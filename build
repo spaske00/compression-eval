@@ -1,0 +1,73 @@
+#!/bin/bash
+
+if [ $# -lt 3 ]; then
+    echo "usage: $(basename $0) r|b image generated_image_path target_command..."
+    exit 1
+fi
+
+corpus_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/corpus"
+
+bench_build=false
+if [ $1 = 'b' ]; then
+    bench_build=true
+fi
+shift 1
+
+image="$1"
+path="$(realpath "$2")"
+shift 2
+
+arch=(
+    "x64"
+)
+
+declare -A opts=(
+    ["O2"]="-O2"
+    ["O3"]="-O3"
+    ["Os"]="-Os"
+    ["prof"]="-g -H:+UnlockExperimentalVMOptions -H:-DeleteLocalSymbols -H:-RemoveUnusedSymbols -H:+SourceLevelDebug -H:+InternalSymbolsAreGlobal -H:+PreserveFramePointer"
+    ["static"]="--static --libc=musl"
+    ["static-nolibc"]="--static-nolibc"
+)
+
+saved_ni_opts="$NATIVE_IMAGE_OPTIONS"
+bench_opts=""
+
+log_dir="$corpus_dir/../logs/$image"
+mkdir -p "$log_dir"
+
+for a in "${arch[@]}"; do
+    for suffix in "${!opts[@]}"; do
+        opt="${opts[$suffix]}"
+        target="$image-$arch-$suffix"
+
+        rm "$path"
+        echo "Generating $target ..."
+
+        bench_opts=""
+        unset NATIVE_IMAGE_OPTIONS
+        if $bench_build ; then
+            read -ra split <<<"$opt"
+            for o in "${split[@]}" ; do
+                bench_opts="$bench_opts -Dnative-image.benchmark.extra-image-build-argument=$o"
+            done
+        else
+            NATIVE_IMAGE_OPTIONS="$saved_ni_opts $opt"
+            export NATIVE_IMAGE_OPTIONS
+        fi
+
+        if "$@" $bench_opts 2>&1 | tee "$log_dir/$target.log" ; then
+            if [ -f "$path" ] ; then
+                mkdir -p "$corpus_dir/$image"
+                cp "$path" "$corpus_dir/$image/$target"
+            else
+                echo "ERROR: $path not found!"
+            fi
+        else
+            echo "ERROR: Failed to build $target (code $?)"
+        fi
+
+
+    done
+done
+

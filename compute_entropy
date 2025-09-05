@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DIR="$1"
+
+if [[ -z "$DIR" ]]; then
+    echo "Usage: $0 <directory>"
+    echo "Example: $0 corpus/"
+    exit 1
+fi
+
+# Takes some time, be patient please :)
+result=""
+while IFS= read -r -d '' file; do
+    result+="./$(basename $file)"
+    result+=$'\n'
+    result+="$(ent -t -b $file)"
+    result+=$'\n'
+done < <(find "$DIR" -type f -print0)
+
+dt=$(date +%s)
+output_file="results/results_${DIR//\//\_}entropy_$dt.csv"
+echo "$result" | awk '
+NR % 3 == 1 { fname = $0; next }                        
+NR % 3 == 2 {
+    if (!header_printed) {
+        sub(/^0,/, "Filename,"); 
+        print; 
+        header_printed = 1; 
+    }
+    next
+}
+NR % 3 == 0 { sub(/^1,/, fname ","); print; next }
+' > "$output_file"

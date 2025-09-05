@@ -1,0 +1,1051 @@
+Compressor name,Compression speed,Decompression speed,Original size,Compressed size,Ratio,Filename
+memcpy,20053.49,20437.89,66779993,66779993,100.00,corpus_text//micronaut-shopcart-x64-O3-text
+fastlz 0.5.0 -1,268.59,646.84,66779993,41645468,62.36,corpus_text//micronaut-shopcart-x64-O3-text
+fastlz 0.5.0 -2,272.41,654.24,66779993,39609275,59.31,corpus_text//micronaut-shopcart-x64-O3-text
+kanzi 2.3 -1,238.61,1335.78,66779993,29908312,44.79,corpus_text//micronaut-shopcart-x64-O3-text
+kanzi 2.3 -2,200.03,541.16,66779993,26144928,39.15,corpus_text//micronaut-shopcart-x64-O3-text
+kanzi 2.3 -3,132.39,570.46,66779993,25258856,37.82,corpus_text//micronaut-shopcart-x64-O3-text
+lizard 2.1 -10,539.48,3031.02,66779993,39167058,58.65,corpus_text//micronaut-shopcart-x64-O3-text
+lizard 2.1 -11,329.77,2911.19,66779993,34684245,51.94,corpus_text//micronaut-shopcart-x64-O3-text
+lizard 2.1 -12,184.42,3049.23,66779993,32508170,48.68,corpus_text//micronaut-shopcart-x64-O3-text
+lizard 2.1 -13,115.46,3063.43,66779993,31681273,47.44,corpus_text//micronaut-shopcart-x64-O3-text
+lizard 2.1 -14,106.61,3083.47,66779993,31194888,46.71,corpus_text//micronaut-shopcart-x64-O3-text
+lz4 1.10.0,641.31,4193.35,66779993,39064970,58.50,corpus_text//micronaut-shopcart-x64-O3-text
+lz4 1.10.0 --fast -3,786.42,4103.70,66779993,43345580,64.91,corpus_text//micronaut-shopcart-x64-O3-text
+lz4 1.10.0 --fast -17,1613.37,5852.56,66779993,55904756,83.71,corpus_text//micronaut-shopcart-x64-O3-text
+lzav 4.22 -1,424.68,2306.54,66779993,32350317,48.44,corpus_text//micronaut-shopcart-x64-O3-text
+lzav 4.22 -2,78.66,2133.10,66779993,27820439,41.66,corpus_text//micronaut-shopcart-x64-O3-text
+lzf 3.6 -0,305.85,564.78,66779993,40662220,60.89,corpus_text//micronaut-shopcart-x64-O3-text
+lzf 3.6 -1,301.76,556.37,66779993,39913150,59.77,corpus_text//micronaut-shopcart-x64-O3-text
+lzfse 2017-03-08,83.50,722.28,66779993,26280529,39.35,corpus_text//micronaut-shopcart-x64-O3-text
+lzo1b 2.10 -1,191.51,576.49,66779993,38029700,56.95,corpus_text//micronaut-shopcart-x64-O3-text
+lzo1c 2.10 -1,207.54,596.67,66779993,38909507,58.27,corpus_text//micronaut-shopcart-x64-O3-text
+lzof 2.10 -1,176.92,537.53,66779993,38030174,56.95,corpus_text//micronaut-shopcart-x64-O3-text
+lzo1x 2.10 -1,491.40,587.73,66779993,38029925,56.95,corpus_text//micronaut-shopcart-x64-O3-text
+lzo1y 2.10 -1,498.23,586.95,66779993,38393880,57.49,corpus_text//micronaut-shopcart-x64-O3-text
+lzsse4fast 2019-04-18,252.62,3926.83,66779993,33748553,50.54,corpus_text//micronaut-shopcart-x64-O3-text
+lzsse8 2019-04-18 -1,18.59,4381.42,66779993,30641796,45.88,corpus_text//micronaut-shopcart-x64-O3-text
+lzvn 2017-03-08,67.94,930.89,66779993,28672704,42.94,corpus_text//micronaut-shopcart-x64-O3-text
+quicklz 1.5.0 -1,398.23,521.99,66779993,36547018,54.73,corpus_text//micronaut-shopcart-x64-O3-text
+quicklz 1.5.0 -2,221.99,524.56,66779993,32144861,48.14,corpus_text//micronaut-shopcart-x64-O3-text
+snappy 1.2.1,351.72,1045.86,66779993,39357498,58.94,corpus_text//micronaut-shopcart-x64-O3-text
+zstd 1.5.7 -1,450.62,1306.87,66779993,30270043,45.33,corpus_text//micronaut-shopcart-x64-O3-text
+zstd 1.5.7 -2,369.02,1239.06,66779993,27031977,40.48,corpus_text//micronaut-shopcart-x64-O3-text
+zstd 1.5.7 -3,260.18,1179.19,66779993,25275096,37.85,corpus_text//micronaut-shopcart-x64-O3-text
+zstd 1.5.7 -4,230.60,1168.29,66779993,24509255,36.70,corpus_text//micronaut-shopcart-x64-O3-text
+zstd 1.5.7 -5,127.85,1120.13,66779993,23812404,35.66,corpus_text//micronaut-shopcart-x64-O3-text
+memcpy,27477.66,27858.32,10838809,10838809,100.00,corpus_text//jmh-x64-O2-text
+fastlz 0.5.0 -1,258.64,622.40,10838809,6541337,60.35,corpus_text//jmh-x64-O2-text
+fastlz 0.5.0 -2,261.79,618.53,10838809,6347503,58.56,corpus_text//jmh-x64-O2-text
+kanzi 2.3 -1,223.53,1251.82,10838809,5023276,46.35,corpus_text//jmh-x64-O2-text
+kanzi 2.3 -2,188.69,505.15,10838809,4369155,40.31,corpus_text//jmh-x64-O2-text
+kanzi 2.3 -3,119.32,533.74,10838809,4263922,39.34,corpus_text//jmh-x64-O2-text
+lizard 2.1 -10,517.97,2966.42,10838809,6281191,57.95,corpus_text//jmh-x64-O2-text
+lizard 2.1 -11,304.28,2861.85,10838809,5668771,52.30,corpus_text//jmh-x64-O2-text
+lizard 2.1 -12,171.15,3025.01,10838809,5337923,49.25,corpus_text//jmh-x64-O2-text
+lizard 2.1 -13,108.17,3063.29,10838809,5204007,48.01,corpus_text//jmh-x64-O2-text
+lizard 2.1 -14,100.77,3051.76,10838809,5123907,47.27,corpus_text//jmh-x64-O2-text
+lz4 1.10.0,627.27,4244.11,10838809,6250234,57.67,corpus_text//jmh-x64-O2-text
+lz4 1.10.0 --fast -3,768.80,4224.18,10838809,6918444,63.83,corpus_text//jmh-x64-O2-text
+lz4 1.10.0 --fast -17,1572.16,6302.00,10838809,8882871,81.95,corpus_text//jmh-x64-O2-text
+lzav 4.22 -1,433.95,2454.14,10838809,5452252,50.30,corpus_text//jmh-x64-O2-text
+lzav 4.22 -2,83.47,2260.36,10838809,4743200,43.76,corpus_text//jmh-x64-O2-text
+lzf 3.6 -0,316.43,558.81,10838809,6409230,59.13,corpus_text//jmh-x64-O2-text
+lzf 3.6 -1,304.12,559.46,10838809,6292501,58.06,corpus_text//jmh-x64-O2-text
+lzfse 2017-03-08,82.34,707.85,10838809,4317610,39.83,corpus_text//jmh-x64-O2-text
+lzo1b 2.10 -1,189.72,576.94,10838809,6133797,56.59,corpus_text//jmh-x64-O2-text
+lzo1c 2.10 -1,211.38,604.55,10838809,6174552,56.97,corpus_text//jmh-x64-O2-text
+lzof 2.10 -1,183.39,542.40,10838809,6012153,55.47,corpus_text//jmh-x64-O2-text
+lzo1x 2.10 -1,493.65,595.70,10838809,6041476,55.74,corpus_text//jmh-x64-O2-text
+lzo1y 2.10 -1,499.80,588.40,10838809,6090729,56.19,corpus_text//jmh-x64-O2-text
+lzsse4fast 2019-04-18,246.93,3890.05,10838809,5581778,51.50,corpus_text//jmh-x64-O2-text
+lzsse8 2019-04-18 -1,11.96,4641.25,10838809,5047197,46.57,corpus_text//jmh-x64-O2-text
+lzvn 2017-03-08,69.41,959.09,10838809,4665136,43.04,corpus_text//jmh-x64-O2-text
+quicklz 1.5.0 -1,410.23,539.40,10838809,5877051,54.22,corpus_text//jmh-x64-O2-text
+quicklz 1.5.0 -2,223.88,531.55,10838809,5220509,48.16,corpus_text//jmh-x64-O2-text
+snappy 1.2.1,366.75,1101.63,10838809,6294918,58.08,corpus_text//jmh-x64-O2-text
+zstd 1.5.7 -1,461.94,1341.95,10838809,4942861,45.60,corpus_text//jmh-x64-O2-text
+zstd 1.5.7 -2,381.26,1283.64,10838809,4504078,41.56,corpus_text//jmh-x64-O2-text
+zstd 1.5.7 -3,268.70,1196.91,10838809,4235634,39.08,corpus_text//jmh-x64-O2-text
+zstd 1.5.7 -4,230.98,1177.90,10838809,4123685,38.05,corpus_text//jmh-x64-O2-text
+zstd 1.5.7 -5,126.62,1140.68,10838809,4009835,37.00,corpus_text//jmh-x64-O2-text
+memcpy,27933.38,27750.01,2887222,2887222,100.00,corpus_text//hello-isolate-x64-O2-text
+fastlz 0.5.0 -1,274.08,662.09,2887222,1657770,57.42,corpus_text//hello-isolate-x64-O2-text
+fastlz 0.5.0 -2,273.49,654.37,2887222,1615665,55.96,corpus_text//hello-isolate-x64-O2-text
+kanzi 2.3 -1,234.93,1311.18,2887222,1288546,44.63,corpus_text//hello-isolate-x64-O2-text
+kanzi 2.3 -2,196.47,527.12,2887222,1121813,38.85,corpus_text//hello-isolate-x64-O2-text
+kanzi 2.3 -3,135.90,556.69,2887222,1100761,38.13,corpus_text//hello-isolate-x64-O2-text
+lizard 2.1 -10,545.66,3073.78,2887222,1599620,55.40,corpus_text//hello-isolate-x64-O2-text
+lizard 2.1 -11,283.77,3029.87,2887222,1454645,50.38,corpus_text//hello-isolate-x64-O2-text
+lizard 2.1 -12,162.56,3165.25,2887222,1375409,47.64,corpus_text//hello-isolate-x64-O2-text
+lizard 2.1 -13,107.41,3182.72,2887222,1342381,46.49,corpus_text//hello-isolate-x64-O2-text
+lizard 2.1 -14,100.88,3197.47,2887222,1322750,45.81,corpus_text//hello-isolate-x64-O2-text
+lz4 1.10.0,664.55,4368.69,2887222,1591783,55.13,corpus_text//hello-isolate-x64-O2-text
+lz4 1.10.0 --fast -3,816.30,4402.53,2887222,1766915,61.20,corpus_text//hello-isolate-x64-O2-text
+lz4 1.10.0 --fast -17,1674.04,6961.10,2887222,2271243,78.67,corpus_text//hello-isolate-x64-O2-text
+lzav 4.22 -1,474.85,2827.54,2887222,1417153,49.08,corpus_text//hello-isolate-x64-O2-text
+lzav 4.22 -2,94.40,2562.19,2887222,1247915,43.22,corpus_text//hello-isolate-x64-O2-text
+lzf 3.6 -0,330.56,594.51,2887222,1626559,56.34,corpus_text//hello-isolate-x64-O2-text
+lzf 3.6 -1,322.84,590.58,2887222,1595231,55.25,corpus_text//hello-isolate-x64-O2-text
+lzfse 2017-03-08,86.33,744.57,2887222,1106875,38.34,corpus_text//hello-isolate-x64-O2-text
+lzo1b 2.10 -1,198.35,611.45,2887222,1564607,54.19,corpus_text//hello-isolate-x64-O2-text
+lzo1c 2.10 -1,223.53,639.98,2887222,1569689,54.37,corpus_text//hello-isolate-x64-O2-text
+lzof 2.10 -1,192.64,576.21,2887222,1531915,53.06,corpus_text//hello-isolate-x64-O2-text
+lzo1x 2.10 -1,521.62,632.63,2887222,1536094,53.20,corpus_text//hello-isolate-x64-O2-text
+lzo1y 2.10 -1,535.22,634.21,2887222,1547799,53.61,corpus_text//hello-isolate-x64-O2-text
+lzsse4fast 2019-04-18,247.15,4073.18,2887222,1452238,50.30,corpus_text//hello-isolate-x64-O2-text
+lzsse8 2019-04-18 -1,4.69,5122.42,2887222,1312811,45.47,corpus_text//hello-isolate-x64-O2-text
+lzvn 2017-03-08,71.98,1008.68,2887222,1198837,41.52,corpus_text//hello-isolate-x64-O2-text
+quicklz 1.5.0 -1,430.45,567.25,2887222,1504632,52.11,corpus_text//hello-isolate-x64-O2-text
+quicklz 1.5.0 -2,238.39,560.06,2887222,1337332,46.32,corpus_text//hello-isolate-x64-O2-text
+snappy 1.2.1,386.78,1144.11,2887222,1602030,55.49,corpus_text//hello-isolate-x64-O2-text
+zstd 1.5.7 -1,473.45,1390.43,2887222,1270608,44.01,corpus_text//hello-isolate-x64-O2-text
+zstd 1.5.7 -2,387.90,1334.45,2887222,1159694,40.17,corpus_text//hello-isolate-x64-O2-text
+zstd 1.5.7 -3,281.87,1246.73,2887222,1090852,37.78,corpus_text//hello-isolate-x64-O2-text
+zstd 1.5.7 -4,250.33,1235.29,2887222,1066330,36.93,corpus_text//hello-isolate-x64-O2-text
+zstd 1.5.7 -5,133.69,1195.41,2887222,1035991,35.88,corpus_text//hello-isolate-x64-O2-text
+memcpy,27235.75,28675.54,2871683,2871683,100.00,corpus_text//hello-isolate-x64-prof-text
+fastlz 0.5.0 -1,285.62,654.64,2871683,1577507,54.93,corpus_text//hello-isolate-x64-prof-text
+fastlz 0.5.0 -2,276.37,653.96,2871683,1528819,53.24,corpus_text//hello-isolate-x64-prof-text
+kanzi 2.3 -1,234.74,1270.13,2871683,1208635,42.09,corpus_text//hello-isolate-x64-prof-text
+kanzi 2.3 -2,199.34,537.38,2871683,1046820,36.45,corpus_text//hello-isolate-x64-prof-text
+kanzi 2.3 -3,140.28,587.22,2871683,1030778,35.89,corpus_text//hello-isolate-x64-prof-text
+lizard 2.1 -10,567.51,3132.71,2871683,1513441,52.70,corpus_text//hello-isolate-x64-prof-text
+lizard 2.1 -11,305.72,3141.21,2871683,1378360,48.00,corpus_text//hello-isolate-x64-prof-text
+lizard 2.1 -12,167.57,3282.93,2871683,1297265,45.17,corpus_text//hello-isolate-x64-prof-text
+lizard 2.1 -13,111.47,3291.85,2871683,1256138,43.74,corpus_text//hello-isolate-x64-prof-text
+lizard 2.1 -14,103.38,3302.96,2871683,1232666,42.92,corpus_text//hello-isolate-x64-prof-text
+lz4 1.10.0,676.12,4449.10,2871683,1497567,52.15,corpus_text//hello-isolate-x64-prof-text
+lz4 1.10.0 --fast -3,794.63,4454.56,2871683,1656156,57.67,corpus_text//hello-isolate-x64-prof-text
+lz4 1.10.0 --fast -17,1490.19,6202.75,2871683,2147890,74.80,corpus_text//hello-isolate-x64-prof-text
+lzav 4.22 -1,492.67,2877.39,2871683,1338214,46.60,corpus_text//hello-isolate-x64-prof-text
+lzav 4.22 -2,92.84,2592.66,2871683,1170015,40.74,corpus_text//hello-isolate-x64-prof-text
+lzf 3.6 -0,345.23,598.55,2871683,1554389,54.13,corpus_text//hello-isolate-x64-prof-text
+lzf 3.6 -1,335.70,603.87,2871683,1519975,52.93,corpus_text//hello-isolate-x64-prof-text
+lzfse 2017-03-08,87.55,765.21,2871683,1035861,36.07,corpus_text//hello-isolate-x64-prof-text
+lzo1b 2.10 -1,214.17,624.56,2871683,1486790,51.77,corpus_text//hello-isolate-x64-prof-text
+lzo1c 2.10 -1,236.19,635.19,2871683,1495138,52.06,corpus_text//hello-isolate-x64-prof-text
+lzof 2.10 -1,202.04,575.28,2871683,1460479,50.86,corpus_text//hello-isolate-x64-prof-text
+lzo1x 2.10 -1,518.27,627.82,2871683,1460668,50.86,corpus_text//hello-isolate-x64-prof-text
+lzo1y 2.10 -1,529.73,623.21,2871683,1469483,51.17,corpus_text//hello-isolate-x64-prof-text
+lzsse4fast 2019-04-18,253.71,4197.27,2871683,1408653,49.05,corpus_text//hello-isolate-x64-prof-text
+lzsse8 2019-04-18 -1,4.77,5272.69,2871683,1241479,43.23,corpus_text//hello-isolate-x64-prof-text
+lzvn 2017-03-08,73.55,1014.13,2871683,1128583,39.30,corpus_text//hello-isolate-x64-prof-text
+quicklz 1.5.0 -1,432.41,578.88,2871683,1421252,49.49,corpus_text//hello-isolate-x64-prof-text
+quicklz 1.5.0 -2,240.68,596.89,2871683,1257149,43.78,corpus_text//hello-isolate-x64-prof-text
+snappy 1.2.1,378.04,1115.38,2871683,1513608,52.71,corpus_text//hello-isolate-x64-prof-text
+zstd 1.5.7 -1,479.48,1385.44,2871683,1179791,41.08,corpus_text//hello-isolate-x64-prof-text
+zstd 1.5.7 -2,394.04,1331.57,2871683,1082422,37.69,corpus_text//hello-isolate-x64-prof-text
+zstd 1.5.7 -3,293.00,1270.36,2871683,1017866,35.44,corpus_text//hello-isolate-x64-prof-text
+zstd 1.5.7 -4,258.90,1260.88,2871683,997562,34.74,corpus_text//hello-isolate-x64-prof-text
+zstd 1.5.7 -5,136.47,1220.74,2871683,966084,33.64,corpus_text//hello-isolate-x64-prof-text
+memcpy,27439.64,26373.70,21553561,21553561,100.00,corpus_text//micronaut-conferences-isolate-x64-O2-text
+fastlz 0.5.0 -1,273.74,609.20,21553561,12111916,56.19,corpus_text//micronaut-conferences-isolate-x64-O2-text
+fastlz 0.5.0 -2,266.28,600.29,21553561,11831487,54.89,corpus_text//micronaut-conferences-isolate-x64-O2-text
+kanzi 2.3 -1,223.88,1222.17,21553561,9033342,41.91,corpus_text//micronaut-conferences-isolate-x64-O2-text
+kanzi 2.3 -2,192.65,528.88,21553561,7754976,35.98,corpus_text//micronaut-conferences-isolate-x64-O2-text
+kanzi 2.3 -3,134.88,559.45,21553561,7588074,35.21,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lizard 2.1 -10,500.35,2783.79,21553561,11351907,52.67,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lizard 2.1 -11,335.08,2682.63,21553561,10392895,48.22,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lizard 2.1 -12,176.74,2848.95,21553561,9687538,44.95,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lizard 2.1 -13,111.29,2880.68,21553561,9338576,43.33,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lizard 2.1 -14,101.39,2912.79,21553561,9129416,42.36,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lz4 1.10.0,594.74,3965.96,21553561,11282152,52.34,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lz4 1.10.0 --fast -3,676.92,3925.99,21553561,12390401,57.49,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lz4 1.10.0 --fast -17,1158.25,4584.72,21553561,16375410,75.98,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzav 4.22 -1,417.72,2185.73,21553561,9889346,45.88,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzav 4.22 -2,85.07,2139.04,21553561,8552073,39.68,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzf 3.6 -0,324.98,543.51,21553561,11910315,55.26,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzf 3.6 -1,317.98,553.67,21553561,11650101,54.05,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzfse 2017-03-08,84.20,712.62,21553561,7788498,36.14,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzo1b 2.10 -1,209.21,572.02,21553561,11373889,52.77,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzo1c 2.10 -1,238.85,595.63,21553561,11372352,52.76,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzof 2.10 -1,200.98,538.33,21553561,11055208,51.29,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzo1x 2.10 -1,474.67,577.65,21553561,11020103,51.13,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzo1y 2.10 -1,477.47,577.45,21553561,11086102,51.44,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzsse4fast 2019-04-18,262.98,4001.23,21553561,10550841,48.95,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzsse8 2019-04-18 -1,14.21,4617.79,21553561,9217218,42.76,corpus_text//micronaut-conferences-isolate-x64-O2-text
+lzvn 2017-03-08,72.29,967.68,21553561,8457512,39.24,corpus_text//micronaut-conferences-isolate-x64-O2-text
+quicklz 1.5.0 -1,401.51,548.23,21553561,10871711,50.44,corpus_text//micronaut-conferences-isolate-x64-O2-text
+quicklz 1.5.0 -2,226.14,575.96,21553561,9584059,44.47,corpus_text//micronaut-conferences-isolate-x64-O2-text
+snappy 1.2.1,343.33,1003.89,21553561,11515842,53.43,corpus_text//micronaut-conferences-isolate-x64-O2-text
+zstd 1.5.7 -1,447.85,1285.43,21553561,8614935,39.97,corpus_text//micronaut-conferences-isolate-x64-O2-text
+zstd 1.5.7 -2,373.01,1213.64,21553561,7952145,36.89,corpus_text//micronaut-conferences-isolate-x64-O2-text
+zstd 1.5.7 -3,276.72,1159.03,21553561,7490467,34.75,corpus_text//micronaut-conferences-isolate-x64-O2-text
+zstd 1.5.7 -4,244.52,1136.13,21553561,7364736,34.17,corpus_text//micronaut-conferences-isolate-x64-O2-text
+zstd 1.5.7 -5,132.63,1097.87,21553561,7134909,33.10,corpus_text//micronaut-conferences-isolate-x64-O2-text
+memcpy,26733.39,25849.77,10532075,10532075,100.00,corpus_text//jmh-x64-prof-text
+fastlz 0.5.0 -1,269.54,627.84,10532075,6152362,58.42,corpus_text//jmh-x64-prof-text
+fastlz 0.5.0 -2,264.84,626.20,10532075,5962513,56.61,corpus_text//jmh-x64-prof-text
+kanzi 2.3 -1,223.66,1227.56,10532075,4678997,44.43,corpus_text//jmh-x64-prof-text
+kanzi 2.3 -2,191.37,515.51,10532075,4051861,38.47,corpus_text//jmh-x64-prof-text
+kanzi 2.3 -3,130.32,541.79,10532075,3964866,37.65,corpus_text//jmh-x64-prof-text
+lizard 2.1 -10,520.08,2967.23,10532075,5890487,55.93,corpus_text//jmh-x64-prof-text
+lizard 2.1 -11,314.58,2905.56,10532075,5321598,50.53,corpus_text//jmh-x64-prof-text
+lizard 2.1 -12,173.36,3043.18,10532075,4998829,47.46,corpus_text//jmh-x64-prof-text
+lizard 2.1 -13,110.07,3081.59,10532075,4848445,46.04,corpus_text//jmh-x64-prof-text
+lizard 2.1 -14,101.45,3104.86,10532075,4760864,45.20,corpus_text//jmh-x64-prof-text
+lz4 1.10.0,631.23,4163.53,10532075,5830275,55.36,corpus_text//jmh-x64-prof-text
+lz4 1.10.0 --fast -3,759.47,4125.90,10532075,6450190,61.24,corpus_text//jmh-x64-prof-text
+lz4 1.10.0 --fast -17,1440.47,5796.95,10532075,8317636,78.97,corpus_text//jmh-x64-prof-text
+lzav 4.22 -1,437.97,2413.28,10532075,5107937,48.50,corpus_text//jmh-x64-prof-text
+lzav 4.22 -2,88.89,2300.24,10532075,4422574,41.99,corpus_text//jmh-x64-prof-text
+lzf 3.6 -0,320.33,567.71,10532075,6057097,57.51,corpus_text//jmh-x64-prof-text
+lzf 3.6 -1,313.63,564.22,10532075,5927427,56.28,corpus_text//jmh-x64-prof-text
+lzfse 2017-03-08,83.04,718.46,10532075,4013352,38.11,corpus_text//jmh-x64-prof-text
+lzo1b 2.10 -1,198.39,586.28,10532075,5777374,54.86,corpus_text//jmh-x64-prof-text
+lzo1c 2.10 -1,223.27,611.92,10532075,5804960,55.12,corpus_text//jmh-x64-prof-text
+lzof 2.10 -1,191.80,552.39,10532075,5659389,53.73,corpus_text//jmh-x64-prof-text
+lzo1x 2.10 -1,495.84,600.85,10532075,5656428,53.71,corpus_text//jmh-x64-prof-text
+lzo1y 2.10 -1,500.84,599.05,10532075,5695108,54.07,corpus_text//jmh-x64-prof-text
+lzsse4fast 2019-04-18,251.77,3966.65,10532075,5337911,50.68,corpus_text//jmh-x64-prof-text
+lzsse8 2019-04-18 -1,11.57,4696.74,10532075,4738593,44.99,corpus_text//jmh-x64-prof-text
+lzvn 2017-03-08,70.56,970.02,10532075,4361247,41.41,corpus_text//jmh-x64-prof-text
+quicklz 1.5.0 -1,412.10,546.32,10532075,5505841,52.28,corpus_text//jmh-x64-prof-text
+quicklz 1.5.0 -2,227.81,552.21,10532075,4882863,46.36,corpus_text//jmh-x64-prof-text
+snappy 1.2.1,361.69,1058.34,10532075,5875666,55.79,corpus_text//jmh-x64-prof-text
+zstd 1.5.7 -1,461.17,1340.25,10532075,4570580,43.40,corpus_text//jmh-x64-prof-text
+zstd 1.5.7 -2,375.84,1279.62,10532075,4184112,39.73,corpus_text//jmh-x64-prof-text
+zstd 1.5.7 -3,273.29,1218.05,10532075,3932292,37.34,corpus_text//jmh-x64-prof-text
+zstd 1.5.7 -4,236.98,1197.88,10532075,3836709,36.43,corpus_text//jmh-x64-prof-text
+zstd 1.5.7 -5,129.43,1154.65,10532075,3723180,35.35,corpus_text//jmh-x64-prof-text
+memcpy,18786.84,18470.40,164939625,164939625,100.00,corpus_text//spring-petclinic-x64-O3-text
+fastlz 0.5.0 -1,250.11,606.82,164939625,102681247,62.25,corpus_text//spring-petclinic-x64-O3-text
+fastlz 0.5.0 -2,252.90,612.07,164939625,97980819,59.40,corpus_text//spring-petclinic-x64-O3-text
+kanzi 2.3 -1,221.81,1242.16,164939625,73999802,44.86,corpus_text//spring-petclinic-x64-O3-text
+kanzi 2.3 -2,189.62,511.63,164939625,64817094,39.30,corpus_text//spring-petclinic-x64-O3-text
+kanzi 2.3 -3,128.07,543.55,164939625,62631297,37.97,corpus_text//spring-petclinic-x64-O3-text
+lizard 2.1 -10,505.79,2837.99,164939625,96772866,58.67,corpus_text//spring-petclinic-x64-O3-text
+lizard 2.1 -11,312.77,2764.61,164939625,85711732,51.97,corpus_text//spring-petclinic-x64-O3-text
+lizard 2.1 -12,174.82,2840.18,164939625,80373353,48.73,corpus_text//spring-petclinic-x64-O3-text
+lizard 2.1 -13,107.30,2868.67,164939625,78373300,47.52,corpus_text//spring-petclinic-x64-O3-text
+lizard 2.1 -14,98.57,2890.28,164939625,77199712,46.80,corpus_text//spring-petclinic-x64-O3-text
+lz4 1.10.0,611.00,3976.42,164939625,96502193,58.51,corpus_text//spring-petclinic-x64-O3-text
+lz4 1.10.0 --fast -3,756.82,3899.20,164939625,107038143,64.90,corpus_text//spring-petclinic-x64-O3-text
+lz4 1.10.0 --fast -17,1559.92,5654.75,164939625,137647193,83.45,corpus_text//spring-petclinic-x64-O3-text
+lzav 4.22 -1,405.48,2149.36,164939625,79638515,48.28,corpus_text//spring-petclinic-x64-O3-text
+lzav 4.22 -2,79.64,2032.05,164939625,68549711,41.56,corpus_text//spring-petclinic-x64-O3-text
+lzf 3.6 -0,301.96,539.57,164939625,100230149,60.77,corpus_text//spring-petclinic-x64-O3-text
+lzf 3.6 -1,294.32,535.82,164939625,98410165,59.66,corpus_text//spring-petclinic-x64-O3-text
+lzfse 2017-03-08,80.64,700.90,164939625,65041720,39.43,corpus_text//spring-petclinic-x64-O3-text
+lzo1b 2.10 -1,186.05,558.98,164939625,93940639,56.95,corpus_text//spring-petclinic-x64-O3-text
+lzo1c 2.10 -1,202.27,578.17,164939625,95990538,58.20,corpus_text//spring-petclinic-x64-O3-text
+lzof 2.10 -1,174.20,520.80,164939625,93889931,56.92,corpus_text//spring-petclinic-x64-O3-text
+lzo1x 2.10 -1,483.15,571.93,164939625,93819759,56.88,corpus_text//spring-petclinic-x64-O3-text
+lzo1y 2.10 -1,488.81,570.42,164939625,94682657,57.40,corpus_text//spring-petclinic-x64-O3-text
+lzsse4fast 2019-04-18,257.11,3811.66,164939625,83319179,50.51,corpus_text//spring-petclinic-x64-O3-text
+lzsse8 2019-04-18 -1,20.69,4274.06,164939625,75787770,45.95,corpus_text//spring-petclinic-x64-O3-text
+lzvn 2017-03-08,68.32,935.92,164939625,71009261,43.05,corpus_text//spring-petclinic-x64-O3-text
+quicklz 1.5.0 -1,401.33,519.70,164939625,90483370,54.86,corpus_text//spring-petclinic-x64-O3-text
+quicklz 1.5.0 -2,222.56,521.95,164939625,79622248,48.27,corpus_text//spring-petclinic-x64-O3-text
+snappy 1.2.1,357.35,1049.26,164939625,97119222,58.88,corpus_text//spring-petclinic-x64-O3-text
+zstd 1.5.7 -1,450.66,1310.96,164939625,75174693,45.58,corpus_text//spring-petclinic-x64-O3-text
+zstd 1.5.7 -2,372.98,1237.15,164939625,66872266,40.54,corpus_text//spring-petclinic-x64-O3-text
+zstd 1.5.7 -3,259.12,1157.49,164939625,62550050,37.92,corpus_text//spring-petclinic-x64-O3-text
+zstd 1.5.7 -4,227.46,1147.18,164939625,60556639,36.71,corpus_text//spring-petclinic-x64-O3-text
+zstd 1.5.7 -5,127.58,1108.05,164939625,58851334,35.68,corpus_text//spring-petclinic-x64-O3-text
+memcpy,29063.61,30244.32,21905387,21905387,100.00,corpus_text//micronaut-conferences-x64-prof-text
+fastlz 0.5.0 -1,288.21,619.15,21905387,12188987,55.64,corpus_text//micronaut-conferences-x64-prof-text
+fastlz 0.5.0 -2,269.58,612.04,21905387,11905182,54.35,corpus_text//micronaut-conferences-x64-prof-text
+kanzi 2.3 -1,227.11,1244.94,21905387,9052169,41.32,corpus_text//micronaut-conferences-x64-prof-text
+kanzi 2.3 -2,194.85,534.48,21905387,7780798,35.52,corpus_text//micronaut-conferences-x64-prof-text
+kanzi 2.3 -3,136.77,562.05,21905387,7614002,34.76,corpus_text//micronaut-conferences-x64-prof-text
+lizard 2.1 -10,503.89,2866.61,21905387,11383793,51.97,corpus_text//micronaut-conferences-x64-prof-text
+lizard 2.1 -11,340.24,2733.18,21905387,10423072,47.58,corpus_text//micronaut-conferences-x64-prof-text
+lizard 2.1 -12,177.57,2865.81,21905387,9714388,44.35,corpus_text//micronaut-conferences-x64-prof-text
+lizard 2.1 -13,112.60,2859.92,21905387,9368684,42.77,corpus_text//micronaut-conferences-x64-prof-text
+lizard 2.1 -14,103.05,2874.91,21905387,9160049,41.82,corpus_text//micronaut-conferences-x64-prof-text
+lz4 1.10.0,601.13,4020.71,21905387,11312757,51.64,corpus_text//micronaut-conferences-x64-prof-text
+lz4 1.10.0 --fast -3,678.82,3960.01,21905387,12438713,56.78,corpus_text//micronaut-conferences-x64-prof-text
+lz4 1.10.0 --fast -17,1154.29,4671.02,21905387,16448817,75.09,corpus_text//micronaut-conferences-x64-prof-text
+lzav 4.22 -1,425.59,2204.81,21905387,9921504,45.29,corpus_text//micronaut-conferences-x64-prof-text
+lzav 4.22 -2,88.48,2205.61,21905387,8578486,39.16,corpus_text//micronaut-conferences-x64-prof-text
+lzf 3.6 -0,328.99,548.41,21905387,11998035,54.77,corpus_text//micronaut-conferences-x64-prof-text
+lzf 3.6 -1,322.07,549.46,21905387,11744487,53.61,corpus_text//micronaut-conferences-x64-prof-text
+lzfse 2017-03-08,84.60,719.09,21905387,7816170,35.68,corpus_text//micronaut-conferences-x64-prof-text
+lzo1b 2.10 -1,211.16,569.16,21905387,11463143,52.33,corpus_text//micronaut-conferences-x64-prof-text
+lzo1c 2.10 -1,243.22,596.66,21905387,11440049,52.22,corpus_text//micronaut-conferences-x64-prof-text
+lzof 2.10 -1,203.65,537.13,21905387,11144064,50.87,corpus_text//micronaut-conferences-x64-prof-text
+lzo1x 2.10 -1,480.10,575.72,21905387,11108363,50.71,corpus_text//micronaut-conferences-x64-prof-text
+lzo1y 2.10 -1,482.18,576.00,21905387,11131887,50.82,corpus_text//micronaut-conferences-x64-prof-text
+lzsse4fast 2019-04-18,266.89,4014.71,21905387,10576459,48.28,corpus_text//micronaut-conferences-x64-prof-text
+lzsse8 2019-04-18 -1,14.41,4526.87,21905387,9251218,42.23,corpus_text//micronaut-conferences-x64-prof-text
+lzvn 2017-03-08,72.45,970.44,21905387,8500839,38.81,corpus_text//micronaut-conferences-x64-prof-text
+quicklz 1.5.0 -1,403.19,547.74,21905387,10889826,49.71,corpus_text//micronaut-conferences-x64-prof-text
+quicklz 1.5.0 -2,227.94,581.39,21905387,9632153,43.97,corpus_text//micronaut-conferences-x64-prof-text
+snappy 1.2.1,351.41,1033.71,21905387,11578427,52.86,corpus_text//micronaut-conferences-x64-prof-text
+zstd 1.5.7 -1,444.78,1286.97,21905387,8650762,39.49,corpus_text//micronaut-conferences-x64-prof-text
+zstd 1.5.7 -2,372.64,1230.68,21905387,7987390,36.46,corpus_text//micronaut-conferences-x64-prof-text
+zstd 1.5.7 -3,278.39,1164.63,21905387,7517491,34.32,corpus_text//micronaut-conferences-x64-prof-text
+zstd 1.5.7 -4,246.56,1145.36,21905387,7390889,33.74,corpus_text//micronaut-conferences-x64-prof-text
+zstd 1.5.7 -5,133.16,1102.30,21905387,7163492,32.70,corpus_text//micronaut-conferences-x64-prof-text
+memcpy,19926.40,19800.46,81192873,81192873,100.00,corpus_text//quarkus-tika-x64-O3-text
+fastlz 0.5.0 -1,252.77,609.46,81192873,50265064,61.91,corpus_text//quarkus-tika-x64-O3-text
+fastlz 0.5.0 -2,254.53,613.47,81192873,48202282,59.37,corpus_text//quarkus-tika-x64-O3-text
+kanzi 2.3 -1,221.75,1240.61,81192873,36979818,45.55,corpus_text//quarkus-tika-x64-O3-text
+kanzi 2.3 -2,188.93,502.43,81192873,32311481,39.80,corpus_text//quarkus-tika-x64-O3-text
+kanzi 2.3 -3,127.60,532.45,81192873,31364578,38.63,corpus_text//quarkus-tika-x64-O3-text
+lizard 2.1 -10,502.91,2836.19,81192873,47595534,58.62,corpus_text//quarkus-tika-x64-O3-text
+lizard 2.1 -11,310.81,2742.05,81192873,42383976,52.20,corpus_text//quarkus-tika-x64-O3-text
+lizard 2.1 -12,173.19,2853.55,81192873,39778614,48.99,corpus_text//quarkus-tika-x64-O3-text
+lizard 2.1 -13,108.15,2925.83,81192873,38773338,47.75,corpus_text//quarkus-tika-x64-O3-text
+lizard 2.1 -14,100.92,2922.14,81192873,38195758,47.04,corpus_text//quarkus-tika-x64-O3-text
+lz4 1.10.0,614.02,4076.86,81192873,47471601,58.47,corpus_text//quarkus-tika-x64-O3-text
+lz4 1.10.0 --fast -3,756.22,3977.77,81192873,52675623,64.88,corpus_text//quarkus-tika-x64-O3-text
+lz4 1.10.0 --fast -17,1550.36,5702.46,81192873,67697222,83.38,corpus_text//quarkus-tika-x64-O3-text
+lzav 4.22 -1,417.40,2245.42,81192873,39982001,49.24,corpus_text//quarkus-tika-x64-O3-text
+lzav 4.22 -2,78.06,2035.85,81192873,34545551,42.55,corpus_text//quarkus-tika-x64-O3-text
+lzf 3.6 -0,310.81,552.89,81192873,49142899,60.53,corpus_text//quarkus-tika-x64-O3-text
+lzf 3.6 -1,299.14,550.67,81192873,48261683,59.44,corpus_text//quarkus-tika-x64-O3-text
+lzfse 2017-03-08,81.06,722.84,81192873,32259667,39.73,corpus_text//quarkus-tika-x64-O3-text
+lzo1b 2.10 -1,190.08,579.63,81192873,46375937,57.12,corpus_text//quarkus-tika-x64-O3-text
+lzo1c 2.10 -1,208.16,601.49,81192873,47191798,58.12,corpus_text//quarkus-tika-x64-O3-text
+lzof 2.10 -1,180.27,540.72,81192873,46110083,56.79,corpus_text//quarkus-tika-x64-O3-text
+lzo1x 2.10 -1,492.69,591.74,81192873,46079812,56.75,corpus_text//quarkus-tika-x64-O3-text
+lzo1y 2.10 -1,500.17,592.90,81192873,46479004,57.25,corpus_text//quarkus-tika-x64-O3-text
+lzsse4fast 2019-04-18,265.67,3964.64,81192873,41261058,50.82,corpus_text//quarkus-tika-x64-O3-text
+lzsse8 2019-04-18 -1,19.40,4436.04,81192873,37480903,46.16,corpus_text//quarkus-tika-x64-O3-text
+lzvn 2017-03-08,70.66,954.51,81192873,34978026,43.08,corpus_text//quarkus-tika-x64-O3-text
+quicklz 1.5.0 -1,411.26,536.81,81192873,44548094,54.87,corpus_text//quarkus-tika-x64-O3-text
+quicklz 1.5.0 -2,228.53,534.21,81192873,39298650,48.40,corpus_text//quarkus-tika-x64-O3-text
+snappy 1.2.1,365.72,1086.71,81192873,47756300,58.82,corpus_text//quarkus-tika-x64-O3-text
+zstd 1.5.7 -1,464.56,1329.85,81192873,37129828,45.73,corpus_text//quarkus-tika-x64-O3-text
+zstd 1.5.7 -2,383.64,1258.83,81192873,33319350,41.04,corpus_text//quarkus-tika-x64-O3-text
+zstd 1.5.7 -3,269.91,1186.50,81192873,31206647,38.44,corpus_text//quarkus-tika-x64-O3-text
+zstd 1.5.7 -4,233.23,1167.89,81192873,30298477,37.32,corpus_text//quarkus-tika-x64-O3-text
+zstd 1.5.7 -5,131.38,1128.57,81192873,29445588,36.27,corpus_text//quarkus-tika-x64-O3-text
+memcpy,21924.70,22497.65,35358315,35358315,100.00,corpus_text//micronaut-shopcart-x64-prof-text
+fastlz 0.5.0 -1,270.18,623.80,35358315,20588633,58.23,corpus_text//micronaut-shopcart-x64-prof-text
+fastlz 0.5.0 -2,266.08,623.87,35358315,19805094,56.01,corpus_text//micronaut-shopcart-x64-prof-text
+kanzi 2.3 -1,232.03,1264.36,35358315,15091102,42.68,corpus_text//micronaut-shopcart-x64-prof-text
+kanzi 2.3 -2,198.23,534.76,35358315,13102374,37.06,corpus_text//micronaut-shopcart-x64-prof-text
+kanzi 2.3 -3,135.53,563.80,35358315,12771224,36.12,corpus_text//micronaut-shopcart-x64-prof-text
+lizard 2.1 -10,518.27,2953.93,35358315,19443709,54.99,corpus_text//micronaut-shopcart-x64-prof-text
+lizard 2.1 -11,335.81,2863.91,35358315,17449524,49.35,corpus_text//micronaut-shopcart-x64-prof-text
+lizard 2.1 -12,180.79,3035.18,35358315,16300711,46.10,corpus_text//micronaut-shopcart-x64-prof-text
+lizard 2.1 -13,114.46,3027.26,35358315,15781576,44.63,corpus_text//micronaut-shopcart-x64-prof-text
+lizard 2.1 -14,104.54,2972.03,35358315,15473083,43.76,corpus_text//micronaut-shopcart-x64-prof-text
+lz4 1.10.0,629.38,4061.60,35358315,19257724,54.46,corpus_text//micronaut-shopcart-x64-prof-text
+lz4 1.10.0 --fast -3,745.04,4019.93,35358315,21343942,60.36,corpus_text//micronaut-shopcart-x64-prof-text
+lz4 1.10.0 --fast -17,1381.76,5090.27,35358315,27848616,78.76,corpus_text//micronaut-shopcart-x64-prof-text
+lzav 4.22 -1,430.97,2231.82,35358315,16457290,46.54,corpus_text//micronaut-shopcart-x64-prof-text
+lzav 4.22 -2,84.20,2135.78,35358315,14158840,40.04,corpus_text//micronaut-shopcart-x64-prof-text
+lzf 3.6 -0,318.86,557.03,35358315,20232792,57.22,corpus_text//micronaut-shopcart-x64-prof-text
+lzf 3.6 -1,311.90,561.27,35358315,19803322,56.01,corpus_text//micronaut-shopcart-x64-prof-text
+lzfse 2017-03-08,85.12,731.07,35358315,13103899,37.06,corpus_text//micronaut-shopcart-x64-prof-text
+lzo1b 2.10 -1,203.18,580.26,35358315,19083656,53.97,corpus_text//micronaut-shopcart-x64-prof-text
+lzo1c 2.10 -1,225.96,606.11,35358315,19271465,54.50,corpus_text//micronaut-shopcart-x64-prof-text
+lzof 2.10 -1,194.31,546.64,35358315,18816731,53.22,corpus_text//micronaut-shopcart-x64-prof-text
+lzo1x 2.10 -1,491.55,593.79,35358315,18781046,53.12,corpus_text//micronaut-shopcart-x64-prof-text
+lzo1y 2.10 -1,497.08,592.56,35358315,18917772,53.50,corpus_text//micronaut-shopcart-x64-prof-text
+lzsse4fast 2019-04-18,265.38,4016.54,35358315,17464561,49.39,corpus_text//micronaut-shopcart-x64-prof-text
+lzsse8 2019-04-18 -1,16.57,4626.11,35358315,15435800,43.66,corpus_text//micronaut-shopcart-x64-prof-text
+lzvn 2017-03-08,72.55,967.17,35358315,14283036,40.40,corpus_text//micronaut-shopcart-x64-prof-text
+quicklz 1.5.0 -1,409.94,551.00,35358315,18207796,51.50,corpus_text//micronaut-shopcart-x64-prof-text
+quicklz 1.5.0 -2,230.09,566.13,35358315,16055902,45.41,corpus_text//micronaut-shopcart-x64-prof-text
+snappy 1.2.1,361.49,1044.98,35358315,19497133,55.14,corpus_text//micronaut-shopcart-x64-prof-text
+zstd 1.5.7 -1,470.50,1355.59,35358315,14936675,42.24,corpus_text//micronaut-shopcart-x64-prof-text
+zstd 1.5.7 -2,383.52,1287.86,35358315,13529176,38.26,corpus_text//micronaut-shopcart-x64-prof-text
+zstd 1.5.7 -3,278.61,1209.81,35358315,12660201,35.81,corpus_text//micronaut-shopcart-x64-prof-text
+zstd 1.5.7 -4,245.38,1192.62,35358315,12350065,34.93,corpus_text//micronaut-shopcart-x64-prof-text
+zstd 1.5.7 -5,135.39,1146.26,35358315,11966553,33.84,corpus_text//micronaut-shopcart-x64-prof-text
+memcpy,21501.72,21701.68,49421225,49421225,100.00,corpus_text//quarkus-tika-x64-O2-text
+fastlz 0.5.0 -1,269.43,639.17,49421225,28911340,58.50,corpus_text//quarkus-tika-x64-O2-text
+fastlz 0.5.0 -2,268.11,639.95,49421225,27802168,56.26,corpus_text//quarkus-tika-x64-O2-text
+kanzi 2.3 -1,235.42,1303.71,49421225,21462489,43.43,corpus_text//quarkus-tika-x64-O2-text
+kanzi 2.3 -2,200.05,536.66,49421225,18678174,37.79,corpus_text//quarkus-tika-x64-O2-text
+kanzi 2.3 -3,134.40,565.14,49421225,18271026,36.97,corpus_text//quarkus-tika-x64-O2-text
+lizard 2.1 -10,532.56,2965.53,49421225,27343264,55.33,corpus_text//quarkus-tika-x64-O2-text
+lizard 2.1 -11,336.98,2845.42,49421225,24608154,49.79,corpus_text//quarkus-tika-x64-O2-text
+lizard 2.1 -12,183.85,2952.50,49421225,23062482,46.67,corpus_text//quarkus-tika-x64-O2-text
+lizard 2.1 -13,116.56,3046.45,49421225,22433202,45.39,corpus_text//quarkus-tika-x64-O2-text
+lizard 2.1 -14,108.00,3083.54,49421225,22063919,44.64,corpus_text//quarkus-tika-x64-O2-text
+lz4 1.10.0,644.01,4155.57,49421225,27232262,55.10,corpus_text//quarkus-tika-x64-O2-text
+lz4 1.10.0 --fast -3,775.46,4067.51,49421225,30183627,61.07,corpus_text//quarkus-tika-x64-O2-text
+lz4 1.10.0 --fast -17,1492.33,5512.01,49421225,39212332,79.34,corpus_text//quarkus-tika-x64-O2-text
+lzav 4.22 -1,439.13,2310.67,49421225,23365085,47.28,corpus_text//quarkus-tika-x64-O2-text
+lzav 4.22 -2,86.05,2136.57,49421225,20264600,41.00,corpus_text//quarkus-tika-x64-O2-text
+lzf 3.6 -0,326.39,573.83,49421225,28296786,57.26,corpus_text//quarkus-tika-x64-O2-text
+lzf 3.6 -1,316.48,569.20,49421225,27789167,56.23,corpus_text//quarkus-tika-x64-O2-text
+lzfse 2017-03-08,85.65,729.21,49421225,18584742,37.60,corpus_text//quarkus-tika-x64-O2-text
+lzo1b 2.10 -1,99.32,564.44,49421225,26778176,54.18,corpus_text//quarkus-tika-x64-O2-text
+lzo1c 2.10 -1,221.16,620.57,49421225,27090708,54.82,corpus_text//quarkus-tika-x64-O2-text
+lzof 2.10 -1,189.25,555.83,49421225,26390817,53.40,corpus_text//quarkus-tika-x64-O2-text
+lzo1x 2.10 -1,500.95,601.67,49421225,26415174,53.45,corpus_text//quarkus-tika-x64-O2-text
+lzo1y 2.10 -1,506.57,602.09,49421225,26619506,53.86,corpus_text//quarkus-tika-x64-O2-text
+lzsse4fast 2019-04-18,269.01,3942.88,49421225,24227113,49.02,corpus_text//quarkus-tika-x64-O2-text
+lzsse8 2019-04-18 -1,17.74,4490.21,49421225,21803813,44.12,corpus_text//quarkus-tika-x64-O2-text
+lzvn 2017-03-08,72.66,983.73,49421225,20140449,40.75,corpus_text//quarkus-tika-x64-O2-text
+quicklz 1.5.0 -1,417.12,549.79,49421225,25602387,51.80,corpus_text//quarkus-tika-x64-O2-text
+quicklz 1.5.0 -2,234.91,554.46,49421225,22639185,45.81,corpus_text//quarkus-tika-x64-O2-text
+snappy 1.2.1,371.05,1087.71,49421225,27528992,55.70,corpus_text//quarkus-tika-x64-O2-text
+zstd 1.5.7 -1,473.98,1367.53,49421225,21256266,43.01,corpus_text//quarkus-tika-x64-O2-text
+zstd 1.5.7 -2,391.40,1282.30,49421225,19272575,39.00,corpus_text//quarkus-tika-x64-O2-text
+zstd 1.5.7 -3,277.73,1199.43,49421225,18087628,36.60,corpus_text//quarkus-tika-x64-O2-text
+zstd 1.5.7 -4,241.59,1156.30,49421225,17637302,35.69,corpus_text//quarkus-tika-x64-O2-text
+zstd 1.5.7 -5,129.59,1164.03,49421225,17111131,34.62,corpus_text//quarkus-tika-x64-O2-text
+memcpy,29806.43,28856.70,4115254,4115254,100.00,corpus_text//hello-world-x64-O3-text
+fastlz 0.5.0 -1,257.05,635.35,4115254,2478046,60.22,corpus_text//hello-world-x64-O3-text
+fastlz 0.5.0 -2,260.05,636.75,4115254,2408401,58.52,corpus_text//hello-world-x64-O3-text
+kanzi 2.3 -1,226.89,1280.25,4115254,1907574,46.35,corpus_text//hello-world-x64-O3-text
+kanzi 2.3 -2,191.89,509.93,4115254,1667405,40.52,corpus_text//hello-world-x64-O3-text
+kanzi 2.3 -3,127.28,538.87,4115254,1614173,39.22,corpus_text//hello-world-x64-O3-text
+lizard 2.1 -10,539.78,3041.47,4115254,2400430,58.33,corpus_text//hello-world-x64-O3-text
+lizard 2.1 -11,280.90,2998.10,4115254,2162068,52.54,corpus_text//hello-world-x64-O3-text
+lizard 2.1 -12,163.41,3061.86,4115254,2044727,49.69,corpus_text//hello-world-x64-O3-text
+lizard 2.1 -13,105.80,3173.52,4115254,1998369,48.56,corpus_text//hello-world-x64-O3-text
+lizard 2.1 -14,98.45,3155.45,4115254,1972120,47.92,corpus_text//hello-world-x64-O3-text
+lz4 1.10.0,652.57,4389.28,4115254,2389376,58.06,corpus_text//hello-world-x64-O3-text
+lz4 1.10.0 --fast -3,824.08,4335.40,4115254,2650797,64.41,corpus_text//hello-world-x64-O3-text
+lz4 1.10.0 --fast -17,1741.33,7667.10,4115254,3368519,81.85,corpus_text//hello-world-x64-O3-text
+lzav 4.22 -1,456.93,2769.17,4115254,2092992,50.86,corpus_text//hello-world-x64-O3-text
+lzav 4.22 -2,84.52,2441.67,4115254,1830857,44.49,corpus_text//hello-world-x64-O3-text
+lzf 3.6 -0,326.10,582.79,4115254,2424771,58.92,corpus_text//hello-world-x64-O3-text
+lzf 3.6 -1,312.88,578.79,4115254,2382513,57.89,corpus_text//hello-world-x64-O3-text
+lzfse 2017-03-08,83.59,726.12,4115254,1651408,40.13,corpus_text//hello-world-x64-O3-text
+lzo1b 2.10 -1,188.36,597.01,4115254,2332861,56.69,corpus_text//hello-world-x64-O3-text
+lzo1c 2.10 -1,209.24,626.08,4115254,2344583,56.97,corpus_text//hello-world-x64-O3-text
+lzof 2.10 -1,182.34,564.21,4115254,2290791,55.67,corpus_text//hello-world-x64-O3-text
+lzo1x 2.10 -1,512.86,616.76,4115254,2294968,55.77,corpus_text//hello-world-x64-O3-text
+lzo1y 2.10 -1,519.53,621.22,4115254,2314745,56.25,corpus_text//hello-world-x64-O3-text
+lzsse4fast 2019-04-18,243.03,3974.32,4115254,2133052,51.83,corpus_text//hello-world-x64-O3-text
+lzsse8 2019-04-18 -1,6.19,4999.89,4115254,1938611,47.11,corpus_text//hello-world-x64-O3-text
+lzvn 2017-03-08,70.42,982.89,4115254,1787624,43.44,corpus_text//hello-world-x64-O3-text
+quicklz 1.5.0 -1,423.56,552.36,4115254,2240863,54.45,corpus_text//hello-world-x64-O3-text
+quicklz 1.5.0 -2,233.68,541.98,4115254,1994464,48.47,corpus_text//hello-world-x64-O3-text
+snappy 1.2.1,383.44,1145.36,4115254,2387518,58.02,corpus_text//hello-world-x64-O3-text
+zstd 1.5.7 -1,469.58,1363.85,4115254,1906980,46.34,corpus_text//hello-world-x64-O3-text
+zstd 1.5.7 -2,386.42,1311.22,4115254,1728624,42.01,corpus_text//hello-world-x64-O3-text
+zstd 1.5.7 -3,273.48,1241.93,4115254,1627007,39.54,corpus_text//hello-world-x64-O3-text
+zstd 1.5.7 -4,238.07,1218.06,4115254,1580740,38.41,corpus_text//hello-world-x64-O3-text
+zstd 1.5.7 -5,130.61,1178.74,4115254,1537961,37.37,corpus_text//hello-world-x64-O3-text
+memcpy,28587.09,27945.33,2906678,2906678,100.00,corpus_text//fork-join-pool-x64-O2-text
+fastlz 0.5.0 -1,274.25,662.64,2906678,1670108,57.46,corpus_text//fork-join-pool-x64-O2-text
+fastlz 0.5.0 -2,272.20,658.63,2906678,1627663,56.00,corpus_text//fork-join-pool-x64-O2-text
+kanzi 2.3 -1,234.84,1306.24,2906678,1297704,44.65,corpus_text//fork-join-pool-x64-O2-text
+kanzi 2.3 -2,197.02,529.18,2906678,1130445,38.89,corpus_text//fork-join-pool-x64-O2-text
+kanzi 2.3 -3,134.64,554.68,2906678,1107984,38.12,corpus_text//fork-join-pool-x64-O2-text
+lizard 2.1 -10,579.70,3394.57,2906678,1611894,55.45,corpus_text//fork-join-pool-x64-O2-text
+lizard 2.1 -11,282.80,3022.97,2906678,1465671,50.42,corpus_text//fork-join-pool-x64-O2-text
+lizard 2.1 -12,161.49,3119.05,2906678,1385743,47.67,corpus_text//fork-join-pool-x64-O2-text
+lizard 2.1 -13,106.98,3393.49,2906678,1352608,46.53,corpus_text//fork-join-pool-x64-O2-text
+lizard 2.1 -14,104.14,3282.42,2906678,1333000,45.86,corpus_text//fork-join-pool-x64-O2-text
+lz4 1.10.0,688.45,4567.31,2906678,1604305,55.19,corpus_text//fork-join-pool-x64-O2-text
+lz4 1.10.0 --fast -3,840.88,4661.49,2906678,1779973,61.24,corpus_text//fork-join-pool-x64-O2-text
+lz4 1.10.0 --fast -17,1718.52,7249.10,2906678,2290713,78.81,corpus_text//fork-join-pool-x64-O2-text
+lzav 4.22 -1,531.62,2947.16,2906678,1428100,49.13,corpus_text//fork-join-pool-x64-O2-text
+lzav 4.22 -2,96.95,2629.41,2906678,1256991,43.24,corpus_text//fork-join-pool-x64-O2-text
+lzf 3.6 -0,341.49,605.68,2906678,1636666,56.31,corpus_text//fork-join-pool-x64-O2-text
+lzf 3.6 -1,330.07,609.22,2906678,1605931,55.25,corpus_text//fork-join-pool-x64-O2-text
+lzfse 2017-03-08,88.07,760.73,2906678,1115925,38.39,corpus_text//fork-join-pool-x64-O2-text
+lzo1b 2.10 -1,204.30,624.41,2906678,1576045,54.22,corpus_text//fork-join-pool-x64-O2-text
+lzo1c 2.10 -1,226.92,651.89,2906678,1580795,54.38,corpus_text//fork-join-pool-x64-O2-text
+lzof 2.10 -1,197.99,587.88,2906678,1542254,53.06,corpus_text//fork-join-pool-x64-O2-text
+lzo1x 2.10 -1,542.34,646.84,2906678,1545975,53.19,corpus_text//fork-join-pool-x64-O2-text
+lzo1y 2.10 -1,543.58,639.11,2906678,1558025,53.60,corpus_text//fork-join-pool-x64-O2-text
+lzsse4fast 2019-04-18,253.52,4161.49,2906678,1463077,50.34,corpus_text//fork-join-pool-x64-O2-text
+lzsse8 2019-04-18 -1,4.93,5238.20,2906678,1322460,45.50,corpus_text//fork-join-pool-x64-O2-text
+lzvn 2017-03-08,74.07,1030.00,2906678,1207862,41.55,corpus_text//fork-join-pool-x64-O2-text
+quicklz 1.5.0 -1,441.09,580.44,2906678,1515016,52.12,corpus_text//fork-join-pool-x64-O2-text
+quicklz 1.5.0 -2,243.41,577.10,2906678,1347121,46.35,corpus_text//fork-join-pool-x64-O2-text
+snappy 1.2.1,397.73,1198.28,2906678,1614897,55.56,corpus_text//fork-join-pool-x64-O2-text
+zstd 1.5.7 -1,499.87,1443.00,2906678,1280978,44.07,corpus_text//fork-join-pool-x64-O2-text
+zstd 1.5.7 -2,406.80,1380.58,2906678,1169030,40.22,corpus_text//fork-join-pool-x64-O2-text
+zstd 1.5.7 -3,295.36,1281.18,2906678,1098669,37.80,corpus_text//fork-join-pool-x64-O2-text
+zstd 1.5.7 -4,258.91,1269.47,2906678,1074054,36.95,corpus_text//fork-join-pool-x64-O2-text
+zstd 1.5.7 -5,139.34,1238.05,2906678,1043225,35.89,corpus_text//fork-join-pool-x64-O2-text
+memcpy,29006.11,28390.19,2885238,2885238,100.00,corpus_text//hello-world-x64-O2-text
+fastlz 0.5.0 -1,279.70,674.36,2885238,1656585,57.42,corpus_text//hello-world-x64-O2-text
+fastlz 0.5.0 -2,278.18,668.89,2885238,1614374,55.95,corpus_text//hello-world-x64-O2-text
+kanzi 2.3 -1,239.80,1363.84,2885238,1286815,44.60,corpus_text//hello-world-x64-O2-text
+kanzi 2.3 -2,203.09,538.49,2885238,1120529,38.84,corpus_text//hello-world-x64-O2-text
+kanzi 2.3 -3,139.61,563.01,2885238,1099980,38.12,corpus_text//hello-world-x64-O2-text
+lizard 2.1 -10,567.91,3144.94,2885238,1599584,55.44,corpus_text//hello-world-x64-O2-text
+lizard 2.1 -11,292.98,3164.80,2885238,1453846,50.39,corpus_text//hello-world-x64-O2-text
+lizard 2.1 -12,168.28,3320.70,2885238,1374651,47.64,corpus_text//hello-world-x64-O2-text
+lizard 2.1 -13,111.71,3342.01,2885238,1341643,46.50,corpus_text//hello-world-x64-O2-text
+lizard 2.1 -14,104.29,3306.25,2885238,1322038,45.82,corpus_text//hello-world-x64-O2-text
+lz4 1.10.0,680.45,4548.24,2885238,1591642,55.17,corpus_text//hello-world-x64-O2-text
+lz4 1.10.0 --fast -3,841.12,4528.21,2885238,1766108,61.21,corpus_text//hello-world-x64-O2-text
+lz4 1.10.0 --fast -17,1702.40,7223.37,2885238,2269856,78.67,corpus_text//hello-world-x64-O2-text
+lzav 4.22 -1,489.99,2901.30,2885238,1416763,49.10,corpus_text//hello-world-x64-O2-text
+lzav 4.22 -2,97.25,2622.89,2885238,1247020,43.22,corpus_text//hello-world-x64-O2-text
+lzf 3.6 -0,342.46,607.47,2885238,1624454,56.30,corpus_text//hello-world-x64-O2-text
+lzf 3.6 -1,329.77,600.56,2885238,1594046,55.25,corpus_text//hello-world-x64-O2-text
+lzfse 2017-03-08,88.15,762.77,2885238,1106748,38.36,corpus_text//hello-world-x64-O2-text
+lzo1b 2.10 -1,203.16,624.70,2885238,1563663,54.20,corpus_text//hello-world-x64-O2-text
+lzo1c 2.10 -1,227.20,655.54,2885238,1569048,54.38,corpus_text//hello-world-x64-O2-text
+lzof 2.10 -1,196.59,588.99,2885238,1530750,53.05,corpus_text//hello-world-x64-O2-text
+lzo1x 2.10 -1,538.36,645.81,2885238,1534911,53.20,corpus_text//hello-world-x64-O2-text
+lzo1y 2.10 -1,541.08,640.44,2885238,1546723,53.61,corpus_text//hello-world-x64-O2-text
+lzsse4fast 2019-04-18,252.14,4169.53,2885238,1451630,50.31,corpus_text//hello-world-x64-O2-text
+lzsse8 2019-04-18 -1,4.89,5247.20,2885238,1311879,45.47,corpus_text//hello-world-x64-O2-text
+lzvn 2017-03-08,74.26,1028.58,2885238,1197948,41.52,corpus_text//hello-world-x64-O2-text
+quicklz 1.5.0 -1,441.08,582.00,2885238,1502827,52.09,corpus_text//hello-world-x64-O2-text
+quicklz 1.5.0 -2,241.07,574.74,2885238,1335995,46.30,corpus_text//hello-world-x64-O2-text
+snappy 1.2.1,396.89,1209.43,2885238,1601062,55.49,corpus_text//hello-world-x64-O2-text
+zstd 1.5.7 -1,491.19,1421.50,2885238,1270086,44.02,corpus_text//hello-world-x64-O2-text
+zstd 1.5.7 -2,402.11,1368.52,2885238,1158370,40.15,corpus_text//hello-world-x64-O2-text
+zstd 1.5.7 -3,291.90,1284.20,2885238,1090283,37.79,corpus_text//hello-world-x64-O2-text
+zstd 1.5.7 -4,257.10,1265.27,2885238,1065252,36.92,corpus_text//hello-world-x64-O2-text
+zstd 1.5.7 -5,138.16,1230.74,2885238,1034657,35.86,corpus_text//hello-world-x64-O2-text
+memcpy,28956.40,28503.58,2901750,2901750,100.00,corpus_text//fork-join-pool-isolate-x64-O2-text
+fastlz 0.5.0 -1,278.94,673.97,2901750,1665818,57.41,corpus_text//fork-join-pool-isolate-x64-O2-text
+fastlz 0.5.0 -2,275.60,667.78,2901750,1624354,55.98,corpus_text//fork-join-pool-isolate-x64-O2-text
+kanzi 2.3 -1,238.16,1354.42,2901750,1295867,44.66,corpus_text//fork-join-pool-isolate-x64-O2-text
+kanzi 2.3 -2,201.26,534.94,2901750,1128888,38.90,corpus_text//fork-join-pool-isolate-x64-O2-text
+kanzi 2.3 -3,137.45,562.02,2901750,1106816,38.14,corpus_text//fork-join-pool-isolate-x64-O2-text
+lizard 2.1 -10,561.27,3155.75,2901750,1608838,55.44,corpus_text//fork-join-pool-isolate-x64-O2-text
+lizard 2.1 -11,293.82,3115.87,2901750,1462983,50.42,corpus_text//fork-join-pool-isolate-x64-O2-text
+lizard 2.1 -12,166.57,3259.31,2901750,1383277,47.67,corpus_text//fork-join-pool-isolate-x64-O2-text
+lizard 2.1 -13,111.28,3260.62,2901750,1350083,46.53,corpus_text//fork-join-pool-isolate-x64-O2-text
+lizard 2.1 -14,103.40,3283.99,2901750,1330461,45.85,corpus_text//fork-join-pool-isolate-x64-O2-text
+lz4 1.10.0,683.22,4559.83,2901750,1600950,55.17,corpus_text//fork-join-pool-isolate-x64-O2-text
+lz4 1.10.0 --fast -3,834.36,4504.53,2901750,1778099,61.28,corpus_text//fork-join-pool-isolate-x64-O2-text
+lz4 1.10.0 --fast -17,1719.04,7187.28,2901750,2285594,78.77,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzav 4.22 -1,489.00,2948.55,2901750,1426154,49.15,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzav 4.22 -2,88.75,2586.16,2901750,1255318,43.26,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzf 3.6 -0,343.42,606.15,2901750,1634882,56.34,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzf 3.6 -1,327.94,599.90,2901750,1603421,55.26,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzfse 2017-03-08,88.14,761.78,2901750,1113905,38.39,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzo1b 2.10 -1,201.78,621.95,2901750,1574150,54.25,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzo1c 2.10 -1,227.67,656.68,2901750,1578019,54.38,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzof 2.10 -1,197.29,586.13,2901750,1538537,53.02,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzo1x 2.10 -1,537.48,643.90,2901750,1544238,53.22,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzo1y 2.10 -1,544.19,640.43,2901750,1556286,53.63,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzsse4fast 2019-04-18,251.65,4163.51,2901750,1460619,50.34,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzsse8 2019-04-18 -1,4.92,5233.94,2901750,1320271,45.50,corpus_text//fork-join-pool-isolate-x64-O2-text
+lzvn 2017-03-08,73.79,1028.74,2901750,1206352,41.57,corpus_text//fork-join-pool-isolate-x64-O2-text
+quicklz 1.5.0 -1,440.10,576.03,2901750,1513240,52.15,corpus_text//fork-join-pool-isolate-x64-O2-text
+quicklz 1.5.0 -2,241.18,573.04,2901750,1345217,46.36,corpus_text//fork-join-pool-isolate-x64-O2-text
+snappy 1.2.1,397.61,1195.25,2901750,1611356,55.53,corpus_text//fork-join-pool-isolate-x64-O2-text
+zstd 1.5.7 -1,494.90,1435.89,2901750,1280302,44.12,corpus_text//fork-join-pool-isolate-x64-O2-text
+zstd 1.5.7 -2,404.96,1380.43,2901750,1167631,40.24,corpus_text//fork-join-pool-isolate-x64-O2-text
+zstd 1.5.7 -3,290.66,1276.55,2901750,1098234,37.85,corpus_text//fork-join-pool-isolate-x64-O2-text
+zstd 1.5.7 -4,255.37,1260.31,2901750,1073143,36.98,corpus_text//fork-join-pool-isolate-x64-O2-text
+zstd 1.5.7 -5,137.90,1229.11,2901750,1042023,35.91,corpus_text//fork-join-pool-isolate-x64-O2-text
+memcpy,29010.36,28452.36,4131510,4131510,100.00,corpus_text//hello-isolate-x64-O3-text
+fastlz 0.5.0 -1,265.40,658.31,4131510,2489630,60.26,corpus_text//hello-isolate-x64-O3-text
+fastlz 0.5.0 -2,266.82,651.06,4131510,2419053,58.55,corpus_text//hello-isolate-x64-O3-text
+kanzi 2.3 -1,235.56,1323.14,4131510,1915347,46.36,corpus_text//hello-isolate-x64-O3-text
+kanzi 2.3 -2,198.80,521.00,4131510,1674615,40.53,corpus_text//hello-isolate-x64-O3-text
+kanzi 2.3 -3,130.96,551.58,4131510,1622005,39.26,corpus_text//hello-isolate-x64-O3-text
+lizard 2.1 -10,553.93,3119.07,4131510,2411999,58.38,corpus_text//hello-isolate-x64-O3-text
+lizard 2.1 -11,292.84,3097.35,4131510,2171412,52.56,corpus_text//hello-isolate-x64-O3-text
+lizard 2.1 -12,169.14,3217.12,4131510,2053376,49.70,corpus_text//hello-isolate-x64-O3-text
+lizard 2.1 -13,110.00,3238.72,4131510,2006918,48.58,corpus_text//hello-isolate-x64-O3-text
+lizard 2.1 -14,102.42,3259.94,4131510,1980664,47.94,corpus_text//hello-isolate-x64-O3-text
+lz4 1.10.0,670.39,4658.32,4131510,2400747,58.11,corpus_text//hello-isolate-x64-O3-text
+lz4 1.10.0 --fast -3,851.41,4530.23,4131510,2663878,64.48,corpus_text//hello-isolate-x64-O3-text
+lz4 1.10.0 --fast -17,1814.90,7716.75,4131510,3382784,81.88,corpus_text//hello-isolate-x64-O3-text
+lzav 4.22 -1,472.95,2859.94,4131510,2102785,50.90,corpus_text//hello-isolate-x64-O3-text
+lzav 4.22 -2,85.41,2480.42,4131510,1838958,44.51,corpus_text//hello-isolate-x64-O3-text
+lzf 3.6 -0,330.84,598.71,4131510,2435718,58.95,corpus_text//hello-isolate-x64-O3-text
+lzf 3.6 -1,315.81,589.02,4131510,2393713,57.94,corpus_text//hello-isolate-x64-O3-text
+lzfse 2017-03-08,85.24,745.52,4131510,1658033,40.13,corpus_text//hello-isolate-x64-O3-text
+lzo1b 2.10 -1,191.04,608.48,4131510,2343478,56.72,corpus_text//hello-isolate-x64-O3-text
+lzo1c 2.10 -1,213.05,633.78,4131510,2356515,57.04,corpus_text//hello-isolate-x64-O3-text
+lzof 2.10 -1,185.50,571.77,4131510,2301680,55.71,corpus_text//hello-isolate-x64-O3-text
+lzo1x 2.10 -1,518.39,626.99,4131510,2314887,56.03,corpus_text//hello-isolate-x64-O3-text
+lzo1y 2.10 -1,528.56,625.42,4131510,2335276,56.52,corpus_text//hello-isolate-x64-O3-text
+lzsse4fast 2019-04-18,245.90,4132.08,4131510,2142573,51.86,corpus_text//hello-isolate-x64-O3-text
+lzsse8 2019-04-18 -1,6.48,4909.20,4131510,1947172,47.13,corpus_text//hello-isolate-x64-O3-text
+lzvn 2017-03-08,71.48,999.51,4131510,1795198,43.45,corpus_text//hello-isolate-x64-O3-text
+quicklz 1.5.0 -1,431.23,557.66,4131510,2251524,54.50,corpus_text//hello-isolate-x64-O3-text
+quicklz 1.5.0 -2,235.46,547.48,4131510,2002639,48.47,corpus_text//hello-isolate-x64-O3-text
+snappy 1.2.1,390.45,1188.89,4131510,2404921,58.21,corpus_text//hello-isolate-x64-O3-text
+zstd 1.5.7 -1,480.61,1389.48,4131510,1914990,46.35,corpus_text//hello-isolate-x64-O3-text
+zstd 1.5.7 -2,396.33,1343.73,4131510,1738141,42.07,corpus_text//hello-isolate-x64-O3-text
+zstd 1.5.7 -3,280.78,1259.36,4131510,1635258,39.58,corpus_text//hello-isolate-x64-O3-text
+zstd 1.5.7 -4,243.88,1243.53,4131510,1588225,38.44,corpus_text//hello-isolate-x64-O3-text
+zstd 1.5.7 -5,134.69,1210.34,4131510,1545513,37.41,corpus_text//hello-isolate-x64-O3-text
+memcpy,28494.36,28073.86,21546521,21546521,100.00,corpus_text//micronaut-conferences-x64-O3-text
+fastlz 0.5.0 -1,290.24,625.51,21546521,12106011,56.19,corpus_text//micronaut-conferences-x64-O3-text
+fastlz 0.5.0 -2,278.19,616.65,21546521,11825857,54.89,corpus_text//micronaut-conferences-x64-O3-text
+kanzi 2.3 -1,232.78,1263.72,21546521,9030360,41.91,corpus_text//micronaut-conferences-x64-O3-text
+kanzi 2.3 -2,199.46,544.32,21546521,7751331,35.97,corpus_text//micronaut-conferences-x64-O3-text
+kanzi 2.3 -3,139.21,573.53,21546521,7584100,35.20,corpus_text//micronaut-conferences-x64-O3-text
+lizard 2.1 -10,520.42,2924.79,21546521,11348986,52.67,corpus_text//micronaut-conferences-x64-O3-text
+lizard 2.1 -11,343.37,2759.19,21546521,10387542,48.21,corpus_text//micronaut-conferences-x64-O3-text
+lizard 2.1 -12,181.61,2987.21,21546521,9683496,44.94,corpus_text//micronaut-conferences-x64-O3-text
+lizard 2.1 -13,115.06,2987.76,21546521,9334616,43.32,corpus_text//micronaut-conferences-x64-O3-text
+lizard 2.1 -14,105.25,2986.21,21546521,9125274,42.35,corpus_text//micronaut-conferences-x64-O3-text
+lz4 1.10.0,614.26,4067.07,21546521,11279555,52.35,corpus_text//micronaut-conferences-x64-O3-text
+lz4 1.10.0 --fast -3,693.43,4021.31,21546521,12386242,57.49,corpus_text//micronaut-conferences-x64-O3-text
+lz4 1.10.0 --fast -17,1185.04,4736.14,21546521,16366297,75.96,corpus_text//micronaut-conferences-x64-O3-text
+lzav 4.22 -1,427.17,2239.05,21546521,9886558,45.88,corpus_text//micronaut-conferences-x64-O3-text
+lzav 4.22 -2,90.93,2194.84,21546521,8547294,39.67,corpus_text//micronaut-conferences-x64-O3-text
+lzf 3.6 -0,330.49,562.75,21546521,11905232,55.25,corpus_text//micronaut-conferences-x64-O3-text
+lzf 3.6 -1,323.25,564.51,21546521,11645795,54.05,corpus_text//micronaut-conferences-x64-O3-text
+lzfse 2017-03-08,86.84,729.86,21546521,7784723,36.13,corpus_text//micronaut-conferences-x64-O3-text
+lzo1b 2.10 -1,214.87,583.62,21546521,11365444,52.75,corpus_text//micronaut-conferences-x64-O3-text
+lzo1c 2.10 -1,243.70,607.10,21546521,11367298,52.76,corpus_text//micronaut-conferences-x64-O3-text
+lzof 2.10 -1,205.86,546.80,21546521,11051811,51.29,corpus_text//micronaut-conferences-x64-O3-text
+lzo1x 2.10 -1,486.29,587.45,21546521,11020708,51.15,corpus_text//micronaut-conferences-x64-O3-text
+lzo1y 2.10 -1,487.88,585.38,21546521,11086633,51.45,corpus_text//micronaut-conferences-x64-O3-text
+lzsse4fast 2019-04-18,266.80,4126.42,21546521,10546439,48.95,corpus_text//micronaut-conferences-x64-O3-text
+lzsse8 2019-04-18 -1,14.54,4692.92,21546521,9213238,42.76,corpus_text//micronaut-conferences-x64-O3-text
+lzvn 2017-03-08,73.88,967.01,21546521,8454051,39.24,corpus_text//micronaut-conferences-x64-O3-text
+quicklz 1.5.0 -1,399.85,541.04,21546521,10868818,50.44,corpus_text//micronaut-conferences-x64-O3-text
+quicklz 1.5.0 -2,221.58,571.97,21546521,9584529,44.48,corpus_text//micronaut-conferences-x64-O3-text
+snappy 1.2.1,340.38,992.38,21546521,11513072,53.43,corpus_text//micronaut-conferences-x64-O3-text
+zstd 1.5.7 -1,441.74,1262.08,21546521,8607981,39.95,corpus_text//micronaut-conferences-x64-O3-text
+zstd 1.5.7 -2,365.57,1204.48,21546521,7950075,36.90,corpus_text//micronaut-conferences-x64-O3-text
+zstd 1.5.7 -3,271.39,1143.08,21546521,7485532,34.74,corpus_text//micronaut-conferences-x64-O3-text
+zstd 1.5.7 -4,242.28,1130.96,21546521,7360111,34.16,corpus_text//micronaut-conferences-x64-O3-text
+zstd 1.5.7 -5,131.40,1086.47,21546521,7131627,33.10,corpus_text//micronaut-conferences-x64-O3-text
+memcpy,28535.70,29106.15,21912363,21912363,100.00,corpus_text//micronaut-conferences-isolate-x64-prof-text
+fastlz 0.5.0 -1,285.94,622.86,21912363,12195919,55.66,corpus_text//micronaut-conferences-isolate-x64-prof-text
+fastlz 0.5.0 -2,272.06,614.38,21912363,11911512,54.36,corpus_text//micronaut-conferences-isolate-x64-prof-text
+kanzi 2.3 -1,227.85,1246.85,21912363,9053910,41.32,corpus_text//micronaut-conferences-isolate-x64-prof-text
+kanzi 2.3 -2,196.01,539.10,21912363,7781074,35.51,corpus_text//micronaut-conferences-isolate-x64-prof-text
+kanzi 2.3 -3,137.92,567.68,21912363,7615587,34.75,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lizard 2.1 -10,505.65,2841.76,21912363,11393897,52.00,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lizard 2.1 -11,339.96,2746.49,21912363,10427721,47.59,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lizard 2.1 -12,179.08,2885.34,21912363,9718511,44.35,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lizard 2.1 -13,113.31,2875.93,21912363,9372082,42.77,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lizard 2.1 -14,103.91,2892.43,21912363,9163407,41.82,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lz4 1.10.0,598.71,4018.72,21912363,11323298,51.68,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lz4 1.10.0 --fast -3,677.67,3974.68,21912363,12449240,56.81,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lz4 1.10.0 --fast -17,1162.02,4683.89,21912363,16451739,75.08,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzav 4.22 -1,424.63,2230.68,21912363,9925196,45.29,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzav 4.22 -2,85.89,2176.46,21912363,8582823,39.17,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzf 3.6 -0,331.39,556.64,21912363,12002647,54.78,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzf 3.6 -1,324.19,560.67,21912363,11749168,53.62,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzfse 2017-03-08,84.69,728.56,21912363,7819433,35.69,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzo1b 2.10 -1,212.99,578.77,21912363,11467865,52.34,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzo1c 2.10 -1,242.35,606.02,21912363,11444192,52.23,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzof 2.10 -1,204.83,545.99,21912363,11148384,50.88,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzo1x 2.10 -1,483.45,585.24,21912363,11116800,50.73,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzo1y 2.10 -1,482.61,582.61,21912363,11140146,50.84,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzsse4fast 2019-04-18,264.79,4067.20,21912363,10579215,48.28,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzsse8 2019-04-18 -1,14.43,4543.13,21912363,9254984,42.24,corpus_text//micronaut-conferences-isolate-x64-prof-text
+lzvn 2017-03-08,72.97,973.81,21912363,8503495,38.81,corpus_text//micronaut-conferences-isolate-x64-prof-text
+quicklz 1.5.0 -1,408.06,554.54,21912363,10890175,49.70,corpus_text//micronaut-conferences-isolate-x64-prof-text
+quicklz 1.5.0 -2,230.34,582.11,21912363,9637751,43.98,corpus_text//micronaut-conferences-isolate-x64-prof-text
+snappy 1.2.1,347.89,1020.70,21912363,11587247,52.88,corpus_text//micronaut-conferences-isolate-x64-prof-text
+zstd 1.5.7 -1,450.81,1301.58,21912363,8652838,39.49,corpus_text//micronaut-conferences-isolate-x64-prof-text
+zstd 1.5.7 -2,377.33,1243.26,21912363,7991935,36.47,corpus_text//micronaut-conferences-isolate-x64-prof-text
+zstd 1.5.7 -3,279.66,1172.88,21912363,7519942,34.32,corpus_text//micronaut-conferences-isolate-x64-prof-text
+zstd 1.5.7 -4,248.11,1158.34,21912363,7392502,33.74,corpus_text//micronaut-conferences-isolate-x64-prof-text
+zstd 1.5.7 -5,134.16,1110.77,21912363,7164678,32.70,corpus_text//micronaut-conferences-isolate-x64-prof-text
+memcpy,28311.52,28131.56,4124790,4124790,100.00,corpus_text//fork-join-pool-x64-O3-text
+fastlz 0.5.0 -1,260.99,648.96,4124790,2489229,60.35,corpus_text//fork-join-pool-x64-O3-text
+fastlz 0.5.0 -2,265.11,644.49,4124790,2418679,58.64,corpus_text//fork-join-pool-x64-O3-text
+kanzi 2.3 -1,230.42,1286.09,4124790,1914644,46.42,corpus_text//fork-join-pool-x64-O3-text
+kanzi 2.3 -2,192.87,511.93,4124790,1674051,40.59,corpus_text//fork-join-pool-x64-O3-text
+kanzi 2.3 -3,129.19,540.22,4124790,1621226,39.30,corpus_text//fork-join-pool-x64-O3-text
+lizard 2.1 -10,545.23,3059.79,4124790,2411781,58.47,corpus_text//fork-join-pool-x64-O3-text
+lizard 2.1 -11,283.63,3010.68,4124790,2169116,52.59,corpus_text//fork-join-pool-x64-O3-text
+lizard 2.1 -12,164.90,3134.69,4124790,2051087,49.73,corpus_text//fork-join-pool-x64-O3-text
+lizard 2.1 -13,106.24,3154.21,4124790,2004647,48.60,corpus_text//fork-join-pool-x64-O3-text
+lizard 2.1 -14,99.36,3180.03,4124790,1978434,47.96,corpus_text//fork-join-pool-x64-O3-text
+lz4 1.10.0,653.25,4445.77,4124790,2400463,58.20,corpus_text//fork-join-pool-x64-O3-text
+lz4 1.10.0 --fast -3,827.83,4426.85,4124790,2662685,64.55,corpus_text//fork-join-pool-x64-O3-text
+lz4 1.10.0 --fast -17,1780.37,7424.71,4124790,3376844,81.87,corpus_text//fork-join-pool-x64-O3-text
+lzav 4.22 -1,460.32,2770.31,4124790,2101360,50.94,corpus_text//fork-join-pool-x64-O3-text
+lzav 4.22 -2,91.54,2447.80,4124790,1838839,44.58,corpus_text//fork-join-pool-x64-O3-text
+lzf 3.6 -0,325.49,587.33,4124790,2434748,59.03,corpus_text//fork-join-pool-x64-O3-text
+lzf 3.6 -1,313.39,579.31,4124790,2393784,58.03,corpus_text//fork-join-pool-x64-O3-text
+lzfse 2017-03-08,84.21,725.87,4124790,1658726,40.21,corpus_text//fork-join-pool-x64-O3-text
+lzo1b 2.10 -1,188.88,596.51,4124790,2341263,56.76,corpus_text//fork-join-pool-x64-O3-text
+lzo1c 2.10 -1,209.64,625.97,4124790,2355391,57.10,corpus_text//fork-join-pool-x64-O3-text
+lzof 2.10 -1,182.11,565.65,4124790,2302555,55.82,corpus_text//fork-join-pool-x64-O3-text
+lzo1x 2.10 -1,516.77,619.30,4124790,2307819,55.95,corpus_text//fork-join-pool-x64-O3-text
+lzo1y 2.10 -1,524.71,622.69,4124790,2327944,56.44,corpus_text//fork-join-pool-x64-O3-text
+lzsse4fast 2019-04-18,244.14,4094.26,4124790,2139442,51.87,corpus_text//fork-join-pool-x64-O3-text
+lzsse8 2019-04-18 -1,6.34,5036.57,4124790,1944916,47.15,corpus_text//fork-join-pool-x64-O3-text
+lzvn 2017-03-08,69.63,981.51,4124790,1793464,43.48,corpus_text//fork-join-pool-x64-O3-text
+quicklz 1.5.0 -1,421.99,548.69,4124790,2249278,54.53,corpus_text//fork-join-pool-x64-O3-text
+quicklz 1.5.0 -2,230.12,535.03,4124790,2003923,48.58,corpus_text//fork-join-pool-x64-O3-text
+snappy 1.2.1,381.77,1154.36,4124790,2399707,58.18,corpus_text//fork-join-pool-x64-O3-text
+zstd 1.5.7 -1,470.46,1360.97,4124790,1915642,46.44,corpus_text//fork-join-pool-x64-O3-text
+zstd 1.5.7 -2,387.25,1310.24,4124790,1736567,42.10,corpus_text//fork-join-pool-x64-O3-text
+zstd 1.5.7 -3,274.26,1238.06,4124790,1634676,39.63,corpus_text//fork-join-pool-x64-O3-text
+zstd 1.5.7 -4,237.02,1213.28,4124790,1587576,38.49,corpus_text//fork-join-pool-x64-O3-text
+zstd 1.5.7 -5,130.12,1182.43,4124790,1544998,37.46,corpus_text//fork-join-pool-x64-O3-text
+memcpy,27225.49,27076.81,21553497,21553497,100.00,corpus_text//micronaut-conferences-isolate-x64-O3-text
+fastlz 0.5.0 -1,284.64,612.60,21553497,12110046,56.19,corpus_text//micronaut-conferences-isolate-x64-O3-text
+fastlz 0.5.0 -2,268.03,602.55,21553497,11830108,54.89,corpus_text//micronaut-conferences-isolate-x64-O3-text
+kanzi 2.3 -1,226.93,1235.27,21553497,9032402,41.91,corpus_text//micronaut-conferences-isolate-x64-O3-text
+kanzi 2.3 -2,194.94,534.10,21553497,7753920,35.98,corpus_text//micronaut-conferences-isolate-x64-O3-text
+kanzi 2.3 -3,135.50,562.23,21553497,7587893,35.20,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lizard 2.1 -10,503.37,2826.53,21553497,11353076,52.67,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lizard 2.1 -11,335.91,2711.54,21553497,10392871,48.22,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lizard 2.1 -12,177.04,2885.58,21553497,9687542,44.95,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lizard 2.1 -13,111.97,2866.59,21553497,9338599,43.33,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lizard 2.1 -14,102.59,2878.36,21553497,9129338,42.36,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lz4 1.10.0,599.53,3990.60,21553497,11282414,52.35,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lz4 1.10.0 --fast -3,673.69,3979.75,21553497,12394411,57.51,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lz4 1.10.0 --fast -17,1169.76,4635.53,21553497,16367722,75.94,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzav 4.22 -1,419.93,2195.61,21553497,9890308,45.89,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzav 4.22 -2,84.33,2162.19,21553497,8551417,39.68,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzf 3.6 -0,325.93,551.46,21553497,11910633,55.26,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzf 3.6 -1,319.84,558.14,21553497,11650446,54.05,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzfse 2017-03-08,84.62,715.55,21553497,7788524,36.14,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzo1b 2.10 -1,209.97,575.37,21553497,11371464,52.76,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzo1c 2.10 -1,241.05,599.93,21553497,11372541,52.76,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzof 2.10 -1,201.67,539.61,21553497,11057106,51.30,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzo1x 2.10 -1,476.12,578.03,21553497,11020774,51.13,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzo1y 2.10 -1,479.83,578.06,21553497,11087009,51.44,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzsse4fast 2019-04-18,264.26,4024.81,21553497,10551234,48.95,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzsse8 2019-04-18 -1,14.23,4558.77,21553497,9217402,42.77,corpus_text//micronaut-conferences-isolate-x64-O3-text
+lzvn 2017-03-08,73.00,967.06,21553497,8457859,39.24,corpus_text//micronaut-conferences-isolate-x64-O3-text
+quicklz 1.5.0 -1,402.93,552.67,21553497,10874653,50.45,corpus_text//micronaut-conferences-isolate-x64-O3-text
+quicklz 1.5.0 -2,228.16,579.82,21553497,9584486,44.47,corpus_text//micronaut-conferences-isolate-x64-O3-text
+snappy 1.2.1,345.62,1009.59,21553497,11516364,53.43,corpus_text//micronaut-conferences-isolate-x64-O3-text
+zstd 1.5.7 -1,448.29,1290.45,21553497,8616216,39.98,corpus_text//micronaut-conferences-isolate-x64-O3-text
+zstd 1.5.7 -2,375.17,1226.14,21553497,7952601,36.90,corpus_text//micronaut-conferences-isolate-x64-O3-text
+zstd 1.5.7 -3,279.24,1169.65,21553497,7491997,34.76,corpus_text//micronaut-conferences-isolate-x64-O3-text
+zstd 1.5.7 -4,244.45,1150.64,21553497,7365411,34.17,corpus_text//micronaut-conferences-isolate-x64-O3-text
+zstd 1.5.7 -5,133.90,1099.61,21553497,7135373,33.11,corpus_text//micronaut-conferences-isolate-x64-O3-text
+memcpy,29507.43,29106.86,16953817,16953817,100.00,corpus_text//jmh-x64-O3-text
+fastlz 0.5.0 -1,249.33,618.57,16953817,10676863,62.98,corpus_text//jmh-x64-O3-text
+fastlz 0.5.0 -2,252.56,615.70,16953817,10314972,60.84,corpus_text//jmh-x64-O3-text
+kanzi 2.3 -1,220.99,1255.88,16953817,8080155,47.66,corpus_text//jmh-x64-O3-text
+kanzi 2.3 -2,185.86,489.90,16953817,7063729,41.66,corpus_text//jmh-x64-O3-text
+kanzi 2.3 -3,123.27,515.84,16953817,6842193,40.36,corpus_text//jmh-x64-O3-text
+lizard 2.1 -10,507.94,2895.17,16953817,10252601,60.47,corpus_text//jmh-x64-O3-text
+lizard 2.1 -11,296.36,2787.10,16953817,9144476,53.94,corpus_text//jmh-x64-O3-text
+lizard 2.1 -12,169.63,2955.29,16953817,8618023,50.83,corpus_text//jmh-x64-O3-text
+lizard 2.1 -13,106.14,2976.09,16953817,8414913,49.63,corpus_text//jmh-x64-O3-text
+lizard 2.1 -14,98.82,3039.38,16953817,8297712,48.94,corpus_text//jmh-x64-O3-text
+lz4 1.10.0,618.87,4170.51,16953817,10213452,60.24,corpus_text//jmh-x64-O3-text
+lz4 1.10.0 --fast -3,781.29,4069.80,16953817,11316013,66.75,corpus_text//jmh-x64-O3-text
+lz4 1.10.0 --fast -17,1648.57,6341.11,16953817,14344059,84.61,corpus_text//jmh-x64-O3-text
+lzav 4.22 -1,416.87,2383.64,16953817,8724017,51.46,corpus_text//jmh-x64-O3-text
+lzav 4.22 -2,79.35,2091.78,16953817,7562166,44.60,corpus_text//jmh-x64-O3-text
+lzf 3.6 -0,305.19,547.02,16953817,10447035,61.62,corpus_text//jmh-x64-O3-text
+lzf 3.6 -1,293.93,540.78,16953817,10257166,60.50,corpus_text//jmh-x64-O3-text
+lzfse 2017-03-08,79.99,696.95,16953817,7003598,41.31,corpus_text//jmh-x64-O3-text
+lzo1b 2.10 -1,180.08,560.14,16953817,9943683,58.65,corpus_text//jmh-x64-O3-text
+lzo1c 2.10 -1,197.56,584.92,16953817,10073482,59.42,corpus_text//jmh-x64-O3-text
+lzof 2.10 -1,171.81,526.56,16953817,9843909,58.06,corpus_text//jmh-x64-O3-text
+lzo1x 2.10 -1,485.36,581.20,16953817,9883329,58.30,corpus_text//jmh-x64-O3-text
+lzo1y 2.10 -1,490.89,579.66,16953817,9973832,58.83,corpus_text//jmh-x64-O3-text
+lzsse4fast 2019-04-18,247.26,3839.25,16953817,8914788,52.58,corpus_text//jmh-x64-O3-text
+lzsse8 2019-04-18 -1,13.64,4481.59,16953817,8119367,47.89,corpus_text//jmh-x64-O3-text
+lzvn 2017-03-08,68.56,931.24,16953817,7578949,44.70,corpus_text//jmh-x64-O3-text
+quicklz 1.5.0 -1,406.71,522.27,16953817,9565918,56.42,corpus_text//jmh-x64-O3-text
+quicklz 1.5.0 -2,223.38,513.00,16953817,8483974,50.04,corpus_text//jmh-x64-O3-text
+snappy 1.2.1,366.89,1103.07,16953817,10212485,60.24,corpus_text//jmh-x64-O3-text
+zstd 1.5.7 -1,457.23,1349.22,16953817,8072845,47.62,corpus_text//jmh-x64-O3-text
+zstd 1.5.7 -2,376.61,1273.62,16953817,7291485,43.01,corpus_text//jmh-x64-O3-text
+zstd 1.5.7 -3,261.66,1200.23,16953817,6850157,40.40,corpus_text//jmh-x64-O3-text
+zstd 1.5.7 -4,224.93,1167.33,16953817,6639770,39.16,corpus_text//jmh-x64-O3-text
+zstd 1.5.7 -5,123.27,1136.49,16953817,6458083,38.09,corpus_text//jmh-x64-O3-text
+memcpy,28975.78,29394.46,2866371,2866371,100.00,corpus_text//hello-world-x64-prof-text
+fastlz 0.5.0 -1,286.07,655.66,2866371,1574564,54.93,corpus_text//hello-world-x64-prof-text
+fastlz 0.5.0 -2,278.85,654.69,2866371,1525503,53.22,corpus_text//hello-world-x64-prof-text
+kanzi 2.3 -1,239.63,1308.65,2866371,1205961,42.07,corpus_text//hello-world-x64-prof-text
+kanzi 2.3 -2,201.48,546.46,2866371,1044441,36.44,corpus_text//hello-world-x64-prof-text
+kanzi 2.3 -3,143.45,571.99,2866371,1028391,35.88,corpus_text//hello-world-x64-prof-text
+lizard 2.1 -10,555.66,3140.54,2866371,1509145,52.65,corpus_text//hello-world-x64-prof-text
+lizard 2.1 -11,300.77,3075.92,2866371,1375463,47.99,corpus_text//hello-world-x64-prof-text
+lizard 2.1 -12,164.73,3201.47,2866371,1294865,45.17,corpus_text//hello-world-x64-prof-text
+lizard 2.1 -13,110.22,3223.64,2866371,1253732,43.74,corpus_text//hello-world-x64-prof-text
+lizard 2.1 -14,102.11,3225.75,2866371,1230372,42.92,corpus_text//hello-world-x64-prof-text
+lz4 1.10.0,656.40,4271.74,2866371,1493526,52.11,corpus_text//hello-world-x64-prof-text
+lz4 1.10.0 --fast -3,786.67,4272.20,2866371,1654595,57.72,corpus_text//hello-world-x64-prof-text
+lz4 1.10.0 --fast -17,1463.78,5950.95,2866371,2144763,74.83,corpus_text//hello-world-x64-prof-text
+lzav 4.22 -1,483.43,2736.26,2866371,1335418,46.59,corpus_text//hello-world-x64-prof-text
+lzav 4.22 -2,99.88,2533.73,2866371,1167795,40.74,corpus_text//hello-world-x64-prof-text
+lzf 3.6 -0,340.06,599.26,2866371,1551325,54.12,corpus_text//hello-world-x64-prof-text
+lzf 3.6 -1,336.15,599.46,2866371,1516701,52.91,corpus_text//hello-world-x64-prof-text
+lzfse 2017-03-08,88.65,754.31,2866371,1033600,36.06,corpus_text//hello-world-x64-prof-text
+lzo1b 2.10 -1,211.05,610.20,2866371,1483666,51.76,corpus_text//hello-world-x64-prof-text
+lzo1c 2.10 -1,238.95,642.35,2866371,1491178,52.02,corpus_text//hello-world-x64-prof-text
+lzof 2.10 -1,204.47,579.40,2866371,1457146,50.84,corpus_text//hello-world-x64-prof-text
+lzo1x 2.10 -1,523.92,630.44,2866371,1455560,50.78,corpus_text//hello-world-x64-prof-text
+lzo1y 2.10 -1,533.31,622.97,2866371,1464517,51.09,corpus_text//hello-world-x64-prof-text
+lzsse4fast 2019-04-18,258.43,4190.89,2866371,1406405,49.07,corpus_text//hello-world-x64-prof-text
+lzsse8 2019-04-18 -1,4.86,5105.40,2866371,1239278,43.24,corpus_text//hello-world-x64-prof-text
+lzvn 2017-03-08,74.41,1013.46,2866371,1126049,39.28,corpus_text//hello-world-x64-prof-text
+quicklz 1.5.0 -1,433.69,577.97,2866371,1417552,49.45,corpus_text//hello-world-x64-prof-text
+quicklz 1.5.0 -2,241.28,592.68,2866371,1254867,43.78,corpus_text//hello-world-x64-prof-text
+snappy 1.2.1,386.78,1119.31,2866371,1508342,52.62,corpus_text//hello-world-x64-prof-text
+zstd 1.5.7 -1,487.80,1405.36,2866371,1178148,41.10,corpus_text//hello-world-x64-prof-text
+zstd 1.5.7 -2,398.40,1354.44,2866371,1080925,37.71,corpus_text//hello-world-x64-prof-text
+zstd 1.5.7 -3,297.17,1296.57,2866371,1016348,35.46,corpus_text//hello-world-x64-prof-text
+zstd 1.5.7 -4,263.91,1286.47,2866371,996180,34.75,corpus_text//hello-world-x64-prof-text
+zstd 1.5.7 -5,139.54,1244.17,2866371,964664,33.65,corpus_text//hello-world-x64-prof-text
+memcpy,20601.66,20345.50,86361067,86361067,100.00,corpus_text//spring-petclinic-x64-prof-text
+fastlz 0.5.0 -1,267.06,611.28,86361067,50579309,58.57,corpus_text//spring-petclinic-x64-prof-text
+fastlz 0.5.0 -2,259.32,604.26,86361067,48995923,56.73,corpus_text//spring-petclinic-x64-prof-text
+kanzi 2.3 -1,225.50,1230.12,86361067,37292936,43.18,corpus_text//spring-petclinic-x64-prof-text
+kanzi 2.3 -2,194.06,525.28,86361067,32396984,37.51,corpus_text//spring-petclinic-x64-prof-text
+kanzi 2.3 -3,134.39,556.60,86361067,31570434,36.56,corpus_text//spring-petclinic-x64-prof-text
+lizard 2.1 -10,507.70,2856.92,86361067,48059815,55.65,corpus_text//spring-petclinic-x64-prof-text
+lizard 2.1 -11,329.52,2788.74,86361067,43082636,49.89,corpus_text//spring-petclinic-x64-prof-text
+lizard 2.1 -12,178.19,2905.74,86361067,40271168,46.63,corpus_text//spring-petclinic-x64-prof-text
+lizard 2.1 -13,111.71,2921.36,86361067,39007496,45.17,corpus_text//spring-petclinic-x64-prof-text
+lizard 2.1 -14,103.11,2949.55,86361067,38255545,44.30,corpus_text//spring-petclinic-x64-prof-text
+lz4 1.10.0,614.75,3989.18,86361067,47604779,55.12,corpus_text//spring-petclinic-x64-prof-text
+lz4 1.10.0 --fast -3,725.05,3927.12,86361067,52714818,61.04,corpus_text//spring-petclinic-x64-prof-text
+lz4 1.10.0 --fast -17,1362.75,5014.91,86361067,68561965,79.39,corpus_text//spring-petclinic-x64-prof-text
+lzav 4.22 -1,417.04,2156.17,86361067,40506339,46.90,corpus_text//spring-petclinic-x64-prof-text
+lzav 4.22 -2,81.16,2067.93,86361067,34877882,40.39,corpus_text//spring-petclinic-x64-prof-text
+lzf 3.6 -0,315.67,550.18,86361067,49712877,57.56,corpus_text//spring-petclinic-x64-prof-text
+lzf 3.6 -1,307.46,551.47,86361067,48669880,56.36,corpus_text//spring-petclinic-x64-prof-text
+lzfse 2017-03-08,82.92,703.32,86361067,32319062,37.42,corpus_text//spring-petclinic-x64-prof-text
+lzo1b 2.10 -1,198.38,560.40,86361067,47157009,54.60,corpus_text//spring-petclinic-x64-prof-text
+lzo1c 2.10 -1,221.30,587.43,86361067,47518728,55.02,corpus_text//spring-petclinic-x64-prof-text
+lzof 2.10 -1,190.27,530.92,86361067,46375325,53.70,corpus_text//spring-petclinic-x64-prof-text
+lzo1x 2.10 -1,481.61,575.66,86361067,46301397,53.61,corpus_text//spring-petclinic-x64-prof-text
+lzo1y 2.10 -1,488.28,573.10,86361067,46603094,53.96,corpus_text//spring-petclinic-x64-prof-text
+lzsse4fast 2019-04-18,265.21,3936.00,86361067,42951738,49.74,corpus_text//spring-petclinic-x64-prof-text
+lzsse8 2019-04-18 -1,19.10,4460.42,86361067,38089365,44.10,corpus_text//spring-petclinic-x64-prof-text
+lzvn 2017-03-08,70.71,946.78,86361067,35337274,40.92,corpus_text//spring-petclinic-x64-prof-text
+quicklz 1.5.0 -1,402.57,535.73,86361067,44969101,52.07,corpus_text//spring-petclinic-x64-prof-text
+quicklz 1.5.0 -2,224.62,551.73,86361067,39700794,45.97,corpus_text//spring-petclinic-x64-prof-text
+snappy 1.2.1,353.86,1019.25,86361067,48177095,55.79,corpus_text//spring-petclinic-x64-prof-text
+zstd 1.5.7 -1,460.03,1323.04,86361067,36939008,42.77,corpus_text//spring-petclinic-x64-prof-text
+zstd 1.5.7 -2,375.59,1247.57,86361067,33425331,38.70,corpus_text//spring-petclinic-x64-prof-text
+zstd 1.5.7 -3,271.47,1170.35,86361067,31297549,36.24,corpus_text//spring-petclinic-x64-prof-text
+zstd 1.5.7 -4,238.43,1163.62,86361067,30505200,35.32,corpus_text//spring-petclinic-x64-prof-text
+zstd 1.5.7 -5,130.64,1117.45,86361067,29575301,34.25,corpus_text//spring-petclinic-x64-prof-text
+memcpy,23307.35,23173.21,38842521,38842521,100.00,corpus_text//micronaut-shopcart-x64-O2-text
+fastlz 0.5.0 -1,261.33,613.68,38842521,23143796,59.58,corpus_text//micronaut-shopcart-x64-O2-text
+fastlz 0.5.0 -2,262.74,615.99,38842521,22155468,57.04,corpus_text//micronaut-shopcart-x64-O2-text
+kanzi 2.3 -1,229.35,1266.33,38842521,16943815,43.62,corpus_text//micronaut-shopcart-x64-O2-text
+kanzi 2.3 -2,195.29,529.00,38842521,14756706,37.99,corpus_text//micronaut-shopcart-x64-O2-text
+kanzi 2.3 -3,133.57,558.01,38842521,14349916,36.94,corpus_text//micronaut-shopcart-x64-O2-text
+lizard 2.1 -10,515.50,2905.90,38842521,21743046,55.98,corpus_text//micronaut-shopcart-x64-O2-text
+lizard 2.1 -11,328.18,2831.64,38842521,19492212,50.18,corpus_text//micronaut-shopcart-x64-O2-text
+lizard 2.1 -12,175.13,2937.44,38842521,18248545,46.98,corpus_text//micronaut-shopcart-x64-O2-text
+lizard 2.1 -13,112.27,2980.19,38842521,17749437,45.70,corpus_text//micronaut-shopcart-x64-O2-text
+lizard 2.1 -14,103.55,3028.84,38842521,17445568,44.91,corpus_text//micronaut-shopcart-x64-O2-text
+lz4 1.10.0,620.93,4113.77,38842521,21654760,55.75,corpus_text//micronaut-shopcart-x64-O2-text
+lz4 1.10.0 --fast -3,748.43,4036.16,38842521,24029921,61.86,corpus_text//micronaut-shopcart-x64-O2-text
+lz4 1.10.0 --fast -17,1474.31,5465.72,38842521,31348879,80.71,corpus_text//micronaut-shopcart-x64-O2-text
+lzav 4.22 -1,428.90,2294.68,38842521,18390236,47.35,corpus_text//micronaut-shopcart-x64-O2-text
+lzav 4.22 -2,84.42,2138.76,38842521,15893563,40.92,corpus_text//micronaut-shopcart-x64-O2-text
+lzf 3.6 -0,316.91,554.55,38842521,22616203,58.23,corpus_text//micronaut-shopcart-x64-O2-text
+lzf 3.6 -1,306.59,554.60,38842521,22198456,57.15,corpus_text//micronaut-shopcart-x64-O2-text
+lzfse 2017-03-08,83.69,721.40,38842521,14729577,37.92,corpus_text//micronaut-shopcart-x64-O2-text
+lzo1b 2.10 -1,196.27,572.52,38842521,21280369,54.79,corpus_text//micronaut-shopcart-x64-O2-text
+lzo1c 2.10 -1,216.96,596.77,38842521,21640212,55.71,corpus_text//micronaut-shopcart-x64-O2-text
+lzof 2.10 -1,186.34,535.40,38842521,21080871,54.27,corpus_text//micronaut-shopcart-x64-O2-text
+lzo1x 2.10 -1,489.73,581.92,38842521,21055912,54.21,corpus_text//micronaut-shopcart-x64-O2-text
+lzo1y 2.10 -1,495.24,580.87,38842521,21243549,54.69,corpus_text//micronaut-shopcart-x64-O2-text
+lzsse4fast 2019-04-18,263.48,3964.46,38842521,19165717,49.34,corpus_text//micronaut-shopcart-x64-O2-text
+lzsse8 2019-04-18 -1,17.34,4485.38,38842521,17249047,44.41,corpus_text//micronaut-shopcart-x64-O2-text
+lzvn 2017-03-08,71.16,964.35,38842521,15989956,41.17,corpus_text//micronaut-shopcart-x64-O2-text
+quicklz 1.5.0 -1,407.65,540.79,38842521,20392969,52.50,corpus_text//micronaut-shopcart-x64-O2-text
+quicklz 1.5.0 -2,228.42,546.28,38842521,17973835,46.27,corpus_text//micronaut-shopcart-x64-O2-text
+snappy 1.2.1,359.50,1056.58,38842521,21928984,56.46,corpus_text//micronaut-shopcart-x64-O2-text
+zstd 1.5.7 -1,465.10,1347.70,38842521,16860147,43.41,corpus_text//micronaut-shopcart-x64-O2-text
+zstd 1.5.7 -2,384.42,1274.24,38842521,15204843,39.14,corpus_text//micronaut-shopcart-x64-O2-text
+zstd 1.5.7 -3,271.76,1200.16,38842521,14245904,36.68,corpus_text//micronaut-shopcart-x64-O2-text
+zstd 1.5.7 -4,239.06,1177.23,38842521,13879082,35.73,corpus_text//micronaut-shopcart-x64-O2-text
+zstd 1.5.7 -5,131.64,1128.46,38842521,13466131,34.67,corpus_text//micronaut-shopcart-x64-O2-text
+memcpy,20760.99,20148.98,93031081,93031081,100.00,corpus_text//spring-petclinic-x64-O2-text
+fastlz 0.5.0 -1,259.98,612.71,93031081,55694589,59.87,corpus_text//spring-petclinic-x64-O2-text
+fastlz 0.5.0 -2,260.35,610.97,93031081,53852290,57.89,corpus_text//spring-petclinic-x64-O2-text
+kanzi 2.3 -1,227.74,1249.09,93031081,41245517,44.34,corpus_text//spring-petclinic-x64-O2-text
+kanzi 2.3 -2,193.14,520.82,93031081,35961928,38.66,corpus_text//spring-petclinic-x64-O2-text
+kanzi 2.3 -3,131.00,549.56,93031081,35025901,37.65,corpus_text//spring-petclinic-x64-O2-text
+lizard 2.1 -10,508.86,2844.74,93031081,52869557,56.83,corpus_text//spring-petclinic-x64-O2-text
+lizard 2.1 -11,325.70,2757.56,93031081,47356147,50.90,corpus_text//spring-petclinic-x64-O2-text
+lizard 2.1 -12,178.57,2908.33,93031081,44376916,47.70,corpus_text//spring-petclinic-x64-O2-text
+lizard 2.1 -13,111.34,2878.40,93031081,43174663,46.41,corpus_text//spring-petclinic-x64-O2-text
+lizard 2.1 -14,103.03,2949.47,93031081,42444061,45.62,corpus_text//spring-petclinic-x64-O2-text
+lz4 1.10.0,615.53,4054.74,93031081,52639468,56.58,corpus_text//spring-petclinic-x64-O2-text
+lz4 1.10.0 --fast -3,741.20,3970.43,93031081,58327603,62.70,corpus_text//spring-petclinic-x64-O2-text
+lz4 1.10.0 --fast -17,1455.61,5350.40,93031081,75684256,81.35,corpus_text//spring-petclinic-x64-O2-text
+lzav 4.22 -1,419.34,2195.54,93031081,44627887,47.97,corpus_text//spring-petclinic-x64-O2-text
+lzav 4.22 -2,77.42,2043.94,93031081,38614541,41.51,corpus_text//spring-petclinic-x64-O2-text
+lzf 3.6 -0,315.87,549.09,93031081,54436087,58.51,corpus_text//spring-petclinic-x64-O2-text
+lzf 3.6 -1,304.58,545.17,93031081,53450281,57.45,corpus_text//spring-petclinic-x64-O2-text
+lzfse 2017-03-08,81.93,704.90,93031081,35811546,38.49,corpus_text//spring-petclinic-x64-O2-text
+lzo1b 2.10 -1,194.02,565.77,93031081,51689534,55.56,corpus_text//spring-petclinic-x64-O2-text
+lzo1c 2.10 -1,214.56,588.99,93031081,52236405,56.15,corpus_text//spring-petclinic-x64-O2-text
+lzof 2.10 -1,184.46,529.35,93031081,50895507,54.71,corpus_text//spring-petclinic-x64-O2-text
+lzo1x 2.10 -1,486.17,576.72,93031081,50965782,54.78,corpus_text//spring-petclinic-x64-O2-text
+lzo1y 2.10 -1,490.72,571.08,93031081,51371347,55.22,corpus_text//spring-petclinic-x64-O2-text
+lzsse4fast 2019-04-18,261.35,3879.21,93031081,46501364,49.98,corpus_text//spring-petclinic-x64-O2-text
+lzsse8 2019-04-18 -1,19.41,4398.88,93031081,41898235,45.04,corpus_text//spring-petclinic-x64-O2-text
+lzvn 2017-03-08,69.37,950.06,93031081,38928551,41.84,corpus_text//spring-petclinic-x64-O2-text
+quicklz 1.5.0 -1,404.37,531.84,93031081,49514936,53.22,corpus_text//spring-petclinic-x64-O2-text
+quicklz 1.5.0 -2,227.62,537.78,93031081,43744337,47.02,corpus_text//spring-petclinic-x64-O2-text
+snappy 1.2.1,357.24,1046.80,93031081,53081893,57.06,corpus_text//spring-petclinic-x64-O2-text
+zstd 1.5.7 -1,456.60,1319.39,93031081,41137693,44.22,corpus_text//spring-petclinic-x64-O2-text
+zstd 1.5.7 -2,377.23,1251.16,93031081,37082520,39.86,corpus_text//spring-petclinic-x64-O2-text
+zstd 1.5.7 -3,263.23,1164.07,93031081,34750329,37.35,corpus_text//spring-petclinic-x64-O2-text
+zstd 1.5.7 -4,229.18,1158.89,93031081,33832942,36.37,corpus_text//spring-petclinic-x64-O2-text
+zstd 1.5.7 -5,130.52,1112.28,93031081,32838585,35.30,corpus_text//spring-petclinic-x64-O2-text
+memcpy,30174.38,29169.16,4149430,4149430,100.00,corpus_text//fork-join-pool-isolate-x64-O3-text
+fastlz 0.5.0 -1,260.63,645.94,4149430,2501917,60.30,corpus_text//fork-join-pool-isolate-x64-O3-text
+fastlz 0.5.0 -2,264.01,638.54,4149430,2430671,58.58,corpus_text//fork-join-pool-isolate-x64-O3-text
+kanzi 2.3 -1,231.56,1302.05,4149430,1926634,46.43,corpus_text//fork-join-pool-isolate-x64-O3-text
+kanzi 2.3 -2,194.96,515.38,4149430,1683552,40.57,corpus_text//fork-join-pool-isolate-x64-O3-text
+kanzi 2.3 -3,130.46,542.82,4149430,1631285,39.31,corpus_text//fork-join-pool-isolate-x64-O3-text
+lizard 2.1 -10,544.25,2928.14,4149430,2423270,58.40,corpus_text//fork-join-pool-isolate-x64-O3-text
+lizard 2.1 -11,284.68,2996.04,4149430,2180432,52.55,corpus_text//fork-join-pool-isolate-x64-O3-text
+lizard 2.1 -12,162.88,3101.68,4149430,2061348,49.68,corpus_text//fork-join-pool-isolate-x64-O3-text
+lizard 2.1 -13,106.90,3157.42,4149430,2014595,48.55,corpus_text//fork-join-pool-isolate-x64-O3-text
+lizard 2.1 -14,99.99,3178.01,4149430,1988239,47.92,corpus_text//fork-join-pool-isolate-x64-O3-text
+lz4 1.10.0,654.84,4447.55,4149430,2411878,58.13,corpus_text//fork-join-pool-isolate-x64-O3-text
+lz4 1.10.0 --fast -3,827.58,4420.62,4149430,2674616,64.46,corpus_text//fork-join-pool-isolate-x64-O3-text
+lz4 1.10.0 --fast -17,1892.31,7976.02,4149430,3395118,81.82,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzav 4.22 -1,476.53,2899.10,4149430,2113396,50.93,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzav 4.22 -2,84.61,2511.17,4149430,1849355,44.57,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzf 3.6 -0,334.62,600.34,4149430,2448857,59.02,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzf 3.6 -1,321.06,588.78,4149430,2406510,58.00,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzfse 2017-03-08,85.87,750.06,4149430,1666831,40.17,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzo1b 2.10 -1,193.20,609.20,4149430,2352306,56.69,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzo1c 2.10 -1,214.04,639.26,4149430,2368090,57.07,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzof 2.10 -1,185.46,577.55,4149430,2313450,55.75,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzo1x 2.10 -1,526.45,631.71,4149430,2330047,56.15,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzo1y 2.10 -1,530.12,626.21,4149430,2350690,56.65,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzsse4fast 2019-04-18,246.86,4128.48,4149430,2150444,51.83,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzsse8 2019-04-18 -1,6.40,5022.67,4149430,1954530,47.10,corpus_text//fork-join-pool-isolate-x64-O3-text
+lzvn 2017-03-08,71.65,999.57,4149430,1802473,43.44,corpus_text//fork-join-pool-isolate-x64-O3-text
+quicklz 1.5.0 -1,435.01,543.37,4149430,2260328,54.47,corpus_text//fork-join-pool-isolate-x64-O3-text
+quicklz 1.5.0 -2,229.87,530.40,4149430,2013476,48.52,corpus_text//fork-join-pool-isolate-x64-O3-text
+snappy 1.2.1,384.80,1146.34,4149430,2412469,58.14,corpus_text//fork-join-pool-isolate-x64-O3-text
+zstd 1.5.7 -1,465.77,1355.81,4149430,1925194,46.40,corpus_text//fork-join-pool-isolate-x64-O3-text
+zstd 1.5.7 -2,384.79,1312.27,4149430,1746948,42.10,corpus_text//fork-join-pool-isolate-x64-O3-text
+zstd 1.5.7 -3,275.51,1242.12,4149430,1643996,39.62,corpus_text//fork-join-pool-isolate-x64-O3-text
+zstd 1.5.7 -4,241.72,1223.41,4149430,1596456,38.47,corpus_text//fork-join-pool-isolate-x64-O3-text
+zstd 1.5.7 -5,129.77,1181.40,4149430,1554323,37.46,corpus_text//fork-join-pool-isolate-x64-O3-text
+memcpy,28903.75,30049.08,2879363,2879363,100.00,corpus_text//fork-join-pool-isolate-x64-prof-text
+fastlz 0.5.0 -1,285.54,652.52,2879363,1581774,54.93,corpus_text//fork-join-pool-isolate-x64-prof-text
+fastlz 0.5.0 -2,279.67,651.92,2879363,1533576,53.26,corpus_text//fork-join-pool-isolate-x64-prof-text
+kanzi 2.3 -1,236.86,1300.81,2879363,1211754,42.08,corpus_text//fork-join-pool-isolate-x64-prof-text
+kanzi 2.3 -2,200.50,545.01,2879363,1049249,36.44,corpus_text//fork-join-pool-isolate-x64-prof-text
+kanzi 2.3 -3,143.80,568.11,2879363,1033344,35.89,corpus_text//fork-join-pool-isolate-x64-prof-text
+lizard 2.1 -10,546.01,3129.15,2879363,1517937,52.72,corpus_text//fork-join-pool-isolate-x64-prof-text
+lizard 2.1 -11,296.77,3003.91,2879363,1382581,48.02,corpus_text//fork-join-pool-isolate-x64-prof-text
+lizard 2.1 -12,163.99,3199.15,2879363,1301444,45.20,corpus_text//fork-join-pool-isolate-x64-prof-text
+lizard 2.1 -13,109.12,3109.59,2879363,1260214,43.77,corpus_text//fork-join-pool-isolate-x64-prof-text
+lizard 2.1 -14,101.73,3227.68,2879363,1236796,42.95,corpus_text//fork-join-pool-isolate-x64-prof-text
+lz4 1.10.0,661.92,4265.77,2879363,1502328,52.18,corpus_text//fork-join-pool-isolate-x64-prof-text
+lz4 1.10.0 --fast -3,780.12,4215.58,2879363,1663952,57.79,corpus_text//fork-join-pool-isolate-x64-prof-text
+lz4 1.10.0 --fast -17,1468.63,5950.29,2879363,2156496,74.89,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzav 4.22 -1,482.45,2741.42,2879363,1342574,46.63,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzav 4.22 -2,91.76,2534.76,2879363,1173486,40.76,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzf 3.6 -0,336.98,596.39,2879363,1559113,54.15,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzf 3.6 -1,330.07,595.43,2879363,1524377,52.94,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzfse 2017-03-08,88.09,760.27,2879363,1038684,36.07,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzo1b 2.10 -1,210.05,607.06,2879363,1491551,51.80,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzo1c 2.10 -1,237.86,635.30,2879363,1498951,52.06,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzof 2.10 -1,203.96,576.07,2879363,1464905,50.88,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzo1x 2.10 -1,523.87,631.15,2879363,1464728,50.87,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzo1y 2.10 -1,529.40,625.18,2879363,1473818,51.19,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzsse4fast 2019-04-18,258.28,4263.25,2879363,1413045,49.07,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzsse8 2019-04-18 -1,4.85,5363.15,2879363,1245324,43.25,corpus_text//fork-join-pool-isolate-x64-prof-text
+lzvn 2017-03-08,73.95,1013.28,2879363,1132516,39.33,corpus_text//fork-join-pool-isolate-x64-prof-text
+quicklz 1.5.0 -1,434.38,578.21,2879363,1424953,49.49,corpus_text//fork-join-pool-isolate-x64-prof-text
+quicklz 1.5.0 -2,243.17,592.26,2879363,1261547,43.81,corpus_text//fork-join-pool-isolate-x64-prof-text
+snappy 1.2.1,384.85,1127.99,2879363,1516193,52.66,corpus_text//fork-join-pool-isolate-x64-prof-text
+zstd 1.5.7 -1,491.11,1421.14,2879363,1184558,41.14,corpus_text//fork-join-pool-isolate-x64-prof-text
+zstd 1.5.7 -2,399.65,1355.73,2879363,1085407,37.70,corpus_text//fork-join-pool-isolate-x64-prof-text
+zstd 1.5.7 -3,297.88,1298.02,2879363,1020544,35.44,corpus_text//fork-join-pool-isolate-x64-prof-text
+zstd 1.5.7 -4,264.52,1291.15,2879363,1001177,34.77,corpus_text//fork-join-pool-isolate-x64-prof-text
+zstd 1.5.7 -5,139.08,1241.68,2879363,968997,33.65,corpus_text//fork-join-pool-isolate-x64-prof-text
+memcpy,29187.21,29256.21,2871555,2871555,100.00,corpus_text//fork-join-pool-x64-prof-text
+fastlz 0.5.0 -1,285.92,654.93,2871555,1577724,54.94,corpus_text//fork-join-pool-x64-prof-text
+fastlz 0.5.0 -2,280.96,653.17,2871555,1529621,53.27,corpus_text//fork-join-pool-x64-prof-text
+kanzi 2.3 -1,238.20,1307.84,2871555,1209076,42.11,corpus_text//fork-join-pool-x64-prof-text
+kanzi 2.3 -2,203.22,545.66,2871555,1046904,36.46,corpus_text//fork-join-pool-x64-prof-text
+kanzi 2.3 -3,143.51,575.14,2871555,1030302,35.88,corpus_text//fork-join-pool-x64-prof-text
+lizard 2.1 -10,555.80,3085.20,2871555,1512715,52.68,corpus_text//fork-join-pool-x64-prof-text
+lizard 2.1 -11,299.53,2996.50,2871555,1378104,47.99,corpus_text//fork-join-pool-x64-prof-text
+lizard 2.1 -12,163.23,3200.19,2871555,1297708,45.19,corpus_text//fork-join-pool-x64-prof-text
+lizard 2.1 -13,108.13,3199.73,2871555,1256503,43.76,corpus_text//fork-join-pool-x64-prof-text
+lizard 2.1 -14,100.98,3235.43,2871555,1233179,42.94,corpus_text//fork-join-pool-x64-prof-text
+lz4 1.10.0,667.74,4276.54,2871555,1496546,52.12,corpus_text//fork-join-pool-x64-prof-text
+lz4 1.10.0 --fast -3,794.65,4239.13,2871555,1659522,57.79,corpus_text//fork-join-pool-x64-prof-text
+lz4 1.10.0 --fast -17,1463.51,5947.81,2871555,2148374,74.82,corpus_text//fork-join-pool-x64-prof-text
+lzav 4.22 -1,481.93,2752.55,2871555,1338497,46.61,corpus_text//fork-join-pool-x64-prof-text
+lzav 4.22 -2,99.61,2546.16,2871555,1170412,40.76,corpus_text//fork-join-pool-x64-prof-text
+lzf 3.6 -0,338.15,596.71,2871555,1554301,54.13,corpus_text//fork-join-pool-x64-prof-text
+lzf 3.6 -1,331.17,600.33,2871555,1519386,52.91,corpus_text//fork-join-pool-x64-prof-text
+lzfse 2017-03-08,87.93,753.88,2871555,1035631,36.07,corpus_text//fork-join-pool-x64-prof-text
+lzo1b 2.10 -1,211.49,609.44,2871555,1486435,51.76,corpus_text//fork-join-pool-x64-prof-text
+lzo1c 2.10 -1,240.01,638.79,2871555,1494382,52.04,corpus_text//fork-join-pool-x64-prof-text
+lzof 2.10 -1,204.63,579.73,2871555,1460535,50.86,corpus_text//fork-join-pool-x64-prof-text
+lzo1x 2.10 -1,523.31,630.75,2871555,1461321,50.89,corpus_text//fork-join-pool-x64-prof-text
+lzo1y 2.10 -1,531.96,620.23,2871555,1470356,51.20,corpus_text//fork-join-pool-x64-prof-text
+lzsse4fast 2019-04-18,258.12,4189.30,2871555,1409379,49.08,corpus_text//fork-join-pool-x64-prof-text
+lzsse8 2019-04-18 -1,4.85,5241.58,2871555,1241814,43.25,corpus_text//fork-join-pool-x64-prof-text
+lzvn 2017-03-08,74.03,1014.49,2871555,1128964,39.32,corpus_text//fork-join-pool-x64-prof-text
+quicklz 1.5.0 -1,435.46,578.32,2871555,1420954,49.48,corpus_text//fork-join-pool-x64-prof-text
+quicklz 1.5.0 -2,243.30,593.62,2871555,1258248,43.82,corpus_text//fork-join-pool-x64-prof-text
+snappy 1.2.1,383.97,1107.53,2871555,1514893,52.76,corpus_text//fork-join-pool-x64-prof-text
+zstd 1.5.7 -1,489.76,1410.51,2871555,1181943,41.16,corpus_text//fork-join-pool-x64-prof-text
+zstd 1.5.7 -2,397.73,1351.37,2871555,1083670,37.74,corpus_text//fork-join-pool-x64-prof-text
+zstd 1.5.7 -3,296.02,1301.80,2871555,1017846,35.45,corpus_text//fork-join-pool-x64-prof-text
+zstd 1.5.7 -4,264.70,1285.55,2871555,998368,34.77,corpus_text//fork-join-pool-x64-prof-text
+zstd 1.5.7 -5,138.74,1237.16,2871555,966505,33.66,corpus_text//fork-join-pool-x64-prof-text
+memcpy,28466.09,28611.39,21546777,21546777,100.00,corpus_text//micronaut-conferences-x64-O2-text
+fastlz 0.5.0 -1,283.70,610.63,21546777,12108312,56.20,corpus_text//micronaut-conferences-x64-O2-text
+fastlz 0.5.0 -2,269.44,598.98,21546777,11828133,54.90,corpus_text//micronaut-conferences-x64-O2-text
+kanzi 2.3 -1,226.77,1236.96,21546777,9030669,41.91,corpus_text//micronaut-conferences-x64-O2-text
+kanzi 2.3 -2,195.55,538.63,21546777,7752161,35.98,corpus_text//micronaut-conferences-x64-O2-text
+kanzi 2.3 -3,136.55,566.98,21546777,7584823,35.20,corpus_text//micronaut-conferences-x64-O2-text
+lizard 2.1 -10,506.09,2825.59,21546777,11345763,52.66,corpus_text//micronaut-conferences-x64-O2-text
+lizard 2.1 -11,339.97,2719.29,21546777,10388526,48.21,corpus_text//micronaut-conferences-x64-O2-text
+lizard 2.1 -12,178.34,2880.85,21546777,9684381,44.95,corpus_text//micronaut-conferences-x64-O2-text
+lizard 2.1 -13,112.93,2891.06,21546777,9335320,43.33,corpus_text//micronaut-conferences-x64-O2-text
+lizard 2.1 -14,102.97,2883.06,21546777,9126220,42.36,corpus_text//micronaut-conferences-x64-O2-text
+lz4 1.10.0,603.59,4013.33,21546777,11276574,52.34,corpus_text//micronaut-conferences-x64-O2-text
+lz4 1.10.0 --fast -3,676.10,3977.19,21546777,12392393,57.51,corpus_text//micronaut-conferences-x64-O2-text
+lz4 1.10.0 --fast -17,1160.78,4659.72,21546777,16365984,75.96,corpus_text//micronaut-conferences-x64-O2-text
+lzav 4.22 -1,423.12,2188.30,21546777,9887928,45.89,corpus_text//micronaut-conferences-x64-O2-text
+lzav 4.22 -2,85.54,2173.02,21546777,8549223,39.68,corpus_text//micronaut-conferences-x64-O2-text
+lzf 3.6 -0,326.59,554.58,21546777,11907244,55.26,corpus_text//micronaut-conferences-x64-O2-text
+lzf 3.6 -1,319.34,556.86,21546777,11647743,54.06,corpus_text//micronaut-conferences-x64-O2-text
+lzfse 2017-03-08,84.21,715.55,21546777,7785046,36.13,corpus_text//micronaut-conferences-x64-O2-text
+lzo1b 2.10 -1,210.03,570.38,21546777,11366911,52.75,corpus_text//micronaut-conferences-x64-O2-text
+lzo1c 2.10 -1,240.23,594.70,21546777,11368453,52.76,corpus_text//micronaut-conferences-x64-O2-text
+lzof 2.10 -1,202.29,535.83,21546777,11052604,51.30,corpus_text//micronaut-conferences-x64-O2-text
+lzo1x 2.10 -1,479.07,574.65,21546777,11020530,51.15,corpus_text//micronaut-conferences-x64-O2-text
+lzo1y 2.10 -1,476.48,572.64,21546777,11086661,51.45,corpus_text//micronaut-conferences-x64-O2-text
+lzsse4fast 2019-04-18,262.58,4010.56,21546777,10546759,48.95,corpus_text//micronaut-conferences-x64-O2-text
+lzsse8 2019-04-18 -1,14.43,4613.68,21546777,9213798,42.76,corpus_text//micronaut-conferences-x64-O2-text
+lzvn 2017-03-08,72.90,966.46,21546777,8454868,39.24,corpus_text//micronaut-conferences-x64-O2-text
+quicklz 1.5.0 -1,403.23,547.58,21546777,10873664,50.47,corpus_text//micronaut-conferences-x64-O2-text
+quicklz 1.5.0 -2,227.36,573.71,21546777,9582068,44.47,corpus_text//micronaut-conferences-x64-O2-text
+snappy 1.2.1,347.93,1011.44,21546777,11513618,53.44,corpus_text//micronaut-conferences-x64-O2-text
+zstd 1.5.7 -1,452.18,1292.40,21546777,8611797,39.97,corpus_text//micronaut-conferences-x64-O2-text
+zstd 1.5.7 -2,377.28,1230.06,21546777,7952369,36.91,corpus_text//micronaut-conferences-x64-O2-text
+zstd 1.5.7 -3,280.72,1172.15,21546777,7488128,34.75,corpus_text//micronaut-conferences-x64-O2-text
+zstd 1.5.7 -4,248.71,1148.59,21546777,7361579,34.17,corpus_text//micronaut-conferences-x64-O2-text
+zstd 1.5.7 -5,134.65,1107.49,21546777,7132302,33.10,corpus_text//micronaut-conferences-x64-O2-text
+memcpy,22365.30,22461.38,46433195,46433195,100.00,corpus_text//quarkus-tika-x64-prof-text
+fastlz 0.5.0 -1,273.41,629.45,46433195,26580158,57.24,corpus_text//quarkus-tika-x64-prof-text
+fastlz 0.5.0 -2,266.57,624.77,46433195,25698100,55.34,corpus_text//quarkus-tika-x64-prof-text
+kanzi 2.3 -1,231.75,1265.48,46433195,19715415,42.46,corpus_text//quarkus-tika-x64-prof-text
+kanzi 2.3 -2,197.83,535.83,46433195,17103555,36.83,corpus_text//quarkus-tika-x64-prof-text
+kanzi 2.3 -3,136.52,566.09,46433195,16733373,36.04,corpus_text//quarkus-tika-x64-prof-text
+lizard 2.1 -10,518.42,2891.28,46433195,25205489,54.28,corpus_text//quarkus-tika-x64-prof-text
+lizard 2.1 -11,336.61,2822.49,46433195,22686673,48.86,corpus_text//quarkus-tika-x64-prof-text
+lizard 2.1 -12,179.65,2979.13,46433195,21247599,45.76,corpus_text//quarkus-tika-x64-prof-text
+lizard 2.1 -13,113.47,2990.20,46433195,20567757,44.30,corpus_text//quarkus-tika-x64-prof-text
+lizard 2.1 -14,104.91,2989.16,46433195,20175225,43.45,corpus_text//quarkus-tika-x64-prof-text
+lz4 1.10.0,627.00,4037.08,46433195,24998239,53.84,corpus_text//quarkus-tika-x64-prof-text
+lz4 1.10.0 --fast -3,743.70,3974.64,46433195,27701288,59.66,corpus_text//quarkus-tika-x64-prof-text
+lz4 1.10.0 --fast -17,1382.05,5152.91,46433195,35977336,77.48,corpus_text//quarkus-tika-x64-prof-text
+lzav 4.22 -1,430.28,2239.55,46433195,21535350,46.38,corpus_text//quarkus-tika-x64-prof-text
+lzav 4.22 -2,88.81,2128.67,46433195,18577566,40.01,corpus_text//quarkus-tika-x64-prof-text
+lzf 3.6 -0,324.38,566.99,46433195,26140073,56.30,corpus_text//quarkus-tika-x64-prof-text
+lzf 3.6 -1,314.07,567.08,46433195,25587780,55.11,corpus_text//quarkus-tika-x64-prof-text
+lzfse 2017-03-08,84.92,728.15,46433195,17024657,36.66,corpus_text//quarkus-tika-x64-prof-text
+lzo1b 2.10 -1,203.01,579.55,46433195,24794066,53.40,corpus_text//quarkus-tika-x64-prof-text
+lzo1c 2.10 -1,226.78,605.07,46433195,24972491,53.78,corpus_text//quarkus-tika-x64-prof-text
+lzof 2.10 -1,194.63,545.95,46433195,24367928,52.48,corpus_text//quarkus-tika-x64-prof-text
+lzo1x 2.10 -1,495.03,592.22,46433195,24353651,52.45,corpus_text//quarkus-tika-x64-prof-text
+lzo1y 2.10 -1,502.87,588.61,46433195,24514683,52.80,corpus_text//quarkus-tika-x64-prof-text
+lzsse4fast 2019-04-18,266.46,3987.80,46433195,22716933,48.92,corpus_text//quarkus-tika-x64-prof-text
+lzsse8 2019-04-18 -1,17.59,4569.62,46433195,20083740,43.25,corpus_text//quarkus-tika-x64-prof-text
+lzvn 2017-03-08,72.10,972.83,46433195,18541887,39.93,corpus_text//quarkus-tika-x64-prof-text
+quicklz 1.5.0 -1,413.85,550.19,46433195,23618263,50.87,corpus_text//quarkus-tika-x64-prof-text
+quicklz 1.5.0 -2,233.34,566.00,46433195,20834310,44.87,corpus_text//quarkus-tika-x64-prof-text
+snappy 1.2.1,365.33,1048.94,46433195,25309744,54.51,corpus_text//quarkus-tika-x64-prof-text
+zstd 1.5.7 -1,468.85,1351.82,46433195,19419914,41.82,corpus_text//quarkus-tika-x64-prof-text
+zstd 1.5.7 -2,387.18,1284.97,46433195,17671530,38.06,corpus_text//quarkus-tika-x64-prof-text
+zstd 1.5.7 -3,277.49,1210.58,46433195,16559507,35.66,corpus_text//quarkus-tika-x64-prof-text
+zstd 1.5.7 -4,244.05,1175.71,46433195,16166275,34.82,corpus_text//quarkus-tika-x64-prof-text
+zstd 1.5.7 -5,132.92,1127.55,46433195,15664859,33.74,corpus_text//quarkus-tika-x64-prof-text

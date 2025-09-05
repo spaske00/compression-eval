@@ -1,0 +1,9 @@
+#!/bin/bash
+
+dt=$(date +%s)
+
+corpus="${1-corpus}"
+
+
+lzbench -o4c7 -r "$corpus" | tee "results/results_${corpus//\//\_}_lzbench_$dt.csv"
+sed -i 's/corpus\/\/[^/]*\///g' "results/results_${corpus//\//\_}_lzbench_$dt.csv"

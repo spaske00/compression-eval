@@ -1,0 +1,38 @@
+#!/bin/bash
+
+corpus_dir="$PWD"
+
+########################################
+####### Build playground examples
+########################################
+pg=/home/ivan/ol/ol-playground/
+cd "$pg"
+cd "$pg"/hello-world && $corpus_dir/build r hello-world HelloWorld.image bash run
+cd "$pg"/hello-isolate && $corpus_dir/build r hello-isolate HelloIsolate.image bash run
+cd "$pg"/fork-join-pool && $corpus_dir/build r fork-join-pool ForkJoinRecursiveSum.image bash run
+cd "$pg"/fork-join-pool-isolate && $corpus_dir/build r fork-join-pool-isolate ForkJoinRecursiveSum.image bash run
+cd "$pg"/build r-time-init-heap && $corpus_dir/build r build-time-init-heap Main.image bash run
+cd "$pg"/micronaut-conferences && $corpus_dir/build r micronaut-conferences build/native/nativeCompile/conferences bash run
+cd "$pg"/micronaut-conferences-isolate && $corpus_dir/build r micronaut-conferences-isolate build/native/nativeCompile/conferences bash compile
+cd "$pg"/jmh-native && $corpus_dir/build r jmh target/benchmarks bash run
+
+########################################
+####### Build microservice benchmarks
+########################################
+cd "$OL_PATH/bb/compression/graal-enterprise/vm-enterprise/"
+
+ni_opts="$NATIVE_IMAGE_OPTIONS"
+
+function mx_benchmark ()
+{
+    $corpus_dir/build b "$2" "$3" mx --env ni-ee benchmark --tracker=rsspercentiles "$1" -- --jvm=native-image --jvm-config=default-ee -Dnative-image.benchmark.stages=image 
+}
+
+mx_benchmark shopcart-wrk:mixed-tiny micronaut-shopcart "$OL_PATH/bb/compression/graal/vm/mxbuild/native-image-benchmarks/shopcart-wrk-0-3-10-mixed-tiny-default-ee/shopcart-wrk-0-3-10-mixed-tiny-default-ee"
+mx_benchmark tika-wrk:odt-tiny quarkus-tika "$OL_PATH/bb/compression/graal/vm/mxbuild/native-image-benchmarks/tika-wrk-1-0-11-odt-tiny-default-ee/tika-wrk-1-0-11-odt-tiny-default-ee"
+mx_benchmark petclinic-wrk:mixed-tiny spring-petclinic "$OL_PATH/bb/compression/graal/vm/mxbuild/native-image-benchmarks/petclinic-wrk-3-0-1-mixed-tiny-default-ee/petclinic-wrk-3-0-1-mixed-tiny-default-ee"
+
+########################################
+####### Build barista benchmarks
+########################################
+

@@ -1,0 +1,531 @@
+Compressor name,Compression speed,Decompression speed,Original size,Compressed size,Ratio,Filename
+memcpy,14826.23,14987.88,74451352,74451352,100.00,./micronaut-shopcart-x64-O2
+fastlz 0.5.0 -1,148.26,404.74,74451352,42860798,57.57,./micronaut-shopcart-x64-O2
+fastlz 0.5.0 -2,159.75,402.64,74451352,41766541,56.10,./micronaut-shopcart-x64-O2
+kanzi 2.3 -1,142.26,785.56,74451352,34381439,46.18,./micronaut-shopcart-x64-O2
+kanzi 2.3 -2,123.74,277.03,74451352,28649622,38.48,./micronaut-shopcart-x64-O2
+kanzi 2.3 -3,81.63,284.63,74451352,28548023,38.34,./micronaut-shopcart-x64-O2
+lizard 2.1 -10,330.47,2589.74,74451352,41664925,55.96,./micronaut-shopcart-x64-O2
+lizard 2.1 -11,201.12,2678.88,74451352,38653517,51.92,./micronaut-shopcart-x64-O2
+lizard 2.1 -12,113.66,2764.48,74451352,36516668,49.05,./micronaut-shopcart-x64-O2
+lizard 2.1 -13,73.77,2700.79,74451352,35712729,47.97,./micronaut-shopcart-x64-O2
+lizard 2.1 -14,67.19,2725.47,74451352,35249284,47.35,./micronaut-shopcart-x64-O2
+lz4 1.10.0,384.31,2497.56,74451352,41286804,55.45,./micronaut-shopcart-x64-O2
+lz4 1.10.0 --fast -3,467.61,2518.74,74451352,44638021,59.96,./micronaut-shopcart-x64-O2
+lz4 1.10.0 --fast -17,813.46,3371.41,74451352,55552296,74.62,./micronaut-shopcart-x64-O2
+lzav 4.22 -1,349.37,1668.21,74451352,38577197,51.82,./micronaut-shopcart-x64-O2
+lzav 4.22 -2,59.07,1481.35,74451352,33540462,45.05,./micronaut-shopcart-x64-O2
+lzf 3.6 -0,201.67,346.77,74451352,42136205,56.60,./micronaut-shopcart-x64-O2
+lzf 3.6 -1,192.95,344.61,74451352,41626763,55.91,./micronaut-shopcart-x64-O2
+lzfse 2017-03-08,61.70,451.97,74451352,28603330,38.42,./micronaut-shopcart-x64-O2
+lzo1b 2.10 -1,107.12,380.34,74451352,40462808,54.35,./micronaut-shopcart-x64-O2
+lzo1c 2.10 -1,117.88,393.88,74451352,40656824,54.61,./micronaut-shopcart-x64-O2
+lzof 2.10 -1,107.04,362.87,74451352,39299764,52.79,./micronaut-shopcart-x64-O2
+lzo1x 2.10 -1,304.69,404.59,74451352,39779694,53.43,./micronaut-shopcart-x64-O2
+lzo1y 2.10 -1,306.78,409.13,74451352,39952782,53.66,./micronaut-shopcart-x64-O2
+lzsse4fast 2019-04-18,178.62,1868.98,74451352,40011881,53.74,./micronaut-shopcart-x64-O2
+lzsse8 2019-04-18 -1,13.03,2621.78,74451352,35295982,47.41,./micronaut-shopcart-x64-O2
+lzvn 2017-03-08,40.93,564.75,74451352,31427665,42.21,./micronaut-shopcart-x64-O2
+quicklz 1.5.0 -1,258.03,302.58,74451352,38378616,51.55,./micronaut-shopcart-x64-O2
+quicklz 1.5.0 -2,128.41,289.16,74451352,35058970,47.09,./micronaut-shopcart-x64-O2
+snappy 1.2.1,285.71,755.86,74451352,41535133,55.79,./micronaut-shopcart-x64-O2
+zstd 1.5.7 -1,306.09,752.87,74451352,31740090,42.63,./micronaut-shopcart-x64-O2
+zstd 1.5.7 -2,265.11,721.10,74451352,29429189,39.53,./micronaut-shopcart-x64-O2
+zstd 1.5.7 -3,194.41,687.90,74451352,27973073,37.57,./micronaut-shopcart-x64-O2
+zstd 1.5.7 -4,167.62,685.09,74451352,27653583,37.14,./micronaut-shopcart-x64-O2
+zstd 1.5.7 -5,93.15,669.98,74451352,27092072,36.39,./micronaut-shopcart-x64-O2
+memcpy,14933.80,14896.50,74516912,74516912,100.00,./micronaut-shopcart-x64-static-nolibc
+fastlz 0.5.0 -1,154.63,408.83,74516912,42851368,57.51,./micronaut-shopcart-x64-static-nolibc
+fastlz 0.5.0 -2,159.72,403.34,74516912,41756921,56.04,./micronaut-shopcart-x64-static-nolibc
+kanzi 2.3 -1,145.02,789.86,74516912,34353533,46.10,./micronaut-shopcart-x64-static-nolibc
+kanzi 2.3 -2,120.29,278.57,74516912,28620025,38.41,./micronaut-shopcart-x64-static-nolibc
+kanzi 2.3 -3,80.72,285.38,74516912,28543043,38.30,./micronaut-shopcart-x64-static-nolibc
+lizard 2.1 -10,330.58,2586.37,74516912,41640797,55.88,./micronaut-shopcart-x64-static-nolibc
+lizard 2.1 -11,195.19,2685.21,74516912,38639447,51.85,./micronaut-shopcart-x64-static-nolibc
+lizard 2.1 -12,108.95,2763.55,74516912,36510664,49.00,./micronaut-shopcart-x64-static-nolibc
+lizard 2.1 -13,70.09,2710.87,74516912,35711426,47.92,./micronaut-shopcart-x64-static-nolibc
+lizard 2.1 -14,65.72,2734.94,74516912,35252539,47.31,./micronaut-shopcart-x64-static-nolibc
+lz4 1.10.0,385.57,2500.02,74516912,41285150,55.40,./micronaut-shopcart-x64-static-nolibc
+lz4 1.10.0 --fast -3,469.74,2527.26,74516912,44627957,59.89,./micronaut-shopcart-x64-static-nolibc
+lz4 1.10.0 --fast -17,815.23,3367.51,74516912,55568070,74.57,./micronaut-shopcart-x64-static-nolibc
+lzav 4.22 -1,338.33,1672.39,74516912,38575223,51.77,./micronaut-shopcart-x64-static-nolibc
+lzav 4.22 -2,59.09,1477.56,74516912,33559971,45.04,./micronaut-shopcart-x64-static-nolibc
+lzf 3.6 -0,201.56,347.74,74516912,42133244,56.54,./micronaut-shopcart-x64-static-nolibc
+lzf 3.6 -1,193.10,345.28,74516912,41624507,55.86,./micronaut-shopcart-x64-static-nolibc
+lzfse 2017-03-08,61.78,453.43,74516912,28587401,38.36,./micronaut-shopcart-x64-static-nolibc
+lzo1b 2.10 -1,107.26,382.75,74516912,40449742,54.28,./micronaut-shopcart-x64-static-nolibc
+lzo1c 2.10 -1,118.04,395.58,74516912,40639696,54.54,./micronaut-shopcart-x64-static-nolibc
+lzof 2.10 -1,107.42,363.72,74516912,39286075,52.72,./micronaut-shopcart-x64-static-nolibc
+lzo1x 2.10 -1,308.37,405.67,74516912,39774044,53.38,./micronaut-shopcart-x64-static-nolibc
+lzo1y 2.10 -1,309.22,410.48,74516912,39944916,53.61,./micronaut-shopcart-x64-static-nolibc
+lzsse4fast 2019-04-18,179.28,1878.16,74516912,39971676,53.64,./micronaut-shopcart-x64-static-nolibc
+lzsse8 2019-04-18 -1,13.04,2615.26,74516912,35292104,47.36,./micronaut-shopcart-x64-static-nolibc
+lzvn 2017-03-08,41.01,566.95,74516912,31407609,42.15,./micronaut-shopcart-x64-static-nolibc
+quicklz 1.5.0 -1,260.52,302.33,74516912,38359673,51.48,./micronaut-shopcart-x64-static-nolibc
+quicklz 1.5.0 -2,134.62,291.59,74516912,35030204,47.01,./micronaut-shopcart-x64-static-nolibc
+snappy 1.2.1,285.39,757.47,74516912,41524169,55.72,./micronaut-shopcart-x64-static-nolibc
+zstd 1.5.7 -1,307.69,755.13,74516912,31711580,42.56,./micronaut-shopcart-x64-static-nolibc
+zstd 1.5.7 -2,264.99,721.54,74516912,29398914,39.45,./micronaut-shopcart-x64-static-nolibc
+zstd 1.5.7 -3,190.00,689.35,74516912,27962850,37.53,./micronaut-shopcart-x64-static-nolibc
+zstd 1.5.7 -4,163.83,687.04,74516912,27648023,37.10,./micronaut-shopcart-x64-static-nolibc
+zstd 1.5.7 -5,93.21,671.00,74516912,27099074,36.37,./micronaut-shopcart-x64-static-nolibc
+memcpy,14848.32,14908.19,76333928,76333928,100.00,./micronaut-shopcart-x64-prof
+fastlz 0.5.0 -1,166.45,431.92,76333928,41301361,54.11,./micronaut-shopcart-x64-prof
+fastlz 0.5.0 -2,174.57,428.58,76333928,40350594,52.86,./micronaut-shopcart-x64-prof
+kanzi 2.3 -1,141.55,771.45,76333928,33252361,43.56,./micronaut-shopcart-x64-prof
+kanzi 2.3 -2,120.11,289.58,76333928,27453386,35.96,./micronaut-shopcart-x64-prof
+kanzi 2.3 -3,80.46,288.69,76333928,27675234,36.26,./micronaut-shopcart-x64-prof
+lizard 2.1 -10,338.79,2558.05,76333928,40320075,52.82,./micronaut-shopcart-x64-prof
+lizard 2.1 -11,215.42,2626.06,76333928,37547531,49.19,./micronaut-shopcart-x64-prof
+lizard 2.1 -12,117.69,2718.06,76333928,35337393,46.29,./micronaut-shopcart-x64-prof
+lizard 2.1 -13,76.80,2690.71,76333928,34490958,45.18,./micronaut-shopcart-x64-prof
+lizard 2.1 -14,70.20,2722.77,76333928,34009166,44.55,./micronaut-shopcart-x64-prof
+lz4 1.10.0,392.50,2471.28,76333928,39860108,52.22,./micronaut-shopcart-x64-prof
+lz4 1.10.0 --fast -3,470.56,2502.36,76333928,42873274,56.17,./micronaut-shopcart-x64-prof
+lz4 1.10.0 --fast -17,758.16,3113.92,76333928,53111136,69.58,./micronaut-shopcart-x64-prof
+lzav 4.22 -1,361.70,1697.45,76333928,37361260,48.94,./micronaut-shopcart-x64-prof
+lzav 4.22 -2,64.56,1525.05,76333928,32509060,42.59,./micronaut-shopcart-x64-prof
+lzf 3.6 -0,212.87,363.87,76333928,40764715,53.40,./micronaut-shopcart-x64-prof
+lzf 3.6 -1,206.26,362.77,76333928,40234173,52.71,./micronaut-shopcart-x64-prof
+lzfse 2017-03-08,64.59,472.78,76333928,27450472,35.96,./micronaut-shopcart-x64-prof
+lzo1b 2.10 -1,115.57,402.50,76333928,39211284,51.37,./micronaut-shopcart-x64-prof
+lzo1c 2.10 -1,128.59,415.73,76333928,39268797,51.44,./micronaut-shopcart-x64-prof
+lzof 2.10 -1,116.09,386.03,76333928,37941288,49.70,./micronaut-shopcart-x64-prof
+lzo1x 2.10 -1,319.74,430.91,76333928,38441922,50.36,./micronaut-shopcart-x64-prof
+lzo1y 2.10 -1,321.67,435.25,76333928,38567183,50.52,./micronaut-shopcart-x64-prof
+lzsse4fast 2019-04-18,190.98,1949.97,76333928,38676199,50.67,./micronaut-shopcart-x64-prof
+lzsse8 2019-04-18 -1,12.75,2731.97,76333928,34298935,44.93,./micronaut-shopcart-x64-prof
+lzvn 2017-03-08,42.13,591.72,76333928,30456302,39.90,./micronaut-shopcart-x64-prof
+quicklz 1.5.0 -1,273.14,326.99,76333928,36960452,48.42,./micronaut-shopcart-x64-prof
+quicklz 1.5.0 -2,141.60,312.49,76333928,33844039,44.34,./micronaut-shopcart-x64-prof
+snappy 1.2.1,297.82,780.44,76333928,40055711,52.47,./micronaut-shopcart-x64-prof
+zstd 1.5.7 -1,315.68,775.47,76333928,30245709,39.62,./micronaut-shopcart-x64-prof
+zstd 1.5.7 -2,273.25,744.35,76333928,28214997,36.96,./micronaut-shopcart-x64-prof
+zstd 1.5.7 -3,202.49,711.21,76333928,26913616,35.26,./micronaut-shopcart-x64-prof
+zstd 1.5.7 -4,176.57,707.91,76333928,26653373,34.92,./micronaut-shopcart-x64-prof
+zstd 1.5.7 -5,95.84,693.78,76333928,26082917,34.17,./micronaut-shopcart-x64-prof
+memcpy,14598.07,14511.63,106367384,106367384,100.00,./micronaut-shopcart-x64-O3
+fastlz 0.5.0 -1,136.80,382.86,106367384,64270325,60.42,./micronaut-shopcart-x64-O3
+fastlz 0.5.0 -2,150.14,380.80,106367384,62137413,58.42,./micronaut-shopcart-x64-O3
+kanzi 2.3 -1,140.35,763.86,106367384,50236924,47.23,./micronaut-shopcart-x64-O3
+kanzi 2.3 -2,116.93,270.21,106367384,42324128,39.79,./micronaut-shopcart-x64-O3
+kanzi 2.3 -3,73.36,272.37,106367384,41707285,39.21,./micronaut-shopcart-x64-O3
+lizard 2.1 -10,314.33,2493.58,106367384,62085282,58.37,./micronaut-shopcart-x64-O3
+lizard 2.1 -11,188.95,2598.67,106367384,56805653,53.41,./micronaut-shopcart-x64-O3
+lizard 2.1 -12,106.32,2674.91,106367384,53696836,50.48,./micronaut-shopcart-x64-O3
+lizard 2.1 -13,69.73,2666.75,106367384,52528839,49.38,./micronaut-shopcart-x64-O3
+lizard 2.1 -14,65.28,2689.11,106367384,51855330,48.75,./micronaut-shopcart-x64-O3
+lz4 1.10.0,364.28,2462.19,106367384,61689282,58.00,./micronaut-shopcart-x64-O3
+lz4 1.10.0 --fast -3,448.18,2430.46,106367384,67208561,63.19,./micronaut-shopcart-x64-O3
+lz4 1.10.0 --fast -17,836.42,3491.77,106367384,84228341,79.19,./micronaut-shopcart-x64-O3
+lzav 4.22 -1,300.61,1539.35,106367384,55306303,52.00,./micronaut-shopcart-x64-O3
+lzav 4.22 -2,57.75,1401.63,106367384,48299001,45.41,./micronaut-shopcart-x64-O3
+lzf 3.6 -0,185.49,327.63,106367384,63027411,59.25,./micronaut-shopcart-x64-O3
+lzf 3.6 -1,177.06,326.12,106367384,62178493,58.46,./micronaut-shopcart-x64-O3
+lzfse 2017-03-08,59.37,433.17,106367384,42241576,39.71,./micronaut-shopcart-x64-O3
+lzo1b 2.10 -1,99.95,347.50,106367384,60059436,56.46,./micronaut-shopcart-x64-O3
+lzo1c 2.10 -1,108.73,360.58,106367384,60735540,57.10,./micronaut-shopcart-x64-O3
+lzof 2.10 -1,97.88,329.82,106367384,58934706,55.41,./micronaut-shopcart-x64-O3
+lzo1x 2.10 -1,283.75,366.65,106367384,59396403,55.84,./micronaut-shopcart-x64-O3
+lzo1y 2.10 -1,286.03,371.24,106367384,59725785,56.15,./micronaut-shopcart-x64-O3
+lzsse4fast 2019-04-18,172.25,1991.98,106367384,56785236,53.39,./micronaut-shopcart-x64-O3
+lzsse8 2019-04-18 -1,13.44,2645.38,106367384,51357378,48.28,./micronaut-shopcart-x64-O3
+lzvn 2017-03-08,38.89,538.82,106367384,46356399,43.58,./micronaut-shopcart-x64-O3
+quicklz 1.5.0 -1,232.01,288.01,106367384,57201728,53.78,./micronaut-shopcart-x64-O3
+quicklz 1.5.0 -2,126.25,274.89,106367384,51754176,48.66,./micronaut-shopcart-x64-O3
+snappy 1.2.1,263.68,725.72,106367384,61747777,58.05,./micronaut-shopcart-x64-O3
+zstd 1.5.7 -1,288.78,727.75,106367384,47445659,44.61,./micronaut-shopcart-x64-O3
+zstd 1.5.7 -2,250.46,698.85,106367384,43520481,40.92,./micronaut-shopcart-x64-O3
+zstd 1.5.7 -3,183.62,676.26,106367384,41246060,38.78,./micronaut-shopcart-x64-O3
+zstd 1.5.7 -4,159.66,672.76,106367384,40531010,38.10,./micronaut-shopcart-x64-O3
+zstd 1.5.7 -5,88.67,658.20,106367384,39667250,37.29,./micronaut-shopcart-x64-O3
+memcpy,19295.11,19560.09,22939952,22939952,100.00,./jmh-x64-static-nolibc
+fastlz 0.5.0 -1,156.26,411.45,22939952,13455736,58.66,./jmh-x64-static-nolibc
+fastlz 0.5.0 -2,168.28,404.66,22939952,13225386,57.65,./jmh-x64-static-nolibc
+kanzi 2.3 -1,152.16,779.91,22939952,11192354,48.79,./jmh-x64-static-nolibc
+kanzi 2.3 -2,120.83,265.01,22939952,9373234,40.86,./jmh-x64-static-nolibc
+kanzi 2.3 -3,78.27,270.67,22939952,9373935,40.86,./jmh-x64-static-nolibc
+lizard 2.1 -10,332.21,2649.72,22939952,13268339,57.84,./jmh-x64-static-nolibc
+lizard 2.1 -11,189.75,2769.22,22939952,12373681,53.94,./jmh-x64-static-nolibc
+lizard 2.1 -12,107.57,2813.54,22939952,11710833,51.05,./jmh-x64-static-nolibc
+lizard 2.1 -13,70.52,2660.01,22939952,11463190,49.97,./jmh-x64-static-nolibc
+lizard 2.1 -14,67.45,2686.33,22939952,11322955,49.36,./jmh-x64-static-nolibc
+lz4 1.10.0,389.24,2514.44,22939952,13102930,57.12,./jmh-x64-static-nolibc
+lz4 1.10.0 --fast -3,480.78,2509.73,22939952,14110749,61.51,./jmh-x64-static-nolibc
+lz4 1.10.0 --fast -17,835.86,3465.54,22939952,17520465,76.38,./jmh-x64-static-nolibc
+lzav 4.22 -1,346.94,1786.70,22939952,12514695,54.55,./jmh-x64-static-nolibc
+lzav 4.22 -2,59.43,1523.33,22939952,10934661,47.67,./jmh-x64-static-nolibc
+lzf 3.6 -0,206.53,360.86,22939952,13256192,57.79,./jmh-x64-static-nolibc
+lzf 3.6 -1,197.48,358.08,22939952,13116302,57.18,./jmh-x64-static-nolibc
+lzfse 2017-03-08,62.18,438.50,22939952,9332124,40.68,./jmh-x64-static-nolibc
+lzo1b 2.10 -1,104.63,391.13,22939952,12809683,55.84,./jmh-x64-static-nolibc
+lzo1c 2.10 -1,117.60,405.42,22939952,12809972,55.84,./jmh-x64-static-nolibc
+lzof 2.10 -1,106.10,372.89,22939952,12365084,53.90,./jmh-x64-static-nolibc
+lzo1x 2.10 -1,317.69,419.08,22939952,12692126,55.33,./jmh-x64-static-nolibc
+lzo1y 2.10 -1,317.40,420.38,22939952,12730322,55.49,./jmh-x64-static-nolibc
+lzsse4fast 2019-04-18,165.64,1833.16,22939952,13438826,58.58,./jmh-x64-static-nolibc
+lzsse8 2019-04-18 -1,9.35,2661.70,22939952,11382534,49.62,./jmh-x64-static-nolibc
+lzvn 2017-03-08,41.52,547.83,22939952,10107618,44.06,./jmh-x64-static-nolibc
+quicklz 1.5.0 -1,265.84,297.94,22939952,12211436,53.23,./jmh-x64-static-nolibc
+quicklz 1.5.0 -2,134.08,279.96,22939952,11199039,48.82,./jmh-x64-static-nolibc
+snappy 1.2.1,294.50,755.77,22939952,13193134,57.51,./jmh-x64-static-nolibc
+zstd 1.5.7 -1,304.51,737.31,22939952,10220064,44.55,./jmh-x64-static-nolibc
+zstd 1.5.7 -2,264.75,707.95,22939952,9607839,41.88,./jmh-x64-static-nolibc
+zstd 1.5.7 -3,187.01,668.12,22939952,9173934,39.99,./jmh-x64-static-nolibc
+zstd 1.5.7 -4,163.49,667.17,22939952,9095123,39.65,./jmh-x64-static-nolibc
+zstd 1.5.7 -5,91.88,650.77,22939952,8940642,38.97,./jmh-x64-static-nolibc
+memcpy,16862.53,16773.12,29559056,29559056,100.00,./jmh-x64-O3
+fastlz 0.5.0 -1,138.54,389.60,29559056,18035531,61.02,./jmh-x64-O3
+fastlz 0.5.0 -2,150.46,386.19,29559056,17648608,59.71,./jmh-x64-O3
+kanzi 2.3 -1,141.01,753.89,29559056,14713745,49.78,./jmh-x64-O3
+kanzi 2.3 -2,113.53,260.73,29559056,12435088,42.07,./jmh-x64-O3
+kanzi 2.3 -3,77.34,265.03,29559056,12327112,41.70,./jmh-x64-O3
+lizard 2.1 -10,318.95,2547.93,29559056,17699812,59.88,./jmh-x64-O3
+lizard 2.1 -11,178.90,2688.73,29559056,16307549,55.17,./jmh-x64-O3
+lizard 2.1 -12,104.40,2729.04,29559056,15447026,52.26,./jmh-x64-O3
+lizard 2.1 -13,67.81,2641.01,29559056,15124215,51.17,./jmh-x64-O3
+lizard 2.1 -14,62.79,2673.38,29559056,14942264,50.55,./jmh-x64-O3
+lz4 1.10.0,374.16,2480.57,29559056,17523946,59.28,./jmh-x64-O3
+lz4 1.10.0 --fast -3,466.10,2431.91,29559056,19010400,64.31,./jmh-x64-O3
+lz4 1.10.0 --fast -17,854.47,3596.13,29559056,23603948,79.85,./jmh-x64-O3
+lzav 4.22 -1,310.46,1642.59,29559056,16227565,54.90,./jmh-x64-O3
+lzav 4.22 -2,55.26,1428.02,29559056,14179651,47.97,./jmh-x64-O3
+lzf 3.6 -0,190.49,342.31,29559056,17728720,59.98,./jmh-x64-O3
+lzf 3.6 -1,182.14,338.94,29559056,17510717,59.24,./jmh-x64-O3
+lzfse 2017-03-08,59.14,425.39,29559056,12360108,41.81,./jmh-x64-O3
+lzo1b 2.10 -1,98.60,358.52,29559056,17068064,57.74,./jmh-x64-O3
+lzo1c 2.10 -1,108.85,373.54,29559056,17135142,57.97,./jmh-x64-O3
+lzof 2.10 -1,99.03,341.29,29559056,16609820,56.19,./jmh-x64-O3
+lzo1x 2.10 -1,293.07,380.82,29559056,16861477,57.04,./jmh-x64-O3
+lzo1y 2.10 -1,295.20,383.74,29559056,16939046,57.31,./jmh-x64-O3
+lzsse4fast 2019-04-18,160.25,1949.38,29559056,16990623,57.48,./jmh-x64-O3
+lzsse8 2019-04-18 -1,10.16,2665.72,29559056,14869192,50.30,./jmh-x64-O3
+lzvn 2017-03-08,39.28,532.45,29559056,13370789,45.23,./jmh-x64-O3
+quicklz 1.5.0 -1,248.71,294.58,29559056,16319400,55.21,./jmh-x64-O3
+quicklz 1.5.0 -2,127.31,266.52,29559056,14855993,50.26,./jmh-x64-O3
+snappy 1.2.1,273.67,734.88,29559056,17482447,59.14,./jmh-x64-O3
+zstd 1.5.7 -1,289.62,713.17,29559056,13704671,46.36,./jmh-x64-O3
+zstd 1.5.7 -2,251.06,690.58,29559056,12749518,43.13,./jmh-x64-O3
+zstd 1.5.7 -3,177.93,660.35,29559056,12146652,41.09,./jmh-x64-O3
+zstd 1.5.7 -4,154.63,659.24,29559056,11962749,40.47,./jmh-x64-O3
+zstd 1.5.7 -5,88.71,643.07,29559056,11737380,39.71,./jmh-x64-O3
+memcpy,17807.49,18663.69,22874384,22874384,100.00,./jmh-x64-O2
+fastlz 0.5.0 -1,156.28,411.20,22874384,13404851,58.60,./jmh-x64-O2
+fastlz 0.5.0 -2,164.05,404.37,22874384,13179666,57.62,./jmh-x64-O2
+kanzi 2.3 -1,150.94,780.10,22874384,11156333,48.77,./jmh-x64-O2
+kanzi 2.3 -2,123.27,266.12,22874384,9335781,40.81,./jmh-x64-O2
+kanzi 2.3 -3,82.57,265.45,22874384,9549838,41.75,./jmh-x64-O2
+lizard 2.1 -10,332.90,2641.09,22874384,13224641,57.81,./jmh-x64-O2
+lizard 2.1 -11,189.32,2771.38,22874384,12324930,53.88,./jmh-x64-O2
+lizard 2.1 -12,109.61,2810.72,22874384,11651055,50.93,./jmh-x64-O2
+lizard 2.1 -13,71.91,2656.56,22874384,11406927,49.87,./jmh-x64-O2
+lizard 2.1 -14,67.62,2679.28,22874384,11267805,49.26,./jmh-x64-O2
+lz4 1.10.0,390.80,2520.79,22874384,13058816,57.09,./jmh-x64-O2
+lz4 1.10.0 --fast -3,481.72,2514.57,22874384,14067924,61.50,./jmh-x64-O2
+lz4 1.10.0 --fast -17,834.07,3475.52,22874384,17452261,76.30,./jmh-x64-O2
+lzav 4.22 -1,341.53,1786.97,22874384,12466503,54.50,./jmh-x64-O2
+lzav 4.22 -2,58.95,1523.31,22874384,10891462,47.61,./jmh-x64-O2
+lzf 3.6 -0,206.24,361.57,22874384,13204010,57.72,./jmh-x64-O2
+lzf 3.6 -1,198.29,358.73,22874384,13063194,57.11,./jmh-x64-O2
+lzfse 2017-03-08,61.80,438.57,22874384,9299376,40.65,./jmh-x64-O2
+lzo1b 2.10 -1,105.10,387.71,22874384,12754063,55.76,./jmh-x64-O2
+lzo1c 2.10 -1,112.07,408.02,22874384,12753844,55.76,./jmh-x64-O2
+lzof 2.10 -1,106.32,372.82,22874384,12311124,53.82,./jmh-x64-O2
+lzo1x 2.10 -1,316.06,416.78,22874384,12628614,55.21,./jmh-x64-O2
+lzo1y 2.10 -1,316.69,419.61,22874384,12667663,55.38,./jmh-x64-O2
+lzsse4fast 2019-04-18,164.39,1833.15,22874384,13380449,58.50,./jmh-x64-O2
+lzsse8 2019-04-18 -1,9.27,2660.23,22874384,11332627,49.54,./jmh-x64-O2
+lzvn 2017-03-08,41.31,549.61,22874384,10065822,44.00,./jmh-x64-O2
+quicklz 1.5.0 -1,267.74,299.29,22874384,12160516,53.16,./jmh-x64-O2
+quicklz 1.5.0 -2,134.31,279.88,22874384,11153513,48.76,./jmh-x64-O2
+snappy 1.2.1,295.29,756.94,22874384,13145412,57.47,./jmh-x64-O2
+zstd 1.5.7 -1,304.76,734.66,22874384,10166725,44.45,./jmh-x64-O2
+zstd 1.5.7 -2,260.19,707.48,22874384,9569361,41.83,./jmh-x64-O2
+zstd 1.5.7 -3,181.69,669.85,22874384,9140060,39.96,./jmh-x64-O2
+zstd 1.5.7 -4,161.68,668.82,22874384,9057123,39.60,./jmh-x64-O2
+zstd 1.5.7 -5,91.57,654.34,22874384,8908555,38.95,./jmh-x64-O2
+memcpy,17097.58,18974.40,24133184,24133184,100.00,./jmh-x64-prof
+fastlz 0.5.0 -1,165.57,428.07,24133184,13377698,55.43,./jmh-x64-prof
+fastlz 0.5.0 -2,176.76,421.64,24133184,13141032,54.45,./jmh-x64-prof
+kanzi 2.3 -1,155.29,781.24,24133184,11129652,46.12,./jmh-x64-prof
+kanzi 2.3 -2,125.56,276.22,24133184,9244423,38.31,./jmh-x64-prof
+kanzi 2.3 -3,85.63,282.47,24133184,9254345,38.35,./jmh-x64-prof
+lizard 2.1 -10,337.67,2609.73,24133184,13196549,54.68,./jmh-x64-prof
+lizard 2.1 -11,201.63,2701.88,24133184,12345074,51.15,./jmh-x64-prof
+lizard 2.1 -12,112.35,2754.60,24133184,11640758,48.24,./jmh-x64-prof
+lizard 2.1 -13,73.47,2593.88,24133184,11373081,47.13,./jmh-x64-prof
+lizard 2.1 -14,68.59,2615.33,24133184,11222232,46.50,./jmh-x64-prof
+lz4 1.10.0,396.13,2478.74,24133184,13009937,53.91,./jmh-x64-prof
+lz4 1.10.0 --fast -3,475.14,2468.34,24133184,13968533,57.88,./jmh-x64-prof
+lz4 1.10.0 --fast -17,766.71,3165.75,24133184,17340346,71.85,./jmh-x64-prof
+lzav 4.22 -1,346.31,1770.94,24133184,12434017,51.52,./jmh-x64-prof
+lzav 4.22 -2,61.15,1557.81,24133184,10860214,45.00,./jmh-x64-prof
+lzf 3.6 -0,214.40,371.43,24133184,13218329,54.77,./jmh-x64-prof
+lzf 3.6 -1,208.86,369.91,24133184,13060485,54.12,./jmh-x64-prof
+lzfse 2017-03-08,63.62,452.54,24133184,9199791,38.12,./jmh-x64-prof
+lzo1b 2.10 -1,112.03,407.11,24133184,12773740,52.93,./jmh-x64-prof
+lzo1c 2.10 -1,127.16,420.74,24133184,12744388,52.81,./jmh-x64-prof
+lzof 2.10 -1,114.11,385.83,24133184,12291094,50.93,./jmh-x64-prof
+lzo1x 2.10 -1,326.46,432.41,24133184,12548235,52.00,./jmh-x64-prof
+lzo1y 2.10 -1,325.11,435.28,24133184,12575265,52.11,./jmh-x64-prof
+lzsse4fast 2019-04-18,171.43,1907.42,24133184,13485609,55.88,./jmh-x64-prof
+lzsse8 2019-04-18 -1,9.37,2744.55,24133184,11359647,47.07,./jmh-x64-prof
+lzvn 2017-03-08,42.68,544.73,24133184,10049158,41.64,./jmh-x64-prof
+quicklz 1.5.0 -1,266.22,298.54,24133184,12097920,50.13,./jmh-x64-prof
+quicklz 1.5.0 -2,139.44,295.93,24133184,11112246,46.05,./jmh-x64-prof
+snappy 1.2.1,301.13,766.62,24133184,13068440,54.15,./jmh-x64-prof
+zstd 1.5.7 -1,309.72,753.05,24133184,9997389,41.43,./jmh-x64-prof
+zstd 1.5.7 -2,266.68,725.79,24133184,9446745,39.14,./jmh-x64-prof
+zstd 1.5.7 -3,189.18,690.66,24133184,9047246,37.49,./jmh-x64-prof
+zstd 1.5.7 -4,166.29,688.20,24133184,8985120,37.23,./jmh-x64-prof
+zstd 1.5.7 -5,94.32,671.60,24133184,8826903,36.58,./jmh-x64-prof
+memcpy,15149.29,15567.77,7080144,7080144,100.00,./fork-join-pool-isolate-x64-static-nolibc
+fastlz 0.5.0 -1,168.50,431.13,7080144,3731420,52.70,./fork-join-pool-isolate-x64-static-nolibc
+fastlz 0.5.0 -2,179.69,425.14,7080144,3682388,52.01,./fork-join-pool-isolate-x64-static-nolibc
+kanzi 2.3 -1,166.39,800.69,7080144,3121451,44.09,./fork-join-pool-isolate-x64-static-nolibc
+kanzi 2.3 -2,136.78,287.92,7080144,2588424,36.56,./fork-join-pool-isolate-x64-static-nolibc
+kanzi 2.3 -3,93.26,291.67,7080144,2599673,36.72,./fork-join-pool-isolate-x64-static-nolibc
+lizard 2.1 -10,350.54,2727.48,7080144,3704539,52.32,./fork-join-pool-isolate-x64-static-nolibc
+lizard 2.1 -11,192.32,2806.53,7080144,3473446,49.06,./fork-join-pool-isolate-x64-static-nolibc
+lizard 2.1 -12,110.77,2895.71,7080144,3268278,46.16,./fork-join-pool-isolate-x64-static-nolibc
+lizard 2.1 -13,75.15,2553.80,7080144,3193210,45.10,./fork-join-pool-isolate-x64-static-nolibc
+lizard 2.1 -14,68.88,2584.34,7080144,3152565,44.53,./fork-join-pool-isolate-x64-static-nolibc
+lz4 1.10.0,411.55,2583.11,7080144,3643469,51.46,./fork-join-pool-isolate-x64-static-nolibc
+lz4 1.10.0 --fast -3,496.11,2576.03,7080144,3922591,55.40,./fork-join-pool-isolate-x64-static-nolibc
+lz4 1.10.0 --fast -17,823.10,3557.69,7080144,4930953,69.64,./fork-join-pool-isolate-x64-static-nolibc
+lzav 4.22 -1,378.37,1870.43,7080144,3519937,49.72,./fork-join-pool-isolate-x64-static-nolibc
+lzav 4.22 -2,64.67,1631.64,7080144,3088965,43.63,./fork-join-pool-isolate-x64-static-nolibc
+lzf 3.6 -0,226.51,379.16,7080144,3678670,51.96,./fork-join-pool-isolate-x64-static-nolibc
+lzf 3.6 -1,219.44,375.61,7080144,3639373,51.40,./fork-join-pool-isolate-x64-static-nolibc
+lzfse 2017-03-08,64.97,458.06,7080144,2587527,36.55,./fork-join-pool-isolate-x64-static-nolibc
+lzo1b 2.10 -1,111.47,405.66,7080144,3568391,50.40,./fork-join-pool-isolate-x64-static-nolibc
+lzo1c 2.10 -1,134.03,440.46,7080144,3548526,50.12,./fork-join-pool-isolate-x64-static-nolibc
+lzof 2.10 -1,120.92,407.18,7080144,3425371,48.38,./fork-join-pool-isolate-x64-static-nolibc
+lzo1x 2.10 -1,344.69,444.44,7080144,3517471,49.68,./fork-join-pool-isolate-x64-static-nolibc
+lzo1y 2.10 -1,343.24,445.71,7080144,3523825,49.77,./fork-join-pool-isolate-x64-static-nolibc
+lzsse4fast 2019-04-18,147.62,1907.23,7080144,4085050,57.70,./fork-join-pool-isolate-x64-static-nolibc
+lzsse8 2019-04-18 -1,4.79,2815.21,7080144,3205351,45.27,./fork-join-pool-isolate-x64-static-nolibc
+lzvn 2017-03-08,44.43,540.64,7080144,2814999,39.76,./fork-join-pool-isolate-x64-static-nolibc
+quicklz 1.5.0 -1,280.59,313.26,7080144,3380070,47.74,./fork-join-pool-isolate-x64-static-nolibc
+quicklz 1.5.0 -2,139.78,312.92,7080144,3102771,43.82,./fork-join-pool-isolate-x64-static-nolibc
+snappy 1.2.1,319.60,789.26,7080144,3672909,51.88,./fork-join-pool-isolate-x64-static-nolibc
+zstd 1.5.7 -1,321.78,765.44,7080144,2797191,39.51,./fork-join-pool-isolate-x64-static-nolibc
+zstd 1.5.7 -2,277.69,743.64,7080144,2649310,37.42,./fork-join-pool-isolate-x64-static-nolibc
+zstd 1.5.7 -3,200.14,709.36,7080144,2532422,35.77,./fork-join-pool-isolate-x64-static-nolibc
+zstd 1.5.7 -4,173.75,705.14,7080144,2519044,35.58,./fork-join-pool-isolate-x64-static-nolibc
+zstd 1.5.7 -5,96.15,683.09,7080144,2485111,35.10,./fork-join-pool-isolate-x64-static-nolibc
+memcpy,15191.88,15565.00,7080144,7080144,100.00,./fork-join-pool-isolate-x64-O2
+fastlz 0.5.0 -1,167.96,431.48,7080144,3735766,52.76,./fork-join-pool-isolate-x64-O2
+fastlz 0.5.0 -2,181.95,424.43,7080144,3686440,52.07,./fork-join-pool-isolate-x64-O2
+kanzi 2.3 -1,165.55,800.65,7080144,3124813,44.13,./fork-join-pool-isolate-x64-O2
+kanzi 2.3 -2,136.02,287.39,7080144,2591479,36.60,./fork-join-pool-isolate-x64-O2
+kanzi 2.3 -3,93.63,288.69,7080144,2603232,36.77,./fork-join-pool-isolate-x64-O2
+lizard 2.1 -10,349.39,2761.16,7080144,3710795,52.41,./fork-join-pool-isolate-x64-O2
+lizard 2.1 -11,193.57,2872.95,7080144,3479053,49.14,./fork-join-pool-isolate-x64-O2
+lizard 2.1 -12,112.36,2923.63,7080144,3268515,46.16,./fork-join-pool-isolate-x64-O2
+lizard 2.1 -13,75.17,2549.41,7080144,3194620,45.12,./fork-join-pool-isolate-x64-O2
+lizard 2.1 -14,70.43,2575.35,7080144,3153426,44.54,./fork-join-pool-isolate-x64-O2
+lz4 1.10.0,408.71,2573.39,7080144,3643829,51.47,./fork-join-pool-isolate-x64-O2
+lz4 1.10.0 --fast -3,495.45,2558.84,7080144,3922605,55.40,./fork-join-pool-isolate-x64-O2
+lz4 1.10.0 --fast -17,822.24,3552.05,7080144,4935246,69.71,./fork-join-pool-isolate-x64-O2
+lzav 4.22 -1,376.93,1936.38,7080144,3519290,49.71,./fork-join-pool-isolate-x64-O2
+lzav 4.22 -2,65.69,1672.29,7080144,3090049,43.64,./fork-join-pool-isolate-x64-O2
+lzf 3.6 -0,228.97,378.46,7080144,3682800,52.02,./fork-join-pool-isolate-x64-O2
+lzf 3.6 -1,218.86,376.35,7080144,3643662,51.46,./fork-join-pool-isolate-x64-O2
+lzfse 2017-03-08,64.98,457.62,7080144,2592565,36.62,./fork-join-pool-isolate-x64-O2
+lzo1b 2.10 -1,111.46,408.85,7080144,3570104,50.42,./fork-join-pool-isolate-x64-O2
+lzo1c 2.10 -1,128.15,421.10,7080144,3551190,50.16,./fork-join-pool-isolate-x64-O2
+lzof 2.10 -1,115.19,390.77,7080144,3427986,48.42,./fork-join-pool-isolate-x64-O2
+lzo1x 2.10 -1,343.21,443.59,7080144,3520309,49.72,./fork-join-pool-isolate-x64-O2
+lzo1y 2.10 -1,343.30,444.60,7080144,3526614,49.81,./fork-join-pool-isolate-x64-O2
+lzsse4fast 2019-04-18,147.72,1896.43,7080144,4097153,57.87,./fork-join-pool-isolate-x64-O2
+lzsse8 2019-04-18 -1,4.81,2827.00,7080144,3208454,45.32,./fork-join-pool-isolate-x64-O2
+lzvn 2017-03-08,44.02,563.53,7080144,2817580,39.80,./fork-join-pool-isolate-x64-O2
+quicklz 1.5.0 -1,289.61,323.88,7080144,3384273,47.80,./fork-join-pool-isolate-x64-O2
+quicklz 1.5.0 -2,145.86,313.24,7080144,3106064,43.87,./fork-join-pool-isolate-x64-O2
+snappy 1.2.1,319.71,783.83,7080144,3672063,51.86,./fork-join-pool-isolate-x64-O2
+zstd 1.5.7 -1,323.37,771.10,7080144,2794595,39.47,./fork-join-pool-isolate-x64-O2
+zstd 1.5.7 -2,278.82,746.53,7080144,2651858,37.45,./fork-join-pool-isolate-x64-O2
+zstd 1.5.7 -3,200.95,708.35,7080144,2536447,35.82,./fork-join-pool-isolate-x64-O2
+zstd 1.5.7 -4,173.78,702.76,7080144,2523338,35.64,./fork-join-pool-isolate-x64-O2
+zstd 1.5.7 -5,96.50,685.06,7080144,2485882,35.11,./fork-join-pool-isolate-x64-O2
+memcpy,15079.49,15429.79,8325328,8325328,100.00,./fork-join-pool-isolate-x64-O3
+fastlz 0.5.0 -1,161.19,418.09,8325328,4648455,55.84,./fork-join-pool-isolate-x64-O3
+fastlz 0.5.0 -2,167.91,407.53,8325328,4568586,54.88,./fork-join-pool-isolate-x64-O3
+kanzi 2.3 -1,156.67,795.45,8325328,3831156,46.02,./fork-join-pool-isolate-x64-O3
+kanzi 2.3 -2,128.68,279.38,8325328,3203423,38.48,./fork-join-pool-isolate-x64-O3
+kanzi 2.3 -3,87.19,283.82,8325328,3187820,38.29,./fork-join-pool-isolate-x64-O3
+lizard 2.1 -10,334.71,2644.67,8325328,4603141,55.29,./fork-join-pool-isolate-x64-O3
+lizard 2.1 -11,180.92,2696.53,8325328,4276866,51.37,./fork-join-pool-isolate-x64-O3
+lizard 2.1 -12,106.12,2799.88,8325328,4024839,48.34,./fork-join-pool-isolate-x64-O3
+lizard 2.1 -13,70.07,2636.96,8325328,3933944,47.25,./fork-join-pool-isolate-x64-O3
+lizard 2.1 -14,65.62,2669.21,8325328,3885535,46.67,./fork-join-pool-isolate-x64-O3
+lz4 1.10.0,388.73,2510.55,8325328,4530929,54.42,./fork-join-pool-isolate-x64-O3
+lz4 1.10.0 --fast -3,478.87,2475.09,8325328,4908171,58.95,./fork-join-pool-isolate-x64-O3
+lz4 1.10.0 --fast -17,839.10,3648.26,8325328,6167311,74.08,./fork-join-pool-isolate-x64-O3
+lzav 4.22 -1,340.46,1799.41,8325328,4280860,51.42,./fork-join-pool-isolate-x64-O3
+lzav 4.22 -2,59.85,1559.40,8325328,3756396,45.12,./fork-join-pool-isolate-x64-O3
+lzf 3.6 -0,211.79,361.58,8325328,4572416,54.92,./fork-join-pool-isolate-x64-O3
+lzf 3.6 -1,201.76,357.76,8325328,4522509,54.32,./fork-join-pool-isolate-x64-O3
+lzfse 2017-03-08,62.31,445.34,8325328,3198522,38.42,./fork-join-pool-isolate-x64-O3
+lzo1b 2.10 -1,107.80,389.20,8325328,4423016,53.13,./fork-join-pool-isolate-x64-O3
+lzo1c 2.10 -1,123.19,404.64,8325328,4409582,52.97,./fork-join-pool-isolate-x64-O3
+lzof 2.10 -1,111.46,371.78,8325328,4269448,51.28,./fork-join-pool-isolate-x64-O3
+lzo1x 2.10 -1,319.13,410.66,8325328,4357048,52.33,./fork-join-pool-isolate-x64-O3
+lzo1y 2.10 -1,320.00,412.29,8325328,4371247,52.51,./fork-join-pool-isolate-x64-O3
+lzsse4fast 2019-04-18,148.72,1913.98,8325328,4712186,56.60,./fork-join-pool-isolate-x64-O3
+lzsse8 2019-04-18 -1,5.31,2795.17,8325328,3909085,46.95,./fork-join-pool-isolate-x64-O3
+lzvn 2017-03-08,41.91,552.12,8325328,3467148,41.65,./fork-join-pool-isolate-x64-O3
+quicklz 1.5.0 -1,270.14,305.43,8325328,4199552,50.44,./fork-join-pool-isolate-x64-O3
+quicklz 1.5.0 -2,137.93,294.42,8325328,3837999,46.10,./fork-join-pool-isolate-x64-O3
+snappy 1.2.1,296.74,763.50,8325328,4542213,54.56,./fork-join-pool-isolate-x64-O3
+zstd 1.5.7 -1,304.91,735.96,8325328,3498741,42.03,./fork-join-pool-isolate-x64-O3
+zstd 1.5.7 -2,263.18,711.22,8325328,3287051,39.48,./fork-join-pool-isolate-x64-O3
+zstd 1.5.7 -3,187.48,681.88,8325328,3134651,37.65,./fork-join-pool-isolate-x64-O3
+zstd 1.5.7 -4,164.27,677.49,8325328,3098447,37.22,./fork-join-pool-isolate-x64-O3
+zstd 1.5.7 -5,92.74,662.39,8325328,3049853,36.63,./fork-join-pool-isolate-x64-O3
+memcpy,15287.66,15231.88,7669360,7669360,100.00,./fork-join-pool-isolate-x64-prof
+fastlz 0.5.0 -1,189.96,446.64,7669360,3780498,49.29,./fork-join-pool-isolate-x64-prof
+fastlz 0.5.0 -2,193.31,441.65,7669360,3720581,48.51,./fork-join-pool-isolate-x64-prof
+kanzi 2.3 -1,164.75,813.42,7669360,3149745,41.07,./fork-join-pool-isolate-x64-prof
+kanzi 2.3 -2,137.25,302.92,7669360,2588701,33.75,./fork-join-pool-isolate-x64-prof
+kanzi 2.3 -3,97.06,304.08,7669360,2601288,33.92,./fork-join-pool-isolate-x64-prof
+lizard 2.1 -10,356.55,2642.61,7669360,3744310,48.82,./fork-join-pool-isolate-x64-prof
+lizard 2.1 -11,206.39,2791.16,7669360,3522596,45.93,./fork-join-pool-isolate-x64-prof
+lizard 2.1 -12,116.82,2860.43,7669360,3298514,43.01,./fork-join-pool-isolate-x64-prof
+lizard 2.1 -13,77.66,2441.73,7669360,3214402,41.91,./fork-join-pool-isolate-x64-prof
+lizard 2.1 -14,71.07,2460.59,7669360,3168827,41.32,./fork-join-pool-isolate-x64-prof
+lz4 1.10.0,415.82,2536.54,7669360,3674665,47.91,./fork-join-pool-isolate-x64-prof
+lz4 1.10.0 --fast -3,486.00,2520.49,7669360,3941838,51.40,./fork-join-pool-isolate-x64-prof
+lz4 1.10.0 --fast -17,753.53,3175.66,7669360,4977787,64.90,./fork-join-pool-isolate-x64-prof
+lzav 4.22 -1,377.47,1899.20,7669360,3529147,46.02,./fork-join-pool-isolate-x64-prof
+lzav 4.22 -2,69.64,1707.73,7669360,3092051,40.32,./fork-join-pool-isolate-x64-prof
+lzf 3.6 -0,240.41,388.91,7669360,3737952,48.74,./fork-join-pool-isolate-x64-prof
+lzf 3.6 -1,232.26,387.03,7669360,3693688,48.16,./fork-join-pool-isolate-x64-prof
+lzfse 2017-03-08,67.15,473.17,7669360,2593632,33.82,./fork-join-pool-isolate-x64-prof
+lzo1b 2.10 -1,126.87,444.28,7669360,3615076,47.14,./fork-join-pool-isolate-x64-prof
+lzo1c 2.10 -1,146.91,453.03,7669360,3596620,46.90,./fork-join-pool-isolate-x64-prof
+lzof 2.10 -1,131.71,427.25,7669360,3470232,45.25,./fork-join-pool-isolate-x64-prof
+lzo1x 2.10 -1,359.70,467.44,7669360,3571661,46.57,./fork-join-pool-isolate-x64-prof
+lzo1y 2.10 -1,357.84,463.66,7669360,3574481,46.61,./fork-join-pool-isolate-x64-prof
+lzsse4fast 2019-04-18,156.41,1996.19,7669360,4224601,55.08,./fork-join-pool-isolate-x64-prof
+lzsse8 2019-04-18 -1,5.12,2938.12,7669360,3250781,42.39,./fork-join-pool-isolate-x64-prof
+lzvn 2017-03-08,46.15,585.20,7669360,2843038,37.07,./fork-join-pool-isolate-x64-prof
+quicklz 1.5.0 -1,302.82,329.47,7669360,3410282,44.47,./fork-join-pool-isolate-x64-prof
+quicklz 1.5.0 -2,146.22,322.10,7669360,3127850,40.78,./fork-join-pool-isolate-x64-prof
+snappy 1.2.1,330.40,800.88,7669360,3741296,48.78,./fork-join-pool-isolate-x64-prof
+zstd 1.5.7 -1,332.52,803.25,7669360,2769834,36.12,./fork-join-pool-isolate-x64-prof
+zstd 1.5.7 -2,287.81,777.15,7669360,2640977,34.44,./fork-join-pool-isolate-x64-prof
+zstd 1.5.7 -3,208.68,733.77,7669360,2531710,33.01,./fork-join-pool-isolate-x64-prof
+zstd 1.5.7 -4,181.76,731.43,7669360,2527522,32.96,./fork-join-pool-isolate-x64-prof
+zstd 1.5.7 -5,101.19,711.69,7669360,2491648,32.49,./fork-join-pool-isolate-x64-prof
+memcpy,15190.86,15205.20,59931504,59931504,100.00,./micronaut-conferences-x64-prof
+fastlz 0.5.0 -1,185.01,466.49,59931504,30458529,50.82,./micronaut-conferences-x64-prof
+fastlz 0.5.0 -2,192.44,458.65,59931504,30008836,50.07,./micronaut-conferences-x64-prof
+kanzi 2.3 -1,151.53,832.92,59931504,24858602,41.48,./micronaut-conferences-x64-prof
+kanzi 2.3 -2,128.69,304.11,59931504,20229034,33.75,./micronaut-conferences-x64-prof
+kanzi 2.3 -3,87.85,308.40,59931504,20324162,33.91,./micronaut-conferences-x64-prof
+lizard 2.1 -10,356.55,2595.73,59931504,29813269,49.75,./micronaut-conferences-x64-prof
+lizard 2.1 -11,234.62,2644.82,59931504,28123773,46.93,./micronaut-conferences-x64-prof
+lizard 2.1 -12,121.08,2683.03,59931504,26367657,44.00,./micronaut-conferences-x64-prof
+lizard 2.1 -13,76.94,2672.47,59931504,25723437,42.92,./micronaut-conferences-x64-prof
+lizard 2.1 -14,71.52,2692.33,59931504,25354839,42.31,./micronaut-conferences-x64-prof
+lz4 1.10.0,407.21,2537.99,59931504,29462542,49.16,./micronaut-conferences-x64-prof
+lz4 1.10.0 --fast -3,470.07,2564.60,59931504,31330105,52.28,./micronaut-conferences-x64-prof
+lz4 1.10.0 --fast -17,698.87,2923.87,59931504,38721006,64.61,./micronaut-conferences-x64-prof
+lzav 4.22 -1,369.45,1756.15,59931504,28039548,46.79,./micronaut-conferences-x64-prof
+lzav 4.22 -2,65.96,1622.36,59931504,24581416,41.02,./micronaut-conferences-x64-prof
+lzf 3.6 -0,237.92,390.35,59931504,30107852,50.24,./micronaut-conferences-x64-prof
+lzf 3.6 -1,230.94,389.62,59931504,29758582,49.65,./micronaut-conferences-x64-prof
+lzfse 2017-03-08,68.40,495.27,59931504,20397183,34.03,./micronaut-conferences-x64-prof
+lzo1b 2.10 -1,126.26,442.39,59931504,29220106,48.76,./micronaut-conferences-x64-prof
+lzo1c 2.10 -1,143.66,458.13,59931504,29062261,48.49,./micronaut-conferences-x64-prof
+lzof 2.10 -1,128.39,428.57,59931504,28015314,46.75,./micronaut-conferences-x64-prof
+lzo1x 2.10 -1,344.55,475.08,59931504,28517291,47.58,./micronaut-conferences-x64-prof
+lzo1y 2.10 -1,343.36,479.74,59931504,28530780,47.61,./micronaut-conferences-x64-prof
+lzsse4fast 2019-04-18,201.26,1932.46,59931504,29784942,49.70,./micronaut-conferences-x64-prof
+lzsse8 2019-04-18 -1,12.06,2824.72,59931504,25886235,43.19,./micronaut-conferences-x64-prof
+lzvn 2017-03-08,45.04,619.85,59931504,22778084,38.01,./micronaut-conferences-x64-prof
+quicklz 1.5.0 -1,298.03,338.95,59931504,27387517,45.70,./micronaut-conferences-x64-prof
+quicklz 1.5.0 -2,151.17,331.22,59931504,25257545,42.14,./micronaut-conferences-x64-prof
+snappy 1.2.1,321.38,817.16,59931504,29795482,49.72,./micronaut-conferences-x64-prof
+zstd 1.5.7 -1,326.00,791.28,59931504,21854185,36.47,./micronaut-conferences-x64-prof
+zstd 1.5.7 -2,285.92,765.87,59931504,20787911,34.69,./micronaut-conferences-x64-prof
+zstd 1.5.7 -3,211.65,726.30,59931504,19929834,33.25,./micronaut-conferences-x64-prof
+zstd 1.5.7 -4,183.82,721.05,59931504,19859552,33.14,./micronaut-conferences-x64-prof
+zstd 1.5.7 -5,100.88,707.50,59931504,19432290,32.42,./micronaut-conferences-x64-prof
+memcpy,15227.15,15278.52,51054968,51054968,100.00,./micronaut-conferences-x64-O3
+fastlz 0.5.0 -1,169.83,427.63,51054968,28339681,55.51,./micronaut-conferences-x64-O3
+fastlz 0.5.0 -2,178.16,419.12,51054968,27968626,54.78,./micronaut-conferences-x64-O3
+kanzi 2.3 -1,155.65,809.42,51054968,23160258,45.36,./micronaut-conferences-x64-O3
+kanzi 2.3 -2,128.68,284.03,51054968,19008952,37.23,./micronaut-conferences-x64-O3
+kanzi 2.3 -3,86.33,285.53,51054968,19360175,37.92,./micronaut-conferences-x64-O3
+lizard 2.1 -10,338.83,2704.47,51054968,27751250,54.36,./micronaut-conferences-x64-O3
+lizard 2.1 -11,214.96,2761.92,51054968,26094607,51.11,./micronaut-conferences-x64-O3
+lizard 2.1 -12,113.23,2848.27,51054968,24569117,48.12,./micronaut-conferences-x64-O3
+lizard 2.1 -13,74.10,2747.07,51054968,23949888,46.91,./micronaut-conferences-x64-O3
+lizard 2.1 -14,68.83,2781.53,51054968,23599929,46.22,./micronaut-conferences-x64-O3
+lz4 1.10.0,390.77,2532.29,51054968,27394317,53.66,./micronaut-conferences-x64-O3
+lz4 1.10.0 --fast -3,458.14,2563.90,51054968,29186041,57.17,./micronaut-conferences-x64-O3
+lz4 1.10.0 --fast -17,716.55,3006.75,51054968,36129827,70.77,./micronaut-conferences-x64-O3
+lzav 4.22 -1,351.70,1702.02,51054968,26165274,51.25,./micronaut-conferences-x64-O3
+lzav 4.22 -2,64.80,1538.75,51054968,22878791,44.81,./micronaut-conferences-x64-O3
+lzf 3.6 -0,219.52,364.82,51054968,27978899,54.80,./micronaut-conferences-x64-O3
+lzf 3.6 -1,211.63,365.61,51054968,27647862,54.15,./micronaut-conferences-x64-O3
+lzfse 2017-03-08,65.01,463.04,51054968,19160694,37.53,./micronaut-conferences-x64-O3
+lzo1b 2.10 -1,113.82,413.33,51054968,27142810,53.16,./micronaut-conferences-x64-O3
+lzo1c 2.10 -1,129.77,427.17,51054968,26992609,52.87,./micronaut-conferences-x64-O3
+lzof 2.10 -1,115.87,398.81,51054968,26035819,51.00,./micronaut-conferences-x64-O3
+lzo1x 2.10 -1,319.70,446.43,51054968,26492137,51.89,./micronaut-conferences-x64-O3
+lzo1y 2.10 -1,320.13,447.99,51054968,26548637,52.00,./micronaut-conferences-x64-O3
+lzsse4fast 2019-04-18,187.48,1793.66,51054968,27763680,54.38,./micronaut-conferences-x64-O3
+lzsse8 2019-04-18 -1,12.14,2659.63,51054968,24044985,47.10,./micronaut-conferences-x64-O3
+lzvn 2017-03-08,42.49,580.40,51054968,21155983,41.44,./micronaut-conferences-x64-O3
+quicklz 1.5.0 -1,275.70,307.60,51054968,25622846,50.19,./micronaut-conferences-x64-O3
+quicklz 1.5.0 -2,139.29,303.00,51054968,23554229,46.14,./micronaut-conferences-x64-O3
+snappy 1.2.1,300.62,760.66,51054968,27713071,54.28,./micronaut-conferences-x64-O3
+zstd 1.5.7 -1,313.20,752.88,51054968,20578374,40.31,./micronaut-conferences-x64-O3
+zstd 1.5.7 -2,272.63,725.95,51054968,19524699,38.24,./micronaut-conferences-x64-O3
+zstd 1.5.7 -3,198.52,685.17,51054968,18637968,36.51,./micronaut-conferences-x64-O3
+zstd 1.5.7 -4,171.45,680.85,51054968,18565177,36.36,./micronaut-conferences-x64-O3
+zstd 1.5.7 -5,95.11,667.22,51054968,18209159,35.67,./micronaut-conferences-x64-O3
+memcpy,15239.17,15328.54,51120528,51120528,100.00,./micronaut-conferences-x64-static-nolibc
+fastlz 0.5.0 -1,162.45,426.24,51120528,28345520,55.45,./micronaut-conferences-x64-static-nolibc
+fastlz 0.5.0 -2,174.28,419.27,51120528,27979336,54.73,./micronaut-conferences-x64-static-nolibc
+kanzi 2.3 -1,156.06,807.23,51120528,23167545,45.32,./micronaut-conferences-x64-static-nolibc
+kanzi 2.3 -2,126.97,283.96,51120528,19011772,37.19,./micronaut-conferences-x64-static-nolibc
+kanzi 2.3 -3,85.33,286.36,51120528,19368069,37.89,./micronaut-conferences-x64-static-nolibc
+lizard 2.1 -10,340.05,2700.63,51120528,27765678,54.31,./micronaut-conferences-x64-static-nolibc
+lizard 2.1 -11,215.13,2762.09,51120528,26102841,51.06,./micronaut-conferences-x64-static-nolibc
+lizard 2.1 -12,114.05,2839.17,51120528,24581024,48.08,./micronaut-conferences-x64-static-nolibc
+lizard 2.1 -13,73.82,2745.84,51120528,23971616,46.89,./micronaut-conferences-x64-static-nolibc
+lizard 2.1 -14,68.74,2762.12,51120528,23624852,46.21,./micronaut-conferences-x64-static-nolibc
+lz4 1.10.0,390.17,2532.67,51120528,27406413,53.61,./micronaut-conferences-x64-static-nolibc
+lz4 1.10.0 --fast -3,458.55,2563.92,51120528,29199436,57.12,./micronaut-conferences-x64-static-nolibc
+lz4 1.10.0 --fast -17,720.52,3025.89,51120528,36160459,70.74,./micronaut-conferences-x64-static-nolibc
+lzav 4.22 -1,353.40,1701.34,51120528,26189478,51.23,./micronaut-conferences-x64-static-nolibc
+lzav 4.22 -2,65.34,1537.01,51120528,22905277,44.81,./micronaut-conferences-x64-static-nolibc
+lzf 3.6 -0,219.60,366.46,51120528,27981035,54.74,./micronaut-conferences-x64-static-nolibc
+lzf 3.6 -1,212.43,365.81,51120528,27652264,54.09,./micronaut-conferences-x64-static-nolibc
+lzfse 2017-03-08,64.91,462.47,51120528,19168376,37.50,./micronaut-conferences-x64-static-nolibc
+lzo1b 2.10 -1,113.92,412.38,51120528,27156345,53.12,./micronaut-conferences-x64-static-nolibc
+lzo1c 2.10 -1,129.72,427.80,51120528,26998909,52.81,./micronaut-conferences-x64-static-nolibc
+lzof 2.10 -1,115.50,398.36,51120528,26039682,50.94,./micronaut-conferences-x64-static-nolibc
+lzo1x 2.10 -1,320.80,446.70,51120528,26528624,51.89,./micronaut-conferences-x64-static-nolibc
+lzo1y 2.10 -1,321.83,449.82,51120528,26582039,52.00,./micronaut-conferences-x64-static-nolibc
+lzsse4fast 2019-04-18,187.39,1794.36,51120528,27798904,54.38,./micronaut-conferences-x64-static-nolibc
+lzsse8 2019-04-18 -1,12.16,2655.37,51120528,24060803,47.07,./micronaut-conferences-x64-static-nolibc
+lzvn 2017-03-08,42.67,581.07,51120528,21168128,41.41,./micronaut-conferences-x64-static-nolibc
+quicklz 1.5.0 -1,275.25,325.51,51120528,25621026,50.12,./micronaut-conferences-x64-static-nolibc
+quicklz 1.5.0 -2,139.52,306.29,51120528,23580540,46.13,./micronaut-conferences-x64-static-nolibc
+snappy 1.2.1,300.88,763.45,51120528,27726315,54.24,./micronaut-conferences-x64-static-nolibc
+zstd 1.5.7 -1,314.30,756.75,51120528,20582523,40.26,./micronaut-conferences-x64-static-nolibc
+zstd 1.5.7 -2,272.58,730.14,51120528,19522460,38.19,./micronaut-conferences-x64-static-nolibc
+zstd 1.5.7 -3,198.07,688.63,51120528,18641007,36.46,./micronaut-conferences-x64-static-nolibc
+zstd 1.5.7 -4,171.06,683.64,51120528,18571227,36.33,./micronaut-conferences-x64-static-nolibc
+zstd 1.5.7 -5,95.28,669.00,51120528,18220776,35.64,./micronaut-conferences-x64-static-nolibc
+memcpy,15189.50,15276.94,51054968,51054968,100.00,./micronaut-conferences-x64-O2
+fastlz 0.5.0 -1,170.12,430.37,51054968,28290725,55.41,./micronaut-conferences-x64-O2
+fastlz 0.5.0 -2,178.99,419.73,51054968,27923671,54.69,./micronaut-conferences-x64-O2
+kanzi 2.3 -1,155.75,814.82,51054968,23124456,45.29,./micronaut-conferences-x64-O2
+kanzi 2.3 -2,128.64,284.34,51054968,18967724,37.15,./micronaut-conferences-x64-O2
