@@ -1,0 +1,38 @@
+#!/bin/python3
+
+import sklearn
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import sys
+
+for csv in sys.argv[1:]:
+
+    df = pd.read_csv(csv)
+
+    def corr(a, b):
+        return a.corr(b)
+
+# Unused
+    df = df.drop('Filename', axis=1)
+    df = df.drop('Compressor name', axis=1)
+
+    cols = df.columns[1:]
+    n = len(cols)
+
+    print(f' --- {csv} --- ')
+    for i in range(n):
+        c1 = cols[i]
+        for j in range(i + 1, n):
+            c2 = cols[j]
+            print(str(c1).rjust(20, ' '), ' | ', str(c2).ljust(20, ' '), ' | ', end='')
+            c = corr(df[c1], df[c2])
+            print(c, end='')
+            if abs(c) > 0.8:
+                print('\t<===')
+            elif abs(c) > 0.5:
+                print('\t<---')
+            else:
+                print()
+    print()
+

@@ -1,0 +1,171 @@
+ --- results/merged_results_corpus_lzbench_1753711437.csv_results_corpus_entropy_1757091573.csv.csv --- 
+   Compression speed  |  Decompression speed   | 0.9378908048300482	<===
+   Compression speed  |  Original size         | -0.003296313480995793
+   Compression speed  |  Compressed size       | 0.21786198965311596
+   Compression speed  |  Ratio                 | 0.7548346053064572	<---
+   Compression speed  |  File-bits             | -0.003296313852372761
+   Compression speed  |  Entropy               | -0.0106454668783003
+   Compression speed  |  Chi-square            | 0.004029242157186927
+   Compression speed  |  Mean                  | -0.011320276236492219
+   Compression speed  |  Monte-Carlo-Pi        | 0.005478714190378778
+   Compression speed  |  Serial-Correlation    | 0.00026541529048782186
+ Decompression speed  |  Original size         | -0.009565493770880597
+ Decompression speed  |  Compressed size       | 0.21335544185766728
+ Decompression speed  |  Ratio                 | 0.7681718538175698	<---
+ Decompression speed  |  File-bits             | -0.00956549401979282
+ Decompression speed  |  Entropy               | -0.012496483501490557
+ Decompression speed  |  Chi-square            | -0.0039286636073340335
+ Decompression speed  |  Mean                  | -0.013179512260115331
+ Decompression speed  |  Monte-Carlo-Pi        | 0.008967714967908328
+ Decompression speed  |  Serial-Correlation    | 0.003600752390630497
+       Original size  |  Compressed size       | 0.92839690360052	<===
+       Original size  |  Ratio                 | 0.04308796209925904
+       Original size  |  File-bits             | 1.0	<===
+       Original size  |  Entropy               | 0.7200422845916108	<---
+       Original size  |  Chi-square            | 0.9713851544879571	<===
+       Original size  |  Mean                  | 0.7315231496592505	<---
+       Original size  |  Monte-Carlo-Pi        | -0.5641189892442354	<---
+       Original size  |  Serial-Correlation    | -0.6765088595427009	<---
+     Compressed size  |  Ratio                 | 0.34025098749489346
+     Compressed size  |  File-bits             | 0.9283969011541967	<===
+     Compressed size  |  Entropy               | 0.6769546461054811	<---
+     Compressed size  |  Chi-square            | 0.8949111573952339	<===
+     Compressed size  |  Mean                  | 0.6889468756750226	<---
+     Compressed size  |  Monte-Carlo-Pi        | -0.5724775585906672	<---
+     Compressed size  |  Serial-Correlation    | -0.5907407711763134	<---
+               Ratio  |  File-bits             | 0.04308795768075614
+               Ratio  |  Entropy               | 0.12200297395660326
+               Ratio  |  Chi-square            | 0.030210944645763908
+               Ratio  |  Mean                  | 0.12158717981808402
+               Ratio  |  Monte-Carlo-Pi        | -0.20071100236990264
+               Ratio  |  Serial-Correlation    | 0.04878926316166998
+           File-bits  |  Entropy               | 0.7200422877250414	<---
+           File-bits  |  Chi-square            | 0.9713851535556648	<===
+           File-bits  |  Mean                  | 0.7315231528113005	<---
+           File-bits  |  Monte-Carlo-Pi        | -0.5641189771543192	<---
+           File-bits  |  Serial-Correlation    | -0.6765088779762223	<---
+             Entropy  |  Chi-square            | 0.6257884661017871	<---
+             Entropy  |  Mean                  | 0.9987824108643507	<===
+             Entropy  |  Monte-Carlo-Pi        | -0.771619250693128	<---
+             Entropy  |  Serial-Correlation    | -0.6095010547840887	<---
+          Chi-square  |  Mean                  | 0.630332253254886	<---
+          Chi-square  |  Monte-Carlo-Pi        | -0.45745526239771683
+          Chi-square  |  Serial-Correlation    | -0.6975478973798321	<---
+                Mean  |  Monte-Carlo-Pi        | -0.7803762328403879	<---
+                Mean  |  Serial-Correlation    | -0.6040485624259301	<---
+      Monte-Carlo-Pi  |  Serial-Correlation    | 0.06049818573489843
+
+ --- results/merged_results_corpus_text_lzbench_1757095632.csv_results_corpus_text_entropy_1757090740.csv.csv --- 
+   Compression speed  |  Decompression speed   | 0.9491091303079834	<===
+   Compression speed  |  Original size         | -0.021729845103052675
+   Compression speed  |  Compressed size       | 0.08836470011301512
+   Compression speed  |  Ratio                 | 0.7047228984821999	<---
+   Compression speed  |  File-bits             | -0.021729845103052675
+   Compression speed  |  Entropy               | -0.0065039468343933895
+   Compression speed  |  Chi-square            | -0.021779982382206194
+   Compression speed  |  Mean                  | -0.0064088177381954456
+   Compression speed  |  Monte-Carlo-Pi        | -0.005180112500455633
+   Compression speed  |  Serial-Correlation    | 0.004390067044852971
+ Decompression speed  |  Original size         | -0.03422930472859152
+ Decompression speed  |  Compressed size       | 0.07760380492750997
+ Decompression speed  |  Ratio                 | 0.717935916149398	<---
+ Decompression speed  |  File-bits             | -0.03422930472859152
+ Decompression speed  |  Entropy               | -0.010932225947517353
+ Decompression speed  |  Chi-square            | -0.03447572055432431
+ Decompression speed  |  Mean                  | -0.010661276915239284
+ Decompression speed  |  Monte-Carlo-Pi        | 0.00019566479657822533
+ Decompression speed  |  Serial-Correlation    | 0.013033674257237145
+       Original size  |  Compressed size       | 0.9542384257030985	<===
+       Original size  |  Ratio                 | 0.03453452657933016
+       Original size  |  File-bits             | 0.9999999999999998	<===
+       Original size  |  Entropy               | 0.2926361489072245
+       Original size  |  Chi-square            | 0.9985748206122732	<===
+       Original size  |  Mean                  | 0.28971645479422087
+       Original size  |  Monte-Carlo-Pi        | 0.16096406824652645
+       Original size  |  Serial-Correlation    | -0.05883872015060089
+     Compressed size  |  Ratio                 | 0.22113574888731632
+     Compressed size  |  File-bits             | 0.9542384257030984	<===
+     Compressed size  |  Entropy               | 0.28301303326147326
+     Compressed size  |  Chi-square            | 0.9525403484677221	<===
+     Compressed size  |  Mean                  | 0.28047639607843095
+     Compressed size  |  Monte-Carlo-Pi        | 0.16444473088931577
+     Compressed size  |  Serial-Correlation    | -0.03553224425361973
+               Ratio  |  File-bits             | 0.03453452657933016
+               Ratio  |  Entropy               | 0.12082700112020786
+               Ratio  |  Chi-square            | 0.031273007719727304
+               Ratio  |  Mean                  | 0.12181492111365068
+               Ratio  |  Monte-Carlo-Pi        | -0.005465544153866512
+               Ratio  |  Serial-Correlation    | 0.1352045237868266
+           File-bits  |  Entropy               | 0.2926361489072245
+           File-bits  |  Chi-square            | 0.9985748206122732	<===
+           File-bits  |  Mean                  | 0.28971645479422087
+           File-bits  |  Monte-Carlo-Pi        | 0.16096406824652645
+           File-bits  |  Serial-Correlation    | -0.05883872015060089
+             Entropy  |  Chi-square            | 0.2685233556785642
+             Entropy  |  Mean                  | 0.9996456559564242	<===
+             Entropy  |  Monte-Carlo-Pi        | -0.5568195723585231	<---
+             Entropy  |  Serial-Correlation    | 0.634523214437201	<---
+          Chi-square  |  Mean                  | 0.26471264016452933
+          Chi-square  |  Monte-Carlo-Pi        | 0.17307450219632436
+          Chi-square  |  Serial-Correlation    | -0.08161165449068178
+                Mean  |  Monte-Carlo-Pi        | -0.5503376321545461	<---
+                Mean  |  Serial-Correlation    | 0.6404808387345325	<---
+      Monte-Carlo-Pi  |  Serial-Correlation    | -0.08073485394959161
+
+ --- results/merged_results_silesia_lzbench_1753709924.csv_results_silesia_entropy_1757092178.csv.csv --- 
+   Compression speed  |  Decompression speed   | 0.8693716137964657	<===
+   Compression speed  |  Original size         | -0.011846209445399969
+   Compression speed  |  Compressed size       | 0.2402937369979574
+   Compression speed  |  Ratio                 | 0.3997426117624161
+   Compression speed  |  File-bits             | -0.011846209445399969
+   Compression speed  |  Entropy               | -0.0031425216354624354
+   Compression speed  |  Chi-square            | 0.005679567756158458
+   Compression speed  |  Mean                  | -0.014555422335020595
+   Compression speed  |  Monte-Carlo-Pi        | 0.023643452592932664
+   Compression speed  |  Serial-Correlation    | 0.012004202426663117
+ Decompression speed  |  Original size         | -0.03387718554508259
+ Decompression speed  |  Compressed size       | 0.18970581876733034
+ Decompression speed  |  Ratio                 | 0.4010972574761226
+ Decompression speed  |  File-bits             | -0.03387718554508259
+ Decompression speed  |  Entropy               | -0.009982917806075343
+ Decompression speed  |  Chi-square            | 0.0178194943309736
+ Decompression speed  |  Mean                  | -0.03211784257594871
+ Decompression speed  |  Monte-Carlo-Pi        | 0.058286577233014954
+ Decompression speed  |  Serial-Correlation    | 0.018846526005524403
+       Original size  |  Compressed size       | 0.80212876348967	<===
+       Original size  |  Ratio                 | -0.29512733240665573
+       Original size  |  File-bits             | 0.9999999999999999	<===
+       Original size  |  Entropy               | -0.0752590322320022
+       Original size  |  Chi-square            | 0.48959553992375954
+       Original size  |  Mean                  | -0.1508530002476704
+       Original size  |  Monte-Carlo-Pi        | 0.022574070894867848
+       Original size  |  Serial-Correlation    | 0.36833202103569485
+     Compressed size  |  Ratio                 | 0.20165051222203645
+     Compressed size  |  File-bits             | 0.80212876348967	<===
+     Compressed size  |  Entropy               | 0.07613603295416041
+     Compressed size  |  Chi-square            | 0.1642423440476471
+     Compressed size  |  Mean                  | 0.017952904955354763
+     Compressed size  |  Monte-Carlo-Pi        | -0.15972637900544748
+     Compressed size  |  Serial-Correlation    | 0.40176310313042096
+               Ratio  |  File-bits             | -0.2951273324066558
+               Ratio  |  Entropy               | 0.16862233203581106
+               Ratio  |  Chi-square            | -0.3666867951071807
+               Ratio  |  Mean                  | 0.1674129522451615
+               Ratio  |  Monte-Carlo-Pi        | -0.45724440036907354
+               Ratio  |  Serial-Correlation    | 0.15720792331548797
+           File-bits  |  Entropy               | -0.0752590322320022
+           File-bits  |  Chi-square            | 0.48959553992375954
+           File-bits  |  Mean                  | -0.1508530002476704
+           File-bits  |  Monte-Carlo-Pi        | 0.022574070894867848
+           File-bits  |  Serial-Correlation    | 0.36833202103569485
+             Entropy  |  Chi-square            | -0.7440983625026161	<---
+             Entropy  |  Mean                  | 0.9554422425538674	<===
+             Entropy  |  Monte-Carlo-Pi        | -0.22701797940291346
+             Entropy  |  Serial-Correlation    | -0.6659659727710335	<---
+          Chi-square  |  Mean                  | -0.8118538716148039	<===
+          Chi-square  |  Monte-Carlo-Pi        | 0.1388052729656677
+          Chi-square  |  Serial-Correlation    | 0.5518062741394588	<---
+                Mean  |  Monte-Carlo-Pi        | -0.2292998327339505
+                Mean  |  Serial-Correlation    | -0.68269630541123	<---
+      Monte-Carlo-Pi  |  Serial-Correlation    | -0.2652129828607109
+
