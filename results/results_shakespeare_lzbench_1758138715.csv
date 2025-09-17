@@ -1,0 +1,1684 @@
+Compressor name,Compression speed,Decompression speed,Original size,Compressed size,Ratio,Filename
+memcpy,28816.78,27866.99,119215,119215,100.00,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.79,312.37,119215,71651,60.10,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,142.59,303.82,119215,70935,59.50,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.17,744.60,119215,62890,52.75,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.82,377.56,119215,52223,43.81,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,44.31,112.21,119215,47165,39.56,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,222.14,3434.11,119215,77127,64.70,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,185.98,2645.17,119215,67378,56.52,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.81,2845.84,119215,62830,52.70,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.44,2960.98,119215,60793,50.99,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.50,3039.49,119215,59541,49.94,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lz4 1.10.0,273.19,2601.87,119215,77070,64.65,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,352.14,3351.37,119215,84669,71.02,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2029.23,9527.29,119215,108794,91.26,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,233.80,1318.65,119215,71972,60.37,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.83,1232.85,119215,63013,52.86,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,156.12,273.15,119215,73708,61.83,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,162.44,294.30,119215,68764,57.68,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.74,351.44,119215,48132,40.37,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,95.79,256.87,119215,70469,59.11,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,99.63,263.08,119215,71988,60.39,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.78,239.25,119215,73799,61.90,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,189.90,265.69,119215,73480,61.64,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,195.15,276.08,119215,75174,63.06,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,111.19,2326.74,119215,63323,53.12,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.22,2555.57,119215,56211,47.15,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.29,480.24,119215,59555,49.96,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.25,310.95,119215,69455,58.26,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.07,287.65,119215,60666,50.89,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+snappy 1.2.2,229.46,497.61,119215,73877,61.97,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,199.60,854.96,119215,52399,43.95,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,145.68,693.23,119215,49911,41.87,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,129.32,757.66,119215,48379,40.58,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,120.60,636.49,119215,49083,41.17,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.46,627.64,119215,47782,40.08,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+memcpy,27935.29,28726.46,124759,124759,100.00,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.31,312.90,124759,74802,59.96,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,142.83,302.33,124759,74177,59.46,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,81.73,729.44,124759,65344,52.38,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,90.45,371.64,124759,53798,43.12,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.81,117.92,124759,49138,39.39,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,218.01,3319.29,124759,80044,64.16,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.39,2604.74,124759,69902,56.03,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.90,2765.60,124759,65313,52.35,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.26,2864.40,124759,63192,50.65,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.14,2956.02,124759,61777,49.52,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lz4 1.10.0,268.74,2510.80,124759,79993,64.12,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,329.99,3100.30,124759,88112,70.63,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1847.30,9194.41,124759,114383,91.68,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,233.11,1230.66,124759,74622,59.81,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.24,1153.78,124759,65462,52.47,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,153.04,272.14,124759,77777,62.34,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,161.49,294.77,124759,72524,58.13,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,48.11,349.28,124759,50093,40.15,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,97.31,256.39,124759,73282,58.74,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,102.82,262.17,124759,74577,59.78,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.82,237.69,124759,76988,61.71,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,186.45,260.54,124759,76534,61.35,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.56,271.28,124759,78610,63.01,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,112.03,2332.73,124759,65993,52.90,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.09,2573.52,124759,58654,47.01,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.56,481.78,124759,62491,50.09,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,199.48,306.39,124759,73050,58.55,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.84,288.70,124759,63447,50.86,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+snappy 1.2.2,230.69,491.81,124759,76923,61.66,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,195.01,828.48,124759,54423,43.62,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,143.13,683.23,124759,52005,41.68,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,128.32,753.13,124759,50209,40.24,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,119.59,643.57,124759,51109,40.97,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.11,624.95,124759,49760,39.88,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+memcpy,27992.86,28782.00,149062,149062,100.00,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,162.72,310.91,149062,91099,61.11,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.92,300.19,149062,90222,60.53,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.31,661.83,149062,79767,53.51,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.85,361.30,149062,66251,44.45,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.16,113.11,149062,58899,39.51,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,217.81,3447.40,149062,98558,66.12,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,175.93,2590.45,149062,85168,57.14,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,72.76,2761.58,149062,79854,53.57,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.39,2863.11,149062,77264,51.83,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.04,2914.04,149062,75598,50.72,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lz4 1.10.0,268.53,2602.57,149062,98494,66.08,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,337.64,3195.81,149062,109163,73.23,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1613.77,9951.40,149062,137662,92.35,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,220.92,1159.94,149062,90095,60.44,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.10,1126.93,149062,79466,53.31,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,156.25,273.87,149062,94355,63.30,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,163.43,298.15,149062,87931,58.99,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.53,342.87,149062,61381,41.18,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.43,250.04,149062,89874,60.29,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,96.88,254.72,149062,91672,61.50,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.69,236.89,149062,94304,63.26,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,182.12,258.45,149062,93778,62.91,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,186.42,267.58,149062,96092,64.46,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,112.46,2310.47,149062,80188,53.80,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.98,2532.79,149062,71277,47.82,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.64,465.19,149062,76265,51.16,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.16,308.22,149062,88464,59.35,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.72,285.20,149062,76851,51.56,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+snappy 1.2.2,218.80,479.43,149062,94867,63.64,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.09,824.27,149062,65041,43.63,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,127.21,729.41,149062,62952,42.23,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,116.91,607.84,149062,63000,42.26,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.19,707.56,149062,59569,39.96,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,57.69,722.53,149062,59079,39.63,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+memcpy,27956.73,28820.97,147304,147304,100.00,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.95,307.59,147304,89889,61.02,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,142.68,296.68,147304,89172,60.54,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.57,661.37,147304,79593,54.03,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.36,359.17,147304,65881,44.72,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.75,115.07,147304,58901,39.99,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,218.58,3474.07,147304,98197,66.66,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,176.00,2603.60,147304,85006,57.71,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,71.99,2757.06,147304,79566,54.01,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.26,2844.37,147304,77040,52.30,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,40.89,2903.97,147304,75551,51.29,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lz4 1.10.0,268.32,2638.49,147304,98128,66.62,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,342.05,3289.87,147304,108445,73.62,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1863.03,10207.47,147304,136930,92.96,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,220.83,1175.86,147304,89990,61.09,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.05,1123.53,147304,79046,53.66,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,153.22,270.32,147304,93356,63.38,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.30,292.48,147304,86994,59.06,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.18,339.42,147304,61083,41.47,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,92.23,248.37,147304,89023,60.43,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,96.71,254.09,147304,90834,61.66,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,83.83,234.64,147304,93301,63.34,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,181.23,257.04,147304,92184,62.58,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,185.96,265.01,147304,94503,64.16,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,111.69,2307.03,147304,79502,53.97,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.95,2526.61,147304,70886,48.12,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.68,470.76,147304,75599,51.32,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.76,306.95,147304,87633,59.49,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.25,295.08,147304,76292,51.79,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+snappy 1.2.2,219.70,478.09,147304,94443,64.11,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.26,817.13,147304,64882,44.05,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,128.50,733.85,147304,62692,42.56,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,116.42,605.48,147304,62503,42.43,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,66.84,700.98,147304,59432,40.35,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,57.93,715.66,147304,58994,40.05,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+memcpy,27812.11,28668.70,103322,103322,100.00,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,163.96,321.25,103322,63239,61.21,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,146.35,308.64,103322,62723,60.71,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,77.40,744.21,103322,56486,54.67,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.84,367.49,103322,46104,44.62,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,43.08,108.58,103322,42898,41.52,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,227.59,3577.76,103322,68797,66.59,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.72,2690.19,103322,60027,58.10,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.48,2858.70,103322,56289,54.48,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.30,2941.13,103322,54780,53.02,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.96,3002.76,103322,53766,52.04,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lz4 1.10.0,290.38,2705.76,103322,68704,66.50,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,382.28,3571.20,103322,75977,73.53,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2411.53,10648.46,103322,95967,92.88,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,243.18,1553.90,103322,65317,63.22,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.25,1229.91,103322,57315,55.47,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,159.59,276.04,103322,65420,63.32,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,168.75,303.01,103322,60938,58.98,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.19,344.67,103322,43057,41.67,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,94.66,262.57,103322,62658,60.64,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,97.34,265.97,103322,64031,61.97,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.76,243.74,103322,65762,63.65,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.90,274.33,103322,65332,63.23,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,194.10,282.10,103322,66746,64.60,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,106.70,2267.62,103322,56344,54.53,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.22,2492.81,103322,50412,48.79,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.05,473.54,103322,53232,51.52,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,205.98,311.08,103322,61482,59.51,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,88.36,284.71,103322,54105,52.37,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+snappy 1.2.2,230.79,471.48,103322,66163,64.04,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,204.66,852.12,103322,46796,45.29,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,146.52,693.77,103322,44575,43.14,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,129.62,751.05,103322,43337,41.94,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,116.59,614.43,103322,43974,42.56,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,63.35,610.25,103322,42658,41.29,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+memcpy,24415.84,25422.68,2466,2466,100.00,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,382.86,809.32,2466,1869,75.79,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,358.22,787.86,2466,1869,75.79,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,5.72,378.74,2466,2011,81.55,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,57.31,148.73,2466,1610,65.29,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,4.00,19.02,2466,1545,62.65,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,437.39,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,435.69,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,234.77,14421.05,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,117.37,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,115.62,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lz4 1.10.0,482.49,2518.90,2466,1986,80.54,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,823.10,4179.66,2466,2149,87.15,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,4165.54,15412.50,2466,2456,99.59,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,460.50,3859.16,2466,2155,87.39,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,119.63,2441.58,2466,1995,80.90,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,218.06,844.23,2466,1889,76.60,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,204.65,840.20,2466,1862,75.51,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,59.12,787.86,2466,1687,68.41,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,282.22,1306.14,2466,1945,78.87,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,426.13,1126.54,2466,1942,78.75,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,422.12,1162.11,2466,1863,75.55,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,411.00,1620.24,2466,1925,78.06,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,411.82,1369.24,2466,1950,79.08,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,11.21,1697.18,2466,2044,82.89,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,9.12,2201.79,2466,1916,77.70,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,60.09,1152.88,2466,1671,67.76,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,126.74,230.21,2466,1885,76.44,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,112.50,181.24,2466,1834,74.37,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+snappy 1.2.2,578.06,868.00,2466,1934,78.43,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.32,404.93,2466,1341,54.38,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,167.49,372.79,2466,1340,54.34,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,140.33,379.85,2466,1343,54.46,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,94.57,379.03,2466,1324,53.69,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,79.99,380.79,2466,1318,53.45,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+memcpy,27950.93,28759.24,125304,125304,100.00,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,162.50,315.44,125304,73926,59.00,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.35,307.30,125304,73332,58.52,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.79,738.71,125304,65256,52.08,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,90.53,375.74,125304,54113,43.19,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.22,115.10,125304,48772,38.92,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,220.93,3408.15,125304,80132,63.95,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,191.45,2624.50,125304,70099,55.94,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.99,2840.39,125304,65294,52.11,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.73,2936.24,125304,63376,50.58,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.64,3017.19,125304,62149,49.60,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0,272.83,2602.48,125304,80097,63.92,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,338.49,3318.26,125304,88465,70.60,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1946.08,9774.87,125304,115070,91.83,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,238.58,1288.23,125304,74658,59.58,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.87,1187.28,125304,65654,52.40,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,159.03,275.00,125304,76943,61.41,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,163.36,296.57,125304,71881,57.37,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,48.06,352.45,125304,50180,40.05,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,97.70,258.81,125304,73230,58.44,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,101.30,260.54,125304,74826,59.72,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,87.45,236.64,125304,76751,61.25,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.47,263.09,125304,76459,61.02,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,194.07,270.94,125304,78364,62.54,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,113.57,2353.75,125304,65767,52.49,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.10,2572.77,125304,58688,46.84,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.85,483.86,125304,61933,49.43,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.29,313.85,125304,72355,57.74,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.28,293.60,125304,63358,50.56,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+snappy 1.2.2,230.96,504.31,125304,76630,61.16,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,200.35,850.93,125304,54526,43.51,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,146.73,690.87,125304,52004,41.50,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,131.02,756.25,125304,50339,40.17,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,121.29,642.27,125304,51130,40.80,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.50,626.18,125304,49879,39.81,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+memcpy,27636.97,28412.13,99272,99272,100.00,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,173.40,321.55,99272,60334,60.78,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,152.64,308.04,99272,59963,60.40,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,76.45,712.52,99272,53768,54.16,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,89.68,358.07,99272,43457,43.78,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.19,119.42,99272,41145,41.45,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,217.12,3142.91,99272,65405,65.88,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,182.79,2496.91,99272,57967,58.39,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.08,2649.37,99272,54780,55.18,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.13,2742.17,99272,53112,53.50,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.04,2820.39,99272,51967,52.35,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lz4 1.10.0,270.15,2400.66,99272,65378,65.86,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,348.13,3138.14,99272,72969,73.50,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2128.98,9686.96,99272,93299,93.98,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,228.80,1414.49,99272,63123,63.59,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,45.77,1184.69,99272,55236,55.64,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,167.49,278.58,99272,62919,63.38,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,172.64,305.45,99272,58734,59.16,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.48,344.21,99272,41337,41.64,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,100.75,273.97,99272,59694,60.13,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,104.60,273.13,99272,60849,61.30,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,88.31,239.02,99272,62789,63.25,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,183.31,268.23,99272,62605,63.06,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,187.02,274.52,99272,64507,64.98,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,105.88,2221.25,99272,54761,55.16,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.12,2458.20,99272,48765,49.12,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.23,490.42,99272,51343,51.72,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,213.18,323.53,99272,60391,60.83,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.87,276.90,99272,52396,52.78,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+snappy 1.2.2,231.46,469.96,99272,63376,63.84,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,195.84,823.72,99272,44563,44.89,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,139.30,653.75,99272,42532,42.84,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,123.29,706.53,99272,41523,41.83,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,116.16,591.96,99272,42258,42.57,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,62.65,581.54,99272,40987,41.29,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+memcpy,26755.27,28873.91,181588,181588,100.00,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.29,304.76,181588,106426,58.61,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.64,299.78,181588,105311,57.99,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,88.46,657.68,181588,91643,50.47,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,90.27,368.95,181588,75093,41.35,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,48.93,122.05,181588,67288,37.06,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,219.65,3421.73,181588,113577,62.55,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,179.15,2636.87,181588,98348,54.16,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.43,2857.18,181588,91417,50.34,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.00,2974.41,181588,88320,48.64,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.08,3025.11,181588,86474,47.62,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lz4 1.10.0,260.81,2586.06,181588,113463,62.48,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,312.10,3074.90,181588,124943,68.81,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,957.36,6636.02,181588,162921,89.72,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.23,1151.61,181588,101375,55.83,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.57,1184.61,181588,88936,48.98,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.35,268.78,181588,110372,60.78,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,154.09,287.66,181588,103006,56.73,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,48.90,351.93,181588,70605,38.88,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,96.94,249.44,181588,103760,57.14,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,100.64,254.49,181588,106565,58.69,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.83,236.23,181588,109728,60.43,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,188.16,255.82,181588,108691,59.86,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.05,264.97,181588,111111,61.19,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,120.78,2438.63,181588,92426,50.90,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.81,2660.51,181588,81956,45.13,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.90,471.35,181588,88191,48.57,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,199.89,302.11,181588,102309,56.34,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,92.01,297.05,181588,88966,48.99,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+snappy 1.2.2,224.56,501.40,181588,109754,60.44,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,177.56,827.51,181588,75169,41.40,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,132.12,755.55,181588,72608,39.99,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,124.52,648.84,181588,72205,39.76,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,69.07,733.10,181588,68362,37.65,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.61,751.25,181588,67484,37.16,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+memcpy,27922.89,27799.61,113339,113339,100.00,shakespeare//pericles_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,163.21,316.46,113339,68461,60.40,shakespeare//pericles_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,145.55,308.09,113339,67793,59.81,shakespeare//pericles_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,80.02,741.28,113339,60523,53.40,shakespeare//pericles_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,89.39,371.36,113339,49811,43.95,shakespeare//pericles_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,44.91,112.87,113339,45630,40.26,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,222.16,3443.18,113339,74085,65.37,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,187.19,2645.45,113339,64713,57.10,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.20,2826.76,113339,60514,53.39,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.36,2923.75,113339,58728,51.82,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.51,2996.01,113339,57583,50.81,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lz4 1.10.0,277.73,2612.88,113339,74054,65.34,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,362.88,3487.46,113339,82021,72.37,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2298.73,10451.77,113339,104971,92.62,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,239.29,1423.59,113339,69775,61.56,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.96,1191.85,113339,61240,54.03,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,157.70,275.27,113339,70885,62.54,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,166.99,298.22,113339,66204,58.41,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.11,347.05,113339,46418,40.96,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,97.30,259.45,113339,67440,59.50,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,100.67,264.35,113339,68500,60.44,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,87.32,240.89,113339,70649,62.33,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,188.83,271.16,113339,70523,62.22,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.96,279.86,113339,72316,63.81,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,110.64,2304.48,113339,60682,53.54,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.14,2525.49,113339,54146,47.77,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.32,484.28,113339,57278,50.54,shakespeare//pericles_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.63,316.74,113339,66817,58.95,shakespeare//pericles_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.73,291.40,113339,58606,51.71,shakespeare//pericles_TXT_FolgerShakespeare.txt
+snappy 1.2.2,229.22,485.85,113339,71038,62.68,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,201.44,844.53,113339,50519,44.57,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,144.70,685.56,113339,48025,42.37,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,128.18,742.07,113339,46684,41.19,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,118.43,621.25,113339,47402,41.82,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,63.90,614.54,113339,46165,40.73,shakespeare//pericles_TXT_FolgerShakespeare.txt
+memcpy,27906.53,26975.72,127784,127784,100.00,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.35,316.22,127784,74864,58.59,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.76,306.42,127784,74061,57.96,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.82,745.70,127784,65357,51.15,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,91.64,378.59,127784,54011,42.27,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.76,115.24,127784,48137,37.67,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.97,3353.65,127784,80182,62.75,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,194.52,2630.06,127784,70471,55.15,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,77.12,2888.10,127784,65289,51.09,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.63,2990.99,127784,63174,49.44,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.90,3060.91,127784,61786,48.35,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.53,2530.78,127784,80147,62.72,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,333.73,3179.73,127784,88172,69.00,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1426.97,8588.79,127784,114395,89.52,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,236.97,1272.71,127784,74637,58.41,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.12,1256.12,127784,65241,51.06,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,157.56,278.80,127784,77519,60.66,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,161.45,297.34,127784,72220,56.52,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,49.21,356.04,127784,50214,39.30,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,98.72,257.73,127784,73487,57.51,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,102.24,260.94,127784,75076,58.75,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,89.45,241.05,127784,77003,60.26,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,193.17,264.70,127784,76474,59.85,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,197.57,273.15,127784,78163,61.17,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.62,2390.00,127784,66004,51.65,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.18,2615.15,127784,58578,45.84,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,32.18,486.46,127784,61793,48.36,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,207.88,314.21,127784,72317,56.59,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,92.59,301.46,127784,63270,49.51,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+snappy 1.2.2,237.94,512.00,127784,76320,59.73,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,197.61,862.24,127784,54659,42.77,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,147.86,697.23,127784,52277,40.91,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,131.94,772.10,127784,50309,39.37,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,123.59,650.85,127784,51089,39.98,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,65.36,636.89,127784,49814,38.98,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+memcpy,27845.79,29635.05,106538,106538,100.00,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,164.22,319.19,106538,64863,60.88,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.49,307.55,106538,64408,60.46,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,78.47,738.74,106538,57779,54.23,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.90,365.17,106538,47198,44.30,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,43.72,114.32,106538,43776,41.09,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,225.83,3540.88,106538,70542,66.21,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.59,2648.88,106538,61447,57.68,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.12,2826.77,106538,57681,54.14,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.09,2928.80,106538,55955,52.52,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.71,3005.22,106538,54840,51.47,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lz4 1.10.0,285.45,2680.61,106538,70509,66.18,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,377.68,3576.42,106538,78114,73.32,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2285.24,10341.49,106538,98666,92.61,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,240.53,1486.63,106538,66818,62.72,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.52,1204.00,106538,58667,55.07,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,156.25,271.92,106538,67429,63.29,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,166.48,300.59,106538,62662,58.82,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.79,346.04,106538,44130,41.42,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,94.72,258.48,106538,64147,60.21,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,98.69,263.17,106538,65378,61.37,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.89,242.73,106538,67270,63.14,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.95,268.52,106538,67018,62.91,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.40,279.37,106538,68697,64.48,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,107.51,2254.25,106538,57907,54.35,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.11,2497.02,106538,51589,48.42,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.84,478.20,106538,54600,51.25,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,205.17,312.41,106538,63321,59.44,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.11,284.33,106538,55480,52.08,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+snappy 1.2.2,227.20,476.66,106538,67906,63.74,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,203.73,837.12,106538,48256,45.29,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,145.37,685.75,106538,45653,42.85,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,128.68,741.48,106538,44440,41.71,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,117.40,612.30,106538,45311,42.53,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,63.42,608.45,106538,43795,41.11,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+memcpy,28989.09,29517.33,132828,132828,100.00,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,159.45,308.58,132828,79215,59.64,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.71,300.80,132828,78588,59.17,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.60,676.26,132828,69657,52.44,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.70,362.32,132828,58357,43.93,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.45,113.51,132828,53059,39.95,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,224.52,3469.45,132828,86356,65.01,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,184.28,2651.42,132828,75295,56.69,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.32,2858.05,132828,70159,52.82,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.89,2947.08,132828,68272,51.40,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.45,3021.08,132828,66973,50.42,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lz4 1.10.0,275.18,2646.19,132828,86273,64.95,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,347.37,3396.79,132828,95200,71.67,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1828.05,9651.79,132828,121980,91.83,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,230.03,1255.84,132828,79910,60.16,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.16,1148.06,132828,70265,52.90,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,154.22,270.57,132828,82198,61.88,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.13,291.39,132828,76603,57.67,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.57,346.80,132828,53854,40.54,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.78,253.13,132828,79113,59.56,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,97.26,258.50,132828,80661,60.73,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.51,238.92,132828,82484,62.10,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,186.89,264.18,132828,82045,61.77,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,191.13,269.75,132828,83638,62.97,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,112.86,2319.61,132828,70271,52.90,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.13,2545.87,132828,62913,47.36,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.46,478.74,132828,66579,50.12,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,201.48,304.43,132828,76990,57.96,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.29,285.20,132828,67818,51.06,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+snappy 1.2.2,225.67,493.60,132828,82395,62.03,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,185.38,833.54,132828,57080,42.97,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,132.98,750.87,132828,55289,41.62,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,118.16,625.47,132828,55305,41.64,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.75,720.11,132828,52678,39.66,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.84,736.95,132828,52271,39.35,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+memcpy,27986.40,28808.21,125575,125575,100.00,shakespeare//king-john_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,161.91,313.40,125575,75893,60.44,shakespeare//king-john_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.30,303.59,125575,75064,59.78,shakespeare//king-john_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,81.26,687.32,125575,66348,52.84,shakespeare//king-john_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.24,364.33,125575,55047,43.84,shakespeare//king-john_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.12,119.21,125575,49817,39.67,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.85,3422.31,125575,81670,65.04,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.53,2611.47,125575,71106,56.62,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.61,2791.73,125575,66423,52.90,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.06,2892.03,125575,64342,51.24,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.37,2956.31,125575,63088,50.24,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lz4 1.10.0,273.46,2578.01,125575,81620,65.00,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,345.63,3370.33,125575,90410,72.00,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2176.83,10020.35,125575,116682,92.92,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,236.59,1292.67,125575,76257,60.73,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.94,1162.21,125575,67027,53.38,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,155.24,272.44,125575,79131,63.01,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,163.77,297.48,125575,73534,58.56,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.62,349.08,125575,51012,40.62,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,95.25,255.94,125575,74656,59.45,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,99.09,259.84,125575,76467,60.89,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.56,236.97,125575,78528,62.53,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,186.44,263.47,125575,77929,62.06,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,191.20,272.02,125575,79859,63.59,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,111.30,2306.07,125575,67048,53.39,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.00,2543.70,125575,59681,47.53,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.38,475.14,125575,63593,50.64,shakespeare//king-john_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,205.17,309.92,125575,73896,58.85,shakespeare//king-john_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.30,291.08,125575,64272,51.18,shakespeare//king-john_TXT_FolgerShakespeare.txt
+snappy 1.2.2,226.92,487.94,125575,78240,62.31,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,197.87,845.94,125575,55548,44.23,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,142.66,680.20,125575,52851,42.09,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,127.06,743.49,125575,51313,40.86,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,119.11,627.69,125575,52097,41.49,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.23,619.65,125575,50583,40.28,shakespeare//king-john_TXT_FolgerShakespeare.txt
+memcpy,27735.78,28325.07,119985,119985,100.00,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.69,315.49,119985,70065,58.39,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.83,307.51,119985,69553,57.97,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.79,755.77,119985,61527,51.28,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,92.66,383.24,119985,50556,42.14,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.82,118.79,119985,46036,38.37,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.75,3325.43,119985,74908,62.43,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,196.52,2612.34,119985,66417,55.35,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,77.06,2835.12,119985,61744,51.46,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,49.06,2970.88,119985,59642,49.71,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,43.23,3026.41,119985,58264,48.56,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.00,2513.93,119985,74856,62.39,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,329.94,3093.59,119985,82414,68.69,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1692.03,8681.98,119985,108394,90.34,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,236.47,1304.17,119985,70187,58.50,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,49.08,1228.07,119985,61572,51.32,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,155.42,273.25,119985,72669,60.57,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.85,294.45,119985,67965,56.64,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,49.19,357.48,119985,47296,39.42,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,99.23,258.19,119985,68922,57.44,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,103.40,263.18,119985,70397,58.67,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,90.10,240.52,119985,72240,60.21,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,191.12,265.13,119985,71890,59.92,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,198.91,273.05,119985,73678,61.41,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.08,2367.55,119985,62319,51.94,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.13,2622.16,119985,55127,45.94,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,32.20,490.13,119985,58392,48.67,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.41,314.25,119985,68213,56.85,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.82,297.37,119985,59538,49.62,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+snappy 1.2.2,237.97,508.68,119985,72100,60.09,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,197.15,839.98,119985,51418,42.85,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,147.46,688.88,119985,49264,41.06,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,131.42,757.08,119985,47536,39.62,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,122.95,645.75,119985,48299,40.25,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,65.01,636.58,119985,46891,39.08,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+memcpy,29476.48,28698.59,152246,152246,100.00,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.24,310.86,152246,88878,58.38,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.21,304.29,152246,87730,57.62,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,85.42,676.07,152246,76913,50.52,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,91.34,373.32,152246,64122,42.12,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,48.45,123.79,152246,56592,37.17,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,219.33,3356.69,152246,93891,61.67,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,185.51,2645.13,152246,82360,54.10,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,76.82,2887.93,152246,76537,50.27,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.79,2983.87,152246,73996,48.60,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.80,3055.98,152246,72271,47.47,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lz4 1.10.0,261.92,2541.58,152246,93790,61.60,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,317.65,3091.60,152246,104209,68.45,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1117.99,8796.79,152246,136235,89.48,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,225.73,1200.87,152246,85214,55.97,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,49.65,1219.88,152246,75098,49.33,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,152.50,270.79,152246,92354,60.66,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,157.09,293.63,152246,86023,56.50,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,49.29,354.13,152246,59143,38.85,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,98.77,254.92,152246,86471,56.80,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,102.76,259.73,152246,88723,58.28,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,89.58,239.41,152246,91182,59.89,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.69,259.11,152246,90868,59.68,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,196.31,269.14,152246,93205,61.22,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,118.73,2422.76,152246,77640,51.00,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.90,2642.43,152246,68976,45.31,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,32.01,478.23,152246,73681,48.40,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.09,309.17,152246,85605,56.23,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,93.79,308.89,152246,74047,48.64,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+snappy 1.2.2,229.18,501.84,152246,91970,60.41,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.72,829.42,152246,62517,41.06,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,133.39,751.77,152246,60392,39.67,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,124.68,651.56,152246,60288,39.60,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,69.63,735.46,152246,57115,37.51,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.53,753.51,152246,56420,37.06,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+memcpy,29566.73,28928.68,158182,158182,100.00,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,157.73,305.78,158182,95612,60.44,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.70,296.05,158182,94545,59.77,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,84.99,663.90,158182,82659,52.26,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.87,358.30,158182,68191,43.11,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.37,117.63,158182,61288,38.75,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.08,3512.50,158182,102174,64.59,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,178.28,2649.57,158182,88252,55.79,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.25,2878.02,158182,82197,51.96,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.45,2963.82,158182,79638,50.35,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.05,3021.51,158182,77975,49.29,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0,266.02,2646.02,158182,102003,64.48,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,332.90,3218.42,158182,112726,71.26,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1506.68,10166.59,158182,145937,92.26,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,226.25,1183.35,158182,92416,58.42,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.87,1158.84,158182,81403,51.46,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.84,268.37,158182,99084,62.64,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,156.76,290.33,158182,92279,58.34,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.66,346.45,158182,63731,40.29,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.01,247.99,158182,93525,59.12,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,97.43,253.22,158182,95660,60.47,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.22,236.16,158182,98340,62.17,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.59,257.63,158182,97618,61.71,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,191.63,266.96,158182,99969,63.20,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.67,2360.82,158182,82943,52.44,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.90,2591.75,158182,73774,46.64,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.31,470.40,158182,79104,50.01,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,200.88,302.65,158182,91420,57.79,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.87,297.61,158182,79901,50.51,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+snappy 1.2.2,220.01,489.35,158182,98731,62.42,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.44,818.17,158182,67570,42.72,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.23,740.72,158182,65214,41.23,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,120.12,632.47,158182,64994,41.09,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,68.33,725.38,158182,61601,38.94,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.88,737.58,158182,61021,38.58,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+memcpy,29400.99,28755.23,136156,136156,100.00,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.88,308.52,136156,82858,60.86,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.15,299.35,136156,81924,60.17,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.06,690.77,136156,71694,52.66,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.52,369.45,136156,59911,44.00,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.00,118.44,136156,53682,39.43,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.14,3503.04,136156,88775,65.20,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,184.21,2644.47,136156,76286,56.03,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.64,2824.34,136156,71343,52.40,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.85,2909.44,136156,69117,50.76,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.37,2989.88,136156,67688,49.71,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.11,2642.68,136156,88651,65.11,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,341.81,3369.36,136156,97685,71.74,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2070.06,10328.93,136156,126327,92.78,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,225.88,1251.08,136156,80271,58.96,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.59,1195.80,136156,70970,52.12,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,151.25,269.72,136156,86191,63.30,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.99,294.21,136156,80060,58.80,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.65,350.68,136156,54882,40.31,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.37,250.33,136156,80953,59.46,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,95.62,253.32,136156,83163,61.08,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,83.19,235.90,136156,85582,62.86,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.34,261.31,136156,84340,61.94,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,190.37,267.35,136156,86382,63.44,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.39,2360.01,136156,71610,52.59,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.03,2579.25,136156,64011,47.01,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.29,467.13,136156,68956,50.64,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,200.41,304.43,136156,79934,58.71,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.75,289.23,136156,69422,50.99,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+snappy 1.2.2,226.50,488.92,136156,85265,62.62,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.40,826.93,136156,58420,42.91,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.43,748.30,136156,56470,41.47,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,120.31,630.56,136156,56424,41.44,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.96,729.98,136156,53603,39.37,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.22,744.66,136156,53104,39.00,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+memcpy,29449.04,28929.63,157464,157464,100.00,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,159.06,307.28,157464,95150,60.43,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.53,299.12,157464,94071,59.74,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,84.62,662.46,157464,83270,52.88,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,85.48,356.61,157464,68191,43.31,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.09,115.76,157464,62407,39.63,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.83,3533.12,157464,103639,65.82,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,177.50,2652.11,157464,89280,56.70,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.11,2838.11,157464,83211,52.84,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.28,2945.56,157464,80916,51.39,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.94,2998.46,157464,79407,50.43,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lz4 1.10.0,270.41,2666.89,157464,103546,65.76,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,336.56,3336.38,157464,113739,72.23,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1563.60,10319.42,157464,145858,92.63,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,228.24,1201.81,157464,93865,59.61,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.73,1131.21,157464,82654,52.49,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.14,268.37,157464,98999,62.87,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,158.08,292.53,157464,92082,58.48,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.91,342.71,157464,63883,40.57,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,91.72,247.35,157464,94319,59.90,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,94.86,251.35,157464,96532,61.30,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,82.68,234.87,157464,98605,62.62,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.22,257.43,157464,97992,62.23,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,189.11,262.97,157464,100142,63.60,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.66,2321.07,157464,83445,52.99,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.90,2560.18,157464,74533,47.33,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.29,471.31,157464,79524,50.50,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,201.85,303.68,157464,91780,58.29,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.68,287.20,157464,80538,51.15,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+snappy 1.2.2,218.24,478.57,157464,99044,62.90,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,182.06,823.17,157464,68112,43.26,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.32,747.82,157464,65925,41.87,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,117.80,616.42,157464,65759,41.76,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.74,714.57,157464,62407,39.63,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.84,727.71,157464,61888,39.30,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+memcpy,29526.78,28876.08,159858,159858,100.00,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.41,308.17,159858,95505,59.74,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.25,298.49,159858,94593,59.17,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,85.51,662.05,159858,83541,52.26,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.91,355.49,159858,68813,43.05,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.33,115.62,159858,62162,38.89,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.98,3441.36,159858,103320,64.63,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,177.99,2643.77,159858,90059,56.34,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.17,2836.83,159858,83944,52.51,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.19,2933.34,159858,81318,50.87,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.08,2994.04,159858,79704,49.86,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0,266.90,2627.08,159858,103197,64.56,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,332.06,3255.50,159858,113716,71.14,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1269.69,9465.21,159858,146127,91.41,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,226.38,1195.06,159858,93858,58.71,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.28,1142.09,159858,82589,51.66,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,152.19,269.94,159858,98992,61.92,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,157.28,291.94,159858,92336,57.76,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.50,344.41,159858,64358,40.26,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.28,250.81,159858,94634,59.20,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,98.03,255.06,159858,96133,60.14,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.23,236.15,159858,98604,61.68,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,185.34,256.71,159858,98308,61.50,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,190.68,263.76,159858,100653,62.96,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.86,2347.37,159858,84166,52.65,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.98,2577.27,159858,75073,46.96,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.33,473.10,159858,79682,49.85,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,202.81,305.32,159858,92093,57.61,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.15,290.88,159858,80864,50.58,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+snappy 1.2.2,221.52,492.73,159858,99304,62.12,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.08,826.09,159858,68270,42.71,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.45,748.79,159858,65908,41.23,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,119.77,623.73,159858,65859,41.20,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.93,719.21,159858,62583,39.15,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.76,733.01,159858,61972,38.77,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+memcpy,29525.50,26739.05,145915,145915,100.00,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.63,309.98,145915,87969,60.29,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,141.96,300.01,145915,87133,59.71,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.72,676.90,145915,77005,52.77,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.70,363.30,145915,64068,43.91,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.55,114.65,145915,56962,39.04,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,224.23,3487.29,145915,95626,65.54,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,181.80,2626.83,145915,82549,56.57,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.32,2822.07,145915,77088,52.83,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.59,2936.39,145915,74740,51.22,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.03,3001.07,145915,73247,50.20,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.66,2640.33,145915,95575,65.50,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,341.55,3365.97,145915,105539,72.33,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1718.71,10166.88,145915,134738,92.34,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,228.60,1219.58,145915,87110,59.70,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.33,1165.32,145915,76263,52.27,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,152.83,272.16,145915,91223,62.52,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.47,293.30,145915,85206,58.39,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.12,344.89,145915,59265,40.62,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.30,249.49,145915,86877,59.54,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,96.93,255.01,145915,88827,60.88,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.15,237.19,145915,91059,62.41,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.07,258.90,145915,90112,61.76,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,188.95,267.47,145915,92209,63.19,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.01,2334.45,145915,77335,53.00,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.89,2556.95,145915,68875,47.20,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.41,470.93,145915,73403,50.31,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,202.35,304.38,145915,85122,58.34,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.12,297.24,145915,74620,51.14,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+snappy 1.2.2,222.16,485.55,145915,91734,62.87,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.77,834.91,145915,62865,43.08,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,130.33,755.22,145915,60750,41.63,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,119.56,623.20,145915,60556,41.50,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,68.08,726.08,145915,57593,39.47,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.13,740.85,145915,57044,39.09,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+memcpy,29618.72,28888.78,182866,182866,100.00,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,157.44,302.08,182866,111093,60.75,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,139.85,291.58,182866,110071,60.19,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,86.04,635.61,182866,96412,52.72,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.90,354.83,182866,78868,43.13,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.04,116.11,182866,71874,39.30,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,219.05,3424.71,182866,120462,65.87,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,169.81,2586.73,182866,103673,56.69,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,72.30,2787.21,182866,96582,52.82,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.35,2858.17,182866,93465,51.11,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,40.59,2929.70,182866,91355,49.96,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lz4 1.10.0,262.78,2580.63,182866,120345,65.81,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,325.67,2996.48,182866,132597,72.51,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1066.42,7161.67,182866,167549,91.62,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.01,1121.08,182866,108093,59.11,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,45.80,1091.70,182866,94940,51.92,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.41,267.06,182866,115359,63.08,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,155.16,288.53,182866,107356,58.71,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.80,342.90,182866,74451,40.71,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,90.63,242.25,182866,109898,60.10,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,94.87,248.97,182866,112176,61.34,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,82.75,231.63,182866,115040,62.91,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,179.97,251.76,182866,114065,62.38,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,185.45,260.77,182866,116712,63.82,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.49,2329.80,182866,97197,53.15,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.66,2558.43,182866,86262,47.17,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.98,462.50,182866,93073,50.90,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,198.96,301.00,182866,107475,58.77,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,88.98,283.69,182866,93565,51.17,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+snappy 1.2.2,212.93,473.01,182866,115870,63.36,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,177.96,811.42,182866,79254,43.34,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,128.09,730.93,182866,76588,41.88,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,118.07,613.90,182866,76557,41.87,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.26,704.17,182866,72235,39.50,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,57.42,723.33,182866,71403,39.05,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+memcpy,29480.73,28802.73,169072,169072,100.00,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,161.59,307.08,169072,102700,60.74,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.83,300.46,169072,101611,60.10,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,85.12,655.80,169072,89081,52.69,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.07,359.96,169072,72777,43.04,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.95,116.88,169072,66269,39.20,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,220.38,3518.81,169072,111821,66.14,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,172.23,2613.21,169072,95240,56.33,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,72.67,2762.39,169072,89363,52.85,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.51,2842.12,169072,86457,51.14,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,40.82,2900.23,169072,84612,50.04,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lz4 1.10.0,267.13,2636.56,169072,111796,66.12,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,340.66,3232.49,169072,123750,73.19,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1420.79,10362.34,169072,156088,92.32,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.65,1157.12,169072,100338,59.35,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.81,1112.43,169072,88324,52.24,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,154.18,273.05,169072,106677,63.10,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,160.14,295.46,169072,99400,58.79,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.48,346.78,169072,68883,40.74,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.75,246.51,169072,101231,59.87,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,95.58,250.80,169072,103794,61.39,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.01,234.54,169072,106630,63.07,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,179.78,257.38,169072,106170,62.80,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,187.13,266.90,169072,108794,64.35,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.40,2340.19,169072,89575,52.98,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.61,2561.19,169072,79697,47.14,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.76,462.34,169072,85997,50.86,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.33,302.89,169072,99849,59.06,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.01,292.02,169072,86752,51.31,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+snappy 1.2.2,215.95,479.42,169072,107225,63.42,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.04,823.76,169072,73354,43.39,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,127.04,734.26,169072,71019,42.01,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,118.09,614.96,169072,70642,41.78,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.58,706.78,169072,66813,39.52,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.47,723.60,169072,66140,39.12,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+memcpy,29555.50,28824.07,171215,171215,100.00,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,159.26,306.30,171215,102107,59.64,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,141.25,298.13,171215,101247,59.13,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,86.35,655.74,171215,89023,51.99,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.02,362.49,171215,72768,42.50,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.86,117.25,171215,65137,38.04,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,218.44,3431.23,171215,110116,64.31,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,177.77,2604.62,171215,95401,55.72,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,73.85,2821.28,171215,88722,51.82,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.26,2900.43,171215,85780,50.10,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.33,2979.62,171215,83891,49.00,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lz4 1.10.0,263.76,2576.25,171215,110059,64.28,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,320.67,3079.74,171215,120852,70.58,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1033.76,6829.21,171215,154564,90.27,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.20,1142.23,171215,99207,57.94,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.69,1169.96,171215,87184,50.92,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,151.06,269.09,171215,106472,62.19,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,154.73,292.21,171215,98762,57.68,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.73,347.69,171215,68373,39.93,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,94.82,246.62,171215,100454,58.67,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,98.04,250.43,171215,102674,59.97,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.03,236.02,171215,105582,61.67,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.22,256.17,171215,105316,61.51,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,190.90,265.89,171215,107916,63.03,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,116.46,2379.24,171215,89284,52.15,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.71,2595.74,171215,79274,46.30,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.10,468.20,171215,85045,49.67,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,201.38,302.89,171215,98652,57.62,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.04,296.59,171215,85863,50.15,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+snappy 1.2.2,219.47,489.66,171215,105906,61.86,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,177.94,820.36,171215,72786,42.51,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,130.13,741.93,171215,70326,41.07,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,120.91,632.66,171215,69910,40.83,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,68.22,724.33,171215,66269,38.71,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.17,740.85,171215,65506,38.26,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+
+The results sorted by column number 7:
+Compressor name,Compression speed,Decompression speed,Original size,Compressed size,Ratio,Filename
+fastlz 0.5.0 -1,163.21,316.46,113339,68461,60.40,shakespeare//pericles_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.31,312.90,124759,74802,59.96,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,162.72,310.91,149062,91099,61.11,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,159.26,306.30,171215,102107,59.64,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.95,307.59,147304,89889,61.02,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,163.96,321.25,103322,63239,61.21,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,382.86,809.32,2466,1869,75.79,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,161.59,307.08,169072,102700,60.74,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,162.50,315.44,125304,73926,59.00,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,173.40,321.55,99272,60334,60.78,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.29,304.76,181588,106426,58.61,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,157.44,302.08,182866,111093,60.75,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.79,312.37,119215,71651,60.10,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.35,316.22,127784,74864,58.59,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,164.22,319.19,106538,64863,60.88,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.63,309.98,145915,87969,60.29,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,159.45,308.58,132828,79215,59.64,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,161.91,313.40,125575,75893,60.44,shakespeare//king-john_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.69,315.49,119985,70065,58.39,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.41,308.17,159858,95505,59.74,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,160.24,310.86,152246,88878,58.38,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,157.73,305.78,158182,95612,60.44,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,158.88,308.52,136156,82858,60.86,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -1,159.06,307.28,157464,95150,60.43,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.92,300.19,149062,90222,60.53,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,358.22,787.86,2466,1869,75.79,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.15,299.35,136156,81924,60.17,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,152.64,308.04,99272,59963,60.40,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,142.59,303.82,119215,70935,59.50,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.83,300.46,169072,101611,60.10,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.70,296.05,158182,94545,59.77,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,145.55,308.09,113339,67793,59.81,shakespeare//pericles_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.49,307.55,106538,64408,60.46,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.64,299.78,181588,105311,57.99,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.83,307.51,119985,69553,57.97,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.35,307.30,125304,73332,58.52,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,146.35,308.64,103322,62723,60.71,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.30,303.59,125575,75064,59.78,shakespeare//king-john_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,141.96,300.01,145915,87133,59.71,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,139.85,291.58,182866,110071,60.19,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.71,300.80,132828,78588,59.17,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,141.25,298.13,171215,101247,59.13,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,142.68,296.68,147304,89172,60.54,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.53,299.12,157464,94071,59.74,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,140.25,298.49,159858,94593,59.17,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,142.83,302.33,124759,74177,59.46,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,143.21,304.29,152246,87730,57.62,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+fastlz 0.5.0 -2,144.76,306.42,127784,74061,57.96,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,85.42,676.07,152246,76913,50.52,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.79,755.77,119985,61527,51.28,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,85.51,662.05,159858,83541,52.26,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,88.46,657.68,181588,91643,50.47,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.31,661.83,149062,79767,53.51,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.79,738.71,125304,65256,52.08,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,77.40,744.21,103322,56486,54.67,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,78.47,738.74,106538,57779,54.23,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,81.26,687.32,125575,66348,52.84,shakespeare//king-john_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.72,676.90,145915,77005,52.77,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,84.62,662.46,157464,83270,52.88,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.60,676.26,132828,69657,52.44,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,86.04,635.61,182866,96412,52.72,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,86.35,655.74,171215,89023,51.99,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.57,661.37,147304,79593,54.03,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,82.17,744.60,119215,62890,52.75,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,84.99,663.90,158182,82659,52.26,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,85.12,655.80,169072,89081,52.69,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,76.45,712.52,99272,53768,54.16,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.06,690.77,136156,71694,52.66,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,83.82,745.70,127784,65357,51.15,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,5.72,378.74,2466,2011,81.55,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,81.73,729.44,124759,65344,52.38,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -1,80.02,741.28,113339,60523,53.40,shakespeare//pericles_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,57.31,148.73,2466,1610,65.29,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.02,362.49,171215,72768,42.50,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.91,355.49,159858,68813,43.05,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.70,362.32,132828,58357,43.93,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.90,354.83,182866,78868,43.13,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,85.48,356.61,157464,68191,43.31,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,91.34,373.32,152246,64122,42.12,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.36,359.17,147304,65881,44.72,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.07,359.96,169072,72777,43.04,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.24,364.33,125575,55047,43.84,shakespeare//king-john_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.70,363.30,145915,64068,43.91,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,92.66,383.24,119985,50556,42.14,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.87,358.30,158182,68191,43.11,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.84,367.49,103322,46104,44.62,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,89.68,358.07,99272,43457,43.78,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,89.39,371.36,113339,49811,43.95,shakespeare//pericles_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,90.53,375.74,125304,54113,43.19,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.52,369.45,136156,59911,44.00,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,90.27,368.95,181588,75093,41.35,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,88.82,377.56,119215,52223,43.81,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,87.90,365.17,106538,47198,44.30,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,90.45,371.64,124759,53798,43.12,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,91.64,378.59,127784,54011,42.27,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -2,86.85,361.30,149062,66251,44.45,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,44.91,112.87,113339,45630,40.26,shakespeare//pericles_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,4.00,19.02,2466,1545,62.65,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.75,115.07,147304,58901,39.99,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.45,113.51,132828,53059,39.95,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.76,115.24,127784,48137,37.67,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.00,118.44,136156,53682,39.43,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.95,116.88,169072,66269,39.20,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,43.72,114.32,106538,43776,41.09,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.22,115.10,125304,48772,38.92,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,43.08,108.58,103322,42898,41.52,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.55,114.65,145915,56962,39.04,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.37,117.63,158182,61288,38.75,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,48.93,122.05,181588,67288,37.06,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.82,118.79,119985,46036,38.37,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.09,115.76,157464,62407,39.63,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.19,119.42,99272,41145,41.45,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.16,113.11,149062,58899,39.51,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,46.12,119.21,125575,49817,39.67,shakespeare//king-john_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.33,115.62,159858,62162,38.89,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.86,117.25,171215,65137,38.04,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,45.81,117.92,124759,49138,39.39,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,44.31,112.21,119215,47165,39.56,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,48.45,123.79,152246,56592,37.17,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+kanzi 2.4.0 -3,47.04,116.11,182866,71874,39.30,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,219.65,3421.73,181588,113577,62.55,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,220.93,3408.15,125304,80132,63.95,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,225.83,3540.88,106538,70542,66.21,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,217.81,3447.40,149062,98558,66.12,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,222.14,3434.11,119215,77127,64.70,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,227.59,3577.76,103322,68797,66.59,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,219.05,3424.71,182866,120462,65.87,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.75,3325.43,119985,74908,62.43,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.83,3533.12,157464,103639,65.82,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,217.12,3142.91,99272,65405,65.88,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.97,3353.65,127784,80182,62.75,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,220.38,3518.81,169072,111821,66.14,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.98,3441.36,159858,103320,64.63,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,437.39,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,218.01,3319.29,124759,80044,64.16,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,222.16,3443.18,113339,74085,65.37,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.14,3503.04,136156,88775,65.20,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,219.33,3356.69,152246,93891,61.67,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.08,3512.50,158182,102174,64.59,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,221.85,3422.31,125575,81670,65.04,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,218.58,3474.07,147304,98197,66.66,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,218.44,3431.23,171215,110116,64.31,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,224.52,3469.45,132828,86356,65.01,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -10,224.23,3487.29,145915,95626,65.54,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,177.50,2652.11,157464,89280,56.70,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,178.28,2649.57,158182,88252,55.79,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,185.98,2645.17,119215,67378,56.52,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,184.21,2644.47,136156,76286,56.03,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,196.52,2612.34,119985,66417,55.35,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,435.69,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,172.23,2613.21,169072,95240,56.33,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,182.79,2496.91,99272,57967,58.39,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,185.51,2645.13,152246,82360,54.10,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,194.52,2630.06,127784,70471,55.15,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,177.77,2604.62,171215,95401,55.72,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,177.99,2643.77,159858,90059,56.34,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.59,2648.88,106538,61447,57.68,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.39,2604.74,124759,69902,56.03,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,175.93,2590.45,149062,85168,57.14,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,184.28,2651.42,132828,75295,56.69,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,191.45,2624.50,125304,70099,55.94,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,187.19,2645.45,113339,64713,57.10,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.53,2611.47,125575,71106,56.62,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,179.15,2636.87,181588,98348,54.16,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,176.00,2603.60,147304,85006,57.71,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,186.72,2690.19,103322,60027,58.10,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,181.80,2626.83,145915,82549,56.57,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -11,169.81,2586.73,182866,103673,56.69,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.99,2840.39,125304,65294,52.11,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.20,2826.76,113339,60514,53.39,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,71.99,2757.06,147304,79566,54.01,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.32,2858.05,132828,70159,52.82,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,234.77,14421.05,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,72.67,2762.39,169072,89363,52.85,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.08,2649.37,99272,54780,55.18,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.90,2765.60,124759,65313,52.35,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,72.30,2787.21,182866,96582,52.82,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.64,2824.34,136156,71343,52.40,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.61,2791.73,125575,66423,52.90,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.43,2857.18,181588,91417,50.34,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.48,2858.70,103322,56289,54.48,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,72.76,2761.58,149062,79854,53.57,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,75.12,2826.77,106538,57681,54.14,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.32,2822.07,145915,77088,52.83,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.25,2878.02,158182,82197,51.96,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.17,2836.83,159858,83944,52.51,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,77.06,2835.12,119985,61744,51.46,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.81,2845.84,119215,62830,52.70,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,76.82,2887.93,152246,76537,50.27,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,77.12,2888.10,127784,65289,51.09,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,74.11,2838.11,157464,83211,52.84,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -12,73.85,2821.28,171215,88722,51.82,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.13,2742.17,99272,53112,53.50,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.85,2909.44,136156,69117,50.76,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.00,2974.41,181588,88320,48.64,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.35,2858.17,182866,93465,51.11,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.73,2936.24,125304,63376,50.58,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.09,2928.80,106538,55955,52.52,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.06,2892.03,125575,64342,51.24,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.89,2947.08,132828,68272,51.40,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.26,2844.37,147304,77040,52.30,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.44,2960.98,119215,60793,50.99,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.39,2863.11,149062,77264,51.83,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.45,2963.82,158182,79638,50.35,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.28,2945.56,157464,80916,51.39,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.26,2900.43,171215,85780,50.10,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.30,2941.13,103322,54780,53.02,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.19,2933.34,159858,81318,50.87,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,47.59,2936.39,145915,74740,51.22,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.36,2923.75,113339,58728,51.82,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.26,2864.40,124759,63192,50.65,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,49.06,2970.88,119985,59642,49.71,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.63,2990.99,127784,63174,49.44,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,48.79,2983.87,152246,73996,48.60,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,46.51,2842.12,169072,86457,51.14,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -13,117.37,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.08,2994.04,159858,79704,49.86,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.37,2956.31,125575,63088,50.24,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.14,2956.02,124759,61777,49.52,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.08,3025.11,181588,86474,47.62,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.04,2914.04,149062,75598,50.72,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.37,2989.88,136156,67688,49.71,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.80,3055.98,152246,72271,47.47,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,43.23,3026.41,119985,58264,48.56,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.33,2979.62,171215,83891,49.00,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.51,2996.01,113339,57583,50.81,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,40.59,2929.70,182866,91355,49.96,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.04,2820.39,99272,51967,52.35,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.45,3021.08,132828,66973,50.42,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,115.62,14505.88,2466,2471,100.20,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,40.82,2900.23,169072,84612,50.04,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.90,3060.91,127784,61786,48.35,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.03,3001.07,145915,73247,50.20,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.50,3039.49,119215,59541,49.94,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.71,3005.22,106538,54840,51.47,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.96,3002.76,103322,53766,52.04,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,41.94,2998.46,157464,79407,50.43,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.05,3021.51,158182,77975,49.29,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,40.89,2903.97,147304,75551,51.29,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lizard 2.1 -14,42.64,3017.19,125304,62149,49.60,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.66,2640.33,145915,95575,65.50,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0,262.78,2580.63,182866,120345,65.81,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lz4 1.10.0,277.73,2612.88,113339,74054,65.34,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lz4 1.10.0,273.19,2601.87,119215,77070,64.65,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lz4 1.10.0,275.18,2646.19,132828,86273,64.95,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.00,2513.93,119985,74856,62.39,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lz4 1.10.0,260.81,2586.06,181588,113463,62.48,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.53,2530.78,127784,80147,62.72,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lz4 1.10.0,270.15,2400.66,99272,65378,65.86,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lz4 1.10.0,271.11,2642.68,136156,88651,65.11,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0,273.46,2578.01,125575,81620,65.00,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lz4 1.10.0,261.92,2541.58,152246,93790,61.60,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lz4 1.10.0,266.90,2627.08,159858,103197,64.56,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0,285.45,2680.61,106538,70509,66.18,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lz4 1.10.0,270.41,2666.89,157464,103546,65.76,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lz4 1.10.0,263.76,2576.25,171215,110059,64.28,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lz4 1.10.0,482.49,2518.90,2466,1986,80.54,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lz4 1.10.0,290.38,2705.76,103322,68704,66.50,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lz4 1.10.0,267.13,2636.56,169072,111796,66.12,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lz4 1.10.0,268.74,2510.80,124759,79993,64.12,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lz4 1.10.0,268.53,2602.57,149062,98494,66.08,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lz4 1.10.0,266.02,2646.02,158182,102003,64.48,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0,268.32,2638.49,147304,98128,66.62,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lz4 1.10.0,272.83,2602.48,125304,80097,63.92,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1563.60,10319.42,157464,145858,92.63,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1269.69,9465.21,159858,146127,91.41,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1946.08,9774.87,125304,115070,91.83,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2029.23,9527.29,119215,108794,91.26,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2411.53,10648.46,103322,95967,92.88,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1033.76,6829.21,171215,154564,90.27,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1426.97,8588.79,127784,114395,89.52,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1718.71,10166.88,145915,134738,92.34,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2298.73,10451.77,113339,104971,92.62,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1420.79,10362.34,169072,156088,92.32,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,957.36,6636.02,181588,162921,89.72,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1692.03,8681.98,119985,108394,90.34,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2070.06,10328.93,136156,126327,92.78,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1117.99,8796.79,152246,136235,89.48,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1506.68,10166.59,158182,145937,92.26,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2285.24,10341.49,106538,98666,92.61,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2128.98,9686.96,99272,93299,93.98,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,2176.83,10020.35,125575,116682,92.92,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1863.03,10207.47,147304,136930,92.96,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1847.30,9194.41,124759,114383,91.68,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1613.77,9951.40,149062,137662,92.35,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1828.05,9651.79,132828,121980,91.83,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,4165.54,15412.50,2466,2456,99.59,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -17,1066.42,7161.67,182866,167549,91.62,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,341.81,3369.36,136156,97685,71.74,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,345.63,3370.33,125575,90410,72.00,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,348.13,3138.14,99272,72969,73.50,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,332.06,3255.50,159858,113716,71.14,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,352.14,3351.37,119215,84669,71.02,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,377.68,3576.42,106538,78114,73.32,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,317.65,3091.60,152246,104209,68.45,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,338.49,3318.26,125304,88465,70.60,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,325.67,2996.48,182866,132597,72.51,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,342.05,3289.87,147304,108445,73.62,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,332.90,3218.42,158182,112726,71.26,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,329.99,3100.30,124759,88112,70.63,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,320.67,3079.74,171215,120852,70.58,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,382.28,3571.20,103322,75977,73.53,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,823.10,4179.66,2466,2149,87.15,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,362.88,3487.46,113339,82021,72.37,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,347.37,3396.79,132828,95200,71.67,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,341.55,3365.97,145915,105539,72.33,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,336.56,3336.38,157464,113739,72.23,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,340.66,3232.49,169072,123750,73.19,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,337.64,3195.81,149062,109163,73.23,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,329.94,3093.59,119985,82414,68.69,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,333.73,3179.73,127784,88172,69.00,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lz4 1.10.0 --fast -3,312.10,3074.90,181588,124943,68.81,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.65,1157.12,169072,100338,59.35,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,460.50,3859.16,2466,2155,87.39,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,220.92,1159.94,149062,90095,60.44,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,236.59,1292.67,125575,76257,60.73,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,226.38,1195.06,159858,93858,58.71,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,236.97,1272.71,127784,74637,58.41,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,239.29,1423.59,113339,69775,61.56,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,228.60,1219.58,145915,87110,59.70,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,225.73,1200.87,152246,85214,55.97,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,228.80,1414.49,99272,63123,63.59,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,220.83,1175.86,147304,89990,61.09,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,233.11,1230.66,124759,74622,59.81,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,230.03,1255.84,132828,79910,60.16,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,240.53,1486.63,106538,66818,62.72,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.01,1121.08,182866,108093,59.11,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,233.80,1318.65,119215,71972,60.37,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,225.88,1251.08,136156,80271,58.96,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,243.18,1553.90,103322,65317,63.22,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,236.47,1304.17,119985,70187,58.50,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.23,1151.61,181588,101375,55.83,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,226.25,1183.35,158182,92416,58.42,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,222.20,1142.23,171215,99207,57.94,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,228.24,1201.81,157464,93865,59.61,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzav 4.22 -1,238.58,1288.23,125304,74658,59.58,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.25,1229.91,103322,57315,55.47,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.81,1112.43,169072,88324,52.24,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,49.65,1219.88,152246,75098,49.33,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.83,1232.85,119215,63013,52.86,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.16,1148.06,132828,70265,52.90,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.33,1165.32,145915,76263,52.27,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.52,1204.00,106538,58667,55.07,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.10,1126.93,149062,79466,53.31,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.73,1131.21,157464,82654,52.49,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.12,1256.12,127784,65241,51.06,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.05,1123.53,147304,79046,53.66,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.96,1191.85,113339,61240,54.03,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.87,1187.28,125304,65654,52.40,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,46.69,1169.96,171215,87184,50.92,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.87,1158.84,158182,81403,51.46,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.28,1142.09,159858,82589,51.66,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.57,1184.61,181588,88936,48.98,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,49.08,1228.07,119985,61572,51.32,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.59,1195.80,136156,70970,52.12,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,45.80,1091.70,182866,94940,51.92,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,119.63,2441.58,2466,1995,80.90,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,48.24,1153.78,124759,65462,52.47,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,45.77,1184.69,99272,55236,55.64,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzav 4.22 -2,47.94,1162.21,125575,67027,53.38,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,159.59,276.04,103322,65420,63.32,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,152.83,272.16,145915,91223,62.52,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,153.22,270.32,147304,93356,63.38,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,151.06,269.09,171215,106472,62.19,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.35,268.78,181588,110372,60.78,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,152.50,270.79,152246,92354,60.66,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,154.22,270.57,132828,82198,61.88,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,156.25,271.92,106538,67429,63.29,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,167.49,278.58,99272,62919,63.38,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.84,268.37,158182,99084,62.64,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,218.06,844.23,2466,1889,76.60,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,155.42,273.25,119985,72669,60.57,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,153.04,272.14,124759,77777,62.34,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.41,267.06,182866,115359,63.08,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,159.03,275.00,125304,76943,61.41,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,156.12,273.15,119215,73708,61.83,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,151.25,269.72,136156,86191,63.30,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,156.25,273.87,149062,94355,63.30,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,155.24,272.44,125575,79131,63.01,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,157.70,275.27,113339,70885,62.54,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,154.18,273.05,169072,106677,63.10,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,152.19,269.94,159858,98992,61.92,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,150.14,268.37,157464,98999,62.87,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzf 3.6 -0,157.56,278.80,127784,77519,60.66,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,161.49,294.77,124759,72524,58.13,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,160.14,295.46,169072,99400,58.79,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,166.99,298.22,113339,66204,58.41,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,158.08,292.53,157464,92082,58.48,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,166.48,300.59,106538,62662,58.82,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,155.16,288.53,182866,107356,58.71,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,163.43,298.15,149062,87931,58.99,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,163.77,297.48,125575,73534,58.56,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,156.76,290.33,158182,92279,58.34,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,157.09,293.63,152246,86023,56.50,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,172.64,305.45,99272,58734,59.16,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,204.65,840.20,2466,1862,75.51,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.30,292.48,147304,86994,59.06,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.85,294.45,119985,67965,56.64,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,157.28,291.94,159858,92336,57.76,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.99,294.21,136156,80060,58.80,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,168.75,303.01,103322,60938,58.98,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.13,291.39,132828,76603,57.67,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,163.36,296.57,125304,71881,57.37,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,159.47,293.30,145915,85206,58.39,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,161.45,297.34,127784,72220,56.52,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,154.09,287.66,181588,103006,56.73,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,162.44,294.30,119215,68764,57.68,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzf 3.6 -1,154.73,292.21,171215,98762,57.68,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.18,339.42,147304,61083,41.47,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,48.11,349.28,124759,50093,40.15,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.66,346.45,158182,63731,40.29,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.50,344.41,159858,64358,40.26,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.53,342.87,149062,61381,41.18,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.73,347.69,171215,68373,39.93,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.62,349.08,125575,51012,40.62,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.57,346.80,132828,53854,40.54,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,49.19,357.48,119985,47296,39.42,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.80,342.90,182866,74451,40.71,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,49.21,356.04,127784,50214,39.30,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.74,351.44,119215,48132,40.37,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.12,344.89,145915,59265,40.62,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,59.12,787.86,2466,1687,68.41,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.11,347.05,113339,46418,40.96,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.19,344.67,103322,43057,41.67,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.91,342.71,157464,63883,40.57,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.79,346.04,106538,44130,41.42,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,47.65,350.68,136156,54882,40.31,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,48.06,352.45,125304,50180,40.05,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,49.29,354.13,152246,59143,38.85,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,48.90,351.93,181588,70605,38.88,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.48,346.78,169072,68883,40.74,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzfse 2017-03-08,46.48,344.21,99272,41337,41.64,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.01,247.99,158182,93525,59.12,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.28,250.81,159858,94634,59.20,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,98.72,257.73,127784,73487,57.51,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.43,250.04,149062,89874,60.29,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,95.25,255.94,125575,74656,59.45,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,100.75,273.97,99272,59694,60.13,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.30,249.49,145915,86877,59.54,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,94.82,246.62,171215,100454,58.67,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,97.30,259.45,113339,67440,59.50,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,96.94,249.44,181588,103760,57.14,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,282.22,1306.14,2466,1945,78.87,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,90.63,242.25,182866,109898,60.10,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,97.31,256.39,124759,73282,58.74,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,99.23,258.19,119985,68922,57.44,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,91.72,247.35,157464,94319,59.90,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,97.70,258.81,125304,73230,58.44,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,94.72,258.48,106538,64147,60.21,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,95.79,256.87,119215,70469,59.11,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,98.77,254.92,152246,86471,56.80,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.75,246.51,169072,101231,59.87,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,92.23,248.37,147304,89023,60.43,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.37,250.33,136156,80953,59.46,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,94.66,262.57,103322,62658,60.64,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1b 2.10 -1,93.78,253.13,132828,79113,59.56,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,95.58,250.80,169072,103794,61.39,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,97.26,258.50,132828,80661,60.73,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,94.86,251.35,157464,96532,61.30,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,99.09,259.84,125575,76467,60.89,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,102.82,262.17,124759,74577,59.78,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,100.67,264.35,113339,68500,60.44,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,97.34,265.97,103322,64031,61.97,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,426.13,1126.54,2466,1942,78.75,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,99.63,263.08,119215,71988,60.39,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,100.64,254.49,181588,106565,58.69,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,98.69,263.17,106538,65378,61.37,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,97.43,253.22,158182,95660,60.47,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,101.30,260.54,125304,74826,59.72,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,96.71,254.09,147304,90834,61.66,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,102.76,259.73,152246,88723,58.28,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,98.03,255.06,159858,96133,60.14,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,96.93,255.01,145915,88827,60.88,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,94.87,248.97,182866,112176,61.34,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,102.24,260.94,127784,75076,58.75,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,98.04,250.43,171215,102674,59.97,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,103.40,263.18,119985,70397,58.67,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,104.60,273.13,99272,60849,61.30,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,95.62,253.32,136156,83163,61.08,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1c 2.10 -1,96.88,254.72,149062,91672,61.50,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,183.31,268.23,99272,62605,63.06,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,181.23,257.04,147304,92184,62.58,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,188.16,255.82,181588,108691,59.86,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.22,256.17,171215,105316,61.51,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.34,261.31,136156,84340,61.94,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,186.45,260.54,124759,76534,61.35,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.22,257.43,157464,97992,62.23,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.47,263.09,125304,76459,61.02,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,191.12,265.13,119985,71890,59.92,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,179.97,251.76,182866,114065,62.38,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,179.78,257.38,169072,106170,62.80,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.95,268.52,106538,67018,62.91,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.07,258.90,145915,90112,61.76,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,193.17,264.70,127784,76474,59.85,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,185.34,256.71,159858,98308,61.50,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,182.12,258.45,149062,93778,62.91,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,186.89,264.18,132828,82045,61.77,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.90,274.33,103322,65332,63.23,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,187.69,259.11,152246,90868,59.68,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,188.83,271.16,113339,70523,62.22,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,184.59,257.63,158182,97618,61.71,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,186.44,263.47,125575,77929,62.06,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,189.90,265.69,119215,73480,61.64,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1x 2.10 -1,411.00,1620.24,2466,1925,78.06,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.05,264.97,181588,111111,61.19,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,190.68,263.76,159858,100653,62.96,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,190.90,265.89,171215,107916,63.03,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,197.57,273.15,127784,78163,61.17,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,186.42,267.58,149062,96092,64.46,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,191.63,266.96,158182,99969,63.20,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,190.37,267.35,136156,86382,63.44,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,194.10,282.10,103322,66746,64.60,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,195.15,276.08,119215,75174,63.06,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,189.11,262.97,157464,100142,63.60,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,191.13,269.75,132828,83638,62.97,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,187.02,274.52,99272,64507,64.98,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,411.82,1369.24,2466,1950,79.08,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,187.13,266.90,169072,108794,64.35,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,198.91,273.05,119985,73678,61.41,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,188.95,267.47,145915,92209,63.19,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.56,271.28,124759,78610,63.01,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,196.31,269.14,152246,93205,61.22,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.96,279.86,113339,72316,63.81,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,185.45,260.77,182866,116712,63.82,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,191.20,272.02,125575,79859,63.59,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,194.07,270.94,125304,78364,62.54,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,185.96,265.01,147304,94503,64.16,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzo1y 2.10 -1,193.40,279.37,106538,68697,64.48,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.83,236.23,181588,109728,60.43,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,89.58,239.41,152246,91182,59.89,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.22,236.16,158182,98340,62.17,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,82.68,234.87,157464,98605,62.62,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.15,237.19,145915,91059,62.41,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,422.12,1162.11,2466,1863,75.55,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,87.45,236.64,125304,76751,61.25,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.76,243.74,103322,65762,63.65,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,82.75,231.63,182866,115040,62.91,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,88.31,239.02,99272,62789,63.25,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.01,234.54,169072,106630,63.07,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,83.19,235.90,136156,85582,62.86,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,87.32,240.89,113339,70649,62.33,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,83.83,234.64,147304,93301,63.34,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.78,239.25,119215,73799,61.90,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,89.45,241.05,127784,77003,60.26,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.89,242.73,106538,67270,63.14,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,90.10,240.52,119985,72240,60.21,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.03,236.02,171215,105582,61.67,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.56,236.97,125575,78528,62.53,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.23,236.15,159858,98604,61.68,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,86.82,237.69,124759,76988,61.71,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,85.51,238.92,132828,82484,62.10,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzof 2.10 -1,84.69,236.89,149062,94304,63.26,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,112.03,2332.73,124759,65993,52.90,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.39,2360.01,136156,71610,52.59,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,111.69,2307.03,147304,79502,53.97,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.40,2340.19,169072,89575,52.98,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,111.19,2326.74,119215,63323,53.12,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,112.46,2310.47,149062,80188,53.80,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,106.70,2267.62,103322,56344,54.53,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,116.46,2379.24,171215,89284,52.15,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.67,2360.82,158182,82943,52.44,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,113.57,2353.75,125304,65767,52.49,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.49,2329.80,182866,97197,53.15,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.66,2321.07,157464,83445,52.99,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,105.88,2221.25,99272,54761,55.16,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,11.21,1697.18,2466,2044,82.89,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,120.78,2438.63,181588,92426,50.90,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,118.73,2422.76,152246,77640,51.00,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,110.64,2304.48,113339,60682,53.54,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.08,2367.55,119985,62319,51.94,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,114.01,2334.45,145915,77335,53.00,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.62,2390.00,127784,66004,51.65,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,107.51,2254.25,106538,57907,54.35,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,112.86,2319.61,132828,70271,52.90,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,115.86,2347.37,159858,84166,52.65,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzsse4fast 2019-04-18,111.30,2306.07,125575,67048,53.39,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.90,2591.75,158182,73774,46.64,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.03,2579.25,136156,64011,47.01,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.22,2555.57,119215,56211,47.15,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.95,2526.61,147304,70886,48.12,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.10,2572.77,125304,58688,46.84,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.66,2558.43,182866,86262,47.17,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.12,2458.20,99272,48765,49.12,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,9.12,2201.79,2466,1916,77.70,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.81,2660.51,181588,81956,45.13,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.22,2492.81,103322,50412,48.79,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.14,2525.49,113339,54146,47.77,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.61,2561.19,169072,79697,47.14,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.89,2556.95,145915,68875,47.20,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.18,2615.15,127784,58578,45.84,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.11,2497.02,106538,51589,48.42,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.13,2545.87,132828,62913,47.36,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.09,2573.52,124759,58654,47.01,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.90,2560.18,157464,74533,47.33,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.90,2642.43,152246,68976,45.31,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.71,2595.74,171215,79274,46.30,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.13,2622.16,119985,55127,45.94,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,12.00,2543.70,125575,59681,47.53,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.98,2577.27,159858,75073,46.96,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzsse8 2019-04-18 -1,11.98,2532.79,149062,71277,47.82,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.76,462.34,169072,85997,50.86,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.56,481.78,124759,62491,50.09,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.64,465.19,149062,76265,51.16,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.68,470.76,147304,75599,51.32,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.05,473.54,103322,53232,51.52,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.10,468.20,171215,85045,49.67,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.29,471.31,157464,79524,50.50,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.29,480.24,119215,59555,49.96,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,60.09,1152.88,2466,1671,67.76,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.29,467.13,136156,68956,50.64,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,32.18,486.46,127784,61793,48.36,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,32.20,490.13,119985,58392,48.67,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.31,470.40,158182,79104,50.01,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.38,475.14,125575,63593,50.64,shakespeare//king-john_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.33,473.10,159858,79682,49.85,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.46,478.74,132828,66579,50.12,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.85,483.86,125304,61933,49.43,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.84,478.20,106538,54600,51.25,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.41,470.93,145915,73403,50.31,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.32,484.28,113339,57278,50.54,shakespeare//pericles_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,32.01,478.23,152246,73681,48.40,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.90,471.35,181588,88191,48.57,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,31.23,490.42,99272,51343,51.72,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+lzvn 2017-03-08,30.98,462.50,182866,93073,50.90,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+memcpy,29555.50,28824.07,171215,171215,100.00,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+memcpy,29526.78,28876.08,159858,159858,100.00,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+memcpy,28989.09,29517.33,132828,132828,100.00,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+memcpy,29525.50,26739.05,145915,145915,100.00,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+memcpy,29618.72,28888.78,182866,182866,100.00,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+memcpy,29480.73,28802.73,169072,169072,100.00,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+memcpy,29449.04,28929.63,157464,157464,100.00,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+memcpy,27845.79,29635.05,106538,106538,100.00,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+memcpy,27906.53,26975.72,127784,127784,100.00,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+memcpy,28816.78,27866.99,119215,119215,100.00,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+memcpy,27922.89,27799.61,113339,113339,100.00,shakespeare//pericles_TXT_FolgerShakespeare.txt
+memcpy,27986.40,28808.21,125575,125575,100.00,shakespeare//king-john_TXT_FolgerShakespeare.txt
+memcpy,26755.27,28873.91,181588,181588,100.00,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+memcpy,27636.97,28412.13,99272,99272,100.00,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+memcpy,27735.78,28325.07,119985,119985,100.00,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+memcpy,27950.93,28759.24,125304,125304,100.00,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+memcpy,29476.48,28698.59,152246,152246,100.00,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+memcpy,27935.29,28726.46,124759,124759,100.00,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+memcpy,24415.84,25422.68,2466,2466,100.00,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+memcpy,27812.11,28668.70,103322,103322,100.00,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+memcpy,29566.73,28928.68,158182,158182,100.00,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+memcpy,27956.73,28820.97,147304,147304,100.00,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+memcpy,27992.86,28782.00,149062,149062,100.00,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+memcpy,29400.99,28755.23,136156,136156,100.00,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.63,316.74,113339,66817,58.95,shakespeare//pericles_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,205.17,309.92,125575,73896,58.85,shakespeare//king-john_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,199.89,302.11,181588,102309,56.34,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,213.18,323.53,99272,60391,60.83,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,200.41,304.43,136156,79934,58.71,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.41,314.25,119985,68213,56.85,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,201.48,304.43,132828,76990,57.96,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,202.81,305.32,159858,92093,57.61,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.29,313.85,125304,72355,57.74,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,198.96,301.00,182866,107475,58.77,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,202.35,304.38,145915,85122,58.34,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,201.38,302.89,171215,98652,57.62,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,126.74,230.21,2466,1885,76.44,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,205.98,311.08,103322,61482,59.51,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,205.17,312.41,106538,63321,59.44,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,200.88,302.65,158182,91420,57.79,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.76,306.95,147304,87633,59.49,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.33,302.89,169072,99849,59.06,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,204.16,308.22,149062,88464,59.35,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,207.88,314.21,127784,72317,56.59,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.09,309.17,152246,85605,56.23,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,201.85,303.68,157464,91780,58.29,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,203.25,310.95,119215,69455,58.26,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -1,199.48,306.39,124759,73050,58.55,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.15,290.88,159858,80864,50.58,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.12,297.24,145915,74620,51.14,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,92.59,301.46,127784,63270,49.51,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.07,287.65,119215,60666,50.89,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.29,285.20,132828,67818,51.06,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.72,285.20,149062,76851,51.56,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.11,284.33,106538,55480,52.08,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,92.01,297.05,181588,88966,48.99,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.87,297.61,158182,79901,50.51,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.73,291.40,113339,58606,51.71,shakespeare//pericles_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.04,296.59,171215,85863,50.15,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.28,293.60,125304,63358,50.56,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.01,292.02,169072,86752,51.31,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,112.50,181.24,2466,1834,74.37,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.68,287.20,157464,80538,51.15,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,93.79,308.89,152246,74047,48.64,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,88.36,284.71,103322,54105,52.37,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,88.98,283.69,182866,93565,51.17,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.82,297.37,119985,59538,49.62,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,90.84,288.70,124759,63447,50.86,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.75,289.23,136156,69422,50.99,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,89.25,295.08,147304,76292,51.79,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.87,276.90,99272,52396,52.78,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+quicklz 1.5.0 -2,91.30,291.08,125575,64272,51.18,shakespeare//king-john_TXT_FolgerShakespeare.txt
+snappy 1.2.2,229.22,485.85,113339,71038,62.68,shakespeare//pericles_TXT_FolgerShakespeare.txt
+snappy 1.2.2,219.70,478.09,147304,94443,64.11,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+snappy 1.2.2,237.94,512.00,127784,76320,59.73,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+snappy 1.2.2,230.79,471.48,103322,66163,64.04,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+snappy 1.2.2,218.80,479.43,149062,94867,63.64,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+snappy 1.2.2,229.46,497.61,119215,73877,61.97,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+snappy 1.2.2,578.06,868.00,2466,1934,78.43,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+snappy 1.2.2,215.95,479.42,169072,107225,63.42,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+snappy 1.2.2,230.69,491.81,124759,76923,61.66,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+snappy 1.2.2,212.93,473.01,182866,115870,63.36,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+snappy 1.2.2,230.96,504.31,125304,76630,61.16,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+snappy 1.2.2,222.16,485.55,145915,91734,62.87,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+snappy 1.2.2,224.56,501.40,181588,109754,60.44,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+snappy 1.2.2,231.46,469.96,99272,63376,63.84,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+snappy 1.2.2,226.50,488.92,136156,85265,62.62,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+snappy 1.2.2,226.92,487.94,125575,78240,62.31,shakespeare//king-john_TXT_FolgerShakespeare.txt
+snappy 1.2.2,227.20,476.66,106538,67906,63.74,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+snappy 1.2.2,218.24,478.57,157464,99044,62.90,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+snappy 1.2.2,220.01,489.35,158182,98731,62.42,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+snappy 1.2.2,237.97,508.68,119985,72100,60.09,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+snappy 1.2.2,219.47,489.66,171215,105906,61.86,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+snappy 1.2.2,225.67,493.60,132828,82395,62.03,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+snappy 1.2.2,221.52,492.73,159858,99304,62.12,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+snappy 1.2.2,229.18,501.84,152246,91970,60.41,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,200.35,850.93,125304,54526,43.51,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,185.38,833.54,132828,57080,42.97,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.40,826.93,136156,58420,42.91,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,177.56,827.51,181588,75169,41.40,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.72,829.42,152246,62517,41.06,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,195.84,823.72,99272,44563,44.89,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,197.87,845.94,125575,55548,44.23,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,204.66,852.12,103322,46796,45.29,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,195.01,828.48,124759,54423,43.62,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.09,824.27,149062,65041,43.63,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,197.15,839.98,119985,51418,42.85,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,177.96,811.42,182866,79254,43.34,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,182.06,823.17,157464,68112,43.26,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,177.94,820.36,171215,72786,42.51,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.32,404.93,2466,1341,54.38,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.77,834.91,145915,62865,43.08,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,201.44,844.53,113339,50519,44.57,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.26,817.13,147304,64882,44.05,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.44,818.17,158182,67570,42.72,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,180.08,826.09,159858,68270,42.71,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,203.73,837.12,106538,48256,45.29,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,197.61,862.24,127784,54659,42.77,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,179.04,823.76,169072,73354,43.39,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -1,199.60,854.96,119215,52399,43.95,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,147.86,697.23,127784,52277,40.91,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.32,747.82,157464,65925,41.87,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,128.09,730.93,182866,76588,41.88,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,145.68,693.23,119215,49911,41.87,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.23,740.72,158182,65214,41.23,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,145.37,685.75,106538,45653,42.85,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,130.13,741.93,171215,70326,41.07,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,147.46,688.88,119985,49264,41.06,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,143.13,683.23,124759,52005,41.68,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,167.49,372.79,2466,1340,54.34,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,144.70,685.56,113339,48025,42.37,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,146.73,690.87,125304,52004,41.50,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,127.04,734.26,169072,71019,42.01,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,146.52,693.77,103322,44575,43.14,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,128.50,733.85,147304,62692,42.56,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.43,748.30,136156,56470,41.47,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,142.66,680.20,125575,52851,42.09,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,131.45,748.79,159858,65908,41.23,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,139.30,653.75,99272,42532,42.84,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,127.21,729.41,149062,62952,42.23,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,130.33,755.22,145915,60750,41.63,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,133.39,751.77,152246,60392,39.67,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,132.98,750.87,132828,55289,41.62,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -2,132.12,755.55,181588,72608,39.99,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,120.12,632.47,158182,64994,41.09,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,118.09,614.96,169072,70642,41.78,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,117.80,616.42,157464,65759,41.76,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,124.68,651.56,152246,60288,39.60,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,128.32,753.13,124759,50209,40.24,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,116.42,605.48,147304,62503,42.43,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,120.91,632.66,171215,69910,40.83,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,129.62,751.05,103322,43337,41.94,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,123.29,706.53,99272,41523,41.83,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,128.18,742.07,113339,46684,41.19,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,120.31,630.56,136156,56424,41.44,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,119.77,623.73,159858,65859,41.20,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,119.56,623.20,145915,60556,41.50,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,124.52,648.84,181588,72205,39.76,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,118.16,625.47,132828,55305,41.64,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,129.32,757.66,119215,48379,40.58,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,127.06,743.49,125575,51313,40.86,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,116.91,607.84,149062,63000,42.26,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,128.68,741.48,106538,44440,41.71,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,131.02,756.25,125304,50339,40.17,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,131.42,757.08,119985,47536,39.62,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,118.07,613.90,182866,76557,41.87,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,131.94,772.10,127784,50309,39.37,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -3,140.33,379.85,2466,1343,54.46,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,122.95,645.75,119985,48299,40.25,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,119.59,643.57,124759,51109,40.97,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.96,729.98,136156,53603,39.37,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,68.33,725.38,158182,61601,38.94,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.19,707.56,149062,59569,39.96,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,68.22,724.33,171215,66269,38.71,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.58,706.78,169072,66813,39.52,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,119.11,627.69,125575,52097,41.49,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,123.59,650.85,127784,51089,39.98,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,117.40,612.30,106538,45311,42.53,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.93,719.21,159858,62583,39.15,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,118.43,621.25,113339,47402,41.82,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,68.08,726.08,145915,57593,39.47,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,69.07,733.10,181588,68362,37.65,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.75,720.11,132828,52678,39.66,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,116.16,591.96,99272,42258,42.57,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,66.84,700.98,147304,59432,40.35,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,120.60,636.49,119215,49083,41.17,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,121.29,642.27,125304,51130,40.80,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.26,704.17,182866,72235,39.50,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,94.57,379.03,2466,1324,53.69,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,67.74,714.57,157464,62407,39.63,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,116.59,614.43,103322,43974,42.56,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -4,69.63,735.46,152246,57115,37.51,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.46,627.64,119215,47782,40.08,shakespeare//twelfth-night_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.17,740.85,171215,65506,38.26,shakespeare//coriolanus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,63.90,614.54,113339,46165,40.73,shakespeare//pericles_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.22,744.66,136156,53104,39.00,shakespeare//henry-vi-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.88,737.58,158182,61021,38.58,shakespeare//henry-vi-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.53,753.51,152246,56420,37.06,shakespeare//henry-vi-part-3_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.84,727.71,157464,61888,39.30,shakespeare//henry-v_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,65.01,636.58,119985,46891,39.08,shakespeare//julius-caesar_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.23,619.65,125575,50583,40.28,shakespeare//king-john_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.84,736.95,132828,52271,39.35,shakespeare//loves-labors-lost_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.76,733.01,159858,61972,38.77,shakespeare//henry-iv-part-2_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,63.42,608.45,106538,43795,41.11,shakespeare//macbeth_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,65.36,636.89,127784,49814,38.98,shakespeare//much-ado-about-nothing_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.11,624.95,124759,49760,39.88,shakespeare//titus-andronicus_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.13,740.85,145915,57044,39.09,shakespeare//henry-iv-part-1_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,59.61,751.25,181588,67484,37.16,shakespeare//richard-iii_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,62.65,581.54,99272,40987,41.29,shakespeare//shakespeares-sonnets_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,64.50,626.18,125304,49879,39.81,shakespeare//the-merchant-of-venice_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,57.42,723.33,182866,71403,39.05,shakespeare//hamlet_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,79.99,380.79,2466,1318,53.45,shakespeare//the-phoenix-and-turtle_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,63.35,610.25,103322,42658,41.29,shakespeare//the-tempest_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,57.93,715.66,147304,58994,40.05,shakespeare//the-two-noble-kinsmen_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,58.47,723.60,169072,66140,39.12,shakespeare//cymbeline_TXT_FolgerShakespeare.txt
+zstd 1.5.7 -5,57.69,722.53,149062,59079,39.63,shakespeare//the-winters-tale_TXT_FolgerShakespeare.txt
