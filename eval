@@ -1,9 +1,14 @@
 #!/bin/bash
 
+cd corpus/
+
 dt=$(date +%s)
+corpus="${1:-corpus}"
 
-corpus="${1-corpus}"
+pushd "$corpus"
 
+files=$(find . -type f -executable ! -name '*.dll' ! -name '*.so' ! -name 'createdump')
+"${LZBENCH_EXE:-lzbench}" -o4c7 $files | tee "results_${corpus}_$dt.csv"
 
-lzbench -o4c7 -r "$corpus" | tee "results/results_${corpus//\//\_}_lzbench_$dt.csv"
-sed -i 's/corpus\/\/[^/]*\///g' "results/results_${corpus//\//\_}_lzbench_$dt.csv"
+popd
+
