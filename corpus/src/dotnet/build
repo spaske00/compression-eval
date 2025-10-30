@@ -1,0 +1,36 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+source ../../utils.sh
+
+arch=(
+    # "win-x64"
+    "linux-x64"
+)
+
+declare -A opts=(
+    ["debug"]="-c Debug"
+    ["release"]="-c Release"
+    ["standalone"]="-c Release --self-contained true"
+    ["static"]="-c Release -p:PublishSingleFile=true --self-contained true"
+)
+
+function build_templates ()
+{
+    for a in "${arch[@]}"; do
+        for o in "${!opts[@]}"; do
+            local prog
+            prog="$(basename "$PWD")-dotnet"
+            local opt="${opts[$o]}"
+            local target="$prog-$a-$o"
+
+            echo "Building $target ..."
+            dotnet publish -o "$__BASE_DIR/bin/$target" -r "$a" $opt 
+        done
+    done
+}
+
+loop_dirs build_templates
+
+unset arch
+unset opts

@@ -1,0 +1,45 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+source ../../utils.sh
+
+arch=(
+    "linux-x64"
+)
+
+declare -A opts=(
+    ["O2"]="-O2"
+    ["O3"]="-O3"
+    ["Os"]="-Os"
+    ["prof"]="-g -H:+UnlockExperimentalVMOptions -H:-DeleteLocalSymbols -H:-RemoveUnusedSymbols -H:+SourceLevelDebug -H:+InternalSymbolsAreGlobal -H:+PreserveFramePointer"
+    ["static"]="--static --libc=musl"
+    ["static-nolibc"]="--static-nolibc"
+)
+
+if [ ! -d "$GRAALVM_HOME" ] || [ ! -f "$GRAALVM_HOME/bin/native-image" ]; then
+    echo "GRAALVM_HOME points to an invalid directory or the SDK does not contain native-image."    
+    exit 1
+fi
+
+function build_templates ()
+{
+    for a in "${arch[@]}"; do
+        for o in "${!opts[@]}"; do
+            local prog
+            prog="$(basename "$PWD")-graalvm"
+            local opt="${opts[$o]}"
+            local target="$prog-$a-$o"
+
+            echo "Building $target ..."
+            ./build "$target" "$opt"
+        done
+    done
+}
+
+
+loop_dirs build_templates
+loop_dirs mv ./target/images/* "$__BASE_DIR/bin"
+
+
+unset arch
+unset opts

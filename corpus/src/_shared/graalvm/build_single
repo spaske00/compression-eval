@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Build a native-image from a single source file
+
+if [ $# -lt 2 ]; then
+    echo "usage: $0 <image_name> [native_image_args]"
+    exit 1
+fi
+
+java_src="$(find . -maxdepth 1 -type f -name "*.java" | head -n 1)"
+java_src="${java_src##*/}"
+java_src="${java_src%.*}"
+
+out="target/images/$1/$1"
+mkdir -p "target/images/$1/"
+shift 1
+args="$@"
+
+"$GRAALVM_HOME/bin/javac" "$java_src.java" 
+"$GRAALVM_HOME/bin/native-image" \
+    -o "$out" \
+    $args \
+    "$java_src"
+
+unset java_src
+unset out
+unset args

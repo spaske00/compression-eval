@@ -1,0 +1,1 @@
+./mvnw --no-transfer-progress package -Dpackaging=native-image

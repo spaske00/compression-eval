@@ -1,0 +1,33 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+cc="$1"
+cxx="$2"
+target="${3#"polybench-"}"
+shift 3
+cflags="$@ -lm"
+
+polybench_root="$PWD"
+mkdir -p bin/
+
+cd ./polybench
+perl utilities/makefile-gen.pl . -cfg
+shopt -s globstar
+for dir in ./**/; do
+    echo "$dir"
+    cd "$dir"
+    if [ -f Makefile ] ; then
+        make -B CC="$cc" CXX="$cxx" CFLAGS="$cflags" TARGET_NAME="$target"
+        target_dir="$polybench_root/bin/polybench-${target%.out}/" 
+        mkdir -p "$target_dir"
+        mv *.out "$target_dir" 
+    fi
+    cd "$polybench_root/polybench"
+done
+
+unset cc
+unset cxx
+unset target
+unset cflags
+unset polybench_root
+

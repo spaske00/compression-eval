@@ -1,0 +1,23 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+source ../../utils.sh
+
+arch=(
+    "linux-x64"
+)
+
+declare -A opts=(
+    ["O2"]="-O2"
+    ["O3"]="-O3"
+    ["Os"]="-Os"
+    ["debug"]="-g"
+    ["static"]="-static"
+    ["static-pie"]="-static-pie"
+)
+
+loop_dirs make_all gcc g++
+loop_dirs mv bin/* "$__BASE_DIR/bin"
+
+unset arch
+unset opts

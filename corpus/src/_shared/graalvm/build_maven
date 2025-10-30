@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Build a native-image from a Maven project
+# Assumes NBT (Native Build Tools) are used
+# Assumes target image name is `image`
+
+if [ $# -lt 1 ]; then
+    echo "usage: $0 <image_name> [native_image_args]"
+    exit 1
+fi
+
+out="$1"
+target_dir="target/images/$out"
+mkdir -p "$target_dir"
+
+shift 1
+
+cmd="./mvnw package -Pnative"
+if [ -f package_cmd ] ; then
+    cmd="$(cat package_cmd)"
+fi
+
+export NATIVE_IMAGE_OPTIONS="$@"
+JAVA_HOME="$GRAALVM_HOME" $cmd
+unset NATIVE_IMAGE_OPTIONS
+
+if [ -f post_package_cmd ] ; then
+    $(cat post_package_cmd)
+fi
+
+mv target/image "$target_dir/$out"
