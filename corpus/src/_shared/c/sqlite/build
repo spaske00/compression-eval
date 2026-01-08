@@ -1,0 +1,28 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+cc="$1"
+cxx="$2"
+target="${3#"jq-"}"
+shift 3
+cflags="$@"
+
+sqlite_root="$PWD"
+mkdir -p bin/
+
+cd ./sqlite-3.51.1
+mkdir -p build
+cd build
+../configure CC="$cc" CXX="$cxx" CLAGS="$cflags"
+make sqlite3 -j8
+target_dir="$sqlite_root/bin/sqlite-${target%.out}/" 
+mkdir -p "$target_dir"
+mv ./sqlite3 "$target_dir/${target%.out}"
+
+unset cc
+unset cxx
+unset target
+unset target_dir
+unset cflags
+unset sqlite_root
+

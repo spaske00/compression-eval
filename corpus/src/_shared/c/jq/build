@@ -22,6 +22,7 @@ mv ./libs/jq "$target_dir/${target%.out}"
 unset cc
 unset cxx
 unset target
+unset target_dir
 unset cflags
 unset jq_root
 
