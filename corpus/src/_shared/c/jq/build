@@ -15,7 +15,7 @@ autoreconf -fi
 ./configure --without-oniguruma CC="$cc" CXX="$cxx" CLAGS="$cflags"
 make clean
 make -j8
-target_dir="$jq_root/bin/${target%.out}/" 
+target_dir="$jq_root/bin/jq-${target%.out}/" 
 mkdir -p "$target_dir"
 mv ./libs/jq "$target_dir/${target%.out}"
 
