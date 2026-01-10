@@ -11,13 +11,13 @@ jq_root="$PWD"
 mkdir -p bin/
 
 cd ./jq-1.8.1
+make clean
 autoreconf -fi
 ./configure --without-oniguruma CC="$cc" CXX="$cxx" CLAGS="$cflags"
-make clean
 make -j8
 target_dir="$jq_root/bin/jq-${target%.out}/" 
 mkdir -p "$target_dir"
-mv ./libs/jq "$target_dir/${target%.out}"
+mv .libs/jq "$target_dir/${target%.out}"
 
 unset cc
 unset cxx
