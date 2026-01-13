@@ -17,7 +17,7 @@ autoreconf -fi
 make -j8
 target_dir="$jq_root/bin/jq-${target%.out}/" 
 mkdir -p "$target_dir"
-mv .libs/jq "$target_dir/${target%.out}"
+mv .libs/jq "$target_dir/jq-${target%.out}"
 
 unset cc
 unset cxx
