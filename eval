@@ -1,13 +1,11 @@
 #!/bin/bash
 
-cd corpus/
-
 dt=$(date +%s)
 corpus="${1:-corpus}"
 
 pushd "$corpus"
 
-files=$(find . -type f -executable ! -name '*.dll' ! -name '*.so' ! -name 'createdump')
+files=$(find . -type f -name '*.tar')
 "${LZBENCH_EXE:-lzbench}" -o4c7 $files | tee "results_${corpus}_$dt.csv"
 
 popd

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ./corpus/bin/
+for d in * ; do
+    tar -cvf "$d.tar" "$d"
+done
