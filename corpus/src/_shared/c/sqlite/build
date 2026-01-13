@@ -3,7 +3,7 @@
 
 cc="$1"
 cxx="$2"
-target="${3#"jq-"}"
+target="${3#"sqlite-"}"
 shift 3
 cflags="$@"
 
@@ -17,7 +17,7 @@ cd build
 make sqlite3 -j8
 target_dir="$sqlite_root/bin/sqlite-${target%.out}/" 
 mkdir -p "$target_dir"
-mv ./sqlite3 "$target_dir/${target%.out}"
+mv ./sqlite3 "$target_dir/sqlite-${target%.out}"
 
 unset cc
 unset cxx
