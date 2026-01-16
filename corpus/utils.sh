@@ -41,6 +41,7 @@ function make_all ()
             local target="$prog-$a-$o"
 
             echo "Building $target ..."
+            make clean
             make -B CC="$cc" CXX="$cxx" CFLAGS="$opt" TARGET_NAME="$target".out "$*"
             mkdir -p "bin/$target"
             mv "bin/$target.out" "bin/$target/$target"

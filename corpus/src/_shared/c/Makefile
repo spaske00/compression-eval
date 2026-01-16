@@ -62,9 +62,9 @@ debug: $(TARGET_DEBUG)
 .PHONY: clean
 clean:
 	@echo CLEAN $(CLEAN_LIST)
-	@rm -f $(CLEAN_LIST)
+	@rm -rf $(CLEAN_LIST)
 
 .PHONY: distclean
 distclean:
 	@echo CLEAN $(DISTCLEAN_LIST)
-	@rm -f $(DISTCLEAN_LIST)
+	@rm -rf $(DISTCLEAN_LIST)
