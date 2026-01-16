@@ -12,6 +12,7 @@ declare -A opts=(
     ["debug"]="-c Debug"
     ["release"]="-c Release"
     ["static"]="-c Release --self-contained true"
+    ["sf"]="-c Release -p:PublishSingleFile=true"
     ["static-sf"]="-c Release -p:PublishSingleFile=true --self-contained true"
 )
 
