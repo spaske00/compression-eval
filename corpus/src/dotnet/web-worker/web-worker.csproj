@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-web_worker-94fdee2c-451b-4676-8cd9-725111977055</UserSecretsId>
     <RootNamespace>web_worker</RootNamespace>
+    <PublishAot>true</PublishAot>
   </PropertyGroup>
 
   <ItemGroup>
