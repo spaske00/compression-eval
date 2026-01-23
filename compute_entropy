@@ -14,10 +14,12 @@ output_file="$PWD/results/results_${DIR//\//\_}entropy_$dt.csv"
 cd "$DIR"
 
 # Print header
-echo '' | ent -t -b | head -n 1 > "$output_file"
+echo -n 'filename,' > "$output_file"
+echo '' | ent -t -b | head -n 1 >> "$output_file"
 
-for file in $(find . -type f -name '*.tar'); do
+for file in $(find . -type f -name '*.tar' | sort); do
     echo "Processing: $file"
+    echo -n "$file," >> "$output_file"
     ent -t -b "$file" | tail -n 1 >> "$output_file"
 done
 
