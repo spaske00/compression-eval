@@ -1,0 +1,32 @@
+#!/bin/bash
+
+py="${1:-python}"
+
+metrics=(
+    "Compression speed"
+    "Decompression speed"
+    "Ratio"
+)
+
+
+# Silesia
+
+for m in "${metrics[@]}"; do
+    "$py" plot_metrics.py silesia.csv "$m" 
+done
+
+"$py" plot_bubble.py silesia.csv "${metrics[2]}" "${metrics[0]}" "Compressor name" "Original size" "Filename"
+"$py" plot_bubble.py silesia.csv "${metrics[2]}" "${metrics[1]}" "Compressor name" "Original size" "Filename"
+"$py" plot_bubble.py silesia.csv "${metrics[0]}" "${metrics[1]}" "Compressor name" "Original size" "Filename"
+
+# Bin corpus
+
+for c in "graalvm-linux-x64-O2" "dotnet-linux-x64-release" "gcc-linux-x64-O2"; do
+    for m in "${metrics[@]}"; do
+        "$py" plot_metrics.py exe-corpus.csv "$m" "$c"
+    done
+    "$py" plot_bubble.py exe-corpus.csv "${metrics[2]}" "${metrics[0]}" "Compressor name" "Original size" "Filename" "$c"
+    "$py" plot_bubble.py exe-corpus.csv "${metrics[2]}" "${metrics[1]}" "Compressor name" "Original size" "Filename" "$c"
+    "$py" plot_bubble.py exe-corpus.csv "${metrics[0]}" "${metrics[1]}" "Compressor name" "Original size" "Filename" "$c"
+done
+
