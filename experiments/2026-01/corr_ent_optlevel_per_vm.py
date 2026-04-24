@@ -30,13 +30,21 @@ def extract_compiler(filename):
 df['Compiler'] = df['filename'].apply(extract_compiler)
 
 # Plot optimization level vs entropy grouped by compiler
-plt.figure(figsize=(14,7))
-sns.boxplot(data=df, x='Opt_Level', y='Entropy', hue='Compiler', 
-            order=['debug','O0','O1','O2','O3','Os','Of','Og','prof','release','sf','static'])
-plt.title("Entropy vs Optimization Level by Compiler/VM")
-plt.xlabel("Optimization Level")
+order = ['debug', 'O0', 'O1', 'O2', 'O3', 'Os', 'Of', 'Og', 'prof', 'release', 'single', 'static']
+
+plt.figure(figsize=(14, 7))
+ax = sns.boxplot(data=df, x='Opt_Level', y='Entropy', hue='Compiler', order=order)
+
+ax.set_axisbelow(True)
+for i in range(len(order) - 1):
+    ax.axvline(i + 0.5, color='0.88', linewidth=1, zorder=0)
+
+""" plt.title("Entropy vs Optimization Level by Compiler/VM") """
+plt.xlabel("Build configuration")
 plt.ylabel("Entropy")
 plt.grid(True, axis='y')
-plt.legend(title='Compiler/VM')
+plt.legend(title='Platform')
+plt.ylim(0.2, 1.0)
+
 plt.show()
 
