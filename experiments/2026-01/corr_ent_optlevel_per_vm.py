@@ -2,6 +2,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import re
+import sys
+
+metric = 'Entropy'
+if len(sys.argv) > 1:
+    metric = sys.argv[1]
+
+ymin = None
+if len(sys.argv) > 2:
+    ymin = float(sys.argv[2])
+ymax = None
+if len(sys.argv) > 3:
+    ymax = float(sys.argv[3])
 
 # Load CSV
 df = pd.read_csv("data.csv")  # replace with your CSV file
@@ -33,18 +45,18 @@ df['Compiler'] = df['filename'].apply(extract_compiler)
 order = ['debug', 'O0', 'O1', 'O2', 'O3', 'Os', 'Of', 'Og', 'prof', 'release', 'single', 'static']
 
 plt.figure(figsize=(14, 7))
-ax = sns.boxplot(data=df, x='Opt_Level', y='Entropy', hue='Compiler', order=order)
+ax = sns.boxplot(data=df, x='Opt_Level', y=metric, hue='Compiler', order=order)
 
 ax.set_axisbelow(True)
 for i in range(len(order) - 1):
     ax.axvline(i + 0.5, color='0.88', linewidth=1, zorder=0)
 
-""" plt.title("Entropy vs Optimization Level by Compiler/VM") """
+""" plt.title(f"{metric} vs Optimization Level by Compiler/VM") """
 plt.xlabel("Build configuration")
-plt.ylabel("Entropy")
+plt.ylabel(metric)
 plt.grid(True, axis='y')
 plt.legend(title='Platform')
-plt.ylim(0.2, 1.0)
+plt.ylim(ymin, ymax)
 
 plt.show()
 
