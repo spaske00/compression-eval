@@ -1,0 +1,60 @@
+#!/bin/bash
+
+benchmarks=(
+
+    # Dacapo
+    "dacapo-native-image:fop"
+    "dacapo-native-image:lusearch"
+    "dacapo-native-image:xalan"
+    "dacapo-native-image:luindex"
+    "dacapo-native-image:pmd"
+    "dacapo-native-image:sunflow"
+
+    # Scala-Dacapo
+    "scala-dacapo-native-image:apparat"
+    "scala-dacapo-native-image:factorie"
+    "scala-dacapo-native-image:kiama"
+    "scala-dacapo-native-image:scalac"
+    "scala-dacapo-native-image:scaladoc"
+    "scala-dacapo-native-image:scalap"
+    "scala-dacapo-native-image:scalaxb"
+    "scala-dacapo-native-image:tmt"
+
+    # Renaissance
+    "renaissance-native-image:akka-uct"
+    "renaissance-native-image:fj-kmeans"
+    "renaissance-native-image:mnemonics"
+    "renaissance-native-image:philosophers"
+    "renaissance-native-image:rx-scrabble"
+    "renaissance-native-image:scala-kmeans"
+    "renaissance-native-image:scrabble"
+    "renaissance-native-image:finagle-http"
+    "renaissance-native-image:future-genetic"
+    "renaissance-native-image:par-mnemonics"
+    "renaissance-native-image:reactors"
+    "renaissance-native-image:scala-doku"
+    "renaissance-native-image:scala-stm-bench7"
+
+    # Barista
+    "barista-native-image:micronaut-hello-world"
+    "barista-native-image:vanilla-hello-world"
+    "barista-native-image:micronaut-shopcart"
+    "barista-native-image:micronaut-similarity"
+    "barista-native-image:quarkus-hello-world"
+    "barista-native-image:quarkus-tika"
+    "barista-native-image:spring-hello-world"
+    "barista-native-image:spring-petclinic"
+    "barista-native-image:helidon-hello-world"
+    "barista-native-image:play-scala-hello-world"
+
+)
+
+
+for bench in "${benchmarks[@]}"; do
+    if [ ! -d "$bench" ]; then
+        mkdir "$bench"
+        pushd "$bench"
+        ln -s ../../_shared/graalvm/build_mx build
+        popd
+    fi
+done

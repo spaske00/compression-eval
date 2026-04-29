@@ -3,6 +3,7 @@
 
 cd corpus/
 
+source env
 source ./utils.sh
 
 mkdir -p bin/

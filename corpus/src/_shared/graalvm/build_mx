@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "usage: $0 <image_name> [native_image_args]"
+    exit 1
+fi
+
+bench_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+bench=$(basename "$bench_dir")
+out="$1"
+target_dir="target/images/$out"
+mkdir -p "$target_dir"
+mkdir -p tmp
+shift
+
+read -r -a ni_opts <<< "$@"
+extra_args=()
+for opt in "${ni_opts[@]}"; do
+    extra_args+=("-Dnative-image.benchmark.extra-image-build-argument=$opt")
+done
+
+ni_bench_dir="$GRAALVM_SRC_DIR/graal/sdk/mxbuild/native-image-benchmarks"
+rm -rf "$ni_bench_dir"
+
+cd "$GRAALVM_SRC_DIR/graal-enterprise/vm-enterprise"
+unset NATIVE_IMAGE_OPTIONS
+mx --java-home $JAVA_HOME --env ni-ee benchmark "$bench" -- \
+   --jvm=native-image --jvm-config=default-ee \
+   -Dnative-image.benchmark.stages=agent,image \
+   "${extra_args[@]}"
+cd "$bench_dir"
+
+mv "$ni_bench_dir"/* "$target_dir/$out"
+
+unset ni_opts
+unset extra_args
+unset opt
+unset bench
+unset bench_dir
+unset ni_bench_dir
+unset out
+unset target_dir
