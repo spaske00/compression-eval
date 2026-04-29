@@ -2,5 +2,5 @@
 
 cd ./corpus/bin/
 for d in * ; do
-    tar --force-local -cvf "$d.tar" "$d"
+    tar --force-local --exclude='sources/*' -cvf "$d.tar" "$d"
 done
