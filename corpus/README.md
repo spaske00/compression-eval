@@ -6,6 +6,8 @@ Sources for building executable file corpus
 Executables on path:
 - `gcc`
 - `clang`
+- `cmake`
+- `ninja`
 - `dotnet` 
 
 Environment variables:

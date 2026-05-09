@@ -20,18 +20,46 @@ function build_templates ()
 {
     for a in "${arch[@]}"; do
         for o in "${!opts[@]}"; do
-            local prog
-            prog="$(basename "$PWD")-dotnet"
+            local app
+            app="$(basename "$PWD")"
+            local prog="$app-dotnet"
             local opt="${opts[$o]}"
             local target="$prog-$a-$o"
+            local stage_dir="$__BASE_DIR/bin/.$target.publish"
+            local final_dir="$__BASE_DIR/bin/$target"
 
             echo "Building $target ..."
-            dotnet publish -o "$__BASE_DIR/bin/$target" -r "$a" $opt 
+            rm -rf "$stage_dir" || return $?
+            dotnet publish -o "$stage_dir" -r "$a" $opt || return $?
+
+            rm -rf "$final_dir" || return $?
+            mkdir -p "$final_dir"
+
+            if [[ "$o" == "debug" ]]; then
+                if [[ ! -f "$stage_dir/$app.dbg" ]]; then
+                    echo "Expected debug symbols at $stage_dir/$app.dbg" >&2
+                    rm -rf "$stage_dir"
+                    return 1
+                fi
+                cp "$stage_dir/$app.dbg" "$final_dir/$app.dbg" || return $?
+            else
+                if [[ ! -x "$stage_dir/$app" ]]; then
+                    echo "Expected executable at $stage_dir/$app" >&2
+                    rm -rf "$stage_dir"
+                    return 1
+                fi
+                cp "$stage_dir/$app" "$final_dir/$app" || return $?
+            fi
+
+            rm -rf "$stage_dir"
         done
     done
 }
 
-loop_dirs build_templates
+status=0
+loop_dirs build_templates || status=$?
 
 unset arch
 unset opts
+
+exit "$status"

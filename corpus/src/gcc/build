@@ -20,8 +20,35 @@ declare -A opts=(
     # ["static-pie"]="-static-pie"
 )
 
-loop_dirs make_all gcc g++
-loop_dirs mv bin/* "$__BASE_DIR/bin"
+function move_bins ()
+{
+    shopt -s nullglob
+    local entries=(bin/*)
+    if (( ${#entries[@]} == 0 )); then
+        return 0
+    fi
+
+    mkdir -p "$__BASE_DIR/bin"
+    for entry in "${entries[@]}"; do
+        local dest="$__BASE_DIR/bin/$(basename "$entry")"
+        if [[ -d "$entry" && -d "$dest" ]]; then
+            if rm -rf "$dest" 2>/dev/null; then
+                mv "$entry" "$dest" || return $?
+            else
+                cp -Rf "$entry"/. "$dest"/ 2>/dev/null || cp -Rn "$entry"/. "$dest"/ || return $?
+                rm -rf "$entry" || return $?
+            fi
+        else
+            mv -f "$entry" "$dest" || return $?
+        fi
+    done
+}
+
+status=0
+loop_dirs make_all gcc g++ || status=$?
+loop_dirs move_bins || status=$?
 
 unset arch
 unset opts
+
+exit "$status"

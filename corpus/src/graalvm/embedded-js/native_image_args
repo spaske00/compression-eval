@@ -1,0 +1,4 @@
+--exclude-config truffle-api-25.0.1.jar META-INF\/native-image\/org.graalvm.truffle\/truffle-api\/native-image.properties
+--exclude-config truffle-runtime-25.0.1.jar META-INF\/native-image\/org.graalvm.truffle\/truffle-runtime\/native-image.properties
+--macro:truffle
+-H:+AllowDeprecatedBuilderClassesOnImageClasspath

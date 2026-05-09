@@ -1,0 +1,103 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+set -euo pipefail
+
+cc="$1"
+cxx="$2"
+target="${3#"llvm-test-suite-"}"
+shift 3
+cflags="$*"
+target_base="${target%.out}"
+
+suite_root=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd -P )
+work_root="$PWD"
+source_dir="$suite_root/llvm-test-suite"
+build_dir="$work_root/.build/$target_base"
+staging_dir="$work_root/bin/.llvm-$target_base.tmp"
+marker="$work_root/bin/.llvm-test-suite-$target_base.complete"
+manifest="$suite_root/benchmarks.txt"
+
+if [[ ! -f "$source_dir/CMakeLists.txt" ]]; then
+    echo "Missing LLVM test-suite checkout at $source_dir" >&2
+    exit 1
+fi
+
+if [[ ! -f "$manifest" ]]; then
+    echo "Missing benchmark manifest at $manifest" >&2
+    exit 1
+fi
+
+mapfile -t benchmark_dirs < <(grep -vE '^[[:space:]]*(#|$)' "$manifest")
+test_suite_subdirs="$(IFS=';'; echo "${benchmark_dirs[*]}")"
+
+rm -rf "$staging_dir"
+trap 'rm -rf "$staging_dir"' EXIT
+mkdir -p "$build_dir" "$staging_dir"
+
+cmake -S "$source_dir" -B "$build_dir" -G Ninja \
+    -DCMAKE_BUILD_TYPE=Corpus \
+    -DCMAKE_C_COMPILER="$cc" \
+    -DCMAKE_CXX_COMPILER="$cxx" \
+    -DCMAKE_C_FLAGS="$cflags" \
+    -DCMAKE_CXX_FLAGS="$cflags" \
+    -DCMAKE_EXE_LINKER_FLAGS="$cflags" \
+    -DTEST_SUITE_SUBDIRS="$test_suite_subdirs" \
+    -DTEST_SUITE_RUN_BENCHMARKS=OFF \
+    -DTEST_SUITE_COLLECT_CODE_SIZE=OFF \
+    -DTEST_SUITE_COLLECT_COMPILE_TIME=OFF \
+    -DTEST_SUITE_BENCHMARKING_ONLY=ON
+
+cmake --build "$build_dir" --parallel "${JOBS:-8}"
+
+while IFS= read -r -d '' exe; do
+    program="$(basename "$exe")"
+    out_dir="llvm-$program-$target_base"
+    if [[ -e "$staging_dir/$out_dir" ]]; then
+        echo "Duplicate LLVM test-suite program name: $program" >&2
+        exit 1
+    fi
+
+    mkdir -p "$staging_dir/$out_dir"
+    cp "$exe" "$staging_dir/$out_dir/$out_dir"
+done < <(
+    find "$build_dir/MultiSource" -type f -perm -111 \
+        ! -name '*.cmake' \
+        ! -name '*.py' \
+        ! -name '*.sh' \
+        ! -name '*.txt' \
+        -print0
+)
+
+if [[ -z "$(find "$staging_dir" -type f -perm -111 -print -quit)" ]]; then
+    echo "No LLVM test-suite executables were copied to $staging_dir" >&2
+    exit 1
+fi
+
+rm -rf "$work_root/bin"/llvm-*-"$target_base"
+for program_dir in "$staging_dir"/*; do
+    mv "$program_dir" "$work_root/bin/$(basename "$program_dir")"
+done
+
+rmdir "$staging_dir"
+touch "$marker"
+trap - EXIT
+
+unset cc
+unset cxx
+unset target
+unset target_base
+unset cflags
+unset suite_root
+unset work_root
+unset source_dir
+unset build_dir
+unset staging_dir
+unset marker
+unset manifest
+unset benchmark_dirs
+unset test_suite_subdirs
+unset exe
+unset program
+unset out_dir
+unset program_dir

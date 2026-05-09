@@ -39,10 +39,35 @@ function build_templates ()
     done
 }
 
+function move_images ()
+{
+    shopt -s nullglob
+    local entries=(./target/images/*)
+    if (( ${#entries[@]} == 0 )); then
+        return 0
+    fi
 
-loop_dirs build_templates
-loop_dirs mv ./target/images/* "$__BASE_DIR/bin"
+    mkdir -p "$__BASE_DIR/bin"
+    for entry in "${entries[@]}"; do
+        local dest="$__BASE_DIR/bin/$(basename "$entry")"
+        if [[ -d "$entry" && -d "$dest" ]]; then
+            if rm -rf "$dest" 2>/dev/null; then
+                mv "$entry" "$dest" || return $?
+            else
+                cp -Rf "$entry"/. "$dest"/ 2>/dev/null || cp -Rn "$entry"/. "$dest"/ || return $?
+                rm -rf "$entry" || return $?
+            fi
+        else
+            mv -f "$entry" "$dest" || return $?
+        fi
+    done
+}
 
+status=0
+loop_dirs build_templates || status=$?
+loop_dirs move_images || status=$?
 
 unset arch
 unset opts
+
+exit "$status"

@@ -1,0 +1,22 @@
+# Curated LLVM test-suite subset used by the executable corpus.
+#
+# These are passed to CMake via TEST_SUITE_SUBDIRS. Keep this list broad
+# enough to replace PolyBench's numeric kernels without pulling in the full
+# LLVM test-suite.
+MultiSource/Benchmarks/MiBench
+MultiSource/Benchmarks/Olden
+MultiSource/Benchmarks/FreeBench
+MultiSource/Benchmarks/BitBench
+MultiSource/Benchmarks/MallocBench
+MultiSource/Benchmarks/Ptrdist
+MultiSource/Benchmarks/7zip
+MultiSource/Benchmarks/PAQ8p
+MultiSource/Applications/aha
+MultiSource/Applications/hexxagon
+MultiSource/Applications/lemon
+MultiSource/Applications/lua
+MultiSource/Applications/minisat
+MultiSource/Applications/sgefa
+MultiSource/Applications/siod
+MultiSource/Applications/spiff
+MultiSource/Applications/viterbi

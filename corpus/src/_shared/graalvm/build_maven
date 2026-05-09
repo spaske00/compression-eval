@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Build a native-image from a Maven project
 # Assumes NBT (Native Build Tools) are used
@@ -11,21 +12,40 @@ fi
 
 out="$1"
 target_dir="target/images/$out"
-mkdir -p "$target_dir"
 
 shift 1
 
-cmd="./mvnw package -Pnative"
-if [ -f package_cmd ] ; then
-    cmd="$(cat package_cmd)"
+if [ -s .mvn/wrapper/maven-wrapper.jar ]; then
+    mvn_cmd="./mvnw"
+else
+    mvn_cmd="mvn"
 fi
 
-export NATIVE_IMAGE_OPTIONS="$@"
-JAVA_HOME="$GRAALVM_HOME" $cmd
+cmd="$mvn_cmd package -Pnative"
+if [ -f package_cmd ] ; then
+    cmd="$(cat package_cmd)"
+    if [ "$mvn_cmd" = "mvn" ]; then
+        cmd="${cmd/#.\/mvnw/mvn}"
+    fi
+fi
+
+native_image_options="$*"
+if [ -f native_image_args ]; then
+    native_image_options="$native_image_options $(tr '\n' ' ' < native_image_args)"
+fi
+
+export NATIVE_IMAGE_OPTIONS="$native_image_options"
+JAVA_HOME="$GRAALVM_HOME" bash -lc "$cmd"
 unset NATIVE_IMAGE_OPTIONS
 
 if [ -f post_package_cmd ] ; then
-    $(cat post_package_cmd)
+    bash -lc "$(cat post_package_cmd)"
 fi
 
+if [ ! -x target/image ]; then
+    echo "Expected executable native image at target/image" >&2
+    exit 1
+fi
+
+mkdir -p "$target_dir"
 mv target/image "$target_dir/$out"

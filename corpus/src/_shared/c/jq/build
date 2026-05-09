@@ -1,28 +1,47 @@
 #!/bin/bash
 #shellcheck disable=SC2164
 
+set -euo pipefail
+
 cc="$1"
 cxx="$2"
 target="${3#"jq-"}"
 shift 3
-cflags="$@"
+cflags="$*"
+target_name="jq-${target%.out}"
+configure_args=("--without-oniguruma")
+
+if [[ " $cflags " == *" -static "* ]]; then
+    configure_args+=("--enable-all-static" "--disable-shared" "--enable-static")
+fi
 
 jq_root="$PWD"
 mkdir -p bin/
 
 cd ./jq-1.8.1
-make clean
+if [[ -f Makefile ]]; then
+    make clean
+fi
 autoreconf -fi
-./configure --without-oniguruma CC="$cc" CXX="$cxx" CLAGS="$cflags"
-make -j8
-target_dir="$jq_root/bin/jq-${target%.out}/" 
+./configure "${configure_args[@]}" CC="$cc" CXX="$cxx" CFLAGS="$cflags" CXXFLAGS="$cflags" LDFLAGS="$cflags"
+make -j"${JOBS:-8}"
+target_dir="$jq_root/bin/$target_name/"
 mkdir -p "$target_dir"
-mv .libs/jq "$target_dir/jq-${target%.out}"
+
+if [[ -x .libs/jq ]]; then
+    cp .libs/jq "$target_dir/$target_name"
+elif [[ -x jq ]]; then
+    cp jq "$target_dir/$target_name"
+else
+    echo "Expected jq executable at .libs/jq or jq" >&2
+    exit 1
+fi
 
 unset cc
 unset cxx
 unset target
+unset target_name
+unset configure_args
 unset target_dir
 unset cflags
 unset jq_root
-

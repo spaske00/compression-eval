@@ -1,0 +1,6 @@
+#!/bin/bash
+#shellcheck disable=SC2164
+
+set -euo pipefail
+
+../../_shared/c/llvm-test-suite/build "$@"

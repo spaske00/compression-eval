@@ -1,6 +1,23 @@
 #!/bin/bash
 
+set -euo pipefail
+
+timestamp="$(date +%s)"
+archive="nexus-$timestamp.zip"
+generated_tars=()
+
 cd ./corpus/bin/
-for d in * ; do
-    tar -cvf "$d.tar" "$d"
+shopt -s nullglob
+for d in */ ; do
+    d="${d%/}"
+    tar --force-local -cvf "$d.tar" "$d"
+    generated_tars+=("./bin/$d.tar")
 done
+
+cd ..
+if (( ${#generated_tars[@]} == 0 )); then
+    echo "No generated tar files to archive" >&2
+    exit 1
+fi
+
+printf '%s\0' "${generated_tars[@]}" | xargs -0 zip -j "$archive"
