@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -13,7 +13,7 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif  
 
 #undef _WIN32
 
@@ -29,10 +29,10 @@ MY_FONT
 BEGIN
 OK  PUSHBUTTON  "&Restart", IDC_BUTTON_RESTART, bXPos1, marg, bXSize, bYSize
 OK  PUSHBUTTON  "&Stop",    IDC_BUTTON_STOP,    bXPos1,   27, bXSize, bYSize
-
+  
   PUSHBUTTON  "&Help",    IDHELP,             bXPos2, bYPos, bXSize,bYSize
   PUSHBUTTON  "Cancel",   IDCANCEL,           bXPos1, bYPos, bXSize, bYSize
-
+  
 OK  LTEXT     "&Dictionary size:", IDC_BENCHMARK_DICTIONARY, marg, marg + 1, g0XSize, 8
 OK  COMBOBOX  IDC_BENCHMARK_COMBO_DICTIONARY, g1XPos, marg, g1XSize, 140, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
 
@@ -47,21 +47,21 @@ OK  COMBOBOX  IDC_BENCHMARK_COMBO_DICTIONARY, g1XPos, marg, g1XSize, 140, CBS_DR
   RTEXT     "Speed", IDC_BENCHMARK_SPEED_LABEL,               gSpeedPos,  53, gSpeedSize,  8
   RTEXT     "Rating / Usage", IDC_BENCHMARK_RPU_LABEL,          gRpuPos,  53, gRpuSize,    8
   RTEXT     "Rating", IDC_BENCHMARK_RATING_LABEL,            gRatingPos,  53, gRatingSize, 8
-
+  
   GROUPBOX  "Compressing", IDC_BENCHMARK_COMPRESSING,              marg,  64,      xSize2, 40
-
+ 
   LTEXT     "Current", IDC_BENCHMARK_CURRENT,                   g10XPos,  76, gLabelSize,  8
   RTEXT     "100%", IDC_BENCHMARK_COMPRESSING_USAGE,          gUsagePos,  76, gUsageSize,  8
   RTEXT     "100 KB/s", IDC_BENCHMARK_COMPRESSING_SPEED,      gSpeedPos,  76, gSpeedSize,  8
   RTEXT     "0", IDC_BENCHMARK_COMPRESSING_RPU,                 gRpuPos,  76, gRpuSize,    8
   RTEXT     "0", IDC_BENCHMARK_COMPRESSING_RATING,           gRatingPos,  76, gRatingSize, 8
-
+  
   LTEXT     "Resulting", IDC_BENCHMARK_RESULTING,               g10XPos,  89, gLabelSize,  8
   RTEXT     "100%", IDC_BENCHMARK_COMPRESSING_USAGE2,         gUsagePos,  89, gUsageSize,  8
   RTEXT     "100 KB/s", IDC_BENCHMARK_COMPRESSING_SPEED2,     gSpeedPos,  89, gSpeedSize,  8
   RTEXT     "0", IDC_BENCHMARK_COMPRESSING_RPU2,                gRpuPos,  89, gRpuSize,    8
   RTEXT     "0", IDC_BENCHMARK_COMPRESSING_RATING2,          gRatingPos,  89, gRatingSize, 8
-
+  
   GROUPBOX  "Decompressing", IDC_BENCHMARK_DECOMPRESSING,          marg, 111, xSize2, 40
 
   LTEXT     "Current", IDC_BENCHMARK_CURRENT2,                  g10XPos, 123,  gLabelSize, 8
@@ -69,18 +69,18 @@ OK  COMBOBOX  IDC_BENCHMARK_COMBO_DICTIONARY, g1XPos, marg, g1XSize, 140, CBS_DR
   RTEXT     "100 KB/s", IDC_BENCHMARK_DECOMPRESSING_SPEED,    gSpeedPos, 123,  gSpeedSize, 8
   RTEXT     "0", IDC_BENCHMARK_DECOMPRESSING_RPU,               gRpuPos, 123,    gRpuSize, 8
   RTEXT     "0", IDC_BENCHMARK_DECOMPRESSING_RATING,         gRatingPos, 123, gRatingSize, 8
-
+  
   LTEXT     "Resulting", IDC_BENCHMARK_RESULTING2,              g10XPos, 136,  gLabelSize, 8
   RTEXT     "100%", IDC_BENCHMARK_DECOMPRESSING_USAGE2,       gUsagePos, 136,  gUsageSize, 8
   RTEXT     "100 KB/s", IDC_BENCHMARK_DECOMPRESSING_SPEED2,   gSpeedPos, 136,  gSpeedSize, 8
   RTEXT     "0", IDC_BENCHMARK_DECOMPRESSING_RPU2,              gRpuPos, 136,    gRpuSize, 8
   RTEXT     "0", IDC_BENCHMARK_DECOMPRESSING_RATING2,        gRatingPos, 136, gRatingSize, 8
-
+  
   GROUPBOX  "Total Rating", IDC_BENCHMARK_TOTAL_RATING, gTotalRatingPos, 163, gTotalRatingSize, 38
   RTEXT     "0", IDC_BENCHMARK_TOTAL_USAGE_VALUE,             gUsagePos, 181,  gUsageSize, 8
   RTEXT     "0", IDC_BENCHMARK_TOTAL_RPU_VALUE,                 gRpuPos, 181,    gRpuSize, 8
   RTEXT     "0", IDC_BENCHMARK_TOTAL_RATING_VALUE,           gRatingPos, 181, gRatingSize, 8
-
+  
   LTEXT     "Elapsed time:", IDC_BENCHMARK_ELAPSED,    marg, 163, g2XSize, 8
   LTEXT     "Size:", IDC_BENCHMARK_SIZE,               marg, 176, g2XSize, 8
   LTEXT     "Passes:", IDC_BENCHMARK_PASSES,           marg, 189, g2XSize, 8
@@ -245,3 +245,4 @@ BEGIN_EVENT_TABLE(CBenchmarkDialogImpl, wxDialog)
 	EVT_COMBOBOX(wxID_ANY,    CModalDialogImpl::OnAnyChoice)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

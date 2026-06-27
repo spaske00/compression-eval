@@ -434,7 +434,7 @@ unsigned xpredefined, OBJECT xenclosing, OBJECT xbody)
 	  }
 	}
       }
-    }
+    } 
 
     if( StringEqual(str, KW_MERGE) )
       is_merge(s) = has_merge(enclosing(s)) = TRUE;
@@ -629,7 +629,7 @@ FULL_CHAR *SymName(OBJECT s)
   assert( is_word(type(p)), "SymName: !is_word(type(p))!" );
   return string(p);
 } /* end SymName */
-
+	
 
 /*@::FullSymName(), ChildSym()@***********************************************/
 /*                                                                           */
@@ -758,7 +758,7 @@ static void DeleteSymBody(OBJECT s)
 		  Dispose(t);
 		}
 		break;
-
+	
     case LPAR:
     case NPAR:
     case RPAR:

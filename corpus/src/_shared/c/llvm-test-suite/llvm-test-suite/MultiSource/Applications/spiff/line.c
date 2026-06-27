@@ -35,7 +35,7 @@ int   _L_atlm;		/* count of token lines in the file */
 int   _L_btlm;
 
 int   _L_aclindex[_L_MAXLINES]; /* mapping from content lines to real lines*/
-int   _L_bclindex[_L_MAXLINES];
+int   _L_bclindex[_L_MAXLINES]; 
 
 int   _L_atlindex[_L_MAXLINES]; /*mapping from token lines to content lines */
 int   _L_btlindex[_L_MAXLINES];
@@ -164,3 +164,4 @@ int L_init_file(int fnumber, char *fname)
 
 	return(ret_val);
 }
+

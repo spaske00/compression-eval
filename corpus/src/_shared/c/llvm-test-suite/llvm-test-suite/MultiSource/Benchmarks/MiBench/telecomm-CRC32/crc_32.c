@@ -168,7 +168,7 @@ DWORD crc32buf(char *buf, size_t len)
       }
 
       return ~oldcrc32;
-
+      
 }
 
 static const char *mybasename(const char *str) {

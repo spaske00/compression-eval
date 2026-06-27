@@ -9,7 +9,7 @@ namespace NWindows {
 namespace NCOM {
 
 #ifdef _WIN32
-
+  
 class CComInitializer
 {
 public:
@@ -63,7 +63,7 @@ HRESULT StringToGUIDA(const char *string, GUID &classID);
   #define StringToGUID StringToGUIDA
 #endif
 
-
+  
 }}
 
 #endif

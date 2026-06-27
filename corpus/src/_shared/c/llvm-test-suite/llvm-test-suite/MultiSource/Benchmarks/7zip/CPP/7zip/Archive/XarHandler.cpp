@@ -40,12 +40,12 @@ struct CFile
   UInt64 Size;
   UInt64 PackSize;
   UInt64 Offset;
-
+  
   // UInt32 mode;
   UInt64 CTime;
   UInt64 MTime;
   UInt64 ATime;
-
+  
   bool IsDir;
   bool HasData;
 
@@ -124,7 +124,7 @@ static UInt64 ParseTime(const CXmlItem &item, const char *name)
   if (!ParseNumber(p + 11, 2, hour )) return 0;
   if (!ParseNumber(p + 14, 2, min  )) return 0;
   if (!ParseNumber(p + 17, 2, sec  )) return 0;
-
+  
   UInt64 numSecs;
   if (!NWindows::NTime::GetSecondsSince1601(year, month, day, hour, min, sec, numSecs))
     return 0;
@@ -283,7 +283,7 @@ HRESULT CHandler::Open2(IInStream *stream)
   CXml xml;
   if (!xml.Parse(_xml))
     return S_FALSE;
-
+  
   if (!xml.Root.IsTagged("xar") || xml.Root.SubItems.Size() != 1)
     return S_FALSE;
   const CXmlItem &toc = xml.Root.SubItems[0];
@@ -342,7 +342,7 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID, PROPVARIANT *val
 {
   COM_TRY_BEGIN
   NWindows::NCOM::CPropVariant prop;
-
+  
   #ifdef XAR_SHOW_RAW
   if ((int)index == _files.Size())
   {
@@ -389,11 +389,11 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID, PROPVARIANT *val
           prop = name;
         break;
       }
-
+      
       case kpidIsDir:  prop = item.IsDir; break;
       case kpidSize:      if (!item.IsDir) prop = item.Size; break;
       case kpidPackSize:  if (!item.IsDir) prop = item.PackSize; break;
-
+      
       case kpidMTime:  TimeToProp(item.MTime, prop); break;
       case kpidCTime:  TimeToProp(item.CTime, prop); break;
       case kpidATime:  TimeToProp(item.ATime, prop); break;
@@ -436,13 +436,13 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CByteBuffer zeroBuf;
   zeroBuf.SetCapacity(kZeroBufSize);
   memset(zeroBuf, 0, kZeroBufSize);
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
   NCompress::NZlib::CDecoder *zlibCoderSpec = new NCompress::NZlib::CDecoder();
   CMyComPtr<ICompressCoder> zlibCoder = zlibCoderSpec;
-
+  
   NCompress::NBZip2::CDecoder *bzip2CoderSpec = new NCompress::NBZip2::CDecoder();
   CMyComPtr<ICompressCoder> bzip2Coder = bzip2CoderSpec;
 
@@ -457,7 +457,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CMyComPtr<ISequentialInStream> inStream(inStreamSpec);
   inStreamSpec->SetStream(_inStream);
 
-
+  
   CLimitedSequentialOutStream *outStreamLimSpec = new CLimitedSequentialOutStream;
   CMyComPtr<ISequentialOutStream> outStream(outStreamLimSpec);
 
@@ -480,7 +480,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         NExtract::NAskMode::kExtract;
     Int32 index = allFilesMode ? i : indices[i];
     RINOK(extractCallback->GetStream(index, &realOutStream, askMode));
-
+    
     if (index < _files.Size())
     {
       const CFile &item = _files[index];
@@ -516,13 +516,13 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       {
         currentPackSize = item.PackSize;
         currentUnpSize = item.Size;
-
+        
         RINOK(_inStream->Seek(_dataStartPos + item.Offset, STREAM_SEEK_SET, NULL));
         inStreamSpec->Init(item.PackSize);
         outStreamSha1Spec->Init(item.Sha1IsDefined);
         outStreamLimSpec->Init(item.Size);
         HRESULT res = S_OK;
-
+        
         ICompressCoder *coder = NULL;
         if (item.Method.IsEmpty() || item.Method == "octet-stream")
           if (item.PackSize == item.Size)
@@ -535,10 +535,10 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
           coder = bzip2Coder;
         else
           opRes = NExtract::NOperationResult::kUnSupportedMethod;
-
+        
         if (coder)
           res = coder->Code(inStream, outStream, NULL, NULL, progress);
-
+        
         if (res != S_OK)
         {
           if (!outStreamLimSpec->IsFinishedOK())

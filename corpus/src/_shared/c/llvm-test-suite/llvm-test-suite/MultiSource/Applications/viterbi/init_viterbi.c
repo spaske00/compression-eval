@@ -3,14 +3,14 @@
 
 #include "common.h"
 
-void init_viterbi(param_viterbi_t* param, coderate_tt in_rate)
+void init_viterbi(param_viterbi_t* param, coderate_tt in_rate) 
 {
   unsigned char Tabl[7][MAX_Nways];
   size_t i, j;
-
+  
   memset(param, 0, sizeof(param_viterbi_t));
   memset(&Tabl, 0, sizeof(Tabl));
-
+  
   switch (in_rate) {
    case CODERATE_1D2:
     param->punct1[0] = 1; param->punct2[0] = 1;
@@ -55,7 +55,7 @@ void init_viterbi(param_viterbi_t* param, coderate_tt in_rate)
         Tabl[6-j][i] = ((i & (1 << j)) != 0);
     }
   }
-
+   
   for (i=0; i<param->Nways; ++i) {
     param->Tabl_X[i] = Tabl[0][i] ^ Tabl[1][i] ^ Tabl[2][i] ^ Tabl[5][i];
     param->Tabl_Y[i] = Tabl[1][i] ^ Tabl[2][i] ^ Tabl[4][i] ^ Tabl[5][i];
@@ -65,5 +65,6 @@ void init_viterbi(param_viterbi_t* param, coderate_tt in_rate)
     param->Metr[i] = 1e6;
   }
   param->Metr[0] = 0;
-
+  
 }
+

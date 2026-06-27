@@ -57,10 +57,10 @@ sz:    3     total:    6     edgesCut:    0     netsCuts:    2
 sz:    4     total:    2     edgesCut:    0     netsCuts:    0
 sz:    5     total:    1     edgesCut:    0     netsCuts:    0
 ----------------------------------------------
-Group A:
- 10   5   3  19  11  12  15   2   9   8
-Group B:
-  1   6  17  18  20  13  14  16   7   4
+Group A:  
+ 10   5   3  19  11  12  15   2   9   8 
+Group B:  
+  1   6  17  18  20  13  14  16   7   4 
 Conn  10 -  13 cut.
 Conn  10 -  17 cut.
 Conn   5 -  13 cut.

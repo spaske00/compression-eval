@@ -64,7 +64,7 @@ static HRESULT CopyFileSpec(LPCWSTR fromPath, LPCWSTR toPath, bool writeToDisk, 
   tempBuffer.buffer = MidAlloc(bufferSize);
   if (tempBuffer.buffer == 0)
     return E_OUTOFMEMORY;
-
+ 
   for (UInt64 pos = 0; pos < fileSize;)
   {
     UInt64 progressCur = progressStart + pos;
@@ -170,7 +170,7 @@ STDMETHODIMP CFSDrives::LoadItems()
 	// Root
     di.FullSystemName = L"/";
 	di.VolumeName = L"/";
-	di.FileSystemName = L"img";
+	di.FileSystemName = L"img";	
     di.Name = L"/"; // di.FullSystemName.Left(di.FullSystemName.Length() - 1);
     di.ClusterSize = 0;
     di.DriveSize = 0;
@@ -178,14 +178,14 @@ STDMETHODIMP CFSDrives::LoadItems()
     di.DriveType = 0; // FIXME NFile::NSystem::MyGetDriveType(driveName);
 	di.KnownSizes = false;
 	_drives.Add(di);
-
+	
 	// Home Directory
 	const char * home = getenv("HOME");
 	if (home) {
 		UString ustr = GetUnicodeString(home);
 		di.FullSystemName = ustr + L"/";
 		di.VolumeName = ustr;
-		di.FileSystemName = L"img";
+		di.FileSystemName = L"img";	
 		di.Name = ustr;
 		_drives.Add(di);
 	}
@@ -305,7 +305,7 @@ UString CFSDrives::GetExt(int index) const
 {
   const wchar_t *ext = NULL;
 #ifdef _WIN32
-  const CDriveInfo &di = _drives[index];
+  const CDriveInfo &di = _drives[index];	
   if (di.DriveType == DRIVE_CDROM)
     ext = L"iso";
   else if (di.FileSystemName.Find(L"NTFS") >= 0)
@@ -313,14 +313,14 @@ UString CFSDrives::GetExt(int index) const
   else if (di.FileSystemName.Find(L"FAT") >= 0)
     ext = L"fat";
   else
-#endif
+#endif	  
     ext = L"img";
   return (UString)L'.' + ext;
 }
 
 HRESULT CFSDrives::GetLength(int index, UInt64 &length) const
 {
-#ifdef _WIN32
+#ifdef _WIN32	
   NFile::NIO::CInFile inFile;
   if (!inFile.Open(_drives[index].GetDeviceFileIoName()))
     return GetLastError();
@@ -338,7 +338,7 @@ STDMETHODIMP CFSDrives::CopyTo(const UInt32 *indices, UInt32 numItems,
 {
   if (numItems == 0)
     return S_OK;
-
+  
   if (!_volumeMode)
     return E_NOTIMPL;
 
@@ -352,7 +352,7 @@ STDMETHODIMP CFSDrives::CopyTo(const UInt32 *indices, UInt32 numItems,
   }
   RINOK(callback->SetTotal(totalSize));
   RINOK(callback->SetNumFiles(numItems));
-
+  
   UString destPath = path;
   if (destPath.IsEmpty())
     return E_INVALIDARG;
@@ -391,23 +391,23 @@ STDMETHODIMP CFSDrives::CopyTo(const UInt32 *indices, UInt32 numItems,
     if (!di.KnownSizes)
       totalSize += fileSize;
     RINOK(callback->SetTotal(totalSize));
-
+    
     Int32 writeAskResult;
     CMyComBSTR destPathResult;
     RINOK(callback->AskWrite(srcPath, BoolToInt(false), NULL, &fileSize,
       destPath2, &destPathResult, &writeAskResult));
     if (!IntToBool(writeAskResult))
       continue;
-
+    
     RINOK(callback->SetCurrentFilePath(srcPath));
-
+    
     static const UInt32 kBufferSize = (4 << 20);
 #ifdef _WIN32
     UInt32 bufferSize = (di.DriveType == DRIVE_REMOVABLE) ? (18 << 10) * 4 : kBufferSize;
 #else
 	UInt32 bufferSize = kBufferSize;
 #endif
-
+	  
     RINOK(CopyFileSpec(srcPath, destPathResult, false, fileSize, bufferSize, completedSize, callback));
     completedSize += fileSize;
   }

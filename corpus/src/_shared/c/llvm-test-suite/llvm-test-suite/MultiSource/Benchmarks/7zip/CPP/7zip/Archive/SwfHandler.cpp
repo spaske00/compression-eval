@@ -180,7 +180,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   lps->InSize = kHeaderSize;
   lps->OutSize = outStreamSpec->GetSize();
   RINOK(lps->SetCur());
-
+  
   CItem item = _item;
   item.MakeUncompressed();
   RINOK(item.WriteHeader(outStream));
@@ -230,7 +230,7 @@ static HRESULT UpdateArchive(ISequentialOutStream *outStream,
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(updateCallback, true);
-
+  
   NCompress::NZlib::CEncoder *encoderSpec = new NCompress::NZlib::CEncoder;
   CMyComPtr<ICompressCoder> encoder = encoderSpec;
   encoderSpec->Create();
@@ -286,7 +286,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
     }
     return UpdateArchive(outStream, size, _method, updateCallback);
   }
-
+    
   if (indexInArchive != 0)
     return E_INVALIDARG;
 
@@ -582,7 +582,7 @@ HRESULT CHandler::OpenSeq3(ISequentialInStream *stream, IArchiveOpenCallback *ca
   RINOK(_item.ReadHeader(stream))
   if (!_item.IsUncompressed())
     return S_FALSE;
-
+  
   CInBuffer s;
   if (!s.Create(1 << 20))
     return E_OUTOFMEMORY;
@@ -685,7 +685,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     RINOK(extractCallback->GetStream(index, &outStream, askMode));
     if (!testMode && !outStream)
       continue;
-
+      
     RINOK(extractCallback->PrepareOperation(askMode));
     if (outStream)
       RINOK(WriteStream(outStream, buf, buf.GetCapacity()));

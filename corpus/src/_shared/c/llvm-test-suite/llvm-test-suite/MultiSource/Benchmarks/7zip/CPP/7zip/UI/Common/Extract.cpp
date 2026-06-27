@@ -32,7 +32,7 @@ static HRESULT DecompressArchive(
   {
     UInt32 numItems;
     RINOK(archive->GetNumberOfItems(&numItems));
-
+    
     for (UInt32 i = 0; i < numItems; i++)
     {
       UString filePath;

@@ -166,7 +166,7 @@ public:
 #endif
   }
 
-
+  
   void OnCopy(bool move, bool copyToSame, int srcPanelIndex);
   void OnSetSameFolder(int srcPanelIndex);
   void OnSetSubFolder(int srcPanelIndex);
@@ -284,7 +284,7 @@ public:
     if (ShowArchiveToolbar) mask |= 8;
     SaveToolbarsMask(mask);
   }
-
+  
   void SaveToolbarChanges();
 
   void SwitchStandardToolbar()

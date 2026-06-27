@@ -46,10 +46,10 @@ namespace NWindows {
 		public:
 			operator HWND() const { return HWND(_window); }
 
-			bool OnInit(CModalDialogImpl * window) {
+			bool OnInit(CModalDialogImpl * window) { 
 				_window = window;
 				return OnInit();
-			}
+		       	}
 			virtual bool OnInit() { return false; }
 			virtual void OnOK() {}
 			virtual void OnCancel() {}
@@ -176,3 +176,4 @@ void RegisterDialog(const CDialogInfo *dialogInfo);
 	static REGISTER_DIALOG_NAME(x) g_RegisterDialog;
 
 #endif
+

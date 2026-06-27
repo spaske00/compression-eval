@@ -122,7 +122,7 @@ static OBJECT BreakVcat(OBJECT x, CONSTRAINT *c)
   debug1(DOB, DD, "[ BreakVcat(x, %s)", EchoConstraint(c));
   assert(Down(x) != x, "BreakVcat: Down(x) == x!" );
   SetConstraint(tc, MAX_FULL_LENGTH, find_min(bfc(*c), fc(*c)), MAX_FULL_LENGTH);
-
+  
   dble_found = FALSE;  dble_fwd = 0;  start_group = nilobj;
   for( link = Down(x);  link != x;  link = NextDown(link) )
   { Child(y, link);
@@ -141,7 +141,7 @@ static OBJECT BreakVcat(OBJECT x, CONSTRAINT *c)
       }
     }
     else if( start_group == nilobj )
-    {
+    {	
       /* start new group */
       b = back(y, COLM);  f = fwd(y, COLM);
       start_group = link;  m = y;
@@ -163,7 +163,7 @@ static OBJECT BreakVcat(OBJECT x, CONSTRAINT *c)
   assert( start_group != nilobj, "BreakVcat: start_group == nilobj (2)!" );
 
   if( dble_found )
-  {
+  {	
     /* finish off and break this last group, and set sizes of x */
     if( !FitsConstraint(b, f, tc) )
       BreakJoinedGroup(start_group, LastDown(x), m, &tc, &b, &f);
@@ -335,7 +335,7 @@ static OBJECT BreakTable(OBJECT x, CONSTRAINT *c)
     {
 
       case BACK:
-
+      
 	back_max = find_min(bc(*c), bwidth + av_colsize * bcount);
 	col_size = (back_max - bwidth) / bcount;
 	if( col_size > prev_col_size && col_size - prev_col_size < PT )
@@ -348,7 +348,7 @@ static OBJECT BreakTable(OBJECT x, CONSTRAINT *c)
 
 
       case ON:
-
+      
 	fwd_max = find_min(fc(*c), fwidth + av_colsize * fcount);
 	col_size = (fwd_max - fwidth) / fcount;
 	if( col_size > prev_col_size && col_size - prev_col_size < PT )
@@ -361,7 +361,7 @@ static OBJECT BreakTable(OBJECT x, CONSTRAINT *c)
 
 
       case FWD:
-
+      
 	fwd_max = find_min(fc(*c), fwidth + av_colsize * fcount);
 	col_size = (fwd_max - fwidth) / fcount;
 	if( col_size > prev_col_size && col_size - prev_col_size < PT )
@@ -374,7 +374,7 @@ static OBJECT BreakTable(OBJECT x, CONSTRAINT *c)
 
 
       default:
-
+      
 	assert(FALSE, "BreakTable: mside");
 	break;
     }
@@ -407,7 +407,7 @@ static OBJECT BreakTable(OBJECT x, CONSTRAINT *c)
 	case BACK:	bwidth += beffect + feffect;
 			bcount--;
 			break;
-
+	
 	case ON:	bwidth += beffect;  fwidth += feffect;
 			fcount--;
 			break;
@@ -415,7 +415,7 @@ static OBJECT BreakTable(OBJECT x, CONSTRAINT *c)
 	case FWD:	fwidth += beffect + feffect;
 			fcount--;
 			break;
-
+	
 	default:	assert(FALSE, "BreakTable: mside");
 			break;
     }
@@ -481,7 +481,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
   {
 
     case ROTATE:
-
+    
       if( BackEnd->scale_avail && InsertScale(x, c) )
       {
 	Parent(x, Up(x));
@@ -522,7 +522,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
 
     case WORD:
     case QWORD:
-
+    
       if( word_hyph(x) )
       {
 	/* create an ACAT with the same size as x */
@@ -576,7 +576,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
 
 
     case WIDE:
-
+    
       MinConstraint(&constraint(x), c);
       Child(y, Down(x));
       y = BreakObject(y, &constraint(x));
@@ -613,16 +613,16 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
     case VSCALE:
     case VCOVER:
     case VSHIFT:
-    case HCONTRACT:
+    case HCONTRACT: 
     case VCONTRACT:
-    case HLIMITED:
+    case HLIMITED: 
     case VLIMITED:
-    case HEXPAND:
+    case HEXPAND: 
     case VEXPAND:
     case ONE_COL:
     case ONE_ROW:
     case HSPANNER:
-
+    
       assert( Down(x) == LastDown(x), "BreakObject: downs!" );
       Child(y, Down(x));
       y = BreakObject(y, c);
@@ -692,7 +692,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
 
     case BEGIN_HEADER:
     case SET_HEADER:
-
+    
       Child(y, LastDown(x));
       y = BreakObject(y, c);
       back(x, COLM) = back(y, COLM);
@@ -706,7 +706,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
     case GRAPHIC:
     case LINK_SOURCE:
     case LINK_DEST:
-
+    
       Child(y, LastDown(x));
       y = BreakObject(y, c);
       back(x, COLM) = back(y, COLM);
@@ -715,7 +715,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
 
 
     case SPLIT:
-
+    
       Child(y, DownDim(x, COLM));
       y = BreakObject(y, c);
       back(x, COLM) = back(y, COLM);
@@ -724,7 +724,7 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
 
 
     case ACAT:
-
+    
       if( back(x, COLM) > 0 )
       { int sz;  OBJECT rpos;
 	/* shift the column mark of x to the left edge */
@@ -753,26 +753,26 @@ OBJECT BreakObject(OBJECT x, CONSTRAINT *c)
 
 
     case HCAT:
-
+    
       x = BreakTable(x, c);
       break;
 
 
     case COL_THR:
-
+    
       BreakJoinedGroup(Down(x), LastDown(x), nilobj, c,
 	&back(x,COLM), &fwd(x,COLM));
       break;
 
 
     case VCAT:
-
+    
       x = BreakVcat(x, c);
       break;
-
+			
 
     default:
-
+    
       assert1(FALSE, "BreakObject:", Image(type(x)));
       break;
 

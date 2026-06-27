@@ -30,7 +30,7 @@ struct CCoder2: public CCoderInfo2, public CVirtThread
   for each coder
     AddCoder[2]()
   SetProgressIndex(UInt32 coderIndex);
-
+ 
   for each file
   {
     ReInit()

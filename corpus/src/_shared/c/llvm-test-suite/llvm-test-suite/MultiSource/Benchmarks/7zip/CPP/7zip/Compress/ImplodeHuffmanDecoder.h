@@ -24,7 +24,7 @@ class CDecoder
 public:
   CDecoder(UInt32 numSymbols);
   ~CDecoder();
-
+  
   bool SetCodeLengths(const Byte *codeLengths);
   UInt32 DecodeSymbol(CInBit *inStream);
 };

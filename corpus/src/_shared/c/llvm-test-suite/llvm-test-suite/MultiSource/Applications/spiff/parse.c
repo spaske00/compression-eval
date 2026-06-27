@@ -115,7 +115,7 @@ _P_initparser()
 	/*
 	**	now reset all the state of each module
 	*/
-	C_clear_cmd();		/* disable embedded command key word */
+	C_clear_cmd();		/* disable embedded command key word */ 
 	T_clear_tols();
 	W_clearcoms();
 	W_clearlits();
@@ -204,7 +204,7 @@ _P_nextline()
 */
 static int
 _P_litsnarf(litptr)
-W_lit litptr;
+W_lit litptr; 
 {
 	_P_stringsize = 0;
 	/*
@@ -290,7 +290,7 @@ W_lit litptr;
 
 static int
 _P_bolsnarf(bolptr)
-W_bol bolptr;
+W_bol bolptr; 
 {
 	/*
 	**	skip the start of comment string
@@ -373,7 +373,7 @@ W_bol bolptr;
 */
 static int
 _P_comsnarf(comptr)
-W_com comptr;
+W_com comptr; 
 {
 	int depth = 1; /* nesting depth */
 	/*
@@ -567,7 +567,7 @@ _P_do_parse()
 					L_gettlmax(_P_fnumb),
 					L_getclmax(_P_fnumb));
 			/*
-			**	and the pointer from the token line to the
+			**	and the pointer from the token line to the 
 			** 	first  token on the line
 			*/
 			L_setindex(_P_fnumb,
@@ -748,7 +748,7 @@ _P_do_parse()
 		}
 	}   /* loop once per object on a line */
 
-#ifndef lint
+#ifndef lint 
 	Z_fatal("this line should never execute");
 #endif
 }
@@ -763,8 +763,8 @@ int flags;	/* flags for controlling the parse mode */
 	/*
 	**	set module-wide state variables
 	*/
-	_P_fnumb = num;
-	_P_start = strt;
+	_P_fnumb = num;		
+	_P_start = strt;	
 	_P_lcount = lcnt;
 	_P_flags = flags;
 

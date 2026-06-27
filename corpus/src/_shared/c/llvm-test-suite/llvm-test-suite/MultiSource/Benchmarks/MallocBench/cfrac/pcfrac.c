@@ -2,7 +2,7 @@
  * pcfrac: Implementation of the continued fraction factoring algoritm
  *
  * Every two digits additional appears to double the factoring time
- *
+ * 
  * Written by Dave Barrett (barrett%asgard@boulder.Colorado.EDU)
  */
 #include <string.h>
@@ -73,9 +73,9 @@ BitVector newBitVector(value, size)
    register solnvec  vp = value + size;
    unsigned msize = ((size + BPI(res)-1) / BPI(res)) * sizeof res[0];
 
-#ifdef BWGC
+#ifdef BWGC 		 
    res = (BitVector) gc_malloc(msize);
-#else
+#else		 
    res = (BitVector) malloc(msize);
 #endif
    if (res == (BitVector) 0) return res;
@@ -100,10 +100,10 @@ void printSoln(stream, prefix, suffix, pm, m, p, t, e)
 
    for (i = 1; i <= m; i++) j += (e[i] != 0);
 
-   fputs(prefix, stream);
+   fputs(prefix, stream); 
    fputp(stream, pparm(p)); fputs(" = ", stream);
    if (*e & 1) putc('-', stream);  else putc('+', stream);
-   fputp(stream, pparm(t));
+   fputp(stream, pparm(t)); 
 
    if (j >= 1) fputs(" *", stream);
    do {
@@ -117,13 +117,13 @@ void printSoln(stream, prefix, suffix, pm, m, p, t, e)
       pm++;
    } while (--m);
 
-   fputs(suffix, stream);
+   fputs(suffix, stream); 
    fflush(stream);
    pdestroy(p); pdestroy(t);
 }
 
 /*
- * Combine two solutions
+ * Combine two solutions 
  */
 void combineSoln(x, t, e, pm, m, n, bp)
    precision *x, *t, n;
@@ -145,7 +145,7 @@ void combineSoln(x, t, e, pm, m, n, bp)
    for (j = 1; j <= m; j++) {
       if (bp != (SolnPtr) 0) e[j] += getBit(bp->e, j);
       if (e[j] > 2) {
-	 pset(t, pmod(pmul(*t,
+	 pset(t, pmod(pmul(*t, 
 	    ppowmod(utop(pm[j-1]), utop((unsigned) e[j]>>1), n)), n));
 	 e[j] &= 1;
       } else if (e[j] == 2) {
@@ -167,9 +167,9 @@ SolnPtr newSoln(n, pm, m, next, x, t, e)
    precision x, t;
    solnvec e;
 {
-#ifdef BWGC
+#ifdef BWGC 		 
    SolnPtr bp = (SolnPtr) gc_malloc(sizeof (Soln));
-#else
+#else		 
    SolnPtr bp = (SolnPtr) malloc(sizeof (Soln));
 #endif
 
@@ -207,7 +207,7 @@ void freeSolns(p)
    register SolnPtr p;
 {
    register SolnPtr l;
-
+   
    while (p != (SolnPtr) 0) {
       l = p;
       p = p->next;
@@ -261,7 +261,7 @@ void freeEas(eas)
 /*
  * Return Pomerance's L^alpha (L = exp(sqrt(log(n)*log(log(n)))))
  */
-double pomeranceLpow(n, y)
+double pomeranceLpow(n, y) 
    double n;
    double y;
 {
@@ -282,7 +282,7 @@ double cfracA(n, aborts)
 }
 
 /*
- * Returns 1 if a is a quadratic residue of odd prime p,
+ * Returns 1 if a is a quadratic residue of odd prime p, 
  * p-1 if non-quadratic residue, 0 otherwise (gcd(a,p)<>1)
  */
 #define plegendre(a,p) ppowmod(a, phalf(psub(p, pone)), p)
@@ -290,7 +290,7 @@ double cfracA(n, aborts)
 /*
  * Create a table of small primes of quadratic residues of n
  *
- * Input:
+ * Input:   
  *    n      - the number to be factored
  *    k      - the multiple of n to be factored
  *    *m     - the number of primes to generate (0 to select best)
@@ -326,14 +326,14 @@ uvec pfactorbase(n, k, m, aborts)
       primePtr = primes;
    }
    /*
-    * This m tends to be too small for small n, and becomes closer to
+    * This m tends to be too small for small n, and becomes closer to 
     * optimal as n goes to infinity.  For 30 digits, best m is ~1.5 this m.
     * For 38 digits, best m appears to be ~1.15 this m. It's appears to be
     * better to guess too big than too small.
     */
-#ifdef BWGC
+#ifdef BWGC 		 
    res = (uvec) gc_malloc(count * sizeof (unsigned));
-#else
+#else		 
    res = (uvec) malloc(count * sizeof (unsigned));
 #endif
    if (res == (uvec) 0) goto doneMk;
@@ -373,12 +373,12 @@ EasPtr getEas(n, k, pm, m, aborts)
 
    precision bound = pUndef;
    EasPtr   eas;
-
+   
    if (aborts == 0) return (EasPtr) 0;
 
-#ifdef BWGC
+#ifdef BWGC 		 
    eas = (EasPtr) gc_malloc((aborts+1) * sizeof (EasEntry));
-#else
+#else		 
    eas = (EasPtr) malloc((aborts+1) * sizeof (EasEntry));
 #endif
    if (eas == (EasPtr) 0) return eas;
@@ -424,7 +424,7 @@ foundpm:
  *
  * e is set to the number of times each prime in pm divides v.
  *
- * Returns:
+ * Returns: 
  *    -2 - if factoring aborted because of early abort
  *    -1 - factoring failed
  *     0 - if result is a "partial" factoring
@@ -438,10 +438,10 @@ int pfactorQ(f, t, pm, e, m, eas)
    register unsigned m;
    EasEntry *eas;
 {
-   precision maxp  = pUndef;
+   precision maxp  = pUndef; 
    unsigned  maxpm = pm[m-1], res = 0;
    register unsigned *pp = (unsigned *) 0;
-
+   
    (void) pparm(t);
 
    if (eas != (EasEntry *) 0) {
@@ -479,7 +479,7 @@ int pfactorQ(f, t, pm, e, m, eas)
    } else if (picmp(pidiv(t, (int) *pm), maxpm) <= 0) {
 #if 0 		/* it'll never happen;  Honest! If so, pm is incorrect. */
       if (picmp(t, maxpm) <= 0) {
-	 fprintf(stderr, "BUG: partial with t < maxpm! t = ");
+	 fprintf(stderr, "BUG: partial with t < maxpm! t = "); 
 	 fputp(stderr, t); putc('\n', stderr);
       }
 #endif
@@ -502,7 +502,7 @@ gotSoln:
  *
  * This algorithm will loop indefinitiely in n is prime.
  *
- * This an implementation of Morrison and Brillhart's algorithm, with
+ * This an implementation of Morrison and Brillhart's algorithm, with 
  * Pomerance's early abort strategy, and Knuth's method to find best k.
  */
 precision pcfrac(n, maxCount)
@@ -514,7 +514,7 @@ precision pcfrac(n, maxCount)
    unsigned aborts = pcfrac_aborts;
    SolnPtr  oddt   = (SolnPtr) 0, sp, bp, *b;
    EasPtr   eas    = (EasPtr) 0;
-   uvec     pm     = (uvec) 0;
+   uvec     pm     = (uvec) 0; 
    solnvec  e	   = (solnvec) 0;
    unsigned bsize, s = 0, count = 0;
    register unsigned h, j;
@@ -526,21 +526,21 @@ precision pcfrac(n, maxCount)
       x  = pUndef, y      = pUndef, qn = pUndef,     rn = pUndef;
 
    precision res = pnew(pparm(n));		/* default res is argument */
-
+   
    pm = pfactorbase(n, k, &m, aborts); 		/* m may have been reduced */
 
    bsize  = (m+2) * sizeof (SolnPtr);
-#ifdef BWGC
+#ifdef BWGC 		 
    b      = (SolnPtr *) gc_malloc(bsize);
-#else
+#else		 
    b      = (SolnPtr *) malloc(bsize);
 #endif
    if (b == (SolnPtr *) 0) goto nomem;
 
-#ifdef BWGC
-   e = (solnvec) gc_malloc((m+1) * sizeof e[0]);
-#else
-   e = (solnvec) malloc((m+1) * sizeof e[0]);
+#ifdef BWGC 		 
+   e = (solnvec) gc_malloc((m+1) * sizeof e[0]); 
+#else		 
+   e = (solnvec) malloc((m+1) * sizeof e[0]); 
 #endif
    if (e == (solnvec) 0) {
 nomem:
@@ -599,8 +599,8 @@ F2:
 	 e[0] = s;
 	 i = pfactorQ(&t, Qn, pm, &e[1], m, eas);  	/* E3: Factor Qn */
 	 if (i < -1) cfracNabort++;
-	 /*
-	  * We should (but don't, yet) check to see if we can get a
+	 /* 
+	  * We should (but don't, yet) check to see if we can get a 
 	  * factor by a special property of Qn = 1
 	  */
 	 if (picmp(Qn, 1) == 0) {
@@ -632,7 +632,7 @@ F2:
 	 if (verbose > 2) printSoln(stdout, "Full:    ", "", pm, m, x, t, e);
       }
 
-      /*
+      /* 
        * Crude gaussian elimination.  We should be more effecient about the
        * binary vectors here, but this works as it is.
        *
@@ -649,7 +649,7 @@ F2:
 	    bp=b[h];
 	    if (bp == (SolnPtr) 0) { 		/* F4: Linear dependence? */
 	       if (verbose > 3)  {
-		  printSoln(stdout, " -->\nFullSum: ", "", pm, m, x, t, e);
+		  printSoln(stdout, " -->\nFullSum: ", "", pm, m, x, t, e); 
 	       }
 	       if (verbose > 2) putc('\n', stdout);
 	       b[h] = newSoln(n, pm, m, bp, x, t, e);
@@ -670,8 +670,8 @@ F2:
       case 2: putc('\n', stderr); break;
       default: ;
 	 putc('\n', stderr);
-	 printSoln(stdout, " -->\nSquare:  ", "\n", pm, m, x, t, e);
-	 fputs("x,y:     ", stdout);
+	 printSoln(stdout, " -->\nSquare:  ", "\n", pm, m, x, t, e); 
+	 fputs("x,y:     ", stdout); 
 	 fputp(stdout, x); fputs("  ", stdout);
 	 fputp(stdout, y); putc('\n', stdout);
 	 fflush(stdout);
@@ -685,7 +685,7 @@ F2:
     */
    if (peq(res, pone) || peq(res, n)) {
       fputs("Error!  Degenerate solution:\n", stdout);
-      fputs("x,y:   ", stdout);
+      fputs("x,y:   ", stdout); 
       fputp(stdout, x); fputs(" ", stdout);
       fputp(stdout, y); putc('\n', stdout);
       fflush(stdout);
@@ -701,7 +701,7 @@ bail:
 #ifndef IGNOREFREE
    free(e);
    free(pm);
-#endif
+#endif   
 
    pdestroy(r);  pdestroy(twog);   pdestroy(u);  pdestroy(lastU);
    pdestroy(Qn); pdestroy(lastQn); pdestroy(An); pdestroy(lastAn);

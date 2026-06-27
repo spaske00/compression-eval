@@ -19,18 +19,18 @@ void CCoder::MakeTable(int nchar, Byte *bitlen, int tablebits,
 {
   UInt32 count[17], weight[17], start[18], *p;
   UInt32 i, k, len, ch, jutbits, avail, nextcode, mask;
-
+  
   for (i = 1; i <= 16; i++)
     count[i] = 0;
   for (i = 0; (int)i < nchar; i++)
     count[bitlen[i]]++;
-
+  
   start[1] = 0;
   for (i = 1; i <= 16; i++)
     start[i + 1] = start[i] + (count[i] << (16 - i));
   if (start[17] != (UInt32) (1 << 16))
     throw "Data error";
-
+  
   jutbits = 16 - tablebits;
   for (i = 1; (int)i <= tablebits; i++)
   {
@@ -42,7 +42,7 @@ void CCoder::MakeTable(int nchar, Byte *bitlen, int tablebits,
     weight[i] = 1 << (16 - i);
     i++;
   }
-
+  
   i = start[tablebits + 1] >> jutbits;
   if (i != (UInt32) (1 << 16))
   {
@@ -50,7 +50,7 @@ void CCoder::MakeTable(int nchar, Byte *bitlen, int tablebits,
     while (i != k)
       table[i++] = 0;
   }
-
+  
   avail = nchar;
   mask = 1 << (15 - tablebits);
   for (ch = 0; (int)ch < nchar; ch++)
@@ -137,7 +137,7 @@ void CCoder::read_c_len()
 {
   int i, c, n;
   UInt32 mask;
-
+  
   n = m_InBitStream.ReadBits(CBIT);
   if (n == 0)
   {
@@ -255,7 +255,7 @@ HRESULT CCoder::CodeReal(ISequentialInStream *inStream, ISequentialOutStream *ou
   m_OutWindowStream.Init(false);
   m_InBitStream.SetStream(inStream);
   m_InBitStream.Init();
-
+  
   CCoderReleaser coderReleaser(this);
 
   UInt32 blockSize = 0;

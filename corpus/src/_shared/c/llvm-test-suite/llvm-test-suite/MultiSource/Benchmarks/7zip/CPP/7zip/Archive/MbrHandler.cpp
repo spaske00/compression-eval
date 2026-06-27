@@ -40,7 +40,7 @@ struct CChs
   Byte Head;
   Byte SectCyl;
   Byte Cyl8;
-
+  
   UInt32 GetSector() const { return SectCyl & 0x3F; }
   UInt32 GetCyl() const { return ((UInt32)SectCyl >> 6 << 8) | Cyl8; }
   void ToString(NCOM::CPropVariant &prop) const;
@@ -91,7 +91,7 @@ struct CPartition
   UInt32 NumBlocks;
 
   CPartition() { memset (this, 0, sizeof(*this)); }
-
+  
   bool IsEmpty() const { return Type == 0; }
   bool IsExtended() const { return Type == 5 || Type == 0xF; }
   UInt32 GetLimit() const { return Lba + NumBlocks; }
@@ -217,10 +217,10 @@ HRESULT CHandler::ReadTables(IInStream *stream, UInt32 baseLba, UInt32 lba, int 
       return S_FALSE;
     RINOK(stream->Seek(newPos, STREAM_SEEK_SET, NULL));
     RINOK(ReadStream_FALSE(stream, buf, kSectorSize));
-
+    
     if (buf[0x1FE] != 0x55 || buf[0x1FF] != 0xAA)
       return S_FALSE;
-
+    
     for (int i = 0; i < kNumHeaderParts; i++)
       if (!parts[i].Parse(buf + 0x1BE + 16 * i))
         return S_FALSE;
@@ -235,17 +235,17 @@ HRESULT CHandler::ReadTables(IInStream *stream, UInt32 baseLba, UInt32 lba, int 
   for (int i = 0; i < kNumHeaderParts; i++)
   {
     CPartition &part = parts[i];
-
+    
     if (part.IsEmpty())
       continue;
     PRF(printf("\n   %2d ", (int)level));
     #ifdef SHOW_DEBUG_INFO
     part.Print();
     #endif
-
+    
     int numItems = _items.Size();
     UInt32 newLba = lba + part.Lba;
-
+    
     if (part.IsExtended())
     {
       // if (part.Type == 5) // Check it!
@@ -447,7 +447,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   totalSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 

@@ -76,7 +76,7 @@ HRESULT CHandler::Open2(IInStream *stream, IArchiveOpenCallback *callback)
     RINOK(stream->Seek(0, STREAM_SEEK_END, &endPos));
     RINOK(stream->Seek(0, STREAM_SEEK_SET, NULL));
   }
-
+  
   _phySizeDefined = true;
   for (;;)
   {
@@ -86,7 +86,7 @@ HRESULT CHandler::Open2(IInStream *stream, IArchiveOpenCallback *callback)
     if (!filled)
       break;
     _items.Add(item);
-
+    
     RINOK(stream->Seek(item.GetPackSize(), STREAM_SEEK_CUR, &_phySize));
     if (_phySize > endPos)
     {
@@ -282,7 +282,7 @@ HRESULT CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 totalPackSize;
   totalSize = totalPackSize = 0;
-
+  
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(extractCallback, false);

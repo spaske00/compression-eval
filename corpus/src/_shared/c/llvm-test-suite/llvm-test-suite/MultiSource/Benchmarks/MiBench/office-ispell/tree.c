@@ -624,7 +624,7 @@ void treeoutput ()
     ** destructively, but that turns out to fail because in some modes
     ** the dictionary is written more than once.  So we build an
     ** auxiliary pointer table (in sortlist) and sort that.  This
-    ** is faster anyway, though it uses more memory.
+    ** is faster anyway, though it uses more memory. 
     */
     sortptr = sortlist;
     for (cent = pershtab, ehtab = pershtab + pershsize;  cent < ehtab;  cent++)
@@ -711,7 +711,7 @@ char * do_regex_lookup (expr, whence)
         curpersent = pershtab;
         curpersindex = 0;
 	}
-
+    
     /* search the dictionary until the word is found or the words run out */
     for (  ; curindex < hashsize;  curent++, curindex++)
 	{

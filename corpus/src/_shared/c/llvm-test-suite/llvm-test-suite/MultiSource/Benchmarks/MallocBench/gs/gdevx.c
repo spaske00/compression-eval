@@ -381,8 +381,8 @@ if ( gs_debug['X'] )
 				       ARG_BORDER_COLOR);
 
 	border_color = (border_color_str == NULL ||
-			 !XAllocNamedColor(xdev->dpy, xdev->cmap,
-					   border_color_str,
+			 !XAllocNamedColor(xdev->dpy, xdev->cmap, 
+					   border_color_str, 
 					   &screen_color, &exact_color) ?
 			DEFAULT_BORDER_COLOR :
 			screen_color.pixel);
@@ -545,7 +545,7 @@ x_tile_rectangle(register gx_device *dev, gx_bitmap *tile,
 	if ( one == gx_no_color_index && zero == gx_no_color_index )
 		return -1;
 
-	/*
+	/* 
 	 * Remember, an X tile is already filled with particular
 	 * pixel values (i.e., colors).  Therefore if we are changing
 	 * fore/background color, we must invalidate the tile (using
@@ -651,7 +651,7 @@ x_copy_mono(register gx_device *dev, _byte *base, int sourcex, int raster,
   int x, int y, int w, int h, gx_color_index zero, gx_color_index one)
 /*
  * X doesn't readily support the simple operation of writing a color
- * through a mask.  The plot is the following:
+ * through a mask.  The plot is the following: 
  *  If neither color is gx_no_color_index ("transparent"),
  *	use XPutImage with the "copy" function as usual.
  *  If the color is 0 or bitwise-includes every color written to date
@@ -673,7 +673,7 @@ x_copy_mono(register gx_device *dev, _byte *base, int sourcex, int raster,
 	unsigned long
 	  bc = xdev->colors[zero],
 	  fc = xdev->colors[one];
-
+	
 	check_rect();
 
 	xdev->image.width = raster << 3;

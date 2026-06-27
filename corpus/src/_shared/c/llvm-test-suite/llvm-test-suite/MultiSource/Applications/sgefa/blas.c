@@ -38,7 +38,7 @@ int	n, incx;
   int	i, istmp = 0;
 
 #ifndef abs
-#define abs(x) ((x)>0.0?(x):-(x))
+#define abs(x) ((x)>0.0?(x):-(x)) 
 #endif
   if( n <= 1 ) return( istmp );
   if( incx != 1 ) {
@@ -47,7 +47,7 @@ int	n, incx;
     istmp = 0;
     smax  = abs( *sx );
     sx += incx;
-    for( i=1; i<n; i++, sx+=incx )
+    for( i=1; i<n; i++, sx+=incx ) 
       if( abs( *sx ) > smax ) {
 	istmp = i;
 	smax  = abs( *sx );
@@ -58,14 +58,14 @@ int	n, incx;
   istmp = 0;
   smax  = abs(*sx);
   sx++;
-  for( i=1; i<n; i++, sx++ )
-    if( abs( *sx ) > smax ) {
+  for( i=1; i<n; i++, sx++ ) 
+    if( abs( *sx ) > smax ) { 
       istmp = i;
       smax  = abs( *sx );
     }
   return( istmp );
 }
-
+ 
 void saxpy( n, sa, sx, incx, sy, incy )
 float *sx, *sy, sa;
 int   n, incx, incy;
@@ -105,10 +105,10 @@ int   n, incx, incy;
   /* Unequal or negative increments. */
   if( incx < 0 ) sx += ((-n+1)*incx + 1);
   if( incy < 0 ) sy += ((-n+1)*incy + 1);
-  for( i=0; i<n; i++,sx+=incx,sy+=incy )
+  for( i=0; i<n; i++,sx+=incx,sy+=incy ) 
     *sy += sa*(*sx);
 }
-
+ 
 void saxpyx( n, sa, sx, incx, sy, incy )
 float *sx, *sy, sa;
 int   n, incx, incy;
@@ -148,7 +148,7 @@ int   n, incx, incy;
   /* Unequal or negative increments. */
   if( incx < 0 ) sx += ((-n+1)*incx + 1);
   if( incy < 0 ) sy += ((-n+1)*incy + 1);
-  for( i=0; i<n; i++,sx+=incx,sy+=incy )
+  for( i=0; i<n; i++,sx+=incx,sy+=incy ) 
     *sx = *sy + sa*(*sx);
 }
 
@@ -158,13 +158,13 @@ int     n, incx, incy;
 /*
     PURPOSE
         Copies vector sx into vector sy.
-
+ 
     INPUT
         n    Number of components to copy.
 	sx   Source vector
 	incx Index increment for sx.
         incy Index increment for sy.
-
+ 
     OUTPUT
         sy   Destination vector.
 */
@@ -189,7 +189,7 @@ int     n, incx, incy;
   /* Non-equal or negative increments. */
   if( incx < 0 ) sx += ((-n+1)*incx + 1);
   if( incy < 0 ) sy += ((-n+1)*incy + 1);
-  for( i=0; i<n; i++,sx+=incx,sy+=incy )
+  for( i=0; i<n; i++,sx+=incx,sy+=incy ) 
     (*sx) = (*sy);
   return;
 }
@@ -233,7 +233,7 @@ int	n, incx, incy;
   /* Unequal or negative increments. */
   if( incx < 0 ) sx += ((-n+1)*incx + 1);
   if( incy < 0 ) sy += ((-n+1)*incy + 1);
-  for( i=0; i<n; i++,sx+=incx,sy+=incy )
+  for( i=0; i<n; i++,sx+=incx,sy+=incy ) 
     stemp += (*sx)*(*sy);
   return( stemp );
 }				/* End of ---SDOT--- */
@@ -282,7 +282,7 @@ int	n, incx;
 START:
   if( abs( *sx ) > cutlo ) {
     for( ; i<n; i++, sx+=incx ) {		/* Loop over elements. */
-      if( abs( *sx ) > hitst ) goto GOT_LARGE;
+      if( abs( *sx ) > hitst ) goto GOT_LARGE;  
       sum += (*sx) * (*sx);
     }
     sum = sqrt( sum );
@@ -326,14 +326,14 @@ START:
 
 double r1mach()
 /* ---------------------------------------------------------------------
-        This routine computes the unit roundoff for single precision
-	of the machine.  This is defined as the smallest positive
+        This routine computes the unit roundoff for single precision 
+	of the machine.  This is defined as the smallest positive 
 	machine number u such that  1.0 + u .ne. 1.0
 	Returns a double due to `C' language features.
 ----------------------------------------------------------------------*/
 {
     float u = 1.0e0, comp;
-
+ 
     do {
         u *= 0.5e0;
         comp = 1.0e0 + u;
@@ -342,66 +342,66 @@ double r1mach()
     return( (double)u*2.0e0 );
 }
 /*-------------------- end of function r1mach ------------------------*/
-
+ 
 int min0( n, a, b, c, d, e, f, g, h, i, j, k, l, m, o, p )
 /*
     PURPOSE
         Determine the minimum of the arguments a-p.
-
+ 
     INPUT
         n       Number of arguments to check 1 <= n <= 15.
         a-p     Integer arguments of which the minumum is desired.
-
+ 
     RETURNS
         min0    Minimum of a thru p.
 */
 int n, a, b, c, d, e, f, g, h, i, j, k, l, m, o, p;
 {
     int mt;
-
+ 
     if( n < 1 || n > 15 ) return( -1 );
     mt = a;
     if( n == 1 ) return( mt );
-
+ 
     if( mt > b ) mt = b;
     if( n == 2 ) return( mt );
-
+ 
     if( mt > c ) mt = c;
     if( n == 3 ) return( mt );
-
+ 
     if( mt > d ) mt = d;
     if( n == 4 ) return( mt );
-
+ 
     if( mt > e ) mt = e;
     if( n == 5 ) return( mt );
-
+ 
     if( mt > f ) mt = f;
     if( n == 6 ) return( mt );
-
+ 
     if( mt > g ) mt = g;
     if( n == 7 ) return( mt );
-
+ 
     if( mt > h ) mt = h;
     if( n == 8 ) return( mt );
-
+ 
     if( mt > i ) mt = i;
     if( n == 9 ) return( mt );
-
+ 
     if( mt > j  ) mt = j;
     if( n == 10 ) return( mt );
-
+ 
     if( mt > k  ) mt = k;
     if( n == 11 ) return( mt );
-
+ 
     if( mt > l  ) mt = l;
     if( n == 12 ) return( mt );
-
+ 
     if( mt > m ) mt = m;
     if( n == 13 ) return( mt );
-
+ 
     if( mt > o  ) mt = o;
     if( n == 14 ) return( mt );
-
+ 
     if( mt > p  ) mt = p;
     return( mt );
 }
@@ -411,19 +411,19 @@ float  sa, *sx;
 /*
     PURPOSE
         Scales a vector by a constant.
-
+ 
     INPUT
         n    Number of components to scale.
         sa   Scale value.
         sx   Vector to scale.
         incx Every incx-th element of sx will be scaled.
-
+ 
     OUTPUT
         sx   Scaled vector.
 */
 {
   int i;
-
+ 
   if( n < 1 ) return( 1 );
 
   /* Code for increment not equal to 1.*/

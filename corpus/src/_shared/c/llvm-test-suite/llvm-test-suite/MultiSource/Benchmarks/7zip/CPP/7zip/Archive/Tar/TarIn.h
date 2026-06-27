@@ -9,9 +9,9 @@
 
 namespace NArchive {
 namespace NTar {
-
+  
 HRESULT ReadItem(ISequentialInStream *stream, bool &filled, CItemEx &itemInfo, AString &error);
 
 }}
-
+  
 #endif

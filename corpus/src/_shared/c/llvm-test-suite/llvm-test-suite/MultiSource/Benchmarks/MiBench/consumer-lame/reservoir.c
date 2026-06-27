@@ -100,7 +100,7 @@ ResvFrameBegin(lame_global_flags *gfp,III_side_info_t *l3_side, int mean_bits, i
 
 /*
   ResvMaxBits2:
-  As above, but now it *really* is bits per granule (both channels).
+  As above, but now it *really* is bits per granule (both channels).  
   Mark Taylor 4/99
 */
 void ResvMaxBits(int mean_bits, int *targ_bits, int *extra_bits, int gr)
@@ -119,15 +119,15 @@ void ResvMaxBits(int mean_bits, int *targ_bits, int *extra_bits, int gr)
     *targ_bits -= (int) (mean_bits/15.2);
   }
 
-
+  
   /* amount from the reservoir we are allowed to use. ISO says 6/10 */
-  *extra_bits =
+  *extra_bits =    
     (ResvSize  < (ResvMax*6)/10  ? ResvSize : (ResvMax*6)/10);
   *extra_bits -= add_bits;
-
+  
   if (*extra_bits < 0) *extra_bits=0;
 
-
+  
 }
 
 /*
@@ -163,7 +163,7 @@ ResvFrameEnd(lame_global_flags *gfp,III_side_info_t *l3_side, int mean_bits)
     over_bits = ResvSize - ResvMax;
     if ( over_bits < 0 )
 	over_bits = 0;
-
+    
     ResvSize -= over_bits;
     stuffingBits = over_bits;
 
@@ -179,3 +179,5 @@ ResvFrameEnd(lame_global_flags *gfp,III_side_info_t *l3_side, int mean_bits)
     return;
 
 }
+
+

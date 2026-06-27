@@ -106,7 +106,7 @@ struct CLogBlockAddr
 {
   UInt32 Pos;
   UInt16 PartitionRef;
-
+  
   void Parse(const Byte *buf);
 };
 
@@ -143,10 +143,10 @@ struct CLongAllocDesc
 {
   UInt32 Len;
   CLogBlockAddr Location;
-
+  
   // Byte ImplUse[6];
   // CADImpUse adImpUse; // UDF
-
+  
   UInt32 GetLen() const { return Len & 0x3FFFFFFF; }
   UInt32 GetType() const { return Len >> 30; }
   bool IsRecAndAlloc() const { return GetType() == SHORT_ALLOC_DESC_TYPE_RecordedAndAllocated; }
@@ -218,7 +218,7 @@ struct CMyExtent
   UInt32 Pos;
   UInt32 Len;
   int PartitionRef;
-
+  
   UInt32 GetLen() const { return Len & 0x3FFFFFFF; }
   UInt32 GetType() const { return Len >> 30; }
   bool IsRecAndAlloc() const { return GetType() == SHORT_ALLOC_DESC_TYPE_RecordedAndAllocated; }
@@ -274,7 +274,7 @@ struct CItem
 
   bool IsDir() const { return IcbTag.IsDir(); }
 };
-
+ 
 struct CRef
 {
   int Parent;
@@ -309,7 +309,7 @@ struct CLogVol
   CDString128 Id;
   UInt32 BlockSize;
   // CRegId DomainId;
-
+  
   // Byte ContentsUse[16];
   CLongAllocDesc FileSetLocation; // UDF
 
@@ -371,5 +371,5 @@ public:
 };
 
 }}
-
+  
 #endif

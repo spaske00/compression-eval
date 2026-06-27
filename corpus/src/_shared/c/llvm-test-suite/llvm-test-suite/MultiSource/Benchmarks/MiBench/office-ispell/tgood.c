@@ -305,7 +305,7 @@ static void chk_suf (word, ucword, len, optflags, pfxent, ignoreflagbits,
     suf_list_chk (word, ucword, len, ind, optflags, pfxent,
       ignoreflagbits, allhits);
     }
-
+    
 static void suf_list_chk (word, ucword, len, ind, optflags, pfxent,
   ignoreflagbits, allhits)
     ichar_t *		word;		/* Word to be checked */

@@ -110,7 +110,7 @@ class CStringBase
     memmove(_chars + destIndex, _chars + srcIndex,
         sizeof(T) * (_length - srcIndex + 1));
   }
-
+  
   void InsertSpace(int &index, int size)
   {
     CorrectIndex(index);
@@ -130,7 +130,7 @@ protected:
   T *_chars;
   int _length;
   int _capacity;
-
+  
   void SetCapacity(int newCapacity)
   {
     int realCapacity = newCapacity + 1;
@@ -255,7 +255,7 @@ public:
     _length = s._length;
     return *this;
   }
-
+  
   CStringBase& operator+=(T c)
   {
     GrowLength(1);
@@ -292,10 +292,10 @@ public:
   {
     if (startIndex + count > _length)
       count = _length - startIndex;
-
+    
     if (startIndex == 0 && startIndex + count == _length)
       return *this;
-
+    
     CStringBase<T> result;
     result.SetCapacity(count);
     // MyStringNCopy(result._chars, _chars + startIndex, count);

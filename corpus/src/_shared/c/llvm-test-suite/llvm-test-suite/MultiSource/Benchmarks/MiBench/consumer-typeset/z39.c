@@ -227,7 +227,7 @@ FULL_CHAR *StringQuotedWord(OBJECT x)
   q = buff;
   *q++ = CH_QUOTE;
   for( p = string(x);  *p != '\0';  p++ )
-  {
+  { 
     for( r = (FULL_CHAR *) quoted_string[*p];  *r != '\0';  *q++ = *r++ );
   }
   *q++ = CH_QUOTE;

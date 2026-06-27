@@ -16,3 +16,10 @@ typedef struct tree {
 
 extern tree_t *TreeAlloc (int level, int lo, int hi);
 int TreeAdd (tree_t *t);
+
+
+
+
+
+
+

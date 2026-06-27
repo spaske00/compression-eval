@@ -316,15 +316,15 @@ static void ParseMapWithPaths(NWildcard::CCensor &wildcardCensor,
   if (splitPos < 0)
     ThrowUserErrorException();
   UString mappingName = switchParam.Left(splitPos);
-
+  
   UString switchParam2 = switchParam.Mid(splitPos + 1);
   splitPos = switchParam2.Find(L':');
   if (splitPos < 0)
     ThrowUserErrorException();
-
+  
   UString mappingSize = switchParam2.Left(splitPos);
   UString eventName = switchParam2.Mid(splitPos + 1);
-
+  
   UInt64 dataSize64 = ConvertStringToUInt64(mappingSize, NULL);
   UInt32 dataSize = (UInt32)dataSize64;
   {
@@ -362,7 +362,7 @@ static void ParseMapWithPaths(NWildcard::CCensor &wildcardCensor,
     }
     UnmapViewOfFile(data);
   }
-
+  
   {
     NSynchronization::CManualResetEvent event;
     if (event.Open(EVENT_MODIFY_STATE, false, GetSystemString(eventName)) == S_OK)
@@ -627,9 +627,9 @@ static void SetAddCommandOptions(
     default:
       defaultActionSet = NUpdateArchive::kUpdateActionSet;
   }
-
+  
   options.UpdateArchiveItself = true;
-
+  
   options.Commands.Clear();
   CUpdateArchiveCommand updateMainCommand;
   updateMainCommand.ActionSet = defaultActionSet;
@@ -764,7 +764,7 @@ void CArchiveCommandLineParser::Parse2(CArchiveCommandLineOptions &options)
   if (parser[NKey::kExclude].ThereIs)
     AddSwitchWildCardsToCensor(options.WildcardCensor,
         parser[NKey::kExclude].PostStrings, false, recursedType, codePage);
-
+ 
   int curCommandIndex = kCommandIndex + 1;
   bool thereIsArchiveName = !parser[NKey::kNoArName].ThereIs &&
       options.Command.CommandType != NCommandType::kBenchmark &&
@@ -890,9 +890,9 @@ void CArchiveCommandLineParser::Parse2(CArchiveCommandLineOptions &options)
       options.ArchivePathsSorted.Add(archivePaths[indices[i]]);
       options.ArchivePathsFullSorted.Add(archivePathsFull[indices[i]]);
     }
-
+    
     }
-
+    
     if (isExtractGroupCommand)
     {
       SetMethodOptions(parser, options.ExtractProperties);
@@ -916,7 +916,7 @@ void CArchiveCommandLineParser::Parse2(CArchiveCommandLineOptions &options)
     CUpdateOptions &updateOptions = options.UpdateOptions;
 
     SetAddCommandOptions(options.Command.CommandType, parser, updateOptions);
-
+    
     SetMethodOptions(parser, updateOptions.MethodMode.Properties);
 
     options.EnablePercents = !parser[NKey::kDisablePercents].ThereIs;

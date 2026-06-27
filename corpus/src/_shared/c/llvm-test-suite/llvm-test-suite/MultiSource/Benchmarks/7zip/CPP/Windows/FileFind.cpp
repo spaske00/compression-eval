@@ -136,7 +136,7 @@ namespace NFind {
 static const TCHAR kDot = TEXT('.');
 
 bool CFileInfo::IsDots() const
-{
+{ 
   if (!IsDir() || Name.IsEmpty())
     return false;
   if (Name[0] != kDot)
@@ -145,7 +145,7 @@ bool CFileInfo::IsDots() const
 }
 
 bool CFileInfoW::IsDots() const
-{
+{ 
   if (!IsDir() || Name.IsEmpty())
     return false;
   if (Name[0] != kDot)
@@ -261,7 +261,7 @@ bool CFindFile::Close()
   }
   return false;
 }
-
+           
 // bool CFindFile::FindFirst(LPCTSTR wildcard, CFileInfo &fileInfo)
 bool CFindFile::FindFirst(LPCSTR wildcard, CFileInfo &fileInfo)
 {
@@ -272,9 +272,9 @@ bool CFindFile::FindFirst(LPCSTR wildcard, CFileInfo &fileInfo)
     SetLastError(ERROR_PATH_NOT_FOUND);
     return false;
   }
-
+ 
   my_windows_split_path(nameWindowToUnix(wildcard),_directory,_pattern);
-
+  
   TRACEN((printf("CFindFile::FindFirst : %s (dirname=%s,pattern=%s)\n",wildcard,(const char *)_directory,(const char *)_pattern)))
 
   _dirp = ::opendir((const char *)_directory);
@@ -440,7 +440,7 @@ bool FindFile(LPCWSTR wildcard, CFileInfoW &fileInfo)
 {
   // CFindFile finder;
   // return finder.FindFirst(wildcard, fileInfo);
-  AString name = UnicodeStringToMultiByte(wildcard, CP_ACP);
+  AString name = UnicodeStringToMultiByte(wildcard, CP_ACP); 
   CFileInfo fileInfo0;
   int ret = fillin_CFileInfo(fileInfo0,nameWindowToUnix((const char *)name));
   TRACEN((printf("FindFile-1(%s,CFileInfo) ret=%d\n",(const char *)name,ret)))
@@ -494,7 +494,7 @@ bool DoesFileOrDirExist(LPCSTR name)
 
 bool DoesFileExist(LPCWSTR name)
 {
-  AString Aname = UnicodeStringToMultiByte(name, CP_ACP);
+  AString Aname = UnicodeStringToMultiByte(name, CP_ACP); 
   bool bret = DoesFileExist((LPCSTR)Aname);
   if (bret) return bret;
 
@@ -509,7 +509,7 @@ bool DoesFileExist(LPCWSTR name)
 
 bool DoesDirExist(LPCWSTR name)
 {
-  AString Aname = UnicodeStringToMultiByte(name, CP_ACP);
+  AString Aname = UnicodeStringToMultiByte(name, CP_ACP); 
   bool bret = DoesDirExist((LPCSTR)Aname);
   if (bret) return bret;
 
@@ -524,7 +524,7 @@ bool DoesDirExist(LPCWSTR name)
 
 bool DoesFileOrDirExist(LPCWSTR name)
 {
-  AString Aname = UnicodeStringToMultiByte(name, CP_ACP);
+  AString Aname = UnicodeStringToMultiByte(name, CP_ACP); 
   bool bret = DoesFileOrDirExist((LPCSTR)Aname);
   if (bret) return bret;
 

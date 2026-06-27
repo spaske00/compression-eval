@@ -23,7 +23,7 @@ def @GraphObj
     PostScript @Yield {
 	@Null &  # kills previous white space
 	@HContract @VContract {
-	  //0io ||0io @HContract @VContract
+	  //0io ||0io @HContract @VContract 
 	  { p "trpoint translate" adj "translate gsave" // "grestore" }
 	  @Graphic { //margin ||margin x ||margin //margin }
 	  ||0io //0io
@@ -33,7 +33,7 @@ def @GraphObj
     PDF @Yield {
 	@Null &  # kills previous white space
 	@HContract @VContract {
-	  //0io ||0io @HContract @VContract
+	  //0io ||0io @HContract @VContract 
 	  { "% @GraphObj UNIMPLEMENTED" }
 	  @Graphic { //margin ||margin x ||margin //margin }
 	  ||0io //0io
@@ -1081,4 +1081,4 @@ def @Graph
 	PDF @Yield { {"% @Graph UNIMPLEMENTED"} @Graphic { //1rt objects } }
     }
 
-@End @Graph
+@End @Graph                  

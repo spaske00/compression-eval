@@ -44,13 +44,13 @@ bool DeleteFileAlways(LPCWSTR name);
 bool RemoveDirectoryWithSubItems(const UString &path);
 
 #ifndef _WIN32_WCE
-bool MyGetFullPathName(LPCTSTR fileName, CSysString &resultPath,
+bool MyGetFullPathName(LPCTSTR fileName, CSysString &resultPath, 
     int &fileNamePartStartIndex);
 bool MyGetFullPathName(LPCTSTR fileName, CSysString &resultPath);
 bool GetOnlyName(LPCTSTR fileName, CSysString &resultName);
 bool GetOnlyDirPrefix(LPCTSTR fileName, CSysString &resultName);
 #ifndef _UNICODE
-bool MyGetFullPathName(LPCWSTR fileName, UString &resultPath,
+bool MyGetFullPathName(LPCWSTR fileName, UString &resultPath, 
     int &fileNamePartStartIndex);
 bool MyGetFullPathName(LPCWSTR fileName, UString &resultPath);
 #endif

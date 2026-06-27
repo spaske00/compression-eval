@@ -2,7 +2,7 @@
 
 static bool primes_consensus_special_cases();
 static pcover primes_consensus_merge();
-static pcover and_with_cofactor();
+static pcover and_with_cofactor(); 
 
 
 /* primes_consensus -- generate primes using consensus */
@@ -30,7 +30,7 @@ pcube *T;			/* T will be disposed of */
     return Tnew;
 }
 
-static bool
+static bool 
 primes_consensus_special_cases(T, Tnew)
 pcube *T;			/* will be disposed if answer is determined */
 pcover *Tnew;			/* returned only if answer determined */
@@ -105,7 +105,7 @@ pcover *Tnew;			/* returned only if answer determined */
     }
 }
 
-static pcover
+static pcover 
 primes_consensus_merge(Tl, Tr, cl, cr)
 pcover Tl, Tr;
 pcube cl, cr;

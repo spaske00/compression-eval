@@ -7,21 +7,64 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
+function find_single_executable ()
+{
+    local search_dir="$1"
+    local preferred_name="$2"
+    local executables=()
+    local debug_executables=()
+
+    if [[ -x "$search_dir/$preferred_name.debug" ]]; then
+        printf '%s\n' "$search_dir/$preferred_name.debug"
+        return 0
+    fi
+
+    if [[ -x "$search_dir/$preferred_name" ]]; then
+        printf '%s\n' "$search_dir/$preferred_name"
+        return 0
+    fi
+
+    mapfile -t executables < <(find "$search_dir" -maxdepth 1 -type f -perm -111 | sort)
+    mapfile -t debug_executables < <(find "$search_dir" -maxdepth 1 -type f -perm -111 -name '*.debug' | sort)
+
+    if (( ${#debug_executables[@]} == 1 )); then
+        printf '%s\n' "${debug_executables[0]}"
+    elif (( ${#executables[@]} == 1 )); then
+        printf '%s\n' "${executables[0]}"
+    else
+        echo "Could not select a single executable artifact in $search_dir" >&2
+        printf '  %s\n' "${executables[@]}" >&2
+        return 1
+    fi
+}
+
+target_dir="target/images/$1"
+build_dir="target/native-image-build/$1"
+image_name="$1"
+
 java_src="$(find . -maxdepth 1 -type f -name "*.java" | head -n 1)"
 java_src="${java_src##*/}"
 java_src="${java_src%.*}"
 
-out="target/images/$1/$1"
-mkdir -p "target/images/$1/"
+rm -rf "$target_dir" "$build_dir"
+mkdir -p "$build_dir"
 shift 1
-args="$@"
+read -r -a args <<< "$*"
 
 "$GRAALVM_HOME/bin/javac" "$java_src.java" 
 "$GRAALVM_HOME/bin/native-image" \
-    -o "$out" \
-    $args \
+    -o "$build_dir/$image_name" \
+    "${args[@]}" \
     "$java_src"
 
+executable="$(find_single_executable "$build_dir" "$image_name")" || exit $?
+mkdir -p "$target_dir"
+mv "$executable" "$target_dir/$image_name"
+rm -rf "$build_dir"
+
 unset java_src
-unset out
+unset target_dir
+unset build_dir
+unset image_name
+unset executable
 unset args

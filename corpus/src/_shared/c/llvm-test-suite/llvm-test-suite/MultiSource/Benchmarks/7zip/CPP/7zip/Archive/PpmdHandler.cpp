@@ -37,7 +37,7 @@ static const UInt32 kBufSize = (1 << 20);
 struct CBuf
 {
   Byte *Buf;
-
+  
   CBuf(): Buf(0) {}
   ~CBuf() { ::MidFree(Buf); }
   bool Alloc()
@@ -57,7 +57,7 @@ struct CItem
   UInt32 Attrib;
   UInt32 Time;
   AString Name;
-
+  
   unsigned Order;
   unsigned MemInMB;
   unsigned Ver;
@@ -75,12 +75,12 @@ HRESULT CItem::ReadHeader(ISequentialInStream *s, UInt32 &headerSize)
     return S_FALSE;
   Attrib = GetUi32(h + 4);
   Time = GetUi32(h + 12);
-
+  
   unsigned info = GetUi16(h + 8);
   Order = (info & 0xF) + 1;
   MemInMB = ((info >> 4) & 0xFF) + 1;
   Ver = info >> 12;
-
+ 
   UInt32 nameLen = GetUi16(h + 10);
   Restor = nameLen >> 14;
   if (Restor > 2)
@@ -299,7 +299,7 @@ struct CPpmdCpp
   CRangeDecoder _rc;
   CPpmd7 _ppmd7;
   CPpmd8 _ppmd8;
-
+  
   CPpmdCpp(unsigned version)
   {
     Ver = version;
@@ -328,7 +328,7 @@ struct CPpmdCpp
     else
       Ppmd8_Init(&_ppmd8, order, restor);;
   }
-
+    
   bool InitRc(CByteInBufWrap *inStream)
   {
     if (Ver == 7)

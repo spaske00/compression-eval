@@ -1,5 +1,5 @@
 
-add_definitions(-DLANG -DNEW_FOLDER_INTERFACE -DEXTERNAL_CODECS)
+add_definitions(-DLANG -DNEW_FOLDER_INTERFACE -DEXTERNAL_CODECS)  
 
 IF(APPLE)
   add_definitions(-DENV_MACOSX)
@@ -86,10 +86,10 @@ add_executable(7zFM
  ../../UI/FileManager/PasswordDialog.cpp
  ../../UI/FileManager/PasswordDialog_rc.cpp
  ../../UI/FileManager/LangUtils.cpp
-
+  
 ../../UI/Common/ArchiveName.cpp
 ../../UI/Common/CompressCall.cpp
-../../UI/Common/WorkDir.cpp
+../../UI/Common/WorkDir.cpp  
 ../../UI/Common/ArchiveExtractCallback.cpp
 ../../UI/Common/ArchiveOpenCallback.cpp
 ../../UI/Common/DefaultName.cpp
@@ -117,11 +117,11 @@ add_executable(7zFM
         ../../../Common/MyVector.cpp
         ../../../Common/StringConvert.cpp
         ../../../Common/StringToInt.cpp
-        ../../../Common/IntToString.cpp
+        ../../../Common/IntToString.cpp        
         ../../../Common/MyWindows.cpp
         ../../../Common/Wildcard.cpp
-
-        ../../../Windows/DLL.cpp
+        
+        ../../../Windows/DLL.cpp    
         ../../../Windows/Error.cpp
         ../../../Windows/FileDir.cpp
         ../../../Windows/FileFind.cpp
@@ -153,9 +153,11 @@ add_executable(7zFM
  )
 
 IF(HAVE_PTHREADS)
- TARGET_LINK_LIBRARIES(7zFM
+ TARGET_LINK_LIBRARIES(7zFM 
 
  ${wxWidgets_LIBRARIES}
 
  ${CMAKE_THREAD_LIBS_INIT})
 ENDIF(HAVE_PTHREADS)
+
+

@@ -51,7 +51,7 @@ static void configSubRef() {
 
 	LONG CKey::Close()
 	{
-		if (_object)
+		if (_object) 
 		{
 			configSubRef();
 			delete _object;
@@ -218,7 +218,7 @@ LONG CKey::GetValue_IfOk(LPCTSTR name, bool &value)
 		while ( bCont ) {
 			keyNames.Add((const TCHAR *)str);
 			bCont = g_config->GetNextGroup(str, dummy);
-		}
+  		}
 		return ERROR_SUCCESS;
 	}
 
@@ -310,3 +310,4 @@ LONG CKey::GetValue_Strings(LPCTSTR valueName, UStringVector &strings)
 
 }
 }
+

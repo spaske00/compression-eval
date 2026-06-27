@@ -137,10 +137,10 @@ FOLDER_INTERFACE(IGetFolderArcProps, 0x11)
   STDMETHOD(OpenFolderFile)(IInStream *inStream, const wchar_t *filePath, const wchar_t *arcFormat, IFolderFolder **resultFolder, IProgress *progress) x; \
   STDMETHOD(GetExtensions)(BSTR *extensions) x; \
   STDMETHOD(GetIconPath)(const wchar_t *ext, BSTR *iconPath, Int32 *iconIndex) x; \
-
+  
   // STDMETHOD(GetTypes)(BSTR *types) PURE;
   // STDMETHOD(CreateFolderFile)(const wchar_t *type, const wchar_t *filePath, IProgress *progress) PURE;
-
+            
 FOLDER_MANAGER_INTERFACE(IFolderManager, 0x05)
 {
   INTERFACE_IFolderManager(PURE);

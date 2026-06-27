@@ -70,7 +70,7 @@ NUserAnswerMode::EEnum ScanUserYesNoAllQuit(CStdOutStream *outStream)
 
 UString GetPassword(CStdOutStream *outStream,bool verify)
 {
-#ifdef USE_FLTK
+#ifdef USE_FLTK 
   const char *r = fl_password("Enter password", 0);
   AString oemPassword = "";
   if (r) oemPassword = r;

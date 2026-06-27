@@ -79,7 +79,7 @@ HRESULT SetMethodProperties(const CMethod &method, const UInt64 *inSizeForReduce
       RINOK(res);
     }
   }
-
+ 
   /*
   CMyComPtr<ICompressWriteCoderProperties> writeCoderProperties;
   coder->QueryInterface(IID_ICompressWriteCoderProperties, (void **)&writeCoderProperties);
@@ -96,3 +96,4 @@ HRESULT SetMethodProperties(const CMethod &method, const UInt64 *inSizeForReduce
   */
   return S_OK;
 }
+

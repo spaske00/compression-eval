@@ -37,7 +37,7 @@ class CExtractDialog: public NWindows::NControl::CModalDialog
   #else
   NWindows::NControl::CComboBox _path;
   #endif
-
+  
   #ifndef _SFX
   NWindows::NControl::CEdit _passwordControl;
   NWindows::NControl::CComboBox _pathMode;
@@ -48,7 +48,7 @@ class CExtractDialog: public NWindows::NControl::CModalDialog
   // int GetFilesMode() const;
   void UpdatePasswordControl();
   #endif
-
+  
   void OnButtonSetPath();
 
   virtual bool OnInit();

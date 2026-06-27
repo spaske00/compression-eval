@@ -26,7 +26,7 @@ void CDeflateProps::Normalize()
   UInt32 level = Level;
   if (level == 0xFFFFFFFF)
     level = 5;
-
+  
   if (Algo == 0xFFFFFFFF)
     Algo = (level >= 5 ?
       kAlgo5 :

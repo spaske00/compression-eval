@@ -126,9 +126,9 @@ HRESULT CHandler::ReadTables(IInStream *stream)
   for (unsigned i = 0;;)
   {
     RINOK(ReadStream_FALSE(stream, buf, kSectorSize));
-
+ 
     CItem item;
-
+    
     UInt32 numBlocksInMap2;
     if (!item.Parse(buf, numBlocksInMap2))
       return S_FALSE;
@@ -145,7 +145,7 @@ HRESULT CHandler::ReadTables(IInStream *stream)
     if (finish < item.StartBlock)
       return S_FALSE;
     _numBlocks = MyMax(_numBlocks, finish);
-
+    
     _items.Add(item);
     for (unsigned j = 1; j < numSkips; j++)
     {
@@ -295,7 +295,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   totalSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 

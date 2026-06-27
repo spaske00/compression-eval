@@ -21,7 +21,7 @@ precision psub(u, v)
    register digitPtr	wPtr, uPtr;
 #endif
    precision		w;
-   register accumulator temp;
+   register accumulator temp; 
 #ifndef ASM_16BIT
    register digit	noborrow;
 #endif
@@ -40,7 +40,7 @@ precision psub(u, v)
 
       if (i < 0) {
 	 w = u; u = v; v = w;		/* make u the largest */
-      }
+      } 
 
       w = palloc(u->size);	/* may produce much wasted storage */
       if (w == pUndef) return w;
@@ -54,7 +54,7 @@ precision psub(u, v)
       noborrow = 1;
 
       HiDigit  = v->value + v->size;	      /* digits in both args */
-      do {
+      do {				   
 	 temp	  = (BASE-1) - *vPtr++;	     /* 0 <= temp <   base   */
 	 temp	 += *uPtr++;		     /* 0 <= temp < 2*base-1 */
 	 temp	 += noborrow;		     /* 0 <= temp < 2*base   */

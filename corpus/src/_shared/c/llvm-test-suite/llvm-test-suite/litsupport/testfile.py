@@ -22,7 +22,7 @@ def _parseShellCommand(script, ln):
 
 def clean_verify_command_for_windows(command_str):
     """Prepares a command string for execution in Windows command line by
-    formatting paths and arguments."""
+    formatting paths and arguments.""" 
     # Replace backslashes with forward slashes and split into tokens
     tokens = shlex.split(command_str.replace("\\", "/"))
     # Enclose each token in double quotes and convert slashes back

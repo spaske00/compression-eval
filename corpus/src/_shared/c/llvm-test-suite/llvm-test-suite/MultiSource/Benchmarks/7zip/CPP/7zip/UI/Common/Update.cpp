@@ -288,7 +288,7 @@ struct CUpdateProduceCallbackImp: public IUpdateProduceCallback
 {
   const CObjectVector<CArcItem> *_arcItems;
   IUpdateCallbackUI *_callback;
-
+  
   CUpdateProduceCallbackImp(const CObjectVector<CArcItem> *a,
       IUpdateCallbackUI *callback): _arcItems(a), _callback(callback) {}
   virtual HRESULT ShowDeleteFile(int arcIndex);
@@ -344,7 +344,7 @@ static HRESULT Compress(
   }
   if (outArchive == 0)
     throw kUpdateIsNotSupoorted;
-
+  
   NFileTimeType::EEnum fileTimeType;
   UInt32 value;
   RINOK(outArchive->GetFileTimeType(&value));
@@ -373,13 +373,13 @@ static HRESULT Compress(
   for (int i = 0; i < updatePairs2.Size(); i++)
     if (updatePairs2[i].NewData)
       numFiles++;
-
+  
   RINOK(callback->SetNumFiles(numFiles));
 
-
+  
   CArchiveUpdateCallback *updateCallbackSpec = new CArchiveUpdateCallback;
   CMyComPtr<IArchiveUpdateCallback> updateCallback(updateCallbackSpec);
-
+  
   updateCallbackSpec->ShareForWrite = shareForWrite;
   updateCallbackSpec->StdInMode = stdInMode;
   updateCallbackSpec->Callback = callback;
@@ -704,7 +704,7 @@ HRESULT UpdateArchive(
         errorInfo.Message = L"Updating for multivolume archives is not implemented";
         return E_NOTIMPL;
       }
-
+      
       CArc &arc = arcLink.Arcs.Back();
       arc.MTimeDefined = !fi.IsDevice;
       arc.MTime = fi.MTime;
@@ -759,7 +759,7 @@ HRESULT UpdateArchive(
 
   UString tempDirPrefix;
   bool usesTempDir = false;
-
+  
   #ifdef _WIN32
   NDirectory::CTempDirectoryW tempDirectory;
   if (options.EMailMode && options.EMailRemoveAfter)

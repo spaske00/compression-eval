@@ -202,9 +202,9 @@ HRESULT CUpdateCallbackConsole::CryptoGetTextPassword2(Int32 *passwordIsDefined,
 
   *passwordIsDefined = false;
   return S_OK;
-
+  
   #else
-
+  
   if (!PasswordIsDefined)
   {
     if (AskPassword)
@@ -215,7 +215,7 @@ HRESULT CUpdateCallbackConsole::CryptoGetTextPassword2(Int32 *passwordIsDefined,
   }
   *passwordIsDefined = BoolToInt(PasswordIsDefined);
   return StringToBstr(Password, password);
-
+  
   #endif
 }
 
@@ -226,9 +226,9 @@ HRESULT CUpdateCallbackConsole::CryptoGetTextPassword(BSTR *password)
   #ifdef _NO_CRYPTO
 
   return E_NOTIMPL;
-
+  
   #else
-
+  
   if (!PasswordIsDefined)
   {
     {
@@ -237,7 +237,7 @@ HRESULT CUpdateCallbackConsole::CryptoGetTextPassword(BSTR *password)
     }
   }
   return StringToBstr(Password, password);
-
+  
   #endif
 }
 

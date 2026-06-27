@@ -28,7 +28,7 @@ struct CCompressionMethodMode
   AString Password;
   bool IsAesMode;
   Byte AesKeyMode;
-
+  
   CCompressionMethodMode():
       NumMatchFinderCyclesDefined(false),
       PasswordIsDefined(false),

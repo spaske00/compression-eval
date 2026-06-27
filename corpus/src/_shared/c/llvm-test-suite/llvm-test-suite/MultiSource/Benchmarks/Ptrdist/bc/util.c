@@ -23,7 +23,7 @@
                 Computer Science Department, 9062
                 Western Washington University
                 Bellingham, WA 98226-9062
-
+       
 *************************************************************************/
 
 #include "bcdefs.h"
@@ -55,7 +55,7 @@ nextarg (arg_list * args, char val)
   temp = (arg_list *)malloc(sizeof (arg_list));
   temp->av_name = val;
   temp->next = args;
-
+ 
   return (temp);
 }
 
@@ -93,7 +93,7 @@ make_arg_str (arg_list * args, int len, int commas)
     }
 
   /* Add the current number to the end of the string. */
-  if (len != 1 && commas)
+  if (len != 1 && commas) 
     sprintf (sval, "%d,", args->av_name);
   else
     sprintf (sval, "%d", args->av_name);
@@ -104,7 +104,7 @@ make_arg_str (arg_list * args, int len, int commas)
 char *
 arg_str (arg_list * args, int commas)
 {
-  if (arglist2 != NULL)
+  if (arglist2 != NULL) 
     free(arglist2);
   arglist2 = arglist1;
   arglist1 = make_arg_str (args, 1, commas);
@@ -116,9 +116,9 @@ arg_str (arg_list * args, int commas)
 
 void
 free_args (arg_list * args)
-{
+{ 
   arg_list * temp;
-
+ 
   temp = args;
   while (temp != NULL)
     {
@@ -148,7 +148,7 @@ check_params ( arg_list * params, arg_list * autos )
 	  tmp2 = tmp1->next;
 	  while (tmp2 != NULL)
 	    {
-	      if (tmp2->av_name == tmp1->av_name)
+	      if (tmp2->av_name == tmp1->av_name) 
 		yyerror ("duplicate parameter names");
 	      tmp2 = tmp2->next;
 	    }
@@ -167,7 +167,7 @@ check_params ( arg_list * params, arg_list * autos )
 	  tmp2 = tmp1->next;
 	  while (tmp2 != NULL)
 	    {
-	      if (tmp2->av_name == tmp1->av_name)
+	      if (tmp2->av_name == tmp1->av_name) 
 		yyerror ("duplicate auto variable names");
 	      tmp2 = tmp2->next;
 	    }
@@ -184,7 +184,7 @@ check_params ( arg_list * params, arg_list * autos )
 	  tmp2 = autos;
 	  while (tmp2 != NULL)
 	    {
-	      if (tmp2->av_name == tmp1->av_name)
+	      if (tmp2->av_name == tmp1->av_name) 
 		yyerror ("variable in both parameter and auto lists");
 	      tmp2 = tmp2->next;
 	    }
@@ -204,7 +204,7 @@ init_gen (void)
   continue_label = 0;
   next_label  = 1;
   out_count = 2;
-  if (compile_only)
+  if (compile_only) 
     printf ("@i");
   else
     init_load ();
@@ -244,7 +244,7 @@ run_code(void)
     {
       if (compile_only)
 	{
-	  printf ("@r\n");
+	  printf ("@r\n"); 
 	  out_count = 0;
 	}
       else
@@ -294,7 +294,7 @@ id_rec *
 find_id (id_rec * tree, char * id)
 {
   int cmp_result;
-
+  
   /* Check for an empty tree. */
   if (tree == NULL)
     return NULL;
@@ -306,7 +306,7 @@ find_id (id_rec * tree, char * id)
   else if (cmp_result < 0)
     return find_id (tree->left, id);
   else
-    return find_id (tree->right, id);
+    return find_id (tree->right, id);  
 }
 
 
@@ -338,7 +338,7 @@ int insert_id_rec (id_rec * * root, id_rec * new_id)
 	{
 	  /* The height increased. */
 	  (*root)->balance --;
-
+	  
       switch ((*root)->balance)
 	{
 	case  0:  /* no height increase. */
@@ -382,8 +382,8 @@ int insert_id_rec (id_rec * * root, id_rec * new_id)
 		}
 	      (*root)->balance = 0;
 	    }
-	}
-	}
+	}     
+	} 
     }
   else
     {
@@ -435,10 +435,10 @@ int insert_id_rec (id_rec * * root, id_rec * new_id)
 		    }
 		  (*root)->balance = 0;
 		}
-	    }
-	}
+	    }     
+	} 
     }
-
+  
   /* If we fall through to here, the tree did not grow in height. */
   return (FALSE);
 }
@@ -483,7 +483,7 @@ lookup (char * name, int namekind)
   /* Return the correct value. */
   switch (namekind)
     {
-
+      
     case ARRAY:
       /* ARRAY variable numbers are returned as negative numbers. */
       if (id->a_name != 0)
@@ -541,7 +541,7 @@ lookup (char * name, int namekind)
 
 /* Print the welcome banner. */
 
-void
+void 
 welcome(void)
 {
   printf ("This is free software with ABSOLUTELY NO WARRANTY.\n");
@@ -551,7 +551,7 @@ welcome(void)
 
 /* Print out the warranty information. */
 
-void
+void 
 warranty(char * prefix)
 {
   printf ("\n%s%s\n\n", prefix, BC_VERSION);
@@ -584,7 +584,7 @@ limits(void)
   printf ("Number of vars  = %ld\n", (long) MAX_STORE);
 #ifdef OLD_EQ_OP
   printf ("Old assignment operatiors are valid. (=-, =+, ...)\n");
-#endif
+#endif 
 }
 
 
@@ -691,7 +691,7 @@ rt_error (char *mesg, ...)
 
   vsprintf (error_mesg, mesg, args);
   va_end (args);
-
+  
   fprintf (stderr, "Runtime error (func=%s, adr=%d): %s\n",
 	   f_names[pc.pc_func], pc.pc_addr, error_mesg);
   runtime_error = TRUE;

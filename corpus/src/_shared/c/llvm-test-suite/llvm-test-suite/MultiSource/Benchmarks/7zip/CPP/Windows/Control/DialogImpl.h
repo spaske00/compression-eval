@@ -24,8 +24,8 @@ namespace NWindows {
 			CDialog *_dialog;
 		public:
 			CModalDialogImpl(CDialog *dialog, wxWindow* parent, wxWindowID id, const wxString& title,
-					const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize,
-					long style = wxDEFAULT_DIALOG_STYLE );
+				       	const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize,
+				       	long style = wxDEFAULT_DIALOG_STYLE );
 
 			CDialog * Detach()
 			{
@@ -70,3 +70,4 @@ namespace NWindows {
 }
 
 #endif
+

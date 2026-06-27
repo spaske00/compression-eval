@@ -39,7 +39,7 @@ struct CSwitchResult
   int PostCharIndex;
   CSwitchResult(): ThereIs(false) {};
 };
-
+  
 class CParser
 {
   int _numSwitches;

@@ -192,7 +192,7 @@ HRESULT CDecoder::CodeSpec(UInt32 curSize)
         }
       }
       m_x86ConvertOutStreamSpec->Init(translationMode, i86TranslationSize);
-
+      
       for (unsigned i = 0 ; i < kNumRepDistances; i++)
         m_RepDistances[i] = 0;
     }
@@ -244,7 +244,7 @@ HRESULT CDecoder::CodeSpec(UInt32 curSize)
             return S_FALSE;
           len += lenTemp;
         }
-
+        
         if (posSlot < kNumRepDistances)
         {
           UInt32 distance = m_RepDistances[posSlot];

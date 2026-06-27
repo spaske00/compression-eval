@@ -109,7 +109,7 @@ HRESULT CHandler::SetCompressionMethod(
     )
 {
   UInt32 level = _level;
-
+  
   if (methodsInfo.IsEmpty())
   {
     COneMethodInfo oneMethodInfo;
@@ -205,7 +205,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
   #endif
 
   CObjectVector<CUpdateItem> updateItems;
-
+  
   for (UInt32 i = 0; i < numItems; i++)
   {
     Int32 newData, newProps;
@@ -230,7 +230,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
       ui.IsDir = fi.IsDir;
       ui.Size = fi.Size;
       ui.IsAnti = db->IsItemAnti(ui.IndexInArchive);
-
+      
       ui.CTimeDefined = db->CTime.GetItem(ui.IndexInArchive, ui.CTime);
       ui.ATimeDefined = db->ATime.GetItem(ui.IndexInArchive, ui.ATime);
       ui.MTimeDefined = db->MTime.GetItem(ui.IndexInArchive, ui.MTime);
@@ -253,7 +253,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
           ui.AttribDefined = true;
         }
       }
-
+      
       // we need MTime to sort files.
       RINOK(GetTime(updateCallback, i, WriteCTime, kpidCTime, ui.CTime, ui.CTimeDefined));
       RINOK(GetTime(updateCallback, i, WriteATime, kpidATime, ui.ATime, ui.ATimeDefined));
@@ -304,7 +304,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
         ui.CTimeDefined = false;
         ui.ATimeDefined = false;
         ui.MTimeDefined = false;
-
+        
         ui.Size = 0;
       }
 
@@ -380,7 +380,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
   options.HeaderOptions.WriteCTime = WriteCTime;
   options.HeaderOptions.WriteATime = WriteATime;
   options.HeaderOptions.WriteMTime = WriteMTime;
-
+  
   options.NumSolidFiles = _numSolidFiles;
   options.NumSolidBytes = _numSolidBytes;
   options.SolidExtension = _solidExtension;
@@ -392,7 +392,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
 
   CMyComPtr<ICryptoGetTextPassword> getPassword;
   updateCallback->QueryInterface(IID_ICryptoGetTextPassword, (void **)&getPassword);
-
+  
   HRESULT res = Update(
       EXTERNAL_CODECS_VARS
       #ifdef _7Z_VOL

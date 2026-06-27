@@ -158,7 +158,7 @@ static bool ConvertProperty(PROPVARIANT srcProp, VARTYPE varType, NCOM::CPropVar
   }
   return false;
 }
-
+    
 static int FindPropIdExact(const UString &name)
 {
   for (int i = 0; i < sizeof(g_NameToPropID) / sizeof(g_NameToPropID[0]); i++)
@@ -198,7 +198,7 @@ void COutHandler::SetCompressionMethod2(COneMethodInfo &oneMethodInfo
   UInt32 level = _level;
   if (oneMethodInfo.MethodName.IsEmpty())
     oneMethodInfo.MethodName = kDefaultMethodName;
-
+  
   if (oneMethodInfo.IsLzma())
   {
     UInt32 dicSize =
@@ -207,19 +207,19 @@ void COutHandler::SetCompressionMethod2(COneMethodInfo &oneMethodInfo
       (level >= 5 ? kLzmaDicSizeX5 :
       (level >= 3 ? kLzmaDicSizeX3 :
                     kLzmaDicSizeX1))));
-
+    
     UInt32 algo =
       (level >= 5 ? kLzmaAlgoX5 :
                     kLzmaAlgoX1);
-
+    
     UInt32 fastBytes =
       (level >= 7 ? kLzmaFastBytesX7 :
                     kLzmaFastBytesX1);
-
+    
     const wchar_t *matchFinder =
       (level >= 5 ? kLzmaMatchFinderX5 :
                     kLzmaMatchFinderX1);
-
+    
     SetMethodProp(oneMethodInfo, NCoderPropID::kDictionarySize, dicSize);
     SetMethodProp(oneMethodInfo, NCoderPropID::kAlgorithm, algo);
     SetMethodProp(oneMethodInfo, NCoderPropID::kNumFastBytes, fastBytes);
@@ -234,16 +234,16 @@ void COutHandler::SetCompressionMethod2(COneMethodInfo &oneMethodInfo
       (level >= 9 ? kDeflateFastBytesX9 :
       (level >= 7 ? kDeflateFastBytesX7 :
                     kDeflateFastBytesX1));
-
+    
     UInt32 numPasses =
       (level >= 9 ? kDeflatePassesX9 :
       (level >= 7 ? kDeflatePassesX7 :
                     kDeflatePassesX1));
-
+    
     UInt32 algo =
       (level >= 5 ? kDeflateAlgoX5 :
                     kDeflateAlgoX1);
-
+    
     SetMethodProp(oneMethodInfo, NCoderPropID::kAlgorithm, algo);
     SetMethodProp(oneMethodInfo, NCoderPropID::kNumFastBytes, fastBytes);
     SetMethodProp(oneMethodInfo, NCoderPropID::kNumPasses, numPasses);
@@ -254,12 +254,12 @@ void COutHandler::SetCompressionMethod2(COneMethodInfo &oneMethodInfo
       (level >= 9 ? kBZip2NumPassesX9 :
       (level >= 7 ? kBZip2NumPassesX7 :
                     kBZip2NumPassesX1));
-
+    
     UInt32 dicSize =
       (level >= 5 ? kBZip2DicSizeX5 :
       (level >= 3 ? kBZip2DicSizeX3 :
                     kBZip2DicSizeX1));
-
+    
     SetMethodProp(oneMethodInfo, NCoderPropID::kNumPasses, numPasses);
     SetMethodProp(oneMethodInfo, NCoderPropID::kDictionarySize, dicSize);
     #ifndef _7ZIP_ST
@@ -273,13 +273,13 @@ void COutHandler::SetCompressionMethod2(COneMethodInfo &oneMethodInfo
       (level >= 7 ? kPpmdMemSizeX7 :
       (level >= 5 ? kPpmdMemSizeX5 :
                     kPpmdMemSizeX1)));
-
+    
     UInt32 order =
       (level >= 9 ? kPpmdOrderX9 :
       (level >= 7 ? kPpmdOrderX7 :
       (level >= 5 ? kPpmdOrderX5 :
                     kPpmdOrderX1)));
-
+    
     SetMethodProp(oneMethodInfo, NCoderPropID::kUsedMemorySize, useMemSize);
     SetMethodProp(oneMethodInfo, NCoderPropID::kOrder, order);
   }
@@ -348,7 +348,7 @@ HRESULT COutHandler::SetParam(COneMethodInfo &oneMethodInfo, const UString &name
   else
   {
     NCOM::CPropVariant propValue;
-
+    
     if (nameToPropID.VarType == VT_BSTR)
       propValue = value;
     else if (nameToPropID.VarType == VT_BOOL)
@@ -366,7 +366,7 @@ HRESULT COutHandler::SetParam(COneMethodInfo &oneMethodInfo, const UString &name
       else
         propValue = value;
     }
-
+    
     if (!ConvertProperty(propValue, nameToPropID.VarType, prop.Value))
       return E_INVALIDARG;
   }
@@ -471,15 +471,15 @@ void COutHandler::Init()
   _compressHeaders = true;
   _encryptHeadersSpecified = false;
   _encryptHeaders = false;
-
+  
   WriteCTime = false;
   WriteATime = false;
   WriteMTime = true;
-
+  
   #ifndef _7ZIP_ST
   _numThreads = NSystem::GetNumberOfProcessors();
   #endif
-
+  
   _level = 5;
   _autoFilter = true;
   _volumeMode = false;
@@ -506,14 +506,14 @@ HRESULT COutHandler::SetProperty(const wchar_t *nameSpec, const PROPVARIANT &val
   name.MakeUpper();
   if (name.IsEmpty())
     return E_INVALIDARG;
-
+  
   if (name[0] == 'X')
   {
     name.Delete(0);
     _level = 9;
     return ParsePropValue(name, value, _level);
   }
-
+  
   if (name[0] == L'S')
   {
     name.Delete(0);
@@ -523,14 +523,14 @@ HRESULT COutHandler::SetProperty(const wchar_t *nameSpec, const PROPVARIANT &val
       return E_INVALIDARG;
     return SetSolidSettings(name);
   }
-
+  
   if (name == L"CRC")
   {
     _crcSize = 4;
     name.Delete(0, 3);
     return ParsePropValue(name, value, _crcSize);
   }
-
+  
   UInt32 number;
   int index = ParseStringToUInt32(name, number);
   UString realName = name.Mid(index);
@@ -576,14 +576,14 @@ HRESULT COutHandler::SetProperty(const wchar_t *nameSpec, const PROPVARIANT &val
     COneMethodInfo oneMethodInfo;
     _methods.Add(oneMethodInfo);
   }
-
+  
   COneMethodInfo &oneMethodInfo = _methods[number];
-
+  
   if (realName.Length() == 0)
   {
     if (value.vt != VT_BSTR)
       return E_INVALIDARG;
-
+    
     RINOK(SetParams(oneMethodInfo, value.bstrVal));
   }
   else

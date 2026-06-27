@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -128,7 +128,7 @@ void testCMessagesDialog()
     messagesDialog.Messages = &Messages;
    int ret = messagesDialog.Create( 0  ); // ParentWindow
 
-	if (ret == IDOK) myErrorMsg(wxT("CMessagesDialog => IDOK"));
+   	if (ret == IDOK) myErrorMsg(wxT("CMessagesDialog => IDOK"));
 	else if (ret == IDCANCEL) myErrorMsg(wxT("CMessagesDialog => IDCANCEL"));
 	else  myErrorMsg(wxT("CMessagesDialog => ?"));
 
@@ -173,18 +173,18 @@ SystemTimeToFileTime( &systemTime , &data_newTime);
     dialog.NewFileInfo.TimeIsDefined = true;
     dialog.NewFileInfo.Time = *newTime;
   }
-
+  
   dialog.NewFileInfo.SizeIsDefined = (newSize != NULL);
   if (dialog.NewFileInfo.SizeIsDefined)
     dialog.NewFileInfo.Size = *newSize;
   dialog.NewFileInfo.Name = newName;
-
+  
   /*
-  NOverwriteDialog::NResult::EEnum writeAnswer =
+  NOverwriteDialog::NResult::EEnum writeAnswer = 
     NOverwriteDialog::Execute(oldFileInfo, newFileInfo);
   */
   INT_PTR writeAnswer = dialog.Create(NULL); // ParentWindow doesn't work with 7z
-
+  
   switch(writeAnswer)
   {
   case IDCANCEL: myErrorMsg(wxT("COverwriteDialog => IDCANCEL")); break;
@@ -263,7 +263,7 @@ void testDialog(int num)
 
 void testMessageBox()
 {
-	int ret = MessageBoxW(0, L"test yes/no/cancel",
+	int ret = MessageBoxW(0, L"test yes/no/cancel", 
             L"7-Zip", MB_YESNOCANCEL | MB_ICONQUESTION | MB_TASKMODAL);
 	if (ret == IDYES) myErrorMsg(wxT("MessageBoxW => IDYES"));
 	else if (ret == IDNO) myErrorMsg(wxT("MessageBoxW => IDNO"));
@@ -313,10 +313,10 @@ int Main3(int argc,wxChar **argv)
 	// TODO CExtractDialog ?
 		case 1 : testCMessagesDialog();  break;
 		case 2 : testCOverwriteDialog(); break;
-		case 3 : testCPasswordDialog();  break;
+	 	case 3 : testCPasswordDialog();  break;
 		case 4 : testCProgressDialog();  break;
 		case 5 : testMessageBox();  break;
-		case 9 :
+		case 9 : 
 			if (argc >= 3)
 			{
 				AString str = GetAnsiString(argv[2]);
@@ -327,7 +327,7 @@ int Main3(int argc,wxChar **argv)
 			{
 				printf("usage : 7zG 9 <windowID>\n");
 			}
-			break;
+		      	break;
 		default :
 			printf("usage : 7zG number\n");
 
@@ -370,7 +370,7 @@ void testCPasswordDialog()
 
 	int ret = dialog.Create(0);
 	if (ret == IDOK) {
-		UString Password = dialog.Password;
+    		UString Password = dialog.Password;
 		UString msg  = wxT("CPasswordDialog => IDOK password=\"");
 		msg += Password;
 		msg += wxT("\"");
@@ -413,10 +413,10 @@ int Main3(int argc,wxChar **argv)
 	// TODO CExtractDialog ?
 		case 1 : testCMessagesDialog();  break;
 		case 2 : testCOverwriteDialog(); break;
-		case 3 : testCPasswordDialog();  break;
+	 	case 3 : testCPasswordDialog();  break;
 		case 4 : testCProgressDialog();  break;
 		case 5 : testMessageBox();  break;
-		case 9 :
+		case 9 : 
 			if (argc >= 3)
 			{
 				AString str = GetAnsiString(argv[2]);
@@ -427,7 +427,7 @@ int Main3(int argc,wxChar **argv)
 			{
 				printf("usage : 7zG 9 <windowID>\n");
 			}
-			break;
+		      	break;
 		default :
 			printf("usage : 7zG number\n");
 
@@ -450,7 +450,7 @@ public:
 
     // operations
     void WriteText(const wxString& text) { m_txtctrl->WriteText(text); }
-
+    
 protected:
     // callbacks
     void OnWorkerEvent(wxCommandEvent& event);
@@ -471,7 +471,7 @@ MyFrame::MyFrame(wxFrame *frame, const wxString& title,
        : wxFrame(frame, wxID_ANY, title, wxPoint(x, y), wxSize(w, h))
 {
 	this->SetIcon(wxICON(p7zip_32));
-
+    
 #if wxUSE_STATUSBAR
     CreateStatusBar(2);
 #endif // wxUSE_STATUSBAR
@@ -557,3 +557,4 @@ g_main_thread = pthread_self();
   // application would exit immediately.
     return true;
 }
+

@@ -117,7 +117,7 @@ _O_start_standout()
 	{
 #ifdef M_TERMCAP
 		(void) printf("%s",_O_startline);
-#endif
+#endif 
 #ifdef M_TERMINFO
 		vidattr(A_STANDOUT);
 #endif
@@ -139,7 +139,7 @@ _O_end_standout()
 	{
 #ifdef M_TERMCAP
 		(void) printf("%s",_O_endline);
-#endif
+#endif 
 #ifdef M_TERMINFO
 		vidattr(0);
 #endif
@@ -223,7 +223,7 @@ char *ptr;
 				(void) strcpy(spacetext,"<SPACE>");
 				return(spacetext);
 		}
-
+				
 	}
 	return(ptr);
 }
@@ -245,7 +245,7 @@ int file,index,flags;
 		(void) sprintf(buf,"%s -- line %d, character %d\n",
 				text,
 				/*
-				**	add 1 to make output start at line 1
+				**	add 1 to make output start at line 1 
 				**	and character numbers start at 1
 				*/
 				L_tl2cl(file,K_getline(tmp))+1,
@@ -318,7 +318,7 @@ int start,end,file;
 			_O_pchars(linetext,K_getpos(nexttoken),lastchar);
 			_O_end_standout();
 			_O_pchars(linetext,lastchar,strlen(linetext));
-
+			
 			lastline = nextline;
 		}
 	}
@@ -385,7 +385,7 @@ int flags;
 			/*
 			**	run down the list looking for the edit
 			**	that is not part of the current deletion
-			*/
+			*/	
 			do {
 				a = b;
 				b = E_getnext(b);
@@ -419,13 +419,13 @@ int flags;
 			/*
 			**	if we are showing only a deletion,
 			**	then we're all done, so skip ahead
-			*/
+			*/ 
 			if (_O_DEL == type)
 			{
 				t_beg2 = E_getl2(a);
 				t_end2 = -1;	/* dummy number, won't
 							ever be printed */
-
+						   
 				goto skipit;
 			}
 		}
@@ -530,7 +530,7 @@ skipit:;
 				}
 			}
 			else
-			{
+			{	
 				_O_do_lines(t_beg1,t_end1,0);
 			}
 		}

@@ -255,7 +255,7 @@ STDMETHODIMP CExtentsStream::Read(void *data, UInt32 size, UInt32 *processedSize
       else
         left = mid;
     }
-
+    
     const CSeekExtent &extent = Extents[left];
     UInt64 phyPos = extent.Phy + (_virtPos - extent.Virt);
     if (_needStartSeek || _phyPos != phyPos)
@@ -268,7 +268,7 @@ STDMETHODIMP CExtentsStream::Read(void *data, UInt32 size, UInt32 *processedSize
     UInt64 rem = Extents[left + 1].Virt - _virtPos;
     if (size > rem)
       size = (UInt32)rem;
-
+ 
     HRESULT res = Stream->Read(data, size, &size);
     _phyPos += size;
     _virtPos += size;
@@ -321,7 +321,7 @@ STDMETHODIMP CHandler::GetStream(UInt32 index, ISequentialInStream **stream)
 
   CExtentsStream *extentStreamSpec = new CExtentsStream();
   CMyComPtr<ISequentialInStream> extentStream = extentStreamSpec;
-
+  
   extentStreamSpec->Stream = _inStream;
 
   UInt64 virtOffset = 0;
@@ -333,13 +333,13 @@ STDMETHODIMP CHandler::GetStream(UInt32 index, ISequentialInStream **stream)
       continue;
     if (size < len)
       return S_FALSE;
-
+      
     int partitionIndex = vol.PartitionMaps[extent.PartitionRef].PartitionIndex;
     UInt32 logBlockNumber = extent.Pos;
     const CPartition &partition = _archive.Partitions[partitionIndex];
     UInt64 offset = ((UInt64)partition.Pos << _archive.SecLogSize) +
       (UInt64)logBlockNumber * vol.BlockSize;
-
+      
     CSeekExtent se;
     se.Phy = offset;
     se.Virt = virtOffset;
@@ -384,7 +384,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   UInt64 currentTotalSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -404,7 +404,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         NExtract::NAskMode::kTest :
         NExtract::NAskMode::kExtract;
     UInt32 index = allFilesMode ? i : indices[i];
-
+    
     RINOK(extractCallback->GetStream(index, &realOutStream, askMode));
 
     const CRef2 &ref2 = _refs2[index];

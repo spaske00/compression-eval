@@ -115,7 +115,7 @@ void brhist_disp_total(lame_global_flags *gfp)
     ave += bitrate_table[gfp->version][i]*
       (FLOAT)brhist_count[i] / gfp->totalframes;
   fprintf(stderr, "\naverage: %2.0f kbs\n",ave);
-
+    
 #if 0
   fprintf(stderr, "----- bitrate statistics -----\n");
   fprintf(stderr, " [kbps]      frames\n");
@@ -131,3 +131,5 @@ void brhist_disp_total(lame_global_flags *gfp)
 }
 
 #endif /* BRHIST */
+
+

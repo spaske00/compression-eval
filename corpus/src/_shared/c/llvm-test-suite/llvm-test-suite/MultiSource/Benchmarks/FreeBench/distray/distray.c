@@ -8,7 +8,7 @@
  * ----------------
  * Features reflections, anti-aliasing
  * and soft-shadows.
- *
+ * 
  * Written by Marcus Geelnard, benchmarkified by
  * Peter Rundberg, biff@ce.chalmers.se
  */
@@ -161,7 +161,7 @@ static double Jitter( void )
 static void ReflectVector( VECTOR *v2, VECTOR *v1, VECTOR *n )
 {
     double  a, b;
-
+ 
     b = n->x*n->x + n->y*n->y + n->z*n->z;      /* b = |n|^2 */
     a = v1->x*n->x + v1->y*n->y + v1->z*n->z;   /* a = v1·n  */
     a = -2.0 * a / b;                           /* a = -2*(v1·n)/|n|^2 */
@@ -246,17 +246,17 @@ static double IntersectObjs( VECTOR *LinP, VECTOR *LinD,
             A = sqrt(A);
             if( (ttmp = B - A) < EPSILON ) ttmp = B + A;
             if( (EPSILON<ttmp) && ( (ttmp<t)||(t<0.0) ) ) {
-		t = ttmp;
-		Pnt->x = LinD->x*t;       /* Calculate intersection point */
-		Pnt->y = LinD->y*t;
-		Pnt->z = LinD->z*t;
-		Norm->x = Pnt->x-Pos.x;   /* Calcualate surface normal */
-		Norm->y = Pnt->y-Pos.y;
-		Norm->z = Pnt->z-Pos.z;
-		Pnt->x += LinP->x;        /* Translate object back to "true-space" */
-		Pnt->y += LinP->y;
-		Pnt->z += LinP->z;
-		*txt = &objs[objn].t;     /* Get surface properties */
+        	t = ttmp;
+        	Pnt->x = LinD->x*t;       /* Calculate intersection point */
+        	Pnt->y = LinD->y*t;
+        	Pnt->z = LinD->z*t;
+        	Norm->x = Pnt->x-Pos.x;   /* Calcualate surface normal */
+        	Norm->y = Pnt->y-Pos.y;
+        	Norm->z = Pnt->z-Pos.z;
+        	Pnt->x += LinP->x;        /* Translate object back to "true-space" */
+        	Pnt->y += LinP->y;
+        	Pnt->z += LinP->z;
+        	*txt = &objs[objn].t;     /* Get surface properties */
             }
         }
     }
@@ -372,12 +372,12 @@ static void TraceScene(void)
     Scale.z = ((double)(HEIGHT/2-sy))/(double)HEIGHT;
     for( sx = 0; sx < WIDTH; sx++ ) {
       Scale.x = ((double)(sx-WIDTH/2))/(double)WIDTH;
-
+      
       /* Calculate line-direction (from camera-center through a pixel) */
       LinD.x = Cameraright.x*Scale.x + Cameradir.x*Scale.y + Cameraup.x*Scale.z;
       LinD.y = Cameraright.y*Scale.x + Cameradir.y*Scale.y + Cameraup.y*Scale.z;
       LinD.z = Cameraright.z*Scale.x + Cameradir.z*Scale.y + Cameraup.z*Scale.z;
-
+      
       /* Get color for pixel */
 #if (DISTLEVELS > 0)
       PixColor.x = PixColor.y = PixColor.z = 0.0;
@@ -393,7 +393,7 @@ static void TraceScene(void)
 #else
       TraceLine( &Camerapos, &LinD, &PixColor, MAXREC );
 #endif
-
+  
       memory[3*(sx+sy*WIDTH)]=(UBYTE)(PixColor.x*255.0);
       memory[3*(sx+sy*WIDTH)+1]=(UBYTE)(PixColor.y*255.0);
       memory[3*(sx+sy*WIDTH)+2]=(UBYTE)(PixColor.z*255.0);

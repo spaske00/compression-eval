@@ -72,3 +72,4 @@ macro(create_one_local_test Name FileGlob
                           ${VariantOffload} ${VariantSuffix}
                           "${VariantCPPFLAGS}" "${VariantLibs}")
 endmacro()
+

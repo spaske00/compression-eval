@@ -165,7 +165,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
     case PAGE_LABEL:
     case CROSS:
     case FORCE_CROSS:
-
+    
       *actual_back = xb;  *actual_fwd = xf;
       break;
 
@@ -239,7 +239,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
     case WORD:
     case QWORD:
-
+    
       if( dim == COLM )
       {
 	/* save horizontal position for PrintWord below */
@@ -269,7 +269,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
     case WIDE:
     case HIGH:
-
+    
       CountChild(y, Down(x), count);
       if( (dim == COLM) == (type(x) == WIDE) )
       { yf = bfc(constraint(x)) - back(y, dim);
@@ -312,7 +312,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
     case HCONTRACT:
     case VCONTRACT:
-
+    
       CountChild(y, Down(x), count);
       if( (dim == COLM) == (type(x) == HCONTRACT) )
       {	y = FixAndPrintObject(y, xmk, back(y,dim), fwd(y,dim), dim,
@@ -332,7 +332,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
     case VLIMITED:
     case HEXPAND:
     case VEXPAND:
-
+    
       CountChild(y, Down(x), count);
       if( (dim == COLM) == (type(x) == ONE_COL || type(x) == HEXPAND) )
       { y = FixAndPrintObject(y, xmk, xb, xf, dim, NO_SUPPRESS, pg, count,
@@ -373,7 +373,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
 
     case HSCALE:
-
+    
       debug0(DRS, DD, "FixAndPrintObject at HSCALE");
       CountChild(y, Down(x), count);
       if( BackEnd->scale_avail )
@@ -454,7 +454,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
 
     case BACKGROUND:
-
+ 
       /* this object has the size of its second child; but its first */
       /* child gets printed too, in the same space                   */
       CountChild(y, Down(x), count);
@@ -468,7 +468,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
 
     case ROTATE:
-
+    
       CountChild(y, Down(x), count);
       if( BackEnd->rotate_avail )
       {
@@ -541,7 +541,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
 
     case GRAPHIC:
-
+    
       CountChild(y, LastDown(x), count);
       if( BackEnd->graphic_avail )
       {
@@ -590,7 +590,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
     case LINK_SOURCE:
     case LINK_DEST:
-
+    
       CountChild(y, LastDown(x), count);
       if( dim == COLM )
 	save_mark(x) = xmk;
@@ -638,7 +638,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
 
     case SPLIT:
-
+    
       link = DownDim(x, dim);  CountChild(y, link, count);
       y = FixAndPrintObject(y, xmk, find_max(back(y, dim), xb),
 	find_max(fwd(y, dim), xf), dim, suppress, pg, count,
@@ -650,7 +650,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
     case HCAT:
 
       if( (type(x) == VCAT) == (dim == ROWM) )
-      {
+      { 
 	debug6(DGP, DD, "[ FAPO-CAT %s (%s,%s): xmk %s, xb %s, xf %s",
 	    Image(type(x)), EchoLength(back(x, dim)), EchoLength(fwd(x, dim)),
 	    EchoLength(xmk), EchoLength(xb), EchoLength(xf));
@@ -791,7 +791,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 	  debug4(DGP, DD, "  starting first group %s (%sdbl_found): b %s, f %s",
 	    Image(type(y)), dble_found ? "" : "not ",
 	    EchoLength(b), EchoLength(f));
-
+	
 	  NextDefiniteWithGap(x, link, y, g, jn);
 	  while( link != x )
 	  {
@@ -885,7 +885,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 	BOOLEAN underlining; int underline_xstart;
 	FONT_NUM underline_font;  COLOUR_NUM underline_colour;
 	OBJECT urec, last_bad_gap;
-
+      
 
 	/*********************************************************************/
 	/*                                                                   */
@@ -910,7 +910,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 	  break;  /* no definite children, nothing to print */
 	}
 
-	/*** nasty bug finder
+	/*** nasty bug finder 
 	{ OBJECT ff = y;
 	debugcond1(DGP, DD, word_equal(ff, "@ReportLayout"),
 	  "FAPO(%s, COLM)", EchoObject(x));
@@ -954,7 +954,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 	/*********************************************************************/
 
 	if( actual_size > frame_size && adjustable_gaps == 0 )
-	{
+	{ 
 	  /* can't be fixed by adjustment, so scale the line or delete it */
 	  CONSTRAINT c;
 	  SetConstraint(c, 0, frame_size, frame_size);
@@ -1044,7 +1044,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 	  /********************************************************************/
 
 	  if( actual_size > frame_size )
-	  {
+	  { 
 	    assert( adjustable_gaps > 0, "FAPO: adjustable_gaps!" );
 	    adjust_cat(x) = TRUE;
 	    adjust_indent = 0;
@@ -1055,7 +1055,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 				adjust_indent = 0;
 				debug1(DSF, D,  "adjust %s", EchoObject(x));
 				break;
-
+	
 	    case DISPLAY_CENTRE: adjust_cat(x) = FALSE;
 				adjust_indent = (frame_size - actual_size)/2;
 				debug1(DGP, DD, "cdisp %s", EchoObject(x));
@@ -1340,7 +1340,7 @@ OBJECT FixAndPrintObject(OBJECT x, FULL_LENGTH xmk, FULL_LENGTH xb,
 
 
     default:
-
+    
       assert1(FALSE, "FixAndPrintObject:", Image(type(x)));
       break;
 

@@ -30,7 +30,7 @@ bool CDecoder::SetCodeLengths(const Byte *codeLengths)
   for (symbolIndex = 0; symbolIndex < m_NumSymbols; symbolIndex++)
     lenCounts[codeLengths[symbolIndex]]++;
   // lenCounts[0] = 0;
-
+  
   // tmpPositions[0] = m_Positions[0] = m_Limitits[0] = 0;
   m_Limitits[kNumBitsInLongestCode + 1] = 0;
   m_Positions[kNumBitsInLongestCode + 1] = 0;

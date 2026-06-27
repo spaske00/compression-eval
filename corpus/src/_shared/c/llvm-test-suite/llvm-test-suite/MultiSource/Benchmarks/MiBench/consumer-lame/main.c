@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 
 	/* encode */
 	imp3=lame_encode_buffer(&gf,Buffer[0],Buffer[1],iread,
-              mp3buffer,(int)sizeof(mp3buffer));
+              mp3buffer,(int)sizeof(mp3buffer)); 
 
 	/* was our output buffer big enough? */
 	if (imp3==-1) {
@@ -137,3 +137,6 @@ int main(int argc, char **argv)
   lame_mp3_tags(&gf);                /* add id3 or VBR tags to mp3 file */
   return 0;
 }
+
+
+

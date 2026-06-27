@@ -6,7 +6,7 @@
 
 static int adj(Direction d, ChildType ct)
 {
-  switch (d)
+  switch (d) 
     {
     case north:
       return ((ct==northeast) || (ct==northwest));
@@ -19,11 +19,11 @@ static int adj(Direction d, ChildType ct)
     }
 }
 
-static ChildType reflect(Direction d, ChildType ct)
+static ChildType reflect(Direction d, ChildType ct) 
 {
-  if ((d==west) || (d==east))
+  if ((d==west) || (d==east)) 
     {
-      switch(ct)
+      switch(ct) 
 	{
 	case northwest:
 	  return northeast;
@@ -40,7 +40,7 @@ static ChildType reflect(Direction d, ChildType ct)
 #endif
 	}
     }
-  switch(ct)
+  switch(ct) 
     {
     case northwest:
       return southwest;
@@ -58,7 +58,7 @@ static ChildType reflect(Direction d, ChildType ct)
     }
 }
 
-int CountTree(QuadTree tree)
+int CountTree(QuadTree tree) 
 {
   QuadTree nw,ne,sw,se;
 
@@ -72,7 +72,7 @@ int CountTree(QuadTree tree)
 
 static QuadTree child(QuadTree tree, ChildType ct)
 {
-  switch(ct)
+  switch(ct) 
     {
     case northeast:
       return tree->ne;
@@ -95,7 +95,7 @@ static QuadTree gtequal_adj_neighbor(QuadTree tree, Direction d)
 {
   QuadTree q,parent;
   ChildType ct;
-
+  
   parent=tree->parent;
   ct=tree->childtype;
   if ((parent!=NULL) && adj(d,ct))
@@ -109,12 +109,12 @@ static QuadTree gtequal_adj_neighbor(QuadTree tree, Direction d)
 
 static int sum_adjacent(QuadTree p, ChildType q1, ChildType q2, int size)
 {
-  if (p->color==grey)
+  if (p->color==grey) 
     {
       return sum_adjacent(child(p,q1),q1,q2,size/2) +
 	sum_adjacent(child(p,q2),q1,q2,size/2);
     }
-  else if (p->color==white)
+  else if (p->color==white) 
     {
       return size;
     }
@@ -126,7 +126,7 @@ int perimeter(QuadTree tree, int size)
   int retval = 0;
   QuadTree neighbor;
 
-  if (tree->color==grey)
+  if (tree->color==grey) 
     {
       QuadTree child;
 #ifdef FUTURES
@@ -162,22 +162,22 @@ int perimeter(QuadTree tree, int size)
       /* North */
       neighbor=gtequal_adj_neighbor(tree,north);
       if ((neighbor==NULL) || (neighbor->color==white)) retval+=size;
-      else if (neighbor->color==grey)
+      else if (neighbor->color==grey) 
 	retval+=sum_adjacent(neighbor,southeast,southwest,size);
       /* East */
       neighbor=gtequal_adj_neighbor(tree,east);
       if ((neighbor==NULL) || (neighbor->color==white)) retval+=size;
-      else if (neighbor->color==grey)
+      else if (neighbor->color==grey) 
 	retval+=sum_adjacent(neighbor,southwest,northwest,size);
       /* South */
       neighbor=gtequal_adj_neighbor(tree,south);
       if ((neighbor==NULL) || (neighbor->color==white)) retval+=size;
-      else if (neighbor->color==grey)
+      else if (neighbor->color==grey) 
 	retval+=sum_adjacent(neighbor,northwest,northeast,size);
       /* West */
       neighbor=gtequal_adj_neighbor(tree,west);
       if ((neighbor==NULL) || (neighbor->color==white)) retval+=size;
-      else if (neighbor->color==grey)
+      else if (neighbor->color==grey) 
 	retval+=sum_adjacent(neighbor,northeast,southeast,size);
     }
   return retval;
@@ -248,3 +248,11 @@ int main(int argc, char *argv[])
 
   exit(0);
 }
+
+
+
+
+
+
+
+

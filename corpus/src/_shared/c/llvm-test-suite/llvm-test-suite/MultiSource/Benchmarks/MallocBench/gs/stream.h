@@ -53,7 +53,7 @@ struct stream_s {
 					/* encoded number reader */
 					/* (only used locally) */
 	/*
-	 * If were were able to program in a real object-oriented style,
+	 * If were were able to program in a real object-oriented style, 
 	 * the remaining data would be per-subclass.  It's just too much
 	 * of a nuisance to do this in C, so we allocate space for the
 	 * private data of ALL subclasses.

@@ -55,3 +55,4 @@ void ShowLastErrorMessage(HWND window)
 {
   ShowErrorMessageDWORD(window, ::GetLastError());
 }
+

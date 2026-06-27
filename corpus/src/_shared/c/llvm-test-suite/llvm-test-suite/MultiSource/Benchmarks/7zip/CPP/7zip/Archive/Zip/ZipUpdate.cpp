@@ -96,7 +96,7 @@ static void SetFileHeader(
   item.LocalHeaderPosition = archive.GetCurrentPosition();
   item.MadeByVersion.HostOS = kMadeByHostOS;
   item.MadeByVersion.Version = NFileHeader::NCompressionMethod::kMadeByProgramVersion;
-
+  
   item.ExtractVersion.HostOS = kExtractHostOS;
 
   item.InternalAttributes = 0; // test it
@@ -172,7 +172,7 @@ struct CThreadInfo
       OutStreamSpec(0),
       Coder(options)
   {}
-
+  
   HRESULT CreateEvents(CSynchro *sync)
   {
     RINOK(CompressEvent.CreateIfNotCreated());
@@ -346,11 +346,11 @@ static HRESULT UpdateItemOldData(COutArchive &archive,
   {
     if (item.HasDescriptor())
       return E_NOTIMPL;
-
+    
     // use old name size.
     // CUpdateRange range(item.GetLocalExtraPosition(), item.LocalExtraSize + item.PackSize);
     CUpdateRange range(item.GetDataPosition(), item.PackSize);
-
+    
     // item.ExternalAttributes = ui.Attributes;
     // Test it
     item.Name = ui.Name;
@@ -363,7 +363,7 @@ static HRESULT UpdateItemOldData(COutArchive &archive,
 
     item.CentralExtra.RemoveUnknownSubBlocks();
     item.LocalExtra.RemoveUnknownSubBlocks();
-
+    
     archive.PrepareWriteCompressedData2((UInt16)item.Name.Length(), item.UnPackSize, item.PackSize, item.LocalExtra.HasWzAesField());
     item.LocalHeaderPosition = archive.GetCurrentPosition();
     archive.SeekToPackedDataPosition();
@@ -374,10 +374,10 @@ static HRESULT UpdateItemOldData(COutArchive &archive,
   else
   {
     CUpdateRange range(item.LocalHeaderPosition, item.GetLocalFullSize());
-
+    
     // set new header position
     item.LocalHeaderPosition = archive.GetCurrentPosition();
-
+    
     RINOK(WriteRange(inStream, archive, range, progress));
     complexity += range.Size;
     archive.MoveBasePosition(range.Size);
@@ -409,7 +409,7 @@ static HRESULT Update2St(
   lps->Init(updateCallback, true);
 
   CAddCommon compressor(*options);
-
+  
   CObjectVector<CItem> items;
   UInt64 unpackSizeTotal = 0, packSizeTotal = 0;
 
@@ -491,7 +491,7 @@ static HRESULT Update2(
   UInt64 complexity = 0;
   UInt64 numFilesToCompress = 0;
   UInt64 numBytesToCompress = 0;
-
+ 
   int i;
   for(i = 0; i < updateItems.Size(); i++)
   {
@@ -524,16 +524,16 @@ static HRESULT Update2(
   updateCallback->SetTotal(complexity);
 
   CAddCommon compressor(*options);
-
+  
   complexity = 0;
-
+  
   #ifndef _7ZIP_ST
 
   const size_t kNumMaxThreads = (1 << 10);
   UInt32 numThreads = options->NumThreads;
   if (numThreads > kNumMaxThreads)
     numThreads = kNumMaxThreads;
-
+  
   const size_t kMemPerThread = (1 << 25);
   const size_t kBlockSize = 1 << 16;
 
@@ -594,7 +594,7 @@ static HRESULT Update2(
   synchroForCompressingCompletedEvents.Create();
   NWindows::NSynchronization::CSynchro synchroForOutStreamSpec;
   synchroForOutStreamSpec.Create();
-
+  
 
   CObjectVector<CItem> items;
 
@@ -706,7 +706,7 @@ static HRESULT Update2(
       }
       continue;
     }
-
+    
     if (refs.Refs[itemIndex].Skip)
     {
       itemIndex++;
@@ -837,7 +837,7 @@ public:
   ~CCacheOutStream();
   bool Allocate();
   HRESULT Init(IOutStream *stream);
-
+  
   MY_UNKNOWN_IMP
 
   STDMETHOD(Write)(const void *data, UInt32 size, UInt32 *processedSize);
@@ -938,7 +938,7 @@ STDMETHODIMP CCacheOutStream::Write(const void *data, UInt32 size, UInt32 *proce
   if (zerosStart != _virtPos)
   {
     // write zeros to [cachedEnd ... _virtPos)
-
+    
     for (;;)
     {
       UInt64 cachedEnd = _cachedPos + _cachedSize;
@@ -1048,7 +1048,7 @@ HRESULT Update(
         !inArchive->IsOkHeaders)
       return E_NOTIMPL;
   }
-
+  
   COutArchive outArchive;
   outArchive.Create(outStream);
   /*

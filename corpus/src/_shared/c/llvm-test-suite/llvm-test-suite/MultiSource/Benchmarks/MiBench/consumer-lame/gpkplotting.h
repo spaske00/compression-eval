@@ -24,3 +24,4 @@ void gpk_bargraph_draw(GtkWidget *widget,
 
 /* set forground color  */
 void setcolor(GtkWidget *widget, GdkColor *color,int red,int green,int blue);
+

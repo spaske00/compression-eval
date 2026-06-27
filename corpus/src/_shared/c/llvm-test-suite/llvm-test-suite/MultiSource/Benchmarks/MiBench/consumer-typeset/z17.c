@@ -55,7 +55,7 @@
 #define setwidths(x, y) w = x; units(*res_gap) = y;  break;
 
 void GetGap(OBJECT x, STYLE *style, GAP *res_gap, unsigned *res_inc)
-{ int w;  float num;
+{ int w;  float num; 
   FULL_CHAR *str;
 
   debug2(DGW, D, "GetGap( %s, %s, res_gap, res_inc )",

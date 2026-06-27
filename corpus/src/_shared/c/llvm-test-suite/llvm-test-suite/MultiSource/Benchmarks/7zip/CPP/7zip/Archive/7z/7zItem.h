@@ -100,13 +100,13 @@ struct CUInt64DefVector
 {
   CRecordVector<UInt64> Values;
   CRecordVector<bool> Defined;
-
+  
   void Clear()
   {
     Values.Clear();
     Defined.Clear();
   }
-
+  
   void ReserveDown()
   {
     Values.ReserveDown();
@@ -123,7 +123,7 @@ struct CUInt64DefVector
     value = 0;
     return false;
   }
-
+  
   void SetItem(int index, bool defined, UInt64 value)
   {
     while (index >= Defined.Size())

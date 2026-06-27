@@ -12,7 +12,7 @@
 
 #include "power.h"
 
-Root build_tree()
+Root build_tree() 
 {
   int i;
   Root t;
@@ -35,7 +35,7 @@ Lateral build_lateral(int i, int num)
   Lateral l;
   Branch b;
   Lateral next;
-
+ 
   if (num == 0) return NULL;
   l = (Lateral) malloc(sizeof(*l));
 
@@ -60,7 +60,7 @@ Branch build_branch(int i, int j, int num)
   if (num == 0) return NULL;
   /* allocate branch */
   b = (Branch) malloc(sizeof(*b));
-
+  
   /* fill in children */
   b->next_branch= build_branch(i,j,num-1);
 
@@ -68,7 +68,7 @@ Branch build_branch(int i, int j, int num)
     l = build_leaf();
     b->leaves[i] = l;
   }
-
+  
   /* fill in values */
   b->R = 0.0001;
   b->X = 0.00002;

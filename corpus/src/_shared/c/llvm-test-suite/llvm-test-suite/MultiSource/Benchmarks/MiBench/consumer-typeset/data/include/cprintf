@@ -95,7 +95,7 @@ def @CPSetup
 @Begin
 
     export
-
+    
 	@PI @PK @PO @PN @PS @PC @PL @PA @PM @PD
 	@A "$>"
 
@@ -179,12 +179,12 @@ def @CPSetup
 
 	    pipe @Case {
 		"" @Yield {
-		    "prg2lout -r -lC" wantnumbered -i{@FilterIn}
+	    	    "prg2lout -r -lC" wantnumbered -i{@FilterIn}
 		    -o{@FilterOut} -e{@FilterErr}
 		    -t{@InitTab} -T{@InitTabWidth}
 		}
 		else @Yield {
-		    "cat" @FilterIn "|" pipe "|"
+	    	    "cat" @FilterIn "|" pipe "|"
 		    "prg2lout -r -lC" wantnumbered -o{@FilterOut}
 		    -e{@FilterErr} -t{@InitTab} -T{@InitTabWidth}
 		}

@@ -102,7 +102,7 @@ static COLOUR_TABLE ctab_rehash(COLOUR_TABLE S, int newsize)
 } /* end ctab_rehash */
 
 static void ctab_insert(OBJECT x, COLOUR_TABLE *S)
-{ int pos, num;
+{ int pos, num;					
   if( ctab_count(*S) == ctab_size(*S) - 1 )	/* one less since 0 unused */
     *S = ctab_rehash(*S, 2*ctab_size(*S));
   num = ++ctab_count(*S);

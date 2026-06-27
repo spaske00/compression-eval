@@ -160,7 +160,7 @@ class CHandler:
 
   NCompress::NZlib::CDecoder *_zlibDecoderSpec;
   CMyComPtr<ICompressCoder> _zlibDecoder;
-
+  
   CBufInStream *_inStreamSpec;
   CMyComPtr<ISequentialInStream> _inStream;
 
@@ -225,7 +225,7 @@ HRESULT CHandler::OpenDir(int parent, UInt32 baseOffset, unsigned level)
     _headersSize = end;
 
   int startIndex = _items.Size();
-
+  
   while (size != 0)
   {
     if (size < kNodeSize || (UInt32)_items.Size() >= kNumFilesMax)
@@ -506,7 +506,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 totalPackSize;
   totalSize = totalPackSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 

@@ -87,7 +87,7 @@ public:
 };
 
 static const UInt64 k_BCJ = 0x03030103;
-
+  
 HRESULT CDecoder::Create(
     DECL_EXTERNAL_CODECS_LOC_VARS
     bool filteredMode, ISequentialInStream *inStream)
@@ -280,23 +280,23 @@ STDMETHODIMP CHandler::GetProperty(UInt32 /* index */, PROPID propID,  PROPVARIA
 STDMETHODIMP CHandler::Open(IInStream *inStream, const UInt64 *, IArchiveOpenCallback *)
 {
   RINOK(inStream->Seek(0, STREAM_SEEK_CUR, &_startPosition));
-
+  
   const UInt32 kBufSize = 1 + 5 + 8 + 1;
   Byte buf[kBufSize];
-
+  
   RINOK(ReadStream_FALSE(inStream, buf, kBufSize));
-
+  
   if (!_header.Parse(buf, _lzma86))
     return S_FALSE;
   const Byte *start = buf + GetHeaderSize();
   if (start[0] != 0)
     return S_FALSE;
-
+  
   UInt64 endPos;
   RINOK(inStream->Seek(0, STREAM_SEEK_END, &endPos));
   _packSize = endPos - _startPosition;
   _packSizeDefined = true;
-
+  
   _stream = inStream;
   _seqStream = inStream;
   return S_OK;
@@ -329,8 +329,8 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   if (_stream)
     extractCallback->SetTotal(_packSize);
-
-
+    
+  
   CMyComPtr<ISequentialOutStream> realOutStream;
   Int32 askMode = testMode ?
       NExtract::NAskMode::kTest :
@@ -338,7 +338,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   RINOK(extractCallback->GetStream(0, &realOutStream, askMode));
   if (!testMode && !realOutStream)
     return S_OK;
-
+  
   extractCallback->PrepareOperation(askMode);
 
   CDummyOutStream *outStreamSpec = new CDummyOutStream;
@@ -361,7 +361,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       EXTERNAL_CODECS_VARS
       _lzma86, _seqStream);
   RINOK(result);
-
+ 
   Int32 opRes = NExtract::NOperationResult::kOK;
   bool firstItem = true;
 
@@ -381,7 +381,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     RINOK(decoder.ReadInput(buf, headerSize, &processed));
     if (processed != headerSize)
       break;
-
+  
     if (!st.Parse(buf, _lzma86))
       break;
     firstItem = false;
@@ -412,7 +412,7 @@ static IInArchive *CreateArc() { return new CHandler(false); }
 static IInArchive *CreateArc86() { return new CHandler(true); }
 
 namespace NLzmaAr {
-
+  
 static CArcInfo g_ArcInfo =
   { L"lzma", L"lzma", 0, 0xA, { 0 }, 0, true, CreateArc, NULL };
 REGISTER_ARC(Lzma)

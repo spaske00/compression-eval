@@ -28,7 +28,7 @@ extend @BasicSetup
 export
 
     @Runner
-
+	
     @Figure @Table
     @FootNote @AnotherFootNote @EndNote
     @LeftNote @RightNote @OuterNote @InnerNote @Place
@@ -83,17 +83,17 @@ def @DocumentSetup
     named @FigureLocation	{  PageTop		} # default figure location
     named @TableLocation	{  PageTop		} # default table location
     named @FigureFormat
-	named @II right x { |@DisplayIndent x |      }
-	named @QQ right x { |@DisplayIndent x |@DisplayIndent }
-	named @CC right x { |0.5rt x |      }
-	named @RR right x { |1.0rt x |      }
+    	named @II right x { |@DisplayIndent x |      }
+    	named @QQ right x { |@DisplayIndent x |@DisplayIndent }
+    	named @CC right x { |0.5rt x |      }
+    	named @RR right x { |1.0rt x |      }
 	right @Body
 				{  @CC @Body		} # default figure format
     named @TableFormat
-	named @II right x { |@DisplayIndent x |      }
-	named @QQ right x { |@DisplayIndent x |@DisplayIndent }
-	named @CC right x { |0.5rt x |      }
-	named @RR right x { |1.0rt x |      }
+    	named @II right x { |@DisplayIndent x |      }
+    	named @QQ right x { |@DisplayIndent x |@DisplayIndent }
+    	named @CC right x { |0.5rt x |      }
+    	named @RR right x { |1.0rt x |      }
 	right @Body
 				{  @CC @Body		} # default table format
     named @FigureWord		{  figure		} # "Figure" word else anything
@@ -163,7 +163,7 @@ def @DocumentSetup
     named @RefNumbers		{  Arabic		} # reference numbers
 
     named @RefListFormat	{  Labels		} # NoLabels, Labels,
-							# DropLabels, IntegrateLabels
+						  	# DropLabels, IntegrateLabels
     named @RefListLabels
 	named @RefNum       {}
 	named @Tag          {}
@@ -328,9 +328,9 @@ def @DocumentSetup
 
     named @PageHeaders		{  Simple		} # None Simple Titles NoTitles
     named @PageNumbers		{  Arabic		} # page numbers
-    named @FirstPageNumber	{  1			} # number of first page
+    named @FirstPageNumber	{  1			} # number of first page 
     named @IntroPageNumbers	{  Roman		} # intro page numbers
-    named @IntroFirstPageNumber	{  1			} # number of first intro page
+    named @IntroFirstPageNumber	{  1			} # number of first intro page 
     named @StructPageNums	{  No			} # structured page numbers
 
     named @OddTop	      right @PageNum { @Centre { - @PageNum - }	}
@@ -724,7 +724,7 @@ def @DocumentSetup
     }
 
     def @PageSet right x
-    {
+    {	
 #     "LoutPageSet" @Graphic	# VT: case PDF produces nothing
       { @BackEnd @Case {
           PostScript @Yield "LoutPageSet"
@@ -1334,7 +1334,7 @@ def @DocumentSetup
 
 	}
     }
-
+    
     def @IntroColList right num
     {
 	@HExpand num @ColsOf @EqualWidth @VExpand
@@ -1344,27 +1344,27 @@ def @DocumentSetup
 	    @OneRow { @ColFootSection }
 	}
     }
-
+    
     def @ZeroColList right num
     {
 	@HExpand num @ColsOf @EqualWidth 0c @High @ColPlace
     }
-
+    
     def @ZeroIntroColList right num
     {
 	@HExpand num @ColsOf @EqualWidth 0c @High @IntroColPlace
     }
-
+    
     def @IndexColList right num
     {
 	@HExpand num @ColsOf gap { @IndexColumnGap } @EqualWidth @VExpand @IndexPlace
     }
-
+    
     def @IndexAColList right num
     {
 	@HExpand num @ColsOf gap { @IndexAColumnGap } @EqualWidth @VExpand @IndexAPlace
     }
-
+    
     def @IndexBColList right num
     {
 	@HExpand num @ColsOf gap { @IndexBColumnGap } @EqualWidth @VExpand @IndexBPlace
@@ -1875,7 +1875,7 @@ def @DocumentSetup
 		    //@MidGap
 		    @EvenBodyMargins {
 			@PageEvenTopSection @Orient
-			//@MidGap @ChooseColList @ColumnNumber
+		    	//@MidGap @ChooseColList @ColumnNumber
 		    }
 		    //1rt @OneRow
 		    {  //        @EvenBodyMargins @PageFootSection
@@ -3055,7 +3055,7 @@ def @DocumentSetup
 
     def @CiteLabel
 	left label
-	right tag
+	right tag 
     {
 	tag @CrossLink @RefCiteLabels
 	    @RefNum       { @NumberOf tag				}
@@ -3103,7 +3103,7 @@ def @DocumentSetup
 
     def @ListLabel
 	left label
-	right tag
+	right tag 
     {
 	@RefListLabels
 	    @RefNum       { @NumberOf tag				}
@@ -3151,7 +3151,7 @@ def @DocumentSetup
 
     def @SortKey
 	left label
-	right tag
+	right tag 
     {
 	@RefListSortKey
 	    @Tag          { tag						}
@@ -3541,10 +3541,10 @@ def @DocumentSetup
 	named @ShortCaption { dft }
 	named @CaptionPos { @FigureCaptionPos }
 	named @Format
-	    named @II right x { |@DisplayIndent x |               }
-	    named @QQ right x { |@DisplayIndent x |@DisplayIndent }
-	    named @CC right x { |0.5rt x          |               }
-	    named @RR right x { |1.0rt x          |               }
+    	    named @II right x { |@DisplayIndent x |               }
+    	    named @QQ right x { |@DisplayIndent x |@DisplayIndent }
+    	    named @CC right x { |0.5rt x          |               }
+    	    named @RR right x { |1.0rt x          |               }
 		right @Body { @FigureFormat @Body }
 	named @InitialLanguage { @InitialLanguage }
 	named @BypassNumber { dft }
@@ -3655,9 +3655,9 @@ def @DocumentSetup
 	    def @Enclose right x
 	    {
 		@OnePg @Case {
-			No  @Yield @Format x
-			Yes @Yield x
-		}
+                	No  @Yield @Format x
+                	Yes @Yield x
+            	}
 	    }
 
 	    x
@@ -3786,10 +3786,10 @@ def @DocumentSetup
 	named @ShortCaption { dft }
 	named @CaptionPos { @TableCaptionPos }
 	named @Format
-	    named @II right x { |@DisplayIndent x |               }
-	    named @QQ right x { |@DisplayIndent x |@DisplayIndent }
-	    named @CC right x { |0.5rt x          |               }
-	    named @RR right x { |1.0rt x          |               }
+    	    named @II right x { |@DisplayIndent x |               }
+    	    named @QQ right x { |@DisplayIndent x |@DisplayIndent }
+    	    named @CC right x { |0.5rt x          |               }
+    	    named @RR right x { |1.0rt x          |               }
 		right @Body { @TableFormat @Body }
 	named @InitialLanguage { @InitialLanguage }
 	named @BypassNumber { dft }
@@ -3900,9 +3900,9 @@ def @DocumentSetup
 	    def @Enclose right x
 	    {
 		@OnePg @Case {
-			No  @Yield @Format x
-			Yes @Yield x
-		}
+                	No  @Yield @Format x
+                	Yes @Yield x
+            	}
 	    }
 
 	    x

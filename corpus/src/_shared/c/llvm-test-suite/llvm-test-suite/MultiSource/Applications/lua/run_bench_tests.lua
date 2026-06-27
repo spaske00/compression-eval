@@ -262,7 +262,7 @@ if run_type ~= "script_lists" then
 			run_bench(unpack(v))
 		end
 	end
-
+	
 	if profile_all and use_profiler then
 		profiler.stop()
 	end
@@ -271,7 +271,7 @@ if run_type ~= "script_lists" then
 	eclock=sclock
 	--LLVM local end
 	write(string.format("Total bench time = %f\n", eclock - sclock))
-
+	
 	io.close(output_fd)
 else
 	write("#!/bin/sh\n\n")
@@ -285,3 +285,4 @@ else
 	print_script_list(scripts_short)
 	write('"\n\n')
 end
+

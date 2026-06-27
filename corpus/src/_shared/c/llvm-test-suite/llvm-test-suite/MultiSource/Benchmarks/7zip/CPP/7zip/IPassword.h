@@ -21,3 +21,4 @@ PASSWORD_INTERFACE(ICryptoGetTextPassword2, 0x11)
 };
 
 #endif
+

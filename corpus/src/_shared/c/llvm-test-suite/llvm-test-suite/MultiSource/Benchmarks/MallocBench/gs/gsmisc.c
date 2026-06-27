@@ -33,9 +33,9 @@ char *
 gs_malloc(uint num_elts, uint elt_size, char *client_name)
 {
 #ifdef BWGC
-	extern char *gc_malloc();
+    	extern char *gc_malloc();
 	char *ptr = gc_malloc(num_elts * elt_size);
-#else
+#else	
 	char *ptr = malloc(num_elts * elt_size);
 #endif
 
@@ -46,7 +46,7 @@ void
 gs_free(char *ptr, uint num_elts, uint elt_size, char *client_name)
 {
 #ifdef IGNOREFREE
-#else
+#else    
     free(ptr);
-#endif
+#endif    
 }

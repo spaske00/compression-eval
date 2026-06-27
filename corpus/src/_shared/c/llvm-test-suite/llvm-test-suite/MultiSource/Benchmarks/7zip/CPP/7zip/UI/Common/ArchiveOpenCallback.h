@@ -24,7 +24,7 @@
   virtual HRESULT Open_GetPasswordIfAny(UString &password) x; \
   virtual bool Open_WasPasswordAsked() x; \
   virtual void Open_ClearPasswordWasAskedFlag() x; \
-
+  
 #endif
 
 #define INTERFACE_IOpenCallbackUI(x) \

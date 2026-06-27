@@ -66,11 +66,11 @@ void GetUpdatePairInfoList(
     CRecordVector<CUpdatePair> &updatePairs)
 {
   CIntVector dirIndices, arcIndices;
-
+  
   int numDirItems = dirItems.Items.Size();
   int numArcItems = arcItems.Size();
-
-
+  
+  
   {
     UStringVector arcNames;
     arcNames.Reserve(numArcItems);
@@ -88,7 +88,7 @@ void GetUpdatePairInfoList(
     SortFileNames(dirNames, dirIndices);
     TestDuplicateString(dirNames, dirIndices);
   }
-
+  
   int dirIndex = 0, arcIndex = 0;
   while (dirIndex < numDirItems && arcIndex < numArcItems)
   {
@@ -142,7 +142,7 @@ void GetUpdatePairInfoList(
     pair.DirIndex = dirIndices[dirIndex];
     updatePairs.Add(pair);
   }
-
+  
   for (; arcIndex < numArcItems; arcIndex++)
   {
     CUpdatePair pair;

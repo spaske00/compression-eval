@@ -5,7 +5,7 @@
 *  encoder and decoder delays
 *
 ***********************************************************************/
-/*
+/* 
 layerIII enc->dec delay:  1056    (observed)
 layerII  enc->dec dealy:   480    (observed)
 
@@ -18,13 +18,13 @@ total:    512+16
 
 
 
-/* ENCDELAY  The encoder delay.
+/* ENCDELAY  The encoder delay.  
 
    Minimum allowed is MDCTDELAY (see below)
-
+   
    The first 96 samples will be attenuated, so using a value
    less than 96 will result in lost data in the first 96-ENCDELAY
-   samples.
+   samples. 
 
    suggested: 800
    set to 1160 to sync with FhG.
@@ -36,11 +36,11 @@ total:    512+16
 
 /* delay of the MDCT used in mdct.c */
 /* original ISO routiens had a delay of 528!  Takehiro's routines: */
-#define MDCTDELAY 48
+#define MDCTDELAY 48  
 #define FFTOFFSET (224+MDCTDELAY)
 
 /*
-Most decoders, including the one we use,  have a delay of 528 samples.
+Most decoders, including the one we use,  have a delay of 528 samples.  
 */
 #define DECDELAY 528
 

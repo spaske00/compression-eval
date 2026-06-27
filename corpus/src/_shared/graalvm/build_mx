@@ -5,11 +5,41 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
+function find_single_executable ()
+{
+    local search_dir="$1"
+    local preferred_name="$2"
+    local executables=()
+    local debug_executables=()
+
+    if [[ -x "$search_dir/$preferred_name.debug" ]]; then
+        printf '%s\n' "$search_dir/$preferred_name.debug"
+        return 0
+    fi
+
+    if [[ -x "$search_dir/$preferred_name" ]]; then
+        printf '%s\n' "$search_dir/$preferred_name"
+        return 0
+    fi
+
+    mapfile -t executables < <(find "$search_dir" -type f -perm -111 | sort)
+    mapfile -t debug_executables < <(find "$search_dir" -type f -perm -111 -name '*.debug' | sort)
+
+    if (( ${#debug_executables[@]} == 1 )); then
+        printf '%s\n' "${debug_executables[0]}"
+    elif (( ${#executables[@]} == 1 )); then
+        printf '%s\n' "${executables[0]}"
+    else
+        echo "Could not select a single executable artifact in $search_dir" >&2
+        printf '  %s\n' "${executables[@]}" >&2
+        return 1
+    fi
+}
+
 bench_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 bench=$(basename "$bench_dir")
 out="$1"
 target_dir="target/images/$out"
-mkdir -p "$target_dir"
 mkdir -p tmp
 shift
 
@@ -22,19 +52,23 @@ done
 ni_bench_dir="$GRAALVM_SRC_DIR/graal/sdk/mxbuild/native-image-benchmarks"
 rm -rf "$ni_bench_dir"
 
-cd "$GRAALVM_SRC_DIR/graal-enterprise/vm-enterprise"
+cd "$GRAALVM_SRC_DIR/graal-enterprise/vm-enterprise" || exit $?
 unset NATIVE_IMAGE_OPTIONS
-mx --java-home $JAVA_HOME --env ni-ee benchmark "$bench" -- \
+mx --java-home "$JAVA_HOME" --env ni-ee benchmark "$bench" -- \
    --jvm=native-image --jvm-config=default-ee \
    -Dnative-image.benchmark.stages=agent,image \
-   "${extra_args[@]}"
-cd "$bench_dir"
+   "${extra_args[@]}" 
+cd "$bench_dir" || exit $?
 
-mv "$ni_bench_dir"/* "$target_dir/$out"
+executable="$(find_single_executable "$ni_bench_dir" "$out")" || exit $?
+rm -rf "$target_dir"
+mkdir -p "$target_dir"
+mv "$executable" "$target_dir/$out"
 
 unset ni_opts
 unset extra_args
 unset opt
+unset executable
 unset bench
 unset bench_dir
 unset ni_bench_dir

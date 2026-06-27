@@ -73,7 +73,7 @@ STDMETHODIMP CHandler::Open(IInStream *stream,
     UInt64 endPosition;
     RINOK(stream->Seek(0, STREAM_SEEK_END, &endPosition));
     _packSize = endPosition - _streamStartPosition - kSignatureSize;
-
+    
     _stream = stream;
   }
   return S_OK;
@@ -99,16 +99,16 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(_packSize);
 
   UInt64 currentTotalPacked = 0;
-
+  
   RINOK(extractCallback->SetCompleted(&currentTotalPacked));
-
+  
   CMyComPtr<ISequentialOutStream> realOutStream;
   Int32 askMode = testMode ?
       NExtract::NAskMode::kTest :
       NExtract::NAskMode::kExtract;
-
+  
   RINOK(extractCallback->GetStream(0, &realOutStream, askMode));
-
+    
   if (!testMode && !realOutStream)
     return S_OK;
 
@@ -123,7 +123,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(extractCallback, true);
-
+  
   RINOK(_stream->Seek(_streamStartPosition + kSignatureSize, STREAM_SEEK_SET, NULL));
 
   CMyComPtr<ICompressCoder> decoder;

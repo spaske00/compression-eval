@@ -41,7 +41,7 @@ int a,b,flags;
 	{
 		return(_X_cmptokens(atmp,btmp,flags));
 	}
-#ifndef lint
+#ifndef lint 
 	Z_fatal("this line should never be reached in com");
 	return(-1);	/* Z_fatal never returns, but i need a this line
 				here to stop lint from complaining */
@@ -55,7 +55,7 @@ static int _X_strcmp(char *s1,char *s2,int flags)
 {
 	if (flags & U_NO_CASE)
 	{
-
+		
 		for (;('\0' != s1) && ('\0' !=  *s2);s1++,s2++)
 		{
 			if(isalpha(*s1) && isalpha(*s2))
@@ -134,7 +134,7 @@ static int _X_floatdiff(F_float p1,F_float p2,T_tol the_tol)
 	*/
 	for(tol_tmp=the_tol; !(T_isnull(tol_tmp)) ;tol_tmp=T_getnext(tol_tmp))
 	{
-		if ((T_IGNORE == T_gettype(tol_tmp)) ||
+		if ((T_IGNORE == T_gettype(tol_tmp)) || 
 			/*
 			**	take a look at the exponents before you bother
 			**	with the mantissas
@@ -150,7 +150,7 @@ static int _X_floatdiff(F_float p1,F_float p2,T_tol the_tol)
 		}
 	}
 
-
+	
 	/*
 	**	ok, we're going to have to do some arithmetic, so
 	**		first find the magnitude of the difference

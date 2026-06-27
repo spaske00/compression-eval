@@ -32,7 +32,7 @@ struct CFirstHeader
 {
   UInt32 Flags;
   UInt32 HeaderLength;
-
+ 
   UInt32 ArchiveSize;
 
   bool ThereIsCrc() const
@@ -70,7 +70,7 @@ struct CItem
   UInt32 CompressedSize;
   UInt32 EstimatedSize;
   UInt32 DictionarySize;
-
+  
   CItem(): IsUnicode(false), UseFilter(false), IsCompressed(true), SizeIsDefined(false),
       CompressedSizeIsDefined(false), EstimatedSizeIsDefined(false), Size(0), DictionarySize(1) {}
 
@@ -162,7 +162,7 @@ public:
     const CItem &item = Items[index];
     return 4 + FirstHeader.HeaderLength + item.Pos;
   }
-
+  
   UInt64 GetPosOfNonSolidItem(int index) const
   {
     const CItem &item = Items[index];
@@ -177,5 +177,5 @@ public:
 };
 
 }}
-
+  
 #endif

@@ -68,7 +68,7 @@ BOOLEAN FindOptimize(OBJECT x, OBJECT env)
       break;
     }
   }
-
+  
   /* should have found it by now */
   assert( res != nilobj, "FindOptimize: res == nilobj!" );
 

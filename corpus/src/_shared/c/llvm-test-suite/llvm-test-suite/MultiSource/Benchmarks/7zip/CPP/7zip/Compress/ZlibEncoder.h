@@ -34,7 +34,7 @@ class CEncoder:
   CMyComPtr<ICompressCoder> DeflateEncoder;
 public:
   NCompress::NDeflate::NEncoder::CCOMCoder *DeflateEncoderSpec;
-
+  
   void Create();
   STDMETHOD(Code)(ISequentialInStream *inStream, ISequentialOutStream *outStream,
       const UInt64 *inSize, const UInt64 *outSize, ICompressProgressInfo *progress);

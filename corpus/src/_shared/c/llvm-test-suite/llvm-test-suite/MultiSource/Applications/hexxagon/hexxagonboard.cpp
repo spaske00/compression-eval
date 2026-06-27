@@ -1,23 +1,23 @@
 /*
  * Hexxagon board game.
  * Copyright (C) 2001 Erik Jonsson.
- *
+ * 
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; either version 2
  * of the License, or (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
+ * 
  * Email erik@nesqi.homeip.net
- *
+ * 
  */
 
 #include "hexxagonboard.h"
@@ -27,8 +27,8 @@
 
 using namespace std;
 
-BitBoard64 *clone_lookups = 0;
-BitBoard64 *jump_lookups = 0;
+BitBoard64 *clone_lookups = 0; 
+BitBoard64 *jump_lookups = 0; 
 
 int getHexxagonIndex(int x, int y)
 {
@@ -43,9 +43,9 @@ int getHexxagonIndex(int x, int y)
 		if(y > 5)
 			if(x <= (y - 5))
 				return -1;
-
+	  
 		no = x+y*9 - 10;
-
+	  
 		if(y > 1) no -= 4;
 		if(y > 2) no -= 3;
 		if(y > 3) no -= 2;
@@ -54,7 +54,7 @@ int getHexxagonIndex(int x, int y)
 		if(y > 6) no -= 2;
 		if(y > 7) no -= 3;
 		if(y > 8) no -= 4;
-
+	  
 		return no;
 	}
 
@@ -64,30 +64,30 @@ int getHexxagonIndex(int x, int y)
 void initCloneLookups()
 {
 	clone_lookups = new BitBoard64[61];
-
+	
 	int no = 0;
 
 	for(int i = 0; i < 61; i++)
 		clone_lookups[i] = BitBoard64(0,0);
 
-	// Clone.
+	// Clone. 
 	for(int y = 1; y <= 9; y++)
 	{
 		for(int x = 1; x <= 9; x++)
 		{
 			int out = 0;
-
+			
 			if(x > 0 && x < 10 && y > 0 && y < 10)
 			{
 				if(y < 5)
 					if(x > (9 - (5 - y)))
 						out = 1;
-
+				
 				if(y > 5)
 					if(x <= (y - 5))
 						out = 1;
 			}
-
+			
 			if(!out)
 			{
 				clone_lookups[no].setBit(getHexxagonIndex(x-1, y-1));
@@ -98,14 +98,14 @@ void initCloneLookups()
 				clone_lookups[no].setBit(getHexxagonIndex(x+1, y+1));
 				no++;
 			}
-		}
+		} 
 	}
 }
 
 void initJumpLookups()
 {
 	jump_lookups = new BitBoard64[61];
-
+	
 	int no = 0;
 
 	for(int i = 0; i < 61; i++)
@@ -117,18 +117,18 @@ void initJumpLookups()
 		for(int x = 1; x <= 9; x++)
 		{
 			int out = 0;
-
+			
 			if(x > 0 && x < 10 && y > 0 && y < 10)
 			{
 				if(y < 5)
 					if(x > (9 - (5 - y)))
 						out = 1;
-
+				
 				if(y > 5)
 					if(x <= (y - 5))
 						out = 1;
 			}
-
+			
 			if(!out)
 			{
 				jump_lookups[no].setBit(getHexxagonIndex(x-2, y-2));
@@ -197,13 +197,13 @@ int HexxagonBoard::countBricks(int player)
 		return good;
 	else if(player == 2)
 		return bad;
-
+	
 	return 0;
 }
 
 int HexxagonBoard::evaluate(void)
 {
-	int good = 0;
+	int good = 0; 
 	int bad = 0;
 	int count = 0;
 
@@ -218,9 +218,9 @@ int HexxagonBoard::evaluate(void)
 				bad++;
 		}
 	}
-
+    
 	int score = good - bad;
-
+	
 	if(good == 0 || bad == 0 || count == 61) /* Game is over... */
 	{
 		if(good == 0)
@@ -233,7 +233,7 @@ int HexxagonBoard::evaluate(void)
 		{
 			if(good > bad)
 				score += SCR_WIN;
-
+			
 			if(good <= bad)
 				score -= SCR_WIN;
 		}
@@ -258,12 +258,12 @@ int HexxagonBoard::applyMove(HexxagonMove &move)
 {
 	board.setBit(move.to);
 	color.setBit(move.to);
-
+		
 	color = color | clone_lookups[move.to];
 
 	if(move.from != move.to) // Jump.
 		board.unSetBit(move.from);
-
+	
 	color = ~color;
 
 	return 0;
@@ -289,7 +289,7 @@ int HexxagonBoard::isMoveValid(HexxagonMove &move)
 					return 1;
 		  }
 	 }
-
+		  
 	 return 0;
 }
 
@@ -312,7 +312,7 @@ HexxagonMoveList *HexxagonBoard::generateMoveList()
 				HexxagonMove move = HexxagonMove(i);
 				list->addMove(move);
 			}
-
+			
 			BitBoard64 moves;
 			if((moves = ((board & jump_lookups[i]) & color))) // Jump.
 			{
@@ -338,14 +338,14 @@ HexxagonMoveList *HexxagonBoard::generateMoveList()
 int HexxagonBoard::endOfGame()
 {
 	HexxagonMoveList *movelist;
-
+	
 	movelist = generateMoveList();
 
 	if(!movelist)
 		return 1;
 
 	delete movelist;
-
+	
 	return 0;
 }
 
@@ -357,13 +357,13 @@ int HexxagonBoard::computerMove(int depth, void (*callback)(), int maxtime)
 	{
 		printf("No more moves.\n");
 		return -1;
-	}
+	} 
 
 	movelist->scoreAllMoves(*this, depth, callback, maxtime);
 	applyMove(*(movelist->getBestMove()));
-
+	
 	delete movelist;
-
+	
 	return 0;
 }
 
@@ -409,7 +409,7 @@ void HexxagonBoard::displayBoardText(int turn)
 
 			if((no = getHexxagonIndex(x, y)) == -1)
 				cout << " ";
-			else
+			else 
 			{
 				if(board.getBit(no))
 				{
@@ -423,10 +423,10 @@ void HexxagonBoard::displayBoardText(int turn)
 		}
 		cout << "\n";
 	}
-
-	int empty = 61 - ((turn ? countBricks(1) : countBricks(2)) +
+	
+	int empty = 61 - ((turn ? countBricks(1) : countBricks(2)) + 
 					  (turn ? countBricks(2) : countBricks(1)));
-
+	
 	cout << "\nBricks: x " << (turn ? countBricks(1) : countBricks(2));
 	cout << ", o " << (turn ? countBricks(2) : countBricks(1));
 	cout <<	". Empty " << empty << ".\n";

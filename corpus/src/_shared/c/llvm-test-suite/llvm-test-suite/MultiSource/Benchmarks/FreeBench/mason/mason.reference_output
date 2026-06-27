@@ -1,5 +1,5 @@
 Compile date: today
-Compiler switches:
+Compiler switches: 
 Trying 2
 Trying 4
 Trying 6
@@ -15,5 +15,5 @@ Trying 24
 Trying 26
 Gul: 0 1 2
 bin+art: 14 15
-02 1021 2121 0201 2121 0202 0120
+02 1021 2121 0201 2121 0202 0120 
 exit 0

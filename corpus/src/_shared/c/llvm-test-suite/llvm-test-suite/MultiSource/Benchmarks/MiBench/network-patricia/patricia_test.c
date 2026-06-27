@@ -183,9 +183,9 @@ main(int argc, char **argv)
 		else
 		{
 			/*
-			* Insert the node.
-			* Returns the node it inserted on success, 0 on failure.
-			*/
+		 	* Insert the node.
+		 	* Returns the node it inserted on success, 0 on failure.
+		 	*/
 			//printf("%08x: ", addr.s_addr);
 			//printf("Inserted.\n");
 			p = pat_insert(p, phead);

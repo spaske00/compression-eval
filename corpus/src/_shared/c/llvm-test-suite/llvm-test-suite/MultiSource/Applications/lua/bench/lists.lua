@@ -85,7 +85,7 @@ function test ()
   -- append to right side of l3 (preserving order)
   local l3 = List:new()
   while l2:length() > 0 do
-    l3:pushright(l2:popleft())
+    l3:pushright(l2:popleft())  
   end
   -- remove each individual item from right side of l3 and
   -- append to right side of l2 (reversing list)

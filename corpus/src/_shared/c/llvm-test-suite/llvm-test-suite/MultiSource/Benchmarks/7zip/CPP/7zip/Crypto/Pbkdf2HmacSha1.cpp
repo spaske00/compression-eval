@@ -24,7 +24,7 @@ void Pbkdf2Hmac(const Byte *pwd, size_t pwdSize, const Byte *salt, size_t saltSi
     unsigned int s;
     for (s = 0; s < curSize; s++)
       key[s] = u[s];
-
+    
     for (UInt32 j = numIterations; j > 1; j--)
     {
       ctx = baseCtx;
@@ -57,11 +57,11 @@ void Pbkdf2Hmac32(const Byte *pwd, size_t pwdSize, const UInt32 *salt, size_t sa
     ctx = baseCtx;
     ctx.GetLoopXorDigest(u, numIterations - 1);
     // Speed-optimized code end
-
+    
     unsigned int s;
     for (s = 0; s < curSize; s++)
       key[s] = u[s];
-
+    
     /*
     // Default code start
     for (UInt32 j = numIterations; j > 1; j--)

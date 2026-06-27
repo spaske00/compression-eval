@@ -33,7 +33,7 @@ public:
 
   UInt64 GetProcessedSize() const { return Stream.GetProcessedSize(); }
   bool WasFinished() const { return Stream.WasFinished(); }
-
+  
   UInt32 ReadBit()
   {
     if (Value >= 0x10000)
@@ -142,7 +142,7 @@ public:
     }
     Freqs[numItems] = 0;
   }
-
+  
   unsigned Decode(CDecoder *rangeDecoder)
   {
     UInt32 threshold = rangeDecoder->GetThreshold(Freqs[0]);
@@ -245,7 +245,7 @@ public:
 
   HRESULT CodeReal(ISequentialInStream *inStream, ISequentialOutStream *outStream,
       const UInt64 *inSize, const UInt64 *outSize, ICompressProgressInfo *progress);
-
+  
   STDMETHOD(Code)(ISequentialInStream *inStream, ISequentialOutStream *outStream,
       const UInt64 *inSize, const UInt64 *outSize, ICompressProgressInfo *progress);
 

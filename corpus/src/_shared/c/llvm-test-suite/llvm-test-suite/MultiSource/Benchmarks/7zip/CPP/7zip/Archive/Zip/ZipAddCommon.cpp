@@ -247,7 +247,7 @@ HRESULT CAddCommon::Compress(
               _options.Algo,
               _options.MemSize,
               _options.Order
-
+              
             };
             PROPID propIDs[] =
             {

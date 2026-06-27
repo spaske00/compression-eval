@@ -38,7 +38,7 @@ public:
       EnablePercents(true),
       m_WarningsMode(false)
       {}
-
+  
   ~CUpdateCallbackConsole() { Finilize(); }
   void Init(CStdOutStream *outStream)
   {

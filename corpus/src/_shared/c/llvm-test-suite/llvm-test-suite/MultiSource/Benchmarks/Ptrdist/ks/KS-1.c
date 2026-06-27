@@ -52,7 +52,7 @@ ReadNetList(char *fname)
 
     for (net = 0; net < numNets; net++) {
 	fgets(line, BUF_LEN, inFile);
-
+	
 	/* net connections for "dest" */
 	dest = atol(strtok(line, " \t\n"))-1;
 
@@ -252,7 +252,7 @@ ComputeDs(ModuleListPtr group, Groups myGroup, Groups mySwap)
 	for (netNode = modules[(*groupNode).module];
 	     netNode != NULL;
 	     netNode = (*netNode).next) {
-
+	    
 	    /* for all modules on this net */
 	    for (modNode = nets[(*netNode).net];
 		 modNode != NULL;

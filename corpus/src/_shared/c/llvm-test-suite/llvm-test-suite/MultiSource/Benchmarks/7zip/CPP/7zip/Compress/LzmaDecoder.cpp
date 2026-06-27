@@ -103,7 +103,7 @@ HRESULT CDecoder::CodeSpec(ISequentialInStream *inStream, ISequentialOutStream *
 
     SizeT dicPos = _state.dicPos;
     SizeT curSize = next - dicPos;
-
+    
     ELzmaFinishMode finishMode = LZMA_FINISH_ANY;
     if (_outSizeDefined)
     {

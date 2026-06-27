@@ -43,7 +43,7 @@ FULL_CHAR *DebugInnersNames(OBJECT inners)
 
         case RECEIVING:
         case UNATTACHED:
-
+      
 	  assert( Down(y) != y, "DebugInnersNames: UNATTACHED!");
 	  Child(z, Down(y));
           StringCat(buff, SymName(actual(z)));
@@ -53,13 +53,13 @@ FULL_CHAR *DebugInnersNames(OBJECT inners)
         case PRECEDES:
         case GALL_PREC:
         case DEAD:
-
+      
 	  StringCat(buff, Image(type(y)));
 	  break;
 
 
         default:
-
+      
 	  assert1(FALSE, "DebugInnersNames:", Image(type(y)));
 	  break;
       }
@@ -162,14 +162,14 @@ void FlushGalley(OBJECT hd)
   {
 
     case DEAD:
-
+    
       /* the galley has been killed off while this process was sleeping */
       debug1(DGF, D, "] FlushGalley %s returning (DEAD)", SymName(actual(hd)));
       return;
 
 
     case UNATTACHED:
-
+    
       /* the galley is currently not attached to a destination */
       attach_status = AttachGalley(hd, &inners, &y);
       debug1(DGF, DD, "  ex-AttachGalley inners: %s", DebugInnersNames(inners));
@@ -296,7 +296,7 @@ void FlushGalley(OBJECT hd)
 
 
     case RECEIVING:
-
+    
       if( actual(actual(dest_index)) == InputSym )
       { ParentFlush(prnt_flush, dest_index, FALSE);
 	debug1(DGF, D, "] FlushGalley %s retn, input", SymName(actual(hd)));
@@ -306,7 +306,7 @@ void FlushGalley(OBJECT hd)
 
 
     default:
-
+    
       assert1(FALSE, "FlushGalley: dest_index", Image(type(dest_index)));
       break;
   }
@@ -442,7 +442,7 @@ void FlushGalley(OBJECT hd)
 
       case PRECEDES:
       case UNATTACHED:
-
+	  
 	if( inners == nilobj )  New(inners, ACAT);
 	Link(inners, y);
 	break;
@@ -450,12 +450,12 @@ void FlushGalley(OBJECT hd)
 
       case RECEIVING:
       case RECEPTIVE:
-
+	  
 	goto SUSPEND;
 
 
       case FOLLOWS:
-
+	  
 	Child(tmp, Down(y));
 	if( Up(tmp) == LastUp(tmp) )
 	{ link = PrevDown(link);
@@ -636,7 +636,7 @@ void FlushGalley(OBJECT hd)
 		  debug2(DOG, D, "FlushGalley(%s) adding constraint %s",
 		    SymName(actual(hd)), EchoConstraint(&constraint(z)));
 		  if( units(gap(prec_gap))==FRAME_UNIT &&
-		      width(gap(prec_gap)) > FR )
+		      width(gap(prec_gap)) > FR ) 
 		  { debug1(DOG, D, "  prec_gap = %s", EchoGap(&gap(prec_gap)));
 		  }
 		  if( !FitsConstraint(dest_back, f, dest_par_constr) )
@@ -751,7 +751,7 @@ void FlushGalley(OBJECT hd)
 
 
       default:
-
+	  
 	assert1(FALSE, "FlushGalley:", Image(type(y)));
 	break;
 
@@ -795,7 +795,7 @@ void FlushGalley(OBJECT hd)
 
 
   REJECT:
-
+  
     /* reject this component and move to a new dest; at this point, link is */
     /* the link to the rejected component; its child is either y or else it */
     /* is a SPLIT whose child is y                                          */
@@ -865,7 +865,7 @@ void FlushGalley(OBJECT hd)
 
 
   SUSPEND:
-
+  
     /* suspend this component */
     debug1(DGF, D, "  suspend %s", EchoIndex(y));
     if( inners != nilobj )  DisposeObject(inners);
@@ -1022,7 +1022,7 @@ void FlushGalley(OBJECT hd)
       goto RESUME;
     }
     else if( type(y) == RECEIVING && non_blocking(y) )
-    {
+    {	
       if( Down(y) == y )
       {	DeleteNode(y);
       }

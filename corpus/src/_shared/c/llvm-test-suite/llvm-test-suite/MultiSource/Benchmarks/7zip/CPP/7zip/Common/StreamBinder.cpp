@@ -68,7 +68,7 @@ void CStreamBinder::ReInit()
 }
 
 
-
+  
 void CStreamBinder::CreateStreams(ISequentialInStream **inStream,
       ISequentialOutStream **outStream)
 {

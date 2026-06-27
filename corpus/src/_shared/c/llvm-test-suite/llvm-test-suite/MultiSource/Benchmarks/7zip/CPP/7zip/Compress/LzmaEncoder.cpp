@@ -145,5 +145,5 @@ STDMETHODIMP CEncoder::Code(ISequentialInStream *inStream, ISequentialOutStream 
     return progressWrap.Res;
   return SResToHRESULT(res);
 }
-
+  
 }}

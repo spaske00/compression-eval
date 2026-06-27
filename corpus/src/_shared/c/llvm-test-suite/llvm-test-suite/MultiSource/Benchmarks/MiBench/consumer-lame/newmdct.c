@@ -31,7 +31,7 @@
 
 #define SCALE 32768
 
-static FLOAT8 enwindow[] =
+static FLOAT8 enwindow[] = 
 {
   3.5780907e-02,1.7876148e-02,3.134727e-03,2.457142e-03,
     9.71317e-04,  2.18868e-04, 1.01566e-04,  1.3828e-05,
@@ -366,28 +366,28 @@ void mdct_sub48(lame_global_flags *gfp,
 	    /* bands >= gfp->lowpass_band  will be zeroed out below */
 	    if (gfp->filter_type==0) {
 	      FLOAT8 amp,freq;
-	      for (band=gfp->highpass_band+1;  band < gfp->lowpass_band ; band++) {
+	      for (band=gfp->highpass_band+1;  band < gfp->lowpass_band ; band++) { 
 		freq = band/31.0;
 		if (gfp->lowpass1 < freq && freq < gfp->lowpass2) {
 		  amp = cos((PI/2)*(gfp->lowpass1-freq)/(gfp->lowpass2-gfp->lowpass1));
-		  for (k=0; k<18; k++)
+		  for (k=0; k<18; k++) 
 		    sb_sample[ch][1-gr][k][band]*=amp;
 		}
 		if (gfp->highpass1 < freq && freq < gfp->highpass2) {
 		  amp = cos((PI/2)*(gfp->highpass2-freq)/(gfp->highpass2-gfp->highpass1));
-		  for (k=0; k<18; k++)
+		  for (k=0; k<18; k++) 
 		    sb_sample[ch][1-gr][k][band]*=amp;
 		}
 	      }
 	    }
-
+	    
 
 
 	    /*
 	     * Perform imdct of 18 previous subband samples
 	     * + 18 current subband samples
 	     */
-	    for (band = 0; band < 32; band++, mdct_enc += 18)
+	    for (band = 0; band < 32; band++, mdct_enc += 18) 
               {
 		int type = gi->block_type;
 #ifdef ALLOW_MIXED
@@ -406,14 +406,14 @@ void mdct_sub48(lame_global_flags *gfp,
 		      work[k+3] =
 			sb_sample[ch][gr][k+12][band] +
 			sb_sample[ch][gr][17-k][band] * w1;
-
+		      
 		      work[k+6] =
 			sb_sample[ch][gr][k+12][band] * w1 -
 			sb_sample[ch][gr][17-k][band];
 		      work[k+9] =
 			sb_sample[ch][1-gr][k][band] +
 			sb_sample[ch][1-gr][5-k][band] * w1;
-
+		      
 		      work[k+12] =
 			sb_sample[ch][1-gr][k][band] * w1 -
 			sb_sample[ch][1-gr][5-k][band];
@@ -427,7 +427,7 @@ void mdct_sub48(lame_global_flags *gfp,
 		      work[k] =
 			win[type][k  ] * sb_sample[ch][gr][k   ][band]
 			- win[type][k+9] * sb_sample[ch][gr][17-k][band];
-
+		      
 		      work[9+k] =
 			win[type][k+18] * sb_sample[ch][1-gr][k   ][band]
 			+ win[type][k+27] * sb_sample[ch][1-gr][17-k][band];
@@ -435,8 +435,8 @@ void mdct_sub48(lame_global_flags *gfp,
 		    mdct_long(mdct_enc, work);
 		  }
 		}
-
-
+		
+		
 		/*
 		  Perform aliasing reduction butterfly
 		*/
@@ -447,7 +447,7 @@ void mdct_sub48(lame_global_flags *gfp,
 		    FLOAT8 bu,bd;
 		    bu = mdct_enc[k] * ca[k] + mdct_enc[-1-k] * cs[k];
 		    bd = mdct_enc[k] * cs[k] - mdct_enc[-1-k] * ca[k];
-
+		    
 		    mdct_enc[-1-k] = bu;
 		    mdct_enc[k]    = bd;
 		  }
@@ -487,7 +487,7 @@ void mdct_init48(void)
     for (i = 0; i < 36; i++)
 	win[0][i] = sin(PI/36 * (i + 0.5));
     /* type 1*/
-    for (i = 0; i < 18; i++)
+    for (i = 0; i < 18; i++) 
 	win[1][i] = win[0][i];
     for (; i < 24; i++)
 	win[1][i] = 1.0;

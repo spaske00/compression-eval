@@ -16,7 +16,7 @@ function main(num)
 	        for k=i+i, 8192, i do
 		    flags[k] = 0
 		end
-	        count = count + 1
+	        count = count + 1	
 	    end
 	end
     end

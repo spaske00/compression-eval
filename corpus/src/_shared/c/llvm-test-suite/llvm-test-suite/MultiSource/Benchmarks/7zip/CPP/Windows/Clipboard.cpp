@@ -149,12 +149,12 @@ bool ClipboardSetText(HWND owner, const UString &s)
   return res;
 #else
   wxTheClipboard->Clear();
-  // This data objects are held by the clipboard,
+  // This data objects are held by the clipboard, 
   // so do not delete them in the app.
   wxString ws(s);
-  wxTheClipboard->SetData( new wxTextDataObject(ws) );
+  wxTheClipboard->SetData( new wxTextDataObject(ws) );  
   return true;
 #endif
 }
-
+ 
 }

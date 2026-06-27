@@ -47,12 +47,12 @@ static CIDLangPair kIDLangPairs[] =
   { IDC_STATIC_COMPRESS_SOLID, 0x02000D13 },
   { IDC_STATIC_COMPRESS_VOLUME, 0x02000D40 },
   { IDC_STATIC_COMPRESS_PARAMETERS, 0x02000D06 },
-
+  
   { IDC_STATIC_COMPRESS_UPDATE_MODE, 0x02000D02 },
   { IDC_STATIC_COMPRESS_OPTIONS, 0x02000D07 },
   { IDC_COMPRESS_SFX, 0x02000D08 },
   { IDC_COMPRESS_SHARED, 0x02000D16 },
-
+  
   { IDC_COMPRESS_ENCRYPTION, 0x02000D10 },
   { IDC_STATIC_COMPRESS_PASSWORD1, 0x02000B01 },
   { IDC_STATIC_COMPRESS_PASSWORD2, 0x02000B03 },
@@ -280,7 +280,7 @@ bool CCompressDialog::OnInit()
   m_Order.Attach(GetItem(IDC_COMPRESS_COMBO_ORDER));
   m_Solid.Attach(GetItem(IDC_COMPRESS_COMBO_SOLID));
   m_NumThreads.Attach(GetItem(IDC_COMPRESS_COMBO_THREADS));
-
+  
   m_UpdateMode.Attach(GetItem(IDC_COMPRESS_COMBO_UPDATE_MODE));
   m_Volume.Attach(GetItem(IDC_COMPRESS_COMBO_VOLUME));
   m_Params.Attach(GetItem(IDC_COMPRESS_EDIT_PARAMETERS));
@@ -311,7 +311,7 @@ bool CCompressDialog::OnInit()
   SetArchiveName(Info.ArchiveName);
   SetLevel();
   SetParams();
-
+  
   for (i = 0; i < m_RegistryInfo.ArcPaths.Size() && i < kHistorySize; i++)
     m_ArchivePath.AddString(m_RegistryInfo.ArcPaths[i]);
 
@@ -331,7 +331,7 @@ bool CCompressDialog::OnInit()
 
   CheckButton(IDC_COMPRESS_SFX, Info.SFXMode);
   CheckButton(IDC_COMPRESS_SHARED, Info.OpenShareForWrite);
-
+  
   CheckControlsEnable();
 
   OnButtonSFX();
@@ -425,7 +425,7 @@ void CCompressDialog::CheckControlsEnable()
   bool multiThreadEnable = fi.MultiThread;
   Info.MultiThreadIsAllowed = multiThreadEnable;
   Info.EncryptHeadersIsAllowed = fi.EncryptFileNames;
-
+  
   EnableItem(IDC_COMPRESS_COMBO_SOLID, fi.Solid);
   EnableItem(IDC_COMPRESS_COMBO_THREADS, multiThreadEnable);
   CheckSFXControlsEnable();
@@ -616,12 +616,12 @@ void CCompressDialog::OnOK()
   }
   if (m_RegistryInfo.ArcPaths.Size() > kHistorySize)
     m_RegistryInfo.ArcPaths.DeleteBack();
-
+  
   m_RegistryInfo.ArcType = (*ArcFormats)[Info.FormatIndex].Name;
   m_RegistryInfo.ShowPassword = IsShowPasswordChecked();
 
   m_RegistryInfo.Save();
-
+  
   CModalDialog::OnOK();
 }
 
@@ -1452,7 +1452,7 @@ void CCompressDialog::PrintMemUsage(UINT res, UInt64 value)
   lstrcat(s, TEXT(" MB"));
   SetItemText(res, s);
 }
-
+    
 void CCompressDialog::SetMemoryUsage()
 {
   UInt64 decompressMem;

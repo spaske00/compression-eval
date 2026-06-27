@@ -80,7 +80,7 @@ struct CItem
     return (IsLhMethod() && Method[3] == '0') ||
       (IsValidMethod() && Method[2] == 'z' && Method[3] == '4');
   }
-
+  
   bool IsLh1GroupMethod() const
   {
     if (!IsLhMethod())
@@ -92,7 +92,7 @@ struct CItem
     }
     return false;
   }
-
+  
   bool IsLh4GroupMethod() const
   {
     if (!IsLhMethod())
@@ -107,7 +107,7 @@ struct CItem
     }
     return false;
   }
-
+  
   int GetNumDictBits() const
   {
     if (!IsLhMethod())
@@ -186,7 +186,7 @@ class CInArchive
 {
   CMyComPtr<IInStream> m_Stream;
   UInt64 m_Position;
-
+  
   HRESULT ReadBytes(void *data, UInt32 size, UInt32 &processedSize);
   HRESULT CheckReadBytes(void *data, UInt32 size);
 public:
@@ -399,7 +399,7 @@ class CCRC
 public:
   static UInt16 Table[256];
   static void InitTable();
-
+  
   CCRC(): _value(0) {}
   void Init() { _value = 0; }
   void Update(const void *data, size_t size);
@@ -649,7 +649,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 currentTotalUnPacked = 0, currentTotalPacked = 0;
   UInt64 currentItemUnPacked, currentItemPacked;
-
+  
   NCompress::NLzh::NDecoder::CCoder *lzhDecoderSpec = 0;
   CMyComPtr<ICompressCoder> lzhDecoder;
   CMyComPtr<ICompressCoder> lzh1Decoder;
@@ -706,7 +706,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       CMyComPtr<ISequentialOutStream> outStream(outStreamSpec);
       outStreamSpec->Init(realOutStream);
       realOutStream.Release();
-
+      
       UInt64 pos;
       _stream->Seek(item.DataPosition, STREAM_SEEK_SET, &pos);
 

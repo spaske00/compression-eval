@@ -23,7 +23,7 @@ struct CRecordingDateTime
   Byte Minute;
   Byte Second;
   signed char GmtOffset; // min intervals from -48 (West) to +52 (East) recorded.
-
+  
   bool GetFileTime(FILETIME &ft) const
   {
     UInt64 value;

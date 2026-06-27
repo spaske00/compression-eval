@@ -54,7 +54,7 @@ void Compute_Tree(Root r) {
   r->D.Q = tmp.Q;
 }
 
-Demand Compute_Lateral(Lateral l, double theta_R, double theta_I,
+Demand Compute_Lateral(Lateral l, double theta_R, double theta_I, 
                        double pi_R, double pi_I) {
   Demand a1;
   Demand a2;
@@ -62,12 +62,12 @@ Demand Compute_Lateral(Lateral l, double theta_R, double theta_I,
   double a,b,c,root;
   Lateral next;
   Branch br;
-
+  
   new_pi_R = pi_R + l->alpha*(theta_R+(theta_I*l->X)/l->R);
   new_pi_I = pi_I + l->beta*(theta_I+(theta_R*l->R)/l->X);
 
   next = l->next_lateral;
-  if (next != NULL)
+  if (next != NULL) 
     a1 = Compute_Lateral(next,theta_R,theta_I,new_pi_R,new_pi_I);
 
   br = l->branch;
@@ -82,7 +82,7 @@ Demand Compute_Lateral(Lateral l, double theta_R, double theta_I,
   }
 
   /* compute P,Q */
-  a = l->R*l->R + l->X*l->X;
+  a = l->R*l->R + l->X*l->X;  
   b = 2*l->R*l->X*l->D.Q - 2*l->X*l->X*l->D.P - l->R;
   c = l->R*l->D.Q - l->X*l->D.P;
   c = c*c + l->R*l->D.P;
@@ -98,7 +98,7 @@ Demand Compute_Lateral(Lateral l, double theta_R, double theta_I,
   return l->D;
 }
 
-Demand Compute_Branch(Branch br, double theta_R, double theta_I,
+Demand Compute_Branch(Branch br, double theta_R, double theta_I, 
                        double pi_R, double pi_I) {
   Demand a2,tmp;
   double new_pi_R, new_pi_I;
@@ -107,7 +107,7 @@ Demand Compute_Branch(Branch br, double theta_R, double theta_I,
   Branch next;
   int i;
   Demand a1;
-
+  
   new_pi_R = pi_R + br->alpha*(theta_R+(theta_I*br->X)/br->R);
   new_pi_I = pi_I + br->beta*(theta_I+(theta_R*br->R)/br->X);
 
@@ -134,7 +134,7 @@ Demand Compute_Branch(Branch br, double theta_R, double theta_I,
   }
 
   /* compute P,Q */
-  a = br->R*br->R + br->X*br->X;
+  a = br->R*br->R + br->X*br->X;  
   b = 2*br->R*br->X*br->D.Q - 2*br->X*br->X*br->D.P - br->R;
   c = br->R*br->D.Q - br->X*br->D.P;
   c = c*c + br->R*br->D.P;
@@ -153,7 +153,7 @@ Demand Compute_Branch(Branch br, double theta_R, double theta_I,
 Demand Compute_Leaf(Leaf l, double pi_R, double pi_I) {
   P = l->D.P;
   Q = l->D.Q;
-
+  
   optimize_node(pi_R,pi_I);
 
   if (P<0.0) {
@@ -299,7 +299,7 @@ void find_dd_grad_f (double pi_R, double pi_I, double* dd_grad)
     double	    P_grad_term=P_plus_1_inv-pi_R;
     double	    Q_grad_term=Q_plus_1_inv-pi_I;
     double	    grad_mag;
-
+    
     grad_mag=sqrt (P_grad_term*P_grad_term+Q_grad_term*Q_grad_term);
 
     dd_grad[0]=-P_plus_1_inv*P_plus_1_inv*P_grad_term/grad_mag;

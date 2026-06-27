@@ -68,7 +68,7 @@ int scale_bitcount_lsf( III_scalefac_t *scalefac, gr_info *cod_info);
 int calc_noise1( FLOAT8 xr[576],
                  int ix[576],
                  gr_info *cod_info,
-                 FLOAT8 xfsf[4][SBPSY_l],
+                 FLOAT8 xfsf[4][SBPSY_l], 
 		 FLOAT8 distort[4][SBPSY_l],
                  III_psy_xmin *l3_xmin,
 		 III_scalefac_t *,
@@ -121,3 +121,4 @@ int init_outer_loop(
 #define LARGE_BITS 100000
 
 #endif
+

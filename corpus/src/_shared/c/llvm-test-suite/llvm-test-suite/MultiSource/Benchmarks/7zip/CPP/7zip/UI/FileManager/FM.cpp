@@ -5,8 +5,8 @@
 #include "resource.h"
 #include "Panel.h"
 
-extern "C"
-{
+extern "C" 
+{ 
   #include "../../../../C/Alloc.h"
 }
 
@@ -81,7 +81,7 @@ class CSplitterPos
   int _pos;
   int _fullWidth;
   void SetRatioFromPos(HWND hWnd)
-    { _ratio = (_pos + kSplitterWidth / 2) * kSplitterRateMax /
+    { _ratio = (_pos + kSplitterWidth / 2) * kSplitterRateMax / 
         MyMax(GetWidth(hWnd), 1); }
 public:
   int GetPos() const
@@ -93,8 +93,8 @@ public:
     return rect.right;
   }
   void SetRatio(HWND hWnd, int aRatio)
-  {
-    _ratio = aRatio;
+  { 
+    _ratio = aRatio; 
     SetPosFromRatio(hWnd);
   }
   void SetPosPure(HWND hWnd, int pos)
@@ -113,12 +113,12 @@ public:
     SetRatioFromPos(hWnd);
   }
   void SetPosFromRatio(HWND hWnd)
-  {
+  { 
     int fullWidth = GetWidth(hWnd);
     if (_fullWidth != fullWidth)
     {
       _fullWidth = fullWidth;
-      SetPosPure(hWnd, GetWidth(hWnd) * _ratio / kSplitterRateMax - kSplitterWidth / 2);
+      SetPosPure(hWnd, GetWidth(hWnd) * _ratio / kSplitterRateMax - kSplitterWidth / 2); 
     }
   }
 };
@@ -146,7 +146,7 @@ static bool IsItWindowsNT()
 {
   OSVERSIONINFO versionInfo;
   versionInfo.dwOSVersionInfoSize = sizeof(versionInfo);
-  if (!::GetVersionEx(&versionInfo))
+  if (!::GetVersionEx(&versionInfo)) 
     return false;
   return (versionInfo.dwPlatformId == VER_PLATFORM_WIN32_NT);
 }
@@ -169,11 +169,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
   /*
   //If it is already running, then focus on the window
   hWnd = FindWindow(windowClass, title);
-  if (hWnd)
+  if (hWnd) 
   {
-    SetForegroundWindow ((HWND) (((DWORD)hWnd) | 0x01));
+    SetForegroundWindow ((HWND) (((DWORD)hWnd) | 0x01));    
     return 0;
-  }
+  } 
   */
 
 #ifdef _WIN32
@@ -202,7 +202,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
   DWORD style = WS_OVERLAPPEDWINDOW;
   // DWORD style = 0;
-
+  
   RECT rect;
   bool maximized = false;
   int x , y, xSize, ySize;
@@ -252,7 +252,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
   placement.length = sizeof(placement);
   if (wnd.GetPlacement(&placement))
   {
-    if (nCmdShow == SW_SHOWNORMAL || nCmdShow == SW_SHOW ||
+    if (nCmdShow == SW_SHOWNORMAL || nCmdShow == SW_SHOW || 
         nCmdShow == SW_SHOWDEFAULT)
     {
       if (maximized)
@@ -292,7 +292,7 @@ static void GetCommands(const UString &aCommandLine, UString &aCommands)
         break;
       }
     }
-    else
+    else 
       aProgramName += aChar;
   }
   aCommands = aCommandLine.Mid(i);
@@ -309,9 +309,9 @@ DWORD GetDllVersion(LPCTSTR lpszDllName)
   {
     DLLGETVERSIONPROC pDllGetVersion;
     pDllGetVersion = (DLLGETVERSIONPROC) GetProcAddress(hinstDll, "DllGetVersion");
-
+    
     /*Because some DLLs might not implement this function, you
-    must test for it explicitly. Depending on the particular
+    must test for it explicitly. Depending on the particular 
     DLL, the lack of a DllGetVersion function can be a useful
     indicator of the version.
     */
@@ -319,12 +319,12 @@ DWORD GetDllVersion(LPCTSTR lpszDllName)
     {
       DLLVERSIONINFO dvi;
       HRESULT hr;
-
+      
       ZeroMemory(&dvi, sizeof(dvi));
       dvi.cbSize = sizeof(dvi);
-
+      
       hr = (*pDllGetVersion)(&dvi);
-
+      
       if(SUCCEEDED(hr))
       {
         dwVersion = MAKELONG(dvi.dwMinorVersion, dvi.dwMajorVersion);
@@ -364,7 +364,7 @@ bool IsLargePageSupported()
   #else
   OSVERSIONINFO versionInfo;
   versionInfo.dwOSVersionInfoSize = sizeof(versionInfo);
-  if (!::GetVersionEx(&versionInfo))
+  if (!::GetVersionEx(&versionInfo)) 
     return false;
   if (versionInfo.dwPlatformId != VER_PLATFORM_WIN32_NT || versionInfo.dwMajorVersion < 5)
     return false;
@@ -402,7 +402,7 @@ enum Enum
 
 }
 
-static const CSwitchForm kSwitchForms[kNumSwitches] =
+static const CSwitchForm kSwitchForms[kNumSwitches] = 
   {
     { L"SOA",  NSwitchType::kSimple, false },
   };
@@ -426,7 +426,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE /* hPrevInstance */, LPSTR /* 
   g_ComCtl32Version = ::GetDllVersion(TEXT("comctl32.dll"));
 
   // OleInitialize is required for drag and drop.
-  OleInitialize(NULL);
+  OleInitialize(NULL); 
   // Maybe needs CoInitializeEx also ?
   // NCOM::CComInitializer comInitializer;
 
@@ -438,7 +438,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE /* hPrevInstance */, LPSTR /* 
   UString paramString, tailString;
   SplitStringToTwoStrings(commandsString, paramString, tailString);
   paramString.Trim();
-
+ 
   if (!paramString.IsEmpty())
   {
     g_MainPath = paramString;
@@ -450,11 +450,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE /* hPrevInstance */, LPSTR /* 
   UStringVector commandStrings;
   NCommandLineParser::SplitCommandLine(GetCommandLineW(), commandStrings);
   NCommandLineParser::CParser parser(kNumSwitches);
-  try
-  {
-    parser.ParseStrings(kSwitchForms, commandStrings);
+  try 
+  { 
+    parser.ParseStrings(kSwitchForms, commandStrings); 
     const UStringVector &nonSwitchStrings = parser.NonSwitchStrings;
-    if(nonSwitchStrings.Size() > 1)
+    if(nonSwitchStrings.Size() > 1)  
     {
       g_MainPath = nonSwitchStrings[1];
       // g_OpenArchive = parser[NKey::kOpenArachive].ThereIs;
@@ -473,7 +473,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE /* hPrevInstance */, LPSTR /* 
   SetMemoryLock();
 
   MSG msg;
-  if (!InitInstance (hInstance, nCmdShow))
+  if (!InitInstance (hInstance, nCmdShow)) 
     return FALSE;
 
   MyLoadMenu(g_HWND);
@@ -482,9 +482,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE /* hPrevInstance */, LPSTR /* 
   if (g_IsNT)
   {
     HACCEL hAccels = LoadAcceleratorsW(hInstance, MAKEINTRESOURCEW(IDR_ACCELERATOR1));
-    while (GetMessageW(&msg, NULL, 0, 0))
+    while (GetMessageW(&msg, NULL, 0, 0)) 
     {
-      if (TranslateAcceleratorW(g_HWND, hAccels, &msg) == 0)
+      if (TranslateAcceleratorW(g_HWND, hAccels, &msg) == 0) 
       {
         TranslateMessage(&msg);
         DispatchMessageW(&msg);
@@ -495,9 +495,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE /* hPrevInstance */, LPSTR /* 
   #endif
   {
     HACCEL hAccels = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDR_ACCELERATOR1));
-    while (GetMessage(&msg, NULL, 0, 0))
+    while (GetMessage(&msg, NULL, 0, 0)) 
     {
-      if (TranslateAccelerator(g_HWND, hAccels, &msg) == 0)
+      if (TranslateAccelerator(g_HWND, hAccels, &msg) == 0) 
       {
         // if (g_Hwnd != NULL || !IsDialogMessage(g_Hwnd, &msg))
         // if (!IsDialogMessage(g_Hwnd, &msg))
@@ -523,9 +523,9 @@ static void SaveWindowInfo(HWND aWnd)
   placement.length = sizeof(placement);
   if (!::GetWindowPlacement(aWnd, &placement))
     return;
-  SaveWindowSize(placement.rcNormalPosition,
+  SaveWindowSize(placement.rcNormalPosition, 
       BOOLToBool(::IsZoomed(aWnd)));
-  SavePanelsInfo(g_App.NumPanels, g_App.LastFocusedPanel,
+  SavePanelsInfo(g_App.NumPanels, g_App.LastFocusedPanel, 
       g_Splitter.GetPos());
 }
 #else
@@ -536,7 +536,7 @@ int Main1(int argc,TCHAR **argv)
     g_MainPath = argv[1];
   }
 
-  if (!InitInstance (0, 0))
+  if (!InitInstance (0, 0)) 
     return FALSE;
 
   MyLoadMenu(g_HWND);
@@ -568,7 +568,7 @@ void ExecuteCommand(UINT commandID)
 		extern void createAboutDialog(void);
 		createAboutDialog();
 		break;
-	}
+	}		  
   }
 }
 
@@ -576,11 +576,11 @@ void ExecuteCommand(UINT commandID)
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
   int wmId, wmEvent;
-  switch (message)
+  switch (message) 
   {
     case WM_COMMAND:
-      wmId    = LOWORD(wParam);
-      wmEvent = HIWORD(wParam);
+      wmId    = LOWORD(wParam); 
+      wmEvent = HIWORD(wParam); 
       if ((HWND) lParam != NULL && wmEvent != 0)
         break;
       if (wmId >= kToolbarStartID)
@@ -615,23 +615,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
       icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
       icex.dwICC  = ICC_BAR_CLASSES;
       InitCommonControlsEx(&icex);
-
+      
       // Toolbar buttons used to create the first 4 buttons.
-      TBBUTTON tbb [ ] =
+      TBBUTTON tbb [ ] = 
       {
         // {0, 0, TBSTATE_ENABLED, BTNS_SEP, 0L, 0},
         // {VIEW_PARENTFOLDER, kParentFolderID, TBSTATE_ENABLED, BTNS_BUTTON, 0L, 0},
           // {0, 0, TBSTATE_ENABLED, BTNS_SEP, 0L, 0},
         {VIEW_NEWFOLDER, ID_FILE_CREATEFOLDER, TBSTATE_ENABLED, BTNS_BUTTON, 0L, 0},
       };
-
+      
       int baseID = 100;
       NWindows::NControl::CToolBar aToolBar;
-      aToolBar.Attach(::CreateToolbarEx (hWnd,
-        WS_CHILD | WS_BORDER | WS_VISIBLE | TBSTYLE_TOOLTIPS, //  | TBSTYLE_FLAT
-        baseID + 2, 11,
-        (HINSTANCE)HINST_COMMCTRL, IDB_VIEW_SMALL_COLOR,
-        (LPCTBBUTTON)&tbb, sizeof(tbb) / sizeof(tbb[0]),
+      aToolBar.Attach(::CreateToolbarEx (hWnd, 
+        WS_CHILD | WS_BORDER | WS_VISIBLE | TBSTYLE_TOOLTIPS, //  | TBSTYLE_FLAT 
+        baseID + 2, 11, 
+        (HINSTANCE)HINST_COMMCTRL, IDB_VIEW_SMALL_COLOR, 
+        (LPCTBBUTTON)&tbb, sizeof(tbb) / sizeof(tbb[0]), 
         0, 0, 100, 30, sizeof (TBBUTTON)));
       */
       // HCURSOR cursor = ::LoadCursor(0, IDC_SIZEWE);
@@ -686,7 +686,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     }
     case WM_DESTROY:
     {
-      // ::DragAcceptFiles(hWnd, FALSE);
+      // ::DragAcceptFiles(hWnd, FALSE);  
       RevokeDragDrop(hWnd);
       g_App._dropTarget.Release();
 
@@ -712,11 +712,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
       ::ReleaseCapture();
       break;
     }
-    case WM_MOUSEMOVE:
+    case WM_MOUSEMOVE: 
     {
       if ((wParam & MK_LBUTTON) != 0 && ::GetCapture() == hWnd)
       {
-        g_Splitter.SetPos(hWnd, g_StartCaptureSplitterPos +
+        g_Splitter.SetPos(hWnd, g_StartCaptureSplitterPos + 
             (short)LOWORD(lParam) - g_StartCaptureMousePos);
         MoveSubWindows(hWnd);
       }
@@ -753,7 +753,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     /*
     case WM_ACTIVATE:
     {
-      int fActive = LOWORD(wParam);
+      int fActive = LOWORD(wParam); 
       switch (fActive)
       {
         case WA_INACTIVE:
@@ -771,7 +771,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
       MyLoadMenu(g_HWND);
       return 0;
     */
-
+      
     /*
     case WM_SETTINGCHANGE:
       break;
@@ -901,7 +901,7 @@ void MoveSubWindows(HWND hWnd)
   if (g_App._rebar)
     headerSize = Window_GetRealHeight(g_App._rebar);
   int ySize = MyMax((int)(rect.bottom - headerSize), 0);
-
+ 
   if (g_App.NumPanels > 1)
   {
     g_App.Panels[0].Move(0, headerSize, g_Splitter.GetPos(), ySize);
@@ -950,7 +950,7 @@ void CApp::MoveSubWindows()
     headerSize += Window_GetRealHeight(_toolBar);
   }
   int ySize = MyMax((int)(rect.bottom - headerSize), 0);
-
+  
   if (NumPanels > 1)
   {
     Panels[0].Move(0, headerSize, g_Splitter.GetPos(), ySize);
@@ -972,7 +972,9 @@ void CApp::MoveSubWindows()
 
 
 // FIXME for mac
-void doMacOpenFile(	const UString & fileName	 )
+void doMacOpenFile(	const UString & fileName	 ) 
 {
 	g_App.GetFocusedPanel().BindToPathAndRefresh(fileName);
 }
+
+

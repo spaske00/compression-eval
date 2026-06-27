@@ -158,7 +158,7 @@ N = TestNameParts.Size();
                            File                          Dir
 ForFile     req   M<=N  [N-M, N)                          -
          nonreq   M=N   [0, M)                            -
-
+ 
 ForDir      req   M<N   [0, M) ... [N-M-1, N-1)  same as ForBoth-File
          nonreq         [0, M)                   same as ForBoth-File
 

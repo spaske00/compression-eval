@@ -1,7 +1,7 @@
 // Rar2Decoder.cpp
 // According to unRAR license, this code may not be used to develop
 // a program that creates RAR archives
-
+ 
 #include "StdAfx.h"
 
 #include "Rar2Decoder.h"
@@ -114,7 +114,7 @@ bool CDecoder::ReadTables(void)
   }
   else
     numLevels = kHeapTablesSizesSum;
-
+ 
   int i;
   for (i = 0; i < kLevelTableSize; i++)
     levelLevels[i] = (Byte)ReadBits(4);
@@ -313,7 +313,7 @@ HRESULT CDecoder::CodeReal(ISequentialInStream *inStream, ISequentialOutStream *
   m_PackSize = *inSize;
 
   UInt64 pos = 0, unPackSize = *outSize;
-
+  
   m_OutWindowStream.SetStream(outStream);
   m_OutWindowStream.Init(m_IsSolid);
   m_InBitStream.SetStream(inStream);

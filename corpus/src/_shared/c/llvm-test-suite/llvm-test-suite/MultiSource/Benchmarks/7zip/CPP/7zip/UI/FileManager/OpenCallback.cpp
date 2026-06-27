@@ -111,7 +111,7 @@ STDMETHODIMP COpenArchiveCallback::CryptoGetTextPassword(BSTR *password)
   if (!PasswordIsDefined)
   {
     CPasswordDialog dialog;
-
+   
     ProgressDialog.WaitCreating();
     if (dialog.Create(ProgressDialog) == IDCANCEL)
       return E_ABORT;

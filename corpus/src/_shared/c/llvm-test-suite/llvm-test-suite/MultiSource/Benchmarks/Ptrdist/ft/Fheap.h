@@ -29,7 +29,7 @@
  * The algorithm is theirs.  Any discrepancy between the algorithm
  * description which appears in the paper and this implementation is
  * a consequence of my misunderstanding of their intent.
- *
+ *   
  * ------------------------------------------------------------------------
  *
  * $Id$

@@ -53,7 +53,7 @@ class CCoder:
 
   bool DeCodeLevelTable(Byte *values, int numSymbols);
   bool ReadTables();
-
+  
   HRESULT Flush() { return m_OutWindowStream.Flush(); }
   class CCoderReleaser
   {
@@ -106,7 +106,7 @@ public:
   STDMETHOD(SetInStream)(ISequentialInStream *inStream);
   STDMETHOD(ReleaseInStream)();
   STDMETHOD(SetOutStreamSize)(const UInt64 *outSize);
-
+  
   #ifndef NO_READ_FROM_CODER
   STDMETHOD(Read)(void *data, UInt32 size, UInt32 *processedSize);
   #endif

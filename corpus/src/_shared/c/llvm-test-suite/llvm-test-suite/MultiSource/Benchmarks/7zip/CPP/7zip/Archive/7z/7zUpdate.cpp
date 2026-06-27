@@ -361,7 +361,7 @@ static bool IsExeFile(const CUpdateItem &ui)
         {
           for(UInt32 i = 0; i < processedSize ; i++)
           {
-            if (buffer[i] == 0)
+            if (buffer[i] == 0) 
 	    {
               return true; // this file is not a text (ascii, utf8, ...) !
 	    }
@@ -369,7 +369,7 @@ static bool IsExeFile(const CUpdateItem &ui)
        }
      }
    }
-  }
+  } 
   return false;
 }
 #endif
@@ -465,7 +465,7 @@ static void FromUpdateItemToFileItem(const CUpdateItem &ui,
   file.Name = NItemName::MakeLegalName(ui.Name);
   if (ui.AttribDefined)
     file.SetAttrib(ui.Attrib);
-
+  
   file2.CTime = ui.CTime;  file2.CTimeDefined = ui.CTimeDefined;
   file2.ATime = ui.ATime;  file2.ATimeDefined = ui.ATimeDefined;
   file2.MTime = ui.MTime;  file2.MTimeDefined = ui.MTimeDefined;
@@ -497,7 +497,7 @@ class CFolderOutStream2:
   HRESULT ProcessEmptyFiles();
 public:
   MY_UNKNOWN_IMP
-
+  
   CFolderOutStream2()
   {
     _crcStreamSpec = new COutStreamWithCRC;
@@ -942,14 +942,14 @@ HRESULT Update(
       if (rep.Group != groupIndex)
         break;
       int folderIndex = rep.FolderIndex;
-
+      
       if (rep.NumCopyFiles == db->NumUnpackStreamsVector[folderIndex])
       {
         UInt64 packSize = db->GetFolderFullPackSize(folderIndex);
         RINOK(WriteRange(inStream, archive.SeqStream,
           db->GetFolderStreamPos(folderIndex, 0), packSize, progress));
         lps->ProgressOffset += packSize;
-
+        
         const CFolder &folder = db->Folders[folderIndex];
         CNum startIndex = db->FolderStartPackStreamIndex[folderIndex];
         for (int j = 0; j < folder.PackStreams.Size(); j++)
@@ -968,10 +968,10 @@ HRESULT Update(
         CMyComPtr<ISequentialInStream> sbInStream;
         sb.CreateStreams(&sbInStream, &sbOutStream);
         CBoolVector extractStatuses;
-
+        
         CNum numUnpackStreams = db->NumUnpackStreamsVector[folderIndex];
         CNum indexInFolder = 0;
-
+        
         for (CNum fi = db->FolderStartFileIndex[folderIndex]; indexInFolder < numUnpackStreams; fi++)
         {
           bool needExtract = false;
@@ -987,21 +987,21 @@ HRESULT Update(
 
         RINOK(threadDecoder.FosSpec->Init(db, db->FolderStartFileIndex[folderIndex], &extractStatuses, sbOutStream));
         sbOutStream.Release();
-
+        
         threadDecoder.InStream = inStream;
         threadDecoder.Folder = &db->Folders[folderIndex];
         threadDecoder.StartPos = db->GetFolderStreamPos(folderIndex, 0);
         threadDecoder.PackSizes = &db->PackSizes[db->FolderStartPackStreamIndex[folderIndex]];
-
+        
         threadDecoder.Start();
-
+        
         int startPackIndex = newDatabase.PackSizes.Size();
         CFolder newFolder;
         RINOK(encoder.Encode(
           EXTERNAL_CODECS_LOC_VARS
           sbInStream, NULL, &inSizeForReduce, newFolder,
           archive.SeqStream, newDatabase.PackSizes, progress));
-
+        
         threadDecoder.WaitFinish();
 
         RINOK(threadDecoder.Result);
@@ -1009,14 +1009,14 @@ HRESULT Update(
         for (; startPackIndex < newDatabase.PackSizes.Size(); startPackIndex++)
           lps->OutSize += newDatabase.PackSizes[startPackIndex];
         lps->InSize += newFolder.GetUnpackSize();
-
+        
         newDatabase.Folders.Add(newFolder);
       }
-
+      
       newDatabase.NumUnpackStreamsVector.Add(rep.NumCopyFiles);
-
+      
       CNum numUnpackStreams = db->NumUnpackStreamsVector[folderIndex];
-
+      
       CNum indexInFolder = 0;
       for (CNum fi = db->FolderStartFileIndex[folderIndex]; indexInFolder < numUnpackStreams; fi++)
       {
@@ -1057,7 +1057,7 @@ HRESULT Update(
     for (i = 0; i < numFiles; i++)
       refItems.Add(CRefItem(group.Indices[i], updateItems[group.Indices[i]], sortByType));
     refItems.Sort(CompareUpdateItems, (void *)&sortByType);
-
+    
     CRecordVector<UInt32> indices;
     indices.Reserve(numFiles);
 
@@ -1077,7 +1077,7 @@ HRESULT Update(
       newDatabase.Files.Add(file);
       */
     }
-
+    
     for (i = 0; i < numFiles;)
     {
       UInt64 totalSize = 0;
@@ -1106,7 +1106,7 @@ HRESULT Update(
       CFolderInStream *inStreamSpec = new CFolderInStream;
       CMyComPtr<ISequentialInStream> solidInStream(inStreamSpec);
       inStreamSpec->Init(updateCallback, &indices[i], numSubFiles);
-
+      
       CFolder folderItem;
 
       int startPackIndex = newDatabase.PackSizes.Size();
@@ -1122,9 +1122,9 @@ HRESULT Update(
       // for ()
       // newDatabase.PackCRCsDefined.Add(false);
       // newDatabase.PackCRCs.Add(0);
-
+      
       newDatabase.Folders.Add(folderItem);
-
+      
       CNum numUnpackStreams = 0;
       for (int subIndex = 0; subIndex < numSubFiles; subIndex++)
       {
@@ -1137,7 +1137,7 @@ HRESULT Update(
           db->GetFile(ui.IndexInArchive, file, file2);
         if (file2.IsAnti || file.IsDir)
           return E_FAIL;
-
+        
         /*
         CFileItem &file = newDatabase.Files[
               startFileIndexInDatabase + i + subIndex];
@@ -1181,7 +1181,7 @@ HRESULT Update(
 
   {
     // ---------- Write Folders & Empty Files ----------
-
+    
     CRecordVector<int> emptyRefs;
     for (i = 0; i < updateItems.Size(); i++)
     {
@@ -1208,7 +1208,7 @@ HRESULT Update(
       newDatabase.AddFile(file, file2);
     }
   }
-
+    
   newDatabase.ReserveDown();
   return S_OK;
 }

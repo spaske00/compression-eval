@@ -35,7 +35,7 @@ solution_t *sol;
 }
 
 
-void
+void 
 solution_add(sol, weight, col)
 solution_t *sol;
 int *weight;
@@ -46,7 +46,7 @@ int col;
 }
 
 
-void
+void 
 solution_accept(sol, A, weight, col)
 solution_t *sol;
 sm_matrix *A;
@@ -68,7 +68,7 @@ int col;
 
 
 /* ARGSUSED */
-void
+void 
 solution_reject(sol, A, weight, col)
 solution_t *sol;
 sm_matrix *A;

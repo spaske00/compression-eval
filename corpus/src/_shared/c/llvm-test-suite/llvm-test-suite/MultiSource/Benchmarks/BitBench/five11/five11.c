@@ -85,7 +85,7 @@ int read_11_bits(unsigned char* buf, int offset) {				/*14*/
   res = b0 << (11-ioffset);							/*21*/
   if (ioffset >= 3) {								/*22*/
      return  (res | (b1 >> (ioffset-3)))  &  ((1 << 11) - 1);			/*23*/
-  }
+  }						
   else
     b2 = (int)buf[byte_offset+2] & 255;						/*24*/
     return (res | (b1 << (3-ioffset)) | b2 >> (ioffset+5)) &  ((1 << 11) - 1);	/*25*/
@@ -112,7 +112,7 @@ linked_list_lli* five11(unsigned char* inbuf) {					/*26*/
   }
     return res;									/*43*/
 }
-
+ 
 int pad_size(int nof_channels) {						/*44*/
   int bits = 5+nof_channels*11;							/*45*/
   return ((8 - (bits & 7)) & 7);						/*46*/
@@ -146,7 +146,7 @@ int calc_sum1(linked_list_int* list) {						/*56*/
 /*==========================================================================*/
 
 static size_t read_data(FILE *in, void *buffer)
-{
+{ 
   return fread(buffer, 1, MAX_SIZE, in);
 }
 
@@ -158,9 +158,9 @@ int main(int argc, char *argv[])
   int outsize,time;
   linked_list_lli *list;
   unsigned char *inbuf, *outbuf, *temp;
-
+  
   struct timeval pre,post;
-
+  
   /* optional input arg */
   inbuf = malloc(MAX_SIZE);
 
@@ -184,12 +184,12 @@ int main(int argc, char *argv[])
   for(i=0;i<500;i++){
 #else
   for(i=0;i<10000;i++){
-#endif
+#endif    
     list = five11(inbuf);
     outsize = calc_sum2(list);
     free_list2(list);
   }
   gettimeofday(&post,0);
-  printf("%d\n", outsize);
-  exit(0);
+  printf("%d\n", outsize);  
+  exit(0); 
 }

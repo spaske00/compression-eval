@@ -29,7 +29,7 @@ public:
   void SetKey(const Byte *key, size_t keySize);
   void Update(const UInt32 *data, size_t dataSize) { _sha.Update(data, dataSize); }
   void Final(UInt32 *mac, size_t macSize = kDigestSizeInWords);
-
+  
   // It'sa for hmac function. in,out: mac[kDigestSizeInWords].
   void GetLoopXorDigest(UInt32 *mac, UInt32 numIteration);
 };

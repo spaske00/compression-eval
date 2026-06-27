@@ -78,13 +78,13 @@ void FlushInners(OBJECT inners, OBJECT hd)
       {
 
         case DEAD:
-
+      
 	  break;
 
 
         case RECEIVING:
         case UNATTACHED:
-
+      
 	  if( Down(y) != y )	/* bug fix (was assert before) */
 	  { assert( Down(y) != y, "FlushInners: UNATTACHED!");
 	    Child(z, Down(y));
@@ -94,7 +94,7 @@ void FlushInners(OBJECT inners, OBJECT hd)
 
 
         case PRECEDES:
-
+      
 	  break;
 
 
@@ -104,7 +104,7 @@ void FlushInners(OBJECT inners, OBJECT hd)
 
 
         default:
-
+      
 	  break;
       }
     }
@@ -129,13 +129,13 @@ void FlushInners(OBJECT inners, OBJECT hd)
     {
 
       case DEAD:
-
+      
 	break;
 
 
       case RECEIVING:
       case UNATTACHED:
-
+      
 	if( Down(y) != y )	/* bug fix (was assert before) */
 	{ assert( Down(y) != y, "FlushInners: UNATTACHED!");
 	  Child(z, Down(y));
@@ -148,7 +148,7 @@ void FlushInners(OBJECT inners, OBJECT hd)
 
 
       case PRECEDES:
-
+      
 	Child(tmp, Down(y));
 	if( Up(tmp) != LastUp(tmp) )
 	{ Parent(tmp, LastUp(tmp));
@@ -171,7 +171,7 @@ void FlushInners(OBJECT inners, OBJECT hd)
 
 
       default:
-
+      
 	assert1(FALSE, "FlushInners:", Image(type(y)));
 	break;
     }
@@ -358,7 +358,7 @@ static OBJECT FindSplitInGalley(OBJECT hd)
 
 
     default:
-
+    
       assert1(FALSE, "FindSplitInGalley:", Image(type(y)));
       break;
 
@@ -476,7 +476,7 @@ void HandleHeader(OBJECT hd, OBJECT header)
 	}
       }
       break;
-
+	
   }
 
   /* dispose header object and following gap object */
@@ -684,13 +684,13 @@ void Promote(OBJECT hd, OBJECT stop_link, OBJECT dest_index, BOOLEAN join_after)
 	case SCALE_IND:
 	case COVER_IND:
 	case PRECEDES:
-
+      
 	  DisposeChild(NextDown(link));
 	  break;
-
+	
 
 	case UNATTACHED:
-
+      
 	  assert( Down(y) != y, "FlushRootGalley: UNATTACHED!" );
 	  Child(z, Down(y));
 	  assert( type(z) == HEAD, "FlushRootGalley: unattached HEAD!" );
@@ -731,7 +731,7 @@ void Promote(OBJECT hd, OBJECT stop_link, OBJECT dest_index, BOOLEAN join_after)
 
 
 	case EXPAND_IND:
-
+      
 	  /* expand @HExpand or @VExpand to occupy everything possible */
 	  dim = type(actual(y)) == HEXPAND ? COLM : ROWM;
 	  Constrained(actual(y), &c, dim, &why);
@@ -765,7 +765,7 @@ void Promote(OBJECT hd, OBJECT stop_link, OBJECT dest_index, BOOLEAN join_after)
 	case CROSS_FOLL:
 	case CROSS_FOLL_OR_PREC:
 	case CROSS_TARG:
-
+	      
 	  debug2(DGS, DD, "root promote %s %s", Image(type(y)), EchoObject(y));
 	  /* NB NO BREAK */
 
@@ -885,10 +885,10 @@ void Promote(OBJECT hd, OBJECT stop_link, OBJECT dest_index, BOOLEAN join_after)
 
 
 	default:
-
+      
 	  assert1(FALSE, "Promote:", Image(type(y)));
 	  break;
-
+	
       }
     }
     debug0(DGS, DD, "Promote returning (root galley).");
@@ -941,7 +941,7 @@ void Promote(OBJECT hd, OBJECT stop_link, OBJECT dest_index, BOOLEAN join_after)
     assert( UpDim(dest, ROWM) == UpDim(dest, COLM), "Promote: dims!" );
     link = Up(dest);
   }
-
+  
   /* promote components */
   TransferLinks(Down(hd), stop_link, link);
 
@@ -1013,7 +1013,7 @@ void KillGalley(OBJECT hd, BOOLEAN optimize)
 			}
 			DeleteNode(y);
 			break;
-
+		
       case RECEPTIVE:	assert( Down(y) == y, "KillGalley: RECEPTIVE!" );
 			DeleteNode(y);
 			break;
@@ -1151,7 +1151,7 @@ void SetTarget(OBJECT hd)
     }
   }
   assert(cr != nilobj, "SetTarget:  cr == nilobj!");
-
+  
   /* if cr is not a cross-reference, expand it until it is */
   copied = FALSE;
   if( !is_cross(type(cr)) )

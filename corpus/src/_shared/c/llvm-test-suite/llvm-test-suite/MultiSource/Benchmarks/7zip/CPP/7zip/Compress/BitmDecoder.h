@@ -30,9 +30,9 @@ public:
     m_BitPos = kNumBigValueBits;
     Normalize();
   }
-
+  
   UInt64 GetProcessedSize() const { return m_Stream.GetProcessedSize() - (kNumBigValueBits - m_BitPos) / 8; }
-
+  
   void Normalize()
   {
     for (;m_BitPos >= 8; m_BitPos -= 8)
@@ -44,13 +44,13 @@ public:
     // return (m_Value << m_BitPos) >> (kNumBigValueBits - numBits);
     return ((m_Value >> (8 - m_BitPos)) & kMask) >> (kNumValueBits - numBits);
   }
-
+  
   void MovePos(unsigned numBits)
   {
     m_BitPos += numBits;
     Normalize();
   }
-
+  
   UInt32 ReadBits(unsigned numBits)
   {
     UInt32 res = GetValue(numBits);

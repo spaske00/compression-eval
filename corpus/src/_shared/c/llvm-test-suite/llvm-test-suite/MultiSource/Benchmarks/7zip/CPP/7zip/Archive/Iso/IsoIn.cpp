@@ -8,7 +8,7 @@
 
 namespace NArchive {
 namespace NIso {
-
+ 
 Byte CInArchive::ReadByte()
 {
   if (m_BufferPos >= BlockSize)
@@ -170,7 +170,7 @@ void CInArchive::ReadDirRecord2(CDirRecord &r, Byte len)
   r.FileId.SetCapacity(idLen);
   ReadBytes((Byte *)r.FileId, idLen);
   int padSize = 1 - (idLen & 1);
-
+  
   // SkipZeros(1 - (idLen & 1));
   Skip(1 - (idLen & 1)); // it's bug in some cd's. Must be zeros
 
@@ -267,7 +267,7 @@ void CInArchive::ReadDir(CDir &d, int level)
     ReadDirRecord2(subItem, len);
     if (firstItem && level == 0)
       IsSusp = subItem.CheckSusp(SuspSkipSize);
-
+      
     if (!subItem.IsSystemItem())
       d._subItems.Add(subItem);
 
@@ -299,7 +299,7 @@ void CInArchive::ReadBootInfo()
     return;
   if (memcmp(_bootDesc.BootSystemId, kElToritoSpec, sizeof(_bootDesc.BootSystemId)) != 0)
     return;
-
+  
   const Byte *p = (const Byte *)_bootDesc.BootSystemUse;
   UInt32 blockIndex = p[0] | ((UInt32)p[1] << 8) | ((UInt32)p[2] << 16) | ((UInt32)p[3] << 24);
   SeekToBlock(blockIndex);

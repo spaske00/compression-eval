@@ -34,7 +34,7 @@ int pcm_point = 0;
 #if 0
 static void get_II_stuff(struct frame *fr)
 {
-  static int translate[3][2][16] =
+  static int translate[3][2][16] = 
    { { { 0,2,2,2,2,2,2,0,0,0,1,1,1,1,1,0 } ,
        { 0,2,2,0,0,0,1,1,1,1,1,1,1,1,1,0 } } ,
      { { 0,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0 } ,
@@ -43,7 +43,7 @@ static void get_II_stuff(struct frame *fr)
        { 0,3,3,0,0,0,1,1,1,1,1,1,1,1,1,0 } } };
 
   int table,sblim;
-  static struct al_table *tables[5] =
+  static struct al_table *tables[5] = 
        { alloc_0, alloc_1, alloc_2, alloc_3 , alloc_4 };
   static int sblims[5] = { 27 , 30 , 8, 12 , 30 };
 
@@ -92,7 +92,7 @@ int decode_header(struct frame *fr,unsigned long newhead)
       fr->mpeg25 = 1;
     }
 
-
+    
     fr->lay = 4-((newhead>>17)&3);
     if( ((newhead>>10)&0x3) == 0x3) {
       fprintf(stderr,"Stream error\n");
@@ -130,7 +130,7 @@ int decode_header(struct frame *fr,unsigned long newhead)
       case 1:
 #if 0
 		fr->do_layer = do_layer1;
-        fr->jsbound = (fr->mode == MPG_MD_JOINT_STEREO) ?
+        fr->jsbound = (fr->mode == MPG_MD_JOINT_STEREO) ? 
                          (fr->mode_ext<<2)+4 : 32;
         fr->framesize  = (long) tabsel_123[fr->lsf][0][fr->bitrate_index] * 12000;
         fr->framesize /= freqs[fr->sampling_frequency];
@@ -168,9 +168,9 @@ int decode_header(struct frame *fr,unsigned long newhead)
           fr->framesize  = (long) tabsel_123[fr->lsf][2][fr->bitrate_index] * 144000;
           fr->framesize /= freqs[fr->sampling_frequency]<<(fr->lsf);
           fr->framesize = fr->framesize + fr->padding - 4;
-        break;
+        break; 
       default:
-        fprintf(stderr,"Sorry, unknown layer type.\n");
+        fprintf(stderr,"Sorry, unknown layer type.\n"); 
         return (0);
     }
 
@@ -186,7 +186,7 @@ void print_header(struct frame *fr)
 	static char *modes[4] = { "Stereo", "Joint-Stereo", "Dual-Channel", "Single-Channel" };
 	static char *layers[4] = { "Unknown" , "I", "II", "III" };
 
-	fprintf(stderr,"MPEG %s, Layer: %s, Freq: %ld, mode: %s, modext: %d, BPF : %d\n",
+	fprintf(stderr,"MPEG %s, Layer: %s, Freq: %ld, mode: %s, modext: %d, BPF : %d\n", 
 		fr->mpeg25 ? "2.5" : (fr->lsf ? "2.0" : "1.0"),
 		layers[fr->lay],freqs[fr->sampling_frequency],
 		modes[fr->mode],fr->mode_ext,fr->framesize+4);
@@ -202,7 +202,7 @@ void print_header_compact(struct frame *fr)
 {
 	static char *modes[4] = { "stereo", "joint-stereo", "dual-channel", "mono" };
 	static char *layers[4] = { "Unknown" , "I", "II", "III" };
-
+ 
 	fprintf(stderr,"MPEG %s layer %s, %d kbit/s, %ld Hz %s\n",
 		fr->mpeg25 ? "2.5" : (fr->lsf ? "2.0" : "1.0"),
 		layers[fr->lay],
@@ -244,7 +244,7 @@ unsigned int getbits_fast(int number_of_bits)
 
   {
     rval = wordpointer[0];
-    rval <<= 8;
+    rval <<= 8;	
     rval |= wordpointer[1];
     rval <<= bitindex;
     rval &= 0xffff;

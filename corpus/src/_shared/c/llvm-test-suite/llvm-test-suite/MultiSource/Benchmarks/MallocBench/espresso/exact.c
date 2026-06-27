@@ -158,7 +158,7 @@ sm_matrix *table;
     if (fp_primes != stdout) {
 	(void) fclose(fp_primes);
     }
-
+	
     sm_write(fp_pi_table, table);
     if (fp_pi_table != stdout) {
 	(void) fclose(fp_pi_table);

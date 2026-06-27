@@ -63,11 +63,11 @@ main(int argc, char *argv[])
 	    gc_init();
 	}
 #endif BWGC
-
+	
 	/* Initialize the file search paths */
 	gs_lib_env_path = 0;
 	   {	char *lib = getenv("GS_LIB");
-		if ( lib != 0 )
+		if ( lib != 0 ) 
 		   {	int len = strlen(lib);
 			gs_lib_env_path = gs_malloc(len + 1, 1, "GS_LIB");
 			strcpy(gs_lib_env_path, lib);

@@ -733,7 +733,7 @@ void toutent (toutfile, hent, onlykeep)
 	}
 #endif
     }
-
+		
 static void toutword (toutfile, word, cent)
     register FILE *	toutfile;
     char *		word;

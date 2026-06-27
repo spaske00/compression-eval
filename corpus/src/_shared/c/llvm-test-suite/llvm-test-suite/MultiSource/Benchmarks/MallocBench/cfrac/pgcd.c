@@ -18,7 +18,7 @@ precision pgcd(u, v)
    }
 
    pdestroy(v3);
-   pdestroy(q);  pdestroy(r);
+   pdestroy(q);  pdestroy(r);  
    pdestroy(u);  pdestroy(v);
    return presult(u3);			/* result always positive */
 }

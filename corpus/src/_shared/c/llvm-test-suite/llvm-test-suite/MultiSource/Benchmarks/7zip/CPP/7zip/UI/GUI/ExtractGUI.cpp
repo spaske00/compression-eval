@@ -88,7 +88,7 @@ HRESULT CThreadExtracting::ProcessVirt()
     AddValuePair(IDS_FILES_COLON, 0x02000320, Stat.NumFiles, s);
     AddSizePair(IDS_SIZE_COLON, 0x02000322, Stat.UnpackSize, s);
     AddSizePair(IDS_COMPRESSED_COLON, 0x02000323, Stat.PackSize, s);
-
+    
     if (Options->CalcCrc)
     {
       wchar_t temp[16];
@@ -97,10 +97,10 @@ HRESULT CThreadExtracting::ProcessVirt()
       s += temp;
       s += L'\n';
     }
-
+    
     s += L'\n';
     s += LangString(IDS_MESSAGE_NO_ERRORS, 0x02000608);
-
+    
     OkMessageTitle = Title;
     OkMessage = s;
   }
@@ -171,7 +171,7 @@ HRESULT ExtractGUI(
       return E_FAIL;
     }
     NFile::NName::NormalizeDirPathPrefix(options.OutputDir);
-
+    
     /*
     if(!NFile::NDirectory::CreateComplexDirectory(options.OutputDir))
     {
@@ -186,7 +186,7 @@ HRESULT ExtractGUI(
     }
     */
   }
-
+  
   UString title = LangStringSpec(options.TestMode ? IDS_PROGRESS_TESTING : IDS_PROGRESS_EXTRACTING,
       options.TestMode ? 0x02000F90: 0x02000890);
 

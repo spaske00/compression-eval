@@ -134,7 +134,7 @@ class CDecoder :
   UInt32 m_RepDistPtr;
 
   UInt32 m_LastLength;
-
+  
   Byte m_LastLevels[kMaxTableSize];
 
   UInt64 m_PackSize;

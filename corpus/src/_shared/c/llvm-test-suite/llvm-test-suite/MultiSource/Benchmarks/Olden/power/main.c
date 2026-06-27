@@ -71,7 +71,7 @@ int main(int argc,char *argv[])
   r->last_theta_I = r->theta_I;
   r->theta_R = 0.7;
   r->theta_I = 0.14;
-
+  
   while (!finished) {
     Compute_Tree(r);
     printf("TR=%4.2f, TI=%4.2f, P0=%4.2f, Q0=%4.2f\n",
@@ -91,7 +91,7 @@ int main(int argc,char *argv[])
       if (i>35) i=35;
       d_theta_I = -(r->theta_I - r->D.Q/10000.0) /
         (1 - (map_Q[i+1] - map_Q[i]) / (PER_INDEX_I * 10000.0));
-
+ 
       printf("D TR-%4.2f, TI=%4.2f\n", d_theta_R,d_theta_I);
       r->last.P = r->D.P;
       r->last.Q = r->D.Q;

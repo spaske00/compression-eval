@@ -29,7 +29,7 @@ static void Decoding_of_the_coded_Log_Area_Ratios P2((LARc,LARpp),
 
 	/*  This procedure requires for efficient implementation
 	 *  two tables.
-	 *
+ 	 *
 	 *  INVA[1..8] = integer( (32768 * 8) / real_A[1..8])
 	 *  MIC[1..8]  = minimum value of the LARc[1..8]
 	 */
@@ -73,7 +73,7 @@ static void Decoding_of_the_coded_Log_Area_Ratios P2((LARc,LARpp),
 }
 
 /* 4.2.9 */
-/* Computation of the quantized reflection coefficients
+/* Computation of the quantized reflection coefficients 
  */
 
 /* 4.2.9.1  Interpolation of the LARpp[1..8] to get the LARp[1..8]
@@ -360,7 +360,7 @@ void Gsm_Short_Term_Analysis_Filter P3((S,LARc,s),
 #if 	defined(FAST) && defined(USE_FLOAT_MUL)
 # 	define	FILTER 	(* (S->fast			\
 			   ? Fast_Short_term_analysis_filtering	\
-			   : Short_term_analysis_filtering	))
+		    	   : Short_term_analysis_filtering	))
 
 #else
 # 	define	FILTER	Short_term_analysis_filtering
@@ -404,7 +404,7 @@ void Gsm_Short_Term_Synthesis_Filter P4((S, LARcr, wt, s),
 
 # 	define	FILTER 	(* (S->fast			\
 			   ? Fast_Short_term_synthesis_filtering	\
-			   : Short_term_synthesis_filtering	))
+		    	   : Short_term_synthesis_filtering	))
 #else
 #	define	FILTER	Short_term_synthesis_filtering
 #endif

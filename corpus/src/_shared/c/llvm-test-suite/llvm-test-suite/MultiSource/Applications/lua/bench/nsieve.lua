@@ -21,17 +21,17 @@ local function nsieve(m,isPrime)
    end
    return count
 end
-
+ 
 
 local n = tonumber(arg and arg[1]) or 1
 if n < 2 then n = 2 end
 local flags = {}
 
-local m = (2^n)*10000
+local m = (2^n)*10000 
 io.write( string.format("Primes up to %8d %8d", m, nsieve(m,flags)), "\n")
 
 m = (2^(n-1))*10000
 io.write( string.format("Primes up to %8d %8d", m, nsieve(m,flags)), "\n")
 
-m = (2^(n-2))*10000
+m = (2^(n-2))*10000 
 io.write( string.format("Primes up to %8d %8d", m, nsieve(m,flags)), "\n")

@@ -56,3 +56,4 @@ STDMETHODIMP CAgentFolder::MoveTo(const UInt32 * /* indices */, UInt32 /* numIte
 {
   return E_NOTIMPL;
 }
+

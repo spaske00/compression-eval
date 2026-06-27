@@ -271,7 +271,7 @@ static inline VOID WINAPI RtlTimeToTimeFields(
             TimeFields->Year = years + 1525;
         }
         /* calculation of day of month is based on the wonderful
-         * sequence of INT( n * 30.6): it reproduces the
+         * sequence of INT( n * 30.6): it reproduces the 
          * 31-30-31-30-31-31 month lengths exactly for small n's */
         TimeFields->Day = yearday - (1959 * months) / 64 ;
 }
@@ -384,7 +384,7 @@ static BOOLEAN WINAPI RtlTimeFieldsToTime(
          * First start counting years from March. This way the leap days
          * are added at the end of the year, not somewhere in the middle.
          * Formula's become so much less complicate that way.
-         * To convert: add 12 to the month numbers of Jan and Feb, and
+         * To convert: add 12 to the month numbers of Jan and Feb, and 
          * take 1 from the year */
         if(tfTimeFields->Month < 3) {
             month = tfTimeFields->Month + 13;
@@ -399,7 +399,7 @@ static BOOLEAN WINAPI RtlTimeFieldsToTime(
                  tfTimeFields->Day -          /* day of the month */
                  584817 ;                      /* zero that on 1601-01-01 */
         /* done */
-
+        
         Time->QuadPart = (((((LONGLONG) day * HOURSPERDAY +
             tfTimeFields->Hour) * MINSPERHOUR +
             tfTimeFields->Minute) * SECSPERMIN +
@@ -431,3 +431,4 @@ BOOL WINAPI SystemTimeToFileTime( const SYSTEMTIME *syst, FILETIME * ft ) {
   ft->dwHighDateTime = (DWORD)(t.QuadPart>>32);
   return TRUE;
 }
+

@@ -239,7 +239,7 @@ bool CVm::ExecuteCode(const CProgram *prg)
     switch(cmd->OpCode)
     {
       #ifndef RARVM_NO_VM
-
+      
       case CMD_MOV:
         SetOperand32(&cmd->Op1, GetOperand32(&cmd->Op2));
         break;
@@ -531,7 +531,7 @@ bool CVm::ExecuteCode(const CProgram *prg)
           continue;
         }
         break;
-
+      
       case CMD_PUSH:
         R[kStackRegIndex] -= 4;
         SetValue32(&Mem[R[kStackRegIndex] & kSpaceMask], GetOperand32(&cmd->Op1));
@@ -567,7 +567,7 @@ bool CVm::ExecuteCode(const CProgram *prg)
         Flags = GetValue32(&Mem[R[kStackRegIndex] & kSpaceMask]);
         R[kStackRegIndex] += 4;
         break;
-
+      
       case CMD_MOVZX:
         SetOperand32(&cmd->Op1, GetOperand8(&cmd->Op2));
         break;
@@ -603,9 +603,9 @@ bool CVm::ExecuteCode(const CProgram *prg)
           }
         }
         break;
-
+      
       #endif
-
+      
       case CMD_RET:
         {
           if (R[kStackRegIndex] >= kSpaceSize)
@@ -926,7 +926,7 @@ static void RgbDecode(Byte *srcData, UInt32 dataSize, UInt32 width, UInt32 posR)
   for (UInt32 curChannel = 0; curChannel < numChannels; curChannel++)
   {
     Byte prevByte = 0;
-
+    
     for (UInt32 i = curChannel; i < dataSize; i+= numChannels)
     {
       unsigned int predicted;
@@ -970,25 +970,25 @@ static void AudioDecode(Byte *srcData, UInt32 dataSize, UInt32 numChannels)
     Int32 D1 = 0, D2 = 0, D3;
     Int32 K1 = 0, K2 = 0, K3 = 0;
     memset(dif, 0, sizeof(dif));
-
+    
     for (UInt32 i = curChannel, byteCount = 0; i < dataSize; i += numChannels, byteCount++)
     {
       D3 = D2;
       D2 = prevDelta - D1;
       D1 = prevDelta;
-
+      
       UInt32 predicted = 8 * prevByte + K1 * D1 + K2 * D2 + K3 * D3;
       predicted = (predicted >> 3) & 0xFF;
-
+      
       UInt32 curByte = *(srcData++);
-
+      
       predicted -= curByte;
       destData[i] = (Byte)predicted;
       prevDelta = (UInt32)(Int32)(signed char)(predicted - prevByte);
       prevByte = predicted;
-
+      
       Int32 D = ((Int32)(signed char)curByte) << 3;
-
+      
       dif[0] += abs(D);
       dif[1] += abs(D - D1);
       dif[2] += abs(D + D1);
@@ -996,7 +996,7 @@ static void AudioDecode(Byte *srcData, UInt32 dataSize, UInt32 numChannels)
       dif[4] += abs(D + D2);
       dif[5] += abs(D - D3);
       dif[6] += abs(D + D3);
-
+      
       if ((byteCount & 0x1F) == 0)
       {
         UInt32 minDif = dif[0], numMinDif = 0;

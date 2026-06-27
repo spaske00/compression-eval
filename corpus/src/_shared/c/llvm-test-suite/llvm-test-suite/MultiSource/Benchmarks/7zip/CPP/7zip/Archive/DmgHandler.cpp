@@ -90,7 +90,7 @@ struct CBlock
   UInt64 UnpSize;
   UInt64 PackPos;
   UInt64 PackSize;
-
+  
   UInt64 GetNextPackOffset() const { return PackPos + PackSize; }
 };
 
@@ -316,16 +316,16 @@ HRESULT CHandler::Open2(IInStream *stream)
     return S_FALSE;
   if (xml.Root.Name != "plist")
     return S_FALSE;
-
+  
   int dictIndex = xml.Root.FindSubTag("dict");
   if (dictIndex < 0)
     return S_FALSE;
-
+  
   const CXmlItem &dictItem = xml.Root.SubItems[dictIndex];
   int rfDictIndex = FindKeyPair(dictItem, "resource-fork", "dict");
   if (rfDictIndex < 0)
     return S_FALSE;
-
+  
   const CXmlItem &rfDictItem = dictItem.SubItems[rfDictIndex];
   int arrIndex = FindKeyPair(rfDictItem, "blkx", "array");
   if (arrIndex < 0)
@@ -351,7 +351,7 @@ HRESULT CHandler::Open2(IInStream *stream)
         name = GetStringFromKeyPair(item, "CFName", "string");
       file.Name = name;
       dataString = GetStringFromKeyPair(item, "Data", "data");
-
+     
       destLen = Base64ToBin(NULL, dataString, dataString.Length());
       file.Raw.SetCapacity(destLen);
       Base64ToBin(file.Raw, dataString, dataString.Length());
@@ -389,7 +389,7 @@ HRESULT CHandler::Open2(IInStream *stream)
         _fileIndices.Add(itemIndex);
     }
   }
-
+  
   // PackPos for each new file is 0 in some DMG files. So we use additional StartPos
 
   bool allStartAreZeros = true;
@@ -454,7 +454,7 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID, PROPVARIANT *val
 {
   COM_TRY_BEGIN
   NWindows::NCOM::CPropVariant prop;
-
+  
   #ifdef DMG_SHOW_RAW
   if ((int)index == _fileIndices.Size())
   {
@@ -503,7 +503,7 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID, PROPVARIANT *val
           prop = resString;
         break;
       }
-
+      
       // case kpidExtension: prop = L"hfs"; break;
 
       case kpidPath:
@@ -631,7 +631,7 @@ STDMETHODIMP CAdcDecoder::CodeReal(ISequentialInStream *inStream,
   m_OutWindowStream.Init(false);
   m_InStream.SetStream(inStream);
   m_InStream.Init();
-
+  
   CCoderReleaser coderReleaser(this);
 
   const UInt32 kStep = (1 << 20);
@@ -741,7 +741,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CByteBuffer zeroBuf;
   zeroBuf.SetCapacity(kZeroBufSize);
   memset(zeroBuf, 0, kZeroBufSize);
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -776,8 +776,8 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     Int32 index = allFilesMode ? i : indices[i];
     // const CItemEx &item = _files[index];
     RINOK(extractCallback->GetStream(index, &realOutStream, askMode));
-
-
+    
+    
     if (!testMode && !realOutStream)
       continue;
     RINOK(extractCallback->PrepareOperation(askMode));
@@ -785,7 +785,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     CLimitedSequentialOutStream *outStreamSpec = new CLimitedSequentialOutStream;
     CMyComPtr<ISequentialOutStream> outStream(outStreamSpec);
     outStreamSpec->SetStream(realOutStream);
-
+    
     realOutStream.Release();
 
     Int32 opRes = NExtract::NOperationResult::kOK;
@@ -852,13 +852,13 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
               }
               res = copyCoder->Code(inStream, outStream, NULL, NULL, progress);
               break;
-
+            
             case METHOD_ADC:
             {
               res = adcCoder->Code(inStream, outStream, &block.PackSize, &block.UnpSize, progress);
               break;
             }
-
+            
             case METHOD_ZLIB:
             {
               res = zlibCoder->Code(inStream, outStream, NULL, NULL, progress);
@@ -873,7 +873,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
                   opRes = NExtract::NOperationResult::kDataError;
               break;
             }
-
+            
             default:
               opRes = NExtract::NOperationResult::kUnSupportedMethod;
               break;

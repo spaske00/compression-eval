@@ -137,7 +137,7 @@ OBJECT *sg, OBJECT *sdef, int *side)
   *side = ratm ? BACK : *pg == nilobj || mark(gap(*pg)) ? ON : FWD;
   debug4(DSA, DD,
     "SetNeighbours: ratm == %s, pg %s nilobj, sg %s nilobj, side == %s",
-    bool(ratm), *pg == nilobj ? "==" : "!=", *sg == nilobj ? "==" : "!=",
+    bool(ratm), *pg == nilobj ? "==" : "!=", *sg == nilobj ? "==" : "!=", 
     *side == BACK ? "BACK" : *side == ON ? "ON" : "FWD");
 } /* end SetNeighbours */
 
@@ -209,7 +209,7 @@ OBJECT y, int dim)
     feffect = sg == nilobj ? *f - fwd(x, dim) :
       MinGap(*f,          back(sd, dim), fwd(sd, dim), &gap(sg)) -
       MinGap(fwd(x, dim), back(sd, dim), fwd(sd, dim), &gap(sg));
-
+	
     seffect = 0;
   }
 
@@ -293,7 +293,7 @@ void AdjustSize(OBJECT x, FULL_LENGTH b, FULL_LENGTH f, int dim)
     {
 
       case HEAD:
-
+      
 	if( gall_dir(y) == COLM )
 	{ back(x, dim) = b, fwd(x, dim) = f;
 	  debug0(DSA, D, "] AdjustSize returning at horiz HEAD");
@@ -319,7 +319,7 @@ void AdjustSize(OBJECT x, FULL_LENGTH b, FULL_LENGTH f, int dim)
 
 	  back(x, dim) = b;  fwd(x, dim) = f;
 	  if( lp == y && rp == y && !seen_nojoin(y) )
-	  {
+	  {	
 	    /* if whole object is joined, do this */
 	    b = find_max(b, back(y, dim));
 	    f = find_max(f, fwd(y, dim));
@@ -445,7 +445,7 @@ void AdjustSize(OBJECT x, FULL_LENGTH b, FULL_LENGTH f, int dim)
 
 
       case ROTATE:
-
+      
 	back(x, dim) = b;  fwd(x, dim) = f;
 	RotateSize(&cby, &cfy, &rby, &rfy, x, sparec(constraint(y)));
 	if( cby != back(y, COLM) || cfy != fwd(y, COLM) )
@@ -458,7 +458,7 @@ void AdjustSize(OBJECT x, FULL_LENGTH b, FULL_LENGTH f, int dim)
 
       case WIDE:
       case HIGH:
-
+      
 	if( (type(y) == WIDE) == (dim == COLM) )
 	{ if( !FitsConstraint(b, f, constraint(y)) )
 	  { Error(16, 2, "size constraint %s,%s,%s broken by %s,%s",
@@ -479,7 +479,7 @@ void AdjustSize(OBJECT x, FULL_LENGTH b, FULL_LENGTH f, int dim)
 
       case HLIMITED:
       case VLIMITED:
-
+      
 	if( (type(y) == HLIMITED) == (dim == COLM) )
 	{
 	  /* ***
@@ -623,7 +623,7 @@ void AdjustSize(OBJECT x, FULL_LENGTH b, FULL_LENGTH f, int dim)
       case CROSS:
       case FORCE_CROSS:
       default:
-
+      
 	assert1(FALSE, "AdjustSize:", Image(type(y)));
 	break;
 

@@ -17,7 +17,7 @@ using namespace NWindows;
 using namespace NRegistry;
 
 namespace NRegistryAssociations {
-
+  
 static NSynchronization::CCriticalSection g_CriticalSection;
 
 #define REG_PATH_FM TEXT("Software") TEXT(STRING_PATH_SEPARATOR) TEXT("7-Zip") TEXT(STRING_PATH_SEPARATOR) TEXT("FM")
@@ -96,7 +96,7 @@ void WriteInternalAssociations(const CObjectVector<CExtInfo> &items)
 
 static const TCHAR *kShellNewKeyName = TEXT("ShellNew");
 static const TCHAR *kShellNewDataValueName = TEXT("Data");
-
+  
 static const TCHAR *kDefaultIconKeyName = TEXT("DefaultIcon");
 static const TCHAR *kShellKeyName = TEXT("shell");
 static const TCHAR *kOpenKeyName = TEXT("open");
@@ -240,7 +240,7 @@ void AddShellExtensionInfo(const CSysString &extension,
   CKey openKey;
   openKey.Create(shellKey, kOpenKeyName);
   openKey.SetValue(NULL, TEXT(""));
-
+  
   CKey commandKey;
   commandKey.Create(openKey, kCommandKeyName);
 

@@ -58,3 +58,4 @@ for bench in "${benchmarks[@]}"; do
         popd
     fi
 done
+

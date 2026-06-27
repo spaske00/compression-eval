@@ -13,13 +13,13 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif 
 
 #include  <wx/filename.h>
 
 
 #undef _WIN32
-
+ 
 #include "Windows/Control/DialogImpl.h"
 #include "Windows/Synchronization.h"
 
@@ -69,14 +69,14 @@ static struct
 	const TCHAR * title;
 	int flag;
 
-	//
+	// 
 	LPCWSTR initialFolderOrFile;
 
 	wxSemaphore * sem;
 	int ret;
 
 	UString resultPath;
-
+	
 #define MAX_CREATE 16
 } g_tabCreate[MAX_CREATE];
 
@@ -120,7 +120,7 @@ static int WaitInd(wxWindow * destWindow, int ind,int id,wxWindow * parent,UStri
 	{
 		if (destWindow == 0) {
 			extern wxWindow * g_window;
-			if (g_window == 0)
+        		if (g_window == 0)
 			{
 				printf("INTERNAL ERROR : g_window and destWindow == NULL\n"); abort();
 			}
@@ -163,33 +163,33 @@ class LockGUI
 	bool _IsMain;
 	public:
 		LockGUI() {
-
+			
 			verify_main_thread();
-
+			
 			_IsMain = wxThread::IsMain();
 			if (!_IsMain) {
 				// DEBUG
 				printf("GuiEnter-Dialog(0x%lx)\n",wxThread::GetCurrentId());
 				abort(); // FIXME wxMutexGuiEnter();
 			}
-		}
-		~LockGUI() {
+	       	}
+		~LockGUI() { 
 			if (!_IsMain) {
 				wxMutexGuiLeave();
 				// DEBUG printf("GuiLeave(0x%lx)\n",wxThread::GetCurrentId());
 			}
-		}
+	       	}
 };
 
 static const unsigned int kNumDialogsMax = 32;
 static unsigned int g_NumDialogs = 0;
-static const CDialogInfo *g_Dialogs[kNumDialogsMax];
+static const CDialogInfo *g_Dialogs[kNumDialogsMax]; 
 
-void RegisterDialog(const CDialogInfo *dialogInfo)
-{
+void RegisterDialog(const CDialogInfo *dialogInfo) 
+{ 
   // DEBUG printf("RegisterDialog : %d\n",dialogInfo->id);
   if (g_NumDialogs < kNumDialogsMax)
-    g_Dialogs[g_NumDialogs++] = dialogInfo;
+    g_Dialogs[g_NumDialogs++] = dialogInfo; 
 }
 
 namespace NWindows {
@@ -228,7 +228,7 @@ namespace NWindows {
 			}
 
 			UINT CModalDialog::IsButtonChecked(int buttonID) const
-			{
+			{ 
 				LockGUI lock;
 				wxCheckBox* w = (wxCheckBox*)_window->FindWindow(buttonID);
 				if (w)
@@ -289,19 +289,19 @@ namespace NWindows {
 
 			void CModalDialog::SetText(const TCHAR *_title) {
 				LockGUI lock;
-				_window->SetTitle(_title);
-			}
+			      	_window->SetTitle(_title);
+		       	}
 
 
 			bool CModalDialog::GetText(CSysString &s) {
 				wxString str;
 				{
 					LockGUI lock;
-					str = _window->GetTitle();
+	  				str = _window->GetTitle();
 				}
-				s = str;
-				return true;
-			}
+	  			s = str;
+	  			return true;
+		       	}
 
 			INT_PTR CModalDialog::Create(int id , HWND parentWindow)
 			{
@@ -313,7 +313,7 @@ namespace NWindows {
 			}
 
 			void CModalDialog::End(int result)
-			{
+			{ 
 				int ind = findFreeInd();
 
 				g_tabCreate[ind].window  = _window;
@@ -334,11 +334,11 @@ namespace NWindows {
 
 /////////////////////////////////////////// CModalDialogImpl ///////////////////////////////////////
 
-			CModalDialogImpl::CModalDialogImpl(CDialog *dialog, wxWindow* parent, wxWindowID id,
+			CModalDialogImpl::CModalDialogImpl(CDialog *dialog, wxWindow* parent, wxWindowID id, 
 					 const wxString& title, const wxPoint& pos,
 					 const wxSize& size, long style) :
-					wxDialog(parent, id, title , pos , size, style /* | wxDIALOG_NO_PARENT */ ) ,
-					_timer(this, TIMER_ID_IMPL), _dialog(dialog)
+			   		wxDialog(parent, id, title , pos , size, style /* | wxDIALOG_NO_PARENT */ ) ,
+				       	_timer(this, TIMER_ID_IMPL), _dialog(dialog)
 			{
 				// set the frame icon
 				this->SetIcon(wxICON(p7zip_32));
@@ -388,7 +388,7 @@ namespace NWindows {
 
 
 static int myCreateHandle2(int n)
-{
+{ 
 	unsigned int                           id           = g_tabCreate[n].id;
 	wxWindow *                             parentWindow = g_tabCreate[n].parentWindow;
 	NWindows::NControl::CModalDialogImpl * window       = 0;
@@ -431,7 +431,7 @@ static int myCreateHandle2(int n)
 	{
 		wxString defaultDir = g_tabCreate[n].initialFolderOrFile;
 		wxDirDialog dirDialog(g_tabCreate[n].parentWindow,
-				g_tabCreate[n].title, defaultDir);
+			       	g_tabCreate[n].title, defaultDir);
 		dirDialog.SetIcon(wxICON(p7zip_32));
 		int ret = dirDialog.ShowModal();
 		if (ret == wxID_OK) g_tabCreate[n].resultPath = dirDialog.GetPath();
@@ -441,16 +441,16 @@ static int myCreateHandle2(int n)
 	if (id == DIALOG_ID_FILE_DIALOG)
 	{
 		wxString defaultFilename = g_tabCreate[n].initialFolderOrFile;
-
+		
 		wxFileName filename(defaultFilename);
-
+		
 		wxString dir = filename.GetPath();
 		wxString name = filename.GetFullName();
-
-
+		
+		
 		// printf("DIALOG_ID_FILE_DIALOG = '%ls' => '%ls'  '%ls'\n",&defaultFilename[0],&dir[0],&name[0]);
-
-
+		
+		
 		wxFileDialog fileDialog(g_tabCreate[n].parentWindow, g_tabCreate[n].title,
 				dir, name, wxT("All Files (*.*)|*.*"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
 		fileDialog.SetIcon(wxICON(p7zip_32));
@@ -506,7 +506,7 @@ int MessageBoxW(wxWindow * parent, const TCHAR * msg, const TCHAR * title,int fl
 	g_tabCreate[ind].msg          = msg;
 	g_tabCreate[ind].title        = title;
 	g_tabCreate[ind].flag         = flag;
-
+	
 	return WaitInd(parent,ind,DIALOG_ID_MESSAGEBOX,parent); // FIXME
 }
 
@@ -523,7 +523,7 @@ bool BrowseForFolder(HWND owner, LPCWSTR title, LPCWSTR initialFolder, UString &
 
 	g_tabCreate[ind].title               = title;
 	g_tabCreate[ind].initialFolderOrFile = nameWindowToUnix(initialFolder);
-
+	
 	UString resTmp;
 	int ret = WaitInd(0,ind,DIALOG_ID_DIR_DIALOG,owner,resTmp); // FIXME
 	if(ret == wxID_OK)
@@ -546,7 +546,7 @@ namespace NWindows
 
 		g_tabCreate[ind].title               = title;
 		g_tabCreate[ind].initialFolderOrFile = nameWindowToUnix(fullFileName);
-
+	
 		UString resTmp;
 		int ret = WaitInd(0,ind,DIALOG_ID_FILE_DIALOG,hwnd,resTmp); // FIXME
 		if(ret == wxID_OK)
@@ -557,3 +557,4 @@ namespace NWindows
 		return false;
 	}
 }
+

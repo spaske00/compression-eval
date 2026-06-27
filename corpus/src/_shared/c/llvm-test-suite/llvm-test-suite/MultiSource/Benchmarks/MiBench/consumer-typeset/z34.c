@@ -83,7 +83,7 @@ void RotateSize(FULL_LENGTH *xcb, FULL_LENGTH *xcf, FULL_LENGTH *xrb,
   maxx = maxy = (float) - MAX_FULL_LENGTH;
   minx = miny = (float) MAX_FULL_LENGTH;
   for( i = 0;  i < 4;  i++ )
-  {
+  {	
     if( ycorners[i].x == 0 && ycorners[i].y == 0 )
     {	pol.radius = 0; pol.angle  = 0; }
     else rect_to_polar(ycorners[i], pol);

@@ -396,7 +396,7 @@ if ($HTML) {
       for ($i = 0; $i < @$Value-1; $i++) {
         printf "%-$FieldWidths[$i]s ", $$Value[$i];
       }
-
+      
       # Print the assertion message if existant...
       print "$$Value[@$Value-1]\n";
     }

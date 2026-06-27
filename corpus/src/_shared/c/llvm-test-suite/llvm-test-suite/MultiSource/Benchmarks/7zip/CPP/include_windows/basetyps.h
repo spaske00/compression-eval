@@ -11,8 +11,9 @@
 #define STDAPI extern "C" DLLEXPORT HRESULT
 #else
 #define STDAPI extern DLLEXPORT HRESULT
-#endif  /* __cplusplus */
+#endif  /* __cplusplus */ 
 
 typedef GUID IID;
 typedef GUID CLSID;
 #endif
+

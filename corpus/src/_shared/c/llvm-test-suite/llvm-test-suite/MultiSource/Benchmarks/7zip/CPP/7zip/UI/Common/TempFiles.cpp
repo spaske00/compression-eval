@@ -18,3 +18,5 @@ void CTempFiles::Clear()
     Paths.DeleteBack();
   }
 }
+
+

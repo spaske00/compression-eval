@@ -37,7 +37,7 @@ public:
 
   bool Create(UInt32 bufferSize);
   void Free();
-
+  
   void SetStream(ISequentialInStream *stream);
   void Init();
   void ReleaseStream() { _stream.Release(); }

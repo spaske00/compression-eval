@@ -12,7 +12,7 @@
 
 namespace NArchive {
 namespace NTar {
-
+ 
 static void MyStrNCpy(char *dest, const char *src, int size)
 {
   for (int i = 0; i < size; i++)
@@ -97,7 +97,7 @@ static HRESULT GetNextItemReal(ISequentialInStream *stream, bool &filled, CItemE
     error = "There are data after end of archive";
     return S_OK;
   }
-
+  
   ReadString(p, NFileHeader::kNameSize, item.Name); p += NFileHeader::kNameSize;
 
   RIF(OctalToNumber32(p, 8, item.Mode)); p += 8;
@@ -116,7 +116,7 @@ static HRESULT GetNextItemReal(ISequentialInStream *stream, bool &filled, CItemE
   }
   p += 12;
   RIF(OctalToNumber32(p, 12, item.MTime)); p += 12;
-
+  
   UInt32 checkSum;
   RIF(OctalToNumber32(p, 8, checkSum));
   memcpy(p, NFileHeader::kCheckSumBlanks, 8); p += 8;
@@ -142,11 +142,11 @@ static HRESULT GetNextItemReal(ISequentialInStream *stream, bool &filled, CItemE
 
   if (item.LinkFlag == NFileHeader::NLinkFlag::kLink)
     item.Size = 0;
-
+ 
   UInt32 checkSumReal = 0;
   for (int i = 0; i < NFileHeader::kRecordSize; i++)
     checkSumReal += (Byte)buf[i];
-
+  
   if (checkSumReal != checkSum)
     return S_FALSE;
 

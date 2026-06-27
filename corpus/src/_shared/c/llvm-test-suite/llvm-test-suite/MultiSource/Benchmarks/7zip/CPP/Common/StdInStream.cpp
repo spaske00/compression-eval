@@ -96,3 +96,5 @@ int CStdInStream::GetChar()
     throw kReadErrorMessage;
   return c;
 }
+
+

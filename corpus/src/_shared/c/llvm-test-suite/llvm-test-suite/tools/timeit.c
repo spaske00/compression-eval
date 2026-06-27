@@ -366,7 +366,7 @@ static int monitor_child_process(double start_time) {
       exit_status = EXITCODE_CHILD_SIGNALLED;
     }
   }
-
+  
   /* Set exit_status to 1 if process was not signalled, but it returned
    * non-zero exit code. */
   if(!exit_status && exit_code == 1)
@@ -396,7 +396,7 @@ static int monitor_child_process(double start_time) {
 
 #endif
 
-  /* If we are not using a summary file, report the information as
+  /* If we are not using a summary file, report the information as 
    * /usr/bin/time would. */
   if (!g_summary_file) {
     if (g_posix_mode) {
@@ -596,7 +596,7 @@ static int execute_target_process(char *const argv[]) {
     perror("chdir");
     return EXITCODE_EXEC_FAILURE;
   }
-
+  
   PROCESS_INFORMATION proc_info = {0};
 
   /* Create the child process. */
@@ -762,7 +762,7 @@ static int execute(char * const argv[]) {
 
 #ifndef _WIN32
   pid_t pid;
-
+  
   /* Fork the child process. */
   pid = fork();
   if (pid < 0) {

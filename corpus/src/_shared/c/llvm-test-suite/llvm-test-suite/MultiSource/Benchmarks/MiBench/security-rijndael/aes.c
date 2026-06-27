@@ -2,7 +2,7 @@
  /*
    -----------------------------------------------------------------------
    Copyright (c) 2001 Dr Brian Gladman <brg@gladman.uk.net>, Worcester, UK
-
+   
    TERMS
 
    Redistribution and use in source and binary forms, with or without
@@ -19,19 +19,19 @@
    -----------------------------------------------------------------------
 
    1. FUNCTION
-
+ 
    The AES algorithm Rijndael implemented for block and key sizes of 128,
    192 and 256 bits (16, 24 and 32 bytes) by Brian Gladman.
 
    This is an implementation of the AES encryption algorithm (Rijndael)
    designed by Joan Daemen and Vincent Rijmen. This version is designed
-   to provide both fixed and dynamic block and key lengths and can also
-   run with either big or little endian internal byte order (see aes.h).
-   It inputs block and key lengths in bytes with the legal values being
+   to provide both fixed and dynamic block and key lengths and can also 
+   run with either big or little endian internal byte order (see aes.h). 
+   It inputs block and key lengths in bytes with the legal values being 
    16, 24 and 32.
-
+ 
    2. CONFIGURATION OPTIONS (see also aes.h)
-
+ 
    a.  Define UNROLL for full loop unrolling in encryption and decryption.
    b.  Define PARTIAL_UNROLL to unroll two loops in encryption and decryption.
    c.  Define FIXED_TABLES for compiled rather than dynamic tables.
@@ -40,42 +40,42 @@
        is not defined, individually declared 32-bit words are used.
    f.  Define FAST_VARIABLE if a high speed variable block implementation
        is needed (essentially three separate fixed block size code sequences)
-   g.  Define either ONE_TABLE or FOUR_TABLES for a fast table driven
+   g.  Define either ONE_TABLE or FOUR_TABLES for a fast table driven 
        version using 1 table (2 kbytes of table space) or 4 tables (8
        kbytes of table space) for higher speed.
-   h.  Define either ONE_LR_TABLE or FOUR_LR_TABLES for a further speed
+   h.  Define either ONE_LR_TABLE or FOUR_LR_TABLES for a further speed 
        increase by using tables for the last rounds but with more table
        space (2 or 8 kbytes extra).
-   i.  If neither ONE_TABLE nor FOUR_TABLES is defined, a compact but
+   i.  If neither ONE_TABLE nor FOUR_TABLES is defined, a compact but 
        slower version is provided.
    j.  If fast decryption key scheduling is needed define ONE_IM_TABLE
        or FOUR_IM_TABLES for higher speed (2 or 8 kbytes extra).
 
    3. USE OF DEFINES
-
+  
    NOTE: some combinations of the following defines are disabled below.
 
    UNROLL or PARTIAL_UNROLL control the extent to which loops are unrolled
    in the main encryption and decryption routines. UNROLL does a complete
    unroll while PARTIAL_UNROLL uses a loop with two rounds in it.
-
+ 
 #define UNROLL
 #define PARTIAL_UNROLL
-
-   If FIXED_TABLES is defined, the tables are comipled statically into the
+ 
+   If FIXED_TABLES is defined, the tables are comipled statically into the 
    code, otherwise they are computed once when the code is first used.
-
+ 
 #define FIXED_TABLES
-
-   If FF_TABLES is defined faster finite field arithmetic is performed by
+ 
+   If FF_TABLES is defined faster finite field arithmetic is performed by 
    using tables.
-
+ 
 #define FF_TABLES
 
    If ARRAYS is defined the state variables for encryption are defined as
    arrays, otherwise they are defined as individual variables. The latter
-   is useful on machines where these variables can be mapped to registers.
-
+   is useful on machines where these variables can be mapped to registers. 
+ 
 #define ARRAYS
 
    If FAST_VARIABLE is defined with variable block length, faster but larger
@@ -94,24 +94,24 @@
    This code uses three sets of tables, each of which can be a single table
    or four sub-tables to gain a further speed advantage.
 
-   The defines ONE_TABLE and FOUR_TABLES control the use of tables in the
+   The defines ONE_TABLE and FOUR_TABLES control the use of tables in the 
    main encryption rounds and have the greatest impact on speed.  If neither
    is defined, tables are not used and the resulting code is then very slow.
-   Defining ONE_TABLE gives a substantial speed increase using 2 kbytes of
+   Defining ONE_TABLE gives a substantial speed increase using 2 kbytes of 
    table space; FOUR_TABLES gives a further speed increase but uses 8 kbytes
    of table space.
-
+   
 #define ONE_TABLE
 #define FOUR_TABLES
 
    The defines ONE_LR_TABLE and FOUR_LR_TABLES apply to the last round only
    and their impact on speed is hence less. It is unlikely to be sensible to
-   apply these options unless the correspnding option above is also used.
+   apply these options unless the correspnding option above is also used.    
 
 #define ONE_LR_TABLE
 #define FOUR_LR_TABLES
 
-   The ONE_IM_TABLE and FOUR_IM_TABLES options use tables to speed up the
+   The ONE_IM_TABLE and FOUR_IM_TABLES options use tables to speed up the 
    generation of the decryption key schedule. This will only be useful in
    limited situations where decryption speed with frequent re-keying is
    needed.
@@ -129,7 +129,7 @@
  /*
    In this implementation the columns of the state array are each held in
    32-bit words. The state array can be held in various ways: in an array
-   of words, in a number of individual word variables or in a number of
+   of words, in a number of individual word variables or in a number of 
    processor registers. The following define maps a variable name x and
    a column number c to the way the state array variable is to be held.
  */
@@ -142,7 +142,7 @@
 
 #if defined(BLOCK_SIZE) && (BLOCK_SIZE == 20 || BLOCK_SIZE == 28)
 #error an illegal block size has been specified
-#endif
+#endif  
 
 #if defined(UNROLL) && defined (PARTIAL_UNROLL)
 #error both UNROLL and PARTIAL_UNROLL are defined
@@ -198,14 +198,14 @@
 #define m3  0x0000001b
 #define FFmulX(x)  ((((x) & m2) << 1) ^ ((((x) & m1) >> 7) * m3))
 
- /*
+ /* 
    The following defines provide alternative definitions of FFmulX that might
    give improved performance if a fast 32-bit multiply is not available. Note
    that a temporary variable u needs to be defined where FFmulX is used.
 
-#define FFmulX(x) (u = (x) & m1, u |= (u >> 1), ((x) & m2) << 1) ^ ((u >> 3) | (u >> 6))
+#define FFmulX(x) (u = (x) & m1, u |= (u >> 1), ((x) & m2) << 1) ^ ((u >> 3) | (u >> 6)) 
 #define m4  0x1b1b1b1b
-#define FFmulX(x) (u = (x) & m1, ((x) & m2) << 1) ^ ((u - (u >> 7)) & m4)
+#define FFmulX(x) (u = (x) & m1, ((x) & m2) << 1) ^ ((u - (u >> 7)) & m4) 
 
  */
 
@@ -250,8 +250,8 @@ static word  im_tab[4][256];
 /*
    Generate the tables for the dynamic table option
 
-   It will generally be sensible to use tables to compute finite
-   field multiplies and inverses but where memory is scarse this
+   It will generally be sensible to use tables to compute finite 
+   field multiplies and inverses but where memory is scarse this 
    code might sometimes be better.
 
    return 2 ^ (n - 1) where n is the bit number of the highest bit
@@ -261,7 +261,7 @@ static word  im_tab[4][256];
 
 static byte hibit(const word x)
 {   byte r = (byte)((x >> 1) | (x >> 2));
-
+    
     r |= (r >> 2);
     r |= (r >> 4);
     return (r + 1) >> 1;
@@ -279,14 +279,14 @@ static byte FFinv(const byte x)
         if(!n1) return v1;
 
         while(n2 >= n1)
-        {
+        {   
             n2 /= n1; p2 ^= p1 * n2; v2 ^= v1 * n2; n2 = hibit(p2);
         }
-
+        
         if(!n2) return v2;
 
         while(n1 >= n2)
-        {
+        {   
             n1 /= n2; p1 ^= p2 * n1; v1 ^= v2 * n1; n1 = hibit(p1);
         }
     }
@@ -333,9 +333,9 @@ static void gen_tabs(void)
        root is 0x03, used here to generate the tables
     */
 
-    i = 0; w = 1;
+    i = 0; w = 1; 
     do
-    {
+    {   
         pow[i] = (byte)w;
         pow[i + 255] = (byte)w;
         log[w] = (byte)i++;
@@ -434,7 +434,7 @@ static void gen_tabs(void)
 #define inv_mcol(x)     (f9 = (x),f2 = FFmulX(f9), f4 = FFmulX(f2), f8 = FFmulX(f4), f9 ^= f8,     f2 ^= f4 ^ f8 ^ upr(f2 ^ f9,3) ^ upr(f4 ^ f9,2) ^ upr(f9,1))
 #endif
 
- /*
+ /* 
    Subroutine to set the block size (if variable) in bytes, legal
    values being 16, 24 and 32.
  */
@@ -450,8 +450,8 @@ cf_dec c_name(set_blk)(const word n_bytes, c_name(aes) *cx)
     if(!(cx->mode & 0x08)) { gen_tabs(); cx->mode = 0x08; }
 #endif
 
-    if((n_bytes & 7) || n_bytes < 16 || n_bytes > 32)
-    {
+    if((n_bytes & 7) || n_bytes < 16 || n_bytes > 32) 
+    {     
         return (n_bytes ? cx->mode &= ~0x07, aes_bad : (aes_ret)(nc << 2));
     }
 
@@ -500,12 +500,12 @@ cf_dec c_name(set_key)(const byte in_key[], const word n_bytes, const enum aes_k
     if(!(cx->mode & 0x04)) c_name(set_blk)(16, cx);
 #endif
 
-    if((n_bytes & 7) || n_bytes < 16 || n_bytes > 32 || !(f & 1) && !(f & 2))
-    {
+    if((n_bytes & 7) || n_bytes < 16 || n_bytes > 32 || !(f & 1) && !(f & 2)) 
+    {     
         return (n_bytes ? cx->mode &= ~0x03, aes_bad : (aes_ret)(cx->Nkey << 2));
     }
 
-    cx->mode = cx->mode & ~0x03 | (byte)f & 0x03;
+    cx->mode = cx->mode & ~0x03 | (byte)f & 0x03;      
     cx->Nkey = n_bytes >> 2;
     cx->Nrnd = Nr(cx->Nkey, nc);
 
@@ -514,8 +514,8 @@ cf_dec c_name(set_key)(const byte in_key[], const word n_bytes, const enum aes_k
     cx->e_key[2] = word_in(in_key +  8);
     cx->e_key[3] = word_in(in_key + 12);
 
-    kf = cx->e_key;
-    kt = kf + nc * (cx->Nrnd + 1) - cx->Nkey;
+    kf = cx->e_key; 
+    kt = kf + nc * (cx->Nrnd + 1) - cx->Nkey; 
     rci = 0;
 
     switch(cx->Nkey)
@@ -565,14 +565,14 @@ cf_dec c_name(set_key)(const byte in_key[], const word n_bytes, const enum aes_k
 
     if((cx->mode & 3) != enc)
     {   word    i;
-
+        
         kt = cx->d_key + nc * cx->Nrnd;
         kf = cx->e_key;
-
+        
         cpy(kt, kf); kt -= 2 * nc;
 
         for(i = 1; i < cx->Nrnd; ++i)
-        {
+        { 
 #if defined(ONE_TABLE) || defined(FOUR_TABLES)
 #if !defined(ONE_IM_TABLE) && !defined(FOUR_IM_TABLES)
             word    f2, f4, f8, f9;
@@ -583,7 +583,7 @@ cf_dec c_name(set_key)(const byte in_key[], const word n_bytes, const enum aes_k
 #endif
             kt -= 2 * nc;
         }
-
+        
         cpy(kt, kf);
     }
 
@@ -593,14 +593,14 @@ cf_dec c_name(set_key)(const byte in_key[], const word n_bytes, const enum aes_k
  /*
    I am grateful to Frank Yellin for the following constructions
    which, given the column (c) of the output state variable, give
-   the input state variables which are needed for each row (r) of
+   the input state variables which are needed for each row (r) of 
    the state.
 
-   For the fixed block size options, compilers should reduce these
-   two expressions to fixed variable references. But for variable
+   For the fixed block size options, compilers should reduce these 
+   two expressions to fixed variable references. But for variable 
    block size code conditional clauses will sometimes be returned.
 
-   y = output word, x = input word, r = row, c = column for r = 0,
+   y = output word, x = input word, r = row, c = column for r = 0, 
    1, 2 and 3 = column accessed for row r.
  */
 
@@ -641,7 +641,7 @@ cf_dec c_name(set_key)(const byte in_key[], const word n_bytes, const enum aes_k
 #define locals(y,x)     x[4],y[4]
 #else
 #define locals(y,x)     x##0,x##1,x##2,x##3,y##0,y##1,y##2,y##3
- /*
+ /* 
    the following defines prevent the compiler requiring the declaration
    of generated but unused variables in the fwd_var and inv_var macros
  */
@@ -722,17 +722,17 @@ cf_dec c_name(encrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
 
     switch(cx->Nrnd)
     {
-    case 14:    round(fwd_rnd,  b1, b0, kp         );
+    case 14:    round(fwd_rnd,  b1, b0, kp         ); 
                 round(fwd_rnd,  b0, b1, kp + nc    ); kp += 2 * nc;
-    case 12:    round(fwd_rnd,  b1, b0, kp         );
+    case 12:    round(fwd_rnd,  b1, b0, kp         ); 
                 round(fwd_rnd,  b0, b1, kp + nc    ); kp += 2 * nc;
-    case 10:    round(fwd_rnd,  b1, b0, kp         );
+    case 10:    round(fwd_rnd,  b1, b0, kp         );             
                 round(fwd_rnd,  b0, b1, kp +     nc);
-                round(fwd_rnd,  b1, b0, kp + 2 * nc);
+                round(fwd_rnd,  b1, b0, kp + 2 * nc); 
                 round(fwd_rnd,  b0, b1, kp + 3 * nc);
-                round(fwd_rnd,  b1, b0, kp + 4 * nc);
+                round(fwd_rnd,  b1, b0, kp + 4 * nc); 
                 round(fwd_rnd,  b0, b1, kp + 5 * nc);
-                round(fwd_rnd,  b1, b0, kp + 6 * nc);
+                round(fwd_rnd,  b1, b0, kp + 6 * nc); 
                 round(fwd_rnd,  b0, b1, kp + 7 * nc);
                 round(fwd_rnd,  b1, b0, kp + 8 * nc);
                 round(fwd_lrnd, b0, b1, kp + 9 * nc);
@@ -742,7 +742,7 @@ cf_dec c_name(encrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
 
         for(rnd = 0; rnd < (cx->Nrnd >> 1) - 1; ++rnd)
         {
-            round(fwd_rnd, b1, b0, kp);
+            round(fwd_rnd, b1, b0, kp); 
             round(fwd_rnd, b0, b1, kp + nc); kp += 2 * nc;
         }
 
@@ -754,7 +754,7 @@ cf_dec c_name(encrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
 
         for(rnd = 0; rnd < cx->Nrnd - 1; ++rnd)
         {
-            round(fwd_rnd, b1, b0, kp);
+            round(fwd_rnd, b1, b0, kp); 
             l_copy(b0, b1); kp += nc;
         }
 
@@ -771,7 +771,7 @@ cf_dec c_name(decrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
     const word  *kp = cx->d_key;
 
 #if !defined(ONE_TABLE) && !defined(FOUR_TABLES)
-    word        f2, f4, f8, f9;
+    word        f2, f4, f8, f9; 
 #endif
 
     if(!(cx->mode & 0x02)) return aes_bad;
@@ -786,13 +786,13 @@ cf_dec c_name(decrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
                 round(inv_rnd,  b0, b1, kp + nc    ); kp += 2 * nc;
     case 12:    round(inv_rnd,  b1, b0, kp         );
                 round(inv_rnd,  b0, b1, kp + nc    ); kp += 2 * nc;
-    case 10:    round(inv_rnd,  b1, b0, kp         );
+    case 10:    round(inv_rnd,  b1, b0, kp         );             
                 round(inv_rnd,  b0, b1, kp +     nc);
-                round(inv_rnd,  b1, b0, kp + 2 * nc);
+                round(inv_rnd,  b1, b0, kp + 2 * nc); 
                 round(inv_rnd,  b0, b1, kp + 3 * nc);
-                round(inv_rnd,  b1, b0, kp + 4 * nc);
+                round(inv_rnd,  b1, b0, kp + 4 * nc); 
                 round(inv_rnd,  b0, b1, kp + 5 * nc);
-                round(inv_rnd,  b1, b0, kp + 6 * nc);
+                round(inv_rnd,  b1, b0, kp + 6 * nc); 
                 round(inv_rnd,  b0, b1, kp + 7 * nc);
                 round(inv_rnd,  b1, b0, kp + 8 * nc);
                 round(inv_lrnd, b0, b1, kp + 9 * nc);
@@ -802,7 +802,7 @@ cf_dec c_name(decrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
 
         for(rnd = 0; rnd < (cx->Nrnd >> 1) - 1; ++rnd)
         {
-            round(inv_rnd, b1, b0, kp);
+            round(inv_rnd, b1, b0, kp); 
             round(inv_rnd, b0, b1, kp + nc); kp += 2 * nc;
         }
 
@@ -814,7 +814,7 @@ cf_dec c_name(decrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *c
 
         for(rnd = 0; rnd < cx->Nrnd - 1; ++rnd)
         {
-            round(inv_rnd, b1, b0, kp);
+            round(inv_rnd, b1, b0, kp); 
             l_copy(b0, b1); kp += nc;
         }
 

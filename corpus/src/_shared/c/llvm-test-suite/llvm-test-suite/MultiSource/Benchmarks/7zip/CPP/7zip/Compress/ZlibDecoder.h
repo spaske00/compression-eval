@@ -31,7 +31,7 @@ class CDecoder:
 {
   COutStreamWithAdler *AdlerSpec;
   CMyComPtr<ISequentialOutStream> AdlerStream;
-
+  
   NCompress::NDeflate::NDecoder::CCOMCoder *DeflateDecoderSpec;
   CMyComPtr<ICompressCoder> DeflateDecoder;
 public:

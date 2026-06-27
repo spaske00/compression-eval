@@ -17,7 +17,7 @@
 
 namespace NArchive {
 namespace NZip {
-
+ 
 HRESULT CInArchive::Open(IInStream *stream, const UInt64 *searchHeaderSizeLimit)
 {
   _inBufMode = false;
@@ -360,10 +360,10 @@ HRESULT CInArchive::ReadLocalItemDescriptor(CItemEx &item)
   {
     const int kBufferSize = (1 << 12);
     Byte buffer[kBufferSize];
-
+    
     UInt32 numBytesInBuffer = 0;
     UInt32 packedSize = 0;
-
+    
     bool descriptorWasFound = false;
     for (;;)
     {
@@ -378,7 +378,7 @@ HRESULT CInArchive::ReadLocalItemDescriptor(CItemEx &item)
         // descriptorSignature field is Info-ZIP's extension
         // to Zip specification.
         UInt32 descriptorSignature = Get32(buffer + i);
-
+        
         // !!!! It must be fixed for Zip64 archives
         UInt32 descriptorPackSize = Get32(buffer + i + 8);
         if (descriptorSignature== NSignature::kDataDescriptor && descriptorPackSize == packedSize + i)
@@ -440,7 +440,7 @@ HRESULT CInArchive::ReadLocalItemAfterCdItemFull(CItemEx &item)
   catch(...) { return S_FALSE; }
   return S_OK;
 }
-
+  
 HRESULT CInArchive::ReadCdItem(CItemEx &item)
 {
   item.FromCentral = true;
@@ -465,7 +465,7 @@ HRESULT CInArchive::ReadCdItem(CItemEx &item)
   item.ExternalAttributes = Get32(p + 34);
   item.LocalHeaderPosition = Get32(p + 38);
   ReadFileName(headerNameSize, item.Name);
-
+  
   if (headerExtraSize > 0)
   {
     ReadExtra(headerExtraSize, item.CentralExtra, item.UnPackSize, item.PackSize,
@@ -474,13 +474,13 @@ HRESULT CInArchive::ReadCdItem(CItemEx &item)
 
   if (headerDiskNumberStart != 0)
     throw CInArchiveException(CInArchiveException::kMultiVolumeArchiveAreNotSupported);
-
+  
   // May be these strings must be deleted
   /*
   if (item.IsDir())
     item.UnPackSize = 0;
   */
-
+  
   ReadBuffer(item.Comment, headerCommentSize);
   return S_OK;
 }
@@ -858,7 +858,7 @@ HRESULT CInArchive::ReadHeaders(CObjectVector<CItemEx> &items, CProgressVirt *pr
       ((UInt32)(ecd64.cdStartOffset) != (UInt32)cdStartOffset &&
         (!items.IsEmpty())))
     return S_FALSE;
-
+  
   _inBufMode = false;
   _inBuffer.Free();
   IsOkHeaders = (numCdItems == items.Size());

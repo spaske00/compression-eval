@@ -1,7 +1,7 @@
 #ifdef TORONTO
 /* Toronto's hack */
 #define ALLOC(p, sz)      malloc(sz)
-#define chatting          printf
+#define chatting          printf  
 extern int NumNodes, NDim;
 #endif
 
@@ -10,7 +10,7 @@ extern int flag;
 int atoi(const char *);
 int dealwithargs(int argc, char *argv[]);
 
-
+  
 /* For copyright information, see olden_v1.0/COPYRIGHT */
 
 typedef struct tree {
@@ -34,9 +34,25 @@ typedef struct tree {
 								     will be not necessary if we have non-excepting pfs */
 #endif
 
-/* Builds a 2D tree of n nodes in specified range with dir as primary
+/* Builds a 2D tree of n nodes in specified range with dir as primary 
    axis (0 for x, 1 for y) */
 Tree build_tree(int n,int dir,int lo,int num_proc,double min_x,
                 double max_x,double min_y,double max_y);
 /* Compute TSP for the tree t -- use conquer for problems <= sz */
 Tree tsp(Tree t, int sz, int nproc);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

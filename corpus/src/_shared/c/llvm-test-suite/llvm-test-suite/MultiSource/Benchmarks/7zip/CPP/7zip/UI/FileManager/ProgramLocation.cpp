@@ -17,3 +17,4 @@ bool GetProgramFolderPath(UString &folder)
 
   return true;
 }
+

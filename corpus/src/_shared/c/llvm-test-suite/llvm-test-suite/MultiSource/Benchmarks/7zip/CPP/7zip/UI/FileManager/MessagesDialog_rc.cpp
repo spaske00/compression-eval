@@ -1,10 +1,10 @@
 // MessagesDialog_rc.cpp
-
+ 
 #include "StdAfx.h"
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -29,7 +29,7 @@ MY_FONT
 BEGIN
   DEFPUSHBUTTON "&Close", IDOK, bXPos, bYPos, bXSize, bYSize
   CONTROL "List1",IDC_MESSAGE_LIST,"SysListView32",
-          LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,
+          LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP, 
           marg, marg, xSize2, ySize2 - bYSize - 6
 END
 
@@ -86,3 +86,4 @@ BEGIN_EVENT_TABLE(CMessagesDialogImpl, wxDialog)
 	EVT_BUTTON(wxID_ANY, CModalDialogImpl::OnAnyButton)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

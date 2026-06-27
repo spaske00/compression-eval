@@ -39,7 +39,7 @@ struct CInArchiveInfo
   UInt32 Flags;
   Byte EncryptVersion;
   UInt64 StartPosition;
-
+  
   bool IsSolid() const { return (Flags & NHeader::NArchive::kSolid) != 0; }
   bool IsCommented() const {  return (Flags & NHeader::NArchive::kComment) != 0; }
   bool IsVolume() const {  return (Flags & NHeader::NArchive::kVolume) != 0; }
@@ -52,35 +52,35 @@ struct CInArchiveInfo
 class CInArchive
 {
   CMyComPtr<IInStream> m_Stream;
-
+  
   UInt64 m_StreamStartPosition;
-
+  
   CInArchiveInfo _header;
   CDynamicBuffer<char> m_NameBuffer;
   CDynamicBuffer<wchar_t> _unicodeNameBuffer;
 
   CByteBuffer _comment;
-
+  
   void ReadName(CItemEx &item, int nameSize);
   void ReadHeaderReal(CItemEx &item);
-
+  
   HRESULT ReadBytesSpec(void *data, size_t *size);
   bool ReadBytesAndTestSize(void *data, UInt32 size);
-
+  
   HRESULT Open2(IInStream *stream, const UInt64 *searchHeaderSizeLimit);
 
   void ThrowExceptionWithCode(CInArchiveException::CCauseType cause);
   void ThrowUnexpectedEndOfArchiveException();
-
+  
   void AddToSeekValue(UInt64 addValue);
-
+  
   CDynamicBuffer<Byte> m_FileHeaderData;
-
+  
   NHeader::NBlock::CBlock m_BlockHeader;
 
   NCrypto::NRar29::CDecoder *m_RarAESSpec;
   CMyComPtr<ICompressFilter> m_RarAES;
-
+  
   Byte *m_CurData; // it must point to start of Rar::Block
   UInt32 m_CurPos;
   UInt32 m_PosLimit;
@@ -111,13 +111,13 @@ public:
   HRESULT Open(IInStream *inStream, const UInt64 *searchHeaderSizeLimit);
   void Close();
   HRESULT GetNextItem(CItemEx &item, ICryptoGetTextPassword *getTextPassword, bool &decryptionError, AString &errorMessage);
-
+  
   void GetArchiveInfo(CInArchiveInfo &archiveInfo) const;
-
+  
   void SeekInArchive(UInt64 position);
   ISequentialInStream *CreateLimitedStream(UInt64 position, UInt64 size);
 };
-
+  
 }}
-
+  
 #endif

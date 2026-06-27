@@ -163,7 +163,7 @@ static void WriteClosure(OBJECT x, int *linecount, FILE_NUM fnum, OBJECT env)
       if( type(y) == PAR )  switch( type(actual(y)) )
       {
         case LPAR:
-
+      
 	  assert( Down(y) != y, "WriteObject/CLOSURE: LPAR!" );
 	  Child(z, Down(y));
 	  WriteObject(z, (int) precedence(sym), linecount, fnum);
@@ -172,7 +172,7 @@ static void WriteClosure(OBJECT x, int *linecount, FILE_NUM fnum, OBJECT env)
 
 
         case NPAR:
-
+      
 	  assert( Down(y) != y, "WriteObject/CLOSURE: NPAR!" );
 	  Child(z, Down(y));
 	  if( !name_printed )
@@ -204,7 +204,7 @@ static void WriteClosure(OBJECT x, int *linecount, FILE_NUM fnum, OBJECT env)
 
 
         case RPAR:
-
+      
 	  assert( Down(y) != y, "WriteObject/CLOSURE: RPAR!" );
 	  Child(z, Down(y));
 	  if( !name_printed )
@@ -243,7 +243,7 @@ static void WriteClosure(OBJECT x, int *linecount, FILE_NUM fnum, OBJECT env)
 
 
         default:
-
+      
 	  assert1(FALSE, "WriteClosure:", Image(type(actual(y))));
 	  break;
 
@@ -289,13 +289,13 @@ static void WriteObject(OBJECT x, int outer_prec, int *linecount, FILE_NUM fnum)
       else StringFPuts(string(x), last_write_fp);
       break;
 
-
+    
     case QWORD:
 
       StringFPuts(StringQuotedWord(x), last_write_fp);
       break;
 
-
+    
     case VCAT:  prec = VCAT_PREC;  goto ETC;
     case HCAT:  prec = HCAT_PREC;  goto ETC;
     case ACAT:  prec = ACAT_PREC;  goto ETC;
@@ -439,17 +439,17 @@ static void WriteObject(OBJECT x, int outer_prec, int *linecount, FILE_NUM fnum)
       {	StringFPuts(KW_CENV, last_write_fp);
 	StringFPuts(STR_SPACE, last_write_fp);
 	StringFPuts(KW_LBR, last_write_fp);
-	StringFPuts(STR_NEWLINE, last_write_fp);
+      	StringFPuts(STR_NEWLINE, last_write_fp);
 	*linecount += 1;
 	WriteObject(env, NO_PREC, linecount, fnum);
         StringFPuts(KW_RBR, last_write_fp);
-	StringFPuts(STR_NEWLINE, last_write_fp);
+      	StringFPuts(STR_NEWLINE, last_write_fp);
 	*linecount += 1;
       }
 
       /* print left brace if needed */
       if( braces_needed )  StringFPuts(KW_LBR, last_write_fp);
-
+	
       /* print the closure proper */
       WriteClosure(x, linecount, fnum, env);
 

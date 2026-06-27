@@ -33,7 +33,7 @@ bool CSplitDialog::OnInit()
   #endif
   _pathCombo.Attach(GetItem(IDC_COMBO_SPLIT_PATH));
   _volumeCombo.Attach(GetItem(IDC_COMBO_SPLIT_VOLUME));
-
+  
   if (!FilePath.IsEmpty())
   {
     UString title;

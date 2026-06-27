@@ -25,7 +25,7 @@ struct CArchivePath
   UString TempPostfix;
 
   CArchivePath(): Temp(false) {};
-
+  
   void ParseFromPath(const UString &path)
   {
     OriginalPath = path;
@@ -62,7 +62,7 @@ struct CArchivePath
     return path;
   }
 
-
+  
   UString GetTempPath() const
   {
     UString path = TempPrefix + Name;
@@ -95,16 +95,16 @@ struct CUpdateOptions
   CObjectVector<CUpdateArchiveCommand> Commands;
   bool UpdateArchiveItself;
   CArchivePath ArchivePath;
-
+  
   bool SfxMode;
   UString SfxModule;
-
+  
   bool OpenShareForWrite;
 
   bool StdInMode;
   UString StdInFileName;
   bool StdOutMode;
-
+  
   bool EMailMode;
   bool EMailRemoveAfter;
   UString EMailAddress;

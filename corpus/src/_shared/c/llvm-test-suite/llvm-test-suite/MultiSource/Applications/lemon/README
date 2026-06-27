@@ -10,3 +10,4 @@ covered by lighttpd_COPYING
 wireshark_grammar.lemon, wireshark_dtd_grammar.lemon, wireshark_mate_grammar.lemon is from wireshark-0.99.8, covered by wireshark_COPYING
 
 xapian_queryparser.lemony is from xapian-core-1.0.5, covered by xapian_COPYING
+

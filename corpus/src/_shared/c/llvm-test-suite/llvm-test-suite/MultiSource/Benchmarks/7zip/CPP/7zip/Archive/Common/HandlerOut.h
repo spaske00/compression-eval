@@ -20,7 +20,7 @@ class COutHandler
 {
 public:
   HRESULT SetProperty(const wchar_t *name, const PROPVARIANT &value);
-
+  
   HRESULT SetSolidSettings(const UString &s);
   HRESULT SetSolidSettings(const PROPVARIANT &value);
 
@@ -32,7 +32,7 @@ public:
 
   CObjectVector<COneMethodInfo> _methods;
   bool _removeSfxBlock;
-
+  
   UInt64 _numSolidFiles;
   UInt64 _numSolidBytes;
   bool _numSolidBytesDefined;

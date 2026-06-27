@@ -187,22 +187,22 @@ static void display(const char *txt,SYSTEMTIME systime)
 	BOOL ret = SystemTimeToFileTime(&systime,&fileTime);
 	assert(ret == TRUE);
 	LARGE_INTEGER ulFileTime = FileTimeToUL(fileTime);
-
+	
 	const char * day="";
 	switch (systime.wDayOfWeek)
 	{
-		case 0:day = "Sunday";break;
-		case 1:day = "Monday";break;
-		case 2:day = "Tuesday";break;
-		case 3:day = "Wednesday";break;
-		case 4:day = "Thursday";break;
-		case 5:day = "Friday";break;
-		case 6:day = "Saturday";break;
+        	case 0:day = "Sunday";break;
+        	case 1:day = "Monday";break;
+        	case 2:day = "Tuesday";break;
+        	case 3:day = "Wednesday";break;
+        	case 4:day = "Thursday";break;
+        	case 5:day = "Friday";break;
+        	case 6:day = "Saturday";break;
 	}
-	g_StdOut<< txt << day << " "
+	g_StdOut<< txt << day << " " 
 		<< (int)systime.wYear << "/" <<  (int)systime.wMonth << "/" << (int)systime.wDay << " "
-		<< (int)systime.wHour << ":" << (int)systime.wMinute << ":" <<  (int)systime.wSecond << ":"
-		<<     (int)systime.wMilliseconds
+		<< (int)systime.wHour << ":" << (int)systime.wMinute << ":" <<  (int)systime.wSecond << ":" 
+        	<<     (int)systime.wMilliseconds
 		<< " (" << (UInt64)ulFileTime.QuadPart << ")\n";
 }
 
@@ -214,7 +214,7 @@ static void test_time()
 	printf("===========\n");
 	SYSTEMTIME systimeGM;
 	GetSystemTime(&systimeGM);
-
+	
 	LARGE_INTEGER ul = UnixTimeToUL(tps_unx);
 	g_StdOut<<"  unix time = " << (UInt64)tps_unx << " (" << (UInt64)ul.QuadPart << ")\n";
 
@@ -321,11 +321,11 @@ int test_thread(void) {
 	Thread_Construct(&thread);
 
 	threads_count = 0;
-
+	
 	printf("test_thread : %d threads\n",MAX_THREADS);
 
 	for(int i=0;i<MAX_THREADS;i++) {
-		Thread_Create(&thread, thread_fct, 0);
+		Thread_Create(&thread, thread_fct, 0); 
 
 		Thread_Wait(&thread);
 
@@ -345,7 +345,7 @@ void dumpStr(const char *title,const char *txt)
   printf("%s - %d :",title,(int)len);
 
   for(i  = 0 ; i<len;i++) {
-    printf(" 0x%02x",(unsigned)(txt[i] & 255));
+    printf(" 0x%02x",(unsigned)(txt[i] & 255)); 
   }
 
   printf("\n");
@@ -359,7 +359,7 @@ void dumpWStr(const char *title,const wchar_t *txt)
   printf("%s - %d :",title,(int)len);
 
   for(i  = 0 ; i<len;i++) {
-    printf(" 0x%02x",(unsigned)(txt[i]));
+    printf(" 0x%02x",(unsigned)(txt[i])); 
   }
 
   printf("\n");
@@ -384,14 +384,14 @@ void  testMaxOSX_stringConvert()
    tab [] =
    {
       {
-      //   'a' , 'e with acute'       , 'e with grave'     ,  'a with grave'    ,  'u with grave'    ,  'b' , '.'  ,  't' , 'x'  , 't'
+      //   'a' , 'e with acute'       , 'e with grave'     ,  'a with grave'    ,  'u with grave'    ,  'b' , '.'  ,  't' , 'x'  , 't'  
          { 0x61,  0x65,  0xcc,  0x81  ,  0x65,  0xcc,  0x80,  0x61,  0xcc,  0x80,  0x75,  0xcc,  0x80,  0x62,  0x2e,  0x74,  0x78, 0x74,  0 },
          { 0x61,  0xe9,                  0xe8,                0xe0,                0xf9,                0x62,  0x2e,  0x74,  0x78, 0x74, 0 }
       },
       {
-      //   'a' , 'euro sign'        ,  'b' , '.'  ,  't' , 'x'  , 't'  , '\n'
+      //   'a' , 'euro sign'        ,  'b' , '.'  ,  't' , 'x'  , 't'  , '\n' 
          { 0x61,  0xe2,  0x82,  0xac,  0x62,  0x2e,  0x74,  0x78,  0x74,  0x0a, 0 },
-         { 0x61,  0x20AC,              0x62,  0x2e,  0x74,  0x78,  0x74,  0x0a, 0 }
+         { 0x61,  0x20AC,              0x62,  0x2e,  0x74,  0x78,  0x74,  0x0a, 0 }  
       },
       {
          { 0 },
@@ -479,10 +479,10 @@ void  testMacOSX()
     CFMutableStringRef cfpath2 = CFStringCreateMutableCopy(NULL,0,cfpath);
     CFRelease(cfpath);
     CFStringNormalize(cfpath2,kCFStringNormalizationFormD);
-
+    
     CFStringGetCString(cfpath2,(char *)utf8,4096,kCFStringEncodingUTF8);
 
-    CFRelease(cfpath2);
+    CFRelease(cfpath2);  
   }
 
   dumpStr("UTF8 MacOSX",utf8);
@@ -501,14 +501,14 @@ void  testMacOSX()
        CFMutableStringRef cfpath2 = CFStringCreateMutableCopy(NULL,0,cfpath);
        CFRelease(cfpath);
        CFStringNormalize(cfpath2,kCFStringNormalizationFormC);
-
+    
        n = CFStringGetLength(cfpath2);
        for(long i =   0 ; i<= n ;i++) {
          wpath2[i] = CFStringGetCharacterAtIndex(cfpath2,i);
        }
        wpath2[n] = 0;
 
-       CFRelease(cfpath2);
+       CFRelease(cfpath2);  
     }
     else
     {
@@ -529,9 +529,9 @@ void  testMacOSX()
     CFMutableStringRef cfpath2 = CFStringCreateMutableCopy(NULL,0,cfpaht);
     CFRealease(cfpath);
 
+    
 
-
-
+    
   }
 */
 
@@ -566,7 +566,7 @@ void test_csystring(void)
 
 		UINT   number = 12345;
 		UInt32 count  = 6789;
-
+		
 /*
 		TCHAR * buf = resultPath.GetBuffer(MAX_PATH);
 		::swprintf(buf,MAX_PATH,L"%ls%ls#%d@%d.tmp",dirPath,prefix,(unsigned)number,count);
@@ -585,7 +585,7 @@ void test_csystring(void)
 
 		assert(MyStringCompare(&resultPath[0],TEXT("/tmp/foo#12345@6789.tmp")) == 0);
 	}
-
+	
 }
 
 static void  test_AString()
@@ -735,10 +735,11 @@ int main() {
 	primLang = (WORD)(PRIMARYLANGID(langID));
 	subLang = (WORD)(SUBLANGID(langID));
 
-	printf("primLang=%d subLang=%d\n",(unsigned)primLang,(unsigned)subLang);
+	printf("primLang=%d subLang=%d\n",(unsigned)primLang,(unsigned)subLang);  
 }
 
   printf("\n### All Done ###\n\n");
 
   return 0;
 }
+

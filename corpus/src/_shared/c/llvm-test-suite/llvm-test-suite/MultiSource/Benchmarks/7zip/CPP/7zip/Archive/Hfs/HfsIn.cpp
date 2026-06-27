@@ -149,7 +149,7 @@ struct CHeaderRec
   // Byte KeyCompareType;
   // UInt32 Attributes;
   // UInt32 Reserved3[16];
-
+  
   HRESULT Parse(const Byte *p);
 };
 
@@ -273,7 +273,7 @@ HRESULT CDatabase::LoadCatalog(IInStream *inStream, CProgressVirt *progress)
   // nodeDesc.Parse(p);
   CHeaderRec hr;
   hr.Parse(p + 14);
-
+  
   // CaseSensetive = (Header.IsHfsX() && hr.KeyCompareType == 0xBC);
 
   if ((catalogBuf.GetCapacity() >> hr.NodeSizeLog) < hr.TotalNodes)
@@ -317,15 +317,15 @@ HRESULT CDatabase::LoadCatalog(IInStream *inStream, CProgressVirt *progress)
       r += 6;
       recSize -= 6;
       keyLength -= 6;
-
+      
       int nameLength = Get16(r);
       if (nameLength * 2 != (int)keyLength)
         return S_FALSE;
       r += 2;
       recSize -= 2;
-
+     
       wchar_t *pp = name.GetBuffer(nameLength + 1);
-
+      
       int j;
       for (j = 0; j < nameLength; j++)
         pp[j] = ((wchar_t)r[j * 2] << 8) | r[j * 2 + 1];
@@ -351,7 +351,7 @@ HRESULT CDatabase::LoadCatalog(IInStream *inStream, CProgressVirt *progress)
       // item.AttrMTime = Get32(r + 0x14);
       item.ATime = Get32(r + 0x18);
       // item.BackupDate = Get32(r + 0x1C);
-
+      
       /*
       item.OwnerID = Get32(r + 0x20);
       item.GroupID = Get32(r + 0x24);
@@ -433,7 +433,7 @@ HRESULT CDatabase::Open(IInStream *inStream, CProgressVirt *progress)
 
   // h.NumFiles = Get32(p + 0x20);
   // h.NumFolders = Get32(p + 0x24);
-
+  
   UInt32 numFiles = Get32(p + 0x20);
   UInt32 numFolders = Get32(p + 0x24);;
   if (progress)

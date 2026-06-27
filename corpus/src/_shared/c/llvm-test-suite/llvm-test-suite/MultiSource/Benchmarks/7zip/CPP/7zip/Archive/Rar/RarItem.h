@@ -22,7 +22,7 @@ struct CItem
 {
   UInt64 Size;
   UInt64 PackSize;
-
+  
   CRarTime CTime;
   CRarTime ATime;
   CRarTime MTime;
@@ -42,7 +42,7 @@ struct CItem
   UString UnicodeName;
 
   Byte Salt[8];
-
+  
   bool IsEncrypted()   const { return (Flags & NHeader::NFile::kEncrypted) != 0; }
   bool IsSolid()       const { return (Flags & NHeader::NFile::kSolid) != 0; }
   bool IsCommented()   const { return (Flags & NHeader::NFile::kComment) != 0; }
@@ -52,12 +52,12 @@ struct CItem
   bool HasExtTime()    const { return (Flags & NHeader::NFile::kExtTime) != 0; }
   bool HasUnicodeName()const { return (Flags & NHeader::NFile::kUnicodeName) != 0; }
   bool IsOldVersion()  const { return (Flags & NHeader::NFile::kOldVersion) != 0; }
-
+  
   UInt32 GetDictSize() const { return (Flags >> NHeader::NFile::kDictBitStart) & NHeader::NFile::kDictMask; }
   bool IsDir() const;
   bool IgnoreItem() const;
   UInt32 GetWinAttributes() const;
-
+  
   CItem(): CTimeDefined(false), ATimeDefined(false) {}
 };
 

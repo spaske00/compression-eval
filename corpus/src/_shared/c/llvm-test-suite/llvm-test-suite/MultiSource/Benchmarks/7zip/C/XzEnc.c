@@ -404,10 +404,10 @@ static SRes Xz_Compress(CXzStream *xz,
     CSeqSizeOutStream seqSizeOutStream;
     CXzBlock block;
     int filterIndex = 0;
-
+    
     XzBlock_ClearFlags(&block);
     XzBlock_SetNumFilters(&block, 1 + (useSubblock ? 1 : 0));
-
+    
     if (useSubblock)
     {
       CXzFilter *f = &block.filters[filterIndex++];
@@ -425,13 +425,13 @@ static SRes Xz_Compress(CXzStream *xz,
     seqSizeOutStream.p.Write = MyWrite;
     seqSizeOutStream.realStream = outStream;
     seqSizeOutStream.processed = 0;
-
+    
     RINOK(XzBlock_WriteHeader(&block, &seqSizeOutStream.p));
-
+    
     checkInStream.p.Read = SeqCheckInStream_Read;
     checkInStream.realStream = inStream;
     SeqCheckInStream_Init(&checkInStream, XzFlags_GetCheckType(xz->flags));
-
+    
     #ifdef USE_SUBBLOCK
     if (useSubblock)
     {
@@ -439,7 +439,7 @@ static SRes Xz_Compress(CXzStream *xz,
       SubblockEnc_Init(&lzmaf->sb.sb);
     }
     #endif
-
+    
     {
       UInt64 packPos = seqSizeOutStream.processed;
       SRes res = Lzma2Enc_Encode(lzmaf->lzma2, &seqSizeOutStream.p,

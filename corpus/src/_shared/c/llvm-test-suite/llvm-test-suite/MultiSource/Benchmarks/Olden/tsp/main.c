@@ -27,7 +27,7 @@ void print_list(Tree t)
   if (!t) return;
   x = t->x; y = t->y;
   chatting("%f %f\n",x,y);
-  for (tmp=t->next; tmp!=t; tmp=tmp->next)
+  for (tmp=t->next; tmp!=t; tmp=tmp->next) 
     {
     x = tmp->x; y = tmp->y;
     chatting("%f %f\n",x,y);
@@ -38,7 +38,7 @@ int main(int argc,char *argv[])
 {
   Tree t;
   int num;
-
+ 
   num=dealwithargs(argc,argv);
 
   chatting("Building tree of size %d\n",num);
@@ -47,7 +47,7 @@ int main(int argc,char *argv[])
   if (flag) chatting("newgraph\n");
   if (flag) chatting("newcurve pts\n");
 
-  printf("Call tsp(t, %d, %d)\n", conquer_thresold, NumNodes);
+  printf("Call tsp(t, %d, %d)\n", conquer_thresold, NumNodes); 
   tsp(t,conquer_thresold, NumNodes);
 
   if (flag) print_list(t);

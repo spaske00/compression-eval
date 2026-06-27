@@ -10,7 +10,7 @@ def @HeaderF right x { @CD -2p @Font { x } }
 @Doc @Text @Begin
 #DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
 
-# saved from url=(0044)http://www.gnu.org/press/2001-06-18-GCC.html
+# saved from url=(0044)http://www.gnu.org/press/2001-06-18-GCC.html 
 
 #start html
 #start head
@@ -32,20 +32,20 @@ and IA-64 - GNU Project - Free Software Foundation (FSF)}
 
 #start body attributes= (bgcolor=>#ffffff), (vlink=>#9900dd), (text=>#000000), (link=>#1f00ff), (alink=>#ff0000)
 {}@Underline {#start a attributes= (href=>http://www.gnu.org/press/2001-06-18-GCC.txt)
-A plain text version of this
+A plain text version of this 
 press release is available}
 #end a
-.
+. 
 
 @PP
 #start p
 {}@B {#start strong
 FOR IMMEDIATE RELEASE}
 #end strong
-
+ 
 @LLP
 #start br
-Media Contact: Free Software
+Media Contact: Free Software 
 Foundation
 @LLP
 #start br
@@ -84,71 +84,71 @@ Boston, Massachusetts, USA}
  - {}@I {#start i
 Monday, June 18, 2001}
 #end i
- -
+ - 
 The Free Software Foundation announced today the 3.0 release of the GNU
-Compiler
-Collection (GCC). GCC is a Free (as in freedom) Software compiler toolset,
-licensed under the GNU General Public License (GPL).
+Compiler 
+Collection (GCC). GCC is a Free (as in freedom) Software compiler toolset, 
+licensed under the GNU General Public License (GPL). 
 
 @PP
 #start p
-This version of GCC fully incorporates a native-code compiler for the Java
+This version of GCC fully incorporates a native-code compiler for the Java 
 programming language. This allows Java programs that run faster, while
-using a
-completely Free Software system without depending on a proprietary Java
-compiler.
+using a 
+completely Free Software system without depending on a proprietary Java 
+compiler. 
 
 @PP
 #start p
-GCC 3.0 includes rewritten support the Intel and AMD 32-bit family of
-processors, which includes all Pentium systems. GCC 3.0 now generates much
+GCC 3.0 includes rewritten support the Intel and AMD 32-bit family of 
+processors, which includes all Pentium systems. GCC 3.0 now generates much 
 better output for these processors. This allows programs to run faster on
-such
-systems.
+such 
+systems. 
 
 @PP
 #start p
-GCC 3.0 supports the Intel IA-64 processor. This support will allow
+GCC 3.0 supports the Intel IA-64 processor. This support will allow 
 completely Free Software systems to run on the IA-64 architecture
-immediately
+immediately 
 upon the public release of IA-64. GCC 3.0 also supports other new chipsets
-from
-Motorola, Atmel, Mitsubishi, Fujitsu and Sun.
+from 
+Motorola, Atmel, Mitsubishi, Fujitsu and Sun. 
 
 @PP
 #start p
-GCC 3.0 vastly improves C++ support. Many bug fixes and changes to the C++
+GCC 3.0 vastly improves C++ support. Many bug fixes and changes to the C++ 
 support library allow GCC 3.0 to conform better to ISO C++ standards than
-ever
-before. Also included is a new Application Binary Interface (ABI) for C++.
+ever 
+before. Also included is a new Application Binary Interface (ABI) for C++. 
 
 @PP
 #start p
-But, technological considerations are not the most important reasons for
-using GCC. Richard M. Stallman, president of the Free Software Foundation,
+But, technological considerations are not the most important reasons for 
+using GCC. Richard M. Stallman, president of the Free Software Foundation, 
 pointed out: ``Many users choose GCC for technical advantages, such as
-having one
+having one 
 compiler that works on many systems, or its powerful C extensions. But the
-most
-important benefit of GCC is freedom--your freedom. A free operating system
+most 
+important benefit of GCC is freedom--your freedom. A free operating system 
 requires a free compiler. GCC was an essential step on the road to
-freedom.''
+freedom.'' 
 
 @PP
 #start p
-GCC 3.0 has benefitted from the efforts of several successful businesses
-built around support and development of Free Software. GCC, which is Free
+GCC 3.0 has benefitted from the efforts of several successful businesses 
+built around support and development of Free Software. GCC, which is Free 
 Software licensed under the GPL, has facilitated sustainable business
-models.
+models. 
 Some of these companies are listed in the Free Software Foundation's
-service
+service 
 directory, which can be found at:
 @LLP
 #start br
 {}@Underline {#start a attributes= (href=>http://www.gnu.org/prep/service.html)
 http:"/""/"www.gnu.org"/"prep"/"service.html}
 #end a
-
+ 
 
 @PP
 #start p
@@ -158,7 +158,7 @@ More information about the new features of GCC 3.0 can be found at:
 {}@Underline {#start a attributes= (href=>http://www.gnu.org/software/gcc/gcc-3.0/features.html)
 http:"/""/"www.gnu.org"/"software"/"gcc"/"gcc-3.0"/"features.html}
 #end a
-
+ 
 
 @PP
 #start p
@@ -168,13 +168,13 @@ The software can be downloaded from:
 {}@Underline {#start a attributes= (href=>http://www.gnu.org/software/gcc/releases.html)
 http:"/""/"www.gnu.org"/"software"/"gcc"/"releases.html}
 #end a
-
+ 
 
 @PP
 #start p
 Users are encouraged to use mirror sites for downloads, to decrease the
-load
-on GNU and FSF servers.
+load 
+on GNU and FSF servers. 
 
 @PP
 #start p
@@ -190,21 +190,21 @@ About the GNU Compiler Collection (GCC):}
 
 @LLP
 #start br
-The GNU Compiler Collection
+The GNU Compiler Collection 
 (GCC), originally called the GNU C Compiler, includes compilers for the C,
-C++,
+C++, 
 Objective C, Fortran, and Java languages. Originally developed by Richard
-M.
-Stallman, GCC is now developed and improved by a worldwide network of
+M. 
+Stallman, GCC is now developed and improved by a worldwide network of 
 volunteers, lead by the GCC Steering Committee, the official maintainers of
-GCC.
+GCC. 
 The GCC website can be found at:
 @LLP
 #start br
 {}@Underline {#start a attributes= (href=>http://www.gnu.org/software/gcc/gcc.html)
 http:"/""/"www.gnu.org"/"software"/"gcc"/"gcc.html}
 #end a
-
+ 
 
 @PP
 #start p
@@ -216,8 +216,8 @@ About GNU:}
 
 @LLP
 #start br
-GNU is a Free Software Unix-like operating system.
-Development of GNU began in 1984. GCC is the compiler for the GNU system.
+GNU is a Free Software Unix-like operating system. 
+Development of GNU began in 1984. GCC is the compiler for the GNU system. 
 
 @LLP @FullWidthRule @LLP
 #start hr
@@ -225,20 +225,20 @@ Development of GNU began in 1984. GCC is the compiler for the GNU system.
 
 @PP
 #start p
-Copyright (C) 2001 Free Software Foundation, Inc., 59 Temple Place - Suite
-330, Boston, MA 02111, USA
+Copyright (C) 2001 Free Software Foundation, Inc., 59 Temple Place - Suite 
+330, Boston, MA 02111, USA 
 
 @PP
 #start p
 Verbatim copying and distribution of this entire article is permitted in
-any
-medium, provided this notice is preserved.
+any 
+medium, provided this notice is preserved. 
 
 @PP
 #start p
-Updated: # timestamp start
-$Date$ $Author: bkuhn
-$ # timestamp end
+Updated: # timestamp start 
+$Date$ $Author: bkuhn 
+$ # timestamp end 
 
 
 @LLP @FullWidthRule @LLP

@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -13,7 +13,7 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif  
 
 #include <wx/listctrl.h>
 
@@ -57,3 +57,4 @@ BEGIN_EVENT_TABLE(CListViewDialogImpl, wxDialog)
 	EVT_CHECKBOX(wxID_ANY, CModalDialogImpl::OnAnyButton)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

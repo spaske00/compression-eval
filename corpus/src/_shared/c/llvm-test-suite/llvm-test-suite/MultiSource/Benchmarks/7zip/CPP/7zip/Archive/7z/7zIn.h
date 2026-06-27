@@ -12,10 +12,10 @@
 #include "../../Common/InBuffer.h"
 
 #include "7zItem.h"
-
+ 
 namespace NArchive {
 namespace N7z {
-
+  
 struct CInArchiveInfo
 {
   CArchiveVersion Version;
@@ -64,13 +64,13 @@ struct CArchiveDatabaseEx: public CArchiveDatabase
     FillStartPos();
     FillFolderStartFileIndex();
   }
-
+  
   UInt64 GetFolderStreamPos(int folderIndex, int indexInFolder) const
   {
     return ArchiveInfo.DataStartPosition +
         PackStreamStartPositions[FolderStartPackStreamIndex[folderIndex] + indexInFolder];
   }
-
+  
   UInt64 GetFolderFullPackSize(int folderIndex) const
   {
     CNum packStreamIndex = FolderStartPackStreamIndex[folderIndex];
@@ -80,7 +80,7 @@ struct CArchiveDatabaseEx: public CArchiveDatabase
       size += PackSizes[packStreamIndex + i];
     return size;
   }
-
+  
   UInt64 GetFolderPackStreamSize(int folderIndex, int streamIndex) const
   {
     return PackSizes[FolderStartPackStreamIndex[folderIndex] + streamIndex];
@@ -131,7 +131,7 @@ class CInArchive
 
   CObjectVector<CInByte2> _inByteVector;
   CInByte2 *_inByteBack;
-
+ 
   UInt64 _arhiveBeginStreamPosition;
 
   Byte _header[kHeaderSize];
@@ -144,7 +144,7 @@ class CInArchive
     _inByteBack = &_inByteVector.Back();
     _inByteBack->Init(buffer, size);
   }
-
+  
   void DeleteByteStream()
   {
     _inByteVector.DeleteBack();
@@ -154,7 +154,7 @@ class CInArchive
 
 private:
   HRESULT FindAndReadSignature(IInStream *stream, const UInt64 *searchHeaderSizeLimit);
-
+  
   void ReadBytes(Byte *data, size_t size) { _inByteBack->ReadBytes(data, size); }
   Byte ReadByte() { return _inByteBack->ReadByte(); }
   UInt64 ReadNumber() { return _inByteBack->ReadNumber(); }
@@ -170,17 +170,17 @@ private:
   void GetNextFolderItem(CFolder &itemInfo);
   void ReadHashDigests(int numItems,
       CBoolVector &digestsDefined, CRecordVector<UInt32> &digests);
-
+  
   void ReadPackInfo(
       UInt64 &dataOffset,
       CRecordVector<UInt64> &packSizes,
       CBoolVector &packCRCsDefined,
       CRecordVector<UInt32> &packCRCs);
-
+  
   void ReadUnpackInfo(
       const CObjectVector<CByteBuffer> *dataVector,
       CObjectVector<CFolder> &folders);
-
+  
   void ReadSubStreamsInfo(
       const CObjectVector<CFolder> &folders,
       CRecordVector<CNum> &numUnpackStreamsInFolders,
@@ -239,7 +239,7 @@ public:
       #endif
       );
 };
-
+  
 }}
-
+  
 #endif

@@ -579,7 +579,7 @@ static void PS_PrintBeforeFirstPage(FULL_LENGTH h, FULL_LENGTH v,
 static void PS_PrintAfterLastPage(void)
 { OBJECT x, link;  BOOLEAN first_need;
   if( prologue_done )
-  {
+  { 
     fprintf(out_fp, "\npgsave restore\nshowpage\n");
     fprintf(out_fp, "\n%%%%Trailer\n");
 
@@ -741,7 +741,7 @@ static void PS_PrintWord(OBJECT x, int hpos, int vpos)
   lig = finfo[word_font(x)].lig_table;
   p = q = string(x);
   do
-  {
+  { 
     /* check for missing glyph (lig[] == 1) or ligatures (lig[] > 1) */
     if( lig[*q++ = *p++] )
     {
@@ -1002,10 +1002,10 @@ void PS_PrintGraphicObject(OBJECT x)
 
       StringFPuts(string(x), out_fp);
       break;
-
+	
 
     case ACAT:
-
+    
       for( link = Down(x);  link != x;  link = NextDown(link) )
       {	Child(y, link);
 	if( type(y) == GAP_OBJ )
@@ -1030,7 +1030,7 @@ void PS_PrintGraphicObject(OBJECT x)
 
 
     default:
-
+    
       Error(49, 9, "error in left parameter of %s", WARN, &fpos(x), KW_GRAPHIC);
       debug1(DPO, D, "  type(x) = %s, x =", Image(type(x)));
       ifdebug(DPO, D, DebugObject(x));
@@ -1135,7 +1135,7 @@ void PS_SaveTranslateDefineSave(OBJECT x, FULL_LENGTH xdist, FULL_LENGTH ydist)
       currentfont <= 0 ? 12*PT : FontSize(currentfont, x),
       width(line_gap(save_style(x))), width(space_gap(save_style(x))),
       xdist, ydist);
-
+      
   }
 } /* end PS_SaveTranslateDefineSave */
 

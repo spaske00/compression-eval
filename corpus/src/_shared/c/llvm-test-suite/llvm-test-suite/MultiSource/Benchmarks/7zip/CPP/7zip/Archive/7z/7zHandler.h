@@ -79,7 +79,7 @@ private:
   #endif
 
   #ifdef EXTRACT_ONLY
-
+  
   #ifdef __7Z_SET_PROPERTIES
   UInt32 _numThreads;
   #endif
@@ -87,7 +87,7 @@ private:
   UInt32 _crcSize;
 
   #else
-
+  
   CRecordVector<CBind> _binds;
 
   HRESULT SetCompressionMethod(CCompressionMethodMode &method,

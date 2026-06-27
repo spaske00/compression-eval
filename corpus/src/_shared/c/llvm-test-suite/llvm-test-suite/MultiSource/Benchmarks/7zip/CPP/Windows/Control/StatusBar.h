@@ -21,7 +21,7 @@ public:
 	wxWindow * Detach();
 
 	void SetText(int index, LPCTSTR text);
-
+	
 /* FIXME
   bool Create(LONG style, LPCTSTR text, HWND hwndParent, UINT id)
     { return (_window = ::CreateStatusWindow(style, text, hwndParent, id)) != 0; }
@@ -47,9 +47,10 @@ public:
   bool SetText(int index, LPCWSTR text)
     { return SetText(index, text, 0); }
   #endif
-*/
+*/  
 };
 
 }}
 
 #endif
+

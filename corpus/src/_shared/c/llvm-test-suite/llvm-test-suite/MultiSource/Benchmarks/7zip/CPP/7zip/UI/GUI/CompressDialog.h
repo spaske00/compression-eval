@@ -47,7 +47,7 @@ namespace NCompressDialog
     bool SFXMode;
     bool OpenShareForWrite;
 
-
+    
     UString ArchiveName; // in: Relative for ; out: abs
     UString CurrentDirPrefix;
     bool KeepName;
@@ -99,16 +99,16 @@ class CCompressDialog: public NWindows::NControl::CModalDialog
   void SetArchiveName(const UString &name);
   int FindRegistryFormat(const UString &name);
   int FindRegistryFormatAlways(const UString &name);
-
+  
   void CheckSFXNameChange();
   void SetArchiveName2(bool prevWasSFX);
-
+  
   int GetStaticFormatIndex();
 
   void SetNearestSelectComboBox(NWindows::NControl::CComboBox &comboBox, UInt32 value);
 
   void SetLevel();
-
+  
   void SetMethod(int keepMethodId = -1);
   int GetMethodID();
   UString GetMethodSpec();
@@ -120,7 +120,7 @@ class CCompressDialog: public NWindows::NControl::CModalDialog
 
   int AddDictionarySize(UInt32 size, bool kilo, bool maga);
   int AddDictionarySize(UInt32 size);
-
+  
   void SetDictionary();
 
   UInt32 GetComboValue(NWindows::NControl::CComboBox &c, int defMax = 0);

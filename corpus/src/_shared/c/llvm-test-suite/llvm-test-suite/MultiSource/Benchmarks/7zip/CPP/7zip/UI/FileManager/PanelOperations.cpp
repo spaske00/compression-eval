@@ -47,13 +47,13 @@ public:
   CMyComPtr<IFolderOperations> FolderOperations;
   CMyComPtr<IProgress> UpdateCallback;
   CUpdateCallback100Imp *UpdateCallbackSpec;
-
+  
   HRESULT Result;
 
   CThreadFolderOperations(EFolderOpType opType): OpType(opType), Result(E_FAIL) {};
   HRESULT DoOperation(CPanel &panel, const UString &progressTitle, const UString &titleError);
 };
-
+  
 HRESULT CThreadFolderOperations::ProcessVirt()
 {
 #ifdef _WIN32
@@ -360,9 +360,9 @@ void CPanel::CreateFolder()
   comboDialog.Value = LangString(IDS_CREATE_FOLDER_DEFAULT_NAME, /*0x03020232*/ (UInt32)-1);
   if (comboDialog.Create(GetParent()) == IDCANCEL)
     return;
-
+  
   UString newName = comboDialog.Value;
-
+  
   {
     CThreadFolderOperations op(FOLDER_TYPE_CREATE_FOLDER);
     op.FolderOperations = folderOperations;

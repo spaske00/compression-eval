@@ -701,7 +701,7 @@ is automatically set when defined in the file with either
 ;; Use default directory, unless locally set.
 (set-default 'ispell-local-dictionary nil)
 
-(defconst ispell-words-keyword "LocalWords: "
+(defconst ispell-words-keyword "LocalWords: "				      
   "The keyword for local oddly-spelled words to accept.
 The keyword will be followed by any number of local word spellings.
 There can be multiple of these keywords in the file.")
@@ -1996,7 +1996,7 @@ Standard ispell choices are then available."
 (defun ispell-minor-mode (&optional arg)
   "Toggle Ispell minor mode.
 With prefix arg, turn Ispell minor mode on iff arg is positive.
-
+ 
 In Ispell minor mode, pressing SPC or RET
 warns you if the previous word is incorrectly spelled."
   (interactive "P")
@@ -2004,7 +2004,7 @@ warns you if the previous word is incorrectly spelled."
 	(not (or (and (null arg) ispell-minor-mode)
 		 (<= (prefix-numeric-value arg) 0))))
   (force-mode-line-update))
-
+ 
 (defun ispell-minor-check ()
   ;; Check previous word then continue with the normal binding of this key.
   (interactive "*")
@@ -2378,3 +2378,4 @@ Both should not be used to define a buffer-local dictionary."
 ; LocalWords:  regexps ispell-tib-ref-beginning ispell-tib-ref-end
 
 ;; ispell.el ends here
+

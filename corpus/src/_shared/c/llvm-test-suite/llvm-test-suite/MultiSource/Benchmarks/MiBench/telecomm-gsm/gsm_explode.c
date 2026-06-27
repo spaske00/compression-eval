@@ -110,7 +110,7 @@ int gsm_explode P3((s, c, target), gsm s, gsm_byte * c, gsm_signal * target)
 	xmc[25]  = *c++ & 0x7;
 
 #undef	Nc
-#define	Nc	(target + 42 - 2)
+#define	Nc	(target + 42 - 2) 
 
 	Nc[2]  = (*c >> 1) & 0x7F;
 

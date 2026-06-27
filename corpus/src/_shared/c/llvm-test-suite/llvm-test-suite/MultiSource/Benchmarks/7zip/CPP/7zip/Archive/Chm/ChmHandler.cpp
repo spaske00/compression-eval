@@ -44,7 +44,7 @@ STATPROPSTG kProps[] =
   { NULL, kpidSize, VT_UI8},
   { NULL, kpidMethod, VT_BSTR},
   { NULL, kpidBlock, VT_UI4}
-
+  
   #ifdef _CHM_DETAILS
   ,
   { L"Section", kpidSection, VT_UI4},
@@ -147,9 +147,9 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID,  PROPVARIANT *va
       else if (item.Section != 0)
         prop = m_Database.GetFolder(index);
       break;
-
+    
     #ifdef _CHM_DETAILS
-
+    
     case kpidSection:  prop = (UInt32)item.Section; break;
     case kpidOffset:  prop = (UInt32)item.Offset; break;
 
@@ -437,7 +437,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       for (i = 0; i < numItems; i++)
         totalSize += m_Database.Items[allFilesMode ? i : indices[i]].Size;
     extractCallback->SetTotal(totalSize);
-
+    
     for (i = 0; i < numItems; i++, currentTotalSize += currentItemSize)
     {
       currentItemSize = 0;
@@ -467,9 +467,9 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         continue;
       }
       const CItem &item = m_Database.Items[index];
-
+      
       currentItemSize = item.Size;
-
+      
       if (!testMode && !realOutStream)
         continue;
       RINOK(extractCallback->PrepareOperation(askMode));
@@ -484,10 +484,10 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         RINOK(extractCallback->SetOperationResult(NExtract::NOperationResult::kOK));
         continue;
       }
-
+      
       RINOK(m_Stream->Seek(m_Database.ContentOffset + item.Offset, STREAM_SEEK_SET, NULL));
       streamSpec->Init(item.Size);
-
+      
       RINOK(copyCoder->Code(inStream, realOutStream, NULL, NULL, progress));
       realOutStream.Release();
       RINOK(extractCallback->SetOperationResult((copyCoderSpec->TotalSize == item.Size) ?
@@ -496,7 +496,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     }
     return S_OK;
   }
-
+  
   UInt64 lastFolderIndex = ((UInt64)0 - 1);
   for (i = 0; i < numItems; i++)
   {
@@ -579,7 +579,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       currentTotalSize += item.Size;
       continue;
     }
-
+  
     const CSectionInfo &section = m_Database.Sections[(int)sectionIndex];
 
     if (!section.IsLzx())

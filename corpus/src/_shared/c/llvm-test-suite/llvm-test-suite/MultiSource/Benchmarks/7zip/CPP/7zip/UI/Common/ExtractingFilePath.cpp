@@ -123,7 +123,7 @@ UString GetCorrectFsPath(const UString &path)
   #endif
   return res;
 }
-
+  
 UString GetCorrectFullFsPath(const UString &path)
 {
   UStringVector parts;

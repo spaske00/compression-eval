@@ -42,13 +42,13 @@ namespace NHeader
     const Byte kName = 1 << 3;
     const Byte kComment = 1 << 4;
   }
-
+  
   namespace NExtraFlags
   {
     const Byte kMaximum = 2;
     const Byte kFastest = 4;
   }
-
+  
   namespace NCompressionMethod
   {
     const Byte kDeflate = 8;
@@ -76,7 +76,7 @@ namespace NHeader
       kMVS,
       kBeOS,
       kTandem,
-
+      
       kUnknown = 255
     };
   }
@@ -198,7 +198,7 @@ HRESULT CItem::ReadHeader(NCompress::NDeflate::NDecoder::CCOMCoder *stream)
   Byte buf[10];
 
   RINOK(ReadBytes(stream, buf, 10));
-
+  
   if (GetUi16(buf) != kSignature)
     return S_FALSE;
 
@@ -213,7 +213,7 @@ HRESULT CItem::ReadHeader(NCompress::NDeflate::NDecoder::CCOMCoder *stream)
   HostOS = buf[9];
 
   // crc = CrcUpdate(crc, buf, 10);
-
+  
   if (ExtraFieldIsPresent())
   {
     UInt16 extraSize;
@@ -564,7 +564,7 @@ static HRESULT UpdateArchive(
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(updateCallback, true);
-
+  
   CItem item = newItem;
   item.Method = NHeader::NCompressionMethod::kDeflate;
   item.ExtraFlags = deflateProps.IsMaximum() ?
@@ -661,7 +661,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
 
     return UpdateArchive(outStream, size, newItem, _method, updateCallback);
   }
-
+    
   if (indexInArchive != 0)
     return E_INVALIDARG;
 

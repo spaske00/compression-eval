@@ -132,7 +132,7 @@ HRESULT CArc::OpenStream(
       orderIndices.Insert(numFinded++, i);
     else
       orderIndices.Add(i);
-
+  
   if (!stream)
   {
     if (numFinded != 1)
@@ -201,7 +201,7 @@ HRESULT CArc::OpenStream(
       }
       while (i != 0xFF);
     }
-
+    
     for (i = 0; i < orderIndices.Size(); i++)
     {
       int val = orderIndices[i];
@@ -306,7 +306,7 @@ HRESULT CArc::OpenStream(
       if (prop.vt != VT_EMPTY)
         ErrorMessage = (prop.vt == VT_BSTR) ? prop.bstrVal : L"Unknown error";
     }
-
+    
     Archive = archive;
     const CArcInfoEx &format = codecs->Formats[FormatIndex];
     if (format.Exts.Size() == 0)
@@ -383,7 +383,7 @@ HRESULT CArchiveLink::Open(
   Release();
   if (formatIndices.Size() >= 32)
     return E_NOTIMPL;
-
+  
   HRESULT resSpec;
 
   for (;;)
@@ -408,11 +408,11 @@ HRESULT CArchiveLink::Open(
       Arcs.Add(arc);
       continue;
     }
-
+    
     const CArc &arc = Arcs.Back();
-
+    
     resSpec = (formatIndices.Size() == 0 ? S_OK : E_NOTIMPL);
-
+    
     UInt32 mainSubfile;
     {
       NCOM::CPropVariant prop;
@@ -427,27 +427,27 @@ HRESULT CArchiveLink::Open(
         break;
     }
 
-
+  
     CMyComPtr<IInArchiveGetStream> getStream;
     if (arc.Archive->QueryInterface(IID_IInArchiveGetStream, (void **)&getStream) != S_OK || !getStream)
       break;
-
+    
     CMyComPtr<ISequentialInStream> subSeqStream;
     if (getStream->GetStream(mainSubfile, &subSeqStream) != S_OK || !subSeqStream)
       break;
-
+    
     CMyComPtr<IInStream> subStream;
     if (subSeqStream.QueryInterface(IID_IInStream, &subStream) != S_OK || !subStream)
       break;
-
+    
     CArc arc2;
     RINOK(arc.GetItemPath(mainSubfile, arc2.Path));
-
+    
     CMyComPtr<IArchiveOpenSetSubArchiveName> setSubArchiveName;
     callback->QueryInterface(IID_IArchiveOpenSetSubArchiveName, (void **)&setSubArchiveName);
     if (setSubArchiveName)
       setSubArchiveName->SetSubArchiveName(arc2.Path);
-
+    
     arc2.SubfileIndex = mainSubfile;
     HRESULT result = arc2.OpenStream(codecs, formatIndex, subStream, NULL, callback);
     resSpec = (formatIndices.Size() == 0 ? S_OK : S_FALSE);

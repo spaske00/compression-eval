@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+
+import argparse
+import csv
+import sys
+from pathlib import Path
+
+
+def filename_column(fieldnames, path):
+    for name in fieldnames or []:
+        if name.lower() == "filename":
+            return name
+    raise SystemExit(f"{path}: missing filename column")
+
+
+def normalized_filename(value):
+    filename = value.strip().replace("\\", "/")
+    while filename.startswith("./"):
+        filename = filename[2:]
+    if filename.startswith("bin/"):
+        filename = filename[4:]
+    return filename
+
+
+def dataset_name(entropy_csv, lzbench_csv):
+    names = []
+    for path in (entropy_csv, lzbench_csv):
+        stem = path.stem
+        for suffix in ("_entropy", "-entropy", "_lzbench", "-lzbench"):
+            if stem.endswith(suffix):
+                stem = stem[: -len(suffix)]
+                break
+        names.append(stem)
+    return names[0] if names[0] == names[1] else "merged"
+
+
+def read_csv(path):
+    with path.open(newline="") as file:
+        reader = csv.DictReader(file)
+        rows = list(reader)
+    return reader.fieldnames or [], rows
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Join compute_entropy and lzbench CSV files by filename."
+    )
+    parser.add_argument("entropy_csv", type=Path)
+    parser.add_argument("lzbench_csv", type=Path)
+    parser.add_argument(
+        "-o",
+        "--out-dir",
+        type=Path,
+        default=None,
+        help="Output directory. Defaults to the lzbench CSV directory.",
+    )
+    parser.add_argument(
+        "--output-name",
+        default=None,
+        help="Output file name. Defaults to <dataset>.csv.",
+    )
+    args = parser.parse_args()
+
+    entropy_fields, entropy_rows = read_csv(args.entropy_csv)
+    lzbench_fields, lzbench_rows = read_csv(args.lzbench_csv)
+
+    entropy_filename = filename_column(entropy_fields, args.entropy_csv)
+    lzbench_filename = filename_column(lzbench_fields, args.lzbench_csv)
+
+    entropy_by_filename = {}
+    for row in entropy_rows:
+        raw_filename = row.get(entropy_filename)
+        if not raw_filename or raw_filename == entropy_filename:
+            continue
+        key = normalized_filename(raw_filename)
+        if key in entropy_by_filename:
+            raise SystemExit(f"{args.entropy_csv}: duplicate filename after normalization: {key}")
+        entropy_by_filename[key] = row
+
+    out_dir = args.out_dir if args.out_dir is not None else args.lzbench_csv.parent
+    out_dir.mkdir(parents=True, exist_ok=True)
+    output_name = args.output_name or f"{dataset_name(args.entropy_csv, args.lzbench_csv)}.csv"
+    output_path = out_dir / output_name
+
+    entropy_data_fields = [name for name in entropy_fields if name != entropy_filename]
+    lzbench_data_fields = [name for name in lzbench_fields if name != lzbench_filename]
+    output_fields = ["Filename", *entropy_data_fields, *lzbench_data_fields]
+
+    matched_rows = 0
+    malformed_lzbench_rows = 0
+    duplicate_lzbench_rows = 0
+    unmatched_lzbench_rows = 0
+    matched_entropy_keys = set()
+    seen_lzbench_rows = set()
+
+    with output_path.open("w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=output_fields, lineterminator="\n")
+        writer.writeheader()
+
+        for lzbench_row in lzbench_rows:
+            raw_filename = lzbench_row.get(lzbench_filename)
+            if not raw_filename or raw_filename == lzbench_filename:
+                malformed_lzbench_rows += 1
+                continue
+
+            row_signature = tuple(lzbench_row.get(name) for name in lzbench_fields)
+            if row_signature in seen_lzbench_rows:
+                duplicate_lzbench_rows += 1
+                continue
+            seen_lzbench_rows.add(row_signature)
+
+            key = normalized_filename(raw_filename)
+            entropy_row = entropy_by_filename.get(key)
+            if entropy_row is None:
+                unmatched_lzbench_rows += 1
+                continue
+
+            matched_entropy_keys.add(key)
+            output_row = {"Filename": raw_filename}
+            output_row.update({name: entropy_row[name] for name in entropy_data_fields})
+            output_row.update({name: lzbench_row[name] for name in lzbench_data_fields})
+            writer.writerow(output_row)
+            matched_rows += 1
+
+    if matched_rows == 0:
+        output_path.unlink(missing_ok=True)
+        raise SystemExit("No rows matched by filename")
+
+    unmatched_entropy = len(entropy_by_filename) - len(matched_entropy_keys)
+    print(f"Wrote {matched_rows} rows to {output_path}")
+    print(f"Skipped {malformed_lzbench_rows} malformed/header lzbench rows")
+    print(f"Skipped {duplicate_lzbench_rows} duplicate lzbench rows")
+    print(f"Skipped {unmatched_lzbench_rows} lzbench rows without entropy data")
+    print(f"Entropy filenames without lzbench rows: {unmatched_entropy}")
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

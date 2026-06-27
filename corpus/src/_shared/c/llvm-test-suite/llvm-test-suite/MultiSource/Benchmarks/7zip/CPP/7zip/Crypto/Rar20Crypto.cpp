@@ -52,7 +52,7 @@ void CData::SetPassword(const Byte *password, UInt32 passwordLen)
   Keys[1] = 0x3F6D12F7L;
   Keys[2] = 0x7515A235L;
   Keys[3] = 0xA4E7F123L;
-
+  
   Byte psw[256];
   memset(psw, 0, sizeof(psw));
   memcpy(psw, password, passwordLen);
@@ -82,7 +82,7 @@ void CData::CryptBlock(Byte *buf, bool encrypt)
 
   if (!encrypt)
     memcpy(inBuf, buf, sizeof(inBuf));
-
+  
   for (int i = 0; i < kNumRounds; i++)
   {
     UInt32 key = Keys[(encrypt ? i : (kNumRounds - 1 - i)) & 3];

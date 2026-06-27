@@ -16,7 +16,7 @@ struct CUpdateItem
 {
   int IndexInArchive;
   int IndexInClient;
-
+  
   UInt64 CTime;
   UInt64 ATime;
   UInt64 MTime;
@@ -25,7 +25,7 @@ struct CUpdateItem
   UString Name;
 
   UInt32 Attrib;
-
+  
   bool NewData;
   bool NewProps;
 

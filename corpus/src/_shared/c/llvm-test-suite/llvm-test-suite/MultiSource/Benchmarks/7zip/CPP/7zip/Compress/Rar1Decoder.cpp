@@ -1,7 +1,7 @@
 // Rar1Decoder.cpp
 // According to unRAR license, this code may not be used to develop
 // a program that creates RAR archives
-
+ 
 #include "StdAfx.h"
 
 #include "Rar1Decoder.h"
@@ -139,7 +139,7 @@ HRESULT CDecoder::ShortLZ()
     LCount = 0;
     AvrLn1 += len;
     AvrLn1 -= AvrLn1 >> 4;
-
+    
     distancePlace = DecodeNum(PosHf2) & 0xff;
     dist = ChSetA[distancePlace];
     if (--distancePlace != -1)

@@ -45,7 +45,7 @@ HRESULT CAgentFolder::CommonUpdateOperation(
   if (SetOutProperties(anOutArchive, aCompressionInfo.Method) != S_OK)
     return NFileOperationReturnCode::kError;
   */
-
+  
   ////////////////////////////
   // Save FolderItem;
 
@@ -76,14 +76,14 @@ HRESULT CAgentFolder::CommonUpdateOperation(
       actionSetByte[i] = (Byte)actionSet->StateActions[i];
     result = _agentSpec->DoOperation2(tempFileName, actionSetByte, NULL, updateCallback100);
   }
-
+  
   if (result != S_OK)
     return result;
 
   _agentSpec->Close();
-
+  
   // m_FolderItem = NULL;
-
+  
   if (NFind::DoesFileExist(archiveFilePath))
     if (!DeleteFileAlways(archiveFilePath))
       return GetLastError();
@@ -100,7 +100,7 @@ HRESULT CAgentFolder::CommonUpdateOperation(
     }
     RINOK(_agentSpec->ReOpen(openCallback));
   }
-
+   
   ////////////////////////////
   // Restore FolderItem;
 

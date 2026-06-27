@@ -23,7 +23,7 @@ void UpdateProduce(
     up2.DirIndex = pair.DirIndex;
     up2.ArcIndex = pair.ArcIndex;
     up2.NewData = up2.NewProps = true;
-
+    
     switch(actionSet.StateActions[pair.State])
     {
       case NPairAction::kIgnore:
@@ -41,13 +41,13 @@ void UpdateProduce(
           throw kUpdateActionSetCollision;
         up2.NewData = up2.NewProps = false;
         break;
-
+      
       case NPairAction::kCompress:
         if (pair.State == NPairState::kOnlyInArchive ||
             pair.State == NPairState::kNotMasked)
           throw kUpdateActionSetCollision;
         break;
-
+      
       case NPairAction::kCompressAsAnti:
         up2.IsAnti = true;
         break;

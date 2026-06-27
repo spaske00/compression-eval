@@ -620,7 +620,7 @@ OBJECT FillObject(OBJECT x, CONSTRAINT *c, OBJECT multi, BOOLEAN can_hyphenate,
 
       case TOO_LOOSE:
       case EMPTY_INTERVAL:
-
+      
 	/* too loose, so save best and shift right end */
 	if( IntervalClass(I) == EMPTY_INTERVAL ||
 	    IntervalBadness(BestI) <= IntervalBadness(I) )
@@ -639,7 +639,7 @@ OBJECT FillObject(OBJECT x, CONSTRAINT *c, OBJECT multi, BOOLEAN can_hyphenate,
       case LOOSE:
       case TIGHT:
       case TOO_TIGHT:
-
+      
 	/* reasonable, so check best and shift left end */
 	if( IntervalBadness(I) < IntervalBadness(BestI) )  BestI = I;
 	/* NB no break */
@@ -647,7 +647,7 @@ OBJECT FillObject(OBJECT x, CONSTRAINT *c, OBJECT multi, BOOLEAN can_hyphenate,
 
       case UNBREAKABLE_LEFT:
       case TAB_OVERLAP:
-
+      
 	/* too tight, or unbreakable gap at left end, so shift left end */
 	IntervalShiftLeftEnd(I, x, max_width, etc_width);
 	break;
@@ -670,7 +670,7 @@ OBJECT FillObject(OBJECT x, CONSTRAINT *c, OBJECT multi, BOOLEAN can_hyphenate,
 
 
       default:
-
+      
 	assert(FALSE, "FillObject: IntervalClass(I)");
 	break;
 
@@ -883,7 +883,7 @@ OBJECT FillObject(OBJECT x, CONSTRAINT *c, OBJECT multi, BOOLEAN can_hyphenate,
 	        word_outline(prev) == word_outline(next) &&
 	        word_language(prev) == word_language(next) &&
 	        underline(prev) == underline(next) )
-	    {
+	    { 
 	      debug2(DOF, D, "joining %s with %s", EchoObject(prev),
 		EchoObject(next));
 	      typ = type(prev) == QWORD || type(next) == QWORD ? QWORD : WORD;

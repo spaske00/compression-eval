@@ -8,14 +8,14 @@
  *    u        - the number to convert
  *    dest     - Where to put the ASCII representation radix
  *               WARNING! Not '\0' terminated, this is an exact image
- *    size     - the number of digits of dest.
+ *    size     - the number of digits of dest.  
  *               (alphabet[0] padded on left)
  *               if size is too small, truncation occurs on left
  *    alphabet - A mapping from each radix digit to it's character digit
  *               (note: '\0' is perfectly OK as a digit)
  *    radix    - The size of the alphabet, and the conversion radix
  *               2 <= radix < 256.
- *
+ * 
  * Returns:
  *    -1 if invalid radix
  *    0  if successful

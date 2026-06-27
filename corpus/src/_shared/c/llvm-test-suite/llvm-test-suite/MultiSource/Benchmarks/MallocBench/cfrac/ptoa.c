@@ -18,7 +18,7 @@ char *ptoa(u)
    register accumulator	 temp;
    register char *dPtr;
    char		 *d;
-   int		 i = 0;
+   int		 i = 0; 
    unsigned int	 consize;
    precision	 r, v, pbase;
    register int	 j;

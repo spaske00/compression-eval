@@ -43,7 +43,7 @@ public:
 
   CRecordVector<UInt32> CRCs;
 };
-
+  
 }}
 
 #endif

@@ -73,7 +73,7 @@ DimensionChannel(void)
 	printf("\tChannel file cannot be opened.\n");
 	exit(1);
     }
-
+    
     /*
      * Scan the file to find the last column
      * number.  The channel file description
@@ -347,3 +347,12 @@ DensityChannel(void)
     channelDensity = bound;			/* max channel density */
     channelDensityColumn = boundColumn;		/* column of max channel density */
 }
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit
                    const dvarray* Dist, const param_viterbi_t* param, size_t n);
 void init_viterbi(param_viterbi_t* param, coderate_tt in_rate);
 
-int main(void)
+int main(void) 
 {
   dvarray Dist_demux;
   param_viterbi_t param_viterbi;

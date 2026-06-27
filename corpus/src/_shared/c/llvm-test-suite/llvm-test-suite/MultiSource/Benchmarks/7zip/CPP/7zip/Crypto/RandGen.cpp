@@ -65,7 +65,7 @@ void CRandomGenerator::Init()
 
     DWORD tickCount = ::GetTickCount();
     hash.Update((const Byte *)&tickCount, sizeof(tickCount));
-
+    
     for (int j = 0; j < 100; j++)
     {
       hash.Final(_buff);
@@ -87,11 +87,11 @@ void CRandomGenerator::Generate(Byte *data, unsigned int size)
   while (size > 0)
   {
     NCrypto::NSha1::CContext hash;
-
+    
     hash.Init();
     hash.Update(_buff, NCrypto::NSha1::kDigestSize);
     hash.Final(_buff);
-
+    
     hash.Init();
     UInt32 salt = 0xF672ABD1;
     hash.Update((const Byte *)&salt, sizeof(salt));

@@ -27,7 +27,7 @@ extern long long seed;
 struct Results {
   float                   total_patients;
   float                   total_time;
-  float                   total_hosps;
+  float                   total_hosps; 
 };
 
 struct Patient {
@@ -45,34 +45,34 @@ struct List {
 
 struct Hosp {
 #if 1
-  int                    personnel;
-  int                    free_personnel;
-  int                    num_waiting_patients;
-  struct List            waiting;
-  struct List            assess;
+  int                    personnel; 
+  int                    free_personnel; 
+  int                    num_waiting_patients; 
+  struct List            waiting; 
+  struct List            assess; 
   struct List            inside;
   struct List            up;
 #else
-  int                    free_personnel;
+  int                    free_personnel; 
   struct List            waiting;
   struct List            assess;
   struct List            inside;
   struct List            up;
-  int                    personnel;
-  int                    num_waiting_patients;
+  int                    personnel; 
+  int                    num_waiting_patients; 
 #endif
 };
-
+ 
 struct Village {
 #if 1
   struct Village         *forward[4];
   struct Village         *back;
   struct List            returned;
-  struct Hosp            hosp;
+  struct Hosp            hosp;   
   int                    label;
   long long              seed;
 #else
-  struct Hosp            hosp;
+  struct Hosp            hosp;   
   long                   seed;
   struct Village         *forward[4];
   int                    label;
@@ -98,3 +98,4 @@ float get_total_hosps(struct Village *village);
 struct Results get_results(struct Village *village);
 
 #endif
+

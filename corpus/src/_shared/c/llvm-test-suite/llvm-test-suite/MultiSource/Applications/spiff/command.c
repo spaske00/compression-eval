@@ -132,7 +132,7 @@ char *str;
 		S_nextword(&str);
 		P_addalpha(str);
 	}
-	else if ((0 == strlen(str)) || !S_wordcmp(str,"rem")
+	else if ((0 == strlen(str)) || !S_wordcmp(str,"rem") 
 				    || ('#' == *str))
 	{
 		/* do nothing */
@@ -189,3 +189,4 @@ char *in_line;
 	}
 	return(0);
 }
+

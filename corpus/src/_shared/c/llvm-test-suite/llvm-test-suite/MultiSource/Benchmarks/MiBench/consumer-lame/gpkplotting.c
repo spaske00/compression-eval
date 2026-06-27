@@ -53,7 +53,7 @@ void gpk_graph_draw(GtkWidget *widget,               /* plot on this widged */
 		   gdouble xmx,gdouble ymx,
                    int clear,                       /* clear old plot first */
 		   char *title,                     /* add a title (only if clear=1) */
-                   GdkColor *color)
+                   GdkColor *color)		    
 {
   GdkPixmap **ppixmap;
   GdkPoint *points;
@@ -88,7 +88,7 @@ void gpk_graph_draw(GtkWidget *widget,               /* plot on this widged */
 		     widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
 		     0,10,title,strlen(title));
     }
-
+      
 
     points = g_malloc(n*sizeof(GdkPoint));
     for (i=0; i<n ; i++) {
@@ -148,8 +148,8 @@ void gpk_bargraph_draw(GtkWidget *widget,           /* plot on this widged */
 		   gdouble xmx,gdouble ymx,
                    int clear,                       /* clear old plot first */
 		   char *title,                     /* add a title (only if clear=1) */
-                   int barwidth,                    /* bar width. 0=compute based on window size */
-                   GdkColor *color)
+                   int barwidth,                    /* bar width. 0=compute based on window size */    
+                   GdkColor *color)		    
 {
   GdkPixmap **ppixmap;
   GdkPoint points[2];
@@ -184,7 +184,7 @@ void gpk_bargraph_draw(GtkWidget *widget,           /* plot on this widged */
 		     widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
 		     0,10,title,strlen(title));
     }
-
+      
 
     for (i=0; i<n ; i++) {
       points[1].x =.5+  ((xcord[i]-xmn)*(width-1)/(xmx-xmn));
@@ -258,7 +258,7 @@ expose_event (GtkWidget *widget, GdkEventExpose *event, gpointer data)
 GtkWidget *gpk_plot_new(int width, int height)
 {
   GtkWidget *pixmapbox;
-
+   
   pixmapbox = gtk_drawing_area_new();
   gtk_drawing_area_size(GTK_DRAWING_AREA(pixmapbox),width,height);
   gtk_signal_connect (GTK_OBJECT (pixmapbox), "expose_event",

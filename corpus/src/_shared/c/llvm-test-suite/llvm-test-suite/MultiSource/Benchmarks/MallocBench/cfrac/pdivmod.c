@@ -15,10 +15,10 @@
  *   NULL, then *rp will be returned if non-null, otherwise pUndef is returned.
  *
  *  Produce:
- *
+ * 
  *	 q (quotient)	= u div v	(v != 0)
  *			  truncation is toward zero
- *
+ *	
  *	 r (remainder)	= u mod v
  *			= u - u div v * v      (v != 0)
  *			= u		       (v == 0)
@@ -27,20 +27,20 @@
  *
  * Note: this has opposite convention than the C standard div fuction,
  *	 but the same convention of the typical C "/" operator
- *	 It is also inconvienient for the mod function.
+ *	 It is also inconvienient for the mod function.	 
  */
 /*
  *	This algorithm is taken almost verbatum from Knuth Vol 2.
  *	Please note the following trivial(?) array index
  *	transformations (since MSD to LSD order is reversed):
- *
+ *	
  *	q[0..m] to Q[0..m]   thus   q[i] == Q[m-i]
  *	r[1..n]	   R[0..n-1]	    r[i] == R[n+1-i]
  *	u[0..m+n]  w[0..m+n]	    u[i] == w[m+n-i]
  *	v[1..n]	   x[0..n-1]	    v[i] == x[n-i]
- *
+ *	
  *	let N == n - 1 so that n == N + 1 thus:
- *
+ *	
  *	q[0..m] to Q[0..m]   thus   q[i] == Q[m-i]
  *	r[1..n]	   R[0..N]	    r[i] == R[N+2-i]
  *	u[0..m+n]  w[0..m+N+1]	    u[i] == w[m+N+1-i]
@@ -96,8 +96,8 @@ precision pdivmod(u, v, qp, rp)
       pdestroy(q);
       return r;
    }
-   r->sign = u->sign;
-/*
+   r->sign = u->sign;	    
+/* 
  * watch out! does this function return: q=floor(a/b) or trunc(a/b)?
  * it's currently the latter, but every mathmaticion I have talked to
  * prefers the former so that a % b returns between 0 to b-1.  The
@@ -123,10 +123,10 @@ precision pdivmod(u, v, qp, rp)
 	qPtr -= m + 1;
 	*(r->value) = memdivw1(qPtr, u->value, m + 1, d);
 #endif
-      }
+      }					  
    } else {					/* muti digit divide */
       /*
-       * normalize:   multiply u and v by d so hi digit of v > b/2
+       * normalize:   multiply u and v by d so hi digit of v > b/2 
        */
       d = BASE / (*--vPtr+1);			  /* high digit of v */
 
@@ -159,8 +159,8 @@ precision pdivmod(u, v, qp, rp)
       vPtr = w->value;		     /* very confusing.	 just a temp */
       LastPtr = uPtr + m + n;
       do {				    /* single digit multiply */
-	 temp	 = uMul(*uPtr++, d);
-	 temp	+= hi;
+	 temp	 = uMul(*uPtr++, d);	      
+	 temp	+= hi;	      
 	 hi	 = divBase(temp);
 	 *vPtr++ = modBase(temp);
       } while (uPtr < LastPtr);
@@ -186,8 +186,8 @@ precision pdivmod(u, v, qp, rp)
 	 printf("   u = ");
 	 for (i = n; i >= 0; --i) printf("%.*x ", sizeof(digit) * 2, uPtr[i]);
 	 putchar('\n');
-	 printf("   v = ");
-	 for (i = 1; i < 3; i++) printf("%.*x ", sizeof(digit) * 2,
+	 printf("   v = "); 
+	 for (i = 1; i < 3; i++) printf("%.*x ", sizeof(digit) * 2, 
 	    v->value[n-i]);
 	 putchar('\n');
 #endif
@@ -206,7 +206,7 @@ precision pdivmod(u, v, qp, rp)
 	       --qd;
 	       temp += vPtr[1];
 	       if (temp >= BASE) break;  /* if so, vPtr*qd <= temp*base */
-	    }
+	    }		
 	    LastPtr += 2;
 	 }
 	 /*
@@ -240,7 +240,7 @@ precision pdivmod(u, v, qp, rp)
 #endif
 #ifdef DEBUG
 	 printf("   qhat = %.*x\n", sizeof(digit) * 2, qd);
-	 printf("   new u = ");
+	 printf("   new u = "); 
 	 for (i = n; i >= 0; --i) printf("%.*x ", sizeof(digit) * 2, uPtr[i]);
 	 putchar('\n');
 #endif
@@ -258,7 +258,7 @@ precision pdivmod(u, v, qp, rp)
 	    --qd;
 #ifdef DEBUG
 	    printf("   decrementing q...adding back\n");
-	    printf("   fixed u = ");
+	    printf("   fixed u = "); 
 	    for (i = n; i >= 0; --i) printf("%.*x ", sizeof(digit) * 2, uPtr[i]);
 	    putchar('\n');
 	    printf("   newq = %.*x\n", sizeof(digit) * 2, qd);
@@ -266,7 +266,7 @@ precision pdivmod(u, v, qp, rp)
 	 }
 	 *--qPtr = qd;			/* one leading zero possible */
 #ifdef DEBUG
-	 putchar('\n');
+	 putchar('\n'); 
 #endif
       } while (uPtr > u->value);
 
@@ -282,7 +282,7 @@ precision pdivmod(u, v, qp, rp)
 	  temp	 += *--uPtr;		/* 0 <= temp < base^2	     */
 	  hi	  = uModDiv(temp, d, --vPtr);
       } while (uPtr > u->value);	/* carry will be zero	     */
-#else
+#else 
       carry = memdivw1(r->value, u->value, n, d); 	 /* always 0 */
 #endif
       pnorm(r);		      /* remainder may have many leading 0's */

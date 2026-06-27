@@ -112,7 +112,7 @@ DFSClearHCG(nodeHCGType * HCG)
 
     for (net = 1; net <= channelNets; net++) {
 	HCG[net].netsReached = FALSE;
-    }
+    }	
 }
 
 void
@@ -127,7 +127,7 @@ DumpHCG(nodeHCGType * HCG)
 	    printf("%d ", HCG[net].netsHook[which]);
 	}
 	printf("\n\n");
-    }
+    }	
 }
 
 void
@@ -161,7 +161,7 @@ NoHCV(nodeHCGType * HCG,
 			break;
 		    }
 		}
-
+		
 		/*
 		 * Is net an HCV?
 		 */

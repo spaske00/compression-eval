@@ -205,3 +205,4 @@ LISP gc_info(LISP);
 LISP err_closure_code(LISP tmp);
 
 #define VLOAD_OFFSET_HACK_CHAR '|'
+

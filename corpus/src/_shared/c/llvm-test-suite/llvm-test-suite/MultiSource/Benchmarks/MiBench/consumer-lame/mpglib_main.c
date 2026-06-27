@@ -16,7 +16,7 @@
 #include <stdlib.h>
 
 static char buf[16384];
-#define FSIZE 8192
+#define FSIZE 8192  
 static char out[FSIZE];
 struct mpstr mp;
 
@@ -36,7 +36,7 @@ printf(" integer  %i \n",(int) ( header[0] == (char) 0xFF));
 printf(" integer  %i \n",(int) ( (header[1] & (char) 0xF0) == (char) 0xF0));
 */
 
-return
+return 
 ((int) ( header[0] == (char) 0xFF)) &&
 ((int) ( (header[1] & (char) 0xF0) == (char) 0xF0));
 
@@ -44,7 +44,7 @@ return
 }
 
 
-int lame_decode_initfile(FILE *fd, int *stereo, int *samp, int *bitrate,
+int lame_decode_initfile(FILE *fd, int *stereo, int *samp, int *bitrate, 
 unsigned long *num_samples)
 {
   extern int tabsel_123[2][3][16];
@@ -57,11 +57,11 @@ unsigned long *num_samples)
 
   InitMP3(&mp);
   memset(buf, 0, sizeof(buf));
-
+  
   /* skip RIFF type proprietary headers  */
   /* look for sync word  FFF */
   while (!is_syncword(buf)) {
-    buf[0]=buf[1];
+    buf[0]=buf[1]; 
     if (fread(&buf[1],1,1,fd) == 0) return -1;  /* failed */
   }
   /*  ret = decodeMP3(&mp,buf,2,out,FSIZE,&size); */
@@ -137,13 +137,13 @@ int lame_decode_fromfile(FILE *fd, short pcm_l[], short pcm_r[])
     /* if (ret ==MP3_ERR) return -1;  lets ignore errors and keep reading... */
     /*
     printf("ret = %i size= %i  %i   %i  %i \n",ret,size,
-	   MP3_NEED_MORE,MP3_ERR,MP3_OK);
+	   MP3_NEED_MORE,MP3_ERR,MP3_OK); 
     */
   }
 
   stereo=mp.fr.stereo;
 
-  if (ret == MP3_OK)
+  if (ret == MP3_OK) 
   {
     /*    write(1,out,size); */
     outsize = size/(2*(stereo));
@@ -153,7 +153,7 @@ int lame_decode_fromfile(FILE *fd, short pcm_l[], short pcm_r[])
     }
 
     for (j=0; j<stereo; j++)
-      for (i=0; i<outsize; i++)
+      for (i=0; i<outsize; i++) 
 	if (j==0) pcm_l[i] = ((short *) out)[mp.fr.stereo*i+j];
 	else pcm_r[i] = ((short *) out)[mp.fr.stereo*i+j];
 
@@ -186,7 +186,7 @@ int lame_decode(char *buf,int len,short pcm_l[],short pcm_r[])
     }
 
     for (j=0; j<mp.fr.stereo; j++)
-      for (i=0; i<outsize; i++)
+      for (i=0; i<outsize; i++) 
 	if (j==0) pcm_l[i] = ((short *) out)[mp.fr.stereo*i+j];
 	else pcm_r[i] = ((short *) out)[mp.fr.stereo*i+j];
 
@@ -200,3 +200,4 @@ int lame_decode(char *buf,int len,short pcm_l[],short pcm_r[])
 }
 
 #endif /* HAVEMPGLIB */
+

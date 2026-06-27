@@ -9,7 +9,7 @@ consumed = 0
 buffer = 0
 
 function producer()
-   return coroutine.create(
+   return coroutine.create( 
 
       function()
          while produced < n do
@@ -22,10 +22,10 @@ function producer()
 
    )
 end
-
+   
 
 function consumer(p)
-   return coroutine.create(
+   return coroutine.create( 
 
       function()
          local value = 0

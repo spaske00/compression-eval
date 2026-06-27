@@ -53,7 +53,7 @@ STDMETHODIMP CBaseCoder::Init()
   UInt32 keySize = _key.GetKeySize();
   UInt32 keysTotalSize = 2 * keySize + kPwdVerifCodeSize;
   Byte buf[2 * kAesKeySizeMax + kPwdVerifCodeSize];
-
+  
   // for (unsigned ii = 0; ii < 1000; ii++)
   {
     #ifdef _NO_WZAES_OPTIMIZATIONS
@@ -78,7 +78,7 @@ STDMETHODIMP CBaseCoder::Init()
       buf32, key32SizeTotal);
     for (UInt32 j = 0; j < keysTotalSize; j++)
       buf[j] = (Byte)(buf32[j / 4] >> (24 - 8 * (j & 3)));
-
+    
     #endif
   }
 

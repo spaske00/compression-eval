@@ -27,14 +27,14 @@ struct CItem
       return false;
     return Name[0] == ':' && Name[1] == ':';
   }
-
+  
   bool IsUserItem() const
   {
     if (Name.Length() < 2)
       return false;
     return Name[0] == '/';
   }
-
+  
   bool IsDir() const
   {
     if (Name.Length() == 0)
@@ -238,7 +238,7 @@ public:
   HRESULT Open2(IInStream *inStream, const UInt64 *searchHeaderSizeLimit, CFilesDatabase &database);
   HRESULT Open(IInStream *inStream, const UInt64 *searchHeaderSizeLimit, CFilesDatabase &database);
 };
-
+  
 }}
-
+  
 #endif

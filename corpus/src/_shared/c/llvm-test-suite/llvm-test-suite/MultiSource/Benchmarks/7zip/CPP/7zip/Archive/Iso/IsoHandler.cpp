@@ -229,7 +229,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 currentTotalSize = 0;
   UInt64 currentItemSize;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -254,7 +254,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         NExtract::NAskMode::kTest :
         NExtract::NAskMode::kExtract;
     UInt32 index = allFilesMode ? i : indices[i];
-
+    
     RINOK(extractCallback->GetStream(index, &realOutStream, askMode));
 
     UInt64 blockIndex;
@@ -278,7 +278,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       currentItemSize = _archive.GetBootItemSize(bootIndex);
       blockIndex = be.LoadRBA;
     }
-
+   
     if (!testMode && !realOutStream)
       continue;
     RINOK(extractCallback->PrepareOperation(askMode));

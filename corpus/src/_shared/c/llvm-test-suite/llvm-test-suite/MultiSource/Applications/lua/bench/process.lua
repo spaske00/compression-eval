@@ -8,10 +8,10 @@ local function link(n)
    local message, next = 0
 
    if n-1 > 0 then
-      next = coroutine.create(link)
+      next = coroutine.create(link) 
       _,message = coroutine.resume(next,n-1)
-   end
-   coroutine.yield(message + 1)
+   end   
+   coroutine.yield(message + 1)   
 end
 
 

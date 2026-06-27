@@ -38,8 +38,8 @@ static int hashfunc(unsigned int key)
   return ((key>>3) % HashRange);
 }
 
-static void AddEdges(int count1, Graph retval, int numproc,
-                     int perproc, int numvert, int j)
+static void AddEdges(int count1, Graph retval, int numproc, 
+                     int perproc, int numvert, int j) 
 {
   Vertex tmp;
   Vertex helper[MAXPROC];
@@ -49,15 +49,15 @@ static void AddEdges(int count1, Graph retval, int numproc,
     helper[i] = retval->vlist[i];
   }
 
-  for (tmp = retval->vlist[j]; tmp; tmp=tmp->next)
+  for (tmp = retval->vlist[j]; tmp; tmp=tmp->next) 
     {
-      for (i=0; i<numproc*perproc; i++)
+      for (i=0; i<numproc*perproc; i++) 
         {
           int pn,offset,dist;
           Vertex dest;
           Hash hash;
-
-          if (i!=count1)
+          
+          if (i!=count1) 
             {
               dist = compute_dist(i,count1,numvert);
               pn = i/perproc;
@@ -72,7 +72,7 @@ static void AddEdges(int count1, Graph retval, int numproc,
     } /* for tmp... */
 }
 
-Graph MakeGraph(int numvert, int numproc)
+Graph MakeGraph(int numvert, int numproc) 
 {
   int perproc = numvert/numproc;
   int i,j;
@@ -81,16 +81,16 @@ Graph MakeGraph(int numvert, int numproc)
   Vertex block;
   Graph retval;
   retval = (Graph)malloc(sizeof(*retval));
-  for (i=0; i<MAXPROC; i++)
+  for (i=0; i<MAXPROC; i++) 
     {
       retval->vlist[i]=NULL;
     }
   chatting("Make phase 2\n");
-  for (j=numproc-1; j>=0; j--)
+  for (j=numproc-1; j>=0; j--) 
     {
       block = (Vertex) malloc(perproc*(sizeof(*tmp)));
       v = NULL;
-      for (i=0; i<perproc; i++)
+      for (i=0; i<perproc; i++) 
         {
           tmp = block+(perproc-i-1);
           HashRange = numvert/4;
@@ -103,7 +103,7 @@ Graph MakeGraph(int numvert, int numproc)
     }
 
   chatting("Make phase 3\n");
-  for (j=numproc-1; j>=0; j--)
+  for (j=numproc-1; j>=0; j--) 
     {
       count1 = j*perproc;
       AddEdges(count1, retval, numproc, perproc, numvert, j);
@@ -113,3 +113,9 @@ Graph MakeGraph(int numvert, int numproc)
   chatting("Make returning\n");
   return retval;
 }
+
+  
+
+
+
+

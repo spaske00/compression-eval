@@ -163,7 +163,7 @@ static int mu(p_type p,int maxdep,int dep,int last) {
 #define KKK 4
   /* 2 : {0x40,0x40,0x40,0x60,0x0,0x5,0xa,0x50,0x70,0x70,0x24,0xc,0x9,0xe,0x20,0x10,0x1,0x3}; */
   /* {0,0,0,0,1,1,1,0,0,0,1,1,1,1,0,0,0,1};*/
-
+  
   int win;
   if( dep == maxdep - KKK ) {
     if(( B & near[p.b]) == 0) return 0;
@@ -285,10 +285,10 @@ int main(int argc,char *argv[]) {
     fprintf(stderr,"ERROR in %s: Could not open datafile %s\n",argv[0],argv[1]);
     exit(1);
   }
-
-  fscanf(fp,"%d %d %d %d %d %d %d %d %d",
+  
+  fscanf(fp,"%d %d %d %d %d %d %d %d %d", 
 	 &p.a, &p.b, &p.c, &p.d, &p.bi, &p.ar, &p.g1, &p.g2, &p.g3);
-
+  
   for(k=2;;k+=2) {
     printf("Trying %d\n",k);
     if(mu(p,k,0,-1) == 1) {
@@ -297,13 +297,13 @@ int main(int argc,char *argv[]) {
     }
   }
 #endif
-
+  
   return 0;
 }
 
 static int neard(p_type p,int maxdep,int dep,int last,int near[]);
 static int nearu(p_type p,int maxdep,int dep,int last,int near[]) {
-  if(maxdep == dep) {
+  if(maxdep == dep) { 
     near[p.a] |= A;
     near[p.b] |= B;
     near[p.c] |= C;
@@ -354,12 +354,12 @@ static void prnear(int k) {
   14 15
 
 
-  Vinst :
-  G G G   A B
+  Vinst : 
+  G G G   A B 
   E F     C D
 
   Vinster:
-  0 1 7 8
+  0 1 7 8 
   1 2 8 9
   2 3 9 10
   3 4 10 11
@@ -380,3 +380,6 @@ static void prnear(int k) {
   17 6 5 13
 
 */
+
+
+

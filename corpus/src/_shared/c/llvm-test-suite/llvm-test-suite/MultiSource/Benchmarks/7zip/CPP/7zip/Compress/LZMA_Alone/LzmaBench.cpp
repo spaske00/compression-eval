@@ -176,7 +176,7 @@ STDMETHODIMP CBenchmarkInStream::Read(void *data, UInt32 size, UInt32 *processed
     *processedSize = size;
   return S_OK;
 }
-
+  
 class CBenchmarkOutStream:
   public ISequentialOutStream,
   public CBenchBuffer,
@@ -211,7 +211,7 @@ STDMETHODIMP CBenchmarkOutStream::Write(const void *data, UInt32 size, UInt32 *p
   }
   return S_OK;
 }
-
+  
 class CCrcOutStream:
   public ISequentialOutStream,
   public CMyUnknownImp
@@ -230,7 +230,7 @@ STDMETHODIMP CCrcOutStream::Write(const void *data, UInt32 size, UInt32 *process
     *processedSize = size;
   return S_OK;
 }
-
+  
 static UInt64 GetTimeCount()
 {
   #ifdef USE_POSIX_TIME
@@ -568,7 +568,7 @@ HRESULT CEncoderInfo::Init(UInt32 dictionarySize, UInt32 numThreads, CBaseRandom
   if (!propStreamSpec->Alloc(kMaxLzmaPropSize))
     return E_OUTOFMEMORY;
   propStreamSpec->Init();
-
+  
   PROPID propIDs[] =
   {
     NCoderPropID::kDictionarySize,
@@ -625,7 +625,7 @@ HRESULT CEncoderInfo::Decode(UInt32 decoderIndex)
 
   CCrcOutStream *crcOutStreamSpec = new CCrcOutStream;
   CMyComPtr<ISequentialOutStream> crcOutStream = crcOutStreamSpec;
-
+    
   CBenchProgressInfo *pi = progressInfoSpec[decoderIndex];
   pi->BenchInfo.UnpackSize = 0;
   pi->BenchInfo.PackSize = 0;
@@ -634,7 +634,7 @@ HRESULT CEncoderInfo::Decode(UInt32 decoderIndex)
   {
     inStreamSpec->Init(outStreamSpec->Buffer, compressedSize);
     crcOutStreamSpec->Init();
-
+    
     RINOK(compressSetDecoderProperties->SetDecoderProperties2(propStreamSpec->Buffer, propStreamSpec->Pos));
     UInt64 outSize = kBufferSize;
     RINOK(decoder->Code(inStream, crcOutStream, 0, &outSize, progressInfo[decoderIndex]));
@@ -1015,3 +1015,4 @@ HRESULT CrcBench(UInt32 numThreads, UInt32 bufferSize, UInt64 &speed)
   speed = MyMultDiv64(size, timeVal, GetFreq());
   return S_OK;
 }
+

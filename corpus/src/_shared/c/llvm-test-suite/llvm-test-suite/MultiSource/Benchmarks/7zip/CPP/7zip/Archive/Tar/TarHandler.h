@@ -23,7 +23,7 @@ class CHandler:
   CObjectVector<CItemEx> _items;
   CMyComPtr<IInStream> _stream;
   CMyComPtr<ISequentialInStream> _seqStream;
-
+  
   UInt32 _curIndex;
   bool _latestIsRead;
   CItemEx _latestItem;

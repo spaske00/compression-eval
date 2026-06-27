@@ -33,7 +33,7 @@ typedef struct {
 	unsigned part2_3_length;
 	unsigned big_values;
 	unsigned count1;
-	unsigned global_gain;
+ 	unsigned global_gain;
 	unsigned scalefac_compress;
 	unsigned window_switching_flag;
 	unsigned block_type;

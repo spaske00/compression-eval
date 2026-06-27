@@ -62,7 +62,7 @@ class COutArchive
   UInt64 _prefixHeaderPos;
 
   HRESULT WriteDirect(const void *data, UInt32 size);
-
+  
   UInt64 GetPos() const;
   void WriteBytes(const void *data, size_t size);
   void WriteBytes(const CByteBuffer &data) { WriteBytes(data, data.GetCapacity()); }
@@ -106,7 +106,7 @@ class COutArchive
       const CArchiveDatabase &db,
       const CHeaderOptions &headerOptions,
       UInt64 &headerOffset);
-
+  
   bool _countMode;
   bool _writeToStream;
   size_t _countSize;

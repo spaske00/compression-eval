@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
 	MAXSIZE=atoi(argv[2]);
 	MAXWAVES=atoi(argv[1]);
   srand(1);
-
+		
  RealIn=(float*)malloc(sizeof(float)*MAXSIZE);
  ImagIn=(float*)malloc(sizeof(float)*MAXSIZE);
  RealOut=(float*)malloc(sizeof(float)*MAXSIZE);
@@ -73,34 +73,34 @@ int main(int argc, char *argv[]) {
  amp=(float*)malloc(sizeof(float)*MAXWAVES);
 
  /* Makes MAXWAVES waves of random amplitude and period */
-	for(i=0;i<MAXWAVES;i++)
+	for(i=0;i<MAXWAVES;i++) 
 	{
 		coeff[i] = i%1000;
 		amp[i] = i%1000;
 	}
- for(i=0;i<MAXSIZE;i++)
+ for(i=0;i<MAXSIZE;i++) 
  {
    /*   RealIn[i]=rand();*/
 	 RealIn[i]=0;
-	 for(j=0;j<MAXWAVES;j++)
+	 for(j=0;j<MAXWAVES;j++) 
 	 {
 		 /* randomly select sin or cos */
 		 if (rand()%2)
 		 {
-				RealIn[i]+=coeff[j]*cos(amp[j]*i);
+		 		RealIn[i]+=coeff[j]*cos(amp[j]*i);
 			}
 		 else
 		 {
-			RealIn[i]+=coeff[j]*sin(amp[j]*i);
+		 	RealIn[i]+=coeff[j]*sin(amp[j]*i);
 		 }
-	 ImagIn[i]=0;
+  	 ImagIn[i]=0;
 	 }
  }
 
  /* regular*/
  fft_float (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
  fft_float_StrictFP (MAXSIZE,invfft,RealIn,ImagIn,RealOut_StrictFP,ImagOut_StrictFP);
-
+ 
  printf("RealOut:\n");
  for (i=0;i<MAXSIZE;i++) {
    if (!check_FP(RealOut[i], RealOut_StrictFP[i]))

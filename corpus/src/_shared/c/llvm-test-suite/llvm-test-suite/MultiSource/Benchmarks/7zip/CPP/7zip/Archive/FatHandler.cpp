@@ -51,13 +51,13 @@ struct CHeader
   Byte SectorSizeLog;
   Byte SectorsPerClusterLog;
   Byte ClusterSizeLog;
-
+  
   UInt16 SectorsPerTrack;
   UInt16 NumHeads;
   UInt32 NumHiddenSectors;
 
   bool VolFieldsDefined;
-
+  
   UInt32 VolId;
   // Byte VolName[11];
   // Byte FileSys[8];
@@ -208,7 +208,7 @@ bool CHeader::Parse(const Byte *p)
     return false;
   UInt32 numDataSectors = NumSectors - DataSector;
   UInt32 numClusters = numDataSectors >> SectorsPerClusterLog;
-
+  
   BadCluster = 0x0FFFFFF7;
   if (numClusters < 0xFFF5)
   {
@@ -450,7 +450,7 @@ HRESULT CDatabase::ReadDir(Int32 parent, UInt32 cluster, int level)
       }
       else if (sectorIndex++ >= Header.NumRootDirSectors)
         break;
-
+      
       RINOK(ReadStream_FALSE(InStream, ByteBuf, blockSize));
     }
     const Byte *p = ByteBuf + pos;
@@ -469,7 +469,7 @@ HRESULT CDatabase::ReadDir(Int32 parent, UInt32 cluster, int level)
         return S_FALSE;
       continue;
     }
-
+    
     Byte attrib = p[11];
     if ((attrib & 0x3F) == 0xF)
     {
@@ -489,12 +489,12 @@ HRESULT CDatabase::ReadDir(Int32 parent, UInt32 cluster, int level)
         return S_FALSE;
 
       numLongRecords--;
-
+      
       if (p[12] == 0)
       {
         wchar_t nameBuf[14];
         wchar_t *dest;
-
+        
         dest = AddSubStringToName(nameBuf, p + 1, 5);
         dest = AddSubStringToName(dest, p + 14, 6);
         AddSubStringToName(dest, p + 28, 2);
@@ -918,7 +918,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 totalPackSize;
   totalSize = totalPackSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 

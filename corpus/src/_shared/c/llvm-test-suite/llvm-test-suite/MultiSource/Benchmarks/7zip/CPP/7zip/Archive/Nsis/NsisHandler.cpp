@@ -342,17 +342,17 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     #endif
     {
       const CItem &item = _archive.Items[index];
-
+      
       if (_archive.IsSolid)
         GetUncompressedSize(index, currentItemSize);
       else
         GetCompressedSize(index, currentItemSize);
-
+      
       if (!testMode && !realOutStream)
         continue;
-
+      
       RINOK(extractCallback->PrepareOperation(askMode));
-
+      
       if (!dataError)
       {
         bool needDecompress = false;
@@ -454,11 +454,11 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
               if (writeToTemp)
                 memcpy((Byte *)tempBuf + (size_t)offset, buffer, processedSize);
-
+              
               fullSize -= (UInt32)processedSize;
               streamPos += processedSize;
               offset += processedSize;
-
+              
               UInt64 completed;
               if (_archive.IsSolid)
                 completed = currentTotalSize + offset;

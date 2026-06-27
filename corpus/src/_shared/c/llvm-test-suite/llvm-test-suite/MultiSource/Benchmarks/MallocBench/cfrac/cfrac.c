@@ -9,7 +9,7 @@
 #include "pfactor.h"
 
 #ifdef __STDC__
-extern unsigned *pfactorbase(precision n, unsigned k,
+extern unsigned *pfactorbase(precision n, unsigned k, 
    unsigned *m, unsigned aborts);
 extern double  pomeranceLpow(double n, double alpha);
 #else
@@ -83,7 +83,7 @@ float logf_(p, n, k)
    precision n;
    unsigned p, k;
 {
-   register float     res;
+   register float     res; 
 
    (void) pparm(n);
 
@@ -96,7 +96,7 @@ float logf_(p, n, k)
    res  = pfKnuthEx28(p, pmul(itop(k),n)) * log((double) p);
    /* res -= log((double) k) * 0.5; */
 
-   pdestroy(n);
+   pdestroy(n); 
    return res;
 }
 
@@ -123,7 +123,7 @@ unsigned findk(n, m, aborts, maxk)
 
    for (k = 1; k < maxk; k++) {		/* maxk should best be m+m? */
       if (debug) {
-	 fputs("kN = ", stdout);
+	 fputs("kN = ", stdout); 
 	 fputp(stdout, pmul(utop(k), n)); putc('\n', stdout);
       }
       count = *m;
@@ -199,8 +199,8 @@ int main(argc, argv)
       verbose++;
       break;
    default:
-usage: fprintf(stderr,
-  "usage: %s [-dv] [-a aborts ] [-k maxk ] [-i maxCount ] n [[ m ] k ]\n",
+usage: fprintf(stderr, 
+  "usage: %s [-dv] [-a aborts ] [-k maxk ] [-i maxCount ] n [[ m ] k ]\n", 
          progName);
       return 1;
    }
@@ -210,8 +210,8 @@ usage: fprintf(stderr,
    if (argc < 1 || argc > 3) goto usage;
 
    pset(&n, atop(*argv++));  --argc;
-   if (argc) { m = atoi(*argv++);  --argc; }
-   if (argc) { k = atoi(*argv++);  --argc; }
+   if (argc) { m = atoi(*argv++);  --argc; } 
+   if (argc) { k = atoi(*argv++);  --argc; } 
 
    if (k == 0) {
       if (maxk == 0) {

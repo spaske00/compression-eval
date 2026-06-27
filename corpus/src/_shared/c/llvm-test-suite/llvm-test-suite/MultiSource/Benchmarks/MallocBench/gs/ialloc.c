@@ -159,9 +159,9 @@ alloc_init(proc_alloc_t palloc, proc_free_t pfree, uint chunk_size)
 	ap->chunk_size = chunk_size;
 #if defined(NOMEMOPT)
 	ap->big_size = 8;
-#else
+#else	
 	ap->big_size = chunk_size / 4;
-#endif
+#endif	
 	ap->palloc = palloc;
 	ap->pfree = pfree;
 }
@@ -578,7 +578,7 @@ alloc_large(alloc_state_ptr ap, uint size, char *client_name)
 	char *block;
 	if ( mblock == NULL ) return NULL;
 	block = (char *)mblock + alloc_block_size;
-	alloc_print_large('+', '*', block, size);
+   	alloc_print_large('+', '*', block, size);
 	mblock->next = ap->malloc_chain;
 	mblock->size = size;
 	mblock->save_level = ap->save_level;

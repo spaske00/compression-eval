@@ -17,7 +17,7 @@ static char rcsid[]= "$Header$";
 #include "float.h"
 #include "strings.h"
 
-#define _F_GETEND(x)	(x + (strlen(x)-1))
+#define _F_GETEND(x)	(x + (strlen(x)-1)) 
 
 /*
 int floatcnt = 0;
@@ -135,10 +135,10 @@ F_atof(str,allflag)
 char *str;
 int allflag;	/* require that exactly all the characters are used */
 {
-	char *beg = str; /* place holder for beginning of the string */
+	char *beg = str; /* place holder for beginning of the string */ 
 	char man[R_MANMAX];	/* temporary location to build the mantissa */
 	int length = 0;	/* length of the mantissa so far */
-	int got_a_digit = 0;	/* flag to set if we get a non-zero digit */
+	int got_a_digit = 0;	/* flag to set if we get a non-zero digit */ 
 	int i;
 	int resexp;
 
@@ -408,7 +408,7 @@ F_float  p1,p2;
 
 	(void) strcat(man1,R_getfrac(p1));
 	(void) strcat(man2,R_getfrac(p2));
-
+	
 	/*
 	**	now that the mantissa are aligned,
 	**	if the strings are the same, return 0
@@ -707,7 +707,7 @@ F_float p1,p2;
 	**	make sure that there is room to store the result
 	*/
 	if (digits>0)
-	{
+	{ 
 		if (R_getexp(p1) < R_getexp(p2))
 		{
 			/*
@@ -740,7 +740,7 @@ F_float p1,p2;
 		*/
 		if (Z_MAX(strlen(R_getfrac(p1)),
 			strlen(R_getfrac(p2))) > (R_MANMAX-2))
-		{
+		{						
 			(void) sprintf(Z_err_buf,
 			   "numbers differ by too much in magnitude");
 			Z_fatal(Z_err_buf);

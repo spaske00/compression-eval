@@ -4,7 +4,7 @@
 
 /****************************************************************
 //	Vector Routines.
-//	From CMU vision library.
+//	From CMU vision library.  
 //	They are used only for the VD, not the DT.
 // 	They are slow because of large call-by-value parameters.
 / ***************************************************************/
@@ -38,7 +38,7 @@ struct VEC2 V2_times(double c, struct VEC2 v)
 
 struct VEC2 V2_sum(struct VEC2 u, struct VEC2 v) {
     struct VEC2 ans;
-
+    
     ans.x = u.x + v.x;
     ans.y = u.y + v.y;
     return(ans);

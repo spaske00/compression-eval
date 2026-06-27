@@ -176,7 +176,7 @@ MAPPING MapLoad(OBJECT file_name, BOOLEAN recoded)
   /* first pass through the file; read character codes and names only */
   prev_code = -1;  curr_line_num = 0;
   while( fgets( (char *) buff, MAX_BUFF, fp) == (char *) buff )
-  {
+  { 
     /* skip comment lines and blank lines */
     curr_line_num++;
     for( i = 0;  buff[i] == ' ' || buff[i] == '\t';  i++ );
@@ -220,7 +220,7 @@ MAPPING MapLoad(OBJECT file_name, BOOLEAN recoded)
   rewind(fp);
   curr_line_num = 0;
   while( fgets( (char *) buff, MAX_BUFF, fp) == (char *) buff )
-  {
+  { 
     /* skip comment lines and blank lines */
     curr_line_num++;
     for( i = 0;  buff[i] == ' ' || buff[i] == '\t';  i++ );
@@ -488,7 +488,7 @@ OBJECT MapSmallCaps(OBJECT x, STYLE *style)
 
         /* in this state, all characters so far are non-transformable */
         if( transformable(*p) )
-        {
+        { 
 	  /* work out what the smaller font is going to be */
 	  StyleCopy(new_style, *style);
 	  FontChange(&new_style, font_change_word);

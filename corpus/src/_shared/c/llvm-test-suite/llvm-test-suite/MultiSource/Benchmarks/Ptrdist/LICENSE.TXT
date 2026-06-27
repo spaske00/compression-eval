@@ -60,3 +60,4 @@ licenses:
 	yacr2:
 	The yacr2 program is licensed to you under the GNU General Public License,
 	Version 2.
+

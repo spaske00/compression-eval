@@ -15,7 +15,7 @@ namespace NSignature
   UInt32 kEndOfCentralDir   = 0x06054B50 + 1;
   UInt32 kZip64EndOfCentralDir   = 0x06064B50 + 1;
   UInt32 kZip64EndOfCentralDirLocator   = 0x07064B50 + 1;
-
+  
   class CMarkersInitializer
   {
   public:
@@ -33,3 +33,4 @@ namespace NSignature
 }
 
 }}
+

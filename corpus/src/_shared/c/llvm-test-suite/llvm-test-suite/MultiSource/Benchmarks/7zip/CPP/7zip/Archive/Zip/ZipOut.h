@@ -14,7 +14,7 @@ namespace NArchive {
 namespace NZip {
 
 // can throw CSystemException and COutBufferException
-
+  
 class COutArchive
 {
   CMyComPtr<IOutStream> m_Stream;

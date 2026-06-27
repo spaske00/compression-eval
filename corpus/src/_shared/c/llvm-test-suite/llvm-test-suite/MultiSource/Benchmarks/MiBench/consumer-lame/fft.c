@@ -1,10 +1,10 @@
 /*
 ** FFT and FHT routines
 **  Copyright 1988, 1993; Ron Mayer
-**
+**  
 **  fht(fz,n);
 **      Does a hartley transform of "n" points in the array "fz".
-**
+**      
 ** NOTE: This routine uses at least 2 patented algorithms, and may be
 **       under the restrictions of a bunch of different organizations.
 **       Although I wrote it completely myself; it is kind of a derivative
@@ -347,7 +347,7 @@ void init_fft(void)
     }
 
     /*
-     * calculate HANN window coefficients
+     * calculate HANN window coefficients 
      */
     for (i = 0; i < BLKSIZE / 2; i++)
 	window[i] = 0.5 * (1.0 - cos(2.0 * PI * (i + 0.5) / BLKSIZE));

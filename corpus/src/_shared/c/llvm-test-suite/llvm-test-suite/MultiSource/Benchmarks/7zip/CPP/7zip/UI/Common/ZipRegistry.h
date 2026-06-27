@@ -31,7 +31,7 @@ namespace NCompression
     UInt32 Order;
     UInt32 BlockLogSize;
     UInt32 NumThreads;
-
+    
     CSysString FormatID;
     UString Method;
     UString Options;

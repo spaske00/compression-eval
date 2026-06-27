@@ -202,14 +202,14 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID,  PROPVARIANT *va
 {
   COM_TRY_BEGIN
   NCOM::CPropVariant prop;
-
+  
   /*
   const CRef2 &ref2 = _refs[index];
   if (ref2.Refs.IsEmpty())
     return E_FAIL;
   const CRef &ref = ref2.Refs.Front();
   */
-
+  
   const CFileItem &item = _db.Files[index];
   UInt32 index2 = index;
 
@@ -271,7 +271,7 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID,  PROPVARIANT *va
             bool methodIsKnown = FindMethod(
               EXTERNAL_CODECS_VARS
               coder.MethodID, methodName);
-
+            
             if (!methodIsKnown)
               methodsString += ConvertMethodIdToString(coder.MethodID);
             else

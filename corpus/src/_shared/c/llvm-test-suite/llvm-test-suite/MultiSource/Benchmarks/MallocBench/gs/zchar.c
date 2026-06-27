@@ -229,7 +229,7 @@ zsetcharwidth(register ref *op)
 	gs_show_enum *penum = find_show();
 	int code = num_params(op, 2, width);
 	if ( penum == 0 ) return e_undefined;
-	if (	code < 0 ||
+	if (	code < 0 || 
 		(code = gs_setcharwidth(penum, width[0], width[1])) < 0
 	   )
 		return code;

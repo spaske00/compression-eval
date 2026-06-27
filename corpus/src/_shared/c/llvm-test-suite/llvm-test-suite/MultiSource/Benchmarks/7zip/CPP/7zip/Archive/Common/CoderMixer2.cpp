@@ -34,7 +34,7 @@ CBindReverseConverter::CBindReverseConverter(const CBindInfo &srcBindInfo):
 
     srcInOffset -= srcCoderInfo.NumInStreams;
     srcOutOffset -= srcCoderInfo.NumOutStreams;
-
+    
     UInt32 j;
     for (j = 0; j < srcCoderInfo.NumInStreams; j++, destOutOffset++)
     {

@@ -46,7 +46,7 @@ void CArchiveExtractCallback::Init(
   LocalProgressSpec->Init(extractCallback2, true);
   LocalProgressSpec->SendProgress = false;
 
-
+ 
   _removePathParts = removePathParts;
   _arc = arc;
   _directoryPath = directoryPath;
@@ -176,7 +176,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index, ISequentialOutStre
       _isSplit = true;
     }
   }
-
+    
   RINOK(GetArchiveItemBoolProp(archive, index, kpidEncrypted, _encrypted));
 
   RINOK(GetUnpackSize());
@@ -219,7 +219,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index, ISequentialOutStre
 
     UStringVector pathParts;
     SplitPathToParts(fullPath, pathParts);
-
+    
     if (pathParts.IsEmpty())
       return E_FAIL;
     int numRemovePathParts = 0;
@@ -253,7 +253,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index, ISequentialOutStre
         if (!pathParts.IsEmpty())
           pathParts.DeleteBack();
       }
-
+    
       if (!pathParts.IsEmpty())
       {
         UString fullPathNew;
@@ -485,3 +485,4 @@ STDMETHODIMP CArchiveExtractCallback::CryptoGetTextPassword(BSTR *password)
   return _cryptoGetTextPassword->CryptoGetTextPassword(password);
   COM_TRY_END
 }
+

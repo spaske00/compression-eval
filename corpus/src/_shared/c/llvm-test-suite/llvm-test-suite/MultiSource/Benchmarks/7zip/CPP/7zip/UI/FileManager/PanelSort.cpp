@@ -23,7 +23,7 @@ static int CALLBACK CompareItems2(LPARAM lParam1, LPARAM lParam2, LPARAM lpData)
   if (lpData == 0) // FIXME NULL)
     return 0;
   CPanel *panel = (CPanel*)lpData;
-
+  
   switch(panel->_sortID)
   {
     // if (panel->_sortIndex == 0)
@@ -88,7 +88,7 @@ static int CALLBACK CompareItems(LPARAM lParam1, LPARAM lParam2, LPARAM lpData)
 
   bool isDir1 = panel->IsItemFolder((int)lParam1);
   bool isDir2 = panel->IsItemFolder((int)lParam2);
-
+  
   if (isDir1 && !isDir2) return -1;
   if (isDir2 && !isDir1) return 1;
 
@@ -97,7 +97,7 @@ static int CALLBACK CompareItems(LPARAM lParam1, LPARAM lParam2, LPARAM lpData)
 }
 
 
-int
+int 
 #if defined(__WIN32__) && !defined(__WXMICROWIN__) // FIXME
   wxCALLBACK
 #endif

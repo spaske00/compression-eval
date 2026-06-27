@@ -21,3 +21,4 @@ STDMETHODIMP CSequentialInStreamSizeCount2::GetSubStreamSize(
     return E_NOTIMPL;
   return  _getSubStreamSize->GetSubStreamSize(subStream, value);
 }
+

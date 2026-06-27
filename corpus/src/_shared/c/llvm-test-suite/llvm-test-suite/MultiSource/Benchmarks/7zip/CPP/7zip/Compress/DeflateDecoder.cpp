@@ -95,7 +95,7 @@ bool CCoder::ReadTables(void)
     if (!_deflate64Mode)
       if (_numDistLevels > kDistTableSize32)
         return false;
-
+    
     Byte levelLevels[kLevelTableSize];
     for (int i = 0; i < kLevelTableSize; i++)
     {
@@ -105,9 +105,9 @@ bool CCoder::ReadTables(void)
       else
         levelLevels[position] = 0;
     }
-
+    
     RIF(m_LevelDecoder.SetCodeLengths(levelLevels));
-
+    
     Byte tmpLevels[kFixedMainTableSize + kFixedDistTableSize];
     if (!DeCodeLevelTable(tmpLevels, numLitLenLevels + _numDistLevels))
       return false;

@@ -164,7 +164,7 @@ retry:	code = interp(epref);
 	/* Push the error object on the operand stack */
 	*++osp = error_object;
 	goto retry;
-}
+}	
 private int
 interp_exit(ref *op)
 {	return e_InterpreterExit;
@@ -448,7 +448,7 @@ sw:	/* We have to populate enough cases of the switch statement */
 	   }
 	case exec(t_file):
 	   {	/* Executable file.  Read the next token and interpret it. */
-		stream *s;
+	   	stream *s;
 		code = file_check_read(iref, &s);
 		if ( code < 0 ) return_with_error (code, iref);
 		osp = iosp;		/* scan_token uses ostack */

@@ -21,7 +21,7 @@ static const UInt32 kBufSize = (1 << 20);
 struct CBuf
 {
   Byte *Buf;
-
+  
   CBuf(): Buf(0) {}
   ~CBuf() { ::MidFree(Buf); }
   bool Alloc()

@@ -7,7 +7,7 @@
 #endif
 
 /*
- * Add
+ * Add 
  *
  * This will work correctly if -0 is passed as input
  */
@@ -66,9 +66,9 @@ precision padd(u, v)
       } while (vPtr < v->value + v->size);
 
       while (uPtr < u->value + u->size) {	/* propogate carry */
-	 temp	 = *uPtr++ + carry;
-	 carry	 = divBase(temp);
-	 *wPtr++ = modBase(temp);
+	 temp	 = *uPtr++ + carry;		    
+	 carry	 = divBase(temp);			   
+	 *wPtr++ = modBase(temp);	       
       }
       *wPtr = carry;
 #else

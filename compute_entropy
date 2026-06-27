@@ -1,6 +1,8 @@
 #!/bin/bash
 
-DIR="$1"
+set -euo pipefail
+
+DIR="${1:-}"
 
 if [[ -z "$DIR" ]]; then
     echo "Usage: $0 <directory>"
@@ -8,18 +10,35 @@ if [[ -z "$DIR" ]]; then
     exit 1
 fi
 
-dt=$(date +%s)
-output_file="$PWD/results/results_${DIR//\//\_}entropy_$dt.csv"
+if [[ ! -d "$DIR" ]]; then
+    echo "Directory not found: $DIR" >&2
+    exit 1
+fi
 
-cd "$DIR"
+dt=$(date +%s)
+output_file="$PWD/results_${DIR//\//\_}entropy_$dt.csv"
+
+scan_dir="$(cd "$DIR" && pwd)"
+search_path="."
+if [[ -d "$DIR/bin" ]]; then
+    search_path="./bin"
+fi
+
+cd "$scan_dir"
+
+mapfile -d '' files < <(find "$search_path" -type f -executable -print0 | sort -z)
+
+if (( ${#files[@]} == 0 )); then
+    echo "No executables found under $scan_dir/$search_path" >&2
+    exit 1
+fi
 
 # Print header
 echo -n 'filename,' > "$output_file"
-echo '' | ent -t -b | head -n 1 >> "$output_file"
+printf '\n' | ent -t -b | sed -n '1p' >> "$output_file"
 
-for file in $(find . -type f -name '*.tar' | sort); do
+for file in "${files[@]}"; do
     echo "Processing: $file"
     echo -n "$file," >> "$output_file"
     ent -t -b "$file" | tail -n 1 >> "$output_file"
 done
-

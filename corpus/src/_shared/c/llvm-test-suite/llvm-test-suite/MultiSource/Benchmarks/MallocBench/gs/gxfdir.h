@@ -47,3 +47,4 @@ struct gs_font_dir_s {
 	struct cached_char_s *cdata;
 	uint cnext;			/* rover for allocating cached_chars */
 };
+

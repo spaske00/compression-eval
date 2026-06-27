@@ -3,7 +3,7 @@
 // a program that creates RAR archives
 
 /* This code uses Carryless rangecoder (1999): Dmitry Subbotin : Public domain */
-
+ 
 #include "StdAfx.h"
 
 #include "../../../C/Alloc.h"
@@ -213,7 +213,7 @@ HRESULT CDecoder::WriteBuf()
       }
     }
   }
-
+      
   _wrPtr = _winPos;
   return WriteArea(writtenBorder, _winPos);
 }
@@ -285,7 +285,7 @@ bool CDecoder::AddVmCode(UInt32 firstByte, UInt32 codeSize)
   _tempFilters[_tempFilters.Size() - numEmptyItems] = tempFilter;
   tempFilter->FilterIndex = filterIndex;
   tempFilter->ExecCount = filter->ExecCount;
-
+ 
   UInt32 blockStart = NVm::ReadEncodedUInt32(inp);
   if (firstByte & 0x40)
     blockStart += 258;
@@ -859,7 +859,7 @@ STDMETHODIMP CDecoder::Code(ISequentialInStream *inStream, ISequentialOutStream 
         return E_OUTOFMEMORY;
       _vmCode = _vmData + kVmDataSizeMax;
     }
-
+    
     if (_window == 0)
     {
       _window = (Byte *)::MidAlloc(kWindowSize);
@@ -871,11 +871,11 @@ STDMETHODIMP CDecoder::Code(ISequentialInStream *inStream, ISequentialOutStream 
     if (!_vm.Create())
       return E_OUTOFMEMORY;
 
-
+    
     m_InBitStream.bitDecoder.SetStream(inStream);
     m_InBitStream.bitDecoder.Init();
     _outStream = outStream;
-
+   
     CCoderReleaser coderReleaser(this);
     _unpackSize = *outSize;
     return CodeReal(progress);

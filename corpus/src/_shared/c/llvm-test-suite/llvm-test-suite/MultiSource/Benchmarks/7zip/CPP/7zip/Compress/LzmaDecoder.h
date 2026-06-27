@@ -62,7 +62,7 @@ public:
   STDMETHOD(SetOutBufSize)(UInt32 streamIndex, UInt32 size);
 
   #ifndef NO_READ_FROM_CODER
-
+  
   STDMETHOD(SetInStream)(ISequentialInStream *inStream);
   STDMETHOD(ReleaseInStream)();
   STDMETHOD(Read)(void *data, UInt32 size, UInt32 *processedSize);

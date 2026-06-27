@@ -12,3 +12,4 @@ STDMETHODIMP CCrossThreadProgress::SetRatioInfo(const UInt64 *inSize, const UInt
   WaitEvent.Lock();
   return Result;
 }
+

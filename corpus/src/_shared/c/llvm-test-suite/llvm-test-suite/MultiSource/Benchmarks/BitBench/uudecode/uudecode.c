@@ -76,7 +76,7 @@ int decode(char* input, int offset, char* output) {				/*7*/
   while (input[offset] != 32) {							/*9*/
     int encodedoctets;								/*10*/
     encodedoctets = decode_char(input[offset]);					/*11*/
-    for (++offset; encodedoctets > 0; offset += 4, encodedoctets -= 3) {	/*12*/
+    for (++offset; encodedoctets > 0; offset += 4, encodedoctets -= 3) {	/*12*/ 
       char ch;									/*13*/
       if (encodedoctets >= 3) {							/*14*/
         ch = decode_char (input[offset]) << 2 | 				/*15*/
@@ -109,7 +109,7 @@ int decode(char* input, int offset, char* output) {				/*7*/
     return ooffset;								/*36*/
   }
    exit(1);									/*37*/
- }
+ } 
 
 
 
@@ -124,12 +124,12 @@ int do_decode(char* input, char* output, char* outfilename) {			/*38*/
 /*==========================================================================*/
 
 static size_t read_data(FILE *in, void *buffer)
-{
+{ 
   return fread(buffer, 1, MAX_SIZE, in);
 }
 
 static size_t write_data(FILE *out, int size, void *buffer)
-{
+{ 
   return fwrite(buffer, 1, size, out);
 }
 
@@ -144,11 +144,11 @@ int main(int argc, char *argv[])
   char outfilename[100];
   char postfix[] = ".c";
   struct timeval pre,post;
-
+  
   /* optional input arg */
   inbuf = malloc(MAX_SIZE);
   outbuf = malloc(MAX_SIZE);
-
+  
   if (argc > 1) {
     //create_test_data(argv[1]); // for testing purposes
     if ((in = fopen(argv[1], "r")) == NULL) {
@@ -157,7 +157,7 @@ int main(int argc, char *argv[])
     }
     argv++; argc--;
   }
-
+  
   else{
     in = stdin;
     out = stdout;
@@ -173,5 +173,5 @@ int main(int argc, char *argv[])
   }
 
   printf("%d\n", outsize);
-  exit(0);
+  exit(0); 
 }

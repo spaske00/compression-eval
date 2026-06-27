@@ -81,8 +81,8 @@ maximum word length		misc.h		Z_WORDLEN	   20
  delimiters.
  NOT length of tokens which
  can be virtually any length)
-default absolute tolerance	tol.h		_T_ADEF		   "1e-10"
-default relative tolerance	tol.h		_T_RDEF		   "1e-10"
+default absolute tolerance	tol.h		_T_ADEF		   "1e-10"   
+default relative tolerance	tol.h		_T_RDEF		   "1e-10"  
 maximum number of commands	command.h	_C_CMDMAX	  100
  in effect at one time
 maximum number of commenting	comment.h	W_COMMAX	   20
@@ -117,7 +117,7 @@ granularity of object used when applying the differencing algorithm.
 The current version of spiff always applies the differencing
 in terms of individual tokens.  The -t flag controls how the edit script
 is printed.  This arrangement more closely reflects the original intent
-of having multiple differencing granularities.
+of having multiple differencing granularities. 
 
 PERFORMANCE
 
@@ -155,7 +155,7 @@ All symbols (functions, data declarations, macros) are named as follows:
 			within a module
 	foo	-- for names used inside a single routine.
 
-Each module uses a different value for "L" --
+Each module uses a different value for "L" -- 
 	module files	   letter used     implements
 	spiff.c			Y	top level routines
 	misc.[ch]		Z	various routines used throughout
@@ -182,7 +182,7 @@ Each module uses a different value for "L" --
 	visual.[ch]		V	screen oriented display for MGR
 					window manager, also contains
 					dummy routines for people who don't
-					have MGR
+					have MGR 
 
 I haven't cleaned up visual.c yet.  It probably doesn't even compile
 in this version anyway. But since most people don't have mgr, this
@@ -197,7 +197,7 @@ The fractional part is often called the mantissa.
 
 The structure consists of
 	a flag for the sign of the factional part
-	the exponent in binary
+	the exponent in binary 
 	a character string containing the fractional part
 
 The structure could be converted to a float via
@@ -214,14 +214,14 @@ the mantissa is a fractional number ranging
 between 0.1 (inclusive) and 1.0 (exclusive).
 The exponent is interpreted as a power of 10.
 
-Lines
+Lines 
 there are three sets of lines:
 implemented in line.c and line.h
 	real_lines --
 	  the lines as they come from the file
 	content_lines --
 	  a subset of reallines that excluding embedded commands
-implemented in token.c and token.h
+implemented in token.c and token.h 
 	token_lines --
 	  a subset of content_lines consisting of those lines that
 		have tokens that begin on them (literals can go on for
@@ -241,7 +241,7 @@ Things that would be nice to add
 		(i.e. including command lines)
 	at present, all storage is in core. there should
 		be a compile time decision to allow temporary storage
-		in files rather than core.
+		in files rather than core. 
 		that way the user could decide how to handle the
 			speed/space tradeoff
 	a front end that looked like diff should be added so that

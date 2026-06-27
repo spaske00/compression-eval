@@ -271,15 +271,15 @@ static BOOLEAN	TriedFile[MAX_LANGUAGE]  = { FALSE };
 
 /* ***
 static void AltUncompressValue(FULL_CHAR *compressed, FULL_CHAR *uncompressed)
-{ register FULL_CHAR *p, *q, xval; int i, skip;
-  q = uncompressed;
-  for( p = compressed;  *p != (FULL_CHAR) '\0';  p++ )
-  { CharUnPack(*p, skip, xval);
-    for( i = 0;  i < skip;  i++ )
-      *q++ = (FULL_CHAR) '0';
-    *q++ = (FULL_CHAR) (xval + '0' - 2);
-  }
-  *q++ = (FULL_CHAR) '\0';
+{ register FULL_CHAR *p, *q, xval; int i, skip;				
+  q = uncompressed;							
+  for( p = compressed;  *p != (FULL_CHAR) '\0';  p++ )			
+  { CharUnPack(*p, skip, xval);						
+    for( i = 0;  i < skip;  i++ )					
+      *q++ = (FULL_CHAR) '0';						
+    *q++ = (FULL_CHAR) (xval + '0' - 2);					
+  }									
+  *q++ = (FULL_CHAR) '\0';						
   debug1(DHY, D, "AltUncompressValue returning %s", uncompressed);
 }
 *** */
@@ -1129,7 +1129,7 @@ OBJECT Hyphenate(OBJECT x)
 	for( p = ss; *p != 0;  p++ )  fprintf(stderr, "%c", findrep(*p, T));
 	fprintf(stderr, "\"\n");
       );
-
+	
       /* accumulate all prefixes of ss */
       curr_node = 0;  s = ss;
       for(;;)

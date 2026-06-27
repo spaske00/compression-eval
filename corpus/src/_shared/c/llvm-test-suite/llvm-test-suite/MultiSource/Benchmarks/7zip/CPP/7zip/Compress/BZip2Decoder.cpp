@@ -12,7 +12,7 @@ namespace NBZip2 {
 
 #undef NO_INLINE
 #define NO_INLINE
-
+  
 static const UInt32 kNumThreadsMax = 4;
 
 static const UInt32 kBufferSize = (1 << 17);
@@ -117,14 +117,14 @@ static HRESULT NO_INLINE ReadBlock(NBitm::CDecoder<CInBuffer> *m_InStream,
   if (randRes)
     *randRes = ReadBit(m_InStream) ? true : false;
   *origPtrRes = ReadBits(m_InStream, kNumOrigBits);
-
+  
   // in original code it compares OrigPtr to (UInt32)(10 + blockSizeMax)) : why ?
   if (*origPtrRes >= blockSizeMax)
     return S_FALSE;
 
   CMtf8Decoder mtf;
   mtf.StartInit();
-
+  
   int numInUse = 0;
   {
     Byte inUse16[16];
@@ -146,7 +146,7 @@ static HRESULT NO_INLINE ReadBlock(NBitm::CDecoder<CInBuffer> *m_InStream,
   int numTables = ReadBits(m_InStream, kNumTablesBits);
   if (numTables < kNumTablesMin || numTables > kNumTablesMax)
     return S_FALSE;
-
+  
   UInt32 numSelectors = ReadBits(m_InStream, kNumSelectorsBits);
   if (numSelectors < 1 || numSelectors > kNumSelectorsMax)
     return S_FALSE;
@@ -201,7 +201,7 @@ static HRESULT NO_INLINE ReadBlock(NBitm::CDecoder<CInBuffer> *m_InStream,
     for (int i = 0; i < 256; i++)
       CharCounters[i] = 0;
   }
-
+  
   UInt32 blockSize = 0;
   {
     UInt32 groupIndex = 0;
@@ -209,7 +209,7 @@ static HRESULT NO_INLINE ReadBlock(NBitm::CDecoder<CInBuffer> *m_InStream,
     CHuffmanDecoder *huffmanDecoder = 0;
     int runPower = 0;
     UInt32 runCounter = 0;
-
+    
     for (;;)
     {
       if (groupSize == 0)
@@ -220,9 +220,9 @@ static HRESULT NO_INLINE ReadBlock(NBitm::CDecoder<CInBuffer> *m_InStream,
         huffmanDecoder = &m_HuffmanDecoders[m_Selectors[groupIndex++]];
       }
       groupSize--;
-
+        
       UInt32 nextSym = huffmanDecoder->DecodeSymbol(m_InStream);
-
+      
       if (nextSym < 2)
       {
         runCounter += ((UInt32)(nextSym + 1) << runPower++);
@@ -267,7 +267,7 @@ static void NO_INLINE DecodeBlock1(UInt32 *charCounters, UInt32 blockSize)
       charCounters[i] = sum - charCounters[i];
     }
   }
-
+  
   UInt32 *tt = charCounters + 256;
   // Compute the T^(-1) vector
   UInt32 i = 0;
@@ -283,14 +283,14 @@ static UInt32 NO_INLINE DecodeBlock2(const UInt32 *tt, UInt32 blockSize, UInt32 
   // it's for speed optimization: prefetch & prevByte_init;
   UInt32 tPos = tt[tt[OrigPtr] >> 8];
   unsigned prevByte = (unsigned)(tPos & 0xFF);
-
+  
   unsigned numReps = 0;
 
   do
   {
     unsigned b = (unsigned)(tPos & 0xFF);
     tPos = tt[tPos >> 8];
-
+    
     if (numReps == kRleModeRepSize)
     {
       for (; b > 0; b--)
@@ -325,7 +325,7 @@ static UInt32 NO_INLINE DecodeBlock2(const UInt32 *tt, UInt32 blockSize, UInt32 
       }
       if (--blockSize == 0)
         break;
-
+      
       b = (unsigned)(tPos & 0xFF);
       tPos = tt[tPos >> 8];
       crc.UpdateByte(b);
@@ -337,7 +337,7 @@ static UInt32 NO_INLINE DecodeBlock2(const UInt32 *tt, UInt32 blockSize, UInt32 
       }
       if (--blockSize == 0)
         break;
-
+      
       b = (unsigned)(tPos & 0xFF);
       tPos = tt[tPos >> 8];
       crc.UpdateByte(b);
@@ -355,7 +355,7 @@ static UInt32 NO_INLINE DecodeBlock2(const UInt32 *tt, UInt32 blockSize, UInt32 
 
     b = (unsigned)(tPos & 0xFF);
     tPos = tt[tPos >> 8];
-
+    
     for (; b > 0; b--)
     {
       crc.UpdateByte(prevByte);
@@ -370,21 +370,21 @@ static UInt32 NO_INLINE DecodeBlock2(const UInt32 *tt, UInt32 blockSize, UInt32 
 static UInt32 NO_INLINE DecodeBlock2Rand(const UInt32 *tt, UInt32 blockSize, UInt32 OrigPtr, COutBuffer &m_OutStream)
 {
   CBZip2Crc crc;
-
+  
   UInt32 randIndex = 1;
   UInt32 randToGo = kRandNums[0] - 2;
-
+  
   unsigned numReps = 0;
 
   // it's for speed optimization: prefetch & prevByte_init;
   UInt32 tPos = tt[tt[OrigPtr] >> 8];
   unsigned prevByte = (unsigned)(tPos & 0xFF);
-
+  
   do
   {
     unsigned b = (unsigned)(tPos & 0xFF);
     tPos = tt[tPos >> 8];
-
+    
     {
       if (randToGo == 0)
       {
@@ -394,7 +394,7 @@ static UInt32 NO_INLINE DecodeBlock2Rand(const UInt32 *tt, UInt32 blockSize, UIn
       }
       randToGo--;
     }
-
+    
     if (numReps == kRleModeRepSize)
     {
       for (; b > 0; b--)
@@ -504,7 +504,7 @@ HRESULT CDecoder::ReadSignatures(bool &wasFinished, UInt32 &crc)
         s[4] != kFinSig4 ||
         s[5] != kFinSig5)
       return S_FALSE;
-
+    
     wasFinished = true;
     return (crc == CombinedCrc.GetDigest()) ? S_OK : S_FALSE;
   }
@@ -903,7 +903,7 @@ STDMETHODIMP CNsisDecoder::Read(void *data, UInt32 size, UInt32 *processedSize)
     unsigned b = (unsigned)(tPos & 0xFF);
     tPos = tt[tPos >> 8];
     blockSize--;
-
+    
     if (numReps == kRleModeRepSize)
     {
       numReps = 0;

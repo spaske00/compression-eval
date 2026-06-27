@@ -313,7 +313,7 @@ HRESULT CHandler::Open3()
   RINOK(ReadPhy(Footer.DataOffset, buf, kDynSize));
   if (!Dyn.Parse(buf))
     return S_FALSE;
-
+  
   if (Dyn.NumBlocks >= (UInt32)1 << 31)
     return S_FALSE;
   if (Footer.CurrentSize == 0)
@@ -445,7 +445,7 @@ STATPROPSTG kProps[] =
   { NULL, kpidSize, VT_UI8},
   { NULL, kpidPackSize, VT_UI8},
   { NULL, kpidCTime, VT_FILETIME}
-
+  
   /*
   { NULL, kpidNumCyls, VT_UI4},
   { NULL, kpidNumHeads, VT_UI4},

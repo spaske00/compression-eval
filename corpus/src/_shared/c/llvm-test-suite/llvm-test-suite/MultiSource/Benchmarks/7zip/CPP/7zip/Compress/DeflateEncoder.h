@@ -97,7 +97,7 @@ public:
 
   UInt32 m_OptimumEndIndex;
   UInt32 m_OptimumCurrentIndex;
-
+  
   Byte  m_LiteralPrices[256];
   Byte  m_LenPrices[kNumLenSymbolsMax];
   Byte  m_PosPrices[kDistTableSize64];
@@ -144,7 +144,7 @@ public:
 
   void WriteStoreBlock(UInt32 blockSize, UInt32 additionalOffset, bool finalBlock);
   void WriteTables(bool writeMode, bool finalBlock);
-
+  
   void WriteBlockData(bool writeMode, bool finalBlock);
 
   void ReleaseStreams()

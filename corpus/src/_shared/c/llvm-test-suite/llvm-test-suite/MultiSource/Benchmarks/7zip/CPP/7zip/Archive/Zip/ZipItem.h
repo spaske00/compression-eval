@@ -190,23 +190,23 @@ public:
   UInt32 FileCRC;
   UInt64 PackSize;
   UInt64 UnPackSize;
-
+  
   AString Name;
 
   CExtraBlock LocalExtra;
 
   bool IsUtf8() const { return (Flags & NFileHeader::NFlags::kUtf8) != 0; }
-
+  
   bool IsEncrypted() const { return (Flags & NFileHeader::NFlags::kEncrypted) != 0; }
   bool IsStrongEncrypted() const { return IsEncrypted() && (Flags & NFileHeader::NFlags::kStrongEncrypted) != 0; };
   bool IsAesEncrypted() const { return IsEncrypted() && (IsStrongEncrypted() || CompressionMethod == NFileHeader::NCompressionMethod::kWzAES); };
-
+  
   bool IsLzmaEOS() const { return (Flags & NFileHeader::NFlags::kLzmaEOS) != 0; }
-
+  
   bool IsDir() const;
   bool IgnoreItem() const { return false; }
   UInt32 GetWinAttributes() const;
-
+  
   bool HasDescriptor() const  { return (Flags & NFileHeader::NFlags::kDescriptorUsedMask) != 0; }
 
   UString GetUnicodeString(const AString &s) const
@@ -219,7 +219,7 @@ public:
       res = MultiByteToUnicodeString(s, GetCodePage());
     return res;
   }
-
+  
 private:
   void SetFlagBits(int startBitNumber, int numBits, int value);
   void SetBitMask(int bitMask, bool enable);
@@ -237,9 +237,9 @@ public:
   CVersion MadeByVersion;
   UInt16 InternalAttributes;
   UInt32 ExternalAttributes;
-
+  
   UInt64 LocalHeaderPosition;
-
+  
   FILETIME NtfsMTime;
   FILETIME NtfsATime;
   FILETIME NtfsCTime;
@@ -250,7 +250,7 @@ public:
   bool FromLocal;
   bool FromCentral;
   bool NtfsTimeIsDefined;
-
+  
   bool IsDir() const;
   UInt32 GetWinAttributes() const;
 
@@ -264,7 +264,7 @@ public:
     }
     return (FileCRC != 0 || !IsDir());
   }
-
+  
   WORD GetCodePage() const
   {
     return (WORD)((MadeByVersion.HostOS == NFileHeader::NHostOS::kFAT
@@ -277,3 +277,5 @@ public:
 }}
 
 #endif
+
+

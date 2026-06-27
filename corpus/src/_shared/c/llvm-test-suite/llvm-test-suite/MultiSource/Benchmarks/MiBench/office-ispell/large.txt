@@ -273,7 +273,7 @@ codes that damage or cannot be read by your equipment.
 
 LIMITED WARRANTY; DISCLAIMER OF DAMAGES
 But for the "Right of Replacement or Refund" described below,
-[1] Michael Hart and the Foundation (and any other party you may
+[1] Michael Hart and the Foundation (and any other party you may 
 receive this etext from as a PROJECT GUTENBERG-tm etext) disclaims
 all liability to you for damages, costs and expenses, including
 legal fees, and [2] YOU HAVE NO REMEDIES FOR NEGLIGENCE OR
@@ -308,7 +308,7 @@ You will indemnify and hold Michael Hart, the Foundation,
 and its trustees and agents, and any volunteers associated
 with the production and distribution of Project Gutenberg-tm
 texts harmless, from all liability, cost and expense, including
-legal fees, that arise directly or indirectly from any of the
+legal fees, that arise directly or indirectly from any of the 
 following that you do or cause:  [1] distribution of this etext,
 [2] alteration, modification, or addition to the etext,
 or [3] any Defect.
@@ -363,9 +363,9 @@ or:
 WHAT IF YOU WANT TO SEND MONEY EVEN IF YOU DON'T HAVE TO?
 Project Gutenberg is dedicated to increasing the number of
 public domain and licensed works that can be freely distributed
-in machine readable form.
+in machine readable form.  
 
-The Project gratefully accepts contributions of money, time,
+The Project gratefully accepts contributions of money, time, 
 public domain materials, or royalty free copyright licenses.
 Money should be paid to the:
 "Project Gutenberg Literary Archive Foundation."
@@ -6839,3 +6839,6 @@ that I have counted her, and that she has counted me, among the dead.
 
 
 End of The Project Gutenberg Etext of War of the Worlds by H. G. Wells
+
+
+

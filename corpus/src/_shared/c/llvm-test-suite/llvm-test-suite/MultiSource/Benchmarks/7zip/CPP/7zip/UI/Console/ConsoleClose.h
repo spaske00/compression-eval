@@ -16,7 +16,7 @@ public:
   virtual ~CCtrlHandlerSetter();
 };
 
-class CCtrlBreakException
+class CCtrlBreakException 
 {};
 
 void CheckCtrlBreak();

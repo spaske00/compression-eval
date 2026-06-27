@@ -26,7 +26,7 @@ namespace NAttributes
 }
 
 class CFileInfoBase
-{
+{ 
   bool MatchesMask(UINT32 mask) const  { return ((Attrib & mask) != 0); }
 public:
   UInt64 Size;
@@ -35,12 +35,12 @@ public:
   FILETIME MTime;
   DWORD Attrib;
   bool IsDevice;
-
+  
   bool IsDir() const { return MatchesMask(FILE_ATTRIBUTE_DIRECTORY); }
 };
 
 class CFileInfo: public CFileInfoBase
-{
+{ 
 public:
   AString Name; // FIXME CSysString Name;
   bool IsDots() const;
@@ -51,7 +51,7 @@ public:
 // typedef CFileInfo CFileInfoW;
 // #else
 class CFileInfoW: public CFileInfoBase
-{
+{ 
 public:
   UString Name;
   bool IsDots() const;
@@ -64,7 +64,7 @@ class CFindFile
   friend class CEnumerator;
   DIR *_dirp;
   AString _pattern;
-  AString _directory;
+  AString _directory;  
 public:
   bool IsHandleAllocated() const { return (_dirp != 0); }
   CFindFile(): _dirp(0) {}
@@ -123,3 +123,4 @@ public:
 }}}
 
 #endif
+

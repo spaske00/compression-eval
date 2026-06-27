@@ -18,7 +18,7 @@ extern FILE	* in, * out;
 
 static unsigned short a2s[] = {
 
-	 5120,60160,  320,65200,20480,44032, 1280,64192,
+ 	 5120,60160,  320,65200,20480,44032, 1280,64192,
 	 2560,62848,   64,65456,10240,54784,  640,64864,
 	 7168,58112,  448,65072,28672,35840, 1792,63680,
 	 3584,61824,  192,65328,14336,50688,  896,64608,
@@ -313,7 +313,7 @@ static unsigned char  s2a[] = {
 	 91,219, 27,155,123,251, 59,187, 75,203, 11,139,107,235, 43,171
 };
 
-int alaw_input P1((buf), gsm_signal * buf)
+int alaw_input P1((buf), gsm_signal * buf) 
 {
 	int  i, c;
 
@@ -322,7 +322,7 @@ int alaw_input P1((buf), gsm_signal * buf)
 	return i;
 }
 
-int alaw_output P1((buf), gsm_signal * buf)
+int alaw_output P1((buf), gsm_signal * buf) 
 {
 	int  i;
 
@@ -330,3 +330,4 @@ int alaw_output P1((buf), gsm_signal * buf)
 		if (fputc( S2A( *buf ), out) == EOF) return -1;
 	return 0;
 }
+

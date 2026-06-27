@@ -205,7 +205,7 @@ STDMETHODIMP CCachedInStream::Read(void *data, UInt32 size, UInt32 *processedSiz
 
   return S_OK;
 }
-
+ 
 STDMETHODIMP CCachedInStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPosition)
 {
   switch(seekOrigin)

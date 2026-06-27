@@ -43,7 +43,7 @@ struct CDirEnumerator
   int Index;
   bool GetNextFile(NFind::CFileInfoW &fileInfo, bool &filled, UString &fullPath, DWORD &errorCode);
   void Init();
-
+  
   CDirEnumerator(): FlatMode(false) {};
 };
 
@@ -124,7 +124,7 @@ struct CThreadCrc
   CProgressDialog *ProgressDialog;
 
   CDirEnumerator DirEnumerator;
-
+  
   UInt64 NumFiles;
   UInt64 NumFolders;
   UInt64 DataSize;
@@ -136,7 +136,7 @@ struct CThreadCrc
   UString ErrorPath;
   UString Error;
   bool ThereIsError;
-
+  
   void Process2()
   {
     DataSize = NumFolders = NumFiles = DataCrcSum = DataNameCrcSum = 0;
@@ -252,7 +252,7 @@ struct CThreadCrc
     ProgressDialog->MyClose();
     return 0;
   }
-
+  
   static THREAD_FUNC_DECL MyThreadFunction(void *param)
   {
     return ((CThreadCrc *)param)->Process();
@@ -337,7 +337,7 @@ void CApp::CalculateCrc()
       ConvertUInt64ToString(combiner.NumFiles, sz);
       s += sz;
       s += L"\n";
-
+      
       s += LangString(IDS_FOLDERS_COLON, 0x02000321);
       s += L" ";
       ConvertUInt64ToString(combiner.NumFolders, sz);

@@ -57,7 +57,7 @@ void CHmac32::SetKey(const Byte *key, size_t keySize)
     sha.Update(key, keySize);
     Byte digest[kDigestSize];
     sha.Final(digest);
-
+    
     for (int i = 0 ; i < kDigestSizeInWords; i++)
       keyTemp[i] =
           ((UInt32)(digest[i * 4 + 0]) << 24) |

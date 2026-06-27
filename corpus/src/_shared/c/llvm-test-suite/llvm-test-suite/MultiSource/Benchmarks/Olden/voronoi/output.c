@@ -73,7 +73,7 @@ struct VEC2 circle_center(struct VEC2 a, struct VEC2 b, struct VEC2 c)
     return(vv2);
   else {
     vv3 = V2_sub(b,a);
-    vv4 = V2_sub(c,a);
+    vv4 = V2_sub(c,a); 
     d3 = V2_cprod(vv3, vv4) ;
     d2 = -2.0 * d3 ;
     vv5 = V2_sub(c,b);
@@ -92,10 +92,10 @@ void output_voronoi_diagram(QUAD_EDGE edge, int nv, struct EDGE_STACK *my_stack)
   QUAD_EDGE nex, prev, snex, sprev;
   struct VEC2 cvxvec, center;
   double ln;
-
+  
   double d1;
   struct VEC2 vv1, vv2, vv3;
-
+  
   if (voronoi) {
     zero_seen(my_stack,edge);
     nex = edge;
@@ -123,16 +123,16 @@ void output_voronoi_diagram(QUAD_EDGE edge, int nv, struct EDGE_STACK *my_stack)
       nex = rnext(nex);
     } while (nex != edge);
   }
-
+  
   /* Plot DT edges and finite VD edges. */
-
+  
   my_stack->ptr = 0;
   push_ring(my_stack, edge);
   printf("mystack_ptr = %d\n",my_stack->ptr);
   while (my_stack->ptr != 0) {
     VERTEX_PTR v1,v2,v3,v4;
     double d1,d2;
-
+        
     edge = pop_edge(my_stack);
     if (seen(edge) == 1) {
       prev = edge;
@@ -176,3 +176,4 @@ void output_voronoi_diagram(QUAD_EDGE edge, int nv, struct EDGE_STACK *my_stack)
   }
   zero_seen(my_stack, edge);
 }
+

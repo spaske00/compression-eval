@@ -3,7 +3,7 @@
 
 
 /*
- *  allocate a new row vector
+ *  allocate a new row vector 
  */
 sm_row *
 sm_row_alloc()
@@ -82,7 +82,7 @@ register sm_row *prow;
 
 
 /*
- *  insert an element into a row vector
+ *  insert an element into a row vector 
  */
 sm_element *
 sm_row_insert(prow, col)
@@ -94,7 +94,7 @@ register int col;
     /* get a new item, save its address */
     sm_element_alloc(element);
     test = element;
-    sorted_insert(sm_element, prow->first_col, prow->last_col, prow->length,
+    sorted_insert(sm_element, prow->first_col, prow->last_col, prow->length, 
 		    next_col, prev_col, col_num, col, test);
 
     /* if item was not used, free it */
@@ -108,7 +108,7 @@ register int col;
 
 
 /*
- *  remove an element from a row vector
+ *  remove an element from a row vector 
  */
 void
 sm_row_remove(prow, col)
@@ -120,7 +120,7 @@ register int col;
     for(p = prow->first_col; p != 0 && p->col_num < col; p = p->next_col)
 	;
     if (p != 0 && p->col_num == col) {
-	dll_unlink(p, prow->first_col, prow->last_col,
+	dll_unlink(p, prow->first_col, prow->last_col, 
 			    next_col, prev_col, prow->length);
 	sm_element_free(p);
     }
@@ -149,7 +149,7 @@ int col;
 /*
  *  return 1 if row p2 contains row p1; 0 otherwise
  */
-int
+int 
 sm_row_contains(p1, p2)
 sm_row *p1, *p2;
 {
@@ -174,7 +174,7 @@ sm_row *p1, *p2;
 /*
  *  return 1 if row p1 and row p2 share an element in common
  */
-int
+int 
 sm_row_intersects(p1, p2)
 sm_row *p1, *p2;
 {
@@ -202,7 +202,7 @@ sm_row *p1, *p2;
 /*
  *  compare two rows, lexical ordering
  */
-int
+int 
 sm_row_compare(p1, p2)
 sm_row *p1, *p2;
 {
@@ -263,7 +263,7 @@ sm_row *p1, *p2;
     }
 }
 
-int
+int 
 sm_row_hash(prow, modulus)
 sm_row *prow;
 int modulus;
@@ -279,14 +279,14 @@ int modulus;
 }
 
 /*
- *  remove an element from a row vector (given a pointer to the element)
+ *  remove an element from a row vector (given a pointer to the element) 
  */
 void
 sm_row_remove_element(prow, p)
 register sm_row *prow;
 register sm_element *p;
 {
-    dll_unlink(p, prow->first_col, prow->last_col,
+    dll_unlink(p, prow->first_col, prow->last_col, 
 			next_col, prev_col, prow->length);
     sm_element_free(p);
 }

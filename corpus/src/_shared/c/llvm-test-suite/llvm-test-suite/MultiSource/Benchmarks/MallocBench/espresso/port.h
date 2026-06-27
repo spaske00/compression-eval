@@ -195,7 +195,7 @@ extern long random();
 #endif
 
 /*
-**  _std_h is defined in /usr/local/lib/g++-include/std.h
+**  _std_h is defined in /usr/local/lib/g++-include/std.h  
 */
 #if ! defined(_std_h)
 #if defined(ultrix3) || defined(ultrix4) ||  defined(hpux)
@@ -238,3 +238,4 @@ extern VOID_HACK sleep();
 #endif
 
 #endif /* PORT_H */
+

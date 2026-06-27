@@ -17,3 +17,4 @@ HRESULT ListArchives(CCodecs *codecs, const CIntVector &formatIndices,
     UInt64 &errors);
 
 #endif
+

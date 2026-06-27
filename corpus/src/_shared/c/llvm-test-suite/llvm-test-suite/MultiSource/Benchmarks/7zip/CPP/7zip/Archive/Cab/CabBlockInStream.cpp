@@ -61,7 +61,7 @@ void CCheckSum2::Update(const void *data, UInt32 size)
   }
 
   int numWords = size / 4;
-
+  
   while (numWords-- != 0)
   {
     UInt32 temp = *dataPointer++;
@@ -73,7 +73,7 @@ void CCheckSum2::Update(const void *data, UInt32 size)
   m_Value = checkSum;
 
   size &= 3;
-
+  
   while (size != 0)
   {
     m_Hist[m_Pos] = *dataPointer++;
@@ -154,7 +154,7 @@ HRESULT CCabBlockInStream::PreRead(UInt32 &packSize, UInt32 &unpackSize)
   TotalPackSize = _size;
 
   checkSumCalc.FinishDataUpdate();
-
+  
   bool dataError;
   if (checkSum == 0)
     dataError = false;

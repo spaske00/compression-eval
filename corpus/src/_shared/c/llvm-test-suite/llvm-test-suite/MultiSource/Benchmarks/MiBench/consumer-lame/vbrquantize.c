@@ -76,7 +76,7 @@ FLOAT8 find_scalefac(FLOAT8 *xr,FLOAT8 *xr34,int stride,int sfb,
   delsf = 32;
   delsf4 = 128;
 
-  sf_ok =10000;
+  sf_ok =10000; 
   sf_ok4=10000;
   for (i=0; i<7; i++) {
     delsf /= 2;
@@ -87,11 +87,11 @@ FLOAT8 find_scalefac(FLOAT8 *xr,FLOAT8 *xr34,int stride,int sfb,
 
     if (xfsf < 0) {
       /* scalefactors too small */
-      sf += delsf;
+      sf += delsf; 
       sf4 += delsf4;
     }else{
-      if (sf_ok==10000) sf_ok=sf;
-      if (sf_ok4==10000) sf_ok4=sf4;
+      if (sf_ok==10000) sf_ok=sf;  
+      if (sf_ok4==10000) sf_ok4=sf4;  
       if (xfsf > l3_xmin)  {
 	/* distortion.  try a smaller scalefactor */
 	sf -= delsf;
@@ -103,28 +103,28 @@ FLOAT8 find_scalefac(FLOAT8 *xr,FLOAT8 *xr34,int stride,int sfb,
 	sf4 += delsf4;
       }
     }
-  }
+  } 
   /* sf_ok accurate to within +/- 2*final_value_of_delsf */
   assert(sf_ok!=10000);
 
   /* NOTE: noise is not a monotone function of the sf, even though
-   * the number of bits used is!  do a brute force search in the
-   * neighborhood of sf_ok:
-   *
-   *  sf = sf_ok + 1.75     works  1% of the time
-   *  sf = sf_ok + 1.50     works  1% of the time
-   *  sf = sf_ok + 1.25     works  2% of the time
-   *  sf = sf_ok + 1.00     works  3% of the time
-   *  sf = sf_ok + 0.75     works  9% of the time
+   * the number of bits used is!  do a brute force search in the 
+   * neighborhood of sf_ok: 
+   * 
+   *  sf = sf_ok + 1.75     works  1% of the time 
+   *  sf = sf_ok + 1.50     works  1% of the time 
+   *  sf = sf_ok + 1.25     works  2% of the time 
+   *  sf = sf_ok + 1.00     works  3% of the time 
+   *  sf = sf_ok + 0.75     works  9% of the time 
    *  sf = sf_ok + 0.50     0 %  (because it was tried above)
-   *  sf = sf_ok + 0.25     works 39% of the time
+   *  sf = sf_ok + 0.25     works 39% of the time 
    *  sf = sf_ok + 0.00     works the rest of the time
    */
 
   sf = sf_ok + 0.75;
   sf4 = sf_ok4 + 3;
 
-  while (sf>(sf_ok+.01)) {
+  while (sf>(sf_ok+.01)) { 
     /* sf = sf_ok + 2*delsf was tried above, skip it:  */
     if (fabs(sf-(sf_ok+2*delsf))  < .01) sf -=.25;
     if (sf4 == sf_ok4+2*delsf4) sf4 -=1;
@@ -144,7 +144,7 @@ FLOAT8 find_scalefac(FLOAT8 *xr,FLOAT8 *xr34,int stride,int sfb,
 
 
 /*
-    sfb=0..5  scalefac < 16
+    sfb=0..5  scalefac < 16 
     sfb>5     scalefac < 8
 
     ifqstep = ( cod_info->scalefac_scale == 0 ) ? .5 : 1.0;
@@ -170,10 +170,10 @@ FLOAT8 compute_scalefacs_short(FLOAT8 vbrsf[SBPSY_s][3],gr_info *cod_info,int sc
     for (i=0; i<3; ++i) {
       /* ifqstep*scalefac + 2*subblock_gain >= -sf[sfb] */
       scalefac[sfb][i]=floor( -sf[sfb][i]*ifqstep_inv  +.75 + .0001)   ;
-
+      
       if (sfb < 6) maxrange = 15.0/ifqstep_inv;
       else maxrange = 7.0/ifqstep_inv;
-
+      
       if (maxrange + sf[sfb][i] > maxover) maxover = maxrange+sf[sfb][i];
     }
   }
@@ -184,13 +184,13 @@ FLOAT8 compute_scalefacs_short(FLOAT8 vbrsf[SBPSY_s][3],gr_info *cod_info,int sc
 
 
 /*
-	  sfb=0..10  scalefac < 16
+	  sfb=0..10  scalefac < 16 
 	  sfb>10     scalefac < 8
-
+		
 	  ifqstep = ( cod_info->scalefac_scale == 0 ) ? .5 : 1.0;
 	  ol_sf =  (cod_info->global_gain-210.0)/4.0;
 	  ol_sf -= ifqstep*scalefac[gr][ch].l[sfb];
-	  if (cod_info->preflag && sfb>=11)
+	  if (cod_info->preflag && sfb>=11) 
 	  ol_sf -= ifqstep*pretab[sfb];
 */
 FLOAT8 compute_scalefacs_long(FLOAT8 vbrsf[SBPSY_l],gr_info *cod_info,int scalefac[SBPSY_l])
@@ -209,7 +209,7 @@ FLOAT8 compute_scalefacs_long(FLOAT8 vbrsf[SBPSY_l],gr_info *cod_info,int scalef
   }
   if (sfb==SBPSY_l) {
     cod_info->preflag=1;
-    for ( sfb = 11; sfb < SBPSY_l; sfb++ )
+    for ( sfb = 11; sfb < SBPSY_l; sfb++ ) 
       sf[sfb] += pretab[sfb]/ifqstep_inv;
   }
 
@@ -225,14 +225,14 @@ FLOAT8 compute_scalefacs_long(FLOAT8 vbrsf[SBPSY_l],gr_info *cod_info,int scalef
   }
   return maxover;
 }
-
-
+  
+  
 
 
 
 /************************************************************************
  *
- * VBR_iteration_loop()
+ * VBR_iteration_loop()   
  *
  *
  ************************************************************************/
@@ -264,7 +264,7 @@ VBR_iteration_loop_new (lame_global_flags *gfp,
   for (gr = 0; gr < gfp->mode_gr; gr++) {
     if (convert_mdct)
       ms_convert(xr[gr],xr[gr]);
-    for (ch = 0; ch < gfp->stereo; ch++) {
+    for (ch = 0; ch < gfp->stereo; ch++) { 
       FLOAT8 xr34[576];
       gr_info *cod_info = &l3_side->gr[gr].ch[ch].tt;
       int shortblock;
@@ -296,7 +296,7 @@ VBR_iteration_loop_new (lame_global_flags *gfp,
 	  end   = scalefac_band.l[ sfb+1 ];
 	  bw = end - start;
 	  vbrsf.l[sfb] = find_scalefac(&xr[gr][ch][start],&xr34[start],1,sfb,
-			 masking_lower*l3_xmin[gr][ch].l[sfb],bw);
+	  		 masking_lower*l3_xmin[gr][ch].l[sfb],bw);
 	  if (vbrsf.l[sfb]>vbrmax) vbrmax = vbrsf.l[sfb];
 	}
 
@@ -321,7 +321,7 @@ VBR_iteration_loop_new (lame_global_flags *gfp,
 	  }
 	}
       }else{
-	for ( sfb = 0; sfb < SBPSY_l; sfb++ )
+	for ( sfb = 0; sfb < SBPSY_l; sfb++ )   
 	  vbrsf.l[sfb] -= vbrmax;
 
 	/* can we get away with scalefac_scale=0? */
@@ -333,7 +333,10 @@ VBR_iteration_loop_new (lame_global_flags *gfp,
 	    exit(32);
 	  }
 	}
-      }
+      } 
     } /* ch */
   } /* gr */
 }
+
+
+

@@ -50,7 +50,7 @@ namespace NFileHeader
     unsigned short c_filesizes[2];
   };
   */
-
+ 
   const UInt32 kRecordSize = 110;
   /*
   struct CRecord
@@ -76,7 +76,7 @@ namespace NFileHeader
   */
 
   const UInt32 kOctRecordSize = 76;
-
+ 
 }
 
 struct CItem
@@ -125,7 +125,7 @@ class CInArchive
   Byte ReadByte();
   UInt16 ReadUInt16();
   UInt32 ReadUInt32();
-
+  
   bool ReadNumber(UInt32 &resultValue);
   bool ReadOctNumber(int size, UInt32 &resultValue);
 
@@ -556,7 +556,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   UInt64 currentTotalSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 

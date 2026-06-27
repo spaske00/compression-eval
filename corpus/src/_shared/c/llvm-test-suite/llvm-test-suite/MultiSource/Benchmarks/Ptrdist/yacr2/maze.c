@@ -110,7 +110,7 @@ DrawSegment(char * plane,
 	/* FROM_TOP at the bottom end */
 	/* assert((ACCESS_MAP(plane, x1, max(y1, y2))&FROM_TOP) == 0); */
 	ACCESS_MAP(plane, x1, max(y1, y2)) |= FROM_TOP;
-
+	       
     }
     else { /* (y1 == y2), horizontal */
 	/* FROM_RIGHT at left end */
@@ -176,7 +176,7 @@ SegmentFree(char * plane,
 	}
     }
     else { /* (y1 == y2), horizontal */
-	index = y1*channelColumns + min(x1,x2);
+	index = y1*channelColumns + min(x1,x2); 
 	for (x=min(x1,x2); x<=max(x1,x2); x++, index++) {
 	    if (plane[index])
 		return 0;
@@ -539,7 +539,7 @@ Maze1(void)
 
 #ifdef TODD
 	    if ((i > 1) && (p > 1) &&
-		Maze1Mech(i,
+		Maze1Mech(i, 
 			  channelTracks+1, p,			/* straight */
 			  0, s,					/* bent */
 			  -1, -1)) {
@@ -567,7 +567,7 @@ Maze1(void)
 		CleanNet(BOT[i]);
 	    }
 	    else if ((i > 1) && (p > 1) &&
-		Maze1Mech(i,
+		Maze1Mech(i, 
 			  channelTracks+1, p,			/* straight */
 			  0, s,					/* bent */
 			  -1, -1)) {
@@ -774,7 +774,7 @@ Maze2(void)
 
 #ifdef TODD
 	    if ((i > 1) && (p > 1) &&
-		Maze2Mech(TOP[i], i,
+		Maze2Mech(TOP[i], i, 
 			  channelTracks+1, p,			/* straight */
 			  0, s,					/* bent */
 			  i-1, 1, -1,				/* left srch */
@@ -805,7 +805,7 @@ Maze2(void)
 		CleanNet(BOT[i]);
 	    }
 	    else if ((i > 1) && (p > 1) &&
-		Maze2Mech(TOP[i], i,
+		Maze2Mech(TOP[i], i, 
 			  channelTracks+1, p,			/* straight */
 			  0, s,					/* bent */
 			  i-1, 1, -1,				/* left srch */
@@ -814,7 +814,7 @@ Maze2(void)
 		CleanNet(TOP[i]);
 		CleanNet(BOT[i]);
 	    }
-#endif
+#endif 
 #ifdef TODD
 	    else if ((i > 1) && (s < channelTracks) &&
 		     Maze2Mech(BOT[i], i,
@@ -979,7 +979,7 @@ Maze3Mech(unsigned long topNet,		/* top net to bend */
 			DrawSegment(horzPlane,	/* conn to net */
 				    botCol, b2,
 				    i, b2);
-			;
+    			;
 			return 1;
 		    }
 		}

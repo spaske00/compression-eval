@@ -9,9 +9,9 @@ void show_help(char *prog_name)
   p("Questions about this software should be directed to biff@ce.chalmers.se\n\n")
   p("To determine the data hazards between loop iterations this program analyzes\n")
   p("trace data from a run of the program examined. The program also analyzes the\n")
-  p("potential speedup obtainable from running the loop iterations in parallel.\n\n")
+  p("potential speedup obtainable from running the loop iterations in parallel.\n\n")  
   p("The program requires a number of settings to be done either on the\n")
-  p("command line or in the settings file.\n\n")
+  p("command line or in the settings file.\n\n") 
   p("Available flags. Many of these can be set in the settings file.\n");
   p("-c #      : CPU limit. Only effective with 'realistic restart'. 0==unlimited.\n");
   p("-C #      : CPU limit for run through several configurations.\n");

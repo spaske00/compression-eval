@@ -89,7 +89,7 @@ HRESULT UpdateArchive(IInStream *inStream, ISequentialOutStream *outStream,
     }
     else
       item.Size = inputItems[ui.IndexInArchive].Size;
-
+  
     if (ui.NewData)
     {
       CMyComPtr<ISequentialInStream> fileInStream;

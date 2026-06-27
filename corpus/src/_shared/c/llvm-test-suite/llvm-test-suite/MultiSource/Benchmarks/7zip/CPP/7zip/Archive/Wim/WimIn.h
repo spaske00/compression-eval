@@ -47,9 +47,9 @@ public:
     Normalize();
     return (m_Value >> (m_BitPos - numBits)) & ((1 << numBits) - 1);
   }
-
+  
   void MovePos(unsigned numBits) { m_BitPos -= numBits; }
-
+  
   UInt32 ReadBits(unsigned numBits)
   {
     UInt32 res = GetValue(numBits);
@@ -140,7 +140,7 @@ struct CHeader
   UInt16 PartNumber;
   UInt16 NumParts;
   UInt32 NumImages;
-
+  
   CResource OffsetResource;
   CResource XmlResource;
   CResource MetadataResource;
@@ -218,7 +218,7 @@ class CDatabase
   size_t DirStartOffset;
   int Order;
   IArchiveOpenCallback *OpenCallback;
-
+  
   HRESULT ParseDirItem(size_t pos, int parent);
   HRESULT ParseImageDirs(const CByteBuffer &buf, int parent);
 
@@ -293,5 +293,5 @@ public:
 };
 
 }}
-
+  
 #endif

@@ -48,7 +48,7 @@ struct CLead
   bool MagicCheck() const
     { return Magic[0] == 0xed && Magic[1] == 0xab && Magic[2] == 0xee && Magic[3] == 0xdb; };
 };
-
+  
 const UInt32 kEntryInfoSize = 16;
 /*
 struct CEntryInfo
@@ -267,7 +267,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(extractCallback, false);
-
+  
   RINOK(_stream->Seek(_pos, STREAM_SEEK_SET, NULL));
   RINOK(copyCoder->Code(_stream, outStream, NULL, NULL, progress));
   outStream.Release();

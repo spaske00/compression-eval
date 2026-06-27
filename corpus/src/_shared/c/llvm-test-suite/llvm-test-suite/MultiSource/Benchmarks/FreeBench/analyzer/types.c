@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "types.h"
-
+ 
 extern conf_list_t *list;
 extern int first;
 
@@ -14,8 +14,8 @@ void hard_raw_mod(uint32 address, int w_epoch, int w_place, uint32 w_issue, int 
 {
   static hard_raw_t *last;
   static int hr_empty=1;
-
-  if (hr_empty) {
+  
+  if (hr_empty) { 
     hard_raw_list=(hard_raw_t *)malloc(sizeof(hard_raw_t));
     if (!hard_raw_list) {
       fprintf(stderr,"ALERT: \tOut of memory, aborting...\n");
@@ -34,7 +34,7 @@ void hard_raw_mod(uint32 address, int w_epoch, int w_place, uint32 w_issue, int 
     last=hard_raw_list;
     return;
   }
-
+  
   last->next=(hard_raw_t *)malloc(sizeof(hard_raw_t));
   last->next->prev=last;
   last=last->next;
@@ -68,7 +68,7 @@ def_list_t *def_list_lookup(uint32 address)
   while (counter!=NULL) {
     if (address==counter->address) {
       return counter;
-    }
+    } 
     counter=(def_list_t *)counter->next;
   }
   return NULL;
@@ -78,11 +78,11 @@ void def_list_mod(uint32 address, int epoch, int place_in_epoch)
 {
   def_list_t *temp=NULL;
   def_list_t *counter;
-
+   
   uint32 place;
 
   place = def_hash(address);
-
+  
   if (def_table[place]==NULL) {
     temp=(def_list_t *)malloc(sizeof(def_list_t));
     if (!temp) {
@@ -95,7 +95,7 @@ void def_list_mod(uint32 address, int epoch, int place_in_epoch)
     temp->place_in_epoch=place_in_epoch;
     def_table[place]=temp;
   } else {
-    for (counter=def_table[place];counter!=NULL;counter=(def_list_t *)counter->next) {
+    for (counter=def_table[place];counter!=NULL;counter=(def_list_t *)counter->next) { 
       temp=counter;
       if (address==counter->address) {
 	counter->epoch=epoch;
@@ -123,7 +123,7 @@ void conflict_list(uint32 address)
   conf_list_t *temp=NULL;
   conf_list_t *counter;
   int make_new=1;
-
+  
   if (first) {
     list=(conf_list_t *)malloc(sizeof(conf_list_t));
     if (!list) {
@@ -137,8 +137,8 @@ void conflict_list(uint32 address)
     next=(conf_list_t *)list;
     return;
   }
-
-  for (counter=list;counter!=NULL;counter=(conf_list_t *)counter->next) {
+  
+  for (counter=list;counter!=NULL;counter=(conf_list_t *)counter->next) {   
     temp=counter;
     if (address==counter->address) {
       counter->accesser++;
@@ -146,14 +146,14 @@ void conflict_list(uint32 address)
       break;
     }
   }
-
+  
   if (make_new) {
     next=(conf_list_t *)malloc(sizeof(conf_list_t));
     if (!next) {
       fprintf(stderr,"ALERT: \tOut of memory, aborting...\n");
       exit(1);
     }
-
+    
     next->next=NULL;
     next->address=address;
     next->accesser=1;

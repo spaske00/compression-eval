@@ -90,7 +90,7 @@ my $safe_mode = 0;
 # "#!/usr/bin/perl /usr/local/bin/filepp" at the top
 my $shebang = 1;
 
-# allow $keywordchar, $contchar, $optlineendchar and $macroprefix
+# allow $keywordchar, $contchar, $optlineendchar and $macroprefix 
 # to be perl regexps
 my $charperlre = 0;
 
@@ -115,7 +115,7 @@ my $contchar;
 if($charperlre) { $contchar = "\\\\"; }
 else            { $contchar = "\Q\\\E"; }
 
-# character(s) which optionally signifies the end of a line -
+# character(s) which optionally signifies the end of a line - 
 # defaults to empty string ''
 my $optlineendchar = "";
 
@@ -211,9 +211,9 @@ GenerateDefinesKeys();
 {
     # conversions of month number into letters (0-11)
     my @MonthChars = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-		      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+		      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');    
     #prepare standard defines
-    my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isbst) =
+    my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isbst) = 
 	localtime(time());
     $year += 1900;
     $sec  = sprintf("%02d", $sec);
@@ -297,7 +297,7 @@ sub SetDebug
 sub Debug
 {
     # print nothing if not debugging
-    if($debug == 0) { return; }
+    if($debug == 0) { return; }    
     my $msg = shift;
     my $level = 1;
     # check if level has been provided
@@ -477,10 +477,10 @@ sub SetEnvchar
 # runs all processors AFTER current processor, then continues with processing.
 # This is used when a keyword want to run all remaining processors on a line
 # before doing its keyword task.
-#
+# 
 # 1: Full line (from Parse function) - if called recursively runs all
 # processors BEFORE current processor, then continues with processing
-#
+# 
 # 2:  Part line (from within a keyword) - if called recursively runs all
 # processors BEFORE current processor, then continues with processing.
 # This is used when keywords are using text taken from somewhere other than
@@ -503,7 +503,7 @@ sub RunProcessors
 	$tmpprefix = $macroprefix;
 	$macroprefix = "";
     }
-
+    
     # These tests are done to make RunProcessors recursion safe.
     # If RunProcessors is called from with a function that was itself called
     # by RunProcessors, then the second calling of RunProcessors will only
@@ -676,7 +676,7 @@ sub AddProcessorBefore
 ##############################################################################
 sub RemoveProcessor
 {
-    my $function = shift;
+    my $function = shift;    
     my $i = 0;
     # find function
     while($i <= $#Processors && $Processors[$i] ne $function) { $i++; }
@@ -742,7 +742,7 @@ sub AddCloseOutputFunc
 sub AddKeyword
 {
     my $keyword = shift;
-    my $function = shift;
+    my $function = shift;    
     $Keywords{$keyword} = $function;
     Debug("Added keyword ".$keyword." which runs ".$function, 2);
 }
@@ -866,10 +866,10 @@ sub OpenOutputFile
 {
     $outputfile = shift;
     Debug("Output file: ".$outputfile, 1);
-
+    
     # check for outputfile name, if not specified use STDOUT
     if($outputfile eq "") { $outputfile = "-"; }
-
+    
     # output is not stdout and file with that name already exists
     if($outputfile ne "-" && FileExists($outputfile) ) {
 	$same_file = $outputfile;
@@ -905,7 +905,7 @@ sub CloseOutputFile
     my $func;
     foreach $func (@CloseOutputFuncs) { $func->(); }
     close(OUTPUT);
-
+    
     # if input and output have same name, rename output to input now
     if($same_file ne "") {
 	if(rename($same_file, $same_file."~") == -1) {
@@ -951,7 +951,7 @@ sub UseModule
 {
     my $module = shift;
     Debug("Loading module ".$module, 1);
-    require $module;
+    require $module; 
     if($@) { Error($@); }
 }
 
@@ -1006,7 +1006,7 @@ sub DefineArgsUsed
 {
     my $string = shift;
     # check '(' is first non-whitespace char after macro
-    if($string =~ /^\s*\(/) {
+    if($string =~ /^\s*\(/) { 
 	return 1;
     }
     return 0;
@@ -1038,7 +1038,7 @@ sub ParseArgs
     my $backslash = 0;
     # number of special char pairs to allow
     my $pairs = 1;
-
+    
     # deal with first '(' if there (ie func(args) rather than func args)
     if($#Chars >= 0 && $Chars[0] eq '(') {
 	push(@Endchar, ')');
@@ -1108,10 +1108,10 @@ sub ParseArgs
 	$arg = $arg.$char; # add char to current arg
 	$char = '';        # set char to null
     }
-
+    
     # deal with last arg or string following args if it exists
     push(@Args, $arg);
-
+    
     return @Args;
 }
 
@@ -1123,19 +1123,19 @@ sub FindDefineArgs
 {
     my $substring = shift;
     my $macro = shift;
-
+    
     # get definition list for this macro
     my @Argnames = split(/\,/, $DefinesArgs{$macro});
 
     # check to see if macro can have any number of arguments (last arg ...)
     my $anyargs = ($#Argnames >= 0 && $Argnames[$#Argnames] =~ /\.\.\.\Z/o);
-
+    
     # get arguments passed to this macro
     my @Argvals = ParseArgs($substring);
     # everything following macro args should be returned as tail
     my $tail = pop(@Argvals);
 
-    # check the right number of args have been passed, should be all args
+    # check the right number of args have been passed, should be all args 
     # present plus string at end of args (assuming macro cannot have any number
     # of arguments)
     if(!$anyargs && $#Argvals != $#Argnames) {
@@ -1150,7 +1150,7 @@ sub FindDefineArgs
     }
     # make all missing args blanks
     while($#Argvals < $#Argnames) { push(@Argvals, ""); }
-
+        
     return (@Argvals, $tail);
 }
 
@@ -1181,13 +1181,13 @@ sub ReplaceDefineArgs
 	# get arguments following macro
 	my @Argvals = FindDefineArgs($tail, $macro);
 	$tail = pop(@Argvals); # tail returned as last element
-
+	
 	my @Argnames = split(/\,/, $DefinesArgs{$macro});
 	my ($i, $j);
-
+	
 	# replace previous macro with defn + args
 	$string = $Defines{$macro};
-
+			
 	# check if macro should call a function
 	if(exists($DefinesFuncs{$macro})) {
 	    # replace all macros in argument list
@@ -1206,7 +1206,7 @@ sub ReplaceDefineArgs
 	    # don't need do anything else, return now
 	    return $string, $tail;
 	}
-
+	
 	# check if last arg ends in ... (allows any number of args in macro)
 	if($#Argnames >= 0 && $Argnames[$#Argnames] =~ s/\.\.\.\Z//o) {
 	    # concatanate all extra args into final arg
@@ -1227,29 +1227,29 @@ sub ReplaceDefineArgs
 		}
 	    }
 	}
-
+	
 	# to get args passed to macro to same processed level as rest of
 	# macro, they need to be checked for occurrences of all used macros,
 	# this is a nasty hack to temporarily change defines list to %Used
-	{
+	{      
 	    my %RealDefines = %Defines;
 	    my $realdefmin = $defmin;
 	    my $realdefmax = $defmax;
 	    my %RealDefineLookup = %DefineLookup;
 	    %Defines = %Used;
-	    GenerateDefinesKeys();
+	    GenerateDefinesKeys();	    
 
 	    for($i=0; $i<=$#Argvals; $i++) {
 		$Argvals[$i] = ReplaceDefines($Argvals[$i]);
 	    }
-
+	    
 	    # return defines to normal
 	    %Defines = %RealDefines;
 	    $defmin = $realdefmin;
 	    $defmax = $realdefmax;
 	    %DefineLookup = %RealDefineLookup;
 	}
-
+	
 	# The next step replaces argnames with argvals.  Once a bit of string
 	# has been replaced it is removed from further processing to avoid
 	# unwanted recursive macro replacement.
@@ -1281,11 +1281,11 @@ sub ReplaceDefineArgs
 	}
 	# rebuild string
 	$string = join('', @InString);
-
+	
 	Debug("Replaced \"".$macro."\" for \"".$string."\" [".$recurse_level."]", 2);
     }
     else {
-	Debug("Macro \"".$string."\" found without args, ignored", 2);
+	Debug("Macro \"".$string."\" found without args, ignored", 2); 
     }
     return ($string, $tail);
 }
@@ -1295,7 +1295,7 @@ sub ReplaceDefineArgs
 # When replacing macros with args, the macro and everything following the
 # macro (the tail) are passed to ReplaceDefineArgs.  The function extracts
 # the args from the tail and then returns the replaced macro and the new
-# tail.  This function extracts the remaining part of the real tail from
+# tail.  This function extracts the remaining part of the real tail from 
 # the current input string.
 ##############################################################################
 sub ReclaimTail
@@ -1315,7 +1315,7 @@ sub ReclaimTail
 
 
 ##############################################################################
-# Replace all defined macro's in a line with their value.  Recursively run
+# Replace all defined macro's in a line with their value.  Recursively run 
 # through macros as many times as needed (to find macros within macros).
 # Inputs:
 # $input = string to process
@@ -1328,15 +1328,15 @@ sub ReclaimTail
 ##############################################################################
 sub ReplaceDefines
 {
-    my ($input, $tail, %Used) = @_;
+    my ($input, $tail, %Used) = @_;    
     # check for recursive macro madness (set to same level as Perl warning)
     if(++$recurse_level > 97) {
 	$recurse_level--;
-	Warning("Recursive macro detected in \"".$input."\"");
-	if($tail) { return ($input, $tail); }
+	Warning("Recursive macro detected in \"".$input."\""); 
+	if($tail) { return ($input, $tail); } 
 	return $input;
     }
-
+    
     my $out = "";   # initialise output to empty string
     OUTER : while($input =~ /\S/o) {
 	my ($macro, $string);
@@ -1348,7 +1348,7 @@ sub ReplaceDefines
         ######################################################################
 	if($macroprefix ne "") {
 	    my $found = 0;
-	    # find next potential macro in line if any
+	    # find next potential macro in line if any	    
 	    while(!$found && $input =~ /$macroprefix\S/) {
 		# everything before prefix
 		$out = $out.$`;
@@ -1387,7 +1387,7 @@ sub ReplaceDefines
 		if($input =~ /^\s/ ) { # remove preceding whitespace
 		    @Words = split(/^(\s+)/, $input, 2);
 		    $out = $out.$Words[1];
-		    $input = $Words[2];
+		    $input = $Words[2]; 
 		}
 		else { # skip to next char
 		    $out = $out.substr($input, 0, 1);
@@ -1395,7 +1395,7 @@ sub ReplaceDefines
 		}
 		if($input eq "") { last OUTER; }
 	    }
-	    # remove the longest possible potential macro (containing no
+	    # remove the longest possible potential macro (containing no 
 	    # whitespace) from the start of input
 	    @Words = split(/(\s+)/, $input, 2);
 	    $macro = $Words[0];
@@ -1424,8 +1424,8 @@ sub ReplaceDefines
 	    if(CheckDefineArgs($macro)) {
 		($string, $input) = ReplaceDefineArgs($macro, $input, %Used);
 	    }
-	    else {
-		$string = $Defines{$macro};
+	    else { 
+		$string = $Defines{$macro};		
 		Debug("Replaced \"".$macro."\" for \"".$string."\" [".$recurse_level."]", 2);
 	    }
 
@@ -1446,9 +1446,9 @@ sub ReplaceDefines
 	    }
 	}
 	# macro not matched, add to output and move swiftly on
-	else {
+	else { 
 	    if($bound eq '\b') { $out = $out.$macro; }
-	    else {
+	    else { 
 		$out = $out.substr($macro, 0, 1);
 		$input = substr($macro, 1).$input;
 	    }
@@ -1644,14 +1644,14 @@ sub Define
     if($macrodefn !~ /\S/o) {
 	Filepp::Error("define keyword used without arguments");
     }
-
+    
     # find end of macroword - assume separated by space or tab
     $i = GetNextWordEnd($macrodefn);
-
+    
     # separate macro and defn (can't use split, doesn't work with '0')
     $macro = substr($macrodefn, 0, $i);
     $defn  = substr($macrodefn, $i);
-
+    
     # strip leading whitespace from $defn
     if($defn) {
 	$defn =~ s/^[ \t]*//;
@@ -1659,7 +1659,7 @@ sub Define
     else {
 	$defn = "";
     }
-
+    
     # check if macro has arguments (will be a '(' in macro)
     if($macro =~ /\(/) {
 	# split up macro, args and defn - delimiters = space, (, ), ','
@@ -1692,7 +1692,7 @@ sub Define
 	$macroargs = Strip($macroargs, ",", 1);
 	# store args
 	SetDefineArgs($macro, $macroargs);
-
+	
 	Debug("Define: macro ".$macro." has args (".$macroargs.")", 2);
 	# put rest of defn back together
 	$defn = join('',@arglist);
@@ -1703,14 +1703,14 @@ sub Define
 	delete($DefinesArgs{$macro});
 	delete($DefinesFuncs{$macro});
     }
-
+    
     # define the macro defn pair
     SetDefine($macro, $defn);
-
+    
     Debug("Defined \"".$macro."\" to be \"".$defn."\"", 2);
     if($debug > 2) { PrintDefines(); }
 }
-
+   
 
 
 ##############################################################################
@@ -1739,7 +1739,7 @@ sub Endif
 # If conditionally includes or ignores parts of a file based on expr
 # usage: #if expr
 # expr is evaluated to true(1) or false(0) and include usual ==, !=, > etc.
-# style comparisons. The "defined" keyword can also be used, ie:
+# style comparisons. The "defined" keyword can also be used, ie: 
 # #if defined MACRO || !defined(MACRO)
 ##############################################################################
 sub If
@@ -1750,11 +1750,11 @@ sub If
     # check for any "defined MACRO" tests and evaluate them
     if($expr =~ /defined/) {
 	my $indefined = 0;
-
+	
 	# split expr up into its component parts, the split is done on the
 	# following list of chars and strings: '!','(',')','&&','||', space
 	my @Exprs = split(/([\s,\!,\(,\)]|\&\&|\|\|)/, $expr);
-
+	
 	# search through parts for "defined" keyword and check if macros
 	# are defined
 	foreach $expr (@Exprs) {
@@ -1773,7 +1773,7 @@ sub If
 			Debug("If: NOT defined", 2);
 		    }
 		    $indefined = 0;
-		}
+		}	    
 	    }
 	    elsif($expr eq "defined") {
 		# get rid of defined keyword
@@ -1782,15 +1782,15 @@ sub If
 		$indefined = 1;
 	    }
 	}
-
+	
 	# put full expr string back together
 	my $newexpr = join('',@Exprs);
 	$expr = $newexpr;
     }
-
+    
     # pass parsed line though processors
     $expr = RunProcessors($expr);
-
+    
     # evaluate line and return result (1 = true)
     Debug("If: evaluating \"".$expr."\"", 2);
     my $result = eval($expr);
@@ -1825,10 +1825,10 @@ sub Elif
 sub Ifdef
 {
     my $macro = shift;
-
+    
     # separate macro from any trailing garbage
     $macro = substr($macro, 0, GetNextWordEnd($macro));
-
+    
     # check if macro defined - if not set to be #ifdef'ed out
     if(CheckDefine($macro)) {
 	Debug("Ifdef: ".$macro." defined", 1);
@@ -1851,7 +1851,7 @@ sub Ifndef
 
     # separate macro from any trailing garbage
     $macro = substr($macro, 0, GetNextWordEnd($macro));
-
+    
     # check if macro defined - if not set to be #ifdef'ed out
     if(CheckDefine($macro)) {
 	Debug("Ifndef: ".$macro." defined", 1);
@@ -1891,15 +1891,15 @@ sub Include
     my $i;
 
     # check for recursive includes (level set to same as Perl recurse warn)
-    if($include_level >= 98) {
+    if($include_level >= 98) { 
 	Warning("Include recursion too deep - skipping \"".$filename."\"\n");
 	return;
     }
-
+    
     # replace any defined values in the include line
     $filename = RunProcessors($filename);
 
-    # check if it is a system include file (#include <filename>) or a local
+    # check if it is a system include file (#include <filename>) or a local 
     # include file (#include "filename")
     if(substr($filename, 0, 1) eq "<") {
 	$sysinclude = 1;
@@ -1913,7 +1913,7 @@ sub Include
 	($filename) = split(/\"/, $filename, 2);
     }
     # else assume filename given without "" or <>, naughty but allowed
-
+    
     # check for file in current directory
     if($sysinclude == 0) {
 	# get name of directory base file is in
@@ -1937,7 +1937,7 @@ sub Include
 	if(FileExists($fullname)) { $found = 1; }
 	$i++;
     }
-
+    
     # include file if found, error if not
     if($found == 1) {
 	Debug("Including file: \"".$fullname."\"", 1);
@@ -1962,7 +1962,7 @@ sub Include
 sub Pragma
 {
     my $input = shift;
-
+    
     # check for "filepp" in string
     if($input =~ /^filepp\b/) {
 	my ($function, $args);
@@ -2024,11 +2024,11 @@ sub ResetBlankSupp
 sub SetWordBoundaries
 {
     my $on = shift;
-    if($on) {
+    if($on) { 
 	$bound = '\b';
 	Debug("Word Boundaries turned on", 2);
     }
-    else {
+    else { 
 	$bound = '';
 	Debug("Word Boundaries turned off", 2);
     }
@@ -2064,21 +2064,21 @@ sub Undef
 {
     my $macro = shift;
     my $i;
-
+    
     # separate macro from any trailing garbage
     $macro = substr($macro, 0, GetNextWordEnd($macro));
-
+    
     # delete macro from table
     delete $Defines{$macro};
     delete $DefinesArgs{$macro};
     delete $DefinesFuncs{$macro};
-
+    
     # and remove its eat-trailing-whitespace flag
     if(CheckEatTrail($macro)) { delete $EatTrail{$macro}; }
 
     # regenerate keys
     GenerateDefinesKeys();
-
+    
     Debug("Undefined macro \"".$macro."\"", 2);
     if($debug > 1) { PrintDefines(); }
 }
@@ -2172,7 +2172,7 @@ sub GetNextLine
 	while($more) {
 	    Debug("Line continuation", 2);
 	    my $nextline = <INPUT>;
-	    if(!$nextline) { return $thisline; }
+	    if(!$nextline) { return $thisline; }	    
 	    # increment line count
 	    Redefine("__LINE__", ++$line);
 	    ($more, $thisline) = $parselineend->($thisline.$nextline);
@@ -2219,7 +2219,7 @@ sub ParseKeywords
     my $inline = shift;
     my $outline = "";
 
-    my $thisline = $inline;
+    my $thisline = $inline;	
     my $keyword;
     my $found = 0;
     # remove whitespace from start of line
@@ -2240,7 +2240,7 @@ sub ParseKeywords
 	    chomp($thisline);
 	    # remove leading whitespace and keyword from line
 	    my $inline = CleanStart(substr($thisline, length($keyword)));
-
+	    
 	    # check for 'if' style keyword
 	    if(exists($Ifwords{$keyword})) {
 		# increment ifblock level and set ifdone to same
@@ -2256,7 +2256,7 @@ sub ParseKeywords
 		Warning($keywordchar.$keyword." found without preceding ".
 			$keywordchar."[else]ifword");
 	    }
-
+	    
 	    # decide if to run 'if' or 'else' keyword
 	    if(exists($Ifwords{$keyword}) || exists($Elsewords{$keyword})){
 		if(!($Ifdone[$iflevel])) {
@@ -2276,11 +2276,11 @@ sub ParseKeywords
 	    }
 	    # run all other keywords
 	    elsif($Writing[$iflevel]) { $Keywords{$keyword}->($inline); }
-
+	    
 	    # write a blank line if preserving blank lines
 	    # (assumes keywords have no output)
 	    if($preserveblank) { $outline = $outline."\n"; }
-
+	    
 	} # keyword if statement
     }
     # no keywords in line - write line to file if not #ifdef'ed out
@@ -2297,20 +2297,20 @@ sub ParseKeywords
 # Main parsing routine
 ##############################################################################
 sub Parse
-{
+{        
     # change file being parsed to this file, remember last filename so
     # it can be returned at the end
     my $lastparse = $file;
     $file = shift;
-
+    
     Debug("Parsing ".$file."...", 1);
     Redefine("__FILE__", $file);
-
+    
     # reset line count, remembering previous count for future reference
     my $lastcount = $line;
     $line = 0;
     Redefine("__LINE__", $line);
-
+    
     # increment include level
     Redefine("__INCLUDE_LEVEL__", ++$include_level);
 
@@ -2345,18 +2345,18 @@ sub Parse
 	my $func;
 	foreach $func (@OpenInputFuncs) { $func->(); }
     }
-
+    
     # parse each line of file
     $_ = GetNextLine();
     # if in "shebang" mode, throw away first line (the #!/blah bit)
     if($shebang) {
 	# check for "#!...perl ...filepp..."
-	if($_ && $_ =~ /^\#\!.*perl.+filepp/) {
+	if($_ && $_ =~ /^\#\!.*perl.+filepp/) {  
 	    Debug("Skipping first line (shebang): ".$_, 1);
 	    $_ = GetNextLine();
 	}
     }
-
+    
     while($_) {
 	# unless blank lines are suppressed at this include level
 	unless($blanksupp[$include_level] && /^\s*$/) {
@@ -2364,7 +2364,7 @@ sub Parse
 	    $_ = RunProcessors($_, 1);
 	    # write output to file or STDOUT
 	    if($output) { Write($_); }
-	}
+	}	
 	$_ = GetNextLine();
     }
 
@@ -2373,10 +2373,10 @@ sub Parse
 	my $func;
 	foreach $func (@CloseInputFuncs) { $func->(); }
     }
-
+    
     # check all #if blocks have been closed at end of parsing
     if($lastparse eq "" && $iflevel > 0) { Warning("Unterminated if block"); }
-
+    
     # close file
     close(INPUT);
     Debug("Parsing ".$file." done. (".$line." lines processed)", 1);
@@ -2391,7 +2391,7 @@ sub Parse
     if($file ne "") {
 	Debug("Parsing returned to ".$file." at line ".$line, 1);
     }
-
+    
     # decrement include level
     Redefine("__INCLUDE_LEVEL__", --$include_level);
 
@@ -2417,7 +2417,7 @@ while($ARGV[$i]) {
     elsif($ARGV[$i] eq "-c") {
 	AddInputFile("-");
     }
-
+    
     # Defines: -Dmacro[=defn] or -D macro[=defn]
     elsif(substr($ARGV[$i], 0, 2) eq "-D") {
 	my $macrodefn;
@@ -2600,29 +2600,29 @@ while($ARGV[$i]) {
 	}
 	SetMacroPrefix($ARGV[++$i]);
     }
-
+    
     # turn off macro prefix within keywords
     elsif($ARGV[$i] eq "-mpnk") {
 	$macroprefixinkeywords = 0;
     }
-
+    
     # turn on overwrite mode
     elsif($ARGV[$i] eq "-ov") {
 	$overwrite = 1;
     }
-
+    
     # turn on overwrite conversion mode
     elsif($ARGV[$i] eq "-ovc") {
-	if($i+1 >= $argc) {
+  	if($i+1 >= $argc) {
 	    Error("Argument to `-ovc' is missing");
 	}
 	$overwriteconv = $ARGV[++$i];
 	if($overwriteconv !~ /=/) {
 	    Error("-ovc argument is of form IN=OUT");
 	}
-	$overwrite = 1;
+	$overwrite = 1;	
     }
-
+    
     # Output filename: -o filename or -ofilename
     elsif(substr($ARGV[$i], 0, 2) eq "-o") {
 	# -o filename
@@ -2648,7 +2648,7 @@ while($ARGV[$i]) {
 	if($charperlre) { SetCharPerlre(0); }
 	else { SetCharPerlre(1); }
     }
-
+    
     # Safe mode - turns off #pragma
     elsif($ARGV[$i] eq "-s") {
 	SafeMode();
@@ -2670,7 +2670,7 @@ while($ARGV[$i]) {
 	if($bound eq '') { SetWordBoundaries(1); }
 	else { SetWordBoundaries(0); }
     }
-
+    
     # default - an input file name
     else {
 	if(!FileExists($ARGV[$i])) {
@@ -2715,7 +2715,7 @@ foreach $base_file (@Inputfiles) {
     }
     Parse($base_file);
     # close output file if in overwrite mode
-    if($overwrite) { CloseOutputFile(); }
+    if($overwrite) { CloseOutputFile(); }    
 }
 
 # close output file

@@ -36,7 +36,7 @@ char *argv[];
     long start;
     extern char *optarg;
     extern int optind;
-
+    
 #ifdef BWGC
 	{
 	    extern gc_init();
@@ -310,7 +310,7 @@ char *argv[];
 	break;
 
     case KEY_primes:            /* generate all prime implicants */
-	EXEC(PLA->F = primes_consensus(cube2list(PLA->F, PLA->D)),
+	EXEC(PLA->F = primes_consensus(cube2list(PLA->F, PLA->D)), 
 						    "PRIMES     ", PLA->F);
 	break;
 
@@ -439,7 +439,7 @@ char *argv[];
 	} else {
 	    printf("PLA's compared equal\n");
 	    exit(0);
-	}
+	}	
 	break;	/* silly */
 
     case KEY_check:			/* check consistency */

@@ -47,7 +47,7 @@ static Bool Utf8_To_Utf16(wchar_t *dest, size_t *destLen, const char *src, size_
       value |= (c2 - 0x80);
     }
     while (--numAdds != 0);
-
+    
     if (value < 0x10000)
     {
       if (dest)

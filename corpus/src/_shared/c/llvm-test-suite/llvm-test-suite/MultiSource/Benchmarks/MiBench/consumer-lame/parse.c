@@ -234,10 +234,10 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
   int autoconvert=0;
   int user_quality=0;
 
-  char *programName = argv[0];
+  char *programName = argv[0]; 
   int track = 0;
 
-  inPath[0] = '\0';
+  inPath[0] = '\0';   
   outPath[0] = '\0';
   gfp->inPath=inPath;
   gfp->outPath=outPath;
@@ -249,7 +249,7 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
   while(++i<argc && err == 0) {
     char c, *token, *arg, *nextArg;
     int  argUsed;
-
+    
     token = argv[i];
     if(*token++ == '-') {
       if(i+1 < argc) nextArg = argv[i+1];
@@ -259,7 +259,7 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	/* The user wants to use stdin and/or stdout. */
 	if(inPath[0] == '\0')       strncpy(inPath, argv[i],MAX_NAME_SIZE);
 	else if(outPath[0] == '\0') strncpy(outPath, argv[i],MAX_NAME_SIZE);
-      }
+      } 
       if (*token == '-') {
 	/* GNU style */
 	token++;
@@ -301,49 +301,49 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 #endif
 	}
 	/* options for ID3 tag */
-	else if (strcmp(token, "tt")==0) {
-		id3tag.used=1;      argUsed = 1;
-		strncpy(id3tag.title, nextArg, 30);
-		}
-	else if (strcmp(token, "ta")==0) {
-		id3tag.used=1; argUsed = 1;
-		strncpy(id3tag.artist, nextArg, 30);
-		}
-	else if (strcmp(token, "tl")==0) {
-		id3tag.used=1; argUsed = 1;
-		strncpy(id3tag.album, nextArg, 30);
-		}
-	else if (strcmp(token, "ty")==0) {
-		id3tag.used=1; argUsed = 1;
-		strncpy(id3tag.year, nextArg, 4);
-		}
-	else if (strcmp(token, "tc")==0) {
-		id3tag.used=1; argUsed = 1;
-		strncpy(id3tag.comment, nextArg, 30);
-		}
-	else if (strcmp(token, "tn")==0) {
-		id3tag.used=1; argUsed = 1;
-		track = atoi(nextArg);
-		if (track < 1) { track = 1; }
-		if (track > 99) { track = 99; }
-		id3tag.track = track;
-		}
-	else if (strcmp(token, "tg")==0) {
+ 	else if (strcmp(token, "tt")==0) {
+ 		id3tag.used=1;      argUsed = 1;
+  		strncpy(id3tag.title, nextArg, 30);
+ 		}
+ 	else if (strcmp(token, "ta")==0) {
+ 		id3tag.used=1; argUsed = 1;
+  		strncpy(id3tag.artist, nextArg, 30);
+ 		}
+ 	else if (strcmp(token, "tl")==0) {
+ 		id3tag.used=1; argUsed = 1;
+  		strncpy(id3tag.album, nextArg, 30);
+ 		}
+ 	else if (strcmp(token, "ty")==0) {
+ 		id3tag.used=1; argUsed = 1;
+  		strncpy(id3tag.year, nextArg, 4);
+ 		}
+ 	else if (strcmp(token, "tc")==0) {
+ 		id3tag.used=1; argUsed = 1;
+  		strncpy(id3tag.comment, nextArg, 30);
+ 		}
+ 	else if (strcmp(token, "tn")==0) {
+ 		id3tag.used=1; argUsed = 1;
+  		track = atoi(nextArg);
+  		if (track < 1) { track = 1; }
+  		if (track > 99) { track = 99; }
+  		id3tag.track = track;
+ 		}
+ 	else if (strcmp(token, "tg")==0) {
 		argUsed = strtol (nextArg, &token, 10);
 		if (nextArg==token) {
 		  /* Genere was given as a string, so it's number*/
 		  for (argUsed=0; argUsed<=genre_last; argUsed++) {
 		    if (!strcmp (genre_list[argUsed], nextArg)) { break; }
 		  }
-		}
-		if (argUsed>genre_last) {
-		  argUsed=255;
+ 		}
+		if (argUsed>genre_last) { 
+		  argUsed=255; 
 		  fprintf(stderr,"Unknown genre: %s.  Specifiy genre number \n", nextArg);
 		}
 	        argUsed &= 255; c=(char)(argUsed);
 
-		id3tag.used=1; argUsed = 1;
-		strncpy(id3tag.genre, &c, 1);
+ 		id3tag.used=1; argUsed = 1;
+  		strncpy(id3tag.genre, &c, 1);
 	       }
 	else if (strcmp(token, "lowpass")==0) {
 	  argUsed=1;
@@ -385,7 +385,7 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    exit(1);
 	  }
 	} /* some more GNU-ish options could be added
-	   * version       => complete name, version and license info (normal exit)
+	   * version       => complete name, version and license info (normal exit)  
 	   * quiet/silent  => no messages on screen
 	   * brief         => few messages on screen (name, status report)
 	   * verbose       => all infos to screen (brhist, internal flags/filters)
@@ -402,9 +402,9 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	  argUsed=1;
 	  if (strcmp(nextArg,"phone")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 16;
+	    gfp->brate = 16; 
 	    gfp->highpassfreq=260;
-            gfp->highpasswidth=40;
+            gfp->highpasswidth=40; 
 	    gfp->lowpassfreq=3700;
 	    gfp->lowpasswidth=300;
 	    gfp->VBR_q=5;
@@ -412,14 +412,14 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    gfp->VBR_max_bitrate_kbps=56;
 	    gfp->no_short_blocks=1;
 	    gfp->out_samplerate =  16000;
-	    gfp->mode = MPG_MD_MONO;
-	    gfp->mode_fixed = 1;
+	    gfp->mode = MPG_MD_MONO; 
+	    gfp->mode_fixed = 1; 
 	    gfp->quality = 5;
 	  }
 	  else if (strcmp(nextArg,"voice")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 56;
-	    gfp->highpassfreq=100;
+	    gfp->brate = 56; 
+	    gfp->highpassfreq=100;  
 	    gfp->highpasswidth=20;
 	    gfp->lowpasswidth=2000;
 	    gfp->lowpassfreq=11000;
@@ -427,14 +427,14 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    gfp->VBR_min_bitrate_kbps=8;
 	    gfp->VBR_max_bitrate_kbps=96;
 	    gfp->no_short_blocks=1;
-	    gfp->mode = MPG_MD_MONO;
-	    gfp->mode_fixed = 1;
-	    gfp->out_samplerate =  24000;
+	    gfp->mode = MPG_MD_MONO; 
+	    gfp->mode_fixed = 1; 
+	    gfp->out_samplerate =  24000; 
 	    gfp->quality = 5;
 	  }
 	  else if (strcmp(nextArg,"fm")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 96;
+	    gfp->brate = 96; 
             gfp->highpassfreq=30;
             gfp->highpasswidth=0;
             gfp->lowpassfreq=15000;
@@ -442,14 +442,14 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    gfp->VBR_q=4;
 	    gfp->VBR_min_bitrate_kbps=32;
 	    gfp->VBR_max_bitrate_kbps=192;
-	    gfp->mode = MPG_MD_JOINT_STEREO;
-	    gfp->mode_fixed = 1;
+	    gfp->mode = MPG_MD_JOINT_STEREO; 
+	    gfp->mode_fixed = 1; 
 	    /*gfp->out_samplerate =  32000; */ /* determined automatically based on bitrate & sample freq. */
 	    gfp->quality = 5;
 	  }
 	  else if (strcmp(nextArg,"tape")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 128;
+	    gfp->brate = 128; 
             gfp->highpassfreq=15;
             gfp->highpasswidth=15;
             gfp->lowpassfreq=17000;
@@ -457,13 +457,13 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    gfp->VBR_q=4;
 	    gfp->VBR_min_bitrate_kbps=32;
 	    gfp->VBR_max_bitrate_kbps=192;
-	    gfp->mode = MPG_MD_JOINT_STEREO;
-	    gfp->mode_fixed = 1;
+	    gfp->mode = MPG_MD_JOINT_STEREO; 
+	    gfp->mode_fixed = 1; 
 	    gfp->quality = 5;
 	  }
 	  else if (strcmp(nextArg,"hifi")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 160;
+	    gfp->brate = 160;            
 	    gfp->highpassfreq=15;
             gfp->highpasswidth=15;
             gfp->lowpassfreq=20000;
@@ -471,32 +471,32 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    gfp->VBR_q=3;
 	    gfp->VBR_min_bitrate_kbps=32;
 	    gfp->VBR_max_bitrate_kbps=224;
-	    gfp->mode = MPG_MD_JOINT_STEREO;
-	    gfp->mode_fixed = 1;
+	    gfp->mode = MPG_MD_JOINT_STEREO; 
+	    gfp->mode_fixed = 1; 
 	    gfp->quality = 2;
 	  }
 	  else if (strcmp(nextArg,"cd")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 192;
+	    gfp->brate = 192;  
 	    gfp->lowpassfreq=-1;
             gfp->highpassfreq=-1;
 	    gfp->VBR_q=2;
 	    gfp->VBR_min_bitrate_kbps=80;
 	    gfp->VBR_max_bitrate_kbps=256;
-	    gfp->mode = MPG_MD_STEREO;
-	    gfp->mode_fixed = 1;
+	    gfp->mode = MPG_MD_STEREO; 
+	    gfp->mode_fixed = 1; 
 	    gfp->quality = 2;
 	  }
 	  else if (strcmp(nextArg,"studio")==0)
 	  { /* when making changes, please update help text too */
-	    gfp->brate = 256;
+	    gfp->brate = 256; 
 	    gfp->lowpassfreq=-1;
             gfp->highpassfreq=-1;
 	    gfp->VBR_q=0;
 	    gfp->VBR_min_bitrate_kbps=112;
 	    gfp->VBR_max_bitrate_kbps=320;
-	    gfp->mode = MPG_MD_STEREO;
-	    gfp->mode_fixed = 1;
+	    gfp->mode = MPG_MD_STEREO; 
+	    gfp->mode_fixed = 1; 
 	    gfp->quality = 2; /* should be 0, but does not work now */
 	  }
 	  else if (strcmp(nextArg,"help")==0)
@@ -516,7 +516,7 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 		    programName, token);
 	  }
 	i += argUsed;
-
+	
       } else  while( (c = *token++) ) {
 	if(*token ) arg = token;
 	else                             arg = nextArg;
@@ -538,12 +538,12 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	    err = 1;
 	  }
 	  break;
-	case 'V':        argUsed = 1;   gfp->VBR = 1;
+	case 'V':        argUsed = 1;   gfp->VBR = 1;  
 	  gfp->VBR_q = atoi(arg);
 	  if (gfp->VBR_q <0) gfp->VBR_q=0;
 	  if (gfp->VBR_q >9) gfp->VBR_q=9;
 	  break;
-	case 'q':        argUsed = 1;
+	case 'q':        argUsed = 1; 
 	  user_quality = atoi(arg);
 	  if (user_quality<0) user_quality=0;
 	  if (user_quality>9) user_quality=9;
@@ -554,15 +554,15 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	  /* samplerate = rint( 1000.0 * srate ); $A  */
 	  gfp->in_samplerate =  (( 1000.0 * srate ) + 0.5);
 	  break;
-	case 'b':
+	case 'b':        
 	  argUsed = 1;
-	  gfp->brate = atoi(arg);
+	  gfp->brate = atoi(arg); 
 	  gfp->VBR_min_bitrate_kbps=gfp->brate;
 	  break;
-	case 'B':
+	case 'B':        
 	  argUsed = 1;
-	  gfp->VBR_max_bitrate_kbps=atoi(arg);
-	  break;
+	  gfp->VBR_max_bitrate_kbps=atoi(arg); 
+	  break;	
 	case 't':  /* dont write VBR tag */
 	  gfp->bWriteVbrTag=0;
 	  break;
@@ -577,27 +577,27 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	  gfp->swapbytes=TRUE;
 	  break;
 	case 'p': /* (jo) error_protection: add crc16 information to stream */
-	  gfp->error_protection = 1;
+	  gfp->error_protection = 1; 
 	  break;
 	case 'a': /* autoconvert input file from stereo to mono - for mono mp3 encoding */
 	  autoconvert=1;
 	  gfp->mode=MPG_MD_MONO;
 	  gfp->mode_fixed=1;
 	  break;
-	case 'h':
+	case 'h': 
 	  gfp->quality = 2;
 	  break;
-	case 'k':
+	case 'k': 
 	  gfp->lowpassfreq=-1;
 	  gfp->highpassfreq=-1;
 	  break;
-	case 'd':
+	case 'd': 
 	  gfp->allow_diff_short = 1;
 	  break;
-	case 'v':
-	  gfp->VBR = 1;
+	case 'v': 
+	  gfp->VBR = 1; 
 	  break;
-	case 'S':
+	case 'S': 
 	  gfp->silent = TRUE;
 	  break;
 	case 'X':        argUsed = 1;   gfp->experimentalX = 0;
@@ -623,13 +623,13 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	  break;
 
 
-	case 'Y':
+	case 'Y': 
 	  gfp->experimentalY = TRUE;
 	  break;
-	case 'Z':
+	case 'Z': 
 	  gfp->experimentalZ = TRUE;
 	  break;
-	case 'f':
+	case 'f': 
 	  gfp->quality= 9;
 	  break;
 	case 'g': /* turn on gtk analysis */
@@ -653,7 +653,7 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
 	  break;
 	case 'c':   gfp->copyright = 1; break;
 	case 'o':   gfp->original  = 0; break;
-
+	
 	case '?':   lame_help(gfp,programName);  /* doesn't return */
 	default:    fprintf(stderr,"%s: unrec option %c\n",
 				programName, c);
@@ -710,7 +710,7 @@ void lame_parse_args(lame_global_flags *gfp,int argc, char **argv)
   }
 #endif
   /* default guess for number of channels */
-  if (autoconvert) gfp->num_channels=2;
+  if (autoconvert) gfp->num_channels=2; 
   else if (gfp->mode == MPG_MD_MONO) gfp->num_channels=1;
   else gfp->num_channels=2;
 

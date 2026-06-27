@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -13,7 +13,7 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif 
 
 #undef _WIN32
 
@@ -43,7 +43,7 @@ BEGIN
   #endif
   EDITTEXT IDC_EXTRACT_EDIT_PASSWORD, g2x2, m + 50, g2xs2, 14, ES_PASSWORD | ES_AUTOHSCROLL
   CONTROL "Show Password", IDC_EXTRACT_CHECK_SHOW_PASSWORD, MY_CHECKBOX, g2x2, m + 72, g2xs2, 10
-
+  
   DEFPUSHBUTTON  "OK",         IDOK, bx3, by, bxs, bys, WS_GROUP
   PUSHBUTTON     "Cancel", IDCANCEL, bx2, by, bxs, bys
   PUSHBUTTON     "Help",     IDHELP, bx1, by, bxs, bys
@@ -131,3 +131,4 @@ BEGIN_EVENT_TABLE(CExtractDialogImpl, wxDialog)
 	EVT_CHECKBOX(wxID_ANY, CModalDialogImpl::OnAnyButton)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

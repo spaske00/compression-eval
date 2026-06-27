@@ -6,7 +6,7 @@ x = 3.454;
   if (x<0) {
     m = 1
     x = -x
-  }
+  } 
 
   /* Precondition x. */
   z = scale;
@@ -37,3 +37,4 @@ x = 3.454;
     }
     v += e
   }
+

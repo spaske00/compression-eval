@@ -21,7 +21,7 @@ end
 
 function hi_function (n)
   local res = try(lo_function, n)
-  if res == "Hi_Exception" then HI = HI+1
+  if res == "Hi_Exception" then HI = HI+1 
   elseif res then error(res, 0)  -- rethrow
   end
 end
@@ -29,7 +29,7 @@ end
 
 function lo_function (n)
   local res = try(blowup, n)
-  if res == "Lo_Exception" then LO = LO+1
+  if res == "Lo_Exception" then LO = LO+1 
   elseif res then error(res, 0)  -- rethrow
   end
 end

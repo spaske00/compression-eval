@@ -10,6 +10,38 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
+function find_single_executable ()
+{
+    local search_dir="$1"
+    local newer_than="$2"
+    local preferred_name="$3"
+    local executables=()
+    local debug_executables=()
+
+    if [[ -x "$search_dir/$preferred_name.debug" && "$search_dir/$preferred_name.debug" -nt "$newer_than" ]]; then
+        printf '%s\n' "$search_dir/$preferred_name.debug"
+        return 0
+    fi
+
+    if [[ -x "$search_dir/$preferred_name" && "$search_dir/$preferred_name" -nt "$newer_than" ]]; then
+        printf '%s\n' "$search_dir/$preferred_name"
+        return 0
+    fi
+
+    mapfile -t executables < <(find "$search_dir" -path "$search_dir/images" -prune -o -type f -perm -111 -newer "$newer_than" -print | sort)
+    mapfile -t debug_executables < <(find "$search_dir" -path "$search_dir/images" -prune -o -type f -perm -111 -newer "$newer_than" -name '*.debug' -print | sort)
+
+    if (( ${#debug_executables[@]} == 1 )); then
+        printf '%s\n' "${debug_executables[0]}"
+    elif (( ${#executables[@]} == 1 )); then
+        printf '%s\n' "${executables[0]}"
+    else
+        echo "Could not select a single executable artifact in $search_dir" >&2
+        printf '  %s\n' "${executables[@]}" >&2
+        return 1
+    fi
+}
+
 out="$1"
 target_dir="target/images/$out"
 
@@ -34,18 +66,20 @@ if [ -f native_image_args ]; then
     native_image_options="$native_image_options $(tr '\n' ' ' < native_image_args)"
 fi
 
+build_marker="$(mktemp)"
+trap 'rm -f "$build_marker"' EXIT
+
 export NATIVE_IMAGE_OPTIONS="$native_image_options"
 JAVA_HOME="$GRAALVM_HOME" bash -lc "$cmd"
 unset NATIVE_IMAGE_OPTIONS
 
 if [ -f post_package_cmd ] ; then
+    export NATIVE_IMAGE_BUILD_MARKER="$build_marker"
     bash -lc "$(cat post_package_cmd)"
+    unset NATIVE_IMAGE_BUILD_MARKER
 fi
 
-if [ ! -x target/image ]; then
-    echo "Expected executable native image at target/image" >&2
-    exit 1
-fi
-
+executable="$(find_single_executable target "$build_marker" image)" || exit $?
+rm -rf "$target_dir"
 mkdir -p "$target_dir"
-mv target/image "$target_dir/$out"
+mv "$executable" "$target_dir/$out"

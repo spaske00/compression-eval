@@ -130,7 +130,7 @@ STDMETHODIMP CArchiveOpenCallback::SetCompleted(const UInt64 * /* files */, cons
 {
   return S_OK;
 }
-
+  
 STDMETHODIMP CArchiveOpenCallback::CryptoGetTextPassword(BSTR *password)
 {
   if (!PasswordIsDefined)
@@ -235,7 +235,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index,
     // Get Name
     NCOM::CPropVariant prop;
     RINOK(_archiveHandler->GetProperty(index, kpidPath, &prop));
-
+    
     UString fullPath;
     if (prop.vt == VT_EMPTY)
       fullPath = kEmptyFileAlias;
@@ -300,7 +300,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index,
       newFileSize = ConvertPropVariantToUInt64(prop);
   }
 
-
+  
   {
     // Create folders for file
     int slashPos = _filePath.ReverseFind(WCHAR_PATH_SEPARATOR);
@@ -326,7 +326,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index,
         return E_ABORT;
       }
     }
-
+    
     _outFileStreamSpec = new COutFileStream;
     CMyComPtr<ISequentialOutStream> outStreamLoc(_outFileStreamSpec);
     if (!_outFileStreamSpec->Open(fullProcessedPath, CREATE_ALWAYS))
@@ -515,7 +515,7 @@ STDMETHODIMP CArchiveUpdateCallback::GetUpdateItemInfo(UInt32 /* index */,
 STDMETHODIMP CArchiveUpdateCallback::GetProperty(UInt32 index, PROPID propID, PROPVARIANT *value)
 {
   NWindows::NCOM::CPropVariant prop;
-
+  
   if (propID == kpidIsAnti)
   {
     prop = false;
@@ -564,7 +564,7 @@ STDMETHODIMP CArchiveUpdateCallback::GetStream(UInt32 index, ISequentialInStream
 
   const CDirItem &dirItem = (*DirItems)[index];
   GetStream2(dirItem.Name);
-
+ 
   if (dirItem.isDir())
     return S_OK;
 
@@ -699,7 +699,7 @@ int MY_CDECL main(int numArgs, const char *args[])
     {
       CDirItem di;
       UString name = GetUnicodeString(args[i]);
-
+      
       NFile::NFind::CFileInfoW fi;
       if (!fi.Find(name))
       {
@@ -760,7 +760,7 @@ int MY_CDECL main(int numArgs, const char *args[])
       RINOK(setProperties->SetProperties(names, values, kNumProps));
     }
     */
-
+    
     HRESULT result = outArchive->UpdateItems(outFileStream, dirItems.Size(), updateCallback);
     updateCallbackSpec->Finilize();
     if (result != S_OK)
@@ -794,17 +794,17 @@ int MY_CDECL main(int numArgs, const char *args[])
       PrintError("incorrect command");
       return 1;
     }
-
+  
     CMyComPtr<IInArchive> archive;
     if (createObjectFunc(&CLSID_CFormat7z, &IID_IInArchive, (void **)&archive) != S_OK)
     {
       PrintError("Can not get class object");
       return 1;
     }
-
+    
     CInFileStream *fileSpec = new CInFileStream;
     CMyComPtr<IInStream> file = fileSpec;
-
+    
     if (!fileSpec->Open(archiveName))
     {
       PrintError("Can not open archive file");
@@ -817,14 +817,14 @@ int MY_CDECL main(int numArgs, const char *args[])
       openCallbackSpec->PasswordIsDefined = false;
       // openCallbackSpec->PasswordIsDefined = true;
       // openCallbackSpec->Password = L"1";
-
+      
       if (archive->Open(file, 0, openCallback) != S_OK)
       {
         PrintError("Can not open archive");
         return 1;
       }
     }
-
+    
     if (listCommand)
     {
       // List command

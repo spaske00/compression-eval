@@ -131,7 +131,7 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID,  PROPVARIANT *va
 {
   COM_TRY_BEGIN
   NWindows::NCOM::CPropVariant prop;
-
+  
   const CMvItem &mvItem = m_Database.Items[index];
   const CDatabaseEx &db = m_Database.Volumes[mvItem.VolumeIndex];
   int itemIndex = mvItem.ItemIndex;
@@ -184,9 +184,9 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID,  PROPVARIANT *va
       break;
     }
     case kpidBlock:  prop = (Int32)m_Database.GetFolderIndex(&mvItem); break;
-
+    
     #ifdef _CAB_DETAILS
-
+    
     case kpidBlockReal:  prop = (UInt32)item.FolderIndex; break;
     case kpidOffset:  prop = (UInt32)item.Offset; break;
     case kpidVolume:  prop = (UInt32)mvItem.VolumeIndex; break;
@@ -234,7 +234,7 @@ STDMETHODIMP CHandler::Open(IInStream *inStream,
   CInArchive archive;
   CMyComPtr<IArchiveOpenVolumeCallback> openVolumeCallback;
   callback->QueryInterface(IID_IArchiveOpenVolumeCallback, (void **)&openVolumeCallback);
-
+  
   CMyComPtr<IInStream> nextStream = inStream;
   bool prevChecked = false;
   UInt64 numItems = 0;
@@ -271,7 +271,7 @@ STDMETHODIMP CHandler::Open(IInStream *inStream,
 
       numItems += db.Items.Size();
       RINOK(callback->SetCompleted(&numItems, NULL));
-
+        
       nextStream = 0;
       for (;;)
       {
@@ -343,7 +343,7 @@ public:
 private:
   const CMvDatabaseEx *m_Database;
   const CRecordVector<bool> *m_ExtractStatuses;
-
+  
   Byte *TempBuf;
   UInt32 TempBufSize;
   int NumIdenticalFiles;
@@ -558,7 +558,7 @@ HRESULT CFolderOutStream::Write2(const void *data, UInt32 size, UInt32 *processe
           m_CurrentIndex++;
           if (result == S_OK && m_RealOutStream && TempBuf)
             result = WriteStream(m_RealOutStream, TempBuf, (size_t)(m_PosInFolder - m_BufStartFolderOffset));
-
+          
           if (!TempBuf && TempBufMode && m_RealOutStream)
           {
             RINOK(CloseFileWithResOp(NExtract::NOperationResult::kUnSupportedMethod));
@@ -851,7 +851,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         f++;
 
         cabBlockInStreamSpec->DataError = false;
-
+        
         if (!keepInputBuffer)
           cabBlockInStreamSpec->InitForNewBlock();
 
@@ -878,7 +878,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
           unpackRemain = kBlockSizeMax;
         if (unpackRemain > unpackSize)
           unpackRemain  = unpackSize;
-
+   
         switch(folder.GetCompressionMethod())
         {
           case NHeader::NCompressionMethodMajor::kNone:

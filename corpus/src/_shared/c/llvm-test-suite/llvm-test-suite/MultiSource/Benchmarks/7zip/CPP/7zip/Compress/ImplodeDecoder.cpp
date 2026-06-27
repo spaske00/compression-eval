@@ -140,7 +140,7 @@ HRESULT CCoder::CodeReal(ISequentialInStream *inStream, ISequentialOutStream *ou
 
   if (!ReadTables())
     return S_FALSE;
-
+  
   while(pos < unPackSize)
   {
     if (progress != NULL && pos % (1 << 16) == 0)

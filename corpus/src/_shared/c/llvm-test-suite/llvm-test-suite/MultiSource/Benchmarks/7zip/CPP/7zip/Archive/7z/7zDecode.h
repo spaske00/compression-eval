@@ -33,14 +33,14 @@ class CDecoder
 {
   bool _bindInfoExPrevIsDefined;
   CBindInfoEx _bindInfoExPrev;
-
+  
   bool _multiThread;
   #ifdef _ST_MODE
   NCoderMixer::CCoderMixer2ST *_mixerCoderSTSpec;
   #endif
   NCoderMixer::CCoderMixer2MT *_mixerCoderMTSpec;
   NCoderMixer::CCoderMixer2 *_mixerCoderCommon;
-
+  
   CMyComPtr<ICompressCoder2> _mixerCoder;
   CObjectVector<CMyComPtr<IUnknown> > _decoders;
   // CObjectVector<CMyComPtr<ICompressCoder2> > _decoders2;

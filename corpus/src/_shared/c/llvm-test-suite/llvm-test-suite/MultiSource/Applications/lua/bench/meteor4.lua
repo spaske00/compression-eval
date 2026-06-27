@@ -221,3 +221,4 @@ if jit and jit.opt and jit.version_num < 10200 then jit.opt.start(0) end
 -- Run the solver protected to get partial results (max count or ctrl-c).
 pcall(solver, 0)
 printresult()
+

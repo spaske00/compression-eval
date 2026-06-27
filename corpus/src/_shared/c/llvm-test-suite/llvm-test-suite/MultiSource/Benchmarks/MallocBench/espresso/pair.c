@@ -238,7 +238,7 @@ int strategy;
     }
     printf("# ");
     print_pair(PLA->pair);
-
+	
     for(i = 0; i < cube.num_binary_vars; i++)
 	FREE(cost_array[i]);
     FREE(cost_array);

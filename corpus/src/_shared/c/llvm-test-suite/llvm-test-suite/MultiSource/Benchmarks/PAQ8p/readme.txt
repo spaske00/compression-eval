@@ -33,7 +33,7 @@ Added Jan. 9, 2009:
   paq7asmsse2.asm - above, but optimized by Dark Shikari.
   paq8p_sse2.exe - 32 bit Windows g++ compile with above for Pentium 4+.
 
-paq8p
+paq8p 
 added wav Model
 minor improvements to bmp Model
 

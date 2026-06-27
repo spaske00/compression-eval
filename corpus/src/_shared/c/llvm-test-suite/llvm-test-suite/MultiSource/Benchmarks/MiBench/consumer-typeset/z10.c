@@ -287,7 +287,7 @@ void CrossAddTag(OBJECT x)
     }
   }
   if( link == x )
-  {
+  { 
       /* search the definition of x for name of its @Tag parameter */
       ppar = nilobj;
       for( link=Down(actual(x));  link != actual(x);  link = NextDown(link) )
@@ -386,14 +386,14 @@ OBJECT *crs, OBJECT *res_env)
 
 
     case 2:
-
+    
       Error(10, 5, "value of right parameter of %s is an empty word",
 	WARN, &fpos(tag), KW_CROSS);
       break;
 
 
     case CROSS_LIT:
-
+    
       debug2(DCR, DD, "  CROSS_LIT sym %s, tag %s", SymName(sym), string(tag));
       if( cross_sym(sym) == nilobj )  CrossInit(sym);
       cs = cross_sym(sym);
@@ -443,7 +443,7 @@ OBJECT *crs, OBJECT *res_env)
     case CROSS_PREC:
     case CROSS_FOLL:
     case CROSS_FOLL_OR_PREC:
-
+    
       if( has_tag(sym) )
       { int new_seq;
 	if( cross_sym(sym) == nilobj )  CrossInit(sym);
@@ -491,7 +491,7 @@ OBJECT *crs, OBJECT *res_env)
 
 
     default:
-
+    
       assert(FALSE, "CrossExpand ctype");
       break;
 
@@ -889,7 +889,7 @@ void CrossSequence(OBJECT x)
 
 	      debug3(DCR, DD, "  inserting cross (foll) %s&%s %s", SymName(sym),
 	        string(tag), "0");
-	      DbInsert(NewCrossDb, FALSE, sym, string(tag), &fpos(tag),
+	      DbInsert(NewCrossDb, FALSE, sym, string(tag), &fpos(tag), 
 	        STR_ZERO, target_file(cs), (long) target_pos(cs),
 		target_lnum(cs), TRUE);
 	      link = PrevDown(link);

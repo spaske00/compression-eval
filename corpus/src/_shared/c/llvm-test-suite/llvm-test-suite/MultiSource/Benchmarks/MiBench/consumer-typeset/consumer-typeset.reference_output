@@ -351,7 +351,7 @@ grestore
 0 11657(\213)m 320 fnt1 480 11205(Ne)m 8(w)k 1148(web)s
 1751(pages!)s 240 fnt1 2615 11657(The)m 3043(ne)s 6(w)k
 3490(domain)s 4265(and)s 4669(mailing)s 5452(lists)s 5887(are)s
-6234(just)s 6639(about)s 7231(up!)s
+6234(just)s 6639(about)s 7231(up!)s 
 [ /Dest /IGNORED /DEST pdfmark
 9066 10 0 10 240 288 60 0 9275 LoutGr2
 LoutRule stroke
@@ -427,7 +427,7 @@ grestore
 782(POSIX-compliant)s 2573(syscalls.)s 3425(The)s 3858(tools)s 4378(ha)s 4(v)k 3(e)k
 4884(been)s 5398(installed)s 6270(\(and)s 6757(should)s 7459(cleanly)s
 8208(b)s 4(uild\))k 8829(on)s 0 1190(the)m 348(follo)s 6(wing)k
-1325(systems:)s
+1325(systems:)s 
 grestore
 0 0 0 0 240 288 60 1417 -15423 LoutGr2
 1 LoutMargSet

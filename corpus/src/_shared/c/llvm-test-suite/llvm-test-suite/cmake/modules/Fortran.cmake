@@ -11,7 +11,7 @@
 # preprocessing pass on Fortran files, it is able to detect module
 # dependencies that are dependent on preprocessing.
 # For example,
-# #ifdef FOO
+# #ifdef FOO 
 # USE MODULE_A
 # #else
 # USE MODULE_B

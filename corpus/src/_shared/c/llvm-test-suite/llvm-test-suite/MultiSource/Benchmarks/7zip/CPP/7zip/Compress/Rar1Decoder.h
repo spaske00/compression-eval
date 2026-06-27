@@ -52,7 +52,7 @@ public:
   void InitHuff();
   void CorrHuff(UInt32 *CharSet, UInt32 *NumToPlace);
   void OldUnpWriteBuf();
-
+  
   UInt32 ChSet[256],ChSetA[256],ChSetB[256],ChSetC[256];
   UInt32 Place[256],PlaceA[256],PlaceB[256],PlaceC[256];
   UInt32 NToPl[256],NToPlB[256],NToPlC[256];

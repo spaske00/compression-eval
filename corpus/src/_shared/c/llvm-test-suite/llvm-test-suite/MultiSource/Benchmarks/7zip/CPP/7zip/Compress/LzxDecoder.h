@@ -40,7 +40,7 @@ public:
   }
 
   UInt64 GetProcessedSize() const { return m_Stream.GetProcessedSize() - (kNumBigValueBits - m_BitPos) / 8; }
-
+  
   unsigned GetBitPosition() const { return m_BitPos & 0xF; }
 
   void Normalize()
@@ -58,7 +58,7 @@ public:
   {
     return ((m_Value >> ((32 - kNumValueBits) - m_BitPos)) & kBitDecoderValueMask) >> (kNumValueBits - numBits);
   }
-
+  
   void MovePos(unsigned numBits)
   {
     m_BitPos += numBits;

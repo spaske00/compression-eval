@@ -540,7 +540,7 @@ done:
     while (g_langInfo[ind].LOCALE_SNAME)
     {
 	    BOOL ret = find_locale_id_callback(&g_langInfo[ind],name);
-	    if (ret == FALSE)
+	    if (ret == FALSE) 
 		    break;
 
 	    ind++;
@@ -668,7 +668,7 @@ static void LOCALE_Init(void)
         CFRelease( preferred_locales );
 #endif
 
-#if 0 // FIXME
+#if 0 // FIXME	
     NtSetDefaultUILanguage( LANGIDFROMLCID(lcid_LC_MESSAGES) );
     NtSetDefaultLocale( TRUE, lcid_LC_MESSAGES );
     NtSetDefaultLocale( FALSE, lcid_LC_CTYPE );
@@ -738,3 +738,4 @@ int main()
 	return 0;
 }
 #endif
+

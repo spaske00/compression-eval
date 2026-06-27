@@ -1,5 +1,5 @@
 /* Scheme In One Defun, but in C this time.
-
+ 
  *                   COPYRIGHT (c) 1988-1994 BY                             *
  *        PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.       *
  *        See the source file SLIB.C for more information.                  *
@@ -18,23 +18,23 @@ struct obj
 		struct obj * vcell;} symbol;
 	struct {char *name;
 		struct obj * (*f)(void);} subr0;
-	struct {char *name;
-		struct obj * (*f)(struct obj *);} subr1;
-	struct {char *name;
-		struct obj * (*f)(struct obj *, struct obj *);} subr2;
-	struct {char *name;
-		struct obj * (*f)(struct obj *, struct obj *, struct obj *);
-	      } subr3;
-	struct {char *name;
-		struct obj * (*f)(struct obj *, struct obj *, struct obj *,
+  	struct {char *name;
+ 		struct obj * (*f)(struct obj *);} subr1;
+ 	struct {char *name;
+ 		struct obj * (*f)(struct obj *, struct obj *);} subr2;
+ 	struct {char *name;
+ 		struct obj * (*f)(struct obj *, struct obj *, struct obj *);
+ 	      } subr3;
+ 	struct {char *name;
+ 		struct obj * (*f)(struct obj *, struct obj *, struct obj *,
 				  struct obj *);
-	      } subr4;
-	struct {char *name;
-		struct obj * (*f)(struct obj *, struct obj *, struct obj *,
+ 	      } subr4;
+ 	struct {char *name;
+ 		struct obj * (*f)(struct obj *, struct obj *, struct obj *,
 				  struct obj *,struct obj *);
-	      } subr5;
-	struct {char *name;
-		struct obj * (*f)(struct obj **, struct obj **);} subrm;
+ 	      } subr5;
+ 	struct {char *name;
+ 		struct obj * (*f)(struct obj **, struct obj **);} subrm;
 	struct {char *name;
 		struct obj * (*f)(void *,...);} subr;
 	struct {struct obj *env;
@@ -114,7 +114,7 @@ struct obj
 #define tc_table_dim 100
 
 typedef struct obj* LISP;
-typedef LISP (*SUBR_FUNC)(void);
+typedef LISP (*SUBR_FUNC)(void); 
 
 #define CONSP(x)   TYPEP(x,tc_cons)
 #define FLONUMP(x) TYPEP(x,tc_flonum)
@@ -350,3 +350,4 @@ long nlength(LISP obj);
 int __stdcall siod_main(int argc,char **argv, char **env);
 void __stdcall siod_shuffle_args(int *pargc,char ***pargv);
 void __stdcall siod_init(int argc,char **argv);
+

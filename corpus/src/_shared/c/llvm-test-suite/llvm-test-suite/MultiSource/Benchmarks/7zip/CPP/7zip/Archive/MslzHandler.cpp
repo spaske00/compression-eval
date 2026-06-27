@@ -225,7 +225,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(extractCallback, false);
-
+  
   RINOK(_stream->Seek(0, STREAM_SEEK_SET, NULL));
   CInBuffer s;
   if (!s.Create(1 << 20))

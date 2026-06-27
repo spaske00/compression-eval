@@ -102,7 +102,7 @@ HRESULT COutArchive::WriteHeaderReal(const CItem &item)
 
   MakeOctalString12(cur, item.Size); cur += 12;
   MakeOctalString12(cur, item.MTime); cur += 12;
-
+  
   memmove(cur, NFileHeader::kCheckSumBlanks, 8);
   cur += 8;
 

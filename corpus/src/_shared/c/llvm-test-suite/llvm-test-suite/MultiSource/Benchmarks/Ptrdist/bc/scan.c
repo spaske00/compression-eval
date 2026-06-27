@@ -148,7 +148,7 @@ int read();
 /* default declaration of generated scanner - a define so the user can
  * easily add parameters
  */
-#define YY_DECL int yylex YY_PROTO(( void ))
+#define YY_DECL int yylex YY_PROTO(( void )) 
 
 /* code executed at the end of each rule */
 #define YY_BREAK break;
@@ -188,7 +188,7 @@ typedef struct yy_buffer_state *YY_BUFFER_STATE;
                 Computer Science Department, 9062
                 Western Washington University
                 Bellingham, WA 98226-9062
-
+       
 *************************************************************************/
 
 #include "bcdefs.h"
@@ -255,7 +255,7 @@ struct yy_buffer_state
     YY_CHAR *yy_buf_pos;	/* current position in input buffer */
 
     /* size of input buffer in bytes, not including room for EOB characters*/
-    int yy_buf_size;
+    int yy_buf_size;	
 
     /* number of characters read into yy_ch_buf, not including EOB characters */
     int yy_n_chars;
@@ -656,7 +656,7 @@ case 21:
 return(Limits);
 	YY_BREAK
 case 22:
-{ yylval.c_value = yytext[0];
+{ yylval.c_value = yytext[0]; 
 					      return((int)yytext[0]); }
 	YY_BREAK
 case 23:
@@ -675,7 +675,7 @@ case 27:
 { yylval.c_value = yytext[0]; return(ASSIGN_OP); }
 	YY_BREAK
 case 28:
-{
+{ 
 #ifdef OLD_EQ_OP
 			 char warn_save;
 			 warn_save = warn_not_std;
@@ -712,14 +712,14 @@ case 34:
 	for (;;)
 	  {
 #ifdef __cplusplus
-	    while ( ((c=yyinput()) != '*') && (c != EOF))
+	    while ( ((c=yyinput()) != '*') && (c != EOF)) 
 #else
-	    while ( ((c=input()) != '*') && (c != EOF))
+	    while ( ((c=input()) != '*') && (c != EOF)) 
 #endif
 	      /* eat it */
 	      if (c == '\n') line_no++;
 	    if (c == '*')
-	      {
+ 	      {
 #ifdef __cplusplus
 		while ( (c=yyinput()) == '*') /* eat it*/;
 #else
@@ -741,7 +741,7 @@ case 35:
 	YY_BREAK
 case 36:
 {
-	      /* unsigned */ char *look;
+ 	      /* unsigned */ char *look;
 	      int count = 0;
 	      yylval.s_value = strcopyof((yytext));
 	      for (look = yytext; *look != 0; look++)
@@ -778,7 +778,7 @@ case 37:
 		    *dst++ = *src++;
 	        }
 	      *dst = 0;
-	      yylval.s_value = strcopyof((yytext));
+	      yylval.s_value = strcopyof((yytext)); 
 	      return(NUMBER);
 	    }
 	YY_BREAK
@@ -916,9 +916,9 @@ case YY_STATE_EOF(INITIAL):
  *
  * synopsis
  *     int yy_get_next_buffer();
- *
+ *     
  * returns a code representing an action
- *     EOB_ACT_LAST_MATCH -
+ *     EOB_ACT_LAST_MATCH - 
  *     EOB_ACT_CONTINUE_SCAN - continue scanning from current position
  *     EOB_ACT_END_OF_FILE - end of file
  */

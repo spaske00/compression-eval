@@ -5,12 +5,12 @@
  * By:  Martin C. Carlisle
  *      Princeton University
  *      6/24/94
- *
+ * 
  * builds a two-dimensional tree for TSP
- *
+ * 
  * distribution of median is given by modification of exponential to
  * be [-1,1]
- */
+ */ 
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,10 +48,10 @@ static double uniform(double min, double max);
 static double median(double min,double max,int n) {
   double t;
   double retval;
-
+  
   t = drand48(); /* in [0.0,1.0) */
   if (t>0.5) {
-    retval=log(1.0-(2.0*(M_E12-1)*(t-0.5)/M_E12))/12.0;
+    retval=log(1.0-(2.0*(M_E12-1)*(t-0.5)/M_E12))/12.0;   
     }
   else {
     retval=-log(1.0-(2.0*(M_E12-1)*t/M_E12))/12.0;
@@ -65,13 +65,13 @@ static double median(double min,double max,int n) {
 /* Get double uniformly distributed over [min,max) */
 static double uniform(double min, double max) {
   double retval;
-
+  
   retval = drand48(); /* in [0.0,1.0) */
   retval = retval * (max-min);
   return retval + min;
 }
 
-/* Builds a 2D tree of n nodes in specified range with dir as primary
+/* Builds a 2D tree of n nodes in specified range with dir as primary 
    axis (0 for x, 1 for y) */
 Tree build_tree(int n,int dir,int lo,int num_proc,double min_x,
                 double max_x,double min_y,double max_y) {
@@ -122,3 +122,7 @@ Tree build_tree(int n,int dir,int lo,int num_proc,double min_x,
 #endif
   return t;
 }
+
+
+
+

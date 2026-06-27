@@ -193,7 +193,7 @@ SwapSubsetAndReset(unsigned long iMax)
     /* must at least select one to swap, case where gMax is first */
     assert(mrPrevA != NULL && mrPrevB != NULL);
 
-    if (mrA == NULL) {
+    if (mrA == NULL) {	
 	/* swap entire list */
 	groupA = swapToA;
 	groupB = swapToB;
@@ -243,7 +243,7 @@ PrintResults(int verbose)
 
     maxStat = -1;
     for (i=0; i<256; i++)
-	netStats[i].total = netStats[i].edgesCut = netStats[i].netsCut = 0;
+	netStats[i].total = netStats[i].edgesCut = netStats[i].netsCut = 0; 
 
     /* partitions */
     if (verbose) {
@@ -266,7 +266,7 @@ PrintResults(int verbose)
 
 	/* for all nets on this module */
 	for (nn = modules[(*mr).module]; nn != NULL; nn = (*nn).next) {
-
+	    
 	    netSz = 0;
 	    for (mn = nets[(*nn).net]; mn != NULL; mn = (*mn).next)
 		netSz++;
@@ -303,7 +303,7 @@ PrintResults(int verbose)
 	for (grp=moduleToGroup[(*(nets[i])).module],mn = (*(nets[i])).next;
 	     mn != NULL;
 	     mn = (*mn).next) {
-
+	    
 	    /* only check nodes other than self, and not swapped */
 	    if (grp != moduleToGroup[(*mn).module]) {
 		if (verbose)

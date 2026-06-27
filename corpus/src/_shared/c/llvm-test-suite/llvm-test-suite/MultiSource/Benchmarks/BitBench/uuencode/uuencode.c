@@ -95,7 +95,7 @@ void encode_line(char* input, int offset, int octets, char* line){		/*3*/
 	line[loffs++] = '=';							/*23*/
       } else {
 	if (octets == 2) {							/*24*/
-	  ch = encode_char ((input[offset]) >> 2); 				/*25*/
+	  ch = encode_char ((input[offset]) >> 2); 				/*25*/ 
 	  line[loffs++] = ch;							/*26*/
 	  ch = encode_char ((input[offset] << 4) | (input[offset+1] >> 4));	/*27*/
 	  line[loffs++] = ch;							/*28*/
@@ -110,7 +110,7 @@ void encode_line(char* input, int offset, int octets, char* line){		/*3*/
   line[loffs] = 0;								/*33*/
   return ;
 }
-
+  
 void encode(char* input, int limit, char* output){				/*34*/
   char line[63];								/*35*/
   int offset=0;									/*36*/
@@ -128,8 +128,8 @@ void encode(char* input, int limit, char* output){				/*34*/
   }
   strcat(output," \nend");							/*45*/
   return;
-}
-
+} 
+ 
 int do_encode(char* input, char* output, int len, char* infilename) {		/*46*/
   int mode, namelen;								/*47*/
   strcpy(output, "begin 640 ");							/*48*/
@@ -145,12 +145,12 @@ int do_encode(char* input, char* output, int len, char* infilename) {		/*46*/
 /*==========================================================================*/
 
 static size_t read_data(FILE *in, void *buffer)
-{
+{ 
   return fread(buffer, 1, MAX_SIZE, in);
 }
 
 static size_t write_data(FILE *out, int size, void *buffer)
-{
+{ 
   return fwrite(buffer, 1, size, out);
 }
 
@@ -162,11 +162,11 @@ int main(int argc, char *argv[])
   int outsize,time;
   unsigned char *inbuf, *outbuf, *temp;
   struct timeval pre,post;
-
+  
   /* optional input arg */
   inbuf = malloc(MAX_SIZE);
   outbuf = malloc(MAX_SIZE*2);
-
+  
   if (argc > 1) {
     //create_test_data(argv[1]); // for testing purposes
     if ((in = fopen(argv[1], "r")) == NULL) {
@@ -175,7 +175,7 @@ int main(int argc, char *argv[])
     }
     argc--;
   }
-
+  
   else{
     in = stdin;
     out = stdout;
@@ -189,13 +189,13 @@ int main(int argc, char *argv[])
   for(i=0;i<1000;i++){
     char *infilename = "uuencode.c";
     outsize = do_encode(inbuf,outbuf, size, infilename);
-
+   
   }
 
   gettimeofday(&post,0);
   time = ((post.tv_sec*1000000+post.tv_usec)-(pre.tv_sec*1000000+pre.tv_usec));
-
+  
   printf("%d\n", outsize);
-
-  exit(0);
+  
+  exit(0); 
 }

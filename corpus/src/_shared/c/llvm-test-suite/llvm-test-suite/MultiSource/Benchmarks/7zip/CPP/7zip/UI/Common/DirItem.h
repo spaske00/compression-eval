@@ -17,7 +17,7 @@ struct CDirItem
   UInt32 Attrib;
   int PhyParent;
   int LogParent;
-
+  
   CDirItem(): PhyParent(-1), LogParent(-1) {}
   bool IsDir() const { return (Attrib & FILE_ATTRIBUTE_DIRECTORY) != 0 ; }
 };
@@ -62,7 +62,7 @@ struct CArcItem
   bool Censored;
   UInt32 IndexInServer;
   int TimeType;
-
+  
   CArcItem(): IsDir(false), SizeDefined(false), MTimeDefined(false), Censored(false), TimeType(-1) {}
 };
 

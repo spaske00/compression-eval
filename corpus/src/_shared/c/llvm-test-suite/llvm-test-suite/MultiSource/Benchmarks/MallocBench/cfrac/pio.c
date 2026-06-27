@@ -60,7 +60,7 @@ int putp(p)
    deallocate(chp);
    pdestroy(p);
    return res;
-
+   
 }
 
 /*
@@ -98,9 +98,9 @@ int fprintp(stream, p, minWidth)
 
 /*
  * Read in a precision type - same as atop but with io
- *
+ * 
  *   leading whitespace skipped
- *   an optional leading '-' or '+' followed by digits '0'..'9'
+ *   an optional leading '-' or '+' followed by digits '0'..'9' 
  *   leading 0's Ok
  *   stops at first unrecognized character
  *
@@ -113,7 +113,7 @@ precision fgetp(stream)
    precision clump = pUndef;
    int sign = 0;
    register int ch;
-   register accumulator temp, x;
+   register accumulator temp, x; 
    register int j;
 
    ch = getc(stream);

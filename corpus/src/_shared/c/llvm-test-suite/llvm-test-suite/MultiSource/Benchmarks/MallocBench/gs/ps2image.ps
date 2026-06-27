@@ -62,7 +62,7 @@ ps2idict begin
    { gsave matrix setmatrix
      1 matrix
      3 index 7 add 8 idiv string currentfile
-				% At each iteration of the loop,
+     				% At each iteration of the loop,
 				% the stack contains <buffer> <file>
       { 2 copy exch
         1 index token pop	% starting index
@@ -79,7 +79,7 @@ ps2idict begin
    { myfile devwidth write==only   myfile ( ) writestring
      myfile devheight write==only   myfile ( readimage\n) writestring
      0 1 prevrow length 1 sub { row exch 0 put } for
-				% Write the hex data
+	 			% Write the hex data
      0 1 devheight 1 sub
       { mydevice exch row copyscanlines
         0 row length 1 sub -1 0
@@ -90,7 +90,7 @@ ps2idict begin
 	 { dup dup prevrow exch get exch row exch get
 	   ne { exch pop exit } { pop } ifelse
 	 } for
-				% stack now has stop index, start index
+	   			% stack now has stop index, start index
 	exch 1 index sub 2 copy exch	% start, length, length, start
 	myfile exch write==only   myfile ( ) writestring
 	myfile exch write==only   myfile ( ) writestring

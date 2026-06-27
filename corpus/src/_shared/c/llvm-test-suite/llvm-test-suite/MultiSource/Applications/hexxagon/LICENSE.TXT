@@ -23,3 +23,4 @@ Please see the file COPYING for more information.
 This tree is only a subset of the original Hexxagon source.  Namely, the X11
 code has been removed, and the source from libhexx has been integrated directly
 into the program.
+

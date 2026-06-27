@@ -8,11 +8,11 @@
 static int remaining = 0;
 static char *temp;
 
-static char *localmalloc(int size)
+static char *localmalloc(int size) 
 {
   char *blah;
-
-  if (size>remaining)
+  
+  if (size>remaining) 
     {
       temp = (char *) malloc(32768);
       if (!temp) printf("Error! malloc returns null\n");
@@ -26,7 +26,7 @@ static char *localmalloc(int size)
 
 #define localfree(sz)
 
-Hash MakeHash(int size, int (*map)(unsigned int))
+Hash MakeHash(int size, int (*map)(unsigned int)) 
 {
   Hash retval;
   int i;
@@ -45,24 +45,24 @@ void *HashLookup(unsigned int key, Hash hash)
   int j;
   HashEntry ent;
 
-  j = (hash->mapfunc)(key);        /* 14% miss in hash->mapfunc */
+  j = (hash->mapfunc)(key);        /* 14% miss in hash->mapfunc */  
   assert(1,j>=0);
   assert(2,j<hash->size);
   for (ent = hash->array[j];       /* 17% miss in hash->array[j] */ /* adt_pf can't detect :( */
        ent &&                      /* 47% miss in ent->key */       /* adt_pf can detect :) */
-           ent->key!=key;
+           ent->key!=key; 
        ent=ent->next);             /* 8% miss in ent->next */       /* adt_pf can detect :) */
   if (ent) return ent->entry;
   return NULL;
 }
 
-void HashInsert(void *entry,unsigned int key,Hash hash)
+void HashInsert(void *entry,unsigned int key,Hash hash) 
 {
   HashEntry ent;
   int j;
-
+  
   assert(3,!HashLookup(key,hash));
-
+  
   j = (hash->mapfunc)(key);
   ent = (HashEntry) localmalloc(sizeof(*ent));
   ent->next = hash->array[j];
@@ -86,3 +86,8 @@ void HashDelete(unsigned key, Hash hash) {
   *ent = (*ent)->next;
   localfree(tmp);
 }
+
+  
+  
+
+

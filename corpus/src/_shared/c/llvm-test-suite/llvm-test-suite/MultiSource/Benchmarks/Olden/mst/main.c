@@ -13,14 +13,14 @@ typedef struct fc_br {
 } future_cell_BlueReturn;
 
 
-static BlueReturn BlueRule(Vertex inserted, Vertex vlist)
+static BlueReturn BlueRule(Vertex inserted, Vertex vlist) 
 {
   BlueReturn retval;
   Vertex tmp,prev;
   Hash hash;
   int dist,dist2;
   int count;
-
+  
   if (!vlist) {
     retval.dist = 999999;
     return retval;
@@ -32,44 +32,44 @@ static BlueReturn BlueRule(Vertex inserted, Vertex vlist)
   hash = vlist->edgehash;
   dist = (int) HashLookup((unsigned int) inserted, hash);
   /*printf("Found %d at 0x%x for 0x%x\n",dist,inserted,vlist);*/
-  if (dist)
+  if (dist) 
     {
-      if (dist<retval.dist)
+      if (dist<retval.dist) 
         {
           vlist->mindist = dist;
           retval.dist = dist;
         }
     }
   else printf("Not found\n");
-
+  
   count = 0;
   /* We are guaranteed that inserted is not first in list */
-  for (tmp=vlist->next; tmp; prev=tmp,tmp=tmp->next)
+  for (tmp=vlist->next; tmp; prev=tmp,tmp=tmp->next) 
     {
       count++;
-      if (tmp==inserted)
+      if (tmp==inserted) 
         {
           Vertex next;
 
           next = tmp->next;
           prev->next = next;
         }
-      else
+      else 
         {
-          hash = tmp->edgehash; /* <------  6% miss in tmp->edgehash */
+          hash = tmp->edgehash; /* <------  6% miss in tmp->edgehash */ 
           dist2 = tmp->mindist;
           dist = (int) HashLookup((unsigned int) inserted, hash);
           /*printf("Found %d at 0x%x for 0x%x\n",dist,inserted,tmp);*/
-          if (dist)
+          if (dist) 
             {
-              if (dist<dist2)
+              if (dist<dist2) 
                 {
                   tmp->mindist = dist;
                   dist2 = dist;
                 }
             }
           else printf("Not found\n");
-          if (dist2<retval.dist)
+          if (dist2<retval.dist) 
             {
               retval.vert = tmp;
               retval.dist = dist2;
@@ -80,7 +80,7 @@ static BlueReturn BlueRule(Vertex inserted, Vertex vlist)
   return retval;
 }
 
-
+          
 
 static Vertex MyVertexList = NULL;
 
@@ -105,7 +105,7 @@ static BlueReturn Do_all_BlueRule(Vertex inserted, int nproc, int pn) {
   }
 }
 
-static int ComputeMst(Graph graph,int numproc,int numvert)
+static int ComputeMst(Graph graph,int numproc,int numvert) 
 {
   Vertex inserted,tmp;
   int cost=0,dist;
@@ -121,12 +121,12 @@ static int ComputeMst(Graph graph,int numproc,int numvert)
   numvert--;
   /* Announce insertion and find next one */
   printf("Compute phase 2\n");
-  while (numvert)
+  while (numvert) 
     {
       BlueReturn br;
-
+      
       br = Do_all_BlueRule(inserted,numproc,0);
-      inserted = br.vert;
+      inserted = br.vert;    
       dist = br.dist;
       numvert--;
       cost = cost+dist;
@@ -134,12 +134,12 @@ static int ComputeMst(Graph graph,int numproc,int numvert)
   return cost;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) 
 {
   Graph graph;
   int dist;
   int size;
-
+ 
   size = dealwithargs(argc,argv);
   printf("Making graph of size %d\n",size);
 

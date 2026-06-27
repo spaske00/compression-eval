@@ -54,7 +54,7 @@ class CCoder :
 
   UInt32 c_table[CTABLESIZE];
   UInt32 pt_table[PTABLESIZE];
-
+  
   void ReleaseStreams()
   {
     m_OutWindowStream.ReleaseStream();
@@ -77,7 +77,7 @@ class CCoder :
   friend class CCoderReleaser;
 
   void MakeTable(int nchar, Byte *bitlen, int tablebits, UInt32 *table, int tablesize);
-
+  
   void read_c_len();
   void read_pt_len(int nn, int nbit, int i_special);
   UInt32 decode_c();

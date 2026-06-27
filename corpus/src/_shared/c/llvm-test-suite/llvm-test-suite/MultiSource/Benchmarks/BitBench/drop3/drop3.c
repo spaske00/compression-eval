@@ -15,7 +15,7 @@ int drop_0xx(unsigned char *in, unsigned char *out, size_t size) {/*1*/
   unsigned char res;                                              /*5*/
   int outoff = 0;                                                 /*6*/
 
-  /* The Macro contains lines 7-14 */
+  /* The Macro contains lines 7-14 */ 
 #define IN(N) \
   { \
     if ((left -= 3) < 0) break; \
@@ -47,12 +47,12 @@ int drop_0xx(unsigned char *in, unsigned char *out, size_t size) {/*1*/
 /*==========================================================================*/
 
 static size_t read_data(FILE *in, void *buffer)
-{
+{ 
   return fread(buffer, 1, MAX_SIZE, in);
 }
 
 static size_t write_data(FILE *out, int size, void *buffer)
-{
+{ 
   return fwrite(buffer, 1, size, out);
 }
 
@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
   char *outfilename;
   char postfix[] = ".c";
   struct timeval pre,post;
-
-
+  
+  
   /* optional input arg */
   inbuf = malloc(MAX_SIZE);
   outbuf = malloc(MAX_SIZE);
@@ -95,10 +95,10 @@ int main(int argc, char *argv[])
   for(i=0;i<20;i++){
     temp = inbuf;
     outsize = drop_0xx(temp, outbuf, size*8);
-
+   
   }
   gettimeofday(&post,0);
   time = ((post.tv_sec*1000000+post.tv_usec)-(pre.tv_sec*1000000+pre.tv_usec));
   printf("%d\n", outsize);
-  exit(0);
+  exit(0); 
 }

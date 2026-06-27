@@ -61,12 +61,12 @@ precision pmul(u, v)
 	 wPtr	= w->value + (vPtr - v->value);
 	 hi	= 0;
 	 vdigit = *vPtr;
-	 do {
+	 do {	  
 	    temp    = uMul(vdigit, *uPtr++);	/* 0 <= temp <= (base-1)^2   */
 	    temp   += *wPtr;			/* 0 <= temp <= base(base-1) */
 	    temp   += hi;			/* 0 <= temp < base * base   */
 	    hi	    = divBase(temp);		/* 0 <= hi < base	     */
-	    *wPtr++ = modBase(temp);
+	    *wPtr++ = modBase(temp); 
 	 } while (uPtr < HiDigit);
 	 *wPtr++    = hi;
       } while (++vPtr < v->value + v->size);

@@ -86,7 +86,7 @@ pPLA PLA;
 	}
 
 
-    /* Loop for the all but one of the multiple-valued variables */
+    /* Loop for the all but one of the multiple-valued variables */	
     for(var = cube.num_binary_vars; var < cube.num_vars-1; var++)
 
 	/* Read a symbolic multiple-valued variable */
@@ -125,7 +125,7 @@ pPLA PLA;
 		    exit(-1);
 		}
 	    }
-
+	
 	} else for(i = cube.first_part[var]; i <= cube.last_part[var]; i++)
 	    switch (getc(fp)) {
 		case EOF:
@@ -360,7 +360,7 @@ fatal("num_binary_vars (second field of .mv) cannot be negative");
 		} else {
 		    fatal("error reading .symbolic-output");
 		}
-
+		
 	    /* .phase allows a choice of output phases */
 	    } else if (equal(word, "phase")) {
 		if (cube.fullset == NULL)
@@ -412,7 +412,7 @@ fatal("num_binary_vars (second field of .mv) cannot be negative");
 			}
 		    }
 		}
-
+		
 	    } else {
 		if (echo_unknown_commands)
 		    printf("%c%s ", ch, word);

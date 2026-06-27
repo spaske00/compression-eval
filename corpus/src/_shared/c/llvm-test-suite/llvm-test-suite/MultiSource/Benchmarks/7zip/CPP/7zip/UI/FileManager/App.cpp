@@ -71,7 +71,7 @@ void CApp::SetListSettings()
     extendedStyle |= LVS_EX_GRIDLINES;
     */
   bool mySelectionMode = ReadAlternativeSelection();
-
+  
 #ifdef _WIN32
   if (ReadSingleClick())
   {
@@ -498,7 +498,7 @@ UString CPanel::GetItemsInfoString(const CRecordVector<UInt32> &indices)
   numDefined += ((filesSize != (UInt64)(Int64)-1) && filesSize != 0) ? 1: 0;
   if (numDefined == 2)
     AddValuePair1(IDS_SIZE_COLON, 0x02000322, filesSize + foldersSize, info);
-
+  
   info += L"\n";
 #ifdef _WIN32
   info += _currentFolderPrefix;
@@ -512,7 +512,7 @@ UString CPanel::GetItemsInfoString(const CRecordVector<UInt32> &indices)
   }
 #endif
 
-
+  
   for (i = 0; i < indices.Size() && i < kCopyDialog_NumInfoLines - 6; i++)
   {
     info += L"\n  ";
@@ -573,7 +573,7 @@ void CApp::OnCopy(bool move, bool copyToSame, int srcPanelIndex)
 
     copyDialog.Strings = copyFolders;
     copyDialog.Value = destPath;
-
+    
     copyDialog.Title = move ?
         LangString(IDS_MOVE, 0x03020202):
         LangString(IDS_COPY, 0x03020201);
@@ -691,7 +691,7 @@ void CApp::OnCopy(bool move, bool copyToSame, int srcPanelIndex)
       return;
     }
   }
-
+  
   if (useDestPanel)
   {
     UStringVector filePaths;
@@ -829,13 +829,13 @@ void CApp::OnNotify(int /* ctrlID */, LPNMHDR pnmh)
 void CApp::RefreshTitle(bool always)
 {
   UString path = GetFocusedPanel()._currentFolderPrefix;
-#ifndef _WIN32
+#ifndef _WIN32	
   {
 	extern const TCHAR * nameWindowToUnix(const TCHAR * lpFileName);
     UString tmp = nameWindowToUnix(path);
 	path = tmp;
-  }
-#endif
+  }	
+#endif	
   if (path.IsEmpty())
     path += LangString(IDS_APP_TITLE, 0x03000000);
   if (!always && path == PrevTitle)

@@ -133,7 +133,7 @@ HRESULT CCoderMixer2ST::GetOutStream(
   *outStreamRes = seqOutStream.Detach();
   return S_OK;
 }
-
+    
 
 STDMETHODIMP CCoderMixer2ST::Code(ISequentialInStream **inStreams,
       const UInt64 **inSizes,
@@ -166,7 +166,7 @@ STDMETHODIMP CCoderMixer2ST::Code(ISequentialInStream **inStreams,
     }
   if (_mainCoderIndex < 0)
     _mainCoderIndex = 0;
-
+ 
   // _mainCoderIndex = 0;
   // _mainCoderIndex = _coders.Size() - 1;
   CCoderInfo &mainCoder = _coders[_mainCoderIndex];

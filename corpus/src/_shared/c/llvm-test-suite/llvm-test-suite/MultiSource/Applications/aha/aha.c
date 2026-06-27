@@ -440,22 +440,22 @@ int main(int argc, char *argv[]) {
      /* Preload the instruction array with the first instruction and
         the lowest register number, with copies of this instruction
         filling the whole array from 0 to numi - 1. */
-
+     
      for (i = 0; i < numi; i++) {
        pgm[i].op = 0;                    // Index first insn in isa.
        pgm[i].opnd[0] = isa[0].opndstart[0];
        pgm[i].opnd[1] = isa[0].opndstart[1];
        pgm[i].opnd[2] = isa[0].opndstart[2];
-
+       
        /* Ensure that the instruction does not have all immediate
           operands, etc. */
-
+       
        fix_operands(i);
      }
-
+     
      // Check the above program, generate the next, check it, etc.
      num_sol = search();
-
+     
      printf("Found %d solutions.\n", num_sol);
      if (counters) {
        int total = 0;

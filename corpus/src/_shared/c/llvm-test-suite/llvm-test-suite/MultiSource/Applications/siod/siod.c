@@ -26,7 +26,7 @@ int main(int argc,char **argv
 #endif
      )
 {int nargc = argc;
- char **nargv = argv;
+ char **nargv = argv; 
 #if defined(WIN32) || defined(vms)
  if (nargc > 0)
   siod_shuffle_args(&nargc,&nargv);
@@ -39,3 +39,12 @@ int main(int argc,char **argv
 	NULL
 #endif
 	));}
+
+
+
+
+
+
+
+
+

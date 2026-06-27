@@ -233,7 +233,7 @@ public:
 private:
 
   void ChangeWindowSize(int xSize, int ySize);
-
+ 
   void InitColumns();
   // void InitColumns2(PROPID sortID);
   void InsertColumn(int index);
@@ -305,7 +305,7 @@ public:
   }
 
   UInt32 _ListViewMode;
-  int _xSize;
+  int _xSize; 
 
   bool _flatMode;
   bool _flatModeForDisk;
@@ -315,7 +315,7 @@ public:
 
 
   UString _currentFolderPrefix;
-
+  
   CObjectVector<CFolderLink> _parentFolders;
   NWindows::NDLL::CLibrary _library;
   CMyComPtr<IFolderFolder> _folder;
@@ -342,10 +342,10 @@ public:
   HRESULT BindToPath(const UString &fullPath, const UString &arcFormat, bool &archiveIsOpened, bool &encrypted); // can be prefix
   HRESULT BindToPathAndRefresh(const UString &path);
   void OpenDrivesFolder();
-
+  
   void SetBookmark(int index);
   void OpenBookmark(int index);
-
+  
   void LoadFullPath();
   void LoadFullPathAndShow();
   void FoldersHistory();
@@ -388,7 +388,7 @@ public:
 
   void SetExtendedStyle()
   {
-/* FIXME
+/* FIXME	  
     if (_listView != 0)
       _listView.SetExtendedListViewStyle(_exStyle);
       */
@@ -400,7 +400,7 @@ public:
   CListViewInfo _listViewInfo;
   CItemProperties _properties;
   CItemProperties _visibleProperties;
-
+  
   PROPID _sortID;
   // int _sortIndex;
   bool _ascending;
@@ -414,27 +414,27 @@ public:
   void OnReload();
   bool OnContextMenu(HANDLE windowHandle, int xPos, int yPos);
 
-#ifdef _WIN32
+#ifdef _WIN32 
   CMyComPtr<IContextMenu> _sevenZipContextMenu;
   CMyComPtr<IContextMenu> _systemContextMenu;
   HRESULT CreateShellContextMenu(
       const CRecordVector<UInt32> &operatedIndices,
       CMyComPtr<IContextMenu> &systemContextMenu);
-  void CreateSystemMenu(HMENU menu,
+  void CreateSystemMenu(HMENU menu, 
       const CRecordVector<UInt32> &operatedIndices,
       CMyComPtr<IContextMenu> &systemContextMenu);
-  void CreateSevenZipMenu(HMENU menu,
+  void CreateSevenZipMenu(HMENU menu, 
       const CRecordVector<UInt32> &operatedIndices,
       CMyComPtr<IContextMenu> &sevenZipContextMenu);
-  void CreateFileMenu(HMENU menu,
+  void CreateFileMenu(HMENU menu, 
       CMyComPtr<IContextMenu> &sevenZipContextMenu,
       CMyComPtr<IContextMenu> &systemContextMenu,
       bool programMenu);
   void CreateFileMenu(HMENU menu);
   bool InvokePluginCommand(int id);
-  bool InvokePluginCommand(int id, IContextMenu *sevenZipContextMenu,
+  bool InvokePluginCommand(int id, IContextMenu *sevenZipContextMenu, 
       IContextMenu *systemContextMenu);
-#endif // ifdef _WIN32
+#endif // ifdef _WIN32 
 
   void InvokeSystemCommand(const char *command);
   void Properties();
@@ -448,7 +448,7 @@ public:
   bool _selectMark;
   int _prevFocusedItem;
 
-
+ 
   // void SortItems(int index);
   void SortItemsWithPropID(PROPID propID);
 
@@ -485,24 +485,24 @@ public:
     CPanel &_panel;
     public:
 
-    CDisableTimerProcessing(CPanel &panel): _panel(panel)
-    {
+    CDisableTimerProcessing(CPanel &panel): _panel(panel) 
+    { 
       Disable();
     }
     void Disable()
     {
       _processTimerMem = _panel._processTimer;
       _processNotifyMem = _panel._processNotify;
-      _panel._processTimer = false;
-      _panel._processNotify = false;
+      _panel._processTimer = false; 
+      _panel._processNotify = false; 
     }
     void Restore()
     {
-      _panel._processTimer = _processTimerMem;
-      _panel._processNotify = _processNotifyMem;
+      _panel._processTimer = _processTimerMem; 
+      _panel._processNotify = _processNotifyMem; 
     }
-    ~CDisableTimerProcessing()
-    {
+    ~CDisableTimerProcessing() 
+    { 
       Restore();
     }
     CDisableTimerProcessing& operator=(const CDisableTimerProcessing &) {; }
@@ -586,7 +586,7 @@ public:
     return CopyTo(indices, folder, moveMode, showErrorMessages, messages, usePassword, password);
   }
 
-  HRESULT CopyFrom(const UString &folderPrefix, const UStringVector &filePaths,
+  HRESULT CopyFrom(const UString &folderPrefix, const UStringVector &filePaths, 
       bool showErrorMessages, UStringVector *messages);
 
   void CopyFromNoAsk(const UStringVector &filePaths);
@@ -603,7 +603,7 @@ public:
   void RefreshTitle(bool always = false) { _panelCallback->RefreshTitle(always);  }
   void RefreshTitleAlways() { RefreshTitle(true);  }
 
-  UString GetItemsInfoString(const CRecordVector<UInt32> &indices);
+  UString GetItemsInfoString(const CRecordVector<UInt32> &indices);  
 };
 
 class CMyBuffer

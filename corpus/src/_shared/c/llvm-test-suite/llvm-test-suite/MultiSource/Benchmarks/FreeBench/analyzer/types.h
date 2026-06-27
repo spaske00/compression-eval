@@ -19,10 +19,10 @@ typedef struct hard_raw {
   uint32 address;
   int w_epoch;
   int w_place;
-  uint32 w_issue;
+  uint32 w_issue; 
   int r_epoch;
   int r_place;
-  uint32 r_issue;
+  uint32 r_issue; 
 } hard_raw_t;
 
 typedef struct {
@@ -40,7 +40,7 @@ typedef struct {
 } def_list_t;
 
 typedef struct {
-  trans_t *trans;
+  trans_t *trans; 
   trans_t *last;
   int first_trans;
   uint32 start_time;

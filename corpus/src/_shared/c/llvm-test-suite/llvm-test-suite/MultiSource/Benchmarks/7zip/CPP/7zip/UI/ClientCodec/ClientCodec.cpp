@@ -91,7 +91,7 @@ class CFileOut : public ISequentialOutStream, public CMyUnknownImp
 //////////////////////////////////////////////////////////////////////////
 // Main function
 
-static const char *kHelpString =
+static const char *kHelpString = 
 "Usage: ClientCodec codec.so [c | d | i] [file_in file_out]\n"
 "Examples:\n"
 "  ClientCodec LZMA.so i                  : info about the codec\n"
@@ -100,8 +100,8 @@ static const char *kHelpString =
 ;
 
 typedef UINT32 (WINAPI * CreateObjectFunc)(
-    const GUID *clsID,
-    const GUID *interfaceID,
+    const GUID *clsID, 
+    const GUID *interfaceID, 
     void **outObject);
 
 typedef UINT32 (WINAPI * GetNumberOfMethodsFunc)(UINT32 *numMethods);
@@ -225,7 +225,7 @@ int main(int argc, char* argv[])
        {
           printf("IID_ICompressSetCoderProperties : Found\n");
           PROPID propID = NCoderPropID::kEndMarker;
-          NWindows::NCOM::CPropVariant value = true;
+          NWindows::NCOM::CPropVariant value = true;          
           res = setCoderProperties->SetCoderProperties(&propID, &value, 1);
           if (res = S_OK) printf("kEndMarker : ON\n");
           else            printf("kEndMarker : KO KO\n");
@@ -238,15 +238,15 @@ int main(int argc, char* argv[])
 
 {
     CMyComPtr<ICompressWriteCoderProperties> writeCoderProperties;
-
+    
     outCoder.QueryInterface(IID_ICompressWriteCoderProperties, &writeCoderProperties);
-
+    
     if (writeCoderProperties != NULL)
     {
 	UINT32 len = 5; // TBD
         UInt32 processedSize;
         outStream->Write(&len, sizeof(len), &processedSize);
-
+        
 	printf("IID_ICompressWriteCoderProperties : Found\n");
         size_t pos1 = outStream->pos();
         writeCoderProperties->WriteCoderProperties(outStream);
@@ -257,15 +257,15 @@ int main(int argc, char* argv[])
       CMyComPtr<ISequentialOutStream> outStream(outStreamSpec);
       outStreamSpec->Init();
       writeCoderProperties->WriteCoderProperties(outStream);
-
+      
       size_t size = outStreamSpec->GetSize();
-
+      
       // encodingInfo.Properties.SetCapacity(size);
       if (encodingInfo.AltCoders.Size() == 0)
         encodingInfo.AltCoders.Add(CAltCoderInfo());
       CAltCoderInfo &altCoderInfo = encodingInfo.AltCoders.Front();
       altCoderInfo.Properties.SetCapacity(size);
-
+      
       memmove(altCoderInfo.Properties, outStreamSpec->GetBuffer(), size);
 */
     }

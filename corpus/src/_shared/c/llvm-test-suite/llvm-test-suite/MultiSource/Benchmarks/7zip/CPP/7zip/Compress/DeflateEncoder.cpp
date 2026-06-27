@@ -57,7 +57,7 @@ public:
       for(int k = 0; k < j; k++, c++)
         g_LenSlots[c] = (Byte)i;
     }
-
+    
     const int kFastSlots = 18;
     int c = 0;
     for (Byte slotFast = 0; slotFast < kFastSlots; slotFast++)
@@ -212,7 +212,7 @@ HRESULT CCoder::BaseSetEncoderProperties2(const PROPID *propIDs, const PROPVARIA
   }
   return S_OK;
 }
-
+  
 void CCoder::Free()
 {
   ::MidFree(m_OnePosMatchesMemory); m_OnePosMatchesMemory = 0;
@@ -240,13 +240,13 @@ NO_INLINE void CCoder::GetMatches()
   }
 
   UInt32 distanceTmp[kMatchMaxLen * 2 + 3];
-
+  
   UInt32 numPairs = (_btMode) ?
       Bt3Zip_MatchFinder_GetMatches(&_lzInWindow, distanceTmp):
       Hc3Zip_MatchFinder_GetMatches(&_lzInWindow, distanceTmp);
 
   *m_MatchDistances = (UInt16)numPairs;
-
+   
   if (numPairs > 0)
   {
     UInt32 i;
@@ -318,7 +318,7 @@ NO_INLINE UInt32 CCoder::GetOptimal(UInt32 &backRes)
     return len;
   }
   m_OptimumCurrentIndex = m_OptimumEndIndex = 0;
-
+  
   GetMatches();
 
   UInt32 numDistancePairs = m_MatchDistances[0];
@@ -458,7 +458,7 @@ NO_INLINE void CCoder::LevelTableDummy(const Byte *levels, int numLevels, UInt32
     count++;
     if (count < maxCount && curLen == nextLen)
       continue;
-
+    
     if (count < minCount)
       freqs[curLen] += (UInt32)count;
     else if (curLen != 0)
@@ -477,7 +477,7 @@ NO_INLINE void CCoder::LevelTableDummy(const Byte *levels, int numLevels, UInt32
 
     count = 0;
     prevLen = curLen;
-
+    
     if (nextLen == 0)
     {
       maxCount = 138;
@@ -523,7 +523,7 @@ NO_INLINE void CCoder::LevelTableCode(const Byte *levels, int numLevels, const B
     count++;
     if (count < maxCount && curLen == nextLen)
       continue;
-
+    
     if (count < minCount)
       for(int i = 0; i < count; i++)
         WRITE_HF(curLen);
@@ -550,7 +550,7 @@ NO_INLINE void CCoder::LevelTableCode(const Byte *levels, int numLevels, const B
 
     count = 0;
     prevLen = curLen;
-
+    
     if (nextLen == 0)
     {
       maxCount = 138;
@@ -653,14 +653,14 @@ NO_INLINE void CCoder::SetPrices(const CLevels &levels)
     Byte price = levels.litLenLevels[i];
     m_LiteralPrices[i] = ((price != 0) ? price : kNoLiteralStatPrice);
   }
-
+  
   for(i = 0; i < m_NumLenCombinations; i++)
   {
     UInt32 slot = g_LenSlots[i];
     Byte price = levels.litLenLevels[kSymbolMatch + slot];
     m_LenPrices[i] = (Byte)(((price != 0) ? price : kNoLenStatPrice) + m_LenDirectBits[slot]);
   }
-
+  
   for(i = 0; i < kDistTableSize64; i++)
   {
     Byte price = levels.distLevels[i];
@@ -764,19 +764,19 @@ NO_INLINE UInt32 CCoder::TryDynBlock(int tableIndex, UInt32 numPasses)
   m_NumLitLenLevels = kMainTableSize;
   while(m_NumLitLenLevels > kNumLitLenCodesMin && m_NewLevels.litLenLevels[m_NumLitLenLevels - 1] == 0)
     m_NumLitLenLevels--;
-
+  
   m_NumDistLevels = kDistTableSize64;
   while(m_NumDistLevels > kNumDistCodesMin && m_NewLevels.distLevels[m_NumDistLevels - 1] == 0)
     m_NumDistLevels--;
-
+  
   UInt32 levelFreqs[kLevelTableSize];
   memset(levelFreqs, 0, sizeof(levelFreqs));
 
   LevelTableDummy(m_NewLevels.litLenLevels, m_NumLitLenLevels, levelFreqs);
   LevelTableDummy(m_NewLevels.distLevels, m_NumDistLevels, levelFreqs);
-
+  
   Huffman_Generate(levelFreqs, levelCodes, levelLens, kLevelTableSize, kMaxLevelBitLength);
-
+  
   m_NumLevelCodes = kNumLevelCodesMin;
   for (UInt32 i = 0; i < kLevelTableSize; i++)
   {
@@ -785,7 +785,7 @@ NO_INLINE UInt32 CCoder::TryDynBlock(int tableIndex, UInt32 numPasses)
       m_NumLevelCodes = i + 1;
     m_LevelLevels[i] = level;
   }
-
+  
   return GetLzBlockPrice() +
       Huffman_GetPrice_Spec(levelFreqs, levelLens, kLevelTableSize, kLevelDirectBits, kTableDirectLevels) +
       kNumLenCodesFieldSize + kNumDistCodesFieldSize + kNumLevelCodesFieldSize +
@@ -812,7 +812,7 @@ NO_INLINE UInt32 CCoder::GetBlockPrice(int tableIndex, int numDivPasses)
   UInt32 numValues = m_ValueIndex;
   UInt32 posTemp = m_Pos;
   UInt32 additionalOffsetEnd = m_AdditionalOffset;
-
+  
   if (m_CheckStatic && m_ValueIndex <= kFixedHuffmanCodeBlockSizeMax)
   {
     const UInt32 fixedPrice = TryFixedBlock(tableIndex);
@@ -890,10 +890,10 @@ void CCoder::CodeBlock(int tableIndex, bool finalBlock)
         WriteBits(m_NumLitLenLevels - kNumLitLenCodesMin, kNumLenCodesFieldSize);
         WriteBits(m_NumDistLevels - kNumDistCodesMin, kNumDistCodesFieldSize);
         WriteBits(m_NumLevelCodes - kNumLevelCodesMin, kNumLevelCodesFieldSize);
-
+        
         for (UInt32 i = 0; i < m_NumLevelCodes; i++)
           WriteBits(m_LevelLevels[i], kLevelFieldSize);
-
+        
         Huffman_ReverseBits(levelCodes, levelLens, kLevelTableSize);
         LevelTableCode(m_NewLevels.litLenLevels, m_NumLitLenLevels, levelLens, levelCodes);
         LevelTableCode(m_NewLevels.distLevels, m_NumDistLevels, levelLens, levelCodes);

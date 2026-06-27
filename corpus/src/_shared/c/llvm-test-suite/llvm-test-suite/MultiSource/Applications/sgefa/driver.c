@@ -31,11 +31,11 @@ main()
   double err, snrm2();
   int 	*ipvt, retval, test_case = 0;
   void  matdump(), ivecdump(), fvecdump();
-
+  
   /* Loop over the test cases. */
   /* Initilize matrix. */
   while( !matgen( &a, &x, &b, &bt, &ipvt, ++test_case, SCALE ) ) {
-
+  
       /* Check that system size is reasonable. */
       if( a.rd > MAXCOL || a.cd > MAXCOL ) {
 	  fprintf(stderr,"Matrix row dim (%d) or column dim (%d) too big.\n",a.rd,a.cd);
@@ -43,7 +43,7 @@ main()
       }
       /* Calculate the 1 norm of A. */
       for( j=0, anorm=0.0; j<a.cd; j++ ) {
-	  for( i=0, col=a.pd[j], t=0.0; i<a.rd; i++, col++ )
+	  for( i=0, col=a.pd[j], t=0.0; i<a.rd; i++, col++ ) 
 	    t += (*col<0.0 ? -*col : *col );
 	  anorm = ( anorm > t ? anorm : t );
       }
@@ -54,7 +54,7 @@ main()
     retval = sgefa( &a, ipvt );
 
     /* For a successful return from SGEFA test SGESL. */
-    if( retval )
+    if( retval ) 
       ;//printf("Zero Column %d found \n", retval );
     else {
       /* Solve system. */
@@ -90,14 +90,14 @@ float	    **x, **b, **bt;
 int	    **ipvt, test_case, scale;
 /*
   This routine generates test matrices for the SGE routines.
-
+  
   INPUT
  test_case	Switch to type of matrix to generate.
-		1, 2, 3 => Hilbert slices of various sizes.  Note
+ 		1, 2, 3 => Hilbert slices of various sizes.  Note
 		due to the memory allocalion local to this routine
 		test_case=1 must be run before any of the others.
 		4, 5    => monoelemental test.
-
+  
  scale          Sizes of systems are scaled according to scale.
 
   OUTPUT
@@ -134,7 +134,7 @@ int	    **ipvt, test_case, scale;
     n = 3*test_case*scale;		/* Set system size. */
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
@@ -152,12 +152,12 @@ int	    **ipvt, test_case, scale;
     n=1;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
     printf("Monoelemental.  Test case %d of size %d.\n", test_case, n );
-    *a->pd[0] = ( test_case == 4 ? 3.0 : 0.0 );
+    *a->pd[0] = ( test_case == 4 ? 3.0 : 0.0 ); 
     break;
 
   case 6:				/* Tridiagional of various types. */
@@ -166,7 +166,7 @@ int	    **ipvt, test_case, scale;
     n = 15*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
@@ -189,7 +189,7 @@ int	    **ipvt, test_case, scale;
     n = 5*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
@@ -205,7 +205,7 @@ int	    **ipvt, test_case, scale;
     n = 4*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
@@ -223,13 +223,13 @@ int	    **ipvt, test_case, scale;
     n = 6*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
     printf("Upper Triangular.  Test case %d of size %d.\n", test_case, n );
-    for( j=0; j<n; j++ )
-      for( i=0, col=a->pd[j]; i<n; i++, col++ )
+    for( j=0; j<n; j++ ) 
+      for( i=0, col=a->pd[j]; i<n; i++, col++ ) 
 	*col = ( i>j ? 0.0 : (float)(i-j+1) );
     break;
 
@@ -237,13 +237,13 @@ int	    **ipvt, test_case, scale;
     n = 6*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
     printf("Lower Triangular.  Test case %d of size %d.\n", test_case, n );
-    for( j=0; j<n; j++ )
-      for( i=0, col=a->pd[j]; i<n; i++, col++ )
+    for( j=0; j<n; j++ ) 
+      for( i=0, col=a->pd[j]; i<n; i++, col++ ) 
 	*col = ( i<j ? 0.0 : (float)(i-j+1) );
     break;
 
@@ -251,13 +251,13 @@ int	    **ipvt, test_case, scale;
     n = 5*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
     printf("Near Overflow.  Test case %d of size %d. BIG = %e\n", test_case, n, BIG );
     tl = (float)(n*n);
-    for( j=0; j<n; j++ )
+    for( j=0; j<n; j++ ) 
       for( i=0, col=a->pd[j]; i<n; i++, col++ ) {
 	tu = (float)(j+1)/(float)( i>j ? i+1 : j+1 );		/* A number <= 1.0 */
 	*col = BIG*tu/tl;
@@ -268,14 +268,14 @@ int	    **ipvt, test_case, scale;
     n = 5*scale;
     a->cd = n;				/* Set column and row dimensions. */
     a->rd = n;
-
+  
     if( get_space( a, x, b, bt, ipvt ) )/* Get the space needed for vectors. */
       return( 1 );
 
     /* Assumes that BIG < 1/SMALL */
     printf("Near Underflow.  Test case %d of size %d. SMALL = %e\n", test_case, n, 1.0/BIG );
     tl = (float)(n*n);
-    for( j=0; j<n; j++ )
+    for( j=0; j<n; j++ ) 
       for( i=0, col=a->pd[j]; i<n; i++, col++ ) {
 	tu = (float)( i>j ? i+1 : j+1 )/(float)(j+1);	/* A number >= 1.0 */
 	*col = tu*tl/BIG;
@@ -308,7 +308,7 @@ int	    **ipvt, test_case, scale;
     printf("MATGEN: Error in matvec.\n");
     return( 1 );
   }
-  if( n<=MATPRINT )
+  if( n<=MATPRINT ) 
     (void) matdump( a, "MATRIX FOLLOWS" );
   if( n<=VECPRINT ) {
     (void) fvecdump( *x,  n, "SOLUTION" );
@@ -354,8 +354,8 @@ float	    *x, *b;
 int	    job;
 /*
   This routine calculates b = a*x (if job=0 and b=trans(a)x else)
-  via a column oriented approach.  It is most efficient if the matrix
-  is stored by columns.   a is a matrix (not its transpose, even when
+  via a column oriented approach.  It is most efficient if the matrix 
+  is stored by columns.   a is a matrix (not its transpose, even when 
   job is nonzero) and x, b are vectors of the appropriate size.
 
   RETURNS
@@ -364,7 +364,7 @@ int	    job;
 {
   register int i, j;
   float *px, *pb, *col, *row;
-
+  
   /* Check input. */
   if( (a->cd < 1) || (a->rd < 1) ) return( 1 );
 
@@ -408,13 +408,13 @@ char	    *head;
     j = 0;
     for( k=0; k<ncolmod; k++ ) {
       if( k ) printf("    ");
-      for( jj=0;  jj<6;  jj++, j++)
+      for( jj=0;  jj<6;  jj++, j++) 
 	printf("%12.4e", pelem(a,i,j));
       printf("\n");
     }
-
+    
     /* Clean up remainder of this row. */
-    for( jj=0;  jj<ncolrem;  jj++, j++)
+    for( jj=0;  jj<ncolrem;  jj++, j++) 
       printf("%12.4e", pelem(a,i,j));
     printf("\n");
     }

@@ -78,7 +78,7 @@ lgraphdict begin
   xprev yprev trpoint xcurr ycurr trpoint 4 copy
   4 copy angle symbolsize 1.5 mul exch 4 2 roll pop pop atangle
   6 2 roll 4 2 roll
-  4 copy angle symbolsize 1.5 mul exch 4 2 roll pop pop atangle
+  4 copy angle symbolsize 1.5 mul exch 4 2 roll pop pop atangle 
   4 copy moveto lineto distance dashlength
 } def
 
@@ -87,7 +87,7 @@ lgraphdict begin
 /solid
 { pop pop [] 0 setdash linewidth setlinewidth stroke
 } def
-
+  
 % stroke a dashed line:   <length> <dashlength> dashed -
 /dashed
 {  2 copy 2 mul le 1 index 0 le or
@@ -127,7 +127,7 @@ lgraphdict begin
 { xprev yleft trpoint yextra sub moveto
   xprev yprev trpoint lineto
   xcurr yprev trpoint lineto
-  xcurr yleft trpoint yextra sub lineto
+  xcurr yleft trpoint yextra sub lineto 
   linewidth setlinewidth stroke
 } def
 
@@ -136,7 +136,7 @@ lgraphdict begin
 { xleft yprev trpoint exch xextra sub exch moveto
   xcurr yprev trpoint lineto
   xcurr ycurr trpoint lineto
-  xleft ycurr trpoint exch xextra sub exch lineto
+  xleft ycurr trpoint exch xextra sub exch lineto 
   linewidth setlinewidth stroke
 } def
 
@@ -150,7 +150,7 @@ lgraphdict begin
   } ifelse
   xcurr yprev trpoint lineto
   lastpair
-  { xcurr yleft trpoint yextra sub lineto
+  { xcurr yleft trpoint yextra sub lineto 
   }
   { xcurr ycurr trpoint lineto
   } ifelse
@@ -167,7 +167,7 @@ lgraphdict begin
   xcurr yprev trpoint lineto
   xcurr ycurr trpoint lineto
   lastpair
-  { xleft ycurr trpoint exch xextra sub exch lineto
+  { xleft ycurr trpoint exch xextra sub exch lineto 
   } if
   linewidth setlinewidth stroke
 } def
@@ -179,7 +179,7 @@ lgraphdict begin
   xprev yleft trpoint exch currentlinewidth 2 div add exch yextra sub moveto
   xprev yprev trpoint exch currentlinewidth 2 div add exch lineto
   xcurr yprev trpoint exch currentlinewidth 2 div sub exch lineto
-  xcurr yleft trpoint exch currentlinewidth 2 div sub exch yextra sub lineto
+  xcurr yleft trpoint exch currentlinewidth 2 div sub exch yextra sub lineto 
   closepath fill
 } def
 
@@ -190,7 +190,7 @@ lgraphdict begin
   xleft yprev trpoint currentlinewidth 2 div add exch xextra sub exch moveto
   xcurr yprev trpoint currentlinewidth 2 div add lineto
   xcurr ycurr trpoint currentlinewidth 2 div sub lineto
-  xleft ycurr trpoint currentlinewidth 2 div sub exch xextra sub exch lineto
+  xleft ycurr trpoint currentlinewidth 2 div sub exch xextra sub exch lineto 
   closepath fill
 } def
 

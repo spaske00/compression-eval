@@ -65,18 +65,18 @@ HRESULT LoadExternalCodecs(ICompressCodecsInfo *codecsInfo, CObjectVector<CCodec
     }
     info.Id = prop.uhVal.QuadPart;
     prop.Clear();
-
+    
     RINOK(codecsInfo->GetProperty(i, NMethodPropID::kName, &prop));
     if (prop.vt == VT_BSTR)
       info.Name = prop.bstrVal;
     else if (prop.vt != VT_EMPTY)
       return E_INVALIDARG;;
-
+    
     RINOK(ReadNumberOfStreams(codecsInfo, i, NMethodPropID::kInStreams, info.NumInStreams));
     RINOK(ReadNumberOfStreams(codecsInfo, i, NMethodPropID::kOutStreams, info.NumOutStreams));
     RINOK(ReadIsAssignedProp(codecsInfo, i, NMethodPropID::kEncoderIsAssigned, info.EncoderIsAssigned));
     RINOK(ReadIsAssignedProp(codecsInfo, i, NMethodPropID::kDecoderIsAssigned, info.DecoderIsAssigned));
-
+    
     externalCodecs.Add(info);
   }
   return S_OK;

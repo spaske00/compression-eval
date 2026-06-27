@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -13,7 +13,7 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif  
 
 #undef _WIN32
 
@@ -47,7 +47,7 @@ class CopyDialogImpl : public NWindows::NControl::CModalDialogImpl
 
 //	topsizer->Add(new wxStaticText(this, IDC_COPY_INFO, _T("line1\nline2\nline3\nline4\n")) , 0 ,wxEXPAND | wxALL | wxALIGN_LEFT, 5 );
 	topsizer->Add(new wxStaticText(this, IDC_COPY_INFO, _T("")) , 0 ,wxEXPAND | wxALL | wxALIGN_LEFT, 5 );
-
+	  
 	topsizer->Add(CreateButtonSizer(wxOK|wxCANCEL), 0, wxALL|wxEXPAND, 5);
 
 	this->OnInit();
@@ -74,3 +74,4 @@ BEGIN_EVENT_TABLE(CopyDialogImpl, wxDialog)
 	EVT_CHECKBOX(wxID_ANY, CModalDialogImpl::OnAnyButton)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

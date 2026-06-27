@@ -106,19 +106,19 @@ int main (int c, char *v[])
 
   fprintf(stderr,"Compile date: %s\n", COMPDATE);
   fprintf(stderr,"Compiler switches: %s\n", CFLAGS);
-
-  if (c!=2) {
-    fprintf(stderr,"Wrong number of arguments, 1 needed, %d specified.\n",c-1);
+  
+  if (c!=2) { 
+    fprintf(stderr,"Wrong number of arguments, 1 needed, %d specified.\n",c-1); 
     fprintf(stderr,"USAGE: %s <datafile>\n",v[0]);
-    exit(1);
+    exit(1); 
   }
-
+   
   fp=fopen(v[1], "r");
   if (fp==NULL) {
     fprintf(stderr,"ABORT: Could not read datafile %s\n",v[1]);
-    exit(1);
+    exit(1); 
   }
-
+  
   /* Size of NeuralNet specifed in datafile. */
   fgets(indata,99,fp);
   NNWIDTH  = atoi(indata);
@@ -129,7 +129,7 @@ int main (int c, char *v[])
   NNTOT    = NNWIDTH*NNHEIGHT;
 
   printf("Matrix size is %dx%d\n",NNWIDTH,NNHEIGHT);
-
+  
   /* Allocating lots of space... */
 
   vnames = (char *)malloc(sizeof(char)*NUMPATS);
@@ -138,27 +138,27 @@ int main (int c, char *v[])
     fprintf(stderr,"ABORT: Out of memory\n");
     exit(1);
   }
-
+  
   Tmatrix = (real **)malloc(sizeof(real *)*NNTOT);
   if (!Tmatrix) {
     fprintf(stderr,"ABORT: Out of memory\n");
     exit(1);
-  }
+  } 
   for (i=0; i<NNTOT; i++) {
     Tmatrix[i] = (real *)malloc(sizeof(real)*NNTOT);
     if (!Tmatrix[i]) {
       fprintf(stderr,"ABORT: Out of memory\n");
       exit(1);
-    }
+    } 
   }
-
+  
   vectors = (int **)malloc(sizeof(int *)*NUMPATS);
   newvectors = (int **)malloc(sizeof(int *)*NUMPATS);
   generators = (int **)malloc(sizeof(int *)*NUMPATS);
   if (!vectors || !newvectors || !generators) {
     fprintf(stderr,"ABORT: Out of memory\n");
     exit(1);
-  }
+  }    
   for (i=0; i<NUMPATS; i++) {
     vectors[i] = (int *)malloc(sizeof(int)*NNTOT);
     newvectors[i] = (int *)malloc(sizeof(int)*NNTOT);
@@ -166,8 +166,8 @@ int main (int c, char *v[])
     if (!vectors[i] || !newvectors[i] || !generators[i]) {
       fprintf(stderr,"ABORT: Out of memory\n");
       exit(1);
-    }
-  }
+    } 
+  }  
 
   /* Do some operations (This is for FreeBench) */
   readvector(fp);     /* read from file */
@@ -190,7 +190,7 @@ int main (int c, char *v[])
   delta(0.5);           /* try to learn vectors using delta learning */
   printf("Store check...\n");
   storecheck();         /* check if vectors were stored */
-
+   
 
   /* original menu system removed
    char option;
@@ -250,7 +250,7 @@ int main (int c, char *v[])
 
 /* Computes the hamming distance between ny and orig, two 35-bit vectors.
  * Mode is one of MODE_NORMAL or MODE_COMPLEMENT. The latter computes the
- * hamming distence between ny and the complement vector of orig. */
+ * hamming distence between ny and the complement vector of orig. */ 
 static int hamming(signed int *ny, signed int *orig, int mode)
 {
    int hd=0, neuron;
@@ -274,11 +274,11 @@ static void checkham()
    /* printf("\nHamming distances for original vectors:\n"); */
    for(vec=0; vec<NUMPATS; vec++) {
       for(comp=(vec+1); comp<NUMPATS; comp++) {
-         if((hd=hamming(vectors[vec], vectors[comp], MODE_NORMAL))<2)
+         if((hd=hamming(vectors[vec], vectors[comp], MODE_NORMAL))<2) 
 	   /* printf ("[!!%c-%c->%d!!] ", vnames[vec], vnames[comp], hd); */ hamwarn++;
          else
            /* printf ("%c-%c->%d ",vnames[vec], vnames[comp], hd) */ ;
-         if((hd=hamming(vectors[vec], vectors[comp], MODE_COMPLEMENT))<2)
+         if((hd=hamming(vectors[vec], vectors[comp], MODE_COMPLEMENT))<2) 
 	   /* printf ("[!!%c-%c'->%d!!] ", vnames[vec], vnames[comp], hd); */ hamwarn++;
          else
            /* printf ("%c-%c'->%d ",vnames[vec], vnames[comp], hd)*/ ;
@@ -299,8 +299,8 @@ static void generateT(int mode)
    int row, col, vec;
    char option='0';
 
-   for(row=0; row<NNTOT; row++)
-      for(col=0; col<NNTOT; col++)
+   for(row=0; row<NNTOT; row++) 
+      for(col=0; col<NNTOT; col++) 
          Tmatrix[row][col]=0.0;
 
    for(vec=0; vec<10; vec++) {
@@ -344,20 +344,20 @@ static void delta (real n)
     scanf("%f", &n);
     getchar();
   */
-
+  
   do {
     status=WTRUE;
     for(vec=0; vec<NUMPATS; ++vec) {
-
+      
       if(nmode==MODE_BIN)
 	run(vectors[vec], newvectors[vec]);
       else
 	runcont(vectors[vec], newvectors[vec]);
-
+      
       for(neuron=0; neuron<NNTOT; ++neuron)
 	if((tempvecC[neuron]=(real)(vectors[vec][neuron]-newvectors[vec][neuron])*n) != 0.0)
 	  status=WFALSE;
-
+      
       for(row=0; row<NNTOT; ++row) {
 	for(col=0; col<NNTOT; ++col) {
 	  if(row==col)
@@ -366,10 +366,10 @@ static void delta (real n)
 	    Tmatrix[row][col]+=tempvecC[row]*(real)(vectors[vec][col]);
 	} /* for */
       } /* for */
-
+      
     } /* for */
   } while (!status);
-
+  
 } /* delta */
 
 
@@ -389,13 +389,13 @@ static int run (signed int *source, signed int *dest)
      exit(1);
    }
 
-   for(neuron=0; neuron<NNTOT; neuron++)
+   for(neuron=0; neuron<NNTOT; neuron++) 
       tempvecA[neuron]=source[neuron];
 
    while((!stable) && (max<500)) {
       for(row=0; row<NNTOT; row++) {
          thesum=0;
-         for(neuron=0; neuron<NNTOT; neuron++)
+         for(neuron=0; neuron<NNTOT; neuron++) 
             thesum+=Tmatrix[row][neuron]*tempvecA[neuron];
          tempvecB[row]= (thesum>=0) ? 1 : -1;
       } /* for */
@@ -411,7 +411,7 @@ static int run (signed int *source, signed int *dest)
          tempvecA[neuron]=tempvecB[neuron];
       } /* else */
       max++;
-   } /* while */
+   } /* while */ 
 
    if(max==500)
       printf("Warning! No stable state reached after 500 iterations, aborting!");
@@ -450,7 +450,7 @@ static void readvector (FILE *fp)
     } /* for */
   } /* for */
   fclose(fp);
-
+  
   printf("Vectors read from file!\n");
 } /* readvector */
 
@@ -463,22 +463,22 @@ static void readvector (FILE *fp)
 static void storecheck ()
 {
   int vec, hd, *iter;
-
+   
   iter = (int *)malloc((NUMPATS)*sizeof(int));
   if (!iter) {
      fprintf(stderr,"ABORT: Out of memory\n");
      exit(1);
   }
 
-  for(vec=0; vec<NUMPATS; vec++)
+  for(vec=0; vec<NUMPATS; vec++) 
     if(nmode==MODE_BIN)
       iter[vec]=run(vectors[vec], newvectors[vec]);
     else
       iter[vec]=runcont(vectors[vec], newvectors[vec]);
-
+  
   /* putchar('\n');
      printvec(newvectors); */
-
+  
   for(vec=0; vec<NUMPATS; vec++) {
     if((hd=hamming(vectors[vec], newvectors[vec], MODE_NORMAL))==0) {
       stored[vec]=1;
@@ -493,7 +493,7 @@ static void storecheck ()
   /*
   printf("\nNumber of iterations used:\n");
   for (vec=0; vec<NUMPATS; vec++)
-    printf("%.5d  ", iter[vec]);
+    printf("%.5d  ", iter[vec]); 
     putchar('\n');
   */
 
@@ -506,14 +506,14 @@ static void storecheck ()
 static void printvec (int vecs[][])
 {
   int row, vec, neuron;
-
+  
   for(row=0; row<NNHEIGHT; row++) {
     for(vec=0; vec<NUMPATS; vec++) {
       for(neuron=0; neuron<NNWIDTH; neuron++) {
 	if(vecs[vec][row*NNWIDTH+neuron]==1)
 	  putchar('X');
 	else
-	  putchar('.');
+	  putchar('.'); 
       } /* for */
       printf("  ");
     } /* for */
@@ -527,26 +527,26 @@ static void printvec (int vecs[][])
 static void printT()
 {
   int row, col;
-
+  
   putchar('\n');
   printf("The T-matrix:\n");
-
+  
   for (row=0; row<NNTOT; row++) {
     for(col=0; col<NNTOT; col++)
       printf("%.1f ", Tmatrix[row][col]);
     putchar('\n');
   } /* for */
-
+  
   putchar('\n');
 } /* printT */
 
 
 /* Prints the vector vect on screen as 1's and -1's. The argument 'vector' is used to
- * indicate the number of the vector so that the actual letter can be printed from vnames. */
+ * indicate the number of the vector so that the actual letter can be printed from vnames. */ 
 static void printV (int vector, signed int vect[])
 {
   int neuron;
-
+  
   printf("%c -> ",vnames[vector]);
   for (neuron=0; neuron<NNTOT; ++neuron)
     if(vect[neuron] != 0)
@@ -559,12 +559,12 @@ static void printV (int vector, signed int vect[])
  * seed and number of unlearning vectors (recommended about 100).
  * Unlearning could improve the number of stored patterns, on the other hand, it
  * might also make things worse ;)
- */
+ */ 
 static void unlearn (int seed, int iter)
 {
   int vecs, neuron, row, col;
   real *tempvec;
-
+  
   tempvec = (real *)malloc((NNTOT)*sizeof(real));
   if (!tempvec) {
      fprintf(stderr,"ABORT: Out of memory\n");
@@ -583,8 +583,8 @@ static void unlearn (int seed, int iter)
   mysrand(seed);
 
   for(vecs=0; vecs<iter; vecs++) {
-    for(neuron=0; neuron<NNTOT; neuron++)
-      tempvec[neuron]= (myrand()>=0.5) ? 1 : -1;
+    for(neuron=0; neuron<NNTOT; neuron++) 
+      tempvec[neuron]= (myrand()>=0.5) ? 1 : -1; 
     for(row=0; row<NNTOT; row++) {
       for(col=0; col<NNTOT; col++) {
 	if(row==col)
@@ -594,13 +594,13 @@ static void unlearn (int seed, int iter)
       } /* for */
     } /* for */
   } /* for */
-
+  
 } /* unlearn */
 
 
 /* Creates generators for all (or n first) stored vectors in 'newvectors' and places the
  * generators in the global variable 'generators'. The generators are found using
- * the clamping method. */
+ * the clamping method. */ 
 #ifndef BENCHMARK
 static void makegenerators (int n)
 {
@@ -640,16 +640,16 @@ static void makegenerators (int n)
 
 
 /* Proves that the generators works by computing the original vector from the
- * generator and print it on the screen. */
+ * generator and print it on the screen. */ 
 static void usegenerators (int n)
 {
   signed int genvec[NUMPATS][NNTOT];
   int vec, neuron, count=0;
-
+  
   for(vec=0; vec<NUMPATS; vec++)
     for(neuron=0; neuron<NNTOT; neuron++)
       genvec[vec][neuron]=0;
-
+  
   for(vec=0; vec<NUMPATS; vec++) {
     if(generators[vec][0] != 0) {
       printV(vec, generators[vec]);
@@ -676,7 +676,7 @@ static int runcont (signed int source[], signed int dest[])
   real *tempvecA, thesum;
   signed int *tempvecC;
   wbool stable=WFALSE, threshold=WFALSE;
-
+  
   tempvecA = (real *)malloc((NNTOT)*sizeof(real));
   tempvecC = (signed int *)malloc((NNTOT)*sizeof(signed int));
   if (!tempvecA || !tempvecC) {
@@ -684,30 +684,30 @@ static int runcont (signed int source[], signed int dest[])
     exit(1);
   }
 
-  for(neuron=0; neuron<NNTOT; neuron++)
+  for(neuron=0; neuron<NNTOT; neuron++) 
     tempvecA[neuron]=dest[neuron]=source[neuron];
-
+  
   while((!stable) && (max<500)) {
     maxcont=0;
     for(row=0; row<NNTOT; row++) {
       thesum=0.0;
-      for(neuron=0; neuron<NNTOT; neuron++)
+      for(neuron=0; neuron<NNTOT; neuron++) 
 	thesum+=Tmatrix[row][neuron]*source[neuron];
-      tempvecA[row]=(1.0-myexp(-1.0*thesum))/(1.0+myexp(-1.0*thesum));
-    } /* for */
+      tempvecA[row]=(1.0-myexp(-1.0*thesum))/(1.0+myexp(-1.0*thesum));  
+    } /* for */ 
     while((!threshold) && (maxcont<50)) {
       threshold=WTRUE;
       for(row=0; row<NNTOT; row++) {
 	if(fabs(tempvecA[row])<0.7) {
 	  thesum=0.0;
-	  for(neuron=0; neuron<NNTOT; neuron++)
+	  for(neuron=0; neuron<NNTOT; neuron++) 
 	    thesum+=Tmatrix[row][neuron]*tempvecA[neuron];
-	  if ((tempvecA[row]=(1.0-myexp(-1.0*thesum))/(1.0+myexp(-1.0*thesum)))<0.7)
+	  if ((tempvecA[row]=(1.0-myexp(-1.0*thesum))/(1.0+myexp(-1.0*thesum)))<0.7)  
 	    threshold=WFALSE;
-	} /* if */
-      }
+	} /* if */ 
+      } 
       maxcont++;
-    } /* while */
+    } /* while */ 
     for(neuron=0; neuron<NNTOT; neuron++)
       tempvecC[neuron] = (tempvecA[neuron]>0) ? 1 : -1;
     if(hamming(dest, tempvecC, MODE_NORMAL)==0)
@@ -721,12 +721,12 @@ static int runcont (signed int source[], signed int dest[])
 	tempvecA[neuron]=dest[neuron];
     } /* else */
     max++;
-  } /* while */
-
+  } /* while */ 
+  
   if(max==500)
     printf("Warning! No stable state reached after 500 iterations!");
   return max;
-
+  
 } /* runcont */
 
 /* A pseudo-random algorithm, just to make sure you always get the
@@ -754,3 +754,32 @@ static double myexp(double in)
 }
 
 /* END OF PROGRAM */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

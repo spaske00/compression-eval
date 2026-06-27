@@ -39,12 +39,12 @@
 /************************************************************************/
 /*  updates plotting data                                               */
 /************************************************************************/
-void
+void 
 set_pinfo (
     gr_info *cod_info,
-    III_psy_ratio *ratio,
+    III_psy_ratio *ratio, 
     III_scalefac_t *scalefac,
-    FLOAT8 xr[576],
+    FLOAT8 xr[576],        
     FLOAT8 xfsf[4][SBPSY_l],
     FLOAT8 noise[4],
     int gr,
@@ -57,24 +57,24 @@ set_pinfo (
   FLOAT8 en0;
   D192_3 *xr_s = (D192_3 *)xr;
   ifqstep = ( cod_info->scalefac_scale == 0 ) ? .5 : 1.0;
-
+	  
   if (cod_info->block_type == SHORT_TYPE) {
     for ( i = 0; i < 3; i++ ) {
       for ( sfb = 0; sfb < SBPSY_s; sfb++ )  {
 	start = scalefac_band.s[ sfb ];
 	end   = scalefac_band.s[ sfb + 1 ];
 	bw = end - start;
-	for ( en0 = 0.0, l = start; l < end; l++ )
+	for ( en0 = 0.0, l = start; l < end; l++ ) 
 	  en0 += (*xr_s)[l][i] * (*xr_s)[l][i];
 	en0=Max(en0/bw,1e-20);
-
+		
 	/* conversion to FFT units */
 	en0 = ratio->en.s[sfb][i]/en0;
-
+	
 	pinfo->xfsf_s[gr][ch][3*sfb+i] =  xfsf[i+1][sfb]*en0;
 	pinfo->thr_s[gr][ch][3*sfb+i] = ratio->thm.s[sfb][i];
-	pinfo->en_s[gr][ch][3*sfb+i] = ratio->en.s[sfb][i];
-
+	pinfo->en_s[gr][ch][3*sfb+i] = ratio->en.s[sfb][i]; 
+	
 	pinfo->LAMEsfb_s[gr][ch][3*sfb+i]=
 	  -2*cod_info->subblock_gain[i]-ifqstep*scalefac->s[sfb][i];
       }
@@ -84,23 +84,23 @@ set_pinfo (
       start = scalefac_band.l[ sfb ];
       end   = scalefac_band.l[ sfb+1 ];
       bw = end - start;
-      for ( en0 = 0.0, l = start; l < end; l++ )
+      for ( en0 = 0.0, l = start; l < end; l++ ) 
 	en0 += xr[l] * xr[l];
       en0=Max(en0/bw,1e-20);
       /*
 	printf("diff  = %f \n",10*log10(Max(ratio[gr][ch].en.l[sfb],1e-20))
 	-(10*log10(en0)+150));
       */
-
+      
       /* convert to FFT units */
       en0 =   ratio->en.l[sfb]/en0;
-
+      
       pinfo->xfsf[gr][ch][sfb] =  xfsf[0][sfb]*en0;
       pinfo->thr[gr][ch][sfb] = ratio->thm.l[sfb];
       pinfo->en[gr][ch][sfb] = ratio->en.l[sfb];
-
+      
       pinfo->LAMEsfb[gr][ch][sfb]=-ifqstep*scalefac->l[sfb];
-      if (cod_info->preflag && sfb>=11)
+      if (cod_info->preflag && sfb>=11) 
 	pinfo->LAMEsfb[gr][ch][sfb]-=ifqstep*pretab[sfb];
     }
   }
@@ -150,21 +150,21 @@ iteration_loop( lame_global_flags *gfp,
   for ( gr = 0; gr < gfp->mode_gr; gr++ ) {
     int targ_bits[2];
 
-    if (convert_mdct)
+    if (convert_mdct) 
       ms_convert(xr[gr], xr[gr]);
-
+    
     on_pe(gfp,pe,l3_side,targ_bits,mean_bits, gr);
 #ifdef RH_SIDE_CBR
 #else
-    if (reduce_sidechannel)
+    if (reduce_sidechannel) 
       reduce_side(targ_bits,ms_ener_ratio[gr],mean_bits);
-#endif
-
+#endif      
+    
     for (ch=0 ; ch < gfp->stereo ; ch ++) {
-      cod_info = &l3_side->gr[gr].ch[ch].tt;
+      cod_info = &l3_side->gr[gr].ch[ch].tt;	
       if (!init_outer_loop(gfp,xr[gr][ch], cod_info))
         {
-          /* xr contains no energy
+          /* xr contains no energy 
            * cod_info was set in init_outer_loop above
 	   */
           memset(&scalefac[gr][ch],0,sizeof(III_scalefac_t));
@@ -175,7 +175,7 @@ iteration_loop( lame_global_flags *gfp,
 	{
           calc_xmin(gfp,xr[gr][ch], &ratio[gr][ch], cod_info, &l3_xmin[ch]);
 	  outer_loop( gfp,xr[gr][ch], targ_bits[ch], noise,
-		      &l3_xmin[ch], l3_enc[gr][ch],
+		      &l3_xmin[ch], l3_enc[gr][ch], 
 		      &scalefac[gr][ch], cod_info, xfsf, ch);
         }
       best_scalefac_store(gfp,gr, ch, l3_enc, l3_side, scalefac);
@@ -217,15 +217,15 @@ iteration_loop( lame_global_flags *gfp,
 }
 
 
-void
+void 
 set_masking_lower (int VBR_q,int nbits)
 {
 	FLOAT masking_lower_db, adjust;
-
+	
 	/* quality setting */
 	/* Adjust allowed masking based on quality setting */
-
-#ifdef  RH_QUALITY_CONTROL
+	
+#ifdef  RH_QUALITY_CONTROL	
 	/* - lower masking depending on Quality setting
 	 * - quality control together with adjusted ATH MDCT scaling
 	 *   on lower quality setting allocate more noise from
@@ -235,11 +235,11 @@ set_masking_lower (int VBR_q,int nbits)
 	 *   limits ends up in very annoying artefacts
 	 */
 	static FLOAT dbQ[10]={-6.0,-4.5,-3.0,-1.5,0,0.3,0.6,1.0,1.5,2.0};
-
+	
 	assert( VBR_q <= 9 );
 	assert( VBR_q >= 0 );
-
-	masking_lower_db = dbQ[VBR_q];
+	
+	masking_lower_db = dbQ[VBR_q];	
 	adjust = 0;
 #else
 	/* masking_lower varies from -8 to +10 db */
@@ -254,11 +254,11 @@ set_masking_lower (int VBR_q,int nbits)
 
 /************************************************************************
  *
- * VBR_iteration_loop()
+ * VBR_iteration_loop()   
  *
  * tries to find out how many bits are needed for each granule and channel
  * to get an acceptable quantization. An appropriate bitrate will then be
- * choosed for quantization.  rh 8/99
+ * choosed for quantization.  rh 8/99                                                
  *
  ************************************************************************/
 void
@@ -273,8 +273,8 @@ VBR_iteration_loop (lame_global_flags *gfp,
 #endif
   gr_info         bst_cod_info, clean_cod_info;
   III_scalefac_t  bst_scalefac;
-  int             bst_l3_enc[576];
-
+  int             bst_l3_enc[576]; 
+  
   III_psy_xmin l3_xmin;
   gr_info  *cod_info = NULL;
   int       save_bits[2][2];
@@ -296,7 +296,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 #ifdef RH_QUALITY_CONTROL
   /* with RH_QUALITY_CONTROL we have to set masking_lower only once */
   set_masking_lower(gfp->VBR_q, 0 );
-#endif
+#endif      
 
   /*******************************************************************
    * how many bits are available for each bitrate?
@@ -316,7 +316,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 
   gfp->bitrate_index=gfp->VBR_max_bitrate;
 
-
+  
   /*******************************************************************
    * how many bits would we use of it?
    *******************************************************************/
@@ -324,22 +324,22 @@ VBR_iteration_loop (lame_global_flags *gfp,
   for (gr = 0; gr < gfp->mode_gr; gr++) {
     int num_chan=gfp->stereo;
 #ifdef  RH_SIDE_VBR
-    /* my experiences are, that side channel reduction
+    /* my experiences are, that side channel reduction  
      * does more harm than good when VBR encoding
      * (Robert.Hegemann@gmx.de 2000-02-18)
      */
 #else
     /* determine quality based on mid channel only */
-    if (reduce_sidechannel) num_chan=1;
+    if (reduce_sidechannel) num_chan=1;  
 #endif
 
     /* copy data to be quantized into xr */
     if (convert_mdct)
 	ms_convert(xr[gr],xr[gr]);
 
-    for (ch = 0; ch < num_chan; ch++) {
+    for (ch = 0; ch < num_chan; ch++) { 
       int real_bits;
-
+      
       /******************************************************************
        * find smallest number of bits for an allowable quantization
        ******************************************************************/
@@ -348,7 +348,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 
       if (!init_outer_loop(gfp,xr[gr][ch], cod_info))
       {
-        /* xr contains no energy
+        /* xr contains no energy 
          * cod_info was set in init_outer_loop above
 	 */
         memset(&scalefac[gr][ch],0,sizeof(III_scalefac_t));
@@ -361,9 +361,9 @@ VBR_iteration_loop (lame_global_flags *gfp,
 	analog_silence=1;
 	continue; /* with next channel */
       }
-
+      
       memcpy( &clean_cod_info, cod_info, sizeof(gr_info) );
-
+      
 #ifdef RH_QUALITY_CONTROL
       /*
        * masking lower already set in the beginning
@@ -373,7 +373,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
        * has to be set before calculating l3_xmin
        */
       set_masking_lower( gfp->VBR_q,2500 );
-#endif
+#endif      
       /* check for analolg silence */
       /* if energy < ATH, set min_bits = 125 */
       if (0==calc_xmin(gfp,xr[gr][ch], &ratio[gr][ch], cod_info, &l3_xmin)) {
@@ -401,7 +401,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 	  assert(this_bits<=max_bits);
 
 	  if( this_bits >= real_bits ){
-	      /*
+	      /* 
 	       * we already found a quantization with fewer bits
 	       * so we can skip this try
 	       */
@@ -416,7 +416,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 	  targ_noise[1]=0;          /* max_noise */
 	  targ_noise[2]=0;          /* over_noise */
 	  targ_noise[3]=0;          /* tot_noise */
-
+	
 	  targ_noise[0]=Max(0,targ_noise[0]);
 	  targ_noise[2]=Max(0,targ_noise[2]);
 
@@ -436,12 +436,12 @@ VBR_iteration_loop (lame_global_flags *gfp,
 #else
 	  /* quality setting */
 	  set_masking_lower( gfp->VBR_q,this_bits );
-          /*
+          /* 
 	   * compute max allowed distortion, masking lower has changed
 	   */
           calc_xmin(gfp,xr[gr][ch], &ratio[gr][ch], cod_info, &l3_xmin);
 #endif
-	  outer_loop( gfp,xr[gr][ch], this_bits, noise,
+	  outer_loop( gfp,xr[gr][ch], this_bits, noise, 
 		      &l3_xmin, l3_enc[gr][ch],
 		      &scalefac[gr][ch], cod_info, xfsf,
 		      ch);
@@ -455,7 +455,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 	    set_pinfo(cod_info, &ratio[gr][ch], &scalefac[gr][ch], xr[gr][ch], xfsf, noise, gr, ch);
 #endif
 	  if (better) {
-	      /*
+	      /* 
 	       * we now know it can be done with "real_bits"
 	       * and maybe we can skip some iterations
 	       */
@@ -467,7 +467,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
               memcpy(  bst_l3_enc,    l3_enc  [gr][ch], sizeof(int)*576         );
               memcpy( &bst_cod_info,  cod_info,         sizeof(gr_info)         );
 #ifdef HAVEGTK
-              if (gfp->gtkflag)
+              if (gfp->gtkflag) 
                 memcpy( &bst_pinfo, pinfo, sizeof(plotting_data) );
 #endif
 	      /*
@@ -482,7 +482,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 	  }
 	  dbits /= 2;
       } while (dbits>10) ;
-
+      
       if (real_bits <= max_bits)
       {
         /* restore best quantization found */
@@ -490,24 +490,24 @@ VBR_iteration_loop (lame_global_flags *gfp,
         memcpy( &scalefac[gr][ch], &bst_scalefac, sizeof(III_scalefac_t) );
         memcpy(  l3_enc  [gr][ch],  bst_l3_enc,   sizeof(int)*576        );
 #ifdef HAVEGTK
-        if (gfp->gtkflag)
+        if (gfp->gtkflag) 
           memcpy( pinfo, &bst_pinfo, sizeof(plotting_data) );
 #endif
       }
       assert((int)cod_info->part2_3_length <= max_bits);
       save_bits[gr][ch] = cod_info->part2_3_length;
       used_bits += save_bits[gr][ch];
-
+      
     } /* for ch */
   } /* for gr */
 
 
 #ifdef  RH_SIDE_VBR
-  /* my experiences are, that side channel reduction
+  /* my experiences are, that side channel reduction  
    * does more harm than good when VBR encoding
    * (Robert.Hegemann@gmx.de 2000-02-18)
    */
-#else
+#else	
   if (reduce_sidechannel) {
     /* number of bits needed was found for MID channel above.  Use formula
      * (fixed bitrate code) to set the side channel bits */
@@ -530,7 +530,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
 
   /*******************************************************************
    * calculate quantization for this bitrate
-   *******************************************************************/
+   *******************************************************************/  
   getframebits (gfp,&bitsPerFrame, &mean_bits);
   bits=ResvFrameBegin (gfp,l3_side, mean_bits, bitsPerFrame);
 
@@ -560,10 +560,10 @@ VBR_iteration_loop (lame_global_flags *gfp,
 #endif
       {
         cod_info = &l3_side->gr[gr].ch[ch].tt;
-
+	       
 	if (!init_outer_loop(gfp,xr[gr][ch], cod_info))
         {
-          /* xr contains no energy
+          /* xr contains no energy 
            * cod_info was set in init_outer_loop above
 	   */
           memset(&scalefac[gr][ch],0,sizeof(III_scalefac_t));
@@ -581,9 +581,9 @@ VBR_iteration_loop (lame_global_flags *gfp,
           set_masking_lower( gfp->VBR_q,save_bits[gr][ch] );
 #endif
           calc_xmin(gfp,xr[gr][ch], &ratio[gr][ch], cod_info, &l3_xmin);
-
+	
           outer_loop( gfp,xr[gr][ch], save_bits[gr][ch], noise,
-		      &l3_xmin, l3_enc[gr][ch],
+	 	      &l3_xmin, l3_enc[gr][ch], 
 		      &scalefac[gr][ch], cod_info, xfsf, ch);
 	}
 #ifdef HAVEGTK
@@ -595,7 +595,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
   }
 
   /*******************************************************************
-   * update reservoir status after FINAL quantization/bitrate
+   * update reservoir status after FINAL quantization/bitrate 
    *******************************************************************/
   for (gr = 0; gr < gfp->mode_gr; gr++)
     for (ch = 0; ch < gfp->stereo; ch++) {
@@ -612,7 +612,7 @@ VBR_iteration_loop (lame_global_flags *gfp,
     }
 
   /*******************************************************************
-   * set the sign of l3_enc
+   * set the sign of l3_enc 
    *******************************************************************/
   for (gr = 0; gr < gfp->mode_gr; gr++)
     for (ch = 0; ch < gfp->stereo; ch++) {
@@ -674,8 +674,8 @@ int init_outer_loop(lame_global_flags *gfp,
   cod_info->global_gain       = 210;
   cod_info->count1table_select= 0;
   cod_info->count1bits        = 0;
-
-
+  
+  
   if (gfp->experimentalZ) {
     /* compute subblock gains */
     int j,b;  FLOAT8 en[3],mx;
@@ -696,9 +696,9 @@ int init_outer_loop(lame_global_flags *gfp,
       /* gain = .5* log( 1/en[0] )/LOG2 = -.5*log(en[])/LOG2 */
       for (b=0; b<3; b++) {
 	cod_info->subblock_gain[b] = (int)(-.5*log(en[b])/LOG2 + 0.5);
-	if (cod_info->subblock_gain[b] > 2)
+	if (cod_info->subblock_gain[b] > 2) 
 	  cod_info->subblock_gain[b]=2;
-	if (cod_info->subblock_gain[b] < 0)
+	if (cod_info->subblock_gain[b] < 0) 
 	  cod_info->subblock_gain[b]=0;
       }
       /*
@@ -715,10 +715,10 @@ int init_outer_loop(lame_global_flags *gfp,
    *  check if there is some energy we have to quantize
    *  if so, then return 1 else 0
    */
-  for (i=0; i<576; i++)
+  for (i=0; i<576; i++) 
     if ( 1e-99 < fabs (xr[i]) )
       return 1;
-
+  
   return 0;
 }
 
@@ -730,18 +730,18 @@ int init_outer_loop(lame_global_flags *gfp,
 /************************************************************************/
 /*  Function: The outer iteration loop controls the masking conditions  */
 /*  of all scalefactorbands. It computes the best scalefac and          */
-/*  global gain. This module calls the inner iteration loop
- *
- *  mt 5/99 completely rewritten to allow for bit reservoir control,
- *  mid/side channels with L/R or mid/side masking thresholds,
- *  and chooses best quantization instead of last quantization when
- *  no distortion free quantization can be found.
- *
+/*  global gain. This module calls the inner iteration loop             
+ * 
+ *  mt 5/99 completely rewritten to allow for bit reservoir control,   
+ *  mid/side channels with L/R or mid/side masking thresholds, 
+ *  and chooses best quantization instead of last quantization when 
+ *  no distortion free quantization can be found.  
+ *  
  *  added VBR support mt 5/99
  ************************************************************************/
 void outer_loop(
     lame_global_flags *gfp,
-    FLOAT8 xr[576],
+    FLOAT8 xr[576],        
     int targ_bits,
     FLOAT8 best_noise[4],
     III_psy_xmin *l3_xmin,   /* the allowed distortion of the scalefactor */
@@ -753,7 +753,7 @@ void outer_loop(
 {
   III_scalefac_t scalefac_w;
   gr_info save_cod_info;
-  int l3_enc_w[576];
+  int l3_enc_w[576]; 
   int i, iteration;
   int status,bits_found=0;
   int huff_bits;
@@ -798,7 +798,7 @@ void outer_loop(
     /* inner_loop starts with the initial quantization step computed above
      * and slowly increases until the bits < huff_bits.
      * Thus it is important not to start with too large of an inital
-     * quantization step.  Too small is ok, but inner_loop will take longer
+     * quantization step.  Too small is ok, but inner_loop will take longer 
      */
     huff_bits = targ_bits - cod_info->part2_length;
     if (huff_bits < 0) {
@@ -815,35 +815,35 @@ void outer_loop(
 	  real_bits = inner_loop(gfp,xrpow, l3_enc_w, huff_bits, cod_info);
 	} else real_bits=bits_found;
       }
-      else
+      else 
 	real_bits=inner_loop(gfp,xrpow, l3_enc_w, huff_bits, cod_info);
       cod_info->part2_3_length = real_bits;
 
       /* compute the distortion in this quantization */
       if (gfp->noise_shaping==0) {
-	over=0;
+      	over=0;
       }else{
 	/* coefficients and thresholds both l/r (or both mid/side) */
-	over=calc_noise1( xr, l3_enc_w, cod_info,
-			  xfsf_w,distort, l3_xmin, &scalefac_w, &over_noise,
+	over=calc_noise1( xr, l3_enc_w, cod_info, 
+			  xfsf_w,distort, l3_xmin, &scalefac_w, &over_noise, 
 			  &tot_noise, &max_noise);
 
       }
 
       /* check if this quantization is better the our saved quantization */
       if (iteration == 1) better=1;
-      else
+      else 
 	better=quant_compare(gfp->experimentalX,
 	     best_over,best_tot_noise,best_over_noise,best_max_noise,
                   over,     tot_noise,     over_noise,     max_noise);
 
-      /* save data so we can restore this quantization later */
+      /* save data so we can restore this quantization later */    
       if (better) {
 	best_over=over;
 	best_max_noise=max_noise;
 	best_over_noise=over_noise;
 	best_tot_noise=tot_noise;
-
+	
 	memcpy(scalefac, &scalefac_w, sizeof(III_scalefac_t));
 	memcpy(l3_enc,l3_enc_w,sizeof(int)*576);
 	memcpy(&save_cod_info,cod_info,sizeof(save_cod_info));
@@ -855,7 +855,7 @@ void outer_loop(
 #endif
       }
     }
-
+    
     /* if no bands with distortion, we are done */
     if (gfp->noise_shaping_stop==0)
       if (over==0) notdone=0;
@@ -871,7 +871,7 @@ void outer_loop(
 	    }else{
 		status = scale_bitcount_lsf(&scalefac_w, cod_info);
 	    }
-	    if (status && (cod_info->scalefac_scale==0)) try_scale=1;
+	    if (status && (cod_info->scalefac_scale==0)) try_scale=1; 
 	}
 	notdone = !status;
     }
@@ -900,7 +900,7 @@ void outer_loop(
 
 
 
-
+  
 
 
 
@@ -967,7 +967,7 @@ int calc_noise1( FLOAT8 xr[576], int ix[576], gr_info *cod_info,
 #else
             sum += temp * temp;
 #endif
-
+	    
         }
         xfsf[0][sfb] = sum / bw;
 
@@ -1019,7 +1019,7 @@ int calc_noise1( FLOAT8 xr[576], int ix[576], gr_info *cod_info,
 #else
 		sum += temp * temp;
 #endif
-            }
+            }       
 	    xfsf[i+1][sfb] = sum / bw;
 	    /* max -30db noise below threshold */
 #ifdef RH_ATH
@@ -1034,7 +1034,7 @@ int calc_noise1( FLOAT8 xr[576], int ix[576], gr_info *cod_info,
 	    }
 	    *tot_noise += noise;
 	    *max_noise=Max(*max_noise,noise);
-	    count++;
+	    count++;	    
         }
     }
 
@@ -1054,11 +1054,11 @@ int calc_noise1( FLOAT8 xr[576], int ix[576], gr_info *cod_info,
 /*            amp_scalefac_bands                                         */
 /*************************************************************************/
 
-/*
+/* 
   Amplify the scalefactor bands that violate the masking threshold.
   See ISO 11172-3 Section C.1.5.4.3.5
 */
-void amp_scalefac_bands(FLOAT8 xrpow[576],
+void amp_scalefac_bands(FLOAT8 xrpow[576], 
 			gr_info *cod_info,
 			III_scalefac_t *scalefac,
 			FLOAT8 distort[4][SBPSY_l])
@@ -1073,7 +1073,7 @@ void amp_scalefac_bands(FLOAT8 xrpow[576],
     else
 	ifqstep34 = 1.68179283050742922612;
 
-    /* distort_thresh = 0, unless all bands have distortion
+    /* distort_thresh = 0, unless all bands have distortion 
      * less than masking.  In that case, just amplify bands with distortion
      * within 95% of largest distortion/masking ratio */
     distort_thresh = -900;
@@ -1125,7 +1125,7 @@ int over,FLOAT8 tot_noise, FLOAT8 over_noise, FLOAT8 max_noise)
 
     over_noise:  sum of quantization noise > masking
     tot_noise:   sum of all quantization noise
-    max_noise:   max quantization noise
+    max_noise:   max quantization noise 
 
    */
   int better=0;
@@ -1135,7 +1135,7 @@ int over,FLOAT8 tot_noise, FLOAT8 over_noise, FLOAT8 max_noise)
 	      ((over==best_over) && (over_noise<=best_over_noise)) ) ;
   }
 
-  if (experimentalX==1)
+  if (experimentalX==1) 
     better = max_noise < best_max_noise;
 
   if (experimentalX==2) {
@@ -1163,7 +1163,7 @@ int over,FLOAT8 tot_noise, FLOAT8 over_noise, FLOAT8 max_noise)
                ||( (max_noise == best_max_noise)
                  &&(tot_noise <= best_tot_noise)
                  )
-               )
+               ) 
 	     );
   }
 
@@ -1180,7 +1180,7 @@ int over,FLOAT8 tot_noise, FLOAT8 over_noise, FLOAT8 max_noise)
 
     over_noise:  sum of quantization noise > masking
     tot_noise:   sum of all quantization noise
-    max_noise:   max quantization noise
+    max_noise:   max quantization noise 
 
    */
   int better=0;
@@ -1191,3 +1191,11 @@ int over,FLOAT8 tot_noise, FLOAT8 over_noise, FLOAT8 max_noise)
 	    (max_noise<=best_max_noise));
   return better;
 }
+  
+
+
+
+
+
+
+

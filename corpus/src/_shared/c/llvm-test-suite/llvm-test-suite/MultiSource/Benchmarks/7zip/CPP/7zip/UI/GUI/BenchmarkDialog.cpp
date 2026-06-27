@@ -50,7 +50,7 @@ static CIDLangPair kIDLangPairs[] =
   { IDC_BENCHMARK_USAGE_LABEL, 0x0308000B },
   { IDC_BENCHMARK_RPU_LABEL, 0x0308000C },
   { IDC_BENCHMARK_COMBO_NUM_THREADS, 0x02000D12},
-
+ 
   { IDC_BUTTON_STOP, 0x02000714 },
   { IDC_BUTTON_RESTART, 0x02000715 },
   { IDHELP, 0x02000720 },
@@ -117,7 +117,7 @@ bool CBenchmarkDialog::OnInit()
   m_Dictionary.Attach(GetItem(IDC_BENCHMARK_COMBO_DICTIONARY));
   cur = 0;
   UInt64 ramSize = NSystem::GetRamSize();
-
+  
   #ifdef UNDER_CE
   const UInt32 kNormalizedCeSize = (16 << 20);
   if (ramSize > kNormalizedCeSize && ramSize < (33 << 20))
@@ -189,7 +189,7 @@ static const UInt32 g_IDs[] =
   IDC_BENCHMARK_COMPRESSING_RATING2,
   IDC_BENCHMARK_COMPRESSING_RPU,
   IDC_BENCHMARK_COMPRESSING_RPU2,
-
+  
   IDC_BENCHMARK_DECOMPRESSING_SPEED,
   IDC_BENCHMARK_DECOMPRESSING_SPEED2,
   IDC_BENCHMARK_DECOMPRESSING_RATING,
@@ -198,12 +198,12 @@ static const UInt32 g_IDs[] =
   IDC_BENCHMARK_DECOMPRESSING_USAGE2,
   IDC_BENCHMARK_DECOMPRESSING_RPU,
   IDC_BENCHMARK_DECOMPRESSING_RPU2,
-
+  
   IDC_BENCHMARK_TOTAL_USAGE_VALUE,
   IDC_BENCHMARK_TOTAL_RATING_VALUE,
   IDC_BENCHMARK_TOTAL_RPU_VALUE
 };
-
+  
 void CBenchmarkDialog::OnChangeSettings()
 {
   EnableItem(IDC_BUTTON_STOP, true);
@@ -504,7 +504,7 @@ HRESULT CThreadBenchmark::Process()
         dictionarySize = sync.DictionarySize;
         numThreads = sync.NumThreads;
       }
-
+      
       CBenchCallback callback;
       callback.dictionarySize = dictionarySize;
       callback.Sync = &sync;

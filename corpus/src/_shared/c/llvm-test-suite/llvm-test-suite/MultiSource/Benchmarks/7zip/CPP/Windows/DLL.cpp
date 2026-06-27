@@ -106,7 +106,7 @@ bool CLibrary::Load(LPCTSTR lpLibFileName)
 #else
   strcpy(name,nameWindowToUnix(lpLibFileName));
 #endif
-
+  
   // replace ".dll" with ".so"
   size_t len = strlen(name);
   if ((len >=4) && (strcmp(name+len-4,".dll") == 0)) {
@@ -184,9 +184,10 @@ TRACEN((printf("load_add_on(%s)=%d\n",p.Path(),(int)image)))
 #else
     printf("Can't load '%ls' (%s)\n", lpLibFileName,dlerror());
 #endif
-  }
+  } 
 
   return LoadOperations(handler);
 }
 
 }}
+

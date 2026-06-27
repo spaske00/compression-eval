@@ -57,7 +57,7 @@ STDMETHODIMP CHandler::GetProperty(UInt32 index, PROPID propID, PROPVARIANT *val
   NWindows::NCOM::CPropVariant prop;
   const CRef &ref = _db.Refs[index];
   const CItem &item = _db.Items[ref.Did];
-
+    
   switch(propID)
   {
     case kpidPath:  prop = _db.GetItemPath(index); break;
@@ -117,7 +117,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 totalPackSize;
   totalSize = totalPackSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -148,7 +148,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
     totalPackSize += _db.GetItemPackSize(item.Size);
     totalSize += item.Size;
-
+    
     if (!testMode && !outStream)
       continue;
     RINOK(extractCallback->PrepareOperation(askMode));

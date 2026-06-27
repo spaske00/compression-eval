@@ -90,7 +90,7 @@ STDMETHODIMP CArchiveUpdateCallback::GetProperty(UInt32 index, PROPID propID, PR
   COM_TRY_BEGIN
   const CUpdatePair2 &up = (*UpdatePairs)[index];
   NWindows::NCOM::CPropVariant prop;
-
+  
   if (propID == kpidIsAnti)
   {
     prop = up.IsAnti;
@@ -114,7 +114,7 @@ STDMETHODIMP CArchiveUpdateCallback::GetProperty(UInt32 index, PROPID propID, PR
         return S_OK;
     }
   }
-
+  
   if (up.ExistOnDisk())
   {
     const CDirItem &di = DirItems->Items[up.DirIndex];
@@ -161,7 +161,7 @@ STDMETHODIMP CArchiveUpdateCallback::GetStream(UInt32 index, ISequentialInStream
   const CUpdatePair2 &up = (*UpdatePairs)[index];
   if (!up.NewData)
     return E_FAIL;
-
+  
   RINOK(Callback->CheckBreak());
   RINOK(Callback->Finilize());
 
@@ -171,7 +171,7 @@ STDMETHODIMP CArchiveUpdateCallback::GetStream(UInt32 index, ISequentialInStream
   }
   const CDirItem &di = DirItems->Items[up.DirIndex];
   RINOK(Callback->GetStream(DirItems->GetLogPath(up.DirIndex), false));
-
+ 
   if (di.IsDir())
     return S_OK;
 

@@ -79,7 +79,7 @@
 #define         MINIMUM         4    /* Minimum size of the buffer in bytes */
 #define         MAX_LENGTH      32   /* Maximum length of word written or
                                         read from bit stream */
-#define         BUFFER_SIZE     LAME_MAXMP3BUFFER
+#define         BUFFER_SIZE     LAME_MAXMP3BUFFER 
 
 #define         Min(A, B)       ((A) < (B) ? (A) : (B))
 #define         Max(A, B)       ((A) > (B) ? (A) : (B))
@@ -99,7 +99,7 @@ typedef struct {
     unsigned int    quant;
 } sb_alloc, *alloc_ptr;
 
-typedef sb_alloc        al_table[SBLIMIT][16];
+typedef sb_alloc        al_table[SBLIMIT][16]; 
 
 /* Header Information Structure */
 
@@ -119,7 +119,7 @@ typedef struct  bit_stream_struc {
     unsigned long        totbit;         /* bit counter of bit stream */
     int         buf_byte_idx;   /* pointer to top byte in buffer */
     int         buf_bit_idx;    /* pointer to top bit of top byte in buffer */
-
+    
     /* format of file in rd mode (BINARY/ASCII) */
 } Bit_stream_struc;
 
@@ -159,7 +159,7 @@ extern void           putbits(Bit_stream_struc*, unsigned int, int);
 extern enum byte_order DetermineByteOrder(void);
 extern void SwapBytesInWords( short *loc, int words );
 
-extern void
+extern void 
 getframebits(lame_global_flags *gfp,int *bitsPerFrame, int *mean_bits);
 
 #endif

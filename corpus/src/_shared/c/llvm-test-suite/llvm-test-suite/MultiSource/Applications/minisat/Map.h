@@ -80,7 +80,7 @@ class Map {
         cap = newsize;
     }
 
-
+    
     public:
 
      Map () : table(NULL), cap(0), size(0) {}
@@ -94,7 +94,7 @@ class Map {
         for (int i = 0; i < ps.size(); i++)
             if (equals(ps[i].key, k)){
                 d = ps[i].data;
-                return true; }
+                return true; } 
         return false;
     }
 

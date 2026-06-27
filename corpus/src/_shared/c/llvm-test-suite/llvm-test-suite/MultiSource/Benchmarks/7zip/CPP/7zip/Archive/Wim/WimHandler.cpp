@@ -39,7 +39,7 @@ static STATPROPSTG kProps[] =
   { NULL, kpidAttrib, VT_UI4},
   { NULL, kpidMethod, VT_BSTR},
   { NULL, kpidShortName, VT_BSTR}
-
+  
   #ifdef WIM_DETAILS
   , { NULL, kpidVolume, VT_UI4}
   , { NULL, kpidOffset, VT_UI8}
@@ -178,7 +178,7 @@ STDMETHODIMP CHandler::GetArchiveProperty(PROPID propID, PROPVARIANT *value)
   {
     case kpidSize: prop = _db.GetUnpackSize(); break;
     case kpidPackSize: prop = _db.GetPackSize(); break;
-
+    
     case kpidCTime:
       if (_xmls.Size() == 1)
       {
@@ -416,7 +416,7 @@ STDMETHODIMP CHandler::Open(IInStream *inStream,
   Close();
   {
     CMyComPtr<IArchiveOpenVolumeCallback> openVolumeCallback;
-
+    
     CVolumeName seqName;
     if (openArchiveCallback != NULL)
       openArchiveCallback->QueryInterface(IID_IArchiveOpenVolumeCallback, (void **)&openVolumeCallback);
@@ -467,15 +467,15 @@ STDMETHODIMP CHandler::Open(IInStream *inStream,
           continue;
         return res;
       }
-
+      
       while (_volumes.Size() <= header.PartNumber)
         _volumes.Add(CVolume());
       CVolume &volume = _volumes[header.PartNumber];
       volume.Header = header;
       volume.Stream = curStream;
-
+      
       firstVolumeIndex = header.PartNumber;
-
+      
       bool needAddXml = true;
       if (_xmls.Size() != 0)
         if (xml.Data == _xmls[0].Data)
@@ -485,7 +485,7 @@ STDMETHODIMP CHandler::Open(IInStream *inStream,
         xml.Parse();
         _xmls.Add(xml);
       }
-
+      
       if (i == 1)
       {
         if (header.PartNumber != 1)
@@ -559,7 +559,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   UInt64 currentTotalPacked = 0;
   UInt64 currentTotalUnPacked = 0;
   UInt64 currentItemUnPacked, currentItemPacked;
-
+  
   int prevSuccessStreamIndex = -1;
 
   CUnpacker unpacker;

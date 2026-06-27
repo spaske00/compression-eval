@@ -36,7 +36,7 @@ struct CVolHeader
   UInt32 MTime;
   // UInt32 BackupTime;
   // UInt32 CheckedTime;
-
+  
   // UInt32 NumFiles;
   // UInt32 NumFolders;
   int BlockSizeLog;
@@ -74,7 +74,7 @@ enum ERecordType
 struct CItem
 {
   UString Name;
-
+  
   UInt32 ParentID;
 
   UInt16 Type;
@@ -150,5 +150,5 @@ public:
 };
 
 }}
-
+  
 #endif

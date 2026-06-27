@@ -27,7 +27,7 @@ int pcmpz(u)
 }
 
 /*
- *  Compare u to v.
+ *  Compare u to v. 
  *
  *  Return:  < 0 if u < v
  *	     = 0 if u = v
@@ -50,7 +50,7 @@ int pcmp(u, v)
    } else {
       i = u->size - v->size;
       if (i == 0) {
-	 uPtr = u->value + u->size;
+	 uPtr = u->value + u->size; 
 	 vPtr = v->value + v->size;
 	 do {
 	    if (*--uPtr != *--vPtr) break;

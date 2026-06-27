@@ -1,23 +1,23 @@
 /*
  * Hexxagon board game.
  * Copyright (C) 2001 Erik Jonsson.
- *
+ * 
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; either version 2
  * of the License, or (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
+ * 
  * Email erik@nesqi.homeip.net
- *
+ * 
  */
 
 #include <stdio.h>
@@ -31,7 +31,7 @@ void stripFromDblSpace(char *cpfrom)
 {
 	char *cpto = cpfrom;
 	int space = 1;
-
+	
 	while(*cpfrom)
 	{
 		if(!(space && (*cpfrom == ' ' || *cpfrom == '\t')))
@@ -39,15 +39,15 @@ void stripFromDblSpace(char *cpfrom)
 			*cpto = *cpfrom;
 			cpto++;
 		}
-
+		
 		if(*cpfrom == ' ' || *cpfrom == '\t')
 			space = 1;
-		else
+		else 
 			space = 0;
-
+		
 		cpfrom++;
 	}
-
+	
 	*cpto = 0;
 }
 
@@ -56,23 +56,23 @@ void printCopy()
 	printf("\n");
 	printf("Hexxagon board game.\n");
 	printf("Copyright (C) 2001 Erik Jonsson.\n\n");
-
+	
 	printf("The pieces was drawn by Stefan Påhlson.\n\n");
 
 	printf("This program is free software; you can redistribute it and/or\n");
 	printf("modify it under the terms of the GNU General Public License\n");
 	printf("as published by the Free Software Foundation; either version 2\n");
 	printf("of the License, or (at your option) any later version.\n\n");
-
+	
 	printf("This program is distributed in the hope that it will be useful,\n");
 	printf("but WITHOUT ANY WARRANTY; without even the implied warranty of\n");
 	printf("MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n");
 	printf("GNU General Public License for more details.\n\n");
-
+	
 	printf("You should have received a copy of the GNU General Public License\n");
 	printf("along with this program; if not, write to the Free Software\n");
 	printf("Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.\n\n");
-
+	
 	printf("Email erik@nesqi.homeip.net\n\n");
 };
 
@@ -87,7 +87,7 @@ void printHelp()
 	printf(" \\__/  \\__/  \\__/                    \n");
 	printf("    \\__/  \\__/                        \n");
 	printf("       \\__/                            \n\n");
-	printf(" erik@nesqi.homeip.net\n");
+	printf(" erik@nesqi.homeip.net\n"); 
 	printf(" http://nesqi.homeip.net/hexxagon\n");
 	printf("\n");
 	printf(" Common commands:\n");
@@ -110,7 +110,7 @@ void printHelp()
 	printf("   save [filename]       : Save a game (with history) to a file.\n");
 	printf("   newgame [CC/HC/CH/HH] : Start a new game:\n");
 	printf("                           HC for human against computer.\n");
-	printf("                           CH for computer against human.\n");
+	printf("                           CH for computer against human.\n"); 
 	printf("                              Same as HC but computer starts.\n");
 	printf("                           CC for computer against computer.\n");
 	printf("                           HH for human against human.\n\n");
@@ -126,7 +126,7 @@ enum
 
 int parseCords(char *str)
 {
-	 if(((*str >= 'a' && *str <= 'i') ||
+	 if(((*str >= 'a' && *str <= 'i') || 
 		 (*str >= 'A' && *str <= 'I')) && (str[1] >= '1' && str[1] <= '9'))
 	 {
 		  int x, y;
@@ -142,14 +142,14 @@ int parseCords(char *str)
 
 		  return getHexxagonIndex(x + 1, y + 1);
 	 }
-
+	 
 	 return -1;
 }
 
 int main(int argc, char *argv[])
 {
 	int quit = 0;
-
+	
 	int mode = 1;
 #ifdef SMALL_PROBLEM_SIZE
         int level = 3;
@@ -157,19 +157,19 @@ int main(int argc, char *argv[])
         int level = 4;
 #endif
 	int time = 12;
-
+	
   int llvm_index;
 
 	printf("Hexxagon board game.\n");
 	printf("Copyright 2001.\n");
 	printf("Erik Jonsson.\n");
 	printf("Type \"copyright\" to see the copyright notice.\n\n");
-
+	
 	HexxagonGame *game = new HexxagonGame();
 	game->displayText();
-
+	
 	char *input = 0;
-
+	
 	for (llvm_index = 0; llvm_index < 1; llvm_index++)
 	{
           char tmp[] = "newgame CC";
@@ -177,7 +177,7 @@ int main(int argc, char *argv[])
 		int len = strlen(tmp);
 		if(len && tmp[len - 1] == ' ')
 			tmp[len - 1] = 0;
-
+		
 		if(*tmp == 0)
 		{
 			if(input)
@@ -187,10 +187,10 @@ int main(int argc, char *argv[])
 		{
 			input = tmp;
 		}
-
+		
 		if(!input)
 			continue;
-
+		
 		if(!strcasecmp("quit", input) || !strcasecmp("exit", input))
 		{
 			quit = 1;
@@ -211,10 +211,10 @@ int main(int argc, char *argv[])
 		else if(!strncasecmp("time ", input, 5))
 		{
 			char *cp = input + 5;
-
+			
 			while(isdigit(*cp))
 				cp++;
-
+			
 			if(cp == input + 5 || (*cp != 0 && !((*cp == ' ') && *(cp + 1) == 0)))
 				printf("Syntax: time [number]\n");
 			else
@@ -242,12 +242,12 @@ int main(int argc, char *argv[])
 		{
 			game->computerMove(level, 0, time * 1000);
 			game->displayText();
-
+			
 			if(mode != GAME_HH)
 			{
 				 game->computerMove(level, 0, time * 1000);
-				 game->displayText();
-			}
+				 game->displayText();							
+			} 
 		}
 		else if(!strncasecmp("load ", input, 5))
 		{
@@ -282,12 +282,12 @@ int main(int argc, char *argv[])
 		{
 			if(((input[8] == 'c' || input[8] == 'C') || (input[8] == 'h' || input[8] == 'H')) &&
 			   ((input[9] == 'c' || input[9] == 'C') || (input[9] == 'h' || input[8] == '9')) &&
-			   (input[10] == 0 || (input[10] == ' ' && input[11] == 0)))
+			   (input[10] == 0 || (input[10] == ' ' && input[11] == 0))) 
 			{
 				delete game;
 				game = new HexxagonGame();
 				game->displayText();
-
+				
 				if((input[8] == 'h' || input[8] == 'H') &&
 					(input[9] == 'c' || input[9] == 'C'))
 					mode = GAME_HC;
@@ -309,7 +309,7 @@ int main(int argc, char *argv[])
 						game->computerMove(level, 0, time * 1000);
 						game->displayText();
 					}
-
+					
 					mode = GAME_HC;
 				}
 				else
@@ -326,7 +326,7 @@ int main(int argc, char *argv[])
 				!strncasecmp("j ", input, 2))
 		{
 			 char *cp = input;
-
+			 
 			 if(!strncasecmp("j ", input, 2))
 				  cp += 2;
 			 else
@@ -352,17 +352,17 @@ int main(int argc, char *argv[])
 				  if(game->isMoveValid(move))
 				  {
 					   game->applyMove(move);
-					   game->displayText();
-
+					   game->displayText();							
+					   
 					   if(mode != GAME_HH)
 					   {
 							game->computerMove(level, 0, time * 1000);
-							game->displayText();
-					   }
+							game->displayText();							
+					   } 
 				  }
 				  else
 					   printf("Illegal move!\n");
-			 }
+			 } 
 			 else
 			 {
 				  if(len == 5)
@@ -387,14 +387,14 @@ int main(int argc, char *argv[])
 				!strncasecmp("c ", input, 2))
 		{
 			 char *cp = input;
-
+			 
 			 if(!strncasecmp("c ", input, 2))
 				  cp += 2;
 			 else
 				  cp += 6;
 
 			 HexxagonMove move;
-
+			 
 			 if(strlen(cp) == 2)
 			 {
 				  move.to = parseCords(cp);
@@ -405,13 +405,13 @@ int main(int argc, char *argv[])
 					   if(game->isMoveValid(move))
 					   {
 							game->applyMove(move);
-							game->displayText();
-
+							game->displayText();							
+							
 							if(mode != GAME_HH)
 							{
 								 game->computerMove(level, 0, time * 1000);
-								 game->displayText();
-							}
+								 game->displayText();							
+							} 
 					   }
 					   else
 							printf("Illegal move!\n");
@@ -421,8 +421,8 @@ int main(int argc, char *argv[])
 			 }
 			 else
 				  printf("Syntax: clone [TO]\nEg. \"clone b4\"\n");
-
-		}
+			 
+		}		
 		else if(!strcasecmp("clone", input) ||
 				!strcasecmp("c", input))
 		{

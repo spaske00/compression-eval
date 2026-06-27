@@ -6,7 +6,7 @@
 /*
  * ascii to precision (modeled after atoi)
  *   leading whitespace skipped
- *   an optional leading '-' or '+' followed by digits '0'..'9'
+ *   an optional leading '-' or '+' followed by digits '0'..'9' 
  *   leading 0's Ok
  *   stops at first unrecognized character
  *
@@ -20,7 +20,7 @@ precision atop(chp)
    int sign = 0;
    register int ch;
    register accumulator temp;
-   accumulator x;
+   accumulator x; 
    register int i;
 
    if (chp != (char *) 0) {

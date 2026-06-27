@@ -3,19 +3,19 @@
 #include "perimeter.h"
 #include <stdlib.h>
 
-static int CheckOutside(int x, int y)
+static int CheckOutside(int x, int y) 
 {
   int euclid = x*x+y*y;
 
-  if (euclid > 4194304) return 1;
-  if (euclid < 1048576) return -1;
+  if (euclid > 4194304) return 1;  
+  if (euclid < 1048576) return -1; 
   return 0;
 }
 
 static int CheckIntersect(int center_x, int center_y, int size)
 {
   int sum;
-
+  
   if (!CheckOutside(center_x+size,center_y+size) &&
       !CheckOutside(center_x+size,center_y-size) &&
       !CheckOutside(center_x-size,center_y-size) &&
@@ -26,10 +26,10 @@ static int CheckIntersect(int center_x, int center_y, int size)
 	CheckOutside(center_x-size,center_y+size);
   if ((sum==4) || (sum==-4)) return 0;
   return 1;
-}
+}  
 
 QuadTree MakeTree(int size, int center_x, int center_y, int lo_proc,
-		  int hi_proc, QuadTree parent, ChildType ct, int level)
+		  int hi_proc, QuadTree parent, ChildType ct, int level) 
 {
   int intersect=0;
   QuadTree retval;
@@ -52,7 +52,7 @@ QuadTree MakeTree(int size, int center_x, int center_y, int lo_proc,
       retval->sw = NULL;
       retval->se = NULL;
     }
-  else if (intersect==2)
+  else if (intersect==2) 
     {
       retval->color=black;
       retval->nw = NULL;
@@ -60,7 +60,7 @@ QuadTree MakeTree(int size, int center_x, int center_y, int lo_proc,
       retval->sw = NULL;
       retval->se = NULL;
     }
-  else
+  else 
     {
       if (!level)
 	{
@@ -70,10 +70,10 @@ QuadTree MakeTree(int size, int center_x, int center_y, int lo_proc,
 	  retval->sw = NULL;
 	  retval->se = NULL;
 	}
-      else
+      else 
 	{
 	  int mid1,mid2;
-#ifdef FUTURES
+#ifdef FUTURES 
      future_cell_int fc_sw,fc_se,fc_ne;
 #endif
 
@@ -118,3 +118,6 @@ QuadTree MakeTree(int size, int center_x, int center_y, int lo_proc,
     }
   return retval;
 }
+
+
+

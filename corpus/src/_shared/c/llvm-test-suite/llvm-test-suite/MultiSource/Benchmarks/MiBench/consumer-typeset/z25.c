@@ -134,13 +134,13 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case UNDER_REC:
-
+    
 	aprint("#under_rec");
 	break;
 
 
     case UNATTACHED:
-
+    
 	aprint( "#unattached " );
 	moveright();
 	if( Down(x) != x )
@@ -166,15 +166,15 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
     case CROSS_TARG:
     case RECURSIVE:
     case PAGE_LABEL_IND:
-
+    
 	/* aprint("#"); cprint(Image(type(x))); aprint(" "); */
 	echo(actual(x), NO_PREC, 1);
 	break;
 
-
+		
     case RECEPTIVE:
     case RECEIVING:
-
+    
 	aprint(type(x) == RECEIVING ? "#receiving " : "#receptive ");
 	if( external_ver(actual(x)) )  aprint("(external_ver) ");
 	if( external_hor(actual(x)) )  aprint("(external_hor) ");
@@ -195,13 +195,13 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case PRECEDES:
-
+    
 	aprint("#precedes");
 	break;
 
 
     case FOLLOWS:
-
+    
 	aprint("#follows");
 	if( blocked(x) )  aprint(" (blocked)");
 	CountChild(y, Down(x), count);
@@ -210,7 +210,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case HEAD:
-
+    
 	aprint("Galley ");  cprint(SymName(actual(x)));
 	aprint(" into ");   cprint(SymName(whereto(x)));
 	for( link = Down(x);  link != x;  link = NextDown(link) )
@@ -292,7 +292,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
     case VCAT: op = "/", prec = VCAT_PREC;  goto ETC;
     case HCAT: op = "|", prec = HCAT_PREC;  goto ETC;
-
+    
 	ETC:
 	if( Down(x) == x )
 	{ aprint(op);
@@ -367,7 +367,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case WORD:
-
+    
 	if( StringLength(string(x)) == 0 )
 	  aprint("{}");
 	else
@@ -379,13 +379,13 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case QWORD:
-
+    
 	cprint( StringQuotedWord(x) );
 	break;
 
 
     case ENV:
-
+    
 	/* debug only */
 	aprint("<");
 	for( link = Down(x);  link != x;  link = NextDown(link) )
@@ -430,7 +430,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case CLOSURE:
-
+    
 	sym = actual(x);
 	braces_needed =
 	    precedence(sym) <= outer_prec && (has_lpar(sym) || has_rpar(sym));
@@ -495,7 +495,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 			}
 			else echo(tmp, (unsigned) precedence(sym), 1);
 			break;
-
+	
 	     default:	assert1(FALSE, "echo:", Image(type(actual(y))));
 			break;
 
@@ -521,7 +521,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case SPLIT:
-
+    
 	/* this should occur only in debug output case */
 	cprint(KW_SPLIT);  moveright();
 	CountChild(y, DownDim(x, COLM), count);
@@ -538,7 +538,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case PAR:
-
+    
 	/* this should occur only in debug output case */
 	aprint("par ");  cprint(SymName(actual(x)));
 	break;
@@ -557,7 +557,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case MACRO:
-
+    
 	newline();  cprint(KW_MACRO);
 	aprint(" ");  cprint(SymName(x));
 	if( sym_body(x) != nilobj )
@@ -578,7 +578,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
     case NPAR:
     case LOCAL:
-
+    
 	/* print predefined operators in abbreviated form */
 	if( sym_body(x) == nilobj && enclosing(x) != nilobj )
 	{ tab(3); aprint("# sys ");
@@ -746,7 +746,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
     case TAGGED:
     case ENV_OBJ:
 
-
+    
 	/* print enclosing left brace if needed */
 	braces_needed = (DEFAULT_PREC <= outer_prec);
 	if( braces_needed )  cprint(KW_LBR), aprint(" ");
@@ -823,7 +823,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     case NULL_CLOS:
-
+    
 	cprint(Image(type(x)));
 	break;
 
@@ -859,7 +859,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 			aprint(" at ");
 			printnum(target_pos(x));
 			break;
-
+	
 	  default:	aprint("ILLEGAL!");
 			break;
 	}
@@ -876,7 +876,7 @@ static void echo(OBJECT x, unsigned outer_prec, int count)
 
 
     default:
-
+    
 	assert1(FALSE, "echo:", Image(type(x)));
 	break;
 

@@ -47,11 +47,11 @@ static int
 pat_count(struct ptree *t, int b)
 {
 	int count;
-
+	
 	if (t->p_b <= b) return 0;
 
 	count = t->p_mlen;
-
+	
 	count += pat_count(t->p_left,  t->p_b);
 	count += pat_count(t->p_right, t->p_b);
 
@@ -129,7 +129,7 @@ pat_insert(struct ptree *n, struct ptree *head)
 				return t;
 			}
 		}
-
+		
 		/*
 		 * Allocate space for a new set of masks.
 		 */
@@ -165,14 +165,14 @@ pat_insert(struct ptree *n, struct ptree *head)
 		 */
 		free(t->p_m);
 		t->p_m = buf;
-
+		
 		return t;
 	}
 
 	/*
 	 * Find the first bit that differs.
 	 */
-	for (i=1; i < 32 && bit(i, n->p_key) == bit(i, t->p_key); i++);
+	for (i=1; i < 32 && bit(i, n->p_key) == bit(i, t->p_key); i++); 
 
 	/*
 	 * Recursive step.
@@ -181,7 +181,7 @@ pat_insert(struct ptree *n, struct ptree *head)
 		head->p_right = insertR(head->p_right, n, i, head);
 	else
 		head->p_left = insertR(head->p_left, n, i, head);
-
+	
 	return n;
 }
 
@@ -226,13 +226,13 @@ pat_remove(struct ptree *n, struct ptree *head)
 		 */
 		if (t->p_b == 0)
 			return 0;
-
+		
 		/*
 		 * Must match on the mask.
 		 */
 		if (t->p_m->pm_mask != n->p_m->pm_mask)
 			return 0;
-
+		
 		/*
 		 * Search for the node that points to the parent, so
 		 * we can make sure it doesn't get lost.
@@ -258,7 +258,7 @@ pat_remove(struct ptree *n, struct ptree *head)
 		else
 			g->p_left = bit(p->p_b, n->p_key) ?
 				p->p_left : p->p_right;
-
+	
 		/*
 		 * Delete the target's data and copy in its parent's
 		 * data, but not the bit value.
@@ -285,7 +285,7 @@ pat_remove(struct ptree *n, struct ptree *head)
 			break;
 	if (i >= t->p_mlen)
 		return 0;
-
+	
 	/*
 	 * Allocate space for a new set of masks.
 	 */
@@ -297,7 +297,7 @@ pat_remove(struct ptree *n, struct ptree *head)
 			bcopy(t->p_m + i, pm++, sizeof(struct ptree_mask));
 		}
 	}
-
+		
 	/*
 	 * Free old masks and point to new ones.
 	 */
@@ -316,7 +316,7 @@ pat_search(unsigned long key, struct ptree *head)
 {
 	struct ptree *p = 0, *t = head;
 	int i;
-
+	
 	if (!t)
 		return 0;
 
@@ -330,7 +330,7 @@ pat_search(unsigned long key, struct ptree *head)
 		if (t->p_key == (key & t->p_m->pm_mask)) {
 			p = t;
 		}
-
+		
 		i = t->p_b;
 		t = bit(t->p_b, key) ? t->p_right : t->p_left;
 	} while (i < t->p_b);

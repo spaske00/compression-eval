@@ -338,7 +338,7 @@ begin def
 	  {.nop}
 	 ifelse} bind def
   /operatortype
-	{(--) .p .cvp (--) .p} bind def
+  	{(--) .p .cvp (--) .p} bind def
   /packedarraytype /arraytype load def
   /stringtype
 	{dup rcheck
@@ -548,7 +548,7 @@ mark
 cleartomark
 % Conditionally disable the character cache.
 NOCACHE { 1 setcachelimit } if
-
+	
 VMDEBUG
 
 % Create a null font.  This is the initial font.

@@ -65,7 +65,7 @@ struct CSeqName
   UString _unchangedPart;
   UString _changedPart;
   bool _splitStyle;
-
+  
   UString GetNextName()
   {
     UString newName;
@@ -149,7 +149,7 @@ STDMETHODIMP CHandler::Open(IInStream *stream,
     if (openArchiveCallbackWrap.QueryInterface(IID_IArchiveOpenVolumeCallback,
         &openVolumeCallback) != S_OK)
       return S_FALSE;
-
+    
     UString name;
     {
       NCOM::CPropVariant prop;
@@ -158,7 +158,7 @@ STDMETHODIMP CHandler::Open(IInStream *stream,
         return S_FALSE;
       name = prop.bstrVal;
     }
-
+    
     int dotPos = name.ReverseFind('.');
     UString prefix, ext;
     if (dotPos >= 0)
@@ -221,7 +221,7 @@ STDMETHODIMP CHandler::Open(IInStream *stream,
     }
     _totalSize += size;
     _sizes.Add(size);
-
+    
     if (openArchiveCallback != NULL)
     {
       UInt64 numFiles = _streams.Size();
@@ -313,7 +313,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   if (!testMode && !outStream)
     return S_OK;
   RINOK(extractCallback->PrepareOperation(askMode));
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder;
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 

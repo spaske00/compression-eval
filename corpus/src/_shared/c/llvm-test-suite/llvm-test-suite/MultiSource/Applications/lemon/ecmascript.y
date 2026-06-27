@@ -137,7 +137,7 @@ logical_and_expression ::= logical_and_expression AND_AND bitwise_or_expression.
 
 logical_and_expression_noin ::= bitwise_or_expression_noin.
 logical_and_expression_noin ::= logical_and_expression_noin AND_AND bitwise_or_expression_noin.
-
+		       
 
 logical_or_expression ::= logical_and_expression.
 logical_or_expression ::= logical_or_expression OR_OR logical_and_expression.
@@ -156,7 +156,7 @@ assignment_expression ::= lefthandside_expression assignment_operator assignment
 
 assignment_expression_noin ::= conditional_expression_noin.
 assignment_expression_noin ::= lefthandside_expression assignment_operator assignment_expression_noin.
-
+		      
 expression ::= assignment_expression.
 expression ::= expression COMMA assignment_expression.
 expression_opt ::= expression.
@@ -187,7 +187,7 @@ statement_list ::= statement_list statement.
 
 variable_statement ::=  VAR variable_declaration_list SEMICOLON.
 
-variable_declaration_list ::= variable_declaration.
+variable_declaration_list ::= variable_declaration.		   
 variable_declaration_list ::= variable_declaration_list COMMA variable_declaration.
 
 variable_declaration_list_noin ::= variable_declaration_noin.
@@ -208,7 +208,7 @@ empty_statement ::= SEMICOLON.
 
 expression_statement ::= expression SEMICOLON.
 		     /*TODO:IMPLEMENT THIS RULE: lookahead not-contains {, function*/
-
+		  
 if_statement ::= IF PAR_OPEN expression PAR_CLOSE ELSE statement.
 if_statement ::= IF PAR_OPEN expression PAR_CLOSE statement.
 
@@ -266,3 +266,5 @@ source_elements ::= source_elements source_element.
 
 source_element ::= statement.
 source_element ::= function_declaration.
+
+

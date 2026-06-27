@@ -143,7 +143,7 @@ STDMETHODIMP CEncoder::WriteCoderProperties(ISequentialOutStream *outStream)
     _iv[i] = 0;
 
   UInt32 ivSize = _ivSize;
-
+  
   // _key.NumCyclesPower = 0x3F;
   _key.NumCyclesPower = 19;
 
@@ -196,10 +196,10 @@ STDMETHODIMP CDecoder::SetDecoderProperties2(const Byte *data, UInt32 size)
   if (pos >= size)
     return E_INVALIDARG;
   Byte secondByte = data[pos++];
-
+  
   _key.SaltSize += (secondByte >> 4);
   ivSize += (secondByte & 0x0F);
-
+  
   if (pos + _key.SaltSize + ivSize > size)
     return E_INVALIDARG;
   for (i = 0; i < _key.SaltSize; i++)

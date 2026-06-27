@@ -14,3 +14,4 @@ dofile("test/table.lua");
 dofile("test/trace-calls.lua");
 dofile("test/trace-globals.lua");
 dofile("test/xd.lua");
+

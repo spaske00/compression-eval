@@ -170,3 +170,4 @@ int CExtToIconMap::GetIconIndex(DWORD attrib, const UString &fileName)
   return -1;
 }
 #endif
+

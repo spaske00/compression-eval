@@ -61,7 +61,7 @@ function main ()
     val = toggle:activate():value()
   end
   print(val and "true" or "false")
-
+    
   val = 1
   local ntoggle = NthToggle:new(val, 3)
   for i=1,N do
@@ -71,3 +71,5 @@ function main ()
 end
 
 main()
+
+

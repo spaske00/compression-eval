@@ -39,7 +39,7 @@ FLOAT ts_process_time(long frame) {
   static clock_t initial_time;
   clock_t current_time;
 
-#if ( defined(_MSC_VER) || defined(__BORLANDC__) )
+#if ( defined(_MSC_VER) || defined(__BORLANDC__) ) 
 
   { static HANDLE hProcess;
     FILETIME Ignored1, Ignored2, KernelTime, UserTime;
@@ -47,7 +47,7 @@ FLOAT ts_process_time(long frame) {
     if ( frame==0 ) {
       hProcess = GetCurrentProcess();
     }
-
+        
     /* GetProcessTimes() always fails under Win9x */
     if (GetProcessTimes(hProcess, &Ignored1, &Ignored2, &KernelTime, &UserTime)) {
       LARGE_INTEGER Kernel = { KernelTime.dwLowDateTime, KernelTime.dwHighDateTime };
@@ -112,7 +112,7 @@ void timestatus(int samp_rate,long frameNum,long totalframes,int framesize)
   if (frameNum == 0) {
     fprintf(stderr, "    Frame          |  CPU/estimated  |  time/estimated | play/CPU |   ETA\n");
     return;
-  }
+  }  
 
   ts_calc_times(&real_time, samp_rate, frameNum, totalframes, framesize);
   ts_calc_times(&process_time, samp_rate, frameNum, totalframes, framesize);
@@ -143,3 +143,4 @@ void timestatus(int samp_rate,long frameNum,long totalframes,int framesize)
 
   fflush(stderr);
 }
+

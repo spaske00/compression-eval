@@ -348,7 +348,7 @@ HRESULT CHandler::Open2(IInStream *stream,
     CMyComPtr<IArchiveOpenVolumeCallback> openVolumeCallback;
     CMyComPtr<ICryptoGetTextPassword> getTextPassword;
     CMyComPtr<IArchiveOpenCallback> openArchiveCallbackWrap = openCallback;
-
+    
     CVolumeName seqName;
 
     UInt64 totalBytes = 0;
@@ -367,7 +367,7 @@ HRESULT CHandler::Open2(IInStream *stream,
       {
         if (!openVolumeCallback)
           break;
-
+        
         if (_archives.Size() == 1)
         {
           if (!_archiveInfo.IsVolume())
@@ -403,13 +403,13 @@ HRESULT CHandler::Open2(IInStream *stream,
         totalBytes += endPos;
         RINOK(openCallback->SetTotal(NULL, &totalBytes));
       }
-
+      
       NArchive::NRar::CInArchive archive;
       RINOK(archive.Open(inStream, maxCheckStartPosition));
 
       if (_archives.IsEmpty())
         archive.GetArchiveInfo(_archiveInfo);
-
+     
       CItemEx item;
       for (;;)
       {
@@ -621,10 +621,10 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       // mustBeProcessedAnywhere = nextItemInfo.IsSolid();
       mustBeProcessedAnywhere = IsSolid(importantIndexes[i + 1]);
     }
-
+    
     if (!mustBeProcessedAnywhere && !testMode && !realOutStream)
       continue;
-
+    
     if (!realOutStream && !testMode)
       askMode = NExtract::NAskMode::kSkip;
 
@@ -635,7 +635,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     outStreamSpec->SetStream(realOutStream);
     outStreamSpec->Init();
     realOutStream.Release();
-
+    
     /*
     for (int partIndex = 0; partIndex < 1; partIndex++)
     {
@@ -661,7 +661,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
     // packedPos += item.PackSize;
     // unpackedPos += 0;
-
+    
     CMyComPtr<ISequentialInStream> inStream;
     if (item.IsEncrypted())
     {
@@ -783,7 +783,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
               methodID += 3;
             RINOK(CreateCoder(EXTERNAL_CODECS_VARS methodID, mi.Coder, false));
           }
-
+         
           if (mi.Coder == 0)
           {
             outStream.Release();
@@ -798,7 +798,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         CMyComPtr<ICompressSetDecoderProperties2> compressSetDecoderProperties;
         RINOK(decoder.QueryInterface(IID_ICompressSetDecoderProperties2,
             &compressSetDecoderProperties));
-
+        
         Byte isSolid = (Byte)((IsSolid(index) || item.IsSplitBefore()) ? 1: 0);
         if (solidStart)
         {
@@ -808,7 +808,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
 
         RINOK(compressSetDecoderProperties->SetDecoderProperties2(&isSolid, 1));
-
+          
         commonCoder = decoder;
         break;
       }

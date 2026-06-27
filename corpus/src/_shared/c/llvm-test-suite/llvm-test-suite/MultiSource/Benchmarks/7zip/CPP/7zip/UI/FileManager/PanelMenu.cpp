@@ -103,7 +103,7 @@ void CPanel::Properties()
     InvokeSystemCommand("properties");
     return;
   }
-
+  
   {
     UString message;
 
@@ -121,10 +121,10 @@ void CPanel::Properties()
           CMyComBSTR name;
           PROPID propID;
           VARTYPE varType;
-
+          
           if (_folder->GetPropertyInfo(i, &name, &propID, &varType) != S_OK)
             continue;
-
+          
           NCOM::CPropVariant prop;
           if (_folder->GetProperty(index, propID, &prop) != S_OK)
             continue;
@@ -133,7 +133,7 @@ void CPanel::Properties()
       }
       message += kSeparator;
     }
-
+        
     /*
     message += LangString(IDS_PROP_FILE_TYPE, 0x02000214);
     message += kPropValueSeparator;
@@ -301,10 +301,10 @@ HRESULT CPanel::CreateShellContextMenu(
     // ShowMessage("Failed to get Desktop folder.");
     return E_FAIL;
   }
-
+  
   // Separate the file from the folder.
 
-
+  
   // Get a pidl for the folder the file
   // is located in.
   LPITEMIDLIST parentPidl;
@@ -312,7 +312,7 @@ HRESULT CPanel::CreateShellContextMenu(
   RINOK(desktopFolder->ParseDisplayName(
       GetParent(), 0, (wchar_t *)(const wchar_t *)folderPath,
       &eaten, &parentPidl, 0));
-
+  
   // Get an IShellFolder for the folder
   // the file is located in.
   CMyComPtr<IShellFolder> parentFolder;
@@ -323,7 +323,7 @@ HRESULT CPanel::CreateShellContextMenu(
     // ShowMessage("Invalid file name.");
     return E_FAIL;
   }
-
+  
   // Get a pidl for the file itself.
   CRecordVector<LPITEMIDLIST> pidls;
   pidls.Reserve(operatedIndices.Size());
@@ -375,13 +375,13 @@ void CPanel::CreateSystemMenu(HMENU menuSpec,
 
   if (systemContextMenu == 0)
     return;
-
+  
   // Set up a CMINVOKECOMMANDINFO structure.
   CMINVOKECOMMANDINFO ci;
   ZeroMemory(&ci, sizeof(ci));
   ci.cbSize = sizeof(CMINVOKECOMMANDINFO);
   ci.hwnd = GetParent();
-
+  
   /*
   if (Sender == GoBtn)
   {
@@ -396,13 +396,13 @@ void CPanel::CreateSystemMenu(HMENU menuSpec,
       action = "delete";
     else if (PropertiesRb->Checked)
       action = "properties";
-
+    
     ci.lpVerb = action.c_str();
     result = cm->InvokeCommand(&ci);
     if (result)
       ShowMessage(
       "Error copying file to clipboard.");
-
+    
   }
   else
   */
@@ -424,7 +424,7 @@ void CPanel::CreateSystemMenu(HMENU menuSpec,
     // line to show the extended context menu.
     // Flags |= 0x00000080;
     systemContextMenu->QueryContextMenu(hMenu, 0, kSystemStartMenuID, 0x7FFF, Flags);
-
+    
 
     {
       CMenu menu;
@@ -498,7 +498,7 @@ void CPanel::CreateSevenZipMenu(HMENU menuSpec,
     CRecordVector<const wchar_t *> namePointers;
     for(i = 0; i < operatedIndices.Size(); i++)
       namePointers.Add(names[i]);
-
+    
     // NFile::NDirectory::MySetCurrentDirectory(currentFolderUnicode);
     if (contextMenuSpec->InitContextMenu(currentFolderUnicode, &namePointers.Front(),
         operatedIndices.Size()) == S_OK)
@@ -527,7 +527,7 @@ void CPanel::CreateFileMenu(HMENU menuSpec,
 
   CMenu menu;
   menu.Attach(menuSpec);
-
+  
   CreateSevenZipMenu(menu, operatedIndices, sevenZipContextMenu);
   if (g_App.ShowSystemMenu)
     CreateSystemMenu(menu, operatedIndices, systemContextMenu);
@@ -681,3 +681,4 @@ bool CPanel::OnContextMenu(HANDLE windowHandle, int xPos, int yPos)
   return true;
 }
 #endif
+

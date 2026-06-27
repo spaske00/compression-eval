@@ -88,7 +88,7 @@ sonyfb_output_page(gx_device *dev)
   prect.refPoint.x = 0;
   prect.refPoint.y = 0;
   prect.ptnRect = prect.rect;
-
+  
   prect.ptnBM.type  = BM_MEM;
   prect.ptnBM.depth = 1;
   prect.ptnBM.width = (byte_width + 1) / 2;
@@ -97,7 +97,7 @@ sonyfb_output_page(gx_device *dev)
   prect.ptnBM.rect.extent.x = byte_width * 8; /* width in 16bit words */
   prect.ptnBM.rect.extent.y = height;
   prect.ptnBM.base = (typeof(prect.ptnBM.base))bm;
-
+  
   prect.fore_color = 1;
   prect.aux_color = 0;
   prect.planemask = FB_PLANEALL;
@@ -109,7 +109,7 @@ sonyfb_output_page(gx_device *dev)
   prect.drawBM.width = (prect.rect.extent.x + 15) / 16;
   prect.drawBM.rect = prect.rect;
   prect.drawBM.base = 0;
-
+  
   if(ioctl(fb_file, FBIOCRECTANGLE, &prect) < 0)
     perror("rect ioctl failed");
 

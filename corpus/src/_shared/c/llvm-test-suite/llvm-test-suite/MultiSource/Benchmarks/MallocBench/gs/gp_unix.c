@@ -55,7 +55,7 @@ gs_get_clock(long *pdt)
 	/* subtract off number of seconds in 10 years */
 	/* leap seconds are not accounted for */
 	secs_since_1980 = tp.tv_sec - (long)(60 * 60 * 24 * 365.25 * 10);
-
+ 
 	/* adjust for timezone */
 	secs_since_1980 -= (tzp.tz_minuteswest * 60);
 

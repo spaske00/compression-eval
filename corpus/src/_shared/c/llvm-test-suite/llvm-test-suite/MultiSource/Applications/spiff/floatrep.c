@@ -30,3 +30,4 @@ R_float ptr;
 {
 	return(ptr->exponent);
 }
+

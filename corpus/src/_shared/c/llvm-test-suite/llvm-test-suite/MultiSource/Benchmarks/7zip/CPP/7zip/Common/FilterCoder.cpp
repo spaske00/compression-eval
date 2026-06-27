@@ -48,10 +48,10 @@ STDMETHODIMP CFilterCoder::Code(ISequentialInStream *inStream, ISequentialOutStr
   while (!_outSizeIsDefined || _nowPos64 < _outSize)
   {
     size_t processedSize = kBufferSize - bufferPos;
-
+    
     // Change it: It can be optimized using ReadPart
     RINOK(ReadStream(inStream, _buffer + bufferPos, &processedSize));
-
+    
     UInt32 endPos = bufferPos + (UInt32)processedSize;
 
     bufferPos = Filter->Filter(_buffer, endPos);

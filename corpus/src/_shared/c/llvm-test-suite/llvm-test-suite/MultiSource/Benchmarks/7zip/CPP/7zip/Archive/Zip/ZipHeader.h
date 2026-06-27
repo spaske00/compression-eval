@@ -16,7 +16,7 @@ namespace NSignature
   extern UInt32 kEndOfCentralDir;
   extern UInt32 kZip64EndOfCentralDir;
   extern UInt32 kZip64EndOfCentralDirLocator;
-
+  
   static const UInt32 kMarkerSize = 4;
 }
 
@@ -51,7 +51,7 @@ namespace NFileHeader
     Byte HostOS;
   };
   */
-
+  
   namespace NCompressionMethod
   {
     enum EType
@@ -67,7 +67,7 @@ namespace NFileHeader
       kDeflated = 8,
       kDeflated64 = 9,
       kPKImploding = 10,
-
+      
       kBZip2 = 12,
       kLZMA = 14,
       kTerse = 18,
@@ -79,7 +79,7 @@ namespace NFileHeader
     };
     const int kNumCompressionMethods = 11;
     const Byte kMadeByProgramVersion = 63;
-
+    
     const Byte kExtractVersion_Default = 10;
     const Byte kExtractVersion_Dir = 20;
     const Byte kExtractVersion_ZipCrypto = 20;
@@ -90,7 +90,7 @@ namespace NFileHeader
     const Byte kExtractVersion_Aes = 51;
     const Byte kExtractVersion_LZMA = 63;
     const Byte kExtractVersion_PPMd = 63;
-
+    
     // const Byte kSupportedVersion   = 20;
   }
 
@@ -132,7 +132,7 @@ namespace NFileHeader
   struct CLocalBlock
   {
     CVersion ExtractVersion;
-
+    
     UInt16 Flags;
     UInt16 CompressionMethod;
     UInt32 Time;
@@ -161,7 +161,7 @@ namespace NFileHeader
     CLocalBlock Header;
   };
   */
-
+  
   const UInt32 kCentralBlockSize = 42;
   /*
   struct CBlock
@@ -182,7 +182,7 @@ namespace NFileHeader
     UInt32 ExternalAttributes;
     UInt32 LocalHeaderOffset;
   };
-
+  
   struct CBlockFull
   {
     UInt32 Signature;
@@ -200,13 +200,13 @@ namespace NFileHeader
 
     const int kImplodeDictionarySizeMask = 1 << 1;
     const int kImplodeLiteralsOnMask     = 1 << 2;
-
+    
     const int kDeflateTypeBitStart = 1;
     const int kNumDeflateTypeBits = 2;
     const int kNumDeflateTypes = (1 << kNumDeflateTypeBits);
     const int kDeflateTypeMask = (1 << kNumDeflateTypeBits) - 1;
   }
-
+  
   namespace NHostOS
   {
     enum EEnum
@@ -236,7 +236,7 @@ namespace NFileHeader
   namespace NUnixAttribute
   {
     const UInt32 kIFMT   =   0170000;     /* Unix file type mask */
-
+    
     const UInt32 kIFDIR  =   0040000;     /* Unix directory */
     const UInt32 kIFREG  =   0100000;     /* Unix regular file */
     const UInt32 kIFSOCK =   0140000;     /* Unix socket (BSD, not SysV or Amiga) */
@@ -244,7 +244,7 @@ namespace NFileHeader
     const UInt32 kIFBLK  =   0060000;     /* Unix block special       (not Amiga) */
     const UInt32 kIFCHR  =   0020000;     /* Unix character special   (not Amiga) */
     const UInt32 kIFIFO  =   0010000;     /* Unix fifo    (BCC, not MSC or Amiga) */
-
+    
     const UInt32 kISUID  =   04000;       /* Unix set user id on execution */
     const UInt32 kISGID  =   02000;       /* Unix set group id on execution */
     const UInt32 kISVTX  =   01000;       /* Unix directory permissions control */
@@ -262,7 +262,7 @@ namespace NFileHeader
     const UInt32 kIWOTH  =   00002;       /* Unix write permission: other */
     const UInt32 kIXOTH  =   00001;       /* Unix execute permission: other */
   }
-
+  
   namespace NAmigaAttribute
   {
     const UInt32 kIFMT     = 06000;       /* Amiga file type mask */

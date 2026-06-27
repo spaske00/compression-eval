@@ -111,14 +111,14 @@ HRESULT CThreadSplit::ProcessVirt()
   UInt64 length;
   if (!inFile.GetLength(length))
     return GetLastError();
-
+  
   CProgressSync &sync = ProgressDialog.Sync;
   sync.SetProgress(length, 0);
   UInt64 pos = 0;
-
+  
   UInt64 numFiles = 0;
   int volIndex = 0;
-
+  
   for (;;)
   {
     UInt64 volSize;
@@ -126,7 +126,7 @@ HRESULT CThreadSplit::ProcessVirt()
       volSize = VolumeSizes[volIndex];
     else
       volSize = VolumeSizes.Back();
-
+    
     UInt32 needSize = (UInt32)(MyMin((UInt64)kBufSize, volSize - curVolSize));
     UInt32 processedSize;
     if (!inFile.Read(buffer, needSize, processedSize))
@@ -256,7 +256,7 @@ void CApp::Split()
   spliter.FilePath = srcPath + itemName;
   spliter.VolBasePath = path + itemName;
   spliter.VolumeSizes = splitDialog.VolumeSizes;
-
+  
   // if (splitDialog.VolumeSizes.Size() == 0) return;
 
   // CPanel::CDisableTimerProcessing disableTimerProcessing1(srcPanel);
@@ -294,10 +294,10 @@ HRESULT CThreadCombine::ProcessVirt()
     ErrorPath1 = OutputPath;
     return res;
   }
-
+  
   CProgressSync &sync = ProgressDialog.Sync;
   sync.SetProgress(TotalSize, 0);
-
+  
   CMyBuffer bufferObject;
   if (!bufferObject.Allocate(kBufSize))
     return E_OUTOFMEMORY;
@@ -384,10 +384,10 @@ void CApp::Combine()
     srcPanel.MessageBoxErrorLang(IDS_COMBINE_CANT_DETECT_SPLIT_FILE, 0x03020621);
     return;
   }
-
+  
   {
   CThreadCombine combiner;
-
+  
   UString nextName = itemName;
   combiner.TotalSize = 0;
   for (;;)
@@ -404,19 +404,19 @@ void CApp::Combine()
     srcPanel.MessageBoxErrorLang(IDS_COMBINE_CANT_FIND_MORE_THAN_ONE_PART, 0x03020622);
     return;
   }
-
+  
   if (combiner.TotalSize == 0)
   {
     srcPanel.MessageBoxMyError(L"No data");
     return;
   }
-
+  
   UString info;
   AddValuePair2(IDS_FILES_COLON, 0x02000320, combiner.Names.Size(), combiner.TotalSize, info);
-
+  
   info += L"\n";
   info += srcPath;
-
+  
   int i;
   for (i = 0; i < combiner.Names.Size() && i < 2; i++)
     AddInfoFileName(combiner.Names[i], info);
@@ -426,7 +426,7 @@ void CApp::Combine()
       AddInfoFileName(L"...", info);
     AddInfoFileName(combiner.Names.Back(), info);
   }
-
+  
   {
     CCopyDialog copyDialog;
     copyDialog.Value = path;
@@ -446,7 +446,7 @@ void CApp::Combine()
     srcPanel.MessageBoxMyError(MyFormatNew(IDS_CANNOT_CREATE_FOLDER, 0x02000603, path));
     return;
   }
-
+  
   UString outName = volSeqName.UnchangedPart;
   while (!outName.IsEmpty())
   {
@@ -457,7 +457,7 @@ void CApp::Combine()
   }
   if (outName.IsEmpty())
     outName = L"file";
-
+  
   NFile::NFind::CFileInfoW fileInfo;
   UString destFilePath = path + outName;
   combiner.OutputPath = destFilePath;
@@ -466,22 +466,22 @@ void CApp::Combine()
     srcPanel.MessageBoxMyError(MyFormatNew(IDS_FILE_EXIST, 0x03020A04, destFilePath));
     return;
   }
-
+  
     CProgressDialog &progressDialog = combiner.ProgressDialog;
     progressDialog.ShowCompressionInfo = false;
-
+  
     UString progressWindowTitle = LangString(IDS_APP_TITLE, 0x03000000);
     UString title = LangString(IDS_COMBINING, 0x03020610);
-
+    
     progressDialog.MainWindow = _window;
     progressDialog.MainTitle = progressWindowTitle;
     progressDialog.MainAddTitle = title + UString(L" ");
-
+    
     combiner.InputDirPrefix = srcPath;
-
+    
     // CPanel::CDisableTimerProcessing disableTimerProcessing1(srcPanel);
     // CPanel::CDisableTimerProcessing disableTimerProcessing2(destPanel);
-
+    
     if (combiner.Create(title, _window) != 0)
       return;
   }

@@ -23,7 +23,7 @@ public:
       PasswordWasAsked(false),
       AskPassword(false)
       {}
-
+  
   ~CUpdateCallbackGUI();
   void Init();
 

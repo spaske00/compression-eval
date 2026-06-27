@@ -27,14 +27,14 @@ enum byte_order NativeByteOrder = order_unknown;
 
 
 /***********************************************************************
- * compute bitsperframe and mean_bits for a layer III frame
+ * compute bitsperframe and mean_bits for a layer III frame 
  **********************************************************************/
 void getframebits(lame_global_flags *gfp,int *bitsPerFrame, int *mean_bits) {
   int whole_SpF;
   FLOAT8 bit_rate,samp;
   int bitsPerSlot;
   int sideinfo_len;
-
+  
   samp =      gfp->out_samplerate/1000.0;
   bit_rate = bitrate_table[gfp->version][gfp->bitrate_index];
   bitsPerSlot = 8;
@@ -55,10 +55,10 @@ void getframebits(lame_global_flags *gfp,int *bitsPerFrame, int *mean_bits) {
       else
 	sideinfo_len += 136;
     }
-
+  
   if (gfp->error_protection) sideinfo_len += 16;
-
-  /* -f fast-math option causes some strange rounding here, be carefull: */
+  
+  /* -f fast-math option causes some strange rounding here, be carefull: */  
   whole_SpF = floor( (gfp->framesize /samp)*(bit_rate /  (FLOAT8)bitsPerSlot) + 1e-9);
   *bitsPerFrame = 8 * whole_SpF + (gfp->padding * 8);
   *mean_bits = (*bitsPerFrame - sideinfo_len) / gfp->mode_gr;
@@ -80,8 +80,8 @@ void display_bitrates(FILE *out_fh)
     fprintf(out_fh,"%i ",bitrate_table[version][index]);
   }
   fprintf(out_fh,"\n");
-
-
+  
+  
   version = 0;
   fprintf(out_fh,"\n");
   fprintf(out_fh,"MPEG2 samplerates(kHz): 16 22.05 24 \n");
@@ -340,3 +340,4 @@ int N)                  /* number of bits of val */
 *  End of bit_stream.c package
 *
 *****************************************************************************/
+

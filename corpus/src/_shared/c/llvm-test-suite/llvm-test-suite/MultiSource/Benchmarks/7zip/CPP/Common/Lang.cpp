@@ -81,7 +81,7 @@ bool CLang::Open(LPCWSTR fileName)
   if (s.Mid(pos, stringID.Length()) != stringID)
     return false;
   pos += stringID.Length();
-
+  
   if (!WaitNextLine(s, pos))
     return false;
 

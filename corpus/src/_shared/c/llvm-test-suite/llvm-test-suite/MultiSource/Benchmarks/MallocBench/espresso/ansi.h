@@ -37,7 +37,7 @@
 #define EXTERN extern
 #endif
 
-#if defined(__cplusplus) || defined(__STDC__)
+#if defined(__cplusplus) || defined(__STDC__) 
 #define HAS_STDARG
 #endif
 

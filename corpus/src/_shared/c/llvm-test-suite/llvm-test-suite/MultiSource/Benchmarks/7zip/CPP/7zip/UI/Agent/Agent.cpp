@@ -429,7 +429,7 @@ STDMETHODIMP CAgentFolder::Extract(const UInt32 *indices,
     pathParts.Insert(0, currentProxyFolder->Name);
     currentProxyFolder = currentProxyFolder->Parent;
   }
-
+  
   /*
   if (_flatMode)
     pathMode = NExtract::NPathMode::kNoPathnames;

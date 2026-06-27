@@ -133,7 +133,7 @@ char *str;
 }
 
 /*
-**	set the default tolerance
+**	set the default tolerance 
 */
 void
 T_setdef(str)

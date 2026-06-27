@@ -67,7 +67,7 @@ public:
   STDMETHOD(SetOperationResult)(Int32 operationResult, bool encrypted);
 
   // IExtractCallbackUI
-
+  
   HRESULT BeforeOpen(const wchar_t *name);
   HRESULT OpenResult(const wchar_t *name, HRESULT result, bool encrypted);
   HRESULT ThereAreNoFiles();
@@ -128,7 +128,7 @@ public:
     #endif
     OverwriteMode(NExtract::NOverwriteMode::kAskBefore)
     {}
-
+   
   ~CExtractCallbackImp();
   void Init();
 

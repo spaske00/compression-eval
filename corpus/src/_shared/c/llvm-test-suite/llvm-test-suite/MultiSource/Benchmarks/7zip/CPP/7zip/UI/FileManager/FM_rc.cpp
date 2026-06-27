@@ -16,7 +16,7 @@
 #include "wx/imaglist.h"
 
 #undef _WIN32
-
+ 
 #include "resource.h"
 
 #include "PropertyNameRes.h"
@@ -74,12 +74,12 @@ class MyFrame;
 class SevenZipPanel : public wxPanel
 {
 	static int count;
-
+	
 	MyFrame *m_frame;
-
+	
 	CExplorerListCtrl *m_pListCtrlExplorer;
 	NWindows::NControl::CWindow2 *_wList;
-
+	
 
 	wxBitmapButton *m_pBmpButtonParentFolder;
 	wxComboBox *m_pComboBoxPath;
@@ -103,7 +103,7 @@ public:
 		_wList = w;
 		_wList->OnMessage(WM_CREATE,0,0);
 	}
-
+		
 	void OnAnyButton( wxCommandEvent &event );
 	void OnSelected(wxListEvent& event);
 	void OnDeselected(wxListEvent& event);
@@ -115,9 +115,9 @@ public:
 
 	void OnLeftDown(wxMouseEvent &event );
 	void OnRightDown(wxMouseEvent &event );
-
+	
 	void OnTextEnter(wxCommandEvent& event);
-
+	
         void WriteText(const wxString& text) {
 		printf("DEBUG : %ls",(const wchar_t *)text);
         }
@@ -208,33 +208,33 @@ static bool TEST_create(HWND hWnd) // FIXME
 {
 extern HWND g_HWND;
 	 CMyListView _listView;
-
+	
 	int _baseID = 1000;
-
+	
 	HWND w = NWindows::GetDlgItem(g_HWND, _baseID + 1);
-	if (w == 0)
+	if (w == 0) 
 	{
 		printf("Can't find id=%d\n",_baseID + 1);
 		return false;
 	}
 	printf("CPanel::OnCreate : _listView.Attach(%p)\n",w);
 	_listView.Attach(w);
-
+	
 	_listView.SetRedraw(false);
-
+	
 	_listView.DeleteAllItems();
-
+	
 	_listView.DeleteColumn(1);
-
+		
 	_listView.InsertColumn(0, L"toto", 100);
-
+	
 //	_listView.SetItemCount(1);
 
 	_listView.InsertItem(0, L"item 1");
 
 
-	_listView.SetRedraw(true);
-
+	_listView.SetRedraw(true);	
+	
 	return true;
 }
 
@@ -246,11 +246,11 @@ MyFrame::MyFrame(void (*wm_create)(HWND),wxFrame *frame, const wxString& title,
 printf("===MyFrame::MyFrame===BEGIN===\n");
 
 	this->SetIcon(wxICON(p7zip_32));
-
+	
 	g_HWND = this; // FIXME
-
+	
 	SetMinSize(wxSize(800,700));
-
+	
 	wxBoxSizer *topsizer = new wxBoxSizer( wxVERTICAL );
 
 	_panel1 = new SevenZipPanel(this,this,BASE_ID_PANEL_1,0);  // FIXME panelIndex = 0
@@ -267,8 +267,8 @@ printf("===MyFrame::MyFrame===BEGIN===\n");
 printf("===MyFrame::MyFrame===WM_CREATE===\n");
 	wm_create(this);
 // FIXME	TEST_create(this);
-
-
+	
+	
        // Create the toolbar // FIXME
 	RecreateToolbar();
 
@@ -294,8 +294,8 @@ HWND myCreateAndShowMainWindow(LPCTSTR title,void (*fct)(HWND))
 {
    MyFrame *frame = new MyFrame(fct,(wxFrame *)NULL, title, 40, 40, 800, 600);
 
-   g_window = frame;
-
+   g_window = frame; 
+  
    // Don't Show the frame !
    frame->Show(true); // FIXME
 
@@ -358,42 +358,42 @@ void MyFrame::PopulateToolbar(wxToolBar* p_toolBar)
 
 	const int kWidth  = 24;
 	const int kHeight = 24;
-
+	
 	UString msg;
 
 	// FIXME toolBar->SetToolBitmapSize(wxSize(24,24));
 	toolBar.SetToolBitmapSize(wxSize(kWidth,kHeight));
-
-
-
+	
+	
+	
     msg = LangString(0x03020400); // { kAddCommand, IDB_ADD, IDB_ADD2, IDS_ADD, 0x03020400}
     if (msg == L"") msg = L"Add";
 	toolBar.AddTool(kAddCommand, (const wchar_t *)msg, wxGetBitmapFromMemory(ADD2));
 
     msg = LangString(0x03020401); // { kExtractCommand, IDB_EXTRACT, IDB_EXTRACT2, IDS_EXTRACT, 0x03020401}
-    if (msg == L"") msg = L"Extract";
+    if (msg == L"") msg = L"Extract";	
 	toolBar.AddTool(kExtractCommand,(const wchar_t *)msg, wxGetBitmapFromMemory(EXTRACT2));
-
+	
     msg = LangString(0x03020402); // { kTestCommand , IDB_TEST, IDB_TEST2, IDS_TEST, 0x03020402}
-    if (msg == L"") msg = L"Test";
+    if (msg == L"") msg = L"Test";	
 	toolBar.AddTool(kTestCommand,(const wchar_t *)msg, wxGetBitmapFromMemory(TEST2));
 
 	toolBar.AddSeparator();
 
     msg = LangString(0x03020420); // { IDM_COPY_TO, IDB_COPY, IDB_COPY2, IDS_BUTTON_COPY, 0x03020420}
-    if (msg == L"") msg = L"Copy";
+    if (msg == L"") msg = L"Copy";		
 	toolBar.AddTool(IDM_COPY_TO, (const wchar_t *)msg, wxGetBitmapFromMemory(COPY2));
-
+	
     msg = LangString(0x03020421); // { IDM_MOVE_TO, IDB_MOVE, IDB_MOVE2, IDS_BUTTON_MOVE, 0x03020421}
-    if (msg == L"") msg = L"Move";
+    if (msg == L"") msg = L"Move";		
 	toolBar.AddTool(IDM_MOVE_TO, (const wchar_t *)msg, wxGetBitmapFromMemory(MOVE2));
-
+	
     msg = LangString(0x03020422); // { IDM_DELETE, IDB_DELETE, IDB_DELETE2, IDS_BUTTON_DELETE, 0x03020422}
-    if (msg == L"") msg = L"Delete";
+    if (msg == L"") msg = L"Delete";	
 	toolBar.AddTool(IDM_DELETE, (const wchar_t *)msg, wxGetBitmapFromMemory(DELETE2));
-
+	
     msg = LangString(0x03020423); // { IDM_FILE_PROPERTIES, IDB_INFO, IDB_INFO2, IDS_BUTTON_INFO, 0x03020423}
-    if (msg == L"") msg = L"Info";
+    if (msg == L"") msg = L"Info";	
 	toolBar.AddTool(IDM_FILE_PROPERTIES, (const wchar_t *)msg, wxGetBitmapFromMemory(INFO2));
 
 	////////////////////////////////////////////////////////
@@ -464,7 +464,7 @@ void registerWindow2(int baseID,NWindows::NControl::CWindow2 *w)
 {
 	MyFrame * f = (MyFrame *) g_HWND;
 	f->registerWindow2(baseID,w);
-
+	
 }
 
 
@@ -502,7 +502,7 @@ void rc_MyLoadMenu(HWND hWnd)
 		m->Append(IDM_CREATE_FOLDER,_T("Create Folder\tF7"));
 		m->Append(IDM_CREATE_FILE,_T("Create File\tCtrl+N"));
 		m->AppendSeparator();
-		m->Append(IDEXIT,_T("E&xit\tAlt+F4"));
+		m->Append(IDEXIT,_T("E&xit\tAlt+F4"));   
 	}
 	wxMenu *m_edit = m = new wxMenu;
 	{
@@ -511,43 +511,43 @@ void rc_MyLoadMenu(HWND hWnd)
 		m->Append(IDM_EDIT_COPY, _T("&Copy\tCtrl+C"))->Enable(true);            // GRAYED
 		m->Append(IDM_EDIT_PASTE, _T("&Paste\tCtrl+V"))->Enable(true);          // GRAYED
 		m->AppendSeparator();
-		m->Append(IDM_SELECT_ALL, _T("Select &All\tShift+[Grey +]"));
-		m->Append(IDM_DESELECT_ALL, _T("Deselect All\tShift+[Grey -]"));
-		m->Append(IDM_INVERT_SELECTION, _T("&Invert Selection\tGrey *"));
-		m->Append(IDM_SELECT, _T("Select...\tGrey +"));
-		m->Append(IDM_DESELECT, _T("Deselect...\tGrey -"));
-// FIXME		m->Append(IDM_SELECT_BY_TYPE, _T("Select by Type\tAlt+[Grey+]"));
-// FIXME		m->Append(IDM_DESELECT_BY_TYPE, _T("Deselect by Type\tAlt+[Grey -]"));
+		m->Append(IDM_SELECT_ALL, _T("Select &All\tShift+[Grey +]")); 
+		m->Append(IDM_DESELECT_ALL, _T("Deselect All\tShift+[Grey -]")); 
+		m->Append(IDM_INVERT_SELECTION, _T("&Invert Selection\tGrey *"));   
+		m->Append(IDM_SELECT, _T("Select...\tGrey +"));           
+		m->Append(IDM_DESELECT, _T("Deselect...\tGrey -"));        
+// FIXME		m->Append(IDM_SELECT_BY_TYPE, _T("Select by Type\tAlt+[Grey+]")); 
+// FIXME		m->Append(IDM_DESELECT_BY_TYPE, _T("Deselect by Type\tAlt+[Grey -]")); 
 	}
 	wxMenu *m_view = m = new wxMenu;
 	{
 /*
-		m->AppendRadioItem(IDM_VIEW_LARGE_ICONS, _T("Lar&ge Icons\tCtrl+1"));
-		m->AppendRadioItem(IDM_VIEW_SMALL_ICONS, _T("S&mall Icons\tCtrl+2"));
-		m->AppendRadioItem(IDM_VIEW_LIST, _T("&List\tCtrl+3"));
+		m->AppendRadioItem(IDM_VIEW_LARGE_ICONS, _T("Lar&ge Icons\tCtrl+1"));        
+		m->AppendRadioItem(IDM_VIEW_SMALL_ICONS, _T("S&mall Icons\tCtrl+2"));      
+		m->AppendRadioItem(IDM_VIEW_LIST, _T("&List\tCtrl+3"));             
 		m->AppendRadioItem(IDM_VIEW_DETAILS, _T("&Details\tCtrl+4"))->Check(true);  // CHECKED
 		m->AppendSeparator();
-		m->Append(IDM_VIEW_ARANGE_BY_NAME, _T("Name\tCtrl+F3"));
-		m->Append(IDM_VIEW_ARANGE_BY_TYPE, _T("Type\tCtrl+F4"));
-		m->Append(IDM_VIEW_ARANGE_BY_DATE, _T("Date\tCtrl+F5"));
-		m->Append(IDM_VIEW_ARANGE_BY_SIZE, _T("Size\tCtrl+F6"));
-		m->Append(IDM_VIEW_ARANGE_NO_SORT, _T("Unsorted\tCtrl+F7"));
+		m->Append(IDM_VIEW_ARANGE_BY_NAME, _T("Name\tCtrl+F3"));               
+		m->Append(IDM_VIEW_ARANGE_BY_TYPE, _T("Type\tCtrl+F4"));             
+		m->Append(IDM_VIEW_ARANGE_BY_DATE, _T("Date\tCtrl+F5"));             
+		m->Append(IDM_VIEW_ARANGE_BY_SIZE, _T("Size\tCtrl+F6"));               
+		m->Append(IDM_VIEW_ARANGE_NO_SORT, _T("Unsorted\tCtrl+F7"));           
 		m->AppendSeparator();
-		m->AppendCheckItem(IDM_VIEW_FLAT_VIEW, _T("Flat View"));
-		m->AppendCheckItem(IDM_VIEW_TWO_PANELS, _T("&2 Panels\tF9"));
+		m->AppendCheckItem(IDM_VIEW_FLAT_VIEW, _T("Flat View"));                   
+		m->AppendCheckItem(IDM_VIEW_TWO_PANELS, _T("&2 Panels\tF9")); 
 
 		{
 			wxMenu* subMenu = new wxMenu;
-			subMenu->AppendCheckItem(IDM_VIEW_ARCHIVE_TOOLBAR, _T("Archive Toolbar"));
-			subMenu->AppendCheckItem(IDM_VIEW_STANDARD_TOOLBAR, _T("Standard Toolbar"));
+			subMenu->AppendCheckItem(IDM_VIEW_ARCHIVE_TOOLBAR, _T("Archive Toolbar"));            
+			subMenu->AppendCheckItem(IDM_VIEW_STANDARD_TOOLBAR, _T("Standard Toolbar"));            
 			subMenu->AppendSeparator();
-			subMenu->AppendCheckItem(IDM_VIEW_TOOLBARS_LARGE_BUTTONS, _T("Large Buttons"));
-			subMenu->AppendCheckItem(IDM_VIEW_TOOLBARS_SHOW_BUTTONS_TEXT, _T("Show Buttons Text"));
+			subMenu->AppendCheckItem(IDM_VIEW_TOOLBARS_LARGE_BUTTONS, _T("Large Buttons"));               
+			subMenu->AppendCheckItem(IDM_VIEW_TOOLBARS_SHOW_BUTTONS_TEXT, _T("Show Buttons Text"));           
 			m->Append(12112, _T("Toolbars"), subMenu); // FIXME ID ?
 		}
 		m->AppendSeparator();
 */
-		m->Append(IDM_OPEN_ROOT_FOLDER, _T("Open Root Folder\t" STRING_PATH_SEPARATOR));
+		m->Append(IDM_OPEN_ROOT_FOLDER, _T("Open Root Folder\t" STRING_PATH_SEPARATOR));        
 		m->Append(IDM_OPEN_PARENT_FOLDER, _T("Up One Level\tBackspace"));
 		m->Append(IDM_FOLDERS_HISTORY, _T("Folders History...\tAlt+F12"));
 		m->AppendSeparator();
@@ -589,7 +589,7 @@ void rc_MyLoadMenu(HWND hWnd)
 			// menu.AppendItem(MF_STRING, kOpenBookmarkMenuID + i, s);
 			m->Append( kOpenBookmarkMenuID + i, wxString(s));
 		}
-
+		
 	}
 	wxMenu *m_tools = m = new wxMenu;
 	{
@@ -619,7 +619,7 @@ void rc_MyLoadMenu(HWND hWnd)
 
 static CStringTable g_stringTable[] =
 {
-  /* resource.rc */
+  /* resource.rc */	  
   /***************/
 	{ IDS_APP_TITLE, L"7-Zip File Manager" },
 
@@ -650,7 +650,7 @@ static CStringTable g_stringTable[] =
 	{ IDS_PROPERTIES , L"Properties" },
 
 	{ IDS_OPERATION_IS_NOT_SUPPORTED , L"Operation is not supported." },
-
+  
 	{ IDS_CONFIRM_FILE_DELETE , L"Confirm File Delete" },
 	{ IDS_CONFIRM_FOLDER_DELETE , L"Confirm Folder Delete" },
 	{ IDS_CONFIRM_ITEMS_DELETE , L"Confirm Multiple File Delete" },
@@ -663,7 +663,7 @@ static CStringTable g_stringTable[] =
 	{ IDS_ERROR_RENAMING      , L"Error Renaming File or Folder" },
 	{ IDS_CONFIRM_FILE_COPY   , L"Confirm File Copy" },
 	{ IDS_WANT_TO_COPY_FILES  , L"Are you sure you want to copy files to archive" },
-
+  
 	{ IDS_CREATE_FOLDER       , L"Create Folder" },
 	{ IDS_CREATE_FOLDER_NAME  , L"Folder name:" },
 	{ IDS_CREATE_FOLDER_DEFAULT_NAME , L"New Folder" },
@@ -710,7 +710,7 @@ static CStringTable g_stringTable[] =
 	{ IDS_PROGRESS_TESTING    , L"Testing" },
 	{ IDS_MESSAGE_NO_ERRORS   , L"There are no errors" },
 
-  /* PropertyName.rc */
+  /* PropertyName.rc */	  
   /*******************/
 	{ IDS_PROP_PATH       , L"Path" },
 	{ IDS_PROP_NAME       , L"Name" },
@@ -766,7 +766,7 @@ static CStringTable g_stringTable[] =
 	{ IDS_PROP_LINK , L"Link" },
 	{ IDS_PROP_ERROR , L"Error" },
 
-
+ 
 	{ 0 , 0 }
 };
 
@@ -777,7 +777,7 @@ REGISTER_STRINGTABLE(g_stringTable)
 #include "res/ParentFolder.h"
 
 	SevenZipPanel::SevenZipPanel(MyFrame *frame, wxWindow *parent,int id,int panelIndex) :
-		wxPanel(parent,id) , m_frame(frame), _wList(0)
+	       	wxPanel(parent,id) , m_frame(frame), _wList(0)
 	{
 		_panelIndex = panelIndex;
 
@@ -813,7 +813,7 @@ REGISTER_STRINGTABLE(g_stringTable)
 		SetAutoLayout (true);
 		Layout();
 
-
+		
 		// m_pListCtrlExplorer->SetDropTarget(new DnDFile(this));
 
 	}
@@ -867,7 +867,7 @@ REGISTER_STRINGTABLE(g_stringTable)
 		*/
 	}
 
-
+	
 
 	void SevenZipPanel::OnDeselected(wxListEvent& event)
 	{
@@ -949,7 +949,7 @@ REGISTER_STRINGTABLE(g_stringTable)
 		wxString msg = wxString::Format(_T("P %d : OnLeftDownBeginDrag %d \n"), count,event.GetId());
 		WriteText(msg);
 
-#if 0
+#if 0		
 		if (   m_pListCtrlExplorer->GetSelectedItemCount() < 1) return ;
 
         // start drag operation
@@ -1055,7 +1055,7 @@ void SevenZipPanel::OnLeftDown(wxMouseEvent &WXUNUSED(event) )
 
 void SevenZipPanel::OnRightClick(wxListEvent& event)
 {
-	wxPoint point = event.GetPoint();
+	wxPoint point = event.GetPoint(); 
 
 	WriteText(_T("OnRightClick"));
     wxMenu menu; // (_T("Dnd sample menu"));
@@ -1071,16 +1071,16 @@ void SevenZipPanel::OnRightClick(wxListEvent& event)
 }
 
 void SevenZipPanel::OnTextEnter(wxCommandEvent& event)
-{
+{	
 	count++;
 
 	NMCBEENDEDITW info;
 	info.hdr.hwndFrom = m_pComboBoxPath;
 	info.hdr.code     = CBEN_ENDEDITW;
 	info.iWhy         = CBENF_RETURN;
-
+	
 	_wList->OnMessage(WM_NOTIFY , event.GetId() , (LPARAM)&info);
-
+	
 	{
 		wxString msg = wxString::Format(_T("P %d : OnTextEnter %d\n"), count,event.GetId());
 		WriteText(msg);

@@ -159,7 +159,7 @@ static HRESULT EnumerateDirItems_Spec(const NWildcard::CCensorNode &curNode,
     IEnumDirItemCallback *callback,
     UStringVector &errorPaths,
     CRecordVector<DWORD> &errorCodes)
-
+  
 {
   const UString name2 = curFolderName + (wchar_t)kDirDelimiter;
   int parent = dirItems.AddPrefix(phyParent, logParent, name2);
@@ -234,7 +234,7 @@ static HRESULT EnumerateDirItems(const NWildcard::CCensorNode &curNode,
         AddDirFileInfo(phyParent, logParent, fi, dirItems.Items);
         if (!isDir)
           continue;
-
+        
         UStringVector addArchivePrefixNew;
         const NWildcard::CCensorNode *nextNode = 0;
         int index = curNode.FindSubNode(name);

@@ -83,7 +83,7 @@ void dumpmode ()
     else if (hashheader.flagmarker < ' '  ||  hashheader.flagmarker >= 0177)
 	(void) printf ("flagmarker \\%3.3o\n",
 	 (unsigned int) hashheader.flagmarker & 0xFF);
-    else
+    else	    
 	(void) printf ("flagmarker %c\n", hashheader.flagmarker);
     if (numpflags)
 	{

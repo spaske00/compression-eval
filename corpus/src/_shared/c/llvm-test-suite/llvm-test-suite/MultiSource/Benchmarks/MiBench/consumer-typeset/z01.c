@@ -263,7 +263,7 @@ int main(int argc, char *argv[])
     if( *argv[i] == CH_HYPHEN ) switch( *(argv[i]+1) )
     {
       case CH_FLAG_OUTFILE:
-
+     
 	/* read name of output file */
 	if( (outfile = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 7, "usage: -o <filename>", FATAL, no_fpos);
@@ -274,42 +274,42 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_SUPPRESS:
-
+     
 	/* suppress references to OldCrossDb and NewCrossDb */
 	AllowCrossDb = FALSE;
 	break;
 
 
       case CH_FLAG_MEMCR:
-
+     
 	/* don't use in-memory database indexes */
 	InMemoryDbIndexes = FALSE;
 	break;
 
 
       case CH_FLAG_NOKERN:
-
+     
 	/* suppress kerning */
 	Kern = FALSE;
 	break;
 
 
       case CH_FLAG_NOCOLLATE:
-
+     
 	/* suppress local collation */
 	UseCollate = FALSE;
 	break;
 
 
       case CH_FLAG_COLLATE:
-
+     
 	/* invoke local collation */
 	UseCollate = TRUE;
 	break;
 
 
       case CH_FLAG_CROSS:
-
+     
 	/* read name of cross reference database */
 	if( (cross_db = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 8, "usage: -c <filename>", FATAL, no_fpos);
@@ -317,7 +317,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_ERRFILE:
-
+     
 	/* read log file name */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 9, "usage: -e <filename>", FATAL, no_fpos);
@@ -326,14 +326,14 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_ALTERR:
-
+     
 	/* alternative error message format */
 	AltErrorFormat = TRUE;
 	break;
 
 
       case CH_FLAG_EPSFIRST:
-
+     
 	/* -EPS produces encapsulated PostScript output */
 	if( !StringEqual(AsciiToFull(argv[i]+1), STR_EPS) )
 	  Error(1, 10, "usage: -EPS", FATAL, no_fpos);
@@ -342,7 +342,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_DIRPATH:
-
+     
 	/* add directory to database and sysdatabase paths */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 11, "usage: -D <directoryname>", FATAL, no_fpos);
@@ -352,7 +352,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_ENCPATH:
-
+     
 	/* add directory to character mapping path */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 12, "usage: -C <directoryname>", FATAL, no_fpos);
@@ -361,7 +361,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_FNTPATH:
-
+     
 	/* add directory to font path */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 13, "usage: -F <directoryname>", FATAL, no_fpos);
@@ -370,7 +370,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_HYPPATH:
-
+     
 	/* add directory to hyph path */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 14, "usage: -H <directoryname>", FATAL, no_fpos);
@@ -379,7 +379,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_INCPATH:
-
+     
 	/* add directory to include and sysinclude paths */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 15, "usage: -I <directoryname>", FATAL, no_fpos);
@@ -389,7 +389,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_INCLUDE:
-
+     
 	/* read sysinclude file and strip any .lt suffix */
 	if( (arg = GetArg(argv, argc, &i)) == NULL )
 	  Error(1, 16, "usage: -i <filename>", FATAL, no_fpos);
@@ -402,7 +402,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_HYPHEN:
-
+     
 	/* declare hyphenation file */
 	if( FirstFile(HYPH_FILE) != NO_FILE )
 	  Error(1, 17, "two -h options illegal", FATAL, no_fpos);
@@ -415,7 +415,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_VERSION:
-
+     
 	fprintf(stderr, "%s\n", LOUT_VERSION);
 	fprintf(stderr, "%-28s %s\n",
 	  "Basser Lout written by:", "Jeffrey H. Kingston (jeff@cs.usyd.edu.au)");
@@ -450,7 +450,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_WORDS:
-
+     
 	seen_wordcount = TRUE;
 	break;
 
@@ -473,7 +473,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_PLAIN:
-
+     
 	BackEnd = Plain_BackEnd;
 	if( *(argv[i]+2) != '\0' )
 	{ float len1, len2;  FULL_CHAR units1, units2;
@@ -522,7 +522,7 @@ int main(int argc, char *argv[])
 
 
       case CH_FLAG_DEBUG:
-
+     
 	debug_init(AsciiToFull(argv[i]));
 	break;
 
@@ -536,7 +536,7 @@ int main(int argc, char *argv[])
 
 
       case '\0':
-
+     
 	/* read stdin as file name */
 	if( stdin_seen )
 	  Error(1, 23, "standard input specified twice", FATAL, no_fpos);
@@ -568,7 +568,7 @@ int main(int argc, char *argv[])
 
 	    if( bp > 0 )
 	    { buff[bp++] = '\0';
-	      if( Down(y) != y )
+	      if( Down(y) != y ) 
 	      { OBJECT g;
 		New(g, GAP_OBJ);
 		hspace(g) = 1;  vspace(g) = 0;
@@ -611,7 +611,7 @@ int main(int argc, char *argv[])
 	break;
 
       default:
-
+     
 	PrintUsage(stderr);
 	Error(1, 26, "unknown command line flag %s", FATAL, no_fpos, argv[i]);
 	break;

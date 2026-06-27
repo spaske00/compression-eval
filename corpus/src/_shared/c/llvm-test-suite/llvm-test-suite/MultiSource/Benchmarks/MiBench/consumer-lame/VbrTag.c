@@ -35,7 +35,7 @@ int SizeOfEmptyFrame[2][2]=
 	{17,9},
 };
 
-static u_char pbtStreamBuffer[216];
+static u_char pbtStreamBuffer[216];   
 static long g_Position[NUMTOCENTRIES];
 static int nZeroStreamSize=0;
 static int TotalFrameSize=0;
@@ -119,7 +119,7 @@ int CheckVbrTag(unsigned char *buf)
 	h_mode     = (buf[3] >> 6) & 3;
 
 	/*  determine offset of header */
-	if( h_id )
+	if( h_id ) 
 	{
                 /* mpeg1 */
 		if( h_mode != 3 )	buf+=(32+4);
@@ -146,7 +146,7 @@ int GetVbrTag(VBRTAGDATA *pTagData,  unsigned char *buf)
 	static int	sr_table[4] = { 44100, 48000, 32000, 99999 };
 
 	/* get Vbr header data */
-	pTagData->flags = 0;
+	pTagData->flags = 0;     
 
 	/* get selected MPEG header data */
 	h_id       = (buf[1] >> 3) & 1;
@@ -154,7 +154,7 @@ int GetVbrTag(VBRTAGDATA *pTagData,  unsigned char *buf)
 	h_mode     = (buf[3] >> 6) & 3;
 
 	/*  determine offset of header */
-	if( h_id )
+	if( h_id ) 
 	{
                 /* mpeg1 */
 		if( h_mode != 3 )	buf+=(32+4);
@@ -275,15 +275,15 @@ int InitVbrTag(Bit_stream_struc* pBs,int nVersion, int nMode, int SampIndex)
 
 	/*
 	// Xing VBR pretends to be a 48kbs layer III frame.  (at 44.1kHz).
-        // (at 48kHz they use 56kbs since 48kbs frame not big enough for
+        // (at 48kHz they use 56kbs since 48kbs frame not big enough for 
         // table of contents)
-	// let's always embed Xing header inside a 64kbs layer III frame.
+	// let's always embed Xing header inside a 64kbs layer III frame.  
 	// this gives us enough room for a LAME version string too.
 	// size determined by sampling frequency (MPEG1)
-	// 32kHz:    216 bytes@48kbs    288bytes@ 64kbs
+	// 32kHz:    216 bytes@48kbs    288bytes@ 64kbs    
 	// 44.1kHz:  156 bytes          208bytes@64kbs     (+1 if padding = 1)
 	// 48kHz:    144 bytes          192
-	//
+	// 
 	// MPEG 2 values are the since the framesize and samplerate
         // are each reduced by a factor of 2.
 	*/
@@ -291,7 +291,7 @@ int InitVbrTag(Bit_stream_struc* pBs,int nVersion, int nMode, int SampIndex)
 	int tot;
 	static const int framesize[3]={208,192,288};  /* 64kbs MPEG1 or MPEG2  framesize */
 	/* static int framesize[3]={156,144,216}; */ /* 48kbs framesize */
-
+	
 	if (SampIndex>2) {
 	  fprintf(stderr,"illegal sampling frequency index\n");
 	  exit(-1);
@@ -299,7 +299,7 @@ int InitVbrTag(Bit_stream_struc* pBs,int nVersion, int nMode, int SampIndex)
 	TotalFrameSize= framesize[SampIndex];
 	tot = (nZeroStreamSize+VBRHEADERSIZE);
 	tot += 20;  /* extra 20 bytes for LAME & version string */
-
+	
 	if (TotalFrameSize < tot ) {
 	  fprintf(stderr,"Xing VBR header problem...use -t\n");
 	  exit(-1);
@@ -357,7 +357,7 @@ int PutVbrTag(char* lpszFileName,int nVbrScale,int nVersion)
 
 	/* Get file size */
 	lFileSize=ftell(fpStream);
-
+	
 	/* Abort if file has zero length. Yes, it can happen :) */
 	if (lFileSize==0)
 		return -1;
@@ -371,14 +371,14 @@ int PutVbrTag(char* lpszFileName,int nVbrScale,int nVersion)
 	/* the default VBR header.  48kbs layer III, no padding, no crc */
 	/* but sampling freq, mode andy copyright/copy protection taken */
 	/* from first valid frame */
-	pbtStreamBuffer[0]=(u_char) 0xff;
+	pbtStreamBuffer[0]=(u_char) 0xff;    
 	if (nVersion==0) {
-	  pbtStreamBuffer[1]=(u_char) 0xfb;
-	  abyte = pbtStreamBuffer[2] & (char) 0x0c;
+	  pbtStreamBuffer[1]=(u_char) 0xfb;    
+	  abyte = pbtStreamBuffer[2] & (char) 0x0c;   
 	  pbtStreamBuffer[2]=(char) 0x50 | abyte;     /* 64kbs MPEG1 frame */
 	}else{
-	  pbtStreamBuffer[1]=(u_char) 0xf3;
-	  abyte = pbtStreamBuffer[2] & (char) 0x0c;
+	  pbtStreamBuffer[1]=(u_char) 0xf3;    
+	  abyte = pbtStreamBuffer[2] & (char) 0x0c;   
 	  pbtStreamBuffer[2]=(char) 0x80 | abyte;     /* 64kbs MPEG2 frame */
 	}
 
@@ -486,7 +486,7 @@ else {
 
 fx = fa + (fb-fa)*(percent-a);
 
-seekpoint = (int)(((float)(1.0/256.0))*fx*file_bytes);
+seekpoint = (int)(((float)(1.0/256.0))*fx*file_bytes); 
 
 
 return seekpoint;

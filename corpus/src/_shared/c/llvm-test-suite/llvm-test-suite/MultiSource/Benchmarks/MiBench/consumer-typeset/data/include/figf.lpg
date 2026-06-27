@@ -521,7 +521,7 @@ lfigdict begin
 
 % stroke a path of the given shape in the given linestyle and dash length.
 % Return the origin and angle of the backward and forward arrow heads.
-% dashlength /linestyle [shape] lfigdopath  [<point> <angle>] [<point> <angle>]
+% dashlength /linestyle [shape] lfigdopath  [<point> <angle>] [<point> <angle>] 
 /lfigdopath
 {
   10 dict begin
@@ -878,8 +878,8 @@ lfigdict begin
     y2 y1 sub /y21 exch def
     y4 y3 sub /y43 exch def
     y21 x43 mul y43 x21 mul sub /det exch def
-
-    % calculate x
+  
+    % calculate x 
     y21 x43 mul x1 mul
     y43 x21 mul x3 mul sub
     y3 y1 sub x21 mul x43 mul add
@@ -941,7 +941,7 @@ lfigdict begin
 
     % if sin(theta) = 0 then line is horizontal and y must be y1
     theta sin abs 0.00001 lt
-    {
+    { 
       /a 1 def
       /b -2 x0 mul def
       /c x0 dup mul y1 y0 sub dup mul add r dup mul sub def

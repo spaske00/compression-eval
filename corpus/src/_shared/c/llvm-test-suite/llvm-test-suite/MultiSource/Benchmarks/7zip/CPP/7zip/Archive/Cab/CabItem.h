@@ -28,7 +28,7 @@ struct CItem
   UInt16 FolderIndex;
   UInt16 Flags;
   UInt16 Attributes;
-
+  
   UInt64 GetEndOffset() const { return (UInt64)Offset + Size; }
   UInt32 GetWinAttributes() const { return (Attributes & ~NHeader::kFileNameIsUTFAttributeMask); }
   bool IsNameUTF() const { return (Attributes & NHeader::kFileNameIsUTFAttributeMask) != 0; }
@@ -40,7 +40,7 @@ struct CItem
       (FolderIndex == NHeader::NFolderIndex::kContinuedFromPrev) ||
       (FolderIndex == NHeader::NFolderIndex::kContinuedPrevAndNext);
   }
-
+  
   bool ContinuedToNext() const
   {
     return

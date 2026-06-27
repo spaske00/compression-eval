@@ -77,7 +77,7 @@ public:
 
   CUInt32Buf Fat;
   UInt32 FatSize;
-
+  
   CUInt32Buf Mat;
   UInt32 MatSize;
 
@@ -115,5 +115,5 @@ public:
 
 
 }}
-
+  
 #endif

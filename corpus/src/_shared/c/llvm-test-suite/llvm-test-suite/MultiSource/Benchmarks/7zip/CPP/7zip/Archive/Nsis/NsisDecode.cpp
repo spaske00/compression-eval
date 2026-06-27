@@ -51,7 +51,7 @@ HRESULT CDecoder::Init(
       return E_NOTIMPL;
     useFilter = (flag != 0);
   }
-
+  
   if (useFilter)
   {
     if (!_filterInStream)

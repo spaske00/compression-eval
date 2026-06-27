@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -18,7 +18,7 @@
 #include "wx/dnd.h"
 
 #undef _WIN32
-
+ 
 #ifdef __WXMAC__
 
 #define UInt32 max_UInt32
@@ -47,25 +47,25 @@ HRESULT MyCreateProcess(const UString &params,LPCWSTR curDir, bool waitFinish)
 	printf("\tparams : %ls\n",(const wchar_t*)params);
 
 	printf("\tcurDir : %ls\n",(const wchar_t*)curDir);
-
+	
 	wxString cmd(params);
 	wxString memoCurDir = wxGetCwd();
-
+	
 	if (curDir) {  // FIXME
 		wxSetWorkingDirectory(wxString(curDir));
 	}
-
+	
 	printf("MyCreateProcess: cmd='%ls'\n",(const wchar_t *)cmd);
 	long pid = 0;
 	if (waitFinish) pid = wxExecute(cmd, wxEXEC_SYNC); // FIXME process never ends and stays zombie ...
 	else            pid = wxExecute(cmd, wxEXEC_ASYNC);
-
+	
 	if (curDir) {
 		wxSetWorkingDirectory(memoCurDir);
 	}
-
+	
 	// FIXME if (pid == 0) return E_FAIL;
-
+	
 	return S_OK;
 }
 
@@ -78,12 +78,12 @@ static HRESULT ExtractGroupCommand(const UStringVector &archivePaths,
 //	AddLagePagesSwitch(params2);
 	params2 += kArchiveNoNameSwitch;
 
-
+	
 	char tempFile[256];
 	static int count = 1000;
-
+	
 	sprintf(tempFile,"/tmp/7zExtract_%d_%d.tmp",(int)getpid(),count++);
-
+	
 	FILE * file = fopen(tempFile,"w");
 	if (file)
 	{
@@ -91,7 +91,7 @@ static HRESULT ExtractGroupCommand(const UStringVector &archivePaths,
 			fprintf(file,"%ls\n",(const wchar_t *)archivePaths[i]);
 			printf(" TMP_%d : '%ls'\n",i,(const wchar_t *)archivePaths[i]);
 		}
-
+		
 		fclose(file);
 	}
 	params2 += L" -ai@";
@@ -99,9 +99,9 @@ static HRESULT ExtractGroupCommand(const UStringVector &archivePaths,
 	printf("ExtractGroupCommand : -%ls-\n",(const wchar_t *)params2);
 	HRESULT res = MyCreateProcess(params2, 0, true);
 	printf("ExtractGroupCommand : END\n");
-
+	
 	remove(tempFile);
-
+	
 	return res;
 }
 
@@ -133,10 +133,10 @@ class DnDFile : public wxFileDropTarget
 {
 public:
     DnDFile(wxListBox *pOwner) { m_pOwner = pOwner; }
-
+	
     virtual bool OnDropFiles(wxCoord x, wxCoord y,
                              const wxArrayString& filenames);
-
+	
 private:
     wxListBox *m_pOwner;
 };
@@ -150,13 +150,13 @@ bool DnDFile::OnDropFiles(wxCoord, wxCoord, const wxArrayString& filenames)
     wxString str;
     str.Printf( _T("%d files dropped"), (int)nFiles);
     m_pOwner->Append(str);
-
+	
 	UStringVector archivePaths;
-
+		
     for ( size_t n = 0; n < nFiles; n++ )
     {
        // m_pOwner->Append(filenames[n]);
-/*
+/*		
         if (wxFile::Exists(filenames[n]))
             m_pOwner->Append(wxT("  This file exists.") );
         else
@@ -166,18 +166,18 @@ bool DnDFile::OnDropFiles(wxCoord, wxCoord, const wxArrayString& filenames)
 		const wchar_t * wx = 	filenames[n].wc_str ();
 		archivePaths.Add(wx);
     }
-
+	
 	/*
 	m_pOwner->Append(cmd);
-
+	
 
 	long pid = 0;
-
+	
 	pid = wxExecute(cmd, wxEXEC_ASYNC);
 	 */
-
+	
 	TestArchives(archivePaths);
-
+	
     return true;
 }
 
@@ -188,16 +188,16 @@ class DnDFrame : public wxFrame
 public:
     DnDFrame(wxFrame *frame, const wxChar *title, int x, int y, int w, int h);
     virtual ~DnDFrame();
-
+	
 	 void OnQuit(wxCommandEvent& event);
-
+	
     DECLARE_EVENT_TABLE()
-
+	
 // private:
 public:
     // GUI controls
     wxListBox  *m_ctrlFile;
-
+	
 };
 
 enum
@@ -231,7 +231,7 @@ DnDFrame::DnDFrame(wxFrame *frame, const wxChar *title, int x, int y, int w, int
     // frame icon and status bar
     // FIXME SetIcon(wxICON(sample));
 
-
+	
 
     // construct menu
     wxMenu *file_menu = new wxMenu;
@@ -243,8 +243,8 @@ DnDFrame::DnDFrame(wxFrame *frame, const wxChar *title, int x, int y, int w, int
     file_menu->AppendSeparator();
     file_menu->Append(Menu_OpenFile, _T("&Open file..."));
     file_menu->AppendSeparator();
-    file_menu->Append(Menu_Quit, _T("E&xit\tCtrl-Q"));
-
+    file_menu->Append(Menu_Quit, _T("E&xit\tCtrl-Q"));	
+	
     wxMenuBar *menu_bar = new wxMenuBar;
     menu_bar->Append(file_menu, _T("&File"));
 //#if wxUSE_LOG
@@ -252,37 +252,37 @@ DnDFrame::DnDFrame(wxFrame *frame, const wxChar *title, int x, int y, int w, int
 //#endif // wxUSE_LOG
 //    menu_bar->Append(clip_menu, _T("&Clipboard"));
 //    menu_bar->Append(help_menu, _T("&Help"));
-
+	
     SetMenuBar(menu_bar);
-
-
-    //
+	
+	
+    // 
     // wxString strFile(_T("Drop files here!"));
-
+	
 	wxString str;
 	wxString str2 = wxString::FromUTF8(getenv("P7ZIP_HOME_DIR"));
     str = wxString(_T("P7ZIP_HOME_DIR -")) + str2 + _T("-");
-
+	
 	wxString strFile(str);
-
+	
     m_ctrlFile  = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 1, &strFile ,
                                 wxLB_HSCROLL | wxLB_ALWAYS_SB );
-
+	
 
     // m_ctrlFile->Append(str);
-
-
+	
+								
 	m_ctrlFile->SetDropTarget(new DnDFile(m_ctrlFile));
-
+								
 	wxBoxSizer *sizer_top = new wxBoxSizer( wxHORIZONTAL );
 	sizer_top->Add(m_ctrlFile, 1, wxEXPAND );
-
+	
    wxBoxSizer *sizer = new wxBoxSizer( wxVERTICAL );
 sizer->Add(sizer_top, 2, wxEXPAND );
-
+	
 SetSizer(sizer);
 sizer->SetSizeHints( this );
-
+								
 }
 
 void DnDFrame::OnQuit(wxCommandEvent& WXUNUSED(event))
@@ -292,7 +292,7 @@ void DnDFrame::OnQuit(wxCommandEvent& WXUNUSED(event))
 
 DnDFrame::~DnDFrame()
 {
-/*
+/*	
 #if wxUSE_LOG
 		if ( m_pLog != NULL ) {
 			if ( wxLog::SetActiveTarget(m_pLogPrev) == m_pLog )
@@ -339,30 +339,30 @@ TransformProcessType(&PSN,kProcessTransformToForegroundApplication);
     // DEBUG printf("putenv(%s)\n",p7zip_home_dir);
   }
 	global_use_utf16_conversion = 1; // UNICODE !
-
+	
 
     wxInitAllImageHandlers();
 
 //    Main1(wxApp::argc,wxApp::argv);
-
+	
     // create the main frame window
     DnDFrame *frame = new DnDFrame((wxFrame  *) NULL,
                                    _T("P7ZIP Drag-and-Drop"),
                                    10, 100, 750, 540);
 
-
+	
 	printf("P7ZIP_HOME_DIR : -%s-\n", getenv("P7ZIP_HOME_DIR"));
+	
 
-
-
+	
     // activate it
     frame->Show(true);
-
+	
     SetTopWindow(frame);
+	
+	
 
-
-
-
+	
 
   // success: wxApp::OnRun() will be called which will enter the main message
   // loop and the application will run. If we returned false here, the

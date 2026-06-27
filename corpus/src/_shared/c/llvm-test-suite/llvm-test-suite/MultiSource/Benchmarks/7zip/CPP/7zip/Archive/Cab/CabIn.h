@@ -79,7 +79,7 @@ struct CDatabase
   CInArchiveInfo ArchiveInfo;
   CObjectVector<CFolder> Folders;
   CObjectVector<CItem> Items;
-
+  
   void Clear()
   {
     ArchiveInfo.Clear();
@@ -123,7 +123,7 @@ public:
   CRecordVector<CMvItem> Items;
   CRecordVector<int> StartFolderOfVol;
   CRecordVector<int> FolderStartFileIndex;
-
+  
   int GetFolderIndex(const CMvItem *mvi) const
   {
     const CDatabaseEx &db = Volumes[mvi->VolumeIndex];
@@ -155,7 +155,7 @@ class CInArchive
 public:
   HRESULT Open(const UInt64 *searchHeaderSizeLimit, CDatabaseEx &db);
 };
-
+  
 }}
-
+  
 #endif

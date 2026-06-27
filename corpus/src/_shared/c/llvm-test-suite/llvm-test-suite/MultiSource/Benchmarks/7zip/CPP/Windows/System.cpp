@@ -34,19 +34,19 @@ namespace NWindows
 		#if defined (__NetBSD__) || defined(__OpenBSD__)
 		UInt32 GetNumberOfProcessors() {
 			int mib[2], value;
-			int nbcpu = 1;
+		  	int nbcpu = 1;
 
-			mib[0] = CTL_HW;
-			mib[1] = HW_NCPU;
-			size_t len = sizeof(size_t);
-			if (sysctl(mib, 2, &value, &len, NULL, 0) >= 0)
-				if (value > nbcpu)
+		  	mib[0] = CTL_HW;
+		  	mib[1] = HW_NCPU;
+		  	size_t len = sizeof(size_t);
+		  	if (sysctl(mib, 2, &value, &len, NULL, 0) >= 0)
+		  		if (value > nbcpu)
 					nbcpu = value;
 			return nbcpu;
 		}
 		#elif defined (__FreeBSD__) || defined (__FreeBSD_kernel__)
 		UInt32 GetNumberOfProcessors() {
-			int nbcpu = 1;
+		  	int nbcpu = 1;
 			size_t value;
 			size_t len = sizeof(value);
 			if (sysctlbyname("hw.ncpu", &value, &len, NULL, 0) == 0)
@@ -55,7 +55,7 @@ namespace NWindows
 		}
 		#elif defined (__APPLE__)
 		UInt32 GetNumberOfProcessors() {
-			int nbcpu = 1,value;
+		  	int nbcpu = 1,value;
 			size_t valSize = sizeof(value);
 			if (sysctlbyname ("hw.ncpu", &value, &valSize, NULL, 0) == 0)
 				nbcpu = value;
@@ -64,7 +64,7 @@ namespace NWindows
 
 		#elif defined(__linux__) || defined(__CYGWIN__) || defined(sun)
 		UInt32 GetNumberOfProcessors() {
-			int nbcpu = sysconf (_SC_NPROCESSORS_CONF);
+		  	int nbcpu = sysconf (_SC_NPROCESSORS_CONF);
 			if (nbcpu < 1) nbcpu = 1;
 			return nbcpu;
 		}
@@ -104,27 +104,27 @@ namespace NWindows
 
 #if 0
 #ifdef linux
-			FILE * f = fopen( "/proc/meminfo", "r" );
-			if (f)
-			{
+	 		FILE * f = fopen( "/proc/meminfo", "r" );
+	 		if (f)
+	 		{
 				char buffer[256];
 				unsigned long total;
 
 				ullTotalPhys = 0;
 
-				while (fgets( buffer, sizeof(buffer), f ))
-				{
-				/* old style /proc/meminfo ... */
+		  		while (fgets( buffer, sizeof(buffer), f ))
+		  		{
+		 		/* old style /proc/meminfo ... */
 					if (sscanf( buffer, "Mem: %lu", &total))
 					{
-						ullTotalPhys += total;
+					 	ullTotalPhys += total;
 					}
 
 					/* new style /proc/meminfo ... */
 					if (sscanf(buffer, "MemTotal: %lu", &total))
-						ullTotalPhys = ((UInt64)total)*1024;
-				}
-				fclose( f );
+					 	ullTotalPhys = ((UInt64)total)*1024;
+		  		}
+		  		fclose( f );
 			}
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__APPLE__)
 #ifdef HW_MEMSIZE
@@ -150,7 +150,7 @@ namespace NWindows
 #elif defined(hpux) || defined(__hpux)
 			struct pst_static pst;
 			union pstun pu;
-
+						
 			pu.pst_static = &pst;
 			if ( pstat( PSTAT_STATIC, pu, (size_t)sizeof(pst), (size_t)0, 0 ) != -1 ) {
 				ullTotalPhys = ((UInt64)pst.physical_memory)*pst.page_size;
@@ -169,3 +169,4 @@ namespace NWindows
 
 	}
 }
+

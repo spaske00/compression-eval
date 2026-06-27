@@ -296,7 +296,7 @@ void SpannerAvailableSpace(OBJECT y, int dim, FULL_LENGTH *resb,
       else
       {
         Error(12, 13, "search for gap preceding %s failed, using zero",
-	  WARN, &fpos(s), Image(type(s)));
+  	  WARN, &fpos(s), Image(type(s)));
         b += fwd(prevthr, dim) + back(thr, dim);
 	f = fwd(thr, dim);
         debug4(DSF, DD, "  later component %s,%s: (no gap), b = %s, f = %s",
@@ -344,7 +344,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
     case WORD:
     case QWORD:
-
+    
       if( dim == COLM )  FontWordSize(x);
       break;
 
@@ -366,7 +366,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
 
     case PAGE_LABEL:
-
+    
       if( dim == ROWM )
       { New(z, PAGE_LABEL_IND);
 	actual(z) = x;
@@ -378,7 +378,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
 
     case NULL_CLOS:
-
+    
       back(x, dim) = fwd(x, dim) = 0;
       break;
 
@@ -386,7 +386,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
     case HEAD:
 
       if( dim == ROWM )
-      {
+      {	
 	/* replace the galley x by a dummy closure y */
 	New(y, NULL_CLOS);
 	FposCopy(fpos(y), fpos(x));
@@ -460,7 +460,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
     case VCONTRACT:
     case HLIMITED:
     case VLIMITED:
-
+    
       Child(y, Down(x));
       y = MinSize(y, dim, extras);
       back(x, dim) = back(y, dim);
@@ -502,11 +502,11 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
       /* if first vertical touch, break if necessary */
       if( (type(x) == START_HVSPAN || type(x) == START_HSPAN) && dim == ROWM )
       { CONSTRAINT c;
-
+ 
         /* find the HSPANNER */
 	Child(t, DownDim(x, COLM));
         assert( type(t) == HSPANNER, "MinSize/SPAN: type(t) != HSPANNER!" );
-
+ 
         /* find the available space for this HSPANNER and break it */
         SpannerAvailableSpace(t, COLM, &b, &f);
         SetConstraint(c, MAX_FULL_LENGTH, b+f, MAX_FULL_LENGTH);
@@ -514,7 +514,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
         t = BreakObject(t, &c);
         spanner_broken(t) = TRUE;
       }
-
+ 
       /* make sure that HSPAN links to HSPANNER, VSPAN to VSPANNER      */
       /* NB must follow breaking since that could affect the value of y */
       Child(y, DownDim(x, dim));
@@ -591,7 +591,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 	Link(*extras, z);
 	/* Can't do Link(z, x) because Constrained goes up and finds z */
 	debug2(DCR, DD, "  MinSize index: %ld %s", (long) z, EchoObject(z));
-      }
+      }	
       break;
 
 
@@ -606,7 +606,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
     case BEGIN_HEADER:
     case SET_HEADER:
-
+    
       Child(y, LastDown(x));
       y = MinSize(y, dim, extras);
       back(x, dim) = back(y, dim);
@@ -620,7 +620,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
     case GRAPHIC:
     case LINK_SOURCE:
     case LINK_DEST:
-
+    
       Child(y, LastDown(x));
       y = MinSize(y, dim, extras);
       back(x, dim) = back(y, dim);
@@ -648,7 +648,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 	Link(*extras, z);
 	/* Can't do Link(z, x) because Constrained goes up and finds z */
 	debug2(DCR, DD, "  MinSize index: %ld %s", (long) z, EchoObject(z));
-      }
+      }	
       break;
 
 
@@ -668,7 +668,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
 
     case ROTATE:
-
+    
       Child(y, Down(x));
       if( dim == COLM )
       {	y = MinSize(y, COLM, extras);
@@ -682,7 +682,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 	Dispose(whereto(x));
       }
       break;
-
+	
 
     case SCALE:
 
@@ -697,7 +697,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 	  Link(*extras, z);
 	  debug1(DSF, DDD, "  MinSize: %s", EchoObject(z));
 	  vert_sized(x) = FALSE;
-        }
+        }	
       }
       else
       { back(x, dim) = (back(y, dim) * fc(constraint(x))) / SF;
@@ -719,7 +719,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 	  EchoObject(x));
 
 	/* default value if don't find anything */
-	back(x, dim) = back(y, dim);
+       	back(x, dim) = back(y, dim);
 	fwd(x, dim)  = fwd(y, dim);
 
 	/* find first character of left parameter */
@@ -776,7 +776,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
 
     case HIGH:
-
+    
       Child(y, Down(x));
       y = MinSize(y, dim, extras);
       if( dim == ROWM )
@@ -816,7 +816,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
 
     case SPLIT:
-
+    
       link = DownDim(x, dim);  Child(y, link);
       y = MinSize(y, dim, extras);
       back(x, dim) = back(y, dim);
@@ -918,7 +918,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
     case HCAT:
     case VCAT:
-
+    
       if( (dim == ROWM) == (type(x) == VCAT) )
       {
 	/********************************************************************/
@@ -1315,7 +1315,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 	  fclose(fp);
 	  if( cp )  StringRemove(AsciiToFull(LOUT_EPS));
 	  break;
-
+	
 	case IG_BADSIZE:
 
 	  Error(12, 8, "%s given zero size (bad BoundingBox line in file %s)",
@@ -1351,7 +1351,7 @@ OBJECT MinSize(OBJECT x, int dim, OBJECT *extras)
 
 
     default:
-
+    
       assert1(FALSE, "MinSize", Image(type(x)));
       break;
 

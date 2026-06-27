@@ -14,7 +14,7 @@ mt 5/99.  These global flags denote 4 possibilities:
 3   MDCT input M/S, quantize M/S,   psy-model thresholds: M/S   -m f     either
 4   MDCT input L/R, quantize M/S,   psy-model thresholds: M/S   -m j -h  m/s
 
-1:  convert_mdct = 0, convert_psy=0,  reduce_sidechannel=0
+1:  convert_mdct = 0, convert_psy=0,  reduce_sidechannel=0          
 2:  convert_mdct = 1, convert_psy=1,  reduce_sidechannel=1
 3:  convert_mdct = 0, convert_psy=0,  reduce_sidechannel=1   (this mode no longer used)
 4:  convert_mdct = 1, convert_psy=0,  reduce_sidechannel=1
@@ -25,11 +25,11 @@ the L/R input MDCT coefficients.
 if (convert_psy), then calc_noise will compute the noise for the L/R
 channels from M/S MDCT data and L/R psy-model threshold information.
 Distortion in ether L or R channel will be marked as distortion in
-both Mid and Side channels.
-NOTE: 3/00: this mode has been removed.
+both Mid and Side channels.  
+NOTE: 3/00: this mode has been removed.  
 
 if (reduce_sidechannel) then outer_loop will allocate less bits
-to the side channel and more bits to the mid channel based on relative
+to the side channel and more bits to the mid channel based on relative 
 energies.
 */
 
@@ -87,7 +87,7 @@ int  pretab[21] =
 
 /*
   Here are MPEG1 Table B.8 and MPEG2 Table B.1
-  -- Layer III scalefactor bands.
+  -- Layer III scalefactor bands. 
   Index into this using a method such as:
     idx  = fr_ps->header->sampling_frequency
            + (fr_ps->header->version * 3)
@@ -185,7 +185,7 @@ iteration_init( lame_global_flags *gfp,III_side_info_t *l3_side, int l3_enc[2][2
     convert_mdct = 1;
     reduce_sidechannel=1;
   }
-
+  
   /* some intializations. */
   for ( gr = 0; gr < gfp->mode_gr; gr++ ){
     for ( ch = 0; ch < gfp->stereo; ch++ ){
@@ -217,8 +217,8 @@ iteration_init( lame_global_flags *gfp,III_side_info_t *l3_side, int l3_enc[2][2
 
 
 
-/*
-compute the ATH for each scalefactor band
+/* 
+compute the ATH for each scalefactor band 
 cd range:  0..96db
 
 Input:  3.3kHz signal  32767 amplitude  (3.3kHz is where ATH is smallest = -5db)
@@ -227,18 +227,18 @@ shortblocks: sfb=5           -9db              0db
 
 Input:  1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 -1 (repeated)
 longblocks:  amp=1      sfb=12   en0/bw=-103 db      max_en0 = -92db
-            amp=32767   sfb=12           -12 db                 -1.4db
+            amp=32767   sfb=12           -12 db                 -1.4db 
 
 Input:  1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 -1 (repeated)
-shortblocks: amp=1      sfb=5   en0/bw= -99                    -86
-            amp=32767   sfb=5           -9  db                  4db
+shortblocks: amp=1      sfb=5   en0/bw= -99                    -86 
+            amp=32767   sfb=5           -9  db                  4db 
 
 
 MAX energy of largest wave at 3.3kHz = 1db
 AVE energy of largest wave at 3.3kHz = -11db
-Let's take AVE:  -11db = maximum signal in sfb=12.
-Dynamic range of CD: 96db.  Therefor energy of smallest audible wave
-in sfb=12  = -11  - 96 = -107db = ATH at 3.3kHz.
+Let's take AVE:  -11db = maximum signal in sfb=12.  
+Dynamic range of CD: 96db.  Therefor energy of smallest audible wave 
+in sfb=12  = -11  - 96 = -107db = ATH at 3.3kHz.  
 
 ATH formula for this wave: -5db.  To adjust to LAME scaling, we need
 ATH = ATH_formula  - 103  (db)
@@ -261,19 +261,19 @@ FLOAT8 ATHformula(lame_global_flags *gfp,FLOAT8 f)
     ath -= 114;    /* MDCT scaling.  From tests by macik and MUS420 code */
     /* ath -= 109; */
   }
-#ifdef RH_QUALITY_CONTROL
+#ifdef RH_QUALITY_CONTROL 
   /* purpose of RH_QUALITY_CONTROL:
    * at higher quality lower ATH masking abilities   => needs more bits
    * at lower quality increase ATH masking abilities => needs less bits
    * works together with adjusted masking lowering of GPSYCHO thresholds
    * (Robert.Hegemann@gmx.de 2000-01-30)
    */
-  ath -= (4-gfp->VBR_q)*4.0;
+  ath -= (4-gfp->VBR_q)*4.0; 
 #endif
   ath = pow( 10.0, ath/10.0 );
   return ath;
 }
-
+ 
 
 void compute_ath(lame_global_flags *gfp,FLOAT8 ATH_l[SBPSY_l],FLOAT8 ATH_s[SBPSY_l])
 {
@@ -283,9 +283,9 @@ void compute_ath(lame_global_flags *gfp,FLOAT8 ATH_l[SBPSY_l],FLOAT8 ATH_s[SBPSY
 #ifdef RH_ATH
   /* going from average to peak level ATH masking
    */
-  FLOAT8 adjust_mdct_scaling = 10.0;
+  FLOAT8 adjust_mdct_scaling = 10.0; 
 #endif
-
+  
 
   /* last sfb is not used */
   for ( sfb = 0; sfb < SBPSY_l; sfb++ ) {
@@ -348,36 +348,36 @@ int targ_bits[2],int mean_bits, int gr)
 {
   gr_info *cod_info;
   int extra_bits,tbits,bits;
-  int add_bits[2];
+  int add_bits[2]; 
   int ch;
 
   /* allocate targ_bits for granule */
   ResvMaxBits( mean_bits, &tbits, &extra_bits, gr);
-
+    
 
   for (ch=0 ; ch < gfp->stereo ; ch ++) {
     /******************************************************************
-     * allocate bits for each channel
+     * allocate bits for each channel 
      ******************************************************************/
     cod_info = &l3_side->gr[gr].ch[ch].tt;
-
+    
     targ_bits[ch]=tbits/gfp->stereo;
-
+    
     /* allocate extra bits from reservoir based on PE */
     bits=0;
-
+    
     /* extra bits based on PE > 700 */
     add_bits[ch]=(pe[gr][ch]-750)/1.55;  /* 1.4; */
-
+    
     /* short blocks need extra, no matter what the pe */
-    if (cod_info->block_type==SHORT_TYPE)
+    if (cod_info->block_type==SHORT_TYPE) 
       if (add_bits[ch]<500) add_bits[ch]=500;
-
+    
     if (add_bits[ch] < 0) add_bits[ch]=0;
     bits += add_bits[ch];
-
+    
     if (bits > extra_bits) add_bits[ch] = (extra_bits*add_bits[ch])/bits;
-    if ((targ_bits[ch]+add_bits[ch]) > 4095)
+    if ((targ_bits[ch]+add_bits[ch]) > 4095) 
       add_bits[ch]=4095-targ_bits[ch];
 
     targ_bits[ch] = targ_bits[ch] + add_bits[ch];
@@ -389,13 +389,13 @@ void reduce_side(int targ_bits[2],FLOAT8 ms_ener_ratio,int mean_bits)
 {
 int ch;
 int numchn=2;
-    /*  ms_ener_ratio = 0:  allocate 66/33  mid/side  fac=.33
+    /*  ms_ener_ratio = 0:  allocate 66/33  mid/side  fac=.33  
      *  ms_ener_ratio =.5:  allocate 50/50 mid/side   fac= 0 */
     /* 75/25 split is fac=.5 */
     /* float fac = .50*(.5-ms_ener_ratio[gr])/.5;*/
     float fac = .33*(.5-ms_ener_ratio)/.5;
     if (fac<0) fac=0;
-
+    
     if (targ_bits[1] >= 125) {
       /* dont reduce side channel below 125 bits */
       if (targ_bits[1]-targ_bits[1]*fac > 125) {
@@ -406,8 +406,8 @@ int numchn=2;
 	targ_bits[1] = 125;
       }
     }
-
-    /* dont allow to many bits per channel */
+    
+    /* dont allow to many bits per channel */  
     for (ch=0; ch<numchn; ch++) {
       int max_bits = Min(4095,mean_bits/2 + 1200);
       if (targ_bits[ch] > max_bits) {
@@ -417,11 +417,11 @@ int numchn=2;
 
 }
 
-/***************************************************************************
- *         inner_loop                                                      *
- ***************************************************************************
+/*************************************************************************** 
+ *         inner_loop                                                      * 
+ *************************************************************************** 
  * The code selects the best global gain for a particular set of scalefacs */
-
+ 
 int
 inner_loop( lame_global_flags *gfp,FLOAT8 xrpow[576],
 	    int l3_enc[576], int max_bits,
@@ -558,9 +558,9 @@ static unsigned max_range_sfac_tab[6][4] =
 /*            scale_bitcount_lsf                                         */
 /*************************************************************************/
 
-/* Also counts the number of bits to encode the scalefacs but for MPEG 2 */
+/* Also counts the number of bits to encode the scalefacs but for MPEG 2 */ 
 /* Lower sampling frequencies  (24, 22.05 and 16 kHz.)                   */
-
+ 
 /*  This is reverse-engineered from section 2.4.3.2 of the MPEG2 IS,     */
 /* "Audio Decoding Layer III"                                            */
 
@@ -658,11 +658,11 @@ int scale_bitcount_lsf(III_scalefac_t *scalefac, gr_info *cod_info)
 	}
     }
 #ifdef DEBUG
-    if ( over )
+    if ( over ) 
         printf( "---WARNING !! Amplification of some bands over limits\n" );
 #endif
     if (!over) {
-      assert( cod_info->sfb_partition_table );
+      assert( cod_info->sfb_partition_table );     
       cod_info->part2_length=0;
       for ( partition = 0; partition < 4; partition++ )
 	cod_info->part2_length += cod_info->slen[partition] * cod_info->sfb_partition_table[partition];
@@ -692,7 +692,7 @@ int calc_xmin( lame_global_flags *gfp,FLOAT8 xr[576], III_psy_ratio *ratio,
 	u_int	sfb;
     FLOAT8 en0, xmin, ener;
 
-    if (gfp->ATHonly) {
+    if (gfp->ATHonly) {    
       for ( sfb = cod_info->sfb_smax; sfb < SBPSY_s; sfb++ )
 	  for ( b = 0; b < 3; b++ )
 	      l3_xmin->s[sfb][b]=ATH_s[sfb];
@@ -764,7 +764,7 @@ int calc_xmin( lame_global_flags *gfp,FLOAT8 xr[576], III_psy_ratio *ratio,
 /*************************************************************************/
 
 /*  Function: Returns zero if there is a scalefac which has not been
-    amplified. Otherwise it returns one.
+    amplified. Otherwise it returns one. 
 */
 
 int loop_break( III_scalefac_t *scalefac, gr_info *cod_info)
@@ -777,7 +777,7 @@ int loop_break( III_scalefac_t *scalefac, gr_info *cod_info)
 	    return 0;
 
     for ( sfb = cod_info->sfb_smax; sfb < SBPSY_s; sfb++ )
-      for ( i = 0; i < 3; i++ )
+      for ( i = 0; i < 3; i++ ) 
             if ( scalefac->s[sfb][i] == 0 )
 		return 0;
 
@@ -800,14 +800,14 @@ int loop_break( III_scalefac_t *scalefac, gr_info *cod_info)
  ----------------------------------------------------------------------
   if someone wants to try to find a faster step search function,
   here is some code which gives a lower bound for the step size:
-
+  
   for (max_xrspow = 0, i = 0; i < 576; ++i)
   {
     max_xrspow = Max(max_xrspow, xrspow[i]);
   }
   lowerbound = 210+log10(max_xrspow/IXMAX_VAL)/(0.1875*LOG2);
-
-
+ 
+ 
                                                  Robert.Hegemann@gmx.de
  ----------------------------------------------------------------------
 */
@@ -815,13 +815,13 @@ int loop_break( III_scalefac_t *scalefac, gr_info *cod_info)
 
 typedef enum {
     BINSEARCH_NONE,
-    BINSEARCH_UP,
+    BINSEARCH_UP, 
     BINSEARCH_DOWN
 } binsearchDirection_t;
 
 /*-------------------------------------------------------------------------*/
-int
-bin_search_StepSize2 (lame_global_flags *gfp,int desired_rate, int start, int *ix,
+int 
+bin_search_StepSize2 (lame_global_flags *gfp,int desired_rate, int start, int *ix, 
                       FLOAT8 xrspow[576], gr_info *cod_info)
 /*-------------------------------------------------------------------------*/
 {
@@ -834,7 +834,7 @@ bin_search_StepSize2 (lame_global_flags *gfp,int desired_rate, int start, int *i
     do
     {
 	cod_info->global_gain = StepSize;
-	nBits = count_bits(gfp,ix, xrspow, cod_info);
+	nBits = count_bits(gfp,ix, xrspow, cod_info);  
 
 	if (CurrentStep == 1 )
         {
@@ -870,7 +870,7 @@ bin_search_StepSize2 (lame_global_flags *gfp,int desired_rate, int start, int *i
     } while (1); /* For-ever, break is adjusted. */
 
     CurrentStep = abs(start - StepSize);
-
+    
     if (CurrentStep >= 4) {
 	CurrentStep = 4;
     } else {
@@ -899,11 +899,11 @@ bin_search_StepSize2 (lame_global_flags *gfp,int desired_rate, int start, int *i
 
 
 /*********************************************************************
- * XRPOW_FTOI is a macro to convert floats to ints.
+ * XRPOW_FTOI is a macro to convert floats to ints.  
  * if XRPOW_FTOI(x) = nearest_int(x), then QUANTFAC(x)=adj43asm[x]
  *                                         ROUNDFAC= -0.0946
  *
- * if XRPOW_FTOI(x) = floor(x), then QUANTFAC(x)=asj43[x]
+ * if XRPOW_FTOI(x) = floor(x), then QUANTFAC(x)=asj43[x]   
  *                                   ROUNDFAC=0.4054
  *********************************************************************/
 #ifdef USE_GNUC_ASM
@@ -958,13 +958,13 @@ bin_search_StepSize2 (lame_global_flags *gfp,int desired_rate, int start, int *i
 #endif
 
 /*********************************************************************
- * nonlinear quantization of xr
+ * nonlinear quantization of xr 
  * More accurate formula than the ISO formula.  Takes into account
- * the fact that we are quantizing xr -> ix, but we want ix^4/3 to be
+ * the fact that we are quantizing xr -> ix, but we want ix^4/3 to be 
  * as close as possible to x^4/3.  (taking the nearest int would mean
  * ix is as close as possible to xr, which is different.)
  * From Segher Boessenkool <segher@eastsite.nl>  11/1999
- * ASM optimization from
+ * ASM optimization from 
  *    Mathew Hendry <scampi@dial.pipex.com> 11/1999
  *    Acy Stapp <AStapp@austin.rr.com> 11/1999
  *    Takehiro Tominaga <tominaga@isoternet.org> 11/1999
@@ -974,7 +974,7 @@ void quantize_xrpow(FLOAT8 xr[576], int ix[576], gr_info *cod_info) {
   /* quantize on xr^(3/4) instead of xr */
   const FLOAT8 istep = IPOW20(cod_info->global_gain);
 
-#if defined (USE_GNUC_ASM)
+#if defined (USE_GNUC_ASM) 
   {
       int rx[4];
       __asm__ __volatile__(
@@ -1124,12 +1124,12 @@ void quantize_xrpow(FLOAT8 xr[576], int ix[576], gr_info *cod_info) {
       }
   }
 #endif
-  {/* from Wilfried.Behne@t-online.de.  Reported to be 2x faster than
+  {/* from Wilfried.Behne@t-online.de.  Reported to be 2x faster than 
       the above code (when not using ASM) on PowerPC */
-	int j;
-
-	for ( j = 576/8; j > 0; --j)
-	{
+     	int j;
+     	
+     	for ( j = 576/8; j > 0; --j)
+     	{
 			FLOAT8	x1, x2, x3, x4, x5, x6, x7, x8;
 			int		rx1, rx2, rx3, rx4, rx5, rx6, rx7, rx8;
 			x1 = *xr++ * istep;
@@ -1153,7 +1153,7 @@ void quantize_xrpow(FLOAT8 xr[576], int ix[576], gr_info *cod_info) {
 			XRPOW_FTOI(x1,*ix++);
 			x3 += QUANTFAC(rx3);
 			XRPOW_FTOI(x2,*ix++);
-			x4 += QUANTFAC(rx4);
+			x4 += QUANTFAC(rx4);		
 			XRPOW_FTOI(x3,*ix++);
 			x5 += QUANTFAC(rx5);
 			XRPOW_FTOI(x4,*ix++);
@@ -1161,10 +1161,10 @@ void quantize_xrpow(FLOAT8 xr[576], int ix[576], gr_info *cod_info) {
 			XRPOW_FTOI(x5,*ix++);
 			x7 += QUANTFAC(rx7);
 			XRPOW_FTOI(x6,*ix++);
-			x8 += QUANTFAC(rx8);
+			x8 += QUANTFAC(rx8);		
 			XRPOW_FTOI(x7,*ix++);
 			XRPOW_FTOI(x8,*ix++);
-	}
+     	}
 	}
 #endif
 }
@@ -1178,7 +1178,7 @@ void quantize_xrpow_ISO( FLOAT8 xr[576], int ix[576], gr_info *cod_info )
 {
   /* quantize on xr^(3/4) instead of xr */
   const FLOAT8 istep = IPOW20(cod_info->global_gain);
-
+  
 #if defined(USE_GNUC_ASM)
    {
       __asm__ __volatile__ (
@@ -1265,7 +1265,7 @@ void quantize_xrpow_ISO( FLOAT8 xr[576], int ix[576], gr_info *cod_info )
           fxch st(2); // 3 0 2 1
           fadd st(0), st(5);
 
-          fxch st(1); // 0 3 2 1
+          fxch st(1); // 0 3 2 1 
           fistp dword ptr [edx-16]; // 3 2 1
           fxch st(2); // 1 2 3
           fistp dword ptr [edx-12];
@@ -1295,18 +1295,18 @@ void quantize_xrpow_ISO( FLOAT8 xr[576], int ix[576], gr_info *cod_info )
       register int j;
       const FLOAT8 compareval0 = (1.0 - 0.4054)/istep;
       /* depending on architecture, it may be worth calculating a few more compareval's.
-         eg.  compareval1 = (2.0 - 0.4054/istep);
+         eg.  compareval1 = (2.0 - 0.4054/istep); 
               .. and then after the first compare do this ...
               if compareval1>*xr then ix = 1;
          On a pentium166, it's only worth doing the one compare (as done here), as the second
-         compare becomes more expensive than just calculating the value. Architectures with
-         slow FP operations may want to add some more comparevals. try it and send your diffs
+         compare becomes more expensive than just calculating the value. Architectures with 
+         slow FP operations may want to add some more comparevals. try it and send your diffs 
          statistically speaking
          73% of all xr*istep values give ix=0
          16% will give 1
          4%  will give 2
       */
-      for (j=576;j>0;j--)
+      for (j=576;j>0;j--) 
         {
           if (compareval0 > *xr) {
             *(ix++) = 0;

@@ -80,7 +80,7 @@ class BasicHeap {
         heap[0] = heap.last();
         heap.pop();
         if (heap.size() > 1) percolateDown(0);
-        return r;
+        return r; 
     }
 
 

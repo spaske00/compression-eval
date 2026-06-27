@@ -50,7 +50,7 @@ class CMemBlocks
 public:
   CRecordVector<void *> Blocks;
   UInt64 TotalSize;
-
+  
   CMemBlocks(): TotalSize(0) {}
 
   void FreeOpt(CMemBlockManagerMt *manager);

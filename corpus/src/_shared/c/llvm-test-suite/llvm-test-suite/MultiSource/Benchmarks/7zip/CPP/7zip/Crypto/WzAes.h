@@ -82,7 +82,7 @@ protected:
 public:
   STDMETHOD(Init)();
   STDMETHOD_(UInt32, Filter)(Byte *data, UInt32 size) = 0;
-
+  
   STDMETHOD(CryptoSetPassword)(const Byte *data, UInt32 size);
 
   UInt32 GetHeaderSize() const { return _key.GetSaltSize() + kPwdVerifCodeSize; }

@@ -22,7 +22,7 @@ extern UInt32 kItsfSignature;
 extern UInt32 kItolSignature;
 const UInt32 kItlsSignature = 0x534C5449;
 UInt64 inline GetHxsSignature() { return ((UInt64)kItlsSignature << 32) | kItolSignature; }
-
+  
 }}}
 
 #endif

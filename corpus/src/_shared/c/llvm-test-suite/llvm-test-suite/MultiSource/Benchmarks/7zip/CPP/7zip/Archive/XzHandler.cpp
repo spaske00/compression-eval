@@ -58,7 +58,7 @@ class CHandler:
   bool _useSeq;
   UInt64 _unpackSizeDefined;
   UInt64 _packSizeDefined;
-
+  
   CMyComPtr<IInStream> _stream;
   CMyComPtr<ISequentialInStream> _seqStream;
 
@@ -464,9 +464,9 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   Int32 askMode = testMode ?
       NExtract::NAskMode::kTest :
       NExtract::NAskMode::kExtract;
-
+  
   RINOK(extractCallback->GetStream(0, &realOutStream, askMode));
-
+  
   if (!testMode && !realOutStream)
     return S_OK;
 
@@ -590,13 +590,13 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
     IArchiveUpdateCallback *updateCallback)
 {
   CSeqOutStreamWrap seqOutStream(outStream);
-
+  
   if (numItems == 0)
   {
     SRes res = Xz_EncodeEmpty(&seqOutStream.p);
     return SResToHRESULT(res);
   }
-
+  
   if (numItems != 1)
     return E_INVALIDARG;
 

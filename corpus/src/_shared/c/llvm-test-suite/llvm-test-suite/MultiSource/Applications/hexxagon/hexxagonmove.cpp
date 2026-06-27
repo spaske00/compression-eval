@@ -1,23 +1,23 @@
 /*
  * Hexxagon board game.
  * Copyright (C) 2001 Erik Jonsson.
- *
+ * 
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; either version 2
  * of the License, or (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
+ * 
  * Email erik@nesqi.homeip.net
- *
+ * 
  */
 
 #include "hexxagonboard.h"
@@ -54,7 +54,7 @@ void HexxagonMoveList::addMove(HexxagonMove &move)
 		}
 	}
 
-	moves[nr_moves] = move;
+ 	moves[nr_moves] = move;
 	nr_moves++;
 }
 
@@ -84,7 +84,7 @@ void HexxagonMoveList::sortList()
 				memcpy(&tmp, &moves[i], sizeof(HexxagonMove));
 				memcpy(&moves[i], &moves[i+1], sizeof(HexxagonMove));
 				memcpy(&moves[i+1], &tmp, sizeof(HexxagonMove));
-			}
+			} 
 		}
 	}
 }
@@ -98,7 +98,7 @@ int getTime()
 	return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 #else
 	struct timeb tb;
-
+	
 	ftime(&tb);
 	return (tb.time * 1000) + tb.millitm;
 #endif
@@ -151,7 +151,7 @@ int alphaBeta(HexxagonBoard &board, int level, int alpha, int beta, void (*callb
 
 		if(value > best)
 			best = value;
-	}
+	}     
 
 	delete moves;
 
@@ -176,13 +176,13 @@ void HexxagonMoveList::scoreAllMoves(HexxagonBoard board, int depth, void (*call
 			HexxagonBoard newboard = HexxagonBoard(board);
 			newboard.applyMove(*getMove(j));
 			int value = -alphaBeta(newboard, i, -beta, -alpha, callback);
-
+			
 			getMove(j)->score = value;
 
 			if(value > best)
 				best = value;
 		}
-
+		
 		sortList();
 	}
 
@@ -197,6 +197,6 @@ HexxagonMove *HexxagonMoveList::getBestMove()
 
 	if(nr_moves)
 		return getMove(0);
-
+	
 	return NULL;
 }

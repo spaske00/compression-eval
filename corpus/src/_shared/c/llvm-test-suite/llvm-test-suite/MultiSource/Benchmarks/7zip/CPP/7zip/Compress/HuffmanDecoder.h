@@ -19,7 +19,7 @@ class CDecoder
   Byte m_Lengths[1 << kNumTableBits];   // Table oh length for short codes.
 
 public:
-
+  
   bool SetCodeLengths(const Byte *codeLengths)
   {
     int lenCounts[kNumBitsMax + 1];

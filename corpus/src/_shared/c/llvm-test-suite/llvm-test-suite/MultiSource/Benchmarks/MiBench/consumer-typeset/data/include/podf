@@ -150,7 +150,7 @@ def @PodSetup
 
 
     export
-
+    
 	@PV @PPG @PLG @PLI @PLRI @PLLW @PLL @PHA @PHB @PHC
 	@PFI @PFB @PFC @PFF @PFL @PFX @A "$>" @PL
 
@@ -236,11 +236,11 @@ def @PodSetup
 	{
 	    pipe @Case {
 		"" @Yield {
-		    "prg2lout -r -lPod" -i{@FilterIn} -o{@FilterOut} -e{@FilterErr}
+	    	    "prg2lout -r -lPod" -i{@FilterIn} -o{@FilterOut} -e{@FilterErr}
 			-t{@InitTab} -T{@InitTabWidth}
 		}
 		else @Yield {
-		    "cat" @FilterIn "|" pipe "|"
+	    	    "cat" @FilterIn "|" pipe "|"
 		    "prg2lout -r -lPod" -o{@FilterOut}
 		    -e{@FilterErr} -t{@InitTab} -T{@InitTabWidth}
 		}
@@ -330,7 +330,7 @@ def @PodSetup
 	{
 	    def defaultwidth
 	    {
-		listlabelwidth @Test
+	    	listlabelwidth @Test
 		    iffixed   { fixedlistlabelwidth   }
 		    ifvarying { varyinglistlabelwidth }
 		    ifsymbol  { symbollistlabelwidth  }

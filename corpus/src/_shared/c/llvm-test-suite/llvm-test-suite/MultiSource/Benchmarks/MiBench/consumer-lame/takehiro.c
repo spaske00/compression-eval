@@ -70,11 +70,11 @@ struct
 
     while (ix < end) {
 	int x =	 *ix++;
-	if (max < x)
+	if (max < x) 
 	    max = x;
 
 	x = *ix++;
-	if (max < x)
+	if (max < x) 
 	    max = x;
     }
     return max;
@@ -86,7 +86,7 @@ struct
 /*************************************************************************/
 
 /*
- Function: Count the number of bits necessary to code the subregion.
+ Function: Count the number of bits necessary to code the subregion. 
 */
 
 static int cb_esc_buf[288];
@@ -144,7 +144,7 @@ count_bit_ESC(int *ix, int *end, int t1, int t2, int *s)
 }
 
  static int
-count_bit_noESC(int *ix, int *end, unsigned int table)
+count_bit_noESC(int *ix, int *end, unsigned int table) 
 {
     /* No ESC-words */
     int	sum = 0, sign = 0;
@@ -176,7 +176,7 @@ count_bit_noESC(int *ix, int *end, unsigned int table)
 
 
  static int
-count_bit_noESC2(unsigned int table)
+count_bit_noESC2(unsigned int table) 
 {
     /* No ESC-words */
     int	sum = cb_esc_sign;
@@ -245,7 +245,7 @@ count_bit_short_ESC(int *ix, int *end, int t1, int t2, int *s)
 
 
  static int
-count_bit_short_noESC(int *ix, int *end, unsigned int table)
+count_bit_short_noESC(int *ix, int *end, unsigned int table) 
 {
     /* No ESC-words */
     int	sum = 0, sign = 0;
@@ -453,7 +453,7 @@ static int count_bits_long(int ix[576], gr_info *gi)
     int bits = 0;
 
     i=576;
-    for (; i > 1; i -= 2)
+    for (; i > 1; i -= 2) 
 	if (ix[i - 1] | ix[i - 2])
 	    break;
 
@@ -507,7 +507,7 @@ static int count_bits_long(int ix[576], gr_info *gi)
 	int index;
 	int scfb_anz = 0;
 
-	while (scalefac_band.l[++scfb_anz] < i)
+	while (scalefac_band.l[++scfb_anz] < i) 
 	    ;
 	index = subdv_table[scfb_anz].region0_count;
 	while (scalefac_band.l[index + 1] > i)
@@ -543,7 +543,7 @@ static int count_bits_long(int ix[576], gr_info *gi)
 
 
 
-int count_bits(lame_global_flags *gfp,int *ix, FLOAT8 *xr, gr_info *cod_info)
+int count_bits(lame_global_flags *gfp,int *ix, FLOAT8 *xr, gr_info *cod_info)  
 {
   int bits=0,i;
   /* since quantize_xrpow uses table lookup, we need to check this first: */
@@ -552,7 +552,7 @@ int count_bits(lame_global_flags *gfp,int *ix, FLOAT8 *xr, gr_info *cod_info)
     if (xr[i] > w)
       return 100000;
   }
-  if (gfp->quantization)
+  if (gfp->quantization) 
     quantize_xrpow(xr, ix, cod_info);
   else
     quantize_xrpow_ISO(xr, ix, cod_info);
@@ -641,7 +641,7 @@ scfsi_calc(int ch,
     static const int slen1_tab[16] = { 0, 0, 0, 0, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4 };
     static const int slen2_tab[16] = { 0, 1, 2, 3, 0, 1, 2, 3, 1, 2, 3, 1, 2, 3, 2, 3 };
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 4; i++) 
 	l3_side->scfsi[ch][i] = 0;
 
     for (i = 0; i < (int)(sizeof(scfsi_band) / sizeof(int)) - 1; i++) {
@@ -698,7 +698,7 @@ void best_scalefac_store(lame_global_flags *gfp,int gr, int ch,
     int sfb,i,l,start,end;
     /* check if l3_enc=0 */
     for ( sfb = 0; sfb < gi->sfb_lmax; sfb++ ) {
-      if (scalefac[gr][ch].l[sfb]>0) {
+      if (scalefac[gr][ch].l[sfb]>0) { 
 	start = scalefac_band.l[ sfb ];
 	end   = scalefac_band.l[ sfb+1 ];
 	for ( l = start; l < end; l++ ) if (l3_enc[gr][ch][l]!=0) break;
@@ -710,7 +710,7 @@ void best_scalefac_store(lame_global_flags *gfp,int gr, int ch,
 	if (scalefac[gr][ch].s[sfb][i]>0) {
 	  start = scalefac_band.s[ sfb ];
 	  end   = scalefac_band.s[ sfb+1 ];
-	  for ( l = start; l < end; l++ )
+	  for ( l = start; l < end; l++ ) 
 	    if (l3_enc[gr][ch][3*l+i]!=0) break;
 	  if (l==end) scalefac[gr][ch].s[sfb][i]=0;
         }
@@ -759,7 +759,7 @@ void best_scalefac_store(lame_global_flags *gfp,int gr, int ch,
 	== l3_side->gr[1].ch[ch].tt.scalefac_scale
 	&& l3_side->gr[0].ch[ch].tt.preflag
 	== l3_side->gr[1].ch[ch].tt.preflag) {
-	scfsi_calc(ch, l3_side, scalefac);
+      	scfsi_calc(ch, l3_side, scalefac);
     }
     gi->part2_3_length += gi->part2_length;
 }

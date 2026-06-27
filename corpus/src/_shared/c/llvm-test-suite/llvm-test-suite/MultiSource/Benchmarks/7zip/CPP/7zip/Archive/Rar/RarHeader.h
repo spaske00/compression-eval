@@ -11,7 +11,7 @@ namespace NHeader {
 
 const int kMarkerSize = 7;
 extern Byte kMarker[kMarkerSize];
-
+  
 const int kArchiveSolid = 0x1;
 
 namespace NBlockType
@@ -45,7 +45,7 @@ namespace NArchive
   const UInt16 kEncryptVer = 0x200; // RAR 3.6 there is EncryptVer Byte in End of MainHeader
 
   const int kHeaderSizeMin = 7;
-
+  
   const int kArchiveHeaderSize = 13;
 
   const int kBlockHeadersAreEncrypted = 0x80;
@@ -59,12 +59,12 @@ namespace NFile
   const int kEncrypted   = 1 << 2;
   const int kComment     = 1 << 3;
   const int kSolid       = 1 << 4;
-
+  
   const int kDictBitStart     = 5;
   const int kNumDictBits  = 3;
   const int kDictMask         = (1 << kNumDictBits) - 1;
   const int kDictDirectoryValue  = 0x7;
-
+  
   const int kSize64Bits    = 1 << 8;
   const int kUnicodeName   = 1 << 9;
   const int kSalt          = 1 << 10;
@@ -74,7 +74,7 @@ namespace NFile
   // const int kSkipIfUnknown = 1 << 14;
 
   const int kLongBlock    = 1 << 15;
-
+  
   /*
   struct CBlock
   {
@@ -133,10 +133,10 @@ namespace NFile
     UInt16 GetRealCRC(const void *aName, UInt32 aNameSize) const;
   };
   */
-
+  
   const int kLabelFileAttribute            = 0x08;
   const int kWinFileDirectoryAttributeMask = 0x10;
-
+  
   enum CHostOS
   {
     kHostMSDOS = 0,

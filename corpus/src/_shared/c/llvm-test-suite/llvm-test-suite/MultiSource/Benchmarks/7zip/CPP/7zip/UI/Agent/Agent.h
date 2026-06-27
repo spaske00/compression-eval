@@ -77,7 +77,7 @@ public:
       const wchar_t *path,
       Int32 testMode,
       IFolderArchiveExtractCallback *extractCallback);
-
+  
   STDMETHOD(GetAgentFolder)(CAgentFolder **agentFolder);
 
   STDMETHOD(GetStream)(UInt32 index, ISequentialInStream **stream);
@@ -160,7 +160,7 @@ public:
       const wchar_t *newArchiveName,
       int numUpdateItems,
       IArchiveUpdateCallback *updateCallback);
-
+  
   HRESULT CreateFolder(
     const wchar_t *newArchiveName,
     const wchar_t *folderName,

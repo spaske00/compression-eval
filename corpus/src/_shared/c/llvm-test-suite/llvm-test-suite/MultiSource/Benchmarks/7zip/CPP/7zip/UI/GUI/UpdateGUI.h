@@ -10,7 +10,7 @@
 /*
   callback->FailedFiles contains names of files for that there were problems.
   RESULT can be S_OK, even if there are such warnings!!!
-
+  
   RESULT = E_ABORT - user break.
   RESULT != E_ABORT:
   {

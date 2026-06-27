@@ -275,7 +275,7 @@ export
     @IndentedList
     @QuotedList
     @CentredList @CenteredList
-    @NumberedList
+    @NumberedList 
     @ParenNumberedList
     @RomanList
     @ParenRomanList
@@ -285,8 +285,8 @@ export
     @ParenAlphaList
     @UCAlphaList
     @ParenUCAlphaList
-    @BulletList
-    @StarList
+    @BulletList 
+    @StarList 
     @DashList
     @TaggedList
     @WideTaggedList
@@ -578,7 +578,7 @@ def @BasicSetup
 	    }
 	}
 
-						  |1s @PAdjust @ParPlace
+						  |1s @PAdjust @ParPlace 
 	/1vo  @Cap @ParGalley {x & @EndPar &1rt } |   @PAdjust @ParPlace
 	//1vx @LineList
 	//    @EndParPlace
@@ -613,7 +613,7 @@ def @BasicSetup
 	    }
 	}
 
-						|1s @PAdjust @ParPlace
+						|1s @PAdjust @ParPlace 
 	/1vo  @ParGalley { x & @EndPar &1rt }	|   @PAdjust @ParPlace
 	/1vo  @Cap				|   @PAdjust @ParPlace
 	//1vx @LineList
@@ -953,7 +953,7 @@ def @BasicSetup
 		^/shadow ^|shadow 0c @HShift
 		@Box margin {margin} paint {paint} linewidth {linewidth} x
 		|shadow /shadow
-	    }
+	    } 
 
 	    PDF @Yield {
 		{
@@ -1031,7 +1031,7 @@ def @BasicSetup
 		    @ULSpot @UpStroke
 		    @URSpot @RightStroke
 		    @URSpot @UpStroke
-
+	
 		    linewidth "setlinewidth stroke"
 		} @Graphic {}
 	    }

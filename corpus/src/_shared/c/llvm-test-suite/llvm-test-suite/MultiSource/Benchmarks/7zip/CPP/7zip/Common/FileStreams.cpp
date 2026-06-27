@@ -67,15 +67,15 @@ bool CInFileStream::OpenShared(LPCWSTR fileName, bool shareForWrite)
 STDMETHODIMP CInFileStream::Read(void *data, UInt32 size, UInt32 *processedSize)
 {
   #ifdef USE_WIN_FILE
-
+  
   UInt32 realProcessedSize;
   bool result = File.ReadPart(data, size, realProcessedSize);
   if(processedSize != NULL)
     *processedSize = realProcessedSize;
   return ConvertBoolToHRESULT(result);
-
+  
   #else
-
+  
   if(processedSize != NULL)
     *processedSize = 0;
   ssize_t res = File.Read(data, (size_t)size);
@@ -100,7 +100,7 @@ STDMETHODIMP CStdInFileStream::Read(void *data, UInt32 size, UInt32 *processedSi
   if (res == FALSE && GetLastError() == ERROR_BROKEN_PIPE)
     return S_OK;
   return ConvertBoolToHRESULT(res != FALSE);
-
+  
   #else
 
   if(processedSize != NULL)
@@ -116,10 +116,10 @@ STDMETHODIMP CStdInFileStream::Read(void *data, UInt32 size, UInt32 *processedSi
   if(processedSize != NULL)
     *processedSize = (UInt32)res;
   return S_OK;
-
+  
   #endif
 }
-
+  
 #endif
 
 STDMETHODIMP CInFileStream::Seek(Int64 offset, UInt32 seekOrigin,
@@ -135,16 +135,16 @@ STDMETHODIMP CInFileStream::Seek(Int64 offset, UInt32 seekOrigin,
   if(newPosition != NULL)
     *newPosition = realNewPosition;
   return ConvertBoolToHRESULT(result);
-
+  
   #else
-
+  
   off_t res = File.Seek(offset, seekOrigin);
   if (res == -1)
     return E_FAIL;
   if(newPosition != NULL)
     *newPosition = (UInt64)res;
   return S_OK;
-
+  
   #endif
 }
 
@@ -172,9 +172,9 @@ STDMETHODIMP COutFileStream::Write(const void *data, UInt32 size, UInt32 *proces
   if(processedSize != NULL)
     *processedSize = realProcessedSize;
   return ConvertBoolToHRESULT(result);
-
+  
   #else
-
+  
   if(processedSize != NULL)
     *processedSize = 0;
   ssize_t res = File.Write(data, (size_t)size);
@@ -184,10 +184,10 @@ STDMETHODIMP COutFileStream::Write(const void *data, UInt32 size, UInt32 *proces
     *processedSize = (UInt32)res;
   ProcessedSize += res;
   return S_OK;
-
+  
   #endif
 }
-
+  
 STDMETHODIMP COutFileStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPosition)
 {
   if(seekOrigin >= 3)
@@ -199,16 +199,16 @@ STDMETHODIMP COutFileStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPo
   if(newPosition != NULL)
     *newPosition = realNewPosition;
   return ConvertBoolToHRESULT(result);
-
+  
   #else
-
+  
   off_t res = File.Seek(offset, seekOrigin);
   if (res == -1)
     return E_FAIL;
   if(newPosition != NULL)
     *newPosition = (UInt64)res;
   return S_OK;
-
+  
   #endif
 }
 
@@ -253,7 +253,7 @@ STDMETHODIMP CStdOutFileStream::Write(const void *data, UInt32 size, UInt32 *pro
   return ConvertBoolToHRESULT(res != FALSE);
 
   #else
-
+  
   ssize_t res;
   do
   {
@@ -265,9 +265,9 @@ STDMETHODIMP CStdOutFileStream::Write(const void *data, UInt32 size, UInt32 *pro
   if(processedSize != NULL)
     *processedSize = (UInt32)res;
   return S_OK;
-
+  
   return S_OK;
   #endif
 }
-
+  
 #endif

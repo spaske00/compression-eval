@@ -25,7 +25,7 @@
                 Computer Science Department, 9062
                 Western Washington University
                 Bellingham, WA 98226-9062
-
+       
 *************************************************************************/
 
 
@@ -401,7 +401,7 @@ yyparse() {
 		yyj = yypgo[yyn] + *yyps + 1;
 		if( yyj>=YYLAST || yychk[ yystate = yyact[yyj] ] != -yyn ) yystate = yyact[yypgo[yyn]];
 		switch(yym){
-
+			
 case 1:
 {
 			      yyval.i_value = 0;
@@ -436,7 +436,7 @@ case 20:
 				warn ("comparison in expression");
 			      if (yypvt[-0].i_value & 1)
 				generate (("W"));
-			      else
+			      else 
 				generate (("p"));
 			    } break;
 case 21:
@@ -477,7 +477,7 @@ case 27:
 { generate (("R")); } break;
 case 28:
 {
-			      yypvt[-0].i_value = break_label;
+			      yypvt[-0].i_value = break_label; 
 			      break_label = next_label++;
 			    } break;
 case 29:
@@ -529,7 +529,7 @@ case 33:
 			    } break;
 case 34:
 {
-			      sprintf (genstr, "N%1d:", if_label);
+			      sprintf (genstr, "N%1d:", if_label); 
 			      generate ((genstr));
 			      if_label = yypvt[-4].i_value;
 			    } break;
@@ -541,7 +541,7 @@ case 35:
 			    } break;
 case 36:
 {
-			      yypvt[-0].i_value = break_label;
+			      yypvt[-0].i_value = break_label; 
 			      break_label = next_label++;
 			      sprintf (genstr, "Z%1d:", break_label);
 			      generate ((genstr));
@@ -568,7 +568,7 @@ case 46:
 {
 			      warn ("else clause in if statement");
 			      yypvt[-0].i_value = next_label++;
-			      sprintf (genstr, "J%d:N%1d:", yypvt[-0].i_value, if_label);
+			      sprintf (genstr, "J%d:N%1d:", yypvt[-0].i_value, if_label); 
 			      generate ((genstr));
 			      if_label = yypvt[-0].i_value;
 			    } break;
@@ -576,7 +576,7 @@ case 48:
 {
 			      /* Check auto list against parameter list? */
 			      check_params (yypvt[-4].a_value,yypvt[-0].a_value);
-			      sprintf (genstr, "F%d,%s.%s[", lookup(yypvt[-6].s_value,FUNCT),
+			      sprintf (genstr, "F%d,%s.%s[", lookup(yypvt[-6].s_value,FUNCT), 
 				       arg_str (yypvt[-4].a_value,TRUE), arg_str (yypvt[-0].a_value,TRUE));
 			      generate ((genstr));
 			      free_args (yypvt[-4].a_value);
@@ -791,7 +791,7 @@ case 85:
 {
 			      yyval.i_value = 1;
 			      if (yypvt[-1].a_value != NULL)
-				{
+				{ 
 				  sprintf (genstr, "C%d,%s:",
 					   lookup (yypvt[-3].s_value,FUNCT),
 					   arg_str (yypvt[-1].a_value,FALSE));
@@ -828,7 +828,7 @@ case 87:
 			      if (yypvt[-1].i_value < 0)
 				{
 				  sprintf (genstr, "DL%d:x", -yypvt[-1].i_value);
-				  generate ((genstr));
+				  generate ((genstr)); 
 				  if (yypvt[-0].c_value == '+')
 				    sprintf (genstr, "A%d:", -yypvt[-1].i_value);
 				  else
@@ -870,7 +870,7 @@ case 95:
 case 96:
 { yyval.i_value = 2; } break;
 case 97:
-{ yyval.i_value = 3; } break;
+{ yyval.i_value = 3; } break; 
 		}
 		goto yystack;  /* stack new state and value */
 

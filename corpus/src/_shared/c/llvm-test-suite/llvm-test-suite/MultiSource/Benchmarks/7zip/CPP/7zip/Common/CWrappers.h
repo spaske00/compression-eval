@@ -52,7 +52,7 @@ struct CByteInBufWrap
   UInt64 Processed;
   bool Extra;
   HRESULT Res;
-
+  
   CByteInBufWrap();
   ~CByteInBufWrap() { Free();  }
   void Free();
@@ -84,7 +84,7 @@ struct CByteOutBufWrap
   ISequentialOutStream *Stream;
   UInt64 Processed;
   HRESULT Res;
-
+  
   CByteOutBufWrap();
   ~CByteOutBufWrap() { Free();  }
   void Free();

@@ -502,7 +502,7 @@ HRESULT ListArchives(CCodecs *codecs, const CIntVector &formatIndices,
       for (int i = 0; i < archiveLink.Arcs.Size(); i++)
       {
         const CArc &arc = archiveLink.Arcs[i];
-
+        
         g_StdOut << "--\n";
         PrintPropPair(L"Path", arc.Path);
         PrintPropPair(L"Type", codecs->Formats[arc.FormatIndex].Name);
@@ -546,7 +546,7 @@ HRESULT ListArchives(CCodecs *codecs, const CIntVector &formatIndices,
             }
           }
         }
-
+        
       }
       g_StdOut << endl;
       if (techMode)
@@ -586,9 +586,9 @@ HRESULT ListArchives(CCodecs *codecs, const CIntVector &formatIndices,
       RINOK(IsArchiveItemFolder(archive, i, isFolder));
       if (!wildcardCensor.CheckPath(filePath, !isFolder))
         continue;
-
+      
       fieldPrinter.PrintItemInfo(arc, i, techMode);
-
+      
       UInt64 packSize, unpackSize;
       if (!GetUInt64Value(archive, i, kpidSize, unpackSize))
         unpackSize = 0;
@@ -598,7 +598,7 @@ HRESULT ListArchives(CCodecs *codecs, const CIntVector &formatIndices,
         packSize = 0;
       else
         totalPackSizePointer = &totalPackSize;
-
+      
       g_StdOut << endl;
 
       if (isFolder)

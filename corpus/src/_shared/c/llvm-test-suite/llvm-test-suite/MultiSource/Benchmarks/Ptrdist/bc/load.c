@@ -23,7 +23,7 @@
                 Computer Science Department, 9062
                 Western Washington University
                 Bellingham, WA 98226-9062
-
+       
 *************************************************************************/
 
 #include "bcdefs.h"
@@ -83,12 +83,12 @@ def_label (long lab)
 {
   bc_label_group * temp;
   int group, offset, func;
-
+    
   /* Get things ready. */
   group = lab >> BC_LABEL_LOG;
   offset = lab % BC_LABEL_GROUP;
   func = load_adr.pc_func;
-
+  
   /* Make sure there is at least one label group. */
   if (functions[func].f_label == NULL)
     {
@@ -128,7 +128,7 @@ long_val (char * * str)
       neg = TRUE;
       (*str)++;
     }
-  while (isdigit(**str))
+  while (isdigit(**str)) 
     val = val*10 + *(*str)++ - '0';
 
   if (neg)
@@ -153,7 +153,7 @@ load_code (char * code)
 
   /* Initialize. */
   str = code;
-
+   
   /* Scan the code. */
   while (*str != 0)
     {
@@ -171,7 +171,7 @@ load_code (char * code)
       else
 	if (load_const)
 	  {
-	    if (*str == '\n')
+	    if (*str == '\n') 
 	      str++;
 	    else
 	      {
@@ -238,7 +238,7 @@ load_code (char * code)
 #if DEBUG > 2
 		    printf ("parameter number %d\n", ap_name);
 #endif
-		    functions[(int)func].f_params =
+		    functions[(int)func].f_params = 
 		      nextarg (functions[(int)func].f_params, ap_name);
 		  }
 
@@ -250,14 +250,14 @@ load_code (char * code)
 #if DEBUG > 2
 		    printf ("auto number %d\n", ap_name);
 #endif
-		    functions[(int)func].f_autos =
+		    functions[(int)func].f_autos = 
 		      nextarg (functions[(int)func].f_autos, ap_name);
 		  }
 		save_adr = load_adr;
 		load_adr.pc_func = func;
 		load_adr.pc_addr = 0;
 		break;
-
+		
 	      case ']':  /* A function end */
 		functions[load_adr.pc_func].f_defined = TRUE;
 		load_adr = save_adr;
@@ -278,7 +278,7 @@ load_code (char * code)
 		  addbyte (*str++);
 		addbyte (':');
 		break;
-
+		
 	      case 'c':  /* Call a special function. */
 		addbyte (*str++);
 		addbyte (*str);
@@ -317,14 +317,14 @@ load_code (char * code)
 		  case 'r':
 		    execute ();
 		    break;
-		  }
+		  } 
 		break;
 
 	      case '\n':  /* Ignore the newlines */
 		break;
-
+		
 	      default:   /* Anything else */
-		addbyte (*str);
+		addbyte (*str);	   
 	      }
 	    str++;
 	  }

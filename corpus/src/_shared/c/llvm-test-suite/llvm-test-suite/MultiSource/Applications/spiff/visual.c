@@ -86,7 +86,7 @@ int flags;
 				break;
 			default :
 				Z_fatal("bad value in main switch");
-
+				
 		}
 	} while (moretodo);
 
@@ -123,7 +123,7 @@ getinput()
 		default:
 			return(OTHER);
 	}
-
+	
 }
 
 showpages(comroutine,flags)

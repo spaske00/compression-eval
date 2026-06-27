@@ -7,7 +7,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Some standard-Scheme compatibility routines
 (define else #t)
-(define (display x)
+(define (display x) 
 	(cond ((number? x) (puts (number->string x)))
 		  ((string? x) (puts x))
 		  ((symbol? x) (puts x))
@@ -48,7 +48,7 @@
 	(if (equal? counter 0)
 		#t
 		(begin
-			(display counter)
+			(display counter) 
 			(newline)
             (print-countdown (- counter 1)))))
 

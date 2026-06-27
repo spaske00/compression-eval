@@ -3,7 +3,7 @@
  *   (e.g. atop, ptoa, itop, ptoi, etc)
  */
 
-/*
+/* 
  * For pXtop:  (X = {i,u,l,ul,d})
  */
 #define	INTSIZE	  	2	/* floor(log[Base](2*(MAXINT+1))) */

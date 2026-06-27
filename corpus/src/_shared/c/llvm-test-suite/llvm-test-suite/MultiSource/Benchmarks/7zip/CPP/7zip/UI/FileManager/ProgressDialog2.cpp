@@ -331,7 +331,7 @@ bool CProgressDialog::OnSize(WPARAM /* wParam */, int xSize, int ySize)
     IDC_PROGRESS_FILES, IDC_PROGRESS_FILES_VALUE,
     IDC_PROGRESS_RATIO, IDC_PROGRESS_RATIO_VALUE,
     IDC_PROGRESS_ERRORS, IDC_PROGRESS_ERRORS_VALUE,
-
+      
     IDC_PROGRESS_TOTAL, IDC_PROGRESS_TOTAL_VALUE,
     IDC_PROGRESS_SPEED, IDC_PROGRESS_SPEED_VALUE,
     IDC_PROGRESS_UNPACKED, IDC_PROGRESS_UNPACKED_VALUE,
@@ -559,7 +559,7 @@ void CProgressDialog::UpdateStatInfo(bool showAll)
       SetTitleText();
       _prevTitleName = titleName;
     }
-
+    
     TCHAR s[64];
     ConvertUInt64ToString(completedFiles, s);
     if (totalFiles != (UInt64)(Int64)-1)
@@ -567,9 +567,9 @@ void CProgressDialog::UpdateStatInfo(bool showAll)
       lstrcat(s, TEXT(" / "));
       ConvertUInt64ToString(totalFiles, s + lstrlen(s));
     }
-
+    
     SetItemText(IDC_PROGRESS_FILES_VALUE, s);
-
+    
     const UInt64 packSize   = CompressingMode ? outSize : inSize;
     const UInt64 unpackSize = CompressingMode ? inSize : outSize;
 
@@ -582,7 +582,7 @@ void CProgressDialog::UpdateStatInfo(bool showAll)
     {
       ShowSize(IDC_PROGRESS_UNPACKED_VALUE, unpackSize);
       ShowSize(IDC_PROGRESS_PACKED_VALUE, packSize);
-
+      
       if (packSize != (UInt64)(Int64)-1 && unpackSize != (UInt64)(Int64)-1 && unpackSize != 0)
       {
         UInt64 ratio = packSize * 100 / unpackSize;
@@ -655,7 +655,7 @@ INT_PTR CProgressDialog::Create(const UString &title, NWindows::CThread &thread,
     {
       CWaitCursor waitCursor;
       HANDLE h[] = { thread, _createDialogEvent };
-
+      
       WRes res = WaitForMultipleObjects(sizeof(h) / sizeof(h[0]), h, FALSE,
           #ifdef UNDER_CE
           2500
@@ -686,11 +686,11 @@ INT_PTR CProgressDialog::Create(const UString &title, NWindows::CThread &thread,
 bool CProgressDialog::OnExternalCloseMessage()
 {
   UpdateStatInfo(true);
-
+  
   HideItem(IDC_BUTTON_PROGRESS_PRIORITY);
   HideItem(IDC_BUTTON_PAUSE);
   SetItemText(IDCANCEL, LangStringSpec(IDS_CLOSE, 0x02000713));
-
+  
   bool thereAreMessages;
   UString okMessage;
   UString okMessageTitle;
@@ -726,11 +726,11 @@ bool CProgressDialog::OnExternalCloseMessage()
   {
 
 #ifdef _WIN32
-    _waitCloseByCancelButton = true;
+    _waitCloseByCancelButton = true;	  
     UpdateMessagesDialog();
     return true;
 #else
-
+ 
 	// FIXME : p7zip does not have a messages zone
 	// FIXME : even if so, the close button does not close the main window
 	// So p7zip uses a MessageBoxW ...
@@ -741,7 +741,7 @@ bool CProgressDialog::OnExternalCloseMessage()
 			  messages.Add(Sync.Messages[i]);
 		  _numPostedMessages = Sync.Messages.Size();
 	  }
-
+	  
 	  if (!messages.IsEmpty())
 	  {
 		  for (int i = 0; i < messages.Size(); i++)
@@ -749,12 +749,12 @@ bool CProgressDialog::OnExternalCloseMessage()
 	  }
 	  else
 		  errorMessage = L"Error(s) in the archive";
-
+	  
 	  MessageBoxW(*this, errorMessage, L"7-Zip - ERROR", MB_ICONERROR | MB_OK);
 
 	  MessagesDisplayed = true;
-
-#endif
+	  
+#endif	  
   }
 
   End(0);
@@ -929,7 +929,7 @@ bool CProgressDialog::OnButtonClicked(int buttonID, HWND buttonHWND)
         End(IDCLOSE);
         break;
       }
-
+        
       bool paused = Sync.GetPaused();
       if (!paused)
         OnPauseButton();
@@ -976,7 +976,7 @@ void CProgressDialog::ProcessWasFinished()
   // Set Window title here.
   // FIXME - not supported if (!WaitMode)
     WaitCreating();
-
+  
   if (_wasCreated)
     PostMessage(kCloseMessage);
   else

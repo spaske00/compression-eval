@@ -147,10 +147,10 @@ STDMETHODIMP CExtractCallbackImp::AskOverwrite(
   dialog.NewFileInfo.SetTime(newTime);
   dialog.NewFileInfo.SetSize(newSize);
   dialog.NewFileInfo.Name = newName;
-
+  
   ProgressDialog->WaitCreating();
   INT_PTR writeAnswer = dialog.Create(*ProgressDialog);
-
+  
   switch(writeAnswer)
   {
     case IDCANCEL: *answer = NOverwriteAnswer::kCancel; return E_ABORT;
@@ -306,7 +306,7 @@ HRESULT CExtractCallbackImp::OpenResult(const wchar_t *name, HRESULT result, boo
   _needWriteArchivePath = true;
   return S_OK;
 }
-
+  
 HRESULT CExtractCallbackImp::ThereAreNoFiles()
 {
   return S_OK;

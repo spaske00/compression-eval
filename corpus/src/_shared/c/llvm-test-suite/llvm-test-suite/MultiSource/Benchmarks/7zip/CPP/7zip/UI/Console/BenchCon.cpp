@@ -184,7 +184,7 @@ HRESULT LzmaBenchCon(
   CBenchCallback callback;
   callback.Init();
   callback.f = f;
-
+  
   fprintf(f, "\n\nDict        Compressing          |        Decompressing\n   ");
   int j;
   for (j = 0; j < 2; j++)

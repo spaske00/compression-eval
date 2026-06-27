@@ -174,7 +174,7 @@ POINTER Error(int set_num, int msg_num, char *str, int etype, FILE_POS *pos, ...
   {
 
     case INTERN:
-
+    
       while( block_top > 0 )  LeaveErrorBlock(TRUE);
       if( AltErrorFormat )
       {
@@ -198,7 +198,7 @@ POINTER Error(int set_num, int msg_num, char *str, int etype, FILE_POS *pos, ...
 
 
     case FATAL:
-
+    
       while( block_top > 0 )  LeaveErrorBlock(TRUE);
       if( AltErrorFormat )
       {
@@ -218,7 +218,7 @@ POINTER Error(int set_num, int msg_num, char *str, int etype, FILE_POS *pos, ...
 
 
     case WARN:
-
+    
       if( block_top == 0 || print_block[block_top - 1] )
       {
 	if( AltErrorFormat )
@@ -249,7 +249,7 @@ POINTER Error(int set_num, int msg_num, char *str, int etype, FILE_POS *pos, ...
 
 
     default:
-
+    
       assert(FALSE, "Error: invalid error type");
       break;
 

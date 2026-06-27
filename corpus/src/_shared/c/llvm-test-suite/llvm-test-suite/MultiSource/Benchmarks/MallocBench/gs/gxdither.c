@@ -19,27 +19,27 @@ copies.  */
 
 /* gxdither.c */
 
-/*
- *	Improved dithering for Ghostscript.  The underlying device imaging
+/* 
+ *	Improved dithering for Ghostscript.  The underlying device imaging 
  *	model supports dithering between two colors to generate intermediate
- *	shades.
- *
+ *	shades.  
+ *	
  *	The strategy is to first see if the color is either pure white or
  *	pure black.  In this case the problem is trivial.
- *
+ *	
  * 	Next, if we are on a High Quality RGB display with 8 or more
  *	bits for each R, G and B, we simply set the color and return.
  *
  *	Now, if the device is black and white, or the color happens
  *	to be achromatic, we perform simple B/W dithering.
- *
- *	Otherwise, things are a bit more complicated.  If the device
- * 	supports N shades of each R, G and B independently, there are a total
- *	of N*N*N colors.  These colors form a 3-D grid in a cubical color
- *	space.  The following dithering technique works by locating the
- *	color we want in this 3-D color grid and finding the eight colors
- * 	that surround it.  In the case of dithering into 8 colors with 1
- *	bit for each red, green and blue, these eight colors will always
+ *	
+ *	Otherwise, things are a bit more complicated.  If the device 
+ * 	supports N shades of each R, G and B independently, there are a total 
+ *	of N*N*N colors.  These colors form a 3-D grid in a cubical color 
+ *	space.  The following dithering technique works by locating the 
+ *	color we want in this 3-D color grid and finding the eight colors 
+ * 	that surround it.  In the case of dithering into 8 colors with 1 
+ *	bit for each red, green and blue, these eight colors will always 
  *	be the same.
  *
  *	Now we consider all possible diagonal paths between the eight colors
@@ -199,7 +199,7 @@ gx_color_render(gs_color *pcolor, gx_device_color *pdevc, gs_state *pgs)
 	else
 		adjust_b = 1;
 	pdevc->color1 = (*dev->procs->map_rgb_color)(dev, r, g, b);
-/*
+/* 
  * Dot the color with each axis to find the best one of 7;
  * find the color at the end of the axis chosen.
  */

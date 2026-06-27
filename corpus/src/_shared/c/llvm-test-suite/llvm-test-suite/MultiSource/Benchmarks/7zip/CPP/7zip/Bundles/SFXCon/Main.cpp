@@ -253,7 +253,7 @@ int Main2(
   #if defined(_WIN32) && !defined(UNDER_CE)
   SetFileApisToOEM();
   #endif
-
+  
   UStringVector commandStrings;
   #ifdef _WIN32
   NCommandLineParser::SplitCommandLine(GetCommandLineW(), commandStrings);
@@ -272,7 +272,7 @@ int Main2(
   int nbcpu = NWindows::NSystem::GetNumberOfProcessors();
   if (nbcpu > 1) g_StdOut << nbcpu << " CPUs)\n";
   else           g_StdOut << nbcpu << " CPU)\n";
-
+ 
   UString arcPath = commandStrings.Front();
 
   commandStrings.Delete(0);
@@ -312,7 +312,7 @@ int Main2(
   recursedType = command.DefaultRecursedType();
 
   NWildcard::CCensor wildcardCensor;
-
+  
   bool thereAreSwitchIncludeWildCards;
   thereAreSwitchIncludeWildCards = false;
   AddToCensorFromNonSwitchesStrings(wildcardCensor, nonSwitchStrings, recursedType,
@@ -331,7 +331,7 @@ int Main2(
 
   if (!NFind::DoesFileExist(arcPath))
     throw kCantFindSFX;
-
+  
   UString outputDir;
   if (parser[NKey::kOutputDir].ThereIs)
   {

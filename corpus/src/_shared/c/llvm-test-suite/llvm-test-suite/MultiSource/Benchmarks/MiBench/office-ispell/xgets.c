@@ -127,7 +127,7 @@ char * xgets (str, size, stream)
 	    else
 		{
 	        (void) fclose (*(current_F--));
-		if (s == str) continue;
+	      	if (s == str) continue;
 		}
 	    }
 
@@ -148,7 +148,7 @@ char * xgets (str, size, stream)
 	    }
 	break;
 	}
-
+    
     return (str);
 #endif
     }

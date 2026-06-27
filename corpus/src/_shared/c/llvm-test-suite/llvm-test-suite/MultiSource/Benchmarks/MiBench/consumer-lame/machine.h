@@ -35,8 +35,8 @@
 #include		<errno.h>
 
 
-/* three different types of pow() functions:
-   1. table lookup
+/* three different types of pow() functions:  
+   1. table lookup   
    2. pow()
    3. exp()   on some machines this is claimed to be faster than pow()
 */
@@ -50,7 +50,7 @@
 
 #define IPOW20(x)  ipow20[x]
 /*
-#define IPOW20(x)  exp( -((double)(x)-210)*.1875*LOG2 )
+#define IPOW20(x)  exp( -((double)(x)-210)*.1875*LOG2 ) 
 #define IPOW20(x)  pow(2.0,-((double)(x)-210)*.1875)
 */
 
@@ -84,7 +84,7 @@
    to disable the ASM routines (or fix them :) */
 
 #define FLOAT8_is_double
-typedef double FLOAT8;
+typedef double FLOAT8;  
 
 /*#define FLOAT8_is_float*/
 /*typedef float FLOAT8;  */

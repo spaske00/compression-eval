@@ -109,7 +109,7 @@ unsigned int do_ari(unsigned int insize)
 {
     rle_pos=0;
     ari_pos=0;
-
+    
     start_model();                              /* Set up other modules.    */
     start_outputing_bits();
     start_encoding();

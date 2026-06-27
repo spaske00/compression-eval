@@ -157,7 +157,7 @@ bool CompoundMsiNameToFileName(const UString &name, UString &resultName)
     if (i == 0)
       resultName += kMsi_ID;
     c -= kMsiStartUnicodeChar;
-
+    
     UInt32 c0 = c & kMsiCharMask;
     UInt32 c1 = c >> kMsiNumBits;
 
@@ -238,7 +238,7 @@ HRESULT CDatabase::Open(IInStream *inStream)
     return S_FALSE;
   UInt32 numSectorsForFAT = Get32(p + 0x2C);
   LongStreamMinSize = Get32(p + 0x38);
-
+  
   UInt32 sectSize = (UInt32)1 << (int)sectorSizeBits;
 
   CByteBuffer sect;
@@ -271,11 +271,11 @@ HRESULT CDatabase::Open(IInStream *inStream)
       sid = bat[i];
     }
     numBatItems = i;
-
+    
     if (!Fat.Allocate(numFatItems))
       return S_FALSE;
     UInt32 j = 0;
-
+      
     for (i = 0; i < numFatItems; j++, i += numSidsInSec)
     {
       if (j >= numBatItems)
@@ -365,7 +365,7 @@ HRESULT CDatabase::Open(IInStream *inStream)
   }
 
   RINOK(AddNode(-1, root.SonDid));
-
+  
   unsigned numCabs = 0;
   for (int i = 0; i < Refs.Size(); i++)
   {

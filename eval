@@ -1,12 +1,31 @@
 #!/bin/bash
 
+set -euo pipefail
+
 dt=$(date +%s)
 corpus="${1:-corpus}"
+out="$PWD/results_$dt.csv"
 
-pushd "$corpus"
+if [[ ! -d "$corpus" ]]; then
+    echo "Corpus directory not found: $corpus" >&2
+    exit 1
+fi
 
-files=$(find . -type f -name '*.tar')
-"${LZBENCH_EXE:-lzbench}" -o4c7 $files | tee "results_${corpus}_$dt.csv"
+search_path="."
+corpus="$(cd "$corpus" && pwd)"
+if [[ -d "$corpus/bin" ]]; then
+    search_path="./bin"
+fi
 
-popd
+pushd "$corpus" >/dev/null
 
+mapfile -d '' files < <(find "$search_path" -type f -executable -print0 | sort -z)
+
+if (( ${#files[@]} == 0 )); then
+    echo "No executables found under $corpus/$search_path" >&2
+    exit 1
+fi
+
+"${LZBENCH_EXE:-lzbench}" -o4c7 "${files[@]}" | tee "$out"
+
+popd >/dev/null

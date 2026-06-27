@@ -4,21 +4,21 @@
  * text functions stolen from mp3info by Ricardo Cerqueira <rmc@rccn.net>
  * adapted for LAME by Conrad Sanderson <c.sanderson@me.gu.edu.au>
  *
- *
- */
-
+ * 
+ */ 
+ 
 #include <stdio.h>
 #include <string.h>
 #include "id3tag.h"
 ID3TAGDATA id3tag;
-
+ 
 /*
  * If "string" is shorter than "length", pad it with ' ' (spaces)
  */
 
 static void id3_pad(char *string, int length) {
 	int l;  l=strlen(string);
-
+	
 	while(l<length) { string[l] = ' '; l++; }
 	string[l]='\0';
 	}
@@ -32,7 +32,7 @@ void id3_inittag(ID3TAGDATA *tag) {
 	strcpy( tag->title, "");
 	strcpy( tag->artist, "");
 	strcpy( tag->album, "");
-	strcpy( tag->year, "");
+	strcpy( tag->year, "");    
 	strcpy( tag->comment, "");
 	tag->genre[0] = 'ÿ';	/* unset genre */
 	tag->track = 0;
@@ -62,7 +62,7 @@ void id3_buildtag(ID3TAGDATA *tag) {
 	}
 
 /*
- * write ID3 tag
+ * write ID3 tag 
  */
 
 int id3_writetag(char* filename, ID3TAGDATA *tag) {
@@ -108,3 +108,5 @@ char *genre_list[]={
 	"Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "JPop",
 	"SynthPop",
 };
+
+

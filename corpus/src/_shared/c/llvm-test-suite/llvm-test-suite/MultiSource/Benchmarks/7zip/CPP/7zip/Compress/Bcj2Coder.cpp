@@ -122,7 +122,7 @@ HRESULT CEncoder::CodeReal(ISequentialInStream **inStreams, const UInt64 **inSiz
       processedSize += processedSizeLoc;
     }
     UInt32 endPos = bufferPos + processedSize;
-
+    
     if (endPos < 5)
     {
       // change it
@@ -242,7 +242,7 @@ HRESULT CEncoder::CodeReal(ISequentialInStream **inStreams, const UInt64 **inSiz
       */
       RINOK(progress->SetRatioInfo(&nowPos64, NULL));
     }
-
+ 
     UInt32 i = 0;
     while(bufferPos < endPos)
       _buffer[i++] = _buffer[bufferPos++];

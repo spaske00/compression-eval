@@ -59,34 +59,34 @@ class CFolderHistory
     if (Strings.Size() > kMaxSize)
       Strings.Delete(kMaxSize, Strings.Size() - kMaxSize);
   }
-
+  
 public:
-
+  
   void GetList(UStringVector &foldersHistory)
   {
     NWindows::NSynchronization::CCriticalSectionLock lock(_criticalSection);
     foldersHistory = Strings;
   }
-
+  
   void AddString(const UString &string)
   {
     NWindows::NSynchronization::CCriticalSectionLock lock(_criticalSection);
     AddUniqueStringToHead(Strings, string);
     Normalize();
   }
-
+  
   void RemoveAll()
   {
     NWindows::NSynchronization::CCriticalSectionLock lock(_criticalSection);
     Strings.Clear();
   }
-
+  
   void Save()
   {
     NWindows::NSynchronization::CCriticalSectionLock lock(_criticalSection);
     SaveFolderHistory(Strings);
   }
-
+  
   void Read()
   {
     NWindows::NSynchronization::CCriticalSectionLock lock(_criticalSection);

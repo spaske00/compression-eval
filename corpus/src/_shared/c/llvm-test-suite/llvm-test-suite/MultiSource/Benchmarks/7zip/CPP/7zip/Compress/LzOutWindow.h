@@ -15,7 +15,7 @@ class CLzOutWindow: public COutBuffer
 {
 public:
   void Init(bool solid = false);
-
+  
   // distance >= 0, len > 0,
   bool CopyBlock(UInt32 distance, UInt32 len)
   {
@@ -46,14 +46,14 @@ public:
     while(--len != 0);
     return true;
   }
-
+  
   void PutByte(Byte b)
   {
     _buffer[_pos++] = b;
     if (_pos == _limitPos)
       FlushWithCheck();
   }
-
+  
   Byte GetByte(UInt32 distance) const
   {
     UInt32 pos = _pos - distance - 1;

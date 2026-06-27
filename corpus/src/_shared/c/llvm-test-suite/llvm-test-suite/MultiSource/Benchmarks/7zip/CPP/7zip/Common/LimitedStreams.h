@@ -24,7 +24,7 @@ public:
     _pos = 0;
     _wasFinished = false;
   }
-
+ 
   MY_UNKNOWN_IMP
 
   STDMETHOD(Read)(void *data, UInt32 size, UInt32 *processedSize);
@@ -53,7 +53,7 @@ public:
     _size = size;
     return SeekToPhys();
   }
-
+ 
   MY_UNKNOWN_IMP1(IInStream)
 
   STDMETHOD(Read)(void *data, UInt32 size, UInt32 *processedSize);

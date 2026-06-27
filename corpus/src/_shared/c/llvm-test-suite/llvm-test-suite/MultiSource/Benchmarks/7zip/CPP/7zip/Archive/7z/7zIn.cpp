@@ -52,7 +52,7 @@ bool CFolder::CheckStructure() const
   {
     CBoolVector v;
     BoolVector_Fill_False(v, BindPairs.Size() + PackStreams.Size());
-
+    
     int i;
     for (i = 0; i < BindPairs.Size(); i++)
       if (BoolVector_GetAndSet(v, BindPairs[i].InIndex))
@@ -60,13 +60,13 @@ bool CFolder::CheckStructure() const
     for (i = 0; i < PackStreams.Size(); i++)
       if (BoolVector_GetAndSet(v, PackStreams[i]))
         return false;
-
+    
     BoolVector_Fill_False(v, UnpackSizes.Size());
     for (i = 0; i < BindPairs.Size(); i++)
       if (BoolVector_GetAndSet(v, BindPairs[i].OutIndex))
         return false;
   }
-
+  
   UInt32 mask[kMaskSize];
   int i;
   for (i = 0; i < kMaskSize; i++)
@@ -83,14 +83,14 @@ bool CFolder::CheckStructure() const
       for (j = 0; j < coder.NumOutStreams; j++)
         outStreamToCoder.Add(i);
     }
-
+    
     for (i = 0; i < BindPairs.Size(); i++)
     {
       const CBindPair &bp = BindPairs[i];
       mask[inStreamToCoder[bp.InIndex]] |= (1 << outStreamToCoder[bp.OutIndex]);
     }
   }
-
+  
   for (i = 0; i < kMaskSize; i++)
     for (int j = 0; j < kMaskSize; j++)
       if (((1 << j) & mask[i]) != 0)
@@ -366,7 +366,7 @@ HRESULT CInArchive::Open(IInStream *stream, const UInt64 *searchHeaderSizeLimit)
   _stream = stream;
   return S_OK;
 }
-
+  
 void CInArchive::Close()
 {
   _stream.Release();
@@ -791,12 +791,12 @@ HRESULT CInArchive::ReadAndDecodePackedStreams(
   CBoolVector packCRCsDefined;
   CRecordVector<UInt32> packCRCs;
   CObjectVector<CFolder> folders;
-
+  
   CRecordVector<CNum> numUnpackStreamsInFolders;
   CRecordVector<UInt64> unpackSizes;
   CBoolVector digestsDefined;
   CRecordVector<UInt32> digests;
-
+  
   ReadStreamsInfo(NULL,
     dataOffset,
     packSizes,
@@ -807,9 +807,9 @@ HRESULT CInArchive::ReadAndDecodePackedStreams(
     unpackSizes,
     digestsDefined,
     digests);
-
+  
   // db.ArchiveInfo.DataStartPosition2 += db.ArchiveInfo.StartPositionAfterHeader;
-
+  
   CNum packIndex = 0;
   CDecoder decoder(
     #ifdef _ST_MODE
@@ -829,11 +829,11 @@ HRESULT CInArchive::ReadAndDecodePackedStreams(
     if (unpackSize != unpackSize64)
       ThrowUnsupported();
     data.SetCapacity(unpackSize);
-
+    
     CBufPtrSeqOutStream *outStreamSpec = new CBufPtrSeqOutStream;
     CMyComPtr<ISequentialOutStream> outStream = outStreamSpec;
     outStreamSpec->Init(data, unpackSize);
-
+    
     HRESULT result = decoder.Decode(
       EXTERNAL_CODECS_LOC_VARS
       _stream, dataStartPos,
@@ -846,7 +846,7 @@ HRESULT CInArchive::ReadAndDecodePackedStreams(
       #endif
       );
     RINOK(result);
-
+    
     if (folder.UnpackCRCDefined)
       if (CrcCalc(data, unpackSize) != folder.UnpackCRC)
         ThrowIncorrect();
@@ -875,9 +875,9 @@ HRESULT CInArchive::ReadHeader(
     ReadArchiveProperties(db.ArchiveInfo);
     type = ReadID();
   }
-
+ 
   CObjectVector<CByteBuffer> dataVector;
-
+  
   if (type == NID::kAdditionalStreamsInfo)
   {
     HRESULT result = ReadAndDecodePackedStreams(
@@ -897,7 +897,7 @@ HRESULT CInArchive::ReadHeader(
   CRecordVector<UInt64> unpackSizes;
   CBoolVector digestsDefined;
   CRecordVector<UInt32> digests;
-
+  
   if (type == NID::kMainStreamsInfo)
   {
     ReadStreamsInfo(&dataVector,
@@ -931,7 +931,7 @@ HRESULT CInArchive::ReadHeader(
     return S_OK;
   if (type != NID::kFilesInfo)
     ThrowIncorrect();
-
+  
   CNum numFiles = ReadNum();
   db.Files.Reserve(numFiles);
   CNum i;
@@ -1035,7 +1035,7 @@ HRESULT CInArchive::ReadHeader(
   for (i = 0; i < numEmptyStreams; i++)
     if (antiFileVector[i])
       numAntiItems++;
-
+    
   for (i = 0; i < numFiles; i++)
   {
     CFileItem &file = db.Files[i];
@@ -1095,7 +1095,7 @@ void CArchiveDatabaseEx::FillFolderStartFileIndex()
   FolderStartFileIndex.Reserve(Folders.Size());
   FileIndexToFolderIndexMap.Clear();
   FileIndexToFolderIndexMap.Reserve(Files.Size());
-
+  
   int folderIndex = 0;
   CNum indexInFolder = 0;
   for (int i = 0; i < Files.Size(); i++)
@@ -1168,7 +1168,7 @@ HRESULT CInArchive::ReadDatabase2(
     if (cur2 - cur < kCheckSize)
       checkSize = (int)(cur2 - cur);
     RINOK(_stream->Seek(-checkSize, STREAM_SEEK_END, &cur2));
-
+    
     RINOK(ReadStream_FALSE(_stream, buf, (size_t)checkSize));
 
     int i;
@@ -1211,12 +1211,12 @@ HRESULT CInArchive::ReadDatabase2(
 
   if (CrcCalc(buffer2, (UInt32)nextHeaderSize) != nextHeaderCRC)
     ThrowIncorrect();
-
+  
   CStreamSwitch streamSwitch;
   streamSwitch.Set(this, buffer2);
-
+  
   CObjectVector<CByteBuffer> dataVector;
-
+  
   UInt64 type = ReadID();
   if (type != NID::kHeader)
   {

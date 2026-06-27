@@ -101,7 +101,7 @@ public:
   #endif
 
   HRESULT Close();
-
+  
   UInt64 ProcessedSize;
 
   #ifdef USE_WIN_FILE

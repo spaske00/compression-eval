@@ -295,7 +295,7 @@ HRESULT CHandler::Open2(IInStream *stream, IArchiveOpenCallback *callback)
   if (offset != 9 || Get32(header + 9) != 0)
     return S_FALSE;
   offset += 4;
-
+ 
   CByteBuffer inBuf;
   size_t fileSize;
   {
@@ -346,11 +346,11 @@ HRESULT CHandler::Open2(IInStream *stream, IArchiveOpenCallback *callback)
 
     UInt32 curSize = kTagHeaderSize + size + 4;
     item.Size = curSize;
-
+    
     offset += curSize - kTagHeaderSize;
     if (offset > fileSize)
       return S_FALSE;
-
+    
     if (Get32(buf + kTagHeaderSize + size) != kTagHeaderSize + size)
       return S_FALSE;
 
@@ -492,7 +492,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   totalSize = 0;
-
+  
   CLocalProgress *lps = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> progress = lps;
   lps->Init(extractCallback, false);

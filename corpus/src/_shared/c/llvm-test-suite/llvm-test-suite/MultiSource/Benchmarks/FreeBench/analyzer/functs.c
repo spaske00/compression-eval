@@ -12,7 +12,7 @@ void speedup_test(FILE *fp)
   char string[100],ostring[100],slask[100];
   uint32 address;
   uint32 issue_no1, issue_no2, issue_no3;
-
+  
   rewind(fp);
 
   fscanf(fp,"%s %lu",string,&issue_no1);
@@ -41,7 +41,7 @@ uint32 imix_test(FILE *fp)
   uint32 issue_no1, issue_no2;
   uint32 data_access=0;
 
-  rewind(fp);
+  rewind(fp); 
 
   fgets(string, 100, fp);
 
@@ -63,12 +63,12 @@ uint32 imix_test(FILE *fp)
 void find_hard_raws()
 {
   hard_raw_t *iter=NULL;
-
+  
   iter=hard_raw_list;
   while (iter!=NULL) {
     if (iter->r_issue>iter->w_issue) {
-      if (iter->prev!=NULL) {
-	iter->prev->next=iter->next;
+      if (iter->prev!=NULL) {  
+	iter->prev->next=iter->next;  
       }
       iter=iter->next;
     } else {
@@ -86,12 +86,12 @@ void specul_time_o(epoch_t *epoch, int num_epochs, FILE *graphfile, int show_spe
 
   for (i=0;i<num_epochs;i++) {
     epoch[i].run_time=epoch[i].end_time-epoch[i].start_time;
-    epoch[i].stall_time=0;
+    epoch[i].stall_time=0;  
   }
 
   {
     hard_raw_t *iter=NULL;
-    iter=hard_raw_list;
+    iter=hard_raw_list; 
     while(iter!=NULL) {
       if ((iter->w_issue+epoch[iter->w_epoch].stall_time) > epoch[iter->r_epoch].stall_time) {
 	epoch[iter->r_epoch].stall_time=iter->w_issue+epoch[iter->w_epoch].stall_time;
@@ -104,13 +104,13 @@ void specul_time_o(epoch_t *epoch, int num_epochs, FILE *graphfile, int show_spe
   for (i=0;i<num_epochs;i++) {
     epoch[i].run_time=epoch[i].run_time+epoch[i].stall_time;
   }
-
+  
   max=epoch[0].run_time;
-  for (i=0;i<num_epochs;i++) {
+  for (i=0;i<num_epochs;i++) {  
     if (epoch[i].run_time>max)
        max=epoch[i].run_time;
   }
-
+  
   printf("OPTIMUM RESTART RESULTS\n");
   max+=(restarts+num_epochs)*thread_pen+num_epochs*commit_pen;
 
@@ -120,7 +120,7 @@ void specul_time_o(epoch_t *epoch, int num_epochs, FILE *graphfile, int show_spe
     printf("Potential speedup for loop: %0.3g times\n", (double)loop_time/(double)max);
   if (show_speedup == 2 || show_speedup == 3)
     printf("Potential speedup for program: %0.3g times\n", (double)prog_time/(max+prog_time-loop_time));
-  if (graphfile!=NULL) {
+  if (graphfile!=NULL) { 
     if (show_speedup == 1 || show_speedup == 3)
       fprintf(graphfile,"optloop: %0.3g\n", (double)loop_time/(double)max);
     if (show_speedup == 2 || show_speedup == 3)
@@ -134,17 +134,17 @@ void specul_time_r(epoch_t *epoch, int num_epochs, int cpulimit, FILE *graphfile
   int i;
   uint32 max=0;
   uint32 restarts=0;
-
+  
   if (cpulimit==0) {  /* "Unlimited" amount of CPUs simulated */
     printf("REALISTIC RESTART RESULTS -- Unlimited amount of CPUs\n");
     for (i=0;i<num_epochs;i++) {
       epoch[i].run_time=epoch[i].end_time-epoch[i].start_time;
-      epoch[i].stall_time=0;
+      epoch[i].stall_time=0; 
     }
-
+    
     {
       hard_raw_t *iter=NULL;
-      iter=hard_raw_list;
+      iter=hard_raw_list; 
       while(iter!=NULL) {
 	if ((iter->w_issue+epoch[iter->w_epoch].stall_time) > epoch[iter->r_epoch].stall_time) {
 	  epoch[iter->r_epoch].stall_time=epoch[iter->w_epoch].run_time+epoch[iter->w_epoch].stall_time;
@@ -153,13 +153,13 @@ void specul_time_r(epoch_t *epoch, int num_epochs, int cpulimit, FILE *graphfile
 	iter=iter->next;
       }
     }
-
+    
     for (i=0;i<num_epochs;i++) {
       epoch[i].run_time=epoch[i].run_time+epoch[i].stall_time;
     }
-
+    
     max=epoch[0].run_time;
-    for (i=0;i<num_epochs;i++) {
+    for (i=0;i<num_epochs;i++) {  
       if (epoch[i].run_time>max)
 	max=epoch[i].run_time;
     }
@@ -168,7 +168,7 @@ void specul_time_r(epoch_t *epoch, int num_epochs, int cpulimit, FILE *graphfile
     uint32 current_stall=0;
     printf("REALISTIC RESTART RESULTS -- %d CPUs\n",cpulimit);
     for (i=0;i<num_epochs;i++) {
-      epoch[i].run_time=epoch[i].end_time-epoch[i].start_time;
+      epoch[i].run_time=epoch[i].end_time-epoch[i].start_time; 
       epoch[i].stall_time=0;
     }
     for (i=cpulimit;i<num_epochs;i+=cpulimit) {
@@ -183,7 +183,7 @@ void specul_time_r(epoch_t *epoch, int num_epochs, int cpulimit, FILE *graphfile
     }
     {
       hard_raw_t *iter=NULL;
-      iter=hard_raw_list;
+      iter=hard_raw_list; 
       while(iter!=NULL) {
 	if ((iter->w_issue+epoch[iter->w_epoch].stall_time) > epoch[iter->r_epoch].stall_time) {
 	  epoch[iter->r_epoch].stall_time+=epoch[iter->w_epoch].run_time+epoch[iter->w_epoch].stall_time;
@@ -195,9 +195,9 @@ void specul_time_r(epoch_t *epoch, int num_epochs, int cpulimit, FILE *graphfile
     for (i=0;i<num_epochs;i++) {
       epoch[i].run_time=epoch[i].run_time+epoch[i].stall_time;
     }
-
+    
     max=epoch[0].run_time;
-    for (i=0;i<num_epochs;i++) {
+    for (i=0;i<num_epochs;i++) {  
       if (epoch[i].run_time>max)
 	max=epoch[i].run_time;
     }

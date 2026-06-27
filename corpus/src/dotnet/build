@@ -11,9 +11,7 @@ arch=(
 declare -A opts=(
     ["debug"]="-c Debug"
     ["release"]="-c Release"
-    ["static"]="-c Release --self-contained true"
-    ["sf"]="-c Release -p:PublishSingleFile=true"
-    ["static-sf"]="-c Release -p:PublishSingleFile=true --self-contained true"
+    ["static"]="-c Release -p:PublishAot=false -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true"
 )
 
 function build_templates ()

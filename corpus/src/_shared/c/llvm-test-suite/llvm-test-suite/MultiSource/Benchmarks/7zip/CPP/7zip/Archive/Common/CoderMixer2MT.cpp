@@ -167,7 +167,7 @@ HRESULT CCoderMixer2MT::Init(ISequentialInStream **inStreams, ISequentialOutStre
     _bindInfo.FindInStream(_bindInfo.InStreams[i], inCoderIndex, inCoderStreamIndex);
     _coders[inCoderIndex].InStreams[inCoderStreamIndex] = inStreams[i];
   }
-
+  
   for (i = 0; i < _bindInfo.OutStreams.Size(); i++)
   {
     UInt32 outCoderIndex, outCoderStreamIndex;

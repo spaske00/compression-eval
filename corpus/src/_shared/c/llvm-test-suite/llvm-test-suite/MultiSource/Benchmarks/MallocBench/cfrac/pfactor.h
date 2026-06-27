@@ -33,7 +33,7 @@ extern void	  pfreefactors();	/* return a factorlist to memory */
 
 #else
 
-extern int       pprime(precision, unsigned trialCount);
+extern int       pprime(precision, unsigned trialCount);	
 extern precision pnextprime(precision, unsigned trialCount);
 
 extern precision pgcd(precision, precision);

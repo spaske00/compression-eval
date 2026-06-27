@@ -18,7 +18,7 @@ int main(void)
   /* solve soem cubic functions */
   printf("********* CUBIC FUNCTIONS ***********\n");
   /* should get 3 solutions: 2, 6 & 2.5   */
-  SolveCubic(a1, b1, c1, d1, &solutions, x);
+  SolveCubic(a1, b1, c1, d1, &solutions, x);  
   printf("Solutions:");
   for(i=0;i<solutions;i++)
     printf(" %f",x[i]);
@@ -26,7 +26,7 @@ int main(void)
 
   a1 = 1.0; b1 = -4.5; c1 = 17.0; d1 = -30.0;
   /* should get 1 solution: 2.5           */
-  SolveCubic(a1, b1, c1, d1, &solutions, x);
+  SolveCubic(a1, b1, c1, d1, &solutions, x);  
   printf("Solutions:");
   for(i=0;i<solutions;i++)
     printf(" %f",x[i]);
@@ -79,7 +79,7 @@ int main(void)
     for(b1=10;b1>0;b1-=.25) {
       for(c1=5;c1<15;c1+=0.61) {
 	   for(d1=-1;d1>-5;d1-=.451) {
-		SolveCubic(a1, b1, c1, d1, &solutions, x);
+		SolveCubic(a1, b1, c1, d1, &solutions, x);  
 		printf("Solutions:");
 		for(i=0;i<solutions;i++)
 		  printf(" %f",x[i]);
@@ -118,7 +118,7 @@ int main(void)
 /*   for (X = 0.0; X <= (2 * PI + 1e-6); X += (PI / 180)) */
   for (X = 0.0; X <= (2 * PI + 1e-6); X += (PI / 5760))
     printf("%.12f radians = %3.0f degrees\n", X, rad2deg(X));
-
-
+  
+  
   return 0;
 }

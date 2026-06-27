@@ -32,7 +32,7 @@ static void DeriveKey2(const Byte *digest, Byte c, Byte *dest)
   sha.Update(buf, 64);
   sha.Final(dest);
 }
-
+ 
 static void DeriveKey(NSha1::CContext &sha, Byte *key)
 {
   Byte digest[NSha1::kDigestSize];
@@ -145,7 +145,7 @@ HRESULT CDecoder::CheckPassword(bool &passwOK)
   sha.Update(_iv, 16);
   sha.Update(p, rdSize - 16); // we don't use last 16 bytes (PAD bytes)
   DeriveKey(sha, fileKey);
-
+  
   RINOK(SetKey(fileKey, _key.KeySize));
   RINOK(SetInitVector(_iv, 16));
   Init();

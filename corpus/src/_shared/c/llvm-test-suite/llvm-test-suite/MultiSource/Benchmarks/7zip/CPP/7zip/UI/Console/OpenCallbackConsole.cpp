@@ -23,7 +23,7 @@ HRESULT COpenCallbackConsole::Open_SetCompleted(const UInt64 *, const UInt64 *)
 {
   return Open_CheckBreak();
 }
-
+ 
 #ifndef _NO_CRYPTO
 
 HRESULT COpenCallbackConsole::Open_CryptoGetTextPassword(BSTR *password)

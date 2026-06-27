@@ -172,7 +172,7 @@ static OBJECT load(FULL_CHAR *name, unsigned dtype, OBJECT encl, BOOLEAN compuls
 }
 
 void FontInit(void)
-{
+{ 
   debug0(DFT, D, "FontInit()");
   font_curr_page = 1;
   font_count	= 0;
@@ -290,7 +290,7 @@ static void ReadCharMetrics(OBJECT face, BOOLEAN fixed_pitch, int xheight2,
   {
     /* read one line containing metric info for one character */
     debug1(DFT, DD, "  ReadCharMetrics: %s", buff);
-    (*lnum)++;  ch = '\0';
+    (*lnum)++;  ch = '\0';  
     wxfound = bfound = FALSE;
     i = 0;  while( buff[i] == ' ' )  i++;
     while( buff[i] != '\n' )
@@ -344,7 +344,7 @@ static void ReadCharMetrics(OBJECT face, BOOLEAN fixed_pitch, int xheight2,
       }
     }
     if( ch > '\0' )
-    {
+    { 
       if( !wxfound )
       { Error(37, 3, "WX missing in font file %s (line %d)",
 	  FATAL, &fpos(AFMfilename), FileName(fnum), *lnum);
@@ -443,7 +443,7 @@ static void ReadCompositeMetrics(OBJECT face, OBJECT Extrafilename,
       cmp[*cmptop].y_offset = y_offset;
       (*cmptop)++;
     }
-
+    
     /* add null terminating component */
     if( *cmptop >= MAX_CHARS )
       Error(37, 8, "too many composites in file %s (at line %d)",
@@ -769,7 +769,7 @@ static OBJECT FontRead(FULL_CHAR *family_name, FULL_CHAR *face_name, OBJECT err)
 
       case 'U':
 
-	if( StringEqual(command, AsciiToFull("UnderlinePosition")) )
+	if( StringEqual(command, AsciiToFull("UnderlinePosition")) ) 
 	{ if( upfound )
 	  { Error(37, 26, "UnderlinePosition found twice in font file (line %d)",
 	      FATAL, &fpos(AFMfilename), lnum);
@@ -778,7 +778,7 @@ static OBJECT FontRead(FULL_CHAR *family_name, FULL_CHAR *face_name, OBJECT err)
 	  under_pos = fl_under_pos;
 	  upfound = TRUE;
 	}
-	else if( StringEqual(command, AsciiToFull("UnderlineThickness")) )
+	else if( StringEqual(command, AsciiToFull("UnderlineThickness")) ) 
 	{ if( utfound )
 	  { Error(37, 27, "UnderlineThickness found twice in font file (line %d)",
 	      FATAL, &fpos(AFMfilename), lnum);
@@ -792,7 +792,7 @@ static OBJECT FontRead(FULL_CHAR *family_name, FULL_CHAR *face_name, OBJECT err)
 
       case 'X':
 
-	if( StringEqual(command, AsciiToFull("XHeight")) )
+	if( StringEqual(command, AsciiToFull("XHeight")) ) 
 	{ if( xhfound )
 	  { Error(37, 28, "XHeight found twice in font file (line %d)",
 	      FATAL, &fpos(AFMfilename), lnum);
@@ -828,7 +828,7 @@ static OBJECT FontRead(FULL_CHAR *family_name, FULL_CHAR *face_name, OBJECT err)
       case 'I':
 
 	if( StringEqual(command, AsciiToFull("IsFixedPitch")) )
-	{
+	{ 
 	  sscanf( (char *) buff, "IsFixedPitch %s", command);
 	  if( StringEqual(command, AsciiToFull("true")) )
 	  { fixed_pitch = TRUE;
@@ -996,7 +996,7 @@ static OBJECT FontRead(FULL_CHAR *family_name, FULL_CHAR *face_name, OBJECT err)
 	    extra_fnum, fnt, &lnum, extra_fp);
 	}
 	else if( StringEqual(command, AsciiToFull("StartBuildComposites")) )
-	{
+	{ 
 	  /* build composites */
 	  debug0(DFT, D, "  StartBuildComposites");
 	  ReadCompositeMetrics(face, Extrafilename, extra_fnum, &lnum,
@@ -1083,14 +1083,14 @@ void FontChange(STYLE *style, OBJECT x)
     else if( StringEqual(string(x), STR_SMALL_CAPS_OFF) )
       small_caps(*style) = SMALL_CAPS_OFF;
     else if( !StringEqual(string(x), STR_EMPTY) )
-      par[num++] = x;
+      par[num++] = x; 
   }
   else if( type(x) == ACAT )
   { for( link = Down(x);  link != x;  link = NextDown(link) )
     { Child(y, link);
       debug1(DFT, DDD, "  pars examining y = %s", EchoObject(y));
       if( type(y) == GAP_OBJ || type(y)  == NULL_CLOS )  continue;
-      if( is_word(type(y)) )
+      if( is_word(type(y)) ) 
       {
 	if( StringEqual(string(y), STR_SMALL_CAPS_ON) )
 	  small_caps(*style) = SMALL_CAPS_ON;
@@ -1104,7 +1104,7 @@ void FontChange(STYLE *style, OBJECT x)
 	    debug0(DFT, D, "FontChange returning: ACAT children");
 	    return;
 	  }
-	  par[num++] = y;
+	  par[num++] = y; 
 	}
       }
       else
@@ -1280,7 +1280,7 @@ void FontChange(STYLE *style, OBJECT x)
   /* get font size as integer flen */
   if( requested_size == nilobj )
     flen = font_size(finfo[font(*style)].font_table);
-  else
+  else 
   { GetGap(requested_size, style, &gp, &inc);
     if( mode(gp) != EDGE_MODE || units(gp) != FIXED_UNIT )
     { Error(37, 47, "syntax error in font size %s; ignoring it",
@@ -1486,7 +1486,7 @@ void FontWordSize(OBJECT x)
     acc   = MapTable[m]->map[MAP_ACCENT];
     d = u = r = 0;
     do
-    {
+    { 
       /* check for missing glyph (lig[] == 1) or ligatures (lig[] > 1) */
       debug2(DFT, D, "  examining `%c' lig = %d", *p, lig[*p]);
       if( lig[*q = *p++] )
@@ -1563,7 +1563,7 @@ void FontWordSize(OBJECT x)
     fwd(x, COLM)  = r;
     back(x, ROWM) = u;
     fwd(x, ROWM)  = -d;
-  }
+  } 
   else back(x, COLM) = fwd(x, COLM) = back(x, ROWM) = fwd(x, ROWM) = 0;
   debug4(DFT, D, "FontWordSize returning %hd %hd %hd %hd",
 	  back(x, COLM), fwd(x, COLM), back(x, ROWM), fwd(x, ROWM));

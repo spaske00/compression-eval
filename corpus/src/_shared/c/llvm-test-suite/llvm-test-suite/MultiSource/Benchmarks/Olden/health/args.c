@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include "health.h"
 
-void dealwithargs(int argc, char *argv[]) {
+void dealwithargs(int argc, char *argv[]) { 
   if (argc < 4) {
     max_level = 3;
     max_time = 15;
@@ -22,3 +22,7 @@ void dealwithargs(int argc, char *argv[]) {
 
   printf("max_level=%d  max_time=%d  seed=%d \n", max_level, (int)max_time, (int)seed);
 }
+
+
+
+

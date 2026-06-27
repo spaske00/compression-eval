@@ -108,9 +108,9 @@ HRESULT CPanel::Create(HWND mainWindow, HWND parentWindow, UINT id,
     return E_FAIL;
 #else
   {
-	// printf("WARNING CPanel::Create => CreateEx\n");
-	// this->OnCreate(0);
-	extern void registerWindow2(int baseID,NWindows::NControl::CWindow2 *w);
+  	// printf("WARNING CPanel::Create => CreateEx\n");
+  	// this->OnCreate(0);
+  	extern void registerWindow2(int baseID,NWindows::NControl::CWindow2 *w);
 	registerWindow2(_baseID,this);
   }
 #endif
@@ -403,7 +403,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   _listView.Show(SW_SHOW);
   _listView.InvalidateRect(NULL, true);
   _listView.Update();
-
+  
   // Ensure that the common control DLL is loaded.
   INITCOMMONCONTROLSEX icex;
 
@@ -424,7 +424,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
     icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
     icex.dwICC  = ICC_COOL_CLASSES | ICC_BAR_CLASSES;
     InitCommonControlsEx(&icex);
-
+    
     _headerReBar.Attach(::CreateWindowEx(WS_EX_TOOLWINDOW,
       REBARCLASSNAME,
       NULL, WS_VISIBLE | WS_BORDER | WS_CHILD |
@@ -461,7 +461,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
   icex.dwICC = ICC_USEREX_CLASSES;
   InitCommonControlsEx(&icex);
-
+  
   _headerComboBox.CreateEx(0, WC_COMBOBOXEXW, NULL,
     WS_BORDER | WS_VISIBLE |WS_CHILD | CBS_DROPDOWN | CBS_AUTOHSCROLL,
       0, 0, 100, 520,
@@ -503,13 +503,13 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
     rbi.fMask  = 0;
     rbi.himl   = (HIMAGELIST)NULL;
     _headerReBar.SetBarInfo(&rbi);
-
+    
     // Send the TB_BUTTONSTRUCTSIZE message, which is required for
     // backward compatibility.
     // _headerToolBar.SendMessage(TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
     SIZE size;
     _headerToolBar.GetMaxSize(&size);
-
+    
     REBARBANDINFO rbBand;
     rbBand.cbSize = sizeof(REBARBANDINFO);  // Required
     rbBand.fMask  = RBBIM_STYLE | RBBIM_CHILD | RBBIM_CHILDSIZE | RBBIM_SIZE;
@@ -549,7 +549,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   // InitListCtrl();
   RefreshListCtrl();
   RefreshStatusBar();
-
+  
   return true;
 }
 #else
@@ -562,7 +562,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
 
   extern HWND g_HWND;
   HWND w = GetDlgItem(g_HWND, _comboBoxID);
-  if (w == 0)
+  if (w == 0) 
   {
 	  printf("Can't find id=%d\n",_comboBoxID);
 	  return false;
@@ -571,7 +571,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   _headerComboBox.Attach(w);
 
   w = GetDlgItem(g_HWND, _statusBarID);
-  if (w == 0)
+  if (w == 0) 
   {
 	  printf("Can't find id=%d\n",_statusBarID);
 	  return false;
@@ -580,14 +580,14 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   _statusBar.Attach(w);
 
   w = GetDlgItem(g_HWND, _baseID + 1);
-  if (w == 0)
+  if (w == 0) 
   {
 	  printf("Can't find id=%d\n",_baseID + 1);
 	  return false;
   }
   printf("CPanel::OnCreate : _listView.Attach(%p)\n",w);
   _listView.Attach(w);
-
+  
   _listView.SetUnicodeFormat(true);
 
   // _listView.SetUserDataLongPtr(LONG_PTR(&_listView));
@@ -601,7 +601,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   // FIXME _listView.Show(SW_SHOW);
   // FIXME _listView.InvalidateRect(NULL, true);
   _listView.Update();
-
+  
   /* FIXME
   _headerToolBar.Attach(::CreateToolbarEx ((*this), toolbarStyle,
       _baseID + 2, 11,
@@ -641,7 +641,7 @@ bool CPanel::OnCreate(CREATESTRUCT * /* createStruct */)
   // InitListCtrl();
   RefreshListCtrl();
   RefreshStatusBar();
-
+  
   return true;
 }
 #endif
@@ -671,10 +671,10 @@ void CPanel::ChangeWindowSize(int xSize, int ySize)
 
   _statusBar.GetWindowRect(&rect);
   kStatusBarSize = rect.bottom - rect.top;
-
+  
   // _statusBar2.GetWindowRect(&rect);
   // kStatusBar2Size = rect.bottom - rect.top;
-
+ 
   int yListViewSize = MyMax(ySize - kHeaderSize - kStatusBarSize, 0);
   const int kStartXPos = 32;
   if (_headerReBar)
@@ -1056,21 +1056,21 @@ void CPanel::TestArchives()
       return;
 
     extracter.Indices = indices;
-
+    
     UString title = LangString(IDS_PROGRESS_TESTING, 0x02000F90);
     UString progressWindowTitle = LangString(IDS_APP_TITLE, 0x03000000);
-
+    
     extracter.ProgressDialog.CompressingMode = false;
     extracter.ProgressDialog.MainWindow = GetParent();
     extracter.ProgressDialog.MainTitle = progressWindowTitle;
     extracter.ProgressDialog.MainAddTitle = title + L" ";
-
+    
     extracter.ExtractCallbackSpec->OverwriteMode = NExtract::NOverwriteMode::kAskBefore;
     extracter.ExtractCallbackSpec->Init();
-
+    
     if (extracter.Create(title, GetParent()) != S_OK)
       return;
-
+    
     }
     RefreshTitleAlways();
     return;

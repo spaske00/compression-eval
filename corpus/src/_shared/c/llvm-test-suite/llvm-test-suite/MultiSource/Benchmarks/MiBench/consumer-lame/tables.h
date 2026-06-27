@@ -1,6 +1,6 @@
 /*
 ** Copyright (C) 1999 Albert L. Faber
-**
+**  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
  * License as published by the Free Software Foundation; either
@@ -24,9 +24,9 @@ extern FLOAT8 psy_data[];
 
 #define HUFFBITS unsigned long int
 #define HTN	34
-
+ 
 struct huffcodetab {
-  unsigned int xlen; 	/*max. x-index+			      	*/
+  unsigned int xlen; 	/*max. x-index+			      	*/ 
   unsigned int linmax;	/*max number to be stored in linbits	*/
   HUFFBITS *table;	/*pointer to array[xlen][ylen]		*/
   unsigned char *hlen;	/*pointer to array[xlen][ylen]		*/

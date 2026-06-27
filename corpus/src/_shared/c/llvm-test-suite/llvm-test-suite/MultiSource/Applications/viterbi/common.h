@@ -39,7 +39,7 @@ typedef enum
 #define MAX_punct   7
 #define MAX_history 150-7
 
-typedef struct
+typedef struct 
 {
   size_t Nbits;
   size_t Nways;
@@ -60,21 +60,21 @@ static inline void dvarray_clear(dvarray* array);
 
 /* Inline functions */
 
-static inline void dvector_clear(dvector* vector)
+static inline void dvector_clear(dvector* vector) 
 {
   free(vector->data);
   vector->length = 0;
   vector->data = NULL;
 }
 
-static inline void bitvector_clear(bitvector* vector)
+static inline void bitvector_clear(bitvector* vector) 
 {
   free(vector->data);
   vector->length = 0;
   vector->data = NULL;
 }
 
-static inline void dvector_init(dvector* vector, size_t length)
+static inline void dvector_init(dvector* vector, size_t length) 
 {
   vector->length = length;
   if (length) {
@@ -85,7 +85,7 @@ static inline void dvector_init(dvector* vector, size_t length)
   }
 }
 
-static inline void bitvector_init(bitvector* vector, size_t length)
+static inline void bitvector_init(bitvector* vector, size_t length) 
 {
   vector->length = length;
   if (length) {
@@ -96,26 +96,26 @@ static inline void bitvector_init(bitvector* vector, size_t length)
   }
 }
 
-static inline void dvarray_init(dvarray* array, size_t count, size_t vlength)
+static inline void dvarray_init(dvarray* array, size_t count, size_t vlength) 
 {
   size_t i;
-
+  
   array->count = count;
   if (count) {
     array->data = (dvector*)malloc(count*sizeof(dvector));
   } else {
     array->data = NULL;
   }
-
+  
   for (i=0; i<count; ++i) {
     dvector_init(&array->data[i], vlength);
   }
 }
 
-static inline void dvarray_clear(dvarray* array)
+static inline void dvarray_clear(dvarray* array) 
 {
   size_t i;
-
+  
   for (i=0; i<array->count; ++i) {
     dvector_clear(&array->data[i]);
   }

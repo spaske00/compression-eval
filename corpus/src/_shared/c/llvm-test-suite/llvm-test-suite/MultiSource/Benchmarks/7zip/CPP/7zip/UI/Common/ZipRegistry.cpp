@@ -65,7 +65,7 @@ void CInfo::Load()
   CKey key;
   if (OpenMainKey(key, kKeyName) != ERROR_SUCCESS)
     return;
-
+  
   key.GetValue_Strings(kPathHistory, Paths);
   UInt32 v;
   if (key.QueryValue(kExtractMode, v) == ERROR_SUCCESS && v <= NPathMode::kNoPathnames)
@@ -148,7 +148,7 @@ void CInfo::Save() const
       const CFormatOptions &fo = Formats[i];
       CKey fk;
       fk.Create(optionsKey, fo.FormatID);
-
+      
       SetRegUInt32(fk, kLevel, fo.Level);
       SetRegUInt32(fk, kDictionary, fo.Dictionary);
       SetRegUInt32(fk, kOrder, fo.Order);
@@ -179,7 +179,7 @@ void CInfo::Load()
     return;
 
   key.GetValue_Strings(kArcHistory, ArcPaths);
-
+  
   {
     CKey optionsKey;
     if (optionsKey.Open(key, kOptionsKeyName, KEY_READ) == ERROR_SUCCESS)

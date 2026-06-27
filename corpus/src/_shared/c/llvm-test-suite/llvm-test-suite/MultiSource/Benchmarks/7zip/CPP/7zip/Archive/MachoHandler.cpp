@@ -225,7 +225,7 @@ bool CHandler::Parse(const Byte *buf, UInt32 size)
             _totalSize = totalSize;
         }
       }
-
+      
       CSegment seg;
       memcpy(seg.Name, buf + 8, kNameSize);
       _segments.Add(seg);
@@ -449,7 +449,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 currentTotalSize = 0;
   UInt64 currentItemSize;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -476,7 +476,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     RINOK(extractCallback->GetStream(index, &outStream, askMode));
     if (!testMode && !outStream)
       continue;
-
+    
     RINOK(extractCallback->PrepareOperation(askMode));
     RINOK(_inStream->Seek(item.Pa, STREAM_SEEK_SET, NULL));
     streamSpec->Init(currentItemSize);

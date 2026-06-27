@@ -1388,7 +1388,7 @@ def @DiagSetup
 	    import @Geometry
             def alignedangle
             {
-		labelpos??"ANGLE" quadcase
+		labelpos??"ANGLE" quadcase 
 			0	{ labelpos??"ANGLE"		}
 			0-90	{ labelpos??"ANGLE"		}
 			90	{ labelpos??"ANGLE"		}
@@ -1402,7 +1402,7 @@ def @DiagSetup
 	    import @Geometry
             def perpalignedangle
             {
-		labelpos??"ANGLE" quadcase
+		labelpos??"ANGLE" quadcase 
 			0	{ labelpos??"ANGLE" - 90d	}
 			0-90	{ labelpos??"ANGLE" - 90d	}
 			90	{ labelpos??"ANGLE" - 90d	}
@@ -1411,7 +1411,7 @@ def @DiagSetup
 			180-270	{ labelpos??"ANGLE" + 90d	}
 			270	{ labelpos??"ANGLE" + 90d	}
 			270-360	{ labelpos??"ANGLE" + 90d	}
-
+		    
 	    }
 
 	    import @Geometry
@@ -3577,7 +3577,7 @@ def @DiagSetup
         #  Arrowheads                                                         #
         #                                                                     #
         #######################################################################
-
+	
 	macro @InsulatedNode {
 	    @Node
 		topmargin { 0i }
@@ -3866,7 +3866,7 @@ def @DiagSetup
         #  @Link                                                              #
         #                                                                     #
         #######################################################################
-
+	
         def @Link
             import @Geometry named path
                 named from {}
@@ -3881,7 +3881,7 @@ def @DiagSetup
                 named topt {}
                 named arrow {}
                 named arrowlength {}
-						{ path
+            					{ path
 						    from { from }
 						    to { to }
 						    bias { bias }
@@ -4087,7 +4087,7 @@ def @DiagSetup
                # TO  	:< FROM@ANGLE
                # TO  	:: to boundaryatangle { TO@ANGLE - 180d }
                # ++ {arrow @ToArrowLength arrowlength} atangle {TO@ANGLE - 180d}
-               #
+               # 		
                # LMID	:: FROM ** 0.5 ++ TO ** 0.5
                # LMID	:< FROM@ANGLE
                # XINDENT	:= xindent min { FROM distance LMID }
@@ -4120,7 +4120,7 @@ def @DiagSetup
                # TO  	:< FROM@ANGLE
                # TO  	:: to boundaryatangle { TO@ANGLE - 180d }
                # ++ {arrow @ToArrowLength arrowlength} atangle {TO@ANGLE - 180d}
-               #
+               # 		
                # LMID	:: FROM ** 0.5 ++ TO ** 0.5
                # LMID	:< FROM@ANGLE
                # XINDENT	:= xindent min { FROM distance LMID }
@@ -4169,7 +4169,7 @@ def @DiagSetup
                #  TO   	:< if cond { TO distance to??CTR > 0 }
                #  	      then { TO angleto to??CTR }
                #  	      else { CTR angleto TO + 90d }
-               #
+               # 
                #  RADIUS	:= CTR distance FROM
                #  LMID 	:: CTR ++ RADIUS atangle {
                #   CTR angleto FROM +
@@ -4303,7 +4303,7 @@ def @DiagSetup
               # LFROM   :< FROM@ANGLE
               # LTO     :: TO ++ ZINDENT atangle TANG
               # LTO     :< TO@ANGLE
-              # LMID    :: CTR
+              # LMID    :: CTR 
               # LMID    :< {1f atangle {FANG + 180d}} angleto
               #            {1f atangle {TANG + 180d}}
               # FROM LFROM LMID LTO TO
@@ -4332,7 +4332,7 @@ def @DiagSetup
               # TO      :< TANG + 180d
               # FDIST   := FROM distance CTR
               # TDIST   := TO distance CTR
-              # RADIUS  := radius min FDIST min TDIST
+              # RADIUS  := radius min FDIST min TDIST 
               # XINDENT := xindent min { FDIST - RADIUS }
               # ZINDENT := zindent min { TDIST - RADIUS }
               # LFROM   :: FROM ++ XINDENT atangle FANG
@@ -4387,7 +4387,7 @@ def @DiagSetup
               # LFROM   :< FROM@ANGLE
               # LTO     :: TO ++ ZINDENT atangle TANG
               # LTO     :< TO@ANGLE
-              # LMID    :: CTR
+              # LMID    :: CTR 
               # LMID    :< {1f atangle {FANG + 180d}} angleto
               #            {1f atangle {TANG + 180d}}
               # FROM LFROM LMID LTO TO
@@ -4416,7 +4416,7 @@ def @DiagSetup
               # TO      :< TANG + 180d
               # FDIST   := FROM distance CTR
               # TDIST   := TO distance CTR
-              # RADIUS  := radius min FDIST min TDIST
+              # RADIUS  := radius min FDIST min TDIST 
               # XINDENT := xindent min { FDIST - RADIUS }
               # ZINDENT := zindent min { TDIST - RADIUS }
               # LFROM   :: FROM ++ XINDENT atangle FANG
@@ -4998,7 +4998,7 @@ def @DiagSetup
                 named topt {}
                 named arrow {}
                 named arrowlength {}
-						{ path
+            					{ path
 						    from { from }
 						    to { to }
 						    bias { bias }
@@ -5246,7 +5246,7 @@ def @DiagSetup
         #  Abbreviations for standard link types                              #
         #                                                                     #
         #######################################################################
-
+	
 	macro @Line		{ @Link path { line     }		}
 	macro @DoubleLine	{ @Link path { doubleline }		}
 	macro @Arrow		{ @Link path { line     } arrow { yes }	}
@@ -6284,9 +6284,9 @@ def @DiagSetup
 	    {
 		@LRLine {
 		    @HContract @VContract { OX:: @LabelMarks {
-			{ |syntaxgap AX:: @LabelMarks A |syntaxgap }
-			//syntaxgap
-			{ |0.5rt BX:: @LabelMarks @GoReverse B |syntaxgap }
+		    	{ |syntaxgap AX:: @LabelMarks A |syntaxgap }
+		    	//syntaxgap
+		    	{ |0.5rt BX:: @LabelMarks @GoReverse B |syntaxgap }
 		    } }
 		    / @Line from { "OX@WMK" } to { "OX@IN@AX@WMK" }
 		    / @Line from { "OX@EMK" } to { "OX@IN@AX@EMK" }
@@ -6303,9 +6303,9 @@ def @DiagSetup
 	    {
 		@UDLine {
 		    @HContract @VContract { OX:: @LabelMarks {
-			{ /syntaxgap AX:: @LabelMarks A /syntaxgap }
-			||syntaxgap
-			{ /0.5rt BX:: @LabelMarks @GoReverse B /syntaxgap }
+		    	{ /syntaxgap AX:: @LabelMarks A /syntaxgap }
+		    	||syntaxgap
+		    	{ /0.5rt BX:: @LabelMarks @GoReverse B /syntaxgap }
 		    } }
 		    / @Line from { "OX@NMK" } to { "OX@IN@AX@NMK" }
 		    / @Line from { "OX@SMK" } to { "OX@IN@AX@SMK" }
@@ -6348,9 +6348,9 @@ def @DiagSetup
 	    {
 		@LRLine {
 		    @HContract @VContract { OX:: @LabelMarks {
-			{ |0.5rt BX:: @LabelMarks @GoReverse B |syntaxgap }
-			^//syntaxgap
-			{ |syntaxgap AX:: @LabelMarks A |syntaxgap }
+		    	{ |0.5rt BX:: @LabelMarks @GoReverse B |syntaxgap }
+		    	^//syntaxgap
+		    	{ |syntaxgap AX:: @LabelMarks A |syntaxgap }
 		    } }
 		    / @Line from { "OX@WMK" } to { "OX@IN@AX@WMK" }
 		    / @Line from { "OX@EMK" } to { "OX@IN@AX@EMK" }
@@ -6367,9 +6367,9 @@ def @DiagSetup
 	    {
 		@UDLine {
 		    @HContract @VContract { OX:: @LabelMarks {
-			{ /0.5rt BX:: @LabelMarks @GoReverse B /syntaxgap }
-			^||syntaxgap
-			{ /syntaxgap AX:: @LabelMarks A /syntaxgap }
+		    	{ /0.5rt BX:: @LabelMarks @GoReverse B /syntaxgap }
+		    	^||syntaxgap
+		    	{ /syntaxgap AX:: @LabelMarks A /syntaxgap }
 		    } }
 		    / @Line from { "OX@NMK" } to { "OX@IN@AX@NMK" }
 		    / @Line from { "OX@SMK" } to { "OX@IN@AX@SMK" }

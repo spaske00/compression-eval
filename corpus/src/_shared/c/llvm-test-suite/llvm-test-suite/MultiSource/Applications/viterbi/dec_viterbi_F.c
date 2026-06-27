@@ -4,7 +4,7 @@
 #include "common.h"
 
 void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit_stream,
-                   const dvarray* Dist, const param_viterbi_t* param, size_t n)
+                   const dvarray* Dist, const param_viterbi_t* param, size_t n) 
 {
   size_t i_in = 0, i_punct, i, j, vote, bv = 0;
   double *Metr0, *Metr1, *Metr;
@@ -17,24 +17,24 @@ void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit
      (JIT or LLC) failed */
   double startTime, now, estTotal;
 #endif /* 0 */
-
+  
   if (bit_stream->length) {
     bitvector_clear(bit_stream);
   }
-
+  
   if (n==0) {
     n = Dist->data[0].length;
   }
-
+  
   bitvector_init(bit_stream, n);
 
   Metr  = (double*)malloc(Metr_mem->length*sizeof(double));
   Metr0 = (double*)malloc(Metr_mem->length*sizeof(double));
   Metr1 = (double*)malloc(Metr_mem->length*sizeof(double));
-
+  
   memcpy(Metr, Metr_mem->data, Metr_mem->length*sizeof(double));
   memcpy(history, history_mem, sizeof(history));
-
+  
 #if 0
   /* FIXME */
   /* Time varies between runs giving false negatives about which run
@@ -57,7 +57,7 @@ void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit
 #endif /* 0 */
     memcpy(Metr0, Metr, Metr_mem->length*sizeof(double));
     memcpy(Metr1, Metr, Metr_mem->length*sizeof(double));
-
+    
     if (param->punct1[i_punct] == 1) {
       for (i=0; i<param->Nways; ++i) {
         X0 = param->Tabl_X[i];
@@ -67,20 +67,20 @@ void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit
       }
       ++i_in;
     }
-
+    
     if (param->punct2[i_punct] == 1) {
       if (i_in >= bit_stream->length) {
         assert(0 && "Synchronization in Viterbi: i_in > size(Dist,2)");
       }
       for (i=0; i<param->Nways; ++i) {
-        Y0 = param->Tabl_Y[i];
-        Y1 = 1 - param->Tabl_Y[i];
+        Y0 = param->Tabl_Y[i];        
+        Y1 = 1 - param->Tabl_Y[i];    
         Metr0[i] = Metr0[i] + Dist->data[Y0].data[i_in];
         Metr1[i] = Metr1[i] + Dist->data[Y1].data[i_in];
       }
       ++i_in;
     }
-
+    
     for (i=0; i<param->Nways/2; ++i) {
       if (Metr0[2*i] <= Metr0[2*i+1]) {
         Metr[i] = Metr0[2*i];
@@ -109,11 +109,11 @@ void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit
         }
       }
     }
-
+    
     for (vote=i=0; i<param->Nways; ++i) {
       vote += (history_new[i][MAX_history] == 0);
     }
-
+    
     if (vote >= param->Nways/2) {
       bit_stream->data[bv++] = 0;
     } else {
@@ -127,17 +127,18 @@ void dec_viterbi_F(dvector* Metr_mem, unsigned char* history_mem, bitvector* bit
     }
 
     if (++i_punct == param->n_in) {
-      i_punct = 0;
+      i_punct = 0;                 
     }
   }
 
   bit_stream->data = (unsigned char*)realloc(bit_stream->data, bv*sizeof(unsigned char));
   bit_stream->length = bv;
-
+  
   memcpy(Metr_mem->data, Metr, Metr_mem->length*sizeof(double));
   memcpy(history_mem, history, sizeof(history));
-
+  
   free(Metr);
   free(Metr0);
   free(Metr1);
 }
+

@@ -191,7 +191,7 @@ static long longfield(char *name,LISP alist)
  if NULLP(value = assq(key,alist))
    return(0);
  return(get_c_long(cdr(value)));}
-
+ 
 void lencode_pwent(LISP alist,struct passwd *p)
 {p->pw_name = strfield("name",alist);
  p->pw_passwd = strfield("passwd",alist);
@@ -487,7 +487,7 @@ LISP lwait(LISP lpid,LISP loptions)
 			    "WNOHANG",WNOHANG,
 			    "WUNTRACED",WUNTRACED,
 			    NULL);
- iflag = no_interrupt(1);
+ iflag = no_interrupt(1); 
  ret = waitpid(pid,&status,options);
  no_interrupt(iflag);
  if (ret == 0)
@@ -928,7 +928,7 @@ LISP decode_stat(struct stat *s)
 		 "gen",flocons(s->st_gen),
 #endif
 		 NULL));}
-
+	      
 
 LISP g_stat(LISP fname,int (*fcn)(const char *,struct stat *))
 {struct stat st;
@@ -1226,7 +1226,7 @@ LISP http_date_parse(LISP input)
  t = time(NULL);
  if (lc = localtime(&t))
    gmtoff = lc->tm_gmtoff;
- if (strchr(str,',') && strchr(str,'-'))
+ if (strchr(str,',') && strchr(str,'-')) 
    /* rfc-850: Sunday, 06-Nov-94 08:49:37 GMT */
    format = "%a, %d-%b-%y %H:%M:%S GMT";
  else if (strchr(str,','))
@@ -2014,8 +2014,8 @@ long position_script(FILE *f,char *buff,size_t bufflen)
  buff[0] = 0;
  for(offset=0;offset<250000;++offset)
   {c = getc(f);
-   switch(c)
-    {case EOF:
+   switch(c) 
+    {case EOF: 
 	  return(-1);
      case '#':
       s = '#';
@@ -2026,7 +2026,7 @@ long position_script(FILE *f,char *buff,size_t bufflen)
       break;
      case '/':
       if (s == '!')
-       {while((c = getc(f)) != EOF) if (c == ' ') break;
+       {while((c = getc(f)) != EOF) if (c == ' ') break;  
         for(j=0;((c = getc(f)) != '\n') && (c != EOF) && (j+1 <= bufflen);++j)
          {buff[j] = c; buff[j+1] = 0;}
         if (strspn(buff," \t\r") == strlen(buff)) buff[0] = 0;
@@ -2051,7 +2051,7 @@ char *find_exe_self(char *cmd)
  else
   return(cmd);}
 #endif
-
+  
 void __stdcall siod_shuffle_args(int *pargc,char ***pargv)
  /* shuffle arguments in the same way that the unix exec loader
     would do for a #!/xxx script execution. */
@@ -2102,7 +2102,7 @@ void __stdcall siod_init(int argc,char **argv)
  init_subrs();
  init_trace();
  init_slibu();}
-
+ 
 void __stdcall init_slibu(void)
 {long j;
 #if defined(unix)

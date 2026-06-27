@@ -399,7 +399,7 @@ HRESULT CInArchive::OpenHelp2(IInStream *inStream, CDatabase &database)
     sectionOffsets[i] = ReadUInt64();
     sectionSizes[i] = ReadUInt64();
   }
-
+  
   // Post-Header
   ReadUInt32(); // 2
   ReadUInt32(); // 0x98: offset to CAOL from beginning of post-header)
@@ -427,7 +427,7 @@ HRESULT CInArchive::OpenHelp2(IInStream *inStream, CDatabase &database)
   ReadUInt64(); // Possibly flags -- sometimes 1, sometimes 0.
   ReadUInt64(); // Number of directory index entries (same as number of AOLL
                // chunks in main directory)
-
+  
   // (The obvious guess for the following two fields, which recur in a number
   // of places, is they are maximum sizes for the directory and directory index.
   // However, I have seen no direct evidence that this is the case.)
@@ -532,7 +532,7 @@ HRESULT CInArchive::OpenHelp2(IInStream *inStream, CDatabase &database)
       ReadUInt64(); // Number of first listing entry in this chunk
       ReadUInt32(); // 1 (unknown -- other values have also been seen here)
       ReadUInt32(); // 0 (unknown)
-
+      
       int numItems = 0;
       for (;;)
       {

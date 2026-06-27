@@ -154,3 +154,4 @@ end
 local solver, printresult = generatesolver(tonumber(arg and arg[1]) or 0)
 pcall(solver, 0)
 printresult()
+

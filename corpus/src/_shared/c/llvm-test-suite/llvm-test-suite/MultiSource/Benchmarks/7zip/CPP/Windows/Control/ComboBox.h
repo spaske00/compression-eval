@@ -64,14 +64,14 @@ namespace NWindows {
 		{
 		public:
 			/* FIXME
-			LRESULT DeleteItem(int index)
-			{ return SendMessage(CBEM_DELETEITEM, index, 0); }
-			LRESULT InsertItem(COMBOBOXEXITEM *item)
-			{ return SendMessage(CBEM_INSERTITEM, 0, (LPARAM)item); }
-			DWORD SetExtendedStyle(DWORD exMask, DWORD exStyle)
-			{ return (DWORD)SendMessage(CBEM_SETEXTENDEDSTYLE, exMask, exStyle); }
-			HWND GetEditControl()
-			{ return (HWND)SendMessage(CBEM_GETEDITCONTROL, 0, 0); }
+  			LRESULT DeleteItem(int index)
+    			{ return SendMessage(CBEM_DELETEITEM, index, 0); }
+  			LRESULT InsertItem(COMBOBOXEXITEM *item)
+    			{ return SendMessage(CBEM_INSERTITEM, 0, (LPARAM)item); }
+  			DWORD SetExtendedStyle(DWORD exMask, DWORD exStyle)
+    			{ return (DWORD)SendMessage(CBEM_SETEXTENDEDSTYLE, exMask, exStyle); }
+  			HWND GetEditControl()
+    			{ return (HWND)SendMessage(CBEM_GETEDITCONTROL, 0, 0); }
 			*/
 		};
 

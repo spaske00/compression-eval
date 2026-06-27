@@ -68,7 +68,7 @@ namespace NFileHeader
       kChapterLabel = 5
     };
   }
-
+  
   namespace NFlags
   {
     const Byte kGarbled = 1;
@@ -117,7 +117,7 @@ struct CArchiveHeader
   // Byte LastChapter;
   AString Name;
   AString Comment;
-
+  
   HRESULT Parse(const Byte *p, unsigned size);
 };
 
@@ -193,9 +193,9 @@ struct CItem
   UInt16 FileAccessMode;
   // Byte FirstChapter;
   // Byte LastChapter;
-
+  
   UInt64 DataPosition;
-
+  
   bool IsEncrypted() const { return (Flags & NFileHeader::NFlags::kGarbled) != 0; }
   bool IsDir() const { return (FileType == NFileHeader::NFileType::kDirectory); }
   bool IsSplitAfter() const { return (Flags & NFileHeader::NFlags::kVolume) != 0; }
@@ -274,13 +274,13 @@ class CInArchive
 {
   UInt32 _blockSize;
   Byte _block[kBlockSizeMax + 4];
-
+  
   HRESULT ReadBlock(bool &filled);
   HRESULT ReadSignatureAndBlock(bool &filled);
   HRESULT SkipExtendedHeaders();
 
   HRESULT SafeReadBytes(void *data, UInt32 size);
-
+    
 public:
   CArchiveHeader Header;
 
@@ -529,7 +529,7 @@ static void SetUnicodeString(const AString &s, NWindows::NCOM::CPropVariant &pro
   if (!s.IsEmpty())
     prop = MultiByteToUnicodeString(s, CP_OEMCP);
 }
-
+ 
 STDMETHODIMP CHandler::GetArchiveProperty(PROPID propID, PROPVARIANT *value)
 {
   COM_TRY_BEGIN
@@ -582,14 +582,14 @@ HRESULT CHandler::Open2(IInStream *inStream, const UInt64 *maxCheckStartPosition
       IArchiveOpenCallback *callback)
 {
   Close();
-
+  
   UInt64 endPos = 0;
   if (callback != NULL)
   {
     RINOK(inStream->Seek(0, STREAM_SEEK_END, &endPos));
     RINOK(inStream->Seek(0, STREAM_SEEK_SET, NULL));
   }
-
+  
   _archive.Stream = inStream;
   _archive.Callback = callback;
   _archive.NumFiles = _archive.NumBytes = 0;
@@ -604,19 +604,19 @@ HRESULT CHandler::Open2(IInStream *inStream, const UInt64 *maxCheckStartPosition
 
 
     RINOK(_archive.GetNextItem(filled, item));
-
+    
     RINOK(inStream->Seek(0, STREAM_SEEK_CUR, &item.DataPosition));
-
+    
     if (!filled)
       break;
     _items.Add(item);
-
+    
     if (inStream->Seek(item.PackSize, STREAM_SEEK_CUR, NULL) != S_OK)
       throw CInArchiveException(CInArchiveException::kUnexpectedEndOfArchive);
 
     _archive.NumFiles = _items.Size();
     _archive.NumBytes = item.DataPosition;
-
+    
     if (callback != NULL && _items.Size() % 100 == 0)
     {
       RINOK(callback->SetCompleted(&_archive.NumFiles, &_archive.NumBytes));
@@ -673,7 +673,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   totalUnpacked = totalPacked = 0;
   UInt64 curUnpacked, curPacked;
-
+  
   CMyComPtr<ICompressCoder> arj1Decoder;
   CMyComPtr<ICompressCoder> arj2Decoder;
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
@@ -726,9 +726,9 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
       outStreamSpec->SetStream(realOutStream);
       realOutStream.Release();
       outStreamSpec->Init();
-
+  
       inStreamSpec->Init(item.PackSize);
-
+      
       UInt64 pos;
       _stream->Seek(item.DataPosition, STREAM_SEEK_SET, &pos);
 

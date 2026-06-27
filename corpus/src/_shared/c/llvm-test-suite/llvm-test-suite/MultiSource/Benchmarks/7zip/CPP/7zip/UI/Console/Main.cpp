@@ -188,7 +188,7 @@ int Main2(
   #if defined(_WIN32) && !defined(UNDER_CE)
   SetFileApisToOEM();
   #endif
-
+  
   UStringVector commandStrings;
   #ifdef _WIN32
   NCommandLineParser::SplitCommandLine(GetCommandLineW(), commandStrings);

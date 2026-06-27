@@ -7,7 +7,7 @@
 .TH SPIFF 1 "February 2, 1988"
 .AT 3
 .SH NAME
-spiff \- make controlled approximate comparisons between files
+spiff \- make controlled approximate comparisons between files 
 .SH SYNOPSIS
 .B spiff
 [
@@ -23,7 +23,7 @@ sfile ] [
 value ] \-value file1 file2
 .SH DESCRIPTION
 .I Spiff
-compares the contents of
+compares the contents of 
 .B file1
 and
 .B file2
@@ -32,7 +32,7 @@ the files.
 White space is ignored except to separate other objects.
 .I Spiff
 maintains tolerances below which differences between two floating point
-numbers are ignored.
+numbers are ignored. 
 Differences in floating point notation (such as 3.4 3.40 and 3.4e01)
 are treated as unimportant.
 User specified delimited strings (i.e. comments) can also be ignored.
@@ -88,7 +88,7 @@ the point of being unreadable.
 The following option controls the differencing algorithm.
 .TP
 .B \-e
-compare each token
+compare each token 
 in the files with the object in the same ordinal
 position in the other file.  If the files have a different number
 of objects, a warning message is printed
@@ -109,7 +109,7 @@ each may appear at at time. The commands accumulate.
 .TP
 .B \-f sfile
 a command script to be taken from file
-.IR sfile
+.IR sfile 
 .TP
 .B \-s command-script
 causes the following argument to be taken as a command script.
@@ -149,7 +149,7 @@ will cause all differences greater than 0.01 to be reported.
 .TP
 .B \-r floating-point-number
 specifies a relative tolerance. The value given is interpreted
-as a fraction of the larger (in absolute terms)
+as a fraction of the larger (in absolute terms) 
 of the two floating point numbers being compared.
 Thus, the flag
 .B \-r0.1
@@ -165,7 +165,7 @@ or
 .B \-i
 flag appear on the command line,
 the tolerances will be OR'd together (i.e. any difference that is within
-any of the tolerances will be ignored).
+any of the tolerances will be ignored). 
 .PP
 If no default tolerances is set on the command line,
 the program will use a default tolerance of
@@ -195,13 +195,13 @@ The default is '$'.
 .TP
 addalpha NEW-ALPHA-CHARACTER
 Add NEW-ALPHA-CHARACTER to the set of characters allowed in literal strings.
-By default,
+By default, 
 .I spiff
 parses sequences of characters that begin with a letter and followed by
 zero or more letters or numbers as a single literal token.  This definition
 is overly restrictive when dealing with programming languages.
 For example, in the C programming language,
-the underscore character is allowed in identifiers.
+the underscore character is allowed in identifiers. 
 .TP
 comment BEGIN-STRING [END-STRING [ESCAPE-STRING]]
 Specifies the delimiters surrounding text that is to be be ignored entirely
@@ -218,7 +218,7 @@ may be specified at a time.
 nestcom BEGIN-STRING [END-STRING [ESCAPE-STRING]]
 Similar to the comment command, but allows comments to be nested.
 Note, due to the design of the parser nested comments can not
-have a BEGIN-STRING that starts with the beginning of line character.
+have a BEGIN-STRING that starts with the beginning of line character.  
 .TP
 resetcomments
 Clears the list of comment specifications.
@@ -227,7 +227,7 @@ resetliterals
 Clears the list of literal specifications.
 .TP
 tol [aVALUE\(brrVALUE\(bri\(brd . . . [ ; aVALUE\(brrVALUE\(bri\(brd . . . ] . . . ]
-set the tolerance for floating point comparisons.
+set the tolerance for floating point comparisons.  
 The arguments to the tol command are a set of tolerance specifications
 separated by semicolons.  If more than one a,r,d, or i appears within
 a specification, then the tolerances are OR'd together (i.e. any difference
@@ -289,7 +289,7 @@ in a form suitable to the
 .B tol
 command.  The tolerance specified will then be used as the default tolerance
 and the display will be updated to highlight only those objects that exceed
-the new default tolerance.  Typing
+the new default tolerance.  Typing 
 .B m
 (followed by a newline) will display the next screenfull of text. Typing
 .B q
@@ -339,7 +339,7 @@ are less than or equal to 0.0001.
 .IP
 A useful script for examing C code is:
 .nf
-literal  "    "    \\
+literal  "    "    \\ 
 comment  /*  */
 literal  &&
 literal  \(br\(br

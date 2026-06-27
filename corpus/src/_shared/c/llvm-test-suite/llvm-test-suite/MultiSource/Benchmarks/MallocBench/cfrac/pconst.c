@@ -30,9 +30,9 @@ static precisionType ptwoConst = {
    { (digit) 2 }	/* value */
 };
 
-static precisionType p_oneConst = {
+static precisionType p_oneConst = { 
 #ifndef BWGC
-   (short) 1,		/* refcount (read/write!) */
+   (short) 1,		/* refcount (read/write!) */ 
 #endif
    (posit) 1,		/* size */
    (posit) 1,		/* digitcount */

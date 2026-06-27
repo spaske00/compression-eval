@@ -28,7 +28,7 @@ public:
 
   HRESULT CodeReal(ISequentialInStream *inStream, ISequentialOutStream *outStream,
       const UInt64 *inSize, const UInt64 *outSize, ICompressProgressInfo *progress);
-
+  
   STDMETHOD(Code)(ISequentialInStream *inStream, ISequentialOutStream *outStream,
       const UInt64 *inSize, const UInt64 *outSize, ICompressProgressInfo *progress);
 };

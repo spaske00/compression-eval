@@ -138,7 +138,7 @@ TRANSPOSE RIGHT HAND SIDE
   0|  0.0000e+00
 
 One-Norm(A) ---------- 0.000000e+00.
-Zero Column 1 found
+Zero Column 1 found 
 
 
 **********************************************************************
@@ -219,7 +219,7 @@ TRANSPOSE RIGHT HAND SIDE
   0| -6.3333e+00 -3.1667e+00  0.0000e+00  3.1667e+00
 
 One-Norm(A) ---------- 4.166667e+00.
-Zero Column 4 found
+Zero Column 4 found 
 
 
 **********************************************************************

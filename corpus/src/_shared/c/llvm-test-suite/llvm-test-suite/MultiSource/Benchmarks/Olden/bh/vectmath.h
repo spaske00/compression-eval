@@ -289,3 +289,15 @@ extern double sqrt(double x);
         for (j = 0; j < NDIM; j++)					\
 	    (p)[i][j] = (s);						\
 }
+
+
+
+
+
+
+
+
+
+
+
+

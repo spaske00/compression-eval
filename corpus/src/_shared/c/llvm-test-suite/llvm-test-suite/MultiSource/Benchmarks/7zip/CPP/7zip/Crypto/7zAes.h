@@ -75,7 +75,7 @@ protected:
 public:
   STDMETHOD(Init)();
   STDMETHOD_(UInt32, Filter)(Byte *data, UInt32 size);
-
+  
   STDMETHOD(CryptoSetPassword)(const Byte *data, UInt32 size);
 };
 

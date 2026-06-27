@@ -43,7 +43,7 @@ public:
   HRESULT ThereAreNoFiles();
   HRESULT ExtractResult(HRESULT result);
 
-
+ 
   #ifndef _NO_CRYPTO
   HRESULT SetPassword(const UString &password);
   STDMETHOD(CryptoGetTextPassword)(BSTR *password);
@@ -52,7 +52,7 @@ public:
   UString Password;
 
   #endif
-
+  
   UInt64 NumArchives;
   UInt64 NumArchiveErrors;
   UInt64 NumFileErrors;

@@ -280,12 +280,12 @@ STDMETHODIMP CFSFolder::CopyTo(const UInt32 *indices, UInt32 numItems,
 {
   if (numItems == 0)
     return S_OK;
-
+  
   UInt64 numFolders, numFiles, totalSize;
   GetItemsFullSize(indices, numItems, numFolders, numFiles, totalSize, callback);
   RINOK(callback->SetTotal(totalSize));
   RINOK(callback->SetNumFiles(numFiles));
-
+  
   UString destPath = path;
   if (destPath.IsEmpty())
     return E_INVALIDARG;
@@ -519,5 +519,5 @@ STDMETHODIMP CFSFolder::CopyFrom(const wchar_t * /* fromFolderPath */,
   */
   return E_NOTIMPL;
 }
-
+  
 }

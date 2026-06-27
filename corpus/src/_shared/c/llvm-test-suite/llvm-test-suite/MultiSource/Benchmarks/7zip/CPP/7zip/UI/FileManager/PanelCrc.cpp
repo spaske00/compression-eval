@@ -37,7 +37,7 @@ struct CDirEnumerator
   int Index;
   HRESULT GetNextFile(NFind::CFileInfoW &fileInfo, bool &filled, UString &fullPath);
   void Init();
-
+  
   CDirEnumerator(): FlatMode(false) {};
 };
 
@@ -138,44 +138,44 @@ class CThreadCrc: public CProgressThreadVirt
   HRESULT ProcessVirt();
 public:
   CDirEnumerator Enumerator;
-
+ 
 };
 
 UString CThreadCrc::GetResultMessage() const
 {
   UString s;
   wchar_t sz[32];
-
+  
   s += LangString(IDS_FILES_COLON, 0x02000320);
   s += L' ';
   ConvertUInt64ToString(NumFiles, sz);
   s += sz;
   s += L'\n';
-
+  
   s += LangString(IDS_FOLDERS_COLON, 0x02000321);
   s += L' ';
   ConvertUInt64ToString(NumFolders, sz);
   s += sz;
   s += L'\n';
-
+  
   s += LangString(IDS_SIZE_COLON, 0x02000322);
   s += L' ';
   ConvertUInt64ToString(DataSize, sz);
   s += MyFormatNew(IDS_FILE_SIZE, 0x02000982, sz);
   s += L'\n';
-
+  
   s += LangString(IDS_CHECKSUM_CRC_DATA, 0x03020721);
   s += L' ';
   ConvertUInt32ToHex(DataCrcSum, sz);
   s += sz;
   s += L'\n';
-
+  
   s += LangString(IDS_CHECKSUM_CRC_DATA_NAMES, 0x03020722);
   s += L' ';
   ConvertUInt32ToHex(DataNameCrcSum, sz);
   s += sz;
   s += L'\n';
-
+  
   if (NumFiles == 1 && NumFilesScan == 1)
   {
     s += L"SHA-256: ";
@@ -195,19 +195,19 @@ HRESULT CThreadCrc::ProcessVirt()
   DataSize = NumFolders = NumFiles = NumFilesScan = DataCrcSum = DataNameCrcSum = 0;
   memset(Sha256Sum, 0, SHA256_DIGEST_SIZE);
   // ProgressDialog.WaitCreating();
-
+  
   CMyBuffer bufferObject;
   if (!bufferObject.Allocate(kBufSize))
     return E_OUTOFMEMORY;
   Byte *buffer = (Byte *)(void *)bufferObject;
-
+  
   UInt64 totalSize = 0;
-
+  
   Enumerator.Init();
-
+  
   UString scanningStr = LangString(IDS_SCANNING, 0x03020800);
   scanningStr += L' ';
-
+  
   CProgressSync &sync = ProgressDialog.Sync;
 
   for (;;)
@@ -234,9 +234,9 @@ HRESULT CThreadCrc::ProcessVirt()
   }
   sync.SetNumFilesTotal(NumFilesScan);
   sync.SetProgress(totalSize, 0);
-
+  
   Enumerator.Init();
-
+  
   for (;;)
   {
     NFind::CFileInfoW fileInfo;
@@ -250,11 +250,11 @@ HRESULT CThreadCrc::ProcessVirt()
     }
     if (!filled)
       break;
-
+    
     UInt32 crc = CRC_INIT_VAL;
     CSha256 sha256;
     Sha256_Init(&sha256);
-
+    
     if (fileInfo.IsDir())
       NumFolders++;
     else
@@ -283,7 +283,7 @@ HRESULT CThreadCrc::ProcessVirt()
         crc = CrcUpdate(crc, buffer, processedSize);
         if (NumFilesScan == 1)
           Sha256_Update(&sha256, buffer, processedSize);
-
+        
         DataSize += processedSize;
         RINOK(sync.SetPosAndCheckPaused(DataSize));
       }

@@ -1,1 +1,11 @@
-mv ./target/getting-started-1.0.0-SNAPSHOT-runner ./target/image
+# shellcheck shell=bash
+
+marker="${NATIVE_IMAGE_BUILD_MARKER:-}"
+runner=./target/getting-started-1.0.0-SNAPSHOT-runner
+debug_runner=./target/getting-started-1.0.0-SNAPSHOT-native-image-source-jar/getting-started-1.0.0-SNAPSHOT-runner.debug
+
+if [[ -x "$debug_runner" && ( -z "$marker" || "$debug_runner" -nt "$marker" ) ]]; then
+    mv ./target/getting-started-1.0.0-SNAPSHOT-native-image-source-jar/getting-started-1.0.0-SNAPSHOT-runner.debug ./target/image.debug
+elif [[ -x "$runner" && ( -z "$marker" || "$runner" -nt "$marker" ) ]]; then
+    mv ./target/getting-started-1.0.0-SNAPSHOT-runner ./target/image
+fi

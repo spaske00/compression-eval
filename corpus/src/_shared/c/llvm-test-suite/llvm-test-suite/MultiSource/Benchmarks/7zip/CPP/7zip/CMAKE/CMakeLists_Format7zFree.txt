@@ -6,7 +6,7 @@ include_directories(
 	../../../include_windows
 )
 
-add_definitions(-DEXTERNAL_CODECS)
+add_definitions(-DEXTERNAL_CODECS) 
 
 IF(APPLE)
   add_definitions(-DENV_MACOSX)
@@ -90,7 +90,7 @@ add_library(7z MODULE
  ../../Archive/XarHandler.cpp
  ../../Archive/XzHandler.cpp
  ../../Archive/ZHandler.cpp
-
+ 
  ../../Archive/Common/CoderMixer2.cpp
  ../../Archive/Common/CoderMixer2MT.cpp
  ../../Archive/Common/CrossThreadProgress.cpp

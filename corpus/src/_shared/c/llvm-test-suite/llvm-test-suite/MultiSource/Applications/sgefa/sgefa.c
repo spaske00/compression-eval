@@ -21,11 +21,11 @@ int	    *ipvt;
 	(time for SGECO) = (1 + 9/n)*(time for SGEFA) .
 
     INPUT
-	a	A pointer to the FULL matrix structure.
+	a	A pointer to the FULL matrix structure.  
 		See the definition in ge.h.
 
     OUTPUT
-	a	A pointer to the FULL matrix structure containing
+	a	A pointer to the FULL matrix structure containing 
 		an upper triangular matrix and the multipliers
 		which were used to obtain it.
 		The factorization can be written  a = l*u  where
@@ -95,12 +95,12 @@ int	    *ipvt;
 	pelem(a,l,j) = t;
 	t = pelem(a,k,j);
       }
-      for( i=k+1, aij=a->pd[j]+k+1, mik=akk+1; i<n; i++, aij++, mik++ )
+      for( i=k+1, aij=a->pd[j]+k+1, mik=akk+1; i<n; i++, aij++, mik++ ) 
 	*aij += t*(*mik);
     }
   }				/* End of for k loop */
-
- CLEAN_UP:
+  
+ CLEAN_UP: 
   *ipvt = nm1;
   if( *akk == 0.0e0 ) info = n;
   return( info );

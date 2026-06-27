@@ -67,7 +67,7 @@ struct CHeader
     { return ElfHeaderSize +
       (UInt64)SegmentEntrySize * NumSegments +
       (UInt64)SectEntrySize * NumSections; }
-
+    
 };
 
 bool CHeader::Parse(const Byte *p)
@@ -333,7 +333,7 @@ bool CHandler::Parse(const Byte *buf, UInt32 size)
     return false;
   const Byte *p = buf + _header.ProgOffset;
   _totalSize = _header.ProgOffset;
-
+  
   for (int i = 0; i < _header.NumSegments; i++, p += _header.SegmentEntrySize)
   {
     CSegment sect;
@@ -483,7 +483,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
   UInt64 currentTotalSize = 0;
   UInt64 currentItemSize;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -505,12 +505,12 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     UInt32 index = allFilesMode ? i : indices[i];
     const CSegment &item = _sections[index];
     currentItemSize = item.PSize;
-
+    
     CMyComPtr<ISequentialOutStream> outStream;
     RINOK(extractCallback->GetStream(index, &outStream, askMode));
     if (!testMode && !outStream)
       continue;
-
+      
     RINOK(extractCallback->PrepareOperation(askMode));
     RINOK(_inStream->Seek(item.Offset, STREAM_SEEK_SET, NULL));
     streamSpec->Init(currentItemSize);

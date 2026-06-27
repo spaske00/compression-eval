@@ -79,14 +79,14 @@ class CCoder :
 
   void MakeTable(int nchar, Byte *bitlen, int tablebits,
       UInt32 *table, int tablesize);
-
+  
   UInt32 ReadBits(int numBits);
   HRESULT ReadLevelTable();
   HRESULT ReadPTable(int numBits);
   HRESULT ReadCTable();
 
 public:
-
+  
   MY_UNKNOWN_IMP
 
   STDMETHOD(CodeReal)(ISequentialInStream *inStream,

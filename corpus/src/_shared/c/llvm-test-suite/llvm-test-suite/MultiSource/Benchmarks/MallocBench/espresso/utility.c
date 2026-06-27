@@ -75,7 +75,7 @@
  *   util_cpu_time -- return a long which represents the elapsed processor
  *   time in milliseconds since some constant reference
  */
-long
+long 
 util_cpu_time()
 {
     long t = 0;
@@ -122,7 +122,7 @@ util_cpu_time()
 
 /*
  *  util_print_time -- massage a long which represents a time interval in
- *  milliseconds, into a string suitable for output
+ *  milliseconds, into a string suitable for output 
  *
  *  Hack for IBM/PC -- avoids using floating point
  */

@@ -21,7 +21,7 @@ class CCoder:
 {
   CLzOutWindow m_OutWindowStream;
   NBitl::CDecoder<CInBuffer> m_InBitStream;
-
+  
   NImplode::NHuffman::CDecoder m_LiteralDecoder;
   NImplode::NHuffman::CDecoder m_LengthDecoder;
   NImplode::NHuffman::CDecoder m_DistanceDecoder;

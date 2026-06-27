@@ -14,7 +14,7 @@
 
 namespace NArchive {
 namespace NZip {
-
+  
 class CInArchiveException
 {
 public:
@@ -71,15 +71,15 @@ class CInArchive
   UInt32 m_Signature;
   UInt64 m_StreamStartPosition;
   UInt64 m_Position;
-
+ 
   bool _inBufMode;
   CInBuffer _inBuffer;
-
+  
   HRESULT Seek(UInt64 offset);
 
   HRESULT FindAndReadMarker(IInStream *stream, const UInt64 *searchHeaderSizeLimit);
   void ReadFileName(UInt32 nameSize, AString &dest);
-
+  
   HRESULT ReadBytes(void *data, UInt32 size, UInt32 *processedSize);
   bool ReadBytesAndTestSize(void *data, UInt32 size);
   void SafeReadBytes(void *data, UInt32 size);
@@ -89,10 +89,10 @@ class CInArchive
   UInt32 ReadUInt32();
   UInt64 ReadUInt64();
   bool ReadUInt32(UInt32 &signature);
-
+  
   void Skip(UInt64 num);
   void IncreaseRealPosition(UInt64 addValue);
-
+ 
   void ReadExtra(UInt32 extraSize, CExtraBlock &extraBlock,
       UInt64 &unpackSize, UInt64 &packSize, UInt64 &localHeaderOffset, UInt32 &diskStartNumber);
   HRESULT ReadLocalItem(CItemEx &item);
@@ -119,7 +119,7 @@ public:
 
   bool IsOpen() const { return m_Stream != NULL; }
 };
-
+  
 }}
-
+  
 #endif

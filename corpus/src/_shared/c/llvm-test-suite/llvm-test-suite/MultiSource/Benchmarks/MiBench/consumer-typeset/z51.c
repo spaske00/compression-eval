@@ -366,7 +366,7 @@ static void Plain_PrintUnderline(FONT_NUM fnum, COLOUR_NUM col,
 static void Plain_PrintAfterLastPage(void)
 { int i, j, jmax;
   if( prologue_done )
-  {
+  { 
     /* print the page that has just ended (exists since prologue_done) */
     ifdebug(DPT, D,
       putc('+', out_fp);

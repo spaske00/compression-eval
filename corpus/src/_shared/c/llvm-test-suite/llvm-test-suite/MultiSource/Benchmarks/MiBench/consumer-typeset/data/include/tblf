@@ -282,7 +282,7 @@ def @TblSetup
 	named arulebelowwidth		arbw	{}
 	named aruleverticalwidth	arvw	{}
 	named aruleleftwidth		arlw	{}
-	named arulerightwidth		arrw	{}
+	named arulerightwidth		arrw	{} 
 	named arulegap			arg	{}
 	named arulehorizontalgap	arhg	{}
 	named aruleabovegap		arag	{}
@@ -387,7 +387,7 @@ def @TblSetup
 	named brulebelowwidth		brbw	{}
 	named bruleverticalwidth	brvw	{}
 	named bruleleftwidth		brlw	{}
-	named brulerightwidth		brrw	{}
+	named brulerightwidth		brrw	{} 
 	named brulegap			brg	{}
 	named brulehorizontalgap	brhg	{}
 	named bruleabovegap		brag	{}
@@ -492,7 +492,7 @@ def @TblSetup
 	named crulebelowwidth		crbw	{}
 	named cruleverticalwidth	crvw	{}
 	named cruleleftwidth		crlw	{}
-	named crulerightwidth		crrw	{}
+	named crulerightwidth		crrw	{} 
 	named crulegap			crg	{}
 	named crulehorizontalgap	crhg	{}
 	named cruleabovegap		crag	{}
@@ -597,7 +597,7 @@ def @TblSetup
 	named drulebelowwidth		drbw	{}
 	named druleverticalwidth	drvw	{}
 	named druleleftwidth		drlw	{}
-	named drulerightwidth		drrw	{}
+	named drulerightwidth		drrw	{} 
 	named drulegap			drg	{}
 	named drulehorizontalgap	drhg	{}
 	named druleabovegap		drag	{}
@@ -702,7 +702,7 @@ def @TblSetup
 	named erulebelowwidth		erbw	{}
 	named eruleverticalwidth	ervw	{}
 	named eruleleftwidth		erlw	{}
-	named erulerightwidth		errw	{}
+	named erulerightwidth		errw	{} 
 	named erulegap			erg	{}
 	named erulehorizontalgap	erhg	{}
 	named eruleabovegap		erag	{}
@@ -807,7 +807,7 @@ def @TblSetup
 	named frulebelowwidth		frbw	{}
 	named fruleverticalwidth	frvw	{}
 	named fruleleftwidth		frlw	{}
-	named frulerightwidth		frrw	{}
+	named frulerightwidth		frrw	{} 
 	named frulegap			frg	{}
 	named frulehorizontalgap	frhg	{}
 	named fruleabovegap		frag	{}
@@ -912,7 +912,7 @@ def @TblSetup
 	named grulebelowwidth		grbw	{}
 	named gruleverticalwidth	grvw	{}
 	named gruleleftwidth		grlw	{}
-	named grulerightwidth		grrw	{}
+	named grulerightwidth		grrw	{} 
 	named grulegap			grg	{}
 	named grulehorizontalgap	grhg	{}
 	named gruleabovegap		grag	{}
@@ -1017,7 +1017,7 @@ def @TblSetup
 	named hrulebelowwidth		hrbw	{}
 	named hruleverticalwidth	hrvw	{}
 	named hruleleftwidth		hrlw	{}
-	named hrulerightwidth		hrrw	{}
+	named hrulerightwidth		hrrw	{} 
 	named hrulegap			hrg	{}
 	named hrulehorizontalgap	hrhg	{}
 	named hruleabovegap		hrag	{}
@@ -1210,7 +1210,7 @@ def @TblSetup
 	                grey            @Yield  { 0.5 0.5 0.5 }
 	                lightgrey       @Yield  { 0.8 0.8 0.8 }
 	                black           @Yield  { 0.0 0.0 0.0 }
-			white           @Yield  { 1.0 1.0 1.0 }
+                	white           @Yield  { 1.0 1.0 1.0 }
 		    }
 	        }
 
@@ -1588,7 +1588,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -1772,7 +1772,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -1956,7 +1956,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -2140,7 +2140,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -2324,7 +2324,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -2508,7 +2508,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -2692,7 +2692,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -2876,7 +2876,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################
@@ -3060,7 +3060,7 @@ def @TblSetup
 		S { S } T { T } U { U } V { V } W { W } X { X }
 		Y { Y } Z { Z }
 		@Cell {
-
+		
 		    @DoCell
 
 			#######################################################

@@ -7,7 +7,7 @@ static char cmpError[] = "Second arg not single digit";
  * Single-digit compare
  */
 int picmp(u, v)
-   register precision u;
+   register precision u; 
    register int v;
 {
    register int i;

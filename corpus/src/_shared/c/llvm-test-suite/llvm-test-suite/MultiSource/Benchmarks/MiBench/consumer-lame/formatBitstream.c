@@ -50,7 +50,7 @@ static void WriteMainDataBits( u_int val,u_int nbits,BF_FrameResults *results );
   See formatBitstream.h for more information about the data
   structures and the bitstream syntax.
 */
-static int elements, forwardFrameLength, forwardSILength;
+static int elements, forwardFrameLength, forwardSILength; 
 void
 BF_BitstreamFrame( BF_FrameData *frameInfo, BF_FrameResults *results )
 {
@@ -95,9 +95,9 @@ BF_FlushBitstream( BF_FrameData *frameInfo, BF_FrameResults *results )
       while ( wordsRemaining-- ) {
 	WriteMainDataBits( 0, 32, results );
       }
-      WriteMainDataBits( 0, (bitsRemaining % 32), results );
+      WriteMainDataBits( 0, (bitsRemaining % 32), results );	
     }
-
+    
 
     results->mainDataLength = forwardFrameLength - forwardSILength;
     results->SILength       = forwardSILength;
@@ -109,7 +109,7 @@ BF_FlushBitstream( BF_FrameData *frameInfo, BF_FrameResults *results )
     /* reinitialize globals */
     BitCount       = 0;
     ThisFrameSize  = 0;
-    BitsRemaining  = 0;
+    BitsRemaining  = 0;    
     return;
 }
 
@@ -322,7 +322,7 @@ store_side_info( BF_FrameData *info )
 	for ( gr = 0; gr < info->nGranules; gr++ )
 	    for ( ch = 0; ch < info->nChannels; ch++ )
 		l->side_info.spectrumSIPH[gr][ch] = BF_newPartHolder( info->spectrumSI[gr][ch]->nrEntries );
-
+	
     }
     else
     { /* remove from the free list */
@@ -375,14 +375,14 @@ get_side_info(void)
 {
     side_info_link *f = side_queue_free;
     side_info_link *l = side_queue_head;
-
+    
     /*
       If we stop here it means you didn't provide enough
       headers to support the amount of main data that was
       written.
     */
     assert( l );
-
+    
     /* update queue head */
     side_queue_head = l->next;
 
@@ -401,7 +401,7 @@ static void
 free_side_queues(void)
 {
     side_info_link *l, *next;
-
+    
     for ( l = side_queue_head; l; l = next )
     {
 	next = l->next;
@@ -495,7 +495,7 @@ BF_PartHolder *BF_resizePartHolder( BF_PartHolder *oldPH, int max_elements )
 
     /* free old holder */
     BF_freePartHolder( oldPH );
-
+    
     return newPH;
 }
 

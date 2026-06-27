@@ -504,7 +504,7 @@
 ** this improves time efficiency and saves a small amount of space
 ** in the hash file.  Thus, I recommend you specify NO8BIT unless you
 ** actually expect to be spelling files which use a 256-character set.
-*/
+*/ 
 #ifndef NO8BIT
 #undef NO8BIT
 #endif /* NO8BIT */
@@ -538,7 +538,7 @@
 ** define it.
 **
 ** Note that MASKTYPE *must* match MASKTYPE_WIDTH or you may get
-** division-by-zero errors!
+** division-by-zero errors! 
 */
 #ifndef MASKTYPE
 #define MASKTYPE	long

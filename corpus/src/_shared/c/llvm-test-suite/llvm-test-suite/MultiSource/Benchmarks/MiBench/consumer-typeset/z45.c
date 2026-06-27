@@ -214,9 +214,9 @@ void SortFile(FULL_CHAR *infile, FULL_CHAR *outfile)
 {
   LINE *lines;
   int lines_len;
-  FILE *in_fp, *out_fp;
+  FILE *in_fp, *out_fp; 
   debug2(DEX, D, "SortFile(%s, %s)", infile, outfile);
-
+  
   /* open input file */
   in_fp = fopen( (char *) infile, READ_BINARY);
   if( in_fp == (FILE *) NULL )

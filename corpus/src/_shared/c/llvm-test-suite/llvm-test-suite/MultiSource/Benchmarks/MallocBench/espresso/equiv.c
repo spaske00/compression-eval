@@ -19,7 +19,7 @@ pPLA PLA;
 	R[i] = cof_output(PLA->R, ipart);
 	F[i] = complement(cube1list(R[i]));
     }
-
+	
     for(i = 0; i < cube.part_size[cube.output]-1; i++) {
 	for(j = i+1; j < cube.part_size[cube.output]; j++) {
 	    ipart = cube.first_part[cube.output] + i;

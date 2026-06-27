@@ -24,7 +24,7 @@ struct CExtractOptions
   NExtract::NPathMode::EEnum PathMode;
   NExtract::NOverwriteMode::EEnum OverwriteMode;
   UString OutputDir;
-
+  
   // bool ShowDialog;
   // bool PasswordEnabled;
   // UString Password;

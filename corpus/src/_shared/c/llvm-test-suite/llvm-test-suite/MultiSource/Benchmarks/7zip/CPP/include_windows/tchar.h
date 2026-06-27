@@ -1,4 +1,4 @@
-/*
+/* 
  * tchar.h
  *
  * Unicode mapping layer for the standard C library. By including this
@@ -86,3 +86,4 @@ typedef char	TCHAR;
 #endif	/* Not _UNICODE */
 
 #endif	/* Not _TCHAR_H_ */
+

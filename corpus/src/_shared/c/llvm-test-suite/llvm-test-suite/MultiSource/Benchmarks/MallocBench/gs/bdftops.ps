@@ -310,7 +310,7 @@ envBDF begin
 	 bbw   fbbh				% bitmap width & height
 	 swx   swy				% width x & y
 	 bbox neg   bboy neg			% origin x & y
-		% Account for lenIV when converting the outline.
+	 	% Account for lenIV when converting the outline.
 	 outline  lenIV  outline length lenIV sub  getinterval
 	 type1imagepath
 	 length lenIV add

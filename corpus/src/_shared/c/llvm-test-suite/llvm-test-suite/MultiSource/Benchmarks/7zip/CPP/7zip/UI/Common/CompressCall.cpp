@@ -68,28 +68,28 @@ HRESULT MyCreateProcess(const UString &params,
 
 	if (curDir) {  // FIXME
 		wxSetWorkingDirectory(wxString(curDir));
-
-
+		
+		
 		// under MacOSX, a bundle does not keep the current directory
 		// between 7zFM and 7zG ...
-		// So, try to use the environment variable P7ZIP_CURRENT_DIR
-
+		// So, try to use the environment variable P7ZIP_CURRENT_DIR	
+	
 		char p7zip_current_dir[MAX_PATH];
-
+			
 		AString aCurPath = GetAnsiString(curDir);
-
+			
 		const char *dir2 = nameWindowToUnix((const char *)aCurPath);
-
+			
 		snprintf(p7zip_current_dir,sizeof(p7zip_current_dir),"P7ZIP_CURRENT_DIR=%s/",dir2);
-
+			
 		p7zip_current_dir[sizeof(p7zip_current_dir)-1] = 0;
-
+			
 		putenv(p7zip_current_dir);
-
+			
 		printf("putenv(%s)\n",p7zip_current_dir);
-
-	}
-
+		
+	}	
+	
 
 	printf("MyCreateProcess: cmd='%ls'\n",(const wchar_t *)cmd);
 	long pid = 0;
@@ -114,7 +114,7 @@ HRESULT MyCreateProcess(const UString &params,
     startupInfo.dwFlags = 0;
     startupInfo.cbReserved2 = 0;
     startupInfo.lpReserved2 = 0;
-
+    
     result = ::CreateProcessW(NULL, (LPWSTR)(LPCWSTR)params,
       NULL, NULL, FALSE, 0, NULL,
       curDir,
@@ -188,9 +188,9 @@ static HRESULT CreateMap(const UStringVector &names,
   for (int i = 0; i < names.Size(); i++)
     dataSize += (names[i].Length() + 1) * sizeof(wchar_t);
   UInt32 totalSize = extraSize + dataSize;
-
+  
   UString mappingName;
-
+  
   CRandom random;
   random.Init(GetTickCount());
   for (;;)
@@ -208,7 +208,7 @@ static HRESULT CreateMap(const UStringVector &names,
       break;
     fileMapping.Close();
   }
-
+  
   UString eventName;
   RINOK(CreateTempEvent(id + L"MappingEndEvent", event, eventName));
 
@@ -217,7 +217,7 @@ static HRESULT CreateMap(const UStringVector &names,
   wchar_t string[10];
   ConvertUInt64ToString(totalSize, string);
   params += string;
-
+  
   params += L":";
   params += eventName;
 
@@ -263,15 +263,15 @@ HRESULT CompressFiles(
 #ifdef _WIN32
   params += kMapSwitch;
   // params += _fileNames[0];
-
+  
   UInt32 extraSize = 2;
   UInt32 dataSize = 0;
   for (int i = 0; i < names.Size(); i++)
     dataSize += (names[i].Length() + 1) * sizeof(wchar_t);
   UInt32 totalSize = extraSize + dataSize;
-
+  
   UString mappingName;
-
+  
   CFileMapping fileMapping;
   CRandom random;
   random.Init(GetTickCount());
@@ -292,7 +292,7 @@ HRESULT CompressFiles(
       break;
     fileMapping.Close();
   }
-
+  
   NSynchronization::CManualResetEvent event;
   UString eventName;
   RINOK(CreateTempEvent(L"7zCompressMappingEndEvent", event, eventName));
@@ -302,13 +302,13 @@ HRESULT CompressFiles(
   wchar_t string[10];
   ConvertUInt64ToString(totalSize, string);
   params += string;
-
+  
   params += L":";
   params += eventName;
 #else
   char tempFile[256];
   static int count = 1000;
-
+  
   sprintf(tempFile,"/tmp/7zCompress_%d_%d.tmp",(int)getpid(),count++);
 
   FILE * file = fopen(tempFile,"w");
@@ -341,9 +341,9 @@ HRESULT CompressFiles(
 
   params += kStopSwitchParsing;
   params += L" ";
-
+  
   params += GetQuotedString(archiveName);
-
+  
 #ifdef _WIN32
   LPVOID data = fileMapping.MapViewOfFile(FILE_MAP_WRITE, 0, totalSize);
   if (data == NULL)
@@ -375,7 +375,7 @@ HRESULT CompressFiles(
     throw;
   }
   UnmapViewOfFile(data);
-
+  
 
   /*
   CThreadCompressMain *compressor = new CThreadCompressMain();;
@@ -411,7 +411,7 @@ static HRESULT ExtractGroupCommand(const UStringVector &archivePaths,
 #else
   char tempFile[256];
   static int count = 1000;
-
+  
   sprintf(tempFile,"/tmp/7zExtract_%d_%d.tmp",(int)getpid(),count++);
 
   FILE * file = fopen(tempFile,"w");

@@ -55,7 +55,7 @@ public:
   QUERY_ENTRY_ISetCompressCodecsInfo
   MY_QUERYINTERFACE_END
   MY_ADDREF_RELEASE
-
+  
   INTERFACE_IInArchive(;)
 
   DECL_ISetCompressCodecsInfo

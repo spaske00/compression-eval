@@ -52,7 +52,7 @@ computer program written for checking the spelling of text documents.
 The book is also a good source of references on spelling programs.]
 
 > ...
->
+>    
 > [Ispell] was originally written in PDP-10 assembly language and ran
 > under the WAITS operating system, which is similar to TOPS-10 but existed
 > only on SAIL (a dual processor KA10/PDP-6 system).  It was and is called
@@ -60,7 +60,7 @@ The book is also a good source of references on spelling programs.]
 > TOPS-20.
 
 [Ralph mentions that SPELL was also ported to MIT's ITS and TOPS-10.]
-
+   
 The Tenex version of ispell was later revised by W. E. Matson (1974),
 and Bill Ackerman (1978).  Bill has provided the following information:
 

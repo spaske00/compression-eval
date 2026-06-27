@@ -64,7 +64,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 { OBJECT y, link, z, crs, t, tlink, zlink, tmp, why;
   OBJECT extras, tmp1, tmp2, bt[2], ft[2], hold_env;
   BOOLEAN after_target;
-
+  
   assert( type(hd) == HEAD && Down(hd) != hd, "SizeGalley: precondition!" );
   assert( !sized(hd), "SizeGalley: already sized!" );
   debug6(DGM, D, "SizeGalley(%s, -, %s, %s, %s, %s, -, %s, -, -, -), hd =",
@@ -170,7 +170,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 
 
 	case VCAT:
-
+	  
 	  if( gall_dir(hd) == ROWM )
 	  { TransferLinks(Down(y), y, Up(y));
 	    DisposeChild(Up(y));
@@ -180,7 +180,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 
 
 	case ACAT:
-
+	  
 	  if( gall_dir(hd) == COLM )
 	  { TransferLinks(Down(y), y, Up(y));
 	    DisposeChild(Up(y));
@@ -190,7 +190,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 
 
 	case SPLIT:
-
+	  
 	  assert(Up(y)==LastUp(y), "SizeGalley COL_THR: Up(y)!=LastUp(y)!");
 	  Child(z, DownDim(y, ROWM));
 	  if( is_indefinite(type(z)) )
@@ -232,7 +232,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 
 	case CLOSURE:
 	case HEAD:
-
+	  
 	  if( gall_dir(hd) == COLM )
 	    external_hor(y) = TRUE;
 	  else
@@ -245,7 +245,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 
 
 	default:
-
+	  
 	  break;
       }
     }
@@ -386,7 +386,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 	  }
 	  break;
 
-
+		
 	case SCALE_IND:
 	case EXPAND_IND:
 	case GALL_PREC:
@@ -490,7 +490,7 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
 
 
 	default:
-
+	  
 	  assert1(FALSE, "SizeGalley:", Image(type(z)));
 	  break;
 
@@ -500,10 +500,10 @@ OBJECT *dest_index, OBJECT *recs, OBJECT *inners, OBJECT enclose)
     assert( Down(extras) == extras && Up(extras) == extras, "SizeG: extras!");
     Dispose(extras);
   }
-
+  
   /* insinuate cross references */
   if( crs != nilobj )
-  {
+  { 
     debug1(DCR, DD, "SizeGalley insinuating %s", EchoObject(crs));
     TransferLinks(Down(crs), crs, Down(hd));
     DisposeObject(crs);

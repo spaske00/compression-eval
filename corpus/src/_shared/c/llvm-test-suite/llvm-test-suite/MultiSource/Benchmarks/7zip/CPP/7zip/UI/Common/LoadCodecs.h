@@ -163,7 +163,7 @@ public:
 public:
   CObjectVector<CArcInfoEx> Formats;
   HRESULT Load();
-
+  
   #ifndef _SFX
   int FindFormatForArchiveName(const UString &arcPath) const;
   int FindFormatForExtension(const UString &ext) const;

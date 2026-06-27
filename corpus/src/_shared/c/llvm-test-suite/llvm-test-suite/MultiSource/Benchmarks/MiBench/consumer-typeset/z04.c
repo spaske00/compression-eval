@@ -114,12 +114,12 @@ FULL_CHAR *EchoToken(OBJECT x)
 { switch( type(x) )
   {
     case WORD:
-
+    
       return string(x);
 
 
     case QWORD:
-
+    
       return StringQuotedWord(x);
 
 
@@ -130,7 +130,7 @@ FULL_CHAR *EchoToken(OBJECT x)
     case GSTUB_EXT:
     case GSTUB_INT:
     case GSTUB_NONE:
-
+    
       return Image(type(x));
 
 
@@ -229,12 +229,12 @@ FULL_CHAR *EchoToken(OBJECT x)
     case LUSE:
     case LEO:
     case LVIS:
-
+    
       return actual(x) != nilobj ? SymName(actual(x)) : Image(type(x));
 
 
     default:
-
+    
       assert1(FALSE, "EchoToken:", Image(type(x)));
       return STR_EMPTY;
   }

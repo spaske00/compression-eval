@@ -29,7 +29,7 @@ solution_t **best;
     register sm_col *c1, *c2;
     register sm_element *p, *p1;
     int c1_col_num, c2_col_num, primary_row_num, secondary_row_num;
-    int reduce_it;
+    int reduce_it; 
 
     reduce_it = 0;
     for(prow = A->first_row; prow != 0; prow = prow->next_row) {

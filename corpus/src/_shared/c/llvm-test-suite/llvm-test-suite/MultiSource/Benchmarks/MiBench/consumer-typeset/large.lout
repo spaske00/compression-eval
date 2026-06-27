@@ -10,7 +10,7 @@ def @HeaderF right x { @CD -2p @Font { x } }
 @Doc @Text @Begin
 #DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
 
-# saved from url=(0041)http://www.simplescalar.org/overview.html
+# saved from url=(0041)http://www.simplescalar.org/overview.html 
 
 #start html
 #start head
@@ -45,15 +45,15 @@ Announcements}
 @BulletList
 #start ul
 
-
+  
 @ListItem {#start li
 
-
+  
 @HeaderC {#start h3
 New web pages!}
 #end h3
 The new domain and mailing lists are just about up!
-
+  
 @PP
 #start p
 @LLP
@@ -92,27 +92,27 @@ SimpleScalar Overview}
 }
 #end center
 {}@B {#start strong
-What
+What 
 is the SimpleScalar tool set? }
 #end strong
 
 
 @PP
 #start p
-This tool set consists of compiler, assembler, linker, simulation, and
+This tool set consists of compiler, assembler, linker, simulation, and 
 visualization tools for the SimpleScalar architecture. With this tool set,
-the
+the 
 user can simulate real programs on a range of modern processors and
-systems,
+systems, 
 using fast execution-driven simulation. We provide simulators ranging from
-a
-fast functional simulator to a detailed, out-of-order issue processor that
+a 
+fast functional simulator to a detailed, out-of-order issue processor that 
 supports non-blocking caches, speculative execution, and state-of-the-art
-branch
+branch 
 prediction. The tool set is partly derived from the GNU software
-development
-tools. It provides researchers with an easily extensible, portable,
-high-performance test bed for systems design.
+development 
+tools. It provides researchers with an easily extensible, portable, 
+high-performance test bed for systems design. 
 
 @PP
 #start p
@@ -123,31 +123,31 @@ Who wrote the SimpleScalar tool set?}
 
 @PP
 #start p
-Much of the compiler tools are simply ports of the GNU software development
+Much of the compiler tools are simply ports of the GNU software development 
 tools to the SimpleScalar architecture. The ports as well as the simulators
-were
-written by Todd Austin (while he was a Ph.D. student at the University of
+were 
+written by Todd Austin (while he was a Ph.D. student at the University of 
 Wisconsin-Madison, working in the Multiscalar Group under {}@Underline {#start a attributes= (href=>http://www.cs.wisc.edu/~sohi)
 Guri Sohi}
 #end a
-; he is now with Intel Corp.).
+; he is now with Intel Corp.). 
 The tool set is now supported by {}@Underline {#start a attributes= (href=>http://www.cs.utexas.edu/users/dburger)
 Doug Burger}
 #end a
-, who wrote the
+, who wrote the 
 documentation for both releases 1.0 and 2.0. Contributions have also been
-made
+made 
 by Manoj Franklin, {}@Underline {#start a attributes= (href=>http://www.cs.wisc.edu/~breach)
 Scott Breach}
 #end a
-,
+, 
 and Kevin Skadron.
 
 @PP
 #start p
-The development of this code was originally supported by grants from the
-National Science Foundation (grant CCR-9303030 plus software capitalization
-supplement) and the Office of Naval Research (grant N00014-93-1-0465). Many
+The development of this code was originally supported by grants from the 
+National Science Foundation (grant CCR-9303030 plus software capitalization 
+supplement) and the Office of Naval Research (grant N00014-93-1-0465). Many 
 sources, all appreciated, currently fund development on several fronts.
 
 @PP
@@ -159,9 +159,9 @@ On which platforms does it run?}
 
 @PP
 #start p
-SimpleScalar should port easily to any 32-bit flavor of UNIX, particularly
+SimpleScalar should port easily to any 32-bit flavor of UNIX, particularly 
 those that support POSIX-compliant syscalls. The tools have been installed
-(and
+(and 
 should cleanly build) on the following systems:
 
 @PP
@@ -402,18 +402,18 @@ c89}
 @PP
 #start p
 {}@B {#start strong
-How can I keep informed as to new releases and
+How can I keep informed as to new releases and 
 announcements?}
 #end strong
 
 
 @PP
 #start p
-We have set up serveral SimpleScalar mailing lists for various topics. To
+We have set up serveral SimpleScalar mailing lists for various topics. To 
 subscribe, go to the {}@Underline {#start a attributes= (href=>http://www.simplescalar.org/subscribe.html)
 mailing list page}
 #end a
- and
+ and 
 follow the directions. {}@B {#start strong
 How do I see old mailing list messages?}
 #end strong
@@ -421,11 +421,11 @@ How do I see old mailing list messages?}
 
 @PP
 #start p
-Steve Raasch at Michigan was kind enough to set up an SS mailing list
+Steve Raasch at Michigan was kind enough to set up an SS mailing list 
 archive. You should pore through these before sending a question to the
-list,
+list, 
 which goes to hundreds of people. Lots of the same questions gets asked
-over and
+over and 
 over, and the answers to new users' questions are likely to be in the
 archive!
 
@@ -434,7 +434,7 @@ archive!
 The archive is available at: {}@Underline {#start a attributes= (href=>http://ord.eecs.umich.edu/)
 http:"/""/"ord.eecs.umich.edu"/"}
 #end a
-.
+. 
 
 @PP
 #start p
@@ -445,26 +445,26 @@ What's new in version 2.0?}
 
 @PP
 #start p
-We have added numerous features and utilities. The code has been cleaned up
-and is better documented, plus all known bugs have been fixed. The code now
+We have added numerous features and utilities. The code has been cleaned up 
+and is better documented, plus all known bugs have been fixed. The code now 
 includes much more sophisticated arguments and statistics packages (that
-allow
+allow 
 you to use config files to set simulation parameters), plus cleaner
-statistics
+statistics 
 reporting. We have provided a source-level debugger called DLite!, which
-allows
+allows 
 you to step through the program being simulated. We have also added a
-pipeline
+pipeline 
 tracer, which allows you to track pipeline state in the out-of-order
-simulator.
-We have removed the simulators' dependence on the BFD utilities, making
+simulator. 
+We have removed the simulators' dependence on the BFD utilities, making 
 binutils' installation optional. There are two new simulators, sim-profile
-and
-sim-cheetah, that do useful profiling and multiple simultaneous cache
+and 
+sim-cheetah, that do useful profiling and multiple simultaneous cache 
 configuration simulations, respectively. Finally, we include pre-built
-binaries,
+binaries, 
 both small test binaries and a complete set of the SPEC95 binaries built
-for
+for 
 SimpleScalar (both big- and little-endian).
 
 @PP

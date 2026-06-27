@@ -227,7 +227,7 @@ void lame_init_params(lame_global_flags *gfp)
     } else {
       /* 15% above on default */
       /* gfp->highpass2 = 1.15*2.0*gfp->highpassfreq/gfp->out_samplerate;  */
-      gfp->highpass2 = 1.00*2.0*gfp->highpassfreq/gfp->out_samplerate;
+      gfp->highpass2 = 1.00*2.0*gfp->highpassfreq/gfp->out_samplerate; 
     }
     gfp->highpass1 = Min( 1, gfp->highpass1 );
     gfp->highpass2 = Min( 1, gfp->highpass2 );
@@ -259,7 +259,7 @@ void lame_init_params(lame_global_flags *gfp)
     if (gfp->lowpass1 > 0) {
       minband=999;
       maxband=-1;
-      for (band=0;  band <=31 ; ++band) {
+      for (band=0;  band <=31 ; ++band) { 
 	freq = band/31.0;
 	amp = 1;
 	/* this band and above will be zeroed: */
@@ -282,17 +282,17 @@ void lame_init_params(lame_global_flags *gfp)
 
     /* make sure highpass filter is within 90% of whan the effective highpass
      * frequency will be */
-    if (gfp->highpass2 > 0)
+    if (gfp->highpass2 > 0) 
       if (gfp->highpass2 <  .9*(.75/31.0) ) {
 	gfp->highpass1=0; gfp->highpass2=0;
 	fprintf(stderr,"Warning: highpass filter disabled.  highpass frequency to small\n");
       }
-
+    
 
     if (gfp->highpass2 > 0) {
       minband=999;
       maxband=-1;
-      for (band=0;  band <=31; ++band) {
+      for (band=0;  band <=31; ++band) { 
 	freq = band/31.0;
 	amp = 1;
 	/* this band and below will be zereod */
@@ -730,7 +730,7 @@ int mf_size,char *mp3buf, int mp3buf_size)
       for ( ch = 0; ch < gfp->stereo; ch++ )
 	bufp[ch] = &inbuf[ch][576 + gr*576-FFTOFFSET];
 
-      L3psycho_anal( gfp,bufp, gr,
+      L3psycho_anal( gfp,bufp, gr, 
 		     &ms_ratio[gr],&ms_ratio_next,&ms_ener_ratio[gr],
 		     masking_ratio, masking_MS_ratio,
 		     pe[gr],pe_MS[gr],blocktype);
@@ -820,7 +820,7 @@ int mf_size,char *mp3buf, int mp3buf_size)
 
   /*
   VBR_iteration_loop_new( gfp,*pe_use, ms_ratio, xr, masking, &l3_side, l3_enc,
-	  &scalefac);
+  	  &scalefac);
   */
 
 
@@ -1358,7 +1358,7 @@ int lame_encode_finish(lame_global_flags *gfp,char *mp3buffer, int mp3buffer_siz
 
     mp3buffer_size_remaining = mp3buffer_size - mp3count;
     /* if user specifed buffer size = 0, dont check size */
-    if (mp3buffer_size == 0) mp3buffer_size_remaining=0;
+    if (mp3buffer_size == 0) mp3buffer_size_remaining=0;  
     imp3=lame_encode(gfp,buffer,mp3buffer,mp3buffer_size_remaining);
 
     if (imp3 == -1) {
@@ -1391,7 +1391,7 @@ int lame_encode_finish(lame_global_flags *gfp,char *mp3buffer, int mp3buffer_siz
   III_FlushBitstream();
   mp3buffer_size_remaining = mp3buffer_size - mp3count;
   /* if user specifed buffer size = 0, dont check size */
-  if (mp3buffer_size == 0) mp3buffer_size_remaining=0;
+  if (mp3buffer_size == 0) mp3buffer_size_remaining=0;  
 
   imp3= copy_buffer(mp3buffer,mp3buffer_size_remaining,&bs);
   if (imp3 == -1) {
@@ -1432,3 +1432,4 @@ void lame_mp3_tags(lame_global_flags *gfp)
 void lame_version(lame_global_flags *gfp,char *ostring) {
   strncpy(ostring,get_lame_version(),20);
 }
+

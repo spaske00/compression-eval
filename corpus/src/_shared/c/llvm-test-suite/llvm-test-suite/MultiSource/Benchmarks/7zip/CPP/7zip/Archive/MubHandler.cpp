@@ -203,7 +203,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   UInt64 currentTotalSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -227,7 +227,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     const CItem &item = _items[index];
     RINOK(extractCallback->GetStream(index, &realOutStream, askMode));
     currentTotalSize += item.Size;
-
+    
     if (!testMode && !realOutStream)
       continue;
     RINOK(extractCallback->PrepareOperation(askMode));

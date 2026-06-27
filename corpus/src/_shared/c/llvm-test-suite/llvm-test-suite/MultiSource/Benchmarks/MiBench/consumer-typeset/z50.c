@@ -359,7 +359,7 @@ static void PDF_PrintWord(OBJECT x, int hpos, int vpos)
   lig = finfo[word_font(x)].lig_table;
   p = q = string(x);
   do
-  {
+  { 
     /* check for missing glyph (lig[] == 1) or ligatures (lig[] > 1) */
     if( lig[*q++ = *p++] )
     {
@@ -494,7 +494,7 @@ static void PDF_PrintUnderline(FONT_NUM fnum, COLOUR_NUM col,
 void PDF_PrintAfterLastPage(void)
 {
   if( prologue_done )
-  {
+  { 
     PDFPage_Cleanup(out_fp);		/* write out page objects */
     /* MapPrintResources(out_fp); not needed */
     PDFFile_Cleanup(out_fp);
@@ -651,10 +651,10 @@ void PDF_PrintGraphicObject(OBJECT x)
 
       PDFPage_WriteGraphic(out_fp, string(x));
       break;
-
+	
 
     case ACAT:
-
+    
       for( link = Down(x);  link != x;  link = NextDown(link) )
       {	Child(y, link);
 	if( type(y) == GAP_OBJ )
@@ -679,7 +679,7 @@ void PDF_PrintGraphicObject(OBJECT x)
 
 
     default:
-
+    
       Error(50, 3, "error in left parameter of %s", WARN, &fpos(x), KW_GRAPHIC);
       debug1(DPF, D, "  type(x) = %s, x =", Image(type(x)));
       ifdebug(DPF, D, DebugObject(x));

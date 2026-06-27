@@ -15,7 +15,7 @@ class CData
 {
   Byte SubstTable[256];
   UInt32 Keys[4];
-
+  
   UInt32 SubstLong(UInt32 t)
   {
     return (UInt32)SubstTable[(int)t & 255] |

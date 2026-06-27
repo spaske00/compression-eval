@@ -23,7 +23,7 @@ What Is Ispell and Why Do I Want It?
     corrections when it can figure them out.  Compared to UNIX spell, it
     is faster and much easier to use.  Ispell can also handle languages
     other than English.
-
+    
 What's New in This Version?
 
     Compared to ispell versions 2 and 4.0 (the latter was the
@@ -63,7 +63,7 @@ Where Can I Get Ispell?
 
     A number of ftp mirror sites also store ispell.  Check Archie for
     "ispell-3.1" to find a site near you.
-
+    
     Ispell comes with English dictionaries.  For other languages,
     check the "Where" and "README" files in the "languages"
     subdirectory for hints on where to find dictionaries and how to
@@ -345,7 +345,7 @@ Special Installation Notes for Certain Machines:
     symptom of the wrong compiler is incorrect highlighting of
     misspelled words.  Gcc will also compile ispell correctly on HP
     systems.
-
+    
     I have a report that on HP systems 300-400, you must use either
     gcc or the non-ansi CCFLAG ("cc +o2"), at least for the ispell.c
     source.  However, it is possible that this problem has been

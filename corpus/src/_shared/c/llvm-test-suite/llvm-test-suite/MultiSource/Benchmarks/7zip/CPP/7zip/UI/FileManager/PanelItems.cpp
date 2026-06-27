@@ -43,13 +43,13 @@ static int GetColumnAlign(PROPID propID, VARTYPE varType)
     case VT_UI8:
     case VT_BOOL:
       return LVCFMT_RIGHT;
-
+    
     case VT_EMPTY:
     case VT_I1:
     case VT_FILETIME:
     case VT_BSTR:
       return LVCFMT_LEFT;
-
+    
     default:
       return LVCFMT_CENTER;
   }
@@ -102,7 +102,7 @@ void CPanel::InitColumns()
     prop.Order = -1;
     prop.IsVisible = true;
 	prop.Width = 100;
-
+	  
     _properties.Add(prop);
   }
   // InitColumns2(sortID);
@@ -121,7 +121,7 @@ void CPanel::InitColumns()
       CItemProperty &item = _properties[index];
       item.IsVisible = columnInfo.IsVisible;
       item.Width = columnInfo.Width;
-
+		
       if (columnInfo.IsVisible)
         item.Order = order++;
       continue;
@@ -299,14 +299,14 @@ printf("CPanel::RefreshListCtrl\n");
 #else
   LVITEMW item = { 0 };
 #endif
-
+  
   _listView.DeleteAllItems();
   _selectedStatusVector.Clear();
   // _realIndices.Clear();
   _startGroupSelect = 0;
 
   _selectionIsDefined = false;
-
+  
   // m_Files.Clear();
   // _folder.Release();
 
@@ -315,7 +315,7 @@ printf("CPanel::RefreshListCtrl\n");
     // throw 1;
     SetToRootFolder();
   }
-
+  
   // FIXME _headerToolBar.EnableButton(kParentFolderID, !IsRootFolder());
 
   CMyComPtr<IFolderSetFlatMode> folderSetFlatMode;
@@ -362,7 +362,7 @@ printf("CPanel::RefreshListCtrl\n");
     if(_listView.InsertItem(&item) == -1)
       return;
   }
-
+  
   // OutputDebugStringA("S1\n");
 
   for(UInt32 i = 0; i < numItems; i++)
@@ -384,13 +384,13 @@ printf("CPanel::RefreshListCtrl\n");
         item.mask |= LVIF_STATE;
         item.state = LVIS_SELECTED;
       }
-
+  
     int subItem = 0;
     item.iItem = _listView.GetItemCount();
-
+    
     item.iSubItem = subItem++;
     item.lParam = i;
-
+    
     UString correctedName;
     if (itemName.Find(L"     ") >= 0)
     {
@@ -587,7 +587,7 @@ void CPanel::OpenSelectedItems(bool tryInternal)
     MessageBoxErrorLang(IDS_TOO_MANY_ITEMS, 0x02000606);
     return;
   }
-
+  
   int focusedItem = _listView.GetFocusedItem();
   if (focusedItem >= 0)
   {
@@ -704,10 +704,10 @@ void CPanel::SaveListViewInfo()
   }
 
   CListViewInfo viewInfo;
-
+  
   // PROPID sortPropID = _properties[_sortIndex].ID;
   PROPID sortPropID = _sortID;
-
+  
   _visibleProperties.Sort();
   for(i = 0; i < _visibleProperties.Size(); i++)
   {
@@ -730,7 +730,7 @@ void CPanel::SaveListViewInfo()
       viewInfo.Columns.Add(columnInfo);
     }
   }
-
+  
   // viewInfo.SortIndex = viewInfo.FindColumnWithID(sortPropID);
   viewInfo.SortID = sortPropID;
 

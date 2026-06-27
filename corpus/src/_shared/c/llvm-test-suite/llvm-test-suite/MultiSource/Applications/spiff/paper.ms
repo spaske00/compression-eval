@@ -11,7 +11,7 @@ Software Engineering Research Group
 Bell Communications Research
 Morristown, New Jersey
 .AB
-The well known program
+The well known program 
 .B
 diff
 .R
@@ -19,20 +19,20 @@ diff
 is inappropriate for some
 common tasks such as comparing the output of floating
 point calculations where roundoff errors
-lead
+lead 
 .B
 diff
 .R
 astray and comparing program source code
 where some differences in the text (such as white space and comments)
 have no effect on the operation of the compiled code. A new program,
-named
+named 
 .B
 spiff,
 .R
 addresses these and other similar cases
 by lexical parsing of the input files and then applying
-a differencing algorithm to the token sequences.
+a differencing algorithm to the token sequences.  
 .B
 Spiff
 .R
@@ -42,16 +42,16 @@ Other features include user settable commenting and literal string
 conventions and a choice of differencing algorithm.
 There is also an interactive mode wherein the input texts are displayed
 with differences highlighted.  The user can change numeric tolerances
-"on the fly" and
+"on the fly" and 
 .B
 spiff
 .R
-will adjust the highlighting accordingly.
+will adjust the highlighting accordingly. 
 .AE
 .SH
 Some Troubles With Diff
 .PP
-Over the past several years, it has been fairly easy to tell when
+Over the past several years, it has been fairly easy to tell when 
 a new type of computer arrived at a nearby computer center.
 The best clue was the discordant chorus of
 groaning, sighing, gnashing of teeth, pounding of foreheads on desks,
@@ -74,7 +74,7 @@ by using a difference finding program such as
 .B
 diff.
 .R
-Programs such as
+Programs such as 
 .B
 diff
 .R
@@ -89,7 +89,7 @@ in which the two test runs
 had printed a number (3.4e-1 vs. 0.34).
 In one case, the test suite for the S statistical analysis package[2],
 over 1700 floating point numbers are produced
-(per machine). In the eyes of
+(per machine). In the eyes of 
 .B
 diff,
 .R
@@ -119,7 +119,7 @@ characters that start blocks.
 .SH
 The Problem in General Terms
 .PP
-As already mentioned, programs such as
+As already mentioned, programs such as 
 .B
 diff
 .R
@@ -136,7 +136,7 @@ or the characters that separate them.
 .PP
 What is needed is a program that first parses the input files
 into tokens, and then applies a differencing algorithm to the token
-sequences.
+sequences. 
 In addition to finding differences in terms of tokens,
 it is possible to interpret the tokens and
 compare different types of tokens in different ways.  Numbers, for example,
@@ -188,7 +188,7 @@ Spiff
 .R
 is also a contraction of "spiffy diff".
 .FE
-works very much like
+works very much like 
 .B
 diff.
 .R
@@ -200,7 +200,7 @@ an edit script.\**
 An edit script is a sequence of insertions and deletions
 that will transform the first file into the second.
 .FE
-As already suggested,
+As already suggested, 
 .B
 spiff
 .R
@@ -219,11 +219,11 @@ By default, a string of digits without a decimal point
 but rather a literal string.\**
 Each non-alphanumeric character (such as #$@^&*)
 is parsed into a separate literal token.
-.FS
+.FS 
 Integer numbers are often used as indices, labels, and so on.
 Under these circumstances, it is more appropriate to treat them as literals.
 Our choice of default was driven by a design goal
-of having
+of having 
 .B
 spiff
 .R
@@ -231,7 +231,7 @@ be very conservative
 when choosing to ignore differences.
 .FE
 .PP
-Once
+Once 
 .B
 spiff
 .R
@@ -243,7 +243,7 @@ If two tokens are of different types,
 spiff
 .R
 deems them to be different, regardless of their content.
-If both tokens are literal tokens,
+If both tokens are literal tokens, 
 .B
 spiff
 .R
@@ -256,15 +256,15 @@ spiff
 will deem them to be different only if
 the difference in their values exceeds a user settable tolerance.
 .SH
-Altering Spiff's Operation
+Altering Spiff's Operation 
 .PP
-To make
+To make 
 .B
 spiff
 .R
 more generally useful, the user can control:
 .IP \(bu
-how text strings are parsed into tokens
+how text strings are parsed into tokens 
 .IP \(bu
 how tokens of the same type are compared
 .IP \(bu
@@ -295,7 +295,7 @@ multicharacter operators (such as the += operator in C)
 can be parsed into a single token.
 .PP
 As yet, no provision is made for allowing delimiter
-specification in terms of regular expressions.  This omission
+specification in terms of regular expressions.  This omission 
 was made for the sake of simplifying the parser.
 Nothing prevents the addition of regular expressions in the
 future.  However, the simple mechanism
@@ -314,20 +314,20 @@ non-alphanumeric character (in other words, parse each white space
 character into its own literal token),
 whether to parse sign markers as part
 of the number that they precede or as separate tokens, whether
-to treat numbers without printed decimal markers (e.g. "1988")
+to treat numbers without printed decimal markers (e.g. "1988") 
 as real numbers rather than as literal strings, and whether
 to parse real numbers into literal tokens.
 .SH
 Altering the Comparison of Individual Tokens
 .PP
 As mentioned earlier, the user can set a tolerance below which differences
-between real numbers are ignored.
+between real numbers are ignored.  
 .B
 Spiff
 .R
 allows two kinds of tolerances:
-absolute and relative.
-Specifying an absolute tolerance will cause
+absolute and relative. 
+Specifying an absolute tolerance will cause 
 .B
 spiff
 .R
@@ -335,14 +335,14 @@ to ignore differences
 that are less than the specified value.
 For instance, specifying an absolute tolerance of 0.01 will
 cause only those differences greater than or equal to 0.01 to be reported.
-Specifying a relative tolerance will cause
+Specifying a relative tolerance will cause 
 .B
 spiff
 .R
 to ignore differences that are
 smaller than some fraction of the number of larger magnitude.
 Specifically, the value of the tolerance is interpreted
-as a fraction of the larger (in absolute terms)
+as a fraction of the larger (in absolute terms) 
 of the two floating point numbers being compared.
 For example,
 specifying a relative tolerance of 0.1
@@ -365,13 +365,13 @@ produced.
 .SH
 Altering the Differencing Algorithm
 .PP
-By default,
+By default, 
 .B
 spiff
 .R
 produces a minimal edit sequence (using the Miller/Myers differencing algorithm[4])
 that will convert the first file into the second.
-However, a minimal edit sequences is not always desirable.
+However, a minimal edit sequences is not always desirable. 
 For example, for the following two tables of numbers:
 .DS
 0.1   0.2   0.3				0.2   0.3   0.4
@@ -436,7 +436,7 @@ but
 express the edit script in terms of entire lines of the files rather
 than individual tokens.\**
 .FS
-For instance, if one wants to have
+For instance, if one wants to have 
 .B
 spiff
 .R
@@ -499,7 +499,7 @@ When operating in interactive mode,
 .B
 spiff
 .R
-places corresponding sections of the input files
+places corresponding sections of the input files 
 side by side on user's screen.\**
 .FS
 Although the current implementation of
@@ -512,7 +512,7 @@ Other graphics interfaces will probably be added over time.
 .FE
 Tokens are compared using a one-to-one ordinal comparison, and any tokens that
 are found to be different are highlighted in reverse video.
-The user can interactively change the tolerances and
+The user can interactively change the tolerances and 
 .B
 spiff
 .R
@@ -522,7 +522,7 @@ Other commands allow the user to page through the file and exit.
 .SH
 Performance
 .PP
-Two components of
+Two components of 
 .B
 spiff,
 .R
@@ -541,7 +541,7 @@ A faster parser could no doubt be written by generating a special state machine.
 .FE
 The performance of the parser is roughly similar to programs that do a similar
 level of parsing (i.e. programs that must examine each character in the file).
-For files where roughly half of the tokens are real numbers,
+For files where roughly half of the tokens are real numbers, 
 .B
 spiff
 .R
@@ -564,7 +564,7 @@ awk '{total += NF}' firstfile secondfile
 .DE
 .R
 .PP
-The time that it takes
+The time that it takes 
 .B
 spiff
 .R
@@ -581,7 +581,7 @@ operators.
 and 1 commenting convention
 required for C code roughly doubles the time required to parse input files.\**
 .FS
-So in total, it takes
+So in total, it takes 
 .B
 spiff
 .R
@@ -603,13 +603,13 @@ analysis package mentioned at the beginning of this paper.
 The output file for each machine is 427 lines long and contains
 1090 floating point numbers.  It takes
 .B
-diff
+diff 
 .R
 approximately 2 seconds on one of our "6 MIPS"\** computers
 .FS
 We will not comment on the usefulness of "MIPS" as a measure
 of computing speed.  The numbers provided are only intended to
-give the reader some vague idea of how fast these programs run.
+give the reader some vague idea of how fast these programs run. 
 .FE
 to compare the two files and produce
 an edit script that is 548 lines long containing 1003 "differences"
@@ -645,7 +645,7 @@ output.  The total for
 .B
 spiff
 .R
-is 36 seconds.  Therefore for this case,
+is 36 seconds.  Therefore for this case, 
 .B
 spiff
 .R
@@ -672,7 +672,7 @@ whenever possible.
 .SH
 Using Spiff For Making Regression Tests Of Software
 .PP
-We envision
+We envision 
 .B
 spiff
 .R
@@ -681,10 +681,10 @@ arduous task of making regression tests.\**
 .FS
 In software engineering parlance, a "regression test" is the process by
 which a tester checks to make sure that the new version of a piece of
-software still performs the same way as the older versions
+software still performs the same way as the older versions 
 on overlapping tasks.
 .FE
-Given
+Given 
 .B
 spiff's
 .R
@@ -698,7 +698,7 @@ point calculations is acceptable.
 .PP
 The test designer is also free to
 edit the output from the older version of the software and add embedded
-commands that can instruct
+commands that can instruct 
 .B
 spiff
 .R
@@ -707,7 +707,7 @@ differently.  The newly edited output can then serve as a template for
 the output of later versions of the software.
 .PP
 Obviously, editing output by hand is a very low level mechanism for adding
-specification information.  It is our intention that
+specification information.  It is our intention that 
 .B
 spiff
 .R
@@ -716,7 +716,7 @@ the last element in a pipeline of programs.  Programs (as yet unwritten) located
 earlier in the pipeline
 can implement a higher level representation of the specification information.
 They read in the old and new input files, add the appropriate embedded commands,
-and then pass the results to
+and then pass the results to 
 .B
 spiff
 .R
@@ -724,15 +724,15 @@ which will do the actual differencing.
 .SH
 Future Work
 .PP
-There are many features that could be added to
+There are many features that could be added to 
 .B
 spiff
 .R
 (if there are not
-too many already).  Some of these include:
+too many already).  Some of these include: 
 .IP \(bu
 Using separate differencing algorithms on separate sections of the file
-and/or limiting the scope of an edit sequence (fencing)
+and/or limiting the scope of an edit sequence (fencing) 
 .IP \(bu
 Providing a more general mechanism for specifying comments and literals
 (perhaps allowing specification in terms of regular expressions).
@@ -743,7 +743,7 @@ expressions out in the name of simplicity.
 Allowing for a more general specification of what lines should look like.
 At present, the user can only specify tolerances for numbers as a function
 of their ordinal position on a line.  The difficulty in expanding the
-specification abilities of
+specification abilities of 
 .B
 spiff
 .R
@@ -758,13 +758,13 @@ Imagine handling the case such as
 on a line starting with the word `foo' but only if the number is between 1.9
 and 3.6 and the word `bar' does not appear on the line".
 .FE
-We hope to keep
+We hope to keep 
 .B
 spiff
 .R
 as simple as possible.  Our first efforts in
 this direction will try to implement higher level specification functions
-outside of
+outside of 
 .B
 spiff.
 .R
@@ -781,7 +781,7 @@ References
 .IP [1]
 Hunt,J.W. and M.D. McIlroy.
 .I
-An Algorithm For Differential File Comparisons,
+An Algorithm For Differential File Comparisons, 
 .R
 .B
 Bell Labs Computer Science Technical Report,

@@ -281,7 +281,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
   int level = m_Level;
   if (level < 0)
     level = 5;
-
+  
   Byte mainMethod;
   if (m_MainMethod < 0)
     mainMethod = (Byte)(((level == 0) ?

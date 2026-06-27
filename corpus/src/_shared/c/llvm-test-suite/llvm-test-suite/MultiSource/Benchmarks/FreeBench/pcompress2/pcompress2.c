@@ -24,18 +24,18 @@
 
 int main(int argc, char *argv[])
 {
-#ifndef BENCHMARK
+#ifndef BENCHMARK 
   const char* argv0;
 #else
   char filename[1000];
-#endif
+#endif  
 
-#ifdef BENCHMARK
+#ifdef BENCHMARK  
   fprintf(stderr,"Compile date: %s\n", COMPDATE);
   fprintf(stderr,"Compiler switches: %s\n", CFLAGS);
   compress(argc,argv); /* Compress four times to make it take some time... */
   compress(argc,argv);
-  compress(argc,argv);
+  compress(argc,argv); 
   compress(argc,argv);
   strcpy(filename,argv[1]);
   strcat(filename,".compr"); /* add the suffix '.compr' */
@@ -58,3 +58,4 @@ int main(int argc, char *argv[])
 #endif
   return 0;
 }
+

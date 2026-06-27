@@ -429,7 +429,7 @@ gs_trace_device(gx_device *rdev)
 {	trace_record *tp;
 	if ( rdev->procs->open_device == trace_procs.open_device )
 		return rdev;		/* already traced */
-	tp = (trace_record *)gs_malloc(1, sizeof(trace_record),
+	tp = (trace_record *)gs_malloc(1, sizeof(trace_record), 
 				       "gs_trace_device");
 	if ( tp == 0 ) return 0;
 	tp->next = trace_list;

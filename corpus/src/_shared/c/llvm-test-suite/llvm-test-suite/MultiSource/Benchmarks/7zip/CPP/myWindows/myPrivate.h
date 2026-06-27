@@ -14,3 +14,4 @@ static inline const char * nameWindowToUnix(const char * lpFileName) {
   return lpFileName;
 }
 #endif
+

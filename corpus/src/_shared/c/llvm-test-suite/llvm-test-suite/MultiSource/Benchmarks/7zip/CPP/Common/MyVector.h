@@ -13,7 +13,7 @@ protected:
   int _size;
   void *_items;
   size_t _itemSize;
-
+  
   void ReserveOnePosition();
   void InsertOneItem(int index);
   void TestIndexAndCorrectNum(int index, int &num) const

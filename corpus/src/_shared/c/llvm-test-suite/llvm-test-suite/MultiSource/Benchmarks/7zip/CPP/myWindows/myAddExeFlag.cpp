@@ -17,3 +17,4 @@ void myAddExeFlag(const UString &u_name)
 	// printf("myAddExeFlag(%s)\n",name);
 	chmod(name,0700);
 }
+

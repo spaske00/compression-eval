@@ -14,3 +14,5 @@ UInt64 ConvertStringToUInt64(const wchar_t *s, const wchar_t **end);
 Int64 ConvertStringToInt64(const char *s, const char **end);
 
 #endif
+
+

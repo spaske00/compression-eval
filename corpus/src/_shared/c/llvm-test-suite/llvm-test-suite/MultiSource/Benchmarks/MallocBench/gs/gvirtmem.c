@@ -234,7 +234,7 @@ vmem_read_page(register gx_vmem *vmem, int pnum)
 	if ( fread((void *)page, sizeof(char), vmem->page_size, file)
 		!= vmem->page_size )
 	   {	dprintf1("fread failed in vmem_read, pnum = %d!\n",
-			pnum);
+			pnum);	
 		exit(1);
 	   }
 	vmem->num_reads++;
@@ -258,7 +258,7 @@ vmem_write_page(register gx_vmem *vmem, int pnum)
 		if ( fwrite((void *)page, sizeof(char), vmem->page_size, file)
 			!= vmem->page_size )
 		   {	dprintf1("fwrite failed in vmem_write, pnum = %d!\n",
-				pnum);
+				pnum);	
 			exit(1);
 		   }
 		if ( pnum == vmem->next_file_page )

@@ -25,3 +25,4 @@ STDAPI CreateObject(const GUID *clsid, const GUID *iid, void **outObject)
 {
   return CreateCoder(clsid, iid, outObject);
 }
+

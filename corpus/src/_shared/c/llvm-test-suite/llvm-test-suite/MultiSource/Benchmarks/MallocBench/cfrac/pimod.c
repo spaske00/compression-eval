@@ -23,11 +23,11 @@ int pimod(u, v)
    if (d >= BASE) {
       errorp(PDOMAIN, "pimod", "divisor too big for single digit");
       goto done;
-   }
+   } 
    if (d == 0) {
       errorp(PDOMAIN, "pimod", "divide by zero");
       goto done;
-   }
+   } 
 #ifndef ASM_16BIT
    uPtr = u->value + u->size;
    r    = 0;			  	/* r is current remainder */

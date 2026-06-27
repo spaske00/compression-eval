@@ -195,7 +195,7 @@ void gsm_implode P3((s, source, c), gsm s, gsm_signal * source, gsm_byte * c)
 	       | (xmc[25] & 0x7);
 
 #undef	Nc
-#define	Nc	(source + 42 - 2)
+#define	Nc	(source + 42 - 2) 
 
 	*c++ =   ((Nc[2] & 0x7F) << 1)			/* 20 */
 

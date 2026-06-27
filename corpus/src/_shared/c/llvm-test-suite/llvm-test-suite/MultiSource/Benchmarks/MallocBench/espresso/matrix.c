@@ -90,7 +90,7 @@ sm_matrix *A;
 
 sm_matrix *
 sm_dup(A)
-sm_matrix *A;
+sm_matrix *A; 
 {
     register sm_row *prow;
     register sm_element *p;
@@ -109,7 +109,7 @@ sm_matrix *A;
 }
 
 
-void
+void 
 sm_resize(A, row, col)
 register sm_matrix *A;
 int row, col;
@@ -136,7 +136,7 @@ int row, col;
 }
 
 
-/*
+/*  
  *  insert -- insert a value into the matrix
  */
 sm_element *
@@ -157,7 +157,7 @@ register int row, col;
     if (prow == NIL(sm_row)) {
 	prow = A->rows[row] = sm_row_alloc();
 	prow->row_num = row;
-	sorted_insert(sm_row, A->first_row, A->last_row, A->nrows,
+	sorted_insert(sm_row, A->first_row, A->last_row, A->nrows, 
 			next_row, prev_row, row_num, row, prow);
     }
 
@@ -165,7 +165,7 @@ register int row, col;
     if (pcol == NIL(sm_col)) {
 	pcol = A->cols[col] = sm_col_alloc();
 	pcol->col_num = col;
-	sorted_insert(sm_col, A->first_col, A->last_col, A->ncols,
+	sorted_insert(sm_col, A->first_col, A->last_col, A->ncols, 
 			next_col, prev_col, col_num, col, pcol);
     }
 
@@ -174,12 +174,12 @@ register int row, col;
     save_element = element;
 
     /* insert it into the row list */
-    sorted_insert(sm_element, prow->first_col, prow->last_col,
+    sorted_insert(sm_element, prow->first_col, prow->last_col, 
 		prow->length, next_col, prev_col, col_num, col, element);
 
     /* if it was used, also insert it into the column list */
     if (element == save_element) {
-	sorted_insert(sm_element, pcol->first_row, pcol->last_row,
+	sorted_insert(sm_element, pcol->first_row, pcol->last_row, 
 		pcol->length, next_row, prev_row, row_num, row, element);
     } else {
 	/* otherwise, it was already in matrix -- free element we allocated */
@@ -226,7 +226,7 @@ int rownum, colnum;
 
 void
 sm_remove_element(A, p)
-register sm_matrix *A;
+register sm_matrix *A; 
 register sm_element *p;
 {
     register sm_row *prow;
@@ -236,7 +236,7 @@ register sm_element *p;
 
     /* Unlink the element from its row */
     prow = sm_get_row(A, p->row_num);
-    dll_unlink(p, prow->first_col, prow->last_col,
+    dll_unlink(p, prow->first_col, prow->last_col, 
 			next_col, prev_col, prow->length);
 
     /* if no more elements in the row, discard the row header */
@@ -246,7 +246,7 @@ register sm_element *p;
 
     /* Unlink the element from its column */
     pcol = sm_get_col(A, p->col_num);
-    dll_unlink(p, pcol->first_row, pcol->last_row,
+    dll_unlink(p, pcol->first_row, pcol->last_row, 
 			next_row, prev_row, pcol->length);
 
     /* if no more elements in the column, discard the column header */
@@ -257,7 +257,7 @@ register sm_element *p;
     sm_element_free(p);
 }
 
-void
+void 
 sm_delrow(A, i)
 sm_matrix *A;
 int i;
@@ -282,16 +282,16 @@ int i;
 	    }
 	}
 
-	/* discard the row -- we already threw away the elements */
+	/* discard the row -- we already threw away the elements */ 
 	A->rows[i] = NIL(sm_row);
-	dll_unlink(prow, A->first_row, A->last_row,
+	dll_unlink(prow, A->first_row, A->last_row, 
 				next_row, prev_row, A->nrows);
 	prow->first_col = prow->last_col = NIL(sm_element);
 	sm_row_free(prow);
     }
 }
 
-void
+void 
 sm_delcol(A, i)
 sm_matrix *A;
 int i;
@@ -316,9 +316,9 @@ int i;
 	    }
 	}
 
-	/* discard the column -- we already threw away the elements */
+	/* discard the column -- we already threw away the elements */ 
 	A->cols[i] = NIL(sm_col);
-	dll_unlink(pcol, A->first_col, A->last_col,
+	dll_unlink(pcol, A->first_col, A->last_col, 
 			    next_col, prev_col, A->ncols);
 	pcol->first_row = pcol->last_row = NIL(sm_element);
 	sm_col_free(pcol);
@@ -404,7 +404,7 @@ sm_matrix *A;
     return num;
 }
 
-int
+int 
 sm_read(fp, A)
 FILE *fp;
 sm_matrix **A;
@@ -425,7 +425,7 @@ sm_matrix **A;
 }
 
 
-int
+int 
 sm_read_compressed(fp, A)
 FILE *fp;
 sm_matrix **A;
@@ -458,7 +458,7 @@ sm_matrix **A;
 }
 
 
-void
+void 
 sm_write(fp, A)
 FILE *fp;
 sm_matrix *A;
@@ -473,7 +473,7 @@ sm_matrix *A;
     }
 }
 
-void
+void 
 sm_print(fp, A)
 FILE *fp;
 sm_matrix *A;
@@ -522,7 +522,7 @@ sm_matrix *A;
 }
 
 
-void
+void 
 sm_dump(A, s, max)
 sm_matrix *A;
 char *s;

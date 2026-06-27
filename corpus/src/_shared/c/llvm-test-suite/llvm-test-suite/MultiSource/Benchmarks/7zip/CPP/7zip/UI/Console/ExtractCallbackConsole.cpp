@@ -67,9 +67,9 @@ STDMETHODIMP CExtractCallbackConsole::AskOverwrite(
   (*OutStream) << "file " << existName <<
     "\nalready exists. Overwrite with " << endl;
   (*OutStream) << newName;
-
+  
   NUserAnswerMode::EEnum overwriteAnswer = ScanUserYesNoAllQuit(OutStream);
-
+  
   switch(overwriteAnswer)
   {
     case NUserAnswerMode::kQuit:  return E_ABORT;
@@ -189,7 +189,7 @@ HRESULT CExtractCallbackConsole::OpenResult(const wchar_t * /* name */, HRESULT 
   }
   return S_OK;
 }
-
+  
 HRESULT CExtractCallbackConsole::ThereAreNoFiles()
 {
   (*OutStream) << endl << kNoFiles << endl;

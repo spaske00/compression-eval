@@ -68,14 +68,14 @@ int main(int argc, char *argv[])
 	}
   iterations=atoi(argv[1]);
   srand(1);
-
+  
   puts("Bit counter algorithm benchmark\n");
-
+  
   for (i = 0; i < FUNCS; i++) {
     #if 0
     start = clock();
     #endif
-
+    
     for (j = n = 0, seed = rand(); j < iterations; j++, seed += 13)
 	 n += pBitCntFunc[i](seed);
 
@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 static int CDECL bit_shifter(long int x)
 {
   int i, n;
-
+  
   for (i = n = 0; x && (i < (sizeof(long) * CHAR_BIT)); ++i, x >>= 1)
     n += (int)(x & 1L);
   return n;

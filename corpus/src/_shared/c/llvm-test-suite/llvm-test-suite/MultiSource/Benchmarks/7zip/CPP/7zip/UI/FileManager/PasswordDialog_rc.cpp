@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -13,7 +13,7 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif  
 
 #undef _WIN32
 
@@ -33,7 +33,7 @@ class CPasswordDialogImpl : public NWindows::NControl::CModalDialogImpl
 	{
 	wxStaticBoxSizer *passwdSizer = new wxStaticBoxSizer(new wxStaticBox(this,IDC_STATIC_PASSWORD_HEADER,_T("&Enter password:")),wxVERTICAL);
 
-	wxTextCtrl *TxtPasswd = new wxTextCtrl(this, IDC_EDIT_PASSWORD, L"",
+	wxTextCtrl *TxtPasswd = new wxTextCtrl(this, IDC_EDIT_PASSWORD, L"", 
 		wxDefaultPosition, wxSize(260,-1), bShowPassword?wxTE_LEFT:wxTE_PASSWORD );
 
 	wxCheckBox *ChkShowPasswd = new wxCheckBox(this, IDC_CHECK_PASSWORD_SHOW, wxT("&Show password"));
@@ -63,3 +63,4 @@ BEGIN_EVENT_TABLE(CPasswordDialogImpl, wxDialog)
 	EVT_CHECKBOX(wxID_ANY, CModalDialogImpl::OnAnyButton)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

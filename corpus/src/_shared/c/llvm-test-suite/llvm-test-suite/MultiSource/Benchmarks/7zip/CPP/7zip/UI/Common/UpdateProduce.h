@@ -10,7 +10,7 @@ struct CUpdatePair2
   bool NewData;
   bool NewProps;
   bool IsAnti;
-
+  
   int DirIndex;
   int ArcIndex;
   int NewNameIndex;

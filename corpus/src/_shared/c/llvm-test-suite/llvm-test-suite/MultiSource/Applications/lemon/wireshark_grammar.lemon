@@ -17,7 +17,7 @@
 #ifdef _WIN32
 #pragma warning(disable:4671)
 #endif
-
+	
 /* End of C code */
 }
 
@@ -59,7 +59,7 @@
 %type		funcparams	{GSList*}
 %destructor	funcparams	{st_funcparams_free($$);}
 
-/* This is called as soon as a syntax error happens. After that,
+/* This is called as soon as a syntax error happens. After that, 
 any "error" symbols are shifted, if possible. */
 %syntax_error {
 
@@ -193,7 +193,7 @@ drnode(D) ::= INTEGER(X) COLON INTEGER(Y).
 	D = drange_node_new();
 	drange_node_set_start_offset(D, stnode_value(X));
 	drange_node_set_length(D, stnode_value(Y));
-
+	
 	stnode_free(X);
 	stnode_free(Y);
 }
@@ -204,7 +204,7 @@ drnode(D) ::= INTEGER(X) HYPHEN INTEGER(Y).
 	D = drange_node_new();
 	drange_node_set_start_offset(D, stnode_value(X));
 	drange_node_set_end_offset(D, stnode_value(Y));
-
+	
 	stnode_free(X);
 	stnode_free(Y);
 }
@@ -291,3 +291,4 @@ expr(X) ::= LPAREN expr(Y) RPAREN.
 {
 	X = Y;
 }
+

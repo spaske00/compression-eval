@@ -9,3 +9,4 @@ for i=1,n do
 end
 local s = table.concat(buff)
 print(string.len(s))
+

@@ -23,7 +23,7 @@ struct get_point {
 typedef struct edge_rec *EDGE_PTR;
 typedef struct VERTEX *VERTEX_PTR;
 typedef struct edge_rec *QUAD_EDGE;
-
+  
 struct VEC2 {
   double x,y;
   double norm;
@@ -63,7 +63,7 @@ struct EDGE_STACK {
 #define orig(a) (a)->v
 #define dest(a) orig(sym(a))
 #define seen(a) (a)->wasseen
-
+  
 #define origv(a) orig(a)->v
 #define destv(a) dest(a)->v
 

@@ -282,7 +282,7 @@ bool CPanel::OnNotifyList(LPNMHDR header, LRESULT &result)
       case NM_CLICK:
       SendRefreshStatusBarMessage();
       return 0;
-
+      
         // TODO : Handler default action...
         return 0;
         case LVN_ITEMCHANGED:
@@ -339,7 +339,7 @@ bool CPanel::OnCustomDraw(LPNMLVCUSTOMDRAW lplvcd, LRESULT &result)
   case CDDS_PREPAINT :
     result = CDRF_NOTIFYITEMDRAW;
     return true;
-
+    
   case CDDS_ITEMPREPAINT:
     /*
     SelectObject(lplvcd->nmcd.hdc,
@@ -363,7 +363,7 @@ bool CPanel::OnCustomDraw(LPNMLVCUSTOMDRAW lplvcd, LRESULT &result)
     // result = CDRF_NEWFONT;
     result = CDRF_NOTIFYITEMDRAW;
     return true;
-
+    
     // return false;
     // return true;
     /*

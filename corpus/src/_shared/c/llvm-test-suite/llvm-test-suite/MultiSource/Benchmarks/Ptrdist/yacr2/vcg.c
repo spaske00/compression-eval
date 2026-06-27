@@ -153,7 +153,7 @@ DFSClearVCG(nodeVCGType * VCG)
 	VCG[net].netsAboveReached = FALSE;
 	VCG[net].netsBelowLabel = 0;
 	VCG[net].netsBelowReached = FALSE;
-    }
+    }	
 }
 
 void
@@ -181,7 +181,7 @@ DumpVCG(nodeVCGType * VCG)
 	    }
 	}
 	printf("\n\n");
-    }
+    }	
 }
 
 void
@@ -386,7 +386,7 @@ AcyclicVCG(void)
 	for (which = 0; which < VCG[net].netsBelow; which++) {
 	    VCG[net].netsBelowHook[which].removed = FALSE;
 	}
-    }
+    }	
 
     acyclic = TRUE;
     removeTotalVCG = 0;
@@ -425,7 +425,7 @@ AcyclicVCG(void)
 	/*
 	 * Constraint to consider.
 	 */
-
+	
 	top = (*removeVCG[rep]).top;
 	bot = (*removeVCG[rep]).bot;
 
@@ -438,7 +438,7 @@ AcyclicVCG(void)
 		break;
 	    }
 	}
-
+	
 	/*
 	 * Replace below.
 	 */
@@ -595,7 +595,7 @@ RemoveConstraintVCG(nodeVCGType * VCG,
 				    weight += 2;
 				}
 			    }
-
+			    
 			    /*
 			     * Update best.
 			     */
@@ -673,7 +673,7 @@ LongestPathVCG(nodeVCGType * VCG,
 	    tracksBotNotPref[track] = FALSE;
 	}
     }
-
+    
     /*
      * How many nets this net is below (including this net)?
      * That is, longest path through nets which this net

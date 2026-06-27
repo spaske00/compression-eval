@@ -110,9 +110,9 @@ void COutArchive::SeekTo(UInt64 offset)
 void COutArchive::WriteLocalHeader(const CLocalItem &item)
 {
   SeekTo(m_BasePosition);
-
+  
   bool isZip64 = m_IsZip64 || item.PackSize >= 0xFFFFFFFF || item.UnPackSize >= 0xFFFFFFFF;
-
+  
   WriteUInt32(NSignature::kLocalFileHeader);
   {
     Byte ver = item.ExtractVersion.Version;
@@ -162,7 +162,7 @@ void COutArchive::WriteCentralHeader(const CItem &item)
   bool isPack64 = item.PackSize >= 0xFFFFFFFF;
   bool isPosition64 = item.LocalHeaderPosition >= 0xFFFFFFFF;
   bool isZip64  = isPack64 || isUnPack64 || isPosition64;
-
+  
   WriteUInt32(NSignature::kCentralFileHeader);
   WriteByte(item.MadeByVersion.Version);
   WriteByte(item.MadeByVersion.HostOS);
@@ -224,7 +224,7 @@ void COutArchive::WriteCentralHeader(const CItem &item)
 void COutArchive::WriteCentralDir(const CObjectVector<CItem> &items, const CByteBuffer *comment)
 {
   SeekTo(m_BasePosition);
-
+  
   UInt64 cdOffset = GetCurrentPosition();
   for(int i = 0; i < items.Size(); i++)
     WriteCentralHeader(items[i]);

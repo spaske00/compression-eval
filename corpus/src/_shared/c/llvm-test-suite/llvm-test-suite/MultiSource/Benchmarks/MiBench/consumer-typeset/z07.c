@@ -208,14 +208,14 @@ OBJECT CopyObject(OBJECT x, FILE_POS *pos)
 
     case WORD:
     case QWORD:
-
+    
       NewWord(res, type(x), StringLength(string(x)), pos);
       StringCopy(string(res), string(x));
       break;
 
 
     case GAP_OBJ:
-
+    
       New(res, GAP_OBJ);
       mark(gap(res)) = mark(gap(x));
       join(gap(res)) = join(gap(x));
@@ -306,7 +306,7 @@ OBJECT CopyObject(OBJECT x, FILE_POS *pos)
     case HCAT:
     case ACAT:
     case ENV_OBJ:
-
+    
       New(res, type(x));
       for( link = Down(x);  link != x;  link = NextDown(link) )
       {	Child(y, link);
@@ -329,13 +329,13 @@ OBJECT CopyObject(OBJECT x, FILE_POS *pos)
 
 
     case ENV:
-
+    
       res = x;  /* do not copy environments */
       break;
 
 
     case PAR:
-
+    
       New(res, PAR);
       actual(res) = actual(x);
       assert( Down(x) != x, "CopyObject: PAR child!" );
@@ -346,7 +346,7 @@ OBJECT CopyObject(OBJECT x, FILE_POS *pos)
 
 
     case CLOSURE:
-
+    
       New(res, CLOSURE);
       for( link = Down(x);  link != x;  link = NextDown(link) )
       {	Child(y, link);
@@ -360,7 +360,7 @@ OBJECT CopyObject(OBJECT x, FILE_POS *pos)
 
 
     default:
-
+    
       assert1(FALSE, "CopyObject:", Image(type(x)));
       res = nilobj;
       break;
@@ -485,7 +485,7 @@ OBJECT InsertObject(OBJECT x, OBJECT *ins, STYLE *style)
 
 
     default:
-
+    
       assert1(FALSE, "InsertObject:", Image(type(x)));
       res = x;
       break;
@@ -626,7 +626,7 @@ OBJECT Meld(OBJECT x, OBJECT y)
         yi--;
 	break;
 
-
+    
       case Y_DIR:
 
         debug3(DOS, DD, "  at table[%d][%d] (ydec) linking %s",

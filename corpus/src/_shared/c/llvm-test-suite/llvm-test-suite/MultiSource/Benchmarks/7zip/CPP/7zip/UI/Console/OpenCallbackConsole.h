@@ -10,7 +10,7 @@ class COpenCallbackConsole: public IOpenCallbackUI
 {
 public:
   INTERFACE_IOpenCallbackUI(;)
-
+  
   CStdOutStream *OutStream;
 
   #ifndef _NO_CRYPTO

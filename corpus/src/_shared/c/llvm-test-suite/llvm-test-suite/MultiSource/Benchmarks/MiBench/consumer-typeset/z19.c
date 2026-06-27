@@ -137,7 +137,7 @@ BOOLEAN subgalleys, BOOLEAN closures, BOOLEAN input)
     {
       case UNATTACHED:
       case RECEIVING:
-
+	
         debug1(DGA, DD, "  examining %s", EchoIndex(y));
 	if( subgalleys )
 	for( zlink = Down(y); zlink!=y && res==nilobj; zlink=NextDown(zlink) )
@@ -151,7 +151,7 @@ BOOLEAN subgalleys, BOOLEAN closures, BOOLEAN input)
 
 
       case RECEPTIVE:
-
+	
         debug1(DGA, DD, "  examining %s", EchoIndex(y));
 	if( closures && type(actual(y)) == CLOSURE
 		     && SearchUses(actual(actual(y)), sym) )  res = y;
@@ -160,7 +160,7 @@ BOOLEAN subgalleys, BOOLEAN closures, BOOLEAN input)
 
 
       default:
-
+	
 	break;
 
     }
@@ -264,7 +264,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
       /* sized galley case: search on from current spot */
       target_index = SearchGalley(Up(hd_index), sym, TRUE, FALSE, TRUE, TRUE);
       if( target_index == nilobj )
-      {
+      {	
 	/* search failed to find any new target, so kill the galley */
 	for( link = Down(hd); link != hd; link = NextDown(link) )
 	{ Child(y, link);
@@ -451,13 +451,13 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 	case CROSS_FOLL_OR_PREC:
 	case CROSS_TARG:
 	case PAGE_LABEL_IND:
-
+	    
 	  break;
 
 
 	case PRECEDES:
 	case UNATTACHED:
-
+	    
 	  if( was_sized )
 	  { /* SizeGalley was not called, so hd_inners was not set by it */
 	    if( hd_inners == nilobj )  New(hd_inners, ACAT);
@@ -472,12 +472,12 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
 	case RECEIVING:
-
+	    
 	  goto SUSPEND;
 
 
 	case FOLLOWS:
-
+	    
 	  Child(tmp, Down(y));
 	  if( Up(tmp) == LastUp(tmp) )
 	  { link = pred(link, CHILD);
@@ -570,7 +570,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 	case VCAT:
 	case ROW_THR:
 	case COL_THR:
-
+	    
 
 	  underline(y) = underline(dest);
 	  if( dim == ROWM )
@@ -581,7 +581,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 	      switch( type(z) )
 	      {
 	        case RECEPTIVE:
-
+		
 		  if( non_blocking(z) )
 		  { zlink = PrevDown(zlink);
 		    DeleteNode(z);
@@ -594,7 +594,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
 	        case RECEIVING:
-
+		
 		  if( non_blocking(z) )
 		  { zlink = PrevDown(zlink);
 		    while( Down(z) != z )
@@ -618,7 +618,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
 	        case GAP_OBJ:
-
+		
 		  if( !join(gap(z)) )  zlink = PrevDown(hd);
 		  break;
 
@@ -866,7 +866,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
 	default:
-
+	    
 	  assert1(FALSE, "AttachGalley:", Image(type(y)));
 	  break;
 
@@ -893,15 +893,15 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 	case FORCE_CROSS:
 	case NULL_CLOS:
 	case PAGE_LABEL:
-
+	
 	  link = PrevDown(link);
 	  debug1(DGA, D, "  null galley, disposing %s", Image(type(y)));
 	  DisposeChild(NextDown(link));
 	  break;
 
-
+	
 	default:
-
+	
 	  break;
       }
     }
@@ -919,7 +919,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
     REJECT:
-
+	
       /* reject first component */
       /* debug1(DGA, D, "  reject %s", EchoObject(y)); */
       debug0(DGA, D, "  reject first component");
@@ -941,7 +941,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
     SUSPEND:
-
+	
       /* suspend at first component */
       debug1(DGA, D, "  suspend %s", EchoIndex(y));
       blocked(y) = TRUE;
@@ -965,7 +965,7 @@ int AttachGalley(OBJECT hd, OBJECT *inners, OBJECT *suspend_pt)
 
 
     ACCEPT:
-
+	
       /* accept first component; now committed to the attach */
       debug3(DGA, D, "  accept %s %s %s", Image(type(y)), EchoObject(y),
 	EchoFilePos(&fpos(y)));

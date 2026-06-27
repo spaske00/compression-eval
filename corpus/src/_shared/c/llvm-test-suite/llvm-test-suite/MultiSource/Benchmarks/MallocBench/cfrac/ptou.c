@@ -3,7 +3,7 @@
 #include "precision.h"
 
 /*
- *  Precision to unsigned
+ *  Precision to unsigned 
  */
 unsigned int ptou(u)
    precision u;

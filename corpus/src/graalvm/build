@@ -1,5 +1,5 @@
 #!/bin/bash
-#shellcheck disable=SC2164
+#shellcheck disable=SC1091,SC2164,SC2329
 
 source ../../utils.sh
 
@@ -49,17 +49,43 @@ function move_images ()
 
     mkdir -p "$__BASE_DIR/bin"
     for entry in "${entries[@]}"; do
-        local dest="$__BASE_DIR/bin/$(basename "$entry")"
-        if [[ -d "$entry" && -d "$dest" ]]; then
-            if rm -rf "$dest" 2>/dev/null; then
-                mv "$entry" "$dest" || return $?
+        local target
+        target="$(basename "$entry")"
+        local dest="$__BASE_DIR/bin/$target"
+        local executable
+
+        if [[ -f "$entry" && -x "$entry" ]]; then
+            executable="$entry"
+        elif [[ -d "$entry" ]]; then
+            if [[ -x "$entry/$target.debug" ]]; then
+                executable="$entry/$target.debug"
+            elif [[ -x "$entry/$target" ]]; then
+                executable="$entry/$target"
             else
-                cp -Rf "$entry"/. "$dest"/ 2>/dev/null || cp -Rn "$entry"/. "$dest"/ || return $?
-                rm -rf "$entry" || return $?
+                local executables=()
+                local debug_executables=()
+                mapfile -t executables < <(find "$entry" -maxdepth 1 -type f -perm -111 | sort)
+                mapfile -t debug_executables < <(find "$entry" -maxdepth 1 -type f -perm -111 -name '*.debug' | sort)
+
+                if (( ${#debug_executables[@]} == 1 )); then
+                    executable="${debug_executables[0]}"
+                elif (( ${#executables[@]} == 1 )); then
+                    executable="${executables[0]}"
+                else
+                    echo "Could not select a single executable artifact in $entry" >&2
+                    printf '  %s\n' "${executables[@]}" >&2
+                    return 1
+                fi
             fi
         else
-            mv -f "$entry" "$dest" || return $?
+            echo "Expected executable file or artifact directory at $entry" >&2
+            return 1
         fi
+
+        rm -rf "$dest" || return $?
+        mkdir -p "$dest" || return $?
+        mv "$executable" "$dest/$target" || return $?
+        rm -rf "$entry" || return $?
     done
 }
 

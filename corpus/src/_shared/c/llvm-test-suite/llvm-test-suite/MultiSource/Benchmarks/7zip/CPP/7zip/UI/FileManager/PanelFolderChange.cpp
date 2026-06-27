@@ -205,9 +205,9 @@ void CPanel::LoadFullPathAndShow()
     extern const TCHAR * nameWindowToUnix(const TCHAR * lpFileName);
 	UString tmp = nameWindowToUnix(_currentFolderPrefix);
 	_headerComboBox.SetText(tmp);
-  }
+  }	
 #endif
-
+	
 #ifdef _WIN32 // FIXME
   COMBOBOXEXITEM item;
   item.mask = 0;
@@ -226,7 +226,7 @@ void CPanel::LoadFullPathAndShow()
   DWORD attrib = FILE_ATTRIBUTE_DIRECTORY;
   if (info.Find(path))
     attrib = info.Attrib;
-
+  
   item.iImage = GetRealIconIndex(path, attrib);
 
   if (item.iImage >= 0)
@@ -322,9 +322,9 @@ void CPanel::AddComboBoxItem(const UString &name, int iconIndex, int indent, boo
   for (int i = 0; i < indent; i++)
     s += L"  ";
   _headerComboBox.AddString(s + name);
-
+  
   #else
-
+  
   COMBOBOXEXITEMW item;
   item.mask = CBEIF_TEXT | CBEIF_INDENT;
   item.iSelectedImage = item.iImage = iconIndex;
@@ -334,7 +334,7 @@ void CPanel::AddComboBoxItem(const UString &name, int iconIndex, int indent, boo
   item.iIndent = indent;
   item.pszText = (LPWSTR)(LPCWSTR)name;
   _headerComboBox.InsertItem(&item);
-
+  
   #endif
 
   if (addToList)
@@ -357,10 +357,10 @@ bool CPanel::OnComboBoxCommand(UINT code, LPARAM /* param */, LRESULT &result)
     {
       ComboBoxPaths.Clear();
       _headerComboBox.ResetContent();
-
+      
       int i;
       UStringVector pathParts;
-
+      
       SplitPathToParts(_currentFolderPrefix, pathParts);
       UString sumPass;
       if (!pathParts.IsEmpty())
@@ -387,7 +387,7 @@ bool CPanel::OnComboBoxCommand(UINT code, LPARAM /* param */, LRESULT &result)
 
       name = RootFolder_GetName_Computer(iconIndex);
       AddComboBoxItem(name, iconIndex, 0, true);
-
+        
       UStringVector driveStrings;
       MyGetLogicalDriveStrings(driveStrings);
       for (i = 0; i < driveStrings.Size(); i++)
@@ -404,7 +404,7 @@ bool CPanel::OnComboBoxCommand(UINT code, LPARAM /* param */, LRESULT &result)
       AddComboBoxItem(name, iconIndex, 0, true);
 
       #endif
-
+    
       return false;
     }
 

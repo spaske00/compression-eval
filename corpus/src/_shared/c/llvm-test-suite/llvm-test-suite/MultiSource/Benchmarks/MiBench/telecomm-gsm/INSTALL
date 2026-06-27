@@ -12,11 +12,11 @@ How to get started:
 	You should configure a few machine-dependencies and what
 	compiler you want to use.
 
-	The code works both with ANSI and K&R-C.  Use
+  	The code works both with ANSI and K&R-C.  Use
 	-DNeedFunctionPrototypes to compile with, or
 	-UNeedFunctionPrototypes to compile without, function
 	prototypes in the header files.
-
+ 
    Make addtst
 
 	The "add" program that will be compiled and run checks whether
@@ -27,19 +27,19 @@ How to get started:
 
    Make
 
-	Local versions of the gsm library and the "compress"-like filters
+   	Local versions of the gsm library and the "compress"-like filters
 	toast, untoast and tcat will be generated.
 
-	If the compilation aborts because of a missing function,
+   	If the compilation aborts because of a missing function,
 	declaration, or header file, see if there's something in
 	inc/config.h to work around it.  If not, complain.
 
    Try it
 
-	Grab an audio file from somewhere (raw u-law or Sun .au is fine,
-	linear 16-bit in host byte order will do), copy it, toast it,
+	Grab an audio file from somewhere (raw u-law or Sun .au is fine, 
+    	linear 16-bit in host byte order will do), copy it, toast it,
 	untoast it, and listen to the result.
-
+    
 	If it doesn't sound anything like the original, read the manual.
 	If it still doesn't sound anything like the original, complain.
 
@@ -50,7 +50,7 @@ Installation
    or both.
 
    Edit the Makefile
-
+	
 	Fill in the directories where you want to install the
 	library, header files, manual pages, and binaries.
 

@@ -60,7 +60,7 @@ struct CStringLangPair
   UINT32 LangID;
 };
 
-static CStringLangPair kStringLangPairs[] =
+static CStringLangPair kStringLangPairs[] = 
 {
   { L"&File",  0x03000102 },
   { L"&Edit",  0x03000103 },
@@ -76,7 +76,7 @@ UINT32 kToolbarsLangID = 0x03000451;
 /*
 static int FindStringLangItem(const UString &anItem)
 {
-  for (int i = 0; i < sizeof(kStringLangPairs) /
+  for (int i = 0; i < sizeof(kStringLangPairs) / 
       sizeof(kStringLangPairs[0]); i++)
     if (anItem.CompareNoCase(kStringLangPairs[i].String) == 0)
       return i;
@@ -84,7 +84,7 @@ static int FindStringLangItem(const UString &anItem)
 }
 */
 
-static CIDLangPair kIDLangPairs[] =
+static CIDLangPair kIDLangPairs[] = 
 {
   // File
   { IDM_FILE_OPEN, 0x03000210 },
@@ -135,7 +135,7 @@ static CIDLangPair kIDLangPairs[] =
   { IDM_FOLDERS_HISTORY, 0x03000432 },
 
   { IDM_VIEW_REFRESH, 0x03000440 },
-
+  
   { IDM_VIEW_FLAT_VIEW, 0x03000449 },
   { IDM_VIEW_TWO_PANELS, 0x03000450 },
   { IDM_VIEW_ARCHIVE_TOOLBAR, 0x03000460 },
@@ -145,7 +145,7 @@ static CIDLangPair kIDLangPairs[] =
 
   { IDM_OPTIONS, 0x03000510 },
   { IDM_BENCHMARK, 0x03000511 },
-
+  
   { IDM_HELP_CONTENTS, 0x03000610 },
   { IDM_ABOUT, 0x03000620 },
 
@@ -176,9 +176,9 @@ public:
     g_IsNew_fMask = false;
     OSVERSIONINFO vi;
     vi.dwOSVersionInfoSize = sizeof(vi);
-    if (::GetVersionEx(&vi))
+    if (::GetVersionEx(&vi)) 
     {
-      g_IsNew_fMask = (vi.dwMajorVersion > 4 ||
+      g_IsNew_fMask = (vi.dwMajorVersion > 4 || 
         (vi.dwMajorVersion == 4 && vi.dwMinorVersion > 0));
     }
     g_IsNew_fMask = false;
@@ -238,8 +238,8 @@ static void MyChangeMenu(HMENU menuLoc, int level, int menuIndex)
   // Sets the label of the top-level menus
   for (int i1= 0; i1< sizeof(kStringLangPairs) / sizeof(kStringLangPairs[0]); i1++)
   {
-	UString newString = LangString(kStringLangPairs[i1].LangID);
-	if (! newString.IsEmpty()) menuLoc->SetMenuLabel(i1, (const TCHAR *)newString);
+       	UString newString = LangString(kStringLangPairs[i1].LangID);
+       	if (! newString.IsEmpty()) menuLoc->SetMenuLabel(i1, (const TCHAR *)newString);
   }
 
   // sub-menu items
@@ -357,7 +357,7 @@ void OnMenuActivating(HWND /* hWnd */, HMENU hMenu, int position)
     // View;
     CMenu menu;
     menu.Attach(hMenu);
-    menu.CheckRadioItem(IDM_VIEW_LARGE_ICONS, IDM_VIEW_DETAILS,
+    menu.CheckRadioItem(IDM_VIEW_LARGE_ICONS, IDM_VIEW_DETAILS, 
       IDM_VIEW_LARGE_ICONS + g_App.GetListViewMode(), MF_BYCOMMAND);
     menu.CheckItem(IDM_VIEW_TWO_PANELS, MF_BYCOMMAND |
         ((g_App.NumPanels == 2) ? MF_CHECKED : MF_UNCHECKED));
@@ -445,7 +445,7 @@ void LoadFileMenu(HMENU hMenu, int startPos, bool /* forFileMode */, bool progra
 
   CMenu destMenu;
   destMenu.Attach(hMenu);
-
+  
   for (int i = 0; i < g_FileMenu.GetItemCount(); i++)
   {
     CMenuItem item;
@@ -566,7 +566,7 @@ bool ExecuteFileCommand(int id)
       break;
     default:
       return false;
-  }
+  } 
   return true;
 }
 
@@ -575,11 +575,11 @@ void createAboutDialog(void)
     wxAboutDialogInfo info;
 
     UString msg;
-
+  
     msg = LangString(0x01000103); // IDC_ABOUT_STATIC_REGISTER_INFO
     if (msg == L"") msg = L"7-Zip is free software. However, you can support development of 7-Zip by registering.";
     info.SetDescription((const wchar_t *)msg);
-
+    
 
     info.SetName(_("P7ZIP"));
     info.SetVersion(wxString(MY_7ZIP_VERSION, wxConvUTF8));
@@ -608,7 +608,7 @@ bool OnMenuCommand(HWND hWnd, int id)
     */
       hWnd->Close(true);
       break;
-
+    
     // Edit
     case IDM_EDIT_CUT:
       g_App.EditCut();
@@ -661,7 +661,7 @@ bool OnMenuCommand(HWND hWnd, int id)
         /*
         CMenu menu;
         menu.Attach(::GetSubMenu(::GetMenu(hWnd), kViewMenuIndex));
-        menu.CheckRadioItem(IDM_VIEW_LARGE_ICONS, IDM_VIEW_DETAILS,
+        menu.CheckRadioItem(IDM_VIEW_LARGE_ICONS, IDM_VIEW_DETAILS, 
             id, MF_BYCOMMAND);
         */
       }
@@ -728,7 +728,7 @@ bool OnMenuCommand(HWND hWnd, int id)
     case IDM_OPTIONS:
       // FIXME OptionsDialog(hWnd, g_hInstance);
       break;
-
+          
     case IDM_BENCHMARK:
       Benchmark();
       break;
@@ -762,3 +762,4 @@ bool OnMenuCommand(HWND hWnd, int id)
   }
   return true;
 }
+

@@ -31,7 +31,7 @@ static bool ReadProperty(const AString &s, int &pos, CXmlProp &prop)
       break;
     prop.Name += c;
   }
-
+  
   if (prop.Name.IsEmpty())
     return false;
 
@@ -42,7 +42,7 @@ static bool ReadProperty(const AString &s, int &pos, CXmlProp &prop)
   SKIP_SPACES(s, pos);
   if (s[pos++] != '\"')
     return false;
-
+  
   while (pos < s.Length())
   {
     char c = s[pos++];
@@ -113,7 +113,7 @@ bool CXmlItem::ParseItems(const AString &s, int &pos, int numAllowedLevels)
 
     if (s.Mid(pos, finishString.Length()) == finishString)
       return true;
-
+      
     CXmlItem item;
     if (!item.ParseItem(s, pos, numAllowedLevels - 1))
       return false;

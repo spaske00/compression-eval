@@ -45,7 +45,7 @@ public:
   const NWildcard::CCensor *WildcardCensor;
   CUpdateOptions *Options;
 };
-
+ 
 HRESULT CThreadUpdating::ProcessVirt()
 {
   CUpdateErrorInfo ei;
@@ -178,7 +178,7 @@ static void SetOutProperties(
       AddProp(properties, name, (UInt32)order);
     }
   }
-
+    
   if (!encryptionMethod.IsEmpty())
     AddProp(properties, L"em", encryptionMethod);
 
@@ -232,7 +232,7 @@ static HRESULT ShowDialog(
       }
     }
   }
-
+    
   CCompressDialog dialog;
   NCompressDialog::CInfo &di = dialog.Info;
   dialog.ArcFormats = &codecs->Formats;
@@ -254,19 +254,19 @@ static HRESULT ShowDialog(
   // di.ArchiveName = options.ArchivePath.GetFinalPath();
   di.ArchiveName = options.ArchivePath.GetPathWithoutExt();
   dialog.OriginalFileName = options.ArchivePath.Prefix + fileInfo.Name;
-
+    
   di.CurrentDirPrefix = currentDirPrefix;
   di.SFXMode = options.SfxMode;
   di.OpenShareForWrite = options.OpenShareForWrite;
-
+  
   if (callback->PasswordIsDefined)
     di.Password = callback->Password;
-
+    
   di.KeepName = !oneFile;
-
+    
   if (dialog.Create(hwndParent) != IDOK)
     return E_ABORT;
-
+    
   options.VolumesSizes = di.VolumeSizes;
   /*
   if (di.VolumeSizeIsDefined)
@@ -275,9 +275,9 @@ static HRESULT ShowDialog(
     return E_FAIL;
   }
   */
-
+  
   NUpdateArchive::CActionSet &actionSet = options.Commands.Front().ActionSet;
-
+  
   switch(di.UpdateMode)
   {
     case NCompressDialog::NUpdateMode::kAdd:
@@ -318,7 +318,7 @@ static HRESULT ShowDialog(
       di.EncryptionMethod,
       di.EncryptHeadersIsAllowed, di.EncryptHeaders,
       di.SFXMode);
-
+  
   options.OpenShareForWrite = di.OpenShareForWrite;
   ParseAndAddPropertires(options.MethodMode.Properties, di.Options);
 

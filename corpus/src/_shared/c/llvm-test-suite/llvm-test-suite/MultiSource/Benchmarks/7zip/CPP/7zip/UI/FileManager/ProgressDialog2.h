@@ -22,7 +22,7 @@ class CProgressSync
   UInt64 _curFiles;
   UInt64 _inSize;
   UInt64 _outSize;
-
+  
   UString _titleFileName;
   UString _currentFileName;
 
@@ -30,7 +30,7 @@ public:
   UStringVector Messages;
   UString ErrorMessage;
   UString ErrorMessageTitle;
-
+  
   UString OkMessage;
   UString OkMessageTitle;
 
@@ -243,7 +243,7 @@ private:
 
   bool _waitCloseByCancelButton;
   bool _cancelWasPressed;
-
+  
   bool _inCancelMessageBox;
   bool _externalCloseMessageWasReceived;
 

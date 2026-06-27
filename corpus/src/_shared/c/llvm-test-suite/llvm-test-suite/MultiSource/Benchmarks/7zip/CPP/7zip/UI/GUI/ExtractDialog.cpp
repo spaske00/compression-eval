@@ -173,7 +173,7 @@ bool CExtractDialog::OnInit()
   _path.Attach(GetItem(IDC_EXTRACT_COMBO_PATH));
 
   _path.SetText(DirectoryPath);
-
+  
   #ifndef NO_REGISTRY
   for (int i = 0; i < info.Paths.Size() && i < kHistorySize; i++)
     _path.AddString(info.Paths[i]);
@@ -212,7 +212,7 @@ bool CExtractDialog::OnInit()
   HICON icon = LoadIcon(g_hInstance, MAKEINTRESOURCE(IDI_ICON));
   SetIcon(ICON_BIG, icon);
 #endif
-
+ 
   // CWindow filesWindow = GetItem(IDC_EXTRACT_RADIO_FILES);
   // filesWindow.Enable(_enableFilesButton);
 
@@ -299,13 +299,13 @@ void CExtractDialog::OnOK()
   info.PathMode = PathMode;
   info.OverwriteMode = OverwriteMode;
   info.ShowPassword = (IsButtonCheckedBool(IDC_EXTRACT_CHECK_SHOW_PASSWORD));
-
+  
   UString s;
-
+  
   #ifdef NO_REGISTRY
-
+  
   _path.GetText(s);
-
+  
   #else
 
   int currentItem = _path.GetCurSel();
@@ -317,7 +317,7 @@ void CExtractDialog::OnOK()
   }
   else
     _path.GetLBText(currentItem, s);
-
+  
   #endif
 
   s.Trim();
@@ -355,3 +355,4 @@ void CExtractDialog::OnHelp()
   CModalDialog::OnHelp();
 }
 #endif
+

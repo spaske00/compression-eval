@@ -16,7 +16,7 @@
 #endif
 
 #undef _WIN32
-
+ 
 #ifdef __WXMAC__
 
 #define UInt32 max_UInt32
@@ -50,7 +50,7 @@ int Main1(int argc,TCHAR **argv)
 	Sleep(10000);
 }
 */
-
+	
 
 #include "Windows/Registry.h"
 using namespace NWindows;
@@ -123,9 +123,9 @@ public:
     virtual bool OnInit();
 
 #ifdef __WXMAC__
-	virtual void MacOpenFile	(	const wxString & 	fileName	 ) ;
+	virtual void MacOpenFile	(	const wxString & 	fileName	 ) ;	
 #endif
-
+	
 };
 
 // Create a new application object: this macro will allow wxWidgets to create
@@ -157,12 +157,12 @@ public:
 #ifdef __WXMAC__
 void doMacOpenFile(	const UString & fileName	 );
 
-void MyApp::MacOpenFile	(	const wxString & 	fileName	 )
+void MyApp::MacOpenFile	(	const wxString & 	fileName	 ) 
 {
 	const wchar_t * wstr =	fileName.wc_str ();
-
+	
 	// ::MessageBoxW(0, L"MyApp::MacOpenFile 2", wstr  , MB_OKCANCEL | MB_ICONQUESTION);
-
+	
 	doMacOpenFile(wstr);
 }
 #endif
@@ -174,7 +174,7 @@ bool MyApp::OnInit()
     // : if ( !wxApp::OnInit() ) return false;
 
 /*
-*/
+*/	
 #ifdef __WXMAC__
 ProcessSerialNumber PSN;
 GetCurrentProcess(&PSN);
@@ -184,11 +184,11 @@ TransformProcessType(&PSN,kProcessTransformToForegroundApplication);
 
 /*
 	UString args(L"Args=");
-
+	
 	for(int i = 0 ; i < wxApp::argc ; i++)
 		args = args + L" '" + wxApp::argv[i] + L"'";
-
-
+	
+	
 	::MessageBoxW(0, L"MyApp::OnInit 3", args, MB_OKCANCEL | MB_ICONQUESTION);
 */
 
@@ -256,7 +256,7 @@ DWORD WINAPI GetTickCount(VOID) {
 
 static CStringTable g_stringTable[] =
 {
-  /* resource.rc */
+  /* resource.rc */	  
   /***************/
 	{ IDS_OPEN_TYPE_ALL_FILES, L"All Files" },
 	{ IDS_METHOD_STORE, L"Store" },
@@ -289,7 +289,7 @@ static CStringTable g_stringTable[] =
 	{ IDS_COMPRESSED_COLON, L"Compressed size:" },
 	{ IDS_ARCHIVES_COLON, L"Archives:" },
 
-  /* Extract.rc */
+  /* Extract.rc */	  
   /**************/
 	{ IDS_CANNOT_CREATE_FOLDER , L"Cannot create folder '{0}'"},
 	{ IDS_OPEN_IS_NOT_SUPORTED_ARCHIVE, L"File is not supported archive."},
@@ -324,3 +324,4 @@ namespace NFsFolder {
 		return wxCopyFile(wxString(existingFile), wxString(newFile), overwrite);
 	}
 }
+

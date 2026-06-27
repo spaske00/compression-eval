@@ -51,3 +51,4 @@ end
 
 io.write(string.format("long lived tree of depth %d\t check: %d\n",
   maxdepth, ItemCheck(longlivedtree)))
+

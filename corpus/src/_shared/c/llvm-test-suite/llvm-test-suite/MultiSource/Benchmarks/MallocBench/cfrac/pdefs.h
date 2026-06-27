@@ -4,7 +4,7 @@
  * +------------------------------------------------------------------+
  */
 /*
- * Optional assembly language
+ * Optional assembly language 
  */
 #ifdef ASM
 #include "machineop.h"		/* 16-bit integer machine operations */
@@ -59,7 +59,7 @@ typedef u8           	boolean;		          /*  1 bit  */
 #define mulBase(u)	((u) << 16)		/* multiply  by Base */
 
 /*
- * The type of a variable used to store intermediate results.
+ * The type of a variable used to store intermediate results.  
  * This should be the most efficient unsigned int on your machine.
  */
 typedef u32		accumulator;	     /* 0..(Base * Base) - 1 */
@@ -92,7 +92,7 @@ typedef digit     	*digitPtr;
  *   all digits >= size assumed to be 0.  (no leading zero's)
  *   size > 0
  */
-typedef struct {
+typedef struct {				
 #ifndef BWGC
     prefc 	refcount;	/* reference count (must be 1st [for pref]) */
 #endif
@@ -114,7 +114,7 @@ typedef struct {
 
 typedef cacheType	*cachePtr;
 /*
- * Maximum total memory consumed by cache =
+ * Maximum total memory consumed by cache = 
  *    LIMIT * (1 + SIZE * (PrecisionSize + sizeof(digit) * (SIZE-1) / 2))
  */
 #ifndef CACHESIZE

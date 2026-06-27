@@ -20,7 +20,7 @@ static const unsigned kNumW =
   #else
   80;
   #endif
-
+  
 
 #define w0(i) (W[(i)] = data[(i)])
 
@@ -96,7 +96,7 @@ void CContextBase::GetBlockDigest(UInt32 *data, UInt32 *destDigest, bool returnR
   if (returnRes)
     for (int i = 0 ; i < 16; i++)
       data[i] = W[kNumW - 16 + i];
-
+  
   // Wipe variables
   // a = b = c = d = e = 0;
 }

@@ -9,7 +9,7 @@ namespace NRar{
 namespace NHeader{
 
 Byte kMarker[kMarkerSize] = {0x52 + 1, 0x61, 0x72, 0x21, 0x1a, 0x07, 0x00};
-
+  
 class CMarkerInitializer
 {
 public:

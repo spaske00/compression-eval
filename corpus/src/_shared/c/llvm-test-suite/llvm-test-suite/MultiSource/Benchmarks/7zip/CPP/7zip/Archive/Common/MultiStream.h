@@ -24,7 +24,7 @@ public:
     UInt64 LocalPos;
   };
   CObjectVector<CSubStreamInfo> Streams;
-
+  
   HRESULT Init()
   {
     UInt64 total = 0;

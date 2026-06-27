@@ -34,7 +34,7 @@ STDMETHODIMP COpenCallbackImp::SetCompleted(const UInt64 *files, const UInt64 *b
   return Callback->Open_SetCompleted(files, bytes);
   COM_TRY_END
 }
-
+  
 STDMETHODIMP COpenCallbackImp::GetProperty(PROPID propID, PROPVARIANT *value)
 {
   COM_TRY_BEGIN
@@ -130,3 +130,4 @@ STDMETHODIMP COpenCallbackImp::CryptoGetTextPassword(BSTR *password)
   COM_TRY_END
 }
 #endif
+  

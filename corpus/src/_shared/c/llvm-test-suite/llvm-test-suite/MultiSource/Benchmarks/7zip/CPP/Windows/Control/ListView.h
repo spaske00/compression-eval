@@ -152,7 +152,7 @@ public:
 	// HWND EditLabel(int itemIndex)
 	void EditLabel(int itemIndex);
 
-	bool SetColumnWidthAuto(int iCol) {
+	bool SetColumnWidthAuto(int iCol) { 
 		return true; // FIXME SetColumnWidth(iCol, LVSCW_AUTOSIZE);
 	}
 
@@ -161,3 +161,4 @@ public:
 
 }}
 #endif
+

@@ -221,7 +221,7 @@ static OBJECT EncloseInHcat(OBJECT nxt, OBJECT y, OBJECT replace)
     }
     else Link(new_y, new_s2);
     if( sh == replace )
-    {
+    { 
       /* replace sh by nxt in the copy */
       new_sh = nxt;
       back(new_sh, COLM) = back(s2, COLM);

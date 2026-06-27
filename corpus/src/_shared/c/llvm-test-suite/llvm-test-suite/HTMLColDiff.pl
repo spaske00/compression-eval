@@ -48,7 +48,7 @@ while (@ARGV) {
     } elsif (!$Input2) {
       $Input2 = $ARGV[0];
     } else {
-      warn("Extra filename found: " . $ARGV[0]);
+      warn("Extra filename found: " . $ARGV[0]); 
     }
   }
   shift;
@@ -152,14 +152,14 @@ foreach my $Line (@File2) {
           $Highlight = 1 if ($Change > 1 + ($highlightThreshold / 100)
                            || $Change < 1 - ($highlightThreshold / 100));
           $Highlight = 0 if (abs($Field - $FieldComp) < $highlightAbsDiff);
-
+          
           # Show and colour changes if the change is large enough
           if ($Show) {
             my $Percent = sprintf("%+.2f%%", ($Change-1)*100);
             $Field = "$FieldComp => $Field ($Percent)";
             $Colour = ($Change > 1 ? "red" : "green");
           }
-
+          
         } elsif ($Field ne $FieldComp) {
           $Show    = 1;
           # Specially handle tests that are failing to compile but were not
@@ -181,7 +181,7 @@ foreach my $Line (@File2) {
       $row .= $Field;
       $row .= "</font>" if $Colour;
       $row .= "</u></b>" if $Highlight;
-
+    
 
       # Keep track that at least one cell was shown/highlighted in this
       # row.

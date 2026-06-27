@@ -17,3 +17,4 @@ HRESULT LzmaBenchCon(
 HRESULT CrcBenchCon(FILE *f, UInt32 numIterations, UInt32 numThreads, UInt32 dictionary);
 
 #endif
+

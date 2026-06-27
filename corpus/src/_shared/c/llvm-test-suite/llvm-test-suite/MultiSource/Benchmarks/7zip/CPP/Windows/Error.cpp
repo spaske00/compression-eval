@@ -33,7 +33,7 @@ bool MyFormatMessage(DWORD messageID, CSysString &message)
     msgBuf[sizeof(msgBuf)-1] = 0;
     msg = msgBuf;
   }
-
+  
   msg += "                ";
 
 #ifdef _UNICODE
@@ -55,3 +55,4 @@ bool MyFormatMessage(DWORD messageID, UString &message)
 #endif
 
 }}
+

@@ -122,7 +122,7 @@ OBJECT ReplaceWithTidy(OBJECT x, BOOLEAN one_word)
   switch( type(x) )
   {
     case ACAT:
-
+    
       for( link = Down(x);  link != x;  link = NextDown(link) )
       {	Child(y, link);
 	if( type(y) == ACAT )
@@ -253,7 +253,7 @@ OBJECT *enclose, BOOLEAN fcr)
   unsigned res_inc;  BOOLEAN still_backing;
   STYLE new_style;
   debug1(DOM, DD, "[ ManifestCat(%s)", EchoObject(x));
-
+    
   StyleCopy(new_style, *style);
   if( type(x) == HCAT )
   { par = ROWM;
@@ -292,7 +292,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
   /* manifest the remaining children */
   while( g != nilobj )
-  {
+  {	
     /* manifest the gap object, store it in gap(g), add perp threads */
     assert( type(g) == GAP_OBJ, "Manifest/VCAT: type(g) != GAP_OBJECT!" );
     assert( Down(g) != g, "Manifest/VCAT: GAP_OBJ has no child!" );
@@ -362,7 +362,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
       /* attach leftover back threads to first_bt if required */
       if( rlink != bt[par] )
-      {
+      { 
 	if( still_backing )  TransferLinks(rlink, bt[par], first_bt);
       }
       DisposeObject(bt[par]);
@@ -700,7 +700,7 @@ OBJECT *enclose, BOOLEAN fcr)
     }
     else
     *** */
-
+    
     if( !is_word(type(z)) )
     { symbol_free = FALSE;
     }
@@ -946,7 +946,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
 
     case CLOSURE:
-
+    
       x = ManifestCl(x, env, style, bthr, fthr, target, crs, ok, need_expand, enclose, fcr);
       break;
 
@@ -969,7 +969,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
     case CROSS:
     case FORCE_CROSS:
-
+    
       assert( Down(x) != x && LastDown(x) != Down(x), "Manifest: CROSS child!");
       if( !fcr )  /* stop if fcr, i.e. if purpose was to find a cross-reference */
       {
@@ -1003,7 +1003,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
     case WORD:
     case QWORD:
-
+    
       if( !ok || *crs == nilobj )
       {	word_font(x) = font(*style);
 	word_colour(x) = colour(*style);
@@ -1025,7 +1025,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
 
     case ACAT:
-
+    
       StyleCopy(save_style(x), *style);
       adjust_cat(x) = padjust(*style);
       StyleCopy(new_style, *style);
@@ -1050,7 +1050,7 @@ OBJECT *enclose, BOOLEAN fcr)
       underline(y) = UNDER_OFF;
       /* ??? if( is_word(type(y)) ) */
       if( ok && *crs != nilobj )
-      {
+      {	
 	debug1(DCR, DD, "  insinuating %s", EchoObject(*crs));
 	TransferLinks(Down(*crs), *crs, link);
 	DisposeObject(*crs);
@@ -1134,7 +1134,7 @@ OBJECT *enclose, BOOLEAN fcr)
 	      debugcond2(DLS, DD, vspace(g) > 0, "  prev = %s %s",
 		Image(type(prev)), EchoObject(prev));
 	      if( vspace(g) > 0 )
-	      {
+	      { 
 		/* set z to the preceding object; may need to search ACATs! */
 		z = prev;
 		while( type(z) == ACAT
@@ -1340,7 +1340,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
     case WIDE:
     case HIGH:
-
+    
       Child(y, Down(x));
       y = Manifest(y, env, style, nbt, nft, &ntarget, crs, FALSE, FALSE, &nenclose, fcr);
       y = ReplaceWithTidy(y, FALSE);
@@ -1365,7 +1365,7 @@ OBJECT *enclose, BOOLEAN fcr)
       y = ReplaceWithTidy(y, FALSE);
       GetGap(y, style, &shift_gap(x), &res_inc);
       shift_type(x) = res_inc;
-      if( mode(shift_gap(x)) != EDGE_MODE ||
+      if( mode(shift_gap(x)) != EDGE_MODE || 
 	  (units(shift_gap(x))!=FIXED_UNIT && units(shift_gap(x))!=NEXT_UNIT) )
       {	Error(8, 27, "replacing invalid left parameter of %s by +0i",
 	  WARN, &fpos(y), Image(type(x)) );
@@ -1386,7 +1386,7 @@ OBJECT *enclose, BOOLEAN fcr)
     case VEXPAND:
     case ONE_COL:
     case ONE_ROW:
-
+    
       ETC:
       par = (type(x)==ONE_COL || type(x)==HEXPAND || type(x) == HCONTRACT ||
 	   type(x)==HLIMITED || type(x)==WIDE || type(x)==HSHIFT) ? COLM : ROWM;
@@ -1652,7 +1652,7 @@ OBJECT *enclose, BOOLEAN fcr)
     case BREAK:
     case COLOUR:
     case LANGUAGE:
-
+    
       assert( Down(x) != x && NextDown(Down(x)) != x, "Manifest: FONT!" );
       StyleCopy(new_style, *style);
       Child(y, Down(x));
@@ -1674,7 +1674,7 @@ OBJECT *enclose, BOOLEAN fcr)
 
 	case BREAK:	BreakChange(&new_style, y);
 			break;
-
+	
 	case COLOUR:	ColourChange(&new_style, y);
 			break;
 
@@ -1751,7 +1751,7 @@ OBJECT *enclose, BOOLEAN fcr)
 	else link1 = NextDown(link1);
       }
       debug1(DHY, DDD, "  manifested x1 = %s", EchoObject(x1));
-
+ 
       /* find the second child of x, make sure it is an ACAT, and manifest */
       Child(x2, NextDown(Down(x)));
       if( type(x2) != ACAT )
@@ -1774,7 +1774,7 @@ OBJECT *enclose, BOOLEAN fcr)
 	else link2 = NextDown(link2);
       }
       debug1(DHY, DDD, "  manifested x2 = %s", EchoObject(x2));
-
+     
       if( type(x) == MELD )
       {
         /* if Meld, result is Meld(x1, x2) */
@@ -1825,7 +1825,7 @@ OBJECT *enclose, BOOLEAN fcr)
         { if( link2 == x2 )
 	    res = MakeWord(WORD, STR_EMPTY, &fpos(x2));
 	  else if( link1 == x1 )
-	  {
+	  { 
 	    TransferLinks(Down(x2), NextDown(link2), x1);
 	    res = x2;
 	  }
@@ -2012,7 +2012,7 @@ OBJECT *enclose, BOOLEAN fcr)
       y = Manifest(y, env, style, nbt, nft, &ntarget, crs, FALSE, FALSE, &nenclose, fcr);
       ReplaceWithSplit(x, bthr, fthr);
       break;
-
+	
 
     case LINK_SOURCE:
     case LINK_DEST:
@@ -2026,7 +2026,7 @@ OBJECT *enclose, BOOLEAN fcr)
       y = ReplaceWithTidy(y, TRUE);
       ReplaceWithSplit(x, bthr, fthr);
       break;
-
+	
 
     case INCGRAPHIC:
     case SINCGRAPHIC:
@@ -2047,7 +2047,7 @@ OBJECT *enclose, BOOLEAN fcr)
       }
       ReplaceWithSplit(x, bthr, fthr);
       break;
-
+	
 
     default:
 

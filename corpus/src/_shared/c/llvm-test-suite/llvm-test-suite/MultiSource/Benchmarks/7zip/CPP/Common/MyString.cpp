@@ -175,29 +175,29 @@ EXTERN_C_BEGIN
 size_t	wcslen(const wchar_t *s)
 {
 	register const wchar_t *p;
-
+	
 	for (p=s ; *p ; p++);
-
+	
 	return p - s;
 }
 
 wchar_t *wcscpy(wchar_t * s1, const wchar_t * s2)
 {
 	register wchar_t *s = s1;
-
+	
 	while ( (*s++ = *s2++) != 0 );
-
+	
 	return s1;
 }
 
 wchar_t *wcscat(wchar_t * s1, const wchar_t * s2)
 {
 	register wchar_t *s = s1;
-
+	
 	while (*s++);
 	--s;
 	while ((*s++ = *s2++) != 0);
-
+	
 	return s1;
 }
 

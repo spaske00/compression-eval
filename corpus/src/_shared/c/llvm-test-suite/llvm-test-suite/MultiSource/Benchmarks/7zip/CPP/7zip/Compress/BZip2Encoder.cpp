@@ -256,7 +256,7 @@ void CEncoder::WriteCrc(UInt32 v)
 void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
 {
   WriteBit2(false); // Randomised = false
-
+  
   {
     UInt32 origPtr = BlockSort(m_BlockSorterIndex, block, blockSize);
     // if (m_BlockSorterIndex[origPtr] != 0) throw 1;
@@ -380,10 +380,10 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
     }
 
     WriteBits2(numTables, kNumTablesBits);
-
+    
     UInt32 numSelectors = (numSymbols + kGroupSize - 1) / kGroupSize;
     WriteBits2(numSelectors, kNumSelectorsBits);
-
+    
     {
       UInt32 remFreq = numSymbols;
       int gs = 0;
@@ -395,10 +395,10 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
         UInt32 aFreq = 0;
         while (aFreq < tFreq) //  && ge < alphaSize)
           aFreq += symbolCounts[ge++];
-
+        
         if (ge - 1 > gs && t != numTables && t != 1 && (((numTables - t) & 1) == 1))
           aFreq -= symbolCounts[--ge];
-
+        
         Byte *lens = Lens[t - 1];
         int i = 0;
         do
@@ -409,8 +409,8 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
       }
       while(--t != 0);
     }
-
-
+    
+    
     for (int pass = 0; pass < kNumHuffPasses; pass++)
     {
       {
@@ -419,7 +419,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
           memset(Freqs[t], 0, sizeof(Freqs[t]));
         while(++t < numTables);
       }
-
+      
       {
         UInt32 mtfPos = 0;
         UInt32 g = 0;
@@ -435,7 +435,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
             symbols[i] = symbol;
           }
           while (++i < kGroupSize && mtfPos < mtfArraySize);
-
+          
           UInt32 bestPrice = 0xFFFFFFFF;
           int t = 0;
           do
@@ -461,7 +461,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
         }
         while (mtfPos < mtfArraySize);
       }
-
+      
       int t = 0;
       do
       {
@@ -475,7 +475,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
       }
       while(++t < numTables);
     }
-
+    
     {
       Byte mtfSel[kNumTablesMax];
       {
@@ -484,7 +484,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
           mtfSel[t] = (Byte)t;
         while(++t < numTables);
       }
-
+      
       UInt32 i = 0;
       do
       {
@@ -499,7 +499,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
       }
       while(++i < numSelectors);
     }
-
+    
     {
       int t = 0;
       do
@@ -531,7 +531,7 @@ void CThreadInfo::EncodeBlock(const Byte *block, UInt32 blockSize)
       }
       while(++t < numTables);
     }
-
+    
     {
       UInt32 groupSize = 0;
       UInt32 groupIndex = 0;

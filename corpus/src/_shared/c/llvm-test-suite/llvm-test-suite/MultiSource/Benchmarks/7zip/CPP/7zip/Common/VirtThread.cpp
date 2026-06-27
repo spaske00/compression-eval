@@ -43,3 +43,4 @@ CVirtThread::~CVirtThread()
   if (Thread.IsCreated())
     Thread.Wait();
 }
+

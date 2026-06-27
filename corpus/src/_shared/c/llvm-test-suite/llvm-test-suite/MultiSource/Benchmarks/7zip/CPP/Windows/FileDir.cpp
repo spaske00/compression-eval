@@ -34,7 +34,7 @@ class Umask
     current_umask = umask (0);  /* get and set the umask */
     umask(current_umask);	/* restore the umask */
     mask = 0777 & (~current_umask);
-  }
+  } 
 };
 
 static Umask gbl_umask;
@@ -110,7 +110,7 @@ DWORD WINAPI GetFullPathName( LPCTSTR name, DWORD len, LPTSTR buffer, LPTSTR *la
   if (cret) {
     begin_len = strlen(begin);
   }
-
+   
   if (begin_len >= 1) {
     //    strlen(begin) + strlen("/") + strlen(name)
     ret = begin_len     +    1        + name_len;
@@ -202,7 +202,7 @@ DWORD WINAPI GetFullPathName( LPCSTR name, DWORD len, LPSTR buffer, LPSTR *lastp
   if (cret) {
     begin_len = strlen(begin);
   }
-
+   
   if (begin_len >= 1) {
     //    strlen(begin) + strlen("/") + strlen(name)
     ret = begin_len     +    1        + name_len;
@@ -454,17 +454,17 @@ bool SetDirTime(LPCWSTR fileName, const FILETIME * /* creationTime */ ,
 
 #ifndef _UNICODE
 bool MySetFileAttributes(LPCWSTR fileName, DWORD fileAttributes)
-{
+{  
   return MySetFileAttributes(UnicodeStringToMultiByte(fileName, CP_ACP), fileAttributes);
 }
 
 bool MyRemoveDirectory(LPCWSTR pathName)
-{
+{  
   return MyRemoveDirectory(UnicodeStringToMultiByte(pathName, CP_ACP));
 }
 
 bool MyMoveFile(LPCWSTR existFileName, LPCWSTR newFileName)
-{
+{  
   UINT codePage = CP_ACP;
   return MyMoveFile(UnicodeStringToMultiByte(existFileName, codePage), UnicodeStringToMultiByte(newFileName, codePage));
 }
@@ -482,7 +482,7 @@ static int convert_to_symlink(const char * name) {
       if (ir == 0) {
         ir = symlink(buf,name);
       }
-      return ir;
+      return ir;    
     }
   }
   return -1;
@@ -559,7 +559,7 @@ bool MySetFileAttributes(LPCTSTR fileName, DWORD fileAttributes)
 }
 
 bool MyCreateDirectory(LPCTSTR pathName)
-{
+{  
   if (!pathName || !*pathName) {
     SetLastError(ERROR_PATH_NOT_FOUND);
     return false;
@@ -579,7 +579,7 @@ bool MyCreateDirectory(LPCTSTR pathName)
 
 #ifndef _UNICODE
 bool MyCreateDirectory(LPCWSTR pathName)
-{
+{  
   return MyCreateDirectory(UnicodeStringToMultiByte(pathName, CP_ACP));
 }
 #endif
@@ -699,7 +699,7 @@ bool DeleteFileAlways(LPCTSTR name)
 
 #ifndef _UNICODE
 bool DeleteFileAlways(LPCWSTR name)
-{
+{  
   return DeleteFileAlways(UnicodeStringToMultiByte(name, CP_ACP));
 }
 #endif
@@ -729,12 +729,12 @@ bool RemoveDirectoryWithSubItems(const UString &path)
 
 #ifndef _WIN32_WCE
 
-bool MyGetFullPathName(LPCTSTR fileName, CSysString &resultPath,
+bool MyGetFullPathName(LPCTSTR fileName, CSysString &resultPath, 
     int &fileNamePartStartIndex)
 {
   LPTSTR fileNamePointer = 0;
   LPTSTR buffer = resultPath.GetBuffer(MAX_PATH);
-  DWORD needLength = ::GetFullPathName(fileName, MAX_PATH + 1,
+  DWORD needLength = ::GetFullPathName(fileName, MAX_PATH + 1, 
       buffer, &fileNamePointer);
   resultPath.ReleaseBuffer();
   if (needLength == 0 || needLength >= MAX_PATH)
@@ -747,12 +747,12 @@ bool MyGetFullPathName(LPCTSTR fileName, CSysString &resultPath,
 }
 
 #ifndef _UNICODE
-bool MyGetFullPathName(LPCWSTR fileName, UString &resultPath,
+bool MyGetFullPathName(LPCWSTR fileName, UString &resultPath, 
     int &fileNamePartStartIndex)
 {
     const UINT currentPage = CP_ACP;
     CSysString sysPath;
-    if (!MyGetFullPathName(UnicodeStringToMultiByte(fileName,
+    if (!MyGetFullPathName(UnicodeStringToMultiByte(fileName, 
         currentPage), sysPath, fileNamePartStartIndex))
       return false;
     UString resultPath1 = MultiByteToUnicodeString(
@@ -860,10 +860,10 @@ UINT CTempFile::Create(LPCTSTR dirPath, LPCTSTR prefix, CSysString &resultPath)
   resultPath += TEXT('@');
   resultPath += CSysConvertUInt32ToString(count);
   resultPath += TEXT(".tmp");
-
+  
   _fileName = resultPath;
   _mustBeDeleted = true;
-
+ 
   return number;
 }
 

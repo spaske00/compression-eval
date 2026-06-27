@@ -73,7 +73,7 @@ static Tree conquer(Tree t) {
 
   if (!t) return NULL;
   t=makelist(t);
-
+ 
   /*printf("CONQUER\n");*/
   /* Create initial cycle */
   cycle = t;
@@ -156,7 +156,7 @@ static Tree merge(Tree a, Tree b, Tree t, int nproc) {
     ttop1 = mindist;
     tton1 = ttonext;
     }
-
+ 
   /* Compute location for second cycle */
   min = b;
   mindist = distance(t,b);
@@ -198,7 +198,7 @@ static Tree merge(Tree a, Tree b, Tree t, int nproc) {
   p1ton2 = distance(p1,n2);
   p1top2 = distance(p1,p2);
 
-  mindist = ttop1+ttop2+n1ton2;
+  mindist = ttop1+ttop2+n1ton2; 
   choice = 1;
 
   test = ttop1+tton2+n1top2;
@@ -212,7 +212,7 @@ static Tree merge(Tree a, Tree b, Tree t, int nproc) {
     choice = 3;
     mindist = test;
     }
-
+  
   test = tton1+tton2+p1top2;
   if (test<mindist) choice = 4;
 
@@ -289,3 +289,4 @@ Tree tsp(Tree t,int sz,int nproc) {
   return merge(leftval,rightval,t,nproc);
 #endif
 }
+

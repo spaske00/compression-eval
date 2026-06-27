@@ -7,7 +7,7 @@
 #endif
 
 /*
- * Divide a precision by 2
+ * Divide a precision by 2 
  */
 precision phalf(u)
    register precision u;

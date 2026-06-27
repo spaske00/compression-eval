@@ -194,7 +194,7 @@ STDMETHODIMP CRootFolder::BindToFolder(const wchar_t *name, IFolderFolder **resu
     return E_INVALIDARG;
 
   CMyComPtr<IFolderFolder> subFolder;
-
+  
 #ifdef _WIN32
   if (name2.Left(4) == L"\\\\.\\")
   {
@@ -272,3 +272,7 @@ STDMETHODIMP CRootFolder::GetSystemIconIndex(UInt32 index, INT32 *iconIndex)
 #endif
   return S_OK;
 }
+
+
+
+

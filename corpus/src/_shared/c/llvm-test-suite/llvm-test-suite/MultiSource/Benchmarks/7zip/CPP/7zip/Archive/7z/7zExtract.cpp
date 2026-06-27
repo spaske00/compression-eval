@@ -70,7 +70,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   const CArchiveDatabaseEx &_db = volume.Database;
   IInStream *_inStream = volume.Stream;
   */
-
+  
   CObjectVector<CExtractFolderInfo> extractFolderInfoVector;
   for (UInt32 ii = 0; ii < numItems; ii++)
   {
@@ -120,9 +120,9 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
         importantTotalUnpacked += unpackSize;
         extractFolderInfoVector.Back().UnpackSize = unpackSize;
       }
-
+      
       CExtractFolderInfo &efi = extractFolderInfoVector.Back();
-
+      
       // const CFolderInfo &folderInfo = m_dam_Folders[folderIndex];
       CNum startIndex = db.FolderStartFileIndex[folderIndex];
       for (CNum index = efi.ExtractStatuses.Size();
@@ -164,7 +164,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
 
     if (i >= extractFolderInfoVector.Size())
       break;
-
+    
     const CExtractFolderInfo &efi = extractFolderInfoVector[i];
     curUnpacked = efi.UnpackSize;
     curPacked = 0;

@@ -106,21 +106,21 @@ BOOLEAN LexLegalName(FULL_CHAR *str)
   {
     case ESCAPE:
     case LETTER:
-
+    
       for( i = 1;  chtbl[str[i]] == LETTER;  i++ );
       res = str[i] == '\0';
       break;
 
 
     case OTHER:
-
+    
       for( i = 1;  chtbl[str[i]] == OTHER;  i++ );
       res = str[i] == '\0';
       break;
 
 
     default:
-
+    
       res = FALSE;
       break;
 
@@ -444,7 +444,7 @@ OBJECT LexGetToken(void)
   do switch( chtbl[*p++] )
   {
       case ESCAPE:
-
+      
 	if( ftype==DATABASE_FILE && *p>='a' && *p<='z' && *(p+1) == '{' /*}*/ )
 	{ res = NewToken(LBR, &file_pos, 0, 0, (unsigned) *p, StartSym);
 	  p += 2;
@@ -459,7 +459,7 @@ OBJECT LexGetToken(void)
 
 
       case COMMENT:
-
+      
 	debug1(DLA, DDD, "LexGetToken%s: comment", EchoFilePos(&file_pos));
 	while( (c = *p++) != CH_NEWLINE && c != '\0' );
 	if( c == CH_NEWLINE )
@@ -492,7 +492,7 @@ OBJECT LexGetToken(void)
 
 
       case NEWLINE:
-
+      
 	chpt = p;  srcnext();
 	line_num(file_pos)++;
 	col_num(file_pos) = 0;
@@ -502,7 +502,7 @@ OBJECT LexGetToken(void)
 
 
       case ENDFILE:
-
+      
 	debug0(DLA, DDD, "LexGetToken: endfile");
 	if( !same_file )
 	{
@@ -545,7 +545,7 @@ OBJECT LexGetToken(void)
 
 	  case SOURCE_FILE:
 	  case DATABASE_FILE:
-
+	  
 	    /* input ends with "@End \Input" then UNEXPECTED_EOF */
 	    res = NewToken(END, &file_pos, 0, 0, END_PREC, StartSym);
 	    next_token = NewToken(UNEXPECTED_EOF, &file_pos,0,0,NO_PREC,nilobj);
@@ -554,7 +554,7 @@ OBJECT LexGetToken(void)
 
 
 	  case FILTER_FILE:
-
+	  
 	    /* input ends with "@End @FilterOut" */
 	    res = NewToken(END, &file_pos, 0, 0, END_PREC, FilterOutSym);
 	    /* ***
@@ -573,7 +573,7 @@ OBJECT LexGetToken(void)
 
 
 	  default:
-
+	  
 	    assert(FALSE, "unknown file type");
 	    break;
 
@@ -582,7 +582,7 @@ OBJECT LexGetToken(void)
 
 
       case OTHER:
-
+      
 	col_num(file_pos) = (startpos = p-1) - startline;
 	while( chtbl[*p++] == OTHER );
 	c = p - startpos - 1;
@@ -594,7 +594,7 @@ OBJECT LexGetToken(void)
 
 
       case LETTER:
-
+      
 	col_num(file_pos) = (startpos = p-1) - startline;
 	while( chtbl[*p++] == LETTER );  --p;
 	res = SearchSym(startpos, p - startpos);
@@ -665,7 +665,7 @@ OBJECT LexGetToken(void)
 
 
       case QUOTE:
-
+      
 	col_num(file_pos) = (startpos = q = p) - 1 - startline;
 	do switch( chtbl[*q++ = *p++] )
 	{
@@ -714,7 +714,7 @@ OBJECT LexGetToken(void)
 
 
       default:
-
+      
 	assert(FALSE, "LexGetToken: bad chtbl[]");
 	break;
 
@@ -840,7 +840,7 @@ FILE *fp;  BOOLEAN end_stop;  FILE_POS *err_pos;  BOOLEAN lessskip;
       case ESCAPE:
       case COMMENT:
       case QUOTE:
-
+      
 	skipping = FALSE;
 	clear();
 	print(*(p-1));
@@ -850,13 +850,13 @@ FILE *fp;  BOOLEAN end_stop;  FILE_POS *err_pos;  BOOLEAN lessskip;
       case CSPACE:
       case TAB:
       case FORMFEED:
-
+      
 	if( !skipping )  hold(*(p-1));
 	break;
 
 
       case NEWLINE:
-
+      
 	if( !skipping )  hold(*(p-1));
 	if( lessskip ) skipping = FALSE;
 	chpt = p;  srcnext();
@@ -867,7 +867,7 @@ FILE *fp;  BOOLEAN end_stop;  FILE_POS *err_pos;  BOOLEAN lessskip;
 
 
       case ENDFILE:
-
+      
 	if( fp == NULL )
 	  Error(2, 22, "end of file reached while reading %s",
 	    FATAL, err_pos, lessskip ? KW_RAWVERBATIM : KW_VERBATIM);
@@ -878,7 +878,7 @@ FILE *fp;  BOOLEAN end_stop;  FILE_POS *err_pos;  BOOLEAN lessskip;
 
 
       case OTHER:
-
+      
 	skipping = FALSE;
 	if( *(p-1) == '{' /*}*/ )
 	{ clear();
@@ -904,7 +904,7 @@ FILE *fp;  BOOLEAN end_stop;  FILE_POS *err_pos;  BOOLEAN lessskip;
 
 
       case LETTER:
-
+      
 	skipping = FALSE;
 	if( *(p-1) == '@' )
 	{
@@ -953,7 +953,7 @@ FILE *fp;  BOOLEAN end_stop;  FILE_POS *err_pos;  BOOLEAN lessskip;
 
 
       default:
-
+      
 	Error(2, 22, "unreadable character (octal %o)",INTERN,&file_pos,*(p-1));
 	assert(FALSE, "LexScanVerbatim: bad chtbl[]");
 	break;

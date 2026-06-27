@@ -255,7 +255,7 @@ unsigned int comp_debug;
 		change = TRUE;
 		count++;
 	    }
-
+	
 	}
     } while (change);
 
@@ -384,7 +384,7 @@ int (*func1)();
 
 	/* Cleanup for next go-around */
 	free_PLA(PLA1);
-
+	
 
     }
 }

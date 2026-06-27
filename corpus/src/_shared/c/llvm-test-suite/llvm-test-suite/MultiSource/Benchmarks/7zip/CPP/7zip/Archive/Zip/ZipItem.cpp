@@ -37,7 +37,7 @@ bool CExtraSubBlock::ExtractNtfsTime(int index, FILETIME &ft) const
     size -= 4;
     if (attrSize > size)
       attrSize = size;
-
+    
     if (tag == NFileHeader::NNtfsExtra::kTagTime && attrSize >= 24)
     {
       p += 8 * index;
@@ -145,7 +145,7 @@ UInt32 CItem::GetWinAttributes() const
       break;
 #ifdef FILE_ATTRIBUTE_UNIX_EXTENSION
     case NFileHeader::NHostOS::kUnix:
-        winAttributes = (ExternalAttributes & 0xFFFF0000) | FILE_ATTRIBUTE_UNIX_EXTENSION;
+        winAttributes = (ExternalAttributes & 0xFFFF0000) | FILE_ATTRIBUTE_UNIX_EXTENSION; 
         if (winAttributes & (NFileHeader::NUnixAttribute::kIFDIR << 16))
 		winAttributes |= FILE_ATTRIBUTE_DIRECTORY;
         return winAttributes;

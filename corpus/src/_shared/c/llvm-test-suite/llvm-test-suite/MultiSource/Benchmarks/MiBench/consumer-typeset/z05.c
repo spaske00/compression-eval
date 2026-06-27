@@ -52,7 +52,7 @@
 
 static void ReadLangDef(OBJECT encl)
 { OBJECT t, names, inside;
-
+  
   New(names, ACAT);
   t = LexGetToken();
   while( is_word(type(t)) )
@@ -456,7 +456,7 @@ static OBJECT ReadMacro(OBJECT *token, OBJECT curr_encl, OBJECT encl)
     *token = t;
     return nilobj;
   }
-
+  
   /* read macro body */
   ReadTokenList(t, res);
   Dispose(t);
@@ -670,7 +670,7 @@ void ReadDefinitions(OBJECT *token, OBJECT encl, unsigned char res_type)
 	if( !is_string(t, KW_INTO) && !is_string(t, KW_HORIZ) )
 	   Error(5, 34, "%s expected here", WARN, &fpos(t), KW_INTO);
       }
-
+	
       /* find horizontally, if any */
       if( is_string(t, KW_HORIZ) )
       { horiz_galley(res) = COLM;
@@ -741,7 +741,7 @@ void ReadDefinitions(OBJECT *token, OBJECT encl, unsigned char res_type)
 	  *token = t;
 	  return;
 	}
-	InsertSym(string(t), LPAR, &fpos(t), DEFAULT_PREC,
+	InsertSym(string(t), LPAR, &fpos(t), DEFAULT_PREC, 
 	  FALSE, FALSE, 0, res, nilobj);
 	Dispose(t);  t = LexGetToken();
       }

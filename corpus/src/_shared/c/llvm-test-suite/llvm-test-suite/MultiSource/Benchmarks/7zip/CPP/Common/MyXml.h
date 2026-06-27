@@ -22,7 +22,7 @@ public:
   CObjectVector<CXmlItem> SubItems;
 
   bool ParseItem(const AString &s, int &pos, int numAllowedLevels);
-
+  
   bool IsTagged(const AString &tag) const;
   int FindProperty(const AString &propName) const;
   AString GetPropertyValue(const AString &propName) const;

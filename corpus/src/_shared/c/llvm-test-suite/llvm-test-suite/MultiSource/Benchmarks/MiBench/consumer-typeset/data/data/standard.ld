@@ -68,7 +68,7 @@
 { bibliography @Word @CurrLang @Case {
     Czech	@Yield { Seznam literatury }
     Danish	@Yield { Bibliografi }
-    Dutch       @Yield { Bibliografie }
+    Dutch       @Yield { Bibliografie } 
     English	@Yield { Bibliography }
     EnglishUK	@Yield { Bibliography }
     Finnish	@Yield { Kirjallisuusluettelo }
@@ -636,7 +636,7 @@
 { mastersthesis @Word @CurrLang @Case {
     Czech	@Yield { Diplomov{@Char aacute} pr{@Char aacute}ce }
     Danish	@Yield { Specialeafhandling }
-    Dutch       @Yield { Doctoraalscriptie }
+    Dutch       @Yield { Doctoraalscriptie } 
     English	@Yield { Master's thesis }
     EnglishUK	@Yield { Master's thesis }
     Finnish	@Yield { diplomity{@Char odieresis} }

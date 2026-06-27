@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -22,7 +22,7 @@
 #include "Windows/Control/DialogImpl.h"
 
 /*
-IDD_DIALOG_PROGRESS  DIALOG  0, 0, xSize, ySize  MY_MODAL_DIALOG_STYLE | WS_MINIMIZEBOX
+IDD_DIALOG_PROGRESS  DIALOG  0, 0, xSize, ySize  MY_MODAL_DIALOG_STYLE | WS_MINIMIZEBOX 
 CAPTION "Progress"
 MY_FONT
 BEGIN
@@ -54,7 +54,7 @@ BEGIN
 END
 
 
-STRINGTABLE DISCARDABLE
+STRINGTABLE DISCARDABLE 
 BEGIN
   IDS_PROGRESS_PAUSED     "Paused"
   IDS_PROGRESS_FOREGROUND "&Foreground"
@@ -92,7 +92,7 @@ class CProgressDialogImpl : public NWindows::NControl::CModalDialogImpl
 
 	wxStaticText *pStaticTextUnpacked = new wxStaticText(this, IDC_PROGRESS_UNPACKED, wxT("Processed:"));
 	wxStaticText *m_pStaticTextUnpacked = new wxStaticText(this, IDC_PROGRESS_UNPACKED, wxT("          "), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
-
+	
 	wxStaticText *pStaticTextPacked = new wxStaticText(this, IDC_PROGRESS_PACKED, wxT("Compressed size:"));
 	wxStaticText *m_pStaticTextPacked = new wxStaticText(this, IDC_PROGRESS_PACKED_VALUE, wxT("          "), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
 
@@ -130,8 +130,8 @@ class CProgressDialogImpl : public NWindows::NControl::CModalDialogImpl
 
 	// wxStaticText *m_pStaticArchiveName = new wxStaticText(this, IDC_PROGRESS_FILE_NAME, wxT(" \n "));
 	wxStaticText *m_pStaticArchiveName = new wxStaticText(this, IDC_PROGRESS_FILE_NAME, wxT(""));
-	// m_pStaticArchiveName->Wrap( -1 ); // No Wrapping
-
+	// m_pStaticArchiveName->Wrap( -1 ); // No Wrapping 
+	  
 	wxGauge *m_pGaugeProgress = new wxGauge(this, IDC_PROGRESS1, 100);
 
 	wxBoxSizer *pButtonSizer = new wxBoxSizer(wxHORIZONTAL);
@@ -177,3 +177,4 @@ BEGIN_EVENT_TABLE(CProgressDialogImpl, wxDialog)
 	EVT_BUTTON(wxID_ANY, CModalDialogImpl::OnAnyButton)
 	EVT_MENU(WORKER_EVENT, CModalDialogImpl::OnWorkerEvent)
 END_EVENT_TABLE()
+

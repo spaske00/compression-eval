@@ -112,7 +112,7 @@ HRESULT CInArchive::Open2(IInStream *stream, const UInt64 *searchHeaderSizeLimit
       (UInt32)Get16(buf) != (CrcCalc(buf + 2, headerSize - 2) & 0xFFFF))
     return S_FALSE;
 
-  size_t commentSize = blockSize - headerSize;
+  size_t commentSize = blockSize - headerSize; 
   _comment.SetCapacity(commentSize);
   RINOK(ReadStream_FALSE(stream, _comment, commentSize));
   AddToSeekValue(commentSize);
@@ -303,7 +303,7 @@ void CInArchive::ReadHeaderReal(CItemEx &item)
   }
 
   UInt16 fileHeaderWithNameSize = (UInt16)m_CurPos;
-
+  
   item.Position = m_Position;
   item.MainPartSize = fileHeaderWithNameSize;
   item.CommentSize = (UInt16)(m_BlockHeader.HeadSize - fileHeaderWithNameSize);

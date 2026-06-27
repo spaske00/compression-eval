@@ -80,13 +80,13 @@ gx_device_sun gs_sunview_device = {
 	sizeof(gx_device_sun),
 	&sun_procs,
 	"sunview",
-	(int)(8.5*DEFAULT_DPI), (int)(11*DEFAULT_DPI),	/* x and y extent */
-	DEFAULT_DPI, DEFAULT_DPI,	/* x and y density */
+ 	(int)(8.5*DEFAULT_DPI), (int)(11*DEFAULT_DPI),	/* x and y extent */
+ 	DEFAULT_DPI, DEFAULT_DPI,	/* x and y density */
 		/* Following parameters are initialized for monochrome */
 	0,			/* has color */
 	1,			/* max r-g-b value */
 	1,			/* bits per color pixel */
-	0,			/* connection not initialized */
+ 	0,			/* connection not initialized */
 		/* End of monochrome/color parameters */
 };
 
@@ -189,14 +189,14 @@ sun_copy_mono(register gx_device *dev, byte *base, int sourcex, int raster,
 	if ((raster & 1) == 0) {
 		xdev->mpr.md_linebytes = raster;
 		xdev->mpr.md_image = (short *)((int)base & ~1);
-		pw_write(xdev->pw, x, y, w, h, op, &(xdev->pr),
+		pw_write(xdev->pw, x, y, w, h, op, &(xdev->pr), 
 			((int)base & 1) ? sourcex + 8 : sourcex, 0);
 	} else {
 		xdev->pr.pr_height = 1;
 		for (i = 0; i < h; i++) {
 			xdev->mpr.md_linebytes = raster;
 			xdev->mpr.md_image = (short *)((int)base & ~1);
-			pw_write(xdev->pw, x, y, w, 1, op, &(xdev->pr),
+			pw_write(xdev->pw, x, y, w, 1, op, &(xdev->pr), 
 				((int)base & 1) ? sourcex + 8 : sourcex, 0);
 			base += raster;
 			y++;

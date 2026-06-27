@@ -373,7 +373,7 @@ void TransferComponent(OBJECT x)
     debug0(DGF, D, "  calling FlushGalley from TransferComponent");
     FlushGalley(y);
   }
-
+  
   debug0(DGT, D, "] TransferComponent returning.");
   ifdebug(DGT, DD, debug_targets());
 } /* end TransferComponent */
@@ -469,7 +469,7 @@ void TransferEnd(OBJECT x)
     FlushGalley(y);
   }
   else DeleteNode(dest_index);
-
+  
   /* pop target stack and exit */
   DisposeObject(targets[itop--]);
   debug0(DGT, D, "] ] TransferEnd returning.");

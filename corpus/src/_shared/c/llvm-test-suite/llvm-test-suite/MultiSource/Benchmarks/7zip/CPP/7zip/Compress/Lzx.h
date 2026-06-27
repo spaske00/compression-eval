@@ -48,7 +48,7 @@ const unsigned kLevelSymbolSameNumBits = 1;
 const unsigned kLevelSymbolSameStartValue = 4;
 
 const unsigned kNumBitsForAlignLevel = 3;
-
+  
 const unsigned kNumDictionaryBitsMin = 15;
 const unsigned kNumDictionaryBitsMax = 21;
 const UInt32 kDictionarySizeMax = (1 << kNumDictionaryBitsMax);

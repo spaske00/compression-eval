@@ -54,10 +54,10 @@ public:
     m_BitPos = 0;
     m_Value = 0;
   }
-
+  
   UInt64 GetProcessedSize() const { return m_Stream.GetProcessedSize() - (m_BitPos) / 8; }
   UInt32 GetBitPosition() const { return ((8 - m_BitPos) & 7); }
-
+  
   UInt32 GetValue(unsigned numBits)
   {
     if (m_BitPos < numBits)
@@ -72,13 +72,13 @@ public:
     }
     return m_Value >> (m_BitPos - numBits);
   }
-
+  
   void MovePos(unsigned numBits)
   {
     m_BitPos -= numBits;
     m_Value = m_Value & ((1 << m_BitPos) - 1);
   }
-
+  
   UInt32 ReadBits(unsigned numBits)
   {
     UInt32 res = GetValue(numBits);
@@ -138,7 +138,7 @@ struct CTempFilter: public NVm::CProgramInitState
   UInt32 BlockSize;
   UInt32 ExecCount;
   bool NextWindow;
-
+  
   UInt32 FilterIndex;
 };
 
@@ -165,7 +165,7 @@ class CDecoder:
 
   UInt32 _reps[kNumReps];
   UInt32 _lastLength;
-
+  
   Byte m_LastLevels[kTablesSizesSum];
 
   Byte *_vmData;
@@ -187,7 +187,7 @@ class CDecoder:
   CPpmd7 _ppmd;
   int PpmEscChar;
   bool PpmError;
-
+  
   HRESULT WriteDataToStream(const Byte *data, UInt32 size);
   HRESULT WriteData(const Byte *data, UInt32 size);
   HRESULT WriteArea(UInt32 startPtr, UInt32 endPtr);
@@ -198,7 +198,7 @@ class CDecoder:
   bool AddVmCode(UInt32 firstByte, UInt32 codeSize);
   bool ReadVmCodeLZ();
   bool ReadVmCodePPM();
-
+  
   UInt32 ReadBits(int numBits);
 
   HRESULT InitPPM();
@@ -251,7 +251,7 @@ public:
     while(--len != 0);
     _winPos = winPos;
   }
-
+  
   void PutByte(Byte b)
   {
     _window[_winPos] = b;

@@ -17,12 +17,12 @@
 
 export	@CC @RR @Rule @DoubleRule @Line @DoubleLine @NP
 	@Rowa @Rowb @Rowc @Rowd @Rowe @Rowf @Rowg @Rowh @Rowi @Rowj
-	@MarkRowa @MarkRowb @MarkRowc @MarkRowd @MarkRowe @MarkRowf
-	@MarkRowg @MarkRowh @MarkRowi @MarkRowj
-	@FirstRowa @FirstRowb @FirstRowc @FirstRowd @FirstRowe @FirstRowf
-	@FirstRowg @FirstRowh @FirstRowi @FirstRowj
+	@MarkRowa @MarkRowb @MarkRowc @MarkRowd @MarkRowe @MarkRowf 
+	@MarkRowg @MarkRowh @MarkRowi @MarkRowj 
+	@FirstRowa @FirstRowb @FirstRowc @FirstRowd @FirstRowe @FirstRowf 
+	@FirstRowg @FirstRowh @FirstRowi @FirstRowj 
 
-def @Tab
+def @Tab                 
 
     named above     { no      }
     named below     { no      }
@@ -30,54 +30,54 @@ def @Tab
     named side      { no      }
     named hmargin   { 0.3c    }
     named vmargin	{
-	@BackEnd @Case {
-		PostScript @Yield 0.2v
-		PDF @Yield 0.2v		# VT: PDF case added
-		PlainText @Yield 0.5v
-	}
+    	@BackEnd @Case {
+    		PostScript @Yield 0.2v
+    		PDF @Yield 0.2v		# VT: PDF case added
+    		PlainText @Yield 0.5v
+    	}
     }
 
     named linewidth
 		named c left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" cm" }
-			PDF        @Yield { "__mul(__cm, "x")" }
+		    	PostScript @Yield { x" cm" }
+		    	PDF        @Yield { "__mul(__cm, "x")" }
 		    }
 		}
 		named i left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" in" }
-			PDF        @Yield { "__mul(__in, "x")" }
+		    	PostScript @Yield { x" in" }
+		    	PDF        @Yield { "__mul(__in, "x")" }
 		    }
 		}
 		named e left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" em" }
-			PDF        @Yield { "__mul(__em, "x")" }
+		    	PostScript @Yield { x" em" }
+		    	PDF        @Yield { "__mul(__em, "x")" }
 		    }
 		}
 		named p left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" pt" }
-			PDF        @Yield { "__mul(__pt, "x")" }
+		    	PostScript @Yield { x" pt" }
+		    	PDF        @Yield { "__mul(__pt, "x")" }
 		    }
 		}
 		named f left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" ft" }
-			PDF        @Yield { "__mul(__loutf, "x")" }
+		    	PostScript @Yield { x" ft" }
+		    	PDF        @Yield { "__mul(__loutf, "x")" }
 		    }
 		}
 		named s left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" sp" }
-			PDF        @Yield { "__mul(__louts, "x")" }
+		    	PostScript @Yield { x" sp" }
+		    	PDF        @Yield { "__mul(__louts, "x")" }
 		    }
 		}
 		named v left x {
 		    @BackEnd @Case {
-			PostScript @Yield { x" vs" }
-			PDF        @Yield { "__mul(__loutv, "x")" }
+		    	PostScript @Yield { x" vs" }
+		    	PDF        @Yield { "__mul(__loutv, "x")" }
 		    }
 		}
 		    { 0.5p    }
@@ -267,25 +267,25 @@ def @Tab
 	@BackEnd @Case {
 	  PostScript @Yield { linewidth ltabhs   }
 	  PDF        @Yield { "0 0 m __xsize 0 l" linewidth "w 0 J S" }
-	}
+    	}
     }
 
     def @HSingleProject	{
 	@BackEnd @Case {
 	  PostScript @Yield { linewidth ltabhsp  }
 	  PDF        @Yield { "0 0 m __xsize 0 l" linewidth "w 2 J S" }
-	}
+    	}
     }
 
     def @HDouble	{
 	@BackEnd @Case {
 	  PostScript @Yield { linewidth ltabhd   }
 	  PDF        @Yield {		#   dup dup
-		"0 0 m __xsize 0 l"	#   0 0 moveto xsize 0 lineto
-		"0 __mul(3, " linewidth ") m __xsize __mul(3, " linewidth ") l"	#  0 exch 3 mul moveto xsize exch 3 mul lineto
-		linewidth "w 0 J S"	#   setlinewidth 0 setlinecap stroke
+	  	"0 0 m __xsize 0 l"	#   0 0 moveto xsize 0 lineto
+	  	"0 __mul(3, " linewidth ") m __xsize __mul(3, " linewidth ") l"	#  0 exch 3 mul moveto xsize exch 3 mul lineto
+	  	linewidth "w 0 J S"	#   setlinewidth 0 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @HDoubleBelow	{
@@ -296,7 +296,7 @@ def @Tab
 		"0 __mul(-3, "linewidth") m __xsize __mul(-3, "linewidth") l"	#  0 exch -3 mul moveto xsize exch -3 mul lineto
 		linewidth "w 0 J S"	#   setlinewidth 0 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @HDoubleNW	{
@@ -309,7 +309,7 @@ def @Tab
 		"__mul(-3, "linewidth") 0 l"	#	-3 mul 0 lineto
 		linewidth "w 0 j 2 J S"	#   setlinewidth 0 setlinejoin 2 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @HDoubleNE	{
@@ -322,7 +322,7 @@ def @Tab
 		"__add(__xsize, __mul(3, "linewidth")) 0 l"	#	3 mul xsize add 0 lineto
 		linewidth "w 0 j 2 J S"	#   setlinewidth 0 setlinejoin 2 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @HDoubleSW	{
@@ -335,7 +335,7 @@ def @Tab
 		"__mul(-3, "linewidth") 0 l"	#	-3 mul 0 lineto
 		linewidth "w 0 j 2 J S"	#   setlinewidth 0 setlinejoin 2 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @HDoubleSE	{
@@ -348,7 +348,7 @@ def @Tab
 		"__add(__xsize, __mul( 3, "linewidth")) 0 l"	#	3 mul xsize add 0 lineto
 		linewidth "w 0 j 2 J S"	#   setlinewidth 0 setlinejoin 2 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @VSingle	{
@@ -358,7 +358,7 @@ def @Tab
 		"0 0 m 0 __ysize l"	#	0 0 moveto 0 ysize lineto
 		linewidth "w 0 J S"	#	setlinewidth 0 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @VDouble	{
@@ -369,7 +369,7 @@ def @Tab
 		"__mul(-3, "linewidth") 0 m __mul(-3, "linewidth") __ysize l"	#	-3 mul 0 moveto -3 mul ysize lineto
 		linewidth "w 0 J S"	#	setlinewidth 0 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @VDoubleRight	{
@@ -380,7 +380,7 @@ def @Tab
 		"__mul(3, "linewidth") 0 m __mul(3, "linewidth") __ysize l"		#	3 mul 0 moveto 3 mul ysize lineto
 		linewidth "w 0 J S"	#	setlinewidth 0 setlinecap stroke
 	  }
-	}
+    	}
     }
 
     def @MidHRule
@@ -539,7 +539,7 @@ def @Tab
 	def vr
 	{
 	    sr @Case
-	    {	dft	@Yield between
+	    {	dft	@Yield between 
 		else	@Yield sr
 	    }
 	}

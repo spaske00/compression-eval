@@ -195,7 +195,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   CMyComPtr<ISequentialOutStream> outStream(outStreamSpec);
   outStreamSpec->SetStream(realOutStream);
   outStreamSpec->Init();
-
+  
   realOutStream.Release();
 
   CLocalProgress *lps = new CLocalProgress;
@@ -265,7 +265,7 @@ static HRESULT UpdateArchive(
   CLocalProgress *localProgressSpec = new CLocalProgress;
   CMyComPtr<ICompressProgressInfo> localProgress = localProgressSpec;
   localProgressSpec->Init(updateCallback, true);
-
+  
   NCompress::NBZip2::CEncoder *encoderSpec = new NCompress::NBZip2::CEncoder;
   CMyComPtr<ICompressCoder> encoder = encoderSpec;
   {
@@ -287,9 +287,9 @@ static HRESULT UpdateArchive(
     };
     RINOK(encoderSpec->SetCoderProperties(propIDs, properties, sizeof(propIDs) / sizeof(propIDs[0])));
   }
-
+  
   RINOK(encoder->Code(fileInStream, outStream, NULL, NULL, localProgress));
-
+  
   return updateCallback->SetOperationResult(NArchive::NUpdate::NOperationResult::kOK);
 }
 
@@ -310,7 +310,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
   if (!updateCallback)
     return E_FAIL;
   RINOK(updateCallback->GetUpdateItemInfo(0, &newData, &newProps, &indexInArchive));
-
+ 
   if (IntToBool(newProps))
   {
     {
@@ -325,7 +325,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
         return E_INVALIDARG;
     }
   }
-
+  
   if (IntToBool(newData))
   {
     UInt64 size;
@@ -336,7 +336,7 @@ STDMETHODIMP CHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 numIt
         return E_INVALIDARG;
       size = prop.uhVal.QuadPart;
     }
-
+  
     UInt32 dicSize = _dicSize;
     if (dicSize == 0xFFFFFFFF)
       dicSize = (_level >= 5 ? kDicSizeX5 :

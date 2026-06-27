@@ -21,8 +21,8 @@ static gint idle_count;       /* pause & plot when idle_count=idel_count_max */
 static gint idle_end=0;      /* process all frames, stop at last frame  */
 static gint idle_back = 0;     /* set when we are displaying the old data */
 static int mp3done = 0;         /* last frame has been read */
-static GtkWidget *frameprogress; /* progress bar */
-static GtkWidget *framecounter;  /* progress counter */
+static GtkWidget *frameprogress; /* progress bar */ 
+static GtkWidget *framecounter;  /* progress counter */ 
 
 static int subblock_draw[3] = { 1, 1, 1 };
 
@@ -62,7 +62,7 @@ struct gtkinfostruct {
 static lame_global_flags *gfp;
 
 /**********************************************************************
- * read one frame and encode it
+ * read one frame and encode it 
  **********************************************************************/
 int gtkmakeframe(void)
 {
@@ -75,7 +75,7 @@ int gtkmakeframe(void)
   int mp3out = 0;
   short mpg123pcm[2][1152];
   char mp3buffer[LAME_MAXMP3BUFFER];
-
+  
 
 #ifndef HAVEMPGLIB
   fprintf(stderr,"Error: GTK frame analyzer requires MPGLIB\n");
@@ -100,11 +100,11 @@ int gtkmakeframe(void)
       }
       if (gfp->frameNum==1) init=0; /* reset for next time frameNum==0 */
       iread=lame_readframe(gfp,Buffer);
-
-
+      
+      
       mp3count=lame_encode(gfp,Buffer,mp3buffer,sizeof(mp3buffer)); /* encode frame */
       assert( !(mp3count > 0 && gfp->frameNum == pinfo->frameNum));
-      /* not possible to produce mp3 data without encoding at least
+      /* not possible to produce mp3 data without encoding at least 
        * one frame of data which would increment gfp->frameNum */
     }
     mp3out=lame_decode(mp3buffer,mp3count,mpg123pcm[0],mpg123pcm[1]); /* re-synthesis to pcm */
@@ -113,7 +113,7 @@ int gtkmakeframe(void)
     /* mp3out = number of samples output */
     if (mp3out>0) assert(mp3out==pinfo->framesize);
     if (mp3out!=0) {
-      /* decoded output is for frame pinfo->frameNum123
+      /* decoded output is for frame pinfo->frameNum123 
        * add a delay of framesize-DECDELAY, which will make the total delay
        * exactly one frame */
       pinfo->frameNum123=pinfo->frameNum-mpglag;
@@ -121,7 +121,7 @@ int gtkmakeframe(void)
 	for ( j = 0; j < pinfo->framesize-DECDELAY; j++ )
 	  pinfo->pcmdata2[ch][j] = pinfo->pcmdata2[ch][j+pinfo->framesize];
 	for ( j = 0; j < pinfo->framesize; j++ ) {
-	  pinfo->pcmdata2[ch][j+pinfo->framesize-DECDELAY] =
+	  pinfo->pcmdata2[ch][j+pinfo->framesize-DECDELAY] = 
 	    (mp3out==-1) ? 0 : mpg123pcm[ch][j];
 	}
       }
@@ -130,7 +130,7 @@ int gtkmakeframe(void)
 	fprintf(stderr,"READ_AHEAD set too low - not enough frame buffering.\n");
 	fprintf(stderr,"MP3x display of input and output PCM data out of sync.\n");
       }
-      else mpglag++;
+      else mpglag++; 
       pinfo->frameNum123=-1;  /* no frame output */
     }
   }
@@ -175,7 +175,7 @@ void plot_frame(void)
 
 
   /* however, the PCM data is delayed by 528 samples in the encoder filterbanks.
-   * We added another 1152-528 delay to this so the PCM data is *exactly* one
+   * We added another 1152-528 delay to this so the PCM data is *exactly* one 
    * frame behind the header & MDCT information */
   pplot1 =pplot2 +1;                   /* back one frame for header info, MDCT */
 
@@ -211,7 +211,7 @@ void plot_frame(void)
   sampindex = SmpFrqIndex((long)samp, &version);
 
   ch = gtkinfo.chflag;
-
+  
   headbits = 32 + ((pplot1->stereo==2) ? 256 : 136);
   gtkinfo.approxbits = (pplot1->bitrate*1000*1152.0/samp) - headbits;
   /*font = gdk_font_load ("-misc-fixed-medium-r-*-*-*-100-*-*-*-*-*-*");*/
@@ -224,26 +224,26 @@ void plot_frame(void)
   title = " mono ";
   if (2==pplot1->stereo) title = pplot1->js ? " js " : " s ";
   gtk_text_insert (GTK_TEXT(headerbox), NULL, &oncolor, NULL,title, -1);
-  color = pplot1->ms_stereo ? &oncolor : &offcolor ;
+  color = pplot1->ms_stereo ? &oncolor : &offcolor ; 
   gtk_text_insert (GTK_TEXT(headerbox), NULL, color, NULL,"ms ", -1);
-  color = pplot1->i_stereo ? &oncolor : &offcolor ;
+  color = pplot1->i_stereo ? &oncolor : &offcolor ; 
   gtk_text_insert (GTK_TEXT(headerbox), NULL, color, NULL,"is ", -1);
 
-  color = pplot1->crc ? &oncolor : &offcolor ;
+  color = pplot1->crc ? &oncolor : &offcolor ; 
   gtk_text_insert (GTK_TEXT(headerbox), NULL, color, NULL,"crc ", -1);
-  color = pplot1->padding ? &oncolor : &offcolor ;
+  color = pplot1->padding ? &oncolor : &offcolor ; 
   gtk_text_insert (GTK_TEXT(headerbox), NULL, color, NULL,"pad ", -1);
 
-  color = pplot1->emph ? &oncolor : &offcolor ;
+  color = pplot1->emph ? &oncolor : &offcolor ; 
   gtk_text_insert (GTK_TEXT(headerbox), NULL, color, NULL,"em ", -1);
 
   sprintf(title2,"c1=%i,%i ",pplot1->big_values[0][ch],pplot1->big_values[1][ch]);
   gtk_text_insert (GTK_TEXT(headerbox), NULL, &black, NULL,title2, -1);
 
-  color = pplot1->scfsi[ch] ? &oncolor : &offcolor ;
+  color = pplot1->scfsi[ch] ? &oncolor : &offcolor ; 
   sprintf(title2,"scfsi=%i            ",pplot1->scfsi[ch]);
   gtk_text_insert (GTK_TEXT(headerbox), NULL, color, NULL,title2, -1);
-  if (gtkinfo.filetype)
+  if (gtkinfo.filetype) 
     sprintf(title2," mdb=%i %i/NA",pplot1->maindata,pplot1->totbits);
   else
     sprintf(title2," mdb=%i   %i/%i",
@@ -256,12 +256,12 @@ void plot_frame(void)
   /*******************************************************************
    * block type
    *******************************************************************/
-  for (gr = 0 ; gr < mode_gr ; gr ++)
-    if (gtkinfo.flag123)
+  for (gr = 0 ; gr < mode_gr ; gr ++) 
+    if (gtkinfo.flag123) 
       blocktype[gr][ch]=pplot1->mpg123blocktype[gr][ch];
-    else blocktype[gr][ch]=pplot->blocktype[gr][ch];
+    else blocktype[gr][ch]=pplot->blocktype[gr][ch]; 
 
-
+  
   /*******************************************************************
    * draw the PCM data *
    *******************************************************************/
@@ -270,9 +270,9 @@ void plot_frame(void)
   ycord = g_malloc(n*sizeof(gdouble));
 
 
-  if (gtkinfo.msflag)
+  if (gtkinfo.msflag) 
     title=ch ? "Side Channel" :  "Mid Channel";
-  else
+  else 
     title=ch ? "Right Channel" : "Left Channel";
 
   sprintf(title2,"%s  mask_ratio=%3.2f  %3.2f  ener_ratio=%3.2f  %3.2f",
@@ -281,7 +281,7 @@ void plot_frame(void)
 	  pplot->ms_ener_ratio[0],pplot->ms_ener_ratio[1]);
 
 
-  ymn = -32767 ;
+  ymn = -32767 ; 
   ymx =  32767;
   xmn = 0;
   xmx = 1600-1;
@@ -299,14 +299,14 @@ void plot_frame(void)
   /* draw some hash marks dividing the frames */
   ycord[0] = ymx*.8;  ycord[1] = ymn*.8;
   for (gr=0 ; gr<=2; gr++) {
-    xcord[0] = 223.5 + gr*576;   xcord[1] = 223.5 +gr*576;
+    xcord[0] = 223.5 + gr*576;   xcord[1] = 223.5 +gr*576;  
     gpk_rectangle_draw(pcmbox,xcord,ycord,xmn,ymn,xmx,ymx,&yellow);
   }
   for (gr = 0 ; gr < mode_gr ; gr++) {
-    if (blocktype[gr][ch]==2)
+    if (blocktype[gr][ch]==2) 
       for (i=1 ; i<=2; i++) {
-	xcord[0] = 223.5+gr*576 + i*192;
-	xcord[1] = 223.5+gr*576 + i*192;
+	xcord[0] = 223.5+gr*576 + i*192; 
+	xcord[1] = 223.5+gr*576 + i*192; 
 	gpk_rectangle_draw(pcmbox,xcord,ycord,xmn,ymn,xmx,ymx,&yellow);
       }
   }
@@ -322,10 +322,10 @@ void plot_frame(void)
   /* plot PCM data */
   for (i=0; i<n; i++) {
     xcord[i] = i;
-    if (gtkinfo.msflag)
-      ycord[i] = ch ? .5*(pplot->pcmdata[0][i]-pplot->pcmdata[1][i]) :
+    if (gtkinfo.msflag) 
+      ycord[i] = ch ? .5*(pplot->pcmdata[0][i]-pplot->pcmdata[1][i]) : 
       .5*(pplot->pcmdata[0][i]+pplot->pcmdata[1][i]);
-    else
+    else 
       ycord[i]=pplot->pcmdata[ch][i];
   }
 
@@ -354,23 +354,23 @@ void plot_frame(void)
   title="Re-synthesis";
 
 
-  ymn = -32767 ;
+  ymn = -32767 ; 
   ymx =  32767;
   xmn = 0;
-  xmx = 1600-1;
+  xmx = 1600-1; 
   gpk_graph_draw(winbox,0,xcord,ycord,
 		 xmn,ymn,xmx,ymx,1,title,&black);
   /* draw some hash marks dividing the frames */
   ycord[0] = ymx*.8;  ycord[1] = ymn*.8;
   for (gr=0 ; gr<=2; gr++) {
-    xcord[0] = 223.5 + gr*576;   xcord[1] = 223.5 +gr*576;
+    xcord[0] = 223.5 + gr*576;   xcord[1] = 223.5 +gr*576;  
     gpk_rectangle_draw(winbox,xcord,ycord,xmn,ymn,xmx,ymx,&yellow);
   }
   for (gr = 0 ; gr < 2 ; gr++) {
-    if (blocktype[gr][ch]==2)
+    if (blocktype[gr][ch]==2) 
       for (i=1 ; i<=2; i++) {
-	xcord[0] = 223.5+gr*576 + i*192;
-	xcord[1] = 223.5+gr*576 + i*192;
+	xcord[0] = 223.5+gr*576 + i*192; 
+	xcord[1] = 223.5+gr*576 + i*192; 
 	gpk_rectangle_draw(winbox,xcord,ycord,xmn,ymn,xmx,ymx,&yellow);
       }
   }
@@ -380,11 +380,11 @@ void plot_frame(void)
   n = 224;
   for (j=1152-n,i=0; i<=n; i++,j++) {
     xcord[i] = i;
-    if (gtkinfo.msflag)
+    if (gtkinfo.msflag) 
       ycord[i] = ch ? .5*(pplot1->pcmdata2[0][j]-
-                          pplot1->pcmdata2[1][j]) :
+                          pplot1->pcmdata2[1][j]) : 
       .5*(pplot1->pcmdata2[0][j]+pplot1->pcmdata2[1][j]);
-    else
+    else 
       ycord[i]=pplot1->pcmdata2[ch][j];
   }
   gpk_graph_draw(winbox,n+1,xcord,ycord,
@@ -393,10 +393,10 @@ void plot_frame(void)
   n = 1152;
   for (i=0; i<n; i++) {
     xcord[i] = i+224;
-    if (gtkinfo.msflag)
-      ycord[i] = ch ? .5*(pplot2->pcmdata2[0][i]-pplot2->pcmdata2[1][i]) :
+    if (gtkinfo.msflag) 
+      ycord[i] = ch ? .5*(pplot2->pcmdata2[0][i]-pplot2->pcmdata2[1][i]) : 
       .5*(pplot2->pcmdata2[0][i]+pplot2->pcmdata2[1][i]);
-    else
+    else 
       ycord[i]=pplot2->pcmdata2[ch][i];
   }
   gpk_graph_draw(winbox,n,xcord,ycord,
@@ -421,9 +421,9 @@ void plot_frame(void)
     strcpy(label,blockname);
     if (pplot1->mixed[gr][ch]) strcat(label,"(mixed)");
 
-
-
-
+    
+    
+    
     n = 576;
     if (gtkinfo.flag123) {
       data = pplot1->mpg123xr[gr][0];
@@ -432,7 +432,7 @@ void plot_frame(void)
       data = pplot->xr[gr][0];
       data2 = pplot->xr[gr][1];
     }
-
+    
 
     xmn = 0;
     xmx = n-1;
@@ -465,7 +465,7 @@ void plot_frame(void)
 	xcord[1] = xcord[0];
 	gpk_rectangle_draw(mdctbox[gr],xcord,ycord,xmn,ymn,xmx,ymx,&yellow);
       }
-    }
+    }   
 
 
 
@@ -482,7 +482,7 @@ void plot_frame(void)
       if (blocktype[gr][ch]==SHORT_TYPE && !subblock_draw[i % 3])
         coeff = 0;
       ycord[i]=coeff*coeff*1e10;
-      ycord[i] = log10( MAX( ycord[i],(double) 1));
+      ycord[i] = log10( MAX( ycord[i],(double) 1)); 
       ymx=(ycord[i] > ymx) ? ycord[i] : ymx;
       ymn=(ycord[i] < ymn) ? ycord[i] : ymn;
     }
@@ -492,8 +492,8 @@ void plot_frame(void)
     */
     if (gtkinfo.flag123) bits=pplot1->mainbits[gr][ch];
     else bits=pplot->LAMEmainbits[gr][ch];
-
-
+    
+    
     sprintf(title2,"MDCT%1i(%s) bits=%i q=%i ",gr,label,bits,
 	      pplot1->qss[gr][ch]);
 
@@ -504,20 +504,20 @@ void plot_frame(void)
     gpk_bargraph_draw(mdctbox[gr],n,xcord,ycord,
 		      xmn,ymn,xmx,ymx,0,title2,0,barcolor);
   }
+  
 
 
-
-
+  
   /*******************************************************************
-   * draw the psy model energy spectrum (k space)
-   * l3psy.c computes pe, en, thm for THIS granule.
+   * draw the psy model energy spectrum (k space) 
+   * l3psy.c computes pe, en, thm for THIS granule.  
    *******************************************************************/
  if (gtkinfo.kbflag){
     for (gr = 0 ; gr < mode_gr ; gr ++) {
       n = HBLKSIZE; /* only show half the spectrum */
 
       data = &pplot->energy[gr][ch][0];
-
+      
       ymn=9e20;
       ymx=-9e20;
       for (i=0; i<n; i++) {
@@ -529,7 +529,7 @@ void plot_frame(void)
 	ymx=(ycord[i] > ymx) ? ycord[i] : ymx;
 	ymn=(ycord[i] < ymn) ? ycord[i] : ymn;
       }
-      for (en=0 , j=0; j<BLKSIZE ; j++)
+      for (en=0 , j=0; j<BLKSIZE ; j++) 
 	en += pplot->energy[gr][ch][j];
 
       sprintf(title2,"FFT%1i  pe=%4.1fK  en=%5.2e ",gr,
@@ -541,7 +541,7 @@ void plot_frame(void)
       xmx = n;
       gpk_bargraph_draw(enerbox[gr],n,xcord,ycord,
 			xmn,ymn,xmx,ymx,1,title2,0,barcolor);
-
+      
     }
   }else{
     /*******************************************************************
@@ -550,12 +550,12 @@ void plot_frame(void)
     for (gr = 0 ; gr < mode_gr ; gr ++) {
 
       if (blocktype[gr][ch]==2) {
-	n = 3*SBMAX_s;
+	n = 3*SBMAX_s; 
 	data = &pplot->en_s[gr][ch][0];
 	data2 = &pplot->thr_s[gr][ch][0];
 	data3 = &pplot->xfsf_s[gr][ch][0];
       } else {
-	n = SBMAX_l;
+	n = SBMAX_l; 
 	data = &pplot->en[gr][ch][0];
 	data2 = &pplot->thr[gr][ch][0];
 	data3 = &pplot->xfsf[gr][ch][0];
@@ -601,9 +601,9 @@ void plot_frame(void)
 	ymn=(ycord[i] < ymn) ? ycord[i] : ymn;
       }
       gpk_bargraph_draw(enerbox[gr],n,xcord,ycord,
-			xmn,ymn,xmx,ymx,0,title2,3,&red);
+			xmn,ymn,xmx,ymx,0,title2,3,&red);  
 
-
+      
       for (i=0; i<n; i++) {
 	xcord[i] = i+1 + (.25*n)/SBMAX_l;
         if (blocktype[gr][ch]==SHORT_TYPE && !subblock_draw[i % 3])
@@ -619,16 +619,16 @@ void plot_frame(void)
   }
 
   /*******************************************************************
-   * draw scalefactors
+   * draw scalefactors 
    *******************************************************************/
   for (gr = 0 ; gr < mode_gr ; gr ++) {
       double ggain;
       if (blocktype[gr][ch]==2) {
-	n = 3*SBMAX_s;
+	n = 3*SBMAX_s; 
 	if (gtkinfo.flag123) data = pplot1->sfb_s[gr][ch];
 	else data = pplot->LAMEsfb_s[gr][ch];
       } else {
-	n = SBMAX_l;
+	n = SBMAX_l; 
 	if (gtkinfo.flag123) data = pplot1->sfb[gr][ch];
 	else data = pplot->LAMEsfb[gr][ch];
       }
@@ -655,13 +655,13 @@ void plot_frame(void)
       }else{
 	sprintf(label2,"SFB scale=%i",pplot1->scalefac_scale[gr][ch]);
       }
-
+      
       if (gtkinfo.flag123) ggain = -(pplot1->qss[gr][ch]-210)/4.0;
       else ggain = -(pplot->LAMEqss[gr][ch]-210)/4.0;
 
       sprintf(title2," gain=%4.1f",ggain);
       strcat(label2,title2);
-
+      
       xmn = 1;
       xmx = n+1;
       gpk_bargraph_draw(sfbbox[gr],n,xcord,ycord,
@@ -672,7 +672,7 @@ void plot_frame(void)
       xcord[1] = n+1;
       gpk_rectangle_draw(sfbbox[gr],xcord,ycord,xmn,ymn,xmx,ymx,&yellow);
 
-
+      
     }
 
 
@@ -681,7 +681,7 @@ void plot_frame(void)
 
 
 static void update_progress(void)
-{
+{    
   char label[80];
   int tf=gfp->totalframes;
   if (gtkinfo.totalframes>0) tf=gtkinfo.totalframes;
@@ -702,8 +702,8 @@ static void analyze(void)
       idle_keepgoing=0;
       idle_end=0;
     }
-    plot_frame();
-    update_progress();
+    plot_frame();   
+    update_progress(); 
 }
 
 static void plotclick( GtkWidget *widget, gpointer   data )
@@ -723,10 +723,10 @@ static int frameadv1(GtkWidget *widget, gpointer   data )
     }else{
       /* advance the frame by reading in a new frame */
       pplot = &Pinfo[READ_AHEAD];
-      if (mp3done) {
+      if (mp3done) { 
 	/* dont try to read any more frames, and quit if "finish MP3" was selected */
 	/*	if (idle_finish) gtk_main_quit(); */
-	idle_count_max=0;
+	idle_count_max=0; 
         idle_end=0;
       } else {
 	/* read in the next frame */
@@ -734,21 +734,21 @@ static int frameadv1(GtkWidget *widget, gpointer   data )
 	  memcpy(&Pinfo[i],&Pinfo[i-1],sizeof(plotting_data));
 	pinfo = &Pinfo[0];
 	pinfo->num_samples = gtkmakeframe();
-	if (pinfo->num_samples==0 && gtkinfo.totalframes==0)
+	if (pinfo->num_samples==0 && gtkinfo.totalframes==0) 
 	  /* allow an extra frame to flush decoder buffers */
 	  gtkinfo.totalframes = pinfo->frameNum +2;
 
-	if (pinfo->sampfreq)
+	if (pinfo->sampfreq) 
 	  pinfo->frametime = (pinfo->frameNum)*1152.0/pinfo->sampfreq;
 	else pinfo->frametime=0;
 
-        /* eof?
+        /* eof? 
 	if (!pinfo->num_samples) if (idle_finish) gtk_main_quit();
 	*/
 
 	pinfo->totbits = 0;
 	{ int gr,ch;
-	for (gr = 0 ; gr < 2 ; gr ++)
+	for (gr = 0 ; gr < 2 ; gr ++) 
 	  for (ch = 0 ; ch < 2 ; ch ++) {
 	    gtkinfo.totshort += (pinfo->mpg123blocktype[gr][ch]==2);
 	    gtkinfo.totmix  += !(pinfo->mixed[gr][ch]==0);
@@ -784,7 +784,7 @@ static void frameadv( GtkWidget *widget, gpointer   data )
 
     if (!strcmp((char *) data,"-1")) {
       /* ignore if we've already gone back as far as possible */
-      if (pplot->frameNum==0 || (idle_back==NUMBACK)) return;
+      if (pplot->frameNum==0 || (idle_back==NUMBACK)) return;  
       idle_back++;
       pplot = &Pinfo[READ_AHEAD+idle_back];
       analyze();
@@ -801,7 +801,7 @@ static void frameadv( GtkWidget *widget, gpointer   data )
 
     if (idle_keepgoing) {
       /* already running - que up additional frame advance requests */
-      idle_count_max += adv;
+      idle_count_max += adv; 
     }
     else {
       /* turn on idleing */
@@ -835,19 +835,19 @@ static void channel_option (GtkWidget *widget, gpointer data)
   switch (option) {
   case 1:
     gtkinfo.msflag=0;
-    gtkinfo.chflag=0;
+    gtkinfo.chflag=0; 
     break;
   case 2:
     gtkinfo.msflag=0;
-    gtkinfo.chflag=1;
+    gtkinfo.chflag=1; 
     break;
   case 3:
     gtkinfo.msflag=1;
-    gtkinfo.chflag=0;
+    gtkinfo.chflag=0; 
     break;
   case 4:
     gtkinfo.msflag=1;
-    gtkinfo.chflag=1;
+    gtkinfo.chflag=1; 
   }
   analyze();
 }
@@ -921,7 +921,7 @@ static void text_window (GtkWidget *widget, gpointer data)
   char text[80];
 
   option = (long) data;
-
+  
   textwindow = gtk_window_new(GTK_WINDOW_DIALOG);
   gtk_signal_connect_object (GTK_OBJECT (window), "delete_event",
 		      GTK_SIGNAL_FUNC(gtk_widget_destroy),
@@ -942,9 +942,9 @@ static void text_window (GtkWidget *widget, gpointer data)
 
 
   switch (option) {
-  case 0:
+  case 0: 
     gtk_window_set_title (GTK_WINDOW (textwindow), "Documentation");
-    gtk_widget_set_usize(box,450,500);
+    gtk_widget_set_usize(box,450,500); 
     gtk_text_set_word_wrap(GTK_TEXT(box),TRUE);
     gtk_text_insert(GTK_TEXT(box),NULL,NULL,NULL,
 		"Frame header information: "\
@@ -988,8 +988,8 @@ static void text_window (GtkWidget *widget, gpointer data)
 		"used, the number of bits used to encode the coefficients and the "\
 		"number of extra bits allocated from the reservoir.  The MDCT pull down "\
 		"window will toggle between the original unquantized MDCT coefficients "\
-		"and the compressed (quantized) coefficients.\n\n",-1);
-
+		"and the compressed (quantized) coefficients.\n\n",-1); 
+ 
 		gtk_text_insert(GTK_TEXT(box),NULL,NULL,NULL,
 		"FFT window: "\
 		"The gray bars show the energy in the FFT spectrum used by the "\
@@ -1017,13 +1017,13 @@ static void text_window (GtkWidget *widget, gpointer data)
 
     sprintf(text,"psycho-acoustic model:  GPSYCHO version %s\n",get_psy_version());
     gtk_text_insert(GTK_TEXT(box),NULL,NULL,NULL,text,-1);
-
+    
     sprintf(text,"frame analyzer: MP3x version %s\n\n",get_mp3x_version());
     gtk_text_insert(GTK_TEXT(box),NULL,NULL,NULL,text,-1);
-
+    
     gtk_text_insert(GTK_TEXT(box),NULL,NULL,NULL,
 		    "decoder:  mpg123/mpglib  .59q  \nMichael Hipp (www.mpg123.de)\n\n",-1);
-
+    
     gtk_text_insert(GTK_TEXT(box),NULL,NULL,NULL,
     "Encoder, decoder & psy-models based on ISO\ndemonstration source. ",-1);
     break;
@@ -1070,7 +1070,7 @@ static void text_window (GtkWidget *widget, gpointer data)
   gtk_box_pack_start(GTK_BOX(hbox), vscrollbar, FALSE, FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, TRUE, 0);
   gtk_box_pack_end (GTK_BOX (vbox), button, FALSE, TRUE, 0);
-  gtk_container_add (GTK_CONTAINER (textwindow), vbox);
+  gtk_container_add (GTK_CONTAINER (textwindow), vbox); 
   gtk_widget_show(textwindow);
 
 }
@@ -1101,7 +1101,7 @@ static void text_window (GtkWidget *widget, gpointer data)
            <path>             -> path of a radio item to link against
            "<Separator>"      -> create a separator
            "<Branch>"         -> create an item to hold sub items
-           "<LastBranch>"     -> create a right justified branch
+           "<LastBranch>"     -> create a right justified branch 
 */
 
 static GtkItemFactoryEntry menu_items[] = {
@@ -1112,9 +1112,9 @@ static GtkItemFactoryEntry menu_items[] = {
   {"/File/_Save",    "<control>S", print_hello, 0, NULL},
   {"/File/Save _As", NULL,         NULL, 0, NULL},
   {"/File/sep1",     NULL,         NULL, 0, "<Separator>"},
-  {"/File/Quit",     "<control>Q", gtk_main_quit, 0, NULL},
+  {"/File/Quit",     "<control>Q", gtk_main_quit, 0, NULL}, 
   */
-  {"/File/_Quit",     "<control>Q", delete_event, 0, NULL},
+  {"/File/_Quit",     "<control>Q", delete_event, 0, NULL}, 
 
   {"/_Plotting",            NULL,         NULL,   0,    "<Branch>"},
   {"/Plotting/_While advancing" ,  NULL,  spec_option, 5, NULL},
@@ -1159,7 +1159,7 @@ static void get_main_menu(GtkWidget *window, GtkWidget ** menubar) {
               the accelerator table while generating menus.
   */
 
-  item_factory = gtk_item_factory_new(GTK_TYPE_MENU_BAR, "<main>",
+  item_factory = gtk_item_factory_new(GTK_TYPE_MENU_BAR, "<main>", 
 				       accel_group);
 
   /* This function generates the menu items. Pass the item factory,
@@ -1171,7 +1171,7 @@ static void get_main_menu(GtkWidget *window, GtkWidget ** menubar) {
   gtk_accel_group_attach (accel_group, GTK_OBJECT (window));
 
   if (menubar)
-    /* Finally, return the actual menu bar created by the item factory. */
+    /* Finally, return the actual menu bar created by the item factory. */ 
     *menubar = gtk_item_factory_get_widget(item_factory, "<main>");
 }
 
@@ -1250,7 +1250,7 @@ int gtkcontrol(lame_global_flags *gfp2)
     gtk_box_pack_end(GTK_BOX (mbox),box2, FALSE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX (mbox),box3, FALSE, TRUE, 0);
     gtk_box_pack_start (GTK_BOX (mbox), table, TRUE, TRUE, 0);
-    gtk_container_add (GTK_CONTAINER (window), mbox);
+    gtk_container_add (GTK_CONTAINER (window), mbox); 
 
 
     /*********************************************************************/
@@ -1258,14 +1258,14 @@ int gtkcontrol(lame_global_flags *gfp2)
     /*********************************************************************/
     /*
     headerbox = gtk_label_new(" ");
-    gtk_label_set_justify(GTK_LABEL(headerbox),GTK_JUSTIFY_LEFT);
+    gtk_label_set_justify(GTK_LABEL(headerbox),GTK_JUSTIFY_LEFT); 
     */
     headerbox = gtk_text_new (NULL, NULL);
     gtk_text_set_editable (GTK_TEXT (headerbox), FALSE);
     gtk_widget_set_usize(headerbox,200,20);
     gtk_widget_show (headerbox);
     gtk_box_pack_start(GTK_BOX (box3),headerbox, TRUE, TRUE, 0);
-
+    
 
 
     /*********************************************************************/
@@ -1372,21 +1372,21 @@ int gtkcontrol(lame_global_flags *gfp2)
 
 
     gtk_idle_add((GtkFunction) frameadv1, NULL);
-    gtk_widget_show(menubar);
-    gtk_widget_show(box2);
-    gtk_widget_show(box3);
+    gtk_widget_show(menubar); 
+    gtk_widget_show(box2); 
+    gtk_widget_show(box3); 
     gtk_widget_show(table);
     gtk_widget_show(box1);
     gtk_widget_show (mbox);
     gtk_widget_show (window);     /* show smallest allowed window */
 
-    /* make window bigger.   */
+    /* make window bigger.   */ 
     /* now the user will be able to shrink it, if desired */
     /* gtk_widget_set_usize(mbox,500,500);  */
     /* gtk_widget_show (window); */     /* show smallest allowed window */
 
 
-
+    
     idle_keepgoing=1;             /* processing of frames is ON */
     idle_count_max=READ_AHEAD+1;  /* number of frames to process before plotting */
     idle_count=0;                 /* pause & plot when idle_count=idle_count_max */
@@ -1398,3 +1398,13 @@ int gtkcontrol(lame_global_flags *gfp2)
 }
 
 #endif
+
+
+
+
+
+
+
+
+
+

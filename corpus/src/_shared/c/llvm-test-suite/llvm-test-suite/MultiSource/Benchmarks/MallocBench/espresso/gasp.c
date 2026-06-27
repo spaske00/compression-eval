@@ -145,7 +145,7 @@ pcover *G;
 	    /* See if this cube can be covered by an expansion */
 	    if (setp_implies(c2under, RAISE) ||
 	      feasibly_covered(R, c2under, RAISE, temp)) {
-
+		
 		/* See if c1under can expanded to cover c2 reduced against
 		 * (F - c1) u c1under; if so, c2 can definitely be removed !
 		 */

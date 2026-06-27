@@ -28,7 +28,7 @@ The output will go in the same folder as the input.
 
 While paq8p is working, a command window will appear and report
 progress.  When it is done you can close the window by pressing
-ENTER or clicking [X].
+ENTER or clicking [X]. 
 
 
 COMMAND LINE INTERFACE
@@ -257,8 +257,8 @@ There are several types of bit history states:
       0 for n >= 16.
 
   The primaty output is t_i := stretch(sm(n0,n1,h)), where sm(.) is
-  a stationary map with K = 1/256, initiaized to
-  sm(n0,n1,h) = (n1+(1/64))/(n+2/64).  Four additional inputs are also
+  a stationary map with K = 1/256, initiaized to 
+  sm(n0,n1,h) = (n1+(1/64))/(n+2/64).  Four additional inputs are also 
   be computed to improve compression slightly:
 
     p1_i = sm(n0,n1,h)
@@ -406,7 +406,7 @@ ARCHITECTURE
 
 The context models are mixed by several of several hundred neural networks
 selected by a low-order context.  The outputs of these networks are
-combined using a second neural network, then fed through several stages of
+combined using a second neural network, then fed through several stages of 
 adaptive probability maps (APM) before arithmetic coding.
 
 For images, only one neural network is used and its context is fixed.
@@ -477,7 +477,7 @@ organized into 64-byte buckets on cache line boundaries.  Each bucket
 contains 7 x 7 bit histories, 7 16-bit checksums, and a 2 element LRU
 queue packed into one byte.  Each 7 byte element represents 7 histories
 for a context ending on a 3-bit boundary plus 0-2 more bits.  One
-element (for bits 0-1, which have 4 unused bytes) also contains a run model
+element (for bits 0-1, which have 4 unused bytes) also contains a run model 
 consisting of the last byte seen and a count (as 1 byte each).
 
 Run models use 4 byte hash elements consisting of a 2 byte checksum, a
@@ -522,11 +522,11 @@ in Array was fixed that caused the program to silently crash upon exit.
 
 DIFFERENCES FROM PAQ8J
 
-1) Slightly improved sparse model.
+1) Slightly improved sparse model. 
 2) Added new family of sparse contexts. Each byte mapped to 3-bit value, where
 different values corresponds to different byte classes. For example, input
-byte 0x00 transformed into 0, all bytes that less then 16 -- into 5, all
-punctuation marks (ispunct(c)!=0) -- into 2 etc. Then this flags from 11
+byte 0x00 transformed into 0, all bytes that less then 16 -- into 5, all 
+punctuation marks (ispunct(c)!=0) -- into 2 etc. Then this flags from 11 
 previous bytes combined into 32-bit pseudo-context.
 
 All this improvements gives only 62 byte on BOOK1, but on binaries archive size
@@ -541,7 +541,7 @@ variable-width record data.
 
 DIFFERENCES FROM PAQ8JB
 
-Restored recordModel(), broken in paq8hp*. Slightly tuned indirectModel().
+Restored recordModel(), broken in paq8hp*. Slightly tuned indirectModel(). 
 
 DIFFERENCES FROM PAQ8JC
 
@@ -575,7 +575,7 @@ Added PGM (grayscale image) model form PAQ8I.
 Added grayscale BMP model to PGM model.
 Ver. 2 can be compiled using either old or new "for" loop scoping rules.
 Added APM and StateMap from LPAQ1
-Code optimizations from Enrico Zeidler
+Code optimizations from Enrico Zeidler 
 Detection of BMP 4,8,24 bit and PGM 8 bit images before compress
 On non BMP,PGM,JPEG data mem is lower
 Fixed bug in BMP 8-bit detection in other files like .exe
@@ -825,7 +825,7 @@ public:
 
 // Buf(n) buf; creates an array of n bytes (must be a power of 2).
 // buf[i] returns a reference to the i'th byte with wrap (no out of bounds).
-// buf(i) returns i'th byte back from pos (i > 0)
+// buf(i) returns i'th byte back from pos (i > 0) 
 // buf.size() returns n.
 
 int pos;  // Number of input bytes in buf (not wrapped)
@@ -1105,7 +1105,7 @@ StateTable::StateTable(): ns(1024) {
           ns[state*4+3]=y;
         }
           // uncomment to print table above
-//        printf("{%3d,%3d,%2d,%2d},", ns[state*4], ns[state*4+1],
+//        printf("{%3d,%3d,%2d,%2d},", ns[state*4], ns[state*4+1], 
 //          ns[state*4+2], ns[state*4+3]);
 //        if (state%4==3) printf(" // %d-%d\n  ", state-3, state);
         assert(state>=0 && state<256);
@@ -1431,7 +1431,7 @@ inline U32 hash(U32 a, U32 b, U32 c=0xffffffff, U32 d=0xffffffff,
 //   reserved for a checksum to detect collisions.  The remaining
 //   B-1 bytes are values, prioritized by the first value.  This
 //   byte is 0 to mark an unused element.
-//
+//   
 // bh[i] returns a pointer to the i'th element, such that
 //   bh[i][0] is a checksum of i, bh[i][1] is the priority, and
 //   bh[i][2..B-1] are other values (0-255).
@@ -1495,7 +1495,7 @@ inline  U8* BH<B>::operator[](U32 i) {
 //   if context cx is found, else 0.  Then it extends all the contexts with
 //   global bit y.  It should be called for every bit:
 //
-//     if (bpos==0)
+//     if (bpos==0) 
 //       for (int i=0; i<C; ++i) cm.set(cxt[i]);
 //     cm.mix(m);
 //
@@ -1580,7 +1580,7 @@ public:
 //
 // Bit histories are stored in a hash table.  The table is organized into
 // 64-byte buckets alinged on cache page boundaries.  Each bucket contains
-// a hash chain of 7 elements, plus a 2 element queue (packed into 1 byte)
+// a hash chain of 7 elements, plus a 2 element queue (packed into 1 byte) 
 // of the last 2 elements accessed for LRU replacement.  Each element has
 // a 2 byte checksum for detecting collisions, and an array of 7 bit history
 // states indexed by the last 0 to 2 bits of context.  The buckets are indexed
@@ -1591,7 +1591,7 @@ public:
 // On bits 0, 2 and 5, the context is updated and a new bucket is selected.
 // The most recently accessed element is tried first, by comparing the
 // 16 bit checksum, then the 7 elements are searched linearly.  If no match
-// is found, then the element with the lowest priority among the 5 elements
+// is found, then the element with the lowest priority among the 5 elements 
 // not in the LRU queue is replaced.  After a replacement, the queue is
 // emptied (so that consecutive misses favor a LFU replacement policy).
 // In all cases, the found/replaced element is put in the front of the queue.
@@ -1604,9 +1604,9 @@ public:
 // history states are used.  The remaining 4 bytes implement a run model
 // as follows: <count:7,d:1> <b1> <unused> <unused> where <b1> is the last byte
 // seen, possibly repeated.  <count:7,d:1> is a 7 bit count and a 1 bit
-// flag (represented by count * 2 + d).  If d=0 then <count> = 1..127 is the
-// number of repeats of <b1> and no other bytes have been seen.  If d is 1 then
-// other byte values have been seen in this context prior to the last <count>
+// flag (represented by count * 2 + d).  If d=0 then <count> = 1..127 is the 
+// number of repeats of <b1> and no other bytes have been seen.  If d is 1 then 
+// other byte values have been seen in this context prior to the last <count> 
 // copies of <b1>.
 //
 // As an optimization, the last two hash elements of each byte (representing
@@ -1783,7 +1783,7 @@ int matchModel(Mixer& m) {
   static int ptr=0;  // points to next byte of match if any
   static int len=0;  // length of match, or 0 if no match
   static int result=0;
-
+  
   static SmallStationaryContextMap scm1(0x20000);
 
   if (!bpos) {
@@ -1811,7 +1811,7 @@ int matchModel(Mixer& m) {
      m.add(ilog(len)<<2);
      m.add(min(len, 32)<<6);
     }
-    else
+    else 
     {
      m.add(-(ilog(len)<<2));
      m.add(-(min(len, 32)<<6));
@@ -1896,7 +1896,7 @@ void wordModel(Mixer& m) {
     if (c==10) nl1=nl, nl=pos-1;
     int col=min(255, pos-nl), above=buf[nl1+col]; // text column context
     U32 h=word0*271+buf(1);
-
+    
     cm.set(h);
     cm.set(word0);
     cm.set(h+word1);
@@ -1957,7 +1957,7 @@ void recordModel(Mixer& m) {
 #endif
     cm.set(c<<8| (min(255, pos-cpos1[c])/4) );
     cm.set(w<<9| llog(pos-wpos1[w])>>2);
-
+    
     cm.set(rlen|buf(rlen)<<10|buf(rlen*2)<<18);
     cn.set(w|rlen<<8);
     cn.set(d|rlen<<16);
@@ -2015,7 +2015,7 @@ void sparseModel(Mixer& m, int seenbefore, int howmany) {
     cm.set(buf(1)|buf(6)<<8);
     cm.set(buf(3)|buf(6)<<8);
     cm.set(buf(4)|buf(8)<<8);
-
+    
     for (int i=1; i<8; ++i) {
       cm.set((buf(i+1)<<8)|buf(i+2));
       cm.set((buf(i+1)<<8)|buf(i+3));
@@ -2192,7 +2192,7 @@ void model8bit(Mixer& m, int w) {
 	static SmallStationaryContextMap scm1(SC), scm2(SC),
 		scm3(SC), scm4(SC), scm5(SC), scm6(SC*2),scm7(SC);
 	static ContextMap cm(MEM*4, 32);
-
+	
 	// Select nearby pixels as context
 	if (!bpos) {
 		assert(w>3);
@@ -2201,7 +2201,7 @@ void model8bit(Mixer& m, int w) {
 		mean>>=2;
 		const int logvar=ilog(var);
 		int i=0;
-		// 2 x
+		// 2 x 
 		cm.set(hash(++i, buf(1)>>2, buf(w)>>2));
 		cm.set(hash(++i, buf(1)>>2, buf(2)>>2));
 		cm.set(hash(++i, buf(w)>>2, buf(w*2)>>2));
@@ -2277,7 +2277,7 @@ int pgmModel(Mixer& m) {
 	static int pgm_hdr[3];  // 0 - Width, 1 - Height, 2 - Max value
 	static int pgm_ptr;		// which record in header should be parsed next
 	int isws;				// is white space
-	char v_buf[32];
+	char v_buf[32];			
 	int  v_ptr;
 	if (!bpos)
 	{
@@ -2286,23 +2286,23 @@ int pgmModel(Mixer& m) {
 			pgm = pos;
 			pgm_ptr = 0;
 			return w = 0; // PGM header just detected, not enough info to get header yet
-		}else
+		}else 
 			if(pgm && pgm_ptr!=3) 		// PGM detected, let's parse header records
-			{
+			{ 
 				for (int i = pgm; i<pos-1 && pgm_ptr<3; i++)
 				{
 					// Skip white spaces
-					while ((isws = ISWHITESPACE(pos-i)) && i<pos-1) i++;
+					while ((isws = ISWHITESPACE(pos-i)) && i<pos-1) i++; 
 					if(isws) break; // buffer end is reached
 
 					// Skip comments
 					if(buf(pos-i)=='#')
-					{
+					{ 
 						do {
 							i++;
 						}while(!ISCRLF(pos-i) && i<pos-1);
 					}else
-					{
+					{ 
 						// Get header record as a string into v_buf
 						v_ptr = 0;
 						do {
@@ -2313,14 +2313,14 @@ int pgmModel(Mixer& m) {
 						if(isws)
 						{
 							pgm_hdr[pgm_ptr++] = atoi(v_buf);
-							pgm = i; // move pointer
+							pgm = i; // move pointer 
 						}
 					}
 				}
 
 				// Header is finished, next byte is first pixel
 				if(pgm_ptr==3)
-				{
+				{ 
 					if(pgm_hdr[2] == 255 && pgm_hdr[0]>0 && pgm_hdr[1]>0)
 					{
 						w = pgm_hdr[0];
@@ -2618,7 +2618,7 @@ int jpegModel(Mixer& m) {
           int tc=buf[p]>>4, th=buf[p]&15;
           if (tc>=2 || th>=4) break;
           jassert(tc>=0 && tc<2 && th>=0 && th<4);
-          HUF* h=&huf[tc*64+th*16]; // [tc][th][0];
+          HUF* h=&huf[tc*64+th*16]; // [tc][th][0]; 
           int val=p+17;  // pointer to values
           int hval=tc*1024+th*256;  // pointer to RS values in hbuf
           int j;
@@ -2987,7 +2987,7 @@ int wavModel(Mixer& m) {
   static int w,K=128>>(level-1);
   static int pr[4][2], n[2], counter[2];
   int chn,ch,msb,j,k,l,i=0;
-  double sum,a=0.996;
+  double sum,a=0.996;  
   double F[49][49][2],L[49][49];
   const int SC=0x20000;
   static SmallStationaryContextMap scm1(SC), scm2(SC), scm3(SC), scm4(SC), scm5(SC), scm6(SC), scm7(SC), scm8(SC);
@@ -2995,7 +2995,7 @@ int wavModel(Mixer& m) {
 
   // Detect .wav file header
   if (!bpos && buf(8)=='d' && buf(7)=='a' && buf(6)=='t' && buf(5)=='a') {
-    for (int i=32; i<=1000; i++)
+    for (int i=32; i<=1000; i++) 
       if (buf(i)=='f' && buf(i-1)=='m' && buf(i-2)=='t' && buf(i-3)==' ' && (i2(i-8)==1||i2(i-8)==65534)) {
     bits=buf(i-22);
     bytes=bits+7>>3;
@@ -3008,11 +3008,11 @@ int wavModel(Mixer& m) {
           for (k=0; k<=S+D; k++) for (l=k; l<=S+D; l++) F[k][l][j]=0;
           F[1][0][j]=1;
           n[j]=counter[j]=0;
-      }
-      wmode=channels+bits;
+      } 
+      wmode=channels+bits; 
       printf("WAV %ibits/",bits);
       if (channels==1) {printf("mono "); S=48; D=0;}
-         else {printf("stereo "); S=36; D=12;}
+         else {printf("stereo "); S=36; D=12;} 
     }
       else eof=pos;
       }
@@ -3030,7 +3030,7 @@ int wavModel(Mixer& m) {
        for (l=S+1; l<=S+D; l++) if (l-S-1<counter[chn]) F[S+1][l][chn]=F[S+1][l][chn]*a+X(S+1,1)*X(l,1);
        for (k=1; k<=S; k++) if (k<counter[chn]) F[k][S+1][chn]=F[k][S+1][chn]*a+X(k,1)*X(S+1,1);
     }
-    if (++n[chn]==K) {
+    if (++n[chn]==K) {        
        if (channels==1) for (k=1; k<=S+D; k++) for (l=k; l<=S+D; l++) F[k][l][chn]=(F[k-1][l-1][chn]-X(k-1,1)*X(l-1,1))/a;
           else for (k=1; k<=S+D; k++) if (k!=S+1) for (l=k; l<=S+D; l++) if (l!=S+1) F[k][l][chn]=(F[k-1][l-1][chn]-X(k-1,1)*X(l-1,1))/a;
        for (i=1; i<=S+D; i++) {
@@ -3046,7 +3046,7 @@ int wavModel(Mixer& m) {
            }
               else break;
        }
-       if (i>S+D && counter[chn]>S+1) {
+       if (i>S+D && counter[chn]>S+1) { 
           for (k=1; k<=S+D; k++) {
               F[k][0][chn]=F[0][k][chn];
               for (j=1; j<k; j++) F[k][0][chn]-=L[k][j]*F[j][0][chn];
@@ -3078,7 +3078,7 @@ int wavModel(Mixer& m) {
     scm1.set(s2(w)&0x1ff);
     scm2.set(s2(w)*2-s2(w*2)&0x1ff);
     scm3.set(s2(w)*3-s2(w*2)*3+s2(w*3)&0x1ff);
-  }
+  } 
     else {
     cm.set(hash(++i, buf(1), ch));
     cm.set(hash(++i, buf(1)>>7, buf(2), buf(3)>>7, ch));
@@ -3097,7 +3097,7 @@ int wavModel(Mixer& m) {
     scm5.set(s2(w-1)+s2(w+1)-buf(1)+pr[0][chn]*2>>10);
     scm7.set(s2(w+1)*4-s2(w*2+1)*6+s2(w*3+1)*4-s2(w*4+1)-buf(1)>>7);
     scm8.set(s2(w+1)*5-s2(w*2+1)*10+s2(w*3+1)*10-s2(w*4+1)*5+s2(w*5+1)-buf(1)+pr[0][chn]>>9);
-    }
+    }  
   }
 
   // Predict next bit
@@ -3170,7 +3170,7 @@ void indirectModel(Mixer& m) {
 //////////////////////////// dmcModel //////////////////////////
 
 // Model using DMC.  The bitwise context is represented by a state graph,
-// initilaized to a bytewise order 1 model as in
+// initilaized to a bytewise order 1 model as in 
 // http://plg.uwaterloo.ca/~ftp/dmc/dmc.c but with the following difference:
 // - It uses integer arithmetic.
 // - The threshold for cloning a state increases as memory is used up.
@@ -3297,7 +3297,7 @@ int contextModel2() {
        return m.p();
      }
   }
-  if (filetype==BMPFILE24 || filetype==TIFFFILE){
+  if (filetype==BMPFILE24 || filetype==TIFFFILE){ 
      int isbmp=bmpModel(m); // Image width (bytes) if BMP or TIFF detected, or 0
      if (isbmp>0) {
        static int col=0;
@@ -3312,11 +3312,11 @@ int contextModel2() {
   if (filetype==PGMFILE){
      if (pgmModel(m)>0) return m.p(); // Image width (bytes) if PGM (P5,PGM_MAXVAL = 255) detected, or 0
   }
-  if (filetype==BMPFILE8){
-     if (bmpModel8(m)>0) return m.p(); // Image width (bytes) if BMP8 detected, or 0
+  if (filetype==BMPFILE8){ 
+     if (bmpModel8(m)>0) return m.p(); // Image width (bytes) if BMP8 detected, or 0 
   }
-if (filetype==RGBFILE){
-     if (rgbModel8(m)>0) return m.p(); // Image width (bytes) if RGB8 detected, or 0
+if (filetype==RGBFILE){ 
+     if (rgbModel8(m)>0) return m.p(); // Image width (bytes) if RGB8 detected, or 0 
   }
   if (iswav>0) {
     int bits=iswav&0xff;
@@ -3343,7 +3343,7 @@ if (filetype==RGBFILE){
     cm.set(cxt[14]);
   }
   int order=cm.mix(m);
-
+  
   rcm7.mix(m);
   rcm9.mix(m);
   rcm10.mix(m);
@@ -3352,7 +3352,7 @@ if (filetype==RGBFILE){
     sparseModel(m,ismatch,order);
     distanceModel(m);
     picModel(m);
-    recordModel(m);
+    recordModel(m);  
     wordModel(m);
     indirectModel(m);
     dmcModel(m);
@@ -3372,9 +3372,9 @@ if (filetype==RGBFILE){
   m.set(c2, 256);
   m.set(c3, 256);
   m.set(ismatch, 256);
-
+  
   if(bpos)
-  {
+  {	
     c=c0<<(8-bpos); if(bpos==1)c+=c3/2;
     c=(min(bpos,5))*256+c1/32+8*(c2/32)+(c&192);
   }
@@ -3419,12 +3419,12 @@ void Predictor::update() {
   int pr0=contextModel2();
 
   pr=a.p(pr0, c0);
-
+  
   int pr1=a1.p(pr0, c0+256*buf(1));
   int pr2=a2.p(pr0, c0^hash(buf(1), buf(2))&0xffff);
   int pr3=a3.p(pr0, c0^hash(buf(1), buf(2), buf(3))&0xffff);
   pr0=pr0+pr1+pr2+pr3+2>>2;
-
+  
       pr1=a4.p(pr, c0+256*buf(1));
       pr2=a5.p(pr, c0^hash(buf(1), buf(2))&0xffff);
       pr3=a6.p(pr, c0^hash(buf(1), buf(2), buf(3))&0xffff);
@@ -3493,7 +3493,7 @@ public:
     assert(mode==COMPRESS);
     if (level==0)
       putc(c, archive);
-    else
+    else 
       for (int i=7; i>=0; --i)
         code((c>>i)&1);
   }
@@ -3515,7 +3515,7 @@ public:
   }
 };
 
-Encoder::Encoder(Mode m, FILE* f):
+Encoder::Encoder(Mode m, FILE* f): 
     mode(m), archive(f), x1(0), x2(0xffffffff), x(0), alt(0) {
   if (level>0 && mode==DECOMPRESS) {  // x = first 4 bytes of archive
     for (int i=0; i<4; ++i)
@@ -3615,7 +3615,7 @@ Filetype detect(FILE* in, int n, Filetype type) {
     if (!soi && i>=3 && (buf0&0xfffffff0)==0xffd8ffe0) soi=i, app=i+2;
     if (soi) {
         if (app==i && ((buf0&0xfff00000)==0xffe00000 || (buf0&0xffff0000)==0xfffe0000))
-          app=i+(buf0&0xffff)+2;
+          app=i+(buf0&0xffff)+2;    
         if (app<i && i-soi<0x10000 && (buf1&0xff)==0xff
             && (buf0&0xff0000ff)==0xc0000008)
           sof=i;
@@ -3630,7 +3630,7 @@ Filetype detect(FILE* in, int n, Filetype type) {
       return DEFAULT;
 
 	// Detect .bmp image
-
+    
     if ((buf0&0xFFFF)==16973) bmp=i;                //possible 'BM'
     if (bmp){
 		if ((i-bmp)==4) bsize=bswap(buf0);          //image size
@@ -3643,10 +3643,10 @@ Filetype detect(FILE* in, int n, Filetype type) {
 		if ((i-bmp)==24){
 			bmpy=bswap(buf0);                       //image y size
 			if (bmpy==0) bmp=imgbpp=bsize=0,imgcomp=-1;
-		}
+		}	
 		if ((i-bmp)==27) imgbpp=c;                  //image bpp
 		if ((i-bmp)==31){
-                         imgcomp=buf0;              //image compression 0=none, 1=RLE-8, 2=RLE-4
+                         imgcomp=buf0;              //image compression 0=none, 1=RLE-8, 2=RLE-4		
                          if (imgcomp!=0) bmp=imgbpp=bsize=0,imgcomp=-1;}
 		if ((type==BMPFILE4 || type==BMPFILE8 || type==BMPFILE24 ) && (imgbpp==4 || imgbpp==8 || imgbpp==24) && imgcomp==0){
             int tbsize=0;
@@ -3676,7 +3676,7 @@ Filetype detect(FILE* in, int n, Filetype type) {
 		if (!pgmcomment && c==0x20 && !pgmw && pgm_ptr) {
 			pgm_buf[pgm_ptr++]=0;
 			pgmw=atoi(pgm_buf);
-			if (pgmw==0) pgm=pgm_ptr=pgmw=pgmh=pgmc=pgmcomment=0;
+			if (pgmw==0) pgm=pgm_ptr=pgmw=pgmh=pgmc=pgmcomment=0;			
 			pgm_ptr=0;
 		}
 		if (!pgmcomment && c==0x0a && !pgmh && pgm_ptr){
@@ -3697,7 +3697,7 @@ Filetype detect(FILE* in, int n, Filetype type) {
 			pgmsize=pgmw *pgmh +pgm+i-1;
 			return fseek(in, start+pgmsize, SEEK_SET),DEFAULT;
 		}
-	if (pgmw && pgmh && pgmc){
+     	if (pgmw && pgmh && pgmc){
 		     return fseek(in, start+pgm-2, SEEK_SET),PGMFILE;
         }
     }
@@ -3710,32 +3710,32 @@ Filetype detect(FILE* in, int n, Filetype type) {
             else
 			    rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
 	    if ((i-rgbi)==2)
-		    if  (c==1 || c==2)
-			rgbBPC=c;
-		else
-			rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
-        if ((i-rgbi)==4)
-		if ((buf0&0xFFFF)==1 || (buf0&0xFFFF)==2 || (buf0&0xFFFF)==3)
-			rgbDIMENSION=buf0&0xFFFF;
+		    if  (c==1 || c==2) 
+    			rgbBPC=c;
+       		else
+      			rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
+        if ((i-rgbi)==4) 
+        	if ((buf0&0xFFFF)==1 || (buf0&0xFFFF)==2 || (buf0&0xFFFF)==3) 
+		    	rgbDIMENSION=buf0&0xFFFF;
 		    else
 			    rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
-	if ((i-rgbi)==6)
-		if ((buf0&0xFFFF)>0)
-			rgbXSIZE=buf0&0xFFFF;
+    	if ((i-rgbi)==6) 
+	    	if ((buf0&0xFFFF)>0) 
+		    	rgbXSIZE=buf0&0xFFFF;
 		    else
 			    rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
-	if ((i-rgbi)==8)
-		if ((buf0&0xFFFF)>0)
+    	if ((i-rgbi)==8) 
+		if ((buf0&0xFFFF)>0) 
 			rgbYSIZE=buf0&0xFFFF,rgbsize=rgbYSIZE*rgbXSIZE+512;
 		else
 			rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
-	if ((i-rgbi)==10)
-		if ((buf0&0xFFFF)==1 || (buf0&0xFFFF)==3 || (buf0&0xFFFF)==4)  // 1 indicates greyscale
-																	   // 3 indicates RGB
-																	   // 4 indicates RGB and Alpha
-			rgbZSIZE=buf0&0xFFFF;
-		else
-			rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
+    	if ((i-rgbi)==10) 
+	    	if ((buf0&0xFFFF)==1 || (buf0&0xFFFF)==3 || (buf0&0xFFFF)==4)  // 1 indicates greyscale
+		    															   // 3 indicates RGB
+			    														   // 4 indicates RGB and Alpha
+    			rgbZSIZE=buf0&0xFFFF;
+	    	else
+		    	rgbi=rgbBPC=rgbDIMENSION=rgbZSIZE=rgbXSIZE=rgbYSIZE=0,rgbSTORAGE=-1;
 		if (rgbsize != 0  && (i-rgbi)>0 && ((i-rgbi)>rgbsize)){
 			if (type==RGBFILE  && rgbZSIZE==1 && rgbSTORAGE==0 ){ //uncompressed greyscale
 				return fseek(in, start+rgbsize, SEEK_SET),DEFAULT;
@@ -3747,8 +3747,8 @@ Filetype detect(FILE* in, int n, Filetype type) {
     }
     //TIFF support needed
     // Detect .tiff file
-
-
+    
+    
     // Detect EXE if the low order byte (little-endian) XX is more
     // recently seen (and within 4K) if a relative to absolute address
     // conversion is done in the context CALL/JMP (E8/E9) XX xx xx 00/FF
@@ -3835,7 +3835,7 @@ void encode_exe(FILE* in, FILE* out, int len, int begin) {
   const int BLOCK=0x10000;
   Array<U8> blk(BLOCK);
   fprintf(out, "%c%c%c%c", len>>24, len>>16, len>>8, len); // size, MSB first
-  fprintf(out, "%c%c%c%c", begin>>24, begin>>16, begin>>8, begin);
+  fprintf(out, "%c%c%c%c", begin>>24, begin>>16, begin>>8, begin); 
 
   // Transform
   for (int offset=0; offset<len; offset+=BLOCK) {
@@ -4225,7 +4225,7 @@ int expand(String& archive, String& s, const char* fname, int base) {
 
 int expand(String& archive, String& s, const char* fname, int base) {
   return putsize(archive, s, fname, base);
-}
+}  
 
 #endif
 #endif
@@ -4309,7 +4309,7 @@ int paqmain(int argc, char** argv) {
         archiveName+=suffix;
       }
     }
-
+   
     // Compress: write archive header, get file names and sizes
     String filenames;
     if (mode==COMPRESS) {
@@ -4401,7 +4401,7 @@ int paqmain(int argc, char** argv) {
         *p++=0;
       }
     }
-
+        
     // Set globals according to option
     assert(level>=0 && level<=9);
     buf.setsize(MEM*8);
@@ -4486,7 +4486,7 @@ int main(int argc, char **argv)
 
   argc--;
   argv++;
-  while(argc && argv[0][0] == '-') {argc--; argv++;}
+  while(argc && argv[0][0] == '-') {argc--; argv++;}  
   String archiveName(argv[0]);
   archiveName += ".";
   archiveName += mybasename(deargv[0]);

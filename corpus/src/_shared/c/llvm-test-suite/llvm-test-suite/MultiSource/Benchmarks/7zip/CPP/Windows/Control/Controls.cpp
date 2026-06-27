@@ -15,10 +15,10 @@
 	#include "wx/wx.h"
 	#include "wx/imaglist.h"
 	#include "wx/listctrl.h"
-#endif
+#endif  
 
 #undef _WIN32
-
+ 
 #include "Windows/Control/Dialog.h"
 
 void verify_main_thread(void);
@@ -35,13 +35,13 @@ class LockGUI
 				printf("GuiEnter-Controls(0x%lx)\n",wxThread::GetCurrentId());
 				abort(); // FIXME wxMutexGuiEnter();
 			}
-		}
-		~LockGUI() {
+	       	}
+		~LockGUI() { 
 			if (!_IsMain) {
 				wxMutexGuiLeave();
 				// DEBUG printf("GuiLeave(0x%lx)\n",wxThread::GetCurrentId());
 			}
-		}
+	       	}
 };
 /////////////////////////
 
@@ -74,17 +74,17 @@ namespace NWindows {
 				LockGUI lock;
 				const wxChar * class_name = _window->GetClassInfo()->GetClassName ();
 				if ( CLASS_NAME_wxStaticText == class_name) {
-					str = ((wxStaticText *)_window)->GetLabel();
+	  				str = ((wxStaticText *)_window)->GetLabel();
 				} else if ( CLASS_NAME_wxTextCtrl == class_name) {
 					str = ((wxTextCtrl *)_window)->GetLabel();
 				} else {
-					// FIXME str = ((wxTextCtrl *)_window)->GetValue();
+	  				// FIXME str = ((wxTextCtrl *)_window)->GetValue();
 					printf("INTERNAL ERROR - CDialogChildControl::GetText(class=%ls) not implemented\n",class_name);
 					exit(-1);
 				}
 			}
-			s = str;
-			return true;
+	  		s = str;
+	  		return true;
 		}
 	}
 }
@@ -106,7 +106,7 @@ namespace NWindows {
 
 		CComboBox::operator HWND() const { return (HWND)_choice; }
 
-
+			
 			int CComboBox::AddString(const TCHAR * txt) {
 				LockGUI lock;
 				wxString item(txt);
@@ -127,7 +127,7 @@ namespace NWindows {
 
 			int CComboBox::GetCount() const  {
 				LockGUI lock;
-				return _choice->GetCount();
+			       	return _choice->GetCount();
 			}
 
 			void CComboBox::GetLBText(int index, CSysString &s) {
@@ -138,18 +138,18 @@ namespace NWindows {
 
 			void CComboBox::SetCurSel(int index) {
 				LockGUI lock;
-				_choice->SetSelection(index);
+			       	_choice->SetSelection(index);
 			}
 
 			int CComboBox::GetCurSel() {
 				LockGUI lock;
-				return _choice->GetSelection();
+			       	return _choice->GetSelection();
 			}
 
 			void CComboBox::SetItemData(int index, int val) {
 				LockGUI lock;
-				_choice->SetClientData( index, (void *)(((char *)0) + val));
-			}
+			       	_choice->SetClientData( index, (void *)(((char *)0) + val));
+		       	}
 
 			int CComboBox::GetItemData(int index)
 			{
@@ -161,13 +161,13 @@ namespace NWindows {
 
 			void CComboBox::Enable(bool state) {
 				LockGUI lock;
-				_choice->Enable(state);
+			       	_choice->Enable(state);
 			}
 
 			void CComboBox::ResetContent() {
 				LockGUI lock;
 			       _choice->Clear();
-			}
+		       	}
 	}
 }
 
@@ -181,8 +181,8 @@ namespace NWindows {
 		{
 				LockGUI lock;
 			long style = _window->GetWindowStyle();
-			if ( c == 0 ) style &= ~(wxTE_PASSWORD);
-			else          style |= wxTE_PASSWORD;
+			if ( c == 0 ) style &= ~(wxTE_PASSWORD);	
+			else          style |= wxTE_PASSWORD;		
 			_window->SetWindowStyle(style);
 			_window->Refresh();
 		}
@@ -206,12 +206,12 @@ namespace NWindows {
 			wxString str;
 			{
 				LockGUI lock;
-				str = ((wxTextCtrl *)_window)->GetValue();
+	  			str = ((wxTextCtrl *)_window)->GetValue();
 			}
-			s = str;
-			return true;
+	  		s = str;
+	  		return true;
 		}
-
+		
 	}
 }
 
@@ -222,9 +222,9 @@ namespace NWindows {
 	namespace NControl {
 
 		CProgressBar::CProgressBar(wxWindow* newWindow):
-			_window((wxGauge *)newWindow) , _minValue(0), _range(0) { }
+		       	_window((wxGauge *)newWindow) , _minValue(0), _range(0) { }
 
-	void CProgressBar::Attach(wxWindow* newWindow) {
+	void CProgressBar::Attach(wxWindow* newWindow) { 
 		_window = (wxGauge *)newWindow;
 		_minValue = 0;
 		_range = 0;
@@ -239,7 +239,7 @@ namespace NWindows {
 			_range    = range;
 			_window->SetRange(_range);
 		}
-	}
+  	}
 
 	void CProgressBar::SetPos(int pos) {
 		if (_range >= 1)
@@ -301,7 +301,7 @@ namespace NControl {
 		if (item->mask & LVIF_TEXT) text = item->pszText;
 
 		// printf("%p->InsertItem(id=%d,%ls)\n",_list,item->iItem, (const wchar_t *)text);
-		return _list->InsertItem(item->iItem, text);
+		return _list->InsertItem(item->iItem, text);        
 		*/
 		wxListItem info;
 		long mask = 0;
@@ -322,10 +322,10 @@ namespace NControl {
 			mask |= wxLIST_MASK_STATE;
 		}
 		// FIXME if (item->mask & LVIF_IMAGE)
-
+		
 		info.SetMask(mask);
 
-		return _list->InsertItem(info);
+		return _list->InsertItem(info);        
 	}
 
 	void CListView::SetItem(const LVITEM* item)  {
@@ -370,7 +370,7 @@ namespace NControl {
 		  printf("%p->DeleteAllItems()\n",_list);
 	  }
 
-	void CListView::SetRedraw(bool b) {
+	void CListView::SetRedraw(bool b) { 
 		if (b) _list->Thaw();
 		else   _list->Freeze();
 		printf(" %p->SetRedraw()\n",_list);
@@ -385,16 +385,16 @@ namespace NControl {
 		  printf("FIXME %p->InvalidateRect()\n",_list);/* FIXME */
 	  }
 
-	  int CListView::GetSelectedCount() const {
+	  int CListView::GetSelectedCount() const { 
 		  int nb = _list->GetSelectedItemCount();
 		  printf(" %p->GetSelectedCount()=>%d\n",_list,nb);
 		  return nb;
 	  }
 
 	void /* bool */ CListView::EnsureVisible(int index, bool partialOK) {
-
+	 	
 		printf(" %p->EnsureVisible(%d)\n",_list,index);
-
+		
 		if (index == -1) index = 0;
 		_list->EnsureVisible(index);
 
@@ -407,7 +407,7 @@ namespace NControl {
 		/*
 		wxListItem info;
 
-		info.m_mask   = wxLIST_MASK_STATE;
+		info.m_mask   = wxLIST_MASK_STATE; 
 		info.m_itemId = index;
 		info.m_col    = 0;
 		info.m_state  = state;
@@ -415,11 +415,11 @@ namespace NControl {
 
 		_list->SetItem(info);
 		*/
-
+	 	
 		printf(" %p->EnsureVisible(%d)\n",_list,index);
-
+		
 		if (index == -1) return;
-
+		
 		if (mask & LVIS_FOCUSED) {
 			_list->SetItemState(index, state & LVIS_FOCUSED, mask & LVIS_FOCUSED);
 		}
@@ -442,8 +442,8 @@ namespace NControl {
 		  printf("FIXME %p->Update()\n",_list); /* FIXME */
 	  }
 
-	  bool CListView::DeleteColumn(int columnIndex) {
-		  // printf("%p->DeleteColumn()\n",_list);
+	  bool CListView::DeleteColumn(int columnIndex) { 
+		  // printf("%p->DeleteColumn()\n",_list); 
 		  if (_list->GetColumnCount() < 1) return false;
 		  return _list->DeleteColumn(columnIndex); // always return true !?
 	  }
@@ -474,7 +474,7 @@ namespace NControl {
 
 	  void CListView::RedrawAllItems()
 	  {
-		printf("FIXME %p->RedrawAllItems()\n",_list);
+	  	printf("FIXME %p->RedrawAllItems()\n",_list);
 	  }
 
 	  // FIXME added
@@ -487,19 +487,19 @@ namespace NControl {
 
 	  void CListView::RedrawItem(int item) { /* FIXME */ }
 
-	bool CListView::SortItems(PFNLVCOMPARE compareFunction, LPARAM dataParam) {
-		printf(" %p->SortItems()\n",_list);
+	bool CListView::SortItems(PFNLVCOMPARE compareFunction, LPARAM dataParam) { 
+	  	printf(" %p->SortItems()\n",_list);
 		return _list->SortItems(compareFunction, dataParam);
 	}
 
 	bool CListView::GetColumn(int columnIndex, LVCOLUMN* columnInfo)
 	{
 		columnInfo->cx = _list->GetColumnWidth(columnIndex);// FIXME
-
+			
 		bool ret = false;
-
+		
 		if (columnInfo->cx >= 1) ret = true;
-
+			
 		// printf("CListView::GetColumn(%d) cx=%d\n",columnIndex,(int)columnInfo->cx);
 
 		return ret;
@@ -512,3 +512,4 @@ namespace NControl {
 	}
 
 }}
+

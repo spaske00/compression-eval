@@ -112,7 +112,7 @@ HRESULT CInArchive::Open(const UInt64 *searchHeaderSizeLimit, CDatabaseEx &db)
     if (ai.IsThereNext())
       ReadOtherArchive(ai.NextArc);
   }
-
+  
   int i;
   for (i = 0; i < ai.NumFolders; i++)
   {
@@ -126,7 +126,7 @@ HRESULT CInArchive::Open(const UInt64 *searchHeaderSizeLimit, CDatabaseEx &db)
     Skip(ai.PerFolderAreaSize);
     db.Folders.Add(folder);
   }
-
+  
   RINOK(stream->Seek(db.StartPosition + ai.FileHeadersOffset, STREAM_SEEK_SET, NULL));
 
   inBuffer.SetStream(stream);

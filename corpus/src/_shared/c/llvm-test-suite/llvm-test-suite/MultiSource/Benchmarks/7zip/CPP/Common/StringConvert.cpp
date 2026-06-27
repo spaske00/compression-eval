@@ -34,13 +34,13 @@ UString MultiByteToUnicodeString(const AString &srcString, UINT codePage)
        CFMutableStringRef cfpath2 = CFStringCreateMutableCopy(NULL,0,cfpath);
        CFRelease(cfpath);
        CFStringNormalize(cfpath2,kCFStringNormalizationFormC);
-
+    
        size_t n = CFStringGetLength(cfpath2);
        for(size_t i =   0 ; i< n ;i++) {
          resultString += CFStringGetCharacterAtIndex(cfpath2,i);
        }
 
-       CFRelease(cfpath2);
+       CFRelease(cfpath2);  
 
        return resultString;
     }
@@ -72,10 +72,10 @@ AString UnicodeStringToMultiByte(const UString &srcString, UINT codePage)
     CFMutableStringRef cfpath2 = CFStringCreateMutableCopy(NULL,0,cfpath);
     CFRelease(cfpath);
     CFStringNormalize(cfpath2,kCFStringNormalizationFormD);
-
+    
     CFStringGetCString(cfpath2,(char *)utf8,4096,kCFStringEncodingUTF8);
 
-    CFRelease(cfpath2);
+    CFRelease(cfpath2);  
 
     return AString(utf8);
   }
@@ -178,3 +178,4 @@ AString UnicodeStringToMultiByte(const UString &srcString, UINT /* codePage */ )
 }
 
 #endif /* LOCALE_IS_UTF8 */
+

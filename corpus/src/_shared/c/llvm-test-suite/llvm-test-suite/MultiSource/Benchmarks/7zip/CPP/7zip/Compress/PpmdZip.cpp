@@ -45,22 +45,22 @@ STDMETHODIMP CDecoder::Code(ISequentialInStream *inStream, ISequentialOutStream 
       buf[i] = _inStream.ReadByte();
     if (_inStream.Extra)
       return S_FALSE;
-
+    
     UInt32 val = GetUi16(buf);
     UInt32 order = (val & 0xF) + 1;
     UInt32 mem = ((val >> 4) & 0xFF) + 1;
     UInt32 restor = (val >> 12);
     if (order < 2 || restor > 2)
       return S_FALSE;
-
+    
     #ifndef PPMD8_FREEZE_SUPPORT
     if (restor == 2)
       return E_NOTIMPL;
     #endif
-
+    
     if (!Ppmd8_Alloc(&_ppmd, mem << 20, &g_BigAlloc))
       return E_OUTOFMEMORY;
-
+    
     if (!Ppmd8_RangeDec_Init(&_ppmd))
       return S_FALSE;
     Ppmd8_Init(&_ppmd, order, restor);

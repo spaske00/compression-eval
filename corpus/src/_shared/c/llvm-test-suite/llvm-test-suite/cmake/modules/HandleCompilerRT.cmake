@@ -10,7 +10,7 @@ function(find_compiler_rt_library variable)
 
   # If the C++ compiler is Clang, run it with -dumpmachine to find
   # the target triple
-  set(target "")
+  set(target "")  
   if(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
     execute_process(
       COMMAND "${clang_command}" ${cmd_prefix}-dumpmachine
@@ -20,7 +20,7 @@ function(find_compiler_rt_library variable)
     )
   endif()
 
-  # If target is set and COMPILER_RT_LIBRARY_builtins_${target}
+  # If target is set and COMPILER_RT_LIBRARY_builtins_${target} 
   # cache variable is not defined, then set it by invoking Clang for the target triple.
   if(NOT ${target} STREQUAL "" AND NOT DEFINED COMPILER_RT_LIBRARY_builtins_${target})
     list(APPEND clang_command "${cmd_prefix}--target=${target}")
@@ -48,3 +48,4 @@ function(find_compiler_rt_library variable)
     set(${variable} "" PARENT_SCOPE)
   endif()
 endfunction()
+

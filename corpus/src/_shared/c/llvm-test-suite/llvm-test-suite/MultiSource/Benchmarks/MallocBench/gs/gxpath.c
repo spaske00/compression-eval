@@ -220,7 +220,7 @@ int
 gx_path_add_pgram(gx_path *ppath,
   fixed x0, fixed y0, fixed x1, fixed y1, fixed x2, fixed y2)
 {	int code;
-	if (	(code = gx_path_add_point(ppath, x0, y0)) < 0 ||
+ 	if (	(code = gx_path_add_point(ppath, x0, y0)) < 0 ||
 		(code = gx_path_add_line(ppath, x1, y1)) < 0 ||
 		(code = gx_path_add_line(ppath, x2, y2)) < 0 ||
 		(code = gx_path_add_line(ppath, x0 + x2 - x1, y0 + y2 - y1)) < 0 ||

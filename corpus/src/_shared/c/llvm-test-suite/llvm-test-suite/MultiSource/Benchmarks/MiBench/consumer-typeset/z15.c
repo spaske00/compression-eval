@@ -393,7 +393,7 @@ OBJECT y, int dim, OBJECT *why)
     {
 
       case BACK:
-
+	
 	tbc = bc(yc) == MAX_FULL_LENGTH ? MAX_FULL_LENGTH : bc(yc) - backy;
 	tbfc = bfc(yc) == MAX_FULL_LENGTH ? MAX_FULL_LENGTH : bfc(yc) - backy - fwdy;
 	mxy = find_min(tbc, tbfc);
@@ -405,7 +405,7 @@ OBJECT y, int dim, OBJECT *why)
 
 
       case ON:
-
+	
 	tbc = bc(yc) == MAX_FULL_LENGTH ? MAX_FULL_LENGTH : bc(yc) - backy;
 	tbfc = bfc(yc) == MAX_FULL_LENGTH ? MAX_FULL_LENGTH : bfc(yc) - backy - fwdy;
 	tfc = fc(yc) == MAX_FULL_LENGTH ? MAX_FULL_LENGTH : fc(yc) - fwdy;
@@ -416,7 +416,7 @@ OBJECT y, int dim, OBJECT *why)
 	tf  = find_min(MAX_FULL_LENGTH, fe + myz);
 	SetConstraint(*xc, tb, tbf, tf);
 	break;
-
+	
 
       case FWD:
 
@@ -428,7 +428,7 @@ OBJECT y, int dim, OBJECT *why)
 	tf  = find_min(MAX_FULL_LENGTH, fe + mxy);
 	SetConstraint(*xc, tb, tbf, tf);
 	break;
-
+	
     }
   } /* end if( constrained ) */
   else SetConstraint(*xc, MAX_FULL_LENGTH, MAX_FULL_LENGTH, MAX_FULL_LENGTH);
@@ -502,7 +502,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
 
     case HSCALE:
     case VSCALE:
-
+    
       if( (dim == COLM) != (type(y) == HSCALE) )  Constrained(y, xc, dim, why);
       else SetConstraint(*xc, MAX_FULL_LENGTH, MAX_FULL_LENGTH, MAX_FULL_LENGTH);
       break;
@@ -510,7 +510,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
 
     case HCOVER:
     case VCOVER:
-
+    
       /* dubious, but not likely to arise anyway */
       if( (dim == COLM) != (type(y) == HCOVER) )  Constrained(y, xc, dim, why);
       else SetConstraint(*xc, MAX_FULL_LENGTH, MAX_FULL_LENGTH, MAX_FULL_LENGTH);
@@ -533,7 +533,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
 
 
     case ROTATE:
-
+    
       Constrained(y, &hc, COLM, why);  Constrained(y, &vc, ROWM, why);
       RotateConstraint(xc, x, sparec(constraint(y)), &hc, &vc, dim);
       break;
@@ -541,7 +541,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
 
     case WIDE:
     case HIGH:
-
+    
       Constrained(y, xc, dim, why);
       if( (type(y)==WIDE) == (dim==COLM) )
       { MinConstraint(xc, &constraint(y));
@@ -634,7 +634,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
 
 
     case HEAD:
-
+    
       if( dim == ROWM )
 	SetConstraint(*xc, MAX_FULL_LENGTH, MAX_FULL_LENGTH, MAX_FULL_LENGTH);
       else
@@ -662,7 +662,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
     case VCAT:
     case HCAT:
     case ACAT:
-
+    
       if( (type(y)==VCAT) == (dim==ROWM) )
       {	CatConstrained(x, xc, ratm, y, dim, why);
 	break;
@@ -714,7 +714,7 @@ void Constrained(OBJECT x, CONSTRAINT *xc, int dim, OBJECT *why)
 
 
     default:
-
+    
       assert1(FALSE, "Constrained:", Image(type(y)));
       break;
 
@@ -777,12 +777,12 @@ void DebugConstrained(OBJECT x)
     case START_VSPAN:
     case HSPAN:
     case VSPAN:
-
+    
       break;
 
 
     case CLOSURE:
-
+    
       Constrained(x, &c, COLM, &why);
       debug2(DSC, DD, "Constrained( %s, &c, COLM ) = %s",
 	EchoObject(x), EchoConstraint(&c));
@@ -793,7 +793,7 @@ void DebugConstrained(OBJECT x)
 
 
     case SPLIT:
-
+    
       link = DownDim(x, COLM);  Child(y, link);
       DebugConstrained(y);
       break;
@@ -815,7 +815,7 @@ void DebugConstrained(OBJECT x)
     case SCALE:
     case WIDE:
     case HIGH:
-
+    
       link = Down(x);  Child(y, link);
       DebugConstrained(y);
       break;
@@ -825,7 +825,7 @@ void DebugConstrained(OBJECT x)
     case VCAT:
     case HCAT:
     case ACAT:
-
+    
       for( link = Down(x);  link != x;  link =NextDown(link) )
       {	Child(y, link);
 	if( type(y) != GAP_OBJ && !is_index(type(y)) )  DebugConstrained(y);
@@ -834,7 +834,7 @@ void DebugConstrained(OBJECT x)
 
 
     default:
-
+    
       assert1(FALSE, "DebugConstrained:", Image(type(x)));
       break;
 

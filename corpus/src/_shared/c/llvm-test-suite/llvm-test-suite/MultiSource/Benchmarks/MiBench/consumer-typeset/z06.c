@@ -93,7 +93,7 @@ static void check_yield(OBJECT y, OBJECT *res_yield, BOOLEAN *all_literals)
 }
 
 OBJECT OptimizeCase(OBJECT x)
-{ OBJECT link, s2, y, res_yield, res;  BOOLEAN all_literals;
+{ OBJECT link, s2, y, res_yield, res;  BOOLEAN all_literals;  
   debug1(DOP, DD, "OptimizeCase(%s)", EchoObject(x));
   assert( type(x) == CASE, "OptimizeCase:  type(x) != CASE!" );
 
@@ -379,7 +379,7 @@ static BOOLEAN Reduce(void)
 
     case GSTUB_INT:
     case GSTUB_EXT:
-
+    
 	debug0(DGT, D, "calling TransferEnd( PopObj() ) from Reduce()");
 	TransferEnd( PopObj() );
 	New(p1, NULL_CLOS);
@@ -510,7 +510,7 @@ static BOOLEAN Reduce(void)
 
 
     case CLOSURE:
-
+    
 	if( has_rpar(actual(op)) )
 	{ New(s2, PAR);
 	  tmp = PopObj();
@@ -532,7 +532,7 @@ static BOOLEAN Reduce(void)
 
 
     case LBR:
-
+    
 	Error(6, 4, "unmatched %s (inserted %s)", WARN, &fpos(op),
 	  KW_LBR, KW_RBR);
 	Dispose(op);
@@ -541,13 +541,13 @@ static BOOLEAN Reduce(void)
 
 
     case BEGIN:
-
+    
 	assert1(FALSE, "Reduce: unmatched", KW_BEGIN);
 	break;
 
 
     case RBR:
-
+    
 	if( type(TokenTop) == LBR )
 	{ /* *** FposCopy(fpos(ObjTop), fpos(TokenTop)); *** */
 	  Dispose( PopToken() );
@@ -561,7 +561,7 @@ static BOOLEAN Reduce(void)
 	    Error(6, 6, "unmatched %s not enclosed in anything",
 	      FATAL, &fpos(op), KW_RBR);
 	}
-	else
+	else 
 	{ assert1(FALSE, "Reduce: unmatched", KW_RBR);
 	}
 	Dispose(op);
@@ -570,7 +570,7 @@ static BOOLEAN Reduce(void)
 
 
     case END:
-
+    
 	if( type(TokenTop) != BEGIN )
 	{ assert1(FALSE, "Reduce: unmatched", KW_END);
 	}
@@ -612,7 +612,7 @@ static BOOLEAN Reduce(void)
     case VCAT:
     case HCAT:
     case ACAT:
-
+    
 	p3 = PopObj();  p2 = PopObj();  p1 = PopObj();
 	if( type(p1) == type(op) )
 	{ Dispose(op);
@@ -645,7 +645,7 @@ static BOOLEAN Reduce(void)
 
 
     default:
-
+    
 	assert1(FALSE, "Reduce:", Image(type(op)));
 	break;
 
@@ -907,7 +907,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
   }
 
   for(;;)
-  {
+  { 
     debugcond0(DOP, DD, debug_now, "");
     ifdebugcond(DOP, DD, debug_now, DebugStacks(0, obj_prev));
     debugcond0(DOP, DD, debug_now, "");
@@ -917,7 +917,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
     {
 
       case WORD:
-
+      
 	if( string(t)[0] == CH_SYMSTART &&
 	  (obj_prev != PREV_OBJ || vspace(t) + hspace(t) > 0) )
 	{
@@ -935,7 +935,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case QWORD:
-
+      
 	ShiftObj(t, PREV_OBJ);
 	t = LexGetToken();
 	break;
@@ -944,7 +944,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
       case VCAT:
       case HCAT:
       case ACAT:
-
+      
 	/* clean up left context */
 	Shift(t, precedence(t), LEFT_ASSOC, TRUE, TRUE);
 
@@ -1061,7 +1061,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 	x = t;
 	Shift(t, precedence(t), RIGHT_ASSOC,
 	  has_lpar(actual(t)), has_rpar(actual(t)));
-
+	
 	/* check for opening brace or begin following, and shift it onto the stacks */
 	t = LexGetToken();
 	if( type(t) != BEGIN && type(t) != LBR )
@@ -1097,7 +1097,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case BEGIN:
-
+      
 	if( actual(t) == nilobj )
 	{ Error(6, 23, "%s replaced by %s", WARN, &fpos(t), KW_BEGIN, KW_LBR);
 	  type(t) = LBR;
@@ -1106,14 +1106,14 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case LBR:
-
+      
 	Shift(t, LBR_PREC, 0, FALSE, TRUE);
 	t = LexGetToken();
 	break;
 
 
       case END:
-
+      
 	if( actual(t) == nilobj )  /* haven't sought following symbol yet */
 	{ x = LexGetToken();
 	  if( type(x) == CLOSURE )
@@ -1150,11 +1150,11 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case RBR:
-
+      
 	Shift(t, precedence(t), 0, TRUE, FALSE);
 	t = LexGetToken();
 	break;
-
+				
 
       case USE:
       case NOT_REVEALED:
@@ -1162,14 +1162,14 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
       case SYS_PREPEND:
       case DATABASE:
       case SYS_DATABASE:
-
+      
 	Error(6, 26, "%s symbol out of place",
 	  FATAL, &fpos(t), SymName(actual(t)));
 	break;
 
 
       case ENV:
-
+      
 	/* only occurs in cross reference databases */
 	res = ParseEnvClosure(t, encl);
 	ShiftObj(res, PREV_OBJ);
@@ -1178,7 +1178,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case ENVA:
-
+      
 	/* only occurs in cross reference databases */
 	offset = LexNextTokenPos() -StringLength(KW_ENVA)-StringLength(KW_LBR)-1;
 	Dispose(t); t = LexGetToken();
@@ -1191,7 +1191,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case ENVB:
-
+      
 	/* only occurs in cross reference databases */
 	offset = LexNextTokenPos() -StringLength(KW_ENVB)-StringLength(KW_LBR)-1;
 	Dispose(t); t = LexGetToken();
@@ -1206,7 +1206,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case ENVC:
-
+      
 	/* only occurs in cross reference databases */
 	Dispose(t); t = LexGetToken();
 	New(res, ENV);
@@ -1215,7 +1215,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case ENVD:
-
+      
 	/* only occurs in cross reference databases */
 	Dispose(t); t = LexGetToken();
 	if( type(t) != QWORD ||
@@ -1236,7 +1236,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case CENV:
-
+      
 	/* only occurs in cross reference databases */
 	Dispose(t); t = LexGetToken();
 	env = Parse(&t, encl, FALSE, FALSE);
@@ -1276,7 +1276,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case LVIS:
-
+      
 	/* only occurs in cross-reference databases */
 	SuppressVisible();
 	Dispose(t);  t = LexGetToken();
@@ -1287,7 +1287,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       case CLOSURE:
-
+      
 	x = t;  xsym = actual(x);
 
 	/* look ahead one token, which could be an NPAR */
@@ -1325,7 +1325,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 	while( (type(t) == CLOSURE && enclosing(actual(t)) == xsym
 				       && type(actual(t)) == NPAR)
 	  || (type(t) == LBR && precedence(t) != LBR_PREC) )
-	{
+	{	
 	  OBJECT new_par;
 
 	  /* check syntax and attach the named parameter to x */
@@ -1431,7 +1431,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 	/* if x can be transferred, do so */
 	if( transfer_allowed && has_target(xsym) &&
 	    !has_key(xsym) && filter(xsym) == nilobj )
-	{
+	{   
 	  if( !has_rpar(xsym) || uses_count(ChildSym(xsym, RPAR)) <= 1 )
 	  {
 	    debug1(DGT, D, "examining transfer of %s", SymName(xsym));
@@ -1543,7 +1543,7 @@ BOOLEAN defs_allowed, BOOLEAN transfer_allowed)
 
 
       default:
-
+      
 	assert1(FALSE, "Parse:", Image(type(t)));
 	break;
 

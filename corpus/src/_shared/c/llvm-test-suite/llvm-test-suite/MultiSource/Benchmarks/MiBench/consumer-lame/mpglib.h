@@ -27,7 +27,7 @@ struct mpstr {
 	int bsnum;
 	real synth_buffs[2][2][0x110];
         int  synth_bo;
-
+	
 };
 
 
@@ -46,3 +46,4 @@ BOOL InitMP3(struct mpstr *mp);
 int decodeMP3(struct mpstr *mp,char *inmemory,int inmemsize,
      char *outmemory,int outmemsize,int *done);
 void ExitMP3(struct mpstr *mp);
+

@@ -25,11 +25,11 @@ precision pidiv(u, v)
    if (d >= BASE) {
       q = pnew(errorp(PDOMAIN, "pidiv", "divisor too big for single digit"));
       goto done;
-   }
+   } 
    if (d == 0) {
       q = pnew(errorp(PDOMAIN, "pidiv", "divide by zero"));
       goto done;
-   }
+   } 
    m = u->size;
    q = palloc(m);
    if (q == pUndef) goto done;

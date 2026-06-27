@@ -67,7 +67,7 @@ HRESULT CDecoder::CodeSpec(UInt32 outSize)
       UInt32 posSlot = posLenSlot / kNumLenSlots;
       UInt32 len = posLenSlot % kNumLenSlots;
       UInt32 distance = (1 << posSlot) - 1 + m_InBitStream.ReadBits(posSlot);
-
+      
       if (len == kNumLenSlots - 1)
       {
         len = m_InBitStream.DirectReadByte();
@@ -79,13 +79,13 @@ HRESULT CDecoder::CodeSpec(UInt32 outSize)
         else
           len += kNumLenSlots - 1;
       }
-
+      
       len += kMatchMinLen;
       UInt32 locLen = (len <= outSize ? len : outSize);
 
       if (!m_OutWindowStream.CopyBlock(distance, locLen))
         return S_FALSE;
-
+      
       len -= locLen;
       outSize -= locLen;
       if (len != 0)
@@ -161,14 +161,14 @@ HRESULT CUnpacker::Unpack(IInStream *inStream, const CResource &resource, bool l
   }
   RINOK(ReadStream_FALSE(inStream, (Byte *)sizesBuf, sizesBufSize));
   const Byte *p = (const Byte *)sizesBuf;
-
+  
   if (lzxMode && !lzxDecoder)
   {
     lzxDecoderSpec = new NCompress::NLzx::CDecoder(true);
     lzxDecoder = lzxDecoderSpec;
     RINOK(lzxDecoderSpec->SetParams(kChunkSizeBits));
   }
-
+  
   UInt64 baseOffset = resource.Offset + sizesBufSize64;
   UInt64 outProcessed = 0;
   for (UInt32 i = 0; i < (UInt32)numChunks; i++)
@@ -193,7 +193,7 @@ HRESULT CUnpacker::Unpack(IInStream *inStream, const CResource &resource, bool l
     {
       RINOK(progress->SetRatioInfo(&offset, &outProcessed));
     }
-
+    
     UInt32 outSize = kChunkSize;
     if (outProcessed + outSize > resource.UnpackSize)
       outSize = (UInt32)(resource.UnpackSize - outProcessed);
@@ -305,7 +305,7 @@ UString CDatabase::GetItemPath(const int index1) const
   }
   if ((UInt32)size >= ((UInt32)1 << 16))
     return kLongPath;
-
+  
   UString path;
   wchar_t *s = path.GetBuffer(size);
   s[size] = 0;
@@ -316,7 +316,7 @@ UString CDatabase::GetItemPath(const int index1) const
   }
 
   index = index1;
-
+  
   for (newLevel = 0;; newLevel = 1)
   {
     const CItem &item = Items[index];
@@ -359,7 +359,7 @@ HRESULT CDatabase::ParseDirItem(size_t pos, int parent)
 {
   if ((pos & 7) != 0)
     return S_FALSE;
-
+  
   int prevIndex = -1;
   for (int numItems = 0;; numItems++)
   {
@@ -413,7 +413,7 @@ HRESULT CDatabase::ParseDirItem(size_t pos, int parent)
       UInt32 fileNameLen2 = (fileNameLen == 0 ? fileNameLen : fileNameLen + 2);
       if (((extraOffset + 2 + fileNameLen2 + 6) & ~7) > len)
         return S_FALSE;
-
+      
       UString name;
       RINOK(ReadName(p + extraOffset + 2, fileNameLen, name));
 
@@ -482,7 +482,7 @@ HRESULT CDatabase::ParseDirItem(size_t pos, int parent)
     if (((dirRecordSize + fileNameLen2 + shortNameLen2 + 6) & ~7) > len)
       return S_FALSE;
     p += dirRecordSize;
-
+    
     RINOK(ReadName(p, fileNameLen, item.Name));
     RINOK(ReadName(p + fileNameLen2, shortNameLen, item.ShortName));
 
@@ -705,7 +705,7 @@ HRESULT CDatabase::Open(IInStream *inStream, const CHeader &h, CByteBuffer &xml,
           needBootMetadata = false;
     }
   }
-
+  
   if (needBootMetadata)
   {
     CByteBuffer metadata;
@@ -807,7 +807,7 @@ HRESULT CDatabase::Sort(bool skipRootDir)
       else
         sortedByHash.Sort(CompareHashRefs, &Streams);
     }
-
+    
     for (int i = 0; i < Items.Size(); i++)
     {
       CItem &item = Items[i];

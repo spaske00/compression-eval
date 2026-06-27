@@ -47,7 +47,7 @@ void putMyBits( u_int val, u_int len )
 
 /*
   III_format_bitstream()
-
+  
   This is called after a frame of audio has been quantized and coded.
   It will write the encoded audio to the bitstream. Note that
   from a layer3 encoder's perspective the bit stream is primarily
@@ -80,13 +80,13 @@ III_format_bitstream( lame_global_flags *gfp,
 
     if ( !PartHoldersInitialized )
     {
-	headerPH = BF_newPartHolder( 14 );
+	headerPH = BF_newPartHolder( 14 ); 
 	frameSIPH = BF_newPartHolder( 12 );
 
 	for ( ch = 0; ch < MAX_CHANNELS; ch++ )
 	    channelSIPH[ch] = BF_newPartHolder( 8 );
 
-	for ( gr = 0; gr < MAX_GRANULES; gr++ )
+	for ( gr = 0; gr < MAX_GRANULES; gr++ )	
 	    for ( ch = 0; ch < MAX_CHANNELS; ch++ )
 	    {
 		spectrumSIPH[gr][ch]   = BF_newPartHolder( 32 );
@@ -167,7 +167,7 @@ encodeMainData( lame_global_flags *gfp,
 	{
 	    for ( ch = 0; ch < gfp->stereo; ch++ )
 	    {
-		BF_PartHolder **pph = &scaleFactorsPH[gr][ch];
+		BF_PartHolder **pph = &scaleFactorsPH[gr][ch];		
 		gr_info *gi = &(si->gr[gr].ch[ch].tt);
 		unsigned slen1 = slen1_tab[ gi->scalefac_compress ];
 		unsigned slen2 = slen2_tab[ gi->scalefac_compress ];
@@ -229,7 +229,7 @@ encodeMainData( lame_global_flags *gfp,
 	gr = 0;
 	for ( ch = 0; ch < gfp->stereo; ch++ )
 	{
-	    BF_PartHolder **pph = &scaleFactorsPH[gr][ch];
+	    BF_PartHolder **pph = &scaleFactorsPH[gr][ch];		
 	    gr_info *gi = &(si->gr[gr].ch[ch].tt);
 	    int *ix = &l3_enc[gr][ch][0];
 	    int sfb_partition;
@@ -290,13 +290,13 @@ static unsigned int crc = 0; /* (jo) current crc */
 static BF_PartHolder *CRC_BF_addEntry( BF_PartHolder *thePH, u_int value, u_int length )
 {
    u_int bit = 1 << length;
-
+   
    while((bit >>= 1)){
       crc <<= 1;
       if (!(crc & 0x10000) ^ !(value & bit))
 	crc ^= CRC16_POLYNOMIAL;
    }
-   crc &= 0xffff;
+   crc &= 0xffff;   
    return BF_addEntry(thePH, value, length);
 }
 
@@ -306,7 +306,7 @@ static BF_PartHolder *CRC_BF_addEntry( BF_PartHolder *thePH, u_int value, u_int 
 static int encodeSideInfo( lame_global_flags *gfp,III_side_info_t  *si )
 {
     int gr, ch, scfsi_band, region, window, bits_sent;
-
+    
     crc = 0xffff; /* (jo) init crc16 for error_protection */
 
     headerPH->part->nrEntries = 0;
@@ -324,9 +324,9 @@ static int encodeSideInfo( lame_global_flags *gfp,III_side_info_t  *si )
     headerPH = CRC_BF_addEntry( headerPH, gfp->copyright,          1 );
     headerPH = CRC_BF_addEntry( headerPH, gfp->original,           1 );
     headerPH = CRC_BF_addEntry( headerPH, gfp->emphasis,           2 );
-
+    
     bits_sent = 32;
-
+   
     /* (jo) see below for BF_addEntry( headerPH, crc, 16 ); */
 
     frameSIPH->part->nrEntries = 0;
@@ -346,7 +346,7 @@ static int encodeSideInfo( lame_global_flags *gfp,III_side_info_t  *si )
 	    frameSIPH = CRC_BF_addEntry( frameSIPH, si->private_bits, 3 );
 	else
 	    frameSIPH = CRC_BF_addEntry( frameSIPH, si->private_bits, 5 );
-
+	
 	for ( ch = 0; ch < gfp->stereo; ch++ )
 	    for ( scfsi_band = 0; scfsi_band < 4; scfsi_band++ )
 	    {
@@ -366,7 +366,7 @@ static int encodeSideInfo( lame_global_flags *gfp,III_side_info_t  *si )
 		*pph = CRC_BF_addEntry( *pph, gi->window_switching_flag, 1 );
 
 		if ( gi->window_switching_flag )
-		{
+		{   
 		    *pph = CRC_BF_addEntry( *pph, gi->block_type,       2 );
 		    *pph = CRC_BF_addEntry( *pph, gi->mixed_block_flag, 1 );
 
@@ -403,7 +403,7 @@ static int encodeSideInfo( lame_global_flags *gfp,III_side_info_t  *si )
 	    frameSIPH = CRC_BF_addEntry( frameSIPH, si->private_bits, 2 );
 	else
 	    frameSIPH = CRC_BF_addEntry( frameSIPH, si->private_bits, 1 );
-
+	
 	gr = 0;
 	for ( ch = 0; ch < gfp->stereo; ch++ )
 	{
@@ -416,7 +416,7 @@ static int encodeSideInfo( lame_global_flags *gfp,III_side_info_t  *si )
 	    *pph = CRC_BF_addEntry( *pph, gi->window_switching_flag, 1 );
 
 	    if ( gi->window_switching_flag )
-	    {
+	    {   
 		*pph = CRC_BF_addEntry( *pph, gi->block_type,       2 );
 		*pph = CRC_BF_addEntry( *pph, gi->mixed_block_flag, 1 );
 
@@ -470,7 +470,7 @@ drain_into_ancillary_data( int lengthInBits )
     /*
       userFrameDataPH->part->nrEntries set by call to write_ancillary_data()
     */
-
+    
     userFrameDataPH->part->nrEntries = 0;
     for ( i = 0; i < wordsToSend; i++ )
 	userFrameDataPH = BF_addEntry( userFrameDataPH, 0, 32 );
@@ -498,7 +498,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 #endif
     int bitsWritten = 0;
 
-
+    
     /* 1: Write the bigvalues */
     bigvalues = gi->big_values * 2;
     if ( bigvalues )
@@ -514,7 +514,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 	    int sfb, window, line, start, end;
 
 	    I192_3 *ix_s;
-
+	    
 	    ix_s = (I192_3 *) ix;
 	    region1Start = 12;
 	    region2Start = 576;
@@ -541,7 +541,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 			*pph = BF_addEntry( *pph,  ext, xbits );
 			bitsWritten += bits;
 		    }
-
+		
 	    }
 	}
 	else
@@ -551,7 +551,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 		int sfb, window, line, start, end;
 		unsigned tableindex;
 		I192_3 *ix_s;
-
+		
 		ix_s = (I192_3 *) ix;
 
 		/* Write the long block region */
@@ -565,7 +565,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 			*pph = BF_addEntry( *pph,  code, cbits );
 			*pph = BF_addEntry( *pph,  ext, xbits );
 			bitsWritten += bits;
-
+			
 		    }
 		/* Write the short block region */
 		tableindex = gi->table_select[ 1 ];
@@ -574,8 +574,8 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 		for ( sfb = 3; sfb < 13; sfb++ )
 		{
 		    start = scalefac_band.s[ sfb ];
-		    end   = scalefac_band.s[ sfb+1 ];
-
+		    end   = scalefac_band.s[ sfb+1 ];           
+		    
 		    for ( window = 0; window < 3; window++ )
 			for ( line = start; line < end; line += 2 )
 			{
@@ -593,7 +593,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 #endif
 	    { /* Long blocks */
 		unsigned scalefac_index = 100;
-
+		
 		if ( gi->mixed_block_flag )
 		{
 		    region1Start = 36;
@@ -605,7 +605,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 		    assert( scalefac_index < 23 );
 		    region1Start = scalefac_band.l[ scalefac_index ];
 		    scalefac_index += gi->region1_count + 1;
-		    assert( scalefac_index < 23 );
+		    assert( scalefac_index < 23 );    
 		    region2Start = scalefac_band.l[ scalefac_index ];
 		}
 
@@ -642,7 +642,7 @@ Huffmancodebits( BF_PartHolder **pph, int *ix, gr_info *gi )
 	    }
     }
 #ifdef DEBUG
-    bvbits = bitsWritten;
+    bvbits = bitsWritten; 
 #endif
 
     /* 2: Write count1 area */
@@ -703,14 +703,14 @@ L3_huffman_coder_count1( BF_PartHolder **pph, struct huffcodetab *h, int v, int 
     unsigned int signv, signw, signx, signy, p;
     int len;
     int totalBits = 0;
-
+    
     signv = abs_and_sign( &v );
     signw = abs_and_sign( &w );
     signx = abs_and_sign( &x );
     signy = abs_and_sign( &y );
-
+    
     /* bug fix from Leonid A. Kulakov 9/1999:*/
-    p = (v << 3) + (w << 2) + (x << 1) + y;
+    p = (v << 3) + (w << 2) + (x << 1) + y;  
 
     huffbits = h->table[p];
     len = h->hlen[ p ];
@@ -738,7 +738,7 @@ L3_huffman_coder_count1( BF_PartHolder **pph, struct huffcodetab *h, int v, int 
 	*pph = BF_addEntry( *pph,  signy, 1 );
 	totalBits += 1;
     }
-#endif
+#endif   
 
     p=0;
     if ( v ) {
@@ -763,7 +763,7 @@ L3_huffman_coder_count1( BF_PartHolder **pph, struct huffcodetab *h, int v, int 
 
     *pph = BF_addEntry(*pph, p, totalBits);
 
-    return totalBits+len;
+    return totalBits+len;  
 }
 
 /*
@@ -779,10 +779,10 @@ HuffmanCode( int table_select, int x, int y, unsigned int *code, unsigned int *e
     *xbits = 0;
     *code  = 0;
     *ext   = 0;
-
+    
     if ( table_select == 0 )
 	return 0;
-
+    
     signx = abs_and_sign( &x );
     signy = abs_and_sign( &y );
     h = &(ht[table_select]);

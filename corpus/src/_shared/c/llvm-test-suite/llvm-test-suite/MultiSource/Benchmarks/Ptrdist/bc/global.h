@@ -23,7 +23,7 @@
                 Computer Science Department, 9062
                 Western Washington University
                 Bellingham, WA 98226-9062
-
+       
 *************************************************************************/
 
 /* For the current "break level" and if statements. */
@@ -104,3 +104,4 @@ extern bc_num _one_;
 
 /* For use with getopt.  Do not declare them here.*/
 extern int optind;
+

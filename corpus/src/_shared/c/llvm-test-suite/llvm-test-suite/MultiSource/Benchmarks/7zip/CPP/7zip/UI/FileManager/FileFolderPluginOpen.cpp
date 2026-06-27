@@ -38,7 +38,7 @@ struct CThreadArchiveOpen
     }
     catch(...) { Result = E_FAIL; }
   }
-
+  
   static THREAD_FUNC_DECL MyThreadFunction(void *param)
   {
     ((CThreadArchiveOpen *)param)->Process();
@@ -166,7 +166,7 @@ HRESULT OpenFileFolderPlugin(
       *resultFolder = t.Folder.Detach();
       return S_OK;
     }
-
+    
     if (t.Result != S_FALSE)
       return t.Result;
 #ifdef _WIN32

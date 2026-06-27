@@ -121,7 +121,7 @@ HRESULT CPanel::OpenItemAsArchive(IInStream *inStream,
       folderLink.FilePath.IsEmpty() ? virtualFilePath : folderLink.FilePath,
       arcFormat,
       &library, &newFolder, GetParent(), encrypted, password));
-
+ 
   folderLink.Password = password;
   folderLink.UsePassword = encrypted;
 
@@ -242,7 +242,7 @@ static const wchar_t *kStartExtensions[] =
   L"dwf",
 
   L"flv", L"swf",
-
+  
   L"odt", L"ods",
   L"wb3",
   L"pdf"
@@ -300,7 +300,7 @@ static HANDLE StartEditApplication(const UString &path, HWND window)
     startupInfo.dwFlags = 0;
     startupInfo.cbReserved2 = 0;
     startupInfo.lpReserved2 = 0;
-
+    
     result = ::CreateProcessA(NULL, (CHAR *)(const CHAR *)GetSystemString(command),
       NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInformation);
   }
@@ -315,7 +315,7 @@ static HANDLE StartEditApplication(const UString &path, HWND window)
     startupInfo.dwFlags = 0;
     startupInfo.cbReserved2 = 0;
     startupInfo.lpReserved2 = 0;
-
+    
     result = ::CreateProcessW(NULL, (WCHAR *)(const WCHAR *)command,
       NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInformation);
   }
@@ -338,7 +338,7 @@ static HANDLE StartEditApplication(const UString &path, HWND window)
 void CApp::DiffFiles()
 {
   const CPanel &panel = GetFocusedPanel();
-
+  
   CRecordVector<UInt32> indices;
   panel.GetSelectedItemsIndices(indices);
 
@@ -420,9 +420,9 @@ static HANDLE StartApplication(const UString &path, HWND window)
         long pid = wxExecute(cmd, wxEXEC_ASYNC);
         if (pid) return 0;
       }
-    }
+    }	   
   }
-  ::MessageBoxW(window,
+  ::MessageBoxW(window, 
           // NError::MyFormatMessageW(::GetLastError()),
           L"There is no application associated with the given file name extension",
           L"7-Zip", MB_OK | MB_ICONSTOP);
@@ -496,7 +496,7 @@ public:
   CMyComPtr<IProgress> UpdateCallback;
   CUpdateCallback100Imp *UpdateCallbackSpec;
 };
-
+  
 HRESULT CThreadCopyFrom::ProcessVirt()
 {
   UStringVector fileNames;
@@ -505,7 +505,7 @@ HRESULT CThreadCopyFrom::ProcessVirt()
   fileNamePointers.Add(fileNames[0]);
   return FolderOperations->CopyFrom(PathPrefix, &fileNamePointers.Front(), fileNamePointers.Size(), UpdateCallback);
 };
-
+      
 HRESULT CPanel::OnOpenItemChanged(const UString &folderPath, const UString &itemName,
     bool usePassword, const UString &password)
 {

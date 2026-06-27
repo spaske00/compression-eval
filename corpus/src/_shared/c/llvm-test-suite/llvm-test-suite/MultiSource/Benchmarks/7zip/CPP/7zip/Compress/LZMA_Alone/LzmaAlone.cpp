@@ -320,7 +320,7 @@ int main2(int n, const char *args[])
       if (inBuffer == 0)
         throw kCantAllocate;
     }
-
+    
     if (ReadStream_FAIL(inStream, inBuffer, inSize) != S_OK)
       throw "Can not read";
 
@@ -392,7 +392,7 @@ int main2(int n, const char *args[])
     bool mcDefined = false;
 
     bool eos = parser[NKey::kEOS].ThereIs || stdInMode;
-
+ 
     ParseUInt32(parser, NKey::kAlgo, algo);
     ParseUInt32(parser, NKey::kFb, fb);
     ParseUInt32(parser, NKey::kLc, lc);
@@ -403,7 +403,7 @@ int main2(int n, const char *args[])
     if (mcDefined)
       if (!GetNumber(parser[NKey::kMc].PostStrings[0], mc))
         IncorrectCommand();
-
+    
     PROPID propIDs[] =
     {
       NCoderPropID::kDictionarySize,

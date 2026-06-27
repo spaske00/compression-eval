@@ -49,10 +49,10 @@ typedef struct demand {
 
 typedef struct root {
   Demand D;
-  double theta_R;
-  double theta_I;
+  double theta_R; 
+  double theta_I; 
   Demand last;
-  double last_theta_R;
+  double last_theta_R; 
   double last_theta_I;
   struct lateral *feeders[NUM_FEEDERS];
 } *Root;  /* sizeof(struct root) = 108 bytes */
@@ -95,3 +95,4 @@ Demand Compute_Lateral(Lateral l, double theta_R, double theta_I,
 Demand Compute_Branch(Branch b, double theta_R, double theta_I,
                        double pi_R, double pi_I);
 Demand Compute_Leaf(Leaf l, double pi_R, double pi_I);
+

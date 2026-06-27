@@ -50,7 +50,7 @@ public:
     CompressingInfoTemp.Init();
     CompressingInfo.Init();
     ProcessedSize = 0;
-
+    
     DecompressingInfoTemp.Init();
     DecompressingInfo.Init();
 

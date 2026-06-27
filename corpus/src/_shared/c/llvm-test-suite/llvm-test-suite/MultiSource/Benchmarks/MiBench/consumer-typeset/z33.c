@@ -283,7 +283,7 @@ BOOLEAN check)
 
   /* if required, check that (sym, tag) not already inserted */
   if( check )
-  {
+  { 
     debug2(DBS, DD, "  checking %s&&%s, DbCheckTable =", SymName(sym), tag);
     if( !DbCheckTableInit )
     { DbCheckTable = dtab_new(INIT_DBCHECK_NUM);

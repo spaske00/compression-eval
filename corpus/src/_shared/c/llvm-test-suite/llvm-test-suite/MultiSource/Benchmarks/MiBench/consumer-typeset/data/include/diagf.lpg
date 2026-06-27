@@ -250,7 +250,7 @@ ldiagdict begin
 % shape and labels of the @CurveBox symbol
 % <margin> ldiagcurvebox <shape>
 /ldiagcurvebox
-{
+{  
 
    % (Entering ldiagcurvebox) 1 ldiagdebugprint
    ldiagdecodelength /cbmgn exch def
@@ -298,9 +298,9 @@ ldiagdict begin
 % its shape and labels are done, somewhat inaccurately, with ldiagbox
 % <shadowmargin> ldiagshadow -
 /ldiagshadow
-{
+{ 
   /lfshm exch def
-
+  
   lfshm 0 moveto
   0 lfshm neg rlineto
   xsize 0 rlineto
@@ -626,7 +626,7 @@ ldiagdict begin
 } def
 
 % ldiagsetpath: convert a Diag path into a PostScript path
-% [ shape ] ldiagsetpath
+% [ shape ] ldiagsetpath 
 /ldiagsetpath
 {
   10 dict begin
@@ -683,7 +683,7 @@ ldiagdict begin
 
 % stroke a path of the given shape in the given linestyle and dash length.
 % Return the origin and angle of the backward and forward arrow heads.
-% dashlength /linestyle [shape] ldiagdopath  [<point> <angle>] [<point> <angle>]
+% dashlength /linestyle [shape] ldiagdopath  [<point> <angle>] [<point> <angle>] 
 /ldiagdopath
 {
   10 dict begin
@@ -813,7 +813,7 @@ ldiagdict begin
 % ldiagnodebegin -
 /ldiagnodebegin
 { % (Entering ldiagnodebegin) 0 ldiagdebugprint
-  ldiagmaxlabels dict begin
+  ldiagmaxlabels dict begin 
 } def
 
 % ldiagnodeend: end of node parameters (so do the node)
@@ -832,7 +832,7 @@ ldiagdict begin
 % ldiaglinkbegin: start of link parameters
 % <direct> ldiaglinkbegin -
 /ldiaglinkbegin
-{ ldiagmaxlabels dict begin
+{ ldiagmaxlabels dict begin 
   1 eq /direct exch def
 } def
 
@@ -1009,7 +1009,7 @@ ldiagdict begin
     {
       (CIRCUM) search % if CIRCUM in key
       { pop pop pop pop pop }
-      {
+      { 
         (ANGLE) search % if ANGLE in key
         {
           pop pop pop pop pop
@@ -1042,7 +1042,7 @@ ldiagdict begin
     {
       (CIRCUM) search % if CIRCUM in key
       { pop pop pop pop pop }
-      {
+      { 
         (ANGLE) search % if ANGLE in key
         {
           pop pop pop pop pop
@@ -1085,7 +1085,7 @@ ldiagdict begin
       {
         (CIRCUM) search % if CIRCUM in key
         { pop pop pop pop pop }
-        {
+        { 
           (@ANGLE) search % if ANGLE in key, draw the angle at the point
           {
             % (showing ANGLE) 5 ldiagdebugprint
@@ -1345,8 +1345,8 @@ ldiagdict begin
     y2 y1 sub /y21 exch def
     y4 y3 sub /y43 exch def
     y21 x43 mul y43 x21 mul sub /det exch def
-
-    % calculate x
+  
+    % calculate x 
     y21 x43 mul x1 mul
     y43 x21 mul x3 mul sub
     y3 y1 sub x21 mul x43 mul add
@@ -1408,7 +1408,7 @@ ldiagdict begin
 
     % if sin(theta) = 0 then line is horizontal and y must be y1
     theta sin abs 0.00001 lt
-    {
+    { 
       /a 1 def
       /b -2 x0 mul def
       /c x0 dup mul y1 y0 sub dup mul add r dup mul sub def
@@ -1682,7 +1682,7 @@ ldiagdict begin
   /fromarrowlength exch def
 
   from (CTR) ldiagdolabel to (CTR) ldiagdolabel ldiagangleto
-  /FROM@ANGLE ldiagangledef
+  /FROM@ANGLE ldiagangledef 
   from (CTR) ldiagdolabel FROM@ANGLE from (CIRCUM) ldiagdolabel ldiagpadd
   0 0 fromarrowlength FROM@ANGLE ldiagatangle ldiagpadd
   /FROM ldiagpointdef
@@ -1720,7 +1720,7 @@ ldiagdict begin
   /fromarrowlength exch def
 
   from (CTR) ldiagdolabel to (CTR) ldiagdolabel ldiagangleto
-  /FROM@ANGLE ldiagangledef
+  /FROM@ANGLE ldiagangledef 
   from (CTR) ldiagdolabel FROM@ANGLE from (CIRCUM) ldiagdolabel ldiagpadd
   0 0 fromarrowlength FROM@ANGLE ldiagatangle ldiagpadd
   /FROM ldiagpointdef

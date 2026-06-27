@@ -1,5 +1,5 @@
 
-add_definitions( -DLANG -DEXTERNAL_LZMA -DEXTERNAL_CODECS -DBENCH_MT )
+add_definitions( -DLANG -DEXTERNAL_LZMA -DEXTERNAL_CODECS -DBENCH_MT )  
 
 IF(APPLE)
   add_definitions(-DENV_MACOSX  -D__WXMAC__)
@@ -17,7 +17,7 @@ include_directories(
 	../../../
 	../../../include_windows
 )
-
+   
 
 
 
@@ -116,7 +116,7 @@ add_executable(7zG
  ../../../../C/Threads.c
   ../../../../C/7zCrc.c
  ../../../../C/7zCrcOpt.c
-
+ 
  )
 
 
@@ -127,3 +127,5 @@ IF(HAVE_PTHREADS)
 
  ${CMAKE_THREAD_LIBS_INIT})
 ENDIF(HAVE_PTHREADS)
+
+

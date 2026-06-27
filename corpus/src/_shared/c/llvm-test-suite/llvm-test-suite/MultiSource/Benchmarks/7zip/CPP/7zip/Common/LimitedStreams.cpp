@@ -95,7 +95,7 @@ STDMETHODIMP CClusterInStream::Read(void *data, UInt32 size, UInt32 *processedSi
   _curRem -= size;
   return res;
 }
-
+ 
 STDMETHODIMP CClusterInStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPosition)
 {
   UInt64 newVirtPos = offset;

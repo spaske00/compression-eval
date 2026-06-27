@@ -61,16 +61,16 @@ int CDECL ntbl_bitcount(long int x)
 int CDECL BW_btbl_bitcount(long int x)
 {
       int xi = (int) x;
-      union
-      {
-            unsigned char ch[4];
-            int y;
-      } U;
-
-      U.y = xi;
-
-      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
-             bits[ U.ch[3] ] + bits[ U.ch[2] ];
+      union 
+      { 
+            unsigned char ch[4]; 
+            int y; 
+      } U; 
+ 
+      U.y = xi; 
+ 
+      return bits[ U.ch[0] ] + bits[ U.ch[1] ] + 
+             bits[ U.ch[3] ] + bits[ U.ch[2] ]; 
 }
 
 /*

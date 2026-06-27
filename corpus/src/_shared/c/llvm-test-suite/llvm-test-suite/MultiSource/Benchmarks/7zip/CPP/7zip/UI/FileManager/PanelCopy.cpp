@@ -27,7 +27,7 @@ public:
 
   CPanelCopyThread(): MoveMode(false), Result(E_FAIL) {}
 };
-
+  
 HRESULT CPanelCopyThread::ProcessVirt()
 {
   if (MoveMode)
@@ -56,21 +56,21 @@ HRESULT CPanel::CopyTo(const CRecordVector<UInt32> &indices, const UString &fold
   {
   CPanelCopyThread extracter;
 
-
+  
   extracter.ExtractCallbackSpec = new CExtractCallbackImp;
   extracter.ExtractCallback = extracter.ExtractCallbackSpec;
   extracter.ExtractCallbackSpec->ProgressDialog = &extracter.ProgressDialog;
   extracter.ProgressDialog.CompressingMode = false;
-
+  
   UString title = moveMode ?
       LangString(IDS_MOVING, 0x03020206):
       LangString(IDS_COPYING, 0x03020205);
   UString progressWindowTitle = LangString(IDS_APP_TITLE, 0x03000000);
-
+  
   extracter.ProgressDialog.MainWindow = GetParent();
   extracter.ProgressDialog.MainTitle = progressWindowTitle;
   extracter.ProgressDialog.MainAddTitle = title + L" ";
-
+    
   extracter.ExtractCallbackSpec->OverwriteMode = NExtract::NOverwriteMode::kAskBefore;
   extracter.ExtractCallbackSpec->Init();
   extracter.Indices = indices;
@@ -80,9 +80,9 @@ HRESULT CPanel::CopyTo(const CRecordVector<UInt32> &indices, const UString &fold
 
   extracter.ExtractCallbackSpec->PasswordIsDefined = usePassword;
   extracter.ExtractCallbackSpec->Password = password;
-
+  
   RINOK(extracter.Create(title, GetParent()));
-
+  
   if (messages != 0)
     *messages = extracter.ProgressDialog.Sync.Messages;
   res = extracter.Result;
@@ -108,7 +108,7 @@ struct CThreadUpdate
   CMyComPtr<IFolderArchiveUpdateCallback> UpdateCallback;
   CUpdateCallback100Imp *UpdateCallbackSpec;
   HRESULT Result;
-
+  
   void Process()
   {
     try
@@ -151,7 +151,7 @@ HRESULT CPanel::CopyFrom(const UString &folderPrefix, const UStringVector &fileP
   updater.ProgressDialog.MainWindow = GetParent();
   updater.ProgressDialog.MainTitle = progressWindowTitle;
   updater.ProgressDialog.MainAddTitle = title + UString(L" ");
-
+  
   updater.UpdateCallbackSpec->Init(false, L"");
   updater.FolderOperations = folderOperations;
   updater.FolderPrefix = folderPrefix;
@@ -166,7 +166,7 @@ HRESULT CPanel::CopyFrom(const UString &folderPrefix, const UStringVector &fileP
   NWindows::CThread thread;
   RINOK(thread.Create(CThreadUpdate::MyThreadFunction, &updater));
   updater.ProgressDialog.Create(title, thread, GetParent());
-
+  
   if (messages != 0)
     *messages = updater.ProgressDialog.Sync.Messages;
 

@@ -277,7 +277,7 @@ void COutArchive::WriteFolder(const CFolder &folder)
     const CCoderInfo &coder = folder.Coders[i];
     {
       size_t propsSize = coder.Props.GetCapacity();
-
+      
       UInt64 id = coder.MethodID;
       int idSize;
       for (idSize = 1; idSize < sizeof(id); idSize++)
@@ -379,7 +379,7 @@ void COutArchive::WritePackInfo(
     WriteNumber(packSizes[i]);
 
   WriteHashDigests(packCRCsDefined, packCRCs);
-
+  
   WriteByte(NID::kEnd);
 }
 
@@ -397,7 +397,7 @@ void COutArchive::WriteUnpackInfo(const CObjectVector<CFolder> &folders)
     for (int i = 0; i < folders.Size(); i++)
       WriteFolder(folders[i]);
   }
-
+  
   WriteByte(NID::kCodersUnpackSize);
   int i;
   for (i = 0; i < folders.Size(); i++)
@@ -440,7 +440,7 @@ void COutArchive::WriteSubStreamsInfo(
       break;
     }
   }
-
+ 
 
   bool needFlag = true;
   CNum index = 0;
@@ -535,7 +535,7 @@ void COutArchive::WriteUInt64DefVector(const CUInt64DefVector &v, Byte type)
     return;
 
   WriteAlignedBoolHeader(v.Defined, numDefined, type, 8);
-
+  
   for (i = 0; i < v.Defined.Size(); i++)
     if (v.Defined[i])
       WriteUInt64(v.Values[i]);
@@ -566,7 +566,7 @@ void COutArchive::WriteHeader(
     UInt64 &headerOffset)
 {
   int i;
-
+  
   UInt64 packedSize = 0;
   for (i = 0; i < db.PackSizes.Size(); i++)
     packedSize += db.PackSizes[i];
@@ -674,7 +674,7 @@ void COutArchive::WriteHeader(
 
   {
     /* ---------- Names ---------- */
-
+    
     int numDefined = 0;
     size_t namesDataSize = 0;
     for (int i = 0; i < db.Files.Size(); i++)
@@ -684,7 +684,7 @@ void COutArchive::WriteHeader(
         numDefined++;
       namesDataSize += (name.Length() + 1) * 2;
     }
-
+    
     if (numDefined > 0)
     {
       namesDataSize++;
@@ -710,7 +710,7 @@ void COutArchive::WriteHeader(
   if (headerOptions.WriteATime) WriteUInt64DefVector(db.ATime, NID::kATime);
   if (headerOptions.WriteMTime) WriteUInt64DefVector(db.MTime, NID::kMTime);
   WriteUInt64DefVector(db.StartPos, NID::kStartPos);
-
+  
   {
     /* ---------- Write Attrib ---------- */
     CBoolVector boolVector;
@@ -780,11 +780,11 @@ HRESULT COutArchive::WriteDatabase(
       CByteBuffer buf;
       buf.SetCapacity(_countSize);
       _outByte2.Init((Byte *)buf, _countSize);
-
+      
       _countMode = false;
       _writeToStream = false;
       WriteHeader(db, headerOptions, headerOffset);
-
+      
       if (_countSize != _outByte2.GetPos())
         return E_FAIL;
 
@@ -800,7 +800,7 @@ HRESULT COutArchive::WriteDatabase(
           packSizes, folders));
 
       _writeToStream = true;
-
+      
       if (folders.Size() == 0)
         throw 1;
 

@@ -1,5 +1,5 @@
 Compile date: today
-Compiler switches:
+Compiler switches: 
 PI calculation to estimate the FFT benchmarks
 initializing...
 nfft= 16384

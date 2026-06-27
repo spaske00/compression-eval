@@ -23,3 +23,4 @@ cofunc(500)
 local count = 0
 for i = 1,N do count = count + cofunc() end
 io.write(count, "\n")
+

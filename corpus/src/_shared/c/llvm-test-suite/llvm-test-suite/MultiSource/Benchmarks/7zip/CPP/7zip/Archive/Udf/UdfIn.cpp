@@ -151,7 +151,7 @@ struct CTag
   // UInt16 Crc;
   // UInt16 CrcLen;
   // UInt32 TagLocation;
-
+  
   HRESULT Parse(const Byte *buf, size_t size);
 };
 
@@ -401,9 +401,9 @@ HRESULT CInArchive::ReadItem(int volIndex, int fsIndex, const CLongAllocDesc &la
     return S_FALSE;
   Items.Add(CItem());
   CItem &item = Items.Back();
-
+  
   const CLogVol &vol = LogVols[volIndex];
-
+ 
   if (lad.GetLen() != vol.BlockSize)
     return S_FALSE;
 
@@ -518,11 +518,11 @@ HRESULT CInArchive::ReadItem(int volIndex, int fsIndex, const CLongAllocDesc &la
         // file.FileCharacteristics = fileId.FileCharacteristics;
         // file.ImplUse = fileId.ImplUse;
         file.Id = fileId.Id;
-
+        
         _fileNameLengthTotal += file.Id.Data.GetCapacity();
         if (_fileNameLengthTotal > kFileNameLengthTotalMax)
           return S_FALSE;
-
+        
         item.SubFiles.Add(Files.Size());
         if (Files.Size() > kNumFilesMax)
           return S_FALSE;
@@ -622,7 +622,7 @@ HRESULT CInArchive::Open2()
       // partition.Flags = Get16(buf + 20);
       partition.Number = Get16(buf + 22);
       // partition.ContentsId.Parse(buf + 24);
-
+      
       // memcpy(partition.ContentsUse, buf + 56, sizeof(partition.ContentsUse));
       // ContentsUse is Partition Header Description.
 
@@ -645,7 +645,7 @@ HRESULT CInArchive::Open2()
 
       if (vol.BlockSize < 512 || vol.BlockSize > ((UInt32)1 << 30))
         return S_FALSE;
-
+      
       // memcpy(vol.ContentsUse, buf + 248, sizeof(vol.ContentsUse));
       vol.FileSetLocation.Parse(buf + 248);
 
@@ -667,7 +667,7 @@ HRESULT CInArchive::Open2()
 
         if (pos + len > bufSize)
           return S_FALSE;
-
+        
         // memcpy(pm.Data, buf + pos + 2, pm.Length - 2);
         if (pm.Type == 1)
         {
@@ -736,23 +736,23 @@ HRESULT CInArchive::Open2()
       RINOK(tag.Parse(p, size));
       if (tag.Id != DESC_TYPE_FileSet)
         return S_FALSE;
-
+      
       CFileSet fs;
       fs.RecodringTime.Parse(p + 16);
       // fs.InterchangeLevel = Get16(p + 18);
       // fs.MaxInterchangeLevel = Get16(p + 20);
       // fs.FileSetNumber = Get32(p + 40);
       // fs.FileSetDescNumber = Get32(p + 44);
-
+      
       // fs.Id.Parse(p + 304);
       // fs.CopyrightId.Parse(p + 336);
       // fs.AbstractId.Parse(p + 368);
-
+      
       fs.RootDirICB.Parse(p + 400);
       // fs.DomainId.Parse(p + 416);
-
+      
       // fs.SystemStreamDirICB.Parse(p + 464);
-
+      
       vol.FileSets.Add(fs);
 
       // nextExtent.Parse(p + 448);

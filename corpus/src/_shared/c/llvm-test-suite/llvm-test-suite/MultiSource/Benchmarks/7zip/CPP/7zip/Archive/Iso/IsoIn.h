@@ -24,7 +24,7 @@ struct CDir: public CDirRecord
     Parent = 0;
     _subItems.Clear();
   }
-
+  
   int GetLength(bool checkSusp, int skipSize) const
   {
     int len = GetLengthCur(checkSusp, skipSize);
@@ -42,7 +42,7 @@ struct CDir: public CDirRecord
         len += 1 + Parent->GetLengthU();
     return len;
   }
-
+  
   AString GetPath(bool checkSusp, int skipSize) const
   {
     AString s;
@@ -241,7 +241,7 @@ class CInArchive
 
   Byte m_Buffer[kBlockSize];
   UInt32 m_BufferPos;
-
+  
   CDir _rootDir;
   bool _bootIsDefined;
   CBootRecordDescriptor _bootDesc;
@@ -309,7 +309,7 @@ public:
   bool IsSusp;
   int SuspSkipSize;
 };
-
+  
 }}
-
+  
 #endif

@@ -143,7 +143,7 @@ static void
 _Y_cmdlines(from)
 char *from;
 {
-	char buf[Z_LINELEN];
+	char buf[Z_LINELEN]; 
 	char *to;
 	while ('\0' != *from)
 	{
@@ -175,11 +175,11 @@ char *from;
 **	this useful macro handle arguements that are adjacent
 **	to a flag or in the following word e.g --
 **
-**		-a XXX
+**		-a XXX 
 **	and
-**		-aXXX
+**		-aXXX 
 **
-**	both work when SETPTR is used.
+**	both work when SETPTR is used. 
 */
 #define SETPTR	{if(strlen(argv[1]) == 2) {argv++;argc--;ptr=argv[1];}else ptr=(&argv[1][2]);}
 

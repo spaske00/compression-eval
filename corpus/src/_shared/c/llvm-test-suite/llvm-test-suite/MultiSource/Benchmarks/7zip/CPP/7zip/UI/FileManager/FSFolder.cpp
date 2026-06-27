@@ -468,7 +468,7 @@ STDMETHODIMP CFSFolder::WasChanged(Int32 *wasChanged)
   *wasChanged = BoolToInt(wasChangedMain);
   return S_OK;
 }
-
+ 
 STDMETHODIMP CFSFolder::Clone(IFolderFolder **resultFolder)
 {
   CFSFolder *fsFolderSpec = new CFSFolder;

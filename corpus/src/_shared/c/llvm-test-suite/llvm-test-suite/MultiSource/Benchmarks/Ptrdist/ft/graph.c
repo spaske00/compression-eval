@@ -159,7 +159,7 @@ AddEdges(Vertices * graph, int nVertex, int nEdge)
 
     Connect(vertex1, vertex2);
   }
-
+  
   return(graph);
 }
 
@@ -190,7 +190,7 @@ Connect(Vertices * vertex1, Vertices * vertex2)
   VERTEX(edge) = vertex2;
   NEXT_EDGE(edge) = EDGES(vertex1);
   EDGES(vertex1) = edge;
-
+  
   edge = NewEdge();
   WEIGHT(edge) = weight;
   SOURCE(edge) = vertex2;
@@ -255,7 +255,7 @@ NewEdge()
   WEIGHT(edge) = 0;
   VERTEX(edge) = NULL;
   NEXT_EDGE(edge) = NULL;
-
+  
   return(edge);
 }
 
@@ -289,3 +289,4 @@ PrintNeighbors(Vertices * vertex)
     edge = NEXT_EDGE(edge);
   }
 }
+

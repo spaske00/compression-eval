@@ -30,7 +30,7 @@ following entries, in order, separated by white space:
     character code here.  Lout will ensure (by including encoding vectors
     in its output) that the character codes defined in this file apply, not
     the codes in font metrics files.
-
+    
     The character name may be -none-, and this is equivalent to omitting the
     line.  There must be no subsequent entries on the line in this case.
 
@@ -53,7 +53,7 @@ following entries, in order, separated by white space:
     in a semicolon.  Functions may appear in any order; omitting a function
     is fine and means that the function does not apply to that character.
     At present the functions are
-
+    
 	UC <charname>;   Corresponding upper-case character (must be the
 			 name of a character appearing elsewhere in the
 			 same file).  This entry is used by Lout when

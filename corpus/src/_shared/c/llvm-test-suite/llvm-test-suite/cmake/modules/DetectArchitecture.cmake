@@ -31,7 +31,7 @@ function(detect_architecture variable)
       "Determining the system architecture failed with the following output:\n${OUTPUT}")
     set(${variable} PARENT_SCOPE)
   endif()
-
+  
 endfunction(detect_architecture)
 
 #

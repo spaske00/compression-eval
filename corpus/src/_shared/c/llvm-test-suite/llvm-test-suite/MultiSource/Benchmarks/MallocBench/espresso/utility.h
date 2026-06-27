@@ -9,7 +9,7 @@
  */
 #define NIL(type)		((type *) 0)
 
-#ifdef BWGC
+#ifdef BWGC 
 #define ALLOC(type, num)	\
     ((type *) gc_malloc(sizeof(type) * ((num)==0?1:(num))))
 #define REALLOC(type, obj, num)	\
@@ -77,3 +77,4 @@ EXTERN void util_register_user
 #endif /* lint */
 
 #endif
+

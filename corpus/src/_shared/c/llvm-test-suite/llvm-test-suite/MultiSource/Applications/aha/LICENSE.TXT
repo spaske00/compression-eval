@@ -4,3 +4,4 @@ A Programmer's Assistant is licensed under the LLVM license with the following
 additional copyright:
 
 Copyright (C) 2002 by Henry S. Warren, Jr.
+

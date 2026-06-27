@@ -80,7 +80,7 @@ struct CDir
   UString Name;
   CObjectVector<CDir> Dirs;
   CIntVector Files;
-
+  
   CDir(): Index(-1) {}
   bool IsLeaf() const { return Index >= 0; }
   UInt64 GetNumDirs() const;
@@ -476,15 +476,15 @@ static HRESULT UpdateArchive(ISequentialOutStream *seqOutStream,
   const UInt32 kSecuritySize = 8;
   size_t pos = kSecuritySize;
   WriteTree(rootFolder, hashes.Digests, ri, updateItems, NULL, pos);
-
+  
   CByteBuffer meta;
   meta.SetCapacity(pos);
-
+  
   // we can write 0 here only if there is no security data, imageX does it,
   // but some programs expect size = 8
   Set32((Byte *)meta, 8); // size of security data
   Set32((Byte *)meta + 4, 0); // num security entries
-
+  
   pos = kSecuritySize;
   WriteTree(rootFolder, hashes.Digests, ri, updateItems, (Byte *)meta, pos);
 
@@ -540,7 +540,7 @@ static HRESULT UpdateArchive(ISequentialOutStream *seqOutStream,
     Set16((Byte *)meta + 2 + i * 2, xml[i]);
   RINOK(WriteStream(outStream, (const Byte *)meta, xmlSize));
   meta.Free();
-
+  
   header.XmlResource.UnpackSize = header.XmlResource.PackSize = xmlSize;
   header.XmlResource.Offset = curPos;
   header.XmlResource.Flags = NResourceFlags::kMetadata;
@@ -578,7 +578,7 @@ STDMETHODIMP COutHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 nu
       else
         ui.IsDir = (prop.boolVal != VARIANT_FALSE);
     }
-
+    
     {
       NCOM::CPropVariant prop;
       RINOK(callback->GetProperty(i, kpidAttrib, &prop));
@@ -589,7 +589,7 @@ STDMETHODIMP COutHandler::UpdateItems(ISequentialOutStream *outStream, UInt32 nu
       else
         ui.Attrib = prop.ulVal;
     }
-
+    
     RINOK(GetTime(callback, i, kpidCTime, ui.CTime));
     RINOK(GetTime(callback, i, kpidATime, ui.ATime));
     RINOK(GetTime(callback, i, kpidMTime, ui.MTime));

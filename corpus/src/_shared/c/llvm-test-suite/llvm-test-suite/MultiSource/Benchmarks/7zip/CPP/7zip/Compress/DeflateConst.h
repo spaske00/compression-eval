@@ -13,11 +13,11 @@ const UInt32 kHistorySize64 = (1 << 16);
 
 const UInt32 kDistTableSize32 = 30;
 const UInt32 kDistTableSize64 = 32;
-
+  
 const UInt32 kNumLenSymbols32 = 256;
 const UInt32 kNumLenSymbols64 = 255; // don't change it. It must be <= 255.
 const UInt32 kNumLenSymbolsMax = kNumLenSymbols32;
-
+  
 const UInt32 kNumLenSlots = 29;
 
 const UInt32 kFixedDistTableSize = 32;
@@ -115,7 +115,7 @@ struct CLevels
   void SetFixedLevels()
   {
     int i;
-
+    
     for (i = 0; i < 144; i++)
       litLenLevels[i] = 8;
     for (; i < 256; i++)

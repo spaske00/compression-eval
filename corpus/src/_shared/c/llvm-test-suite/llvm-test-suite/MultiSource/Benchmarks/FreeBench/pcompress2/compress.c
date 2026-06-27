@@ -22,7 +22,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-FILE *fpi,*fpo;
+FILE *fpi,*fpo; 
 unsigned int *rot; /* Rotation info per byte */
 static unsigned char *in; /* The infile */
 unsigned char *bw; /* The B&W:d data */
@@ -34,30 +34,30 @@ static void do_bwe();
 static unsigned int do_rle();
 unsigned int do_ari(unsigned int insize); /* In "arithmetic.c" */
 
-void compress(int argc, char *argv[])
+void compress(int argc, char *argv[]) 
 {
   char *filename;
   char outname[1000];
-  struct stat buf;
+  struct stat buf; 
   unsigned int filesize, outsize;
 
-  if (argc < 2) {
+  if (argc < 2) { 
     fprintf(stderr,"USAGE: %s <FILENAME>\n",argv[0]);
     exit(1);
   }
   filename = argv[1];
 
-
+  
   /* Find the size of the infile */
   stat(filename,&buf);
-  filesize=buf.st_size;
-
+  filesize=buf.st_size; 
+  
   fpi=fopen(filename,"r"); /* open the infile */
   if (fpi==NULL) {
     fprintf(stderr,"ERROR: Could not find infile %s\n",filename);
     exit(1);
   }
-
+  
   strcpy(outname,filename); /* name the outfile */
   strcat(outname,".compr"); /* add the suffix '.compr' */
   fpo=fopen(outname,"w");
@@ -83,7 +83,7 @@ void compress(int argc, char *argv[])
   if (fread(in,sizeof(unsigned char),filesize,fpi)!=filesize) {
     printf("Something is fishy regarding the file size\n");
     exit(1);
-  }
+  } 
 
   size=filesize;
   /* Do the Burrows Wheeler encoding */
@@ -106,38 +106,38 @@ void compress(int argc, char *argv[])
 }
 
 /* Compare two strings */
-static int compare(const void *a, const void *b)
+static int compare(const void *a, const void *b) 
 {
   unsigned int *first=(unsigned int *)a;
   unsigned int *sec=(unsigned int *)b;
-
+  
   /* Compare strings using memcmp */
   return (memcmp(in+*first,in+*sec,size));
 }
 
-static void do_bwe()
+static void do_bwe() 
 {
   unsigned int i;
-
-  /*
+  
+  /* 
    * Put a copy of the string at the end of the string,
    * this speeds up rotating.
    */
   memcpy(in+size,in,size);
-
+  
   for (i=0;i<size;i++)  /* Initialize 'rot' vector... */
     rot[i]=i;
-
+  
   /* sort the strings using STDLIB qsort */
   qsort(rot,size,sizeof(unsigned int),(*compare));
-
+  
   /* make BW array... */
-  for (i=0;i<size;i++) {
+  for (i=0;i<size;i++) { 
     bw[i]=in[(rot[i]+size-1)%size];
   }
-
+  
   /* Find place of original string, and write it to the outfile*/
-  for (i=0;i<size;i++) {
+  for (i=0;i<size;i++) { 
     if (rot[i]==0) {
       fwrite(&i,sizeof(unsigned int),1,fpo);
       break;
@@ -149,8 +149,8 @@ static unsigned int do_rle()
 {
   unsigned int i, c, rlepos=0;
   unsigned char teck, count;
-  /* RLE --
-   * If the same byte occurs twice or more in s row, put a byte
+  /* RLE -- 
+   * If the same byte occurs twice or more in s row, put a byte 
    * before to show number of repeats. If different bytes occur in a row
    * put a byte before to show how large the block of unique bytes is.
    * A set (1) bit 7 in the describer byte indicates repeats, a cleared
@@ -187,7 +187,10 @@ static unsigned int do_rle()
       rlepos+=2;
       i+=c;
     }
-  }
-
+  }      
+  
   return rlepos;
 }
+
+
+

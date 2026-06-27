@@ -16,6 +16,12 @@
 #define tstop 2.0		/* time to stop calculation                 */
 #define dtout 0.25		/* time between data outputs                */
 #define headline "Hack code: Plummer model"
-				/* message describing calculation           */
+                		/* message describing calculation           */
 
 extern int nbody;
+
+
+
+
+           
+

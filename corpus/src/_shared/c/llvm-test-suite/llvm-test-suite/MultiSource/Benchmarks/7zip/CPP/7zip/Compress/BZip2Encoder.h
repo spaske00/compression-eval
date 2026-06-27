@@ -52,14 +52,14 @@ public:
     {
       int numNewBits = MyMin(numBits, m_BitPos);
       numBits -= numNewBits;
-
+      
       m_CurByte <<= numNewBits;
       UInt32 newBits = value >> numBits;
       m_CurByte |= Byte(newBits);
       value -= (newBits << numBits);
-
+      
       m_BitPos -= numNewBits;
-
+      
       if (m_BitPos == 0)
       {
        Buffer[m_Pos++] = m_CurByte;
@@ -67,7 +67,7 @@ public:
       }
     }
   }
-
+  
   UInt32 GetBytePos() const { return m_Pos ; }
   UInt32 GetPos() const { return m_Pos * 8 + (8 - m_BitPos); }
   Byte GetCurByte() const { return m_CurByte; }
@@ -204,7 +204,7 @@ public:
   #endif
 
   HRESULT Flush() { return m_OutStream.Flush(); }
-
+  
   void ReleaseStreams()
   {
     m_InStream.ReleaseStream();

@@ -125,7 +125,7 @@ struct CAgUpCallbackImp: public IUpdateProduceCallback
 {
   const CObjectVector<CArcItem> *_arcItems;
   IFolderArchiveUpdateCallback *_callback;
-
+  
   CAgUpCallbackImp(const CObjectVector<CArcItem> *a,
       IFolderArchiveUpdateCallback *callback): _arcItems(a), _callback(callback) {}
   HRESULT ShowDeleteFile(int arcIndex);
@@ -222,12 +222,12 @@ STDMETHODIMP CAgent::DoOperation(
   for (i = 0; i < updatePairs2.Size(); i++)
     if (updatePairs2[i].NewData)
       numFiles++;
-
+  
   if (updateCallback100)
   {
     RINOK(updateCallback100->SetNumFiles(numFiles));
   }
-
+  
   CUpdateCallbackAgent updateCallbackAgent;
   updateCallbackAgent.SetCallback(updateCallback100);
   CArchiveUpdateCallback *updateCallbackSpec = new CArchiveUpdateCallback;
@@ -254,7 +254,7 @@ STDMETHODIMP CAgent::DoOperation(
     // ShowLastErrorMessage();
     return E_FAIL;
   }
-
+  
   CMyComPtr<ISetProperties> setProperties;
   if (outArchive->QueryInterface(IID_ISetProperties, (void **)&setProperties) == S_OK)
   {
@@ -359,7 +359,7 @@ HRESULT CAgent::CommonUpdate(
     // ShowLastErrorMessage();
     return E_FAIL;
   }
-
+  
   RINOK(outArchive->UpdateItems(outStream, numUpdateItems, updateCallback));
   return outStreamSpec->Close();
 }
@@ -376,7 +376,7 @@ STDMETHODIMP CAgent::DeleteItems(
   updateCallbackAgent.SetCallback(updateCallback100);
   CArchiveUpdateCallback *updateCallbackSpec = new CArchiveUpdateCallback;
   CMyComPtr<IArchiveUpdateCallback> updateCallback(updateCallbackSpec);
-
+  
   CUIntVector realIndices;
   _agentFolder->GetRealIndices(indices, numItems, realIndices);
   CRecordVector<CUpdatePair2> updatePairs;
@@ -470,7 +470,7 @@ HRESULT CAgent::RenameItem(
   updateCallbackAgent.SetCallback(updateCallback100);
   CArchiveUpdateCallback *updateCallbackSpec = new CArchiveUpdateCallback;
   CMyComPtr<IArchiveUpdateCallback> updateCallback(updateCallbackSpec);
-
+  
   CUIntVector realIndices;
   _agentFolder->GetRealIndices(indices, numItems, realIndices);
 

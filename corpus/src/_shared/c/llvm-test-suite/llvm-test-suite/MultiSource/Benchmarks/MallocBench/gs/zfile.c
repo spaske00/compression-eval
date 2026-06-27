@@ -566,7 +566,7 @@ zrenamefile(register ref *op)
 	if ( str2 != 0 )
 		alloc_free(str2, op->size + 1, 1, "renamefile(to)");
 	return 0;
-}
+}	
 
 /* ------ Ghostscript extensions ------ */
 

@@ -1,6 +1,6 @@
 /*
 ** Copyright (C) 1999 Albert Faber
-**
+**  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
  * License as published by the Free Software Foundation; either
@@ -35,7 +35,7 @@
 
 
 void CloseSndFile(lame_global_flags *gfp);
-FILE * OpenSndFile(lame_global_flags *gfp,const char* lpszFileName,int default_samp, int
+FILE * OpenSndFile(lame_global_flags *gfp,const char* lpszFileName,int default_samp, int 
    default_chan);
 unsigned long GetSndSamples(void);
 int		GetSndSampleRate(void);
@@ -61,7 +61,7 @@ int get_audio(lame_global_flags *gfp,short buffer[2][1152],int stereo);
 
 #else
 /*****************************************************************
- * LAME/ISO built in audio file I/O routines
+ * LAME/ISO built in audio file I/O routines 
  *******************************************************************/
 #include "portableio.h"
 #include "ieeefloat.h"

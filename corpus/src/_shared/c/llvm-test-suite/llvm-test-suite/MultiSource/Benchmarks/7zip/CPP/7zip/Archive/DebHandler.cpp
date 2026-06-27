@@ -27,7 +27,7 @@ namespace NDeb {
 namespace NHeader
 {
   const int kSignatureLen = 8;
-
+  
   const char *kSignature = "!<arch>\n";
 
   const int kNameSize = 16;
@@ -66,7 +66,7 @@ struct CItem
 class CInArchive
 {
   CMyComPtr<IInStream> m_Stream;
-
+  
   HRESULT GetNextItemReal(bool &filled, CItem &itemInfo);
 public:
   UInt64 m_Position;
@@ -156,7 +156,7 @@ HRESULT CInArchive::GetNextItemReal(bool &filled, CItem &item)
   if (processedSize != sizeof(header))
     return S_OK;
   m_Position += processedSize;
-
+  
   char tempString[NHeader::kNameSize + 1];
   MyStrNCpy(tempString, cur, NHeader::kNameSize);
   cur += NHeader::kNameSize;
@@ -172,7 +172,7 @@ HRESULT CInArchive::GetNextItemReal(bool &filled, CItem &item)
   cur += NHeader::kTimeSize;
 
   cur += 6 + 6;
-
+  
   RIF(OctalToNumber32(cur, NHeader::kModeSize, item.Mode));
   cur += NHeader::kModeSize;
 
@@ -350,7 +350,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
   extractCallback->SetTotal(totalSize);
 
   UInt64 currentTotalSize = 0;
-
+  
   NCompress::CCopyCoder *copyCoderSpec = new NCompress::CCopyCoder();
   CMyComPtr<ICompressCoder> copyCoder = copyCoderSpec;
 
@@ -374,7 +374,7 @@ STDMETHODIMP CHandler::Extract(const UInt32 *indices, UInt32 numItems,
     const CItem &item = _items[index];
     RINOK(extractCallback->GetStream(index, &realOutStream, askMode));
     currentTotalSize += item.Size;
-
+    
     if (!testMode && !realOutStream)
       continue;
     RINOK(extractCallback->PrepareOperation(askMode));

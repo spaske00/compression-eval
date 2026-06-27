@@ -151,13 +151,13 @@ private:
   void SetOperand(bool byteMode, const COperand *op, UInt32 val);
 
   void DecodeArg(CMemBitDecoder &inp, COperand &op, bool byteMode);
-
+  
   bool ExecuteCode(const CProgram *prg);
-
+  
   #ifdef RARVM_STANDARD_FILTERS
   void ExecuteStandardFilter(int filterIndex);
   #endif
-
+  
   Byte *Mem;
   UInt32 R[kNumRegs + 1]; // R[kNumRegs] = 0 always (speed optimization)
   UInt32 Flags;

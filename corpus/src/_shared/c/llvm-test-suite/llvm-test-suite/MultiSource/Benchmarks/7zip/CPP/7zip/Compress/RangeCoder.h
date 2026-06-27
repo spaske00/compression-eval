@@ -71,7 +71,7 @@ public:
     _cacheSize++;
     Low = (UInt32)Low << 8;
   }
-
+  
   void EncodeDirectBits(UInt32 value, int numBits)
   {
     for (numBits--; numBits >= 0; numBits--)
@@ -122,7 +122,7 @@ public:
       Range <<= 8;
     }
   }
-
+  
   void SetStream(ISequentialInStream *stream) { Stream.SetStream(stream); }
   void Init()
   {

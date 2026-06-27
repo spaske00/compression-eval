@@ -65,3 +65,4 @@ UString JoinStrings(const UStringVector &srcStrings)
   }
   return destString;
 }
+

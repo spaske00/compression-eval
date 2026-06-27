@@ -1502,7 +1502,7 @@ typedef union rec
      } oux;
      /* union rec *oready_galls; */
   } os2;
-
+  
   struct head_type	/* all fields of HEAD, both as token and object */
   {  LIST		olist[2];
      FIRST_UNION	ou1;
@@ -1525,7 +1525,7 @@ typedef union rec
      union rec *odead_headers;
      int        oopt_comps_permitted;
   } os2a;
-
+  
   struct object_type	/* the general OBJECT */
   {  LIST		olist[2];
      FIRST_UNION	ou1;
@@ -1540,7 +1540,7 @@ typedef union rec
      unsigned char	onumber;
      unsigned char	odb_targ;
   } os4;
-
+  
   struct gapobj_type	/* GAP_OBJ */
   {  LIST		olist[2];
      FIRST_UNION	ou1;
@@ -1855,7 +1855,7 @@ typedef struct font_rec {
 #define MAP_UNACCENTED    2             /* the map to unaccented             */
 #define MAP_ACCENT        3             /* the map to the accent character   */
 #define MAPS              4             /* the number of maps in each file   */
-
+ 
 typedef struct mapvec {
   OBJECT        file_name;              /* name of file containing the vec   */
   FILE_NUM      fnum;                   /* the file number of this file      */
@@ -2197,7 +2197,7 @@ typedef struct back_end_rec {
 #define	AVAIL_UNIT	 3		/* r unit (available spaces)         */
 #define	DEG_UNIT	 4		/* d unit (degrees)                  */
 #define	NEXT_UNIT	 5		/* w unit (inners)                   */
-
+ 
 /* units of distance as multiples of the basic unit */
 #define	CM	       567		/* 1 centimetre                      */
 #define	IN	      1440		/* 1 inch                            */
@@ -2511,7 +2511,7 @@ typedef struct back_end_rec {
 #define disposecheck							\
 { assert( zz_size >= 0 && zz_size < MAX_OBJECT_REC, "Dispose: size" );	\
 }
-
+ 
 #define	setdisposed							\
 { if( (MemCheck != 0) && ((POINTER) zz_hold == MemCheck) )		\
     fprintf(stderr, "Dispose(%ld, %s)\n", (long) zz_hold,		\

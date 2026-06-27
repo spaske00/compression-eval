@@ -3,21 +3,24 @@
 set -euo pipefail
 
 timestamp="$(date +%s)"
-archive="nexus-$timestamp.zip"
-generated_tars=()
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+corpus_dir="${1:-$script_dir/corpus}"
 
-cd ./corpus/bin/
-shopt -s nullglob
-for d in */ ; do
-    d="${d%/}"
-    tar --force-local -cvf "$d.tar" "$d"
-    generated_tars+=("./bin/$d.tar")
-done
-
-cd ..
-if (( ${#generated_tars[@]} == 0 )); then
-    echo "No generated tar files to archive" >&2
+if [[ ! -d "$corpus_dir" ]]; then
+    echo "Corpus directory not found: $corpus_dir" >&2
     exit 1
 fi
 
-printf '%s\0' "${generated_tars[@]}" | xargs -0 zip -j "$archive"
+corpus_dir="$(cd "$corpus_dir" && pwd)"
+archive="$corpus_dir/nexus-$timestamp.zip"
+
+if [[ ! -d "$corpus_dir/bin" ]]; then
+    echo "Corpus bin directory not found: $corpus_dir/bin" >&2
+    exit 1
+fi
+
+cd "$corpus_dir"
+
+echo "Creating archive: $archive"
+zip -r "$archive" bin
+echo "Created $archive from $corpus_dir/bin"

@@ -372,7 +372,7 @@ char * skipoverword (bufp)	/* Return pointer to end of a word */
 	    break;			/* End of the word */
 	}
     /*
-    ** If the word ended in one or more boundary characters,
+    ** If the word ended in one or more boundary characters, 
     ** the address of the first of these is in lastboundary, and it
     ** is the end of the word.  Otherwise, bufp is the end.
     */
@@ -410,7 +410,7 @@ void checkline (ofile)
 
 	/* skip over .ds XX or .nr XX */
 	if (*currentchar == NRDOT
-	  &&  (strncmp (currentchar + 1, "ds ", 3) == 0
+	  &&  (strncmp (currentchar + 1, "ds ", 3) == 0 
 	    ||  strncmp (currentchar + 1, "de ", 3) == 0
 	    ||  strncmp (currentchar + 1, "nr ", 3) == 0))
 	    {
@@ -634,7 +634,7 @@ static int TeX_math_begin (bufp)
        *
        * A limitation is that the entire tib reference must be on one
        * line, or we break down and check the remainder anyway.
-       */
+       */ 
     if ((**bufp == TEXLEFTSQUARE  ||  **bufp == TEXLEFTANGLE)
       &&  (*bufp)[1] == TEXDOT)
 	{

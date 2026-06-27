@@ -315,7 +315,7 @@ def @ReportSetup
 		{
 		    @AbstractFont @Font @AbstractBreak @Break
 		    @AbstractDisplay @Case {
-
+		    
 			No @Yield { @Title @AbstractFormat @Abstract }
 
 			Yes @Yield { |@DisplayIndent
@@ -477,7 +477,7 @@ def @ReportSetup
 	    named @Optimize { @OptimizePages }
         {
 
-				Start @Runner
+	      			Start @Runner
 	    //			@AbstractDisplay @NoDo @AbstractPart
 	    //@ContentsGap	@ContentsPart
 	    //@ContentsGap	@SectionList @FirstSectionNumber
@@ -507,7 +507,7 @@ def @ReportSetup
 	    named @Optimize { @OptimizePages }
         {
 
-				Start @Runner
+	      	 		Start @Runner
 	    //@ContentsGap	@ContentsPart
 	    //@ContentsGap	@SectionList @FirstSectionNumber
 	    //@SectionGap	@ReferencesBeforeAppendices @Do {

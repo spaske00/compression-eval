@@ -46,7 +46,7 @@ OBJECT Next(OBJECT x, int inc, BOOLEAN *done)
   {
     case WORD:
     case QWORD:
-
+    
       len = StringLength(string(x));
       for( r = len - 1;  r >= 0 && !decimaldigit(string(x)[r]);  r--);
       if( r < 0 ) break;
@@ -85,7 +85,7 @@ OBJECT Next(OBJECT x, int inc, BOOLEAN *done)
     case VSPAN:
     case END_HEADER:
     case CLEAR_HEADER:
-
+    
       break;
 
 
@@ -119,14 +119,14 @@ OBJECT Next(OBJECT x, int inc, BOOLEAN *done)
     case GRAPHIC:
     case LINK_SOURCE:
     case LINK_DEST:
-
+    
       Child(y, LastDown(x));
       y = Next(y, inc, done);
       break;
 
 
     case ACAT:
-
+    
       /* *** seems identical!
       link = LastDown(x);
       while( link != x && !*done )
@@ -143,7 +143,7 @@ OBJECT Next(OBJECT x, int inc, BOOLEAN *done)
     case ROW_THR:
     case HCAT:
     case VCAT:
-
+    
       link = LastDown(x);
       while( link != x && !*done )
       {	Child(y, link);
@@ -155,7 +155,7 @@ OBJECT Next(OBJECT x, int inc, BOOLEAN *done)
 
 
     default:
-
+    
       assert1(FALSE, "Next:", Image(type(x)));
       break;
 

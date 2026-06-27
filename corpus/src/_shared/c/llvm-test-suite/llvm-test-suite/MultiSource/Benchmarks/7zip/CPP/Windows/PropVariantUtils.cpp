@@ -75,3 +75,4 @@ void FlagsToProp(const CUInt32PCharPair *pairs, unsigned num, UInt32 flags, NCOM
 {
   StringToProp(FlagsToString(pairs, num, flags), prop);
 }
+

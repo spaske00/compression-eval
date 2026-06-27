@@ -21,7 +21,7 @@
  * ------------------------------------------------------------------------
  *
  * This a collection of functions which check certain invariants.
- *
+ *   
  * ------------------------------------------------------------------------
  *
  * $Id$
@@ -85,7 +85,7 @@ int  SanityCheck3(Heap * h, int rank);
 /*
  * Print the structure in some human readable form.  It is printed in a
  * list like format.  The entry consists of whatever PrintItem() output,
- * and the rank in square brackets.
+ * and the rank in square brackets. 
  *
  * Special external object accessed:
  *   PrintItem()

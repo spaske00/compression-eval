@@ -107,7 +107,7 @@ UString ConvertFileTimeToString(const FILETIME &ft, bool includeTime, bool inclu
   ConvertFileTimeToString(ft, s, includeTime, includeSeconds);
   return GetUnicodeString(s);
 }
-
+ 
 
 UString ConvertPropVariantToString(const PROPVARIANT &prop)
 {

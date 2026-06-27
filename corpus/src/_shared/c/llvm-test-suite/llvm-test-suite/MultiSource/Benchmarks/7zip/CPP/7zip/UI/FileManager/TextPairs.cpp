@@ -65,7 +65,7 @@ static bool GetTextPairs(const UString &srcString, CObjectVector<CTextPair> &pai
 {
   pairs.Clear();
   int pos = 0;
-
+  
   if (srcString.Length() > 0)
   {
     if (srcString[0] == kBOM)

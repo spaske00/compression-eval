@@ -22,7 +22,7 @@ class CCoder :
 {
   CLzOutWindow m_OutWindowStream;
   NBitm::CDecoder<CInBuffer> m_InBitStream;
-
+  
   void ReleaseStreams()
   {
     m_OutWindowStream.ReleaseStream();

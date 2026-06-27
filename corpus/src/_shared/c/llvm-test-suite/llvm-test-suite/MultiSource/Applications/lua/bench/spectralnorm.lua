@@ -43,3 +43,4 @@ for i = 0,n-1 do
 end
 
 io.write(string.format("%0.9f\n", math.sqrt(vBv / vv)))
+

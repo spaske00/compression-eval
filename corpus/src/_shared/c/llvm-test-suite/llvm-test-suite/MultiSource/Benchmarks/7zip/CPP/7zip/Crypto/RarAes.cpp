@@ -85,19 +85,19 @@ void CDecoder::Calculate()
   if (_needCalculate)
   {
     const unsigned kSaltSize = 8;
-
+    
     Byte rawPassword[kMaxPasswordLength + kSaltSize];
-
+    
     memcpy(rawPassword, buffer, buffer.GetCapacity());
-
+    
     size_t rawLength = buffer.GetCapacity();
-
+    
     if (_thereIsSalt)
     {
       memcpy(rawPassword + rawLength, _salt, kSaltSize);
       rawLength += kSaltSize;
     }
-
+    
     NSha1::CContext sha;
     sha.Init();
 

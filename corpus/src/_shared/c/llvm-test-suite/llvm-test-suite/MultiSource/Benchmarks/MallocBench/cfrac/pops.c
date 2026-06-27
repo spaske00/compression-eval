@@ -12,7 +12,7 @@
  *	Changed precision to be determined at run-time		5/19/85
  *	Added dynamic allocation				7/21/85
  *	Combined unsigned math and integer math			8/01/85
- *	Fixed Bug in pcmp					7/20/87
+ *	Fixed Bug in pcmp					7/20/87 
  *	Fixed handling of dynamic storage (refcount added)	7/20/87
  *	Final debugging of current version             		8/22/87
  *	Fixed many bugs in various routines, wrote atop		2/07/89
@@ -24,7 +24,7 @@
  *
  *	warning! The mod operation with negative arguments not portable.
  *		 I have therefore avoided it completely with much pain.
- *
+ *	
  *	The following identities have proven useful:
  *
  *	given:	a %  b = a - floor(a/b) * b
@@ -40,7 +40,7 @@
  *	work has been done to make sure the compiler does not re-arrange
  *	expressions to cause an overflow. The compiler may still be doing
  *	unnecessary type conversions.
- *
+ *  
  * NOTES:
  *
  *	The ptoa routine creates storage which is likely to be forgotton.
@@ -61,12 +61,12 @@
 #include "precision.h"	/* public include file for forward refs */
 
 cacheType pcache[CACHESIZE];
-static char ident[] =
+static char ident[] = 
    " @(#) libprecision.a version 2.00  3-May-91 by Dave Barrett\n";
 
 /*
  * normalize (used by div and sub)
- *   remove all leading zero's
+ *   remove all leading zero's 
  *   force positive sign if result is zero
  */
 void pnorm(u)
@@ -113,7 +113,7 @@ precision palloc(size)
 #endif
    w->size     = w->alloc = size;
 #ifdef DEBUGOPS
-   printf("alloc %.8x\n", w);
+   printf("alloc %.8x\n", w); 
    fflush(stdout);
 #endif
    return w;
@@ -130,7 +130,7 @@ int pfree(u)
    register cacheType *kludge; 	/* for shitty compilers */
 
 #ifdef DEBUGOPS
-   printf("free  %.8x\n", u);
+   printf("free  %.8x\n", u); 
    fflush(stdout);
 #endif
 
@@ -159,7 +159,7 @@ int pfree(u)
  *    a precision pointer must point to a precision or be pNull
  *    pUndef may not be passed as an rvalue into a function
  *    pNull  may not be passed as an lvalue into a function
- *
+ *   
  *    presult and pdestroy are the only functions which may be passed pUndef
  */
 
@@ -200,7 +200,7 @@ precision psetv(up, v)
       v->refcount++;
 #endif
    }
-   if (u != pUndef) {
+   if (u != pUndef) { 
       if (u->sign & ~1) {		/* a minimal check */
 	 errorp(PDOMAIN, "pset", "invalid precision");
       }
@@ -272,7 +272,7 @@ void pdestroyf(u)
  * We cannot allow this to be a macro because of the probability that it's
  * argument will be a function (e.g. utop(2))
  */
-precision pnew(u)
+precision pnew(u) 
    register precision u;
 {
 #ifndef BWGC
@@ -300,7 +300,7 @@ precision presult(u)
  *
  * Assumes: target not pNull and source not pUndef
  */
-precision psetq(up, v)
+precision psetq(up, v) 
    register precision *up, v;
 {
    register precision u = *up;		/* up may NOT be pNULL! */

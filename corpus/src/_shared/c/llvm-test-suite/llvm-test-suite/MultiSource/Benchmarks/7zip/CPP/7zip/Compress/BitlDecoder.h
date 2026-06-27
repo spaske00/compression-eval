@@ -49,7 +49,7 @@ public:
       m_Value = (b << (kNumBigValueBits - m_BitPos)) | m_Value;
     }
   }
-
+  
   UInt32 ReadBits(unsigned numBits)
   {
     Normalize();
@@ -93,7 +93,7 @@ public:
       this->m_Value = (this->m_Value << 8) | kInvertTable[b];
     }
   }
-
+  
   UInt32 GetValue(unsigned numBits)
   {
     Normalize();
@@ -105,7 +105,7 @@ public:
     this->m_BitPos += numBits;
     m_NormalValue >>= numBits;
   }
-
+  
   UInt32 ReadBits(unsigned numBits)
   {
     Normalize();

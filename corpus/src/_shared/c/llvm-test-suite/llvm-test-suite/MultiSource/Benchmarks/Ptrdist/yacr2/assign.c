@@ -91,7 +91,7 @@ NetsAssign(void)
     for (net = 1; net <= channelNets; net++) {
 	netsAssign[net] = 0;
     }
-
+    
     /*
      * Assign nets in max density column.
      */
@@ -172,7 +172,7 @@ RightNetsAssign(void)
 {
     ulong	net;
     ulong	col;
-    ulong	top;
+    ulong	top;	
     ulong	bot;
     ulong	netsCrossing;
     ulong	netSelect;
@@ -221,12 +221,12 @@ RightNetsAssign(void)
 		 * Choose net from CROSSING to assign.
 		 */
 		Select(VCG, HCG, netsAssign, &netSelect, CROSSING);
-
+		
 		/*
 		 * Assign net to a track.
 		 */
 		Assign(VCG, netsAssign, netSelect);
-
+		
 		/*
 		 * Done net.
 		 */
@@ -244,7 +244,7 @@ LeftNetsAssign(void)
 {
     ulong	net;
     ulong	col;
-    ulong	top;
+    ulong	top;	
     ulong	bot;
     ulong	netsCrossing;
     ulong	netSelect;
@@ -293,12 +293,12 @@ LeftNetsAssign(void)
 		 * Choose net from CROSSING to assign.
 		 */
 		Select(VCG, HCG, netsAssign, &netSelect, CROSSING);
-
+		
 		/*
 		 * Assign net to a track.
 		 */
 		Assign(VCG, netsAssign, netSelect);
-
+		
 		/*
 		 * Done net.
 		 */
@@ -330,7 +330,7 @@ Assign(nodeVCGType * VCG,
 #ifdef VERBOSE
     printf("\n*** Assign %d ***\n", select);
 #endif
-
+    
     /*
      * Need information for the selected net.
      * (Must recompute...not current for the selected net)
@@ -651,3 +651,4 @@ IdealTrack(ulong tracks,
 	*ideal = 1;
     }
 }
+

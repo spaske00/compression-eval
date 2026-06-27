@@ -23,12 +23,12 @@ struct CImageInfo
   bool MTimeDefined;
   bool NameDefined;
   // bool IndexDefined;
-
+  
   FILETIME CTime;
   FILETIME MTime;
   UString Name;
   // UInt32 Index;
-
+  
   CImageInfo(): CTimeDefined(false), MTimeDefined(false), NameDefined(false)
       // , IndexDefined(false)
       {}

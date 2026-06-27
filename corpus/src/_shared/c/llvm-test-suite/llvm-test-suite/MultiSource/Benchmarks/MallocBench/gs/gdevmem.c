@@ -186,7 +186,7 @@ mem_open(gx_device *dev)
 	while ( pptr != pend )
 	   {	*pptr++ = (byte *)scan_line;
 		scan_line += mdev->raster;
-	   }
+	   }	
 	return 0;
 }
 

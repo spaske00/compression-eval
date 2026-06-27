@@ -69,7 +69,7 @@ void COverwriteDialog::SetFileInfoControl(int textID, int iconID,
     s2 = fileName;
   ReduceString(s1);
   ReduceString(s2);
-
+  
   UString fullString = s1 + L'\n' + s2;
   fullString += L'\n';
   fullString += sizeString;

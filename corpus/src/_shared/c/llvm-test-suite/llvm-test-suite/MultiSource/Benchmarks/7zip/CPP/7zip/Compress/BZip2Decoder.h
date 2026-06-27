@@ -152,7 +152,7 @@ public:
   MY_QUERYINTERFACE_END
   MY_ADDREF_RELEASE
 
-
+  
   STDMETHOD(Code)(ISequentialInStream *inStream, ISequentialOutStream *outStream,
       const UInt64 *inSize, const UInt64 *outSize, ICompressProgressInfo *progress);
 
@@ -161,7 +161,7 @@ public:
 
   HRESULT CodeResume(ISequentialOutStream *outStream, bool &isBZ, ICompressProgressInfo *progress);
   UInt64 GetInputProcessedSize() const { return m_InStream.GetProcessedSize(); }
-
+  
   #ifndef _7ZIP_ST
   STDMETHOD(SetNumberOfThreads)(UInt32 numThreads);
   #endif
@@ -178,7 +178,7 @@ class CNsisDecoder :
   Byte m_Selectors[kNumSelectorsMax];
   CHuffmanDecoder m_HuffmanDecoders[kNumTablesMax];
   CState m_State;
-
+  
   int _nsisState;
   UInt32 _tPos;
   unsigned _prevByte;

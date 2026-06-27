@@ -41,7 +41,7 @@ void InOrder(HANDLE *h) {
 
 int mult(int p, int q) {
   int p1, p0, q1, q0;
-
+	
   p1 = p/CONST_m1; p0 = p%CONST_m1;
   q1 = q/CONST_m1; q0 = q%CONST_m1;
   return ((p0*q1+p1*q0) % CONST_m1)*CONST_m1+p0*q0;
@@ -84,12 +84,12 @@ HANDLE* RandTree(int n, int seed, int node, int level) {
 
 void SwapValue(HANDLE *l, HANDLE *r) {
   int temp,temp2;
-
+  
   temp = l->value;
   temp2 = r->value;
   r->value = temp;
   l->value = temp2;
-}
+} 
 
 void
 /***********/
@@ -105,7 +105,7 @@ int lval, rval;
   r->left = ll;
   l->left = rl;
   l->value = rval;
-}
+} 
 
 
 void
@@ -117,13 +117,13 @@ HANDLE *r;
 HANDLE *lr;
 HANDLE *rr;
 int lval, rval;
-{
+{  
   r->value = lval;
   r->right = lr;
   l->right = rr;
   l->value = rval;
   /*printf("Swap Val Right l 0x%x,r 0x%x val: %d %d\n",l,r,lval,rval);*/
-}
+} 
 
 int
 /********************/
@@ -152,7 +152,7 @@ int spr_val,dir;
       root->value = spr_val;
       spr_val = rv;
     }
-
+  
   while ((pl != NIL))
     {
       /*printf("pl = 0x%x,pr = 0x%x\n",pl,pr);*/
@@ -165,29 +165,29 @@ int spr_val,dir;
       elementexchange = ((lv > rv) ^ dir);
       if (rightexchange)
         if (elementexchange)
-          {
+          { 
             SwapValRight(pl,pr,plr,prr,lv,rv);
             pl = pll;
             pr = prl;
           }
-        else
+        else 
           { pl = plr;
             pr = prr;
           }
-      else
+      else 
         if (elementexchange)
-          {
+          { 
             SwapValLeft(pl,pr,pll,prl,lv,rv);
             pl = plr;
             pr = prr;
           }
-        else
+        else 
           { pl = pll;
             pr = prl;
           }
     }
   if ((root->left != NIL))
-    {
+    { 
       int value;
       rl = root->left;
       rr = root->right;
@@ -198,7 +198,7 @@ int spr_val,dir;
     }
   /*printf("exit bimerge %x\n", root);*/
   return spr_val;
-}
+} 
 
 int
 /*******************/
@@ -212,7 +212,7 @@ int spr_val,dir;
   int val;
   /*printf("bisort %x\n", root);*/
   if ((root->left == NIL))  /* <---- 8.7% load penalty */
-    {
+    { 
      if (((root->value > spr_val) ^ dir))
         {
 	  val = spr_val;
@@ -220,7 +220,7 @@ int spr_val,dir;
 	  root->value =val;
 	}
     }
-  else
+  else 
     {
       int ndir;
       l = root->left;
@@ -234,13 +234,13 @@ int spr_val,dir;
     }
   /*printf("exit bisort %x\n", root);*/
   return spr_val;
-}
+} 
 
 int main(int argc, char **argv) {
   HANDLE *h;
   int sval;
   int n;
-
+   
   n = dealwithargs(argc,argv);
 
   printf("Bisort with %d size of dim %d\n", n, NDim);
@@ -258,7 +258,7 @@ int main(int argc, char **argv) {
   sval=Bisort(h,sval,0);
 
   if (flag) {
-    printf("Sorted Tree:\n");
+    printf("Sorted Tree:\n"); 
     InOrder(h);
     printf("%d\n",sval);
   }
@@ -266,10 +266,17 @@ int main(int argc, char **argv) {
   sval=Bisort(h,sval,1);
 
   if (flag) {
-    printf("Sorted Tree:\n");
+    printf("Sorted Tree:\n"); 
     InOrder(h);
     printf("%d\n",sval);
   }
 
   return 0;
-}
+} 
+
+
+
+
+
+
+

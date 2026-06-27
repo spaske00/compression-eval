@@ -4,7 +4,7 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
+ 
 #ifdef __BORLANDC__
     #pragma hdrstop
 #endif
@@ -13,10 +13,10 @@
 // need because it includes almost all "standard" wxWidgets headers)
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
-#endif
+#endif  
 
 #undef _WIN32
-
+ 
 #ifndef _UNICODE
 #include "Common/StringConvert.h"
 #endif
@@ -30,13 +30,13 @@ class LockGUI
 	public:
 		LockGUI() {
 			verify_main_thread();
-
+			
 			_IsMain = wxThread::IsMain();
 			if (!_IsMain) {
 				printf("LockGUI-Windows\n");
 				abort(); // FIXME wxMutexGuiEnter();
 			}
-		}
+	       	}
 		~LockGUI() { if (!_IsMain) wxMutexGuiLeave(); }
 };
 
@@ -50,7 +50,7 @@ HWND GetDlgItem(HWND dialogWindow, int ControlID)
 }
 
 void MySetWindowText(HWND wnd, LPCWSTR s)
-{
+{ 
 	if (wnd == 0) return;
 
 	LockGUI lock;
@@ -67,13 +67,13 @@ void MySetWindowText(HWND wnd, LPCWSTR s)
 
 	bool CWindow::GetText(CSysString &s)
 	{
-		wxString str;
+	  	wxString str;
 		{
 			LockGUI lock;
-			str = _window->GetLabel();
+	  		str = _window->GetLabel();
 		}
-		s = str;
-		return true;
+	  	s = str;
+	  	return true;
 	}
 
 	bool CWindow::IsEnabled()
@@ -98,3 +98,4 @@ t_processID GetCurrentProcess(void)  {
 void SetPriorityClass(t_processID pid , int priority) {
 	setpriority(PRIO_PROCESS,pid,priority);
 }
+

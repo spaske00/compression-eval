@@ -152,7 +152,7 @@ STDMETHODIMP CCoder::CodeReal(ISequentialInStream *inStream,
   m_OutWindowStream.Init(false);
   m_InBitStream.SetStream(inStream);
   m_InBitStream.Init();
-
+  
   CCoderReleaser coderReleaser(this);
 
   int pbit;
@@ -166,7 +166,7 @@ STDMETHODIMP CCoder::CodeReal(ISequentialInStream *inStream,
   while(pos < *outSize)
   {
     // for (i = 0; i < dictSize; i++) dtext[i] = 0x20;
-
+    
     if (blockSize == 0)
     {
       if (progress != NULL)

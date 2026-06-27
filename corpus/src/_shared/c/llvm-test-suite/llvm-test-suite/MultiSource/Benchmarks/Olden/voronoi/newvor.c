@@ -28,7 +28,7 @@ QUAD_EDGE a,b;
 
 /*printf("begin connect_left\n");*/
   t1=dest(a);
-  lnexta=lnext(a);
+  lnexta=lnext(a); 
   t2=orig(b);
   ans = makeedge(t1,t2/*dest(a), orig(b)*/);
   splice(ans, lnexta);
@@ -46,7 +46,7 @@ QUAD_EDGE a,b;
 /*printf("begin connect_right\n");*/
   t1=dest(a);
   t2=orig(b);
-  oprevb=oprev(b);
+  oprevb=oprev(b); 
   ans = makeedge(t1,t2/*dest(a), orig(b)*/);
   splice(ans, sym(a));
   splice(sym(ans), oprevb);
@@ -126,7 +126,7 @@ EDGE_PAIR build_delaunay(VERTEX_PTR tree, VERTEX_PTR extra)
     }
     else if (!tree)
       {
-	printf("ERROR: Only 1 point!\n");
+	printf("ERROR: Only 1 point!\n"); 
 	exit(-1);
       }
     else if (!tree->left) {	/* two points */
@@ -171,7 +171,7 @@ void delete_all_edges() { next_edge= 0; avail_edge = NYL;}
 
 /* memalign() on my SGI doesn't work. Thus, I have to write my own */
 void* myalign(int align_size, int alloc_size)
-{
+{   
 #ifdef MEMALIGN_IS_NOT_AVAILABLE
     char* base = (char*)malloc(alloc_size + align_size);
 #else
@@ -232,14 +232,14 @@ BOOLEAN incircle(a,b,c,d)
   VERTEX_PTR loc_a,loc_b,loc_c,loc_d;
 
   /*if (flag) printf("incircle: 0x%x,0x%x,0x%x,0x%x\n",a,b,c,d);*/
-  loc_d = d;
-  dx = X(loc_d); dy = Y(loc_d); dnorm = NORM(loc_d);
+  loc_d = d; 
+  dx = X(loc_d); dy = Y(loc_d); dnorm = NORM(loc_d); 
   loc_a = a;
   adx = X(loc_a) - dx; ady = Y(loc_a) - dy; anorm = NORM(loc_a);  /* <--- 4% load penalty */
   loc_b = b;
   bdx = X(loc_b) - dx;  bdy = Y(loc_b) - dy; bnorm = NORM(loc_b);  /* <--- 5% load penalty */
   loc_c = c;
-  cdx = X(loc_c) - dx;  cdy = Y(loc_c) - dy; cnorm = NORM(loc_c);
+  cdx = X(loc_c) - dx;  cdy = Y(loc_c) - dy; cnorm = NORM(loc_c); 
   /*if (flag) printf("adx=%f,bdx=%f,cdx=%f\n",adx,bdx,cdx);*/
   dret =  (anorm - dnorm) * (bdx * cdy - bdy * cdx);
   dret += (bnorm - dnorm) * (cdx * ady - cdy * adx);
@@ -304,14 +304,14 @@ QUAD_EDGE a, b;
      /*dump_quad(alpha); dump_quad(beta);*/
     t1 = onext(beta);      /*<---------------------------------- 3%  load miss penalty  */
     temp = onext(alpha);   /*<---------------------------------- 11% load miss penalty  */
-    onext(alpha) = t1;
+    onext(alpha) = t1;  
     /*printf("Writing 0x%x at onext of 0x%x\n",t1,alpha);*/
 
     onext(beta) = temp;
     /*printf("Writing 0x%x at onext of 0x%x\n",temp,beta);*/
-    temp = onext(a);
-    t1 = onext(b);
-    onext(b) = temp;
+    temp = onext(a); 
+    t1 = onext(b); 
+    onext(b) = temp;       
     onext(a) = t1;
     /*printf("Wrote 0x%x at onext of 0x%x\n",temp,b);*/
     /*printf("Wrote 0x%x at onext of 0x%x\n",t1,a);*/
@@ -323,11 +323,11 @@ QUAD_EDGE e;
 {
     QUAD_EDGE a,b,syme,lnexttmp;
     VERTEX_PTR a1,b1;
-
+    
     /*printf("begin swapedge\n");*/
     a = oprev(e);
     syme = sym(e);
-    b = oprev(syme);
+    b = oprev(syme); 
     splice(e, a);
     splice(syme, b);
     lnexttmp = lnext(a);
@@ -337,7 +337,7 @@ QUAD_EDGE e;
     a1 = dest(a);
     b1 = dest(b);
     orig(e) = a1;
-    dest(e) = b1;
+    dest(e) = b1; 
     /*printf("end swapedge\n");*/
 }
 
@@ -400,7 +400,7 @@ EDGE_PAIR do_merge(QUAD_EDGE ldo, QUAD_EDGE ldi, QUAD_EDGE rdi, QUAD_EDGE rdo)
     /*t1 = orig(loc);*/
     /*t2 = dest(loc);*/
 
-    while (ccw(t1,t2,t3/*orig(ldi), dest(ldi), orig(rdi)*/))
+    while (ccw(t1,t2,t3/*orig(ldi), dest(ldi), orig(rdi)*/)) 
       {
 	  ldi = lnext(ldi);
       /*ldi = lnext(loc);*/
@@ -416,12 +416,12 @@ EDGE_PAIR do_merge(QUAD_EDGE ldo, QUAD_EDGE ldi, QUAD_EDGE rdi, QUAD_EDGE rdo)
     t2=dest(rdi);
     /*t2 = dest(loc);*/
 
-    if (ccw(t2,t3,t1/*dest(rdi), orig(rdi), orig(ldi)*/))
+    if (ccw(t2,t3,t1/*dest(rdi), orig(rdi), orig(ldi)*/)) 
       {  rdi = rprev(rdi); }
       /*{ rdi = rprev(loc); }*/
     else { break; }
   }
-
+  
   basel = connect_left(sym(rdi), ldi);
 
   /*loc = basel;*/
@@ -437,7 +437,7 @@ EDGE_PAIR do_merge(QUAD_EDGE ldo, QUAD_EDGE ldi, QUAD_EDGE rdi, QUAD_EDGE rdo)
 
   if (t1/*orig(basel)*/ == orig(rdo)) rdo = basel;
   if (t2/*dest(basel)*/ == orig(ldo)) ldo = sym(basel);
-
+  
   while (1) {
     VERTEX_PTR v1,v2,v3,v4;
 
@@ -499,7 +499,7 @@ EDGE_PAIR do_merge(QUAD_EDGE ldo, QUAD_EDGE ldi, QUAD_EDGE rdi, QUAD_EDGE rdo)
 
     if ((! lvalid) && (! rvalid))
       {
-	EDGE_PAIR retval;
+	EDGE_PAIR retval; 
 	retval.left = ldo; retval.right = rdo; return retval;
       }
 
@@ -529,7 +529,7 @@ EDGE_PAIR do_merge(QUAD_EDGE ldo, QUAD_EDGE ldi, QUAD_EDGE rdi, QUAD_EDGE rdo)
 #define CONST_b 31415821
 #define RANGE 100
 
-int loop = 0, randum = 1, filein = 0 , fileout = 1, statistics = 0;
+int loop = 0, randum = 1, filein = 0 , fileout = 1, statistics = 0; 
 
 void in_order(tree)
      VERTEX_PTR tree;
@@ -554,7 +554,7 @@ void in_order(tree)
 int mult(int p, int q)
 {
 	int p1, p0, q1, q0;
-
+	
 	p1=p/CONST_m1; p0=p%CONST_m1;
 	q1=q/CONST_m1; q0=q%CONST_m1;
 	return (((p0*q1+p1*q0) % CONST_m1)*CONST_m1+p0*q0);
@@ -590,7 +590,7 @@ int main(int argc, char **argv) {
   to_lincoln = to_off = to_3d_out = to_color = 0;
   voronoi = delaunay = 1; interactive = ahost = 0 ;
   retained = 0;
-
+  
   printf("argc = %d\n",argc);
   n = dealwithargs(argc, argv);
 
@@ -604,10 +604,10 @@ int main(int argc, char **argv) {
     my_stack=allocate_stack(num_vertices);
     if (flag) in_order(point.v);
     if (flag) print_extra(extra.v);
-    printf("Doing voronoi on %d nodes\n", n);
+    printf("Doing voronoi on %d nodes\n", n); 
 
     edge=build_delaunay_triangulation(point.v,extra.v);
-
+    
     if (flag) output_voronoi_diagram(edge,n,my_stack);
   }
   /*  delete_all_edges();*/

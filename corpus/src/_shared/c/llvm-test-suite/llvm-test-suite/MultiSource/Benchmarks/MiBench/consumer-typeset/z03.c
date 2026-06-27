@@ -116,7 +116,7 @@ static FILE_TABLE ftab_rehash(FILE_TABLE S, int newsize)
 } /* end ftab_rehash */
 
 static void ftab_insert(OBJECT x, FILE_TABLE *S)
-{ int pos, num;
+{ int pos, num;					
   if( ftab_count(*S) == ftab_size(*S) - 1 )	/* one less since 0 unused */
     *S = ftab_rehash(*S, 2*ftab_size(*S));
   num = ++ftab_count(*S);
@@ -348,7 +348,7 @@ FILE_NUM FileNum(FULL_CHAR *str, FULL_CHAR *suffix)
 /*  file position is xfpos.                                                  */
 /*                                                                           */
 /*****************************************************************************/
-
+ 
 FILE_NUM DatabaseFileNum(FILE_POS *xfpos)
 { OBJECT x;
   FILE_NUM fnum;  FULL_CHAR *str;
@@ -411,8 +411,8 @@ FILE_NUM DatabaseFileNum(FILE_POS *xfpos)
     fnum == NO_FILE ? AsciiToFull("NO_FILE") : FileName(fnum));
   return fnum;
 } /* end DatabaseFileNum */
-
-
+ 
+ 
 /*@::FileName(), EchoFilePos(), PosOfFile()@**********************************/
 /*                                                                           */
 /*  FULL_CHAR *FileName(fnum)                                                */
@@ -870,7 +870,7 @@ OBJECT *full_name, FILE_POS *xfpos, BOOLEAN *compressed)
 /*****************************************************************************/
 
 void FileSetUpdated(FILE_NUM fnum, int newlines)
-{
+{ 
   debug2(DFS, DD, "FileSetUpdated(%s, %d)", FileName(fnum), newlines);
   updated(ftab_num(file_tab, fnum)) = TRUE;
   line_count(ftab_num(file_tab, fnum)) = newlines;

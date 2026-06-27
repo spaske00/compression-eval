@@ -28,7 +28,7 @@ float	    b[];
 			    trans(a)  is the transpose.
 
     OUTPUT
-	b       The solution vector x.
+	b       The solution vector x. 
 
     REMARKS
 	Error condition:
@@ -91,10 +91,10 @@ float	    b[];
     for( i=k+1, t=0.0, mik=a->pd[k]+k+1, bi=b+k+1; i<n; i++, mik++, bi++ )
       t += (*mik)*(*bi);
     b[k] += t;
-
+    
     /* Interchange b(k) and b(ipvt(k)) if necessary. */
     l    = *ipvt;
-    if( l == k ) continue;
+    if( l == k ) continue; 
     t    = b[l];
     b[l] = b[k];
     b[k] = t;

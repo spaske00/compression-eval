@@ -65,7 +65,7 @@ static int ShowSysErrorMessage(DWORD errorCode)
 int Main2(int argc,TCHAR **argv)
 {
   UStringVector commandStrings;
-  #ifdef _WIN32
+  #ifdef _WIN32  
   NCommandLineParser::SplitCommandLine(GetCommandLineW(), commandStrings);
   #else
   extern void mySplitCommandLineW(int numArguments,TCHAR  **arguments,UStringVector &parts);
@@ -81,12 +81,12 @@ int Main2(int argc,TCHAR **argv)
     MessageBoxW(0, L"Specify command", L"7-Zip", 0);
     return 0;
   }
-
-/*
+	
+/*	
   {
     CSysString resultPath;
 	NWindows::NFile::NDirectory::MyGetCurrentDirectory(resultPath);
-
+	
 	::MessageBoxW(0, resultPath, L"7-Zip - curDir", 0);
   }
 */
@@ -107,7 +107,7 @@ int Main2(int argc,TCHAR **argv)
   HRESULT result = codecs->Load();
   if (result != S_OK)
     throw CSystemException(result);
-
+  
   bool isExtractGroupCommand = options.Command.IsFromExtractGroup();
   if (codecs->Formats.Size() == 0 &&
         (isExtractGroupCommand ||
@@ -256,17 +256,17 @@ int APIENTRY WinMain(HINSTANCE  hInstance, HINSTANCE /* hPrevInstance */,
 int Main1(int argc,TCHAR **argv)
 {
   ReloadLangSmart(); // ReloadLang();
-
-
+	
+	
   // under MacOSX, a bundle does not keep the current directory
   // between 7zFM and 7zG ...
   // So, try to use the environment variable P7ZIP_CURRENT_DIR
   const char *p7zip_current_dir = getenv("P7ZIP_CURRENT_DIR");
-
+	
   if (p7zip_current_dir)
   {
     UString currentDir = MultiByteToUnicodeString(p7zip_current_dir);
-
+		
     NWindows::NFile::NDirectory::MySetCurrentDirectory(currentDir);
   }
 
@@ -318,3 +318,4 @@ int Main1(int argc,TCHAR **argv)
     return NExitCode::kFatalError;
   }
 }
+

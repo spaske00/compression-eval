@@ -21,15 +21,15 @@ int parse_settings(char *filename)
   char *line;
   int i=0;
 
-  line=(char *)malloc(100*sizeof(char));
-  for (i=0;i<NUM_TOKENS;i++)
+  line=(char *)malloc(100*sizeof(char));  
+  for (i=0;i<NUM_TOKENS;i++)  
     settings[i]=-1;
 
   if ((fp=fopen(filename,"r"))==NULL) {
     fprintf(stderr,"Could not find file %s\n",filename);
     exit(1);
   }
-
+  
   while(!feof(fp)) {
     i=0;
     fgets(line,100,fp);

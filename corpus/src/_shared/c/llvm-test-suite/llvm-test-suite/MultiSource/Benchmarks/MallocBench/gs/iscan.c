@@ -215,7 +215,7 @@ if ( gs_debug['s'] )
 	case '}':
 		if ( pstack == 0 )
 		   {	retcode = e_syntaxerror;
-			break;
+			break;	
 		   }
 		   {	ref *ref0 = (ref *)(proc_da.base + pstack);
 			uint size = myref - ref0;
