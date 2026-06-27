@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+py="${1:-python}"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+plots_dir="$script_dir/plots"
+
+mkdir -p "$plots_dir"
+
+"$py" "$script_dir/plot_v2_all.py" --out-dir "$plots_dir"
