@@ -1,0 +1,5 @@
+{
+  "_error": "HTTP 503",
+  "_body": "{\"error\":\"Search temporarily unavailable\",\"message\":\"Anonymous search is temporarily rate-limited due to heavy load. Please retry shortly, or use a free API key for uninterrupted access: https://openalex.org/rest-api.\"}",
+  "_url": "https://api.openalex.org/works?search=Shannon+entropy+information+theory+data+compression&per-page=50&sort=cited_by_count%3Adesc&mailto=noreply%40example.com"
+}

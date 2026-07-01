@@ -152,7 +152,11 @@ Install the tools required by the families that will be built:
 - Autotools support for projects that run `autoreconf`, such as jq.
 - A .NET SDK that supports the target framework used by the projects.
 - GraalVM with the `native-image` component.
-- Python 3 for `join_results` and `corr`; `corr` also requires pandas,
+- Python 3 for `join_results` and `corr`; `corr` also requires pandas.
+
+The metric commands use only the Python standard library. Their ELF32/ELF64
+section reader is implemented in `file_metrics.py`; no `ent`, `pyelftools`, or
+other runtime package is required.
 
 Set `GRAALVM_HOME` before building GraalVM artifacts:
 
@@ -166,6 +170,66 @@ The build scripts use `JOBS` for parallel builds where supported:
 ```bash
 export JOBS=8
 ```
+
+## File Metrics
+
+Measure one file from the repository root:
+
+```bash
+./compute_file_metrics path/to/file
+./compute_file_metrics --no-header path/to/file
+```
+
+The first form writes an RFC 4180 header and one data row. `--no-header` writes
+only the data row. Diagnostics are written to standard error, and an unreadable
+file or malformed ELF file produces no partial row.
+
+Measure every executable in a corpus directory:
+
+```bash
+./compute_entropy corpus/
+```
+
+When `corpus/bin/` exists, `compute_entropy` scans only that subtree. Otherwise,
+it scans the supplied directory. It processes executable regular files in sorted
+path order and writes `results_<directory>entropy_<timestamp>.csv` in the current
+directory. The first column is `filename`; the remaining columns match the
+single-file command. A failed file prevents publication of a partial result.
+
+The first seven columns preserve the former `ent -t -b` schema and bit-stream
+semantics:
+
+```text
+0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation
+```
+
+`0` is the compatibility value `1`; `File-bits` is the file size multiplied by
+eight. `Entropy`, `Chi-square`, and `Mean` operate on bits. The legacy serial
+correlation is circular and consumes each byte most-significant-bit first. The
+legacy Monte Carlo calculation uses non-overlapping six-byte coordinate groups.
+
+The following columns are appended in this order:
+
+| Column | Definition and unit |
+| --- | --- |
+| `File-Size-Bytes` | File size in bytes. |
+| `Byte-Entropy` | Base-2 Shannon entropy over byte frequencies, in bits per byte. |
+| `Byte-Chi-Square` | Chi-square statistic for the 256 byte values. |
+| `Byte-Monte-Carlo-Pi` | Pi estimate from non-overlapping six-byte groups interpreted as two unsigned 24-bit big-endian coordinates. |
+| `Byte-Serial-Correlation` | Non-circular Pearson correlation of adjacent byte values. |
+| `Conditional-Entropy` | First-order empirical `H(X_i | X_{i-1})`, in bits per byte. |
+| `Bigram-Entropy` | Base-2 Shannon entropy of all overlapping byte pairs; the fixed n-gram order is two. |
+| `Lempel-Ziv-Complexity` | Raw phrase count from incremental LZ78 parsing, including a final non-empty residual phrase. |
+| `Section-Format` | `ELF` for parsed ELF32/ELF64 input and `none` for non-ELF input. |
+| `Section-Size-Ratios` | Strict JSON object mapping `<section-index>:<section-name>` to file-backed section size divided by whole-file size. |
+| `Section-Entropies` | Parallel strict JSON object mapping each section identifier to byte entropy. |
+
+Scalar floating-point values use six decimal places. Metrics without enough
+observations or with a zero variance denominator are written as `NaN`. LZ78
+complexity and both size fields are zero for an empty file. Section metrics cover
+non-empty, file-backed ELF sections only; the null section and `SHT_NOBITS`
+sections are excluded. Non-ELF files retain all whole-file metrics and use `none`,
+`{}`, and `{}` for the three section fields.
 
 ## Building NEXUS
 
@@ -213,4 +277,3 @@ toolchains and deployment configurations.
   represented through the selected LLVM test-suite subset.
 - [Embench](https://github.com/embench/embench-iot): embedded benchmark programs
   relevant to executable-size and compiler-code-generation studies.
-

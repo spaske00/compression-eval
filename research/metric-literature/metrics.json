@@ -1,0 +1,188 @@
+{
+  "retrieval_date": "2026-07-01",
+  "citation_source_priority": [
+    {
+      "name": "OpenAlex",
+      "field": "cited_by_count",
+      "use": "Preferred citation-count source when API search is available."
+    },
+    {
+      "name": "Semantic Scholar",
+      "field": "citationCount",
+      "use": "Fallback source when OpenAlex is unavailable or missing entries."
+    },
+    {
+      "name": "Crossref",
+      "field": "is-referenced-by-count",
+      "use": "Last-resort reference-count proxy; report MUST label it as Crossref reference count, not a global citation count."
+    }
+  ],
+  "selection_policy": {
+    "target_selected_per_metric": 10,
+    "ranking": "Sort relevant candidates by the selected source's citation/reference count in descending order.",
+    "deduplication": "Prefer DOI match; otherwise normalize title and first author names.",
+    "allowed_types": [
+      "journal-article",
+      "proceedings-article",
+      "book",
+      "book-chapter",
+      "monograph"
+    ],
+    "excluded_types": [
+      "blog",
+      "tutorial",
+      "marketing page",
+      "encyclopedia page",
+      "patent"
+    ],
+    "sparse_literature_fallback": [
+      "direct metric use",
+      "metric theory or measurement",
+      "compression/randomness/binary-analysis application",
+      "closely related structural feature"
+    ]
+  },
+  "report_schema": {
+    "selected_entry_fields": [
+      "rank",
+      "title",
+      "authors",
+      "year",
+      "venue_or_publisher",
+      "item_type",
+      "doi_or_url",
+      "citation_count",
+      "citation_count_source",
+      "retrieval_date",
+      "relevance_note",
+      "query"
+    ],
+    "rejected_candidate_fields": [
+      "title",
+      "year",
+      "citation_count",
+      "citation_count_source",
+      "reason"
+    ],
+    "metric_section_fields": [
+      "metric_name",
+      "search_aliases",
+      "queries",
+      "ambiguity_notes",
+      "selected_sources",
+      "rejected_high_citation_candidates"
+    ]
+  },
+  "metrics": [
+    {
+      "id": "file-size",
+      "name": "File size",
+      "aliases": ["file size", "input size", "small file compression", "compression overhead"],
+      "queries": [
+        "file size compression ratio overhead",
+        "small file compression overhead",
+        "data compression performance input size"
+      ],
+      "relevance_note_template": "Relevant to file size, compression overhead, or size-dependent compression performance."
+    },
+    {
+      "id": "byte-entropy",
+      "name": "Byte entropy",
+      "aliases": ["Shannon entropy", "information entropy", "byte entropy", "entropy coding"],
+      "queries": [
+        "Shannon entropy information theory data compression",
+        "information entropy entropy coding compression",
+        "byte entropy randomness compression"
+      ],
+      "relevance_note_template": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility."
+    },
+    {
+      "id": "chi-square-byte-frequency",
+      "name": "Chi-square byte-frequency deviation",
+      "aliases": ["chi-square test", "frequency test", "byte frequency uniformity", "randomness test"],
+      "queries": [
+        "chi-square test randomness frequency distribution",
+        "byte frequency chi-square randomness test",
+        "statistical tests random number generators chi-square"
+      ],
+      "relevance_note_template": "Relevant to chi-square frequency deviation or statistical randomness testing."
+    },
+    {
+      "id": "monte-carlo-pi",
+      "name": "Monte Carlo pi estimate",
+      "aliases": ["Monte Carlo pi", "Monte Carlo method", "randomness pi estimate"],
+      "queries": [
+        "Monte Carlo method pi estimation randomness",
+        "Monte Carlo test random number generators pi",
+        "statistical randomness tests Monte Carlo pi"
+      ],
+      "relevance_note_template": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation."
+    },
+    {
+      "id": "serial-correlation",
+      "name": "Serial correlation coefficient",
+      "aliases": ["serial correlation", "autocorrelation", "lag one correlation", "dependence test"],
+      "queries": [
+        "serial correlation test random number generators",
+        "autocorrelation statistical test sequence randomness",
+        "serial dependence information sequence compression"
+      ],
+      "relevance_note_template": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing."
+    },
+    {
+      "id": "conditional-entropy",
+      "name": "Conditional entropy",
+      "aliases": ["conditional entropy", "entropy rate", "Markov entropy", "sequence predictability"],
+      "queries": [
+        "conditional entropy sequence prediction information theory",
+        "entropy rate Markov source data compression",
+        "conditional entropy compression predictability"
+      ],
+      "relevance_note_template": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression."
+    },
+    {
+      "id": "n-gram-entropy",
+      "name": "n-gram entropy",
+      "aliases": ["n-gram entropy", "block entropy", "sequence entropy", "language entropy"],
+      "queries": [
+        "n-gram entropy sequence prediction compression",
+        "block entropy information theory sequence",
+        "entropy of n-grams compression"
+      ],
+      "relevance_note_template": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns."
+    },
+    {
+      "id": "lempel-ziv-complexity",
+      "name": "Lempel-Ziv complexity",
+      "aliases": ["Lempel Ziv complexity", "LZ complexity", "Lempel-Ziv parsing", "dictionary compression"],
+      "queries": [
+        "Lempel Ziv complexity data compression",
+        "Lempel Ziv parsing complexity sequence",
+        "universal algorithm sequential data compression Lempel Ziv"
+      ],
+      "relevance_note_template": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression."
+    },
+    {
+      "id": "section-size-ratios",
+      "name": "Section-size ratios",
+      "aliases": ["executable section size", "PE section layout", "ELF section layout", "binary layout features"],
+      "queries": [
+        "executable section size ratio binary analysis",
+        "PE file section size features malware detection",
+        "ELF section layout binary analysis"
+      ],
+      "relevance_note_template": "Relevant to executable section layout, section-size features, or binary structural analysis."
+    },
+    {
+      "id": "section-level-entropy",
+      "name": "Section-level entropy",
+      "aliases": ["section entropy", "PE section entropy", "packed executable entropy", "malware entropy"],
+      "queries": [
+        "PE section entropy packed executable malware detection",
+        "section entropy binary analysis malware",
+        "executable entropy compression packing"
+      ],
+      "relevance_note_template": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "_error": "HTTP 429",
+  "_body": "{\"message\": \"Too Many Requests. Please wait and try again or apply for a key for higher rate limits. https://www.semanticscholar.org/product/api#api-key-form\", \"code\": \"429\"}",
+  "_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=statistical+tests+random+number+generators+chi-square&limit=50&fields=title%2Cauthors%2Cyear%2Cvenue%2CcitationCount%2CexternalIds%2Curl%2CpublicationTypes"
+}

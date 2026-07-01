@@ -1,0 +1,5 @@
+{
+  "_error": "TimeoutError",
+  "_body": "The read operation timed out",
+  "_url": "https://api.crossref.org/works?query.title=byte+frequency+chi-square+randomness+test&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+}
