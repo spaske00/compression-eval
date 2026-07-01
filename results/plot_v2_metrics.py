@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Patch
 
-from plot_v2_data import EXECUTABLE_STATS, artifact_frame, load_nexus, transformed_series
+from file_metric_config import ENABLED_FILE_METRICS, apply_metric_axis
+from plot_v2_data import artifact_frame, load_nexus, require_file_metric, transformed_series
 from plot_v2_style import (
     PAPER_WIDTH,
     apply_style,
     metric_label,
     ordered_toolchains,
-    padded_limits,
     save_pdf,
     toolchain_label,
 )
@@ -50,6 +50,7 @@ def output_name(metric):
 def plot_metric(nexus_path, out_dir, metric, ymin=None, ymax=None):
     apply_style()
     nexus = load_nexus(nexus_path)
+    require_file_metric(nexus, metric)
     artifacts = artifact_frame(nexus)
     artifacts = artifacts.copy()
     artifacts[metric] = transformed_series(artifacts, metric)
@@ -107,27 +108,17 @@ def plot_metric(nexus_path, out_dir, metric, ymin=None, ymax=None):
             ymin if ymin is not None else current_ymin,
             ymax if ymax is not None else current_ymax,
         )
+        # Explicit bounds override only the configured limits, not scale or ticks.
+        from file_metric_config import metric_spec
+        spec = metric_spec(metric)
+        if spec.scale == "symlog":
+            ax.set_yscale("symlog", linthresh=spec.symlog_threshold)
+        if spec.ticks is not None:
+            ax.set_yticks(spec.ticks)
+            if spec.tick_labels is not None:
+                ax.set_yticklabels(spec.tick_labels)
     else:
-        if metric == "Entropy":
-            limits = (0.25, 1)
-        elif metric == "Chi-square":
-            limits = (0, 400_000_000)
-        elif metric == "Original size":
-            limits = (0, 150)
-        else:
-            limits = padded_limits(artifacts[metric])
-        if limits is not None:
-            ax.set_ylim(*limits)
-    if metric == "Entropy":
-        ax.set_yticks([0.25, 0.5, 0.75, 1])
-    if metric == "Chi-square":
-        ax.set_yscale("symlog", linthresh=100_000)
-        ax.set_yticks([0, 100_000, 1_000_000, 10_000_000, 100_000_000])
-        ax.set_yticklabels(["0", "1e5", "1e6", "1e7", "1e8"])
-    if metric == "Original size":
-        ax.set_yscale("symlog", linthresh=1)
-        ax.set_yticks([0, 1, 10, 100])
-        ax.set_yticklabels(["0", "1", "10", "100"])
+        apply_metric_axis(ax, metric, artifacts[metric])
 
     handles = [
         Patch(facecolor=color, edgecolor="black", linewidth=0.5, alpha=0.72, label=toolchain_label(toolchain))
@@ -142,7 +133,7 @@ def plot_metric(nexus_path, out_dir, metric, ymin=None, ymax=None):
 def main():
     base_dir = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description="Plot one executable statistic by build configuration and platform.")
-    parser.add_argument("metric", nargs="?", default="Entropy", choices=EXECUTABLE_STATS)
+    parser.add_argument("metric", nargs="?", default="Entropy", choices=ENABLED_FILE_METRICS)
     parser.add_argument("ymin", nargs="?", type=float)
     parser.add_argument("ymax", nargs="?", type=float)
     parser.add_argument("--nexus", default=base_dir / "nexus.csv", type=Path)

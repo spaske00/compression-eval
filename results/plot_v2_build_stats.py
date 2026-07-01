@@ -4,9 +4,11 @@ import argparse
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 
+from file_metric_config import apply_metric_axis
 from plot_v2_data import (
-    KEY_EXECUTABLE_STATS,
+    available_file_metrics,
     artifact_frame,
     load_nexus,
     nexus_summary,
@@ -18,83 +20,60 @@ from plot_v2_style import (
     draw_grouped_boxplot,
     metric_label,
     ordered_toolchains,
-    padded_limits,
-    save_pdf,
     toolchain_label,
 )
 
 
-def plot_distributions(artifacts, out_dir):
-    transformed = transformed_metric_frame(artifacts, KEY_EXECUTABLE_STATS)
+METRICS_PER_PAGE = 5
+
+
+def metric_pages(metrics, page_size=METRICS_PER_PAGE):
+    return [metrics[start:start + page_size] for start in range(0, len(metrics), page_size)]
+
+
+def plot_distributions(artifacts, out_dir, metrics=None):
+    metrics = available_file_metrics(artifacts, report=True) if metrics is None else list(metrics)
+    if not metrics:
+        raise ValueError("No enabled file metrics contain finite values")
+    transformed = transformed_metric_frame(artifacts, metrics)
     transformed["exe_type"] = transformed["toolchain"].replace({"gcc": "gcc_clang", "clang": "gcc_clang"})
     exe_types = ordered_toolchains(transformed["exe_type"].unique())
-    y_limits = {
-        metric: padded_limits(transformed[metric])
-        for metric in KEY_EXECUTABLE_STATS
-    }
-    y_limits["Entropy"] = (0.25, 1)
-    y_limits["Chi-square"] = (0, 400_000_000)
-    y_limits["Original size"] = (0, 150)
-    y_ticks = {
-        "Entropy": [0.25, 0.5, 0.75, 1],
-        "Chi-square": [0, 100_000, 1_000_000, 10_000_000, 100_000_000],
-        "Original size": [0, 1, 10, 100],
-    }
-    y_tick_labels = {
-        "Chi-square": ["0", "1e5", "1e6", "1e7", "1e8"],
-        "Original size": ["0", "1", "10", "100"],
-    }
-    fig, axes = plt.subplots(
-        len(KEY_EXECUTABLE_STATS),
-        len(exe_types),
-        figsize=(PAPER_WIDTH, 10.0),
-        sharex=False,
-    )
-    if len(KEY_EXECUTABLE_STATS) == 1:
-        axes = axes.reshape(1, -1)
-
-    for row, metric in enumerate(KEY_EXECUTABLE_STATS):
-        for col, exe_type in enumerate(exe_types):
-            subset = transformed.loc[transformed["exe_type"] == exe_type]
-            ax = axes[row, col]
-            draw_grouped_boxplot(
-                ax,
-                subset,
-                metric,
-                exe_type,
-                ylabel=metric_label(metric) if col == 0 else None,
-                show_xlabel=row == len(KEY_EXECUTABLE_STATS) - 1,
+    output = Path(out_dir) / "nexus_build_stats_distributions.pdf"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with PdfPages(output) as pdf:
+        for page_metrics in metric_pages(metrics):
+            fig, axes = plt.subplots(
+                len(page_metrics), len(exe_types),
+                figsize=(PAPER_WIDTH, 2.0 * len(page_metrics)), sharex=False, squeeze=False,
             )
-            if y_limits[metric] is not None:
-                ax.set_ylim(*y_limits[metric])
-            if metric == "Chi-square":
-                ax.set_yscale("symlog", linthresh=100_000)
-            if metric == "Original size":
-                ax.set_yscale("symlog", linthresh=1)
-            if metric in y_ticks:
-                ax.set_yticks(y_ticks[metric])
-                labels = y_tick_labels.get(metric, [str(value) for value in y_ticks[metric]])
-                ax.set_yticklabels(labels)
-            if row == 0:
-                ax.text(
-                    0.5,
-                    1.06,
-                    toolchain_label(exe_type),
-                    transform=ax.transAxes,
-                    ha="center",
-                    va="bottom",
-                    fontsize=9.0,
-                )
-            if col != 0:
-                ax.set_ylabel("")
-
-    for ax in axes[:, 0]:
-        ax.yaxis.set_label_coords(-0.30, 0.5)
-    for ax in axes[-1, :]:
-        ax.xaxis.set_label_coords(0.5, -0.42)
-
-    fig.subplots_adjust(left=0.16, right=0.995, top=0.965, bottom=0.065, wspace=0.24, hspace=0.38)
-    save_pdf(fig, Path(out_dir) / "nexus_build_stats_distributions.pdf")
+            for row, metric in enumerate(page_metrics):
+                for col, exe_type in enumerate(exe_types):
+                    subset = transformed.loc[transformed["exe_type"] == exe_type]
+                    ax = axes[row, col]
+                    draw_grouped_boxplot(
+                        ax, subset, metric, exe_type,
+                        ylabel=metric_label(metric) if col == 0 else None,
+                        show_xlabel=row == len(page_metrics) - 1,
+                    )
+                    apply_metric_axis(ax, metric, transformed[metric])
+                    if row == 0:
+                        ax.text(
+                            0.5, 1.06, toolchain_label(exe_type), transform=ax.transAxes,
+                            ha="center", va="bottom", fontsize=9.0,
+                        )
+                    if col != 0:
+                        ax.set_ylabel("")
+            for ax in axes[:, 0]:
+                ax.yaxis.set_label_coords(-0.30, 0.5)
+            for ax in axes[-1, :]:
+                ax.xaxis.set_label_coords(0.5, -0.42)
+            fig.subplots_adjust(
+                left=0.16, right=0.995, top=0.965, bottom=0.065,
+                wspace=0.24, hspace=0.48,
+            )
+            pdf.savefig(fig, bbox_inches="tight", pad_inches=0.025)
+            plt.close(fig)
+    print(f"Saved: {output}")
 
 
 def generate(nexus_path, out_dir):

@@ -7,15 +7,7 @@ import plot_compressor_metrics
 import plot_v2_build_compression
 import plot_v2_build_stats
 import plot_v2_metrics
-
-
-METRICS = [
-    "Entropy",
-    "Chi-square",
-    "Mean",
-    "Monte-Carlo-Pi",
-    "Serial-Correlation",
-]
+from plot_v2_data import available_file_metrics, load_nexus
 
 
 def main():
@@ -27,7 +19,8 @@ def main():
 
     plot_v2_build_stats.generate(args.nexus, args.out_dir)
     plot_v2_build_compression.generate(args.nexus, args.out_dir)
-    for metric in METRICS:
+    nexus = load_nexus(args.nexus)
+    for metric in available_file_metrics(nexus, report=True):
         plot_v2_metrics.plot_metric(args.nexus, args.out_dir, metric)
     for metric in plot_compressor_metrics.METRICS:
         plot_compressor_metrics.generate(args.nexus, args.out_dir, metric)

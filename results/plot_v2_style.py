@@ -10,6 +10,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
+from file_metric_config import FILE_METRIC_SPECS
+
 
 PAPER_WIDTH = 7.2
 WIDE_WIDTH = 12.8
@@ -32,6 +34,7 @@ CONFIG_ORDER = {
 }
 
 METRIC_LABELS = {
+    **{name: spec.label for name, spec in FILE_METRIC_SPECS.items()},
     "Entropy": "Entropy",
     "Chi-square": "Chi-square",
     "Mean": "Mean",
@@ -44,6 +47,7 @@ METRIC_LABELS = {
 }
 
 SHORT_METRIC_LABELS = {
+    **{name: spec.short_label for name, spec in FILE_METRIC_SPECS.items()},
     "Entropy": "Entropy",
     "Chi-square": "Chi-square",
     "Mean": "Mean",

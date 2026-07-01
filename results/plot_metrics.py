@@ -3,7 +3,10 @@ matplotlib.use("Agg")
 import sys
 import os
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
+
+from file_metric_config import ENABLED_FILE_METRICS
 
 from plot_style import (
     apply_paper_style,
@@ -29,6 +32,7 @@ csv_prefix = os.path.splitext(os.path.basename(csv_path))[0]
 y_safe = safe_name(y_col)
 out_prefix = f"{csv_prefix}_{y_safe}"
 legend_prefix = group_name(csv_prefix, name_filter)
+os.makedirs("plots/all", exist_ok=True)
 
 df = pd.read_csv(csv_path)
 
@@ -43,16 +47,16 @@ if name_filter:
 styles = line_style_map(df["Compressor name"].unique())
 save_line_legend(f"legend_{legend_prefix}_line_compressors.pdf", styles)
 
-sort_columns = [
-    "Original size",
-    "Entropy",
-    "Chi-square",
-    "Mean",
-    "Monte-Carlo-Pi",
-    "Serial-Correlation",
-]
+sort_columns = ENABLED_FILE_METRICS
 
 for sort_col in sort_columns:
+    if sort_col not in df.columns:
+        print(f"Skipping file metric {sort_col}: column is missing")
+        continue
+    df[sort_col] = pd.to_numeric(df[sort_col], errors="coerce")
+    if not np.isfinite(df[sort_col].to_numpy(dtype=float)).any():
+        print(f"Skipping file metric {sort_col}: column contains no finite values")
+        continue
     # Get the per-file sort value (same for all rows of a filename)
     file_order = df.groupby("Filename")[sort_col].first().sort_values()
 

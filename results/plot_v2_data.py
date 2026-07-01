@@ -6,23 +6,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from file_metric_config import ENABLED_FILE_METRICS, FILE_METRIC_SPECS
 
-EXECUTABLE_STATS = [
-    "Entropy",
-    "Chi-square",
-    "Mean",
-    "Monte-Carlo-Pi",
-    "Serial-Correlation",
-    "Original size",
-]
 
-KEY_EXECUTABLE_STATS = [
-    "Entropy",
-    "Chi-square",
-    "Serial-Correlation",
-    "Monte-Carlo-Pi",
-    "Original size",
-]
+EXECUTABLE_STATS = ENABLED_FILE_METRICS
 
 PERFORMANCE_METRICS = [
     "Compression speed",
@@ -31,8 +18,6 @@ PERFORMANCE_METRICS = [
 ]
 
 LOG10_METRICS = set()
-
-BYTES_PER_MIB = 1024 * 1024
 
 REQUIRED_NEXUS_COLUMNS = {
     "Filename",
@@ -91,7 +76,7 @@ def parse_build_metadata(filename):
 
 
 def artifact_frame(nexus):
-    cols = ["Filename", "program", "toolchain", "arch", "config", *EXECUTABLE_STATS]
+    cols = ["Filename", "program", "toolchain", "arch", "config", *available_file_metrics(nexus)]
     artifacts = nexus[cols].drop_duplicates().copy()
     duplicate_filenames = artifacts["Filename"].duplicated(keep=False)
     if duplicate_filenames.any():
@@ -109,8 +94,9 @@ def transformed_series(frame, metric):
     if metric in LOG10_METRICS:
         values = values.where(values > 0)
         return np.log10(values)
-    if metric == "Original size":
-        return values / BYTES_PER_MIB
+    spec = FILE_METRIC_SPECS.get(metric)
+    if spec is not None and spec.divisor:
+        return values / spec.divisor
     if metric == "Ratio":
         values = values.where(values > 0)
         return 100 / values
@@ -181,8 +167,38 @@ def _coerce_numeric(frame):
         "Mean",
         "Monte-Carlo-Pi",
         "Serial-Correlation",
+        *ENABLED_FILE_METRICS,
     ]
     for column in numeric_columns:
         if column in frame.columns:
             frame[column] = pd.to_numeric(frame[column], errors="coerce")
     return frame
+
+
+def metric_unavailable_reason(frame, metric):
+    if metric not in frame.columns:
+        return "column is missing"
+    values = pd.to_numeric(frame[metric], errors="coerce").replace([np.inf, -np.inf], np.nan)
+    if not values.notna().any():
+        return "column contains no finite values"
+    return None
+
+
+def available_file_metrics(frame, report=False):
+    available = []
+    for metric in ENABLED_FILE_METRICS:
+        reason = metric_unavailable_reason(frame, metric)
+        if reason:
+            if report:
+                print(f"Skipping file metric {metric}: {reason}")
+        else:
+            available.append(metric)
+    return available
+
+
+def require_file_metric(frame, metric):
+    if metric not in ENABLED_FILE_METRICS:
+        raise ValueError(f"File metric {metric!r} is not enabled")
+    reason = metric_unavailable_reason(frame, metric)
+    if reason:
+        raise ValueError(f"Cannot plot file metric {metric!r}: {reason}")
