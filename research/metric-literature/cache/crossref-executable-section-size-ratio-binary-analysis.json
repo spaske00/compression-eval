@@ -1,0 +1,5162 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 6386461,
+    "items": [
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11416-016-0274-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 28,
+        "title": [
+          "Structural analysis of binary executable headers for malware detection optimization"
+        ],
+        "author": [
+          {
+            "given": "Baptiste",
+            "family": "David",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Eric",
+            "family": "Filiol",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kévin",
+            "family": "Gallienne",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              4,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computer Virology and Hacking Techniques"
+        ],
+        "URL": "https://doi.org/10.1007/s11416-016-0274-2"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/icisa.2013.6579429",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Framework for Dynamic Taint Analysis of Binary Executable File"
+        ],
+        "author": [
+          {
+            "given": "Young Hyun",
+            "family": "Choi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tai-Myoung",
+            "family": "Chung",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 International Conference on Information Science and Applications (ICISA)"
+        ],
+        "URL": "https://doi.org/10.1109/icisa.2013.6579429"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1007/s40012-019-00248-5",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "An analysis of executable size reduction by LLVM passes"
+        ],
+        "author": [
+          {
+            "given": "Shalini",
+            "family": "Jain",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Utpal",
+            "family": "Bora",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Prateek",
+            "family": "Kumar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vaibhav B.",
+            "family": "Sinha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Suresh",
+            "family": "Purini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5290-3266",
+            "authenticated-orcid": false,
+            "given": "Ramakrishna",
+            "family": "Upadrasta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "CSI Transactions on ICT"
+        ],
+        "URL": "https://doi.org/10.1007/s40012-019-00248-5"
+      },
+      {
+        "publisher": "Saint Petersburg State Polytechnical University",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.5862/jcstcs.236.10",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Dynamic Analysis of ARM ELF Executable Code Using Static Binary Instrumentation"
+        ],
+        "author": [
+          {
+            "given": "M.K.",
+            "family": "Ermakov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "St. Petersburg State Polytechnical University Journal. Computer Science. Telecommunications and Control Systems."
+        ],
+        "URL": "https://doi.org/10.5862/jcstcs.236.10"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.asoc.2017.12.040",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Characterization of runtime resource usage from analysis of binary executable programs"
+        ],
+        "author": [
+          {
+            "given": "Renê",
+            "family": "de Souza Pinto",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alexandre Claudio",
+            "family": "Botazzo Delbem",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6172-2689",
+            "authenticated-orcid": false,
+            "given": "Francisco José",
+            "family": "Monaco",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Soft Computing"
+        ],
+        "URL": "https://doi.org/10.1016/j.asoc.2017.12.040"
+      },
+      {
+        "publisher": "InTech",
+        "DOI": "10.5772/67775",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Proactive Detection of Unknown Binary Executable Malware"
+        ],
+        "author": [
+          {
+            "given": "Eric",
+            "family": "Filiol",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Security in Computing and Communications"
+        ],
+        "URL": "https://doi.org/10.5772/67775"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-007-6996-0_20",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A Framework of Static Analyzer for Taint Analysis of Binary Executable File"
+        ],
+        "author": [
+          {
+            "given": "Young-Hyun",
+            "family": "Choi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jae-Won",
+            "family": "Min",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Min-Woo",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jung-Ho",
+            "family": "Eom",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tai-Myoung",
+            "family": "Chung",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Electrical Engineering",
+          "Information Technology Convergence"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-007-6996-0_20"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-159749156-3/50010-1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Executable File Analysis"
+        ],
+        "author": [
+          {
+            "given": "Harlan",
+            "family": "Carvey",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Windows Forensic Analysis"
+        ],
+        "URL": "https://doi.org/10.1016/b978-159749156-3/50010-1"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11227-016-1941-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 30,
+        "title": [
+          "Binary executable file similarity calculation using function matching"
+        ],
+        "author": [
+          {
+            "given": "TaeGuen",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yeo Reum",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "BooJoong",
+            "family": "Kang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Eul Gyu",
+            "family": "Im",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              12,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Supercomputing"
+        ],
+        "URL": "https://doi.org/10.1007/s11227-016-1941-2"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1109/lt60077.2024.10469044",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Tractable Executable Binary Provenance Signalling through Vision Transformers"
+        ],
+        "author": [
+          {
+            "given": "Mohammad",
+            "family": "Nauman",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Effat College of Engineering Effat University,Computer Science Department,Jeddah,KSA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 21st Learning and Technology Conference (L&amp;amp;T)"
+        ],
+        "URL": "https://doi.org/10.1109/lt60077.2024.10469044"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.diin.2012.05.014",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Bin-Carver: Automatic recovery of binary executable files"
+        ],
+        "author": [
+          {
+            "given": "Scott",
+            "family": "Hand",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhiqiang",
+            "family": "Lin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guofei",
+            "family": "Gu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bhavani",
+            "family": "Thuraisingham",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Digital Investigation"
+        ],
+        "URL": "https://doi.org/10.1016/j.diin.2012.05.014"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.actamat.2023.118700",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Effects of size ratio on particle packing in binary glasses"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4162-789X",
+            "authenticated-orcid": false,
+            "given": "Huijun",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chengjie",
+            "family": "Luo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhongyu",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1439-0121",
+            "authenticated-orcid": false,
+            "given": "Yilong",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Materialia"
+        ],
+        "URL": "https://doi.org/10.1016/j.actamat.2023.118700"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.diin.2019.01.004",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Mal-Flux: Rendering hidden code of packed binary executable"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0910-5506",
+            "authenticated-orcid": false,
+            "given": "Charles",
+            "family": "Lim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Suryadi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0374-4465",
+            "authenticated-orcid": false,
+            "given": "Kalamullah",
+            "family": "Ramli",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3699-3943",
+            "authenticated-orcid": false,
+            "given": "Yohanes Syailendra",
+            "family": "Kotualubun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Digital Investigation"
+        ],
+        "URL": "https://doi.org/10.1016/j.diin.2019.01.004"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1365-3091.1996.tb01467.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Thin section grain size analysis revisited"
+        ],
+        "author": [
+          {
+            "given": "GERALD M.",
+            "family": "FRIEDMAN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              6,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Sedimentology"
+        ],
+        "URL": "https://doi.org/10.1111/j.1365-3091.1996.tb01467.x"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1365-3091.1994.tb01436.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 80,
+        "title": [
+          "Thin section grain size analysis revisited"
+        ],
+        "author": [
+          {
+            "given": "M. R.",
+            "family": "JOHNSON",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              6,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Sedimentology"
+        ],
+        "URL": "https://doi.org/10.1111/j.1365-3091.1994.tb01436.x"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevlett.100.225502",
+        "type": "journal-article",
+        "is-referenced-by-count": 38,
+        "title": [
+          "Crystallization of Dense Binary Hard-Sphere Mixtures with Marginal Size Ratio"
+        ],
+        "author": [
+          {
+            "given": "Stephen R.",
+            "family": "Williams",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C. Patrick",
+            "family": "Royall",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gary",
+            "family": "Bryant",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              6,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review Letters"
+        ],
+        "URL": "https://doi.org/10.1103/physrevlett.100.225502"
+      },
+      {
+        "DOI": "10.2139/ssrn.4245024",
+        "title": [
+          "Effects of Size Ratio on Binary Metallic and Hard-Sphere Glasses"
+        ],
+        "author": [
+          {
+            "given": "Huijun",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chengjie",
+            "family": "Luo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhongyu",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yilong",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SSRN Electronic Journal"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.2139/ssrn.4245024"
+      },
+      {
+        "publisher": "American Chemical Society (ACS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1021/ie040048b",
+        "type": "journal-article",
+        "is-referenced-by-count": 96,
+        "title": [
+          "Particulate Binary Mixtures:  Dependence of Packing Porosity on Particle Size Ratio"
+        ],
+        "author": [
+          {
+            "given": "Ricardo P.",
+            "family": "Dias",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Instituto Politécnico de Bragança, Esc. de Tecnologia e Gestão, Campus de Sta. Apolónia, Ap. 1038, 5301-854 Bragança, Portugal, and Centro de Eng. Biológica, University of Minho, Campus de Gualtar, 4710-057 Braga, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "José A.",
+            "family": "Teixeira",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Instituto Politécnico de Bragança, Esc. de Tecnologia e Gestão, Campus de Sta. Apolónia, Ap. 1038, 5301-854 Bragança, Portugal, and Centro de Eng. Biológica, University of Minho, Campus de Gualtar, 4710-057 Braga, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Manuel G.",
+            "family": "Mota",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Instituto Politécnico de Bragança, Esc. de Tecnologia e Gestão, Campus de Sta. Apolónia, Ap. 1038, 5301-854 Bragança, Portugal, and Centro de Eng. Biológica, University of Minho, Campus de Gualtar, 4710-057 Braga, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alexander I.",
+            "family": "Yelshin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Instituto Politécnico de Bragança, Esc. de Tecnologia e Gestão, Campus de Sta. Apolónia, Ap. 1038, 5301-854 Bragança, Portugal, and Centro de Eng. Biológica, University of Minho, Campus de Gualtar, 4710-057 Braga, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              10,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Industrial &amp; Engineering Chemistry Research"
+        ],
+        "URL": "https://doi.org/10.1021/ie040048b"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1002/cphc.201900299",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Binary Colloidal Nanoparticles with a Large Size Ratio in Analytical Ultracentrifugation"
+        ],
+        "author": [
+          {
+            "given": "Xufeng",
+            "family": "Xu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Physical Chemistry University of Konstanz  Universitätsstr 10, Box 714 78457 Konstanz Germany"
+              },
+              {
+                "name": "Department of Chemical Engineering and Chemistry Eindhoven University of Technology 5600 MB Eindhoven  Netherlands"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1148-0308",
+            "authenticated-orcid": false,
+            "given": "Helmut",
+            "family": "Cölfen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Physical Chemistry University of Konstanz  Universitätsstr 10, Box 714 78457 Konstanz Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "ChemPhysChem"
+        ],
+        "URL": "https://doi.org/10.1002/cphc.201900299"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/wcre.2006.11",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "An Empirical Study of Executable Concept Slice Size"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Binkley",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nicolas",
+            "family": "Gold",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mark",
+            "family": "Harman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zheng",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kiarash",
+            "family": "Mahdavi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2006 13th Working Conference on Reverse Engineering"
+        ],
+        "URL": "https://doi.org/10.1109/wcre.2006.11"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-29280-4_28",
+        "type": "book-chapter",
+        "is-referenced-by-count": 10,
+        "title": [
+          "PEAL—Packed Executable AnaLysis"
+        ],
+        "author": [
+          {
+            "given": "Vijay",
+            "family": "Laxmi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Manoj Singh",
+            "family": "Gaur",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Parvez",
+            "family": "Faruki",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Smita",
+            "family": "Naval",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Advanced Computing, Networking and Security"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-29280-4_28"
+      },
+      {
+        "publisher": "Institute of Control, Robotics and Systems",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              3,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.5302/j.icros.2021.20.0179",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hot-patching Platform for Executable and Linkable Format Binary Application"
+        ],
+        "author": [
+          {
+            "given": "Haegeon",
+            "family": "Jeong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kyungtae",
+            "family": "Kang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Institute of Control, Robotics and Systems"
+        ],
+        "URL": "https://doi.org/10.5302/j.icros.2021.20.0179"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1186/s42400-021-00088-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Bin2vec: learning representations of binary executable programs for security tasks"
+        ],
+        "author": [
+          {
+            "given": "Shushan",
+            "family": "Arakelyan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sima",
+            "family": "Arasteh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christophe",
+            "family": "Hauser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Erik",
+            "family": "Kline",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Aram",
+            "family": "Galstyan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Cybersecurity"
+        ],
+        "URL": "https://doi.org/10.1186/s42400-021-00088-4"
+      },
+      {
+        "publisher": "ACM Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1998
+            ]
+          ]
+        },
+        "DOI": "10.1145/268946.268948",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 85,
+        "title": [
+          "Alias analysis of executable code"
+        ],
+        "author": [
+          {
+            "given": "Saumya",
+            "family": "Debray",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert",
+            "family": "Muth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthew",
+            "family": "Weippert",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the 25th ACM SIGPLAN-SIGACT symposium on Principles of programming languages  - POPL '98"
+        ],
+        "URL": "https://doi.org/10.1145/268946.268948"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1145/3478432.3499236",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Are Executable Exams Executable?"
+        ],
+        "author": [
+          {
+            "given": "Yael",
+            "family": "Erez",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Technion - Israel Institute of Technology &amp; Ort Braude College of Engineering, Haifa, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Orit",
+            "family": "Hazzan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Technion - Israel Institute of Technology, Haifa, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 2"
+        ],
+        "URL": "https://doi.org/10.1145/3478432.3499236"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1365-3091.1966.tb01600.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "THIN‐SECTION SIZE ANALYSIS: A FURTHER NOTE"
+        ],
+        "author": [
+          {
+            "given": "PETER H.",
+            "family": "STAUFFER",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              6,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Sedimentology"
+        ],
+        "URL": "https://doi.org/10.1111/j.1365-3091.1966.tb01600.x"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1986,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1016/0032-5910(86)80021-3",
+        "type": "journal-article",
+        "is-referenced-by-count": 103,
+        "title": [
+          "Minimum fluidization velocity of binary mixture of particles with large size ratio"
+        ],
+        "author": [
+          {
+            "given": "K.",
+            "family": "Noda",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Uchida",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Makino",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "H.",
+            "family": "Kamo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Powder Technology"
+        ],
+        "URL": "https://doi.org/10.1016/0032-5910(86)80021-3"
+      },
+      {
+        "publisher": "American Society of Civil Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              2,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1061/9780784413272.014",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Size Effects on the Void Ratio of Loosely Packed Binary Particle Mixtures"
+        ],
+        "author": [
+          {
+            "given": "Andrew R.",
+            "family": "Fuggle",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Geotechnical Engineer, Golder Associates Inc., 3730 Chamblee Tucker Rd., Atlanta, GA 30341."
+              },
+              {
+                "name": "Student, Georgia Institute of Technology, School of Civil and Environmental Engineering, 790 Atlantic Drive NW, Atlanta, GA 30332."
+              },
+              {
+                "name": "Professor, Georgia Institute of Technology, School of Civil and Environmental Engineering, 790 Atlantic Drive NW, Atlanta, GA 30332."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "M. Mahdi",
+            "family": "Roozbahani",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Geotechnical Engineer, Golder Associates Inc., 3730 Chamblee Tucker Rd., Atlanta, GA 30341."
+              },
+              {
+                "name": "Student, Georgia Institute of Technology, School of Civil and Environmental Engineering, 790 Atlantic Drive NW, Atlanta, GA 30332."
+              },
+              {
+                "name": "Professor, Georgia Institute of Technology, School of Civil and Environmental Engineering, 790 Atlantic Drive NW, Atlanta, GA 30332."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "J. David",
+            "family": "Frost",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Geotechnical Engineer, Golder Associates Inc., 3730 Chamblee Tucker Rd., Atlanta, GA 30341."
+              },
+              {
+                "name": "Student, Georgia Institute of Technology, School of Civil and Environmental Engineering, 790 Atlantic Drive NW, Atlanta, GA 30332."
+              },
+              {
+                "name": "Professor, Georgia Institute of Technology, School of Civil and Environmental Engineering, 790 Atlantic Drive NW, Atlanta, GA 30332."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              3,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Geo-Congress 2014 Technical Papers"
+        ],
+        "URL": "https://doi.org/10.1061/9780784413272.014"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreve.90.040801",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Reaction-diffusion-advection equation in binary tree networks and optimal size ratio"
+        ],
+        "author": [
+          {
+            "given": "Hidetsugu",
+            "family": "Sakaguchi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              10,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review E"
+        ],
+        "URL": "https://doi.org/10.1103/physreve.90.040801"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1201/b10528-82",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Effect of particle size ratio on shear strength of dense binary mixtures"
+        ],
+        "author": [
+          {
+            "given": "Takao",
+            "family": "Ueda",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takashi",
+            "family": "Matsushima",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yasuo",
+            "family": "Yamada",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              5,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Geomechanics and Geotechnics"
+        ],
+        "URL": "https://doi.org/10.1201/b10528-82"
+      },
+      {
+        "publisher": "Royal Society of Chemistry (RSC)",
+        "DOI": "10.1039/d0sm00939c",
+        "type": "journal-article",
+        "is-referenced-by-count": 20,
+        "title": [
+          "How size ratio and segregation affect the packing of binary granular mixtures"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4108-7264",
+            "authenticated-orcid": false,
+            "given": "Salvatore",
+            "family": "Pillitteri",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Quartier Agora"
+              },
+              {
+                "name": "Liège"
+              },
+              {
+                "name": "Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eric",
+            "family": "Opsomer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Quartier Agora"
+              },
+              {
+                "name": "Liège"
+              },
+              {
+                "name": "Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Geoffroy",
+            "family": "Lumay",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Quartier Agora"
+              },
+              {
+                "name": "Liège"
+              },
+              {
+                "name": "Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1824-2011",
+            "authenticated-orcid": false,
+            "given": "Nicolas",
+            "family": "Vandewalle",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Quartier Agora"
+              },
+              {
+                "name": "Liège"
+              },
+              {
+                "name": "Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": [
+          "Soft Matter"
+        ],
+        "URL": "https://doi.org/10.1039/d0sm00939c"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-07317-0_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Analysis of Executable Software Models"
+        ],
+        "author": [
+          {
+            "given": "Richard",
+            "family": "Bubel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Antonio Flores",
+            "family": "Montoya",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Reiner",
+            "family": "Hähnle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Formal Methods for Executable Software Models"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-07317-0_1"
+      },
+      {
+        "DOI": "10.1017/cbo9780511600821.026",
+        "title": [
+          "Executable Task Analysis: Integration Issues"
+        ],
+        "author": [
+          {
+            "given": "Conn V",
+            "family": "Copas",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ernest A",
+            "family": "Edmonds",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gilbert",
+            "family": "Cockton",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Stephen",
+            "family": "Draper",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "George R. S.",
+            "family": "Weir",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "People and Computers IX"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 2,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511600821.026"
+      },
+      {
+        "publisher": "Emerald Publishing Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              11,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1108/979-8-88730-831-920251020",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Are Executable Exams Executable?"
+        ],
+        "author": [
+          {
+            "given": "Yael",
+            "family": "Erez",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Technion Israel Institution of Technology Braude College of Engineering"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hazzan",
+            "family": "Orit",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Technion Israel Institution of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Innovation Trends and Educational Technology in Higher Education"
+        ],
+        "URL": "https://doi.org/10.1108/979-8-88730-831-920251020"
+      },
+      {
+        "DOI": "10.1016/s0889-5406(05)81209-0",
+        "title": [
+          "Incisor ratio as a tooth size analysis"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "American Journal of Orthodontics and Dentofacial Orthopedics"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1016/s0889-5406(05)81209-0"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1063/5.0090330",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Finite-size effects in the diffusion dynamics of a glass-forming binary mixture with large size ratio"
+        ],
+        "author": [
+          {
+            "given": "Vinay",
+            "family": "Vaibhav",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The Institute of Mathematical Sciences, CIT Campus 1 , Taramani, Chennai 600113, India"
+              },
+              {
+                "name": "Homi Bhabha National Institute 2 , Anushaktinagar, Mumbai 400094, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6880-2793",
+            "authenticated-orcid": false,
+            "given": "Jürgen",
+            "family": "Horbach",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut für Theoretische Physik II, Heinrich-Heine-Universität Düsseldorf 3 , Universitätsstraße 1, 40225 Düsseldorf, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9722-8364",
+            "authenticated-orcid": false,
+            "given": "Pinaki",
+            "family": "Chaudhuri",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The Institute of Mathematical Sciences, CIT Campus 1 , Taramani, Chennai 600113, India"
+              },
+              {
+                "name": "Homi Bhabha National Institute 2 , Anushaktinagar, Mumbai 400094, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Chemical Physics"
+        ],
+        "URL": "https://doi.org/10.1063/5.0090330"
+      },
+      {
+        "publisher": "Royal Society of Chemistry (RSC)",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.1039/b926696h",
+        "type": "journal-article",
+        "is-referenced-by-count": 36,
+        "title": [
+          "Effects of particle-size ratio on jamming of binary mixtures at zero temperature"
+        ],
+        "author": [
+          {
+            "given": "Ning",
+            "family": "Xu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Emily S. C.",
+            "family": "Ching",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Soft Matter"
+        ],
+        "URL": "https://doi.org/10.1039/b926696h"
+      },
+      {
+        "DOI": "10.1109/pact.2002.1106020",
+        "title": [
+          "Speculative alias analysis for executable code"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "Fernandez",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Espasa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings.International Conference on Parallel Architectures and Compilation Techniques"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 10,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/pact.2002.1106020"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1365-3091.1968.tb01107.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "THIN‐SECTION SIZE ANALYSIS AND THE MOMENT PROBLEM"
+        ],
+        "author": [
+          {
+            "given": "BASANTA K.",
+            "family": "SAHU",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              6,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Sedimentology"
+        ],
+        "URL": "https://doi.org/10.1111/j.1365-3091.1968.tb01107.x"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1111/biom.13501",
+        "type": "journal-article",
+        "is-referenced-by-count": 30,
+        "title": [
+          "Sample size formula for general win ratio analysis"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8626-9822",
+            "authenticated-orcid": false,
+            "given": "Lu",
+            "family": "Mao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics and Medical Informatics University of Wisconsin‐Madison Madison Wisconsin"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6726-003X",
+            "authenticated-orcid": false,
+            "given": "KyungMann",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics and Medical Informatics University of Wisconsin‐Madison Madison Wisconsin"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Xinran",
+            "family": "Miao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics and Medical Informatics University of Wisconsin‐Madison Madison Wisconsin"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Biometrics"
+        ],
+        "URL": "https://doi.org/10.1111/biom.13501"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "DOI": "10.1109/access.2026.3661919",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "BinSight: Enhancing Executable Binary Classification Accuracy Through Kernel Density Estimation-Based Visualization"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-4137-8670",
+            "authenticated-orcid": false,
+            "given": "Jun-Seob",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Information Security, Sejong University, Seoul, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3377-223X",
+            "authenticated-orcid": false,
+            "given": "Ki-Woong",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Information Security, Sejong University, Seoul, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Access"
+        ],
+        "URL": "https://doi.org/10.1109/access.2026.3661919"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-57808-4_10",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "ACE in Chains: How Risky Is CBC Encryption of Binary Executable Files?"
+        ],
+        "author": [
+          {
+            "given": "Rintaro",
+            "family": "Fujita",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takanori",
+            "family": "Isobe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kazuhiko",
+            "family": "Minematsu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Applied Cryptography and Network Security"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-57808-4_10"
+      },
+      {
+        "publisher": "Tech Science Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.32604/cmes.2023.025062",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "The Effects of the Particle Size Ratio on the Behaviors of Binary Granular Materials"
+        ],
+        "author": [
+          {
+            "given": "Deze",
+            "family": "Yang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Xihua",
+            "family": "Chu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Modeling in Engineering &amp; Sciences"
+        ],
+        "URL": "https://doi.org/10.32604/cmes.2023.025062"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/ijca2020920200",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File Checker: Determining Behavioural Signatures of an Executable Binary to Detect Malware"
+        ],
+        "author": [
+          {
+            "given": "Harshal",
+            "family": "R.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Himanshu",
+            "family": "Shukla",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Jothimani",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anurag",
+            "family": "Singh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              5,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/ijca2020920200"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jcis.2018.11.084",
+        "type": "journal-article",
+        "is-referenced-by-count": 30,
+        "title": [
+          "Sandwich layering in binary nanoparticle films and effect of size ratio on stratification behavior"
+        ],
+        "author": [
+          {
+            "given": "Weiping",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Amanda J.",
+            "family": "Carr",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kevin G.",
+            "family": "Yager",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alexander F.",
+            "family": "Routh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Surita R.",
+            "family": "Bhatia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Colloid and Interface Science"
+        ],
+        "URL": "https://doi.org/10.1016/j.jcis.2018.11.084"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/0038-1098(85)91092-0",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Evidence of a critical size ratio in packings of binary mixtures of hard grains"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "Ammi()",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Bideau()",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.P.",
+            "family": "Troadec()",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Ropital()",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.",
+            "family": "Thomas()",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Solid State Communications"
+        ],
+        "URL": "https://doi.org/10.1016/0038-1098(85)91092-0"
+      },
+      {
+        "publisher": "Society of Rheology",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1122/1.4736556",
+        "type": "journal-article",
+        "is-referenced-by-count": 55,
+        "title": [
+          "The rheology of binary mixtures of highly concentrated emulsions: Effect of droplet size ratio"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Foudazi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I.",
+            "family": "Masalova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. Ya.",
+            "family": "Malkin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Rheology"
+        ],
+        "URL": "https://doi.org/10.1122/1.4736556"
+      },
+      {
+        "publisher": "Shanghai Institute of Optics and Fine Mechanics",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.3788/col201614.071101",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Analysis of Strehl ratio limit with superresolution binary phase filters"
+        ],
+        "author": [
+          {
+            "given": "Vidal F.",
+            "family": "Canales",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Pedro J.",
+            "family": "Valle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Manuel P.",
+            "family": "Cagigal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chinese Optics Letters"
+        ],
+        "URL": "https://doi.org/10.3788/col201614.071101"
+      },
+      {
+        "publisher": "Pleiades Publishing Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1134/s0036023619110020",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Quasi-Binary Section CuInS2–FeIn2S4"
+        ],
+        "author": [
+          {
+            "given": "Sh. S.",
+            "family": "Abdullaeva",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F. M.",
+            "family": "Mammadov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I. B.",
+            "family": "Bakhtiyarly",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Russian Journal of Inorganic Chemistry"
+        ],
+        "URL": "https://doi.org/10.1134/s0036023619110020"
+      },
+      {
+        "publisher": "Saratov State University",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.18500/1816-9775-2020-20-1-49-54",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Quasi-binary Section Ag2SnS3-Sb2S3"
+        ],
+        "author": [
+          {
+            "name": "Institute of Catalysis and Inorganic Chemistry named after academician M. F. Nagiyev of the National Academy of Sciences of Azerbaijan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1624-7345",
+            "authenticated-orcid": false,
+            "given": "Sharafat H.",
+            "family": "Mammadov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": [
+          "Izvestiya of Saratov University. New Series. Series: Chemistry. Biology. Ecology"
+        ],
+        "URL": "https://doi.org/10.18500/1816-9775-2020-20-1-49-54"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1145/3774934.3786439",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Binary Compatible Critical Section Delegation"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0006-1591-2506",
+            "authenticated-orcid": false,
+            "given": "Junyao",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fudan University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-0300-3019",
+            "authenticated-orcid": false,
+            "given": "Zhuo",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Alibaba Cloud Computing, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4879-6258",
+            "authenticated-orcid": false,
+            "given": "Zhe",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fudan University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 31st ACM SIGPLAN Annual Symposium on Principles and Practice of Parallel Programming"
+        ],
+        "URL": "https://doi.org/10.1145/3774934.3786439"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.joi.2016.04.001",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Special section on size-independent indicators in citation analysis"
+        ],
+        "author": [
+          {
+            "given": "Ludo",
+            "family": "Waltman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Informetrics"
+        ],
+        "URL": "https://doi.org/10.1016/j.joi.2016.04.001"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1145/258915.258927",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Interprocedural dataflow analysis in an executable optimizer"
+        ],
+        "author": [
+          {
+            "given": "David W.",
+            "family": "Goodwin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Digital Equipment Corporation"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1997,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the ACM SIGPLAN 1997 conference on Programming language design and implementation"
+        ],
+        "URL": "https://doi.org/10.1145/258915.258927"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-1-59749-237-9.00003-x",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Portable Executable and Executable and Linking Formats"
+        ],
+        "author": [
+          {
+            "given": "Dan",
+            "family": "Kaminsky",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Reverse Engineering Code with IDA Pro"
+        ],
+        "URL": "https://doi.org/10.1016/b978-1-59749-237-9.00003-x"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1145/2070336.2070361",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Making the non-executable ACATS tests executable"
+        ],
+        "author": [
+          {
+            "given": "Dan R.",
+            "family": "Eilers",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Irvine Compiler Corp., Irvine, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tero",
+            "family": "Koskinen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "n/a, n/a, Finland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM SIGAda Ada Letters"
+        ],
+        "URL": "https://doi.org/10.1145/2070336.2070361"
+      },
+      {
+        "publisher": "Dean & Francis Press",
+        "DOI": "10.61173/q4zhfh18",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Three Executable Applications Based on Sentiment Analysis"
+        ],
+        "author": [
+          {
+            "given": "Yitong",
+            "family": "Peng",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Interdisciplinary Humanities and Communication Studies"
+        ],
+        "URL": "https://doi.org/10.61173/q4zhfh18"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1145/258916.258927",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Interprocedural dataflow analysis in an executable optimizer"
+        ],
+        "author": [
+          {
+            "given": "David W.",
+            "family": "Goodwin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Digital Equipment Corporation"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1997,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM SIGPLAN Notices"
+        ],
+        "URL": "https://doi.org/10.1145/258916.258927"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "DOI": "10.1109/pccc.1990.101657",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "On constructing executable prototypes from structured analysis"
+        ],
+        "author": [
+          {
+            "given": "R.-J.",
+            "family": "Lea",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.-G.",
+            "family": "Chung",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Ninth Annual International Phoenix Conference on Computers and Communications. 1990 Conference Proceedings"
+        ],
+        "URL": "https://doi.org/10.1109/pccc.1990.101657"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1007/s10035-017-0719-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Effect of particle size ratio and contribution of particle size fractions on micromechanics of uniaxially compressed binary sphere mixtures"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Wiącek",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Parafiniuk",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Stasiak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              4,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Granular Matter"
+        ],
+        "URL": "https://doi.org/10.1007/s10035-017-0719-4"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1080/00014788.1987.9729792",
+        "type": "journal-article",
+        "is-referenced-by-count": 22,
+        "title": [
+          "Sector and Size Effects in Ratio Analysis: An Indirect Test of Ratio Proportionality"
+        ],
+        "author": [
+          {
+            "given": "Stuart",
+            "family": "McLeay",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Susan",
+            "family": "Fieldsend",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Accounting and Business Research"
+        ],
+        "URL": "https://doi.org/10.1080/00014788.1987.9729792"
+      },
+      {
+        "DOI": "10.5140/jass.2003.20.2.133",
+        "title": [
+          "SMALL MASS RATIO CONTACT BINARY"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              6,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Astronomy and Space Sciences"
+        ],
+        "publisher": "The Korean Space Science Society",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.5140/jass.2003.20.2.133"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              3,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.1145/3555776.3577821",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hot-patching Platform for Executable and Linkable Format Binary Application for System Resilience"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0326-6061",
+            "authenticated-orcid": false,
+            "given": "Haegeon",
+            "family": "Jeong",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Hanyang University, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6587-7044",
+            "authenticated-orcid": false,
+            "given": "Kyungtae",
+            "family": "Kang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hanyang University, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6594-3339",
+            "authenticated-orcid": false,
+            "given": "Jinsung",
+            "family": "An",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hanyang University, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 38th ACM/SIGAPP Symposium on Applied Computing"
+        ],
+        "URL": "https://doi.org/10.1145/3555776.3577821"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1109/icghit.2019.00031",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Automatic Detection of Cryptographic Algorithms in Executable Binary Files using Advanced Code Chain"
+        ],
+        "author": [
+          {
+            "given": "Han Seong",
+            "family": "Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hyung-Woo",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 International Conference on Green and Human Information Technology (ICGHIT)"
+        ],
+        "URL": "https://doi.org/10.1109/icghit.2019.00031"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-99-5755-2_51",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Effect of Size Ratio on Permeability and Local Packing Fraction of the Binary Packed Bed"
+        ],
+        "author": [
+          {
+            "given": "Pratyush",
+            "family": "Kumar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sandip K.",
+            "family": "Saha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Atul",
+            "family": "Sharma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              2,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Mechanical Engineering",
+          "Fluid Mechanics and Fluid Power, Volume 6"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-99-5755-2_51"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              12,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1080/19648189.2025.2492067",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Effect of particle size ratio and stratification on the shear behaviour of binary soil mixtures"
+        ],
+        "author": [
+          {
+            "given": "Kai",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Transportation, Southeast University",
+                "place": [
+                  "Nanjing, China"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Weichen",
+            "family": "Sun",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Urban Geology and Engineering, Hebei GEO University",
+                "place": [
+                  "Shijiazhuang, China"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Junxu",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Transportation, Southeast University",
+                "place": [
+                  "Nanjing, China"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              5,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "European Journal of Environmental and Civil Engineering"
+        ],
+        "URL": "https://doi.org/10.1080/19648189.2025.2492067"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1145/2070337.2070361",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Making the non-executable ACATS tests executable"
+        ],
+        "author": [
+          {
+            "given": "Dan R.",
+            "family": "Eilers",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Irvine Compiler Corp., Irvine, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tero",
+            "family": "Koskinen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "n/a, n/a, Finland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 2011 ACM annual international conference on Special interest group on the ada programming language"
+        ],
+        "URL": "https://doi.org/10.1145/2070337.2070361"
+      },
+      {
+        "publisher": "Oxford University Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              4,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1093/oso/9780195087147.003.0021",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Executable statements"
+        ],
+        "author": [
+          {
+            "given": "Douglas",
+            "family": "Schenck",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Peter",
+            "family": "Wilson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              11,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Information Modeling: The EXPRESS Way"
+        ],
+        "URL": "https://doi.org/10.1093/oso/9780195087147.003.0021"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/imis.2015.40",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Research on the Collaborative Analysis Technology for Source Code and Binary Executable Based upon the Unified Defect Mode Set"
+        ],
+        "author": [
+          {
+            "given": "Xiaobing",
+            "family": "Liang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Baojiang",
+            "family": "Cui",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yingjie",
+            "family": "Lv",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yilun",
+            "family": "Fu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 9th International Conference on Innovative Mobile and Internet Services in Ubiquitous Computing"
+        ],
+        "URL": "https://doi.org/10.1109/imis.2015.40"
+      },
+      {
+        "DOI": "10.59350/7e4s0-j4569",
+        "title": [
+          "Executable Papers"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0330-9428",
+            "authenticated-orcid": false,
+            "given": "Konrad",
+            "family": "Hinsen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/02dpqcy73",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Centre de Biophysique Moléculaire"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Front Matter",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.59350/7e4s0-j4569"
+      },
+      {
+        "publisher": "American Astronomical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.3847/1538-3881/adf202",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Binary Analysis and Period Study of the Long-period, High-mass-ratio Contact Binary KIC 7766185"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-4524-9497",
+            "authenticated-orcid": false,
+            "given": "Conor M.",
+            "family": "Larsen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1913-0281",
+            "authenticated-orcid": true,
+            "given": "Andrej",
+            "family": "Prša",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "The Astronomical Journal"
+        ],
+        "URL": "https://doi.org/10.3847/1538-3881/adf202"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cancergencyto.2003.09.015",
+        "type": "journal-article",
+        "is-referenced-by-count": 24,
+        "title": [
+          "Combined binary ratio labeling fluorescence in situ hybridization analysis of chordoma"
+        ],
+        "author": [
+          {
+            "given": "Alina",
+            "family": "Kuźniacka",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fredrik",
+            "family": "Mertens",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bodil",
+            "family": "Strömbeck",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joop",
+            "family": "Wiegant",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nils",
+            "family": "Mandahl",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Cancer Genetics and Cytogenetics"
+        ],
+        "URL": "https://doi.org/10.1016/j.cancergencyto.2003.09.015"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.605136",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Novel signal-to-noise ratio analysis for binary phase-only filters"
+        ],
+        "author": [
+          {
+            "given": "Paul C.",
+            "family": "Miller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Opto-Ireland 2005: Imaging and Vision"
+        ],
+        "URL": "https://doi.org/10.1117/12.605136"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4614-8265-9_1356",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Executable Knowledge"
+        ],
+        "author": [
+          {
+            "given": "Mor",
+            "family": "Peleg",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Arturo",
+            "family": "González-Ferrer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Database Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4614-8265-9_1356"
+      },
+      {
+        "DOI": "10.1007/springerreference_13926",
+        "title": [
+          "executable statement"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_13926"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1145/267896.267928",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Executable connectors"
+        ],
+        "author": [
+          {
+            "given": "Stéphane",
+            "family": "Ducasse",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Software Composition Group, Institut für Informatik (IAM), Universität Bern"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tamar",
+            "family": "Richner",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Software Composition Group, Institut für Informatik (IAM), Universität Bern"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1997,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM SIGSOFT Software Engineering Notes"
+        ],
+        "URL": "https://doi.org/10.1145/267896.267928"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-44238-5_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Executable Code"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Laraway",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              4,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Literatures of the Americas",
+          "Borges and Black Mirror"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-44238-5_4"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.compgeo.2019.103353",
+        "type": "journal-article",
+        "is-referenced-by-count": 68,
+        "title": [
+          "An analysis of the effects of the size ratio and fines content on the shear behaviors of binary mixtures using DEM"
+        ],
+        "author": [
+          {
+            "given": "Yangui",
+            "family": "Zhu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9660-1737",
+            "authenticated-orcid": false,
+            "given": "Zhihong",
+            "family": "Nie",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jian",
+            "family": "Gong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jinfeng",
+            "family": "Zou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lianheng",
+            "family": "Zhao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Liang",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computers and Geotechnics"
+        ],
+        "URL": "https://doi.org/10.1016/j.compgeo.2019.103353"
+      },
+      {
+        "publisher": "American Astronomical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1086/432544",
+        "type": "journal-article",
+        "is-referenced-by-count": 68,
+        "title": [
+          "Deep, Low Mass Ratio Overcontact Binary Systems. V. The Lowest Mass Ratio Binary V857 Herculis"
+        ],
+        "author": [
+          {
+            "given": "S.-B.",
+            "family": "Qian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.-Y.",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Soonthornthum",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.-Z.",
+            "family": "Yuan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Y.-G.",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.-J.",
+            "family": "He",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Astronomical Journal"
+        ],
+        "URL": "https://doi.org/10.1086/432544"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_6522",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "executable statement"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_6522"
+      },
+      {
+        "DOI": "10.1007/springerreference_13925",
+        "title": [
+          "executable program"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 1,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_13925"
+      },
+      {
+        "DOI": "10.1016/s0304-0208(08)70435-3",
+        "title": [
+          "Section 9 Binary Banach Lie Algebras"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "container-title": [
+          "North-Holland Mathematics Studies",
+          "Symmetric Banach Manifolds and Jordan C*-Algebras"
+        ],
+        "publisher": "Elsevier",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1016/s0304-0208(08)70435-3"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              9,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1145/1023833.1023857",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Static program analysis of embedded executable assembly code"
+        ],
+        "author": [
+          {
+            "given": "Ramakrishnan",
+            "family": "Venkitaraman",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The University of Texas at Dallas, TX"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gopal",
+            "family": "Gupta",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The University of Texas at Dallas, TX"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              9,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 2004 international conference on Compilers, architecture, and synthesis for embedded systems"
+        ],
+        "URL": "https://doi.org/10.1145/1023833.1023857"
+      },
+      {
+        "DOI": "10.1007/springerreference_13927",
+        "title": [
+          "executable task state"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_13927"
+      },
+      {
+        "publisher": "Trans Tech Publications, Ltd.",
+        "DOI": "10.4028/www.scientific.net/amm.182-183.1746",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Executable Program Slicing"
+        ],
+        "author": [
+          {
+            "given": "Sheng Hui",
+            "family": "Shi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Beijing University of Chemical Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Qun Xiong",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing University of Chemical Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhi Qiang",
+            "family": "Geng",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing University of Chemical Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Applied Mechanics and Materials"
+        ],
+        "URL": "https://doi.org/10.4028/www.scientific.net/amm.182-183.1746"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1038/nbt1356",
+        "type": "journal-article",
+        "is-referenced-by-count": 430,
+        "title": [
+          "Executable cell biology"
+        ],
+        "author": [
+          {
+            "given": "Jasmin",
+            "family": "Fisher",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas A",
+            "family": "Henzinger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              11,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Nature Biotechnology"
+        ],
+        "URL": "https://doi.org/10.1038/nbt1356"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1109/ic2ie53219.2021.9649225",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Generating Features of Windows Portable Executable Files for Static Analysis using Portable Executable Reader Module (PEFile)"
+        ],
+        "author": [
+          {
+            "given": "Rico S.",
+            "family": "Santos",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Enrique D.",
+            "family": "Festijo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 4th International Conference of Computer and Informatics Engineering (IC2IE)"
+        ],
+        "URL": "https://doi.org/10.1109/ic2ie53219.2021.9649225"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

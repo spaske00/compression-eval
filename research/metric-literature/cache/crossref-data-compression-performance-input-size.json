@@ -1,5 +1,5134 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=data+compression+performance+input+size&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 4842653,
+    "items": [
+      {
+        "DOI": "10.1109/test.2002.1041756",
+        "title": [
+          "Packet-based input test data compression techniques"
+        ],
+        "author": [
+          {
+            "given": "E.H.",
+            "family": "Volkerink",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Khoche",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Mitra",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. International Test Conference"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 49,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/test.2002.1041756"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/tcad.2003.818122",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Test data compression based on input-output dependence"
+        ],
+        "author": [
+          {
+            "given": "I.",
+            "family": "Pomeranz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.M.",
+            "family": "Reddy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"
+        ],
+        "URL": "https://doi.org/10.1109/tcad.2003.818122"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1111/1467-8489.12136",
+        "type": "journal-article",
+        "is-referenced-by-count": 23,
+        "title": [
+          "Input Substitution, Productivity Performance and Farm Size"
+        ],
+        "author": [
+          {
+            "given": "Yu",
+            "family": "Sheng",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The Australian Bureau of Agricultural and Resource Economics and Sciences Canberra Australian Capital Territory Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alistair",
+            "family": "Davidson",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The Australian Bureau of Agricultural and Resource Economics and Sciences Canberra Australian Capital Territory Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Keith",
+            "family": "Fuglie",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Economic Research Service United States Department of Agriculture Washington DC USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dandan",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National School of Development Peking University Beijing China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Australian Journal of Agricultural and Resource Economics"
+        ],
+        "URL": "https://doi.org/10.1111/1467-8489.12136"
+      },
+      {
+        "DOI": "10.1109/soac.1991.143840",
+        "title": [
+          "Data compression and database performance"
+        ],
+        "author": [
+          {
+            "given": "G.",
+            "family": "Graefe",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.D.",
+            "family": "Shapiro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[Proceedings] 1991 Symposium on Applied Computing"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 57,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/soac.1991.143840"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781394374175.ch07",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Maximizing Model Performance with Input Data"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Architected Intelligence"
+        ],
+        "URL": "https://doi.org/10.1002/9781394374175.ch07"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1088/1757-899x/871/1/012011",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Non-Linear Data Structure for Data Coding for Size Compression"
+        ],
+        "author": [
+          {
+            "given": "Ashwan A.",
+            "family": "Abdulmunem",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ahmed K.",
+            "family": "Hassan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dunya J.",
+            "family": "Mohammed",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IOP Conference Series: Materials Science and Engineering"
+        ],
+        "URL": "https://doi.org/10.1088/1757-899x/871/1/012011"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/sisy47553.2019.9111506",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Influence of block size on JPEG compression performance"
+        ],
+        "author": [
+          {
+            "given": "Póth",
+            "family": "Miklós",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Subotica Tech,Subotica,Serbia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Željen",
+            "family": "Trpovski",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Faculty of Technical Sciences,Novi Sad,Serbia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE 17th International Symposium on Intelligent Systems and Informatics (SISY)"
+        ],
+        "URL": "https://doi.org/10.1109/sisy47553.2019.9111506"
+      },
+      {
+        "publisher": "SPIE-Intl Soc Optical Eng",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              2,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1117/1.1637612",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "On reduction of input data for lossy compression of images"
+        ],
+        "author": [
+          {
+            "given": "Asif",
+            "family": "Hayat",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Optical Engineering"
+        ],
+        "URL": "https://doi.org/10.1117/1.1637612"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2002
+            ]
+          ]
+        },
+        "DOI": "10.1109/ipdps.2002.1015528",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Enhancing data migration performance via parallel data compression"
+        ],
+        "author": [
+          {
+            "family": "Jonghyun Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Winslett",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Xiaosong Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Shengke Yu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings 16th International Parallel and Distributed Processing Symposium"
+        ],
+        "URL": "https://doi.org/10.1109/ipdps.2002.1015528"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              9,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1109/hpec58863.2023.10363590",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "AOCL-Compression - A High Performance Optimized Lossless Data Compression Library"
+        ],
+        "author": [
+          {
+            "given": "S. Biplab",
+            "family": "Raut",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "AMD India Private Limited,Bangalore,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE High Performance Extreme Computing Conference (HPEC)"
+        ],
+        "URL": "https://doi.org/10.1109/hpec58863.2023.10363590"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-34218-9_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Classification, Input Data, and Key Performance Indicators"
+        ],
+        "author": [
+          {
+            "given": "Markus",
+            "family": "Rabe",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Johannes",
+            "family": "Stoldt",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Steffen",
+            "family": "Strassburger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christoph",
+            "family": "von Viebahn",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Energy-Related Material Flow Simulation in Production and Logistics"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-34218-9_1"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/pvsc.2012.6318227",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Solar input data for photovoltaic performance modeling"
+        ],
+        "author": [
+          {
+            "given": "Marie",
+            "family": "Schnitzer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Peter",
+            "family": "Johnson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christopher",
+            "family": "Thuman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Janine",
+            "family": "Freeman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 38th IEEE Photovoltaic Specialists Conference"
+        ],
+        "URL": "https://doi.org/10.1109/pvsc.2012.6318227"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/ats.2017.18",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Test Compression with Single-Input Data Spreader and Multiple Test Sessions"
+        ],
+        "author": [
+          {
+            "given": "Chang-Wen",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yi-Cheng",
+            "family": "Kong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kuen-Jong",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 IEEE 26th Asian Test Symposium (ATS)"
+        ],
+        "URL": "https://doi.org/10.1109/ats.2017.18"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/mp.17409",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Eigenbin compression for reducing photon‐counting CT data size"
+        ],
+        "author": [
+          {
+            "given": "Taly Gilat",
+            "family": "Schmidt",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Biomedical Engineering Marquette University and Medical College of Wisconsin  Milwaukee Wisconsin USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhye",
+            "family": "Yin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "GE HealthCare  Waukesha Wisconsin USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jingwu",
+            "family": "Yao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "GE HealthCare  Waukesha Wisconsin USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiahua",
+            "family": "Fan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "GE HealthCare  Waukesha Wisconsin USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              9,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Medical Physics"
+        ],
+        "URL": "https://doi.org/10.1002/mp.17409"
+      },
+      {
+        "DOI": "10.1109/test.2005.1584018",
+        "title": [
+          "XWRC: externally-loadedweighted random pattern testing for input test data compression"
+        ],
+        "author": [
+          {
+            "family": "Seongmoon Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.J.",
+            "family": "Balakrishnan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.T.",
+            "family": "Chakradhar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE International Conference on Test, 2005."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/test.2005.1584018"
+      },
+      {
+        "DOI": "10.1109/iai.2000.839586",
+        "title": [
+          "Variable block-size double predictor DPCM image data compression"
+        ],
+        "author": [
+          {
+            "family": "Jia-Chyi Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Hong-Bin Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Ren-Jean Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "4th IEEE Southwest Symposium on Image Analysis and Interpretation"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iai.2000.839586"
+      },
+      {
+        "DOI": "10.1109/cicc.1994.379736",
+        "title": [
+          "High performance multi-channel data compression chip"
+        ],
+        "author": [
+          {
+            "given": "E.",
+            "family": "Nusinov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Pasco-Anderson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of IEEE Custom Integrated Circuits Conference - CICC '94"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 4,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/cicc.1994.379736"
+      },
+      {
+        "DOI": "10.1117/3.1002297.ch6",
+        "title": [
+          "Optimizing the Performance of Onboard Data Compression"
+        ],
+        "container-title": [
+          "Optical Satellite Data Compression and Implementation"
+        ],
+        "publisher": "Society of Photo-Optical Instrumentation Engineers",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1117/3.1002297.ch6"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/ccaa.2017.8229810",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 30,
+        "title": [
+          "Lossless data compression techniques and their performance"
+        ],
+        "author": [
+          {
+            "given": "Komal",
+            "family": "Sharma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kunal",
+            "family": "Gupta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 International Conference on Computing, Communication and Automation (ICCCA)"
+        ],
+        "URL": "https://doi.org/10.1109/ccaa.2017.8229810"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              1,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119332015.ch19",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improving Multicore System Performance through Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Ozcan",
+            "family": "Ozturk",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mahmut",
+            "family": "Kandemir",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              1,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Programming multi‐core and many‐core computing systems"
+        ],
+        "URL": "https://doi.org/10.1002/9781119332015.ch19"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.vlsi.2016.11.002",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Temperature and data size trade-off in dictionary based test data compression"
+        ],
+        "author": [
+          {
+            "given": "Rajit",
+            "family": "Karmakar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Santanu",
+            "family": "Chattopadhyay",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Integration"
+        ],
+        "URL": "https://doi.org/10.1016/j.vlsi.2016.11.002"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781394171910.ch4",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Lossless Input Feature Map Compression"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Accelerators for Convolutional Neural Networks"
+        ],
+        "URL": "https://doi.org/10.1002/9781394171910.ch4"
+      },
+      {
+        "DOI": "10.1109/ijcnn.2001.939010",
+        "title": [
+          "Input data clustering to improve neural network performance"
+        ],
+        "author": [
+          {
+            "family": "Min Su",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Basu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IJCNN'01. International Joint Conference on Neural Networks. Proceedings (Cat. No.01CH37222)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/ijcnn.2001.939010"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/icoict49345.2020.9166458",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimizing Data Storage in Handling Dynamic Input Fields with JSON String Compression"
+        ],
+        "author": [
+          {
+            "given": "Irfan",
+            "family": "Darmawan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alam",
+            "family": "Rahmatulloh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Iqbal Muhammad Fajar",
+            "family": "Nuralam",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Rianto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rohmat",
+            "family": "Gunawan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2020 8th International Conference on Information and Communication Technology (ICoICT)"
+        ],
+        "URL": "https://doi.org/10.1109/icoict49345.2020.9166458"
+      },
+      {
+        "DOI": "10.1109/isit.1995.531120",
+        "title": [
+          "Adaptive limitation of the dictionary size in LZW data compression"
+        ],
+        "author": [
+          {
+            "given": "K.",
+            "family": "Ouaissa",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Abdat",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Plume",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 1995 IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1995.531120"
+      },
+      {
+        "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1520/stp14147s",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Lysimeter Data as Input to Performance Assessment Models"
+        ],
+        "author": [
+          {
+            "suffix": "Jr",
+            "given": "JW",
+            "family": "McConnell",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Idaho National Engineering Laboratory, EG&G Idaho, Inc. 1 Senior engineering specialist and Principal engineer/scientist , respectively, , P.O. Box 1625, Idaho Falls, ID83415 ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "RD",
+            "family": "Rogers",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Idaho National Engineering Laboratory, EG&G Idaho, Inc. 1 Senior engineering specialist and Principal engineer/scientist , respectively, , P.O. Box 1625, Idaho Falls, ID83415 ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "TM",
+            "family": "Sullivan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Brookhaven National Laboratory 2 Senior scientist , , Upton, NY11973 ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "JD",
+            "family": "Jastrow",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Argonne National Laboratory 3 Environmental scientist , , Argonne, IL60439 ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "DS",
+            "family": "Hicks",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Oak Ridge National Laboratory 4 Environmental scientist , , Oak Ridge, TN37831 ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "RR",
+            "family": "Brey",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Purdue University 5 Graduate assistant , , West Lafayette, IN47907 ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Stabilization and Solidification of Hazardous, Radioactive, and Mixed Wastes: 3rd Volume"
+        ],
+        "URL": "https://doi.org/10.1520/stp14147s"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.apergo.2016.08.011",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "The role of size of input box, location of input box, input method and display size in Chinese handwriting performance and preference on mobile devices"
+        ],
+        "author": [
+          {
+            "given": "Zhe",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pei-Luen Patrick",
+            "family": "Rau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Ergonomics"
+        ],
+        "URL": "https://doi.org/10.1016/j.apergo.2016.08.011"
+      },
+      {
+        "publisher": "Institution of Engineering and Technology (IET)",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1049/icp.2025.0052",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A proposed combination of data compression for various size lengths"
+        ],
+        "author": [
+          {
+            "given": "Doaa J.",
+            "family": "Kadhim",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Electrical Engineering Technical College, Middle Technical University, Baghdad, Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mahmood F.",
+            "family": "Mosleh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electrical Engineering Technical College, Middle Technical University, Baghdad, Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Faeza A.",
+            "family": "Abed",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Technology, Middle Technical University, Baghdad, Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IET Conference Proceedings"
+        ],
+        "URL": "https://doi.org/10.1049/icp.2025.0052"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/s10586-025-05547-y",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimizing blockchain file storage: enhancing performance and reducing ledger size with adaptive compression and advanced data structures"
+        ],
+        "author": [
+          {
+            "given": "Muhammed",
+            "family": "Tmeizeh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carlos",
+            "family": "Rodríguez-Domínguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "María Visitación",
+            "family": "Hurtado-Torres",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Cluster Computing"
+        ],
+        "URL": "https://doi.org/10.1007/s10586-025-05547-y"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-49345-5_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Intelligent Data Compression Policy for Hadoop Performance Optimization"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Ashu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mir Wajahat",
+            "family": "Hussain",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Diptendu",
+            "family": "Sinha Roy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hemant Kumar",
+            "family": "Reddy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Intelligent Systems and Computing",
+          "Proceedings of the 11th International Conference on Soft Computing and Pattern Recognition (SoCPaR 2019)"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-49345-5_9"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/icaie53562.2021.00056",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Performance of compression algorithms for radio signal data"
+        ],
+        "author": [
+          {
+            "given": "Wang",
+            "family": "Zhi-Xin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "State Radio Monitoring Center,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yue",
+            "family": "Xin-Dong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Gansu Radio Monitoring Station,Gansu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Li",
+            "family": "Hai-Feng",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Dingxi Radio Monitoring Station,Gansu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Feng",
+            "family": "Tao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Lanzhou University of Technology,Gansu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zheng",
+            "family": "Lu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Lanzhou University of Technology,Gansu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Liu",
+            "family": "Jun-Wei",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Lanzhou University of Technology,Gansu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 2nd International Conference on Artificial Intelligence and Education (ICAIE)"
+        ],
+        "URL": "https://doi.org/10.1109/icaie53562.2021.00056"
+      },
+      {
+        "DOI": "10.70675/e7ca5091z143fz471czb61az057c9be1397d",
+        "title": [
+          "Efficient data compression for high-performance PDE solvers"
+        ],
+        "author": [
+          {
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0006-8397-3124",
+            "authenticated-orcid": false,
+            "given": "Clément",
+            "family": "Flint",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/00pg6eq24",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Strasbourg"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Agence Bibliographique de l'Enseignement Supérieur",
+        "is-referenced-by-count": 0,
+        "type": "dissertation",
+        "URL": "https://doi.org/10.70675/e7ca5091z143fz471czb61az057c9be1397d"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-12597-3_25",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "High-Performance Spatial Data Compression for Scientific Applications"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-7715-8920",
+            "authenticated-orcid": false,
+            "given": "Ronald",
+            "family": "Kriemann",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6897-1095",
+            "authenticated-orcid": false,
+            "given": "Hatem",
+            "family": "Ltaief",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7245-2968",
+            "authenticated-orcid": false,
+            "given": "Minh Bau",
+            "family": "Luong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7906-8646",
+            "authenticated-orcid": false,
+            "given": "Francisco E. Hernández",
+            "family": "Pérez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7080-1266",
+            "authenticated-orcid": false,
+            "given": "Hong G.",
+            "family": "Im",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4052-7224",
+            "authenticated-orcid": false,
+            "given": "David",
+            "family": "Keyes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Euro-Par 2022: Parallel Processing"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-12597-3_25"
+      },
+      {
+        "DOI": "10.7717/peerjcs.2160/fig-7",
+        "title": [
+          "Figure 7: The size of the input data in each layer."
+        ],
+        "publisher": "PeerJ",
+        "is-referenced-by-count": 0,
+        "type": "component",
+        "URL": "https://doi.org/10.7717/peerjcs.2160/fig-7"
+      },
+      {
+        "publisher": "China Science Publishing & Media Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              7,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.3724/sp.j.1016.2010.00966",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "High Performance Lossless Compression of Scientific Floating Data"
+        ],
+        "author": [
+          {
+            "given": "Ke-Jing",
+            "family": "HE",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chinese Journal of Computers"
+        ],
+        "URL": "https://doi.org/10.3724/sp.j.1016.2010.00966"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/bigdata.2018.8621867",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Dynamic Online Performance Optimization in Streaming Data Compression"
+        ],
+        "author": [
+          {
+            "given": "J. Kade",
+            "family": "Gibson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dongeun",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jaesik",
+            "family": "Choi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alex",
+            "family": "Sim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 IEEE International Conference on Big Data (Big Data)"
+        ],
+        "URL": "https://doi.org/10.1109/bigdata.2018.8621867"
+      },
+      {
+        "DOI": "10.1109/ccece.1996.548073",
+        "title": [
+          "Performance of lossless compression algorithms on voiceband data"
+        ],
+        "author": [
+          {
+            "given": "K.W.",
+            "family": "Ng",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.J.",
+            "family": "Pollard",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.R.",
+            "family": "Dacombe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.D.",
+            "family": "McLeod",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H.C.",
+            "family": "Card",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 1996 Canadian Conference on Electrical and Computer Engineering"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 2,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/ccece.1996.548073"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-03131-2_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Performance Analysis of Compression Techniques for Multimedia Data"
+        ],
+        "author": [
+          {
+            "given": "Anupama S.",
+            "family": "Budhewar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dharmpal D.",
+            "family": "Doye",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Studies in Fuzziness and Soft Computing",
+          "Smart Techniques for a Smarter Planet"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-03131-2_12"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/ispa.2014.18",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "A High Performance Compression Method for Climate Data"
+        ],
+        "author": [
+          {
+            "given": "Songbin",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaomeng",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yufang",
+            "family": "Ni",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Haohuan",
+            "family": "Fu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guangwen",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 IEEE International Symposium on Parallel and Distributed Processing with Applications"
+        ],
+        "URL": "https://doi.org/10.1109/ispa.2014.18"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/med.2011.5983015",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Effect of data compression on controller performance monitoring"
+        ],
+        "author": [
+          {
+            "given": "Selvanathan",
+            "family": "Sivalingam",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Morten",
+            "family": "Hovd",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 19th Mediterranean Conference on Control &amp; Automation (MED)"
+        ],
+        "URL": "https://doi.org/10.1109/med.2011.5983015"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1088/1742-6596/1502/1/012036",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Increasing the input data length of RSA cryptosystem by applying a hybrid lossless data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "Worapat",
+            "family": "Siriboonpipattana",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chitsutha",
+            "family": "Soomlek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pusadee",
+            "family": "Seresangtakul",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Physics: Conference Series"
+        ],
+        "URL": "https://doi.org/10.1088/1742-6596/1502/1/012036"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1109/cdc56724.2024.10886188",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Robustifying Prescribed Performance Controllers Against Control Input Data Losses"
+        ],
+        "author": [
+          {
+            "given": "Lampros N.",
+            "family": "Bikas",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Aristotle University of Thessaloniki,Department of Electrical &#x0026; Computer Engineering,Thessaloniki,Greece,54124"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "George A.",
+            "family": "Rovithakis",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Aristotle University of Thessaloniki,Department of Electrical &#x0026; Computer Engineering,Thessaloniki,Greece,54124"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anthony",
+            "family": "Tzes",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "New York University Abu Dhabi A1-193,Electrical Engineering,Abu Dhabi,UAE,129188"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 IEEE 63rd Conference on Decision and Control (CDC)"
+        ],
+        "URL": "https://doi.org/10.1109/cdc56724.2024.10886188"
+      },
+      {
+        "DOI": "10.7717/peerj-cs.2149/fig-10",
+        "title": [
+          "Figure 10: Assessment of performance metrics for input data."
+        ],
+        "publisher": "PeerJ",
+        "is-referenced-by-count": 0,
+        "type": "component",
+        "URL": "https://doi.org/10.7717/peerj-cs.2149/fig-10"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              18
+            ]
+          ]
+        },
+        "DOI": "10.1109/hipcw63042.2024.00045",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Performance = Implementation + Hardware + Input Data, with application to SpMV"
+        ],
+        "author": [
+          {
+            "given": "Khushboo",
+            "family": "Chaudhari",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "MKSSS&#x2019;s Cummins College of Engineering for Women,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shrirang",
+            "family": "Karandikar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "AlgoAsylum,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sneha",
+            "family": "Thombre",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "MKSSS&#x2019;s Cummins College of Engineering for Women,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 IEEE 31st International Conference on High Performance Computing, Data and Analytics Workshop (HiPCW)"
+        ],
+        "URL": "https://doi.org/10.1109/hipcw63042.2024.00045"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781394165483.ch2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Input Data"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Reliability of Nuclear Power Plants"
+        ],
+        "URL": "https://doi.org/10.1002/9781394165483.ch2"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.2600509",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Performance of pansharpening methods varying with input data formats"
+        ],
+        "author": [
+          {
+            "given": "Alberto",
+            "family": "Arienzo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bruno",
+            "family": "Aiazzi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luciano",
+            "family": "Alparone",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andrea",
+            "family": "Garzelli",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Claudia",
+            "family": "Zoppetti",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Image and Signal Processing for Remote Sensing XXVII"
+        ],
+        "URL": "https://doi.org/10.1117/12.2600509"
+      },
+      {
+        "DOI": "10.1109/9780470545300.ch6",
+        "title": [
+          "Input Stimuli, Performance Data Acquisition, and MetaLevel Output Analysis"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "container-title": [
+          "Modeling and Asynchronous Distributed Simulation"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1109/9780470545300.ch6"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-408-01171-6.50009-1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data input"
+        ],
+        "author": [
+          {
+            "given": "T F",
+            "family": "FRY",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Data Processing"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-408-01171-6.50009-1"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-57903-6_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Haslwanter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Hands-on Signal Analysis with Python"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-57903-6_3"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-28316-6_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Haslwanter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics and Computing",
+          "An Introduction to Statistics with Python"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-28316-6_3"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119126805.ch2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              10,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Python® for R Users"
+        ],
+        "URL": "https://doi.org/10.1002/9781119126805.ch2"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-394443-6.50018-4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "Daniel",
+            "family": "Shiffman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Learning Processing"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-394443-6.50018-4"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              11,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003546436-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Input data"
+        ],
+        "author": [
+          {
+            "given": "Bartosz",
+            "family": "Szeląg",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Adam",
+            "family": "Kiczko",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Grzegorz",
+            "family": "Łagód",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marek",
+            "family": "Sokáč",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yvetta",
+            "family": "Velísková",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Cecilia",
+            "family": "Bruni",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Francesco",
+            "family": "Fatone",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer-Aided Modelling of Stormwater Systems"
+        ],
+        "URL": "https://doi.org/10.1201/9781003546436-2"
+      },
+      {
+        "DOI": "10.4135/9781483348902.n2",
+        "title": [
+          "Data Input"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "container-title": [
+          "Principles of Statistical Data Handling"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4135/9781483348902.n2"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              12,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118448908.ch3",
+        "type": "other",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Data Input"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              11,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "The R Book"
+        ],
+        "URL": "https://doi.org/10.1002/9781118448908.ch3"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/socpar.2015.7492797",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hardware-oriented succinct-data-structure based on block-size-constrained compression"
+        ],
+        "author": [
+          {
+            "given": "Hasitha Muthumala",
+            "family": "Waidyasooriya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daisuke",
+            "family": "Ono",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Masanori",
+            "family": "Hariyama",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 7th International Conference of Soft Computing and Pattern Recognition (SoCPaR)"
+        ],
+        "URL": "https://doi.org/10.1109/socpar.2015.7492797"
+      },
+      {
+        "publisher": "Incoma Ltd. Shoumen, BULGARIA",
+        "DOI": "10.26615/978-954-452-098-4-136",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "LLM Compression: How Far CanWe Go in Balancing Size and Performance?"
+        ],
+        "author": [
+          {
+            "name": "Odia Generative AI, India",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sahil",
+            "family": "Sk",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Debasish",
+            "family": "Dhal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Odia Generative AI, India",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sonal",
+            "family": "Khosla",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Odia Generative AI, India",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sk",
+            "family": "Shahid",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Odia Generative AI, India",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sambit",
+            "family": "Shekhar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Odia Generative AI, India",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Akash",
+            "family": "Dhaka",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "AMD Silo AI, Finland",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shantipriya",
+            "family": "Parida",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "AMD Silo AI, Finland",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dilip",
+            "family": "K. Prasad",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "The Arctic University of Norway, Norway",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ondřej",
+            "family": "Bojar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Charles University, MFF, ÚFAL, Czech Republic",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "container-title": [
+          "International Conference Recent Advances in Natural Language Processing",
+          "Natural Language Processing in the Generative AI Era"
+        ],
+        "URL": "https://doi.org/10.26615/978-954-452-098-4-136"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              3,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1109/wcnc61545.2025.10978680",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "On the Performance of Size-Limited Piecewise Compression for WSN Systems"
+        ],
+        "author": [
+          {
+            "given": "Sanku Kumar",
+            "family": "Roy",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Alberta,Department of Computing Science,Canada"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ioanis",
+            "family": "Nikolaidis",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Alberta,Department of Computing Science,Canada"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2025 IEEE Wireless Communications and Networking Conference (WCNC)"
+        ],
+        "URL": "https://doi.org/10.1109/wcnc61545.2025.10978680"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-97371-1_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-4460-0003",
+            "authenticated-orcid": false,
+            "given": "Thomas",
+            "family": "Haslwanter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics and Computing",
+          "An Introduction to Statistics with Python"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-97371-1_3"
+      },
+      {
+        "DOI": "10.1007/springerreference_16476",
+        "title": [
+          "input data"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_16476"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1977
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4615-9998-2_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "Kenneth L.",
+            "family": "Bowles",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Microcomputer"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4615-9998-2_8"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1977
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-38578-4_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "Kenneth L.",
+            "family": "Bowles",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Microcomputer"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-38578-4_8"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-08-030575-2.50016-8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "O.A.R.",
+            "family": "CORNILLIE",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Microprocessors"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-08-030575-2.50016-8"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_9072",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "input data"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_9072"
+      },
+      {
+        "DOI": "10.4324/9781315064253-12",
+        "title": [
+          "INPUT DATA"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              11,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Simulation of Recreational Use for Park and Wilderness Management"
+        ],
+        "publisher": "RFF Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9781315064253-12"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1998
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-80429-8_16",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Input"
+        ],
+        "author": [
+          {
+            "given": "Stefan",
+            "family": "Trapp",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michael",
+            "family": "Matthies",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chemodynamics and Environmental Modeling"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-80429-8_16"
+      },
+      {
+        "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1287/stsc.2022.0007",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Big Data Analytics, Firm Size, and Performance"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5314-1451",
+            "authenticated-orcid": false,
+            "given": "Raffaele",
+            "family": "Conti",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "ESSEC Business School, Department of Management, 95000 Cergy, France;"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6333-2753",
+            "authenticated-orcid": false,
+            "given": "Miguel Godinho",
+            "family": "de Matos",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Universidade Católica Portuguesa, Católica Lisbon School of Business and Economics, 1600-178 Lisbon, Portugal;"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6252-5262",
+            "authenticated-orcid": false,
+            "given": "Giovanni",
+            "family": "Valentini",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Business and Management, Luiss University, 00199 Rome, Italy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Strategy Science"
+        ],
+        "URL": "https://doi.org/10.1287/stsc.2022.0007"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/s40822-020-00141-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Is size an input in the mutual fund performance evaluation with DEA?"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3658-2546",
+            "authenticated-orcid": false,
+            "given": "Sevgi Eda",
+            "family": "Tuzcu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2049-395X",
+            "authenticated-orcid": false,
+            "given": "Emrah",
+            "family": "Ertugay",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Eurasian Economic Review"
+        ],
+        "URL": "https://doi.org/10.1007/s40822-020-00141-6"
+      },
+      {
+        "DOI": "10.1109/apec.1996.500465",
+        "title": [
+          "Minimizing input filter physical size subject to electrical performance constraints [SMPS CAD]"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of Applied Power Electronics Conference. APEC '96"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/apec.1996.500465"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              12,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/cdc57313.2025.11312176",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Equivalence of Recursive PI-MOESP Identification with Fixed Input-output Data Size"
+        ],
+        "author": [
+          {
+            "given": "Ryota",
+            "family": "Numata",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Nihon University,Department of Precision Mechanical Engineering,Tokyo,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tsuyoshi",
+            "family": "Kiyama",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Nihon University,Department of Precision Mechanical Engineering,Tokyo,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2025 IEEE 64th Conference on Decision and Control (CDC)"
+        ],
+        "URL": "https://doi.org/10.1109/cdc57313.2025.11312176"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.brainres.2020.147194",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Trigeminal input, pupil size and cognitive performance: From oral to brain matter"
+        ],
+        "author": [
+          {
+            "given": "Maria Paola",
+            "family": "Tramonti Fantozzi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Vincenzo",
+            "family": "De Cicco",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Serena",
+            "family": "Argento",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4363-388X",
+            "authenticated-orcid": false,
+            "given": "Davide",
+            "family": "De Cicco",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Massimo",
+            "family": "Barresi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Enrico",
+            "family": "Cataldo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Luca",
+            "family": "Bruschini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Paola",
+            "family": "d'Ascanio",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ugo",
+            "family": "Faraguna",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Diego",
+            "family": "Manzoni",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Brain Research"
+        ],
+        "URL": "https://doi.org/10.1016/j.brainres.2020.147194"
+      },
+      {
+        "publisher": "Defense Technical Information Center",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              10,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.21236/ada189667",
+        "type": "report",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Performance of Data Compression Codes in Channels with Errors."
+        ],
+        "author": [
+          {
+            "family": "SAIC COMSYSTEMS  SAN DIEGO CA",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.21236/ada189667"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/s23187684",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Compression Performance Analysis of Experimental Holographic Data Coding Systems"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3500-5867",
+            "authenticated-orcid": false,
+            "given": "Tianyu",
+            "family": "Dong",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, Hanyang University, Seoul 04763, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kwan-Jung",
+            "family": "Oh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Digital Holography Research Section, Electronics and Telecommunications Research Institute, Daejeon 34129, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joongki",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Digital Holography Research Section, Electronics and Telecommunications Research Institute, Daejeon 34129, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Euee S.",
+            "family": "Jang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, Hanyang University, Seoul 04763, Republic of Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Sensors"
+        ],
+        "URL": "https://doi.org/10.3390/s23187684"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-09147-1_45",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Two High-Performance Alternatives to ZLIB Scientific-Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Samuel",
+            "family": "Almeida",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vitor",
+            "family": "Oliveira",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "António",
+            "family": "Pina",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Manuel",
+            "family": "Melle-Franco",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computational Science and Its Applications – ICCSA 2014"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-09147-1_45"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/1444-1953",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "High Performance Lossless Multimedia Data Compression through Improved Dictionary"
+        ],
+        "author": [
+          {
+            "given": "K. R.",
+            "family": "Kolhe",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P. R.",
+            "family": "Devale",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Shrivastava",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              11,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/1444-1953"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/jstars.2019.2915844",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "High-Performance Compression of Multibeam Echosounders Water Column Data"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8886-8925",
+            "authenticated-orcid": false,
+            "given": "Jordi",
+            "family": "Portell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6248-5512",
+            "authenticated-orcid": false,
+            "given": "David",
+            "family": "Amblas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Garrett",
+            "family": "Mitchell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matias",
+            "family": "Morales",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alberto G.",
+            "family": "Villafranca",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Riccardo",
+            "family": "Iudica",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8756-3855",
+            "authenticated-orcid": false,
+            "given": "Galderic",
+            "family": "Lastras",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing"
+        ],
+        "URL": "https://doi.org/10.1109/jstars.2019.2915844"
+      },
+      {
+        "DOI": "10.1109/icc.1992.268112",
+        "title": [
+          "A new technique for high-performance computer data compression"
+        ],
+        "author": [
+          {
+            "given": "B.Y.",
+            "family": "Kavalerchik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[Conference Record] SUPERCOMM/ICC '92 Discovering a New World of Communications"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icc.1992.268112"
+      },
+      {
+        "publisher": "IBM",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1147/jrd.2015.2430091",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Integrated high-performance data compression in the IBM z13"
+        ],
+        "author": [
+          {
+            "given": "A. T.",
+            "family": "Sofia",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C. C.",
+            "family": "Lewis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Jacobi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D. A.",
+            "family": "Jamsek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D. F.",
+            "family": "Riedy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.-S.",
+            "family": "Vogt",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Sutton",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. W.",
+            "family": "St. John",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IBM Journal of Research and Development"
+        ],
+        "URL": "https://doi.org/10.1147/jrd.2015.2430091"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/cloud.2019.00052",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Data Reduction, Compression, and Recovery for Online Performance Monitoring"
+        ],
+        "author": [
+          {
+            "given": "Salvador",
+            "family": "DeCelles",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthew",
+            "family": "Stamm",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nagarajan",
+            "family": "Kandasamy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE 12th International Conference on Cloud Computing (CLOUD)"
+        ],
+        "URL": "https://doi.org/10.1109/cloud.2019.00052"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-67162-8_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Balancing Performance and Energy for Lightweight Data Compression Algorithms"
+        ],
+        "author": [
+          {
+            "given": "Annett",
+            "family": "Ungethüm",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Patrick",
+            "family": "Damme",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Johannes",
+            "family": "Pietrzyk",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alexander",
+            "family": "Krause",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dirk",
+            "family": "Habich",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wolfgang",
+            "family": "Lehner",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications in Computer and Information Science",
+          "New Trends in Databases and Information Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-67162-8_5"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1145/3530050.3532923",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Ameliorating data compression and query performance through cracked Parquet"
+        ],
+        "author": [
+          {
+            "given": "Patrick",
+            "family": "Hansert",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "TU Kaiserslautern, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sebastian",
+            "family": "Michel",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "TU Kaiserslautern, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the International Workshop on Big Data in Emergent Distributed Environments"
+        ],
+        "URL": "https://doi.org/10.1145/3530050.3532923"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.protcy.2016.05.232",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Window Based Input Vector Monitoring Concurrent BIST Using SRAM Cells with Diagnostic Data Compression"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Kavya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S. Santhosh",
+            "family": "Kumar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Procedia Technology"
+        ],
+        "URL": "https://doi.org/10.1016/j.protcy.2016.05.232"
+      },
+      {
+        "publisher": "Polish Scientific Society of Combustion Engines",
+        "DOI": "10.19206/ce-2019-349",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Methodology of determining the input data of control algorithms for a compression-ignition engine"
+        ],
+        "author": [
+          {
+            "given": "Dariusz",
+            "family": "PIETRAS",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marek",
+            "family": "PRASZKIEWICZ",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Konrad",
+            "family": "CZARNIECKI",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Combustion Engines"
+        ],
+        "URL": "https://doi.org/10.19206/ce-2019-349"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-17885-1_100245",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of GIS"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-17885-1_100245"
+      },
+      {
+        "DOI": "10.1007/3-540-27305-0_14",
+        "title": [
+          "Data Compression"
+        ],
+        "container-title": [
+          "Algorithms and Computation in Mathematics",
+          "Computational Ergodic Theory"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/3-540-27305-0_14"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              11,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118256053.ch13",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Chang‐Su",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.‐C. Jay",
+            "family": "Kuo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Handbook of Computer Networks"
+        ],
+        "URL": "https://doi.org/10.1002/9781118256053.ch13"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789811237591_0006",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              7,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Basic Concepts in Algorithms"
+        ],
+        "URL": "https://doi.org/10.1142/9789811237591_0006"
+      },
+      {
+        "DOI": "10.1007/978-1-84628-603-2",
+        "title": [
+          "Data Compression"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "publisher": "Springer London",
+        "is-referenced-by-count": 24,
+        "type": "book",
+        "URL": "https://doi.org/10.1007/978-1-84628-603-2"
+      },
+      {
+        "DOI": "10.1007/springerreference_11635",
+        "title": [
+          "data compression"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 4,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_11635"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/dcc.2018.00043",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Performance Analysis of Hardware-Based Numerical Data Compression on Various Data Formats"
+        ],
+        "author": [
+          {
+            "given": "Tomohiro",
+            "family": "Ueno",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kentaro",
+            "family": "Sano",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takashi",
+            "family": "Furusawa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 Data Compression Conference"
+        ],
+        "URL": "https://doi.org/10.1109/dcc.2018.00043"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

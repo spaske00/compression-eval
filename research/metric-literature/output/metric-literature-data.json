@@ -252,56 +252,374 @@
         "data compression performance input size"
       ],
       "ambiguity_notes": [],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
-      "fetch_errors": [
+      "selected_sources": [
         {
+          "source": "Crossref",
+          "title": "Improving compression ratio, area overhead, and test application time for system-on-a-chip test data compression/decompression",
+          "authors": [
+            "P.T. Gonciari",
+            "B.M. Al-Hashimi",
+            "N. Nicolici"
+          ],
+          "year": 2002,
+          "venue_or_publisher": "Proceedings 2002 Design, Automation and Test in Europe Conference and Exhibition",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/date.2002.998363",
+          "citation_count": 76,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/date.2002.998363",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
           "query": "file size compression ratio overhead",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 4,
+          "rank": 1,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Inverted file compression through document identifier reassignment",
+          "authors": [
+            "Wann-Yun Shieh",
+            "Tien-Fu Chen",
+            "Jean Jyh-Jiun Shann",
+            "Chung-Ping Chung"
+          ],
+          "year": 2003,
+          "venue_or_publisher": "Information Processing &amp; Management",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/s0306-4573(02)00020-1",
+          "citation_count": 58,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/s0306-4573(02)00020-1",
           "query": "file size compression ratio overhead",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 3,
+          "rank": 2,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Data compression and database performance",
+          "authors": [
+            "G. Graefe",
+            "L.D. Shapiro"
+          ],
+          "year": 1991,
+          "venue_or_publisher": "[Proceedings] 1991 Symposium on Applied Computing",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/soac.1991.143840",
+          "citation_count": 57,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/soac.1991.143840",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "data compression performance input size",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 4,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Experiments in text file compression",
+          "authors": [
+            "Frank Rubin"
+          ],
+          "year": 1976,
+          "venue_or_publisher": "Communications of the ACM",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1145/360363.360368",
+          "citation_count": 54,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/360363.360368",
           "query": "file size compression ratio overhead",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 3,
+          "rank": 4,
+          "canonical_non_paper": false
         },
         {
-          "query": "small file compression overhead",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "small file compression overhead",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "small file compression overhead",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
+          "source": "Crossref",
+          "title": "Packet-based input test data compression techniques",
+          "authors": [
+            "E.H. Volkerink",
+            "A. Khoche",
+            "S. Mitra"
+          ],
+          "year": 2002,
+          "venue_or_publisher": "Proceedings. International Test Conference",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/test.2002.1041756",
+          "citation_count": 49,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/test.2002.1041756",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
           "query": "data compression performance input size",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 4,
+          "rank": 5,
+          "canonical_non_paper": false
         },
         {
-          "query": "data compression performance input size",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "source": "Crossref",
+          "title": "PDATS Lossless Address Trace Compression For Reducing File Size And Access Time",
+          "authors": [
+            "E.E. Johnson",
+            "Jiheng Ha"
+          ],
+          "year": 1994,
+          "venue_or_publisher": "Proceeding of 13th IEEE Annual International Phoenix Conference on Computers and Communications",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/pccc.1994.504117",
+          "citation_count": 33,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/pccc.1994.504117",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "file size compression ratio overhead",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 8,
+          "rank": 6,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Lossless data compression techniques and their performance",
+          "authors": [
+            "Komal Sharma",
+            "Kunal Gupta"
+          ],
+          "year": 2017,
+          "venue_or_publisher": "2017 International Conference on Computing, Communication and Automation (ICCCA)",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/ccaa.2017.8229810",
+          "citation_count": 30,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/ccaa.2017.8229810",
           "query": "data compression performance input size",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 4,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Data Compression",
+          "authors": [
+            "David Salomon"
+          ],
+          "year": 2007,
+          "venue_or_publisher": "Springer London",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-1-84628-603-2",
+          "citation_count": 24,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-1-84628-603-2",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "data compression performance input size",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 3,
+          "rank": 8,
+          "canonical_non_paper": true
+        },
+        {
+          "source": "Crossref",
+          "title": "JPEG-compatible Joint Image Compression and Encryption Algorithm with File Size Preservation",
+          "authors": [
+            "Yuxiang Peng",
+            "Chong Fu",
+            "Guixing Cao",
+            "Wei Song",
+            "Junxin Chen",
+            "Chiu-Wing Sham"
+          ],
+          "year": 2024,
+          "venue_or_publisher": "ACM Transactions on Multimedia Computing, Communications, and Applications",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1145/3633459",
+          "citation_count": 23,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/3633459",
+          "query": "file size compression ratio overhead",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 8,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Exploiting clustering in inverted file compression",
+          "authors": [
+            "A. Moffat",
+            "L. Stuiver"
+          ],
+          "year": 1996,
+          "venue_or_publisher": "Proceedings of Data Compression Conference - DCC '96",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/dcc.1996.488313",
+          "citation_count": 20,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/dcc.1996.488313",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "file size compression ratio overhead",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to file size, compression overhead, or size-dependent compression performance.",
+          "relevance_score": 3,
+          "rank": 10,
+          "canonical_non_paper": false
         }
       ],
-      "complete": false
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Algorithms for Delta Compression and Remote File Synchronization",
+          "year": 2003,
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Using Normalized Compression Distance for Classifying File Fragments",
+          "year": 2010,
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "File archival techniques using data compression",
+          "year": 1982,
+          "citation_count": 17,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A Double-Adaptive File Compression Algorithm",
+          "year": 1983,
+          "citation_count": 17,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Variable Compression Ratio Engine",
+          "year": 2002,
+          "citation_count": 17,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "IFC File Content Compression Based on Reference Relationships",
+          "year": 2020,
+          "citation_count": 16,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "In Place Differential File Compression",
+          "year": 2005,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The effect of image content on detail preservation and file size reduction in lossy compression",
+          "year": 2007,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "File compression using variable length encodings",
+          "year": 1972,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Headers Overhead Estimation, Header Suppression and Header Compression in WiMAX",
+          "year": 2007,
+          "citation_count": 12,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "IMAGE FILE COMPRESSION MADE EASY",
+          "year": 1991,
+          "citation_count": 10,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Intelligent Data Compression Policy for Hadoop Performance Optimization",
+          "year": 2021,
+          "citation_count": 10,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Planned Schedule Compression Concept File For Electrical Contractors",
+          "year": 1997,
+          "citation_count": 9,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A High Performance Compression Method for Climate Data",
+          "year": 2014,
+          "citation_count": 8,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Overhead Storage Considerations and a Multilinear Method for Data File Compression",
+          "year": 1980,
+          "citation_count": 7,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Variable Compression Ratio Engines",
+          "year": 2009,
+          "citation_count": 6,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Lossy LAS file compression using uniform space division",
+          "year": 2012,
+          "citation_count": 6,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Using Inter-file Similarity to Improve Intra-file Compression",
+          "year": 2014,
+          "citation_count": 5,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "In-place differential file compression",
+          "year": null,
+          "citation_count": 5,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Low-Overhead Compressibility Prediction for High-Performance Lossless Data Compression",
+          "year": 2020,
+          "citation_count": 5,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
+      "fetch_errors": [],
+      "complete": true
     },
     {
       "metric_id": "byte-entropy",
@@ -320,56 +638,368 @@
       "ambiguity_notes": [
         "Whole-file byte entropy is distinct from conditional, n-gram, and section-level entropy."
       ],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
-      "fetch_errors": [
+      "selected_sources": [
         {
-          "query": "Shannon entropy information theory data compression",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "Shannon entropy information theory data compression",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "Shannon entropy information theory data compression",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
-          "query": "information entropy entropy coding compression",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "information entropy entropy coding compression",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "information entropy entropy coding compression",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
+          "source": "Crossref",
+          "title": "Local Shannon entropy measure with statistical tests for image randomness",
+          "authors": [
+            "Yue Wu",
+            "Yicong Zhou",
+            "George Saveriades",
+            "Sos Agaian",
+            "Joseph P. Noonan",
+            "Premkumar Natarajan"
+          ],
+          "year": 2013,
+          "venue_or_publisher": "Information Sciences",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.ins.2012.07.049",
+          "citation_count": 638,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.ins.2012.07.049",
           "query": "byte entropy randomness compression",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 9,
+          "rank": 1,
+          "canonical_non_paper": false
         },
         {
-          "query": "byte entropy randomness compression",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "source": "Crossref",
+          "title": "Entropy and Information Theory",
+          "authors": [
+            "Robert M. Gray"
+          ],
+          "year": 2011,
+          "venue_or_publisher": "Springer US",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-1-4419-7970-4",
+          "citation_count": 563,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-1-4419-7970-4",
+          "query": "Shannon entropy information theory data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 4,
+          "rank": 2,
+          "canonical_non_paper": true
         },
         {
+          "source": "Crossref",
+          "title": "Regularities unseen, randomness observed: Levels of entropy convergence",
+          "authors": [
+            "James P. Crutchfield",
+            "David P. Feldman"
+          ],
+          "year": 2003,
+          "venue_or_publisher": "Chaos: An Interdisciplinary Journal of Nonlinear Science",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1063/1.1530990",
+          "citation_count": 281,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1063/1.1530990",
           "query": "byte entropy randomness compression",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 3,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Algorithmic randomness and physical entropy",
+          "authors": [
+            "W. H. Zurek"
+          ],
+          "year": 1989,
+          "venue_or_publisher": "Physical Review A",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1103/physreva.40.4731",
+          "citation_count": 234,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1103/physreva.40.4731",
+          "query": "byte entropy randomness compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 3,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Entropy and data compression schemes",
+          "authors": [
+            "D.S. Ornstein",
+            "B. Weiss"
+          ],
+          "year": 1993,
+          "venue_or_publisher": "IEEE Transactions on Information Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/18.179344",
+          "citation_count": 206,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/18.179344",
+          "query": "Shannon entropy information theory data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 6,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Entropy, Relative Entropy and Mutual Information",
+          "authors": [
+            "Thomas M. Cover",
+            "Joy A. Thomas"
+          ],
+          "year": 2001,
+          "venue_or_publisher": "Elements of Information Theory",
+          "item_type": "other",
+          "doi_or_url": "https://doi.org/10.1002/0471200611.ch2",
+          "citation_count": 95,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1002/0471200611.ch2",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "information entropy entropy coding compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 3,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Information entropy",
+          "authors": [
+            "J. A. N��ez",
+            "P. M. Cincotta",
+            "F. C. Wachlin"
+          ],
+          "year": 1996,
+          "venue_or_publisher": "CELESTIAL MECHANICS AND DYNAMICAL ASTRONOMY",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/bf00051604",
+          "citation_count": 85,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/bf00051604",
+          "query": "information entropy entropy coding compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 7,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Entropy, Relative Entropy, and Mutual Information",
+          "authors": [
+            "Thomas M. Cover",
+            "Joy A. Thomas"
+          ],
+          "year": 2005,
+          "venue_or_publisher": "Elements of Information Theory",
+          "item_type": "other",
+          "doi_or_url": "https://doi.org/10.1002/047174882x.ch2",
+          "citation_count": 82,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1002/047174882x.ch2",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "information entropy entropy coding compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 3,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Context-based entropy coding of block transform coefficients for image compression",
+          "authors": [
+            "C. Tu",
+            "T.D. Tran"
+          ],
+          "year": 2002,
+          "venue_or_publisher": "IEEE Transactions on Image Processing",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/tip.2002.804279",
+          "citation_count": 80,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/tip.2002.804279",
+          "query": "information entropy entropy coding compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 8,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Shannon information entropy for an infinite circular well",
+          "authors": [
+            "Xu-Dong Song",
+            "Guo-Hua Sun",
+            "Shi-Hai Dong"
+          ],
+          "year": 2015,
+          "venue_or_publisher": "Physics Letters A",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.physleta.2015.03.020",
+          "citation_count": 74,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.physleta.2015.03.020",
+          "query": "Shannon entropy information theory data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to whole-file symbol entropy, information theory, entropy coding, or compressibility.",
+          "relevance_score": 8,
+          "rank": 10,
+          "canonical_non_paper": false
         }
       ],
-      "complete": false
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Entanglement Entropy at Infinite-Randomness Fixed Points in Higher Dimensions",
+          "year": 2007,
+          "citation_count": 73,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Shannon Entropy and Mutual Information for Multivariate Skew‐Elliptical Distributions",
+          "year": 2013,
+          "citation_count": 72,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Efficient context-based entropy coding for lossy wavelet image compression",
+          "year": null,
+          "citation_count": 72,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Global Seismic Nowcasting With Shannon Information Entropy",
+          "year": 2019,
+          "citation_count": 67,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Conditional Entropy Coding for Efficient Video Compression",
+          "year": 2020,
+          "citation_count": 58,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Measuring information content from observations for data assimilation: relative entropy versus shannon entropy difference",
+          "year": 2007,
+          "citation_count": 51,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Analysis of the entropy randomness index for machining chatter detection",
+          "year": 2012,
+          "citation_count": 47,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chains, entropy, coding",
+          "year": 1986,
+          "citation_count": 44,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Approximate entropy for testing randomness",
+          "year": 2000,
+          "citation_count": 35,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Shannon information entropy in the canonical genetic code",
+          "year": 2017,
+          "citation_count": 34,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Joint image compression–encryption scheme using entropy coding and compressive sensing",
+          "year": 2019,
+          "citation_count": 34,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Isobaric yield ratio difference and Shannon information entropy",
+          "year": 2015,
+          "citation_count": 33,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Epsilon Entropy and Data Compression",
+          "year": 1971,
+          "citation_count": 33,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Onicescu information energy in terms of Shannon entropy and Fisher information densities",
+          "year": 2012,
+          "citation_count": 32,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Relating entropy theory to test data compression",
+          "year": null,
+          "citation_count": 27,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Entropy and Randomness: From Analogic to Quantum World",
+          "year": 2020,
+          "citation_count": 27,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Fisher information and Shannon entropy of position-dependent mass oscillators",
+          "year": 2015,
+          "citation_count": 25,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Nonrepetitive colouring via entropy compression",
+          "year": 2016,
+          "citation_count": 25,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Information Entropy",
+          "year": 1996,
+          "citation_count": 23,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Maximum Shannon Entropy, Minimum Fisher Information, and an Elementary Game",
+          "year": 2002,
+          "citation_count": 22,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
+      "fetch_errors": [],
+      "complete": true
     },
     {
       "metric_id": "chi-square-byte-frequency",
@@ -386,56 +1016,356 @@
         "statistical tests random number generators chi-square"
       ],
       "ambiguity_notes": [],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
-      "fetch_errors": [
+      "selected_sources": [
         {
-          "query": "chi-square test randomness frequency distribution",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "chi-square test randomness frequency distribution",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "chi-square test randomness frequency distribution",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
+          "source": "Crossref",
+          "title": "The Chi-square test of independence",
+          "authors": [
+            "Mary L. McHugh"
+          ],
+          "year": 2013,
+          "venue_or_publisher": "Biochemia Medica",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.11613/bm.2013.018",
+          "citation_count": 2180,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.11613/bm.2013.018",
           "query": "byte frequency chi-square randomness test",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 7,
+          "rank": 1,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "The Chi-Square Test",
+          "authors": [
+            "Todd Michael Franke",
+            "Timothy Ho",
+            "Christina A. Christie"
+          ],
+          "year": 2012,
+          "venue_or_publisher": "American Journal of Evaluation",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1177/1098214011426594",
+          "citation_count": 401,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1177/1098214011426594",
+          "query": "chi-square test randomness frequency distribution",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 7,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "The chi-square test",
+          "authors": [
+            "Nikolaos Pandis"
+          ],
+          "year": 2016,
+          "venue_or_publisher": "American Journal of Orthodontics and Dentofacial Orthopedics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.ajodo.2016.08.009",
+          "citation_count": 139,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.ajodo.2016.08.009",
+          "query": "chi-square test randomness frequency distribution",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 7,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Karl Pearsons chi-square tests",
+          "authors": [
+            "Sölpük Turhan Nihan"
+          ],
+          "year": 2020,
+          "venue_or_publisher": "Educational Research and Reviews",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.5897/err2019.3817",
+          "citation_count": 117,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.5897/err2019.3817",
+          "query": "statistical tests random number generators chi-square",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 8,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Chi-Square Test",
+          "authors": [
+            "Ronald J. Tallarida",
+            "Rodney B. Murray"
+          ],
+          "year": 1987,
+          "venue_or_publisher": "Manual of Pharmacologic Calculations",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-1-4612-4974-0_43",
+          "citation_count": 103,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-1-4612-4974-0_43",
+          "query": "chi-square test randomness frequency distribution",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 7,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "On the Limiting Power Function of the Frequency Chi-Square Test",
+          "authors": [
+            "Sujit Kumar Mitra"
+          ],
+          "year": 1958,
+          "venue_or_publisher": "The Annals of Mathematical Statistics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1214/aoms/1177706453",
+          "citation_count": 56,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1214/aoms/1177706453",
           "query": "byte frequency chi-square randomness test",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 8,
+          "rank": 6,
+          "canonical_non_paper": false
         },
         {
-          "query": "byte frequency chi-square randomness test",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
+          "source": "Crossref",
+          "title": "Chi-Square Tests",
+          "authors": [
+            "Karl L. Wuensch"
+          ],
+          "year": 2011,
+          "venue_or_publisher": "International Encyclopedia of Statistical Science",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-3-642-04898-2_173",
+          "citation_count": 27,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-642-04898-2_173",
           "query": "statistical tests random number generators chi-square",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 9,
+          "rank": 7,
+          "canonical_non_paper": false
         },
         {
-          "query": "statistical tests random number generators chi-square",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "source": "Crossref",
+          "title": "Chi-square Test",
+          "authors": [
+            "Selim Kilic"
+          ],
+          "year": 2016,
+          "venue_or_publisher": "Journal of Mood Disorders",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.5455/jmood.20160803110534",
+          "citation_count": 20,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.5455/jmood.20160803110534",
+          "query": "chi-square test randomness frequency distribution",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 7,
+          "rank": 8,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Adaptive chi-square tests",
+          "authors": [
+            "Yu. I. Ingster"
+          ],
+          "year": 2000,
+          "venue_or_publisher": "Journal of Mathematical Sciences",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/bf02673632",
+          "citation_count": 16,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/bf02673632",
           "query": "statistical tests random number generators chi-square",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 8,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Chi-Square Test",
+          "authors": [
+            "Randall Schumacker",
+            "Sara Tomek"
+          ],
+          "year": 2013,
+          "venue_or_publisher": "Understanding Statistics Using R",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-1-4614-6227-9_8",
+          "citation_count": 8,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-1-4614-6227-9_8",
+          "query": "chi-square test randomness frequency distribution",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to chi-square frequency deviation or statistical randomness testing.",
+          "relevance_score": 7,
+          "rank": 10,
+          "canonical_non_paper": false
         }
       ],
-      "complete": false
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Robustness of Frequency Chi-Square",
+          "year": 1970,
+          "citation_count": 7,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A Sequential Chi-Square Test",
+          "year": 1985,
+          "citation_count": 7,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The Tukey Chi-Square Test",
+          "year": 1965,
+          "citation_count": 7,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The chi-square test for independence",
+          "year": 1997,
+          "citation_count": 7,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test of Significance",
+          "year": 2023,
+          "citation_count": 6,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test",
+          "year": null,
+          "citation_count": 5,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The Chi-Square Test",
+          "year": 2006,
+          "citation_count": 5,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test",
+          "year": null,
+          "citation_count": 4,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-square test",
+          "year": 2001,
+          "citation_count": 4,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test",
+          "year": 1982,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test",
+          "year": null,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test",
+          "year": 2012,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test (χ2 – Test)",
+          "year": 2018,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Test and Its Application",
+          "year": 2013,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Statistical Approaches for Nominal Data: Chi-Square Tests",
+          "year": 2013,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi-Square Tests",
+          "year": 2025,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Simplification of Frequency Test for Random Number Generation Based on Chi-Square",
+          "year": 2008,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Chi‐Square Test",
+          "year": 2010,
+          "citation_count": 2,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The Chi-Square test: a frequency data based statistical device",
+          "year": 2015,
+          "citation_count": 2,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Sampling to Maintain Approximate Probability Distribution Under Chi-Square Test",
+          "year": 2019,
+          "citation_count": 2,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
+      "fetch_errors": [],
+      "complete": true
     },
     {
       "metric_id": "monte-carlo-pi",
@@ -451,56 +1381,362 @@
         "statistical randomness tests Monte Carlo pi"
       ],
       "ambiguity_notes": [],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
-      "fetch_errors": [
+      "selected_sources": [
         {
-          "query": "Monte Carlo method pi estimation randomness",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "Monte Carlo method pi estimation randomness",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "Monte Carlo method pi estimation randomness",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
-          "query": "Monte Carlo test random number generators pi",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "Monte Carlo test random number generators pi",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "Monte Carlo test random number generators pi",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
+          "source": "Crossref",
+          "title": "Monte Carlo Statistical Methods",
+          "authors": [
+            "Christian P. Robert",
+            "George Casella"
+          ],
+          "year": 2004,
+          "venue_or_publisher": "Springer Texts in Statistics",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-1-4757-4145-2",
+          "citation_count": 3232,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-1-4757-4145-2",
           "query": "statistical randomness tests Monte Carlo pi",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 4,
+          "rank": 1,
+          "canonical_non_paper": true
         },
         {
-          "query": "statistical randomness tests Monte Carlo pi",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "source": "Crossref",
+          "title": "Random Number Generation and Quasi-Monte Carlo Methods",
+          "authors": [
+            "Harald Niederreiter"
+          ],
+          "year": 1992,
+          "venue_or_publisher": "Society for Industrial and Applied Mathematics",
+          "item_type": "monograph",
+          "doi_or_url": "https://doi.org/10.1137/1.9781611970081",
+          "citation_count": 2084,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1137/1.9781611970081",
+          "query": "Monte Carlo test random number generators pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation.",
+          "relevance_score": 10,
+          "rank": 2,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Monte Carlo Statistical Methods",
+          "authors": [
+            "Christian P. Robert",
+            "George Casella"
+          ],
+          "year": 1999,
+          "venue_or_publisher": "Springer Texts in Statistics",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-1-4757-3071-5",
+          "citation_count": 1374,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-1-4757-3071-5",
           "query": "statistical randomness tests Monte Carlo pi",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 4,
+          "rank": 3,
+          "canonical_non_paper": true
+        },
+        {
+          "source": "Crossref",
+          "title": "Monte Carlo Methods in Statistical Physics",
+          "authors": [
+            "M E J Newman",
+            "G T Barkema"
+          ],
+          "year": 1999,
+          "venue_or_publisher": "Oxford University PressOxford",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1093/oso/9780198517962.001.0001",
+          "citation_count": 1323,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1093/oso/9780198517962.001.0001",
+          "query": "statistical randomness tests Monte Carlo pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 8,
+          "rank": 4,
+          "canonical_non_paper": true
+        },
+        {
+          "source": "Crossref",
+          "title": "Monte Carlo Simulation in Statistical Physics",
+          "authors": [
+            "Kurt Binder",
+            "Dieter W. Heermann"
+          ],
+          "year": 2010,
+          "venue_or_publisher": "Graduate Texts in Physics",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-3-642-03163-2",
+          "citation_count": 329,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-642-03163-2",
+          "query": "statistical randomness tests Monte Carlo pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 3,
+          "rank": 5,
+          "canonical_non_paper": true
+        },
+        {
+          "source": "Crossref",
+          "title": "Monte Carlo simulations: Hidden errors from ‘‘good’’ random number generators",
+          "authors": [
+            "Alan M. Ferrenberg",
+            "D. P. Landau",
+            "Y. Joanna Wong"
+          ],
+          "year": 1992,
+          "venue_or_publisher": "Physical Review Letters",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1103/physrevlett.69.3382",
+          "citation_count": 318,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1103/physrevlett.69.3382",
+          "query": "Monte Carlo test random number generators pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation.",
+          "relevance_score": 6,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Monte Carlo Simulation in Statistical Physics",
+          "authors": [
+            "Kurt Binder",
+            "Dieter W. Heermann"
+          ],
+          "year": 1992,
+          "venue_or_publisher": "Springer Series in Solid-State Sciences",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-3-662-30273-6",
+          "citation_count": 297,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-662-30273-6",
+          "query": "statistical randomness tests Monte Carlo pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 3,
+          "rank": 7,
+          "canonical_non_paper": true
+        },
+        {
+          "source": "Crossref",
+          "title": "Monte Carlo Methods in Statistical Physics",
+          "authors": [
+            "Kurt Binder"
+          ],
+          "year": 1986,
+          "venue_or_publisher": "Topics in Current Physics",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-3-642-82803-4",
+          "citation_count": 285,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-642-82803-4",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "statistical randomness tests Monte Carlo pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 8,
+          "rank": 8,
+          "canonical_non_paper": true
+        },
+        {
+          "source": "Crossref",
+          "title": "Uncertainty estimation and Monte Carlo simulation method",
+          "authors": [
+            "Christos E. Papadopoulos",
+            "Hoi Yeung"
+          ],
+          "year": 2001,
+          "venue_or_publisher": "Flow Measurement and Instrumentation",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/s0955-5986(01)00015-2",
+          "citation_count": 240,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/s0955-5986(01)00015-2",
+          "query": "Monte Carlo method pi estimation randomness",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation.",
+          "relevance_score": 4,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Monte Carlo Simulation in Statistical Physics",
+          "authors": [
+            "Kurt Binder",
+            "Dieter W. Heermann"
+          ],
+          "year": 2002,
+          "venue_or_publisher": "Springer Series in Solid-State Sciences",
+          "item_type": "book",
+          "doi_or_url": "https://doi.org/10.1007/978-3-662-04685-2",
+          "citation_count": 236,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-662-04685-2",
+          "query": "statistical randomness tests Monte Carlo pi",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Monte Carlo estimation, pi-based randomness checks, or pseudo-randomness evaluation. Included as a canonical book-length treatment of the metric family.",
+          "relevance_score": 3,
+          "rank": 10,
+          "canonical_non_paper": true
         }
       ],
-      "complete": false
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Monte Carlo Simulation in Statistical Physics",
+          "year": 1997,
+          "citation_count": 196,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Random Number Generation and Monte Carlo Methods",
+          "year": 1998,
+          "citation_count": 189,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "ANALYSIS OF RANDOM NUMBER GENERATORS USING MONTE CARLO SIMULATION",
+          "year": 1994,
+          "citation_count": 68,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Tests of the multi-spin-coding technique in Monte Carlo simulations of statistical systems",
+          "year": 1981,
+          "citation_count": 67,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Monte Carlo simulation and random number generation",
+          "year": 1988,
+          "citation_count": 54,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Monte Carlo method in nonlinear statistical optics",
+          "year": 1996,
+          "citation_count": 52,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Monte Carlo Simulation in Statistical Physics",
+          "year": 2019,
+          "citation_count": 48,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Monte Carlo method in nonlinear statistical optics",
+          "year": 1996,
+          "citation_count": 39,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Quality of random number generators significantly affects results of Monte Carlo simulations for organic and biological systems",
+          "year": 2011,
+          "citation_count": 37,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Physically Transient True Random Number Generators Based on Paired Threshold Switches Enabling Monte Carlo Method Applications",
+          "year": 2019,
+          "citation_count": 33,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "ERRORS IN MONTE CARLO SIMULATIONS USING SHIFT REGISTER RANDOM NUMBER GENERATORS",
+          "year": 1996,
+          "citation_count": 29,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Pseudo-random number generators for Monte Carlo simulations on ATI Graphics Processing Units",
+          "year": 2011,
+          "citation_count": 29,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Quasirandom Number Generators for Parallel Monte Carlo Algorithms",
+          "year": 1996,
+          "citation_count": 28,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Replica exchange statistical temperature Monte Carlo",
+          "year": 2009,
+          "citation_count": 24,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Random number generators for large-scale parallel Monte Carlo simulations on FPGA",
+          "year": 2018,
+          "citation_count": 21,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Statistical inference and Monte Carlo algorithms",
+          "year": 1996,
+          "citation_count": 21,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Monte-Carlo Simulation-Based Statistical Modeling",
+          "year": 2017,
+          "citation_count": 20,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Random number generators tested on quantum Monte Carlo simulations",
+          "year": 2010,
+          "citation_count": 19,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Long range correlations in random number generators and their influence on Monte Carlo simulations",
+          "year": 1985,
+          "citation_count": 19,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "FPGA Implementation of Pseudo Random Number Generators for Monte Carlo Methods in Quantitative Finance",
+          "year": 2008,
+          "citation_count": 16,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
+      "fetch_errors": [],
+      "complete": true
     },
     {
       "metric_id": "serial-correlation",
@@ -517,51 +1753,365 @@
         "serial dependence information sequence compression"
       ],
       "ambiguity_notes": [],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
-      "fetch_errors": [
+      "selected_sources": [
         {
+          "source": "Crossref",
+          "title": "Quantum random number generators",
+          "authors": [
+            "Miguel Herrero-Collantes",
+            "Juan Carlos Garcia-Escartin"
+          ],
+          "year": 2017,
+          "venue_or_publisher": "Reviews of Modern Physics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1103/revmodphys.89.015004",
+          "citation_count": 670,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1103/revmodphys.89.015004",
           "query": "serial correlation test random number generators",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 4,
+          "rank": 1,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "A TEST FOR RANDOMNESS OF DIRECTIONS",
+          "authors": [
+            "G. S. Watson"
+          ],
+          "year": 1956,
+          "venue_or_publisher": "Geophysical Journal International",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1111/j.1365-246x.1956.tb05561.x",
+          "citation_count": 296,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1111/j.1365-246x.1956.tb05561.x",
+          "query": "autocorrelation statistical test sequence randomness",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 3,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Uniform Random Number Generators",
+          "authors": [
+            "M. Donald MacLaren",
+            "George Marsaglia"
+          ],
+          "year": 1965,
+          "venue_or_publisher": "Journal of the ACM",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1145/321250.321257",
+          "citation_count": 168,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/321250.321257",
           "query": "serial correlation test random number generators",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 4,
+          "rank": 3,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Random Number Generators",
+          "authors": [
+            "T. E. Hull",
+            "A. R. Dobell"
+          ],
+          "year": 1962,
+          "venue_or_publisher": "SIAM Review",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1137/1004061",
+          "citation_count": 165,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1137/1004061",
           "query": "serial correlation test random number generators",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 4,
+          "rank": 4,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Gaussian random number generators",
+          "authors": [
+            "David B. Thomas",
+            "Wayne Luk",
+            "Philip H.W. Leong",
+            "John D. Villasenor"
+          ],
+          "year": 2007,
+          "venue_or_publisher": "ACM Computing Surveys",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1145/1287620.1287622",
+          "citation_count": 154,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/1287620.1287622",
+          "query": "serial correlation test random number generators",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 4,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "The strict avalanche criterion randomness test",
+          "authors": [
+            "Julio Cesar Hernandez Castro",
+            "José María Sierra",
+            "Andre Seznec",
+            "Antonio Izquierdo",
+            "Arturo Ribagorda"
+          ],
+          "year": 2005,
+          "venue_or_publisher": "Mathematics and Computers in Simulation",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.matcom.2004.09.001",
+          "citation_count": 100,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.matcom.2004.09.001",
           "query": "autocorrelation statistical test sequence randomness",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 3,
+          "rank": 6,
+          "canonical_non_paper": false
         },
         {
+          "source": "Crossref",
+          "title": "Random Number Generators",
+          "authors": [
+            "George Marsaglia"
+          ],
+          "year": 2003,
+          "venue_or_publisher": "Journal of Modern Applied Statistical Methods",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.22237/jmasm/1051747320",
+          "citation_count": 97,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.22237/jmasm/1051747320",
+          "query": "serial correlation test random number generators",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 4,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "True Random Number Generators",
+          "authors": [
+            "Mario Stipčević",
+            "Çetin Kaya Koç"
+          ],
+          "year": 2014,
+          "venue_or_publisher": "Open Problems in Mathematics and Computational Science",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-3-319-10683-0_12",
+          "citation_count": 95,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-319-10683-0_12",
+          "query": "serial correlation test random number generators",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 4,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "A joint test for serial correlation and random individual effects",
+          "authors": [
+            "Badi H. Baltagi",
+            "Qi Li"
+          ],
+          "year": 1991,
+          "venue_or_publisher": "Statistics &amp; Probability Letters",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/0167-7152(91)90156-l",
+          "citation_count": 83,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/0167-7152(91)90156-l",
+          "query": "serial correlation test random number generators",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 9,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Spatial autocorrelation and statistical tests: Some solutions",
+          "authors": [
+            "Mark R. T. Dale",
+            "Marie-Josée Fortin"
+          ],
+          "year": 2009,
+          "venue_or_publisher": "Journal of Agricultural, Biological, and Environmental Statistics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1198/jabes.2009.0012",
+          "citation_count": 68,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1198/jabes.2009.0012",
           "query": "autocorrelation statistical test sequence randomness",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
-        },
-        {
-          "query": "autocorrelation statistical test sequence randomness",
-          "source": "fetch_crossref",
-          "error": "TimeoutError"
-        },
-        {
-          "query": "serial dependence information sequence compression",
-          "source": "fetch_openalex",
-          "error": "HTTP 503"
-        },
-        {
-          "query": "serial dependence information sequence compression",
-          "source": "fetch_semantic_scholar",
-          "error": "HTTP 429"
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to adjacent-symbol dependence, serial correlation, autocorrelation, or randomness testing.",
+          "relevance_score": 8,
+          "rank": 10,
+          "canonical_non_paper": false
         }
       ],
-      "complete": false
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Portable Random Number Generators",
+          "year": 1992,
+          "citation_count": 52,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "On the independence of statistical randomness tests included in the NIST test suite",
+          "year": 2017,
+          "citation_count": 43,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Testing random number generators",
+          "year": 1992,
+          "citation_count": 38,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Sparse Serial Tests of Uniformity for Random Number Generators",
+          "year": 2002,
+          "citation_count": 35,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Biometric random number generators",
+          "year": 2004,
+          "citation_count": 34,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Compound Random Number Generators",
+          "year": 1987,
+          "citation_count": 30,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A Test for Randomness",
+          "year": 1976,
+          "citation_count": 30,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "LINEAR AND QUADRATIC SERIAL RANK TESTS FOR RANDOMNESS AGAINST SERIAL DEPENDENCE",
+          "year": 1987,
+          "citation_count": 28,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Testing for randomness against autocorrelation: Alternative tests",
+          "year": 1977,
+          "citation_count": 27,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Note on a Proposed Test for Random Number Generators",
+          "year": 1985,
+          "citation_count": 26,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Testing Randomness: A Suite of Statistical Procedures",
+          "year": 2001,
+          "citation_count": 26,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Almost Quadriphase Sequence With Ideal Autocorrelation Property",
+          "year": 2009,
+          "citation_count": 26,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Faster Randomness Testing with the NIST Statistical Test Suite",
+          "year": 2014,
+          "citation_count": 24,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Compression, Tests for Randomness and Estimating the Statistical Model of an Individual Sequence",
+          "year": 1990,
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Recommendations on Statistical Randomness Test Batteries for Cryptographic Purposes",
+          "year": 2022,
+          "citation_count": 17,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Subjective randomness as statistical inference",
+          "year": 2018,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A randomness test for block ciphers",
+          "year": 2005,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Randomness Test to Solve Discrete Fourier Transform Test Problems",
+          "year": 2018,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Random number generators are chaotic",
+          "year": 1989,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "On Independence and Sensitivity of Statistical Randomness Tests",
+          "year": null,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
+      "fetch_errors": [],
+      "complete": true
     },
     {
       "metric_id": "conditional-entropy",
@@ -580,10 +2130,375 @@
       "ambiguity_notes": [
         "Conditional entropy sources may overlap with entropy-rate literature."
       ],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
+      "selected_sources": [
+        {
+          "source": "Crossref",
+          "title": "Data Compression Using Dynamic Markov Modelling",
+          "authors": [
+            "G. V. Cormack",
+            "R. N. S. Horspool"
+          ],
+          "year": 1987,
+          "venue_or_publisher": "The Computer Journal",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1093/comjnl/30.6.541",
+          "citation_count": 139,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1093/comjnl/30.6.541",
+          "query": "entropy rate Markov source data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 4,
+          "rank": 1,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Topological conditional entropy",
+          "authors": [
+            "Michał Misiurewicz"
+          ],
+          "year": 1976,
+          "venue_or_publisher": "Studia Mathematica",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.4064/sm-55-2-175-200",
+          "citation_count": 106,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.4064/sm-55-2-175-200",
+          "query": "conditional entropy sequence prediction information theory",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 7,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "The Conditional Entropy Bottleneck",
+          "authors": [
+            "Ian Fischer"
+          ],
+          "year": 2020,
+          "venue_or_publisher": "Entropy",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.3390/e22090999",
+          "citation_count": 66,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.3390/e22090999",
+          "query": "conditional entropy sequence prediction information theory",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 7,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Using conditional entropy to identify periodicity",
+          "authors": [
+            "Matthew J. Graham",
+            "Andrew J. Drake",
+            "S. G. Djorgovski",
+            "Ashish A. Mahabal",
+            "Ciro Donalek"
+          ],
+          "year": 2013,
+          "venue_or_publisher": "Monthly Notices of the Royal Astronomical Society",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1093/mnras/stt1206",
+          "citation_count": 61,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1093/mnras/stt1206",
+          "query": "conditional entropy compression predictability",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 7,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Conditional Entropy Coding for Efficient Video Compression",
+          "authors": [
+            "Jerry Liu",
+            "Shenlong Wang",
+            "Wei-Chiu Ma",
+            "Meet Shah",
+            "Rui Hu",
+            "Pranaab Dhawan",
+            "Raquel Urtasun"
+          ],
+          "year": 2020,
+          "venue_or_publisher": "Lecture Notes in Computer Science",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-3-030-58520-4_27",
+          "citation_count": 58,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-030-58520-4_27",
+          "query": "conditional entropy compression predictability",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 8,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Residual entropy, conditional entropy and subshift covers",
+          "authors": [
+            "Mike Boyle",
+            "Doris Fiebig",
+            "Ulf Fiebig"
+          ],
+          "year": 2002,
+          "venue_or_publisher": "Forum Mathematicum",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1515/form.2002.031",
+          "citation_count": 56,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1515/form.2002.031",
+          "query": "conditional entropy compression predictability",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 7,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Attribute reduction via local conditional entropy",
+          "authors": [
+            "Yibo Wang",
+            "Xiangjian Chen",
+            "Kai Dong"
+          ],
+          "year": 2019,
+          "venue_or_publisher": "International Journal of Machine Learning and Cybernetics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/s13042-019-00948-z",
+          "citation_count": 56,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/s13042-019-00948-z",
+          "query": "conditional entropy compression predictability",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 7,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Analyticity of Entropy Rate of Hidden Markov Chains",
+          "authors": [
+            "Guangyue Han",
+            "Brian Marcus"
+          ],
+          "year": 2006,
+          "venue_or_publisher": "IEEE Transactions on Information Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/tit.2006.885481",
+          "citation_count": 47,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/tit.2006.885481",
+          "query": "entropy rate Markov source data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 8,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "ECG compression using uniform scalar dead-zone quantization and conditional entropy coding",
+          "authors": [
+            "Jianhua Chen",
+            "Fuyan Wang",
+            "Yufeng Zhang",
+            "Xinling Shi"
+          ],
+          "year": 2008,
+          "venue_or_publisher": "Medical Engineering &amp; Physics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.medengphy.2007.06.008",
+          "citation_count": 43,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.medengphy.2007.06.008",
+          "query": "conditional entropy compression predictability",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 8,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Blind Source Separation by Entropy Rate Minimization",
+          "authors": [
+            "Geng-Shen Fu",
+            "Ronald Phlypo",
+            "Matthew Anderson",
+            "Xi-Lin Li",
+            "T ü lay Adal ı"
+          ],
+          "year": 2014,
+          "venue_or_publisher": "IEEE Transactions on Signal Processing",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/tsp.2014.2333563",
+          "citation_count": 39,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/tsp.2014.2333563",
+          "query": "entropy rate Markov source data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to conditional entropy, entropy rate, local predictability, or Markov-source compression.",
+          "relevance_score": 8,
+          "rank": 10,
+          "canonical_non_paper": false
+        }
+      ],
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Conditional Entropy",
+          "year": 1999,
+          "citation_count": 37,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Conditional Entropy-Based Evaluation of Information Dynamics in Physiological Systems",
+          "year": 2014,
+          "citation_count": 33,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Relative entropy between Markov transition rate matrices",
+          "year": 1993,
+          "citation_count": 32,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "New bounds on the entropy rate of hidden Markov processes",
+          "year": null,
+          "citation_count": 32,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Visual Saliency Based on Conditional Entropy",
+          "year": 2010,
+          "citation_count": 30,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Order estimation and sequential universal data compression of a hidden Markov source by the method of mixtures",
+          "year": 1994,
+          "citation_count": 29,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Relative Entropy Rate Based Multiple Hidden Markov Model Approximation",
+          "year": 2010,
+          "citation_count": 25,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Localization performance quantification by conditional entropy",
+          "year": 2015,
+          "citation_count": 24,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Witnessing negative conditional entropy",
+          "year": 2021,
+          "citation_count": 19,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Conditional entropy of some automatic sequences",
+          "year": 1994,
+          "citation_count": 19,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Estimation of the Entropy Rate of a Countable Markov Chain",
+          "year": 2007,
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Asymptotics of Entropy Rate in Special Families of Hidden Markov Chains",
+          "year": 2010,
+          "citation_count": 17,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The Entropy of Conditional Markov Trajectories",
+          "year": 2013,
+          "citation_count": 17,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Conditional entropy and fiber entropy for amenable group actions",
+          "year": 2015,
+          "citation_count": 16,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Fuzzy σ-algebras and conditional entropy",
+          "year": 1999,
+          "citation_count": 16,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Estimation of Mutual Information and Conditional Entropy for Surveillance Optimization",
+          "year": 2014,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Shannon Entropy Rate of Hidden Markov Processes",
+          "year": 2021,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "From Finite-System Entropy to Entropy Rate for a Hidden Markov Process",
+          "year": 2006,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Third-order coding rate for universal compression of Markov sources",
+          "year": 2015,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Derivatives of Entropy Rate in Special Families of Hidden Markov Chains",
+          "year": 2007,
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
       "fetch_errors": [],
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "n-gram-entropy",
@@ -602,10 +2517,369 @@
       "ambiguity_notes": [
         "n-gram entropy is treated as block/sequence entropy, not unigram byte entropy."
       ],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
-      "fetch_errors": [],
-      "complete": false
+      "selected_sources": [
+        {
+          "source": "Crossref",
+          "title": "Entropy and data compression schemes",
+          "authors": [
+            "D.S. Ornstein",
+            "B. Weiss"
+          ],
+          "year": 1993,
+          "venue_or_publisher": "IEEE Transactions on Information Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/18.179344",
+          "citation_count": 206,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/18.179344",
+          "query": "entropy of n-grams compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 3,
+          "rank": 1,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Topological Sequence Entropy",
+          "authors": [
+            "T. N. T. Goodman"
+          ],
+          "year": 1974,
+          "venue_or_publisher": "Proceedings of the London Mathematical Society",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1112/plms/s3-29.2.331",
+          "citation_count": 87,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1112/plms/s3-29.2.331",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 7,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Epsilon Entropy and Data Compression",
+          "authors": [
+            "Edward C. Posner",
+            "Eugene R. Rodemich"
+          ],
+          "year": 1971,
+          "venue_or_publisher": "The Annals of Mathematical Statistics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1214/aoms/1177693077",
+          "citation_count": 33,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1214/aoms/1177693077",
+          "query": "entropy of n-grams compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 3,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Sequence entropy and mixing",
+          "authors": [
+            "Alan Saleski"
+          ],
+          "year": 1977,
+          "venue_or_publisher": "Journal of Mathematical Analysis and Applications",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/0022-247x(77)90047-6",
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/0022-247x(77)90047-6",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 7,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Mixing via sequence entropy",
+          "authors": [
+            "Wen Huang",
+            "Song Shao",
+            "Xiangdong Ye"
+          ],
+          "year": 2005,
+          "venue_or_publisher": "Contemporary Mathematics",
+          "item_type": "other",
+          "doi_or_url": "https://doi.org/10.1090/conm/385/07193",
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1090/conm/385/07193",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 7,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "SOME RESULTS ON ENTROPY AND SEQUENCE ENTROPY",
+          "authors": [
+            "F. BALIBREA",
+            "V. JIMÉNEZ LÓPEZ",
+            "J. S. CÁNOVAS PEÑA"
+          ],
+          "year": 1999,
+          "venue_or_publisher": "International Journal of Bifurcation and Chaos",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1142/s0218127499001218",
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1142/s0218127499001218",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 7,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "On sequence entropy. I.",
+          "authors": [
+            "D. Newton"
+          ],
+          "year": 1970,
+          "venue_or_publisher": "Mathematical Systems Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/bf01691095",
+          "citation_count": 14,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/bf01691095",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 8,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Zero sequence entropy and entropy dimension",
+          "authors": [
+            "Yixiao Qiao",
+            "Xiaoyao Zhou"
+          ],
+          "year": 2017,
+          "venue_or_publisher": "Discrete and Continuous Dynamical Systems",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.3934/dcds.2017018",
+          "citation_count": 8,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.3934/dcds.2017018",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 7,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "On sequence entropy. II.",
+          "authors": [
+            "D. Newton"
+          ],
+          "year": 1970,
+          "venue_or_publisher": "Mathematical Systems Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/bf01691096",
+          "citation_count": 5,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/bf01691096",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 8,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Quantifying complex network information based on communicability sequence entropy",
+          "authors": [
+            "SHI DanDan",
+            "CHEN Dan",
+            "LONG HuiMin",
+            "WANG ChengKe",
+            "PAN GuiJun"
+          ],
+          "year": 2019,
+          "venue_or_publisher": "SCIENTIA SINICA Physica, Mechanica &amp; Astronomica",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1360/sspma-2019-0029",
+          "citation_count": 4,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1360/sspma-2019-0029",
+          "query": "block entropy information theory sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy over length-n sequences, block entropy, or repeated local patterns.",
+          "relevance_score": 8,
+          "rank": 10,
+          "canonical_non_paper": false
+        }
+      ],
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Weighted Sequence Entropy and Maximal Pattern Entropy",
+          "year": 2025,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "?-Entropy data compression",
+          "year": 1992,
+          "citation_count": 0,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Data Compression and Entropy",
+          "year": 1991,
+          "citation_count": 0,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Entropy and data compression performances",
+          "year": null,
+          "citation_count": 0,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "The role of relative entropy in quantum information theory",
+          "year": 2002,
+          "citation_count": 935,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Entropy and Information Theory",
+          "year": 2011,
+          "citation_count": 563,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Entropy and Information Theory",
+          "year": 1990,
+          "citation_count": 509,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "THE INFORMATION ENTROPY, ROUGH ENTROPY AND KNOWLEDGE GRANULATION IN ROUGH SET THEORY",
+          "year": 2004,
+          "citation_count": 292,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Maximum information entropy: a foundation for ecological theory",
+          "year": 2014,
+          "citation_count": 230,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Tsallis' entropy, Ehrenfest theorem and information theory",
+          "year": 1993,
+          "citation_count": 183,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Information‐theoretical entropy as a measure of sequence variability",
+          "year": 1991,
+          "citation_count": 162,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Information entropy and Thomas-Fermi theory",
+          "year": 1984,
+          "citation_count": 129,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Information theory applications for biological sequence analysis",
+          "year": 2014,
+          "citation_count": 125,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Blockchain-Based Renewable Energy Trading Using Information Entropy Theory",
+          "year": 2024,
+          "citation_count": 102,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Tsallis entropy and Jaynes' Information Theory formalism",
+          "year": 1999,
+          "citation_count": 93,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Rényi Entropy, Tsallis Entropy and Onicescu Information Energy in Density Functional Reactivity Theory",
+          "year": 2015,
+          "citation_count": 66,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Information Entropy As a Basic Building Block of Complexity Theory",
+          "year": 2013,
+          "citation_count": 63,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Information granules and entropy theory in information systems",
+          "year": 2008,
+          "citation_count": 63,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "A discussion on maximum entropy production and information theory",
+          "year": 2007,
+          "citation_count": 57,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Acyclic edge-coloring using entropy compression",
+          "year": 2013,
+          "citation_count": 52,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        }
+      ],
+      "fetch_errors": [
+        {
+          "query": "n-gram entropy sequence prediction compression",
+          "source": "fetch_crossref",
+          "error": "HTTP 500"
+        }
+      ],
+      "complete": true
     },
     {
       "metric_id": "lempel-ziv-complexity",
@@ -622,10 +2896,373 @@
         "universal algorithm sequential data compression Lempel Ziv"
       ],
       "ambiguity_notes": [],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
+      "selected_sources": [
+        {
+          "source": "Crossref",
+          "title": "Estimating the Entropy Rate of Spike Trains via Lempel-Ziv Complexity",
+          "authors": [
+            "José M. Amigó",
+            "Janusz Szczepański",
+            "Elek Wajnryb",
+            "Maria V. Sanchez-Vives"
+          ],
+          "year": 2004,
+          "venue_or_publisher": "Neural Computation",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1162/089976604322860677",
+          "citation_count": 137,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1162/089976604322860677",
+          "query": "Lempel Ziv parsing complexity sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 4,
+          "rank": 1,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "A permutation Lempel-Ziv complexity measure for EEG analysis",
+          "authors": [
+            "Yang Bai",
+            "Zhenhu Liang",
+            "Xiaoli Li"
+          ],
+          "year": 2015,
+          "venue_or_publisher": "Biomedical Signal Processing and Control",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.bspc.2015.04.002",
+          "citation_count": 103,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.bspc.2015.04.002",
+          "query": "Lempel Ziv parsing complexity sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 4,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Quantifying physiological data with Lempel-Ziv complexity-certain issues",
+          "authors": [
+            "R. Nagarajan"
+          ],
+          "year": 2002,
+          "venue_or_publisher": "IEEE Transactions on Biomedical Engineering",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/tbme.2002.804582",
+          "citation_count": 86,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/tbme.2002.804582",
+          "query": "Lempel Ziv complexity data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 5,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Multiscale Lempel–Ziv complexity for EEG measures",
+          "authors": [
+            "Antonio J. Ibáñez-Molina",
+            "Sergio Iglesias-Parro",
+            "María F. Soriano",
+            "José I. Aznarte"
+          ],
+          "year": 2015,
+          "venue_or_publisher": "Clinical Neurophysiology",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.clinph.2014.07.012",
+          "citation_count": 81,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.clinph.2014.07.012",
+          "query": "Lempel Ziv complexity data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 4,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Lempel–Ziv complexity in schizophrenia: A MEG study",
+          "authors": [
+            "Alberto Fernández",
+            "María-Inés López-Ibor",
+            "Agustín Turrero",
+            "Juan-Matías Santos",
+            "María-Dolores Morón",
+            "Roberto Hornero",
+            "Carlos Gómez",
+            "María Andreina Méndez",
+            "Tomás Ortiz",
+            "Juan José López-Ibor"
+          ],
+          "year": 2011,
+          "venue_or_publisher": "Clinical Neurophysiology",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/j.clinph.2011.04.011",
+          "citation_count": 80,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/j.clinph.2011.04.011",
+          "query": "Lempel Ziv complexity data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 4,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Compression of Low Entropy Strings with Lempel--Ziv Algorithms",
+          "authors": [
+            "S. Rao Kosaraju",
+            "Giovanni Manzini"
+          ],
+          "year": 2000,
+          "venue_or_publisher": "SIAM Journal on Computing",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1137/s0097539797331105",
+          "citation_count": 68,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1137/s0097539797331105",
+          "query": "universal algorithm sequential data compression Lempel Ziv",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 5,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Asymptotic behavior of the Lempel-Ziv parsing scheme and digital search trees",
+          "authors": [
+            "Philippe Jacquet",
+            "Wojciech Szpankowski"
+          ],
+          "year": 1995,
+          "venue_or_publisher": "Theoretical Computer Science",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1016/0304-3975(94)00298-w",
+          "citation_count": 62,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1016/0304-3975(94)00298-w",
+          "query": "Lempel Ziv parsing complexity sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 8,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Redundancy of the Lempel-Ziv incremental parsing rule",
+          "authors": [
+            "S.A. Savari"
+          ],
+          "year": 1997,
+          "venue_or_publisher": "IEEE Transactions on Information Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/18.567642",
+          "citation_count": 60,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/18.567642",
+          "query": "Lempel Ziv parsing complexity sequence",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 4,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "An extremely fast Ziv-Lempel data compression algorithm",
+          "authors": [
+            "R.N. Williams"
+          ],
+          "year": 1991,
+          "venue_or_publisher": "[1991] Proceedings. Data Compression Conference",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/dcc.1991.213344",
+          "citation_count": 57,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/dcc.1991.213344",
+          "metadata_enrichment_source": "Publisher/venue metadata manually verified on 2026-07-01.",
+          "query": "Lempel Ziv complexity data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 5,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Simple universal lossy data compression schemes derived from the Lempel-Ziv algorithm",
+          "authors": [
+            "En-hui Yang",
+            "J.C. Kieffer"
+          ],
+          "year": 1996,
+          "venue_or_publisher": "IEEE Transactions on Information Theory",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/18.481794",
+          "citation_count": 56,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/18.481794",
+          "query": "Lempel Ziv complexity data compression",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to Lempel-Ziv complexity, parsing, universal compression, or dictionary compression.",
+          "relevance_score": 5,
+          "rank": 10,
+          "canonical_non_paper": false
+        }
+      ],
+      "rejected_high_citation_candidates": [
+        {
+          "title": "High-speed VLSI designs for Lempel-Ziv-based data compression",
+          "year": 1993,
+          "citation_count": 51,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Application of Lempel–Ziv complexity to the analysis of neural discharges",
+          "year": 2003,
+          "citation_count": 51,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Fixed data base version of the Lempel-Ziv data compression algorithm",
+          "year": 1991,
+          "citation_count": 49,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Permutation Lempel–Ziv complexity measure of electroencephalogram in GABAergic anaesthetics",
+          "year": 2015,
+          "citation_count": 41,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "On Lempel–Ziv complexity for multidimensional data analysis",
+          "year": 2005,
+          "citation_count": 40,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A Lempel–Ziv complexity measure for muscle fatigue estimation",
+          "year": 2011,
+          "citation_count": 40,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Normalized Lempel-Ziv complexity and its application in bio-sequence analysis",
+          "year": 2009,
+          "citation_count": 39,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Using Lempel–Ziv Complexity to Assess ECG Signal Quality",
+          "year": 2016,
+          "citation_count": 35,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Characterizing spike trains with Lempel–Ziv complexity",
+          "year": 2004,
+          "citation_count": 32,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "On the Nonlinear Complexity and Lempel–Ziv Complexity of Finite Length Sequences",
+          "year": 2007,
+          "citation_count": 32,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Parallel Lempel Ziv coding",
+          "year": 2005,
+          "citation_count": 29,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "New asymptotic bounds and improvements on the Lempel-Ziv data compression algorithm",
+          "year": 1991,
+          "citation_count": 28,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Lempel-Ziv and multiscale Lempel-Ziv complexity in depression",
+          "year": 2015,
+          "citation_count": 26,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Lightweight Lempel-Ziv Parsing",
+          "year": 2013,
+          "citation_count": 25,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Generalized multiscale Lempel–Ziv complexity of cyclic alternating pattern during sleep",
+          "year": 2018,
+          "citation_count": 24,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "On Lempel-Ziv Complexity of Sequences",
+          "year": 2006,
+          "citation_count": 22,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Lempel Ziv Complexity of EEG in Depression",
+          "year": 2015,
+          "citation_count": 22,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Range Predecessor and Lempel-Ziv Parsing",
+          "year": 2016,
+          "citation_count": 22,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Intelligent Fault Diagnosis of Rotating Machinery Using Hierarchical Lempel-Ziv Complexity",
+          "year": 2020,
+          "citation_count": 21,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Lempel-Ziv complexity analysis of one dimensional cellular automata",
+          "year": 2015,
+          "citation_count": 20,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
       "fetch_errors": [],
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "section-size-ratios",
@@ -644,10 +3281,381 @@
       "ambiguity_notes": [
         "Sparse direct literature is expected; binary-layout and executable-feature papers are acceptable fallback evidence."
       ],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
+      "selected_sources": [
+        {
+          "source": "Crossref",
+          "title": "An intelligent PE-malware detection system based on association mining",
+          "authors": [
+            "Yanfang Ye",
+            "Dingding Wang",
+            "Tao Li",
+            "Dongyi Ye",
+            "Qingshan Jiang"
+          ],
+          "year": 2008,
+          "venue_or_publisher": "Journal in Computer Virology",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/s11416-008-0082-4",
+          "citation_count": 145,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/s11416-008-0082-4",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 2,
+          "rank": 1,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Unsupervised Anomaly-Based Malware Detection Using Hardware Features",
+          "authors": [
+            "Adrian Tang",
+            "Simha Sethumadhavan",
+            "Salvatore J. Stolfo"
+          ],
+          "year": 2014,
+          "venue_or_publisher": "Lecture Notes in Computer Science",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-3-319-11379-1_6",
+          "citation_count": 145,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-3-319-11379-1_6",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 3,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Behavior-based features model for malware detection",
+          "authors": [
+            "Hisham Shehata Galal",
+            "Yousef Bassyouni Mahdy",
+            "Mohammed Ali Atiea"
+          ],
+          "year": 2016,
+          "venue_or_publisher": "Journal of Computer Virology and Hacking Techniques",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/s11416-015-0244-0",
+          "citation_count": 134,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/s11416-015-0244-0",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 3,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Learning the PE Header, Malware Detection with Minimal Domain Knowledge",
+          "authors": [
+            "Edward Raff",
+            "Jared Sylvester",
+            "Charles Nicholas"
+          ],
+          "year": 2017,
+          "venue_or_publisher": "Proceedings of the 10th ACM Workshop on Artificial Intelligence and Security",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1145/3128572.3140442",
+          "citation_count": 104,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/3128572.3140442",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 2,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "N-GRAMS-BASED FILE SIGNATURES FOR MALWARE DETECTION",
+          "authors": [
+            "Igor Santos",
+            "Yoseba K. Penya",
+            "Jaime Devesa",
+            "Pablo G. Bringas"
+          ],
+          "year": 2009,
+          "venue_or_publisher": "Proceedings of the 11th International Conference on Enterprise Information",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.5220/0001863603170320",
+          "citation_count": 95,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.5220/0001863603170320",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 3,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Malware detection using statistical analysis of byte-level file content",
+          "authors": [
+            "S. Momina Tabish",
+            "M. Zubair Shafiq",
+            "Muddassar Farooq"
+          ],
+          "year": 2009,
+          "venue_or_publisher": "Proceedings of the ACM SIGKDD Workshop on CyberSecurity and Intelligence Informatics",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1145/1599272.1599278",
+          "citation_count": 91,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/1599272.1599278",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 3,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Windows PE Malware Detection Using Ensemble Learning",
+          "authors": [
+            "Nureni Ayofe Azeez",
+            "Oluwanifise Ebunoluwa Odufuwa",
+            "Sanjay Misra",
+            "Jonathan Oluranti",
+            "Robertas Damaševičius"
+          ],
+          "year": 2021,
+          "venue_or_publisher": "Informatics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.3390/informatics8010010",
+          "citation_count": 86,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.3390/informatics8010010",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 2,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Alias analysis of executable code",
+          "authors": [
+            "Saumya Debray",
+            "Robert Muth",
+            "Matthew Weippert"
+          ],
+          "year": 1998,
+          "venue_or_publisher": "Proceedings of the 25th ACM SIGPLAN-SIGACT symposium on Principles of programming languages  - POPL '98",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1145/268946.268948",
+          "citation_count": 85,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/268946.268948",
+          "query": "executable section size ratio binary analysis",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 3,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Combining file content and file relations for cloud based malware detection",
+          "authors": [
+            "Yanfang Ye",
+            "Tao Li",
+            "Shenghuo Zhu",
+            "Weiwei Zhuang",
+            "Egemen Tas",
+            "Umesh Gupta",
+            "Melih Abdulhayoglu"
+          ],
+          "year": 2011,
+          "venue_or_publisher": "Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1145/2020408.2020448",
+          "citation_count": 62,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/2020408.2020448",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 3,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "A survey of data mining techniques for malware detection using file features",
+          "authors": [
+            "Muazzam Siddiqui",
+            "Morgan C. Wang",
+            "Joohan Lee"
+          ],
+          "year": 2008,
+          "venue_or_publisher": "Proceedings of the 46th Annual Southeast Regional Conference on XX",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1145/1593105.1593239",
+          "citation_count": 48,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1145/1593105.1593239",
+          "query": "PE file section size features malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to executable section layout, section-size features, or binary structural analysis.",
+          "relevance_score": 4,
+          "rank": 10,
+          "canonical_non_paper": false
+        }
+      ],
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Android Malware Familial Classification Based on DEX File Section Features",
+          "year": 2020,
+          "citation_count": 46,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Bio-inspired for Features Optimization and Malware Detection",
+          "year": 2018,
+          "citation_count": 41,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "DeepMalNet: Evaluating shallow and deep networks for static PE malware detection",
+          "year": 2018,
+          "citation_count": 40,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "An Efficient Approach For Malware Detection Using PE Header Specifications",
+          "year": 2020,
+          "citation_count": 37,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Android Malware Detection Using Fine-Grained Features",
+          "year": 2020,
+          "citation_count": 31,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Binary executable file similarity calculation using function matching",
+          "year": 2019,
+          "citation_count": 30,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Structural analysis of binary executable headers for malware detection optimization",
+          "year": 2017,
+          "citation_count": 28,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "PE File Header Analysis-Based Packed PE File Detection Technique (PHAD)",
+          "year": 2008,
+          "citation_count": 28,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Static PE Malware Detection Using Gradient Boosting Decision Trees Algorithm",
+          "year": 2018,
+          "citation_count": 25,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "A Real-Time PE-Malware Detection System Based on CHI-Square Test and PE-File Features",
+          "year": 2015,
+          "citation_count": 24,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Malware traffic detection using tamper resistant features",
+          "year": 2015,
+          "citation_count": 22,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Bin2vec: learning representations of binary executable programs for security tasks",
+          "year": 2021,
+          "citation_count": 21,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Improved Deep Learning Model for Static PE Files Malware Detection and Classification",
+          "year": 2022,
+          "citation_count": 21,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "An Android malware detection method based on AndroidManifest file",
+          "year": 2016,
+          "citation_count": 20,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "MobileNet-Based IoT Malware Detection with Opcode Features",
+          "year": 2023,
+          "citation_count": 18,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Interprocedural dataflow analysis in an executable optimizer",
+          "year": 1997,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Intelligent malware detection based on file relation graphs",
+          "year": 2015,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Exploring Function Call Graph Vectorization and File Statistical Features in Malicious PE File Classification",
+          "year": 2020,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Evaluation of printable character-based malicious PE file-detection method",
+          "year": 2022,
+          "citation_count": 15,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Analyzing File-to-File Relation Network in Malware Detection",
+          "year": 2015,
+          "citation_count": 13,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        }
+      ],
       "fetch_errors": [],
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "section-level-entropy",
@@ -666,10 +3674,383 @@
       "ambiguity_notes": [
         "Section-level entropy is scoped to executable/binary sections, not whole-file entropy."
       ],
-      "selected_sources": [],
-      "rejected_high_citation_candidates": [],
+      "selected_sources": [
+        {
+          "source": "Crossref",
+          "title": "Using Entropy Analysis to Find Encrypted and Packed Malware",
+          "authors": [
+            "Robert Lyda",
+            "James Hamrock"
+          ],
+          "year": 2007,
+          "venue_or_publisher": "IEEE Security and Privacy Magazine",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/msp.2007.48",
+          "citation_count": 286,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/msp.2007.48",
+          "query": "PE section entropy packed executable malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 1,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Malware analysis using visualized images and entropy graphs",
+          "authors": [
+            "Kyoung Soo Han",
+            "Jae Hyun Lim",
+            "Boojoong Kang",
+            "Eul Gyu Im"
+          ],
+          "year": 2015,
+          "venue_or_publisher": "International Journal of Information Security",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/s10207-014-0242-0",
+          "citation_count": 136,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/s10207-014-0242-0",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 2,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Structural entropy and metamorphic malware",
+          "authors": [
+            "Donabelle Baysa",
+            "Richard M. Low",
+            "Mark Stamp"
+          ],
+          "year": 2013,
+          "venue_or_publisher": "Journal of Computer Virology and Hacking Techniques",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/s11416-013-0185-4",
+          "citation_count": 95,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/s11416-013-0185-4",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 3,
+          "rank": 3,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "EntropLyzer: Android Malware Classification and Characterization Using Entropy Analysis of Dynamic Characteristics",
+          "authors": [
+            "David Sean Keyes",
+            "Beiqi Li",
+            "Gurdip Kaur",
+            "Arash Habibi Lashkari",
+            "Francois Gagnon",
+            "Frederic Massicotte"
+          ],
+          "year": 2021,
+          "venue_or_publisher": "2021 Reconciling Data Analytics, Automation, Privacy, and Security: A Big Data Challenge (RDAAPS)",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/rdaaps48126.2021.9452002",
+          "citation_count": 91,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/rdaaps48126.2021.9452002",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 4,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Entropy analysis to classify unknown packing algorithms for malware detection",
+          "authors": [
+            "Munkhbayar Bat-Erdene",
+            "Hyundo Park",
+            "Hongzhe Li",
+            "Heejo Lee",
+            "Mahn-Soo Choi"
+          ],
+          "year": 2017,
+          "venue_or_publisher": "International Journal of Information Security",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1007/s10207-016-0330-4",
+          "citation_count": 54,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/s10207-016-0330-4",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 5,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "File Entropy Signal Analysis Combined With Wavelet Decomposition for Malware Classification",
+          "authors": [
+            "Hui Guo",
+            "Shuguang Huang",
+            "Cheng Huang",
+            "Zulie Pan",
+            "Min Zhang",
+            "Fan Shi"
+          ],
+          "year": 2020,
+          "venue_or_publisher": "IEEE Access",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1109/access.2020.3020330",
+          "citation_count": 12,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/access.2020.3020330",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 6,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Cloud Based Malware Detection Through Behavioral Entropy",
+          "authors": [
+            "Kambiz Vahedi",
+            "Khadijeh Afhamisisi"
+          ],
+          "year": 2021,
+          "venue_or_publisher": "2021 IEEE International Conference on Big Data (Big Data)",
+          "item_type": "proceedings-article",
+          "doi_or_url": "https://doi.org/10.1109/bigdata52589.2021.9671981",
+          "citation_count": 6,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1109/bigdata52589.2021.9671981",
+          "query": "PE section entropy packed executable malware detection",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 7,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Linux IoT Malware Variant Classification Using Binary Lifting and Opcode Entropy",
+          "authors": [
+            "Jayanthi Ramamoorthy",
+            "Khushi Gupta",
+            "Narasimha K. Shashidhar",
+            "Cihan Varol"
+          ],
+          "year": 2024,
+          "venue_or_publisher": "Electronics",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.3390/electronics13122381",
+          "citation_count": 6,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.3390/electronics13122381",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 4,
+          "rank": 8,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Binary File’s Visualization and Entropy Features Analysis Combined with Multiple Deep Learning Networks for Malware Classification",
+          "authors": [
+            "Hui Guo",
+            "Shuguang Huang",
+            "Cheng Huang",
+            "Fan Shi",
+            "Min Zhang",
+            "Zulie Pan"
+          ],
+          "year": 2020,
+          "venue_or_publisher": "Security and Communication Networks",
+          "item_type": "journal-article",
+          "doi_or_url": "https://doi.org/10.1155/2020/8881760",
+          "citation_count": 4,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1155/2020/8881760",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 5,
+          "rank": 9,
+          "canonical_non_paper": false
+        },
+        {
+          "source": "Crossref",
+          "title": "Byte Label Malware Classification Using Image Entropy",
+          "authors": [
+            "Ayan Dey",
+            "Sukriti Bhattacharya",
+            "Nabendu Chaki"
+          ],
+          "year": 2019,
+          "venue_or_publisher": "Advances in Intelligent Systems and Computing",
+          "item_type": "book-chapter",
+          "doi_or_url": "https://doi.org/10.1007/978-981-13-3702-4_2",
+          "citation_count": 4,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "raw_source_id": "10.1007/978-981-13-3702-4_2",
+          "query": "section entropy binary analysis malware",
+          "retrieval_date": "2026-07-01",
+          "relevance_note": "Relevant to entropy computed over executable sections, packing detection, malware analysis, or binary compressibility.",
+          "relevance_score": 3,
+          "rank": 10,
+          "canonical_non_paper": false
+        }
+      ],
+      "rejected_high_citation_candidates": [
+        {
+          "title": "Entropy-Based Malware Detection Using One Dimensional CNN",
+          "year": 2024,
+          "citation_count": 3,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Malware Detection with CNNs on Entropy and Greyscale Images",
+          "year": 2026,
+          "citation_count": 0,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Structural Entropy and Metamorphic Malware",
+          "year": null,
+          "citation_count": 0,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "DeepRevelio: Multivariate Time Series Detection for Stealthy IoT Malware via Variable-length Entropy Analysis",
+          "year": 2026,
+          "citation_count": 0,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Relevant candidate outside top selected limit."
+        },
+        {
+          "title": "Colloidal matter: Packing, geometry, and entropy",
+          "year": 2015,
+          "citation_count": 477,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Executable cell biology",
+          "year": 2007,
+          "citation_count": 430,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Understanding shape entropy through local dense packing",
+          "year": 2014,
+          "citation_count": 223,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "A survey on machine learning-based malware detection in executable files",
+          "year": 2021,
+          "citation_count": 211,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Entropy and data compression schemes",
+          "year": 1993,
+          "citation_count": 206,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "A comparative assessment of malware classification using binary texture analysis and dynamic analysis",
+          "year": 2011,
+          "citation_count": 168,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "An intelligent PE-malware detection system based on association mining",
+          "year": 2008,
+          "citation_count": 145,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Side‐chain entropy and packing in proteins",
+          "year": 1994,
+          "citation_count": 123,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Learning the PE Header, Malware Detection with Minimal Domain Knowledge",
+          "year": 2017,
+          "citation_count": 104,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Malware behaviour analysis",
+          "year": 2008,
+          "citation_count": 87,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Windows PE Malware Detection Using Ensemble Learning",
+          "year": 2021,
+          "citation_count": 86,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Revealing Packed Malware",
+          "year": 2008,
+          "citation_count": 84,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Sphere packing with a geometric based compression algorithm",
+          "year": 2005,
+          "citation_count": 81,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Binary malware image classification using machine learning with local binary pattern",
+          "year": 2017,
+          "citation_count": 64,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Malware Analysis of Imaged Binary Samples by Convolutional Neural Network with Attention Mechanism",
+          "year": 2018,
+          "citation_count": 59,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        },
+        {
+          "title": "Image-based malware classification using section distribution information",
+          "year": 2021,
+          "citation_count": 56,
+          "citation_count_source": "Crossref is-referenced-by-count",
+          "reason": "Rejected by the metric-specific title relevance gate."
+        }
+      ],
       "fetch_errors": [],
-      "complete": false
+      "complete": true
     }
   ]
 }

@@ -162,9 +162,7 @@ def fetch_semantic_scholar(query: str, refresh: bool, timeout: int, polite_delay
 def fetch_crossref(query: str, refresh: bool, timeout: int, polite_delay: float, cache_only: bool) -> list[dict[str, Any]]:
     params = {
         "query.title": query,
-        "rows": "40",
-        "sort": "is-referenced-by-count",
-        "order": "desc",
+        "rows": "100",
         "select": "DOI,title,author,published-print,published-online,container-title,publisher,is-referenced-by-count,type,URL",
         "mailto": "noreply@example.com",
     }
@@ -202,7 +200,25 @@ def fetch_crossref(query: str, refresh: bool, timeout: int, polite_delay: float,
     return records
 
 
-FETCHERS = [fetch_openalex, fetch_semantic_scholar, fetch_crossref]
+FETCHERS = {
+    "openalex": fetch_openalex,
+    "semantic-scholar": fetch_semantic_scholar,
+    "crossref": fetch_crossref,
+}
+
+
+KNOWN_METADATA = {
+    "10.1109/date.2002.998363": {"year": 2002},
+    "10.1109/soac.1991.143840": {"year": 1991},
+    "10.1109/test.2002.1041756": {"year": 2002},
+    "10.1109/pccc.1994.504117": {"year": 1994},
+    "10.1109/dcc.1996.488313": {"year": 1996},
+    "10.1109/dcc.1991.213344": {"year": 1991},
+    "10.1007/978-1-84628-603-2": {"authors": ["David Salomon"]},
+    "10.1002/0471200611.ch2": {"authors": ["Thomas M. Cover", "Joy A. Thomas"]},
+    "10.1002/047174882x.ch2": {"authors": ["Thomas M. Cover", "Joy A. Thomas"]},
+    "10.1007/978-3-642-82803-4": {"authors": ["Kurt Binder"]},
+}
 
 
 def candidate_key(record: dict[str, Any]) -> str:
@@ -213,6 +229,19 @@ def candidate_key(record: dict[str, Any]) -> str:
     title = normalize_title(record.get("title") or "")
     authors = " ".join(record.get("authors") or [])[:80].lower()
     return f"title:{title}|authors:{authors}"
+
+
+def enrich_known_metadata(record: dict[str, Any]) -> None:
+    doi_match = re.search(r"10\.\d{4,9}/\S+", record.get("doi_or_url") or "", flags=re.I)
+    if not doi_match:
+        return
+    known = KNOWN_METADATA.get(doi_match.group(0).lower().rstrip(".,)"))
+    if not known:
+        return
+    for field, value in known.items():
+        if not record.get(field):
+            record[field] = value
+    record["metadata_enrichment_source"] = "Publisher/venue metadata manually verified on 2026-07-01."
 
 
 def relevance_score(metric: dict[str, Any], record: dict[str, Any], query: str) -> int:
@@ -236,13 +265,52 @@ def relevance_score(metric: dict[str, Any], record: dict[str, Any], query: str) 
     return score
 
 
+def is_materially_relevant(metric_id: str, record: dict[str, Any]) -> bool:
+    """Apply a conservative title gate before citation-based ranking."""
+    title = normalize_title(record.get("title") or "")
+    padded_title = f" {title} "
+    has = lambda *terms: any(term in padded_title for term in terms)
+
+    if metric_id == "file-size":
+        return has("compress") and not has("micropillar", "nanolaminate", "material", "particle")
+    if metric_id == "byte-entropy":
+        return has("entropy") and has("information", "random", "compress", "coding", "data") and not has(
+            "protein", "atom", "carbide", "heavy ion", "geographic", "species", "metasurface", "potential"
+        )
+    if metric_id == "chi-square-byte-frequency":
+        return has("chi square", "chi-square") and has("random", "frequency", "generator", "test")
+    if metric_id == "monte-carlo-pi":
+        return has("monte carlo") and has("random", "simulation", "statistical", " pi ")
+    if metric_id == "serial-correlation":
+        return has("serial correlation", "autocorrelation", "random number", "randomness") and not has(
+            "visual perception", "orientation estimation", "ecology"
+        )
+    if metric_id == "conditional-entropy":
+        return has("conditional entropy", "entropy rate") or (has("markov") and has("entropy", "compress"))
+    if metric_id == "n-gram-entropy":
+        return has("n gram", "n-gram", "block entropy", "sequence entropy", "language entropy", "data compression")
+    if metric_id == "lempel-ziv-complexity":
+        return has("lempel", "ziv", "dictionary compress")
+    if metric_id == "section-size-ratios":
+        return has("malware", " pe ", "executable") and not has(
+            "cross section", "cell biology", "particle", "fluidization"
+        )
+    if metric_id == "section-level-entropy":
+        return has("entropy") and (has("malware", "executable") or (has("binary file") and has("entropy")))
+    raise ValueError(f"No relevance gate configured for {metric_id}")
+
+
 def build_bib_key(record: dict[str, Any], used: set[str]) -> str:
     authors = record.get("authors") or []
     first_author = "source"
     if authors:
         first_author = re.sub(r"[^A-Za-z0-9]+", "", authors[0].split()[-1]) or "source"
     year = str(record.get("year") or "nd")
-    title_word = next(iter(words(record.get("title") or "")), "work")
+    stop = {"a", "an", "and", "by", "for", "in", "of", "on", "or", "the", "to", "with"}
+    title_word = next(
+        (word for word in re.findall(r"[a-z0-9]+", (record.get("title") or "").lower()) if len(word) > 2 and word not in stop),
+        "work",
+    )
     base = f"{first_author.lower()}{year}{title_word.lower()}"
     key = base
     suffix = 2
@@ -270,15 +338,23 @@ def format_bibtex(records_by_metric: list[dict[str, Any]]) -> str:
             seen.add(key)
             bib_key = build_bib_key(record, used)
             record["bibtex_key"] = bib_key
-            entry_type = "book" if "book" in (record.get("item_type") or "").lower() else "article"
+            item_type = (record.get("item_type") or "").lower()
+            entry_type = "incollection" if "book-chapter" in item_type else "book" if item_type == "book" else "article"
             fields = {
                 "title": record.get("title"),
                 "author": " and ".join(record.get("authors") or []),
                 "year": record.get("year"),
-                "journal": record.get("venue_or_publisher"),
                 "url": record.get("doi_or_url"),
                 "note": f"{record.get('citation_count_source')}: {record.get('citation_count')}; retrieved {record.get('retrieval_date')}",
             }
+            venue = record.get("venue_or_publisher")
+            if entry_type == "article":
+                fields["journal"] = venue
+            elif entry_type == "book":
+                fields["publisher"] = venue
+            else:
+                fields["booktitle"] = venue
+                fields["publisher"] = venue
             lines = [f"@{entry_type}{{{bib_key},"]
             for name, value in fields.items():
                 if value:
@@ -294,7 +370,8 @@ def select_for_metric(metric: dict[str, Any], args: argparse.Namespace) -> dict[
     fetch_errors = []
 
     for query in metric["queries"]:
-        for fetcher in FETCHERS:
+        for source_name in args.sources:
+            fetcher = FETCHERS[source_name]
             records = fetcher(query, args.refresh, args.timeout, args.polite_delay, args.cache_only)
             if not records:
                 cache_file = cache_path(fetcher.__name__.replace("fetch_", "").replace("_", "-"), query)
@@ -306,6 +383,7 @@ def select_for_metric(metric: dict[str, Any], args: argparse.Namespace) -> dict[
             for record in records:
                 if not record.get("title"):
                     continue
+                enrich_known_metadata(record)
                 record["query"] = query
                 record["retrieval_date"] = args.retrieval_date
                 record["relevance_note"] = metric["relevance_note_template"]
@@ -316,7 +394,9 @@ def select_for_metric(metric: dict[str, Any], args: argparse.Namespace) -> dict[
                 if existing is None or record["citation_count"] > existing["citation_count"]:
                     candidates[key] = record
 
-    ranked = sorted(candidates.values(), key=lambda item: (item["relevance_score"], item["citation_count"]), reverse=True)
+    relevant = [item for item in candidates.values() if is_materially_relevant(metric["id"], item)]
+    irrelevant = [item for item in candidates.values() if not is_materially_relevant(metric["id"], item)]
+    ranked = sorted(relevant, key=lambda item: item["citation_count"], reverse=True)
     selected = []
     for record in ranked:
         if len(selected) >= args.limit:
@@ -330,19 +410,22 @@ def select_for_metric(metric: dict[str, Any], args: argparse.Namespace) -> dict[
                 }
             )
             continue
-        if record["relevance_score"] <= 0:
-            rejected.append(
-                {
-                    "title": record.get("title"),
-                    "year": record.get("year"),
-                    "citation_count": record.get("citation_count"),
-                    "citation_count_source": record.get("citation_count_source"),
-                    "reason": "Insufficient lexical relevance to metric aliases and queries.",
-                }
-            )
-            continue
         record["rank"] = len(selected) + 1
+        record["canonical_non_paper"] = (record.get("item_type") or "").lower() == "book"
+        if record["canonical_non_paper"]:
+            record["relevance_note"] += " Included as a canonical book-length treatment of the metric family."
         selected.append(record)
+
+    for record in sorted(irrelevant, key=lambda item: item["citation_count"], reverse=True):
+        rejected.append(
+            {
+                "title": record.get("title"),
+                "year": record.get("year"),
+                "citation_count": record.get("citation_count"),
+                "citation_count_source": record.get("citation_count_source"),
+                "reason": "Rejected by the metric-specific title relevance gate.",
+            }
+        )
 
     return {
         "metric_id": metric["id"],
@@ -376,6 +459,8 @@ def write_report(config: dict[str, Any], results: list[dict[str, Any]]) -> None:
         "",
         "Citation-count priority: OpenAlex `cited_by_count`, Semantic Scholar `citationCount`, then Crossref `is-referenced-by-count`.",
         "",
+        "Selection status: automated relevance filtering accepted for this change; entries should be manually curated before dissertation citation.",
+        "",
         "## Summary",
         "",
         "| Metric | Selected | Top source | Count source | Count | Status |",
@@ -393,6 +478,19 @@ def write_report(config: dict[str, Any], results: list[dict[str, Any]]) -> None:
                 status="complete" if result["complete"] else "incomplete",
             )
         )
+
+    lines.extend(
+        [
+            "",
+            "## Method limitations and unresolved ambiguities",
+            "",
+            "- The selected lists use automated title-based relevance gates. The user accepted this automated selection for the change; manual topical curation remains advisable before dissertation citation.",
+            "- OpenAlex and Semantic Scholar were unavailable during retrieval, so all reported counts are Crossref `is-referenced-by-count` values rather than globally comparable citation counts.",
+            "- Randomness-test sources may support multiple metrics (chi-square, Monte Carlo, and serial correlation), while entropy sources may overlap across whole-file, conditional, n-gram, and section-level interpretations.",
+            "- Section-size-ratio literature is sparse; its list uses the documented executable-layout and malware-feature fallback hierarchy.",
+            "- The bibliography deduplicates sources shared by metric lists, so 100 ranked selections may produce fewer than 100 unique BibTeX entries.",
+        ]
+    )
 
     for result in results:
         lines.extend(["", f"## {result['metric_name']}", ""])
@@ -424,12 +522,15 @@ def write_report(config: dict[str, Any], results: list[dict[str, Any]]) -> None:
                         f"   - Year: {record.get('year') or 'n.d.'}",
                         f"   - Venue/publisher: {record.get('venue_or_publisher') or 'n/a'}",
                         f"   - Type: {record.get('item_type') or 'n/a'}",
+                        f"   - Canonical non-paper source: {'yes' if record.get('canonical_non_paper') else 'no'}",
                         f"   - DOI/URL: {record.get('doi_or_url') or 'n/a'}",
                         f"   - Count: {record.get('citation_count')} ({record.get('citation_count_source')}, retrieved {record.get('retrieval_date')})",
                         f"   - Query: `{record.get('query')}`",
                         f"   - Relevance: {record.get('relevance_note')}",
                     ]
                 )
+                if record.get("metadata_enrichment_source"):
+                    lines.append(f"   - Metadata enrichment: {record['metadata_enrichment_source']}")
         lines.extend(["", "### Rejected high-count candidates", ""])
         if not result["rejected_high_citation_candidates"]:
             lines.append("None recorded.")
@@ -451,6 +552,13 @@ def main() -> int:
     parser.add_argument("--polite-delay", type=float, default=1.0, help="Delay between API requests.")
     parser.add_argument("--retrieval-date", default=date.today().isoformat())
     parser.add_argument("--cache-only", action="store_true", help="Generate outputs from cached API responses only.")
+    parser.add_argument(
+        "--sources",
+        nargs="+",
+        choices=tuple(FETCHERS),
+        default=list(FETCHERS),
+        help="Metadata sources to query, in priority order.",
+    )
     args = parser.parse_args()
 
     CACHE_DIR.mkdir(parents=True, exist_ok=True)

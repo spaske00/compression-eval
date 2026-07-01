@@ -1,5 +1,5253 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=Shannon+entropy+information+theory+data+compression&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 4465652,
+    "items": [
+      {
+        "publisher": "Oxford University PressOxford",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1093/oso/9780198851547.003.0043",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon: entropy and information theory"
+        ],
+        "author": [
+          {
+            "given": "Robert T.",
+            "family": "Hanlon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Block by Block: The Historical and Theoretical Foundations of Thermodynamics"
+        ],
+        "URL": "https://doi.org/10.1093/oso/9780198851547.003.0043"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003346807-4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory (Shannon Entropy) and Materials Science"
+        ],
+        "author": [
+          {
+            "given": "Luca",
+            "family": "Spiridigliozzi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Order from Chaos"
+        ],
+        "URL": "https://doi.org/10.1201/9781003346807-4"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              10,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781315371993-9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon entropy and the basics of information theory"
+        ],
+        "author": [
+          {
+            "given": "Jürgen",
+            "family": "Bierbrauer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Introduction to Coding Theory"
+        ],
+        "URL": "https://doi.org/10.1201/9781315371993-9"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              10,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781482296372-8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon entropy and the basics of information theory"
+        ],
+        "author": [
+          {
+            "given": "Juergen",
+            "family": "Bierbrauer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Introduction to Coding Theory"
+        ],
+        "URL": "https://doi.org/10.1201/9781482296372-8"
+      },
+      {
+        "DOI": "10.1017/cbo9780511976155.003",
+        "title": [
+          "Shannon information and entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              5,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy in Dynamical Systems"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 1,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511976155.003"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1007/s10773-023-05512-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Weighted p-Rényi Entropy Power Inequality: Information Theory to Quantum Shannon Theory"
+        ],
+        "author": [
+          {
+            "given": "Junseo",
+            "family": "Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hyeonjun",
+            "family": "Yeo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kabgyun",
+            "family": "Jeong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Theoretical Physics"
+        ],
+        "URL": "https://doi.org/10.1007/s10773-023-05512-8"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-57715-8_21",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "From Claude Shannon’s Information Entropy to Spike-Time Data Compression Theory"
+        ],
+        "author": [
+          {
+            "given": "Nikola K.",
+            "family": "Kasabov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              8,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Springer Series on Bio- and Neurosystems",
+          "Time-Space, Spiking Neural Networks and Brain-Inspired Artificial Intelligence"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-57715-8_21"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02435839",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Physical information entropy and probability Shannon entropy"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Ascoli",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Urigu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Theoretical Physics"
+        ],
+        "URL": "https://doi.org/10.1007/bf02435839"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-12986-5_6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Shannon Theory for Quantum Systems and Beyond: Information Compression for Fermions"
+        ],
+        "author": [
+          {
+            "given": "Paolo",
+            "family": "Perinotti",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alessandro",
+            "family": "Tosini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Leonardo",
+            "family": "Vaglini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "The Quantum-Like Revolution"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-12986-5_6"
+      },
+      {
+        "DOI": "10.36227/techrxiv.22832357.v2",
+        "title": [
+          "Post Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-7329-5081",
+            "authenticated-orcid": false,
+            "given": "Jialun",
+            "family": "Cao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Coding laboratory"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.36227/techrxiv.22832357.v2"
+      },
+      {
+        "DOI": "10.36227/techrxiv.22832357.v3",
+        "title": [
+          "Post Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-7329-5081",
+            "authenticated-orcid": false,
+            "given": "Jialun",
+            "family": "Cao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Coding laboratory"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.36227/techrxiv.22832357.v3"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1145/1897816.1897822",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Information theory after Shannon"
+        ],
+        "author": [
+          {
+            "given": "Neil",
+            "family": "Savage",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Lowell, MA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications of the ACM"
+        ],
+        "URL": "https://doi.org/10.1145/1897816.1897822"
+      },
+      {
+        "DOI": "10.1109/etsym.2004.1347615",
+        "title": [
+          "Relating entropy theory to test data compression"
+        ],
+        "author": [
+          {
+            "given": "K.J.",
+            "family": "Balakrishnan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.A.",
+            "family": "Touba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. Ninth IEEE European Test Symposium, 2004. ETS 2004."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 27,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/etsym.2004.1347615"
+      },
+      {
+        "publisher": "Springer Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-10-3874-7_10",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Image Compression Using Shannon Entropy-Based Image Thresholding"
+        ],
+        "author": [
+          {
+            "given": "Karri",
+            "family": "Chiranjeevi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Uma Ranjan",
+            "family": "Jena",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Asha",
+            "family": "Harika",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Intelligent Systems and Computing",
+          "Computational Intelligence in Data Mining"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-10-3874-7_10"
+      },
+      {
+        "DOI": "10.36227/techrxiv.22832357.v1",
+        "title": [
+          "Post Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-7329-5081",
+            "authenticated-orcid": false,
+            "given": "Jialun",
+            "family": "Cao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Coding laboratory"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.36227/techrxiv.22832357.v1"
+      },
+      {
+        "DOI": "10.36227/techrxiv.22832357",
+        "title": [
+          "Post Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Jialun",
+            "family": "Cao",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.36227/techrxiv.22832357"
+      },
+      {
+        "publisher": "Stockholm University Press",
+        "DOI": "10.1111/j.1600-0870.2006.00222.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 51,
+        "title": [
+          "Measuring information content from observations for data assimilation: relative entropy versus shannon entropy difference"
+        ],
+        "author": [
+          {
+            "given": "Qin",
+            "family": "Xu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Tellus A: Dynamic Meteorology and Oceanography"
+        ],
+        "URL": "https://doi.org/10.1111/j.1600-0870.2006.00222.x"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              10,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780471650126.dob0678.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon Entropy (Shannon Uncertainty)"
+        ],
+        "author": [
+          {
+            "given": "Thomas D.",
+            "family": "Schneider",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              4,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Dictionary of Bioinformatics and Computational Biology"
+        ],
+        "URL": "https://doi.org/10.1002/9780471650126.dob0678.pub2"
+      },
+      {
+        "publisher": "Universitas Sam Ratulangi",
+        "DOI": "10.35799/dc.2.2.2013.3207",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Data Compression Using Shannon-Fano Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Christine",
+            "family": "Lamorahan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benny",
+            "family": "Pinontoan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nelson",
+            "family": "Nainggolan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "d'CARTESIAN"
+        ],
+        "URL": "https://doi.org/10.35799/dc.2.2.2013.3207"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              19
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119598138.ch2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "SHANNON THEOREM AND INFORMATION THEORY"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Digital Communication For Practicing Engineers"
+        ],
+        "URL": "https://doi.org/10.1002/9781119598138.ch2"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0006-3495(96)79210-x",
+        "type": "journal-article",
+        "is-referenced-by-count": 163,
+        "title": [
+          "The Shannon information entropy of protein sequences"
+        ],
+        "author": [
+          {
+            "given": "B.J.",
+            "family": "Strait",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.G.",
+            "family": "Dewey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biophysical Journal"
+        ],
+        "URL": "https://doi.org/10.1016/s0006-3495(96)79210-x"
+      },
+      {
+        "publisher": "John Wiley & Sons, Inc.",
+        "DOI": "10.1002/0471650129.dob0678",
+        "type": "reference-entry",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon Entropy (Shannon Uncertainty)"
+        ],
+        "author": [
+          {
+            "given": "Thomas D.",
+            "family": "Schneider",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              10,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Dictionary of Bioinformatics and Computational Biology"
+        ],
+        "URL": "https://doi.org/10.1002/0471650129.dob0678"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1088/1674-1056/25/4/040301",
+        "type": "journal-article",
+        "is-referenced-by-count": 58,
+        "title": [
+          "Nonrelativistic Shannon information entropy for Kratzer potential"
+        ],
+        "author": [
+          {
+            "given": "S A",
+            "family": "Najafizade",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "H",
+            "family": "Hassanabadi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "S",
+            "family": "Zarrinkamar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              4,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Chinese Physics B"
+        ],
+        "URL": "https://doi.org/10.1088/1674-1056/25/4/040301"
+      },
+      {
+        "publisher": "American Geophysical Union (AGU)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1029/2018ea000464",
+        "type": "journal-article",
+        "is-referenced-by-count": 67,
+        "title": [
+          "Global Seismic Nowcasting With Shannon Information Entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-1966-4144",
+            "authenticated-orcid": false,
+            "given": "John B.",
+            "family": "Rundle",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Physics University of California  Davis CA USA"
+              },
+              {
+                "name": "Santa Fe Institute  Santa Fe NM USA"
+              },
+              {
+                "name": "Department of Earth and Planetary Science University of California  Davis CA USA"
+              },
+              {
+                "name": "Jet Propulsion Laboratory California Institute of Technology  Pasadena CA USA"
+              },
+              {
+                "name": "Tohoku University  Sendai Japan"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Alexis",
+            "family": "Giguere",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics University of California  Davis CA USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Donald L.",
+            "family": "Turcotte",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Earth and Planetary Science University of California  Davis CA USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "James P.",
+            "family": "Crutchfield",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics University of California  Davis CA USA"
+              },
+              {
+                "name": "Santa Fe Institute  Santa Fe NM USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Andrea",
+            "family": "Donnellan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Jet Propulsion Laboratory California Institute of Technology  Pasadena CA USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Earth and Space Science"
+        ],
+        "URL": "https://doi.org/10.1029/2018ea000464"
+      },
+      {
+        "publisher": "Canadian Science Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1139/cjp-2016-0113",
+        "type": "journal-article",
+        "is-referenced-by-count": 20,
+        "title": [
+          "Nonrelativistic Shannon information entropy for Killingbeck potential"
+        ],
+        "author": [
+          {
+            "given": "Seyede Amene",
+            "family": "Najafizade",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Physics Department, Shahrood University of Technology, Shahrood, Iran."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hassan",
+            "family": "Hassanabadi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Physics Department, Shahrood University of Technology, Shahrood, Iran."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Saber",
+            "family": "Zarrinkamar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Basic Sciences, Garmsar Branch, Islamic Azad University, Garmsar, Iran."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Canadian Journal of Physics"
+        ],
+        "URL": "https://doi.org/10.1139/cjp-2016-0113"
+      },
+      {
+        "DOI": "10.1109/isit.1993.748527",
+        "title": [
+          "Data Compression with Side Information and Graph Entropy"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Orlitsky",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1993.748527"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ppnp.2018.01.002",
+        "type": "journal-article",
+        "is-referenced-by-count": 113,
+        "title": [
+          "Shannon information entropy in heavy-ion collisions"
+        ],
+        "author": [
+          {
+            "given": "Chun-Wang",
+            "family": "Ma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yu-Gang",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Progress in Particle and Nuclear Physics"
+        ],
+        "URL": "https://doi.org/10.1016/j.ppnp.2018.01.002"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "DOI": "10.1088/978-0-7503-3931-5ch2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The synthesis of information theory and thermodynamics: Shannon entropy and Boltzmann entropy are the same thing"
+        ],
+        "author": [
+          {
+            "given": "Hugo",
+            "family": "Fort",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Republic University",
+                "place": [
+                  "Uruguay"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Forecasting with Maximum Entropy"
+        ],
+        "URL": "https://doi.org/10.1088/978-0-7503-3931-5ch2"
+      },
+      {
+        "publisher": "AIP",
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.2821257",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "On Shannon-Jaynes Entropy and Fisher Information"
+        ],
+        "author": [
+          {
+            "given": "Vesselin I.",
+            "family": "Dimitrov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kevin H.",
+            "family": "Knuth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ariel",
+            "family": "Caticha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Julian L.",
+            "family": "Center",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Adom",
+            "family": "Giffin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carlos C.",
+            "family": "Rodríguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "AIP Conference Proceedings"
+        ],
+        "URL": "https://doi.org/10.1063/1.2821257"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01071523",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "?-Entropy data compression"
+        ],
+        "author": [
+          {
+            "given": "I. Ya.",
+            "family": "Tyrygin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Ukrainian Mathematical Journal"
+        ],
+        "URL": "https://doi.org/10.1007/bf01071523"
+      },
+      {
+        "DOI": "10.29172/e9bf3b02-5f76-41ca-b772-3ac5ef388ab6",
+        "title": [
+          "Shannon entropy"
+        ],
+        "container-title": [
+          "Physics Subject Headings (PhySH)"
+        ],
+        "publisher": "American Physical Society (APS)",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.29172/e9bf3b02-5f76-41ca-b772-3ac5ef388ab6"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2004.03.094",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Dynamical Shannon entropy and information Tsallis entropy in complex systems"
+        ],
+        "author": [
+          {
+            "given": "Renat M",
+            "family": "Yulmetyev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Natalya A",
+            "family": "Emelyanova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Fail M",
+            "family": "Gafarov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2004.03.094"
+      },
+      {
+        "DOI": "10.1017/9781108963558.004",
+        "title": [
+          "Shannon Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy and Diversity"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781108963558.004"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1017/s0963548309990642",
+        "type": "journal-article",
+        "is-referenced-by-count": 74,
+        "title": [
+          "Sumset and Inverse Sumset Theory for Shannon Entropy"
+        ],
+        "author": [
+          {
+            "given": "TERENCE",
+            "family": "TAO",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              1,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Combinatorics, Probability and Computing"
+        ],
+        "URL": "https://doi.org/10.1017/s0963548309990642"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physleta.2015.03.020",
+        "type": "journal-article",
+        "is-referenced-by-count": 74,
+        "title": [
+          "Shannon information entropy for an infinite circular well"
+        ],
+        "author": [
+          {
+            "given": "Xu-Dong",
+            "family": "Song",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guo-Hua",
+            "family": "Sun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shi-Hai",
+            "family": "Dong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physics Letters A"
+        ],
+        "URL": "https://doi.org/10.1016/j.physleta.2015.03.020"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physletb.2015.01.015",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Isobaric yield ratio difference and Shannon information entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-9372-518X",
+            "authenticated-orcid": false,
+            "given": "Chun-Wang",
+            "family": "Ma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hui-Ling",
+            "family": "Wei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shan-Shan",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yu-Gang",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ryoichi",
+            "family": "Wada",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yan-Li",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physics Letters B"
+        ],
+        "URL": "https://doi.org/10.1016/j.physletb.2015.01.015"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00184-009-0287-7",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Shannon information in record data"
+        ],
+        "author": [
+          {
+            "given": "Mohsen",
+            "family": "Madadi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mahbanoo",
+            "family": "Tata",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              10,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Metrika"
+        ],
+        "URL": "https://doi.org/10.1007/s00184-009-0287-7"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/ijca2016910637",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Lossless Grayscale Image Compression using Block-wise Entropy Shannon (LBES)"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Anantha",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Eswaran",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Senthil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/ijca2016910637"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              4,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1080/10589759.2016.1184266",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Shannon information entropy of eddy current density distribution"
+        ],
+        "author": [
+          {
+            "given": "Weimin",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guolong",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Weihan",
+            "family": "Pang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Nondestructive Testing and Evaluation"
+        ],
+        "URL": "https://doi.org/10.1080/10589759.2016.1184266"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jtbi.2016.12.010",
+        "type": "journal-article",
+        "is-referenced-by-count": 34,
+        "title": [
+          "Shannon information entropy in the canonical genetic code"
+        ],
+        "author": [
+          {
+            "given": "Louis R.",
+            "family": "Nemzer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Theoretical Biology"
+        ],
+        "URL": "https://doi.org/10.1016/j.jtbi.2016.12.010"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              1,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780470116449.ch5",
+        "type": "other",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Analysis of Chemical Information Content Using Shannon Entropy"
+        ],
+        "author": [
+          {
+            "given": "Jeffrey W.",
+            "family": "Godden",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jürgen",
+            "family": "Bajorath",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              2,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Reviews in Computational Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/9780470116449.ch5"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/mitp.2014.87",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Claude Shannon: Mastermind of Information Theory"
+        ],
+        "author": [
+          {
+            "given": "George",
+            "family": "Strawn",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "NITRD"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IT Professional"
+        ],
+        "URL": "https://doi.org/10.1109/mitp.2014.87"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/telsks.2007.4375953",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "60 Years of Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Dusan B.",
+            "family": "Drajic",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2007 8th International Conference on Telecommunications in Modern Satellite, Cable and Broadcasting Services"
+        ],
+        "URL": "https://doi.org/10.1109/telsks.2007.4375953"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "DOI": "10.1201/9781420035278",
+        "type": "book",
+        "is-referenced-by-count": 28,
+        "title": [
+          "Introduction to Information Theory and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Peter D.",
+            "family": "Johnson Jr.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Greg A.",
+            "family": "Harris",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.C.",
+            "family": "Hankerson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2003,
+              2,
+              26
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1201/9781420035278"
+      },
+      {
+        "publisher": "International Information and Engineering Technology Association",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.2495/dne-v11-n1-48-63",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy acceleration, Shannon information and socioeconomics: Quantitative examples"
+        ],
+        "author": [
+          {
+            "given": "B.E.",
+            "family": "Layton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.L",
+            "family": "Noell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.A.",
+            "family": "Oram jr",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Design &amp; Nature and Ecodynamics"
+        ],
+        "URL": "https://doi.org/10.2495/dne-v11-n1-48-63"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/ingarss51564.2021.9792131",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Use of Shannon Information Entropy in Earthquake Nowcasting"
+        ],
+        "author": [
+          {
+            "given": "Sumanta",
+            "family": "Pasari",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Birla Institute of Technology and Science,Department of Mathematics,Pilani,Rajasthan,333031"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Priyesh",
+            "family": "Agarwal",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Birla Institute of Technology and Science,Department of Mathematics,Pilani,Rajasthan,333031"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Neha",
+            "family": "Neha",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Birla Institute of Technology and Science,Department of Mathematics,Pilani,Rajasthan,333031"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 IEEE International India Geoscience and Remote Sensing Symposium (InGARSS)"
+        ],
+        "URL": "https://doi.org/10.1109/ingarss51564.2021.9792131"
+      },
+      {
+        "publisher": "Taru Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1080/09720502.2009.10700611",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Shannon information theory and molecular biology"
+        ],
+        "author": [
+          {
+            "given": "Francesco",
+            "family": "Fabris",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Interdisciplinary Mathematics"
+        ],
+        "URL": "https://doi.org/10.1080/09720502.2009.10700611"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              3,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118033265.ch3",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression and Entropy"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Foundations of Coding"
+        ],
+        "URL": "https://doi.org/10.1002/9781118033265.ch3"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "DOI": "10.1088/1742-5468/2013/04/p04010",
+        "type": "journal-article",
+        "is-referenced-by-count": 22,
+        "title": [
+          "Infinite Shannon entropy"
+        ],
+        "author": [
+          {
+            "given": "Valentina",
+            "family": "Baccetti",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Matt",
+            "family": "Visser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              4,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Mechanics: Theory and Experiment"
+        ],
+        "URL": "https://doi.org/10.1088/1742-5468/2013/04/p04010"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1109/tgrs.2022.3180200",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Seismic Data Interpolation by Shannon Entropy-Based Shaping"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-1692-4868",
+            "authenticated-orcid": false,
+            "given": "Weilin",
+            "family": "Huang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Artificial Intelligence, State Key Laboratory of Petroleum Resources and Prospecting, China University of Petroleum-Beijing, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Geoscience and Remote Sensing"
+        ],
+        "URL": "https://doi.org/10.1109/tgrs.2022.3180200"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0034-4877(18)30050-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Shannon Entropy Reinterpreted"
+        ],
+        "author": [
+          {
+            "given": "L.",
+            "family": "Truffet",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Reports on Mathematical Physics"
+        ],
+        "URL": "https://doi.org/10.1016/s0034-4877(18)30050-8"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.chemphys.2004.08.020",
+        "type": "journal-article",
+        "is-referenced-by-count": 40,
+        "title": [
+          "Discontinuity of Shannon information entropy for two-electron atoms"
+        ],
+        "author": [
+          {
+            "given": "Qicun",
+            "family": "Shi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sabre",
+            "family": "Kais",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chemical Physics"
+        ],
+        "URL": "https://doi.org/10.1016/j.chemphys.2004.08.020"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.23919/mixdes.2017.8005255",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Shannon information entropy as complexity metric of source code"
+        ],
+        "author": [
+          {
+            "given": "Marcin",
+            "family": "Cholewa",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 MIXDES - 24th International Conference \"Mixed Design of Integrated Circuits and Systems"
+        ],
+        "URL": "https://doi.org/10.23919/mixdes.2017.8005255"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2017.12.111",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "The maximum entropy production and maximum Shannon information entropy in enzyme kinetics"
+        ],
+        "author": [
+          {
+            "given": "Andrej",
+            "family": "Dobovišek",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rene",
+            "family": "Markovič",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Milan",
+            "family": "Brumen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aleš",
+            "family": "Fajmut",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2017.12.111"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1002/qua.26188",
+        "type": "journal-article",
+        "is-referenced-by-count": 31,
+        "title": [
+          "Shannon‐information entropy sum in the confined hydrogenic atom"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8088-7443",
+            "authenticated-orcid": false,
+            "given": "Saúl J. C.",
+            "family": "Salazar",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Departamento de Química Universidad Autónoma Metropolitana  México D.F. Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5565-1551",
+            "authenticated-orcid": false,
+            "given": "Humberto G.",
+            "family": "Laguna",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Departamento de Química Universidad Autónoma Metropolitana  México D.F. Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vinod",
+            "family": "Prasad",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Departamento de Química Universidad Autónoma Metropolitana  México D.F. Mexico"
+              },
+              {
+                "name": "Department of Physics, Swami Shraddhanand College University of Delhi  Delhi India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2762-5321",
+            "authenticated-orcid": false,
+            "given": "Robin P.",
+            "family": "Sagar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Departamento de Química Universidad Autónoma Metropolitana  México D.F. Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Quantum Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/qua.26188"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              8,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.2008212",
+        "type": "journal-article",
+        "is-referenced-by-count": 180,
+        "title": [
+          "Characteristic features of Shannon information entropy of confined atoms"
+        ],
+        "author": [
+          {
+            "given": "K. D.",
+            "family": "Sen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Hyderabad School of Chemistry, , Hyderabad-500 046, India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Chemical Physics"
+        ],
+        "URL": "https://doi.org/10.1063/1.2008212"
+      },
+      {
+        "DOI": "10.1007/978-1-4419-9863-7_100443",
+        "title": [
+          "Entropy, Information Theory"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Systems Biology"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-1-4419-9863-7_100443"
+      },
+      {
+        "DOI": "10.1007/3-540-33023-2_13",
+        "title": [
+          "Information Compression in Cognition: The Interplay between Shannon and Semantic Information"
+        ],
+        "container-title": [
+          "Springer Series in Synergetics",
+          "Information and Self-Organization"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/3-540-33023-2_13"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0217732320500327",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon information entropy for a one-dimensional ionic crystal"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-8217-321X",
+            "authenticated-orcid": false,
+            "given": "Gabriel",
+            "family": "González",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Cátedras Conacyt-Universidad Autónoma de San Luis Potosí, San Luis Potosí 78000, Mexico"
+              },
+              {
+                "name": "Coordinación para la Innovación y la Aplicación de la Ciencia y la Tecnología, Universidad Autónoma de San Luis Potosí, San Luis Potosí 78000, Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daniel",
+            "family": "Salgado-Blanco",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Cátedras Conacyt-Centro Nacional de Supercómputo, Instituto Potosino de Investigación Científica y Tecnológica, Camino a la Presa San José 2055, San Luis Potosí 78216, Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Modern Physics Letters A"
+        ],
+        "URL": "https://doi.org/10.1142/s0217732320500327"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/igarss.2012.6351262",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Analysis of textured PolSAR data by shannon entropy"
+        ],
+        "author": [
+          {
+            "given": "T.",
+            "family": "Eltoft",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Doulgeris",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S. N.",
+            "family": "Anfinsen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 IEEE International Geoscience and Remote Sensing Symposium"
+        ],
+        "URL": "https://doi.org/10.1109/igarss.2012.6351262"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              9,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.1785773",
+        "type": "journal-article",
+        "is-referenced-by-count": 49,
+        "title": [
+          "Finite size scaling for the atomic Shannon-information entropy"
+        ],
+        "author": [
+          {
+            "given": "Qicun",
+            "family": "Shi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Chemistry, Purdue University, West Lafayette, Indiana 47907"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sabre",
+            "family": "Kais",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Chemistry, Purdue University, West Lafayette, Indiana 47907"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Journal of Chemical Physics"
+        ],
+        "URL": "https://doi.org/10.1063/1.1785773"
+      },
+      {
+        "DOI": "10.22541/au.157843018.81965656",
+        "title": [
+          "Shannon Entropy and Fisher Information for Screened Kratzer Potential"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3691-3891",
+            "authenticated-orcid": false,
+            "given": "Precious",
+            "family": "Amadi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Port Harcourt"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Akpan",
+            "family": "Ikot",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Port Harcourt"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Alalibo",
+            "family": "Ngiangia",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Port Harcourt"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Uduakobong",
+            "family": "Okorie",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Port Harcourt"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gaotsiwe Joel",
+            "family": "Rampho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of South Africa"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hewa",
+            "family": "Abdullah",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Salahaddin University- Hawler"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.22541/au.157843018.81965656"
+      },
+      {
+        "DOI": "10.1017/9781009579551.004",
+        "title": [
+          "Information Quantification by Asking, Compressing, or Sampling: Shannon Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Classical and Quantum Information Theory"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781009579551.004"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              7,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1002/qua.26246",
+        "type": "journal-article",
+        "is-referenced-by-count": 44,
+        "title": [
+          "Shannon entropy and Fisher information for screened Kratzer potential"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3691-3891",
+            "authenticated-orcid": false,
+            "given": "Precious O.",
+            "family": "Amadi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Theoretical Physics Group University of Port Harcourt  Choba Nigeria"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Akpan N.",
+            "family": "Ikot",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Theoretical Physics Group University of Port Harcourt  Choba Nigeria"
+              },
+              {
+                "name": "Department of Physics University of South Africa  Johannesburg South Africa"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alalibo T.",
+            "family": "Ngiangia",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Theoretical Physics Group University of Port Harcourt  Choba Nigeria"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Uduakobong S.",
+            "family": "Okorie",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Theoretical Physics Group University of Port Harcourt  Choba Nigeria"
+              },
+              {
+                "name": "Department of Physics Akwa Ibom State University  Uyo Nigeria"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gaotsiwe J.",
+            "family": "Rampho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics University of South Africa  Johannesburg South Africa"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hewa Y.",
+            "family": "Abdullah",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics Education, Faculty of Education Tishk International University  Erbil Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              4,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Quantum Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/qua.26246"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              7,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1002/qua.24928",
+        "type": "journal-article",
+        "is-referenced-by-count": 93,
+        "title": [
+          "Shannon information entropy for a hyperbolic double‐well potential"
+        ],
+        "author": [
+          {
+            "given": "Guo‐Hua",
+            "family": "Sun",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Cátedra CONACyT, Centro de Investigación en Computación, Instituto Politécnico Nacional UPALM, Mexico D. F. 07738 Mexico"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shi‐Hai",
+            "family": "Dong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Departamento de Física Escuela Superior de Física y Matemáticas, Instituto Politécnico Nacional, Edificio 9 UPALM, Mexico D. F. 07738 Mexico"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kristina D.",
+            "family": "Launey",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics and Astronomy Louisiana State University Baton Rouge Louisiana 70803 4001"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Tomas",
+            "family": "Dytrych",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics and Astronomy Louisiana State University Baton Rouge Louisiana 70803 4001"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jerry P.",
+            "family": "Draayer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics and Astronomy Louisiana State University Baton Rouge Louisiana 70803 4001"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              4,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Quantum Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/qua.24928"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "DOI": "10.1109/tnse.2026.3676901",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Beyond Shannon: Semantic Information Theory and Methodology"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0269-104X",
+            "authenticated-orcid": false,
+            "given": "Ping",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "State Key Laboratory of Network and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8076-1867",
+            "authenticated-orcid": false,
+            "given": "Kai",
+            "family": "Niu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Universal Wireless Communications, Ministry of Education, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0003-8919-4592",
+            "authenticated-orcid": false,
+            "given": "Zijian",
+            "family": "Liang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Universal Wireless Communications, Ministry of Education, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0007-8343-0565",
+            "authenticated-orcid": false,
+            "given": "Changshuo",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Universal Wireless Communications, Ministry of Education, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiatong",
+            "family": "Wu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Key Laboratory of Network and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8824-4007",
+            "authenticated-orcid": false,
+            "given": "Yiming",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Key Laboratory of Network and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8767-4742",
+            "authenticated-orcid": false,
+            "given": "Wenjun",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Key Laboratory of Network and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2302-7148",
+            "authenticated-orcid": false,
+            "given": "Nan",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Key Laboratory of Network and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4245-5989",
+            "authenticated-orcid": false,
+            "given": "Xiaodong",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Key Laboratory of Network and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6859-3645",
+            "authenticated-orcid": false,
+            "given": "Ruichen",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computing and Data Science, Nanyang Technological University, Singapore"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Network Science and Engineering"
+        ],
+        "URL": "https://doi.org/10.1109/tnse.2026.3676901"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-84017-3_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Critical Review of Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Guy",
+            "family": "Jumarie",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Synergetics",
+          "Relative Information"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-84017-3_3"
+      },
+      {
+        "publisher": "Defense Technical Information Center",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              1,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.21236/ada420108",
+        "type": "report",
+        "is-referenced-by-count": 9,
+        "title": [
+          "A New Framework for Shannon Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Gerard T.",
+            "family": "Allwein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ira S.",
+            "family": "Moskowitz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "LiWu",
+            "family": "Chang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.21236/ada420108"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              4,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1080/00268976.2011.649795",
+        "type": "journal-article",
+        "is-referenced-by-count": 32,
+        "title": [
+          "Onicescu information energy in terms of Shannon entropy and Fisher information densities"
+        ],
+        "author": [
+          {
+            "given": "Mojtaba",
+            "family": "Alipour",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Afshan",
+            "family": "Mohajeri",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Molecular Physics"
+        ],
+        "URL": "https://doi.org/10.1080/00268976.2011.649795"
+      },
+      {
+        "publisher": "MDPI",
+        "DOI": "10.3390/proceedings2020047024",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Towards Demystifying Shannon Entropy, Lossless Compression and Approaches to Statistical Machine Learning"
+        ],
+        "author": [
+          {
+            "given": "Hector",
+            "family": "Zenil",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Information Dynamics Lab, Karolinska Institute, 171 76 Stockholm, Sweden"
+              },
+              {
+                "name": "Oxford Immune Algorithmics, Reading RG3 1EU, UK"
+              },
+              {
+                "name": "Algorithmic Nature Group, LABORES, 75005 Paris, France"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "IS4SI 2019 Summit"
+        ],
+        "URL": "https://doi.org/10.3390/proceedings2020047024"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1002/cjce.20155",
+        "type": "journal-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "Analysis on chaotic nature of a pressurized spout‐fluid bed by information theory based Shannon entropy"
+        ],
+        "author": [
+          {
+            "given": "Wenqi",
+            "family": "Zhong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaofang",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Qianjun",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Baosheng",
+            "family": "Jin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mingyao",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rui",
+            "family": "Xiao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yaji",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              3,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "The Canadian Journal of Chemical Engineering"
+        ],
+        "URL": "https://doi.org/10.1002/cjce.20155"
+      },
+      {
+        "DOI": "10.1109/dcc.1998.672298",
+        "title": [
+          "Entropy and data compression performances"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Lanza",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '98 Data Compression Conference (Cat. No.98TB100225)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1998.672298"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              7,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1109/icdsns58469.2023.10244966",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Privacy Data Measurement and Classification Model Based on Shannon Information Entropy and BP Neural Network"
+        ],
+        "author": [
+          {
+            "given": "Chengsi",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Shenzhen Power Supply Bureau Co., Ltd.,Shenzhen,Guangdong,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 International Conference on Data Science and Network Security (ICDSNS)"
+        ],
+        "URL": "https://doi.org/10.1109/icdsns58469.2023.10244966"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1214/aoms/1177693077",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Epsilon Entropy and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Edward C.",
+            "family": "Posner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eugene R.",
+            "family": "Rodemich",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Mathematical Statistics"
+        ],
+        "URL": "https://doi.org/10.1214/aoms/1177693077"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1993
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.179344",
+        "type": "journal-article",
+        "is-referenced-by-count": 206,
+        "title": [
+          "Entropy and data compression schemes"
+        ],
+        "author": [
+          {
+            "given": "D.S.",
+            "family": "Ornstein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Weiss",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.179344"
+      },
+      {
+        "publisher": "Canadian Science Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1139/cjp-2019-0391",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Fisher information and Shannon entropy calculations for two-electron systems"
+        ],
+        "author": [
+          {
+            "given": "Ibraheem",
+            "family": "Nasser",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Basic Science, Faculty of Engineering, Egyptian Chinese University, Cairo, Egypt."
+              },
+              {
+                "name": "Department of Basic Science, Faculty of Engineering, Egyptian Chinese University, Cairo, Egypt."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Afaf",
+            "family": "Abdel-Hady",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Basic Science, Faculty of Engineering, Egyptian Chinese University, Cairo, Egypt."
+              },
+              {
+                "name": "Department of Basic Science, Faculty of Engineering, Egyptian Chinese University, Cairo, Egypt."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Canadian Journal of Physics"
+        ],
+        "URL": "https://doi.org/10.1139/cjp-2019-0391"
+      },
+      {
+        "publisher": "American Association for the Advancement of Science (AAAS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.34133/2021/9780760",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Quantifying Information via Shannon Entropy in Spatially Structured Optical Beams"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3141-3364",
+            "authenticated-orcid": false,
+            "given": "Maria",
+            "family": "Solyanik-Gorgone",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Electrical and Computer Engineering, The George Washington University, Washington, DC 20052, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiachi",
+            "family": "Ye",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electrical and Computer Engineering, The George Washington University, Washington, DC 20052, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mario",
+            "family": "Miscuglio",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electrical and Computer Engineering, The George Washington University, Washington, DC 20052, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0679-3307",
+            "authenticated-orcid": false,
+            "given": "Andrei",
+            "family": "Afanasev",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, The George Washington University, Washington, DC 20052, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alan E.",
+            "family": "Willner",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electrical Engineering at University of Southern California, Los Angeles, California 90089USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5152-4766",
+            "authenticated-orcid": false,
+            "given": "Volker J.",
+            "family": "Sorger",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electrical and Computer Engineering, The George Washington University, Washington, DC 20052, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Research"
+        ],
+        "URL": "https://doi.org/10.34133/2021/9780760"
+      },
+      {
+        "publisher": "Frontiers Media SA",
+        "DOI": "10.3389/fimmu.2018.01038",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "RepSeq Data Representativeness and Robustness Assessment by Shannon Entropy"
+        ],
+        "author": [
+          {
+            "given": "Wahiba",
+            "family": "Chaara",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ariadna",
+            "family": "Gonzalez-Tort",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Laura-Maria",
+            "family": "Florez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Klatzmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Encarnita",
+            "family": "Mariotti-Ferrandiz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Adrien",
+            "family": "Six",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              5,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Frontiers in Immunology"
+        ],
+        "URL": "https://doi.org/10.3389/fimmu.2018.01038"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02837736",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy, coding and data compression"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Natarajan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Resonance"
+        ],
+        "URL": "https://doi.org/10.1007/bf02837736"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.1970.1054391",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy and data compression (Corresp.)"
+        ],
+        "author": [
+          {
+            "given": "N.",
+            "family": "Tzannes",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Sarantakis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Fart",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.1970.1054391"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              29
+            ]
+          ]
+        },
+        "DOI": "10.1109/icocwc60930.2024.10470812",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Retracted: Entropy-Based Analysis of Data Compression Techniques for Information Efficiency"
+        ],
+        "author": [
+          {
+            "given": "Bhuvana",
+            "family": "J",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Jain (Deemed to be University),Department of Computer Science and Information Technology,Bangalore,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chandra Kant",
+            "family": "Gautam",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sanskriti University,Department of Mechanical Engineering,Mathura,Uttar Pradesh,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Amit Kumar",
+            "family": "Bishnoi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Teerthanker Mahaveer University,Department of Computing Sciences and Information Technology,Moradabad,Uttar Pradesh,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 International Conference on Optimization Computing and Wireless Communication (ICOCWC)"
+        ],
+        "URL": "https://doi.org/10.1109/icocwc60930.2024.10470812"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/icaetr.2014.7012798",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Data compression using Shannon-fano algorithm implemented by VHDL"
+        ],
+        "author": [
+          {
+            "given": "Mahesh",
+            "family": "Vaidya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ekjot Singh",
+            "family": "Walia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 International Conference on Advances in Engineering &amp; Technology Research (ICAETR - 2014)"
+        ],
+        "URL": "https://doi.org/10.1109/icaetr.2014.7012798"
+      },
+      {
+        "publisher": "PUBLISHED BY IMPERIAL COLLEGE PRESS AND DISTRIBUTED BY WORLD SCIENTIFIC PUBLISHING CO.",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1142/9781848162938_0012",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Informational Entropy and Shannon"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy Theory of Aging Systems"
+        ],
+        "URL": "https://doi.org/10.1142/9781848162938_0012"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1023/a:1021454807474",
+        "type": "journal-article",
+        "is-referenced-by-count": 22,
+        "title": [
+          "Maximum Shannon Entropy, Minimum Fisher Information, and an Elementary Game"
+        ],
+        "author": [
+          {
+            "given": "Shunlong",
+            "family": "Luo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Foundations of Physics"
+        ],
+        "URL": "https://doi.org/10.1023/a:1021454807474"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e24101413",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "First Digits’ Shannon Entropy"
+        ],
+        "author": [
+          {
+            "given": "Welf Alfred",
+            "family": "Kreiner",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Faculty of Natural Sciences, University of Ulm, Einsteinallee 11, D-89069 Ulm, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e24101413"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/bmei.2015.7401622",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Processing combat information with Shannon entropy and improved genetic algorithm"
+        ],
+        "author": [
+          {
+            "given": "Songyun",
+            "family": "Guo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mingming",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yanping",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 8th International Conference on Biomedical Engineering and Informatics (BMEI)"
+        ],
+        "URL": "https://doi.org/10.1109/bmei.2015.7401622"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              12,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.1088/2632-2153/ae2dbb",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Maximum information extraction via clustering and minimization of Shannon entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-6306-5229",
+            "authenticated-orcid": true,
+            "given": "Matteo",
+            "family": "Becchi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3473-8471",
+            "authenticated-orcid": true,
+            "given": "Giovanni M",
+            "family": "Pavan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              12,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Machine Learning: Science and Technology"
+        ],
+        "URL": "https://doi.org/10.1088/2632-2153/ae2dbb"
+      },
+      {
+        "DOI": "10.1017/9781108963558.006",
+        "title": [
+          "Deformations of Shannon Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy and Diversity"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781108963558.006"
+      },
+      {
+        "publisher": "AIP",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.3322336",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Fisher Information and Shannon Entropy in Confined 1D Harmonic Oscillator"
+        ],
+        "author": [
+          {
+            "given": "Ljiljana",
+            "family": "Stevanović",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Angelos",
+            "family": "Angelopoulos",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takis",
+            "family": "Fildisis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "AIP Conference Proceedings"
+        ],
+        "URL": "https://doi.org/10.1063/1.3322336"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1467-9469.2011.00774.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 72,
+        "title": [
+          "Shannon Entropy and Mutual Information for Multivariate Skew‐Elliptical Distributions"
+        ],
+        "author": [
+          {
+            "given": "REINALDO B.",
+            "family": "ARELLANO‐VALLE",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "JAVIER E.",
+            "family": "CONTRERAS‐REYES",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "MARC G.",
+            "family": "GENTON",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              2,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Scandinavian Journal of Statistics"
+        ],
+        "URL": "https://doi.org/10.1111/j.1467-9469.2011.00774.x"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2015.04.003",
+        "type": "journal-article",
+        "is-referenced-by-count": 25,
+        "title": [
+          "Fisher information and Shannon entropy of position-dependent mass oscillators"
+        ],
+        "author": [
+          {
+            "given": "D.X.",
+            "family": "Macedo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I.",
+            "family": "Guedes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2015.04.003"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-803304-3.00015-6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert F.",
+            "family": "Sekerka",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Thermal Physics"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-803304-3.00015-6"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1201/1079/43236.25.8.19980201/30193.9",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "[Data] Compression Theory"
+        ],
+        "author": [
+          {
+            "given": "Peggy",
+            "family": "McGillis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mina",
+            "family": "Nichols",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Britt",
+            "family": "Terry",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "EDPACS"
+        ],
+        "URL": "https://doi.org/10.1201/1079/43236.25.8.19980201/30193.9"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-7970-4",
+        "type": "book",
+        "is-referenced-by-count": 563,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert M.",
+            "family": "Gray",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-7970-4"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              11,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1002/0471711209.ch5",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory and Coding: What Did Shannon Promise?"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              1,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Understanding Information Transmission"
+        ],
+        "URL": "https://doi.org/10.1002/0471711209.ch5"
+      },
+      {
+        "publisher": "Springer London",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4471-7287-1_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Yves",
+            "family": "Coudène",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              11,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Universitext",
+          "Ergodic Theory and Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4471-7287-1_11"
+      },
+      {
+        "DOI": "10.1007/978-3-540-32851-3_5",
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "container-title": [
+          "Simulation with Entropy Thermodynamics"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-32851-3_5"
+      },
+      {
+        "DOI": "10.1017/9781108873710.012",
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Complexity Science"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781108873710.012"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-97902-7_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "author": [
+          {
+            "given": "Robert G.",
+            "family": "Underwood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Universitext",
+          "Cryptography for Secure Encryption"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-97902-7_3"
+      },
+      {
+        "DOI": "10.1007/978-0-387-74075-1_3",
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Model Based Inference in the Life Sciences: A Primer on Evidence"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 17,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-74075-1_3"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

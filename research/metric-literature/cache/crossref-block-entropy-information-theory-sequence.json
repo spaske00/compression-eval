@@ -1,0 +1,5007 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 2661447,
+    "items": [
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e15093396",
+        "type": "journal-article",
+        "is-referenced-by-count": 63,
+        "title": [
+          "Information Entropy As a Basic Building Block of Complexity Theory"
+        ],
+        "author": [
+          {
+            "given": "Jianbo",
+            "family": "Gao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Mechanical Engineering and China-Asean Research Institute, Guangxi University,100 Daxue Road, Nanning 530005, China"
+              },
+              {
+                "name": "PMB Intelligence LLC, Sunnyvale, CA 94087, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Feiyan",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Management School, University of Chinese Academy of Sciences, Beijing 100190, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jianfang",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Management School, University of Chinese Academy of Sciences, Beijing 100190, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jing",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Mechanical Engineering and China-Asean Research Institute, Guangxi University,100 Daxue Road, Nanning 530005, China"
+              },
+              {
+                "name": "PMB Intelligence LLC, Sunnyvale, CA 94087, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yinhe",
+            "family": "Cao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "PMB Intelligence LLC, Sunnyvale, CA 94087, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              8,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e15093396"
+      },
+      {
+        "DOI": "10.1007/978-1-4419-9863-7_100443",
+        "title": [
+          "Entropy, Information Theory"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Systems Biology"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-1-4419-9863-7_100443"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-803304-3.00015-6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert F.",
+            "family": "Sekerka",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Thermal Physics"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-803304-3.00015-6"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-3982-4",
+        "type": "book",
+        "is-referenced-by-count": 509,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert M.",
+            "family": "Gray",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-3982-4"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-7970-4",
+        "type": "book",
+        "is-referenced-by-count": 563,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert M.",
+            "family": "Gray",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-7970-4"
+      },
+      {
+        "publisher": "Springer London",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4471-7287-1_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Yves",
+            "family": "Coudène",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              11,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Universitext",
+          "Ergodic Theory and Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4471-7287-1_11"
+      },
+      {
+        "DOI": "10.1007/978-3-540-32851-3_5",
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "container-title": [
+          "Simulation with Entropy Thermodynamics"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-32851-3_5"
+      },
+      {
+        "DOI": "10.1017/9781108873710.012",
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Complexity Science"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781108873710.012"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-97902-7_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "author": [
+          {
+            "given": "Robert G.",
+            "family": "Underwood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Universitext",
+          "Cryptography for Secure Encryption"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-97902-7_3"
+      },
+      {
+        "DOI": "10.1007/978-0-387-74075-1_3",
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Model Based Inference in the Life Sciences: A Primer on Evidence"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 17,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-74075-1_3"
+      },
+      {
+        "publisher": "De Gruyter",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110861198-013",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy of Information Theory and Thermodynamic Entropy"
+        ],
+        "author": [
+          {
+            "given": "Z . A.",
+            "family": "Terentjeva",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Thermodynamics and Regulation of Biological Processes"
+        ],
+        "URL": "https://doi.org/10.1515/9783110861198-013"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-540-45475-5_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory and Statistical Entropy"
+        ],
+        "author": [
+          {
+            "given": "Roger",
+            "family": "Balian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "From Microphysics to Macrophysics"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-540-45475-5_4"
+      },
+      {
+        "publisher": "Edward Elgar Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              7,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.4337/9781847207012.00042",
+        "type": "book-chapter",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Entropy Statistics and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "K.",
+            "family": "Frenken",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Elgar Companion to Neo-Schumpeterian Economics"
+        ],
+        "URL": "https://doi.org/10.4337/9781847207012.00042"
+      },
+      {
+        "publisher": "Oxford University PressOxford",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1093/oso/9780198851547.003.0043",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon: entropy and information theory"
+        ],
+        "author": [
+          {
+            "given": "Robert T.",
+            "family": "Hanlon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Block by Block: The Historical and Theoretical Foundations of Thermodynamics"
+        ],
+        "URL": "https://doi.org/10.1093/oso/9780198851547.003.0043"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789814295062_0013",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "THE INFORMATION ENTROPY SEQUENCE OF HIERARCHICAL STRUCTURE"
+        ],
+        "author": [
+          {
+            "given": "QINGHUA",
+            "family": "ZHANG",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing, 400065, P.R. China"
+              },
+              {
+                "name": "School of Information Science &amp; Technology, Southwest Jiaotong University, Chengdu 610031, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "GUOYIN",
+            "family": "WANG",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing, 400065, P.R. China"
+              },
+              {
+                "name": "School of Information Science &amp; Technology, Southwest Jiaotong University, Chengdu 610031, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "XI'AO",
+            "family": "MA",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing 400065, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "XIAOXING",
+            "family": "HE",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing 400065, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Intelligent Decision Making Systems"
+        ],
+        "URL": "https://doi.org/10.1142/9789814295062_0013"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreva.30.620",
+        "type": "journal-article",
+        "is-referenced-by-count": 129,
+        "title": [
+          "Information entropy and Thomas-Fermi theory"
+        ],
+        "author": [
+          {
+            "given": "Shridhar R.",
+            "family": "Gadre",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1984,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/physreva.30.620"
+      },
+      {
+        "publisher": "American Mathematical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2002
+            ]
+          ]
+        },
+        "DOI": "10.1090/conm/305/05225",
+        "type": "other",
+        "is-referenced-by-count": 27,
+        "title": [
+          "Relative entropy in quantum information theory"
+        ],
+        "author": [
+          {
+            "given": "Benjamin",
+            "family": "Schumacher",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michael D.",
+            "family": "Westmoreland",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Contemporary Mathematics",
+          "Quantum Computation and Information"
+        ],
+        "URL": "https://doi.org/10.1090/conm/305/05225"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11432-008-0113-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 63,
+        "title": [
+          "Information granules and entropy theory in information systems"
+        ],
+        "author": [
+          {
+            "given": "JiYe",
+            "family": "Liang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "YuHua",
+            "family": "Qian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              7,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Science in China Series F: Information Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/s11432-008-0113-2"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e21010003",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Entropy, Carnot Cycle, and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Mario",
+            "family": "Martinelli",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Dipartimento di Elettronica Informazione e Bioingegneria, Politecnico di Milano, 20133 Milano, Italy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e21010003"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-011-5886-2_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Negative Entropy in Quantum Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Nicolas J.",
+            "family": "Cerf",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chris",
+            "family": "Adami",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "New Developments on Fundamental Problems in Quantum Physics"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-011-5886-2_11"
+      },
+      {
+        "DOI": "10.17077/etd.xe2tdyvf",
+        "title": [
+          "Musical time and information theory entropy"
+        ],
+        "author": [
+          {
+            "given": "Sarah Elizabeth",
+            "family": "Culpepper",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "The University of Iowa",
+        "is-referenced-by-count": 0,
+        "type": "dissertation",
+        "URL": "https://doi.org/10.17077/etd.xe2tdyvf"
+      },
+      {
+        "DOI": "10.1108/14684521211241477",
+        "title": [
+          "Entropy and Information Theory (2nd ed.)"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Online Information Review"
+        ],
+        "publisher": "Emerald",
+        "is-referenced-by-count": 2,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1108/14684521211241477"
+      },
+      {
+        "publisher": "MDPI",
+        "DOI": "10.3390/entropy2021-09800",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy: from Thermodynamics to Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Jordao",
+            "family": "Oliveira",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ivonete",
+            "family": "Avila",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marcelo",
+            "family": "Pinheiro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carlos",
+            "family": "Maciel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of Entropy 2021: The Scientific Tool of the 21st Century"
+        ],
+        "URL": "https://doi.org/10.3390/entropy2021-09800"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e24121760",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy and Information Theory in Acoustics"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-5035-223X",
+            "authenticated-orcid": false,
+            "given": "Yuxing",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Automation and Information Engineering, Xi’an University of Technology, Xi’an 710048, China"
+              },
+              {
+                "name": "Shaanxi Key Laboratory of Complex System Control and Intelligent Information Processing, Xi’an University of Technology, Xi’an 710048, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e24121760"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-00659-3_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Information Theory, Relative Entropy and Statistics"
+        ],
+        "author": [
+          {
+            "given": "François",
+            "family": "Bavaud",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Formal Theories of Information"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-00659-3_3"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e24101398",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Information Theory for Biological Sequence Classification: A Novel Feature Extraction Technique Based on Tsallis Entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4975-7867",
+            "authenticated-orcid": false,
+            "given": "Robson P.",
+            "family": "Bonidia",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6791-0768",
+            "authenticated-orcid": false,
+            "given": "Anderson P.",
+            "family": "Avila Santos",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              },
+              {
+                "name": "Department of Environmental Microbiology, Helmholtz Centre for Environmental Research-UFZ GmbH, 04318 Leipzig, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2041-9170",
+            "authenticated-orcid": false,
+            "given": "Breno L. S.",
+            "family": "de Almeida",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5016-5191",
+            "authenticated-orcid": false,
+            "given": "Peter F.",
+            "family": "Stadler",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science and Interdisciplinary Center of Bioinformatics, University of Leipzig, 04107 Leipzig, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6972-6692",
+            "authenticated-orcid": false,
+            "given": "Ulisses",
+            "family": "Nunes da Rocha",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Environmental Microbiology, Helmholtz Centre for Environmental Research-UFZ GmbH, 04318 Leipzig, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8972-5221",
+            "authenticated-orcid": false,
+            "given": "Danilo S.",
+            "family": "Sanches",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, Federal University of Technology-Paraná—UTFPR, Cornélio Procópio 86300-000, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4765-6459",
+            "authenticated-orcid": false,
+            "given": "André C. P. L. F.",
+            "family": "de Carvalho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e24101398"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "DOI": "10.1088/978-0-7503-3931-5ch1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy as missing information: from Shannon’s information theory to Jaynes’ maximum entropy principle"
+        ],
+        "author": [
+          {
+            "given": "Hugo",
+            "family": "Fort",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Republic University",
+                "place": [
+                  "Uruguay"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Forecasting with Maximum Entropy"
+        ],
+        "URL": "https://doi.org/10.1088/978-0-7503-3931-5ch1"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-017-3040-2_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Review of Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "David F.",
+            "family": "Batten",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Spatial Analysis of Interacting Economies"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-017-3040-2_2"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003346807-4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory (Shannon Entropy) and Materials Science"
+        ],
+        "author": [
+          {
+            "given": "Luca",
+            "family": "Spiridigliozzi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Order from Chaos"
+        ],
+        "URL": "https://doi.org/10.1201/9781003346807-4"
+      },
+      {
+        "publisher": "Meteorological Research Institute, Japan Meteorological Agency",
+        "published-print": {
+          "date-parts": [
+            [
+              1958
+            ]
+          ]
+        },
+        "DOI": "10.2467/mripapers1950.9.2_51",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Weather Forecast and Entropy in Information Theory"
+        ],
+        "author": [
+          {
+            "given": "E.",
+            "family": "Suzuki",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Meteorological Research Institute, Tokyo"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Papers in Meteorology and Geophysics"
+        ],
+        "URL": "https://doi.org/10.2467/mripapers1950.9.2_51"
+      },
+      {
+        "publisher": "FapUNIFESP (SciELO)",
+        "DOI": "10.1590/s0103-97331999000100005",
+        "type": "journal-article",
+        "is-referenced-by-count": 93,
+        "title": [
+          "Tsallis entropy and Jaynes' Information Theory formalism"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Plastino",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. R.",
+            "family": "Plastino",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1999,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Brazilian Journal of Physics"
+        ],
+        "URL": "https://doi.org/10.1590/s0103-97331999000100005"
+      },
+      {
+        "publisher": "Pleiades Publishing Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1134/s0032946022020016",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Entropy in Thermodynamics and in Information Theory"
+        ],
+        "author": [
+          {
+            "given": "V. A.",
+            "family": "Zorich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Problems of Information Transmission"
+        ],
+        "URL": "https://doi.org/10.1134/s0032946022020016"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1080/14735784.2024.2343700",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy, melody, beauty: composing with information theory"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Patteson",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Independent Scholar"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Culture, Theory and Critique"
+        ],
+        "URL": "https://doi.org/10.1080/14735784.2024.2343700"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/0375-9601(93)90021-q",
+        "type": "journal-article",
+        "is-referenced-by-count": 183,
+        "title": [
+          "Tsallis' entropy, Ehrenfest theorem and information theory"
+        ],
+        "author": [
+          {
+            "given": "A.R.",
+            "family": "Plastino",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Plastino",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physics Letters A"
+        ],
+        "URL": "https://doi.org/10.1016/0375-9601(93)90021-q"
+      },
+      {
+        "publisher": "Scientific Research Publishing, Inc.",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.4236/ijmnta.2014.34020",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "The Computational Theory of Intelligence: Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Daniel",
+            "family": "Kovach",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Modern Nonlinear Theory and Application"
+        ],
+        "URL": "https://doi.org/10.4236/ijmnta.2014.34020"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e21121170",
+        "type": "journal-article",
+        "is-referenced-by-count": 32,
+        "title": [
+          "Entropy and Information Theory: Uses and Misuses"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-1263-2342",
+            "authenticated-orcid": false,
+            "given": "Arieh",
+            "family": "Ben-Naim",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Physical Chemistry, The Hebrew University of Jerusalem, Edmond J. Safra Campus Givat Ram, Jerusalem 91904, Israel"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e21121170"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.aei.2004.08.002",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Enhanced diagnostic certainty using information entropy theory"
+        ],
+        "author": [
+          {
+            "given": "Liangsheng",
+            "family": "Qu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Liangming",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jay",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advanced Engineering Informatics"
+        ],
+        "URL": "https://doi.org/10.1016/j.aei.2004.08.002"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/prot.340110408",
+        "type": "journal-article",
+        "is-referenced-by-count": 162,
+        "title": [
+          "Information‐theoretical entropy as a measure of sequence variability"
+        ],
+        "author": [
+          {
+            "given": "Peter S.",
+            "family": "Shenkin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Batu",
+            "family": "Erman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lucy D.",
+            "family": "Mastrandrea",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              2,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Proteins: Structure, Function, and Bioinformatics"
+        ],
+        "URL": "https://doi.org/10.1002/prot.340110408"
+      },
+      {
+        "publisher": "Science China Press., Co. Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1360/sspma-2019-0029",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Quantifying complex network information based on communicability sequence entropy"
+        ],
+        "author": [
+          {
+            "given": "SHI",
+            "family": "DanDan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "CHEN",
+            "family": "Dan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "LONG",
+            "family": "HuiMin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "WANG",
+            "family": "ChengKe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "PAN",
+            "family": "GuiJun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              5,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "SCIENTIA SINICA Physica, Mechanica &amp; Astronomica"
+        ],
+        "URL": "https://doi.org/10.1360/sspma-2019-0029"
+      },
+      {
+        "publisher": "Emerald",
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              2,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1108/eb051124",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Towards a general theory of information II: information and entropy"
+        ],
+        "author": [
+          {
+            "given": "Tom",
+            "family": "Stonier",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Aslib Proceedings"
+        ],
+        "URL": "https://doi.org/10.1108/eb051124"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              5,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/bib/bbt068",
+        "type": "journal-article",
+        "is-referenced-by-count": 125,
+        "title": [
+          "Information theory applications for biological sequence analysis"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Vinga",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              9,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Briefings in Bioinformatics"
+        ],
+        "URL": "https://doi.org/10.1093/bib/bbt068"
+      },
+      {
+        "DOI": "10.7490/f1000research.1120047.1",
+        "title": [
+          "Molecular information theory of composite sequence motifs"
+        ],
+        "author": [
+          {
+            "given": "Elia",
+            "family": "Mascolo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ivan",
+            "family": "Erill",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "F1000 Research Ltd",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.7490/f1000research.1120047.1"
+      },
+      {
+        "publisher": "Project Euclid",
+        "published-print": {
+          "date-parts": [
+            [
+              1953,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.3792/pja/1195570633",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Principle of the minimum entropy in information theory"
+        ],
+        "author": [
+          {
+            "given": "Hirosi",
+            "family": "Itô",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the Japan Academy, Series A, Mathematical Sciences"
+        ],
+        "URL": "https://doi.org/10.3792/pja/1195570633"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              10,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781315371993-9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon entropy and the basics of information theory"
+        ],
+        "author": [
+          {
+            "given": "Jürgen",
+            "family": "Bierbrauer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Introduction to Coding Theory"
+        ],
+        "URL": "https://doi.org/10.1201/9781315371993-9"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0893-9659(97)00028-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 39,
+        "title": [
+          "Some bounds on entropy measures in information theory"
+        ],
+        "author": [
+          {
+            "given": "S.S.",
+            "family": "Dragomir",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.J.",
+            "family": "Goh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Mathematics Letters"
+        ],
+        "URL": "https://doi.org/10.1016/s0893-9659(97)00028-1"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              10,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781482296372-8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon entropy and the basics of information theory"
+        ],
+        "author": [
+          {
+            "given": "Juergen",
+            "family": "Bierbrauer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Introduction to Coding Theory"
+        ],
+        "URL": "https://doi.org/10.1201/9781482296372-8"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11047-006-9017-5",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Entropy and algorithmic complexity in quantum information theory"
+        ],
+        "author": [
+          {
+            "given": "Fabio",
+            "family": "Benatti",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              12,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Natural Computing"
+        ],
+        "URL": "https://doi.org/10.1007/s11047-006-9017-5"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.tree.2014.04.009",
+        "type": "journal-article",
+        "is-referenced-by-count": 230,
+        "title": [
+          "Maximum information entropy: a foundation for ecological theory"
+        ],
+        "author": [
+          {
+            "given": "John",
+            "family": "Harte",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Erica A.",
+            "family": "Newman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Trends in Ecology &amp; Evolution"
+        ],
+        "URL": "https://doi.org/10.1016/j.tree.2014.04.009"
+      },
+      {
+        "publisher": "University of Wisconsin Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1984
+            ]
+          ]
+        },
+        "DOI": "10.2307/1207980",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy and Information Theory in Heller's \"Something Happened\""
+        ],
+        "author": [
+          {
+            "given": "Lindsey",
+            "family": "Tucker",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Contemporary Literature"
+        ],
+        "URL": "https://doi.org/10.2307/1207980"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1068/a170679",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "“Entropy and Information Theory”: Critique, Comments, and Reply"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1985,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Environment and Planning A: Economy and Space"
+        ],
+        "URL": "https://doi.org/10.1068/a170679"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.4922317",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Symmetric polynomials in information theory: Entropy and subentropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-5055-9513",
+            "authenticated-orcid": false,
+            "given": "Richard",
+            "family": "Jozsa",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Cambridge DAMTP, Centre for Mathematical Sciences, , Wilberforce Road, Cambridge CB3 0WA, United Kingdom"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6304-9758",
+            "authenticated-orcid": false,
+            "given": "Graeme",
+            "family": "Mitchison",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Cambridge DAMTP, Centre for Mathematical Sciences, , Wilberforce Road, Cambridge CB3 0WA, United Kingdom"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Mathematical Physics"
+        ],
+        "URL": "https://doi.org/10.1063/1.4922317"
+      },
+      {
+        "DOI": "10.2139/ssrn.3094757",
+        "title": [
+          "Maximum Entropy and Information Theory Approaches to Economics"
+        ],
+        "author": [
+          {
+            "given": "Jason",
+            "family": "Smith",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SSRN Electronic Journal"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 1,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.2139/ssrn.3094757"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e27050493",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy, Carnot Cycle and Information Theory, Part 2"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-6551-9979",
+            "authenticated-orcid": false,
+            "given": "Mario",
+            "family": "Martinelli",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Dipartimento di Elettronica Informazione e Bioingegneria, Politecnico di Milano, 20133 Milano, Italy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              5,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e27050493"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1538-4632.1992.tb00250.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Interregional Migration Modeling via Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "John",
+            "family": "Roy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joe",
+            "family": "Flood",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Geographical Analysis"
+        ],
+        "URL": "https://doi.org/10.1111/j.1538-4632.1992.tb00250.x"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781351043526-6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Mathematical, Physical and Neuronal Entropy Based Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Harald",
+            "family": "Maurer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Cognitive Science"
+        ],
+        "URL": "https://doi.org/10.1201/9781351043526-6"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.1155/2018/2861612",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Some Inequalities in Information Theory Using Tsallis Entropy"
+        ],
+        "author": [
+          {
+            "given": "Litegebe",
+            "family": "Wondie",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Mathematics, College of Natural and Computational Science, University of Gondar, Gondar, Ethiopia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3758-6853",
+            "authenticated-orcid": true,
+            "given": "Satish",
+            "family": "Kumar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Mathematics, College of Natural and Computational Science, University of Gondar, Gondar, Ethiopia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Mathematics and Mathematical Sciences"
+        ],
+        "URL": "https://doi.org/10.1155/2018/2861612"
+      },
+      {
+        "publisher": "Atlantis Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.2991/msie-13.2013.9",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Mathematical Modeling of Multiple Intelligence Theory Based on Information Entropy Theory"
+        ],
+        "author": [
+          {
+            "given": "Xudong",
+            "family": "Yang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the 2nd International Conference on Management Science and Industrial Engineering (MSIE 2013)"
+        ],
+        "URL": "https://doi.org/10.2991/msie-13.2013.9"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0218488504002631",
+        "type": "journal-article",
+        "is-referenced-by-count": 292,
+        "title": [
+          "THE INFORMATION ENTROPY, ROUGH ENTROPY AND KNOWLEDGE GRANULATION IN ROUGH SET THEORY"
+        ],
+        "author": [
+          {
+            "given": "JIYE",
+            "family": "LIANG",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, The Chinese Academy of Sciences,  Beijing, 100080, People's Republic of China"
+              },
+              {
+                "name": "Department of Computer Science, Shanxi University,  Taiyuan, 030006, People's Republic of China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "ZHONGZHI",
+            "family": "SHI",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, The Chinese Academy of Sciences,  Beijing, 100080, People's Republic of China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems"
+        ],
+        "URL": "https://doi.org/10.1142/s0218488504002631"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1974,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1112/plms/s3-29.2.331",
+        "type": "journal-article",
+        "is-referenced-by-count": 87,
+        "title": [
+          "Topological Sequence Entropy"
+        ],
+        "author": [
+          {
+            "given": "T. N. T.",
+            "family": "Goodman",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Sek Men King Edward VII; Taiping Perak Malaysia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              12,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the London Mathematical Society"
+        ],
+        "URL": "https://doi.org/10.1112/plms/s3-29.2.331"
+      },
+      {
+        "publisher": "American Institute of Mathematical Sciences (AIMS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.3934/dcds.2017018",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Zero sequence entropy and entropy dimension"
+        ],
+        "author": [
+          {
+            "given": "Yixiao",
+            "family": "Qiao",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaoyao",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Mathematical Sciences and Institute of Mathematics, Nanjing Normal University, Nanjing, Jiangsu 210023, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Discrete and Continuous Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.3934/dcds.2017018"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.3866/pku.whxb201509183",
+        "type": "journal-article",
+        "is-referenced-by-count": 66,
+        "title": [
+          "Rényi Entropy, Tsallis Entropy and Onicescu Information Energy in Density Functional Reactivity Theory"
+        ],
+        "author": [
+          {
+            "given": "Shu-Bin.",
+            "family": "LIU",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "<sup>1</sup> 湖南师范大学化学化工学院,资源精细化与先进材料湖南省高校重点实验室,化学生物学及中药分析教育部重点实验室,长沙410081,<sup>1</sup> Key Laboratory of Sustainable Resources Processing and Advanced Materials of Hunan Province College, Key Laboratory of Chemical Biology and Traditional Chinese Medicine Research (Ministry of Education of China), College of Chemistry and Chemical Engineering, Hunan Normal University, Changsha 410081, P. R. China",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chun-Ying.",
+            "family": "RONG",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ze-Min.",
+            "family": "WU",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tian.",
+            "family": "LU",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "<sup>2</sup> Research Computing Center, University of North Carolina, Chapel Hill, North Carolina 27599-3420, USA,<sup>2</sup> Research Computing Center, University of North Carolina, Chapel Hill, North Carolina 27599-3420, USA",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "<sup>3</sup> 北京科音自然科学研究中心,北京100022,<sup>3</sup> Beijing Kein Research Center for Natural Sciences, Beijing 100022, P. R. China",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Physico-Chimica Sinica"
+        ],
+        "URL": "https://doi.org/10.3866/pku.whxb201509183"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1023/a:1016587025917",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "A New Method Based on Entropy Theory for Genomic Sequence Analysis"
+        ],
+        "author": [
+          {
+            "given": "Ming",
+            "family": "Xiao",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhi Zhan",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jueping",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chu Yu",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Biotheoretica"
+        ],
+        "URL": "https://doi.org/10.1023/a:1016587025917"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              7,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1209/0295-5075/111/19001",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information theory approach to the Landers aftershock sequence"
+        ],
+        "author": [
+          {
+            "given": "Abigail",
+            "family": "Jiménez",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              7,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "EPL (Europhysics Letters)"
+        ],
+        "URL": "https://doi.org/10.1209/0295-5075/111/19001"
+      },
+      {
+        "publisher": "Japan Association of Mineralogical Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              1986
+            ]
+          ]
+        },
+        "DOI": "10.2465/gkk1952.17.special_95",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Interstratified structure and the entropy concept in information theory."
+        ],
+        "author": [
+          {
+            "given": "Hiroshi",
+            "family": "NAGATA",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the Mineralogical Society of Japan"
+        ],
+        "URL": "https://doi.org/10.2465/gkk1952.17.special_95"
+      },
+      {
+        "publisher": "ITU Press, Press of the Istanbul Techncial University",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.5505/itujfa.2018.83703",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Modeling Spatial Wholeness in Cities Using Information Entropy Theory"
+        ],
+        "author": [
+          {
+            "given": "Harun",
+            "family": "Ekinoglu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ayşe Sema",
+            "family": "Kubat",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Richard",
+            "family": "Plunz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "A/Z : ITU journal of Faculty of Architecture"
+        ],
+        "URL": "https://doi.org/10.5505/itujfa.2018.83703"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e12122497",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Tsallis Entropy, Escort Probability and the Incomplete Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Amir Hossein",
+            "family": "Darooneh",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Zanjan University, P.O.Box 45196-313, Zanjan, Iran"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ghassem",
+            "family": "Naeimi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Zanjan University, P.O.Box 45196-313, Zanjan, Iran"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "Mehri",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Zanjan University, P.O.Box 45196-313, Zanjan, Iran"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Parvin",
+            "family": "Sadeghi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, Zanjan University, P.O.Box 45196-313, Zanjan, Iran"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              12,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e12122497"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/itwitwn.2007.4318051",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 25,
+        "title": [
+          "Normalized Entropy Vectors, Network Information Theory and Convex Optimization"
+        ],
+        "author": [
+          {
+            "given": "Babak",
+            "family": "Hassibi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sormeh",
+            "family": "Shadbakht",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2007 IEEE Information Theory Workshop on Information Theory for Wireless Networks"
+        ],
+        "URL": "https://doi.org/10.1109/itwitwn.2007.4318051"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevlett.100.086804",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Nonequilibrium Quantum Impurities: From Entropy Production to Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Pankaj",
+            "family": "Mehta",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Natan",
+            "family": "Andrei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              2,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review Letters"
+        ],
+        "URL": "https://doi.org/10.1103/physrevlett.100.086804"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1990,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02742695",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Relation between entropy functional of Keizer and information theory"
+        ],
+        "author": [
+          {
+            "given": "E. S.",
+            "family": "Freidkin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. E.",
+            "family": "Nettleton",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              11,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Il Nuovo Cimento B Series 11"
+        ],
+        "URL": "https://doi.org/10.1007/bf02742695"
+      },
+      {
+        "publisher": "Scientific and Academic Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.5923/j.fs.20110101.01",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Entropy Applications for Customer Satisfaction Survey in Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Özlem Ege",
+            "family": "Oruç",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Emel",
+            "family": "Kuruoglu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aslı",
+            "family": "Gündüz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Frontiers in Science"
+        ],
+        "URL": "https://doi.org/10.5923/j.fs.20110101.01"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1980
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-51574-3_14",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Recent Advances Incorporating Diversity, Entropy, Utility, and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "John F.",
+            "family": "Brotchie",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "John W.",
+            "family": "Dickey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ron",
+            "family": "Sharpe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Economics and Mathematical Systems",
+          "Topaz"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-51574-3_14"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              7,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1088/1751-8113/40/27/003",
+        "type": "journal-article",
+        "is-referenced-by-count": 57,
+        "title": [
+          "A discussion on maximum entropy production and information theory"
+        ],
+        "author": [
+          {
+            "given": "Stijn",
+            "family": "Bruers",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              6,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Physics A: Mathematical and Theoretical"
+        ],
+        "URL": "https://doi.org/10.1088/1751-8113/40/27/003"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/tnse.2023.3238110",
+        "type": "journal-article",
+        "is-referenced-by-count": 102,
+        "title": [
+          "Blockchain-Based Renewable Energy Trading Using Information Entropy Theory"
+        ],
+        "author": [
+          {
+            "given": "Ziming",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Information Science and Engineering, Northeastern University, Shenyang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8363-1945",
+            "authenticated-orcid": false,
+            "given": "Bonan",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information Science and Engineering, Northeastern University, Shenyang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5762-2431",
+            "authenticated-orcid": false,
+            "given": "Xuguang",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information Science and Engineering, Northeastern University, Shenyang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Pengbo",
+            "family": "Du",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information Science and Engineering, Northeastern University, Shenyang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8801-0884",
+            "authenticated-orcid": false,
+            "given": "Qiuye",
+            "family": "Sun",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information Science and Engineering, Northeastern University, Shenyang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Network Science and Engineering"
+        ],
+        "URL": "https://doi.org/10.1109/tnse.2023.3238110"
+      },
+      {
+        "DOI": "10.1109/isit.1998.708978",
+        "title": [
+          "Entropy computations for discrete distributions: towards analytic information theory"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Jacquet",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.",
+            "family": "Szpankowski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 1998 IEEE International Symposium on Information Theory (Cat. No.98CH36252)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1998.708978"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/ccsse.2018.8724764",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Diagnostic Strategy Optimization Method Based on Information Entropy Theory"
+        ],
+        "author": [
+          {
+            "given": "Jiahao",
+            "family": "Guo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xianjun",
+            "family": "Shi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kang",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yufeng",
+            "family": "Qin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 IEEE 4th International Conference on Control Science and Systems Engineering (ICCSSE)"
+        ],
+        "URL": "https://doi.org/10.1109/ccsse.2018.8724764"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1007/s10773-023-05512-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Weighted p-Rényi Entropy Power Inequality: Information Theory to Quantum Shannon Theory"
+        ],
+        "author": [
+          {
+            "given": "Junseo",
+            "family": "Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hyeonjun",
+            "family": "Yeo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kabgyun",
+            "family": "Jeong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Theoretical Physics"
+        ],
+        "URL": "https://doi.org/10.1007/s10773-023-05512-8"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1002/eng2.12261",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Information entropy theory for steam turbine system monitoring study"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-6136-7717",
+            "authenticated-orcid": false,
+            "given": "Hui",
+            "family": "Gu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Energy and Power Engineering Nanjing Institute of Technology  Nanjing China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fengqi",
+            "family": "Si",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Key Laboratory of Energy Thermal Conversion and Control of Ministry of Education Southeast University  Nanjing China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yanfeng",
+            "family": "Cui",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Energy and Power Engineering Nanjing Institute of Technology  Nanjing China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hongxia",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Energy and Power Engineering Nanjing Institute of Technology  Nanjing China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaobo",
+            "family": "Cui",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Energy and Power Engineering Nanjing Institute of Technology  Nanjing China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Engineering Reports"
+        ],
+        "URL": "https://doi.org/10.1002/eng2.12261"
+      },
+      {
+        "publisher": "International Journal of Accounting, Business and Finance",
+        "DOI": "10.55429/ijabf.v2i1.95",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Information Entropy Theory and Asset Valuation: A Literature Survey"
+        ],
+        "author": [
+          {
+            "given": "Sana Gaied",
+            "family": "Chortane",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kamel",
+            "family": "Naoui",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Accounting, Business and Finance"
+        ],
+        "URL": "https://doi.org/10.55429/ijabf.v2i1.95"
+      },
+      {
+        "publisher": "Natural Sciences Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              7,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.12785/amis/080456",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Information Entropy and Mutual Information-based Uncertainty Measures in Rough Set Theory"
+        ],
+        "author": [
+          {
+            "given": "Lin",
+            "family": "Sun",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiucheng",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Mathematics &amp; Information Sciences"
+        ],
+        "URL": "https://doi.org/10.12785/amis/080456"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1109/bdkcse53180.2021.9627287",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Methodology advances in Information Theory: adjusting entropy, innovating hierarchy"
+        ],
+        "author": [
+          {
+            "given": "Iiiyan",
+            "family": "Petrov",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Bulgarian Academy of Scences,Institute of information and communication technologies,Department “Information processes and decision support systems”,Sofia,Bulgaria"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 Big Data, Knowledge and Control Systems Engineering (BdKCSE)"
+        ],
+        "URL": "https://doi.org/10.1109/bdkcse53180.2021.9627287"
+      },
+      {
+        "DOI": "10.1109/isatp.2001.928991",
+        "title": [
+          "Disassembly sequence generation using information entropy and heuristics for component replacement"
+        ],
+        "author": [
+          {
+            "given": "T.",
+            "family": "Murayama",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Oba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Abe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Y.",
+            "family": "Yamamichi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the 2001 IEEE International Symposium on Assembly and Task Planning (ISATP2001). Assembly and Disassembly in the Twenty-first Century. (Cat. No.01TH8560)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 11,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isatp.2001.928991"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/revmodphys.74.197",
+        "type": "journal-article",
+        "is-referenced-by-count": 935,
+        "title": [
+          "The role of relative entropy in quantum information theory"
+        ],
+        "author": [
+          {
+            "given": "V.",
+            "family": "Vedral",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              3,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Reviews of Modern Physics"
+        ],
+        "URL": "https://doi.org/10.1103/revmodphys.74.197"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1093/cercor/2.3.259",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Entropy and Cortical Activity: Information Theory and PET Findings"
+        ],
+        "author": [
+          {
+            "given": "K. J.",
+            "family": "Friston",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C. D.",
+            "family": "Frith",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. E.",
+            "family": "Passingham",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. J.",
+            "family": "Dolan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P. F.",
+            "family": "Liddle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. S. J.",
+            "family": "Frackowiak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Cerebral Cortex"
+        ],
+        "URL": "https://doi.org/10.1093/cercor/2.3.259"
+      },
+      {
+        "publisher": "Copernicus GmbH",
+        "DOI": "10.5194/isprs-archives-xliii-b4-2020-11-2020",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "INFORMATION THEORY OF CARTOGRAPHY: A FRAMEWORK FOR ENTROPY-BASED CARTOGRAPHIC COMMUNICATION THEORY"
+        ],
+        "author": [
+          {
+            "given": "Z.",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences"
+        ],
+        "URL": "https://doi.org/10.5194/isprs-archives-xliii-b4-2020-11-2020"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1007/s10955-025-03445-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Weighted Sequence Entropy and Maximal Pattern Entropy"
+        ],
+        "author": [
+          {
+            "given": "Xiaoxiao",
+            "family": "Nie",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yu",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              4,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Physics"
+        ],
+        "URL": "https://doi.org/10.1007/s10955-025-03445-6"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0218127499001218",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "SOME RESULTS ON ENTROPY AND SEQUENCE ENTROPY"
+        ],
+        "author": [
+          {
+            "given": "F.",
+            "family": "BALIBREA",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Departamento de Matemáticas, Universidad de Murcia, Campus de Espinardo, Apto. de Correos 4021, 30100 Murcia, Spain"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "V. JIMÉNEZ",
+            "family": "LÓPEZ",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Departamento de Matemáticas, Universidad de Murcia, Campus de Espinardo, Apto. de Correos 4021, 30100 Murcia, Spain"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "J. S. CÁNOVAS",
+            "family": "PEÑA",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Departamento de Matemática Aplicada, Escuela Politécnica de Cartagena, Paseo de Alfonso XIII, 34–36, 30203 Cartagena, Spain"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Bifurcation and Chaos"
+        ],
+        "URL": "https://doi.org/10.1142/s0218127499001218"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01691095",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "On sequence entropy. I."
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Newton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematical Systems Theory"
+        ],
+        "URL": "https://doi.org/10.1007/bf01691095"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01691096",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "On sequence entropy. II."
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Newton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematical Systems Theory"
+        ],
+        "URL": "https://doi.org/10.1007/bf01691096"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1977,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1016/0022-247x(77)90047-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Sequence entropy and mixing"
+        ],
+        "author": [
+          {
+            "given": "Alan",
+            "family": "Saleski",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Mathematical Analysis and Applications"
+        ],
+        "URL": "https://doi.org/10.1016/0022-247x(77)90047-6"
+      },
+      {
+        "publisher": "American Society of Civil Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              6,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.1061/9780784412725.ch01",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Theory"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              6,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy Theory in Hydraulic Engineering"
+        ],
+        "URL": "https://doi.org/10.1061/9780784412725.ch01"
+      },
+      {
+        "DOI": "10.1017/9781009222136.020",
+        "title": [
+          "Entropy Theory"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Handbook of Hydraulic Geometry"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781009222136.020"
+      },
+      {
+        "publisher": "American Mathematical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "DOI": "10.1090/conm/385/07193",
+        "type": "other",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Mixing via sequence entropy"
+        ],
+        "author": [
+          {
+            "given": "Wen",
+            "family": "Huang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Song",
+            "family": "Shao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiangdong",
+            "family": "Ye",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Contemporary Mathematics",
+          "Algebraic and Topological Dynamics"
+        ],
+        "URL": "https://doi.org/10.1090/conm/385/07193"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              1,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118428306.ch2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Theory"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              1,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy Theory and its Application in Environmental and Water Engineering"
+        ],
+        "URL": "https://doi.org/10.1002/9781118428306.ch2"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/mbits.2025.3543321",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "On Jacob Ziv’s Individual-Sequence Approach to Information Theory"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-9547-3243",
+            "authenticated-orcid": false,
+            "given": "Neri",
+            "family": "Merhav",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The Viterbi Faculty of ECE Technion&#x2014;Israel Institute of Technology Technion City, Haifa, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE BITS the Information Theory Magazine"
+        ],
+        "URL": "https://doi.org/10.1109/mbits.2025.3543321"
+      },
+      {
+        "publisher": "Association for Computational Linguistics",
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "DOI": "10.18653/v1/2025.acl-long.1351",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Evaluating Sequence Labeling on the basis of Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Enrique",
+            "family": "Amigo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Elena",
+            "family": "Álvarez-Mellado",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Julio",
+            "family": "Gonzalo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jorge",
+            "family": "Carrillo-de-Albornoz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+        ],
+        "URL": "https://doi.org/10.18653/v1/2025.acl-long.1351"
+      },
+      {
+        "publisher": "Academic Publications",
+        "DOI": "10.12732/ijam.v38i7s.487",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ENTROPY AND INFORMATION THEORY IN TRANSLATION: MEASURING MEANING ACROSS LANGUAGES"
+        ],
+        "author": [
+          {
+            "family": "Mohammad Fawwaz Alwidyan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Applied Mathematics"
+        ],
+        "URL": "https://doi.org/10.12732/ijam.v38i7s.487"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00023-024-01522-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Relative Entropy and Mutual Information in Gaussian Statistical Field Theory"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-8567-4343",
+            "authenticated-orcid": false,
+            "given": "Markus",
+            "family": "Schröfl",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Stefan",
+            "family": "Floerchinger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Annales Henri Poincaré"
+        ],
+        "URL": "https://doi.org/10.1007/s00023-024-01522-2"
+      },
+      {
+        "publisher": "American Chemical Society (ACS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1021/acs.jpca.9b00910",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Random Walk Enzymes: Information Theory, Quantum Isomorphism, and Entropy Dispersion"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5516-3304",
+            "authenticated-orcid": true,
+            "given": "Chi H.",
+            "family": "Mak",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Phuong",
+            "family": "Pham",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9601-3284",
+            "authenticated-orcid": true,
+            "given": "Myron F.",
+            "family": "Goodman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              3,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Physical Chemistry A"
+        ],
+        "URL": "https://doi.org/10.1021/acs.jpca.9b00910"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.bpj.2019.11.2124",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy, Fluctuations, and Disordered Proteins. Linking between Sequence, Structure, and Disorder Information"
+        ],
+        "author": [
+          {
+            "given": "Eshel",
+            "family": "Faraggi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. Keith",
+            "family": "Dunker",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert L.",
+            "family": "Jernigan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andrzej",
+            "family": "Kloczkowski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biophysical Journal"
+        ],
+        "URL": "https://doi.org/10.1016/j.bpj.2019.11.2124"
+      },
+      {
+        "publisher": "China Science Publishing & Media Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              11,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.3724/sp.j.1087.2013.02490",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Approach for cleaning uncertain data based on information entropy theory"
+        ],
+        "author": [
+          {
+            "given": "Yuanxiang",
+            "family": "QIN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Liang",
+            "family": "DUAN",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kun",
+            "family": "YUE",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.3724/sp.j.1087.2013.02490"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

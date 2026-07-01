@@ -1,5 +1,5156 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=autocorrelation+statistical+test+sequence+randomness&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 1182203,
+    "items": [
+      {
+        "publisher": "Japanese Society of Computational Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "DOI": "10.5183/jjscs1988.4.25",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "ON A SERIAL RANK TEST FOR RANDOMNESS AGAINST AUTOCORRELATION"
+        ],
+        "author": [
+          {
+            "given": "Osamu",
+            "family": "Sugano",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the Japanese Society of Computational Statistics"
+        ],
+        "URL": "https://doi.org/10.5183/jjscs1988.4.25"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1109/icnc-fskd67701.2025.11198038",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Multiple Property Statistical Framework for Nonbinary Sequence Randomness Testing"
+        ],
+        "author": [
+          {
+            "given": "Jingting",
+            "family": "Yan",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Center for Metrology Scientific Data and Energy Metrology, National Institute of Metrology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chaofan",
+            "family": "Jiang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Center for Metrology Scientific Data and Energy Metrology, National Institute of Metrology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Weiqun",
+            "family": "Cui",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Center for Metrology Scientific Data and Energy Metrology, National Institute of Metrology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tingting",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Changcheng Institute of Metrology &#x0026; Measurement,Department of Digital Technology Research,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2025 21st International Conference on Natural Computation, Fuzzy Systems and Knowledge Discovery (ICNC-FSKD)"
+        ],
+        "URL": "https://doi.org/10.1109/icnc-fskd67701.2025.11198038"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-17299-1_139",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Autocorrelation, Statistical"
+        ],
+        "author": [
+          {
+            "given": "Ron",
+            "family": "Johnston",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              2,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Quality of Life and Well-Being Research"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-17299-1_139"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-007-0753-5_139",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Autocorrelation, Statistical"
+        ],
+        "author": [
+          {
+            "given": "Ron",
+            "family": "Johnston",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedia of Quality of Life and Well-Being Research"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-007-0753-5_139"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-12060-7_18",
+        "type": "book-chapter",
+        "is-referenced-by-count": 24,
+        "title": [
+          "Faster Randomness Testing with the NIST Statistical Test Suite"
+        ],
+        "author": [
+          {
+            "given": "Marek",
+            "family": "Sýs",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zdeněk",
+            "family": "Říha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Security, Privacy, and Applied Cryptography Engineering"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-12060-7_18"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2008.07.017",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Statistical auditing and randomness test of lotto -type games"
+        ],
+        "author": [
+          {
+            "given": "H.F.",
+            "family": "Coronel-Brizio",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.R.",
+            "family": "Hernández-Montoya",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Rapallo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Scalas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2008.07.017"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1145/3447773",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Recommendations on Statistical Randomness Test Batteries for Cryptographic Purposes"
+        ],
+        "author": [
+          {
+            "given": "Elena Almaraz",
+            "family": "Luengo",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Group of Analysis, Security and Systems (GASS), Department of Statistic and Operational Research, Faculty of Mathematical Science, Universidad Complutense de Madrid (UCM)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luis Javier García",
+            "family": "Villalba",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Group of Analysis, Security and Systems (GASS), Department of Software Engineering and Artificial Intelligence (DISIA), Faculty of Computer Science and Engineering, Office 431, Universidad Complutense de Madrid (UCM)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM Computing Surveys"
+        ],
+        "URL": "https://doi.org/10.1145/3447773"
+      },
+      {
+        "publisher": "The Korean Statistical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              2,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.5351/kjas.2014.27.1.115",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Test for Randomness of the Binary Random Sequence"
+        ],
+        "author": [
+          {
+            "given": "In-Kwon",
+            "family": "Yeo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Korean Journal of Applied Statistics"
+        ],
+        "URL": "https://doi.org/10.5351/kjas.2014.27.1.115"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/icnit.2010.5508457",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "An enhancement of the spectral statistical test for randomness"
+        ],
+        "author": [
+          {
+            "family": "Nur Azman Abu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Nanna Suryana Herman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shahrin",
+            "family": "Sahib",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 International Conference on Networking and Information Technology"
+        ],
+        "URL": "https://doi.org/10.1109/icnit.2010.5508457"
+      },
+      {
+        "publisher": "University of Baghdad College of Science",
+        "DOI": "10.24996/ijs.2019.60.10.17",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Enhancement of Non-Linear Generators and Calculate the Randomness Test for Autocorrelation Property"
+        ],
+        "author": [
+          {
+            "given": "Ahmed Amer",
+            "family": "Alsaadi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ayad G. Naser",
+            "family": "Al-Shammari",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              10,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Iraqi Journal of Science"
+        ],
+        "URL": "https://doi.org/10.24996/ijs.2019.60.10.17"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1977,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.2307/2345328",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Testing for Randomness Against Autocorrelation: Alternative Tests"
+        ],
+        "author": [
+          {
+            "given": "James D.",
+            "family": "Knoke",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.2307/2345328"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1977
+            ]
+          ]
+        },
+        "DOI": "10.1093/biomet/64.3.523",
+        "type": "journal-article",
+        "is-referenced-by-count": 27,
+        "title": [
+          "Testing for randomness against autocorrelation: Alternative tests"
+        ],
+        "author": [
+          {
+            "given": "JAMES D.",
+            "family": "KNOKE",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.1093/biomet/64.3.523"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/paciia.2009.5406638",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Research and application of entropy in the sequence randomness test"
+        ],
+        "author": [
+          {
+            "family": "Minyong Qi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jinxin Dong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2009 Asia-Pacific Conference on Computational Intelligence and Industrial Applications (PACIIA)"
+        ],
+        "URL": "https://doi.org/10.1109/paciia.2009.5406638"
+      },
+      {
+        "publisher": "Korea Information Processing Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              2,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.3745/kipstc.2010.17c.1.047",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Method of Statistical Randomness Test for Key Derivation Functions"
+        ],
+        "author": [
+          {
+            "given": "Ju-Sung",
+            "family": "Kang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ok-Yeon",
+            "family": "Yi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ji-Sun",
+            "family": "Youm",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jin-Woong",
+            "family": "Cho",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The KIPS Transactions:PartC"
+        ],
+        "URL": "https://doi.org/10.3745/kipstc.2010.17c.1.047"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1958
+            ]
+          ]
+        },
+        "DOI": "10.1093/biomet/45.1-2.253",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Non-randomness in a sequence of two alternatives II. RUNS TEST"
+        ],
+        "author": [
+          {
+            "given": "D. E.",
+            "family": "BARTON",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F. N.",
+            "family": "DAVID",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.1093/biomet/45.1-2.253"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1958,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.2307/2333062",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Non-Randomness in a Sequence of Two Alternatives: II. Runs Test"
+        ],
+        "author": [
+          {
+            "given": "D. E.",
+            "family": "Barton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F. N.",
+            "family": "David",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.2307/2333062"
+      },
+      {
+        "publisher": "Penza State University",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.21685/2072-3059-2021-3-3",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Correlation test for code sequence randomness with almost linear computational complexity"
+        ],
+        "author": [
+          {
+            "name": "Penza State University",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.I.",
+            "family": "Volchikhin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.I.",
+            "family": "Ivanov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Penza Research Institute of Electrical Engineering",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.P.",
+            "family": "Ivanov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Penza State University",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.V.",
+            "family": "Strokov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Organizational & Technological Solutions 2000 LLC",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "container-title": [
+          "University proceedings. Volga region. Technical sciences"
+        ],
+        "URL": "https://doi.org/10.21685/2072-3059-2021-3-3"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1963,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1080/03461238.1963.10404791",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Test of randomness"
+        ],
+        "author": [
+          {
+            "given": "Harald",
+            "family": "Bohman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Scandinavian Actuarial Journal"
+        ],
+        "URL": "https://doi.org/10.1080/03461238.1963.10404791"
+      },
+      {
+        "publisher": "The Japan Society for Industrial and Applied Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.14495/jsiaml.2.123",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "On the pass rate of NIST statistical test suite for randomness"
+        ],
+        "author": [
+          {
+            "given": "Akihiro",
+            "family": "Yamaguchi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Information and Systems Engineering, Fukuoka Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takaaki",
+            "family": "Seo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Information and Systems Engineering, Fukuoka Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Keisuke",
+            "family": "Yoshikawa",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Information and Systems Engineering, Fukuoka Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "JSIAM Letters"
+        ],
+        "URL": "https://doi.org/10.14495/jsiaml.2.123"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              1988,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1145/62882.62921",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A statistical method for test sequence evaluation"
+        ],
+        "author": [
+          {
+            "given": "G. R.",
+            "family": "Case",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Sandia Laboratories, Division 2142, Albuquerque, New Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1988,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Papers on Twenty-five years of electronic design automation"
+        ],
+        "URL": "https://doi.org/10.1145/62882.62921"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1981,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02480939",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Asymptotic efficiency of rank tests of randomness against autocorrelation"
+        ],
+        "author": [
+          {
+            "given": "R. J.",
+            "family": "Aiyar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1981,
+              12,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Annals of the Institute of Statistical Mathematics"
+        ],
+        "URL": "https://doi.org/10.1007/bf02480939"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4612-3352-7_29",
+        "type": "book-chapter",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Compression, Tests for Randomness and Estimating the Statistical Model of an Individual Sequence"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Ziv",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Sequences"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4612-3352-7_29"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0006-3495(95)80325-5",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Protein sequence randomness and sequence/structure correlations"
+        ],
+        "author": [
+          {
+            "given": "R.S.",
+            "family": "Rahman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Rackovsky",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biophysical Journal"
+        ],
+        "URL": "https://doi.org/10.1016/s0006-3495(95)80325-5"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1080/01621459.1989.10478800",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Tests for Autocorrelation and Randomness in Multiple Time Series"
+        ],
+        "author": [
+          {
+            "given": "Mukhtar M.",
+            "family": "Ali",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Kentucky",
+                "place": [
+                  "USA"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              3,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.1080/01621459.1989.10478800"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-89500-0_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "An Efficiency Optimization Scheme for the On-the-Fly Statistical Randomness Test"
+        ],
+        "author": [
+          {
+            "given": "Jiahui",
+            "family": "Shen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tianyu",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lei",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yuan",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Information and Communications Security"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-89500-0_2"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.2307/2289939",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Tests for Autocorrelation and Randomness in Multiple Time Series"
+        ],
+        "author": [
+          {
+            "given": "Mukhtar M.",
+            "family": "Ali",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.2307/2289939"
+      },
+      {
+        "publisher": "Publishing House for Science and Technology, Vietnam Academy of Science and Technology (Publications)",
+        "DOI": "10.15625/1813-9663/19/1/1522",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Standard binary derivative complexity for the test randomness of finite binary sequence."
+        ],
+        "author": [
+          {
+            "given": "Nguyễn Thị Hải",
+            "family": "Yến",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              7,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computer Science and Cybernetics"
+        ],
+        "URL": "https://doi.org/10.15625/1813-9663/19/1/1522"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1964,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.2307/2527626",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "A Non-Parametric Test for Randomness in a Sequence of Multinomial Trials"
+        ],
+        "author": [
+          {
+            "given": "B. M.",
+            "family": "Bennett",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrics"
+        ],
+        "URL": "https://doi.org/10.2307/2527626"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/cscloud.2015.10",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "An Efficiency Optimization Scheme for the On-the-Fly Statistical Randomness Test"
+        ],
+        "author": [
+          {
+            "given": "Tianyu",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yuan",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jingqiang",
+            "family": "Lin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhan",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiwu",
+            "family": "Jing",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 IEEE 2nd International Conference on Cyber Security and Cloud Computing"
+        ],
+        "URL": "https://doi.org/10.1109/cscloud.2015.10"
+      },
+      {
+        "publisher": "Steklov Mathematical Institute",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.4213/tvp328",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Testing randomness: a suite of statistical procedures"
+        ],
+        "author": [
+          {
+            "given": "Андрей Л",
+            "family": "Рухин",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andrew L",
+            "family": "Rukhin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Теория вероятностей и ее применения",
+          "Teoriya Veroyatnostei i ee Primeneniya"
+        ],
+        "URL": "https://doi.org/10.4213/tvp328"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              5,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118165881.ch9",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Test For Randomness: The Runs Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Nonparametric Statistics for Non‐Statisticians"
+        ],
+        "URL": "https://doi.org/10.1002/9781118165881.ch9"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cogpsych.2018.02.003",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Subjective randomness as statistical inference"
+        ],
+        "author": [
+          {
+            "given": "Thomas L.",
+            "family": "Griffiths",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dylan",
+            "family": "Daniels",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joseph L.",
+            "family": "Austerweil",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joshua B.",
+            "family": "Tenenbaum",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Cognitive Psychology"
+        ],
+        "URL": "https://doi.org/10.1016/j.cogpsych.2018.02.003"
+      },
+      {
+        "DOI": "10.1002/9781118445112.stat03483",
+        "title": [
+          "Randomness, Cox's Test of"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Wiley StatsRef: Statistics Reference Online"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/9781118445112.stat03483"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/0471667196.ess0433.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Randomness, Cox's Test of"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess0433.pub2"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1976,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.2307/2529506",
+        "type": "journal-article",
+        "is-referenced-by-count": 30,
+        "title": [
+          "A Test for Randomness"
+        ],
+        "author": [
+          {
+            "given": "Peter C.",
+            "family": "O'Brien",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrics"
+        ],
+        "URL": "https://doi.org/10.2307/2529506"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.2307/2004702",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Run Test for Randomness"
+        ],
+        "author": [
+          {
+            "given": "J. W.",
+            "family": "W.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dorothy",
+            "family": "Kerr",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematics of Computation"
+        ],
+        "URL": "https://doi.org/10.2307/2004702"
+      },
+      {
+        "DOI": "10.1017/cbo9781139051293.004",
+        "title": [
+          "Spatial Autocorrelation and Statistical Inference"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              10,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Spatial Analysis for the Social Sciences"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9781139051293.004"
+      },
+      {
+        "publisher": "The Scientific and Technological Research Council of Turkey (TUBITAK-ULAKBIM) - DIGITAL COMMONS JOURNALS",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.3906/elk-1605-212",
+        "type": "journal-article",
+        "is-referenced-by-count": 43,
+        "title": [
+          "On the independence of statistical randomness tests included in the NIST test suite"
+        ],
+        "author": [
+          {
+            "given": "Fatih",
+            "family": "SULAK",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Muhiddin",
+            "family": "UĞUZ",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Onur",
+            "family": "KOÇAK",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "DOĞANAKSOY",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "TURKISH JOURNAL OF ELECTRICAL ENGINEERING &amp; COMPUTER SCIENCES"
+        ],
+        "URL": "https://doi.org/10.3906/elk-1605-212"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/s44443-025-00271-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "A novel deep learning-based statistical randomness evaluation test methodology for cryptographic applications"
+        ],
+        "author": [
+          {
+            "given": "Seyfullah",
+            "family": "Kaner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ali Murat",
+            "family": "Garipcan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7093-7016",
+            "authenticated-orcid": false,
+            "given": "Ebubekir",
+            "family": "Erdem",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of King Saud University Computer and Information Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/s44443-025-00271-4"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/imccc.2015.337",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Effectiveness Analysis of Encrypted and Unencrypted Bit Sequence Identification Based on Randomness Test"
+        ],
+        "author": [
+          {
+            "given": "Yang",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tao",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jindong",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 Fifth International Conference on Instrumentation and Measurement, Computer, Communication and Control (IMCCC)"
+        ],
+        "URL": "https://doi.org/10.1109/imccc.2015.337"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/ncis.2011.67",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Improving Autocorrelation and RFM Autocorrelation Performance of Skew Tent Sequence"
+        ],
+        "author": [
+          {
+            "given": "Bin",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 International Conference on Network Computing and Information Security"
+        ],
+        "URL": "https://doi.org/10.1109/ncis.2011.67"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/icebeg.2011.5877019",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improving autocorrelation and RFM autocorrelation performance of TD-ERCS sequence"
+        ],
+        "author": [
+          {
+            "given": "Bin",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 International Conference on E-Business and E-Government (ICEE)"
+        ],
+        "URL": "https://doi.org/10.1109/icebeg.2011.5877019"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              1949,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1177/0008068319490203",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Topographic Randomness and Its Statistical Tests"
+        ],
+        "author": [
+          {
+            "given": "Birendranath",
+            "family": "Ghosh",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Presidency College, Calcutta"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1949,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Calcutta Statistical Association Bulletin"
+        ],
+        "URL": "https://doi.org/10.1177/0008068319490203"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevlett.83.112",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Sequence Randomness and Polymer Collapse Transitions"
+        ],
+        "author": [
+          {
+            "given": "Pietro",
+            "family": "Monari",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Attilio L.",
+            "family": "Stella",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carlo",
+            "family": "Vanderzande",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Enzo",
+            "family": "Orlandini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1999,
+              7,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review Letters"
+        ],
+        "URL": "https://doi.org/10.1103/physrevlett.83.112"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1973,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.2044-8341.1973.tb02264.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Randomness in grid test scores"
+        ],
+        "author": [
+          {
+            "given": "JOAN W.",
+            "family": "DRAFFAN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              7,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "British Journal of Medical Psychology"
+        ],
+        "URL": "https://doi.org/10.1111/j.2044-8341.1973.tb02264.x"
+      },
+      {
+        "publisher": "The R Foundation",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.32614/cran.package.cryptrndtest",
+        "type": "dataset",
+        "is-referenced-by-count": 0,
+        "title": [
+          "CryptRndTest: Statistical Tests for Cryptographic Randomness"
+        ],
+        "author": [
+          {
+            "name": "Haydar Demirhan (<https://orcid.org/0000-0002-8565-4710>)",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CRAN: Contributed Packages"
+        ],
+        "URL": "https://doi.org/10.32614/cran.package.cryptrndtest"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1958,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.2307/2333054",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Non-Randomness in a Sequence of Two Alternatives: I. Wilcoxon's and Allied Test Statistics"
+        ],
+        "author": [
+          {
+            "given": "D. E.",
+            "family": "Barton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F. N.",
+            "family": "David",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C. L.",
+            "family": "Mallows",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.2307/2333054"
+      },
+      {
+        "publisher": "American Association for the Advancement of Science (AAAS)",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              4,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1126/science.276.5312.532",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "New Test Sizes Up Randomness"
+        ],
+        "author": [
+          {
+            "given": "Charles",
+            "family": "Seife",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Charles Seife is a writer in Riverdale, New York."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Science"
+        ],
+        "URL": "https://doi.org/10.1126/science.276.5312.532"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1038/news.2010.181",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A truth test for randomness"
+        ],
+        "author": [
+          {
+            "given": "Zeeya",
+            "family": "Merali",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              4,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Nature"
+        ],
+        "URL": "https://doi.org/10.1038/news.2010.181"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1953,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.2307/2333102",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Sequential Test for Randomness"
+        ],
+        "author": [
+          {
+            "given": "P. G.",
+            "family": "Moore",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.2307/2333102"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1080/08982119808919164",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "A MULTIVARIATE TEST FOR RANDOMNESS"
+        ],
+        "author": [
+          {
+            "given": "Donald S.",
+            "family": "Holmes",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Erhan Mergen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Quality Engineering"
+        ],
+        "URL": "https://doi.org/10.1080/08982119808919164"
+      },
+      {
+        "DOI": "10.1093/oxfordjournals.molbev.a040560",
+        "title": [
+          "A statistical test of phylogenies estimated from sequence data."
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1989,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Molecular Biology and Evolution"
+        ],
+        "publisher": "Oxford University Press (OUP)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1093/oxfordjournals.molbev.a040560"
+      },
+      {
+        "publisher": "Institution of Engineering and Technology (IET)",
+        "published-print": {
+          "date-parts": [
+            [
+              1984
+            ]
+          ]
+        },
+        "DOI": "10.1049/ip-f-1.1984.0028",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Autocorrelation function of the multiplexed sequence"
+        ],
+        "author": [
+          {
+            "given": "S.M.",
+            "family": "Jennings",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEE Proceedings F Communications, Radar and Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1049/ip-f-1.1984.0028"
+      },
+      {
+        "publisher": "Korea Information and Communications Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.7840/kics.2014.39a.8.445",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Quaternary Sequence with Ideal Autocorrelation Property"
+        ],
+        "author": [
+          {
+            "given": "Ji-Woong",
+            "family": "Jang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Journal of Korea Information and Communications Society"
+        ],
+        "URL": "https://doi.org/10.7840/kics.2014.39a.8.445"
+      },
+      {
+        "DOI": "10.31234/osf.io/mw8v9_v1",
+        "title": [
+          "A Zellner Test for Autocorrelation"
+        ],
+        "author": [
+          {
+            "given": "Daan",
+            "family": "Schoemaker",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1596-1034",
+            "authenticated-orcid": true,
+            "given": "Eric-Jan",
+            "family": "Wagenmakers",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/mw8v9_v1"
+      },
+      {
+        "publisher": "Wojskowa Akademia Techniczna w Warszawie",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              12,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.37055/sbn/135231",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "AUTOCORRELATION TEST FOR BINARY STREAM"
+        ],
+        "author": [
+          {
+            "given": "Krzysztof",
+            "family": "MAŃK",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Wojskowa Akademia Techniczna im. Jarosława Dąbrowskiego w Warszawie"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              12,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "National Security Studies"
+        ],
+        "URL": "https://doi.org/10.37055/sbn/135231"
+      },
+      {
+        "DOI": "10.1515/9783110805697.27",
+        "title": [
+          "Randomness: algebraic, statistical and complexity theory aspects"
+        ],
+        "author": [
+          {
+            "given": "N. Yu.",
+            "family": "Anisimov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ε. E.",
+            "family": "Demidov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Algebra"
+        ],
+        "publisher": "DE GRUYTER",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1515/9783110805697.27"
+      },
+      {
+        "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1137/s0040585x97978087",
+        "type": "journal-article",
+        "is-referenced-by-count": 26,
+        "title": [
+          "Testing Randomness: A Suite of Statistical Procedures"
+        ],
+        "author": [
+          {
+            "given": "A. L.",
+            "family": "Ruhkin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Theory of Probability &amp; Its Applications"
+        ],
+        "URL": "https://doi.org/10.1137/s0040585x97978087"
+      },
+      {
+        "publisher": "The Society of Instrument and Control Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              1987
+            ]
+          ]
+        },
+        "DOI": "10.9746/sicetr1965.23.812",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Evaluation of Partial Randomness of M-Sequence"
+        ],
+        "author": [
+          {
+            "given": "Hiroshi",
+            "family": "KASHIWAGI",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Teruo",
+            "family": "KOHASHI",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hiroshi",
+            "family": "HARADA",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transactions of the Society of Instrument and Control Engineers"
+        ],
+        "URL": "https://doi.org/10.9746/sicetr1965.23.812"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jisa.2022.103322",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Sensitivity and uniformity in statistical randomness tests"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5591-4550",
+            "authenticated-orcid": false,
+            "given": "Elena",
+            "family": "Almaraz Luengo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marcos",
+            "family": "Leiva Cerna",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7573-6272",
+            "authenticated-orcid": false,
+            "given": "Luis Javier",
+            "family": "García Villalba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9896-9308",
+            "authenticated-orcid": false,
+            "given": "Darren",
+            "family": "Hurley-Smith",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6432-5328",
+            "authenticated-orcid": false,
+            "given": "Julio",
+            "family": "Hernandez-Castro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Information Security and Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.jisa.2022.103322"
+      },
+      {
+        "publisher": "Optica Publishing Group",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1364/oe.27.035842",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Characterizing randomness in photonic glasses using autocorrelation functions of two-dimensional images"
+        ],
+        "author": [
+          {
+            "given": "Seung Ho",
+            "family": "Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sang M.",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sang Eon",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Optics Express"
+        ],
+        "URL": "https://doi.org/10.1364/oe.27.035842"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129183100000614",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "STUDY OF AUTOCORRELATION TIMES IN 2D POTTS MODEL UNDER QUENCHED BOND RANDOMNESS"
+        ],
+        "author": [
+          {
+            "given": "FATIH",
+            "family": "YAŞAR",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Hacettepe University, Physics Department, Beytepe 06532, Ankara"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "YIĞIT",
+            "family": "GÜNDÜÇ",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hacettepe University, Physics Department, Beytepe 06532, Ankara"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "TARÍK",
+            "family": "ÇELIK",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hacettepe University, Physics Department, Beytepe 06532, Ankara"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Modern Physics C"
+        ],
+        "URL": "https://doi.org/10.1142/s0129183100000614"
+      },
+      {
+        "publisher": "Frontiers Media SA",
+        "DOI": "10.3389/fpsyg.2023.1113654",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Instruction effects on randomness in sequence generation"
+        ],
+        "author": [
+          {
+            "given": "Maja",
+            "family": "Guseva",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carsten",
+            "family": "Bogler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carsten",
+            "family": "Allefeld",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "John-Dylan",
+            "family": "Haynes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              3,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Frontiers in Psychology"
+        ],
+        "URL": "https://doi.org/10.3389/fpsyg.2023.1113654"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1949,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.2307/2332670",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Test for Randomness in a Sequence of Two Alternatives Involving a 2 × 2 Table"
+        ],
+        "author": [
+          {
+            "given": "P. G.",
+            "family": "Moore",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.2307/2332670"
+      },
+      {
+        "publisher": "AkiNik Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.22271/maths.2025.v10.i10c.2510",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Bounding runs test procedures for sequence randomness verification with applications to great lakes thermal stratification"
+        ],
+        "author": [
+          {
+            "given": "Chetan",
+            "family": "Patwardhan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Statistics and Applied Mathematics"
+        ],
+        "URL": "https://doi.org/10.22271/maths.2025.v10.i10c.2510"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2006.10.087",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Autoregressive spectral analysis based on statistical autocorrelation"
+        ],
+        "author": [
+          {
+            "given": "Minghui",
+            "family": "Hu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Huihe",
+            "family": "Shao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2006.10.087"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1198/jabes.2009.0012",
+        "type": "journal-article",
+        "is-referenced-by-count": 68,
+        "title": [
+          "Spatial autocorrelation and statistical tests: Some solutions"
+        ],
+        "author": [
+          {
+            "given": "Mark R. T.",
+            "family": "Dale",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marie-Josée",
+            "family": "Fortin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Agricultural, Biological, and Environmental Statistics"
+        ],
+        "URL": "https://doi.org/10.1198/jabes.2009.0012"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1080/03610920008832508",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "An approximate entropy test for randomness"
+        ],
+        "author": [
+          {
+            "given": "Sangit",
+            "family": "Chatterjee",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mustafa R.",
+            "family": "Yilmaz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohamed",
+            "family": "Habibuliah",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthew",
+            "family": "Laudato",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              6,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications in Statistics - Theory and Methods"
+        ],
+        "URL": "https://doi.org/10.1080/03610920008832508"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1949
+            ]
+          ]
+        },
+        "DOI": "10.1093/biomet/36.3-4.305",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A TEST FOR RANDOMNESS IN A SEQUENCE OF TWO ALTERNATIVES INVOLVING A 2 × 2 TABLE"
+        ],
+        "author": [
+          {
+            "given": "P. G.",
+            "family": "MOORE",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.1093/biomet/36.3-4.305"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00607-009-0033-z",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A new matrix test for randomness"
+        ],
+        "author": [
+          {
+            "given": "Otokar",
+            "family": "Grošek",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Milan",
+            "family": "Vojvoda",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Róbert",
+            "family": "Krchnavý",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              5,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Computing"
+        ],
+        "URL": "https://doi.org/10.1007/s00607-009-0033-z"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1961
+            ]
+          ]
+        },
+        "DOI": "10.2307/4510882",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A Test for Randomness in Trapping"
+        ],
+        "author": [
+          {
+            "given": "Howard",
+            "family": "Young",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Bird-Banding"
+        ],
+        "URL": "https://doi.org/10.2307/4510882"
+      },
+      {
+        "publisher": "Public Library of Science (PLoS)",
+        "DOI": "10.1371/journal.pone.0155935",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Randomness in Sequence Evolution Increases over Time"
+        ],
+        "author": [
+          {
+            "given": "Guangyu",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shixiang",
+            "family": "Sun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhang",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "PLOS ONE"
+        ],
+        "URL": "https://doi.org/10.1371/journal.pone.0155935"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/0471667196.ess1143",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Randomness,<scp>BDS</scp>Test for"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Chappell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              10,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess1143"
+      },
+      {
+        "publisher": "CASRP: Center of Advanced Scientific Research and Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.18869/acadpub.jsri.3.1.63",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Randomness Test for Stable Data"
+        ],
+        "author": [
+          {
+            "given": "Adel",
+            "family": "Mohammadpour",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Amirkabir University of Technology",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "Mohammad-Djafari",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "CNRS-Supelec-University Paris 11",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "John",
+            "family": "P. Nolané",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "American University",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Research of Iran"
+        ],
+        "URL": "https://doi.org/10.18869/acadpub.jsri.3.1.63"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/0471667196.ess1143.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Randomness,\n            <scp>BDS</scp>\n            Test for"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Chappell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess1143.pub2"
+      },
+      {
+        "DOI": "10.7717/peerjcs.2877/table-2",
+        "title": [
+          "Table 2: Key randomness test results."
+        ],
+        "publisher": "PeerJ",
+        "is-referenced-by-count": 0,
+        "type": "component",
+        "URL": "https://doi.org/10.7717/peerjcs.2877/table-2"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1080/00224065.1971.11980475",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Closed Sequential Test for Randomness"
+        ],
+        "author": [
+          {
+            "given": "S. C.",
+            "family": "Choi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Washington University, St. Louis, Missouri"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              2,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Quality Technology"
+        ],
+        "URL": "https://doi.org/10.1080/00224065.1971.11980475"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781118445112.stat03505",
+        "type": "other",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Randomness,\n            <scp>BDS</scp>\n            Test for"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Chappell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Wiley StatsRef: Statistics Reference Online"
+        ],
+        "URL": "https://doi.org/10.1002/9781118445112.stat03505"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.matcom.2004.09.001",
+        "type": "journal-article",
+        "is-referenced-by-count": 100,
+        "title": [
+          "The strict avalanche criterion randomness test"
+        ],
+        "author": [
+          {
+            "given": "Julio Cesar Hernandez",
+            "family": "Castro",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "José María",
+            "family": "Sierra",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Andre",
+            "family": "Seznec",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Antonio",
+            "family": "Izquierdo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Arturo",
+            "family": "Ribagorda",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematics and Computers in Simulation"
+        ],
+        "URL": "https://doi.org/10.1016/j.matcom.2004.09.001"
+      },
+      {
+        "publisher": "Science Alert",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              3,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.3923/itj.2014.1435.1438",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Research of Perfect Odd Autocorrelation Sequence Pair"
+        ],
+        "author": [
+          {
+            "given": "Jin",
+            "family": "Hui-Long",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhang",
+            "family": "Miao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Qi Shui-",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Technology Journal"
+        ],
+        "URL": "https://doi.org/10.3923/itj.2014.1435.1438"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              7,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003069331-13",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Test of Randomness and its Applications"
+        ],
+        "author": [
+          {
+            "given": "A.G.",
+            "family": "Ramm",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.I.",
+            "family": "Katsevich",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The RADON TRANSFORM and LOCAL TOMOGRAPHY"
+        ],
+        "URL": "https://doi.org/10.1201/9781003069331-13"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1956,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1365-246x.1956.tb05561.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 296,
+        "title": [
+          "A TEST FOR RANDOMNESS OF DIRECTIONS"
+        ],
+        "author": [
+          {
+            "given": "G. S.",
+            "family": "Watson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Geophysical Journal International"
+        ],
+        "URL": "https://doi.org/10.1111/j.1365-246x.1956.tb05561.x"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/icce-tw46550.2019.8992033",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "NIST Statistical Test for Random Sequence Generated by Möbius Function"
+        ],
+        "author": [
+          {
+            "given": "Fatema",
+            "family": "Akhter",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Okayama University,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yuta",
+            "family": "Kodera",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Okayama University,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yasuyuki",
+            "family": "Nogami",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Okayama University,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takuya",
+            "family": "Kusaka",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Okayama University,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)"
+        ],
+        "URL": "https://doi.org/10.1109/icce-tw46550.2019.8992033"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.amc.2003.12.122",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "A randomness test for block ciphers"
+        ],
+        "author": [
+          {
+            "given": "Vasilios",
+            "family": "Katos",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Mathematics and Computation"
+        ],
+        "URL": "https://doi.org/10.1016/j.amc.2003.12.122"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/icassp.2009.4960134",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Unimodular sequence design for good autocorrelation properties"
+        ],
+        "author": [
+          {
+            "given": "Hao",
+            "family": "He",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Petre",
+            "family": "Stoica",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jian",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2009 IEEE International Conference on Acoustics, Speech and Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/icassp.2009.4960134"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1109/lsp.2008.2009371",
+        "type": "journal-article",
+        "is-referenced-by-count": 26,
+        "title": [
+          "Almost Quadriphase Sequence With Ideal Autocorrelation Property"
+        ],
+        "author": [
+          {
+            "family": "Xiaohu Tang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Lindner",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Signal Processing Letters"
+        ],
+        "URL": "https://doi.org/10.1109/lsp.2008.2009371"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1975,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1467-9574.1975.tb00245.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A test for randomness in behaviour"
+        ],
+        "author": [
+          {
+            "given": "Tom",
+            "family": "Snijders",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              4,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistica Neerlandica"
+        ],
+        "URL": "https://doi.org/10.1111/j.1467-9574.1975.tb00245.x"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1080/11956860.2002.11682702",
+        "type": "journal-article",
+        "is-referenced-by-count": 195,
+        "title": [
+          "Spatial autocorrelation and statistical tests in ecology"
+        ],
+        "author": [
+          {
+            "given": "Mark R.T.",
+            "family": "Dale",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Biological Sciences, University of Alberta, Edmonton, Alberta, T6G 2E9, Canada"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Marie-Josée",
+            "family": "Fortin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Zoology, University of Toronto, Toronto, Ontario, M5S 3G5, Canada"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              3,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Écoscience"
+        ],
+        "URL": "https://doi.org/10.1080/11956860.2002.11682702"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/roedunet.2013.6714183",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "The histogram test for randomness assessment"
+        ],
+        "author": [
+          {
+            "given": "Kinga",
+            "family": "Marton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mihai",
+            "family": "Homan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alin",
+            "family": "Suciu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ioan",
+            "family": "Rasa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 RoEduNet International Conference 12th Edition: Networking in Education and Research"
+        ],
+        "URL": "https://doi.org/10.1109/roedunet.2013.6714183"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jmva.2016.07.002",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A randomness test for functional panels"
+        ],
+        "author": [
+          {
+            "given": "Piotr",
+            "family": "Kokoszka",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7149-0591",
+            "authenticated-orcid": false,
+            "given": "Matthew",
+            "family": "Reimherr",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nikolas",
+            "family": "Wölfing",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Multivariate Analysis"
+        ],
+        "URL": "https://doi.org/10.1016/j.jmva.2016.07.002"
+      },
+      {
+        "publisher": "China Science Publishing & Media Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              2,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.3724/sp.j.1146.2013.00147",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Autocorrelation of the Two-prime Sidel’nikov Sequence"
+        ],
+        "author": [
+          {
+            "given": "Zhao",
+            "family": "Yue",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jun-tao",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jia",
+            "family": "Xie",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Electronics &amp; Information Technology"
+        ],
+        "URL": "https://doi.org/10.3724/sp.j.1146.2013.00147"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              4,
+              13
+            ]
+          ]
+        },
+        "DOI": "10.1080/00949655.2013.874424",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "A Cauchy estimator test for autocorrelation"
+        ],
+        "author": [
+          {
+            "given": "Colin M.",
+            "family": "Gallagher",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas J.",
+            "family": "Fisher",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jie",
+            "family": "Shen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              1,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Computation and Simulation"
+        ],
+        "URL": "https://doi.org/10.1080/00949655.2013.874424"
+      },
+      {
+        "publisher": "Institute of Electronics, Information and Communications Engineers (IEICE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              8,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1587/transfun.e101.a.1204",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Randomness Test to Solve Discrete Fourier Transform Test Problems"
+        ],
+        "author": [
+          {
+            "given": "Atsushi",
+            "family": "IWASAKI",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fukuoka Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ken",
+            "family": "UMENO",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Kyoto University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences"
+        ],
+        "URL": "https://doi.org/10.1587/transfun.e101.a.1204"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/csss.2011.5974383",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improving RFM autocorrelation performance of Tent sequence and holding its good autocorrelation performance"
+        ],
+        "author": [
+          {
+            "given": "Bin",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 International Conference on Computer Science and Service System (CSSS)"
+        ],
+        "URL": "https://doi.org/10.1109/csss.2011.5974383"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.slads.2026.100003",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Autocorrelation test under frequent mean shifts"
+        ],
+        "author": [
+          {
+            "given": "Ziyang",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ning",
+            "family": "Hao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yue Selena",
+            "family": "Niu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Han",
+            "family": "Xiao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hongxu",
+            "family": "Ding",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Statistical Learning and Data Science"
+        ],
+        "URL": "https://doi.org/10.1016/j.slads.2026.100003"
+      },
+      {
+        "publisher": "Journal of Mechanics of Continua and Mathematical Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              10,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.26782/jmcms.2019.10.00023",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Encryption a Message by using the Enhancement Nonlinear Key Generator and Calculate the Autocorrelation Property of Randomness test by using Matlab"
+        ],
+        "author": [
+          {
+            "given": "Ahmed",
+            "family": "Amer Ridha",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              10,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "JOURNAL OF MECHANICS OF CONTINUA AND MATHEMATICAL SCIENCES"
+        ],
+        "URL": "https://doi.org/10.26782/jmcms.2019.10.00023"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              6,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.727076",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Origins of randomness in statistical and quantum mechanics"
+        ],
+        "author": [
+          {
+            "given": "M. B.",
+            "family": "Weissman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Noise and Fluctuations in Circuits, Devices, and Materials"
+        ],
+        "URL": "https://doi.org/10.1117/12.727076"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789814327756_0003",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Statistical Testing of Randomness: New and Old Procedures"
+        ],
+        "author": [
+          {
+            "given": "Andrew L.",
+            "family": "Rukhin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Statistical Engineering Division, National Institute of Standards and Technology, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              10,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Randomness Through Computation"
+        ],
+        "URL": "https://doi.org/10.1142/9789814327756_0003"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevlett.113.068101",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Reentrant Melting of RNA with Quenched Sequence Randomness"
+        ],
+        "author": [
+          {
+            "given": "G. N.",
+            "family": "Hayrapetyan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Iannelli",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Lekscha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V. F.",
+            "family": "Morozov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. R.",
+            "family": "Netz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Y. Sh.",
+            "family": "Mamasakhlisov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review Letters"
+        ],
+        "URL": "https://doi.org/10.1103/physrevlett.113.068101"
+      },
+      {
+        "DOI": "10.1007/978-3-540-85912-3_2",
+        "title": [
+          "On Independence and Sensitivity of Statistical Randomness Tests"
+        ],
+        "author": [
+          {
+            "given": "Meltem",
+            "family": "Sönmez Turan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "DoĞanaksoy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Serdar",
+            "family": "Boztaş",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Sequences and Their Applications - SETA 2008"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 14,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-85912-3_2"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

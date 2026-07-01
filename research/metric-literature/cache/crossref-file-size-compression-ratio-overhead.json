@@ -1,5 +1,4826 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=file+size+compression+ratio+overhead&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 886993,
+    "items": [
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-240-51590-8.50006-8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File size, storage and image compression"
+        ],
+        "author": [
+          {
+            "given": "Adrian",
+            "family": "Davies",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Phil",
+            "family": "Fennessy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Digital Imaging for Photographers"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-240-51590-8.50006-8"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1980,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/tse.1980.234490",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Overhead Storage Considerations and a Multilinear Method for Data File Compression"
+        ],
+        "author": [
+          {
+            "given": "T.Y.",
+            "family": "Young",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.S.",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Software Engineering"
+        ],
+        "URL": "https://doi.org/10.1109/tse.1980.234490"
+      },
+      {
+        "DOI": "10.1007/springerreference_64940",
+        "title": [
+          "File Compression"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_64940"
+      },
+      {
+        "DOI": "10.1007/978-0-387-39940-9_2635",
+        "title": [
+          "File Compression"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Database Systems"
+        ],
+        "publisher": "Springer US",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-39940-9_2635"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-32692-9_91",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Low Overhead File Synchronization Mechanism"
+        ],
+        "author": [
+          {
+            "given": "Ho Min",
+            "family": "Jung",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sun Jeong",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chang Geun",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Young Woong",
+            "family": "Ko",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Communications in Computer and Information Science",
+          "Convergence and Hybrid Information Technology"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-32692-9_91"
+      },
+      {
+        "publisher": "American Scientific Publishers",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1166/asl.2017.9025",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Kernel-Level File System for Minimizing File Modification Overhead"
+        ],
+        "author": [
+          {
+            "given": "Jin",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Computer Engineering, Hallym University, Chuncheon 200702, Korea; Smart Computing Lab, Hallym University, Chuncheon 200702, Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Young Jun",
+            "family": "Yoo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Engineering, Hallym University, Chuncheon 200702, Korea; Smart Computing Lab, Hallym University, Chuncheon 200702, Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Young Woong",
+            "family": "Ko",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Engineering, Hallym University, Chuncheon 200702, Korea; Smart Computing Lab, Hallym University, Chuncheon 200702, Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advanced Science Letters"
+        ],
+        "URL": "https://doi.org/10.1166/asl.2017.9025"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4020-6488-3_35",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Improving Compression Ratio, Area Overhead, and Test Application Time for System-on-Chip Test Data Compression/Decompression"
+        ],
+        "author": [
+          {
+            "given": "Paul Theo",
+            "family": "Gonciari",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bashir M.",
+            "family": "Al-Hashimi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nicola",
+            "family": "Nicolici",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Design, Automation, and Test in Europe"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4020-6488-3_35"
+      },
+      {
+        "DOI": "10.4324/9780080473727-89",
+        "title": [
+          "FILE SIZE"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              2,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Photography Foundations for Art and Design"
+        ],
+        "publisher": "Routledge",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9780080473727-89"
+      },
+      {
+        "DOI": "10.4324/9780080479996-13",
+        "title": [
+          "File size"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              5,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Photoshop CS: Essential Skills"
+        ],
+        "publisher": "Routledge",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9780080479996-13"
+      },
+      {
+        "DOI": "10.1109/date.2002.998363",
+        "title": [
+          "Improving compression ratio, area overhead, and test application time for system-on-a-chip test data compression/decompression"
+        ],
+        "author": [
+          {
+            "given": "P.T.",
+            "family": "Gonciari",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "B.M.",
+            "family": "Al-Hashimi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "N.",
+            "family": "Nicolici",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings 2002 Design, Automation and Test in Europe Conference and Exhibition"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 76,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/date.2002.998363"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_7113",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "file activity ratio"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_7113"
+      },
+      {
+        "DOI": "10.1007/springerreference_14517",
+        "title": [
+          "file activity ratio"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_14517"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.1145/3633459",
+        "type": "journal-article",
+        "is-referenced-by-count": 23,
+        "title": [
+          "JPEG-compatible Joint Image Compression and Encryption Algorithm with File Size Preservation"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0001-5592-9971",
+            "authenticated-orcid": false,
+            "given": "Yuxiang",
+            "family": "Peng",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Engineering, Northeastern University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4549-744X",
+            "authenticated-orcid": false,
+            "given": "Chong",
+            "family": "Fu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Engineering, Northeastern University, China, Engineering Research Center of Security Technology of Complex Network System, Ministry of Education, China, and Key Laboratory of Intelligent Computing in Medical Image, Ministry of Education, Northeastern University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-7392-8000",
+            "authenticated-orcid": false,
+            "given": "Guixing",
+            "family": "Cao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Engineering, Northeastern University, China, and Institute of Telecommunication Satellite, China Academy of Space Technology, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2767-3999",
+            "authenticated-orcid": false,
+            "given": "Wei",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Engineering, Northeastern University, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4745-8361",
+            "authenticated-orcid": false,
+            "given": "Junxin",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Software, Dalian University of Technology, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7007-6746",
+            "authenticated-orcid": false,
+            "given": "Chiu-Wing",
+            "family": "Sham",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, The University of Auckland, New Zealand"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM Transactions on Multimedia Computing, Communications, and Applications"
+        ],
+        "URL": "https://doi.org/10.1145/3633459"
+      },
+      {
+        "DOI": "10.1109/pccc.1994.504117",
+        "title": [
+          "PDATS Lossless Address Trace Compression For Reducing File Size And Access Time"
+        ],
+        "author": [
+          {
+            "given": "E.E.",
+            "family": "Johnson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jiheng Ha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceeding of 13th IEEE Annual International Phoenix Conference on Computers and Communications"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 33,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/pccc.1994.504117"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-370451-1.00013-5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File Formats and Compression"
+        ],
+        "author": [
+          {
+            "given": "Herbert",
+            "family": "Blitzer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Karen",
+            "family": "Stein-Ferguson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jeffrey",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Understanding Forensic Digital Imaging"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-370451-1.00013-5"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4614-5491-5_200010",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Compression Ratio"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              1,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Microfluidics and Nanofluidics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4614-5491-5_200010"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_3312",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "compression ratio"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_3312"
+      },
+      {
+        "DOI": "10.1007/springerreference_10716",
+        "title": [
+          "compression ratio"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_10716"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-41714-6_33772",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "compression ratio"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Dictionary Geotechnical Engineering/Wörterbuch GeoTechnik"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-41714-6_33772"
+      },
+      {
+        "DOI": "10.1007/978-0-387-30160-0_2729",
+        "title": [
+          "Compression ratio"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedic Dictionary of Polymers"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-30160-0_2729"
+      },
+      {
+        "DOI": "10.1036/1097-8542.153400",
+        "title": [
+          "Compression ratio"
+        ],
+        "container-title": [
+          "AccessScience"
+        ],
+        "publisher": "McGraw-Hill Professional",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1036/1097-8542.153400"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-6247-8_2775",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Compression Ratio"
+        ],
+        "author": [
+          {
+            "given": "Jan W.",
+            "family": "Gooch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedic Dictionary of Polymers"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-6247-8_2775"
+      },
+      {
+        "DOI": "10.1007/springerreference_66479",
+        "title": [
+          "Compression Ratio"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_66479"
+      },
+      {
+        "DOI": "10.1007/978-0-387-48998-8_245",
+        "title": [
+          "Compression Ratio"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Microfluidics and Nanofluidics"
+        ],
+        "publisher": "Springer US",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-48998-8_245"
+      },
+      {
+        "DOI": "10.1109/iscas.1993.692634",
+        "title": [
+          "High Compression Ratio Image Compression"
+        ],
+        "author": [
+          {
+            "family": "Sheng Zhong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Qing-yun Shi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Min-Teh Cheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1993 IEEE International Symposium on Circuits and Systems"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.1993.692634"
+      },
+      {
+        "DOI": "10.1109/iscas.1993.393711",
+        "title": [
+          "High compression ratio image compression"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Zhong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Q.-y.",
+            "family": "Shi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.-T.",
+            "family": "Cheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1993 IEEE International Symposium on Circuits and Systems"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.1993.393711"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/trustcom.2012.96",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Assessing Overhead Cost Associated with Encrypting Swap File"
+        ],
+        "author": [
+          {
+            "given": "B.",
+            "family": "AlBelooshi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Salah",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Marin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Bentiba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 IEEE 11th International Conference on Trust, Security and Privacy in Computing and Communications"
+        ],
+        "URL": "https://doi.org/10.1109/trustcom.2012.96"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/asms-spsc.2010.5586926",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Overhead estimation of selected protocols for file transfer"
+        ],
+        "author": [
+          {
+            "given": "Muhammad",
+            "family": "Muhammad",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matteo",
+            "family": "Berioli",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 5th Advanced Satellite Multimedia Systems Conference and the 11th Signal Processing for Space Communications Workshop"
+        ],
+        "URL": "https://doi.org/10.1109/asms-spsc.2010.5586926"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "DOI": "10.1109/lgrs.2025.3562933",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Low-Overhead Compression-Aware Channel Filtering for Hyperspectral Image Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0002-2890-8806",
+            "authenticated-orcid": false,
+            "given": "Wei",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Pengcheng Laboratory, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2498-867X",
+            "authenticated-orcid": false,
+            "given": "Jiayao",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Networked Intelligence, Pengcheng Laboratory, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yueru",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Networked Intelligence, Pengcheng Laboratory, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5549-9027",
+            "authenticated-orcid": false,
+            "given": "Dingquan",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Networked Intelligence, Pengcheng Laboratory, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8070-802X",
+            "authenticated-orcid": false,
+            "given": "Wen",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Pengcheng Laboratory, Shenzhen, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Geoscience and Remote Sensing Letters"
+        ],
+        "URL": "https://doi.org/10.1109/lgrs.2025.3562933"
+      },
+      {
+        "DOI": "10.1109/icdcs.1998.679774",
+        "title": [
+          "Low-overhead protocols for fault-tolerant file sharing"
+        ],
+        "author": [
+          {
+            "given": "L.",
+            "family": "Alvisi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Rao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H.M.",
+            "family": "Vin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 18th International Conference on Distributed Computing Systems (Cat. No.98CB36183)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 2,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icdcs.1998.679774"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1109/broadcom.2008.79",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "File Compression Using Typogenetic Computation"
+        ],
+        "author": [
+          {
+            "given": "Andrew",
+            "family": "Chan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zenon",
+            "family": "Chaczko",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chris",
+            "family": "Chiu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ryszard",
+            "family": "Zielinski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 Third International Conference on Broadband Communications, Information Technology &amp; Biomedical Applications"
+        ],
+        "URL": "https://doi.org/10.1109/broadcom.2008.79"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/bigdata.congress.2014.35",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Using Inter-file Similarity to Improve Intra-file Compression"
+        ],
+        "author": [
+          {
+            "given": "Angelos",
+            "family": "Molfetas",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anthony",
+            "family": "Wirth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Justin",
+            "family": "Zobel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 IEEE International Congress on Big Data"
+        ],
+        "URL": "https://doi.org/10.1109/bigdata.congress.2014.35"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/comjnl/bxh128",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "In Place Differential File Compression"
+        ],
+        "author": [
+          {
+            "given": "Dana",
+            "family": "Shapira",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "James A.",
+            "family": "Storer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              8,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "The Computer Journal"
+        ],
+        "URL": "https://doi.org/10.1093/comjnl/bxh128"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              1976,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1145/360363.360368",
+        "type": "journal-article",
+        "is-referenced-by-count": 54,
+        "title": [
+          "Experiments in text file compression"
+        ],
+        "author": [
+          {
+            "given": "Frank",
+            "family": "Rubin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "IBM, Poughkeepsie, NY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1976,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications of the ACM"
+        ],
+        "URL": "https://doi.org/10.1145/360363.360368"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "DOI": "10.1063/pt.6.1.20190301a",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File compression uncovers hidden order"
+        ],
+        "author": [
+          {
+            "given": "Christine",
+            "family": "Middleton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              3,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physics Today"
+        ],
+        "URL": "https://doi.org/10.1063/pt.6.1.20190301a"
+      },
+      {
+        "DOI": "10.1109/cmpsac.1979.762608",
+        "title": [
+          "Two-stage data file compression"
+        ],
+        "author": [
+          {
+            "given": "P.S.",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Tzay Y. Young",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "COMPSAC 79. Proceedings. Computer Software and The IEEE Computer Society's Third International Applications Conference, 1979."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/cmpsac.1979.762608"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781118798706.hdi010",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Image Compression and File Formats"
+        ],
+        "author": [
+          {
+            "given": "Michael",
+            "family": "Kriss",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Handbook of Digital Imaging"
+        ],
+        "URL": "https://doi.org/10.1002/9781118798706.hdi010"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-08-050754-5.50029-3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 10,
+        "title": [
+          "IMAGE FILE COMPRESSION MADE EASY"
+        ],
+        "author": [
+          {
+            "given": "Alan W.",
+            "family": "Paeth",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Graphics Gems II"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-08-050754-5.50029-3"
+      },
+      {
+        "publisher": "Academy of Management",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.5465/ambpp.2018.10643abstract",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Does the Overhead Ratio Measure Efficiency?"
+        ],
+        "author": [
+          {
+            "given": "Jason",
+            "family": "Coupet",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jessica",
+            "family": "Haynie",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Academy of Management Proceedings"
+        ],
+        "URL": "https://doi.org/10.5465/ambpp.2018.10643abstract"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.922354",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Measuring image quality performance on image versions saved with different file format and compression ratio"
+        ],
+        "author": [
+          {
+            "given": "Carles",
+            "family": "Mitjà",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jaume",
+            "family": "Escofet",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Toni",
+            "family": "Bover",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Optics, Photonics, and Digital Technologies for Multimedia Applications II"
+        ],
+        "URL": "https://doi.org/10.1117/12.922354"
+      },
+      {
+        "DOI": "10.1109/dcc.2003.1194017",
+        "title": [
+          "In-place differential file compression"
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Shapira",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.A.",
+            "family": "Storer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Data Compression Conference, 2003. Proceedings. DCC 2003"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 5,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.2003.1194017"
+      },
+      {
+        "DOI": "10.1007/springerreference_16045",
+        "title": [
+          "image compression ratio"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_16045"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_8641",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "image compression ratio"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_8641"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/spl.2007.371757",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Bus Decryption Overhead Minimization with Code Compression"
+        ],
+        "author": [
+          {
+            "given": "Eduardo",
+            "family": "Wanderley",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guy",
+            "family": "Gogniat",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jean-Philippe",
+            "family": "Digueta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2007 3rd Southern Conference on Programmable Logic"
+        ],
+        "URL": "https://doi.org/10.1109/spl.2007.371757"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.1145/3409390.3409405",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Assessing the Overhead of Offloading Compression Tasks"
+        ],
+        "author": [
+          {
+            "given": "Laura",
+            "family": "Promberger",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "CERN, Switzerland, and Heidelberg University, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rainer",
+            "family": "Schwemmer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "CERN, Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Holger",
+            "family": "Fröning",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Heidelberg University, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "49th International Conference on Parallel Processing - ICPP : Workshops"
+        ],
+        "URL": "https://doi.org/10.1145/3409390.3409405"
+      },
+      {
+        "publisher": "Canadian Center of Science and Education",
+        "DOI": "10.5539/jmr.v9n4p114",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Analysis of Compression Ratio of Various Randomly Generated Images of Same Size"
+        ],
+        "author": [
+          {
+            "given": "Tanvir",
+            "family": "Prince",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Mathematics Research"
+        ],
+        "URL": "https://doi.org/10.5539/jmr.v9n4p114"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-007-5699-1_95",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Ensuring Minimal Communication Overhead in Low Bandwidth Network File"
+        ],
+        "author": [
+          {
+            "given": "Muhammad Ahsan",
+            "family": "Habib",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Waqas",
+            "family": "Nasar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shehzad",
+            "family": "Ashraf Ch",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ahsan Jamal",
+            "family": "Khan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              10,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Electrical Engineering",
+          "Computer Science and its Applications"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-007-5699-1_95"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-29611-7_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Reducing Rename Overhead in Full-Path-Indexed File System"
+        ],
+        "author": [
+          {
+            "given": "Longhua",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Youyou",
+            "family": "Lu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Siyang",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fan",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiwu",
+            "family": "Shu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              8,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Advanced Parallel Processing Technologies"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-29611-7_4"
+      },
+      {
+        "DOI": "10.1109/icde.1994.283000",
+        "title": [
+          "Analysis of reorganization overhead in log-structured file systems"
+        ],
+        "author": [
+          {
+            "given": "J.T.",
+            "family": "Robinson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.A.",
+            "family": "Franaszek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 1994 IEEE 10th International Conference on Data Engineering"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 5,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icde.1994.283000"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              1982,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1145/358628.358635",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "File archival techniques using data compression"
+        ],
+        "author": [
+          {
+            "given": "Michael",
+            "family": "Pechura",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Cleveland State Univ., Cleveland, OH"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1982,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications of the ACM"
+        ],
+        "URL": "https://doi.org/10.1145/358628.358635"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/comjnl/30.1.80",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "An Automatic System for File Compression"
+        ],
+        "author": [
+          {
+            "given": "T.",
+            "family": "Raita",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Computer Journal"
+        ],
+        "URL": "https://doi.org/10.1093/comjnl/30.1.80"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/dcc.2016.24",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Accelerate Data Compression in File System"
+        ],
+        "author": [
+          {
+            "given": "Weigang",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yu",
+            "family": "Yao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 Data Compression Conference (DCC)"
+        ],
+        "URL": "https://doi.org/10.1109/dcc.2016.24"
+      },
+      {
+        "publisher": "IGI Global",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.4018/978-1-5225-3004-6.ch006",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "New FastPFOR for Inverted File Compression"
+        ],
+        "author": [
+          {
+            "given": "V.",
+            "family": "Glory",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Periyar University, India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Domnic",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Institute of Technology Tiruchirappalli, India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advances in Web Technologies and Engineering",
+          "Handbook of Research on Biomimicry in Information Retrieval and Knowledge Management"
+        ],
+        "URL": "https://doi.org/10.4018/978-1-5225-3004-6.ch006"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.3109/17453059409063070",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Graphic file compression on a Macintosh"
+        ],
+        "author": [
+          {
+            "given": "Chris",
+            "family": "Porter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              7,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Audiovisual Media in Medicine"
+        ],
+        "URL": "https://doi.org/10.3109/17453059409063070"
+      },
+      {
+        "DOI": "10.1007/bfb0016885",
+        "title": [
+          "Case study: A file compression system"
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "A Systematic Catalogue of Reusable Abstract Data Types"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/bfb0016885"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/comjnl/15.4.308",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "File compression using variable length encodings"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "Wells",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Computer Journal"
+        ],
+        "URL": "https://doi.org/10.1093/comjnl/15.4.308"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1259/dmfr/66171128",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "The effect of image content on detail preservation and file size reduction in lossy compression"
+        ],
+        "author": [
+          {
+            "given": "A",
+            "family": "Fidler",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "U",
+            "family": "Skalerič",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B",
+            "family": "Likar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Dentomaxillofacial Radiology"
+        ],
+        "URL": "https://doi.org/10.1259/dmfr/66171128"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1983,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/tcom.1983.1095765",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "A Double-Adaptive File Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "G.",
+            "family": "Langdon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Rissanen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Communications"
+        ],
+        "URL": "https://doi.org/10.1109/tcom.1983.1095765"
+      },
+      {
+        "DOI": "10.1109/dcc.1996.488313",
+        "title": [
+          "Exploiting clustering in inverted file compression"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Moffat",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Stuiver",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of Data Compression Conference - DCC '96"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 20,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1996.488313"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.sysarc.2025.103387",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "MIFS: A low overhead and efficient mixture file index management method in flash file system"
+        ],
+        "author": [
+          {
+            "given": "Jingjing",
+            "family": "Jiang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mengfei",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lei",
+            "family": "Qiao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tingyu",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xi",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Systems Architecture"
+        ],
+        "URL": "https://doi.org/10.1016/j.sysarc.2025.103387"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1088/1742-6596/2158/1/012026",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Study on axial compression ratio limits of large size S-CLIP reinforced columns"
+        ],
+        "author": [
+          {
+            "given": "HC",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "PX",
+            "family": "Jiang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "LX",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Physics: Conference Series"
+        ],
+        "URL": "https://doi.org/10.1088/1742-6596/2158/1/012026"
+      },
+      {
+        "publisher": "Edtech Publishers (OPC) Private Limited",
+        "DOI": "10.55041/ijsrem38572",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File Compression System Using Huffman Coding"
+        ],
+        "author": [
+          {
+            "given": "IJSREM",
+            "family": "Journal",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              11,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT"
+        ],
+        "URL": "https://doi.org/10.55041/ijsrem38572"
+      },
+      {
+        "publisher": "Korean Institute of Information Scientists and Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              10,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.5626/ktcp.2016.22.10.497",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Analyzing the Overhead of the Memory Mapped File I/O for In-Memory File Systems"
+        ],
+        "author": [
+          {
+            "given": "Jungsik",
+            "family": "Choi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hwansoo",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "KIISE Transactions on Computing Practices"
+        ],
+        "URL": "https://doi.org/10.5626/ktcp.2016.22.10.497"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1109/83.902297",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Compression ratio boundaries for predictive signal compression"
+        ],
+        "author": [
+          {
+            "given": "O.S.",
+            "family": "Pianykh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.M.",
+            "family": "Tyler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Image Processing"
+        ],
+        "URL": "https://doi.org/10.1109/83.902297"
+      },
+      {
+        "DOI": "10.1117/3.2265064.appendixd",
+        "title": [
+          "Best Achievable Compression Ratio"
+        ],
+        "author": [
+          {
+            "given": "Jose A.",
+            "family": "García",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rosa",
+            "family": "Rodriguez-Sánchez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joaquín",
+            "family": "Fdez-Valdivia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Progressive Image Transmission: The Role of Rationality, Cooperation, and Justice"
+        ],
+        "publisher": "SPIE PRESS",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1117/3.2265064.appendixd"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/icnidc.2016.7974543",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Effect of timer interrupt interval on file system synchronization overhead"
+        ],
+        "author": [
+          {
+            "given": "Hankeun",
+            "family": "Son",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Seongjin",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Youjip",
+            "family": "Won",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 IEEE International Conference on Network Infrastructure and Digital Content (IC-NIDC)"
+        ],
+        "URL": "https://doi.org/10.1109/icnidc.2016.7974543"
+      },
+      {
+        "publisher": "SAE International",
+        "DOI": "10.4271/2002-01-1940",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Variable Compression Ratio Engine"
+        ],
+        "author": [
+          {
+            "given": "Charles",
+            "family": "Mendler",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Envera, LLC"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Roland",
+            "family": "Gravel",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "US Department of Energy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              6,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "SAE Technical Paper Series"
+        ],
+        "URL": "https://doi.org/10.4271/2002-01-1940"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1109/hpc.2000.846594",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Design and implementation of a low-overhead file checkpointing approach"
+        ],
+        "author": [
+          {
+            "family": "Dan Pei",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Dongsheng Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Meiming Shen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Weimin Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings Fourth International Conference/Exhibition on High Performance Computing in the Asia-Pacific Region"
+        ],
+        "URL": "https://doi.org/10.1109/hpc.2000.846594"
+      },
+      {
+        "publisher": "SAE International",
+        "DOI": "10.4271/2009-36-0245",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Variable Compression Ratio Engines"
+        ],
+        "author": [
+          {
+            "given": "Maurilio",
+            "family": "De Bortoli Cassiani",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Mechanic Design, Faculty of Mechanical Engineering — Unicamp"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marco Lucio",
+            "family": "Bittencourt",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Mechanic Design, Faculty of Mechanical Engineering — Unicamp"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luis Antonio",
+            "family": "Galli",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Development Engineering, Thyssenkrupp Metalúrgica Campo Limpo LTDA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sergio Gradella",
+            "family": "Villalva",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Development Engineering, Thyssenkrupp Metalúrgica Campo Limpo LTDA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              10,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "SAE Technical Paper Series"
+        ],
+        "URL": "https://doi.org/10.4271/2009-36-0245"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1145/3433210.3453078",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Analyzing the Overhead of File Protection by Linux Security Modules"
+        ],
+        "author": [
+          {
+            "given": "Wenhui",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The Pennsylvania State University, State College, PA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Peng",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The Pennsylvania State University, State College, PA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Trent",
+            "family": "Jaeger",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The Pennsylvania State University, State College, PA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 2021 ACM Asia Conference on Computer and Communications Security"
+        ],
+        "URL": "https://doi.org/10.1145/3433210.3453078"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/netapps.2010.28",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Network File Transfer Performance: Effect of IP Address, TCP Window Size and File Size"
+        ],
+        "author": [
+          {
+            "given": "Mohd. Khairil",
+            "family": "Sailan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rosilah",
+            "family": "Hassan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 Second International Conference on Network Applications, Protocols and Services"
+        ],
+        "URL": "https://doi.org/10.1109/netapps.2010.28"
+      },
+      {
+        "DOI": "10.2139/ssrn.5133147",
+        "title": [
+          "On the Size Overhead of Pairwise Spanners"
+        ],
+        "author": [
+          {
+            "given": "Ofer",
+            "family": "Neiman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Idan",
+            "family": "Shabat",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.5133147"
+      },
+      {
+        "publisher": "Institute of Electrical Engineers of Japan (IEE Japan)",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1541/ieejeiss1987.121.7_1252",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Two-stage compression for file search system"
+        ],
+        "author": [
+          {
+            "given": "Shingo",
+            "family": "Otsuka",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Chiba Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nobuyoshi",
+            "family": "Miyazaki",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEJ Transactions on Electronics, Information and Systems"
+        ],
+        "URL": "https://doi.org/10.1541/ieejeiss1987.121.7_1252"
+      },
+      {
+        "publisher": "Pakistan Atomic Energy Commission",
+        "DOI": "10.71330/thenucleus.2012.806",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "TRANSPARENT COMPRESSION SCHEME FOR LINUX FILE SYSTEM"
+        ],
+        "author": [
+          {
+            "given": "M. A.",
+            "family": "Basir",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M. H.",
+            "family": "Yousaf",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "The Nucleus"
+        ],
+        "URL": "https://doi.org/10.71330/thenucleus.2012.806"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              8,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.4324/9780429468858-15",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File Formats, Log Encoding, Data, and Compression"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Stump",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Digital Cinematography"
+        ],
+        "URL": "https://doi.org/10.4324/9780429468858-15"
+      },
+      {
+        "publisher": "American Society of Mechanical Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              13
+            ]
+          ]
+        },
+        "DOI": "10.1115/icef2021-67511",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A Fundamental Thermodynamic Investigation of Compression Ratio Effects in Relation to Diesel Engine Size"
+        ],
+        "author": [
+          {
+            "given": "Kevin",
+            "family": "Burnett",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Maryland, College Park, Maryland, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ashwani",
+            "family": "Gupta",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Maryland, College Park, Maryland, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dianne",
+            "family": "Luning Prak",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "US Naval Academy, Annapolis, Maryland, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jim",
+            "family": "Cowart",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "US Naval Academy, Annapolis, Maryland, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "ASME 2021 Internal Combustion Engine Division Fall Technical Conference"
+        ],
+        "URL": "https://doi.org/10.1115/icef2021-67511"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0306-4573(02)00020-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 58,
+        "title": [
+          "Inverted file compression through document identifier reassignment"
+        ],
+        "author": [
+          {
+            "given": "Wann-Yun",
+            "family": "Shieh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tien-Fu",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jean Jyh-Jiun",
+            "family": "Shann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chung-Ping",
+            "family": "Chung",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Processing &amp; Management"
+        ],
+        "URL": "https://doi.org/10.1016/s0306-4573(02)00020-1"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.actamat.2016.05.018",
+        "type": "journal-article",
+        "is-referenced-by-count": 94,
+        "title": [
+          "Anisotropy, size, and aspect ratio effects on micropillar compression of Al SiC nanolaminate composites"
+        ],
+        "author": [
+          {
+            "given": "C.R.",
+            "family": "Mayer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.W.",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.S.",
+            "family": "Singh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Llorca",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3508-6003",
+            "authenticated-orcid": false,
+            "given": "J.M.",
+            "family": "Molina-Aldareguia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Y.L.",
+            "family": "Shen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.",
+            "family": "Chawla",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Materialia"
+        ],
+        "URL": "https://doi.org/10.1016/j.actamat.2016.05.018"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-41148-9_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "File Fragment Analysis Using Normalized Compression Distance"
+        ],
+        "author": [
+          {
+            "given": "Stefan",
+            "family": "Axelsson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kamran Ali",
+            "family": "Bajwa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mandhapati Venkata",
+            "family": "Srikanth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IFIP Advances in Information and Communication Technology",
+          "Advances in Digital Forensics IX"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-41148-9_12"
+      },
+      {
+        "publisher": "University of Kufa",
+        "DOI": "10.31642/jokmc/2018/010209",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "SWF Image Compression by Evaluating objects compression ratio"
+        ],
+        "author": [
+          {
+            "given": "Hind Rostom",
+            "family": "Mohammed",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ameer Abd",
+            "family": "Al-Razaq",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              10,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Kufa for Mathematics and Computer"
+        ],
+        "URL": "https://doi.org/10.31642/jokmc/2018/010209"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.protcy.2012.10.059",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Inverted File Compression using EGC and FEGC"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Domnic",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.",
+            "family": "Glory",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Procedia Technology"
+        ],
+        "URL": "https://doi.org/10.1016/j.protcy.2012.10.059"
+      },
+      {
+        "DOI": "10.1109/dcc.1997.582061",
+        "title": [
+          "An overhead reduction technique for mega-state compression schemes"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Bookstein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.T.",
+            "family": "Klein",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Raita",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '97. Data Compression Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1997.582061"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/iccd56317.2022.00045",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Analysis and Mitigation of Data Sanitization Overhead in DAX File Systems"
+        ],
+        "author": [
+          {
+            "given": "Soyoung",
+            "family": "Park",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Sungkyunkwan University Suwon-si,Dept. of Computer Science and Engineering,Gyeonggi-do,Republic of Korea,16419"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jongseok",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sungkyunkwan University Suwon-si,Dept. of Computer Science and Engineering,Gyeonggi-do,Republic of Korea,16419"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Younghoon",
+            "family": "Lim",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sungkyunkwan University Suwon-si,Dept. of Computer Science and Engineering,Gyeonggi-do,Republic of Korea,16419"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Euiseong",
+            "family": "Seo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sungkyunkwan University Suwon-si,Dept. of Computer Science and Engineering,Gyeonggi-do,Republic of Korea,16419"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2022 IEEE 40th International Conference on Computer Design (ICCD)"
+        ],
+        "URL": "https://doi.org/10.1109/iccd56317.2022.00045"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/gcce46687.2019.9015269",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "JPEG Encryption with File Format Preservation and File Size Reduction"
+        ],
+        "author": [
+          {
+            "given": "Suah",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hyoung Joong",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE 8th Global Conference on Consumer Electronics (GCCE)"
+        ],
+        "URL": "https://doi.org/10.1109/gcce46687.2019.9015269"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0306-4573(97)00034-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "An overhead reduction technique for mega-state compression schemes"
+        ],
+        "author": [
+          {
+            "given": "Abraham",
+            "family": "Bookstein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shmuel T.",
+            "family": "Klein",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Timo",
+            "family": "Raita",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Processing &amp; Management"
+        ],
+        "URL": "https://doi.org/10.1016/s0306-4573(97)00034-4"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/s10586-025-05547-y",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimizing blockchain file storage: enhancing performance and reducing ledger size with adaptive compression and advanced data structures"
+        ],
+        "author": [
+          {
+            "given": "Muhammed",
+            "family": "Tmeizeh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carlos",
+            "family": "Rodríguez-Domínguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "María Visitación",
+            "family": "Hurtado-Torres",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Cluster Computing"
+        ],
+        "URL": "https://doi.org/10.1007/s10586-025-05547-y"
+      },
+      {
+        "publisher": "Office of Scientific and Technical Information (OSTI)",
+        "DOI": "10.2172/1014534",
+        "type": "report",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Envera Variable Compression Ratio Engine"
+        ],
+        "author": [
+          {
+            "family": "Charles Mendler",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              3,
+              15
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.2172/1014534"
+      },
+      {
+        "publisher": "SAE International",
+        "DOI": "10.4271/640372",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Compression Ratio and Multifuel Capability"
+        ],
+        "author": [
+          {
+            "given": "D. E.",
+            "family": "Woomert",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Aberdeen Proving Ground"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W. J.",
+            "family": "Pelizzoni",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Mack Trucks, Inc."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1964,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "SAE Technical Paper Series"
+        ],
+        "URL": "https://doi.org/10.4271/640372"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0218348x26500015",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "COMPRESSION RATIO OF FRACTAL SETS"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0654-9550",
+            "authenticated-orcid": false,
+            "given": "JOEL",
+            "family": "RATSABY",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Electrical and Electronics Engineering, Ariel University, Ariel 40700, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Fractals"
+        ],
+        "URL": "https://doi.org/10.1142/s0218348x26500015"
+      },
+      {
+        "DOI": "10.1016/s0041-2678(69)80235-6",
+        "title": [
+          "Variable compression ratio petrol engine"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Tribology"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1016/s0041-2678(69)80235-6"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/embc.2013.6609674",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Compression-ratio-based seizure detection"
+        ],
+        "author": [
+          {
+            "family": "Chung-Lin Sha",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Taehoon Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N. Sertac",
+            "family": "Artan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H. Jonathan",
+            "family": "Chao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 35th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)"
+        ],
+        "URL": "https://doi.org/10.1109/embc.2013.6609674"
+      },
+      {
+        "publisher": "ASTM International",
+        "published-print": {
+          "date-parts": [
+            [
+              1988,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1520/jte11055j",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Generalized Equation for Compression Ratio"
+        ],
+        "author": [
+          {
+            "given": "TS",
+            "family": "Nagaraj",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Indian Institute of Science 1 Professor and Chairman , Department of Civil Engineering, , Bangalore, India ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "RC",
+            "family": "Joshi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Calgary 2 Professor of Civil Engineering , , Calgary, Canada ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "BR",
+            "family": "Srinivasa Murthy",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Indian Institute of Science 3 Assistant Professor , Department of Civil Engineering, , Bangalore, India ."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Testing and Evaluation"
+        ],
+        "URL": "https://doi.org/10.1520/jte11055j"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              4,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/syscon66367.2026.11503522",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File-Size-Aware Heterogeneous Coded TeraSort"
+        ],
+        "author": [
+          {
+            "given": "Haoyun",
+            "family": "Deng",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Lakehead University,Department of Software Engineering,Thunder Bay,Canada"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yong",
+            "family": "Deng",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Lakehead University,Department of Software Engineering,Thunder Bay,Canada"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2026 IEEE International Systems Conference (SysCon)"
+        ],
+        "URL": "https://doi.org/10.1109/syscon66367.2026.11503522"
+      },
+      {
+        "publisher": "Optica Publishing Group",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1364/cosi.2021.cth2f.3",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improving Compression Ratio in CASSI"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Hlubuček",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Lukeš",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Žídek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "OSA Imaging and Applied Optics Congress 2021 (3D, COSI, DH, ISA, pcAOP)"
+        ],
+        "URL": "https://doi.org/10.1364/cosi.2021.cth2f.3"
+      },
+      {
+        "DOI": "10.1017/cbo9780511546105.005",
+        "title": [
+          "Compression Ratio and Shaft Work"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              8,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Mechanical Efficiency of Heat Engines"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511546105.005"
+      },
+      {
+        "publisher": "A K Peters/CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              7,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1201/b12711-9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Optimizing for File Size and Performance"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Game Development for iOS with Unity3D"
+        ],
+        "URL": "https://doi.org/10.1201/b12711-9"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

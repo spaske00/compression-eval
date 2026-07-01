@@ -1,0 +1,5052 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 3225511,
+    "items": [
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129053399000132",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "AN IMPROVED LEMPEL-ZIV ALGORITHM FOR SEQUENTIAL DATA COMPRESSION"
+        ],
+        "author": [
+          {
+            "given": "S. K.",
+            "family": "JENA",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of High Speed Computing"
+        ],
+        "URL": "https://doi.org/10.1142/s0129053399000132"
+      },
+      {
+        "DOI": "10.1017/cbo9780511843204.012",
+        "title": [
+          "Lempel–Ziv'78 Compression Algorithm"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Analytic Pattern Matching"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511843204.012"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.481794",
+        "type": "journal-article",
+        "is-referenced-by-count": 56,
+        "title": [
+          "Simple universal lossy data compression schemes derived from the Lempel-Ziv algorithm"
+        ],
+        "author": [
+          {
+            "family": "En-hui Yang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.C.",
+            "family": "Kieffer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.481794"
+      },
+      {
+        "DOI": "10.1109/dcc.1991.213344",
+        "title": [
+          "An extremely fast Ziv-Lempel data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "R.N.",
+            "family": "Williams",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[1991] Proceedings. Data Compression Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 57,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1991.213344"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              5,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003052098-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Hardware Based Data Compression using Lempel-Ziv-Welch Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Onkar",
+            "family": "Choudhari",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marisha",
+            "family": "Chopade",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sourabh",
+            "family": "Chopde",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vaishali",
+            "family": "Ingle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "ICT for Competitive Strategies"
+        ],
+        "URL": "https://doi.org/10.1201/9781003052098-2"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "DOI": "10.1007/11821069_60",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Lempel-Ziv Dimension for Lempel-Ziv Compression"
+        ],
+        "author": [
+          {
+            "given": "Maria",
+            "family": "Lopez-Valdes",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Mathematical Foundations of Computer Science 2006"
+        ],
+        "URL": "https://doi.org/10.1007/11821069_60"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1109/nelex59773.2023.10421382",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Lossless Telemetric Data Compression using Lempel-Ziv-Markov-Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Siri Chandana",
+            "family": "Gummidela",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sree Madhu Kiran",
+            "family": "Bhupani",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ganga Sridhar",
+            "family": "Ikkurthi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Thanmai Lakshmi",
+            "family": "Bandaru",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hima Deepthi",
+            "family": "Vankayalapati",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 International Conference on Next Generation Electronics (NEleX)"
+        ],
+        "URL": "https://doi.org/10.1109/nelex59773.2023.10421382"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4939-2864-4_634",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Lempel-Ziv Compression"
+        ],
+        "author": [
+          {
+            "given": "Simon J",
+            "family": "Puglisi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              4,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Algorithms"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4939-2864-4_634"
+      },
+      {
+        "DOI": "10.1109/isit.1991.695162",
+        "title": [
+          "An Improvement To The Lempel-Ziv Data Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "P.E.",
+            "family": "Bender",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.K.",
+            "family": "Wolf",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 1991 IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1991.695162"
+      },
+      {
+        "DOI": "10.1109/cmpsac.1989.65102",
+        "title": [
+          "Enhancements to Ziv-Lempel data compression"
+        ],
+        "author": [
+          {
+            "given": "C.",
+            "family": "Rogers",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.D.",
+            "family": "Thomborson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[1989] Proceedings of the Thirteenth Annual International Computer Software &amp; Applications Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 2,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/cmpsac.1989.65102"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-27848-8_634-1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Lempel-Ziv Compression"
+        ],
+        "author": [
+          {
+            "given": "Simon J.",
+            "family": "Puglisi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              5,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Algorithms"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-27848-8_634-1"
+      },
+      {
+        "DOI": "10.1109/comsig.1989.129018",
+        "title": [
+          "An evaluation of the Lempel-Ziv-Welch data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "H.C.",
+            "family": "Kotze",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.J.",
+            "family": "Kuhn",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "COMSIG 1989 Proceedings: Southern African Conference on Communications and Signal Processing"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 4,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/comsig.1989.129018"
+      },
+      {
+        "DOI": "10.1109/dcc.1991.213361",
+        "title": [
+          "Fixed data base version of the Lempel-Ziv data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "A.D.",
+            "family": "Wyner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Ziv",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[1991] Proceedings. Data Compression Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1991.213361"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0166-218x(02)00308-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Redundancy estimates for the Lempel–Ziv algorithm of data compression"
+        ],
+        "author": [
+          {
+            "given": "V.N.",
+            "family": "Potapov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Discrete Applied Mathematics"
+        ],
+        "URL": "https://doi.org/10.1016/s0166-218x(02)00308-6"
+      },
+      {
+        "DOI": "10.1109/telsks.2003.1246280",
+        "title": [
+          "Lossy Lempel-Ziv algorithm for image compression"
+        ],
+        "author": [
+          {
+            "given": "V.",
+            "family": "Crnojevic",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.",
+            "family": "Senk",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Z.",
+            "family": "Trpovski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "6th International Conference on Telecommunications in Modern Satellite, Cable and Broadcasting Service, 2003. TELSIKS 2003."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 5,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/telsks.2003.1246280"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.79955",
+        "type": "journal-article",
+        "is-referenced-by-count": 49,
+        "title": [
+          "Fixed data base version of the Lempel-Ziv data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "A.D.",
+            "family": "Wyner",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "AT&T Bell Lab., Murray Hill, NJ, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Ziv",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.79955"
+      },
+      {
+        "DOI": "10.1109/isit.1991.695163",
+        "title": [
+          "Fixed Data Base Version Of The Lempel-Ziv Data Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "A.W.",
+            "family": "Wyner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Ziv",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 1991 IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1991.695163"
+      },
+      {
+        "DOI": "10.1007/springerreference_57627",
+        "title": [
+          "Dictionary-Based Data Compression, 1977; Ziv, Lempel"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_57627"
+      },
+      {
+        "publisher": "Institute of Advanced Engineering and Science",
+        "DOI": "10.11591/ijres.v10.i2.pp99-108",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "FPGA implementation of Lempel-Ziv data compression"
+        ],
+        "author": [
+          {
+            "given": "Gody",
+            "family": "Mostafa",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Abdelhalim",
+            "family": "Zekry",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hatem",
+            "family": "Zakaria",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Reconfigurable and Embedded Systems (IJRES)"
+        ],
+        "URL": "https://doi.org/10.11591/ijres.v10.i2.pp99-108"
+      },
+      {
+        "DOI": "10.1109/sequen.1997.666910",
+        "title": [
+          "A progressive Ziv-Lempel algorithm for image compression"
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Greene",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Vishwanath",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Yao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Tong Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 2,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/sequen.1997.666910"
+      },
+      {
+        "publisher": "Federal Research Center &quot;Computer Science and Control&quot; of the Russian Academy of Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.14357/19922264150408",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "PERFORMANCE IMPROVEMENT OF LEMPEL-ZIV-WELCH COMPRESSION ALGORITHM"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Informatics and Applications"
+        ],
+        "URL": "https://doi.org/10.14357/19922264150408"
+      },
+      {
+        "DOI": "10.1109/wescan.1991.160551",
+        "title": [
+          "The Lempel-Ziv-Welch (LZW) data compression algorithm for packet radio"
+        ],
+        "author": [
+          {
+            "given": "W.",
+            "family": "Kinsner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "R.H.",
+            "family": "Greenfield",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[Proceedings] WESCANEX '91"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 15,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/wescan.1991.160551"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-8670-2_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Huffman/Lempel-Ziv Compression Methods"
+        ],
+        "author": [
+          {
+            "given": "William J.",
+            "family": "Buchanan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advanced Data Communications and Networks"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-8670-2_3"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/smrlo.2016.108",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Lempel-Ziv-Welch Compression Algorithm with Exponential Decay"
+        ],
+        "author": [
+          {
+            "given": "Sergey",
+            "family": "Frenkel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marina",
+            "family": "Kopeetsky",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Roman",
+            "family": "Molotkovski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 Second International Symposium on Stochastic Models in Reliability Engineering, Life Science and Operations Management (SMRLO)"
+        ],
+        "URL": "https://doi.org/10.1109/smrlo.2016.108"
+      },
+      {
+        "publisher": "Institution of Engineering and Technology",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1049/ic.2013.0364",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Compound image compression using parallel Lempel-Ziv-Welch algorithm"
+        ],
+        "author": [
+          {
+            "given": "G.R.G.",
+            "family": "King",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.S.",
+            "family": "Christopher",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.A.",
+            "family": "Singh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IET Chennai Fourth International Conference on Sustainable Energy and Intelligent Systems (SEISCON 2013)"
+        ],
+        "URL": "https://doi.org/10.1049/ic.2013.0364"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-80350-5_49",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Differential Ziv-Lempel Text Compression"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Fenwick",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "J.UCS The Journal of Universal Computer Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-80350-5_49"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4020-7870-5_13",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Huffman/Lempel-Ziv Compression Methods"
+        ],
+        "author": [
+          {
+            "given": "W. J.",
+            "family": "Buchanan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Handbook of Data Communications and Networks"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4020-7870-5_13"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-0905-6_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Huffman/Lempel-Ziv Compression Methods"
+        ],
+        "author": [
+          {
+            "given": "Bill",
+            "family": "Buchanan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Handbook of Data Communications and Networks"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-0905-6_3"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.79942",
+        "type": "journal-article",
+        "is-referenced-by-count": 28,
+        "title": [
+          "New asymptotic bounds and improvements on the Lempel-Ziv data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "P.E.",
+            "family": "Bender",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Center for Magnetic Recording Res., California Univ., La Jolla, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.K.",
+            "family": "Wolf",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Center for Magnetic Recording Res., California Univ., La Jolla, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.79942"
+      },
+      {
+        "DOI": "10.1109/glocom.1990.116789",
+        "title": [
+          "An improved sliding window data compression algorithm based on the Lempel-Ziv data compression algorithm (magnetic recording)"
+        ],
+        "author": [
+          {
+            "given": "P.E.",
+            "family": "Bender",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.K.",
+            "family": "Wolf",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[Proceedings] GLOBECOM '90: IEEE Global Telecommunications Conference and Exhibition"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 3,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/glocom.1990.116789"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/ceeict.2018.8628148",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Enhancement of LZAP (Lempel Ziv All Prefixes) Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Tarequzzaman Khan",
+            "family": "Tajul",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Saifur Rahman",
+            "family": "Bhuiyan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ahsan",
+            "family": "Habib",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 4th International Conference on Electrical Engineering and Information &amp; Communication Technology (iCEEiCT)"
+        ],
+        "URL": "https://doi.org/10.1109/ceeict.2018.8628148"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              7,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003420415-3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Huffman/Lempel-Ziv Compression Methods"
+        ],
+        "author": [
+          {
+            "given": "W.",
+            "family": "Buchanan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advanced Data Communications and Networks"
+        ],
+        "URL": "https://doi.org/10.1201/9781003420415-3"
+      },
+      {
+        "DOI": "10.1109/mmsp.2004.1436438",
+        "title": [
+          "Generalized lempel-ziv compression for audio"
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Kirovski",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Z.",
+            "family": "Landau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE 6th Workshop on Multimedia Signal Processing, 2004."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 5,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/mmsp.2004.1436438"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/a4030183",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Lempel–Ziv Data Compression on Parallel and Distributed Systems"
+        ],
+        "author": [
+          {
+            "given": "Sergio",
+            "family": "De Agostino",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Computer Science Department, Sapienza University, Via Salaria 113, Rome, Italy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Algorithms"
+        ],
+        "URL": "https://doi.org/10.3390/a4030183"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.108251",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Improved variations relating the Ziv-Lempel and Welch-type algorithms for sequential data compression"
+        ],
+        "author": [
+          {
+            "given": "H.",
+            "family": "Yokoo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.108251"
+      },
+      {
+        "DOI": "10.1109/icce.1996.517274",
+        "title": [
+          "A Novel Architecture for Lempel-Ziv-Based Data Compression"
+        ],
+        "author": [
+          {
+            "family": "Chun-Te Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Liang-Gee Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Conference on Consumer Electronics"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icce.1996.517274"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1006/cbmr.1995.1006",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "ECG Compression Using Ziv-Lempel Techniques"
+        ],
+        "author": [
+          {
+            "given": "R.Nigel",
+            "family": "Horspool",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Warren J.",
+            "family": "Windels",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computers and Biomedical Research"
+        ],
+        "URL": "https://doi.org/10.1006/cbmr.1995.1006"
+      },
+      {
+        "publisher": "Blue Eyes Intelligence Engineering and Sciences Engineering and Sciences Publication - BEIESP",
+        "DOI": "10.35940/ijeat.b3278.129219",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Genomic Sequence Data Compression using Lempel Ziv Welch Algorithm with Indexed Multiple Dictionary"
+        ],
+        "author": [
+          {
+            "name": "Research Scholar, Department of Computer Science, Karpagam Academy of Higher Education, Coimbatore (Tamil Nadu) India.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Keerthy A.",
+            "family": "S.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S. Manju",
+            "family": "Priya",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Professor, Department of CS, CA & IT, Karpagam Academy of Higher Education, Coimbatore (Tamil Nadu) India.",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              12,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Engineering and Advanced Technology"
+        ],
+        "URL": "https://doi.org/10.35940/ijeat.b3278.129219"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/ecace.2017.7913022",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Bangla text compression based on modified Lempel-Ziv-Welch algorithm"
+        ],
+        "author": [
+          {
+            "given": "Linkon",
+            "family": "Barua",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pranab Kumar",
+            "family": "Dhar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lamia",
+            "family": "Alam",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Isao",
+            "family": "Echizen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 International Conference on Electrical, Computer and Communication Engineering (ECCE)"
+        ],
+        "URL": "https://doi.org/10.1109/ecace.2017.7913022"
+      },
+      {
+        "DOI": "10.1109/dcc.2004.1281456",
+        "title": [
+          "Lempel-Ziv compression of structured text"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Adiego",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.",
+            "family": "Navarro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "de la Fuente",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Data Compression Conference, 2004. Proceedings. DCC 2004"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 15,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.2004.1281456"
+      },
+      {
+        "publisher": "Atlantis Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.2991/978-94-6239-033-1_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Bit-Complexity of Lempel-Ziv Compression"
+        ],
+        "author": [
+          {
+            "given": "Rossano",
+            "family": "Venturini",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Atlantis Studies in Computing",
+          "Compressed Data Structures for Strings"
+        ],
+        "URL": "https://doi.org/10.2991/978-94-6239-033-1_4"
+      },
+      {
+        "DOI": "10.1109/apccas.1998.743927",
+        "title": [
+          "A novel VLSI design for Ziv-Lempel data compression"
+        ],
+        "author": [
+          {
+            "family": "Jin-Ming Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Che-Ho Wei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE. APCCAS 1998. 1998 IEEE Asia-Pacific Conference on Circuits and Systems. Microelectronics and Integrating Systems. Proceedings (Cat. No.98EX242)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/apccas.1998.743927"
+      },
+      {
+        "publisher": "Tech Science Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.32604/cmc.2021.018636",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "An Optimal Lempel Ziv Markov Based Microarray Image Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Sowmyalakshmi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohamed",
+            "family": "Ibrahim Waly",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohamed",
+            "family": "Yacin Sikkandar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Jayasankar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sayed",
+            "family": "Sayeed Ahmad",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rashmi",
+            "family": "Rani",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Suresh",
+            "family": "Chavhan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computers, Materials &amp; Continua"
+        ],
+        "URL": "https://doi.org/10.32604/cmc.2021.018636"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/ccp.2011.11",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Lempel-Ziv Data Compression on Parallel and Distributed Systems"
+        ],
+        "author": [
+          {
+            "given": "Sergio",
+            "family": "De Agostino",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 First International Conference on Data Compression, Communications and Processing"
+        ],
+        "URL": "https://doi.org/10.1109/ccp.2011.11"
+      },
+      {
+        "publisher": "Springer India",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-81-8489-989-4_51",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Implementation of Lempel-ZIV algorithm for lossless compression using VHDL"
+        ],
+        "author": [
+          {
+            "given": "Minaldevi K.",
+            "family": "Tank",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Thinkquest~2010"
+        ],
+        "URL": "https://doi.org/10.1007/978-81-8489-989-4_51"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/tasl.2006.881687",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Generalized Lempel–Ziv Compression for Audio"
+        ],
+        "author": [
+          {
+            "given": "Darko",
+            "family": "Kirovski",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zeph",
+            "family": "Landau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Audio, Speech and Language Processing"
+        ],
+        "URL": "https://doi.org/10.1109/tasl.2006.881687"
+      },
+      {
+        "DOI": "10.1109/isit.1991.695164",
+        "title": [
+          "Double-tree Lempel-Ziv Algorithm"
+        ],
+        "author": [
+          {
+            "given": "W.A.",
+            "family": "Finamore",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 1991 IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1991.695164"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/ijca2021921008",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Design and Implementation of Lempel-Ziv Data Compression using FPGA"
+        ],
+        "author": [
+          {
+            "given": "Gehad",
+            "family": "Mohey",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Abdelhalim",
+            "family": "Zekry",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hatem",
+            "family": "Zakaria",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/ijca2021921008"
+      },
+      {
+        "DOI": "10.1109/iscas.2000.857523",
+        "title": [
+          "A novel VLSI architecture for Lempel-Ziv based data compression"
+        ],
+        "author": [
+          {
+            "family": "Yeong-Kang Lai",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Kuo-Chen Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2000 IEEE International Symposium on Circuits and Systems. Emerging Technologies for the 21st Century. Proceedings (IEEE Cat No.00CH36353)"
+        ],
+        "publisher": "Presses Polytech. Univ. Romandes",
+        "is-referenced-by-count": 2,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.2000.857523"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1993
+            ]
+          ]
+        },
+        "DOI": "10.1109/82.219839",
+        "type": "journal-article",
+        "is-referenced-by-count": 51,
+        "title": [
+          "High-speed VLSI designs for Lempel-Ziv-based data compression"
+        ],
+        "author": [
+          {
+            "given": "N.",
+            "family": "Ranganathan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Henriques",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Circuits and Systems II: Analog and Digital Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/82.219839"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1977,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.1977.1055714",
+        "type": "journal-article",
+        "is-referenced-by-count": 3676,
+        "title": [
+          "A universal algorithm for sequential data compression"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Ziv",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Lempel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.1977.1055714"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/jcn.2019.000021",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Error detection algorithm for Lempel-Ziv-77 compressed data"
+        ],
+        "author": [
+          {
+            "given": "Beom",
+            "family": "Kwon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sanghoon",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Communications and Networks"
+        ],
+        "URL": "https://doi.org/10.1109/jcn.2019.000021"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              11,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/sips62058.2024.00033",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "A High-Throughput Hardware Accelerator for Lempel-Ziv 4 Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Tao",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Electronic Science and Engineering, Nanjing University,Nanjing,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Suwen",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Integrated Circuits, Sun Yat-sen University,Shenzhen,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhongfeng",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electronic Science and Engineering, Nanjing University,Nanjing,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 IEEE Workshop on Signal Processing Systems (SiPS)"
+        ],
+        "URL": "https://doi.org/10.1109/sips62058.2024.00033"
+      },
+      {
+        "DOI": "10.1109/icc.1988.13597",
+        "title": [
+          "Variations on a theme by Ziv and Lempel (data compression)"
+        ],
+        "author": [
+          {
+            "given": "V.S.",
+            "family": "Miller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.N.",
+            "family": "Wegman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE International Conference on Communications, - Spanning the Universe."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icc.1988.13597"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              2,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1002/asi.20496",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Lempel‐Ziv compression of highly structured documents"
+        ],
+        "author": [
+          {
+            "given": "Joaquín",
+            "family": "Adiego",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gonzalo",
+            "family": "Navarro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pablo de la",
+            "family": "Fuente",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              1,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the American Society for Information Science and Technology"
+        ],
+        "URL": "https://doi.org/10.1002/asi.20496"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1109/30.920434",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "A statistical Lempel-Ziv compression algorithm for personal digital assistant (PDA)"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Kwong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Y.F.",
+            "family": "Ho",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Consumer Electronics"
+        ],
+        "URL": "https://doi.org/10.1109/30.920434"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-59212-7_7",
+        "type": "book-chapter",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Relative Lempel-Ziv Compression of Suffix Arrays"
+        ],
+        "author": [
+          {
+            "given": "Simon J.",
+            "family": "Puglisi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bella",
+            "family": "Zhukova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              9,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "String Processing and Information Retrieval"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-59212-7_7"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/92.711318",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Efficient VLSI for Lempel-Ziv compression in wireless data communication networks"
+        ],
+        "author": [
+          {
+            "family": "Bongjin Jung",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.P.",
+            "family": "Burleson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Very Large Scale Integration (VLSI) Systems"
+        ],
+        "URL": "https://doi.org/10.1109/92.711318"
+      },
+      {
+        "publisher": "UIR Press",
+        "DOI": "10.25299/itjrd.2023.10437",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Comparison of Huffman Algorithm and Lempel Ziv Welch Algorithm in Text File Compression"
+        ],
+        "author": [
+          {
+            "given": "Mohamad Nurkamal",
+            "family": "Fauzan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Muhammad",
+            "family": "Alif",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Cahyo",
+            "family": "Prianto3",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "IT Journal Research and Development"
+        ],
+        "URL": "https://doi.org/10.25299/itjrd.2023.10437"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              3,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.590665",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Secure Lempel-Ziv compression with embedded encryption"
+        ],
+        "author": [
+          {
+            "given": "Dahua",
+            "family": "Xie",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.-C. J.",
+            "family": "Kuo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Security, Steganography, and Watermarking of Multimedia Contents VII"
+        ],
+        "URL": "https://doi.org/10.1117/12.590665"
+      },
+      {
+        "DOI": "10.1109/isit.1997.613099",
+        "title": [
+          "Fixed-normal lossy Lempel-Ziv algorithm"
+        ],
+        "author": [
+          {
+            "given": "W.A.",
+            "family": "Finamore",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.S.",
+            "family": "Pinho",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1997.613099"
+      },
+      {
+        "DOI": "10.35940/ijitee.i1092.0789s19",
+        "title": [
+          "Intensification of Lempel-ZIV-Welch Algorithm"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              8,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Innovative Technology and Exploring Engineering"
+        ],
+        "publisher": "Blue Eyes Intelligence Engineering and Sciences Engineering and Sciences Publication - BEIESP",
+        "is-referenced-by-count": 2,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.35940/ijitee.i1092.0789s19"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-05197-5_19",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "On the Suitability of Suffix Arrays for Lempel-Ziv Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Artur J.",
+            "family": "Ferreira",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Arlindo L.",
+            "family": "Oliveira",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mário A. T.",
+            "family": "Figueiredo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Communications in Computer and Information Science",
+          "e-Business and Telecommunications"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-05197-5_19"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1002/(sici)1520-6432(199908)82:8<17::aid-ecjb3>3.0.co;2-x",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A PostScript printer controller embedded with Lempel-Ziv data compression function"
+        ],
+        "author": [
+          {
+            "given": "Akashi",
+            "family": "Satoh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Makoto",
+            "family": "Ueda",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tsuyoshi",
+            "family": "Satoh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Electronics and Communications in Japan (Part II: Electronics)"
+        ],
+        "URL": "https://doi.org/10.1002/(sici)1520-6432(199908)82:8<17::aid-ecjb3>3.0.co;2-x"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/hnicem.2015.7393210",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "Comparison of Huffman Algorithm and Lempel-Ziv Algorithm for audio, image and text compression"
+        ],
+        "author": [
+          {
+            "given": "Rhen Anjerome",
+            "family": "Bedruz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ana Riza F.",
+            "family": "Quiros",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 International Conference on Humanoid, Nanotechnology, Information Technology,Communication and Control, Environment and Management (HNICEM)"
+        ],
+        "URL": "https://doi.org/10.1109/hnicem.2015.7393210"
+      },
+      {
+        "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1137/120869511",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "On the Bit-Complexity of Lempel--Ziv Compression"
+        ],
+        "author": [
+          {
+            "given": "Paolo",
+            "family": "Ferragina",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Igor",
+            "family": "Nitto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rossano",
+            "family": "Venturini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SIAM Journal on Computing"
+        ],
+        "URL": "https://doi.org/10.1137/120869511"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1002/(sici)1520-6432(199908)82:8<17::aid-ecjb3>3.3.co;2-o",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A PostScript printer controller embedded with Lempel–Ziv data compression function"
+        ],
+        "author": [
+          {
+            "given": "Akashi",
+            "family": "Satoh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Makoto",
+            "family": "Ueda",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tsuyoshi",
+            "family": "Satoh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Electronics and Communications in Japan (Part II: Electronics)"
+        ],
+        "URL": "https://doi.org/10.1002/(sici)1520-6432(199908)82:8<17::aid-ecjb3>3.3.co;2-o"
+      },
+      {
+        "DOI": "10.1109/iscas.1994.409103",
+        "title": [
+          "A VLSI systolic array architecture for Lempel-Ziv-based data compression"
+        ],
+        "author": [
+          {
+            "family": "Bongjin Jung",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.",
+            "family": "Burleson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of IEEE International Symposium on Circuits and Systems - ISCAS '94"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 7,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.1994.409103"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.bspc.2024.107372",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "EOG compression in polysomnographic recordings based on the Lempel-Ziv-Welch algorithm"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3572-7632",
+            "authenticated-orcid": false,
+            "given": "Alberto",
+            "family": "López",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-0920-3099",
+            "authenticated-orcid": false,
+            "given": "Gonzalo",
+            "family": "García",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4268-3482",
+            "authenticated-orcid": false,
+            "given": "Saeed Mian",
+            "family": "Qaisar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3551-8160",
+            "authenticated-orcid": false,
+            "given": "Francisco",
+            "family": "Ferrero",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Juan Carlos",
+            "family": "Álvarez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biomedical Signal Processing and Control"
+        ],
+        "URL": "https://doi.org/10.1016/j.bspc.2024.107372"
+      },
+      {
+        "DOI": "10.1109/sequen.1997.666909",
+        "title": [
+          "A universal upper bound on the performance of the Lempel-Ziv algorithm on maliciously-constructed data"
+        ],
+        "author": [
+          {
+            "given": "J.I.",
+            "family": "Lathrop",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Strauss",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 3,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/sequen.1997.666909"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/icica.2014.64",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Behavioral Study of Data Structures on Lempel Ziv Welch (LZW) Data Compression Algorithm and ITS Computational Complexity"
+        ],
+        "author": [
+          {
+            "given": "Nishad",
+            "family": "PM.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. Manika",
+            "family": "Chezian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 International Conference on Intelligent Computing Applications"
+        ],
+        "URL": "https://doi.org/10.1109/icica.2014.64"
+      },
+      {
+        "publisher": "Science Alert",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              5,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.3923/itj.2010.673.679",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Dynamic and Secure Arabic Text Compression Technique Using Bitwise Lempel-Ziv Algorithm"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Musa",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Al-Dmour",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Fraij",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "O.",
+            "family": "Al-Khaleel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Irshid",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Technology Journal"
+        ],
+        "URL": "https://doi.org/10.3923/itj.2010.673.679"
+      },
+      {
+        "publisher": "Society for Industrial and Applied Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              1,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1137/1.9781611973068.84",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "On the bit-complexity of Lempel-Ziv compression"
+        ],
+        "author": [
+          {
+            "given": "Paolo",
+            "family": "Ferragina",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Igor",
+            "family": "Nitto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rossano",
+            "family": "Venturini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the Twentieth Annual ACM-SIAM Symposium on Discrete Algorithms"
+        ],
+        "URL": "https://doi.org/10.1137/1.9781611973068.84"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2008.4595135",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Enumerative implementation of Lempel-Ziv 77 algorithm"
+        ],
+        "author": [
+          {
+            "family": "Tsutomu Kawabata",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 IEEE International Symposium on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2008.4595135"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ic.2007.03.001",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Fast gapped variants for Lempel–Ziv–Welch compression"
+        ],
+        "author": [
+          {
+            "given": "Alberto",
+            "family": "Apostolico",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information and Computation"
+        ],
+        "URL": "https://doi.org/10.1016/j.ic.2007.03.001"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00224-010-9267-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Polylog Space Compression, Pushdown Compression, and Lempel-Ziv Are Incomparable"
+        ],
+        "author": [
+          {
+            "given": "Elvira",
+            "family": "Mayordomo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Philippe",
+            "family": "Moser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sylvain",
+            "family": "Perifel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              5,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Theory of Computing Systems"
+        ],
+        "URL": "https://doi.org/10.1007/s00224-010-9267-6"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1002/ecjb.4420780707",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Lempel‐Ziv‐type high‐speed data compression circuit using content addressable memory"
+        ],
+        "author": [
+          {
+            "given": "Akashi",
+            "family": "Satoh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hideto",
+            "family": "Niijima",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              3,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Electronics and Communications in Japan (Part II: Electronics)"
+        ],
+        "URL": "https://doi.org/10.1002/ecjb.4420780707"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1002/spe.4380230705",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Longest‐match string searching for ziv‐lempel compression"
+        ],
+        "author": [
+          {
+            "given": "Timothy",
+            "family": "Bell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Kulp",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              10,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Software: Practice and Experience"
+        ],
+        "URL": "https://doi.org/10.1002/spe.4380230705"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/embc.2015.7319310",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 26,
+        "title": [
+          "Lempel-Ziv and multiscale Lempel-Ziv complexity in depression"
+        ],
+        "author": [
+          {
+            "given": "K.",
+            "family": "Kalev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Bachmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Orgo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Lass",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H.",
+            "family": "Hinrikus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)"
+        ],
+        "URL": "https://doi.org/10.1109/embc.2015.7319310"
+      },
+      {
+        "publisher": "Trans Tech Publications, Ltd.",
+        "DOI": "10.4028/www.scientific.net/amm.626.44",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "A Novel Compression Technique for Compound Images Using Parallel Lempel-Ziv-Welch Algorithm"
+        ],
+        "author": [
+          {
+            "given": "G.R. Gnana",
+            "family": "King",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "CSI Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C. Christopher",
+            "family": "Seldev",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "St. Xavier’s Catholic College of Engineering"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N. Albert",
+            "family": "Singh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Bharat Sanchar Nigam Limitted Nagercoil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Applied Mechanics and Materials"
+        ],
+        "URL": "https://doi.org/10.4028/www.scientific.net/amm.626.44"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/icprime.2013.6496521",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Huffman and Lempel-Ziv based data compression algorithms for wireless sensor networks"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Renugadevi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "P. S.",
+            "family": "Nithya Darisini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 International Conference on Pattern Recognition, Informatics and Mobile Engineering"
+        ],
+        "URL": "https://doi.org/10.1109/icprime.2013.6496521"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/dasa63652.2024.10836416",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Huffman Tree Compression and Lempel-Ziv Coding Using Java"
+        ],
+        "author": [
+          {
+            "given": "Hilal H.",
+            "family": "Nuha",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Computing, Telkom University,Bandung,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hassan",
+            "family": "Rizky Putra Sailellah",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computing, Telkom University,Bandung,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ahmed",
+            "family": "Abo Absa",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Palestine,Software Engineering,Gaza Strip,Palestine"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 International Conference on Decision Aid Sciences and Applications (DASA)"
+        ],
+        "URL": "https://doi.org/10.1109/dasa63652.2024.10836416"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              11,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1145/2682862.2682866",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Blended Dictionaries for Reduced-Memory Lempel-Ziv Corpus Compression"
+        ],
+        "author": [
+          {
+            "given": "Jiancong",
+            "family": "Tong",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "College of Computer and Control Engineering, Nankai University, China and Department of Computing and Information Systems, The University of Melbourne, Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anthony",
+            "family": "Wirth",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computing and Information Systems, The University of Melbourne, Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Justin",
+            "family": "Zobel",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computing and Information Systems, The University of Melbourne, Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              11,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 2014 Australasian Document Computing Symposium"
+        ],
+        "URL": "https://doi.org/10.1145/2682862.2682866"
+      },
+      {
+        "DOI": "10.1109/icip.1996.559474",
+        "title": [
+          "Lossy Lempel-Ziv algorithm for large alphabet sources and applications to image compression"
+        ],
+        "author": [
+          {
+            "given": "W.A.",
+            "family": "Finamore",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "de A. Leister",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 3rd IEEE International Conference on Image Processing"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 3,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icip.1996.559474"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.165463",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "The Lempel-Ziv algorithm and message complexity"
+        ],
+        "author": [
+          {
+            "given": "E.N.",
+            "family": "Gilbert",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.T.",
+            "family": "Kadota",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.165463"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/istc.2014.6955106",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "DNA inspired bi-directional Lempel-Ziv-like compression algorithms"
+        ],
+        "author": [
+          {
+            "given": "Attiya",
+            "family": "Mahmood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nazia",
+            "family": "Islam",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dawit",
+            "family": "Nigatu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Werner",
+            "family": "Henkel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 8th International Symposium on Turbo Codes and Iterative Information Processing (ISTC)"
+        ],
+        "URL": "https://doi.org/10.1109/istc.2014.6955106"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-48452-3_15",
+        "type": "book-chapter",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Ziv Lempel Compression of Huge Natural Language Data Tries Using Suffix Arrays"
+        ],
+        "author": [
+          {
+            "given": "Strahil",
+            "family": "Ristov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eric",
+            "family": "Laporte",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1999,
+              7,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Combinatorial Pattern Matching"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-48452-3_15"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-67428-5_16",
+        "type": "book-chapter",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Practical Evaluation of Lempel-Ziv-78 and Lempel-Ziv-Welch Tries"
+        ],
+        "author": [
+          {
+            "given": "Johannes",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dominik",
+            "family": "Köppl",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "String Processing and Information Retrieval"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-67428-5_16"
+      },
+      {
+        "DOI": "10.1109/iscas.1993.693058",
+        "title": [
+          "A single chip lempel-Ziv data compressor"
+        ],
+        "author": [
+          {
+            "given": "B.W.Y.",
+            "family": "Wei",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Tarver",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jong-Seop Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Ng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1993 IEEE International Symposium on Circuits and Systems"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 7,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.1993.693058"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/allerton.2011.6120380",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Lossy Lempel-Ziv like compression algorithms for memoryless sources"
+        ],
+        "author": [
+          {
+            "given": "Narayana Prasad",
+            "family": "Santhanam",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dharmendra",
+            "family": "Modha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 49th Annual Allerton Conference on Communication, Control, and Computing (Allerton)"
+        ],
+        "URL": "https://doi.org/10.1109/allerton.2011.6120380"
+      },
+      {
+        "publisher": "Progress IPS",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.7813/2075-4124.2012/4-4/a.17",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "On the pherases in Lempel-Ziv parsing algorithm"
+        ],
+        "author": [
+          {
+            "given": "Ramin",
+            "family": "Kazemi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Academic Research"
+        ],
+        "URL": "https://doi.org/10.7813/2075-4124.2012/4-4/a.17"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-41968-3_30",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "EEG Data Similarity Using Lempel–Ziv Complexity"
+        ],
+        "author": [
+          {
+            "given": "Ibrahim Salem",
+            "family": "Jahan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michal",
+            "family": "Prilepok",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vaclav",
+            "family": "Snasel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Electrical Engineering",
+          "AETA 2013: Recent Advances in Electrical Engineering and Related Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-41968-3_30"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              3,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.23919/gemic64734.2025.10979136",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Combining Run-Length Encoding Preprocessing With Lempel-Ziv-Markov Algorithm to Enhance Compression for Automotive Radar Data"
+        ],
+        "author": [
+          {
+            "given": "Rainer",
+            "family": "Rückert",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Friedrich-Alexander-Universit&#x00E4;t Erlangen-N&#x00FC;rnberg,Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christian",
+            "family": "Herglotz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Brandenburgische Technische Universit&#x00E4;t Cottbus-Senftenberg,Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Oliver",
+            "family": "Sura",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Friedrich-Alexander-Universit&#x00E4;t Erlangen-N&#x00FC;rnberg,Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Youliy",
+            "family": "Ninov",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "GPP Communication GmbH &#x0026; Co. KG,Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "André",
+            "family": "Kaup",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Friedrich-Alexander-Universit&#x00E4;t Erlangen-N&#x00FC;rnberg,Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Martin",
+            "family": "Vossiek",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Friedrich-Alexander-Universit&#x00E4;t Erlangen-N&#x00FC;rnberg,Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2025 16th German Microwave Conference (GeMiC)"
+        ],
+        "URL": "https://doi.org/10.23919/gemic64734.2025.10979136"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-540-95891-8_56",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Polylog Space Compression Is Incomparable with Lempel-Ziv and Pushdown Compression"
+        ],
+        "author": [
+          {
+            "given": "Elvira",
+            "family": "Mayordomo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Philippe",
+            "family": "Moser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "SOFSEM 2009: Theory and Practice of Computer Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-540-95891-8_56"
+      },
+      {
+        "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1137/s0097539797331105",
+        "type": "journal-article",
+        "is-referenced-by-count": 68,
+        "title": [
+          "Compression of Low Entropy Strings with Lempel--Ziv Algorithms"
+        ],
+        "author": [
+          {
+            "given": "S. Rao",
+            "family": "Kosaraju",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Giovanni",
+            "family": "Manzini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SIAM Journal on Computing"
+        ],
+        "URL": "https://doi.org/10.1137/s0097539797331105"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/uemcon59035.2023.10316147",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Quantifying Repetition in Symbolic Music using Lempel-Ziv Compression"
+        ],
+        "author": [
+          {
+            "given": "Anton",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Sidwell Friends School,Washington,D.C.,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ross",
+            "family": "Greer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California,Department of Electrical &#x0026; Computer Engineering,San Diego,La Jolla,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE 14th Annual Ubiquitous Computing, Electronics &amp; Mobile Communication Conference (UEMCON)"
+        ],
+        "URL": "https://doi.org/10.1109/uemcon59035.2023.10316147"
+      },
+      {
+        "DOI": "10.1109/isit.1997.612984",
+        "title": [
+          "Lossless volume compression using a variation of Lempel-Ziv '77"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Chow",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Berger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1997.612984"
+      },
+      {
+        "DOI": "10.1109/iscas.1993.394133",
+        "title": [
+          "A single chip Lempel-Ziv data compressor"
+        ],
+        "author": [
+          {
+            "given": "B.W.Y.",
+            "family": "Wei",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Tarver",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.-S.",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Ng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1993 IEEE International Symposium on Circuits and Systems"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 4,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.1993.394133"
+      },
+      {
+        "publisher": "Sociedad Brasileira de Telecomunicacoes",
+        "DOI": "10.14209/jcis.2001.7",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Lempel-Ziv Encoders"
+        ],
+        "author": [
+          {
+            "given": "M.S.",
+            "family": "Pinho",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.A.",
+            "family": "Finamore",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2001,
+              6,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Communication and Information Systems"
+        ],
+        "URL": "https://doi.org/10.14209/jcis.2001.7"
+      },
+      {
+        "publisher": "International Journal of Advance Engineering and Research Development (IJAERD)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              5,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.21090/ijaerd.0105100",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Reducing Text Fat with Lempel-ziv-welch Algorithm"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              5,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Advance Engineering and Research Development"
+        ],
+        "URL": "https://doi.org/10.21090/ijaerd.0105100"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

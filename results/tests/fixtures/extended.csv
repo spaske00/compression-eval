@@ -1,0 +1,5 @@
+Filename,Compressor name,Compression speed,Decompression speed,Original size,Compressed size,Ratio,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation,Byte-Entropy,Byte-Chi-Square,Byte-Monte-Carlo-Pi,Byte-Serial-Correlation,Conditional-Entropy,Bigram-Entropy,Lempel-Ziv-Complexity,File-Size-Bytes,Section-Format,Section-Size-Ratios,Section-Entropies
+hello-gcc-linux-x64-O2/file1,zstd,100,200,1048576,524288,2,0.80,1000000,127,3.14,0.10,7.1,2000000,3.13,0.05,6.2,12.4,1234,1048576,json,"{}","{}"
+hello-clang-linux-x64-O3/file2,zstd,110,220,2097152,1048576,2,0.82,1200000,128,3.15,0.12,7.2,2200000,3.14,0.06,6.3,12.6,1300,2097152,json,"{}","{}"
+hello-graalvm-linux-x64-O2/file3,zstd,80,180,3145728,1572864,2,0.84,1400000,126,3.12,0.08,7.3,2400000,3.15,0.07,6.4,12.8,1400,3145728,json,"{}","{}"
+hello-dotnet-linux-x64-release/file4,zstd,90,190,4194304,2097152,2,0.86,1600000,129,3.16,0.14,7.4,2600000,3.16,0.08,6.5,13.0,1500,4194304,json,"{}","{}"

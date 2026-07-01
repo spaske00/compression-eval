@@ -1,0 +1,6264 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 1805535,
+    "items": [
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1167/jov.26.3.6",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The effect of sequence stability on serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Elín Kara",
+            "family": "Celin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, School of Health Sciences, University of Iceland, Reykjavík, Iceland"
+              },
+              {
+                "name": "ekc3@hi.is"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sabrina",
+            "family": "Hansmann-Roth",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, School of Health Sciences, University of Iceland, Reykjavík, Iceland"
+              },
+              {
+                "name": "Icelandic Vision Lab, University of Iceland, Reykjavík, Iceland"
+              },
+              {
+                "name": "sabrina@hi.is"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.26.3.6"
+      },
+      {
+        "DOI": "10.31234/osf.io/emw73_v1",
+        "title": [
+          "The role of sequence stability on serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Elín Kara",
+            "family": "Celin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2606-9095",
+            "authenticated-orcid": true,
+            "given": "Sabrina",
+            "family": "Hansmann-Roth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/emw73_v1"
+      },
+      {
+        "DOI": "10.31234/osf.io/emw73_v2",
+        "title": [
+          "The role of sequence stability on serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Elín Kara",
+            "family": "Celin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2606-9095",
+            "authenticated-orcid": true,
+            "given": "Sabrina",
+            "family": "Hansmann-Roth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/emw73_v2"
+      },
+      {
+        "publisher": "IGI Global",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.4018/978-1-7998-6643-5.ch023",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Using Mutual Information to Analyse Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Andreia",
+            "family": "Dionísio",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "CEFAGE, IIFA, Universidade de Évora, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Paulo",
+            "family": "Ferreira",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Polytechnic Institute of Portalegre, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advances in Finance, Accounting, and Economics",
+          "Handbook of Research on Financial Management During Economic Downturn and Recovery"
+        ],
+        "URL": "https://doi.org/10.4018/978-1-7998-6643-5.ch023"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.2202/1558-3708.1044",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Information-Theoretic Analysis of Serial Dependence and Cointegration"
+        ],
+        "author": [
+          {
+            "given": "F. M.",
+            "family": "Aparicio",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Escribano",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Studies in Nonlinear Dynamics &amp; Econometrics"
+        ],
+        "URL": "https://doi.org/10.2202/1558-3708.1044"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781118445112.stat03530",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "O. D.",
+            "family": "Anderson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Wiley StatsRef: Statistics Reference Online"
+        ],
+        "URL": "https://doi.org/10.1002/9781118445112.stat03530"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/0471667196.ess2408",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "O. D.",
+            "family": "Anderson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              10,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess2408"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/0471667196.ess2408.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "O. D.",
+            "family": "Anderson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess2408.pub2"
+      },
+      {
+        "publisher": "Palgrave Macmillan UK",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.1057/978-1-349-95189-5_2157",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Correlation and Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Yongmiao",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              2,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "The New Palgrave Dictionary of Economics"
+        ],
+        "URL": "https://doi.org/10.1057/978-1-349-95189-5_2157"
+      },
+      {
+        "DOI": "10.1057/9780230226203.1514",
+        "title": [
+          "serial correlation and serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Yongmiao",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The New Palgrave Dictionary of Economics"
+        ],
+        "publisher": "Nature Publishing Group",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1057/9780230226203.1514"
+      },
+      {
+        "publisher": "Palgrave Macmillan UK",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-349-58802-2_1511",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Correlation and Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Yongmiao",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "The New Palgrave Dictionary of Economics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-349-58802-2_1511"
+      },
+      {
+        "DOI": "10.1057/9781137336583.1629",
+        "title": [
+          "Serial Correlation and Serial Dependence"
+        ],
+        "container-title": [
+          "The New Palgrave Dictionary of Economics, 2012 Version"
+        ],
+        "publisher": "Palgrave Macmillan",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1057/9781137336583.1629"
+      },
+      {
+        "publisher": "Palgrave Macmillan UK",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.1057/9780230280830_25",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Serial correlation and serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Yongmiao",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Macroeconometrics and Time Series Analysis"
+        ],
+        "URL": "https://doi.org/10.1057/9780230280830_25"
+      },
+      {
+        "publisher": "Palgrave Macmillan UK",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1057/978-1-349-95121-5_2157-1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Correlation and Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Yongmiao",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              12,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "The New Palgrave Dictionary of Economics"
+        ],
+        "URL": "https://doi.org/10.1057/978-1-349-95121-5_2157-1"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.20.11.705",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Context information supports serial dependence of multiple visual objects"
+        ],
+        "author": [
+          {
+            "given": "Cora",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Stefan",
+            "family": "Czoschke",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Peters",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              },
+              {
+                "name": "Zuckerman Mind Brain Behavior Institute, Columbia University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Rahm",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Medical Psychology and Medical Sociology, Faculty of Medicine, Albert-Ludwigs-University Freiburg"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jochen",
+            "family": "Kaiser",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christoph",
+            "family": "Bledowski",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              10,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.20.11.705"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1167/18.10.677",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Contextual information of a memory episode influences serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Cora",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Stefan",
+            "family": "Czoschke",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Peters",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Rahm",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Medical Psychology, Albert-Ludwigs University Freiburg"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jochen",
+            "family": "Kaiser",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christoph",
+            "family": "Bledowski",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Medical Psychology, Goethe University Frankfurt"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/18.10.677"
+      },
+      {
+        "publisher": "EDP Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02899496",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Dependence of mutual information of big protein sequence"
+        ],
+        "author": [
+          {
+            "given": "Shi",
+            "family": "Feng",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Huang",
+            "family": "Jing",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Li",
+            "family": "Yuan-xiang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhou",
+            "family": "Huai-bei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Wuhan University Journal of Natural Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/bf02899496"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1080/15140326.2002.12040580",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Asymmetric Reaction to Information and Serial Dependence of Short-Run Returns"
+        ],
+        "author": [
+          {
+            "given": "Pablo",
+            "family": "Marshall",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Pontificia Universidad Católica de Chile"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eduardo",
+            "family": "Walker",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Pontificia Universidad Católica de Chile"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Applied Economics"
+        ],
+        "URL": "https://doi.org/10.1080/15140326.2002.12040580"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/19.10.134b",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial dependence requires retrieval of relevant information from the previous trial"
+        ],
+        "author": [
+          {
+            "given": "Giyeul",
+            "family": "Bae",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of California, Davis"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Steven J.",
+            "family": "Luck",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California, Davis"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/19.10.134b"
+      },
+      {
+        "publisher": "Annual Reviews",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              18
+            ]
+          ]
+        },
+        "DOI": "10.1146/annurev-psych-021523-104939",
+        "type": "journal-article",
+        "is-referenced-by-count": 113,
+        "title": [
+          "Serial Dependence in Perception"
+        ],
+        "author": [
+          {
+            "given": "Guido Marco",
+            "family": "Cicchini",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Neuroscience, National Research Council (CNR), Pisa, Italy;"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kyriaki",
+            "family": "Mikellidou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Management, University of Limassol, Nicosia, Cyprus;"
+              },
+              {
+                "name": "Department of Neurosciences, Psychology, Drug Research and Child Health, University of Florence, Florence, Italy;"
+              },
+              {
+                "name": "Department of Psychology, University of Cyprus, Nicosia, Cyprus"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David Charles",
+            "family": "Burr",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Neurosciences, Psychology, Drug Research and Child Health, University of Florence, Florence, Italy;"
+              },
+              {
+                "name": "School of Psychology, University of Sydney, Sydney, New South Wales, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Annual Review of Psychology"
+        ],
+        "URL": "https://doi.org/10.1146/annurev-psych-021523-104939"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-8688-7_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Detecting Nonlinear Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Douglas M.",
+            "family": "Patterson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Richard A.",
+            "family": "Ashley",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Dynamic Modeling and Econometrics in Economics and Finance",
+          "A Nonlinear Time Series Workshop"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-8688-7_2"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.25.9.1784",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Cross-modal serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Adam",
+            "family": "Zaidel",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Bar-Ilan University, Ramat Gan, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Baolin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shaanxi Normal University, Xi’an, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Biyao",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shaanxi Normal University, Xi’an, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yael",
+            "family": "Shamir-Bercovich",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Bar-Ilan University, Ramat Gan, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Menashe",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Bar-Ilan University, Ramat Gan, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shir",
+            "family": "Shalom-Sperber",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Bar-Ilan University, Ramat Gan, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aihua",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "East China Normal University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.25.9.1784"
+      },
+      {
+        "publisher": "American Psychological Association (APA)",
+        "DOI": "10.1037/a0022959",
+        "type": "journal-article",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Integration of temporal and ordinal information during serial interception sequence learning."
+        ],
+        "author": [
+          {
+            "given": "Eric W.",
+            "family": "Gobel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daniel J.",
+            "family": "Sanchez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Paul J.",
+            "family": "Reber",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Experimental Psychology: Learning, Memory, and Cognition"
+        ],
+        "URL": "https://doi.org/10.1037/a0022959"
+      },
+      {
+        "publisher": "Society for Neuroscience",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1523/jneurosci.2399-23.2024",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Integration of history information Drives Serial Dependence and Stabilizes Working Memory Representations"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3219-9221",
+            "authenticated-orcid": false,
+            "given": "Ziyao",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9918-465X",
+            "authenticated-orcid": false,
+            "given": "Jarrod A.",
+            "family": "Lewis-Peacock",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Neuroscience"
+        ],
+        "URL": "https://doi.org/10.1523/jneurosci.2399-23.2024"
+      },
+      {
+        "DOI": "10.1101/667626",
+        "title": [
+          "Context information supports serial dependence of multiple visual objects across memory episodes"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5668-9439",
+            "authenticated-orcid": false,
+            "given": "Cora",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7863-8272",
+            "authenticated-orcid": false,
+            "given": "Stefan",
+            "family": "Czoschke",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Peters",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Rahm",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6740-5000",
+            "authenticated-orcid": false,
+            "given": "Jochen",
+            "family": "Kaiser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3628-7683",
+            "authenticated-orcid": false,
+            "given": "Christoph",
+            "family": "Bledowski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "openRxiv",
+        "is-referenced-by-count": 2,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.1101/667626"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1038/s41467-020-15874-w",
+        "type": "journal-article",
+        "is-referenced-by-count": 90,
+        "title": [
+          "Context information supports serial dependence of multiple visual objects across memory episodes"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5668-9439",
+            "authenticated-orcid": false,
+            "given": "Cora",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7863-8272",
+            "authenticated-orcid": false,
+            "given": "Stefan",
+            "family": "Czoschke",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0948-8976",
+            "authenticated-orcid": false,
+            "given": "Benjamin",
+            "family": "Peters",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Rahm",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6740-5000",
+            "authenticated-orcid": false,
+            "given": "Jochen",
+            "family": "Kaiser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3628-7683",
+            "authenticated-orcid": false,
+            "given": "Christoph",
+            "family": "Bledowski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              4,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Nature Communications"
+        ],
+        "URL": "https://doi.org/10.1038/s41467-020-15874-w"
+      },
+      {
+        "publisher": "With Intelligence LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              10,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.3905/jpm.1989.409235",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Serial dependence in, currency returns"
+        ],
+        "author": [
+          {
+            "given": "Mark",
+            "family": "Kritzman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1989,
+              10,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Portfolio Management"
+        ],
+        "URL": "https://doi.org/10.3905/jpm.1989.409235"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1038/nn.3689",
+        "type": "journal-article",
+        "is-referenced-by-count": 751,
+        "title": [
+          "Serial dependence in visual perception"
+        ],
+        "author": [
+          {
+            "given": "Jason",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              3,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Nature Neuroscience"
+        ],
+        "URL": "https://doi.org/10.1038/nn.3689"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/19.10.196c",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Change blindness from serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Mauro",
+            "family": "Manassi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/19.10.196c"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1983,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.2517-6161.1983.tb01236.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Serial Dependence in Contingency Tables"
+        ],
+        "author": [
+          {
+            "given": "Simon",
+            "family": "Tavaré",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Colorado State University   USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the Royal Statistical Society Series B: Statistical Methodology"
+        ],
+        "URL": "https://doi.org/10.1111/j.2517-6161.1983.tb01236.x"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.1167/18.9.15",
+        "type": "journal-article",
+        "is-referenced-by-count": 84,
+        "title": [
+          "Serial dependence in numerosity perception"
+        ],
+        "author": [
+          {
+            "given": "Michele",
+            "family": "Fornaciai",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Psychological & Brain Sciences, University of Massachusetts, Amherst, MA, USA"
+              },
+              {
+                "name": "mfornaciai@umass.edu"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Joonkoo",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychological & Brain Sciences, University of Massachusetts, Amherst, MA, USA"
+              },
+              {
+                "name": "Commonwealth Honors College, University of Massachusetts, Amherst, MA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/18.9.15"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/diagnostics13101775",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Serial Dependence in Dermatological Judgments"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4092-7428",
+            "authenticated-orcid": false,
+            "given": "Zhihang",
+            "family": "Ren",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Vision Science Graduate Group, University of California, Berkeley, Berkeley, CA 94720, USA"
+              },
+              {
+                "name": "Department of Psychology, University of California, Berkeley, Berkeley, CA 94720, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Xinyu",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, University of California, Berkeley, Berkeley, CA 94720, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dana",
+            "family": "Pietralla",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Sociology and Social Psychology, University of Cologne, Albertus-Magnus-Platz, D-50923 Cologne, Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4210-7570",
+            "authenticated-orcid": false,
+            "given": "Mauro",
+            "family": "Manassi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Psychology, King’s College, University of Aberdeen, Aberdeen AB24 3FX, UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Vision Science Graduate Group, University of California, Berkeley, Berkeley, CA 94720, USA"
+              },
+              {
+                "name": "Department of Psychology, University of California, Berkeley, Berkeley, CA 94720, USA"
+              },
+              {
+                "name": "Helen Wills Neuroscience Institute, University of California, Berkeley, Berkeley, CA 94720, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              5,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Diagnostics"
+        ],
+        "URL": "https://doi.org/10.3390/diagnostics13101775"
+      },
+      {
+        "DOI": "10.31234/osf.io/6bkda",
+        "title": [
+          "Serial dependence in timing perception"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-2216-6741",
+            "authenticated-orcid": true,
+            "given": "Warrick",
+            "family": "Roseboom",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 2,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/6bkda"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.22.14.3141",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Uncertainty in Visual Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Geoff",
+            "family": "Gallagher",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Bristol"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christopher P.",
+            "family": "Benton",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Bristol"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.22.14.3141"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.csda.2013.07.009",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Serial dependence of NDARMA processes"
+        ],
+        "author": [
+          {
+            "given": "Christian H.",
+            "family": "Weiß",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computational Statistics &amp; Data Analysis"
+        ],
+        "URL": "https://doi.org/10.1016/j.csda.2013.07.009"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1467-9892.1992.tb00092.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 35,
+        "title": [
+          "NONPARAMETRIC TESTS FOR SERIAL DEPENDENCE"
+        ],
+        "author": [
+          {
+            "given": "Ngai Hang",
+            "family": "Chan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lanh Tat",
+            "family": "Tran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              6,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Time Series Analysis"
+        ],
+        "URL": "https://doi.org/10.1111/j.1467-9892.1992.tb00092.x"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.2307/3315967",
+        "type": "journal-article",
+        "is-referenced-by-count": 70,
+        "title": [
+          "Kendall's tau for serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Thomas S.",
+            "family": "Ferguson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christian",
+            "family": "Genest",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Marc",
+            "family": "Hallin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Canadian Journal of Statistics"
+        ],
+        "URL": "https://doi.org/10.2307/3315967"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1167/14.10.1186",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Serial Dependence of Position Perception"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Liberman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Kosovicheva",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/14.10.1186"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.1167/11.11.1201",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Serial dependence in visual perception"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Shankey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/11.11.1201"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1167/12.9.982",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Dependence of Face Identity"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Liberman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Fischer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/12.9.982"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1990,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/0378-3758(90)90043-t",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Rank statistics for serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Lanh Tat",
+            "family": "Tran",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Planning and Inference"
+        ],
+        "URL": "https://doi.org/10.1016/0378-3758(90)90043-t"
+      },
+      {
+        "publisher": "American Psychological Association (APA)",
+        "DOI": "10.1037/xhp0000591",
+        "type": "journal-article",
+        "is-referenced-by-count": 26,
+        "title": [
+          "Serial dependence in timing perception."
+        ],
+        "author": [
+          {
+            "given": "Warrick",
+            "family": "Roseboom",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Experimental Psychology: Human Perception and Performance"
+        ],
+        "URL": "https://doi.org/10.1037/xhp0000591"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.22.14.3454",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Dependence in Visual Causality"
+        ],
+        "author": [
+          {
+            "given": "Michele",
+            "family": "Deodato",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "New York University Abu Dhabi"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Melcher",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "New York University Abu Dhabi"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.22.14.3454"
+      },
+      {
+        "DOI": "10.31234/osf.io/gzdr6",
+        "title": [
+          "Serial Dependence in Visual Variance"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-6437-3741",
+            "authenticated-orcid": true,
+            "given": "Marta",
+            "family": "Suárez-Pinilla",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1421-6051",
+            "authenticated-orcid": true,
+            "given": "Anil",
+            "family": "Seth",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/00ayhx656",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "University of Sussex"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2216-6741",
+            "authenticated-orcid": true,
+            "given": "Warrick",
+            "family": "Roseboom",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 1,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/gzdr6"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1981,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1467-9892.1981.tb00317.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 47,
+        "title": [
+          "RANK TESTS FOR SERIAL DEPENDENCE"
+        ],
+        "author": [
+          {
+            "given": "Jean‐Marie",
+            "family": "Dufour",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              6,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Time Series Analysis"
+        ],
+        "URL": "https://doi.org/10.1111/j.1467-9892.1981.tb00317.x"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1201/b13150-9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Multivariate models with serial dependence"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              11,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "C&amp;H/CRC Monographs on Statistics &amp; Applied Probability",
+          "Multivariate Models and Multivariate Dependence Concepts"
+        ],
+        "URL": "https://doi.org/10.1201/b13150-9"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              11,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781420046090-c20",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Video Sequence Compression"
+        ],
+        "author": [
+          {
+            "given": "Osama",
+            "family": "Al-Shaykh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ralph",
+            "family": "Neff",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Taubman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Avideh",
+            "family": "Zakhor",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Electrical Engineering Handbook",
+          "Video, Speech, and Audio Signal Processing and Associated Standards"
+        ],
+        "URL": "https://doi.org/10.1201/9781420046090-c20"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1167/18.10.1238",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Serial dependence fluctuates at alpha rhythms"
+        ],
+        "author": [
+          {
+            "given": "Yuki",
+            "family": "Murai",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, University of California, BerkeleyJapan Society for the Promotion of Science"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mauro",
+            "family": "Manassi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, University of California, Berkeley"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bill",
+            "family": "Prinzmetal",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, University of California, Berkeley"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kaoru",
+            "family": "Amano",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Center for Information and Neural Networks, National Institute of Information and Communications TechnologyGraduate School of Frontier Biosciences, Osaka University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, University of California, Berkeley"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/18.10.1238"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1980,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1057/jors.1980.166",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Serial Dependence Properties of Linear Processes"
+        ],
+        "author": [
+          {
+            "given": "O. D.",
+            "family": "Anderson",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "9 Ingham Grove, Lenton Gardens\rNG7 2LQ Nottingham England"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              12,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the Operational Research Society"
+        ],
+        "URL": "https://doi.org/10.1057/jors.1980.166"
+      },
+      {
+        "DOI": "10.2139/ssrn.3285541",
+        "title": [
+          "Financialization and Commodity Market Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Zhi",
+            "family": "Da",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ke",
+            "family": "Tang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yubo",
+            "family": "Tao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SSRN Electronic Journal"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 2,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.2139/ssrn.3285541"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1167/17.10.92",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Context transitions modulate perceptual serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Anastasia",
+            "family": "Kiyonaga",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Helen Wills Neuroscience Institute"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Mauro",
+            "family": "Manassi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Helen Wills Neuroscience Institute"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Mark",
+            "family": "D'Esposito",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Helen Wills Neuroscience Institute"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Helen Wills Neuroscience Institute"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/17.10.92"
+      },
+      {
+        "DOI": "10.1101/165399",
+        "title": [
+          "Serial dependence transfers between perceptual objects"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-9924-1303",
+            "authenticated-orcid": false,
+            "given": "Greg",
+            "family": "Huffman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4902-5095",
+            "authenticated-orcid": false,
+            "given": "Jay",
+            "family": "Pratt",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0745-5089",
+            "authenticated-orcid": false,
+            "given": "Christopher J.",
+            "family": "Honey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "openRxiv",
+        "is-referenced-by-count": 4,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.1101/165399"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.25.9.2942",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial dependence occurs after motion repulsion"
+        ],
+        "author": [
+          {
+            "given": "HOYEON",
+            "family": "YOON",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Ulsan national institute of science and technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "JONGMIN",
+            "family": "MOON",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The University of Texas at Austin"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "OH-SANG",
+            "family": "KWON",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Ulsan national institute of science and technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.25.9.2942"
+      },
+      {
+        "DOI": "10.1101/2025.10.02.679619",
+        "title": [
+          "Slow change blindness from serial dependence"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0002-0542-8893",
+            "authenticated-orcid": false,
+            "given": "Haley G.",
+            "family": "Frey",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4531-5570",
+            "authenticated-orcid": false,
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "openRxiv",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.1101/2025.10.02.679619"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1167/17.10.429",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Is Serial Dependence Sticky or Predictive?"
+        ],
+        "author": [
+          {
+            "given": "Ye",
+            "family": "Xia",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/17.10.429"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.21.9.2962",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Serial dependence in biological motion perception"
+        ],
+        "author": [
+          {
+            "given": "Yongqi",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Sun Yat-sen University, Guangzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaowei",
+            "family": "Ding",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sun Yat-sen University, Guangzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiayu",
+            "family": "Qian",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sun Yat-sen University, Guangzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhou",
+            "family": "Su",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sun Yat-sen University, Guangzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Huichao",
+            "family": "Ji",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sun Yat-sen University, Guangzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.21.9.2962"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/jov.20.11.1178",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Dependence in Immersive Virtual Environments"
+        ],
+        "author": [
+          {
+            "given": "Kyriaki",
+            "family": "Mikellidou",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Psychology and Center for Applied Neuroscience, University of Cyprus, Nicosia, Cyprus"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kleanthis",
+            "family": "Neokleous",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Silversky3D, Nicosia, Cyprus"
+              },
+              {
+                "name": "Research Centre on Interactive Media Smart Systems and Emerging Technologies, Nicosia, Cyprus"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marios",
+            "family": "Avraamides",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology and Center for Applied Neuroscience, University of Cyprus, Nicosia, Cyprus"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              10,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.20.11.1178"
+      },
+      {
+        "DOI": "10.31234/osf.io/3gehk",
+        "title": [
+          "Serial dependence alters perceived object appearance"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-2793-3559",
+            "authenticated-orcid": true,
+            "given": "Thérèse",
+            "family": "Collins",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 1,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/3gehk"
+      },
+      {
+        "DOI": "10.2139/ssrn.3396084",
+        "title": [
+          "Quantile Forecast via Serial Dependence Learning"
+        ],
+        "author": [
+          {
+            "given": "Qi",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xing",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SSRN Electronic Journal"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.2139/ssrn.3396084"
+      },
+      {
+        "DOI": "10.1515/9781400829415.181",
+        "title": [
+          "10. Serial Dependence in Longitudinal Data"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "The Econometrics of Individual Risk"
+        ],
+        "publisher": "Princeton University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1515/9781400829415.181"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1167/18.10.1153",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Serial Dependence on a Large Scale"
+        ],
+        "author": [
+          {
+            "given": "Mauro",
+            "family": "Manassi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley, Department of Psychology, Berkeley, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yuki",
+            "family": "Murai",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley, Department of Psychology, Berkeley, CA, USAJapan Society for the Promotion of Science"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California, Berkeley, Department of Psychology, Berkeley, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/18.10.1153"
+      },
+      {
+        "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1287/mnsc.2023.4797",
+        "type": "journal-article",
+        "is-referenced-by-count": 35,
+        "title": [
+          "Financialization and Commodity Markets Serial Dependence"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-2815-1516",
+            "authenticated-orcid": false,
+            "given": "Zhi",
+            "family": "Da",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Finance, Mendoza College of Business, University of Notre Dame, Notre Dame, Indiana 46556;"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4049-030X",
+            "authenticated-orcid": false,
+            "given": "Ke",
+            "family": "Tang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Economics, School of Social Sciences, Tsinghua University, Beijing 100084, China;"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1013-9984",
+            "authenticated-orcid": false,
+            "given": "Yubo",
+            "family": "Tao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Economics, Faculty of Social Sciences, and Asia-Pacific Academy of Economics and Management, University of Macau, Macau Special Administrative Region 999078, China;"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2599-1328",
+            "authenticated-orcid": false,
+            "given": "Liyan",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Finance, Joseph L. Rotman School of Management, University of Toronto, Toronto, Ontario M5S3E6, Canada;"
+              },
+              {
+                "name": "Guanghua School of Management, Peking University, Peking 100871, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Management Science"
+        ],
+        "URL": "https://doi.org/10.1287/mnsc.2023.4797"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1177/03057356211013396",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Chunking in tonal contexts: Information compression during serial recall of visually presented musical notes"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5665-3313",
+            "authenticated-orcid": false,
+            "given": "Lucas",
+            "family": "Lörch",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Mannheim, Mannheim, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Psychology of Music"
+        ],
+        "URL": "https://doi.org/10.1177/03057356211013396"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "DOI": "10.1167/19.10.289c",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Speed-accuracy tradeoff heightens serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Farshad",
+            "family": "Rafiei",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Psychology, College of Sciences, Georgia Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dobromir",
+            "family": "Rahnev",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Psychology, College of Sciences, Georgia Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/19.10.289c"
+      },
+      {
+        "DOI": "10.64898/2026.03.16.712008",
+        "title": [
+          "Serial dependence generalizes across the senses"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3350-9439",
+            "authenticated-orcid": false,
+            "given": "Michele",
+            "family": "Fornaciai",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Life Sciences Department, University of Trieste, Italy"
+              },
+              {
+                "name": "Institut de recherche en sciences psychologiques (IPSY), Université catholique de Louvain, Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Irene",
+            "family": "Togoli",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Life Sciences Department, University of Trieste, Italy"
+              },
+              {
+                "name": "Institut de recherche en sciences psychologiques (IPSY), Université catholique de Louvain, Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Samuel",
+            "family": "Binisti",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut de recherche en sciences psychologiques (IPSY), Université catholique de Louvain, Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Olivier",
+            "family": "Collignon",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut de recherche en sciences psychologiques (IPSY), Université catholique de Louvain, Belgium"
+              },
+              {
+                "name": "Institute of Neuroscience (IoNS), Université catholique de Louvain, Belgium"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "openRxiv",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.64898/2026.03.16.712008"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cognition.2020.104250",
+        "type": "journal-article",
+        "is-referenced-by-count": 37,
+        "title": [
+          "Attractive serial dependence between memorized stimuli"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3350-9439",
+            "authenticated-orcid": false,
+            "given": "Michele",
+            "family": "Fornaciai",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6703-3961",
+            "authenticated-orcid": false,
+            "given": "Joonkoo",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Cognition"
+        ],
+        "URL": "https://doi.org/10.1016/j.cognition.2020.104250"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1111/jtsa.12266",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Fourier Analysis of Serial Dependence Measures"
+        ],
+        "author": [
+          {
+            "given": "Ria",
+            "family": "Van Hecke",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fakultät für Mathematik Ruhr‐Universität Bochum  Bochum Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Stanislav",
+            "family": "Volgushev",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Statistical Sciences University of Toronto  Toronto Canada"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Holger",
+            "family": "Dette",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fakultät für Mathematik Ruhr‐Universität Bochum  Bochum Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              10,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Time Series Analysis"
+        ],
+        "URL": "https://doi.org/10.1111/jtsa.12266"
+      },
+      {
+        "publisher": "The Royal Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              11,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1098/rspb.2018.1722",
+        "type": "journal-article",
+        "is-referenced-by-count": 187,
+        "title": [
+          "The functional role of serial dependence"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3303-0420",
+            "authenticated-orcid": true,
+            "given": "Guido Marco",
+            "family": "Cicchini",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Neuroscience, National Research Council (CNR), Pisa, Italy"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1860-6951",
+            "authenticated-orcid": true,
+            "given": "Kyriaki",
+            "family": "Mikellidou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Translational Research on New Technologies in Medicine and Surgery, University of Pisa, Pisa, Italy"
+              },
+              {
+                "name": "Department of Psychology, University of Cyprus, Nicosia, Cyprus"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1541-8832",
+            "authenticated-orcid": true,
+            "given": "David C.",
+            "family": "Burr",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Neuroscience, National Research Council (CNR), Pisa, Italy"
+              },
+              {
+                "name": "Department of Neuroscience, University of Florence, Florence, Italy"
+              },
+              {
+                "name": "School of Psychology, University of Sydney, Sydney, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              10,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the Royal Society B: Biological Sciences"
+        ],
+        "URL": "https://doi.org/10.1098/rspb.2018.1722"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1167/jov.20.13.9",
+        "type": "journal-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "Serial dependence alters perceived object appearance"
+        ],
+        "author": [
+          {
+            "given": "Thérèse",
+            "family": "Collins",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Integrative Neuroscience and Cognition Center, Université de Paris and CNRS, Paris, France"
+              },
+              {
+                "name": "therese.collins@parisdescartes.fr"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.20.13.9"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1965,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1017/s1446788700027737",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Serial dependence of a Markov process"
+        ],
+        "author": [
+          {
+            "given": "B. D.",
+            "family": "Craven",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              4,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the Australian Mathematical Society"
+        ],
+        "URL": "https://doi.org/10.1017/s1446788700027737"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              7,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1167/13.9.140",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Tracking Serial Dependence Behind an Occluder"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Liberman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              7,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/13.9.140"
+      },
+      {
+        "publisher": "Emerald",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1108/17439131111109008",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Copula based models for serial dependence"
+        ],
+        "author": [
+          {
+            "given": "Beatriz",
+            "family": "Vaz de Melo Mendes",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "IM/COPPEAD, Federal University at Rio de Janeiro, Rio de Janeiro, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Cecília",
+            "family": "Aíube",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "COPPEAD, Federal University at Rio de Janeiro, Rio de Janeiro, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Managerial Finance"
+        ],
+        "URL": "https://doi.org/10.1108/17439131111109008"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1111/1467-9868.00250",
+        "type": "journal-article",
+        "is-referenced-by-count": 57,
+        "title": [
+          "Generalized Spectral Tests for Serial Dependence"
+        ],
+        "author": [
+          {
+            "given": "Yongmiao",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Cornell University , Ithaca , USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              1,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the Royal Statistical Society Series B: Statistical Methodology"
+        ],
+        "URL": "https://doi.org/10.1111/1467-9868.00250"
+      },
+      {
+        "publisher": "AITO - Association Internationale pour les Technologies Objets",
+        "DOI": "10.5381/jot.2005.4.4.c2",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Synthetic Image Sequence Compression."
+        ],
+        "author": [
+          {
+            "given": "Douglas",
+            "family": "Lyon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Object Technology"
+        ],
+        "URL": "https://doi.org/10.5381/jot.2005.4.4.c2"
+      },
+      {
+        "publisher": "DE GRUYTER",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110917833.29",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "LINEAR AND QUADRATIC SERIAL RANK TESTS FOR RANDOMNESS AGAINST SERIAL DEPENDENCE"
+        ],
+        "author": [
+          {
+            "given": "MARC",
+            "family": "HALLIN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "JEAN-FRANÇOIS",
+            "family": "INGENBLEEK",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "MADAN L.",
+            "family": "PURI",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Time Series, Fuzzy Analysis and Miscellaneous Topics"
+        ],
+        "URL": "https://doi.org/10.1515/9783110917833.29"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-39952-2_27",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Serial Sequence Learning on Digital Games"
+        ],
+        "author": [
+          {
+            "given": "Eduardo",
+            "family": "Adams",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anderson",
+            "family": "Schuh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marcia",
+            "family": "de Borba Campos",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Débora",
+            "family": "Barbosa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "João Batista",
+            "family": "Mossmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              6,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Foundations of Augmented Cognition: Neuroergonomics and Operational Neuroscience"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-39952-2_27"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1467-9892.1987.tb00004.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 28,
+        "title": [
+          "LINEAR AND QUADRATIC SERIAL RANK TESTS FOR RANDOMNESS AGAINST SERIAL DEPENDENCE"
+        ],
+        "author": [
+          {
+            "given": "Marc.",
+            "family": "Hallin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jean‐François",
+            "family": "Ingenbleek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Madan L.",
+            "family": "Puri",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              6,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Time Series Analysis"
+        ],
+        "URL": "https://doi.org/10.1111/j.1467-9892.1987.tb00004.x"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00542-019-04481-5",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "DNA sequence compression using RP/GP2 method with information storage and security"
+        ],
+        "author": [
+          {
+            "given": "Syed Mahamud",
+            "family": "Hossein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Debashis",
+            "family": "De",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pradeep Kumar",
+            "family": "Das Mohapatra",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Microsystem Technologies"
+        ],
+        "URL": "https://doi.org/10.1007/s00542-019-04481-5"
+      },
+      {
+        "publisher": "University of Economics and Human Sciences in Warsaw",
+        "DOI": "10.5709/acp-0108-y",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Redundant sensory information does not enhance sequence learning in the serial reaction time task"
+        ],
+        "author": [
+          {
+            "given": "Elger",
+            "family": "Abrahamse",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rob",
+            "family": "van der Lubbe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Willem",
+            "family": "Verwey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Izabela",
+            "family": "Szumska",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Piotr",
+            "family": "Jaśkowski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Cognitive Psychology"
+        ],
+        "URL": "https://doi.org/10.5709/acp-0108-y"
+      },
+      {
+        "DOI": "10.4018/978-1-60566-888-8.ch008",
+        "title": [
+          "Information Compression"
+        ],
+        "author": [
+          {
+            "given": "Manjunath",
+            "family": "Ramachandra",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "MSR School of Advanced Studies, Philips, India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Web-Based Supply Chain Management and Digital Signal Processing"
+        ],
+        "publisher": "IGI Global",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4018/978-1-60566-888-8.ch008"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1109/iccitm56309.2022.10031700",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improve Compression Data Using Serial Combination Techniques"
+        ],
+        "author": [
+          {
+            "given": "Jannat",
+            "family": "Tariq",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Middle Technical University,Techniques of Computer Engineering,Baghdad,Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mahmood",
+            "family": "Farhan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Middle Technical University,Techniques of Computer Engineering,Baghdad,Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Maha",
+            "family": "Abdulameer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Middle Technical University,Electronic Engineering,Baghdad,Iraq"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2022 8th International Conference on Contemporary Information Technology and Mathematics (ICCITM)"
+        ],
+        "URL": "https://doi.org/10.1109/iccitm56309.2022.10031700"
+      },
+      {
+        "DOI": "10.1109/test.1993.470601",
+        "title": [
+          "A serial scan test vector compression methodology"
+        ],
+        "author": [
+          {
+            "given": "C.",
+            "family": "Su",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Hwang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of IEEE International Test Conference - (ITC)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 35,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/test.1993.470601"
+      },
+      {
+        "publisher": "International Union of Crystallography (IUCr)",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              8,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1107/s2053273323095244",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Compression and data reduction in serial crystallography"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "Galchenkova",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Tolstikova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Oberthuer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Sprenger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.",
+            "family": "Brehm",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T. A.",
+            "family": "White",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Barty",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H. N.",
+            "family": "Chapman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "O. M.",
+            "family": "Yefanov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Crystallographica Section A Foundations and Advances"
+        ],
+        "URL": "https://doi.org/10.1107/s2053273323095244"
+      },
+      {
+        "publisher": "Emerald Publishing Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.1108/978-1-78973-151-420201009",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "‘Serial Access’ to Information"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Williams",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University College London, UK United"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Learning Disabilities and e-Information"
+        ],
+        "URL": "https://doi.org/10.1108/978-1-78973-151-420201009"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-540-30499-9_210",
+        "type": "book-chapter",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Sequence Variability and Long-Range Dependence in DNA: An Information Theoretic Perspective"
+        ],
+        "author": [
+          {
+            "family": "Karmeshu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Krishnamachari",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Neural Information Processing"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-540-30499-9_210"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              3,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1145/3639320",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "LeCo: Lightweight Compression via Learning Serial Correlations"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0004-4623-5240",
+            "authenticated-orcid": false,
+            "given": "Yihao",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute for Interdisciplinary Information Science, Tsinghua University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0002-6858-1457",
+            "authenticated-orcid": false,
+            "given": "Xinyu",
+            "family": "Zeng",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute for Interdisciplinary Information Science, Tsinghua University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0001-4821-1558",
+            "authenticated-orcid": false,
+            "given": "Huanchen",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute for Interdisciplinary Information Science, Tsinghua University &amp; Shanghai Qi Zhi Institute, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              3,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the ACM on Management of Data"
+        ],
+        "URL": "https://doi.org/10.1145/3639320"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/siu.2017.7960193",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "DNA sequence compression within traditional text compression algorithms"
+        ],
+        "author": [
+          {
+            "given": "Abdulkadir",
+            "family": "Seker",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Emre",
+            "family": "Delibas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Banu",
+            "family": "Diri",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 25th Signal Processing and Communications Applications Conference (SIU)"
+        ],
+        "URL": "https://doi.org/10.1109/siu.2017.7960193"
+      },
+      {
+        "publisher": "China Science Publishing & Media Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.3724/sp.j.1042.2022.02228",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Serial dependence effect: A novel “history effect”"
+        ],
+        "author": [
+          {
+            "given": "Wang-Juan",
+            "family": "LIU",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xian-Feng",
+            "family": "DING",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiao-Rong",
+            "family": "CHENG",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhao",
+            "family": "FAN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advances in Psychological Science"
+        ],
+        "URL": "https://doi.org/10.3724/sp.j.1042.2022.02228"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1984,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1057/jors.1984.30",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Erratum: Serial Dependence Properties of Linear Processes"
+        ],
+        "author": [
+          {
+            "given": "O.D.",
+            "family": "Anderson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              12,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the Operational Research Society"
+        ],
+        "URL": "https://doi.org/10.1057/jors.1984.30"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1007/s10182-008-0055-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 30,
+        "title": [
+          "Measuring serial dependence in categorical time series"
+        ],
+        "author": [
+          {
+            "given": "Christian H.",
+            "family": "Weiß",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rainer",
+            "family": "Göb",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              2,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "AStA Advances in Statistical Analysis"
+        ],
+        "URL": "https://doi.org/10.1007/s10182-008-0055-4"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1167/19.4.25",
+        "type": "journal-article",
+        "is-referenced-by-count": 119,
+        "title": [
+          "Confidence boosts serial dependence in orientation estimation"
+        ],
+        "author": [
+          {
+            "given": "Jason",
+            "family": "Samaha",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of California, Santa Cruz, Department of Psychology, Santa Cruz, CA"
+              },
+              {
+                "name": "University of Wisconsin–Madison, Department of Psychology, Madison, WI"
+              },
+              {
+                "name": "jsamaha@ucsc.edu"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Missy",
+            "family": "Switzky",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Wisconsin-Madison, Department of Psychology, Madison, WI"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bradley R.",
+            "family": "Postle",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Wisconsin-Madison, Department of Psychology and Department of Psychiatry, Madison, WI"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/19.4.25"
+      },
+      {
+        "DOI": "10.7554/elife.109830",
+        "title": [
+          "Serial Dependence Predicts Generalization in Perceptual Learning"
+        ],
+        "author": [
+          {
+            "given": "Noga",
+            "family": "Pinchuk-Yacobi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/03kgsv495",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "School of Optometry and Vision Science, Faculty of Life Science, Bar-Ilan University",
+                "place": [
+                  "Israel"
+                ]
+              },
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/03kgsv495",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "The Leslie and Susan Gonda Multidisciplinary Brain Research Center, Bar-Ilan University",
+                "place": [
+                  "Israel"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dov",
+            "family": "Sagi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/0316ej306",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Department of Brain Sciences, The Weizmann Institute of Science",
+                "place": [
+                  "Israel"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yoram S",
+            "family": "Bonneh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/03kgsv495",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "School of Optometry and Vision Science, Faculty of Life Science, Bar-Ilan University",
+                "place": [
+                  "Israel"
+                ]
+              },
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/03kgsv495",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "The Leslie and Susan Gonda Multidisciplinary Brain Research Center, Bar-Ilan University",
+                "place": [
+                  "Israel"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "eLife Sciences Publications, Ltd",
+        "is-referenced-by-count": 1,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.7554/elife.109830"
+      },
+      {
+        "DOI": "10.31234/osf.io/2ceqn",
+        "title": [
+          "Stimulus Reliability in Serial Dependence: Facing Noise"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2284-308X",
+            "authenticated-orcid": true,
+            "given": "Anette",
+            "family": "Lidström",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Center for Open Science",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.31234/osf.io/2ceqn"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1167/12.9.84",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The spatial tuning of perceptual serial dependence"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Whitney",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/12.9.84"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              1,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.1167/jov.23.1.9",
+        "type": "journal-article",
+        "is-referenced-by-count": 182,
+        "title": [
+          "Serial dependence in visual perception: A review"
+        ],
+        "author": [
+          {
+            "given": "David",
+            "family": "Pascucci",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Laboratory of Psychophysics, Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne, Switzerland"
+              },
+              {
+                "name": "david.pascucci@epfl.ch"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ömer Dağlar",
+            "family": "Tanrikulu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Psychology, University of New Hampshire, Durham, NH, USA"
+              },
+              {
+                "name": "Vision Sciences Laboratory, School of Health Sciences, University of Iceland, Reykjavik, Iceland"
+              },
+              {
+                "name": "daglar@hi.is"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ayberk",
+            "family": "Ozkirli",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Laboratory of Psychophysics, Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne, Switzerland"
+              },
+              {
+                "name": "ayberk.ozkirli@epfl.ch"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christian",
+            "family": "Houborg",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Vision Sciences Laboratory, School of Health Sciences, University of Iceland, Reykjavik, Iceland"
+              },
+              {
+                "name": "chh8@hi.is"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gizay",
+            "family": "Ceylan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Laboratory of Psychophysics, Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne, Switzerland"
+              },
+              {
+                "name": "gizay.ceylan@epfl.ch"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Paul",
+            "family": "Zerr",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Vision Sciences Laboratory, School of Health Sciences, University of Iceland, Reykjavik, Iceland"
+              },
+              {
+                "name": "p.zerr@uu.nl"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Mohsen",
+            "family": "Rafiei",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Vision Sciences Laboratory, School of Health Sciences, University of Iceland, Reykjavik, Iceland"
+              },
+              {
+                "name": "mor4@hi.is"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Árni",
+            "family": "Kristjánsson",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Vision Sciences Laboratory, School of Health Sciences, University of Iceland, Reykjavik, Iceland"
+              },
+              {
+                "name": "ak@hi.is"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/jov.23.1.9"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cam.2025.116633",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Conditional correlation estimation and serial dependence identification"
+        ],
+        "author": [
+          {
+            "given": "Kewin",
+            "family": "Pączek",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Damian",
+            "family": "Jelito",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marcin",
+            "family": "Pitera",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9750-1351",
+            "authenticated-orcid": false,
+            "given": "Agnieszka",
+            "family": "Wyłomańska",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Computational and Applied Mathematics"
+        ],
+        "URL": "https://doi.org/10.1016/j.cam.2025.116633"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/biomet/asae027",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Testing serial dependence or cross dependence for time series with underreporting"
+        ],
+        "author": [
+          {
+            "given": "Keyao",
+            "family": "Wei",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Statistics and Data Science, National University of Singapore , Block S16, Level 7, 6 Science Drive 2 , 117546",
+                "place": [
+                  "Singapore"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lengyang",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Centre for Infectious Diseases , 16 Jln Tan Tock Seng , 308442",
+                "place": [
+                  "Singapore"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yingcun",
+            "family": "Xia",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Statistics and Data Science, National University of Singapore , Block S16, Level 7, 6 Science Drive 2 , 117546",
+                "place": [
+                  "Singapore"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.1093/biomet/asae027"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.heliyon.2024.e33977",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Serial dependence: A matter of memory load"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-8312-3580",
+            "authenticated-orcid": false,
+            "given": "Yuri A.",
+            "family": "Markov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Natalia A.",
+            "family": "Tiurina",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Pascucci",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Heliyon"
+        ],
+        "URL": "https://doi.org/10.1016/j.heliyon.2024.e33977"
+      },
+      {
+        "publisher": "Association for Research in Vision and Ophthalmology (ARVO)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.1167/19.13.20",
+        "type": "journal-article",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Visual serial dependence in an audiovisual stimulus"
+        ],
+        "author": [
+          {
+            "given": "Wee K.",
+            "family": "Lau",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Psychology Programme, School of Social Sciences, Nanyang Technological University, Singapore"
+              },
+              {
+                "name": "wlau010@e.ntu.edu.sg"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gerrit W.",
+            "family": "Maus",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Psychology Programme, School of Social Sciences, Nanyang Technological University, Singapore"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Vision"
+        ],
+        "URL": "https://doi.org/10.1167/19.13.20"
+      },
+      {
+        "DOI": "10.1101/2025.10.29.685242",
+        "title": [
+          "Serial dependence in the perception of proportion"
+        ],
+        "author": [
+          {
+            "given": "Kaede",
+            "family": "Hashiguchi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yuichi",
+            "family": "Tanaka",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hiroshi",
+            "family": "Higashi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "openRxiv",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.1101/2025.10.29.685242"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

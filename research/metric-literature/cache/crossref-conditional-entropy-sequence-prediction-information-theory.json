@@ -1,0 +1,5015 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 3188093,
+    "items": [
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_3478",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "conditional information entropy"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_3478"
+      },
+      {
+        "DOI": "10.1007/springerreference_10882",
+        "title": [
+          "conditional information entropy"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 1,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_10882"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.3233/jifs-236009",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Outlier detection using conditional information entropy and rough set theory"
+        ],
+        "author": [
+          {
+            "given": "Zhaowen",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, Guangdong University of Science and Technology, Dongguan, Guangdong, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shengxue",
+            "family": "Wei",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Center for Applied Mathematics of Guangxi, Yulin Normal University, Yulin, Guangxi, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Suping",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, Guangdong University of Science and Technology, Dongguan, Guangdong, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Intelligent &amp; Fuzzy Systems"
+        ],
+        "URL": "https://doi.org/10.3233/jifs-236009"
+      },
+      {
+        "publisher": "IACSIT Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.7763/ijcce.2013.v2.172",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Entropy Estimation Using Indirect Conditional Information"
+        ],
+        "author": [
+          {
+            "given": "Nol",
+            "family": "Premasathian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Computer and Communication Engineering"
+        ],
+        "URL": "https://doi.org/10.7763/ijcce.2013.v2.172"
+      },
+      {
+        "publisher": "Canadian Mathematical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.4153/cjm-1993-022-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Conditional Sequence Entropy and Mild Mixing Extensions"
+        ],
+        "author": [
+          {
+            "given": "Qing",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Canadian Journal of Mathematics"
+        ],
+        "URL": "https://doi.org/10.4153/cjm-1993-022-2"
+      },
+      {
+        "publisher": "Science Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.3844/jmssp.2010.89.91",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Conditional Sequence Information Function"
+        ],
+        "author": [
+          {
+            "family": "Guzide",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Mathematics and Statistics"
+        ],
+        "URL": "https://doi.org/10.3844/jmssp.2010.89.91"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e24060837",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Belavkin–Staszewski Relative Entropy, Conditional Entropy, and Mutual Information"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-6179-8755",
+            "authenticated-orcid": false,
+            "given": "Yuan",
+            "family": "Zhai",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The College of Computer Science, Shaanxi Normal University, Xi’an 710062, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bo",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The College of Computer Science, Shaanxi Normal University, Xi’an 710062, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhengjun",
+            "family": "Xi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "The College of Computer Science, Shaanxi Normal University, Xi’an 710062, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e24060837"
+      },
+      {
+        "DOI": "10.1007/978-1-4419-9863-7_100443",
+        "title": [
+          "Entropy, Information Theory"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Systems Biology"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-1-4419-9863-7_100443"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e22101124",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Estimating Conditional Transfer Entropy in Time Series Using Mutual Information and Nonlinear Prediction"
+        ],
+        "author": [
+          {
+            "given": "Payam",
+            "family": "Shahsavari Baboukani",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Electronic Systems, Aalborg University, 9220 Aalborg, Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Carina",
+            "family": "Graversen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Eriksholm Research Centre, Oticon A/S, 3070 Snekkersten, Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Emina",
+            "family": "Alickovic",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Eriksholm Research Centre, Oticon A/S, 3070 Snekkersten, Denmark"
+              },
+              {
+                "name": "Department of Electrical Engineering, Linköping University, 581 83 Linköping, Sweden"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3724-6114",
+            "authenticated-orcid": false,
+            "given": "Jan",
+            "family": "Østergaard",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electronic Systems, Aalborg University, 9220 Aalborg, Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              10,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e22101124"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/prxquantum.3.030315",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Conditional Entropy Production and Quantum Fluctuation Theorem of Dissipative Information: Theory and Experiments"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4819-5495",
+            "authenticated-orcid": true,
+            "given": "Kun",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7923-7670",
+            "authenticated-orcid": true,
+            "given": "Xuanhua",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2374-104X",
+            "authenticated-orcid": true,
+            "given": "Qian",
+            "family": "Zeng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2841-4913",
+            "authenticated-orcid": true,
+            "given": "Jin",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "PRX Quantum"
+        ],
+        "URL": "https://doi.org/10.1103/prxquantum.3.030315"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-49208-9_23",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Quantum Generalization of Conditional Entropy and Information"
+        ],
+        "author": [
+          {
+            "given": "L. B.",
+            "family": "Levitin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1999,
+              5,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Quantum Computing and Quantum Communications"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-49208-9_23"
+      },
+      {
+        "DOI": "10.1109/isit.1998.708674",
+        "title": [
+          "Conditional entropy and information in quantum systems"
+        ],
+        "author": [
+          {
+            "given": "L.B.",
+            "family": "Levitin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 1998 IEEE International Symposium on Information Theory (Cat. No.98CH36252)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1998.708674"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0960-0779(98)00225-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Conditional Entropy and Information in Quantum Systems"
+        ],
+        "author": [
+          {
+            "given": "L.B.",
+            "family": "Levitin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chaos, Solitons &amp; Fractals"
+        ],
+        "URL": "https://doi.org/10.1016/s0960-0779(98)00225-2"
+      },
+      {
+        "DOI": "10.1109/icdm.2003.1250927",
+        "title": [
+          "Sequence modeling with mixtures of conditional maximum entropy distributions"
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Pavlov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Third IEEE International Conference on Data Mining"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 12,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icdm.2003.1250927"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-803304-3.00015-6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert F.",
+            "family": "Sekerka",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Thermal Physics"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-803304-3.00015-6"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-7970-4",
+        "type": "book",
+        "is-referenced-by-count": 563,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert M.",
+            "family": "Gray",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-7970-4"
+      },
+      {
+        "publisher": "Springer London",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4471-7287-1_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Yves",
+            "family": "Coudène",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              11,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Universitext",
+          "Ergodic Theory and Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4471-7287-1_11"
+      },
+      {
+        "DOI": "10.1007/978-3-540-32851-3_5",
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "container-title": [
+          "Simulation with Entropy Thermodynamics"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-32851-3_5"
+      },
+      {
+        "DOI": "10.1017/9781108873710.012",
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Complexity Science"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781108873710.012"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-97902-7_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "author": [
+          {
+            "given": "Robert G.",
+            "family": "Underwood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Universitext",
+          "Cryptography for Secure Encryption"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-97902-7_3"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-3982-4",
+        "type": "book",
+        "is-referenced-by-count": 509,
+        "title": [
+          "Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Robert M.",
+            "family": "Gray",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-3982-4"
+      },
+      {
+        "DOI": "10.1007/978-0-387-74075-1_3",
+        "title": [
+          "Information Theory and Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Model Based Inference in the Life Sciences: A Primer on Evidence"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 17,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-74075-1_3"
+      },
+      {
+        "publisher": "De Gruyter",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110861198-013",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy of Information Theory and Thermodynamic Entropy"
+        ],
+        "author": [
+          {
+            "given": "Z . A.",
+            "family": "Terentjeva",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Thermodynamics and Regulation of Biological Processes"
+        ],
+        "URL": "https://doi.org/10.1515/9783110861198-013"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-011-4527-5_20",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Conditional Entropy"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Cincotta",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Simó",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Impact of Modern Dynamics in Astronomy"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-011-4527-5_20"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1023/a:1008355215603",
+        "type": "journal-article",
+        "is-referenced-by-count": 37,
+        "title": [
+          "Conditional Entropy"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Cincotta",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Simó",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Celestial Mechanics and Dynamical Astronomy"
+        ],
+        "URL": "https://doi.org/10.1023/a:1008355215603"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1971
+            ]
+          ]
+        },
+        "DOI": "10.1007/bfb0066091",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy and conditional entropy"
+        ],
+        "author": [
+          {
+            "given": "Meir",
+            "family": "Smorodinsky",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              8,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Mathematics",
+          "Ergodic Theory, Entropy"
+        ],
+        "URL": "https://doi.org/10.1007/bfb0066091"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_3474",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "conditional entropy"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_3474"
+      },
+      {
+        "DOI": "10.1007/springerreference_10878",
+        "title": [
+          "conditional entropy"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_10878"
+      },
+      {
+        "DOI": "10.1017/9781009560870.007",
+        "title": [
+          "Conditional Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              4,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Quantum Resource Theories"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781009560870.007"
+      },
+      {
+        "publisher": "The Institute of Webcasting, Internet and Telecommunication",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              4,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.7236/jiibc.2014.14.2.107",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Uncertainty Measurement of Incomplete Information System based on Conditional Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Inkyoo",
+            "family": "Park",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Journal of the Institute of Webcasting, Internet and Telecommunication"
+        ],
+        "URL": "https://doi.org/10.7236/jiibc.2014.14.2.107"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-540-45475-5_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory and Statistical Entropy"
+        ],
+        "author": [
+          {
+            "given": "Roger",
+            "family": "Balian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "From Microphysics to Macrophysics"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-540-45475-5_4"
+      },
+      {
+        "publisher": "Edward Elgar Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              7,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.4337/9781847207012.00042",
+        "type": "book-chapter",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Entropy Statistics and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "K.",
+            "family": "Frenken",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Elgar Companion to Neo-Schumpeterian Economics"
+        ],
+        "URL": "https://doi.org/10.4337/9781847207012.00042"
+      },
+      {
+        "publisher": "Oxford University PressOxford",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1093/oso/9780198851547.003.0043",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Shannon: entropy and information theory"
+        ],
+        "author": [
+          {
+            "given": "Robert T.",
+            "family": "Hanlon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Block by Block: The Historical and Theoretical Foundations of Thermodynamics"
+        ],
+        "URL": "https://doi.org/10.1093/oso/9780198851547.003.0043"
+      },
+      {
+        "publisher": "Japan Society of Engineering Geology",
+        "published-print": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "DOI": "10.5110/jjseg.44.283",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Prediction of Fracture Density Distribution by Neural Network Theory and Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Kazuharu",
+            "family": "SAITO",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hiromistu",
+            "family": "SAEGUSA",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kunio",
+            "family": "WATANABE",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mahesh",
+            "family": "GAUTAMN",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the Japan Society of Engineering Geology"
+        ],
+        "URL": "https://doi.org/10.5110/jjseg.44.283"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/icbk.2017.44",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Online Streaming Feature Selection Based on Conditional Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Huaming",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guoyin",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xianhua",
+            "family": "Zeng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Siyuan",
+            "family": "Peng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 IEEE International Conference on Big Knowledge (ICBK)"
+        ],
+        "URL": "https://doi.org/10.1109/icbk.2017.44"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevd.43.3077",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Conditional entropy and mutual information in random cascading processes"
+        ],
+        "author": [
+          {
+            "given": "Wu",
+            "family": "Yuanfang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Liu",
+            "family": "Lianshou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1991,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review D"
+        ],
+        "URL": "https://doi.org/10.1103/physrevd.43.3077"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789814295062_0013",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "THE INFORMATION ENTROPY SEQUENCE OF HIERARCHICAL STRUCTURE"
+        ],
+        "author": [
+          {
+            "given": "QINGHUA",
+            "family": "ZHANG",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing, 400065, P.R. China"
+              },
+              {
+                "name": "School of Information Science &amp; Technology, Southwest Jiaotong University, Chengdu 610031, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "GUOYIN",
+            "family": "WANG",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing, 400065, P.R. China"
+              },
+              {
+                "name": "School of Information Science &amp; Technology, Southwest Jiaotong University, Chengdu 610031, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "XI'AO",
+            "family": "MA",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing 400065, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "XIAOXING",
+            "family": "HE",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Computer Science &amp; Technology, Chongqing University of Posts and Telecommunications, Chongqing 400065, P.R. China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Intelligent Decision Making Systems"
+        ],
+        "URL": "https://doi.org/10.1142/9789814295062_0013"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-25636-4_21",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Dimensional Reduction Using Conditional Entropy for Incomplete Information Systems"
+        ],
+        "author": [
+          {
+            "given": "Mustafa Mat",
+            "family": "Deris",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Norhalina",
+            "family": "Senan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zailani",
+            "family": "Abdullah",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rabiei",
+            "family": "Mamat",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bana",
+            "family": "Handaga",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Parallel Computing Technologies"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-25636-4_21"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1994
+            ]
+          ]
+        },
+        "DOI": "10.1109/21.328925",
+        "type": "journal-article",
+        "is-referenced-by-count": 18,
+        "title": [
+          "A theory of conditional information with applications"
+        ],
+        "author": [
+          {
+            "given": "P.G.",
+            "family": "Calabrese",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Systems, Man, and Cybernetics"
+        ],
+        "URL": "https://doi.org/10.1109/21.328925"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/grc.2008.4664632",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Attribute reduction of multi-valued information system based on conditional information entropy"
+        ],
+        "author": [
+          {
+            "family": "Shen Qing",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jiang Yun-Liang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 IEEE International Conference on Granular Computing"
+        ],
+        "URL": "https://doi.org/10.1109/grc.2008.4664632"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-99277-8_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Information-Entropy-Based DNS Tunnel Prediction"
+        ],
+        "author": [
+          {
+            "given": "Irvin",
+            "family": "Homem",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Panagiotis",
+            "family": "Papapetrou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Spyridon",
+            "family": "Dosis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              8,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "IFIP Advances in Information and Communication Technology",
+          "Advances in Digital Forensics XIV"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-99277-8_8"
+      },
+      {
+        "publisher": "Defense Technical Information Center",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              3,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.21236/ada278164",
+        "type": "report",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Theory of Conditional Information with Applications."
+        ],
+        "author": [
+          {
+            "given": "P. G.",
+            "family": "Calabrese",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.21236/ada278164"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              10,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780470057339.val005m",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Entropy Profiles"
+        ],
+        "author": [
+          {
+            "given": "G.P.",
+            "family": "Patil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              9,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Environmetrics"
+        ],
+        "URL": "https://doi.org/10.1002/9780470057339.val005m"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781118445112.stat07676",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Entropy Profiles"
+        ],
+        "author": [
+          {
+            "given": "G.P.",
+            "family": "Patil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Wiley StatsRef: Statistics Reference Online"
+        ],
+        "URL": "https://doi.org/10.1002/9781118445112.stat07676"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.2478/cait-2013-0012",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Tsallis Entropy"
+        ],
+        "author": [
+          {
+            "given": "Sanei Tabass",
+            "family": "Manije",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohtashami Borzadaran",
+            "family": "Gholamreza",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Amini",
+            "family": "Mohammad",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Cybernetics and Information Technologies"
+        ],
+        "URL": "https://doi.org/10.2478/cait-2013-0012"
+      },
+      {
+        "publisher": "Institute of Mathematics, Polish Academy of Sciences",
+        "DOI": "10.4064/sm-55-2-175-200",
+        "type": "journal-article",
+        "is-referenced-by-count": 106,
+        "title": [
+          "Topological conditional entropy"
+        ],
+        "author": [
+          {
+            "given": "Michał",
+            "family": "Misiurewicz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1976
+            ]
+          ]
+        },
+        "container-title": [
+          "Studia Mathematica"
+        ],
+        "URL": "https://doi.org/10.4064/sm-55-2-175-200"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-21891-5_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Rényi Entropy"
+        ],
+        "author": [
+          {
+            "given": "Marco",
+            "family": "Tomamichel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              10,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "SpringerBriefs in Mathematical Physics",
+          "Quantum Information Processing with Finite Resources"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-21891-5_5"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "DOI": "10.1007/11816171_85",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Conditional Random Fields Based Label Sequence and Information Feedback"
+        ],
+        "author": [
+          {
+            "given": "Wei",
+            "family": "Jiang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yi",
+            "family": "Guan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiao-Long",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computational Intelligence"
+        ],
+        "URL": "https://doi.org/10.1007/11816171_85"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-540-37275-2_85",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Random Fields Based Label Sequence and Information Feedback"
+        ],
+        "author": [
+          {
+            "given": "Wei",
+            "family": "Jiang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yi",
+            "family": "Guan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiao-Long",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computational Intelligence"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-540-37275-2_85"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11432-008-0113-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 63,
+        "title": [
+          "Information granules and entropy theory in information systems"
+        ],
+        "author": [
+          {
+            "given": "JiYe",
+            "family": "Liang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "YuHua",
+            "family": "Qian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              7,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Science in China Series F: Information Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/s11432-008-0113-2"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreva.30.620",
+        "type": "journal-article",
+        "is-referenced-by-count": 129,
+        "title": [
+          "Information entropy and Thomas-Fermi theory"
+        ],
+        "author": [
+          {
+            "given": "Shridhar R.",
+            "family": "Gadre",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1984,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/physreva.30.620"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780470057339.val005m.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Entropy Profiles"
+        ],
+        "author": [
+          {
+            "given": "G.P.",
+            "family": "Patil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              1,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Environmetrics"
+        ],
+        "URL": "https://doi.org/10.1002/9780470057339.val005m.pub2"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e21010003",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Entropy, Carnot Cycle, and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Mario",
+            "family": "Martinelli",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Dipartimento di Elettronica Informazione e Bioingegneria, Politecnico di Milano, 20133 Milano, Italy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e21010003"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-011-5886-2_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Negative Entropy in Quantum Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Nicolas J.",
+            "family": "Cerf",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chris",
+            "family": "Adami",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "New Developments on Fundamental Problems in Quantum Physics"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-011-5886-2_11"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.asoc.2023.111149",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Information fusion and attribute reduction for multi-source incomplete mixed data via conditional information entropy and D-S evidence theory"
+        ],
+        "author": [
+          {
+            "given": "Zhaowen",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2678-4099",
+            "authenticated-orcid": false,
+            "given": "Qinli",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Suping",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yichun",
+            "family": "Peng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lulu",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Soft Computing"
+        ],
+        "URL": "https://doi.org/10.1016/j.asoc.2023.111149"
+      },
+      {
+        "DOI": "10.17077/etd.xe2tdyvf",
+        "title": [
+          "Musical time and information theory entropy"
+        ],
+        "author": [
+          {
+            "given": "Sarah Elizabeth",
+            "family": "Culpepper",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "The University of Iowa",
+        "is-referenced-by-count": 0,
+        "type": "dissertation",
+        "URL": "https://doi.org/10.17077/etd.xe2tdyvf"
+      },
+      {
+        "DOI": "10.1108/14684521211241477",
+        "title": [
+          "Entropy and Information Theory (2nd ed.)"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Online Information Review"
+        ],
+        "publisher": "Emerald",
+        "is-referenced-by-count": 2,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1108/14684521211241477"
+      },
+      {
+        "publisher": "MDPI",
+        "DOI": "10.3390/entropy2021-09800",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy: from Thermodynamics to Information Theory"
+        ],
+        "author": [
+          {
+            "given": "Jordao",
+            "family": "Oliveira",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ivonete",
+            "family": "Avila",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marcelo",
+            "family": "Pinheiro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Carlos",
+            "family": "Maciel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of Entropy 2021: The Scientific Tool of the 21st Century"
+        ],
+        "URL": "https://doi.org/10.3390/entropy2021-09800"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e24121760",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy and Information Theory in Acoustics"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-5035-223X",
+            "authenticated-orcid": false,
+            "given": "Yuxing",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Automation and Information Engineering, Xi’an University of Technology, Xi’an 710048, China"
+              },
+              {
+                "name": "Shaanxi Key Laboratory of Complex System Control and Intelligent Information Processing, Xi’an University of Technology, Xi’an 710048, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e24121760"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-00659-3_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Information Theory, Relative Entropy and Statistics"
+        ],
+        "author": [
+          {
+            "given": "François",
+            "family": "Bavaud",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Formal Theories of Information"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-00659-3_3"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/arace56528.2022.00027",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Multi-robot gas source localization based on conditional information entropy"
+        ],
+        "author": [
+          {
+            "given": "Yu-Xiu",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Anhui University of Technology,School of Electrical and Information Engineering,Ma&#x2019;anshan,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wei-Wei",
+            "family": "Shao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Anhui University of Technology,School of Electrical and Information Engineering,Ma&#x2019;anshan,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ai-Min",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Anhui University of Technology,School of Electrical and Information Engineering,Ma&#x2019;anshan,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zheng-Lei",
+            "family": "Luo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Anhui University of Technology,School of Electrical and Information Engineering,Ma&#x2019;anshan,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2022 Asia Conference on Advanced Robotics, Automation, and Control Engineering (ARACE)"
+        ],
+        "URL": "https://doi.org/10.1109/arace56528.2022.00027"
+      },
+      {
+        "publisher": "American Mathematical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2002
+            ]
+          ]
+        },
+        "DOI": "10.1090/conm/305/05225",
+        "type": "other",
+        "is-referenced-by-count": 27,
+        "title": [
+          "Relative entropy in quantum information theory"
+        ],
+        "author": [
+          {
+            "given": "Benjamin",
+            "family": "Schumacher",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michael D.",
+            "family": "Westmoreland",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Contemporary Mathematics",
+          "Quantum Computation and Information"
+        ],
+        "URL": "https://doi.org/10.1090/conm/305/05225"
+      },
+      {
+        "publisher": "SPE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              2,
+              18
+            ]
+          ]
+        },
+        "DOI": "10.2118/163638-ms",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Estimation of Mutual Information and Conditional Entropy for Surveillance Optimization"
+        ],
+        "author": [
+          {
+            "given": "Duc H.",
+            "family": "Le",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "U. of Tulsa"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Albert C.",
+            "family": "Reynolds",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "U. of Tulsa"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              2,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "SPE Reservoir Simulation Symposium"
+        ],
+        "URL": "https://doi.org/10.2118/163638-ms"
+      },
+      {
+        "publisher": "Tokyo Institute of Technology, Department of Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              1962,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.2996/kmj/1138844604",
+        "type": "journal-article",
+        "is-referenced-by-count": 527,
+        "title": [
+          "Conditional expectation in an operator algebra. IV. Entropy and information"
+        ],
+        "author": [
+          {
+            "given": "Hisaharu",
+            "family": "Umegaki",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Kodai Mathematical Journal"
+        ],
+        "URL": "https://doi.org/10.2996/kmj/1138844604"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2019.8849809",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Remarks on Rényi versions of conditional entropy and mutual information"
+        ],
+        "author": [
+          {
+            "given": "Gautam",
+            "family": "Aishwarya",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Delaware, Newark, DE, 19716, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mokshay",
+            "family": "Madiman",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Delaware, Newark, DE, 19716, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE International Symposium on Information Theory (ISIT)"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2019.8849809"
+      },
+      {
+        "publisher": "Society of Petroleum Engineers (SPE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.2118/163638-pa",
+        "type": "journal-article",
+        "is-referenced-by-count": 15,
+        "title": [
+          "Estimation of Mutual Information and Conditional Entropy for Surveillance Optimization"
+        ],
+        "author": [
+          {
+            "given": "Duc H.",
+            "family": "Le",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Tulsa"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Albert C.",
+            "family": "Reynolds",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Tulsa"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "SPE Journal"
+        ],
+        "URL": "https://doi.org/10.2118/163638-pa"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-54474-3_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Conditional Entropy-Based Evaluation of Information Dynamics in Physiological Systems"
+        ],
+        "author": [
+          {
+            "given": "Luca",
+            "family": "Faes",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alberto",
+            "family": "Porta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Understanding Complex Systems",
+          "Directed Information Measures in Neuroscience"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-54474-3_3"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1977,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/0301-0104(77)87087-0",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Information theory for experiments with known conditional probabilities: Application to the prediction of branching ratios"
+        ],
+        "author": [
+          {
+            "given": "Carlos L.",
+            "family": "Virá",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "James L.",
+            "family": "Kinsey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chemical Physics"
+        ],
+        "URL": "https://doi.org/10.1016/0301-0104(77)87087-0"
+      },
+      {
+        "publisher": "Tech Science Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.32604/cmc.2024.049147",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Attribute Reduction of Hybrid Decision Information Systems Based on Fuzzy Conditional Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Xiaoqin",
+            "family": "Ma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wenchang",
+            "family": "Yu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Qinli",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "container-title": [
+          "Computers, Materials &amp; Continua"
+        ],
+        "URL": "https://doi.org/10.32604/cmc.2024.049147"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e24101398",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Information Theory for Biological Sequence Classification: A Novel Feature Extraction Technique Based on Tsallis Entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4975-7867",
+            "authenticated-orcid": false,
+            "given": "Robson P.",
+            "family": "Bonidia",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6791-0768",
+            "authenticated-orcid": false,
+            "given": "Anderson P.",
+            "family": "Avila Santos",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              },
+              {
+                "name": "Department of Environmental Microbiology, Helmholtz Centre for Environmental Research-UFZ GmbH, 04318 Leipzig, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2041-9170",
+            "authenticated-orcid": false,
+            "given": "Breno L. S.",
+            "family": "de Almeida",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5016-5191",
+            "authenticated-orcid": false,
+            "given": "Peter F.",
+            "family": "Stadler",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science and Interdisciplinary Center of Bioinformatics, University of Leipzig, 04107 Leipzig, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6972-6692",
+            "authenticated-orcid": false,
+            "given": "Ulisses",
+            "family": "Nunes da Rocha",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Environmental Microbiology, Helmholtz Centre for Environmental Research-UFZ GmbH, 04318 Leipzig, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8972-5221",
+            "authenticated-orcid": false,
+            "given": "Danilo S.",
+            "family": "Sanches",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, Federal University of Technology-Paraná—UTFPR, Cornélio Procópio 86300-000, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4765-6459",
+            "authenticated-orcid": false,
+            "given": "André C. P. L. F.",
+            "family": "de Carvalho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Mathematics and Computer Sciences, University of São Paulo, São Carlos 13566-590, Brazil"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e24101398"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/iske47853.2019.9170314",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Dynamical Information Fusion of Multisource Incomplete Hybrid Information Systems Based on Conditional Entropy"
+        ],
+        "author": [
+          {
+            "given": "Qianqian",
+            "family": "Huang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Southwest Jiaotong University,School of Information Science and Technology,Chengdu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tianrui",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Southwest Jiaotong University,School of Information Science and Technology,Chengdu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xin",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Southwestern University of Finance and Economics,School of Economic Information Engineering,Chengdu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jie",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Southwest Jiaotong University,School of Information Science and Technology,Chengdu,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering (ISKE)"
+        ],
+        "URL": "https://doi.org/10.1109/iske47853.2019.9170314"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1038/srep12403",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Position-specific prediction of methylation sites from sequence conservation based on information theory"
+        ],
+        "author": [
+          {
+            "given": "Yinan",
+            "family": "Shi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yanzhi",
+            "family": "Guo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yayun",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Menglong",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              7,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Scientific Reports"
+        ],
+        "URL": "https://doi.org/10.1038/srep12403"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789813274884_0007",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Headline Generation as a Sequence Prediction with Conditional Random Fields"
+        ],
+        "author": [
+          {
+            "given": "Carlos A.",
+            "family": "Colmenares",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Google Inc., Zurich, Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marina",
+            "family": "Litvak",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shamoon College of Engineering, Beer Sheva, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Amin",
+            "family": "Mantrach",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Criteo Labs, Palo Alto, California, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fabrizio",
+            "family": "Silvestri",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Facebook, London, UK"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Horacio",
+            "family": "Rodríguez",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "TALP-UPC, Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Multilingual Text Analysis"
+        ],
+        "URL": "https://doi.org/10.1142/9789813274884_0007"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0076-6879(96)74036-3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 56,
+        "title": [
+          "Reading of DNA sequence logos: Prediction of major groove binding by information theory"
+        ],
+        "author": [
+          {
+            "given": "Thomas D.",
+            "family": "Schneider",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Methods in Enzymology",
+          "RNA Polymerase and Associated Factors, Part B"
+        ],
+        "URL": "https://doi.org/10.1016/s0076-6879(96)74036-3"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "DOI": "10.1088/978-0-7503-3931-5ch1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy as missing information: from Shannon’s information theory to Jaynes’ maximum entropy principle"
+        ],
+        "author": [
+          {
+            "given": "Hugo",
+            "family": "Fort",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Republic University",
+                "place": [
+                  "Uruguay"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Forecasting with Maximum Entropy"
+        ],
+        "URL": "https://doi.org/10.1088/978-0-7503-3931-5ch1"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-45493-4_24",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Representing and Learning Conditional Information in Possibility Theory"
+        ],
+        "author": [
+          {
+            "given": "Gabriele",
+            "family": "Kern-Isberner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2001,
+              9,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computational Intelligence. Theory and Applications"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-45493-4_24"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1088/1402-4896/ad6222",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Quantum conditional entropy and classical-quantum conditional entropy with localization characteristics"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2646-7202",
+            "authenticated-orcid": true,
+            "given": "Qi",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shuai",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lijie",
+            "family": "Gou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rong",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Physica Scripta"
+        ],
+        "URL": "https://doi.org/10.1088/1402-4896/ad6222"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.391238",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Conditional entropy-constrained vector quantization: high-rate theory and design algorithms"
+        ],
+        "author": [
+          {
+            "given": "D.P.",
+            "family": "de Garrido",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.A.",
+            "family": "Pearlman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.391238"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11856-009-0065-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Conditional entropy theory in infinite measure and a question of Krengel"
+        ],
+        "author": [
+          {
+            "given": "Alexandre I.",
+            "family": "Danilenko",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daniel J.",
+            "family": "Rudolph",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Israel Journal of Mathematics"
+        ],
+        "URL": "https://doi.org/10.1007/s11856-009-0065-2"
+      },
+      {
+        "DOI": "10.1109/isit.1994.394979",
+        "title": [
+          "Conditional entropy-constrained vector quantization: high-rate theory and design algorithms"
+        ],
+        "author": [
+          {
+            "given": "D.P.",
+            "family": "de Garrido",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "W.A.",
+            "family": "Pearlman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 1994 IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1994.394979"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1145/3356995.3364543",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Bike-Share Demand Prediction using Attention based Sequence to Sequence and Conditional Variational AutoEncoder"
+        ],
+        "author": [
+          {
+            "given": "Tomohiro",
+            "family": "Mimura",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "NTT DOCOMO, INC., Tokyo, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shin",
+            "family": "Ishiguro",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "NTT DOCOMO, INC., The University of Tokyo, Tokyo, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Satoshi",
+            "family": "Kawasaki",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "NTT DOCOMO, INC., The University of Tokyo, Tokyo, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yusuke",
+            "family": "Fukazawa",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "NTT DOCOMO, INC., Tokyo, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 3rd ACM SIGSPATIAL International Workshop on Prediction of Human Mobility"
+        ],
+        "URL": "https://doi.org/10.1145/3356995.3364543"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e23111427",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "On Conditional Tsallis Entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-1199-2220",
+            "authenticated-orcid": false,
+            "given": "Andreia",
+            "family": "Teixeira",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "CINTESIS—Centre for Health Technology and Services Research, Faculty of Medicine, University of Porto, 4200-450 Porto, Portugal"
+              },
+              {
+                "name": "MEDCIDS—Department of Community Medicine, Information and Decision in Health, Faculty of Medicine, University of Porto, 4200-450 Porto, Portugal"
+              },
+              {
+                "name": "ADiT-LAB, Instituto Politécnico de Viana do Castelo, Rua Escola Industrial e Comercial Nun’Álvares, 4900-347 Viana do Castelo, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8792-959X",
+            "authenticated-orcid": false,
+            "given": "André",
+            "family": "Souto",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "LASIGE, Faculdade de Ciências da Universidade de Lisboa, Campo Grande, 1749-016 Lisboa, Portugal"
+              },
+              {
+                "name": "Departamento de Informática, Faculdade de Ciências da Universidade de Lisboa, Campo Grande, 1749-016 Lisboa, Portugal"
+              },
+              {
+                "name": "Instituto de Telecomunicações, Av. Rovisco Pais, n 1, 1049-001 Lisboa, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9988-594X",
+            "authenticated-orcid": false,
+            "given": "Luís",
+            "family": "Antunes",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Computer Science Department, Faculty of Sciences, University of Porto, Rua do Campo Alegre, 4169-007 Porto, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e23111427"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e22090999",
+        "type": "journal-article",
+        "is-referenced-by-count": 66,
+        "title": [
+          "The Conditional Entropy Bottleneck"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3886-5619",
+            "authenticated-orcid": false,
+            "given": "Ian",
+            "family": "Fischer",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Google Research, Mountain View, CA 94043, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              9,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e22090999"
+      },
+      {
+        "publisher": "The Institute of Webcasting, Internet and Telecommunication",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.7236/jiibc.2014.14.6.47",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Uncertainty Improvement of Incomplete Decision System using Bayesian Conditional Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Gyoo-Seok",
+            "family": "Choi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "In-Kyu",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Journal of the Institute of Webcasting, Internet and Telecommunication"
+        ],
+        "URL": "https://doi.org/10.7236/jiibc.2014.14.6.47"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/acit49673.2020.9208960",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional Entropy of DNA"
+        ],
+        "author": [
+          {
+            "given": "Marta",
+            "family": "Vohnoutova",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Libor",
+            "family": "Dostalek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Iva",
+            "family": "Dostalkova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lenka",
+            "family": "Gahurova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2020 10th International Conference on Advanced Computer Information Technologies (ACIT)"
+        ],
+        "URL": "https://doi.org/10.1109/acit49673.2020.9208960"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-24282-3_83",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Novel Feature Selection Method for the Conditional Information Entropy Model"
+        ],
+        "author": [
+          {
+            "given": "Jing",
+            "family": "Ruan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Changsheng",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Communications in Computer and Information Science",
+          "Emerging Research in Artificial Intelligence and Computational Intelligence"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-24282-3_83"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-017-3040-2_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Review of Entropy and Information Theory"
+        ],
+        "author": [
+          {
+            "given": "David F.",
+            "family": "Batten",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Spatial Analysis of Interacting Economies"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-017-3040-2_2"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1080/14735784.2024.2343700",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy, melody, beauty: composing with information theory"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Patteson",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Independent Scholar"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Culture, Theory and Critique"
+        ],
+        "URL": "https://doi.org/10.1080/14735784.2024.2343700"
+      },
+      {
+        "publisher": "AICIT",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              11,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.4156/ijact.vol4.issue21.59",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Heuristic Algorithm for Rule Extraction Based on Conditional Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Haichun Zhao",
+            "family": "-",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhisheng Sun",
+            "family": "-",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Advancements in Computing Technology"
+        ],
+        "URL": "https://doi.org/10.4156/ijact.vol4.issue21.59"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003346807-4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Theory (Shannon Entropy) and Materials Science"
+        ],
+        "author": [
+          {
+            "given": "Luca",
+            "family": "Spiridigliozzi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Order from Chaos"
+        ],
+        "URL": "https://doi.org/10.1201/9781003346807-4"
+      },
+      {
+        "publisher": "Meteorological Research Institute, Japan Meteorological Agency",
+        "published-print": {
+          "date-parts": [
+            [
+              1958
+            ]
+          ]
+        },
+        "DOI": "10.2467/mripapers1950.9.2_51",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Weather Forecast and Entropy in Information Theory"
+        ],
+        "author": [
+          {
+            "given": "E.",
+            "family": "Suzuki",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Meteorological Research Institute, Tokyo"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Papers in Meteorology and Geophysics"
+        ],
+        "URL": "https://doi.org/10.2467/mripapers1950.9.2_51"
+      },
+      {
+        "publisher": "FapUNIFESP (SciELO)",
+        "DOI": "10.1590/s0103-97331999000100005",
+        "type": "journal-article",
+        "is-referenced-by-count": 93,
+        "title": [
+          "Tsallis entropy and Jaynes' Information Theory formalism"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Plastino",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. R.",
+            "family": "Plastino",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1999,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Brazilian Journal of Physics"
+        ],
+        "URL": "https://doi.org/10.1590/s0103-97331999000100005"
+      },
+      {
+        "publisher": "Pleiades Publishing Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1134/s0032946022020016",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Entropy in Thermodynamics and in Information Theory"
+        ],
+        "author": [
+          {
+            "given": "V. A.",
+            "family": "Zorich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Problems of Information Transmission"
+        ],
+        "URL": "https://doi.org/10.1134/s0032946022020016"
+      },
+      {
+        "publisher": "National Education Services",
+        "DOI": "10.62311/nesx/rp-2-01-2022",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy-Driven Optimization of Multi-LLM Dialogues through Conditional Information Dynamics"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0007-1023-7035",
+            "authenticated-orcid": false,
+            "given": "Murali Krishna",
+            "family": "Pasupuleti",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Academic and Industrial Research Innovations(IJAIRI)"
+        ],
+        "URL": "https://doi.org/10.62311/nesx/rp-2-01-2022"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e21121170",
+        "type": "journal-article",
+        "is-referenced-by-count": 32,
+        "title": [
+          "Entropy and Information Theory: Uses and Misuses"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-1263-2342",
+            "authenticated-orcid": false,
+            "given": "Arieh",
+            "family": "Ben-Naim",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Physical Chemistry, The Hebrew University of Jerusalem, Edmond J. Safra Campus Givat Ram, Jerusalem 91904, Israel"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e21121170"
+      },
+      {
+        "publisher": "MDPI",
+        "DOI": "10.3390/entropy2021-09750",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "On Conditional Tsallis Entropy"
+        ],
+        "author": [
+          {
+            "given": "Andreia",
+            "family": "Teixeira",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "André",
+            "family": "Souto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luís",
+            "family": "Antunes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of Entropy 2021: The Scientific Tool of the 21st Century"
+        ],
+        "URL": "https://doi.org/10.3390/entropy2021-09750"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreva.104.012417",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Witnessing negative conditional entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-9719-9623",
+            "authenticated-orcid": true,
+            "given": "Mahathi",
+            "family": "Vempati",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nirman",
+            "family": "Ganguly",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Indranil",
+            "family": "Chakrabarty",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Arun K.",
+            "family": "Pati",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              7,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/physreva.104.012417"
+      },
+      {
+        "publisher": "Scientific Research Publishing, Inc.",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.4236/ijmnta.2014.34020",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "The Computational Theory of Intelligence: Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Daniel",
+            "family": "Kovach",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Modern Nonlinear Theory and Application"
+        ],
+        "URL": "https://doi.org/10.4236/ijmnta.2014.34020"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/0375-9601(93)90021-q",
+        "type": "journal-article",
+        "is-referenced-by-count": 183,
+        "title": [
+          "Tsallis' entropy, Ehrenfest theorem and information theory"
+        ],
+        "author": [
+          {
+            "given": "A.R.",
+            "family": "Plastino",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Plastino",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physics Letters A"
+        ],
+        "URL": "https://doi.org/10.1016/0375-9601(93)90021-q"
+      },
+      {
+        "publisher": "University of Debrecen/ Debreceni Egyetem",
+        "DOI": "10.5486/pmd.1972.19.1-4.18",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conditional $(p,q)$ entropy"
+        ],
+        "author": [
+          {
+            "given": "R. W.",
+            "family": "Allen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Publicationes Mathematicae Debrecen"
+        ],
+        "URL": "https://doi.org/10.5486/pmd.1972.19.1-4.18"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

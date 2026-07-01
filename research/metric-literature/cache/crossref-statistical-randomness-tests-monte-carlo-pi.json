@@ -1,5 +1,4604 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=statistical+randomness+tests+Monte+Carlo+pi&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 576879,
+    "items": [
+      {
+        "publisher": "Canadian Science Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1139/x72-014",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Monte Carlo Test of Holgate's New Randomness Tests"
+        ],
+        "author": [
+          {
+            "given": "Bijan",
+            "family": "Payandeh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Canadian Journal of Forest Research"
+        ],
+        "URL": "https://doi.org/10.1139/x72-014"
+      },
+      {
+        "publisher": "Vieweg+Teubner Verlag",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-663-14221-8_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte-Carlo-Pi"
+        ],
+        "author": [
+          {
+            "given": "Karl",
+            "family": "Achilles",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "BASIC und Pascal im Vergleich"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-663-14221-8_9"
+      },
+      {
+        "publisher": "Birkhäuser Boston",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-0-8176-4804-6_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Modeling of Randomness"
+        ],
+        "author": [
+          {
+            "given": "Alan G.",
+            "family": "Steele",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert J.",
+            "family": "Douglas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              11,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Modeling and Simulation in Science, Engineering and Technology",
+          "Data Modeling for Metrology and Testing in Measurement Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-0-8176-4804-6_11"
+      },
+      {
+        "DOI": "10.1007/0-387-29053-2_1",
+        "title": [
+          "Monte Carlo Tests"
+        ],
+        "container-title": [
+          "Lecture Notes in Statistics",
+          "Nonparametric Monte Carlo Tests and Their Applications"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/0-387-29053-2_1"
+      },
+      {
+        "publisher": "Office of Scientific and Technical Information (OSTI)",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.2172/1471319",
+        "type": "report",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Statistical Tests for Convergence in Monte Carlo Criticality Calculations"
+        ],
+        "author": [
+          {
+            "given": "Forrest",
+            "family": "Brown",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Los Alamos National Lab. (LANL), Los Alamos, NM (United States)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "William",
+            "family": "Martin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Univ. of Michigan, Ann Arbor, MI (United States)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.2172/1471319"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              2,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1515/jbnst-1999-1-212",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Zufall und Quasi-Monte Carlo Ansätze / Randomness and Quasi-Monte Carlo Approaches"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Winker",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Universität Mannheim, Wirtschaftswissenschaftliche Fakultät, Lehrstuhl für Volkswirtschaftslehre, D-68131 Mannheim"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kai-Tai",
+            "family": "Fang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Jahrbücher für Nationalökonomie und Statistik"
+        ],
+        "URL": "https://doi.org/10.1515/jbnst-1999-1-212"
+      },
+      {
+        "DOI": "10.3840/000779",
+        "title": [
+          "Monte Carlo Estimate for Pi"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/000779"
+      },
+      {
+        "DOI": "10.3840/07000779",
+        "title": [
+          "Monte Carlo Estimate for Pi"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/07000779"
+      },
+      {
+        "DOI": "10.1007/bfb0049060",
+        "title": [
+          "Non statistical Monte-Carlo"
+        ],
+        "author": [
+          {
+            "given": "B.",
+            "family": "Mercier",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Physics",
+          "Monte-Carlo Methods and Applications in Neutronics, Photonics and Statistical Physics"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/bfb0049060"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-3071-5",
+        "type": "book",
+        "is-referenced-by-count": 1374,
+        "title": [
+          "Monte Carlo Statistical Methods"
+        ],
+        "author": [
+          {
+            "given": "Christian P.",
+            "family": "Robert",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "George",
+            "family": "Casella",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Texts in Statistics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-3071-5"
+      },
+      {
+        "publisher": "Office of Scientific and Technical Information (OSTI)",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.2172/1972034",
+        "type": "report",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Statistical Convergence"
+        ],
+        "author": [
+          {
+            "given": "Dermott",
+            "family": "Cullen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Lawrence Livermore National Laboratory (LLNL), Livermore, CA (United States)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.2172/1972034"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1986,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1080/00411458608212705",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Non statistical Monte-Carlo"
+        ],
+        "author": [
+          {
+            "given": "Bertrand",
+            "family": "Mercier",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transport Theory and Statistical Physics"
+        ],
+        "URL": "https://doi.org/10.1080/00411458608212705"
+      },
+      {
+        "DOI": "10.1198/tech.2005.s272",
+        "title": [
+          "Monte Carlo Statistical Methods"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Technometrics"
+        ],
+        "publisher": "Informa UK Limited",
+        "is-referenced-by-count": 5,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1198/tech.2005.s272"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-4145-2",
+        "type": "book",
+        "is-referenced-by-count": 3232,
+        "title": [
+          "Monte Carlo Statistical Methods"
+        ],
+        "author": [
+          {
+            "given": "Christian P.",
+            "family": "Robert",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "George",
+            "family": "Casella",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Texts in Statistics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-4145-2"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1080/00401706.2000.10485722",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Monte Carlo Statistical Methods"
+        ],
+        "author": [
+          {
+            "given": "Hoon",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Technometrics"
+        ],
+        "URL": "https://doi.org/10.1080/00401706.2000.10485722"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1198/jasa.2001.s372",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Monte Carlo Statistical Methods"
+        ],
+        "author": [
+          {
+            "given": "Osnat",
+            "family": "Stramer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.1198/jasa.2001.s372"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              1949,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1177/0008068319490203",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Topographic Randomness and Its Statistical Tests"
+        ],
+        "author": [
+          {
+            "given": "Birendranath",
+            "family": "Ghosh",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Presidency College, Calcutta"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1949,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Calcutta Statistical Association Bulletin"
+        ],
+        "URL": "https://doi.org/10.1177/0008068319490203"
+      },
+      {
+        "publisher": "Apress",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4842-8185-7_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Calculating Pi with Monte Carlo Simulation"
+        ],
+        "author": [
+          {
+            "given": "Rongpeng",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aiichiro",
+            "family": "Nakano",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Simulation with Python"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4842-8185-7_1"
+      },
+      {
+        "publisher": "National Council of Teachers of Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              1981,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.5951/mt.74.5.0335",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo, Probability, Algebra, and Pi"
+        ],
+        "author": [
+          {
+            "given": "Duane C.",
+            "family": "Hinders",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "1 Henry M. Gunn High School Palo Alto, CA 94306."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Mathematics Teacher"
+        ],
+        "URL": "https://doi.org/10.5951/mt.74.5.0335"
+      },
+      {
+        "publisher": "The R Foundation",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.32614/cran.package.cryptrndtest",
+        "type": "dataset",
+        "is-referenced-by-count": 0,
+        "title": [
+          "CryptRndTest: Statistical Tests for Cryptographic Randomness"
+        ],
+        "author": [
+          {
+            "name": "Haydar Demirhan (<https://orcid.org/0000-0002-8565-4710>)",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CRAN: Contributed Packages"
+        ],
+        "URL": "https://doi.org/10.32614/cran.package.cryptrndtest"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "DOI": "10.1080/00949655.2026.2625783",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Testing complete spatial randomness of point processes with Monte Carlo tests: a comparative power study"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0001-8355-2016",
+            "authenticated-orcid": false,
+            "given": "Chiara",
+            "family": "Fend",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "RPTU University Kaiserslautern-Landau",
+                "place": [
+                  "Kaiserslautern, Germany"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8030-069X",
+            "authenticated-orcid": false,
+            "given": "Claudia",
+            "family": "Redenbach",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "RPTU University Kaiserslautern-Landau",
+                "place": [
+                  "Kaiserslautern, Germany"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Computation and Simulation"
+        ],
+        "URL": "https://doi.org/10.1080/00949655.2026.2625783"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1986,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/0165-1765(86)90164-3",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Monte Carlo tests of autocorrelation"
+        ],
+        "author": [
+          {
+            "given": "Henri",
+            "family": "Theil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.S.",
+            "family": "Shonkwiler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Economics Letters"
+        ],
+        "URL": "https://doi.org/10.1016/0165-1765(86)90164-3"
+      },
+      {
+        "publisher": "CABI",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1079/9781789245349.0016",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo tests and randomization."
+        ],
+        "author": [
+          {
+            "given": "Donald",
+            "family": "Quicke",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Buntika A.",
+            "family": "Butcher",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rachel Kruft",
+            "family": "Welton",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Practical R for biologists: an introduction"
+        ],
+        "URL": "https://doi.org/10.1079/9781789245349.0016"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.2307/2336623",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Generalized Monte Carlo Significance Tests"
+        ],
+        "author": [
+          {
+            "given": "Julian",
+            "family": "Besag",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Peter",
+            "family": "Clifford",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.2307/2336623"
+      },
+      {
+        "publisher": "The Scientific and Technological Research Council of Turkey (TUBITAK-ULAKBIM) - DIGITAL COMMONS JOURNALS",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.3906/mat-1509-19",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "New statistical randomness tests: 4-bit template matching tests"
+        ],
+        "author": [
+          {
+            "given": "Fatih",
+            "family": "SULAK",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "TURKISH JOURNAL OF MATHEMATICS"
+        ],
+        "URL": "https://doi.org/10.3906/mat-1509-19"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1989
+            ]
+          ]
+        },
+        "DOI": "10.1093/biomet/76.4.633",
+        "type": "journal-article",
+        "is-referenced-by-count": 185,
+        "title": [
+          "Generalized Monte Carlo significance tests"
+        ],
+        "author": [
+          {
+            "given": "JULIAN",
+            "family": "BESAG",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "PETER",
+            "family": "CLIFFORD",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.1093/biomet/76.4.633"
+      },
+      {
+        "publisher": "National Council of Teachers of Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.5951/mt.84.5.0387",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "A Monte Carlo Application to Approximate Pi"
+        ],
+        "author": [
+          {
+            "given": "Kenneth",
+            "family": "Easterday",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "1 Kenneth Easterday teaches computer programming and mathematics education for grades 3-14 at Auburn University, Auburn University, AL 36849-5212"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tommy",
+            "family": "Smith",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "2 Tommy Smith serves on the faculty at the University of Alabama at Birmingham, Birmingham, AL 35294"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Mathematics Teacher"
+        ],
+        "URL": "https://doi.org/10.5951/mt.84.5.0387"
+      },
+      {
+        "publisher": "American Association of Physics Teachers (AAPT)",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1119/1.4824938",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Calculating Pi Using the Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Timothy",
+            "family": "Williamson",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Grand Island Senior High School , Grand Island, NY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              10,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "The Physics Teacher"
+        ],
+        "URL": "https://doi.org/10.1119/1.4824938"
+      },
+      {
+        "DOI": "10.3840/002723",
+        "title": [
+          "Approximating Pi by the Monte Carlo Method"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/002723"
+      },
+      {
+        "DOI": "10.3840/08002723",
+        "title": [
+          "Approximating Pi by the Monte Carlo Method"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/08002723"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1080/00224065.1995.11979621",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Usefulness of Monte Carlo Tests"
+        ],
+        "author": [
+          {
+            "given": "Lloyd S.",
+            "family": "Nelson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              2,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Quality Technology"
+        ],
+        "URL": "https://doi.org/10.1080/00224065.1995.11979621"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.2044-8317.1987.tb00880.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo randomization tests: A clarification"
+        ],
+        "author": [
+          {
+            "given": "A. P.",
+            "family": "White",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              8,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "British Journal of Mathematical and Statistical Psychology"
+        ],
+        "URL": "https://doi.org/10.1111/j.2044-8317.1987.tb00880.x"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1214/24-sts958",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Markov Chain Monte Carlo Significance Tests"
+        ],
+        "author": [
+          {
+            "given": "Michael",
+            "family": "Howes",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Michael Howes is a graduate student in the Department of Statistics, Stanford University, Stanford, California 94305-4020, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Statistical Science"
+        ],
+        "URL": "https://doi.org/10.1214/24-sts958"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1988
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-97091-7_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo Simulations in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Stauffer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Simulation and Computer Algebra"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-97091-7_2"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02562621",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Statistical inference and Monte Carlo algorithms"
+        ],
+        "author": [
+          {
+            "given": "George",
+            "family": "Casella",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Juan",
+            "family": "Ferrándiz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daniel",
+            "family": "Peña",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "David Rios",
+            "family": "Insua",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "José M.",
+            "family": "Bernardo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P. A.",
+            "family": "García-López",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "González",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Berger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. P.",
+            "family": "Dawid",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas J.",
+            "family": "Diciccio",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Martin T.",
+            "family": "Wells",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Paul",
+            "family": "Gustafson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Larry",
+            "family": "Wasserman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Edward I.",
+            "family": "George",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jun S.",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiao-Li",
+            "family": "Meng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Philippe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joseph L.",
+            "family": "Schafer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert L.",
+            "family": "Strawderman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Test"
+        ],
+        "URL": "https://doi.org/10.1007/bf02562621"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              3,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.3095422",
+        "type": "journal-article",
+        "is-referenced-by-count": 24,
+        "title": [
+          "Replica exchange statistical temperature Monte Carlo"
+        ],
+        "author": [
+          {
+            "given": "Jaegil",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Boston University Department of Chemistry, , Boston, Massachusetts 02215, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas",
+            "family": "Keyes",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Boston University Department of Chemistry, , Boston, Massachusetts 02215, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "John E.",
+            "family": "Straub",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Boston University Department of Chemistry, , Boston, Massachusetts 02215, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              3,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Chemical Physics"
+        ],
+        "URL": "https://doi.org/10.1063/1.3095422"
+      },
+      {
+        "DOI": "10.1007/978-3-642-82803-4",
+        "title": [
+          "Monte Carlo Methods in Statistical Physics"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1986
+            ]
+          ]
+        },
+        "container-title": [
+          "Topics in Current Physics"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 285,
+        "type": "book",
+        "URL": "https://doi.org/10.1007/978-3-642-82803-4"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1080/01621459.1996.10476977",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Confidence Intervals from Monte Carlo Tests"
+        ],
+        "author": [
+          {
+            "given": "Erik",
+            "family": "Bølviken",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eva",
+            "family": "Skovlund",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.1080/01621459.1996.10476977"
+      },
+      {
+        "publisher": "ACM Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1959
+            ]
+          ]
+        },
+        "DOI": "10.1145/1457838.1457887",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Monte Carlo calculations in statistical mechanics"
+        ],
+        "author": [
+          {
+            "given": "W. W.",
+            "family": "Wood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J. D.",
+            "family": "Jacobson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Papers presented at the the March 3-5, 1959, western joint computer conference on XX - IRE-AIEE-ACM '59 (Western)"
+        ],
+        "URL": "https://doi.org/10.1145/1457838.1457887"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-0716-1454-9_337",
+        "type": "book-chapter",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Monte Carlo Simulations in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Complexity and Systems Science Series",
+          "Statistical and Nonlinear Physics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-0716-1454-9_337"
+      },
+      {
+        "DOI": "10.1007/978-981-10-3307-0",
+        "title": [
+          "Monte-Carlo Simulation-Based Statistical Modeling"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "container-title": [
+          "ICSA Book Series in Statistics"
+        ],
+        "publisher": "Springer Singapore",
+        "is-referenced-by-count": 20,
+        "type": "book",
+        "URL": "https://doi.org/10.1007/978-981-10-3307-0"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-03163-2",
+        "type": "book",
+        "is-referenced-by-count": 329,
+        "title": [
+          "Monte Carlo Simulation in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dieter W.",
+            "family": "Heermann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Graduate Texts in Physics"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-03163-2"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-010-0173-1_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Statistical Ensembles for Monte Carlo Simulation"
+        ],
+        "author": [
+          {
+            "given": "N. B.",
+            "family": "Wilding",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Simulations of Surfaces and Interfaces"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-010-0173-1_5"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-27737-5_337-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Simulations in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Complexity and Systems Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-27737-5_337-2"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2002
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-04685-2",
+        "type": "book",
+        "is-referenced-by-count": 236,
+        "title": [
+          "Monte Carlo Simulation in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dieter W.",
+            "family": "Heermann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Solid-State Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-04685-2"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1198/jasa.2001.s394",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Monte Carlo Methods in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Robert L",
+            "family": "Strawderman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.1198/jasa.2001.s394"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1988,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/0021-9991(88)90073-3",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Statistical error of diffusion Monte Carlo"
+        ],
+        "author": [
+          {
+            "given": "Stuart M",
+            "family": "Rothstein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jan",
+            "family": "Vrbik",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Computational Physics"
+        ],
+        "URL": "https://doi.org/10.1016/0021-9991(88)90073-3"
+      },
+      {
+        "publisher": "Physica-Verlag HD",
+        "published-print": {
+          "date-parts": [
+            [
+              1984
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-51883-6_25",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Computational Aspects of Monte Carlo Tests"
+        ],
+        "author": [
+          {
+            "given": "K.-H.",
+            "family": "Jöckel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Compstat 1984"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-51883-6_25"
+      },
+      {
+        "publisher": "Oxford University PressOxford",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              2,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1093/oso/9780198517962.001.0001",
+        "type": "book",
+        "is-referenced-by-count": 1323,
+        "title": [
+          "Monte Carlo Methods in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "M E J",
+            "family": "Newman",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Santa Fe Institute"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "G T",
+            "family": "Barkema",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute for Theorectical Physics Utrecht University"
+              },
+              {
+                "name": "Santa Fe Institute"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1093/oso/9780198517962.001.0001"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-10758-1",
+        "type": "book",
+        "is-referenced-by-count": 48,
+        "title": [
+          "Monte Carlo Simulation in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dieter W.",
+            "family": "Heermann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Graduate Texts in Physics"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-10758-1"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-30273-6",
+        "type": "book",
+        "is-referenced-by-count": 297,
+        "title": [
+          "Monte Carlo Simulation in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dieter W.",
+            "family": "Heermann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Solid-State Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-30273-6"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1989
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-97174-7_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Simulations in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "D.",
+            "family": "Stauffer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Simulation and Computer Algebra"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-97174-7_2"
+      },
+      {
+        "publisher": "Sissa Medialab",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              11,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.22323/1.023.0018",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo techniques in statistical physics"
+        ],
+        "author": [
+          {
+            "given": "K. P. N.",
+            "family": "Murthy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V. S. S.",
+            "family": "Sastry",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of International conference on Statistical Mechanics of Plasticity and Related Instabilities — PoS(SMPRI2005)"
+        ],
+        "URL": "https://doi.org/10.22323/1.023.0018"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ins.2024.120333",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Statistical tests for multiplicative consistency of fuzzy preference relations: A Monte Carlo simulation"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5423-0632",
+            "authenticated-orcid": false,
+            "given": "Dandan",
+            "family": "Luo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chonghui",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Weihua",
+            "family": "Su",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shouzhen",
+            "family": "Zeng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tomas",
+            "family": "Balezentis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Sciences"
+        ],
+        "URL": "https://doi.org/10.1016/j.ins.2024.120333"
+      },
+      {
+        "DOI": "10.1007/springerreference_60509",
+        "title": [
+          "Monte Carlo Simulations in Statistical Physics"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 3,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_60509"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-0-387-98144-4_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Monte Carlo Methods for Statistical Inference"
+        ],
+        "author": [
+          {
+            "given": "James E.",
+            "family": "Gentle",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              6,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics and Computing",
+          "Computational Statistics"
+        ],
+        "URL": "https://doi.org/10.1007/978-0-387-98144-4_11"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-03336-4",
+        "type": "book",
+        "is-referenced-by-count": 196,
+        "title": [
+          "Monte Carlo Simulation in Statistical Physics"
+        ],
+        "author": [
+          {
+            "given": "Kurt",
+            "family": "Binder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dieter W.",
+            "family": "Heermann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Solid-State Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-03336-4"
+      },
+      {
+        "publisher": "American Institute of Aeronautics and Astronautics",
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.2514/5.9781600865923.0245.0257",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Statistical Fluctuations in Monte Carlo Calculations"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1989,
+              8,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Rarefied Gas Dynamics: Theoretical and Computational Techniques"
+        ],
+        "URL": "https://doi.org/10.2514/5.9781600865923.0245.0257"
+      },
+      {
+        "DOI": "10.1007/978-3-540-85912-3_2",
+        "title": [
+          "On Independence and Sensitivity of Statistical Randomness Tests"
+        ],
+        "author": [
+          {
+            "given": "Meltem",
+            "family": "Sönmez Turan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "DoĞanaksoy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Serdar",
+            "family": "Boztaş",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Sequences and Their Applications - SETA 2008"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 14,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-85912-3_2"
+      },
+      {
+        "DOI": "10.1201/9781482273090-9",
+        "title": [
+          "Statistical Methods for Spatial Epidemiology: Tests for Randomness"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              8,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "GIS And Health"
+        ],
+        "publisher": "CRC Press",
+        "is-referenced-by-count": 1,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1201/9781482273090-9"
+      },
+      {
+        "publisher": "InTech",
+        "DOI": "10.5772/53049",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo Statistical Tests for Identity of Theoretical and Empirical Distributions of Experimental Data"
+        ],
+        "author": [
+          {
+            "given": "Natalia",
+            "family": "D.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daniela",
+            "family": "Toneva-Zheynova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Krasimir",
+            "family": "Kolev",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kiril",
+            "family": "Tenekedjiev",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              3,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Theory and Applications of Monte Carlo Simulations"
+        ],
+        "URL": "https://doi.org/10.5772/53049"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1177/014662168500900302",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Statistical Tests of Group Differences in ALSCAL-Derived Subject Weights: Some Monte Carlo Results"
+        ],
+        "author": [
+          {
+            "given": "Joseph Lee",
+            "family": "Rodgers",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "455 West Lindsey, Room 705, University of Oklahoma, Norman OK 73019, U.S.A."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1985,
+              9,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Applied Psychological Measurement"
+        ],
+        "URL": "https://doi.org/10.1177/014662168500900302"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1981,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1016/0010-4655(81)90174-0",
+        "type": "journal-article",
+        "is-referenced-by-count": 67,
+        "title": [
+          "Tests of the multi-spin-coding technique in Monte Carlo simulations of statistical systems"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Zorn",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "H.J.",
+            "family": "Herrmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Rebbi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Physics Communications"
+        ],
+        "URL": "https://doi.org/10.1016/0010-4655(81)90174-0"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1541-0420.2006.00588_14.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Nonparametric Monte‐Carlo Tests and Their Applications"
+        ],
+        "author": [
+          {
+            "given": "Dongsheng",
+            "family": "Tu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              9,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Biometrics"
+        ],
+        "URL": "https://doi.org/10.1111/j.1541-0420.2006.00588_14.x"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1080/00949658708811002",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improved monte carlo estimation of statistical significance for tests of trend in rates proportions"
+        ],
+        "author": [
+          {
+            "given": "Kenneth J.",
+            "family": "Kopecky",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dale L.",
+            "family": "Preston",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Computation and Simulation"
+        ],
+        "URL": "https://doi.org/10.1080/00949658708811002"
+      },
+      {
+        "DOI": "10.1007/978-3-540-34604-3_8",
+        "title": [
+          "Monte Carlo Tests for LFM Analytical Approximations"
+        ],
+        "container-title": [
+          "Springer Finance",
+          "Interest Rate Models — Theory and Practice"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-34604-3_8"
+      },
+      {
+        "DOI": "10.1007/0-387-29053-2",
+        "title": [
+          "Nonparametric Monte Carlo Tests and Their Applications"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Statistics"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "book",
+        "URL": "https://doi.org/10.1007/0-387-29053-2"
+      },
+      {
+        "DOI": "10.1007/3-540-34604-x_8",
+        "title": [
+          "Monte Carlo Tests for LFM Analytical Approximations"
+        ],
+        "container-title": [
+          "Springer Finance",
+          "Interest Rate Models — Theory and Practice"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/3-540-34604-x_8"
+      },
+      {
+        "publisher": "Scientific Research Publishing, Inc.",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.4236/jdaip.2013.12003",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Relationship between Randomness and Coefficient Alpha: A Monte Carlo Simulation Study"
+        ],
+        "author": [
+          {
+            "given": "Recep",
+            "family": "Bindak",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Data Analysis and Information Processing"
+        ],
+        "URL": "https://doi.org/10.4236/jdaip.2013.12003"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              12,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/biomet/87.4.919",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Nonparametric Monte Carlo tests for multivariate distributions"
+        ],
+        "author": [
+          {
+            "given": "L.-X.",
+            "family": "Zhu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Biometrika"
+        ],
+        "URL": "https://doi.org/10.1093/biomet/87.4.919"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/0304-4076(94)01696-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 153,
+        "title": [
+          "Tests for cointegration a Monte Carlo comparison"
+        ],
+        "author": [
+          {
+            "given": "Alfred A.",
+            "family": "Haug",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Econometrics"
+        ],
+        "URL": "https://doi.org/10.1016/0304-4076(94)01696-8"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129183199001182",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "QUANTUM MONTE CARLO METHODS IN STATISTICAL MECHANICS"
+        ],
+        "author": [
+          {
+            "given": "VILEN",
+            "family": "MELIK-ALAVERDIAN",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Physics, University of Rhode Island, Kingston, Rhode Island 02881, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M. P.",
+            "family": "NIGHTINGALE",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Physics, University of Rhode Island, Kingston, Rhode Island 02881, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              4,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Modern Physics C"
+        ],
+        "URL": "https://doi.org/10.1142/s0129183199001182"
+      },
+      {
+        "publisher": "The R Foundation",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              5,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.32614/cran.package.simctest",
+        "type": "dataset",
+        "is-referenced-by-count": 0,
+        "title": [
+          "simctest: Safe Implementation of Monte Carlo Tests"
+        ],
+        "author": [
+          {
+            "given": "Axel",
+            "family": "Gandy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CRAN: Contributed Packages"
+        ],
+        "URL": "https://doi.org/10.32614/cran.package.simctest"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1080/03610918.2016.1208232",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "An extension of Monte Carlo hypothesis tests"
+        ],
+        "author": [
+          {
+            "given": "Rolf",
+            "family": "Turner",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Statistics, University of Auckland, New Zealand"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Celeste",
+            "family": "Jeffs",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Statistics, University of Auckland, New Zealand"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              9,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications in Statistics - Simulation and Computation"
+        ],
+        "URL": "https://doi.org/10.1080/03610918.2016.1208232"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1977
+            ]
+          ]
+        },
+        "DOI": "10.2307/2346974",
+        "type": "journal-article",
+        "is-referenced-by-count": 322,
+        "title": [
+          "Simple Monte Carlo Tests for Spatial Pattern"
+        ],
+        "author": [
+          {
+            "given": "Julian",
+            "family": "Besag",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Peter J.",
+            "family": "Diggle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Statistics"
+        ],
+        "URL": "https://doi.org/10.2307/2346974"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1145/3680528.3687591",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "A Statistical Approach to Monte Carlo Denoising"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0388-8458",
+            "authenticated-orcid": false,
+            "given": "Hiroyuki",
+            "family": "Sakai",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Technische Universität Wien (TU Wien), Vienna, Austria"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4224-4105",
+            "authenticated-orcid": false,
+            "given": "Christian",
+            "family": "Freude",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Technische Universität Wien (TU Wien), Vienna, Austria"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1546-3265",
+            "authenticated-orcid": false,
+            "given": "Thomas",
+            "family": "Auzinger",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Science and Technology Austria, Klosterneuburg, Austria"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7617-5523",
+            "authenticated-orcid": false,
+            "given": "David",
+            "family": "Hahn",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Technische Universität Wien (TU Wien), Vienna, Austria"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9370-2663",
+            "authenticated-orcid": false,
+            "given": "Michael",
+            "family": "Wimmer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Technische Universität Wien (TU Wien), Vienna, Austria"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "SIGGRAPH Asia 2024 Conference Papers"
+        ],
+        "URL": "https://doi.org/10.1145/3680528.3687591"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1467-9892.1993.tb00149.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 100,
+        "title": [
+          "TESTS FOR FRACTIONAL INTEGRATION:A MONTE CARLO INVESTIGATION"
+        ],
+        "author": [
+          {
+            "given": "Yin‐Wong",
+            "family": "Cheung",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              6,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Time Series Analysis"
+        ],
+        "URL": "https://doi.org/10.1111/j.1467-9892.1993.tb00149.x"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1080/00949650903580047",
+        "type": "journal-article",
+        "is-referenced-by-count": 49,
+        "title": [
+          "Monte Carlo comparison of seven normality tests"
+        ],
+        "author": [
+          {
+            "given": "Hadi Alizadeh",
+            "family": "Noughabi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Naser Reza",
+            "family": "Arghami",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Computation and Simulation"
+        ],
+        "URL": "https://doi.org/10.1080/00949650903580047"
+      },
+      {
+        "DOI": "10.1007/978-0-387-49431-9",
+        "title": [
+          "Vorticity, Statistical Mechanics, and Monte Carlo Simulation"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "container-title": [
+          "Springer Monographs in Mathematics"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 15,
+        "type": "book",
+        "URL": "https://doi.org/10.1007/978-0-387-49431-9"
+      },
+      {
+        "publisher": "Uspekhi Fizicheskikh Nauk (UFN) Journal",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1070/pu1996v039n12abeh000185",
+        "type": "journal-article",
+        "is-referenced-by-count": 52,
+        "title": [
+          "Monte Carlo method in nonlinear statistical optics"
+        ],
+        "author": [
+          {
+            "given": "V P",
+            "family": "Kandidov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              10,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Physics-Uspekhi"
+        ],
+        "URL": "https://doi.org/10.1070/pu1996v039n12abeh000185"
+      },
+      {
+        "DOI": "10.1017/cbo9780511977176.014",
+        "title": [
+          "Statistical Methods for Integration and Monte Carlo"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              4,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Numerical Methods of Statistics"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511977176.014"
+      },
+      {
+        "publisher": "American Institute of Aeronautics and Astronautics",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              6,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.2514/6.1994-3183",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Statistical Monte Carlo prediction for thermal reliability"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Smith",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Atlantic Research Corp., Gainesville, VA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.",
+            "family": "Spear",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Atlantic Research Corp., Gainesville, VA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Cornwell",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Delavan, Inc., Des Moines, IA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1994,
+              8,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "30th Joint Propulsion Conference and Exhibit"
+        ],
+        "URL": "https://doi.org/10.2514/6.1994-3183"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1080/00949659108811330",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Exact monte carlo tests using several statistics"
+        ],
+        "author": [
+          {
+            "given": "John",
+            "family": "Gates",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Computation and Simulation"
+        ],
+        "URL": "https://doi.org/10.1080/00949659108811330"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-04553-4_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Tests for LFM Analytical Approximations"
+        ],
+        "author": [
+          {
+            "given": "Damiano",
+            "family": "Brigo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fabio",
+            "family": "Mercurio",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Finance",
+          "Interest Rate Models Theory and Practice"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-04553-4_8"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/cyberc.2013.93",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Evaluation of Statistical Tests for Randomness Using Conditional Entropy"
+        ],
+        "author": [
+          {
+            "given": "Chengbing",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xuejia",
+            "family": "Lai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery"
+        ],
+        "URL": "https://doi.org/10.1109/cyberc.2013.93"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1088/1757-899x/1116/1/012130",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Application of Monte-Carlo Simulations in Estimation of Pi"
+        ],
+        "author": [
+          {
+            "given": "Rajkumar",
+            "family": "Sharma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Piyush",
+            "family": "Singhal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Manoj Kumar",
+            "family": "Agrawal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IOP Conference Series: Materials Science and Engineering"
+        ],
+        "URL": "https://doi.org/10.1088/1757-899x/1116/1/012130"
+      },
+      {
+        "DOI": "10.4135/9781529733594",
+        "title": [
+          "Conducting Monte Carlo Simulations in Excel: Randomness &amp; Probability Excel Demonstration"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "publisher": "Emory University",
+        "is-referenced-by-count": 0,
+        "URL": "https://doi.org/10.4135/9781529733594"
+      },
+      {
+        "publisher": "Uspekhi Fizicheskikh Nauk (UFN) Journal",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.3367/ufnr.0166.199612c.1309",
+        "type": "journal-article",
+        "is-referenced-by-count": 39,
+        "title": [
+          "Monte Carlo method in nonlinear statistical optics"
+        ],
+        "author": [
+          {
+            "given": "V.P.",
+            "family": "Kandidov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Uspekhi Fizicheskih Nauk"
+        ],
+        "URL": "https://doi.org/10.3367/ufnr.0166.199612c.1309"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e22070741",
+        "type": "journal-article",
+        "is-referenced-by-count": 22,
+        "title": [
+          "Measuring Independence between Statistical Randomness Tests by Mutual Information"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7260-2444",
+            "authenticated-orcid": false,
+            "given": "Jorge Augusto",
+            "family": "Karell-Albo",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Instituto de Criptografía, Universidad de La Habana, Havana 10400, Cuba"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6104-9671",
+            "authenticated-orcid": false,
+            "given": "Carlos Miguel",
+            "family": "Legón-Pérez ",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Instituto de Criptografía, Universidad de La Habana, Havana 10400, Cuba"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5004-2960",
+            "authenticated-orcid": false,
+            "given": "Evaristo José",
+            "family": "Madarro-Capó ",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Instituto de Criptografía, Universidad de La Habana, Havana 10400, Cuba"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0681-3833",
+            "authenticated-orcid": false,
+            "given": "Omar",
+            "family": "Rojas",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Facultad de Ciencias Económicas y Empresariales, Universidad Panamericana, Álvaro del Portillo 49, Zapopan, Jalisco 45010, Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7793-896X",
+            "authenticated-orcid": false,
+            "given": "Guillermo",
+            "family": "Sosa-Gómez",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Facultad de Ciencias Económicas y Empresariales, Universidad Panamericana, Álvaro del Portillo 49, Zapopan, Jalisco 45010, Mexico"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              7,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e22070741"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129183192000178",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "CLUSTER MONTE CARLO ALGORITHMS IN STATISTICAL MECHANICS"
+        ],
+        "author": [
+          {
+            "given": "JIAN-SHENG",
+            "family": "WANG",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institut für Physik, Universität Mainz, D-6500 Mainz, F.R. Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Modern Physics C"
+        ],
+        "URL": "https://doi.org/10.1142/s0129183192000178"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4939-1103-5_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Statistical Parallel Monte-Carlo Analysis on GPUs"
+        ],
+        "author": [
+          {
+            "given": "Guoyong",
+            "family": "Shi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sheldon X.-D.",
+            "family": "Tan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Esteban",
+            "family": "Tlelo Cuautle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              6,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Advanced Symbolic Analysis for VLSI Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4939-1103-5_12"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1987
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-18170-9_166",
+        "type": "book-chapter",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Randomness, provability, and the separation of Monte Carlo Time and space"
+        ],
+        "author": [
+          {
+            "given": "Marek",
+            "family": "Karpinski",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rutger",
+            "family": "Verbeek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computation Theory and Logic"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-18170-9_166"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              1982,
+              5,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.2915086",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Statistical Mechanics algorithm for Monte Carlo optimization"
+        ],
+        "author": [
+          {
+            "given": "Bertram M.",
+            "family": "Schwarzschild",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              8,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Physics Today"
+        ],
+        "URL": "https://doi.org/10.1063/1.2915086"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-011-4792-7_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Basics, Quantum Monte Carlo and Statistical Mechanics"
+        ],
+        "author": [
+          {
+            "given": "M. P.",
+            "family": "Nightingale",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Quantum Monte Carlo Methods in Physics and Chemistry"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-011-4792-7_1"
+      },
+      {
+        "publisher": "Pleiades Publishing Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1134/s1995080214040210",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Exact statistical inferences and Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "S. V.",
+            "family": "Simushkin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              12,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Lobachevskii Journal of Mathematics"
+        ],
+        "URL": "https://doi.org/10.1134/s1995080214040210"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-23383-8_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Kreiszahl@home: Monte-Carlo-Algorithmus für die Kreiszahl Pi"
+        ],
+        "author": [
+          {
+            "given": "Christian Benjamin",
+            "family": "Ries",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              5,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Xpert.press",
+          "BOINC"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-23383-8_11"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1965,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.2307/1266412",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Methods of Statistical Testing: Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Mervin E.",
+            "family": "Muller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yu. A.",
+            "family": "Shreider",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Technometrics"
+        ],
+        "URL": "https://doi.org/10.2307/1266412"
+      },
+      {
+        "DOI": "10.1017/cbo9780511812231.013",
+        "title": [
+          "Statistical Methods for Integration and Monte Carlo"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              2,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Numerical Methods of Statistics"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 1,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511812231.013"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1965,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1080/00401706.1965.10490315",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Methods of Statistical Testing: Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Mervin E.",
+            "family": "Muller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Technometrics"
+        ],
+        "URL": "https://doi.org/10.1080/00401706.1965.10490315"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/iscturkey51113.2020.9308005",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Statistical Randomness Tests of Long Sequences by Dynamic Partitioning"
+        ],
+        "author": [
+          {
+            "given": "Ziya",
+            "family": "AKCENGIZ",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "The Scientific and Tecnological Research Council of Turkey,National Research Instutite of Electronics and Cryptology,Ankara,TURKEY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Melis",
+            "family": "Aslan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Middle East Tecnical University,Department of Mathematics,Ankara,TURKEY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ozgur",
+            "family": "Karabayir",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Middle East Tecnical University,Department of Mathematics,Ankara,TURKEY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "Doganaksoy",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Middle East Tecnical University,Department of Mathematics,Ankara,TURKEY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Muhiddin",
+            "family": "Uguz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Middle East Tecnical University,Department of Mathematics,Ankara,TURKEY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fatih",
+            "family": "Sulak",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Atilim University,Department of Mathematics,Ankara,TURKEY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2020 International Conference on Information Security and Cryptology (ISCTURKEY)"
+        ],
+        "URL": "https://doi.org/10.1109/iscturkey51113.2020.9308005"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

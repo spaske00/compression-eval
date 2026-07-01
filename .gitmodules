@@ -1,0 +1,76 @@
+[submodule "corpus/src/_shared/c/stockfish/upstream"]
+	path = corpus/src/_shared/c/stockfish/upstream
+	url = https://github.com/official-stockfish/Stockfish
+	shallow = true
+[submodule "corpus/src/_shared/c/fmt/upstream"]
+	path = corpus/src/_shared/c/fmt/upstream
+	url = https://github.com/fmtlib/fmt
+	shallow = true
+[submodule "corpus/src/_shared/c/fincept-terminal/upstream"]
+	path = corpus/src/_shared/c/fincept-terminal/upstream
+	url = https://github.com/Fincept-Corporation/FinceptTerminal
+	shallow = true
+[submodule "corpus/src/_shared/c/spdlog/upstream"]
+	path = corpus/src/_shared/c/spdlog/upstream
+	url = https://github.com/gabime/spdlog
+	shallow = true
+[submodule "corpus/src/_shared/c/dragonfly/upstream"]
+	path = corpus/src/_shared/c/dragonfly/upstream
+	url = https://github.com/dragonflydb/dragonfly
+	shallow = true
+[submodule "corpus/src/_shared/c/clickhouse/upstream"]
+	path = corpus/src/_shared/c/clickhouse/upstream
+	url = https://github.com/ClickHouse/ClickHouse
+	shallow = true
+[submodule "corpus/src/_shared/c/imhex/upstream"]
+	path = corpus/src/_shared/c/imhex/upstream
+	url = https://github.com/WerWolv/ImHex
+	shallow = true
+[submodule "corpus/src/_shared/c/qt-creator/upstream"]
+	path = corpus/src/_shared/c/qt-creator/upstream
+	url = https://github.com/qt-creator/qt-creator
+	shallow = true
+[submodule "corpus/src/_shared/c/krita/upstream"]
+	path = corpus/src/_shared/c/krita/upstream
+	url = https://github.com/KDE/krita
+	shallow = true
+[submodule "corpus/src/_shared/c/kdeconnect/upstream"]
+	path = corpus/src/_shared/c/kdeconnect/upstream
+	url = https://github.com/KDE/kdeconnect-kde
+	shallow = true
+[submodule "corpus/src/_shared/c/ghostwriter/upstream"]
+	path = corpus/src/_shared/c/ghostwriter/upstream
+	url = https://github.com/KDE/ghostwriter
+	shallow = true
+[submodule "corpus/src/_shared/c/heaptrack/upstream"]
+	path = corpus/src/_shared/c/heaptrack/upstream
+	url = https://github.com/KDE/heaptrack
+	shallow = true
+[submodule "corpus/src/_shared/c/kdenlive/upstream"]
+	path = corpus/src/_shared/c/kdenlive/upstream
+	url = https://github.com/KDE/kdenlive
+	shallow = true
+[submodule "corpus/src/_shared/c/libreoffice/upstream"]
+	path = corpus/src/_shared/c/libreoffice/upstream
+	url = https://github.com/LibreOffice/core
+	shallow = true
+[submodule "corpus/src/_shared/c/blender/upstream"]
+	path = corpus/src/_shared/c/blender/upstream
+	url = https://github.com/blender/blender
+	shallow = true
+[submodule "corpus/src/_shared/c/memcached/upstream"]
+	path = corpus/src/_shared/c/memcached/upstream
+	url = https://github.com/memcached/memcached
+	shallow = true
+[submodule "corpus/src/_shared/c/mold/upstream"]
+	path = corpus/src/_shared/c/mold/upstream
+	url = https://github.com/rui314/mold
+	shallow = true
+[submodule "corpus/src/_shared/c/assimp/upstream"]
+	path = corpus/src/_shared/c/assimp/upstream
+	url = https://github.com/assimp/assimp
+	shallow = true
+[submodule "corpus/src/_shared/c/imgui/upstream"]
+	path = corpus/src/_shared/c/imgui/upstream
+	url = https://github.com/ocornut/imgui
+	shallow = true

@@ -188,13 +188,27 @@ Measure every executable in a corpus directory:
 
 ```bash
 ./compute_entropy corpus/
+./compute_entropy --jobs 4 corpus/
+./compute_entropy --jobs 1 corpus/
 ```
 
 When `corpus/bin/` exists, `compute_entropy` scans only that subtree. Otherwise,
-it scans the supplied directory. It processes executable regular files in sorted
-path order and writes `results_<directory>entropy_<timestamp>.csv` in the current
-directory. The first column is `filename`; the remaining columns match the
-single-file command. A failed file prevents publication of a partial result.
+it scans the supplied directory. By default, it computes independent files in
+parallel worker processes, using the smaller of the available CPU count and the
+number of files. `--jobs N` (or `-j N`) sets a positive worker limit;
+`--jobs 1` uses the main process without starting a worker pool.
+
+The output remains deterministic when workers finish out of order: executable
+regular files appear in sorted path order. The command writes
+`results_<directory>entropy_<timestamp>.csv` in the current directory. The first
+column is `filename`; the remaining columns match the single-file command. A
+failed file or worker prevents publication of a partial result and identifies
+the affected file in the diagnostic.
+
+Each worker loads one complete file and may create temporary sorted count runs
+for wide-block entropy. Parallelism can therefore multiply peak memory and
+temporary-storage demand. Set a lower `--jobs` value when evaluating large files
+or when those resources are constrained.
 
 The first seven columns preserve the former `ent -t -b` schema and bit-stream
 semantics:
@@ -223,6 +237,32 @@ The following columns are appended in this order:
 | `Section-Format` | `ELF` for parsed ELF32/ELF64 input and `none` for non-ELF input. |
 | `Section-Size-Ratios` | Strict JSON object mapping `<section-index>:<section-name>` to file-backed section size divided by whole-file size. |
 | `Section-Entropies` | Parallel strict JSON object mapping each section identifier to byte entropy. |
+| `1-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 1-bit blocks, in bits per block. |
+| `2-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 2-bit blocks, in bits per block. |
+| `4-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 4-bit blocks, in bits per block. |
+| `8-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 8-bit blocks, in bits per block. |
+| `16-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 16-bit blocks, in bits per block. |
+| `32-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 32-bit blocks, in bits per block. |
+| `64-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 64-bit blocks, in bits per block. |
+| `128-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 128-bit blocks, in bits per block. |
+| `256-Bit-Entropy` | Shannon entropy of non-overlapping, file-aligned 256-bit blocks, in bits per block. |
+
+The n-bit metrics treat the file as an MSB-first bit stream beginning at bit
+offset zero. Each width uses adjacent non-overlapping blocks and ignores a final
+fragment shorter than the requested width. The values are raw empirical block
+entropies rather than normalized entropy rates, so an n-bit result is bounded by
+both `n` and `log2(complete block count)`. `1-Bit-Entropy` therefore matches the
+legacy `Entropy` value for non-empty files, and `8-Bit-Entropy` matches
+`Byte-Entropy`. A width with no complete block is written as `NaN`.
+
+Wide-block counting is exact and uses bounded in-memory state. Large,
+high-cardinality files can create temporary sorted count runs in the system
+temporary directory; these runs are removed after success or failure. Temporary
+storage exhaustion fails the metric run instead of publishing a partial CSV.
+
+Within Python, `file_metrics.compute_metrics(data)` is the complete in-memory
+record API and `compute_file(path)` is its file wrapper. The executable
+`compute_entropy` keeps its historical name and remains the corpus-level driver.
 
 Scalar floating-point values use six decimal places. Metrics without enough
 observations or with a zero variance denominator are written as `NaN`. LZ78
@@ -230,6 +270,47 @@ complexity and both size fields are zero for an empty file. Section metrics cove
 non-empty, file-backed ELF sections only; the null section and `SHT_NOBITS`
 sections are excluded. Non-ELF files retain all whole-file metrics and use `none`,
 `{}`, and `{}` for the three section fields.
+
+### Verify `compute_entropy` against Linux ENT
+
+`verify_compute_entropy_against_ent` cross-checks a seeded random sample of 10
+executable regular files from `corpus/bin/`. The verifier requires the Linux
+`ent` command on `PATH`; for example, Debian and Ubuntu provide it in the `ent`
+package. ENT is needed only for this live verification, not for normal metric
+calculation or the automated test suite.
+
+Run the check from the repository root:
+
+```bash
+./verify_compute_entropy_against_ent \
+  --output results/compute-entropy-ent-report.json
+```
+
+The default sample seed is `0`. Use `--seed` to choose another sample and repeat
+the same seed against an unchanged `corpus/bin/` candidate set to replay it:
+
+```bash
+./verify_compute_entropy_against_ent \
+  --seed 20260701 \
+  --jobs 2 \
+  --output results/compute-entropy-ent-report.json
+```
+
+The comparison covers the seven fields shared with `ent -t -b`: `0`,
+`File-bits`, `Entropy`, `Chi-square`, `Mean`, `Monte-Carlo-Pi`, and
+`Serial-Correlation`. The two integer fields must match exactly. The five
+floating-point fields use absolute difference `<= 0.0001` and zero relative
+tolerance; matching `NaN` values also pass. Appended metrics that ENT does not
+emit are outside this check.
+
+The JSON report records the seed, full candidate count, ordered sample, staged
+file sizes and SHA-256 digests, resolved tool paths, command output, source
+values, and all 70 per-file field comparisons. A successful run prints a concise
+pass message and exits zero. Missing tools, fewer than 10 eligible files, command
+or parsing failures, incomplete rows, and metric differences produce a nonzero
+exit and are described in both the diagnostic and report. Use `--ent` or
+`--compute-entropy` to select explicit executable paths when investigating a
+tool-specific failure.
 
 ## Building NEXUS
 

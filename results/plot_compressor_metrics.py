@@ -5,7 +5,13 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from plot_v2_data import compressor_frame, load_nexus, nexus_summary, transformed_series
+from plot_v2_data import (
+    compressor_frame,
+    load_nexus,
+    load_silesia,
+    nexus_summary,
+    transformed_series,
+)
 from plot_v2_style import (
     WIDE_WIDTH,
     apply_style,
@@ -42,12 +48,24 @@ def output_name(metric_key):
 
 
 def prepare_frame(nexus, metric):
-    frame = compressor_frame(nexus)
-    frame[metric] = transformed_series(frame, metric)
+    frame = prepare_compressor_frame(nexus, metric)
     frame["exe_type"] = frame["toolchain"].replace(
         {"gcc": "gcc_clang", "clang": "gcc_clang"}
     )
     return frame
+
+
+def prepare_compressor_frame(frame, metric):
+    frame = compressor_frame(frame)
+    frame[metric] = transformed_series(frame, metric)
+    return frame
+
+
+def compressor_order(*frames):
+    names = set()
+    for frame in frames:
+        names.update(frame["Compressor name"].dropna().unique())
+    return sorted(names, key=str)
 
 
 def draw_compressor_boxplots(ax, frame, metric, compressors, colors):
@@ -74,22 +92,26 @@ def draw_compressor_boxplots(ax, frame, metric, compressors, colors):
     ax.grid(True, axis="y", alpha=0.28)
 
 
-def plot_metric(frame, out_dir, metric_key):
+def plot_metric(frame, silesia_frame, out_dir, metric_key):
     metric = METRICS[metric_key]
-    compressors = sorted(frame["Compressor name"].dropna().unique(), key=str)
+    compressors = compressor_order(frame, silesia_frame)
     colors = plt.get_cmap("Set2")(np.linspace(0.08, 0.92, max(1, len(compressors))))
+    panels = [
+        (toolchain_label(exe_type), frame.loc[frame["exe_type"] == exe_type])
+        for exe_type in EXECUTABLE_FAMILIES
+    ]
+    panels.append(("Silesia", silesia_frame))
 
     fig, axes = plt.subplots(
-        len(EXECUTABLE_FAMILIES),
+        len(panels),
         1,
-        figsize=(WIDE_WIDTH, 7.8),
+        figsize=(WIDE_WIDTH, 10.2),
         sharex=True,
         sharey=True,
     )
 
-    for row, exe_type in enumerate(EXECUTABLE_FAMILIES):
+    for row, (panel_label, subset) in enumerate(panels):
         ax = axes[row]
-        subset = frame.loc[frame["exe_type"] == exe_type]
         draw_compressor_boxplots(ax, subset, metric, compressors, colors)
         ax.set_ylim(*Y_LIMITS[metric])
         ax.set_yticks(Y_TICKS[metric])
@@ -97,13 +119,13 @@ def plot_metric(frame, out_dir, metric_key):
         ax.text(
             0.5,
             1.04,
-            toolchain_label(exe_type),
+            panel_label,
             transform=ax.transAxes,
             ha="center",
             va="bottom",
             fontsize=9.0,
         )
-        if row < len(EXECUTABLE_FAMILIES) - 1:
+        if row < len(panels) - 1:
             ax.tick_params(axis="x", labelbottom=False)
 
     positions = np.arange(1, len(compressors) + 1)
@@ -115,13 +137,16 @@ def plot_metric(frame, out_dir, metric_key):
     )
     axes[-1].set_xlabel("Compressor name")
 
-    fig.subplots_adjust(left=0.075, right=0.995, top=0.965, bottom=0.18, hspace=0.28)
+    fig.subplots_adjust(left=0.075, right=0.995, top=0.975, bottom=0.14, hspace=0.32)
     save_pdf(fig, Path(out_dir) / output_name(metric_key))
 
 
-def generate(nexus_path, out_dir, metric_key):
+def generate(nexus_path, out_dir, metric_key, *, silesia_path=None):
     apply_style()
+    if silesia_path is None:
+        silesia_path = Path(__file__).resolve().with_name("silesia.csv")
     nexus = load_nexus(nexus_path)
+    silesia = load_silesia(silesia_path)
     summary = nexus_summary(nexus)
     print(
         "Nexus validation: "
@@ -130,7 +155,8 @@ def generate(nexus_path, out_dir, metric_key):
         f"{summary['non_memcpy_compressors']} non-memcpy compressors"
     )
     frame = prepare_frame(nexus, METRICS[metric_key])
-    plot_metric(frame, out_dir, metric_key)
+    silesia_frame = prepare_compressor_frame(silesia, METRICS[metric_key])
+    plot_metric(frame, silesia_frame, out_dir, metric_key)
 
 
 def main():
@@ -140,9 +166,10 @@ def main():
     )
     parser.add_argument("--metric", required=True, choices=METRICS)
     parser.add_argument("--nexus", default=base_dir / "nexus.csv", type=Path)
+    parser.add_argument("--silesia", default=base_dir / "silesia.csv", type=Path)
     parser.add_argument("--out-dir", default=base_dir / "plots-v2", type=Path)
     args = parser.parse_args()
-    generate(args.nexus, args.out_dir, args.metric)
+    generate(args.nexus, args.out_dir, args.metric, silesia_path=args.silesia)
 
 
 if __name__ == "__main__":

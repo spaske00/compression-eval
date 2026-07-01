@@ -14,6 +14,7 @@ def main():
     base_dir = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description="Run all v2 plotting scripts.")
     parser.add_argument("--nexus", default=base_dir / "nexus.csv", type=Path)
+    parser.add_argument("--silesia", default=base_dir / "silesia.csv", type=Path)
     parser.add_argument("--out-dir", default=base_dir / "plots-v2", type=Path)
     args = parser.parse_args()
 
@@ -23,7 +24,9 @@ def main():
     for metric in available_file_metrics(nexus, report=True):
         plot_v2_metrics.plot_metric(args.nexus, args.out_dir, metric)
     for metric in plot_compressor_metrics.METRICS:
-        plot_compressor_metrics.generate(args.nexus, args.out_dir, metric)
+        plot_compressor_metrics.generate(
+            args.nexus, args.out_dir, metric, silesia_path=args.silesia
+        )
 
 
 if __name__ == "__main__":

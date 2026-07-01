@@ -10,9 +10,44 @@ import os
 import sys
 import tempfile
 import time
+from concurrent.futures import FIRST_COMPLETED, Future, ProcessPoolExecutor, wait
+from concurrent.futures.process import BrokenProcessPool
 from pathlib import Path
+from typing import Any
 
 from file_metrics import METRIC_COLUMNS, MetricError, compute_file, serialize_record
+
+PENDING_TASKS_PER_WORKER = 2
+
+
+class FileComputationError(Exception):
+    """A file-specific metric or worker failure."""
+
+    def __init__(self, relative_path: str, cause: BaseException) -> None:
+        super().__init__(f"{relative_path}: {cause}")
+
+
+def positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("must be a positive integer") from error
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return parsed
+
+
+def effective_worker_count(requested: int | None, file_count: int) -> int:
+    available = requested if requested is not None else (os.cpu_count() or 1)
+    return min(available, file_count)
+
+
+def _relative_path(path: Path, scan_root: Path) -> str:
+    return "./" + path.relative_to(scan_root).as_posix()
+
+
+def _compute_serialized_file(path: Path) -> list[str]:
+    return serialize_record(compute_file(path))
 
 
 def executable_files(root: Path) -> list[Path]:
@@ -24,9 +59,80 @@ def executable_files(root: Path) -> list[Path]:
     )
 
 
+def _write_serial_rows(files: list[Path], scan_root: Path, writer: Any) -> None:
+    for path in files:
+        relative = _relative_path(path, scan_root)
+        print(f"Processing: {relative}")
+        try:
+            row = _compute_serialized_file(path)
+        except Exception as error:
+            raise FileComputationError(relative, error) from error
+        writer.writerow((relative, *row))
+
+
+def _write_parallel_rows(
+    files: list[Path], scan_root: Path, writer: Any, worker_count: int
+) -> None:
+    pending_limit = worker_count * PENDING_TASKS_PER_WORKER
+    pending: dict[Future[list[str]], tuple[int, str]] = {}
+    completed: dict[int, tuple[str, list[str]]] = {}
+    next_to_submit = 0
+    next_to_write = 0
+
+    with ProcessPoolExecutor(max_workers=worker_count) as executor:
+
+        def submit_one() -> None:
+            nonlocal next_to_submit
+            path = files[next_to_submit]
+            relative = _relative_path(path, scan_root)
+            print(f"Processing: {relative}")
+            try:
+                future = executor.submit(_compute_serialized_file, path)
+            except Exception as error:
+                raise FileComputationError(relative, error) from error
+            pending[future] = (next_to_submit, relative)
+            next_to_submit += 1
+
+        try:
+            while next_to_submit < len(files) and len(pending) < pending_limit:
+                submit_one()
+
+            while pending:
+                try:
+                    done, _ = wait(pending, return_when=FIRST_COMPLETED)
+                except Exception as error:
+                    _, relative = min(pending.values())
+                    raise FileComputationError(relative, error) from error
+
+                for future in done:
+                    index, relative = pending.pop(future)
+                    try:
+                        completed[index] = (relative, future.result())
+                    except Exception as error:
+                        raise FileComputationError(relative, error) from error
+
+                while next_to_submit < len(files) and len(pending) < pending_limit:
+                    submit_one()
+
+                while next_to_write in completed:
+                    relative, row = completed.pop(next_to_write)
+                    writer.writerow((relative, *row))
+                    next_to_write += 1
+        except BaseException:
+            for future in pending:
+                future.cancel()
+            raise
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Compute metrics for an executable corpus.")
     parser.add_argument("directory", help="corpus directory to scan")
+    parser.add_argument(
+        "-j",
+        "--jobs",
+        type=positive_int,
+        help="number of files to process concurrently (default: available CPUs)",
+    )
     args = parser.parse_args(argv)
 
     directory = Path(args.directory)
@@ -38,6 +144,7 @@ def main(argv: list[str] | None = None) -> int:
     if not files:
         print(f"No executables found under {scan_root}/{search_name}", file=sys.stderr)
         return 1
+    worker_count = effective_worker_count(args.jobs, len(files))
 
     output_name = (
         f"results_{args.directory.replace('/', '_')}entropy_{int(time.time())}.csv"
@@ -51,12 +158,12 @@ def main(argv: list[str] | None = None) -> int:
             temporary_name = output.name
             writer = csv.writer(output, lineterminator="\n")
             writer.writerow(("filename", *METRIC_COLUMNS))
-            for path in files:
-                relative = "./" + path.relative_to(scan_root).as_posix()
-                print(f"Processing: {relative}")
-                writer.writerow((relative, *serialize_record(compute_file(path))))
+            if worker_count == 1:
+                _write_serial_rows(files, scan_root, writer)
+            else:
+                _write_parallel_rows(files, scan_root, writer, worker_count)
         os.replace(temporary_name, output_path)
-    except (MetricError, MemoryError, OSError) as error:
+    except (FileComputationError, MetricError, MemoryError, OSError, BrokenProcessPool) as error:
         if temporary_name:
             Path(temporary_name).unlink(missing_ok=True)
         print(f"compute_entropy: {error}", file=sys.stderr)

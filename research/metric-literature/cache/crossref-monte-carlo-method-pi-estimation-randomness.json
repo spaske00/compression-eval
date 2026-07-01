@@ -1,5 +1,4252 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=Monte+Carlo+method+pi+estimation+randomness&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 2668371,
+    "items": [
+      {
+        "publisher": "Vieweg+Teubner Verlag",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-663-14221-8_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte-Carlo-Pi"
+        ],
+        "author": [
+          {
+            "given": "Karl",
+            "family": "Achilles",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "BASIC und Pascal im Vergleich"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-663-14221-8_9"
+      },
+      {
+        "publisher": "American Association of Physics Teachers (AAPT)",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1119/1.4824938",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Calculating Pi Using the Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Timothy",
+            "family": "Williamson",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Grand Island Senior High School , Grand Island, NY"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              10,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "The Physics Teacher"
+        ],
+        "URL": "https://doi.org/10.1119/1.4824938"
+      },
+      {
+        "DOI": "10.3840/002723",
+        "title": [
+          "Approximating Pi by the Monte Carlo Method"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/002723"
+      },
+      {
+        "DOI": "10.3840/08002723",
+        "title": [
+          "Approximating Pi by the Monte Carlo Method"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/08002723"
+      },
+      {
+        "publisher": "Birkhäuser Boston",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-0-8176-4804-6_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Modeling of Randomness"
+        ],
+        "author": [
+          {
+            "given": "Alan G.",
+            "family": "Steele",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert J.",
+            "family": "Douglas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              11,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Modeling and Simulation in Science, Engineering and Technology",
+          "Data Modeling for Metrology and Testing in Measurement Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-0-8176-4804-6_11"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1088/1757-899x/1116/1/012130",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Application of Monte-Carlo Simulations in Estimation of Pi"
+        ],
+        "author": [
+          {
+            "given": "Rajkumar",
+            "family": "Sharma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Piyush",
+            "family": "Singhal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Manoj Kumar",
+            "family": "Agrawal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IOP Conference Series: Materials Science and Engineering"
+        ],
+        "URL": "https://doi.org/10.1088/1757-899x/1116/1/012130"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/memstech.2016.7507538",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Geometric calculation of Pi using the Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "Petro",
+            "family": "Kosobutskyy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andrii",
+            "family": "Kovalchuk",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Kuzmynykh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Shvarts",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 XII International Conference on Perspective Technologies and Methods in MEMS Design (MEMSTECH)"
+        ],
+        "URL": "https://doi.org/10.1109/memstech.2016.7507538"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              2,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1515/jbnst-1999-1-212",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Zufall und Quasi-Monte Carlo Ansätze / Randomness and Quasi-Monte Carlo Approaches"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Winker",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Universität Mannheim, Wirtschaftswissenschaftliche Fakultät, Lehrstuhl für Volkswirtschaftslehre, D-68131 Mannheim"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kai-Tai",
+            "family": "Fang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Jahrbücher für Nationalökonomie und Statistik"
+        ],
+        "URL": "https://doi.org/10.1515/jbnst-1999-1-212"
+      },
+      {
+        "DOI": "10.3840/000779",
+        "title": [
+          "Monte Carlo Estimate for Pi"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/000779"
+      },
+      {
+        "DOI": "10.3840/07000779",
+        "title": [
+          "Monte Carlo Estimate for Pi"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/07000779"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0955-5986(01)00015-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 240,
+        "title": [
+          "Uncertainty estimation and Monte Carlo simulation method"
+        ],
+        "author": [
+          {
+            "given": "Christos E.",
+            "family": "Papadopoulos",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hoi",
+            "family": "Yeung",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Flow Measurement and Instrumentation"
+        ],
+        "URL": "https://doi.org/10.1016/s0955-5986(01)00015-2"
+      },
+      {
+        "publisher": "Apress",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4842-8185-7_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Calculating Pi with Monte Carlo Simulation"
+        ],
+        "author": [
+          {
+            "given": "Rongpeng",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aiichiro",
+            "family": "Nakano",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Simulation with Python"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4842-8185-7_1"
+      },
+      {
+        "publisher": "National Council of Teachers of Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              1981,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.5951/mt.74.5.0335",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo, Probability, Algebra, and Pi"
+        ],
+        "author": [
+          {
+            "given": "Duane C.",
+            "family": "Hinders",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "1 Henry M. Gunn High School Palo Alto, CA 94306."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Mathematics Teacher"
+        ],
+        "URL": "https://doi.org/10.5951/mt.74.5.0335"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1023/a:1004614130865",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Error Estimation in the Histogram Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "M. E. J.",
+            "family": "Newman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. G.",
+            "family": "Palmer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Physics"
+        ],
+        "URL": "https://doi.org/10.1023/a:1004614130865"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/icspcc.2012.6335671",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Bayesian DOA estimation method using Population Monte Carlo"
+        ],
+        "author": [
+          {
+            "given": "Fei",
+            "family": "Hua",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiao-hong",
+            "family": "Shen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhao",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fu-zhou",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiang-jian",
+            "family": "Gu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 IEEE International Conference on Signal Processing, Communication and Computing (ICSPCC 2012)"
+        ],
+        "URL": "https://doi.org/10.1109/icspcc.2012.6335671"
+      },
+      {
+        "publisher": "Institute of Mathematics and Informatics Bulgarian Academy of Sciences",
+        "DOI": "10.55630/dipp.2021.11.21",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Fast Monte Carlo Method for Condition Number Estimation"
+        ],
+        "author": [
+          {
+            "given": "Silvi-Maria",
+            "family": "Gurova",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aneta",
+            "family": "Karaivanova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Digital Presentation and Preservation of Cultural and Scientific Heritage"
+        ],
+        "URL": "https://doi.org/10.55630/dipp.2021.11.21"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781118785317.weom090172",
+        "type": "other",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo/Monte Carlo Markov Chain Method"
+        ],
+        "author": [
+          {
+            "given": "Rosella",
+            "family": "Castellano",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Elena",
+            "family": "Cedrola",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              1,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Wiley Encyclopedia of Management"
+        ],
+        "URL": "https://doi.org/10.1002/9781118785317.weom090172"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-98319-2_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Density Estimation by Monte Carlo and Quasi-Monte Carlo"
+        ],
+        "author": [
+          {
+            "given": "Pierre",
+            "family": "L’Ecuyer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Florian",
+            "family": "Puchhammer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Springer Proceedings in Mathematics &amp; Statistics",
+          "Monte Carlo and Quasi-Monte Carlo Methods"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-98319-2_1"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.1145/3335783.3335795",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Monte Carlo Dependency Estimation"
+        ],
+        "author": [
+          {
+            "given": "Edouard",
+            "family": "Fouché",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Karlsruhe Institute of Technology (KIT)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Klemens",
+            "family": "Böhm",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Karlsruhe Institute of Technology (KIT)"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 31st International Conference on Scientific and Statistical Database Management"
+        ],
+        "URL": "https://doi.org/10.1145/3335783.3335795"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              5,
+              13
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003734062-24",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo π Estimation"
+        ],
+        "author": [
+          {
+            "given": "Maciej",
+            "family": "Matyka",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computational Modelling with Single Prompts"
+        ],
+        "URL": "https://doi.org/10.1201/9781003734062-24"
+      },
+      {
+        "DOI": "10.1007/springerreference_61034",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_61034"
+      },
+      {
+        "publisher": "Qeios",
+        "DOI": "10.32388/wn42yj",
+        "type": "reference-entry",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "name": "National Cancer Institute",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Definitions"
+        ],
+        "URL": "https://doi.org/10.32388/wn42yj"
+      },
+      {
+        "DOI": "10.1036/1097-8542.434200",
+        "title": [
+          "Monte Carlo method"
+        ],
+        "container-title": [
+          "AccessScience"
+        ],
+        "publisher": "McGraw-Hill Professional",
+        "is-referenced-by-count": 2,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1036/1097-8542.434200"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-416970-8.00005-5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Massimiliano",
+            "family": "Fatica",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gregory",
+            "family": "Ruetsch",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CUDA Fortran for Scientists and Engineers"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-416970-8.00005-5"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789813228269_0004",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              10,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Probability and Random Number"
+        ],
+        "URL": "https://doi.org/10.1142/9789813228269_0004"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789813222724_0007",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Elements of Numerical Analysis with <i>Mathematica</i>"
+        ],
+        "URL": "https://doi.org/10.1142/9789813222724_0007"
+      },
+      {
+        "DOI": "10.1201/9781439865842-79",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "The Handbook of Integration"
+        ],
+        "publisher": "A K Peters/CRC Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1201/9781439865842-79"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789813149861_0011",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              4,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Probabilistic Methods in the Theory of Structures"
+        ],
+        "URL": "https://doi.org/10.1142/9789813149861_0011"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4020-6754-9_10740",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Genetics, Genomics, Proteomics and Informatics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4020-6754-9_10740"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1952,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.2307/2279994",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method."
+        ],
+        "author": [
+          {
+            "given": "W. A.",
+            "family": "W.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.2307/2279994"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4614-5491-5_1059",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "William W.",
+            "family": "Liou",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              1,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Microfluidics and Nanofluidics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4614-5491-5_1059"
+      },
+      {
+        "DOI": "10.1007/springerreference_19207",
+        "title": [
+          "Monte Carlo method"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_19207"
+      },
+      {
+        "DOI": "10.1615/thermopedia.000260",
+        "title": [
+          "Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "George W.",
+            "family": "Kattawar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yu",
+            "family": "You",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "THERMOPEDIA"
+        ],
+        "publisher": "Begell House",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1615/thermopedia.000260"
+      },
+      {
+        "DOI": "10.1007/978-0-387-32833-1_270",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "container-title": [
+          "The Concise Encyclopedia of Statistics"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-32833-1_270"
+      },
+      {
+        "publisher": "National Council of Teachers of Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.5951/mt.84.5.0387",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "A Monte Carlo Application to Approximate Pi"
+        ],
+        "author": [
+          {
+            "given": "Kenneth",
+            "family": "Easterday",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "1 Kenneth Easterday teaches computer programming and mathematics education for grades 3-14 at Auburn University, Auburn University, AL 36849-5212"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tommy",
+            "family": "Smith",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "2 Tommy Smith serves on the faculty at the University of Alabama at Birmingham, Birmingham, AL 35294"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Mathematics Teacher"
+        ],
+        "URL": "https://doi.org/10.5951/mt.84.5.0387"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789813201125_0010",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              12,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Problems Book for Probabilistic Methods for the Theory of Structures with Complete Worked Through Solutions"
+        ],
+        "URL": "https://doi.org/10.1142/9789813201125_0010"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-85040-1_431",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Klaus",
+            "family": "Mosegaard",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              7,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Earth Sciences Series",
+          "Encyclopedia of Mathematical Geosciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-85040-1_431"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-26050-7_431-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Klaus",
+            "family": "Mosegaard",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Earth Sciences Series",
+          "Encyclopedia of Mathematical Geosciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-26050-7_431-2"
+      },
+      {
+        "DOI": "10.1017/cbo9780511800948.016",
+        "title": [
+          "Monte Carlo method"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              4,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "An Introduction to Financial Option Valuation"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511800948.016"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-27758-0_1059-3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "William W.",
+            "family": "Liou",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              4,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Microfluidics and Nanofluidics"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-27758-0_1059-3"
+      },
+      {
+        "publisher": "Springer Nature Switzerland",
+        "published-print": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-032-14833-9_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Weili",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhao",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ding-Zhu",
+            "family": "Du",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Springer Optimization and Its Applications",
+          "Computational Aspects of Social Networks"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-032-14833-9_3"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_11803",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_11803"
+      },
+      {
+        "DOI": "10.1090/mbk/121/34",
+        "title": [
+          "Monte Carlo method"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "100 Years of Math Milestones"
+        ],
+        "publisher": "American Mathematical Society",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1090/mbk/121/34"
+      },
+      {
+        "DOI": "10.1007/springerreference_67293",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 1,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_67293"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-44-321977-1.00019-x",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "Gregory",
+            "family": "Ruetsch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Massimiliano",
+            "family": "Fatica",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CUDA Fortran for Scientists and Engineers"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-44-321977-1.00019-x"
+      },
+      {
+        "DOI": "10.1017/9781108657037.042",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              1,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Uncovering Quantum Field Theory and the Standard Model"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1017/9781108657037.042"
+      },
+      {
+        "DOI": "10.1201/b17384-16",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Introduction to Numerical Programming"
+        ],
+        "publisher": "CRC Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1201/b17384-16"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1977
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-009-5781-7_7",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Robert Eric",
+            "family": "Beard",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Teivo",
+            "family": "Pentikäinen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Erkki",
+            "family": "Pesonen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Risk Theory"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-009-5781-7_7"
+      },
+      {
+        "DOI": "10.1016/b978-0-08-017787-8.50013-3",
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1974
+            ]
+          ]
+        },
+        "container-title": [
+          "Engineering Calculations in Radiative Heat Transfer"
+        ],
+        "publisher": "Elsevier",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1016/b978-0-08-017787-8.50013-3"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-443-33540-2.00030-5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "Christian",
+            "family": "Brosseau",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Electromagnetic Heterostructures"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-443-33540-2.00030-5"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-0-387-48998-8_1059",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "William W.",
+            "family": "Liou",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedia of Microfluidics and Nanofluidics"
+        ],
+        "URL": "https://doi.org/10.1007/978-0-387-48998-8_1059"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              3,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781420074079.ch7",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              12,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Chapman &amp; Hall/CRC Numerical Analy &amp; Scient Comp. Series",
+          "Introduction to Grid Computing"
+        ],
+        "URL": "https://doi.org/10.1201/9781420074079.ch7"
+      },
+      {
+        "publisher": "Japan Society of Civil Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              1968
+            ]
+          ]
+        },
+        "DOI": "10.2208/jscej1949.1968.154_34",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ESTIMATION OF TRAFFIC NOISE USING THE MONTE CARLO METHOD"
+        ],
+        "author": [
+          {
+            "given": "Hikaru",
+            "family": "Shoji",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takeo",
+            "family": "Yamamoto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takakazu",
+            "family": "Nakamura",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kazuhei",
+            "family": "Hashimoto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Toru",
+            "family": "Katayama",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transactions of the Japan Society of Civil Engineers"
+        ],
+        "URL": "https://doi.org/10.2208/jscej1949.1968.154_34"
+      },
+      {
+        "publisher": "The Korean Society for Aeronautical & Space Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.5139/jksas.2015.43.1.62",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "COMS GTO Injection Propellant Estimation using Monte-Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Eungsik",
+            "family": "Park",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hwanil",
+            "family": "Huh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the Korean Society for Aeronautical &amp; Space Sciences"
+        ],
+        "URL": "https://doi.org/10.5139/jksas.2015.43.1.62"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              8,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/ica58538.2023.10273114",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Estimation of Psychrometer Calibration Uncertainty by Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Arfan Sindhu",
+            "family": "Tistomo",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institut Teknologi Bandung,Doctoral Program of Physics, Faculty of Mathematics and Natural Science,Bandung,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aditya",
+            "family": "Achmadi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Standardization Agency of Indonesia,National Measurement Standards,Banten,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lukluk",
+            "family": "Khairiyati",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Standardization Agency of Indonesia,National Measurement Standards,Banten,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sparisoma",
+            "family": "Viridi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut Teknologi Bandung,Faculty of Mathematics and Natural Science,Department of Physics,Bandung,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Muhammad Miftahul",
+            "family": "Munir",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut Teknologi Bandung,Faculty of Mathematics and Natural Science,Department of Physics,Bandung,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Suprijadi",
+            "family": "Suprijadi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut Teknologi Bandung,Faculty of Mathematics and Natural Science,Department of Physics,Bandung,Indonesia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 8th International Conference on Instrumentation, Control, and Automation (ICA)"
+        ],
+        "URL": "https://doi.org/10.1109/ica58538.2023.10273114"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/i2mtc.2015.7151297",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Subcutaneous veins depth estimation method using Monte Carlo simulations"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Shahzad",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chai Meei",
+            "family": "Tyng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.M.",
+            "family": "Saad",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.",
+            "family": "Walter",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aamir Saeed",
+            "family": "Malik",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Meriaudeau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 IEEE International Instrumentation and Measurement Technology Conference (I2MTC) Proceedings"
+        ],
+        "URL": "https://doi.org/10.1109/i2mtc.2015.7151297"
+      },
+      {
+        "publisher": "Materials Research Forum LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.21741/9781644903131-99",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Rolling process variation estimation using a Monte-Carlo method"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "WEINER",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              5,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Materials Research Proceedings",
+          "Material Forming: ESAFORM 2024"
+        ],
+        "URL": "https://doi.org/10.21741/9781644903131-99"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.matcom.2014.02.005",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Quasi-Monte Carlo method in population genetics parameter estimation"
+        ],
+        "author": [
+          {
+            "given": "Hongmei",
+            "family": "Chi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Peter",
+            "family": "Beerli",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematics and Computers in Simulation"
+        ],
+        "URL": "https://doi.org/10.1016/j.matcom.2014.02.005"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/ccdc.2008.4598253",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Dose estimation of radiotherapy based on Monte Carlo method"
+        ],
+        "author": [
+          {
+            "family": "Liu Yanmei",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Xue Dingyu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Xu Xinhe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Chen Zhen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 Chinese Control and Decision Conference"
+        ],
+        "URL": "https://doi.org/10.1109/ccdc.2008.4598253"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1201/b17399-286",
+        "type": "book-chapter",
+        "is-referenced-by-count": 7,
+        "title": [
+          "A new Monte Carlo method for environmental contour estimation"
+        ],
+        "author": [
+          {
+            "given": "Arne",
+            "family": "Huseby",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Erik",
+            "family": "Vanem",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bent",
+            "family": "Natvig",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Safety and Reliability: Methodology and Applications"
+        ],
+        "URL": "https://doi.org/10.1201/b17399-286"
+      },
+      {
+        "publisher": "Canadian Science Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1139/x72-014",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Monte Carlo Test of Holgate's New Randomness Tests"
+        ],
+        "author": [
+          {
+            "given": "Bijan",
+            "family": "Payandeh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Canadian Journal of Forest Research"
+        ],
+        "URL": "https://doi.org/10.1139/x72-014"
+      },
+      {
+        "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1287/ijoc.2021.1135",
+        "type": "journal-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "Monte Carlo and Quasi–Monte Carlo Density Estimation via Conditioning"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3184-0796",
+            "authenticated-orcid": false,
+            "given": "Pierre",
+            "family": "L’Ecuyer",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Département d’Informatique et de Recherche Opérationnelle, Université de Montréal, Montréal, Québec H3C 3J7, Canada;"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3024-3877",
+            "authenticated-orcid": false,
+            "given": "Florian",
+            "family": "Puchhammer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Département d’Informatique et de Recherche Opérationnelle, Université de Montréal, Montréal, Québec H3C 3J7, Canada;"
+              },
+              {
+                "name": "Basque Center for Applied Mathematics, 48009 Bilbao, Basque Country, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Amal",
+            "family": "Ben Abdellah",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Département d’Informatique et de Recherche Opérationnelle, Université de Montréal, Montréal, Québec H3C 3J7, Canada;"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "INFORMS Journal on Computing"
+        ],
+        "URL": "https://doi.org/10.1287/ijoc.2021.1135"
+      },
+      {
+        "publisher": "Sissa Medialab",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.22323/1.453.0039",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Multipolynomial Monte Carlo Trace Estimation"
+        ],
+        "author": [
+          {
+            "given": "Walter",
+            "family": "Wilcox",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Paul",
+            "family": "Lashomb",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ronald B",
+            "family": "Morgan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Travis",
+            "family": "Whyte",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of The 40th International Symposium on Lattice Field Theory — PoS(LATTICE2023)"
+        ],
+        "URL": "https://doi.org/10.22323/1.453.0039"
+      },
+      {
+        "DOI": "10.2307/j.ctv301hd6.15",
+        "title": [
+          "Markov Chain Monte Carlo Estimation"
+        ],
+        "container-title": [
+          "Demographic Forecasting"
+        ],
+        "publisher": "Princeton University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.2307/j.ctv301hd6.15"
+      },
+      {
+        "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1287/opre.2023.0211",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Monte Carlo Estimation of CoVaR"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-6418-2251",
+            "authenticated-orcid": false,
+            "given": "Weihuan",
+            "family": "Huang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Management & Engineering, Nanjing University, Nanjing 210093, China;"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0005-8295-5189",
+            "authenticated-orcid": false,
+            "given": "Nifei",
+            "family": "Lin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Management, Fudan University, Shanghai 200433, China;"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7011-4001",
+            "authenticated-orcid": false,
+            "given": "L. Jeff",
+            "family": "Hong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Management and School of Data Science, Fudan University, Shanghai 200433, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Operations Research"
+        ],
+        "URL": "https://doi.org/10.1287/opre.2023.0211"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4615-6293-1_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Conditional Monte Carlo Gradient Estimation"
+        ],
+        "author": [
+          {
+            "given": "Michael",
+            "family": "Fu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jian-Qiang",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Conditional Monte Carlo"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4615-6293-1_3"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1023/a:1022426103047",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Partition-Weighted Monte Carlo Estimation"
+        ],
+        "author": [
+          {
+            "given": "Ming-Hui",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Qi-Man",
+            "family": "Shao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Annals of the Institute of Statistical Mathematics"
+        ],
+        "URL": "https://doi.org/10.1023/a:1022426103047"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/wsc.2014.7019911",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Efficient Monte Carlo CVA estimation"
+        ],
+        "author": [
+          {
+            "given": "Samim",
+            "family": "Ghamami",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bo",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the Winter Simulation Conference 2014"
+        ],
+        "URL": "https://doi.org/10.1109/wsc.2014.7019911"
+      },
+      {
+        "DOI": "10.1201/9781315374604-5",
+        "title": [
+          "Markov Chain Monte Carlo Estimation"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Bayesian Psychometric Modeling"
+        ],
+        "publisher": "Chapman and Hall/CRC",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1201/9781315374604-5"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0920-3796(01)00188-0",
+        "type": "journal-article",
+        "is-referenced-by-count": 75,
+        "title": [
+          "Proposal of shutdown dose estimation method by Monte Carlo code"
+        ],
+        "author": [
+          {
+            "given": "Davide",
+            "family": "Valenza",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hiromasa",
+            "family": "Iida",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Romano",
+            "family": "Plenteda",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Robert T.",
+            "family": "Santoro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Fusion Engineering and Design"
+        ],
+        "URL": "https://doi.org/10.1016/s0920-3796(01)00188-0"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1980,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/0041-5553(80)90324-9",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Estimation of the error in the multiparameter Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "V.A.",
+            "family": "Dmitrovskii",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "USSR Computational Mathematics and Mathematical Physics"
+        ],
+        "URL": "https://doi.org/10.1016/0041-5553(80)90324-9"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-323-90618-0.00007-7",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "Zafar Ullah",
+            "family": "Koreshi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Nuclear Engineering Mathematical Modeling and Simulation"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-323-90618-0.00007-7"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              1964
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-395653-8.50010-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "THE MONTE CARLO METHOD"
+        ],
+        "author": [
+          {
+            "suffix": "JR.",
+            "given": "MELVILLE",
+            "family": "CLARK",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "KENT F.",
+            "family": "HANSEN",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Numerical Methods of Reactor Analysis"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-395653-8.50010-2"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              2,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781420076196-c3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              6,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Chapman &amp; Hall/CRC Financial Mathematics Series",
+          "Monte Carlo Methods and Models in Finance and Insurance"
+        ],
+        "URL": "https://doi.org/10.1201/9781420076196-c3"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              12,
+              18
+            ]
+          ]
+        },
+        "DOI": "10.1515/jem-2018-0010",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo Evidence on the Estimation Method for Industry Dynamics"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8008-7796",
+            "authenticated-orcid": false,
+            "given": "Kazufumi",
+            "family": "Yamana",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Kanagawa University , Yokohama 221-8686, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Econometric Methods"
+        ],
+        "URL": "https://doi.org/10.1515/jem-2018-0010"
+      },
+      {
+        "publisher": "American Institute of Aeronautics and Astronautics (AIAA)",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.2514/1.j050439",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Error Estimation and Error Reduction in Separable Monte-Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Bharani",
+            "family": "Ravishankar",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Florida, Gainesville, Florida 32611"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin P.",
+            "family": "Smarslok",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Florida, Gainesville, Florida 32611"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Raphael T.",
+            "family": "Haftka",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Florida, Gainesville, Florida 32611"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bhavani V.",
+            "family": "Sankar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Florida, Gainesville, Florida 32611"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "AIAA Journal"
+        ],
+        "URL": "https://doi.org/10.2514/1.j050439"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/iccabs.2011.5729891",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Poster: Quasi-Monte Carlo method in population genetics parameter estimation"
+        ],
+        "author": [
+          {
+            "given": "Hongmei",
+            "family": "Chi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Peter",
+            "family": "Beerli",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 IEEE 1st International Conference on Computational Advances in Bio and Medical Sciences (ICCABS)"
+        ],
+        "URL": "https://doi.org/10.1109/iccabs.2011.5729891"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/icassp.2009.4959628",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Blind Monte Carlo detection-estimation method for optical coherence tomography"
+        ],
+        "author": [
+          {
+            "given": "Georg",
+            "family": "Kail",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Clemens",
+            "family": "Novak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bernd",
+            "family": "Hofer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Franz",
+            "family": "Hlawatsch",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2009 IEEE International Conference on Acoustics, Speech and Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/icassp.2009.4959628"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781315120294-9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Yahya E.",
+            "family": "Osais",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Simulation"
+        ],
+        "URL": "https://doi.org/10.1201/9781315120294-9"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781003226581-4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Jason M.",
+            "family": "Kinser",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Modeling and Simulation in Python"
+        ],
+        "URL": "https://doi.org/10.1201/9781003226581-4"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreve.76.057203",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Monte Carlo method for multiparameter estimation in coupled chaotic systems"
+        ],
+        "author": [
+          {
+            "given": "Inés P.",
+            "family": "Mariño",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joaquín",
+            "family": "Míguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              11,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review E"
+        ],
+        "URL": "https://doi.org/10.1103/physreve.76.057203"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/iembs.2009.5332663",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Pulse pressure variation estimation using a sequential monte carlo method"
+        ],
+        "author": [
+          {
+            "given": "Sunghan",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mateo",
+            "family": "Aboy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "James",
+            "family": "McNames",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2009 Annual International Conference of the IEEE Engineering in Medicine and Biology Society"
+        ],
+        "URL": "https://doi.org/10.1109/iembs.2009.5332663"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              2,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.1088/0305-4470/26/4/022",
+        "type": "journal-article",
+        "is-referenced-by-count": 23,
+        "title": [
+          "Estimation of multidimensional integrals: is Monte Carlo the best method?"
+        ],
+        "author": [
+          {
+            "given": "E J Janse van",
+            "family": "Rensburg",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G M",
+            "family": "Torrie",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1999,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Physics A: Mathematical and General"
+        ],
+        "URL": "https://doi.org/10.1088/0305-4470/26/4/022"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-540-76290-4_6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Fuzzy Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "James J.",
+            "family": "Buckley",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Leonard J.",
+            "family": "Jowers",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Studies in Fuzziness and Soft Computing",
+          "Monte Carlo Methods in Fuzzy Optimization"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-540-76290-4_6"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevd.27.1304",
+        "type": "journal-article",
+        "is-referenced-by-count": 78,
+        "title": [
+          "Projector Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Blankenbecler",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. L.",
+            "family": "Sugar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1983,
+              3,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review D"
+        ],
+        "URL": "https://doi.org/10.1103/physrevd.27.1304"
+      },
+      {
+        "publisher": "CIMNE",
+        "DOI": "10.23967/icossar.2025.097",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "An efficient Monte-Carlo method for power grid reliability estimation"
+        ],
+        "author": [
+          {
+            "given": "Z.",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Duenas-Osorio",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I.",
+            "family": "Papaioannou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Straub",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "container-title": [
+          "14th International Conference on Structural Safety and Reliability"
+        ],
+        "URL": "https://doi.org/10.23967/icossar.2025.097"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119206149.ch1",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              8,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Implementing Models of Financial Derivatives"
+        ],
+        "URL": "https://doi.org/10.1002/9781119206149.ch1"
+      },
+      {
+        "publisher": "Taylor &amp; Francis",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781420033250.ch1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "Habib",
+            "family": "Zaidi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Series in Medical Physics and Biomedical Engineering",
+          "Therapeutic Applications of Monte Carlo Calculations in Nuclear Medicine"
+        ],
+        "URL": "https://doi.org/10.1201/9781420033250.ch1"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              6,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1002/3527603786.ch4",
+        "type": "other",
+        "is-referenced-by-count": 28,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Anthony D.",
+            "family": "Rollett",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Priya",
+            "family": "Manohar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Continuum Scale Simulation of Engineering Materials"
+        ],
+        "URL": "https://doi.org/10.1002/3527603786.ch4"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1955,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1038/scientificamerican0555-90",
+        "type": "journal-article",
+        "is-referenced-by-count": 45,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Daniel D.",
+            "family": "McCracken",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Scientific American"
+        ],
+        "URL": "https://doi.org/10.1038/scientificamerican0555-90"
+      },
+      {
+        "DOI": "10.1201/9781315274867-39",
+        "title": [
+          "Monte Carlo Method (Introduction)"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Engineering Modelling and Analysis"
+        ],
+        "publisher": "CRC Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1201/9781315274867-39"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf00649201",
+        "type": "journal-article",
+        "is-referenced-by-count": 191,
+        "title": [
+          "The Monte Carlo method"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "H�non",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Astrophysics and Space Science"
+        ],
+        "URL": "https://doi.org/10.1007/bf00649201"
+      },
+      {
+        "publisher": "CRC Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781420056341.ch12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              9,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Probability Models in Engineering and Science"
+        ],
+        "URL": "https://doi.org/10.1201/9781420056341.ch12"
+      },
+      {
+        "DOI": "10.1109/wcica.2004.1340710",
+        "title": [
+          "Multi-recursive monte-carlo method for nonlinear system state estimation"
+        ],
+        "author": [
+          {
+            "family": "Shenghong Xu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jinhua Wu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Fifth World Congress on Intelligent Control and Automation (IEEE Cat. No.04EX788)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/wcica.2004.1340710"
+      },
+      {
+        "publisher": "IMPERIAL COLLEGE PRESS",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1142/9781848168756_0007",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Series in Quantitative Finance",
+          "Simulating Copulas"
+        ],
+        "URL": "https://doi.org/10.1142/9781848168756_0007"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              1983,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789814503020_0003",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "THE MONTE CARLO METHOD"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Lattice Gauge Theories and Monte Carlo Simulations"
+        ],
+        "URL": "https://doi.org/10.1142/9789814503020_0003"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-90-481-9751-4_100332",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Kinetic Monte Carlo Method"
+        ],
+        "author": [
+          {
+            "given": "Bharat",
+            "family": "Bhushan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Manuel L. B.",
+            "family": "Palacio",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedia of Nanotechnology"
+        ],
+        "URL": "https://doi.org/10.1007/978-90-481-9751-4_100332"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

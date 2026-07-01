@@ -3,64 +3,64 @@
   "metrics": [
     {
       "metric_id": "file-size",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "byte-entropy",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "chi-square-byte-frequency",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "monte-carlo-pi",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "serial-correlation",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "conditional-entropy",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "n-gram-entropy",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "lempel-ziv-complexity",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "section-size-ratios",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     },
     {
       "metric_id": "section-level-entropy",
-      "selected": 0,
+      "selected": 10,
       "target": 10,
-      "complete": false
+      "complete": true
     }
   ],
-  "complete": false
+  "complete": true
 }

@@ -1,0 +1,2797 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 257211,
+    "items": [
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01071523",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "?-Entropy data compression"
+        ],
+        "author": [
+          {
+            "given": "I. Ya.",
+            "family": "Tyrygin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Ukrainian Mathematical Journal"
+        ],
+        "URL": "https://doi.org/10.1007/bf01071523"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-55210-3_209",
+        "type": "book-chapter",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Compression and entropy"
+        ],
+        "author": [
+          {
+            "given": "Georges",
+            "family": "Hansel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dominique",
+            "family": "Perrin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Imre",
+            "family": "Simon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "STACS 92"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-55210-3_209"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1006/jvci.1993.1025",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Entropy and Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Nassrin",
+            "family": "Tavakoli",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Visual Communication and Image Representation"
+        ],
+        "URL": "https://doi.org/10.1006/jvci.1993.1025"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              3,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118033265.ch3",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression and Entropy"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Foundations of Coding"
+        ],
+        "URL": "https://doi.org/10.1002/9781118033265.ch3"
+      },
+      {
+        "DOI": "10.2139/ssrn.6458760",
+        "title": [
+          "War as Entropy Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-4876-2610",
+            "authenticated-orcid": true,
+            "given": "Truong Xuan",
+            "family": "Khanh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0007-2598-6696",
+            "authenticated-orcid": true,
+            "given": "Quynh Hoa",
+            "family": "Truong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luong Thanh",
+            "family": "Tran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.6458760"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/metrocon59008.2023.10340524",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Tiny Entropy Based Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Arthur C.",
+            "family": "Depoian",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ethan R.",
+            "family": "Adams",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Colleen P.",
+            "family": "Bailey",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Parthasarathy",
+            "family": "Guturu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE MetroCon"
+        ],
+        "URL": "https://doi.org/10.1109/metrocon59008.2023.10340524"
+      },
+      {
+        "DOI": "10.1109/dcc.1998.672298",
+        "title": [
+          "Entropy and data compression performances"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Lanza",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '98 Data Compression Conference (Cat. No.98TB100225)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1998.672298"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1109/lsp.2021.3052097",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Entropy Optimized Deep Feature Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8561-5009",
+            "authenticated-orcid": false,
+            "given": "Benben",
+            "family": "Niu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1720-083X",
+            "authenticated-orcid": false,
+            "given": "Xiaoran",
+            "family": "Cao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ziwei",
+            "family": "Wei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yun",
+            "family": "He",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Signal Processing Letters"
+        ],
+        "URL": "https://doi.org/10.1109/lsp.2021.3052097"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1214/aoms/1177693077",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Epsilon Entropy and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Edward C.",
+            "family": "Posner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eugene R.",
+            "family": "Rodemich",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Mathematical Statistics"
+        ],
+        "URL": "https://doi.org/10.1214/aoms/1177693077"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00493-015-3070-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 25,
+        "title": [
+          "Nonrepetitive colouring via entropy compression"
+        ],
+        "author": [
+          {
+            "given": "Vida",
+            "family": "Dujmović",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gwenaël",
+            "family": "Joret",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jakub",
+            "family": "Kozik",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David R.",
+            "family": "Wood",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Combinatorica"
+        ],
+        "URL": "https://doi.org/10.1007/s00493-015-3070-6"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1993
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.179344",
+        "type": "journal-article",
+        "is-referenced-by-count": 206,
+        "title": [
+          "Entropy and data compression schemes"
+        ],
+        "author": [
+          {
+            "given": "D.S.",
+            "family": "Ornstein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Weiss",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.179344"
+      },
+      {
+        "DOI": "10.1117/3.34917.ch4",
+        "title": [
+          "Entropy Estimation and Lossless Compression"
+        ],
+        "container-title": [
+          "Digital Image Compression Techniques"
+        ],
+        "publisher": "SPIE",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1117/3.34917.ch4"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/nca.2014.31",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy Adaptive On-Line Compression"
+        ],
+        "author": [
+          {
+            "given": "Shlomi",
+            "family": "Dolev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sergey",
+            "family": "Frenkel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marina",
+            "family": "Kopeetsky",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 IEEE 13th International Symposium on Network Computing and Applications"
+        ],
+        "URL": "https://doi.org/10.1109/nca.2014.31"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jcss.2005.10.002",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Dimension, entropy rates, and compression"
+        ],
+        "author": [
+          {
+            "given": "John M.",
+            "family": "Hitchcock",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.V.",
+            "family": "Vinodchandran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Computer and System Sciences"
+        ],
+        "URL": "https://doi.org/10.1016/j.jcss.2005.10.002"
+      },
+      {
+        "DOI": "10.1001/jama.290.18.2379",
+        "title": [
+          "Grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              11,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.290.18.2379"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03150200005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              2,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03150200005001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03110250007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              12,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03110250007001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120050007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120050007001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160090001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              6,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160090001001"
+      },
+      {
+        "DOI": "10.1001/jama.1971.03190070001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              8,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1971.03190070001001"
+      },
+      {
+        "DOI": "10.1001/jama.1973.03220290001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1973,
+              7,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1973.03220290001001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03210060002001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              11,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03210060002001"
+      },
+      {
+        "DOI": "10.1001/jama.1974.03230260005001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1974,
+              4,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1974.03230260005001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03150090003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              11,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03150090003001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120180007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120180007001"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/icaset.2018.8392485",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy based adaptive image compression procedure"
+        ],
+        "author": [
+          {
+            "given": "Sandor",
+            "family": "Piros",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Peter",
+            "family": "Korondi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 Advances in Science and Engineering Technology International Conferences (ASET)"
+        ],
+        "URL": "https://doi.org/10.1109/icaset.2018.8392485"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1109/icip46576.2022.9897669",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy-Reduced Attention for Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Feng",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Electronic and Computer Engineering, Shenzhen Graduate School"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jingyi",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Electronic and Computer Engineering, Shenzhen Graduate School"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ronggang",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Electronic and Computer Engineering, Shenzhen Graduate School"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2022 IEEE International Conference on Image Processing (ICIP)"
+        ],
+        "URL": "https://doi.org/10.1109/icip46576.2022.9897669"
+      },
+      {
+        "DOI": "10.1001/jama.1974.03230310014002",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1974,
+              5,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1974.03230310014002"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03150070003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              11,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03150070003001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03110150007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              10,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03110150007001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03190350002001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              2,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03190350002001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160390003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              12,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160390003001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140050061030",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              1,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140050061030"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140090203036",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              2,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140090203036"
+      },
+      {
+        "DOI": "10.1001/jama.1974.03240030012002",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1974,
+              10,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 3,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1974.03240030012002"
+      },
+      {
+        "DOI": "10.1109/sbcci.2002.1137659",
+        "title": [
+          "Pipelined entropy coders for JPEG compression"
+        ],
+        "author": [
+          {
+            "given": "L.V.",
+            "family": "Agostini",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I.S.",
+            "family": "Silva",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Bampi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. 15th Symposium on Integrated Circuits and Systems Design"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 4,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/sbcci.2002.1137659"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170200007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              5,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170200007001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03200170001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              7,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03200170001001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140330001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              8,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140330001001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120200007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              5,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120200007001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120030007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              1,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120030007001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140290001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              7,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140290001001"
+      },
+      {
+        "DOI": "10.1007/978-0-8176-4683-7_14",
+        "title": [
+          "Entropy Encoding in Wavelet Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Myung-Sin",
+            "family": "Song",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Representations, Wavelets, and Frames"
+        ],
+        "publisher": "Birkhäuser Boston",
+        "is-referenced-by-count": 5,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-8176-4683-7_14"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03200010004001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              4,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03200010004001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130060001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              8,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130060001001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03150220005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              3,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03150220005001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03110110007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              9,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03110110007001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03100230007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              6,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03100230007001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03190370001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              3,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03190370001001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03210040002002",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              10,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03210040002002"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120070007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              2,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120070007001"
+      },
+      {
+        "DOI": "10.1001/jama.1974.03240020014002",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1974,
+              10,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1974.03240020014002"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03150130003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              12,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03150130003001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130170007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              10,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130170007001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120010009001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              1,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120010009001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130110001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              9,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130110001001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120090007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              2,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120090007001"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170030003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              1,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170030003001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03200260002001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              9,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03200260002001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03200140004002",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              7,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03200140004002"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03110100009001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              9,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03110100009001"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170070003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              2,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170070003001"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170160005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              4,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170160005001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140310001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              7,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140310001001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03150110003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              12,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03150110003001"
+      },
+      {
+        "publisher": "University of California Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              3,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1525/fq.2005.58.3.53",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "21 Grams"
+        ],
+        "author": [
+          {
+            "given": "Robert",
+            "family": "Hahn",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Film Quarterly"
+        ],
+        "URL": "https://doi.org/10.1525/fq.2005.58.3.53"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.aam.2021.102163",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy compression versus Lovász Local Lemma"
+        ],
+        "author": [
+          {
+            "given": "Rogério G.",
+            "family": "Alves",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6906-3745",
+            "authenticated-orcid": false,
+            "given": "Aldo",
+            "family": "Procacci",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Remy",
+            "family": "Sanchis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advances in Applied Mathematics"
+        ],
+        "URL": "https://doi.org/10.1016/j.aam.2021.102163"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ejc.2013.02.007",
+        "type": "journal-article",
+        "is-referenced-by-count": 52,
+        "title": [
+          "Acyclic edge-coloring using entropy compression"
+        ],
+        "author": [
+          {
+            "given": "Louis",
+            "family": "Esperet",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Aline",
+            "family": "Parreau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "European Journal of Combinatorics"
+        ],
+        "URL": "https://doi.org/10.1016/j.ejc.2013.02.007"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03200100002001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              6,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03200100002001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130140009001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              10,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130140009001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160040005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              4,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160040005001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140020097043",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              1,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140020097043"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03200160002001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              7,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03200160002001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03100160007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              4,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03100160007001"
+      },
+      {
+        "DOI": "10.1001/jama.1971.03190100001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              9,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1971.03190100001001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03120160007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              4,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03120160007001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140360001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              9,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140360001001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03100050007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              1,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03100050007001"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170190005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              5,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170190005001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03210100002001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              12,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03210100002001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03150160003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              1,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03150160003001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130250007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130250007001"
+      },
+      {
+        "DOI": "10.1001/jama.1971.03190160001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              10,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1971.03190160001001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03210030001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              10,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03210030001001"
+      },
+      {
+        "DOI": "10.1001/jama.1968.03140270003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 1,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1968.03140270003001"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170050003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              2,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170050003001"
+      },
+      {
+        "DOI": "10.1001/jama.1971.03190180001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1971.03190180001001"
+      },
+      {
+        "DOI": "10.1001/jama.1973.03220310001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1973,
+              7,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1973.03220310001001"
+      },
+      {
+        "DOI": "10.1001/jama.1972.03190320001001",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1972,
+              2,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1972.03190320001001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160300003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              10,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160300003001"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130240007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              12,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130240007001"
+      },
+      {
+        "DOI": "10.1001/jama.1970.03170250005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              6,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1970.03170250005001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160070005001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              5,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160070005001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160110001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              6,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160110001001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160160001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              7,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160160001001"
+      },
+      {
+        "DOI": "10.1001/jama.1974.03230290014002",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1974,
+              4,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1974.03230290014002"
+      },
+      {
+        "DOI": "10.1001/jama.1967.03130080001001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              8,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1967.03130080001001"
+      },
+      {
+        "DOI": "10.1001/jama.1966.03110070007001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1966.03110070007001"
+      },
+      {
+        "DOI": "10.1001/jama.1969.03160310003001",
+        "title": [
+          "AMA grams"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1969,
+              11,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1969.03160310003001"
+      },
+      {
+        "DOI": "10.1001/jama.1973.03220110002002",
+        "title": [
+          "AMA GRAMS"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1973,
+              3,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "JAMA: The Journal of the American Medical Association"
+        ],
+        "publisher": "American Medical Association (AMA)",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1001/jama.1973.03220110002002"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

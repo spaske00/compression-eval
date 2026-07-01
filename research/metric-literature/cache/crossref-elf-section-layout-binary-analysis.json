@@ -1,0 +1,4883 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 5797986,
+    "items": [
+      {
+        "DOI": "10.3726/978-3-0351-0061-7/3",
+        "title": [
+          "Section IEIL, ELF, Global English"
+        ],
+        "container-title": [
+          "EIL, ELF, Global English: Teaching and Learning Issues"
+        ],
+        "publisher": "Peter Lang",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.3726/978-3-0351-0061-7/3"
+      },
+      {
+        "DOI": "10.1515/9781501503177-016",
+        "title": [
+          "Section A: Sociolinguistics, variation and ELF"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "English as a Lingua Franca: Perspectives and Prospects"
+        ],
+        "publisher": "De Gruyter",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1515/9781501503177-016"
+      },
+      {
+        "DOI": "10.3726/978-3-0351-0061-7/19",
+        "title": [
+          "Section IV The ELF Teacher / Student"
+        ],
+        "container-title": [
+          "EIL, ELF, Global English: Teaching and Learning Issues"
+        ],
+        "publisher": "Peter Lang",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.3726/978-3-0351-0061-7/19"
+      },
+      {
+        "publisher": "Institute for System Programming of the Russian Academy of Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.15514/ispras-2015-27(1)-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Dynamic analysis of ARM ELF shared libraries using static binary instrumentation"
+        ],
+        "author": [
+          {
+            "given": "M.K.",
+            "family": "Ermakov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.P.",
+            "family": "Vartanov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the Institute for System Programming of the RAS"
+        ],
+        "URL": "https://doi.org/10.15514/ispras-2015-27(1)-1"
+      },
+      {
+        "publisher": "Saint Petersburg State Polytechnical University",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.5862/jcstcs.236.10",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Dynamic Analysis of ARM ELF Executable Code Using Static Binary Instrumentation"
+        ],
+        "author": [
+          {
+            "given": "M.K.",
+            "family": "Ermakov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "St. Petersburg State Polytechnical University Journal. Computer Science. Telecommunications and Control Systems."
+        ],
+        "URL": "https://doi.org/10.5862/jcstcs.236.10"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-22263-5_38",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A Static Instrumentation Method for ELF Binary"
+        ],
+        "author": [
+          {
+            "given": "Wenchuan",
+            "family": "Yang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yifei",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Baojiang",
+            "family": "Cui",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chen",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Intelligent Systems and Computing",
+          "Innovative Mobile and Internet Services in Ubiquitous Computing"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-22263-5_38"
+      },
+      {
+        "DOI": "10.1109/glsv.1991.143936",
+        "title": [
+          "Area efficient binary tree layout"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Bhattacharya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Wei-Tek Tsai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[1991] Proceedings. First Great Lakes Symposium on VLSI"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 2,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/glsv.1991.143936"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/0020-0255(94)90047-7",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Recursive binary tree layout mixing"
+        ],
+        "author": [
+          {
+            "given": "Sourav",
+            "family": "Bhattacharya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wei-Tek",
+            "family": "Tsai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Sciences"
+        ],
+        "URL": "https://doi.org/10.1016/0020-0255(94)90047-7"
+      },
+      {
+        "publisher": "Institute of Electronics, Information and Communications Engineers (IEICE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1587/transinf.2021edp7260",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "BCGL: Binary Classification-Based Graph Layout"
+        ],
+        "author": [
+          {
+            "given": "Kai",
+            "family": "YAN",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Technology, Harbin Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tiejun",
+            "family": "ZHAO",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Technology, Harbin Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Muyun",
+            "family": "YANG",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science and Technology, Harbin Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEICE Transactions on Information and Systems"
+        ],
+        "URL": "https://doi.org/10.1587/transinf.2021edp7260"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1988,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/0167-9260(88)90019-3",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "VLSI layout of binary tree structures"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Chuavalee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.N.",
+            "family": "Bhuyan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Integration"
+        ],
+        "URL": "https://doi.org/10.1016/0167-9260(88)90019-3"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1002/bimj.200390005",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Analysis of the Binary Littermate Data in the One‐Way Layout"
+        ],
+        "author": [
+          {
+            "given": "Sunho",
+            "family": "Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2003,
+              3,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Biometrical Journal"
+        ],
+        "URL": "https://doi.org/10.1002/bimj.200390005"
+      },
+      {
+        "DOI": "10.1109/glsv.1991.143938",
+        "title": [
+          "I/O bound binary tree layout"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Bhattacharya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Yoon-Hwa Choi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Wei-Tek Tsai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[1991] Proceedings. First Great Lakes Symposium on VLSI"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/glsv.1991.143938"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              11,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781003010043-29",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Conversation Analysis and ELF"
+        ],
+        "author": [
+          {
+            "given": "Joan",
+            "family": "Cutting",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kenneth",
+            "family": "Fordyce",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Pragmatics"
+        ],
+        "URL": "https://doi.org/10.4324/9781003010043-29"
+      },
+      {
+        "publisher": "De Gruyter",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.1515/9781501503177-023",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Conversation analysis and ELF"
+        ],
+        "author": [
+          {
+            "given": "Jagdish",
+            "family": "Kaur",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "English as a Lingua Franca: Perspectives and Prospects"
+        ],
+        "URL": "https://doi.org/10.1515/9781501503177-023"
+      },
+      {
+        "DOI": "10.1007/978-0-387-09680-3_17",
+        "title": [
+          "Cache-sensitive Memory Layout for Binary Trees"
+        ],
+        "author": [
+          {
+            "given": "Riku",
+            "family": "Saikkonen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eljas",
+            "family": "Soisalon-Soininen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IFIP International Federation for Information Processing",
+          "Fifth Ifip International Conference On Theoretical Computer Science – Tcs 2008"
+        ],
+        "publisher": "Springer US",
+        "is-referenced-by-count": 4,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-09680-3_17"
+      },
+      {
+        "publisher": "Society of American Archivists",
+        "published-print": {
+          "date-parts": [
+            [
+              1955,
+              7,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.17723/aarc.18.3.216305416n95vt48",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Records Section: Space, Location, and Layout"
+        ],
+        "author": [
+          {
+            "given": "Olive",
+            "family": "Surgen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Pan American Union"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The American Archivist"
+        ],
+        "URL": "https://doi.org/10.17723/aarc.18.3.216305416n95vt48"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1987
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4613-1993-1_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Layout Analysis"
+        ],
+        "author": [
+          {
+            "given": "Stephen M.",
+            "family": "Trimberger",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "An Introduction to CAD for VLSI"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4613-1993-1_8"
+      },
+      {
+        "publisher": "Pleiades Publishing Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1134/s0036023619110020",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Quasi-Binary Section CuInS2–FeIn2S4"
+        ],
+        "author": [
+          {
+            "given": "Sh. S.",
+            "family": "Abdullaeva",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F. M.",
+            "family": "Mammadov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I. B.",
+            "family": "Bakhtiyarly",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Russian Journal of Inorganic Chemistry"
+        ],
+        "URL": "https://doi.org/10.1134/s0036023619110020"
+      },
+      {
+        "publisher": "Pleiades Publishing Ltd",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1134/s003602362001012x",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Quasi-Binary Section Ag2SnS3–AgSbS2"
+        ],
+        "author": [
+          {
+            "given": "Sh. H.",
+            "family": "Mammadov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. N.",
+            "family": "Mammadov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. C.",
+            "family": "Kurbanova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              3,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Russian Journal of Inorganic Chemistry"
+        ],
+        "URL": "https://doi.org/10.1134/s003602362001012x"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1093/comjnl/bxv090",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Cache-Sensitive Memory Layout for Dynamic Binary Trees"
+        ],
+        "author": [
+          {
+            "given": "Riku",
+            "family": "Saikkonen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eljas",
+            "family": "Soisalon-Soininen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              11,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "The Computer Journal"
+        ],
+        "URL": "https://doi.org/10.1093/comjnl/bxv090"
+      },
+      {
+        "publisher": "Saratov State University",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.18500/1816-9775-2020-20-1-49-54",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Quasi-binary Section Ag2SnS3-Sb2S3"
+        ],
+        "author": [
+          {
+            "name": "Institute of Catalysis and Inorganic Chemistry named after academician M. F. Nagiyev of the National Academy of Sciences of Azerbaijan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1624-7345",
+            "authenticated-orcid": false,
+            "given": "Sharafat H.",
+            "family": "Mammadov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": [
+          "Izvestiya of Saratov University. New Series. Series: Chemistry. Biology. Ecology"
+        ],
+        "URL": "https://doi.org/10.18500/1816-9775-2020-20-1-49-54"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1145/3774934.3786439",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Binary Compatible Critical Section Delegation"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0006-1591-2506",
+            "authenticated-orcid": false,
+            "given": "Junyao",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fudan University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-0300-3019",
+            "authenticated-orcid": false,
+            "given": "Zhuo",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Alibaba Cloud Computing, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4879-6258",
+            "authenticated-orcid": false,
+            "given": "Zhe",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fudan University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 31st ACM SIGPLAN Annual Symposium on Principles and Practice of Parallel Programming"
+        ],
+        "URL": "https://doi.org/10.1145/3774934.3786439"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-50399-4_58",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Static Instrumentation Method for IoT Firmware ELF Binary Emulation Patching"
+        ],
+        "author": [
+          {
+            "given": "Yiqi",
+            "family": "Sun",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Baojiang",
+            "family": "Cui",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chen",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yifei",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Intelligent Systems and Computing",
+          "Innovative Mobile and Internet Services in Ubiquitous Computing"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-50399-4_58"
+      },
+      {
+        "publisher": "Voronezh State University of Forestry and Technologies named after G.F. Morozov",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              1,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.12737/2273",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "То Question Layout Box Section Eccentrically Compressed Elements"
+        ],
+        "author": [
+          {
+            "given": "Aleksandr",
+            "family": "Kozlov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Evgeniy",
+            "family": "Bulanov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V",
+            "family": "Bulanova",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yu.",
+            "family": "Kuzina",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Actual directions of scientific researches of the XXI century: theory and practice",
+          "Актуальные направления научных исследований XXI века: теория и практика"
+        ],
+        "URL": "https://doi.org/10.12737/2273"
+      },
+      {
+        "publisher": "Edward Elgar Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.4337/9781781006047.00059",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Section 6 LAYOUT-DESIGNS (TOPOGRAPHIES) OF INTEGRATED CIRCUITS"
+        ],
+        "author": [
+          {
+            "given": "Justin",
+            "family": "Malbon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Charles",
+            "family": "Lawson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mark",
+            "family": "Davison",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The WTO Agreement on Trade-Related Aspects of Intellectual Property Rights"
+        ],
+        "URL": "https://doi.org/10.4337/9781781006047.00059"
+      },
+      {
+        "DOI": "10.2139/ssrn.6641711",
+        "title": [
+          "Structure Prediction and Bonding Analysis of Chromium–Phosphorus Binary [CrₙPₘ]⁺ Clusters: A DFT, QTAIM, and ELF Study"
+        ],
+        "author": [
+          {
+            "given": "Nadia  Ezzat",
+            "family": "Al-kirbasee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6164-3622",
+            "authenticated-orcid": true,
+            "given": "Ahlam  Hussein",
+            "family": "Hassan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Muhsen  Abood Muhsen",
+            "family": "Al-Ibadi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.6641711"
+      },
+      {
+        "publisher": "Korea Association of Secondary English Education",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.20487/kasee.15.2.202205.59",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "An analysis of the English section of the Korea’s college scholastic ability test from the ELF perspective"
+        ],
+        "author": [
+          {
+            "given": "Young-Sook",
+            "family": "Shim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Secondary English Education"
+        ],
+        "URL": "https://doi.org/10.20487/kasee.15.2.202205.59"
+      },
+      {
+        "DOI": "10.59350/ht92c-4cq83",
+        "title": [
+          "Document layout analysis"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7101-9767",
+            "authenticated-orcid": false,
+            "given": "Roderic",
+            "family": "Page",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Front Matter",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.59350/ht92c-4cq83"
+      },
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              11,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.1145/3355610",
+        "type": "journal-article",
+        "is-referenced-by-count": 151,
+        "title": [
+          "Document Layout Analysis"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5111-9760",
+            "authenticated-orcid": false,
+            "given": "Galal M.",
+            "family": "Binmakhashen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "King Fahd University of Petroleum and Minerals, Kingdom of Saudi Arabia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5432-3206",
+            "authenticated-orcid": false,
+            "given": "Sabri A.",
+            "family": "Mahmoud",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "King Fahd University of Petroleum and Minerals, Kingdom of Saudi Arabia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              10,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM Computing Surveys"
+        ],
+        "URL": "https://doi.org/10.1145/3355610"
+      },
+      {
+        "DOI": "10.31390/gradschool_theses.6152",
+        "title": [
+          "BUILDING A CUSTOM U-NET-BASED CNN MODEL FOR ELF SECTION CLASSIFICATION"
+        ],
+        "author": [
+          {
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sanjida",
+            "family": "Mehrin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Louisiana State University and Agricultural and Mechanical College"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Louisiana State University Libraries",
+        "is-referenced-by-count": 0,
+        "type": "dissertation",
+        "URL": "https://doi.org/10.31390/gradschool_theses.6152"
+      },
+      {
+        "DOI": "10.1108/978-1-78973-705-920191011",
+        "title": [
+          "Layout of analysis"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Understanding the Investor: A Maltese Study of Risk and Behavior in Financial Investment Decisions"
+        ],
+        "publisher": "Emerald Publishing Limited",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1108/978-1-78973-705-920191011"
+      },
+      {
+        "publisher": "Springer Vienna",
+        "published-print": {
+          "date-parts": [
+            [
+              1974
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-7091-2868-8_16",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Overall Layout Analysis"
+        ],
+        "author": [
+          {
+            "given": "C.",
+            "family": "Bona",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Galletti",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Lucifredi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CISM International Centre for Mechanical Sciences",
+          "Computer Aided Automatic Design"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-7091-2868-8_16"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-99-4277-0",
+        "type": "book",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Document Layout Analysis"
+        ],
+        "author": [
+          {
+            "given": "Showmik",
+            "family": "Bhowmik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SpringerBriefs in Computer Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-99-4277-0"
+      },
+      {
+        "DOI": "10.59350/z574z-dcw92",
+        "title": [
+          "Document layout analysis"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7101-9767",
+            "authenticated-orcid": false,
+            "given": "Roderic",
+            "family": "Page",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Front Matter",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.59350/z574z-dcw92"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/icse.2012.6227041",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Stack layout transformation: Towards diversity for securing binary programs"
+        ],
+        "author": [
+          {
+            "given": "Benjamin",
+            "family": "Rodes",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 34th International Conference on Software Engineering (ICSE)"
+        ],
+        "URL": "https://doi.org/10.1109/icse.2012.6227041"
+      },
+      {
+        "publisher": "American Society of Civil Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1061/41139(387)460",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Layout of Logistics Facilities Based on Binary Tree Representation"
+        ],
+        "author": [
+          {
+            "given": "Yinying",
+            "family": "Tang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              },
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              },
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Qiuyang",
+            "family": "Yao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              },
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              },
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Si",
+            "family": "Chen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              },
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              },
+              {
+                "name": "School of Traffic and Transp., Southwest Jiaotong University, Chengdu 610031, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              5,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "ICLEM 2010"
+        ],
+        "URL": "https://doi.org/10.1061/41139(387)460"
+      },
+      {
+        "DOI": "10.1016/s0304-0208(08)70435-3",
+        "title": [
+          "Section 9 Binary Banach Lie Algebras"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "container-title": [
+          "North-Holland Mathematics Studies",
+          "Symmetric Banach Manifolds and Jordan C*-Algebras"
+        ],
+        "publisher": "Elsevier",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1016/s0304-0208(08)70435-3"
+      },
+      {
+        "publisher": "Edizioni Ca Foscari",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.30687/mag/2724-3923/2024/02/003",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "NetLay: Layout Classification Dataset for Enhancing Layout Analysis"
+        ],
+        "author": [
+          {
+            "given": "Sharva",
+            "family": "Gogawale",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Tel Aviv University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luigi",
+            "family": "Bambaci",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "École Pratique des Hautes Études (EPHE), France"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Berat",
+            "family": "Kurar-Barakat",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Tel Aviv University, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daria",
+            "family": "Vasyutinsky Shapira",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Tel Aviv University, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Daniel",
+            "family": "Stökl Ben Ezra",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "École Pratique des Hautes Études (EPHE), France"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nachum",
+            "family": "Dershowitz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Tel Aviv University, Israel"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "magazén"
+        ],
+        "URL": "https://doi.org/10.30687/mag/2724-3923/2024/02/003"
+      },
+      {
+        "DOI": "10.1109/pac.2005.1590736",
+        "title": [
+          "Layout of the Diagnostic Section for the European XFEL"
+        ],
+        "author": [
+          {
+            "given": "Ch.",
+            "family": "Gerth",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Rohrs",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H.",
+            "family": "Schlarb",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the 2005 Particle Accelerator Conference"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/pac.2005.1590736"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1002/cae.22348",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Curved beam stress analysis using a binary image of the cross‐section"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0555-4451",
+            "authenticated-orcid": false,
+            "given": "Evaldas",
+            "family": "Narvydas",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Mechanical Engineering Kaunas University of Technology  Kaunas Lithuania"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nomeda",
+            "family": "Puodziuniene",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Mechanical Engineering Kaunas University of Technology  Kaunas Lithuania"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              10,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Applications in Engineering Education"
+        ],
+        "URL": "https://doi.org/10.1002/cae.22348"
+      },
+      {
+        "publisher": "Springer Nature Switzerland",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-62684-5_27",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Layout Design and Noise Study in a Weaving Section"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0006-4329-4776",
+            "authenticated-orcid": false,
+            "given": "Ana",
+            "family": "Monteiro",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0001-7323-2000",
+            "authenticated-orcid": false,
+            "given": "Andreia",
+            "family": "Gomes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0002-9950-4649",
+            "authenticated-orcid": false,
+            "given": "Bruna",
+            "family": "Fernandes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-0917-9103",
+            "authenticated-orcid": false,
+            "given": "César",
+            "family": "Barroso",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-4796-1307",
+            "authenticated-orcid": false,
+            "given": "Diogo",
+            "family": "Alves",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7448-291X",
+            "authenticated-orcid": false,
+            "given": "Ângela",
+            "family": "Silva",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Mechanical Engineering",
+          "Innovations in Mechanical Engineering III"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-62684-5_27"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/spw50608.2020.00041",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Binary Analysis with Architecture and Code Section Detection using Supervised Machine Learning"
+        ],
+        "author": [
+          {
+            "given": "Bryan",
+            "family": "Beckman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jed",
+            "family": "Haile",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2020 IEEE Security and Privacy Workshops (SPW)"
+        ],
+        "URL": "https://doi.org/10.1109/spw50608.2020.00041"
+      },
+      {
+        "publisher": "Ukrainian State University of Science and Technologies",
+        "DOI": "10.15802/stp2023/280006",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Development and Analysis of an Innovative Layout Scheme of an Articulated Two-Section Tram Tramcar"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7789-2081",
+            "authenticated-orcid": false,
+            "given": "S. V.",
+            "family": "Voytkiv",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Scientific and Technical Center «Avtopoliprom», Ukraine"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              3,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Science and Transport Progress"
+        ],
+        "URL": "https://doi.org/10.15802/stp2023/280006"
+      },
+      {
+        "publisher": "Bohn Stafleu van Loghum",
+        "published-print": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-90-313-9257-5_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Elf"
+        ],
+        "author": [
+          {
+            "given": "Hanne",
+            "family": "Rots",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Jij mág niet lief zijn"
+        ],
+        "URL": "https://doi.org/10.1007/978-90-313-9257-5_11"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1111/j.1540-4781.2011.01172.x",
+        "type": "journal-article",
+        "is-referenced-by-count": 55,
+        "title": [
+          "Successful ELF Communications and Implications for ELT: Sequential Analysis of ELF Pronunciation Negotiation Strategies"
+        ],
+        "author": [
+          {
+            "given": "YUMI",
+            "family": "MATSUMOTO",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              3,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "The Modern Language Journal"
+        ],
+        "URL": "https://doi.org/10.1111/j.1540-4781.2011.01172.x"
+      },
+      {
+        "DOI": "10.1385/0-89603-397-x:167",
+        "title": [
+          "Analysis of elF-2α Kinases in Yeast"
+        ],
+        "author": [
+          {
+            "given": "Thomas E.",
+            "family": "Dever",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Protein Synthesis"
+        ],
+        "publisher": "Humana Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1385/0-89603-397-x:167"
+      },
+      {
+        "DOI": "10.5040/9781472500403.article-0000058",
+        "title": [
+          "Elf"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "container-title": [
+          "Shakespeare’s Demonology"
+        ],
+        "publisher": "Bloomsbury Publishing Plc",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.5040/9781472500403.article-0000058"
+      },
+      {
+        "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1097/00004032-199107000-00004",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "ELF"
+        ],
+        "author": [
+          {
+            "given": "Larry E.",
+            "family": "Anderson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Health Physics"
+        ],
+        "URL": "https://doi.org/10.1097/00004032-199107000-00004"
+      },
+      {
+        "DOI": "10.1515/iupac.68.0829",
+        "title": [
+          "ELF"
+        ],
+        "author": [
+          {
+            "given": "R. D.",
+            "family": "Brown",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J. E.",
+            "family": "Boggs",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Hilderbrandt",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Lim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I. M.",
+            "family": "Mills",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Niktin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M. H.",
+            "family": "Palmer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IUPAC Standards Online"
+        ],
+        "publisher": "De Gruyter",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1515/iupac.68.0829"
+      },
+      {
+        "DOI": "10.5040/9781350601529.4828",
+        "title": [
+          "elf"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "container-title": [
+          "The Arden Encyclopedia of Shakespeare’s Language"
+        ],
+        "publisher": "Bloomsbury Publishing Plc",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.5040/9781350601529.4828"
+      },
+      {
+        "DOI": "10.1002/9783527678679.dg03784",
+        "title": [
+          "elF"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "The Dictionary of Genomics, Transcriptomics and Proteomics"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/9783527678679.dg03784"
+      },
+      {
+        "DOI": "10.24894/sprengglossarium_e03657",
+        "title": [
+          "Elf"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "container-title": [
+          "Johann Jakob Spreng, Allgemeines deutsches Glossarium. Historisch-etymologisches Wörterbuch der deutschen Sprache online"
+        ],
+        "publisher": "Schwabe Verlag",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.24894/sprengglossarium_e03657"
+      },
+      {
+        "publisher": "Springer Nature Switzerland",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-66146-4_16",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Comparison of a Binary Signed-Digit Adder with Conventional Binary Adder Circuits on Layout Level"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0002-6515-4724",
+            "authenticated-orcid": false,
+            "given": "Johannes",
+            "family": "Kliemt",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2754-7287",
+            "authenticated-orcid": false,
+            "given": "Markus",
+            "family": "Fritscher",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6077-4732",
+            "authenticated-orcid": false,
+            "given": "Dietmar",
+            "family": "Fey",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Architecture of Computing Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-66146-4_16"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/14466-2749",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "CMOS Layout for Low Power Four Bit Adiabatic Binary Multiplier"
+        ],
+        "author": [
+          {
+            "given": "Sonal",
+            "family": "Jain",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Monika",
+            "family": "Kapoor",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/14466-2749"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              11,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.1145/2807591.2807598",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "ELF"
+        ],
+        "author": [
+          {
+            "given": "Jason Jong Kyu",
+            "family": "Park",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Michigan, Ann Arbor, MI"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yongjun",
+            "family": "Park",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Hongik University, Seoul, Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Scott",
+            "family": "Mahlke",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Michigan, Ann Arbor, MI"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              11,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis"
+        ],
+        "URL": "https://doi.org/10.1145/2807591.2807598"
+      },
+      {
+        "DOI": "10.1002/9783527678679.dg03783",
+        "title": [
+          "ELF"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "The Dictionary of Genomics, Transcriptomics and Proteomics"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/9783527678679.dg03783"
+      },
+      {
+        "publisher": "Carl Hanser Verlag GmbH & Co. KG",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.3139/9783446457164.011",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "elf"
+        ],
+        "author": [
+          {
+            "given": "Florian",
+            "family": "Eisenberg",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Kanban – mehr als Zettel"
+        ],
+        "URL": "https://doi.org/10.3139/9783446457164.011"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/iccce.2010.5556766",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Incorporated preprocessing and physical layout analysis of a binary document image using a two stage classification"
+        ],
+        "author": [
+          {
+            "given": "Hamed",
+            "family": "Behin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Afshin",
+            "family": "Ebrahimi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sepideh",
+            "family": "Ebrahimi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Conference on Computer and Communication Engineering (ICCCE'10)"
+        ],
+        "URL": "https://doi.org/10.1109/iccce.2010.5556766"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1002/scj.4690221301",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Efficient algorithms for realizing a layout of complete binary trees"
+        ],
+        "author": [
+          {
+            "given": "Yumi",
+            "family": "Fukushima",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yoshihide",
+            "family": "Igarashi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              3,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Systems and Computers in Japan"
+        ],
+        "URL": "https://doi.org/10.1002/scj.4690221301"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1007/s002360050093",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "An optimal emulator and VLSI layout for complete binary trees"
+        ],
+        "author": [
+          {
+            "given": "Kemal",
+            "family": "Efe",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nancy",
+            "family": "Eleser",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Informatica"
+        ],
+        "URL": "https://doi.org/10.1007/s002360050093"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              29
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781003021650-13",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Applying conversation analysis to ELF interaction data"
+        ],
+        "author": [
+          {
+            "given": "Jagdish",
+            "family": "Kaur",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "ELF Research Methods and Approaches to Data and Analyses"
+        ],
+        "URL": "https://doi.org/10.4324/9781003021650-13"
+      },
+      {
+        "publisher": "Carl Hanser Verlag GmbH & Co. KG",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.3139/9783446473508.011",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "elf"
+        ],
+        "author": [
+          {
+            "given": "Florian",
+            "family": "Eisenberg",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "Kanban – mehr als Zettel"
+        ],
+        "URL": "https://doi.org/10.3139/9783446473508.011"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              11,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1145/1031495.1031516",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 98,
+        "title": [
+          "ELF"
+        ],
+        "author": [
+          {
+            "given": "Hui",
+            "family": "Dai",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Colorado at Boulder"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michael",
+            "family": "Neufeld",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Colorado at Boulder"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Richard",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Colorado at Boulder"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              11,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 2nd international conference on Embedded networked sensor systems"
+        ],
+        "URL": "https://doi.org/10.1145/1031495.1031516"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1145/3447993.3448628",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 169,
+        "title": [
+          "Elf"
+        ],
+        "author": [
+          {
+            "given": "Wuyang",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Rutgers University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhezhi",
+            "family": "He",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University, Shanghai, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Luyang",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Google Research"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhenhua",
+            "family": "Jia",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "NVIDIA Corporation"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yunxin",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Microsoft Research, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Marco",
+            "family": "Gruteser",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Google Research"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dipankar",
+            "family": "Raychaudhuri",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Rutgers University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yanyong",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Science and Technology of China, Hefei, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 27th Annual International Conference on Mobile Computing and Networking"
+        ],
+        "URL": "https://doi.org/10.1145/3447993.3448628"
+      },
+      {
+        "DOI": "10.1109/icdar.1993.395720",
+        "title": [
+          "Language-free layout analysis"
+        ],
+        "author": [
+          {
+            "given": "D.J.",
+            "family": "Ittner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H.S.",
+            "family": "Baird",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 2nd International Conference on Document Analysis and Recognition (ICDAR '93)"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 35,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icdar.1993.395720"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/s10044-017-0595-x",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Arabic document layout analysis"
+        ],
+        "author": [
+          {
+            "given": "Amany M.",
+            "family": "Hesham",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohsen A. A.",
+            "family": "Rashwan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hassanin M.",
+            "family": "Al-Barhamtoshy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sherif M.",
+            "family": "Abdou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Amr A.",
+            "family": "Badr",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ibrahim",
+            "family": "Farag",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              2,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Pattern Analysis and Applications"
+        ],
+        "URL": "https://doi.org/10.1007/s10044-017-0595-x"
+      },
+      {
+        "publisher": "ACM Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "DOI": "10.1145/1187112.1187121",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Elf"
+        ],
+        "author": [
+          {
+            "given": "Pascal",
+            "family": "Glissman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Martina",
+            "family": "Höfflin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "ACM SIGGRAPH 2005 Sketches on   - SIGGRAPH '05"
+        ],
+        "URL": "https://doi.org/10.1145/1187112.1187121"
+      },
+      {
+        "DOI": "10.1057/9781137397911.0006",
+        "title": [
+          "Analysis of Website Layout"
+        ],
+        "container-title": [
+          "Tourist Activities in Multimodal Texts"
+        ],
+        "publisher": "Palgrave Macmillan",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1057/9781137397911.0006"
+      },
+      {
+        "publisher": "Palgrave Macmillan UK",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1057/9781137397911_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Analysis of Website Layout"
+        ],
+        "author": [
+          {
+            "given": "Melani",
+            "family": "Nekić",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Tourist Activities in Multimodal Texts"
+        ],
+        "URL": "https://doi.org/10.1057/9781137397911_3"
+      },
+      {
+        "publisher": "Geological Society of America",
+        "published-print": {
+          "date-parts": [
+            [
+              1966
+            ]
+          ]
+        },
+        "DOI": "10.1130/mem97-p385",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "SECTION 17: BINARY MIXTURES OF VOLATILE COMPONENTS"
+        ],
+        "author": [
+          {
+            "given": "H. J.",
+            "family": "Greenwood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H. L.",
+            "family": "Barnes",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1966,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Geological Society of America Memoirs",
+          "Handbook of Physical Constants"
+        ],
+        "URL": "https://doi.org/10.1130/mem97-p385"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.2307/2991857",
+        "type": "journal-article",
+        "is-referenced-by-count": 1600,
+        "title": [
+          "Taking Time Seriously: Time-Series-Cross-Section Analysis with a Binary Dependent Variable"
+        ],
+        "author": [
+          {
+            "given": "Nathaniel",
+            "family": "Beck",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jonathan N.",
+            "family": "Katz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Richard",
+            "family": "Tucker",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "American Journal of Political Science"
+        ],
+        "URL": "https://doi.org/10.2307/2991857"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1984,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1016/0167-8655(84)90011-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "The Elf AI project at Elf Aquitaine"
+        ],
+        "author": [
+          {
+            "given": "A",
+            "family": "Perrot",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J",
+            "family": "Lebailly",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.M",
+            "family": "Courteille",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Pattern Recognition Letters"
+        ],
+        "URL": "https://doi.org/10.1016/0167-8655(84)90011-4"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/ccta41146.2020.9206378",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "A Customized Binary-coded Genetic Algorithm for Wind-farm Layout Optimization"
+        ],
+        "author": [
+          {
+            "given": "Yi",
+            "family": "Wen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mengxuan",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2020 IEEE Conference on Control Technology and Applications (CCTA)"
+        ],
+        "URL": "https://doi.org/10.1109/ccta41146.2020.9206378"
+      },
+      {
+        "publisher": "University of Arizona Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.2307/j.ctv21r3jn9.49",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Elf Owl"
+        ],
+        "author": [
+          {
+            "given": "Susanna G.",
+            "family": "Henry",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Raptors of Arizona"
+        ],
+        "URL": "https://doi.org/10.2307/j.ctv21r3jn9.49"
+      },
+      {
+        "publisher": "Institute of Advanced Engineering and Science",
+        "DOI": "10.11591/tijee.v16i1.1585",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Modeling and Analysis of Inductive Coil ELF Sensor"
+        ],
+        "author": [
+          {
+            "given": "Rajendra",
+            "family": "Aparnathi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vedvyas",
+            "family": "Dwivedi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "TELKOMNIKA Indonesian Journal of Electrical Engineering"
+        ],
+        "URL": "https://doi.org/10.11591/tijee.v16i1.1585"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00170-010-3039-y",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "A variable neighborhood binary particle swarm algorithm for cell layout problem"
+        ],
+        "author": [
+          {
+            "given": "Fariborz",
+            "family": "Jolai",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohammad",
+            "family": "Taghipour",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Babak",
+            "family": "Javadi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              12,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "The International Journal of Advanced Manufacturing Technology"
+        ],
+        "URL": "https://doi.org/10.1007/s00170-010-3039-y"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              9,
+              13
+            ]
+          ]
+        },
+        "DOI": "10.1515/jelf-2012-0021",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "ELF in international supervision: a nexus analysis approach"
+        ],
+        "author": [
+          {
+            "given": "Barbara",
+            "family": "Soukup,",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Vienna"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kathrin",
+            "family": "Kordon,",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              10,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "jelf"
+        ],
+        "URL": "https://doi.org/10.1515/jelf-2012-0021"
+      },
+      {
+        "DOI": "10.2307/3002983",
+        "title": [
+          "Section-by-Section Analysis"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1965
+            ]
+          ]
+        },
+        "container-title": [
+          "International Migration Digest"
+        ],
+        "publisher": "SAGE Publications",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.2307/3002983"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              1965,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1177/019791836500200109",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Section-by-Section Analysis"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1965,
+              3,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "The International Migration Digest"
+        ],
+        "URL": "https://doi.org/10.1177/019791836500200109"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1883,
+              10,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1093/nq/s6-viii.197.275b",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Elf-locks"
+        ],
+        "author": [
+          {
+            "given": "St.",
+            "family": "Swithin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Notes and Queries"
+        ],
+        "URL": "https://doi.org/10.1093/nq/s6-viii.197.275b"
+      },
+      {
+        "DOI": "10.5771/9783967072051-64",
+        "title": [
+          "IN DER BAR. Elf Situationen aus elf Filmen"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "container-title": [
+          "Ist man, was man isst?"
+        ],
+        "publisher": "edition text + kritik im Richard Boorberg Verlag",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.5771/9783967072051-64"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/cies.2013.6611724",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Modified binary differential evolution for solving wind farm layout optimization problems"
+        ],
+        "author": [
+          {
+            "family": "Dazhi Jiang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Chenfeng Peng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Zhun Fan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Yan Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Xinye Cai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 IEEE Symposium on Computational Intelligence for Engineering Solutions (CIES)"
+        ],
+        "URL": "https://doi.org/10.1109/cies.2013.6611724"
+      },
+      {
+        "DOI": "10.5771/9783896659897-491",
+        "title": [
+          "KAPITEL ELF"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "container-title": [
+          "Ethische Untersuchungen"
+        ],
+        "publisher": "Academia – ein Verlag in der Nomos Verlagsgesellschaft",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.5771/9783896659897-491"
+      },
+      {
+        "DOI": "10.14321/j.ctt1qv5n1h.77",
+        "title": [
+          "Elf Incantation"
+        ],
+        "author": [
+          {
+            "given": "Ander",
+            "family": "Monson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "And Here"
+        ],
+        "publisher": "Michigan State University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.14321/j.ctt1qv5n1h.77"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1007/s42461-025-01192-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Binary Integer Linear Programming Model for Optimizing Underground Stope Layout"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0006-0801-5313",
+            "authenticated-orcid": false,
+            "given": "Theophilus",
+            "family": "Mensah",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5363-7492",
+            "authenticated-orcid": false,
+            "given": "Kwame",
+            "family": "Awuah-Offei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              4,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Mining, Metallurgy &amp; Exploration"
+        ],
+        "URL": "https://doi.org/10.1007/s42461-025-01192-6"
+      },
+      {
+        "DOI": "10.1109/iscas.1988.15025",
+        "title": [
+          "A graph build algorithm for layout compaction using binary search tree"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Arun",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.K.",
+            "family": "Saxena",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.R.",
+            "family": "Chowdhury",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1988., IEEE International Symposium on Circuits and Systems"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/iscas.1988.15025"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781315717173-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 49,
+        "title": [
+          "Conceptualising ELF"
+        ],
+        "author": [
+          {
+            "given": "Anna",
+            "family": "Mauranen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Routledge Handbook of English as a Lingua Franca"
+        ],
+        "URL": "https://doi.org/10.4324/9781315717173-2"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-012221970-2/50402-2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ELF-153"
+        ],
+        "author": [
+          {
+            "given": "Hans G.",
+            "family": "Drexler",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Leukemia-Lymphoma Cell Line FactsBook"
+        ],
+        "URL": "https://doi.org/10.1016/b978-012221970-2/50402-2"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/cec.2019.8790201",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "A Novel Binary Negatively Correlated Search for Wind Farm Layout Optimization"
+        ],
+        "author": [
+          {
+            "given": "Qun",
+            "family": "Niu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kecheng",
+            "family": "Jiang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bing",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE Congress on Evolutionary Computation (CEC)"
+        ],
+        "URL": "https://doi.org/10.1109/cec.2019.8790201"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              12,
+              18
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.2540721",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Analysis of ELF field variations in Eastern Russia"
+        ],
+        "author": [
+          {
+            "given": "Yuri B.",
+            "family": "Bashkuev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Valery B.",
+            "family": "Khaptanov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Darima G.",
+            "family": "Buyanova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "25th International Symposium on Atmospheric and Ocean Optics: Atmospheric Physics"
+        ],
+        "URL": "https://doi.org/10.1117/12.2540721"
+      },
+      {
+        "publisher": "Springer Vienna",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-211-71530-7_19",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Deuringstraße elf"
+        ],
+        "author": [
+          {
+            "given": "Walter K.",
+            "family": "Zschokke",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Dietrich|Untertrifaller"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-211-71530-7_19"
+      },
+      {
+        "DOI": "10.1093/oed/5376934697",
+        "title": [
+          "elf, v."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Oxford English Dictionary"
+        ],
+        "publisher": "Oxford University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1093/oed/5376934697"
+      },
+      {
+        "DOI": "10.5040/9781474212175.ch-002",
+        "title": [
+          "Uncovering ELF"
+        ],
+        "container-title": [
+          "English as a Lingua Franca : A Corpus-based Analysis"
+        ],
+        "publisher": "Bloomsbury Academic",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.5040/9781474212175.ch-002"
+      },
+      {
+        "publisher": "Bärenreiter-Verlag",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-7618-7266-6_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ELF LEITLINIEN"
+        ],
+        "author": [
+          {
+            "given": "Clemens",
+            "family": "Kühn",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Musiktheorie unterrichten - Musik vermitteln"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-7618-7266-6_2"
+      },
+      {
+        "publisher": "Qeios",
+        "DOI": "10.32388/ktvujc",
+        "type": "reference-entry",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ELF Regimen"
+        ],
+        "author": [
+          {
+            "name": "National Cancer Institute",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Definitions"
+        ],
+        "URL": "https://doi.org/10.32388/ktvujc"
+      },
+      {
+        "DOI": "10.51644/9781771126007-012",
+        "title": [
+          "Chapter Elf"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              9,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "The Frankfurt Kabuff Critical Edition"
+        ],
+        "publisher": "Wilfrid Laurier Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.51644/9781771126007-012"
+      },
+      {
+        "publisher": "SPIE-Intl Soc Optical Eng",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              6,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1117/1.601691",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Online fast measurement of section sizes of three-dimensional objects using binary image analysis"
+        ],
+        "author": [
+          {
+            "given": "Weiming",
+            "family": "Ren",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Optical Engineering"
+        ],
+        "URL": "https://doi.org/10.1117/1.601691"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.2307/2991844",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Erratum: Taking Time Seriously: Time-Series-Cross-Section Analysis with a Binary Dependent Variable"
+        ],
+        "author": [
+          {
+            "given": "Nathaniel",
+            "family": "Beck",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jonathan N.",
+            "family": "Katz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Richard",
+            "family": "Tucker",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "American Journal of Political Science"
+        ],
+        "URL": "https://doi.org/10.2307/2991844"
+      },
+      {
+        "publisher": "IEE",
+        "published-print": {
+          "date-parts": [
+            [
+              1995
+            ]
+          ]
+        },
+        "DOI": "10.1049/cp:19950798",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "ELF radio"
+        ],
+        "author": [
+          {
+            "given": "D.L.",
+            "family": "Jones",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Conference on 100 Years of Radio"
+        ],
+        "URL": "https://doi.org/10.1049/cp:19950798"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1109/dexa.1999.795245",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Document classification using layout analysis"
+        ],
+        "author": [
+          {
+            "family": "Jianying Hu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Kashi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.",
+            "family": "Wilfong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. Tenth International Workshop on Database and Expert Systems Applications. DEXA 99"
+        ],
+        "URL": "https://doi.org/10.1109/dexa.1999.795245"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

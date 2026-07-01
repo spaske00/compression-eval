@@ -1,0 +1,1099 @@
+{
+  "candidate_count": 1338,
+  "commands": [
+    {
+      "argv": [
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/compute_entropy",
+        "--jobs",
+        "1",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/compute-output",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Processing: ./bin/dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2\nProcessing: ./bin/llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of\nProcessing: ./bin/llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og\nProcessing: ./bin/llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0\nProcessing: ./bin/llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1\nProcessing: ./bin/llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os\nProcessing: ./bin/llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2\nProcessing: ./bin/llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0\nProcessing: ./bin/llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1\nProcessing: ./bin/llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static\nWrote 10 rows to /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/compute-output/results__home_ms_ms-base_work_phd_compression-algs-eval_compression-eval_results_verification_verify-compute-entropy-rb32q3na_sampleentropy_1782931088.csv\n",
+      "tool": "compute_entropy"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,1175296,0.921878,124969.338393,0.336959,3.534082,0.221892\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,173440,0.642367,78605.654082,0.163394,3.790756,0.425989\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,249122240,0.901248,33319211.133507,0.317143,3.900602,0.178160\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,134784,0.540369,76275.694712,0.123865,3.844729,0.455735\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,6900928,0.936750,596201.214019,0.353035,3.337771,0.306150\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,573184,0.881525,91533.844134,0.300192,3.530358,0.293803\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,132224,0.520384,77623.699933,0.116900,3.862019,0.447402\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,332672,0.877762,54762.591009,0.297137,3.550361,0.323967\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,169088,0.689027,67482.685939,0.184129,3.706985,0.438651\n",
+      "tool": "ent"
+    },
+    {
+      "argv": [
+        "/tmp/ent-1.2debian-3/usr/bin/ent",
+        "-t",
+        "-b",
+        "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na/sample/bin/llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0"
+      ],
+      "cwd": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/verify-compute-entropy-rb32q3na",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0,File-bits,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n1,135872,0.513595,80731.944448,0.114586,3.896820,0.413639\n",
+      "tool": "ent"
+    }
+  ],
+  "comparisons": [
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "1175296",
+      "difference": 0,
+      "ent": "1175296",
+      "field": "File-bits",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.921878",
+      "difference": 0.0,
+      "ent": "0.921878",
+      "field": "Entropy",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "124969.338393",
+      "difference": 0.0,
+      "ent": "124969.338393",
+      "field": "Chi-square",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.336959",
+      "difference": 0.0,
+      "ent": "0.336959",
+      "field": "Mean",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.534082",
+      "difference": 0.0,
+      "ent": "3.534082",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.221892",
+      "difference": 0.0,
+      "ent": "0.221892",
+      "field": "Serial-Correlation",
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "173440",
+      "difference": 0,
+      "ent": "173440",
+      "field": "File-bits",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.642367",
+      "difference": 0.0,
+      "ent": "0.642367",
+      "field": "Entropy",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "78605.654082",
+      "difference": 0.0,
+      "ent": "78605.654082",
+      "field": "Chi-square",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.163394",
+      "difference": 0.0,
+      "ent": "0.163394",
+      "field": "Mean",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.790756",
+      "difference": 0.0,
+      "ent": "3.790756",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.425989",
+      "difference": 0.0,
+      "ent": "0.425989",
+      "field": "Serial-Correlation",
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "249122240",
+      "difference": 0,
+      "ent": "249122240",
+      "field": "File-bits",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.901248",
+      "difference": 0.0,
+      "ent": "0.901248",
+      "field": "Entropy",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "33319211.133507",
+      "difference": 0.0,
+      "ent": "33319211.133507",
+      "field": "Chi-square",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.317143",
+      "difference": 0.0,
+      "ent": "0.317143",
+      "field": "Mean",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.900602",
+      "difference": 0.0,
+      "ent": "3.900602",
+      "field": "Monte-Carlo-Pi",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.178160",
+      "difference": 0.0,
+      "ent": "0.178160",
+      "field": "Serial-Correlation",
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "134784",
+      "difference": 0,
+      "ent": "134784",
+      "field": "File-bits",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.540369",
+      "difference": 0.0,
+      "ent": "0.540369",
+      "field": "Entropy",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "76275.694712",
+      "difference": 0.0,
+      "ent": "76275.694712",
+      "field": "Chi-square",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.123865",
+      "difference": 0.0,
+      "ent": "0.123865",
+      "field": "Mean",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.844729",
+      "difference": 0.0,
+      "ent": "3.844729",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.455735",
+      "difference": 0.0,
+      "ent": "0.455735",
+      "field": "Serial-Correlation",
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "6900928",
+      "difference": 0,
+      "ent": "6900928",
+      "field": "File-bits",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.936750",
+      "difference": 0.0,
+      "ent": "0.936750",
+      "field": "Entropy",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "596201.214019",
+      "difference": 0.0,
+      "ent": "596201.214019",
+      "field": "Chi-square",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.353035",
+      "difference": 0.0,
+      "ent": "0.353035",
+      "field": "Mean",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.337771",
+      "difference": 0.0,
+      "ent": "3.337771",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.306150",
+      "difference": 0.0,
+      "ent": "0.306150",
+      "field": "Serial-Correlation",
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "573184",
+      "difference": 0,
+      "ent": "573184",
+      "field": "File-bits",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.881525",
+      "difference": 0.0,
+      "ent": "0.881525",
+      "field": "Entropy",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "91533.844134",
+      "difference": 0.0,
+      "ent": "91533.844134",
+      "field": "Chi-square",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.300192",
+      "difference": 0.0,
+      "ent": "0.300192",
+      "field": "Mean",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.530358",
+      "difference": 0.0,
+      "ent": "3.530358",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.293803",
+      "difference": 0.0,
+      "ent": "0.293803",
+      "field": "Serial-Correlation",
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "132224",
+      "difference": 0,
+      "ent": "132224",
+      "field": "File-bits",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.520384",
+      "difference": 0.0,
+      "ent": "0.520384",
+      "field": "Entropy",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "77623.699933",
+      "difference": 0.0,
+      "ent": "77623.699933",
+      "field": "Chi-square",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.116900",
+      "difference": 0.0,
+      "ent": "0.116900",
+      "field": "Mean",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.862019",
+      "difference": 0.0,
+      "ent": "3.862019",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.447402",
+      "difference": 0.0,
+      "ent": "0.447402",
+      "field": "Serial-Correlation",
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "332672",
+      "difference": 0,
+      "ent": "332672",
+      "field": "File-bits",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.877762",
+      "difference": 0.0,
+      "ent": "0.877762",
+      "field": "Entropy",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "54762.591009",
+      "difference": 0.0,
+      "ent": "54762.591009",
+      "field": "Chi-square",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.297137",
+      "difference": 0.0,
+      "ent": "0.297137",
+      "field": "Mean",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.550361",
+      "difference": 0.0,
+      "ent": "3.550361",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.323967",
+      "difference": 0.0,
+      "ent": "0.323967",
+      "field": "Serial-Correlation",
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "169088",
+      "difference": 0,
+      "ent": "169088",
+      "field": "File-bits",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.689027",
+      "difference": 0.0,
+      "ent": "0.689027",
+      "field": "Entropy",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "67482.685939",
+      "difference": 0.0,
+      "ent": "67482.685939",
+      "field": "Chi-square",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.184129",
+      "difference": 0.0,
+      "ent": "0.184129",
+      "field": "Mean",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.706985",
+      "difference": 0.0,
+      "ent": "3.706985",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.438651",
+      "difference": 0.0,
+      "ent": "0.438651",
+      "field": "Serial-Correlation",
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "1",
+      "difference": 0,
+      "ent": "1",
+      "field": "0",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "135872",
+      "difference": 0,
+      "ent": "135872",
+      "field": "File-bits",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "exact match"
+    },
+    {
+      "compute_entropy": "0.513595",
+      "difference": 0.0,
+      "ent": "0.513595",
+      "field": "Entropy",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "80731.944448",
+      "difference": 0.0,
+      "ent": "80731.944448",
+      "field": "Chi-square",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.114586",
+      "difference": 0.0,
+      "ent": "0.114586",
+      "field": "Mean",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "3.896820",
+      "difference": 0.0,
+      "ent": "3.896820",
+      "field": "Monte-Carlo-Pi",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    },
+    {
+      "compute_entropy": "0.413639",
+      "difference": 0.0,
+      "ent": "0.413639",
+      "field": "Serial-Correlation",
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "passed": true,
+      "reason": "absolute difference <= 0.0001"
+    }
+  ],
+  "configuration": {
+    "compute_entropy": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/compute_entropy",
+    "compute_entropy_resolved": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/compute_entropy",
+    "corpus_bin": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/bin",
+    "ent": "/tmp/ent-1.2debian-3/usr/bin/ent",
+    "ent_resolved": "/tmp/ent-1.2debian-3/usr/bin/ent",
+    "float_tolerance": 0.0001,
+    "jobs": 1,
+    "output": "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/results/verification/compute-entropy-ent-seed-0.json",
+    "sample_size": 10,
+    "seed": 0
+  },
+  "errors": [],
+  "files": [
+    {
+      "path": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+      "sha256": "6cbc6bfdeafb768f0e8f1db55a14c14c99c8dafc508eecf64cb0f079959c0aed",
+      "size_bytes": 146912,
+      "staged_path": "bin/llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1"
+    },
+    {
+      "path": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+      "sha256": "7be0469d948e33cebb7ed80285346988dc95a5b13378537eeec9b92888a10d1f",
+      "size_bytes": 21680,
+      "staged_path": "bin/llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2"
+    },
+    {
+      "path": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+      "sha256": "e7689388191702ef36771ee8cefbcc63eb74603bdfed3d8b5ecbddce65c61c8f",
+      "size_bytes": 31140280,
+      "staged_path": "bin/dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2"
+    },
+    {
+      "path": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+      "sha256": "3bc325417322c21d0e3a95d34eba9192a9fc7158c8ec79a37eb60099c8d50894",
+      "size_bytes": 16848,
+      "staged_path": "bin/llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of"
+    },
+    {
+      "path": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+      "sha256": "b7c5f19beae95c8dbd0bb8de30740b475ac47c251510f14e25b78375905a95b1",
+      "size_bytes": 862616,
+      "staged_path": "bin/llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static"
+    },
+    {
+      "path": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+      "sha256": "8eb55293056e8cb87b0a9b52582dc85a9a3e42b470da9a54510db7cdde6bf231",
+      "size_bytes": 71648,
+      "staged_path": "bin/llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1"
+    },
+    {
+      "path": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+      "sha256": "ea85b55c0f6f03f42c4b43d68c6c88a2e2834bfe4bc364ee3450b49211f2ce61",
+      "size_bytes": 16528,
+      "staged_path": "bin/llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os"
+    },
+    {
+      "path": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+      "sha256": "3e93cb6f1a8ebcd3aefe2d83599bdc20ea16d65eb4c343b866068c4bbd2bb624",
+      "size_bytes": 41584,
+      "staged_path": "bin/llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og"
+    },
+    {
+      "path": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+      "sha256": "a27150d1dcc255ec861eaf295e1884ee7a0cb01d31da44c8b5bb128d694867bc",
+      "size_bytes": 21136,
+      "staged_path": "bin/llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0"
+    },
+    {
+      "path": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0",
+      "sha256": "aca4f7f6a2576fa0eef9cb46d1bab14e9ee894bc1242eef5635aa85cc42cd99f",
+      "size_bytes": 16984,
+      "staged_path": "bin/llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0"
+    }
+  ],
+  "schema_version": 1,
+  "selected_paths": [
+    "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1",
+    "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2",
+    "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2",
+    "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of",
+    "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static",
+    "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1",
+    "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os",
+    "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og",
+    "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0",
+    "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0"
+  ],
+  "source_values": [
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "124969.338393",
+        "Entropy": "0.921878",
+        "File-bits": "1175296",
+        "Mean": "0.336959",
+        "Monte-Carlo-Pi": "3.534082",
+        "Serial-Correlation": "0.221892"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "124969.338393",
+        "Entropy": "0.921878",
+        "File-bits": "1175296",
+        "Mean": "0.336959",
+        "Monte-Carlo-Pi": "3.534082",
+        "Serial-Correlation": "0.221892"
+      },
+      "file": "llvm-paq8p-gcc-linux-x64-O1/llvm-paq8p-gcc-linux-x64-O1"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "78605.654082",
+        "Entropy": "0.642367",
+        "File-bits": "173440",
+        "Mean": "0.163394",
+        "Monte-Carlo-Pi": "3.790756",
+        "Serial-Correlation": "0.425989"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "78605.654082",
+        "Entropy": "0.642367",
+        "File-bits": "173440",
+        "Mean": "0.163394",
+        "Monte-Carlo-Pi": "3.790756",
+        "Serial-Correlation": "0.425989"
+      },
+      "file": "llvm-power-gcc-linux-x64-O2/llvm-power-gcc-linux-x64-O2"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "33319211.133507",
+        "Entropy": "0.901248",
+        "File-bits": "249122240",
+        "Mean": "0.317143",
+        "Monte-Carlo-Pi": "3.900602",
+        "Serial-Correlation": "0.178160"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "33319211.133507",
+        "Entropy": "0.901248",
+        "File-bits": "249122240",
+        "Mean": "0.317143",
+        "Monte-Carlo-Pi": "3.900602",
+        "Serial-Correlation": "0.178160"
+      },
+      "file": "dacapo-native-image:luindex-graalvm-linux-x64-O2/dacapo-native-image:luindex-graalvm-linux-x64-O2"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "76275.694712",
+        "Entropy": "0.540369",
+        "File-bits": "134784",
+        "Mean": "0.123865",
+        "Monte-Carlo-Pi": "3.844729",
+        "Serial-Correlation": "0.455735"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "76275.694712",
+        "Entropy": "0.540369",
+        "File-bits": "134784",
+        "Mean": "0.123865",
+        "Monte-Carlo-Pi": "3.844729",
+        "Serial-Correlation": "0.455735"
+      },
+      "file": "llvm-five11-clang-linux-x64-Of/llvm-five11-clang-linux-x64-Of"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "596201.214019",
+        "Entropy": "0.936750",
+        "File-bits": "6900928",
+        "Mean": "0.353035",
+        "Monte-Carlo-Pi": "3.337771",
+        "Serial-Correlation": "0.306150"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "596201.214019",
+        "Entropy": "0.936750",
+        "File-bits": "6900928",
+        "Mean": "0.353035",
+        "Monte-Carlo-Pi": "3.337771",
+        "Serial-Correlation": "0.306150"
+      },
+      "file": "llvm-tsp-gcc-linux-x64-static/llvm-tsp-gcc-linux-x64-static"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "91533.844134",
+        "Entropy": "0.881525",
+        "File-bits": "573184",
+        "Mean": "0.300192",
+        "Monte-Carlo-Pi": "3.530358",
+        "Serial-Correlation": "0.293803"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "91533.844134",
+        "Entropy": "0.881525",
+        "File-bits": "573184",
+        "Mean": "0.300192",
+        "Monte-Carlo-Pi": "3.530358",
+        "Serial-Correlation": "0.293803"
+      },
+      "file": "llvm-telecomm-gsm-clang-linux-x64-O1/llvm-telecomm-gsm-clang-linux-x64-O1"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "77623.699933",
+        "Entropy": "0.520384",
+        "File-bits": "132224",
+        "Mean": "0.116900",
+        "Monte-Carlo-Pi": "3.862019",
+        "Serial-Correlation": "0.447402"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "77623.699933",
+        "Entropy": "0.520384",
+        "File-bits": "132224",
+        "Mean": "0.116900",
+        "Monte-Carlo-Pi": "3.862019",
+        "Serial-Correlation": "0.447402"
+      },
+      "file": "llvm-perimeter-gcc-linux-x64-Os/llvm-perimeter-gcc-linux-x64-Os"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "54762.591009",
+        "Entropy": "0.877762",
+        "File-bits": "332672",
+        "Mean": "0.297137",
+        "Monte-Carlo-Pi": "3.550361",
+        "Serial-Correlation": "0.323967"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "54762.591009",
+        "Entropy": "0.877762",
+        "File-bits": "332672",
+        "Mean": "0.297137",
+        "Monte-Carlo-Pi": "3.550361",
+        "Serial-Correlation": "0.323967"
+      },
+      "file": "llvm-hexxagon-clang-linux-x64-Og/llvm-hexxagon-clang-linux-x64-Og"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "67482.685939",
+        "Entropy": "0.689027",
+        "File-bits": "169088",
+        "Mean": "0.184129",
+        "Monte-Carlo-Pi": "3.706985",
+        "Serial-Correlation": "0.438651"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "67482.685939",
+        "Entropy": "0.689027",
+        "File-bits": "169088",
+        "Mean": "0.184129",
+        "Monte-Carlo-Pi": "3.706985",
+        "Serial-Correlation": "0.438651"
+      },
+      "file": "llvm-telecomm-fft-clang-linux-x64-O0/llvm-telecomm-fft-clang-linux-x64-O0"
+    },
+    {
+      "compute_entropy": {
+        "0": "1",
+        "Chi-square": "80731.944448",
+        "Entropy": "0.513595",
+        "File-bits": "135872",
+        "Mean": "0.114586",
+        "Monte-Carlo-Pi": "3.896820",
+        "Serial-Correlation": "0.413639"
+      },
+      "ent": {
+        "0": "1",
+        "Chi-square": "80731.944448",
+        "Entropy": "0.513595",
+        "File-bits": "135872",
+        "Mean": "0.114586",
+        "Monte-Carlo-Pi": "3.896820",
+        "Serial-Correlation": "0.413639"
+      },
+      "file": "llvm-network-dijkstra-gcc-linux-x64-O0/llvm-network-dijkstra-gcc-linux-x64-O0"
+    }
+  ],
+  "status": "passed",
+  "summary": {
+    "comparisons": 70,
+    "compute_entropy_rows": 10,
+    "ent_rows": 10,
+    "failed": 0,
+    "passed": 70,
+    "selected_files": 10
+  }
+}

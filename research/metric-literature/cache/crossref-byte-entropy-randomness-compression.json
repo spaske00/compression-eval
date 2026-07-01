@@ -1,5 +1,5448 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=byte+entropy+randomness+compression&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 295152,
+    "items": [
+      {
+        "publisher": "Association for Computing Machinery (ACM)",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1145/3462209",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Byte-Select Compression"
+        ],
+        "author": [
+          {
+            "given": "Matthew",
+            "family": "Tomei",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Illinois at Urbana-Champaign"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shomit",
+            "family": "Das",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Advanced Micro Devices, Inc."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Mohammad",
+            "family": "Seyedzadeh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Advanced Micro Devices, Inc."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Philip",
+            "family": "Bedoukian",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Cornell University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bradford",
+            "family": "Beckmann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Advanced Micro Devices, Inc."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rakesh",
+            "family": "Kumar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Illinois at Urbana-Champaign"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Wood",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Advanced Micro Devices, Inc., University of Wisconsin-Madison"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "ACM Transactions on Architecture and Code Optimization"
+        ],
+        "URL": "https://doi.org/10.1145/3462209"
+      },
+      {
+        "DOI": "10.1109/dcc.1995.515586",
+        "title": [
+          "Byte-aligned bitmap compression"
+        ],
+        "author": [
+          {
+            "given": "G.",
+            "family": "Antoshenkov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '95 Data Compression Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 50,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1995.515586"
+      },
+      {
+        "publisher": "Allerton Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.3103/s0146411617080041",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Detection of encrypted executable files based on entropy analysis to determine the randomness measure of byte sequences"
+        ],
+        "author": [
+          {
+            "given": "I. V.",
+            "family": "Alekseev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V. V.",
+            "family": "Platonov",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              3,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Automatic Control and Computer Sciences"
+        ],
+        "URL": "https://doi.org/10.3103/s0146411617080041"
+      },
+      {
+        "DOI": "10.1017/cbo9780511813603.010",
+        "title": [
+          "Entropy, Randomness, and Information"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              1,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Probability and Computing"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 1,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511813603.010"
+      },
+      {
+        "publisher": "International Academy Publishing (IAP)",
+        "DOI": "10.4304/jcp.8.10.2469-2477",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "A Malware Variant Detection Method Based on Byte Randomness Test"
+        ],
+        "author": [
+          {
+            "given": "Shuhui",
+            "family": "Qi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ming",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ning",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computers"
+        ],
+        "URL": "https://doi.org/10.4304/jcp.8.10.2469-2477"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/bec.2010.5630748",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Variable byte-length data compression algorithm"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "Gorev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Ellervee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 12th Biennial Baltic Electronics Conference"
+        ],
+        "URL": "https://doi.org/10.1109/bec.2010.5630748"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/roedunet.2017.8123748",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Key-byte algorithm for image compression"
+        ],
+        "author": [
+          {
+            "given": "Feras Sameer",
+            "family": "Alhaijawy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 16th RoEduNet Conference: Networking in Education and Research (RoEduNet)"
+        ],
+        "URL": "https://doi.org/10.1109/roedunet.2017.8123748"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.450878",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Fast algorithm of byte-to-byte wavelet transform for image compression applications"
+        ],
+        "author": [
+          {
+            "given": "Oleksiy B.",
+            "family": "Pogrebnyak",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Juan H.",
+            "family": "Sossa Azuela",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pablo M.",
+            "family": "Ramirez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Algorithms and Systems for Optical Information Processing VI"
+        ],
+        "URL": "https://doi.org/10.1117/12.450878"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreva.40.4731",
+        "type": "journal-article",
+        "is-referenced-by-count": 234,
+        "title": [
+          "Algorithmic randomness and physical entropy"
+        ],
+        "author": [
+          {
+            "given": "W. H.",
+            "family": "Zurek",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1989,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/physreva.40.4731"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1239/jap/1014842270",
+        "type": "journal-article",
+        "is-referenced-by-count": 35,
+        "title": [
+          "Approximate entropy for testing randomness"
+        ],
+        "author": [
+          {
+            "given": "Andrew L.",
+            "family": "Rukhin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Applied Probability"
+        ],
+        "URL": "https://doi.org/10.1239/jap/1014842270"
+      },
+      {
+        "DOI": "10.7312/bird12662-011",
+        "title": [
+          "9. Entropy, Information, and Randomness"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Chaos and Life"
+        ],
+        "publisher": "Columbia University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.7312/bird12662-011"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1017/s0021900200015278",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Approximate entropy for testing randomness"
+        ],
+        "author": [
+          {
+            "given": "Andrew L.",
+            "family": "Rukhin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Applied Probability"
+        ],
+        "URL": "https://doi.org/10.1017/s0021900200015278"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-16-0882-7_13",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Byte Shrinking Approach for Lossy Image Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0956-4297",
+            "authenticated-orcid": false,
+            "given": "Tanuja R.",
+            "family": "Patil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0544-3890",
+            "authenticated-orcid": false,
+            "given": "Vishwanath P.",
+            "family": "Baligar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              7,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Networks and Systems",
+          "Information and Communication Technology for Competitive Strategies (ICTCS 2020)"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-16-0882-7_13"
+      },
+      {
+        "publisher": "Springer Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-13-3702-4_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Byte Label Malware Classification Using Image Entropy"
+        ],
+        "author": [
+          {
+            "given": "Ayan",
+            "family": "Dey",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sukriti",
+            "family": "Bhattacharya",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nabendu",
+            "family": "Chaki",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Intelligent Systems and Computing",
+          "Advanced Computing and Systems for Security"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-13-3702-4_2"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-74845-6_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy: Measuring Order and Randomness"
+        ],
+        "author": [
+          {
+            "given": "Brian S.",
+            "family": "McConnell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Astronomers' Universe",
+          "The Alien Communication Handbook"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-74845-6_8"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.is.2016.07.004",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "SBH: Super byte-aligned hybrid bitmap compression"
+        ],
+        "author": [
+          {
+            "given": "Sangchul",
+            "family": "Kim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Junhee",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Srinivasa Rao",
+            "family": "Satti",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bongki",
+            "family": "Moon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Systems"
+        ],
+        "URL": "https://doi.org/10.1016/j.is.2016.07.004"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ipl.2017.09.011",
+        "type": "journal-article",
+        "is-referenced-by-count": 36,
+        "title": [
+          "Stream VByte : Faster byte-oriented integer compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3306-6922",
+            "authenticated-orcid": false,
+            "given": "Daniel",
+            "family": "Lemire",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Nathan",
+            "family": "Kurz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5507-876X",
+            "authenticated-orcid": false,
+            "given": "Christoph",
+            "family": "Rupp",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Processing Letters"
+        ],
+        "URL": "https://doi.org/10.1016/j.ipl.2017.09.011"
+      },
+      {
+        "publisher": "Jenny Stanford Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.1201/9781315108612-8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy, Irreversibility, Randomness, and Natural Philosophy"
+        ],
+        "author": [
+          {
+            "given": "John",
+            "family": "Newman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vincent",
+            "family": "Battaglia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Newman Lectures on Thermodynamics"
+        ],
+        "URL": "https://doi.org/10.1201/9781315108612-8"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1080/03610920008832508",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "An approximate entropy test for randomness"
+        ],
+        "author": [
+          {
+            "given": "Sangit",
+            "family": "Chatterjee",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mustafa R.",
+            "family": "Yilmaz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mohamed",
+            "family": "Habibuliah",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthew",
+            "family": "Laudato",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Northeastern University, College of Business Administration"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              6,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications in Statistics - Theory and Methods"
+        ],
+        "URL": "https://doi.org/10.1080/03610920008832508"
+      },
+      {
+        "publisher": "Cattleya Darmaya Fortuna",
+        "DOI": "10.54209/infosains.v11i2.43",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "File Compression Application Design Using Half Byte Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Paska Marto",
+            "family": "Hasugian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Rizki Manullang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Jurnal Info Sains : Informatika dan Sains"
+        ],
+        "URL": "https://doi.org/10.54209/infosains.v11i2.43"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e28040429",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Boltzmann Entropy and Randomness Tests"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-2496-0332",
+            "authenticated-orcid": false,
+            "given": "Peter",
+            "family": "Gács",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Computer Science Department, Boston University, Boston, MA 02215, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              4,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e28040429"
+      },
+      {
+        "DOI": "10.1109/phycmp.1994.363679",
+        "title": [
+          "The Boltzmann entropy and randomness tests"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Gacs",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings Workshop on Physics and Computation. PhysComp '94"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 8,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/phycmp.1994.363679"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1017/etds.2015.79",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy estimate by a randomness criterion"
+        ],
+        "author": [
+          {
+            "given": "TETURO",
+            "family": "KAMAE",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              1,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Ergodic Theory and Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1017/etds.2015.79"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-34989-9_10",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Byte Pattern Based Method for File Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0231-2019",
+            "authenticated-orcid": false,
+            "given": "José Luis",
+            "family": "Hernández-Hernández",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8330-4779",
+            "authenticated-orcid": false,
+            "given": "Mario",
+            "family": "Hernández-Hernández",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2439-5329",
+            "authenticated-orcid": false,
+            "given": "Sajad",
+            "family": "Sabzi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9508-9818",
+            "authenticated-orcid": false,
+            "given": "Mario Andrés",
+            "family": "Paredes-Valverde",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4303-3852",
+            "authenticated-orcid": false,
+            "given": "Alejandro Fuentes",
+            "family": "Penna",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Communications in Computer and Information Science",
+          "Technologies and Innovation"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-34989-9_10"
+      },
+      {
+        "DOI": "10.20944/preprints202603.0841.v1",
+        "title": [
+          "The Boltzmann Entropy and Randomness Tests"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Gács",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "MDPI AG",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.20944/preprints202603.0841.v1"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-99-5652-4_20",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Byte Transformation Technique for Lossy Image Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-6256-4328",
+            "authenticated-orcid": false,
+            "given": "Tanuja R.",
+            "family": "Patil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0544-3890",
+            "authenticated-orcid": false,
+            "given": "Vishwanath P.",
+            "family": "Baligar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Networks and Systems",
+          "ICT Systems and Sustainability"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-99-5652-4_20"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/compcomm.2017.8322796",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Keyword sequence extraction based on byte entropy iterative segmentation"
+        ],
+        "author": [
+          {
+            "given": "Siyuan",
+            "family": "Ding",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "National Digital Switching System Engineering &amp; Technological R &amp;D Center, Zhengzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xia",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Digital Switching System Engineering &amp; Technological R &amp;D Center, Zhengzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ou",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Digital Switching System Engineering &amp; Technological R &amp;D Center, Zhengzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shengxiang",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National Digital Switching System Engineering &amp; Technological R &amp;D Center, Zhengzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 3rd IEEE International Conference on Computer and Communications (ICCC)"
+        ],
+        "URL": "https://doi.org/10.1109/compcomm.2017.8322796"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/19500-0133",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Adaptive Byte Compression and Decompression: A New Approach for Fractal Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Bhumika",
+            "family": "Gupta",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ashish",
+            "family": "Negi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              2,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/19500-0133"
+      },
+      {
+        "publisher": "Springer Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-10-0287-8_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Near Lossless Image Compression Using Block Division Byte Compression and Block Optimization"
+        ],
+        "author": [
+          {
+            "family": "Debashis Chakraborty",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Shouvik Saha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Tanay Mukherjee",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Emerging Research in Computing, Information, Communication and Applications"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-10-0287-8_9"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1177/1464884909102580",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Byte by byte"
+        ],
+        "author": [
+          {
+            "given": "Prasun",
+            "family": "Sonwalkar",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of the West of England, UK"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              4,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journalism"
+        ],
+        "URL": "https://doi.org/10.1177/1464884909102580"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.eswa.2023.122431",
+        "type": "journal-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "An entropy framework for randomness and fuzziness"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3613-644X",
+            "authenticated-orcid": false,
+            "given": "Manish",
+            "family": "Aggarwal",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Expert Systems with Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.eswa.2023.122431"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/csss.2012.499",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Investigating Randomness of the LZSS Compression Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Weiling",
+            "family": "Chang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaochun",
+            "family": "Yun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nanning",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiuguo",
+            "family": "Bao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 International Conference on Computer Science and Service System"
+        ],
+        "URL": "https://doi.org/10.1109/csss.2012.499"
+      },
+      {
+        "DOI": "10.2139/ssrn.5399043",
+        "title": [
+          "Gibbs Randomness-Compression Proposition: An Eﬃcient Deeplearning"
+        ],
+        "author": [
+          {
+            "given": "Mehmet",
+            "family": "Suzen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.5399043"
+      },
+      {
+        "DOI": "10.2139/ssrn.4963487",
+        "title": [
+          "Von Neumann Entropy and Quantum Algorithmic Randomness"
+        ],
+        "author": [
+          {
+            "given": "Tejas",
+            "family": "Bhojraj",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.4963487"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.tcs.2025.115235",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "von Neumann entropy and quantum algorithmic randomness"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8571-1826",
+            "authenticated-orcid": false,
+            "given": "Tejas",
+            "family": "Bhojraj",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Theoretical Computer Science"
+        ],
+        "URL": "https://doi.org/10.1016/j.tcs.2025.115235"
+      },
+      {
+        "publisher": "Japan Society of Mechanical Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1299/jsmemecj.2012._j011013-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "J011013 Randomness Analysis due to Data Compression : 1st Report, Representation Method of Randomness"
+        ],
+        "author": [
+          {
+            "given": "Masashi",
+            "family": "ICHIMIYA",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Technology and Science"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Proceedings of Mechanical Engineering Congress, Japan"
+        ],
+        "URL": "https://doi.org/10.1299/jsmemecj.2012._j011013-1"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01071523",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "?-Entropy data compression"
+        ],
+        "author": [
+          {
+            "given": "I. Ya.",
+            "family": "Tyrygin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Ukrainian Mathematical Journal"
+        ],
+        "URL": "https://doi.org/10.1007/bf01071523"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-55210-3_209",
+        "type": "book-chapter",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Compression and entropy"
+        ],
+        "author": [
+          {
+            "given": "Georges",
+            "family": "Hansel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dominique",
+            "family": "Perrin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Imre",
+            "family": "Simon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "STACS 92"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-55210-3_209"
+      },
+      {
+        "publisher": "RFC Editor",
+        "DOI": "10.17487/rfc3243",
+        "type": "report",
+        "is-referenced-by-count": 1,
+        "title": [
+          "RObust Header Compression (ROHC): Requirements and Assumptions for 0-byte IP/UDP/RTP Compression"
+        ],
+        "author": [
+          {
+            "name": "L-E. Jonsson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              4
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.17487/rfc3243"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1088/1469-7688/1/4/302",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Conditional entropy and randomness in financial time series"
+        ],
+        "author": [
+          {
+            "given": "M.D.",
+            "family": "London",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.K.",
+            "family": "Evans",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.J.",
+            "family": "Turner",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Quantitative Finance"
+        ],
+        "URL": "https://doi.org/10.1088/1469-7688/1/4/302"
+      },
+      {
+        "publisher": "Emerald",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              10,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1108/10650750810914193",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Culture byte by byte"
+        ],
+        "author": [
+          {
+            "given": "Robert",
+            "family": "Fox",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "OCLC Systems &amp; Services: International digital library perspectives"
+        ],
+        "URL": "https://doi.org/10.1108/10650750810914193"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-44581-1_21",
+        "type": "book-chapter",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Strong Entropy Concentration, Game Theory, and Algorithmic Randomness"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Grünwald",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2001,
+              9,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computational Learning Theory"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-44581-1_21"
+      },
+      {
+        "DOI": "10.7717/peerj.18192/fig-5",
+        "title": [
+          "Figure 5: Entropy in an image measures randomness."
+        ],
+        "publisher": "PeerJ",
+        "is-referenced-by-count": 0,
+        "type": "component",
+        "URL": "https://doi.org/10.7717/peerj.18192/fig-5"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              3,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.1530990",
+        "type": "journal-article",
+        "is-referenced-by-count": 281,
+        "title": [
+          "Regularities unseen, randomness observed: Levels of entropy convergence"
+        ],
+        "author": [
+          {
+            "given": "James P.",
+            "family": "Crutchfield",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Santa Fe Institute, 1399 Hyde Park Road, Santa Fe, New Mexico 87501"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David P.",
+            "family": "Feldman",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of the Atlantic, 105 Eden Street, Bar Harbor, Maine 04609"
+              },
+              {
+                "name": "Santa Fe Institute, 1399 Hyde Park Road, Santa Fe, New Mexico 87501"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chaos: An Interdisciplinary Journal of Nonlinear Science"
+        ],
+        "URL": "https://doi.org/10.1063/1.1530990"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1109/access.2020.2988658",
+        "type": "journal-article",
+        "is-referenced-by-count": 27,
+        "title": [
+          "Entropy and Randomness: From Analogic to Quantum World"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0561-3474",
+            "authenticated-orcid": false,
+            "given": "Emil",
+            "family": "Simion",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Access"
+        ],
+        "URL": "https://doi.org/10.1109/access.2020.2988658"
+      },
+      {
+        "publisher": "Portico",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1037/002957",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "General Psychology Byte by Byte"
+        ],
+        "author": [
+          {
+            "given": "Kerry A.",
+            "family": "Marvin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Contemporary Psychology: A Journal of Reviews"
+        ],
+        "URL": "https://doi.org/10.1037/002957"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.1109/ijcnn60899.2024.10650523",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ByteZip: Efficient Lossless Compression for Structured Byte Streams Using DNNs"
+        ],
+        "author": [
+          {
+            "given": "Parvathy Ramakrishnan",
+            "family": "P",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Indian Institute of Technology Palakkad,Department of Data Science,Kerala,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Satyajit",
+            "family": "Das",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Indian Institute of Technology Palakkad,Department of Data Science,Kerala,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 International Joint Conference on Neural Networks (IJCNN)"
+        ],
+        "URL": "https://doi.org/10.1109/ijcnn60899.2024.10650523"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.neunet.2017.07.016",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Entropy factor for randomness quantification in neuronal data"
+        ],
+        "author": [
+          {
+            "given": "K.",
+            "family": "Rajdl",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Lansky",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Kostal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Neural Networks"
+        ],
+        "URL": "https://doi.org/10.1016/j.neunet.2017.07.016"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/tcad.2024.3449562",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Latent RAGE: Randomness Assessment Using Generative Entropy Models"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-4486-4903",
+            "authenticated-orcid": false,
+            "given": "Kuheli",
+            "family": "Pratihar",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science and Engineering, Indian Institute of Technology, Kharagpur, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3588-163X",
+            "authenticated-orcid": false,
+            "given": "Rajat",
+            "family": "Subhra Chakraborty",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science and Engineering, Indian Institute of Technology, Kharagpur, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6499-8346",
+            "authenticated-orcid": false,
+            "given": "Debdeep",
+            "family": "Mukhopadhyay",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science and Engineering, Indian Institute of Technology, Kharagpur, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"
+        ],
+        "URL": "https://doi.org/10.1109/tcad.2024.3449562"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              2,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1145/3159652.3159663",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Index Compression Using Byte-Aligned ANS Coding and Two-Dimensional Contexts"
+        ],
+        "author": [
+          {
+            "given": "Alistair",
+            "family": "Moffat",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Melbourne, Melbourne, Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthias",
+            "family": "Petri",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Melbourne, Melbourne, Australia"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              2,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining"
+        ],
+        "URL": "https://doi.org/10.1145/3159652.3159663"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1038/scientificamerican0691-116b",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Reading Books Byte by Byte"
+        ],
+        "author": [
+          {
+            "given": "Tom",
+            "family": "Koppel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Scientific American"
+        ],
+        "URL": "https://doi.org/10.1038/scientificamerican0691-116b"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1111/coin.12521",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Malware classification using a byte‐granularity feature based on structural entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2957-4177",
+            "authenticated-orcid": false,
+            "given": "Joon‐Young",
+            "family": "Paik",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Software Tiangong University  Tianjin China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rize",
+            "family": "Jin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Software Tiangong University  Tianjin China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eun‐Sun",
+            "family": "Cho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science &amp; Engineering Chungnam National University  Daejeon South Korea"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              4,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Computational Intelligence"
+        ],
+        "URL": "https://doi.org/10.1111/coin.12521"
+      },
+      {
+        "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)",
+        "DOI": "10.1609/aaai.v40i19.38635",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Last Byte: Learning Just Enough for Machine-Oriented Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Wuyuan",
+            "family": "Xie",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhenming",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ye",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jian",
+            "family": "Jin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yun",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Miaohui",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the AAAI Conference on Artificial Intelligence"
+        ],
+        "URL": "https://doi.org/10.1609/aaai.v40i19.38635"
+      },
+      {
+        "DOI": "10.21203/rs.3.rs-7619960/v1",
+        "title": [
+          "ByteHD: Efficient Byte-Level Hypervector Compression for Memory-Constrained Embedded Systems"
+        ],
+        "author": [
+          {
+            "given": "Víctor Ortega",
+            "family": "Gómez",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Castilla-La Mancha"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "María Soledad Escolar",
+            "family": "Díaz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Castilla-La Mancha"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Fernando Rincón",
+            "family": "Calle",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Castilla-La Mancha"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jesús Barba",
+            "family": "Romero",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Castilla-La Mancha"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Julián Caba",
+            "family": "Jiménez",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Castilla-La Mancha"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Juan Carlos López",
+            "family": "López",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Castilla-La Mancha"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisher": "Springer Science and Business Media LLC",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.21203/rs.3.rs-7619960/v1"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1006/jvci.1993.1025",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Entropy and Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Nassrin",
+            "family": "Tavakoli",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Visual Communication and Image Representation"
+        ],
+        "URL": "https://doi.org/10.1006/jvci.1993.1025"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4020-6754-9_2135",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Byte"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Genetics, Genomics, Proteomics and Informatics"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4020-6754-9_2135"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              3,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118033265.ch3",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression and Entropy"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Foundations of Coding"
+        ],
+        "URL": "https://doi.org/10.1002/9781118033265.ch3"
+      },
+      {
+        "DOI": "10.1002/0471684228.egp01622",
+        "title": [
+          "Byte"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004,
+              7,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedic Dictionary of Genetics, Genomics and Proteomics"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/0471684228.egp01622"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/dwdv-89bj",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Improving semi-device-independent randomness certification by entropy accumulation"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-1563-9451",
+            "authenticated-orcid": true,
+            "given": "Carles Roch i",
+            "family": "Carceller",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              },
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/012a77v79",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Lund University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lucas Nunes",
+            "family": "Faria",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8067-1477",
+            "authenticated-orcid": true,
+            "given": "Zheng-Hao",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0007-9210-9538",
+            "authenticated-orcid": true,
+            "given": "Nicolò",
+            "family": "Sguerso",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1990-7687",
+            "authenticated-orcid": true,
+            "given": "Ulrik Lund",
+            "family": "Andersen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8585-0068",
+            "authenticated-orcid": true,
+            "given": "Jonas Schou",
+            "family": "Neergaard-Nielsen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3859-0272",
+            "authenticated-orcid": true,
+            "given": "Jonatan Bohr",
+            "family": "Brask",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/04qtj9h94",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "Technical University of Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/dwdv-89bj"
+      },
+      {
+        "publisher": "Valley International",
+        "DOI": "10.18535/ijsrm/v12i09.ec01",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Text Compression Using the Shannon-Fano, Huffman, and Half–Byte Algorithms"
+        ],
+        "author": [
+          {
+            "given": "Eko",
+            "family": "Priyono",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hindayati",
+            "family": "Mustafidah",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              9,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Scientific Research and Management (IJSRM)"
+        ],
+        "URL": "https://doi.org/10.18535/ijsrm/v12i09.ec01"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-23161-2_300197",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Byte"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Computer Graphics and Games"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-23161-2_300197"
+      },
+      {
+        "DOI": "10.2139/ssrn.6458760",
+        "title": [
+          "War as Entropy Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-4876-2610",
+            "authenticated-orcid": true,
+            "given": "Truong Xuan",
+            "family": "Khanh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0007-2598-6696",
+            "authenticated-orcid": true,
+            "given": "Quynh Hoa",
+            "family": "Truong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luong Thanh",
+            "family": "Tran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.6458760"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789812812438_0002",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ALGORITHMIC RANDOMNESS, PHYSICAL ENTROPY, MEASUREMENTS, AND THE SECOND LAW"
+        ],
+        "author": [
+          {
+            "given": "W. H.",
+            "family": "Zurek",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Theoretical Division, T-6, MS B288, Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              10,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Computation: The Micro and the Macro View"
+        ],
+        "URL": "https://doi.org/10.1142/9789812812438_0002"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/cyberc.2013.93",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Evaluation of Statistical Tests for Randomness Using Conditional Entropy"
+        ],
+        "author": [
+          {
+            "given": "Chengbing",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xuejia",
+            "family": "Lai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery"
+        ],
+        "URL": "https://doi.org/10.1109/cyberc.2013.93"
+      },
+      {
+        "DOI": "10.1163/9789004337862_lgbo_com_022073",
+        "title": [
+          "Byte"
+        ],
+        "container-title": [
+          "Lexikon des gesamten Buchwesens Online"
+        ],
+        "publisher": "Walter de Gruyter GmbH",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1163/9789004337862_lgbo_com_022073"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/s12559-026-10593-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ByteHD: Efficient Byte-Level Hypervector Compression for Memory-Constrained Embedded Systems"
+        ],
+        "author": [
+          {
+            "given": "Víctor",
+            "family": "Ortega",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Soledad",
+            "family": "Escolar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fernando",
+            "family": "Rincón",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jesús",
+            "family": "Barba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Julián",
+            "family": "Caba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Juan Carlos",
+            "family": "López",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              5,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Cognitive Computation"
+        ],
+        "URL": "https://doi.org/10.1007/s12559-026-10593-8"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1002/adts.202000111",
+        "type": "journal-article",
+        "is-referenced-by-count": 118,
+        "title": [
+          "Enhanced Hardness in High‐Entropy Carbides through Atomic Randomness"
+        ],
+        "author": [
+          {
+            "given": "Yichen",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Engineering and Material Science Queen Mary University of London  Mile End Road London E1 4NS UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Tamás",
+            "family": "Csanádi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Materials Research Slovak Academy of Sciences  Watsonova 47 Košice 04353 Slovak Republic"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hangfeng",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Engineering and Material Science Queen Mary University of London  Mile End Road London E1 4NS UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ján",
+            "family": "Dusza",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institute of Materials Research Slovak Academy of Sciences  Watsonova 47 Košice 04353 Slovak Republic"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Michael J.",
+            "family": "Reece",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Engineering and Material Science Queen Mary University of London  Mile End Road London E1 4NS UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7229-769X",
+            "authenticated-orcid": false,
+            "given": "Rui‐Zhi",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Engineering and Material Science Queen Mary University of London  Mile End Road London E1 4NS UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              8,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Advanced Theory and Simulations"
+        ],
+        "URL": "https://doi.org/10.1002/adts.202000111"
+      },
+      {
+        "DOI": "10.1002/0471743984.vse1362",
+        "title": [
+          "Byte"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              10,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Van Nostrand's Scientific Encyclopedia"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/0471743984.vse1362"
+      },
+      {
+        "publisher": "Cambridge University Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              3,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1017/9781009217347",
+        "type": "monograph",
+        "is-referenced-by-count": 10,
+        "title": [
+          "From Randomness and Entropy to the Arrow of Time"
+        ],
+        "author": [
+          {
+            "given": "Lena",
+            "family": "Zuchowski",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              2,
+              16
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1017/9781009217347"
+      },
+      {
+        "DOI": "10.1007/springerreference_9399",
+        "title": [
+          "byte"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_9399"
+      },
+      {
+        "DOI": "10.1515/iupac.66.0187",
+        "title": [
+          "Byte"
+        ],
+        "author": [
+          {
+            "given": "H. M.",
+            "family": "Kingston",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M. L.",
+            "family": "Kingston",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IUPAC Standards Online"
+        ],
+        "publisher": "De Gruyter",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1515/iupac.66.0187"
+      },
+      {
+        "DOI": "10.1163/9789004337862__com_022073",
+        "title": [
+          "Byte"
+        ],
+        "container-title": [
+          "Lexikon des gesamten Buchwesens Online"
+        ],
+        "publisher": "Walter de Gruyter GmbH",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.1163/9789004337862__com_022073"
+      },
+      {
+        "publisher": "Helsinki University Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.2307/j.ctv1c9hpt8.10",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Building Historical Knowledge Byte by Byte:"
+        ],
+        "author": [
+          {
+            "given": "Jessica Parland-von",
+            "family": "Essen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Digital Histories"
+        ],
+        "URL": "https://doi.org/10.2307/j.ctv1c9hpt8.10"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.isci.2025.114555",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy-based byte patching transformer for self-supervised pretraining of SMILES data"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-6893-6281",
+            "authenticated-orcid": false,
+            "given": "Medard Edmund",
+            "family": "Mswahili",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0006-0087-0817",
+            "authenticated-orcid": false,
+            "given": "JunHa",
+            "family": "Hwang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9222-6346",
+            "authenticated-orcid": false,
+            "given": "Kyuri",
+            "family": "Jo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7944-1658",
+            "authenticated-orcid": false,
+            "given": "Jagath C.",
+            "family": "Rajapakse",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0772-9721",
+            "authenticated-orcid": false,
+            "given": "Péter",
+            "family": "Kovács",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9441-2940",
+            "authenticated-orcid": false,
+            "given": "Young-Seob",
+            "family": "Jeong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "iScience"
+        ],
+        "URL": "https://doi.org/10.1016/j.isci.2025.114555"
+      },
+      {
+        "publisher": "Qeios",
+        "DOI": "10.32388/nusppo",
+        "type": "reference-entry",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Byte"
+        ],
+        "author": [
+          {
+            "name": "National Cancer Institute",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Definitions"
+        ],
+        "URL": "https://doi.org/10.32388/nusppo"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.1145/3577193.3593706",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "GPULZ: Optimizing LZSS Lossless Compression for Multi-byte Data on Modern GPUs"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-8937-4067",
+            "authenticated-orcid": false,
+            "given": "Boyuan",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Indiana University, Bloomington, IN, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1101-9148",
+            "authenticated-orcid": false,
+            "given": "Jiannan",
+            "family": "Tian",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Indiana University, Bloomington, IN, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9935-5674",
+            "authenticated-orcid": false,
+            "given": "Sheng",
+            "family": "Di",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Argonne National Laboratory, Lemont, IL, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6244-1264",
+            "authenticated-orcid": false,
+            "given": "Xiaodong",
+            "family": "Yu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Argonne National Laboratory, Lemont, IL, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8028-1161",
+            "authenticated-orcid": false,
+            "given": "Martin",
+            "family": "Swany",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Indiana University, Bloomington, IN, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5422-4497",
+            "authenticated-orcid": false,
+            "given": "Dingwen",
+            "family": "Tao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Indiana University, Bloomington, IN, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7890-3934",
+            "authenticated-orcid": false,
+            "given": "Franck",
+            "family": "Cappello",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Argonne National Laboratory, Lemont, IL, United States of America"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 37th International Conference on Supercomputing"
+        ],
+        "URL": "https://doi.org/10.1145/3577193.3593706"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/icsmc.2011.6084076",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "A novel information entropy based randomness test for image encryption"
+        ],
+        "author": [
+          {
+            "given": "Yue",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joseph P.",
+            "family": "Noonan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sos",
+            "family": "Agaian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 IEEE International Conference on Systems, Man, and Cybernetics"
+        ],
+        "URL": "https://doi.org/10.1109/icsmc.2011.6084076"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_1995",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "byte"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_1995"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cnsns.2024.108469",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Price predictability at ultra-high frequency: Entropy-based randomness test"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-9299-369X",
+            "authenticated-orcid": false,
+            "given": "Andrey",
+            "family": "Shternshis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Stefano",
+            "family": "Marmi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Communications in Nonlinear Science and Numerical Simulation"
+        ],
+        "URL": "https://doi.org/10.1016/j.cnsns.2024.108469"
+      },
+      {
+        "DOI": "10.1007/springerreference_9001",
+        "title": [
+          "bit byte"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_9001"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/aemcse55572.2022.00066",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Deep learning based on byte sample entropy for VPN encrypted traffic identification"
+        ],
+        "author": [
+          {
+            "given": "Yajuan",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "State Grid Customer Service Center,Tianjin,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gengshen",
+            "family": "Yu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Grid Smart Grid Research Institute Co. Ltd,State Grid Key Laboratory of Information &#x0026; Network Security,Nanjing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wen",
+            "family": "Shen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Grid Smart Grid Research Institute Co. Ltd,State Grid Key Laboratory of Information &#x0026; Network Security,Nanjing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lintan",
+            "family": "Sun",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "State Grid Customer Service Center,Tianjin,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2022 5th International Conference on Advanced Electronic Materials, Computers and Software Engineering (AEMCSE)"
+        ],
+        "URL": "https://doi.org/10.1109/aemcse55572.2022.00066"
+      },
+      {
+        "DOI": "10.4135/9781412983907.n215",
+        "title": [
+          "Byte"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "container-title": [
+          "Dictionary of Statistics &amp; Methodology"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781412983907.n215"
+      },
+      {
+        "DOI": "10.1002/0471028959.sof029",
+        "title": [
+          "Byte"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              1,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Software Engineering"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/0471028959.sof029"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/paciia.2009.5406638",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Research and application of entropy in the sequence randomness test"
+        ],
+        "author": [
+          {
+            "family": "Minyong Qi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jinxin Dong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2009 Asia-Pacific Conference on Computational Intelligence and Industrial Applications (PACIIA)"
+        ],
+        "URL": "https://doi.org/10.1109/paciia.2009.5406638"
+      },
+      {
+        "DOI": "10.1515/9783110888133.367",
+        "title": [
+          "Breeches – Byte"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              11,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Anglizismen-Wörterbuch. Band 1: A - E"
+        ],
+        "publisher": "De Gruyter",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1515/9783110888133.367"
+      },
+      {
+        "publisher": "MDPI",
+        "DOI": "10.3390/entropy2021-09851",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Quantum chaos and quantum randomness—paradigms of quantum entropy production"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Dittrich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Óscar",
+            "family": "Rodríguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of Entropy 2021: The Scientific Tool of the 21st Century"
+        ],
+        "URL": "https://doi.org/10.3390/entropy2021-09851"
+      },
+      {
+        "publisher": "University of Baghdad College of Science",
+        "DOI": "10.24996/ijs.2024.65.12.36",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Performance Improvement for Weather Wireless Sensor Network by Mixed-Byte Compression Scheme"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0042-9400",
+            "authenticated-orcid": false,
+            "given": "Saif",
+            "family": "Al-Alak",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Iraqi Journal of Science"
+        ],
+        "URL": "https://doi.org/10.24996/ijs.2024.65.12.36"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/15783-4555",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Achieving Better Compression Applying Index-based Byte-Pair Transformation before Arithmetic Coding"
+        ],
+        "author": [
+          {
+            "given": "Jyotika",
+            "family": "Doshi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Savita",
+            "family": "Gandhi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              3,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/15783-4555"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2010.05.054",
+        "type": "journal-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "Jamming III: Characterizing randomness via the entropy of jammed matter"
+        ],
+        "author": [
+          {
+            "given": "Christopher",
+            "family": "Briscoe",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chaoming",
+            "family": "Song",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ping",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hernán A.",
+            "family": "Makse",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2010.05.054"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreve.105.044101",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Beyond randomness: Evaluating measures of information entropy in binary series"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5574-2840",
+            "authenticated-orcid": true,
+            "given": "Mariana Sacrini Ayres",
+            "family": "Ferraz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4027-7261",
+            "authenticated-orcid": true,
+            "given": "Alexandre Hiroaki",
+            "family": "Kihara",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              4,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review E"
+        ],
+        "URL": "https://doi.org/10.1103/physreve.105.044101"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ijmachtools.2012.06.007",
+        "type": "journal-article",
+        "is-referenced-by-count": 47,
+        "title": [
+          "Analysis of the entropy randomness index for machining chatter detection"
+        ],
+        "author": [
+          {
+            "given": "Daniel",
+            "family": "Pérez-Canales",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luciano",
+            "family": "Vela-Martínez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Juan",
+            "family": "Carlos Jáuregui-Correa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jose",
+            "family": "Alvarez-Ramirez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Journal of Machine Tools and Manufacture"
+        ],
+        "URL": "https://doi.org/10.1016/j.ijmachtools.2012.06.007"
+      },
+      {
+        "DOI": "10.1109/dcc.1998.672298",
+        "title": [
+          "Entropy and data compression performances"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Lanza",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '98 Data Compression Conference (Cat. No.98TB100225)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1998.672298"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1109/lsp.2021.3052097",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Entropy Optimized Deep Feature Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-8561-5009",
+            "authenticated-orcid": false,
+            "given": "Benben",
+            "family": "Niu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1720-083X",
+            "authenticated-orcid": false,
+            "given": "Xiaoran",
+            "family": "Cao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ziwei",
+            "family": "Wei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yun",
+            "family": "He",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Signal Processing Letters"
+        ],
+        "URL": "https://doi.org/10.1109/lsp.2021.3052097"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/metrocon59008.2023.10340524",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Tiny Entropy Based Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Arthur C.",
+            "family": "Depoian",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ethan R.",
+            "family": "Adams",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Colleen P.",
+            "family": "Bailey",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Parthasarathy",
+            "family": "Guturu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of North Texas,Department of Electrical Engineering,Denton,TX,USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE MetroCon"
+        ],
+        "URL": "https://doi.org/10.1109/metrocon59008.2023.10340524"
+      },
+      {
+        "publisher": "Acta Physica Sinica, Chinese Physical Society and Institute of Physics, Chinese Academy of Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.7498/aps.59.7679",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Randomness analysis of external cavity semiconductor laser as entropy source"
+        ],
+        "author": [
+          {
+            "family": "Zhang Ji-Bing",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Zhang Jian-Zhong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Yang Yi-Biao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Liang Jun-Sheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Wang Yun-Cai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Department of Physics, College of Science, Taiyuan University of Technology, Taiyuan 030024, China",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Acta Physica Sinica"
+        ],
+        "URL": "https://doi.org/10.7498/aps.59.7679"
+      },
+      {
+        "publisher": "China Science Publishing & Media Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              3,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.3724/sp.j.1001.2009.03277",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Study on the Correlation Between Randomness Tests Based on Entropy"
+        ],
+        "author": [
+          {
+            "given": "Li-Min",
+            "family": "FAN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Deng-Guo",
+            "family": "FENG",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hua",
+            "family": "CHEN",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Software"
+        ],
+        "URL": "https://doi.org/10.3724/sp.j.1001.2009.03277"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ins.2012.07.049",
+        "type": "journal-article",
+        "is-referenced-by-count": 638,
+        "title": [
+          "Local Shannon entropy measure with statistical tests for image randomness"
+        ],
+        "author": [
+          {
+            "given": "Yue",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yicong",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "George",
+            "family": "Saveriades",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sos",
+            "family": "Agaian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Joseph P.",
+            "family": "Noonan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Premkumar",
+            "family": "Natarajan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Information Sciences"
+        ],
+        "URL": "https://doi.org/10.1016/j.ins.2012.07.049"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevlett.99.147202",
+        "type": "journal-article",
+        "is-referenced-by-count": 73,
+        "title": [
+          "Entanglement Entropy at Infinite-Randomness Fixed Points in Higher Dimensions"
+        ],
+        "author": [
+          {
+            "given": "Yu-Cheng",
+            "family": "Lin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ferenc",
+            "family": "Iglói",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Heiko",
+            "family": "Rieger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              10,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review Letters"
+        ],
+        "URL": "https://doi.org/10.1103/physrevlett.99.147202"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1214/aoms/1177693077",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Epsilon Entropy and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Edward C.",
+            "family": "Posner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eugene R.",
+            "family": "Rodemich",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Mathematical Statistics"
+        ],
+        "URL": "https://doi.org/10.1214/aoms/1177693077"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1007/s00493-015-3070-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 25,
+        "title": [
+          "Nonrepetitive colouring via entropy compression"
+        ],
+        "author": [
+          {
+            "given": "Vida",
+            "family": "Dujmović",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gwenaël",
+            "family": "Joret",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jakub",
+            "family": "Kozik",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David R.",
+            "family": "Wood",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Combinatorica"
+        ],
+        "URL": "https://doi.org/10.1007/s00493-015-3070-6"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

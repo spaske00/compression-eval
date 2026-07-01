@@ -1,0 +1,566 @@
+#!/usr/bin/env python3
+
+"""Cross-check compute_entropy's legacy fields with Linux ENT."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import io
+import json
+import math
+import os
+import random
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+from typing import Any, Iterable, Mapping, Sequence
+
+
+ROOT = Path(__file__).resolve().parent
+SAMPLE_SIZE = 10
+DEFAULT_SEED = 0
+FLOAT_TOLERANCE = 0.0001
+SHARED_FIELDS = (
+    "0",
+    "File-bits",
+    "Entropy",
+    "Chi-square",
+    "Mean",
+    "Monte-Carlo-Pi",
+    "Serial-Correlation",
+)
+INTEGER_FIELDS = frozenset(("0", "File-bits"))
+
+
+class VerificationFailure(RuntimeError):
+    """An expected verification setup, execution, or comparison failure."""
+
+
+def positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("must be a positive integer") from error
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return parsed
+
+
+def eligible_executables(corpus_bin: Path) -> list[Path]:
+    """Return executable regular files in canonical corpus-relative order."""
+
+    return sorted(
+        (
+            path
+            for path in corpus_bin.rglob("*")
+            if not path.is_symlink()
+            and path.is_file()
+            and os.access(path, os.X_OK)
+        ),
+        key=lambda path: path.relative_to(corpus_bin).as_posix(),
+    )
+
+
+def choose_sample(
+    candidates: Sequence[Path], seed: int, sample_size: int = SAMPLE_SIZE
+) -> list[Path]:
+    if len(candidates) < sample_size:
+        raise VerificationFailure(
+            f"need {sample_size} executable files, found {len(candidates)}"
+        )
+    return random.Random(seed).sample(list(candidates), sample_size)
+
+
+def resolve_executable(value: str | Path, label: str) -> Path:
+    text = os.fspath(value)
+    if os.sep in text or (os.altsep and os.altsep in text):
+        candidate = Path(text).expanduser().resolve()
+        resolved = os.fspath(candidate) if candidate.is_file() else None
+    else:
+        resolved = shutil.which(text)
+    if resolved is None or not os.access(resolved, os.X_OK):
+        raise VerificationFailure(
+            f"{label} executable is unavailable or not executable: {text}"
+        )
+    return Path(resolved).resolve()
+
+
+def prepare_output_path(path: Path) -> Path:
+    output = path.expanduser().resolve()
+    if output.exists() and output.is_dir():
+        raise VerificationFailure(f"report path is a directory: {output}")
+    try:
+        output.parent.mkdir(parents=True, exist_ok=True)
+    except OSError as error:
+        raise VerificationFailure(
+            f"cannot create report directory {output.parent}: {error}"
+        ) from error
+    if not os.access(output.parent, os.W_OK):
+        raise VerificationFailure(f"report directory is not writable: {output.parent}")
+    return output
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        while chunk := source.read(1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def stage_sample(
+    selected: Iterable[Path], corpus_bin: Path, stage_root: Path
+) -> tuple[list[dict[str, Any]], dict[str, Path]]:
+    metadata: list[dict[str, Any]] = []
+    staged_paths: dict[str, Path] = {}
+    for source in selected:
+        relative = source.relative_to(corpus_bin).as_posix()
+        destination = stage_root / "bin" / Path(relative)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        staged_paths[relative] = destination
+        metadata.append(
+            {
+                "path": relative,
+                "staged_path": f"bin/{relative}",
+                "size_bytes": destination.stat().st_size,
+                "sha256": sha256_file(destination),
+            }
+        )
+    return metadata, staged_paths
+
+
+def run_command(
+    argv: Sequence[str],
+    *,
+    cwd: Path,
+    commands: list[dict[str, Any]],
+    tool: str,
+    file_path: str | None = None,
+) -> subprocess.CompletedProcess[str]:
+    record: dict[str, Any] = {
+        "tool": tool,
+        "argv": list(argv),
+        "cwd": os.fspath(cwd),
+        "returncode": None,
+        "stdout": "",
+        "stderr": "",
+    }
+    if file_path is not None:
+        record["file"] = file_path
+    try:
+        result = subprocess.run(
+            list(argv), cwd=cwd, capture_output=True, text=True, check=False
+        )
+    except OSError as error:
+        record["error"] = str(error)
+        commands.append(record)
+        raise VerificationFailure(f"cannot invoke {tool}: {error}") from error
+    record.update(
+        {
+            "returncode": result.returncode,
+            "stdout": result.stdout,
+            "stderr": result.stderr,
+        }
+    )
+    commands.append(record)
+    if result.returncode != 0:
+        suffix = f" for {file_path}" if file_path else ""
+        raise VerificationFailure(
+            f"{tool} exited with status {result.returncode}{suffix}"
+        )
+    return result
+
+
+def parse_compute_entropy_csv(
+    csv_path: Path, selected_paths: Sequence[str]
+) -> dict[str, dict[str, str]]:
+    try:
+        with csv_path.open(newline="") as source:
+            reader = csv.DictReader(source)
+            if reader.fieldnames is None:
+                raise VerificationFailure("compute_entropy CSV has no header")
+            required = {"filename", *SHARED_FIELDS}
+            missing_columns = sorted(required - set(reader.fieldnames))
+            if missing_columns:
+                raise VerificationFailure(
+                    "compute_entropy CSV is missing columns: "
+                    + ", ".join(missing_columns)
+                )
+            rows: dict[str, dict[str, str]] = {}
+            for row in reader:
+                filename = row.get("filename")
+                if filename is None:
+                    raise VerificationFailure(
+                        "compute_entropy CSV contains a row without filename"
+                    )
+                if filename in rows:
+                    raise VerificationFailure(
+                        f"compute_entropy CSV duplicates row: {filename}"
+                    )
+                rows[filename] = {field: row[field] for field in SHARED_FIELDS}
+    except (OSError, csv.Error) as error:
+        raise VerificationFailure(
+            f"cannot parse compute_entropy CSV {csv_path}: {error}"
+        ) from error
+
+    expected = {f"./bin/{path}" for path in selected_paths}
+    observed = set(rows)
+    if observed != expected:
+        missing = sorted(expected - observed)
+        unexpected = sorted(observed - expected)
+        details: list[str] = []
+        if missing:
+            details.append("missing " + ", ".join(missing))
+        if unexpected:
+            details.append("unexpected " + ", ".join(unexpected))
+        raise VerificationFailure(
+            "compute_entropy CSV row set does not match sample: " + "; ".join(details)
+        )
+    return {path: rows[f"./bin/{path}"] for path in selected_paths}
+
+
+def parse_ent_terse(stdout: str) -> dict[str, str]:
+    try:
+        rows = [row for row in csv.reader(io.StringIO(stdout)) if row]
+    except csv.Error as error:
+        raise VerificationFailure(f"cannot parse ENT terse output: {error}") from error
+    if rows and tuple(rows[0]) == SHARED_FIELDS:
+        rows = rows[1:]
+    if len(rows) != 1:
+        raise VerificationFailure(
+            f"ENT terse output must contain one data row, found {len(rows)}"
+        )
+    if len(rows[0]) != len(SHARED_FIELDS):
+        raise VerificationFailure(
+            "ENT terse data row must contain "
+            f"{len(SHARED_FIELDS)} fields, found {len(rows[0])}"
+        )
+    return dict(zip(SHARED_FIELDS, rows[0]))
+
+
+def compare_field(
+    path: str, field: str, compute_value: str, ent_value: str
+) -> dict[str, Any]:
+    comparison: dict[str, Any] = {
+        "file": path,
+        "field": field,
+        "compute_entropy": compute_value,
+        "ent": ent_value,
+        "difference": None,
+        "passed": False,
+        "reason": "",
+    }
+    try:
+        if field in INTEGER_FIELDS:
+            observed = int(compute_value)
+            expected = int(ent_value)
+            comparison["passed"] = observed == expected
+            comparison["difference"] = abs(observed - expected)
+            comparison["reason"] = (
+                "exact match" if comparison["passed"] else "integer values differ"
+            )
+            return comparison
+
+        observed_float = float(compute_value)
+        expected_float = float(ent_value)
+    except (TypeError, ValueError) as error:
+        comparison["reason"] = f"invalid {field} value: {error}"
+        return comparison
+
+    if math.isnan(observed_float) or math.isnan(expected_float):
+        comparison["passed"] = math.isnan(observed_float) and math.isnan(
+            expected_float
+        )
+        comparison["reason"] = (
+            "matching NaN values"
+            if comparison["passed"]
+            else "only one value is NaN"
+        )
+        return comparison
+
+    if math.isinf(observed_float) or math.isinf(expected_float):
+        comparison["passed"] = observed_float == expected_float
+        comparison["reason"] = (
+            "matching non-finite values"
+            if comparison["passed"]
+            else "non-finite values differ"
+        )
+        return comparison
+
+    difference = abs(observed_float - expected_float)
+    comparison["difference"] = difference
+    comparison["passed"] = math.isclose(
+        observed_float,
+        expected_float,
+        rel_tol=0.0,
+        abs_tol=FLOAT_TOLERANCE,
+    )
+    comparison["reason"] = (
+        f"absolute difference <= {FLOAT_TOLERANCE}"
+        if comparison["passed"]
+        else f"absolute difference > {FLOAT_TOLERANCE}"
+    )
+    return comparison
+
+
+def write_report(path: Path, report: Mapping[str, Any]) -> None:
+    temporary_name: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w",
+            encoding="utf-8",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            delete=False,
+        ) as output:
+            temporary_name = output.name
+            json.dump(report, output, indent=2, sort_keys=True, allow_nan=False)
+            output.write("\n")
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(temporary_name, path)
+    except OSError:
+        if temporary_name is not None:
+            Path(temporary_name).unlink(missing_ok=True)
+        raise
+
+
+def _new_report(args: argparse.Namespace, output_path: Path) -> dict[str, Any]:
+    return {
+        "schema_version": 1,
+        "status": "failed",
+        "configuration": {
+            "corpus_bin": os.fspath(args.corpus_bin.expanduser().resolve()),
+            "output": os.fspath(output_path),
+            "seed": args.seed,
+            "sample_size": SAMPLE_SIZE,
+            "float_tolerance": FLOAT_TOLERANCE,
+            "jobs": args.jobs,
+            "ent": args.ent,
+            "compute_entropy": os.fspath(args.compute_entropy),
+        },
+        "candidate_count": 0,
+        "selected_paths": [],
+        "files": [],
+        "commands": [],
+        "source_values": [],
+        "comparisons": [],
+        "errors": [],
+        "summary": {
+            "selected_files": 0,
+            "compute_entropy_rows": 0,
+            "ent_rows": 0,
+            "comparisons": 0,
+            "passed": 0,
+            "failed": 0,
+        },
+    }
+
+
+def run_verification(args: argparse.Namespace, output_path: Path) -> int:
+    report = _new_report(args, output_path)
+    compute_rows: dict[str, dict[str, str]] = {}
+    ent_rows: dict[str, dict[str, str]] = {}
+    try:
+        corpus_bin = args.corpus_bin.expanduser().resolve()
+        if not corpus_bin.is_dir():
+            raise VerificationFailure(f"corpus bin directory not found: {corpus_bin}")
+
+        candidates = eligible_executables(corpus_bin)
+        report["candidate_count"] = len(candidates)
+        selected = choose_sample(candidates, args.seed)
+        selected_paths = [
+            path.relative_to(corpus_bin).as_posix() for path in selected
+        ]
+        report["selected_paths"] = selected_paths
+
+        compute_executable = resolve_executable(args.compute_entropy, "compute_entropy")
+        ent_executable = resolve_executable(args.ent, "ENT")
+        report["configuration"]["compute_entropy_resolved"] = os.fspath(
+            compute_executable
+        )
+        report["configuration"]["ent_resolved"] = os.fspath(ent_executable)
+
+        with tempfile.TemporaryDirectory(
+            prefix="verify-compute-entropy-", dir=output_path.parent
+        ) as workspace_name:
+            workspace = Path(workspace_name)
+            stage_root = workspace / "sample"
+            compute_output = workspace / "compute-output"
+            compute_output.mkdir(parents=True)
+            file_metadata, staged = stage_sample(selected, corpus_bin, stage_root)
+            report["files"] = file_metadata
+
+            run_command(
+                [
+                    os.fspath(compute_executable),
+                    "--jobs",
+                    str(args.jobs),
+                    os.fspath(stage_root),
+                ],
+                cwd=compute_output,
+                commands=report["commands"],
+                tool="compute_entropy",
+            )
+            output_entries = list(compute_output.iterdir())
+            generated = list(compute_output.glob("results_*entropy_*.csv"))
+            if len(output_entries) != 1 or len(generated) != 1:
+                raise VerificationFailure(
+                    "compute_entropy must generate exactly one CSV and no other "
+                    f"files; found {[path.name for path in output_entries]}"
+                )
+            compute_rows = parse_compute_entropy_csv(generated[0], selected_paths)
+
+            for relative in selected_paths:
+                result = run_command(
+                    [
+                        os.fspath(ent_executable),
+                        "-t",
+                        "-b",
+                        os.fspath(staged[relative]),
+                    ],
+                    cwd=workspace,
+                    commands=report["commands"],
+                    tool="ent",
+                    file_path=relative,
+                )
+                ent_rows[relative] = parse_ent_terse(result.stdout)
+
+            for relative in selected_paths:
+                report["source_values"].append(
+                    {
+                        "file": relative,
+                        "compute_entropy": compute_rows[relative],
+                        "ent": ent_rows[relative],
+                    }
+                )
+                for field in SHARED_FIELDS:
+                    report["comparisons"].append(
+                        compare_field(
+                            relative,
+                            field,
+                            compute_rows[relative][field],
+                            ent_rows[relative][field],
+                        )
+                    )
+
+        failed = [item for item in report["comparisons"] if not item["passed"]]
+        if failed:
+            report["errors"].append(
+                f"{len(failed)} of {len(report['comparisons'])} comparisons failed"
+            )
+        elif len(report["comparisons"]) != SAMPLE_SIZE * len(SHARED_FIELDS):
+            report["errors"].append(
+                "comparison count is incomplete: "
+                f"expected {SAMPLE_SIZE * len(SHARED_FIELDS)}, "
+                f"found {len(report['comparisons'])}"
+            )
+        else:
+            report["status"] = "passed"
+    except (VerificationFailure, OSError) as error:
+        report["errors"].append(str(error))
+
+    comparisons = report["comparisons"]
+    passed_count = sum(item["passed"] for item in comparisons)
+    report["summary"] = {
+        "selected_files": len(report["selected_paths"]),
+        "compute_entropy_rows": len(compute_rows),
+        "ent_rows": len(ent_rows),
+        "comparisons": len(comparisons),
+        "passed": passed_count,
+        "failed": len(comparisons) - passed_count,
+    }
+    if report["errors"]:
+        report["status"] = "failed"
+
+    try:
+        write_report(output_path, report)
+    except OSError as error:
+        print(f"verify_compute_entropy_against_ent: cannot write report: {error}", file=sys.stderr)
+        return 1
+
+    if report["status"] == "passed":
+        print(
+            f"PASS: {passed_count} shared-field comparisons across "
+            f"{SAMPLE_SIZE} files; report: {output_path}"
+        )
+        return 0
+
+    print("verify_compute_entropy_against_ent: verification failed", file=sys.stderr)
+    for error in report["errors"]:
+        print(f"  {error}", file=sys.stderr)
+    for comparison in comparisons:
+        if not comparison["passed"]:
+            print(
+                f"  {comparison['file']} {comparison['field']}: "
+                f"compute_entropy={comparison['compute_entropy']} "
+                f"ent={comparison['ent']} ({comparison['reason']})",
+                file=sys.stderr,
+            )
+    print(f"  report: {output_path}", file=sys.stderr)
+    return 1
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Compare compute_entropy's seven legacy metrics with Linux ent -t -b "
+            "for a seeded sample of 10 corpus executables."
+        )
+    )
+    parser.add_argument(
+        "--corpus-bin",
+        type=Path,
+        default=ROOT / "corpus" / "bin",
+        help="directory containing corpus executables (default: corpus/bin)",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("compute-entropy-ent-report.json"),
+        help="JSON report path (default: ./compute-entropy-ent-report.json)",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=DEFAULT_SEED,
+        help=f"pseudorandom sample seed (default: {DEFAULT_SEED})",
+    )
+    parser.add_argument(
+        "--ent",
+        default="ent",
+        help="ENT executable name or path (default: ent)",
+    )
+    parser.add_argument(
+        "--compute-entropy",
+        type=Path,
+        default=ROOT / "compute_entropy",
+        help="compute_entropy executable path",
+    )
+    parser.add_argument(
+        "-j",
+        "--jobs",
+        type=positive_int,
+        default=1,
+        help="compute_entropy worker count (default: 1)",
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    try:
+        output_path = prepare_output_path(args.output)
+    except VerificationFailure as error:
+        print(f"verify_compute_entropy_against_ent: {error}", file=sys.stderr)
+        return 1
+    return run_verification(args, output_path)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

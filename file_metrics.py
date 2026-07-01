@@ -4,13 +4,17 @@ from __future__ import annotations
 
 import argparse
 import csv
+import heapq
 import json
 import math
 import struct
 import sys
 from collections import Counter
+from itertools import groupby
+from operator import itemgetter
 from pathlib import Path
-from typing import Iterable, Mapping
+from tempfile import TemporaryDirectory
+from typing import Iterable, Iterator, Mapping
 
 
 LEGACY_COLUMNS = (
@@ -35,7 +39,12 @@ APPENDED_COLUMNS = (
     "Section-Size-Ratios",
     "Section-Entropies",
 )
-METRIC_COLUMNS = LEGACY_COLUMNS + APPENDED_COLUMNS
+N_BIT_WIDTHS = (1, 2, 4, 8, 16, 32, 64, 128, 256)
+N_BIT_ENTROPY_COLUMNS = tuple(f"{width}-Bit-Entropy" for width in N_BIT_WIDTHS)
+METRIC_COLUMNS = LEGACY_COLUMNS + APPENDED_COLUMNS + N_BIT_ENTROPY_COLUMNS
+
+SPARSE_COUNT_ENTRY_BUDGET = 1_000_000
+_RUN_COUNT = struct.Struct(">Q")
 
 SHT_NULL = 0
 SHT_NOBITS = 8
@@ -107,8 +116,19 @@ def _legacy_bit_metrics(data: bytes) -> tuple[float, float, float, float, float]
     if bit_count == 0:
         serial = -100000.0
     else:
-        bits = [byte >> shift & 1 for byte in data for shift in range(7, -1, -1)]
-        cross_sum = sum(a * b for a, b in zip(bits, bits[1:] + bits[:1]))
+        first_bit = data[0] >> 7
+        previous = first_bit
+        cross_sum = 0
+        first = True
+        for byte in data:
+            for shift in range(7, -1, -1):
+                current = byte >> shift & 1
+                if first:
+                    first = False
+                else:
+                    cross_sum += previous * current
+                previous = current
+        cross_sum += previous * first_bit
         denominator = bit_count * ones - ones * ones
         serial = (
             (bit_count * cross_sum - ones * ones) / denominator
@@ -116,6 +136,124 @@ def _legacy_bit_metrics(data: bytes) -> tuple[float, float, float, float, float]
             else -100000.0
         )
     return entropy, chi_square, mean, _monte_carlo_pi(data), serial
+
+
+def _iter_n_bit_blocks(data: bytes, width: int) -> Iterator[int]:
+    """Yield file-aligned, non-overlapping blocks in MSB-first order."""
+
+    if width not in N_BIT_WIDTHS:
+        raise ValueError(f"unsupported bit-block width: {width}")
+    if width < 8:
+        mask = (1 << width) - 1
+        for byte in data:
+            for shift in range(8 - width, -1, -width):
+                yield byte >> shift & mask
+        return
+
+    block_bytes = width // 8
+    complete_bytes = len(data) - len(data) % block_bytes
+    view = memoryview(data)[:complete_bytes]
+    formats = {8: ">B", 16: ">H", 32: ">I", 64: ">Q"}
+    if width in formats:
+        for (value,) in struct.iter_unpack(formats[width], view):
+            yield value
+        return
+    for offset in range(0, complete_bytes, block_bytes):
+        yield int.from_bytes(view[offset : offset + block_bytes], "big")
+
+
+def _dense_n_bit_entropy(data: bytes, width: int) -> float:
+    counts = [0] * (1 << width)
+    total = len(data) * 8 // width
+    for block in _iter_n_bit_blocks(data, width):
+        counts[block] += 1
+    return _entropy(counts, total)
+
+
+def _write_count_run(
+    directory: Path, index: int, counts: Mapping[int, int], width: int
+) -> Path:
+    key_bytes = width // 8
+    path = directory / f"run-{index:06d}.bin"
+    with path.open("wb") as output:
+        for value, count in sorted(counts.items()):
+            output.write(value.to_bytes(key_bytes, "big"))
+            output.write(_RUN_COUNT.pack(count))
+    return path
+
+
+def _read_count_run(path: Path, width: int) -> Iterator[tuple[int, int]]:
+    key_bytes = width // 8
+    record_size = key_bytes + _RUN_COUNT.size
+    with path.open("rb") as source:
+        while record := source.read(record_size):
+            if len(record) != record_size:
+                raise MetricError(f"corrupt temporary count run: {path}")
+            yield (
+                int.from_bytes(record[:key_bytes], "big"),
+                _RUN_COUNT.unpack(record[key_bytes:])[0],
+            )
+
+
+def _merged_run_counts(paths: Iterable[Path], width: int) -> Iterator[int]:
+    records = heapq.merge(
+        *(_read_count_run(path, width) for path in paths), key=itemgetter(0)
+    )
+    for _, group in groupby(records, key=itemgetter(0)):
+        yield sum(count for _, count in group)
+
+
+def _sparse_n_bit_entropy(
+    data: bytes,
+    width: int,
+    *,
+    entry_budget: int = SPARSE_COUNT_ENTRY_BUDGET,
+    temp_root: Path | None = None,
+) -> float:
+    if width < 32 or width not in N_BIT_WIDTHS:
+        raise ValueError(f"sparse counting does not support {width}-bit blocks")
+    if entry_budget < 1:
+        raise ValueError("entry_budget must be positive")
+
+    total = len(data) * 8 // width
+    if total == 0:
+        return math.nan
+
+    counts: dict[int, int] = {}
+    runs: list[Path] = []
+    try:
+        with TemporaryDirectory(
+            prefix="file-metrics-", dir=temp_root, ignore_cleanup_errors=False
+        ) as directory_name:
+            directory = Path(directory_name)
+            for block in _iter_n_bit_blocks(data, width):
+                counts[block] = counts.get(block, 0) + 1
+                if len(counts) >= entry_budget:
+                    runs.append(_write_count_run(directory, len(runs), counts, width))
+                    counts.clear()
+
+            if not runs:
+                return _entropy(counts.values(), total)
+            if counts:
+                runs.append(_write_count_run(directory, len(runs), counts, width))
+                counts.clear()
+            return _entropy(_merged_run_counts(runs, width), total)
+    except OSError as error:
+        raise MetricError(
+            f"cannot compute {width}-bit entropy using temporary storage: {error}"
+        ) from error
+
+
+def _n_bit_entropies(data: bytes, byte_counts: Iterable[int]) -> dict[str, float]:
+    values: dict[str, float] = {}
+    for width, column in zip(N_BIT_WIDTHS, N_BIT_ENTROPY_COLUMNS):
+        if width == 8:
+            values[column] = _entropy(byte_counts, len(data))
+        elif width <= 16:
+            values[column] = _dense_n_bit_entropy(data, width)
+        else:
+            values[column] = _sparse_n_bit_entropy(data, width)
+    return values
 
 
 def _conditional_and_bigram_entropy(data: bytes) -> tuple[float, float]:
@@ -266,7 +404,9 @@ def compute_metrics(data: bytes) -> dict[str, object]:
         counts = Counter(contents)
         entropies[identifier] = _entropy(counts.values(), len(contents))
 
-    return {
+    n_bit_entropies = _n_bit_entropies(data, byte_counts)
+
+    record = {
         "0": 1,
         "File-bits": size * 8,
         "Entropy": bit_entropy,
@@ -286,6 +426,8 @@ def compute_metrics(data: bytes) -> dict[str, object]:
         "Section-Size-Ratios": ratios,
         "Section-Entropies": entropies,
     }
+    record.update(n_bit_entropies)
+    return record
 
 
 def compute_file(path: Path | str) -> dict[str, object]:

@@ -1,0 +1,5066 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 3444632,
+    "items": [
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              2,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/comjnl/30.2.149",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Data Compression for a Source with Markov Characteristics"
+        ],
+        "author": [
+          {
+            "given": "J. A.",
+            "family": "Llewellyn",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Computer Journal"
+        ],
+        "URL": "https://doi.org/10.1093/comjnl/30.2.149"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01071523",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "?-Entropy data compression"
+        ],
+        "author": [
+          {
+            "given": "I. Ya.",
+            "family": "Tyrygin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Ukrainian Mathematical Journal"
+        ],
+        "URL": "https://doi.org/10.1007/bf01071523"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2016.7541386",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Estimation of entropy rate and Rényi entropy rate for Markov chains"
+        ],
+        "author": [
+          {
+            "given": "Sudeep",
+            "family": "Kamath",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Electrical Engineering, Princeton University, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sergio",
+            "family": "Verdú",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Electrical Engineering, Princeton University, United States"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 IEEE International Symposium on Information Theory (ISIT)"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2016.7541386"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              2,
+              19
+            ]
+          ]
+        },
+        "DOI": "10.1109/icnc59896.2024.10556014",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Intermittent Markov Frequency-Hopping Entropy Rate"
+        ],
+        "author": [
+          {
+            "given": "Hyuck M.",
+            "family": "Kwon",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Wichita State University,Department of Electrical and Computer Engineering,Wichita,KS,USA,67260"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2024 International Conference on Computing, Networking and Communications (ICNC)"
+        ],
+        "URL": "https://doi.org/10.1109/icnc59896.2024.10556014"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              3,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118033265.ch3",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression and Entropy"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Foundations of Coding"
+        ],
+        "URL": "https://doi.org/10.1002/9781118033265.ch3"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e17063738",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Maximum Entropy Rate Reconstruction of Markov Dynamics"
+        ],
+        "author": [
+          {
+            "given": "Gregor",
+            "family": "Chliamovitch",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, University of Geneva, Route de Drize 7, 1227 Geneva, Switzerland"
+              },
+              {
+                "name": "Department of Theoretical Physics, University of Geneva, Quai Ernest-Ansermet 24,1211 Geneva, Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alexandre",
+            "family": "Dupuis",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, University of Geneva, Route de Drize 7, 1227 Geneva, Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Bastien",
+            "family": "Chopard",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, University of Geneva, Route de Drize 7, 1227 Geneva, Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e17063738"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1007/s10955-021-02769-3",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Shannon Entropy Rate of Hidden Markov Processes"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-5920-6674",
+            "authenticated-orcid": false,
+            "given": "Alexandra M.",
+            "family": "Jurgens",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4466-5410",
+            "authenticated-orcid": false,
+            "given": "James P.",
+            "family": "Crutchfield",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Physics"
+        ],
+        "URL": "https://doi.org/10.1007/s10955-021-02769-3"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.256516",
+        "type": "journal-article",
+        "is-referenced-by-count": 32,
+        "title": [
+          "Relative entropy between Markov transition rate matrices"
+        ],
+        "author": [
+          {
+            "given": "G.",
+            "family": "Kesidis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Walrand",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.256516"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2017.8007074",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Rényi entropy rate of hidden Markov processes"
+        ],
+        "author": [
+          {
+            "given": "Chengyu",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Easton Li",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 IEEE International Symposium on Information Theory (ISIT)"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2017.8007074"
+      },
+      {
+        "DOI": "10.1109/dcc.1998.672298",
+        "title": [
+          "Entropy and data compression performances"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Lanza",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '98 Data Compression Conference (Cat. No.98TB100225)"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1998.672298"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1214/aoms/1177693077",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Epsilon Entropy and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Edward C.",
+            "family": "Posner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eugene R.",
+            "family": "Rodemich",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Mathematical Statistics"
+        ],
+        "URL": "https://doi.org/10.1214/aoms/1177693077"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1080/23799927.2026.2634339",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Source coding theorems on generalized entropy and its application in data compression"
+        ],
+        "author": [
+          {
+            "given": "Aakansha",
+            "family": "Dwivedi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Manipal University Jaipur",
+                "place": [
+                  "India"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ram Naresh",
+            "family": "Saraswat",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Manipal University Jaipur",
+                "place": [
+                  "India"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sonal",
+            "family": "Jain",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Sir Padampat Singhania University",
+                "place": [
+                  "Udaipur, India"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ali",
+            "family": "Akgul",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Saveetha School of Engineering, SIMATS",
+                "place": [
+                  "Chennai, India"
+                ]
+              },
+              {
+                "name": "Siirt University",
+                "place": [
+                  "Siirt, Turkey"
+                ]
+              },
+              {
+                "name": "Biruni University",
+                "place": [
+                  "Istanbul, Turkey"
+                ]
+              },
+              {
+                "name": "Applied Science Private University",
+                "place": [
+                  "Amman, Jordan"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Mathematics: Computer Systems Theory"
+        ],
+        "URL": "https://doi.org/10.1080/23799927.2026.2634339"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1993
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.179344",
+        "type": "journal-article",
+        "is-referenced-by-count": 206,
+        "title": [
+          "Entropy and data compression schemes"
+        ],
+        "author": [
+          {
+            "given": "D.S.",
+            "family": "Ornstein",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Weiss",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.179344"
+      },
+      {
+        "publisher": "Oxford University Press (OUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1987,
+              12,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1093/comjnl/30.6.541",
+        "type": "journal-article",
+        "is-referenced-by-count": 139,
+        "title": [
+          "Data Compression Using Dynamic Markov Modelling"
+        ],
+        "author": [
+          {
+            "given": "G. V.",
+            "family": "Cormack",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R. N. S.",
+            "family": "Horspool",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Computer Journal"
+        ],
+        "URL": "https://doi.org/10.1093/comjnl/30.6.541"
+      },
+      {
+        "DOI": "10.1109/korus.2005.1507635",
+        "title": [
+          "Efficient algorithm of low-entropy Markov source coding"
+        ],
+        "author": [
+          {
+            "given": "M.P.",
+            "family": "Bakulina",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. The 9th Russian-Korean International Symposium on Science and Technology, 2005. KORUS 2005."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/korus.2005.1507635"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.1970.1054391",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy and data compression (Corresp.)"
+        ],
+        "author": [
+          {
+            "given": "N.",
+            "family": "Tzannes",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Sarantakis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Fart",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.1970.1054391"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02837736",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy, coding and data compression"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Natarajan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Resonance"
+        ],
+        "URL": "https://doi.org/10.1007/bf02837736"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              1,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1081/sta-120028687",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Entropy Rate and Maximum Entropy Methods for Countable Semi-Markov Chains"
+        ],
+        "author": [
+          {
+            "given": "Valerie",
+            "family": "Girardin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nikolaos",
+            "family": "Limnios",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Communications in Statistics - Theory and Methods"
+        ],
+        "URL": "https://doi.org/10.1081/sta-120028687"
+      },
+      {
+        "publisher": "Sociedad Mexicana de Fisica A C",
+        "DOI": "10.31349/suplrevmexfis.6.011309",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Quantum entropy production rate of quantum markov semigroups"
+        ],
+        "author": [
+          {
+            "given": "Jorge",
+            "family": "Bolaños",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              6,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Suplemento de la Revista Mexicana de Física"
+        ],
+        "URL": "https://doi.org/10.31349/suplrevmexfis.6.011309"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.2006.885481",
+        "type": "journal-article",
+        "is-referenced-by-count": 47,
+        "title": [
+          "Analyticity of Entropy Rate of Hidden Markov Chains"
+        ],
+        "author": [
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Brian",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.2006.885481"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2010.5513590",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy rate of continuous-state hidden Markov chains"
+        ],
+        "author": [
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Brian",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 IEEE International Symposium on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2010.5513590"
+      },
+      {
+        "publisher": "Public Library of Science (PLoS)",
+        "DOI": "10.1371/journal.pone.0295074",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "The entropy rate of Linear Additive Markov Processes"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0910-9470",
+            "authenticated-orcid": true,
+            "given": "Bridget",
+            "family": "Smart",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7882-7329",
+            "authenticated-orcid": true,
+            "given": "Matthew",
+            "family": "Roughan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8191-1997",
+            "authenticated-orcid": true,
+            "given": "Lewis",
+            "family": "Mitchell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "PLOS ONE"
+        ],
+        "URL": "https://doi.org/10.1371/journal.pone.0295074"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-49370-1_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression (Source Encoding)"
+        ],
+        "author": [
+          {
+            "given": "Predrag",
+            "family": "Ivaniš",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dušan",
+            "family": "Drajić",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              12,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Information Theory and Coding - Solved Problems"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-49370-1_3"
+      },
+      {
+        "DOI": "10.1109/isit.1994.394778",
+        "title": [
+          "Entropy rate of the form source"
+        ],
+        "author": [
+          {
+            "given": "S.I.",
+            "family": "Stasevich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.N.",
+            "family": "Koshelev",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of 1994 IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 3,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1994.394778"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/lsp.2006.874466",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "From Finite-System Entropy to Entropy Rate for a Hidden Markov Process"
+        ],
+        "author": [
+          {
+            "given": "O.",
+            "family": "Zuk",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Domany",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I.",
+            "family": "Kanter",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Aizenman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Signal Processing Letters"
+        ],
+        "URL": "https://doi.org/10.1109/lsp.2006.874466"
+      },
+      {
+        "publisher": "Cambridge University Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              5,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1017/cbo9780511819407.006",
+        "type": "book-chapter",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Entropy rate for hidden Markov chains with rare transitions"
+        ],
+        "author": [
+          {
+            "given": "Yuval",
+            "family": "Peres",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anthony",
+            "family": "Quas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Entropy of Hidden Markov Processes and Connections to Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1017/cbo9780511819407.006"
+      },
+      {
+        "DOI": "10.1109/isit.2004.1365047",
+        "title": [
+          "On the entropy rate of a hidden markov model"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Egner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.B.",
+            "family": "Balakirsky",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Tolhuizen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Baggen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "H.",
+            "family": "Hollmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Symposium onInformation Theory, 2004. ISIT 2004. Proceedings."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 12,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.2004.1365047"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/cbmi.2008.4564925",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Retrieval of video story units by Markov entropy rate"
+        ],
+        "author": [
+          {
+            "given": "Sergio",
+            "family": "Benini",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pierangelo",
+            "family": "Migliorati",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Riccardo",
+            "family": "Leonardi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 International Workshop on Content-Based Multimedia Indexing"
+        ],
+        "URL": "https://doi.org/10.1109/cbmi.2008.4564925"
+      },
+      {
+        "publisher": "CMV Verlag",
+        "DOI": "10.29252/jsri.15.1.83",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "On Tsallis Relative  Entropy Rate of  Hidden Markov Models"
+        ],
+        "author": [
+          {
+            "given": "Zohre",
+            "family": "Nikooravesh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Research of Iran"
+        ],
+        "URL": "https://doi.org/10.29252/jsri.15.1.83"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              25
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit54713.2023.10206685",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Rate Estimation for Markov Chains with Continuous Distributions"
+        ],
+        "author": [
+          {
+            "given": "Puning",
+            "family": "Zhao",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Zhejiang Lab"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lifeng",
+            "family": "Lai",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of California,Department of Electrical and Computer Engineering,Davis"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE International Symposium on Information Theory (ISIT)"
+        ],
+        "URL": "https://doi.org/10.1109/isit54713.2023.10206685"
+      },
+      {
+        "publisher": "CASRP: Center of Advanced Scientific Research and Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              3,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.18869/acadpub.jsri.5.2.171",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Rate of Rényi Entropy for Irreducible Markov Chains"
+        ],
+        "author": [
+          {
+            "given": "Einollah",
+            "family": "Pasha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Tarbiat Moallem University",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Leila",
+            "family": "Golshani",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Islamic Azad University, Central Tehran Branch",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "hossein",
+            "family": "Yari",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "University of Science and Technology",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Research of Iran"
+        ],
+        "URL": "https://doi.org/10.18869/acadpub.jsri.5.2.171"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1109/tsp.2009.2028115",
+        "type": "journal-article",
+        "is-referenced-by-count": 25,
+        "title": [
+          "Relative Entropy Rate Based Multiple Hidden Markov Model Approximation"
+        ],
+        "author": [
+          {
+            "given": "John",
+            "family": "Lai",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jason J.",
+            "family": "Ford",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/tsp.2009.2028115"
+      },
+      {
+        "DOI": "10.1109/milcom.1997.648774",
+        "title": [
+          "Low bit rate speech compression using hidden Markov modeling"
+        ],
+        "author": [
+          {
+            "given": "S.T.",
+            "family": "Bardenhagen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.L.",
+            "family": "Brown",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.D.",
+            "family": "Braun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "MILCOM 97 MILCOM 97 Proceedings"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/milcom.1997.648774"
+      },
+      {
+        "publisher": "CASRP: Center of Advanced Scientific Research and Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.18869/acadpub.jsri.8.1.97",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Relative Entropy Rate between a Markov Chain and Its Corresponding Hidden Markov Chain"
+        ],
+        "author": [
+          {
+            "given": "H.",
+            "family": "Yari",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Iran University of Science and Technology",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Z.",
+            "family": "Nikooravesh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Birjand University",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Research of Iran"
+        ],
+        "URL": "https://doi.org/10.18869/acadpub.jsri.8.1.97"
+      },
+      {
+        "DOI": "10.1109/atit58178.2022.10024200",
+        "title": [
+          "Source Coding and Data Compression"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "2022 IEEE 4th International Conference on Advanced Trends in Information Theory (ATIT)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/atit58178.2022.10024200"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789811200267_0004",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Source Coding for Data Compression"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Telecommunications Engineering"
+        ],
+        "URL": "https://doi.org/10.1142/9789811200267_0004"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              12,
+              17
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118033296.ch11",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Source Coding, Data Compression, Redundancy"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Cryptography, Information Theory, and Error‐Correction"
+        ],
+        "URL": "https://doi.org/10.1002/9781118033296.ch11"
+      },
+      {
+        "publisher": "Global Science and Technology Forum",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.5176/978-981-08-8113-9_ita31",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression and Source Coding"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Hema",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the Annual International Conference on Information Technology &amp; Applications"
+        ],
+        "URL": "https://doi.org/10.5176/978-981-08-8113-9_ita31"
+      },
+      {
+        "DOI": "10.1109/atit64324.2024.11222509",
+        "title": [
+          "Source Coding and Data Compression"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              11,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "2024 IEEE 5th International Conference on Advanced Trends in Information Theory (ATIT)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/atit64324.2024.11222509"
+      },
+      {
+        "DOI": "10.1109/atit54053.2021.9678788",
+        "title": [
+          "Source Coding and Data Compression"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "2021 IEEE 3rd International Conference on Advanced Trends in Information Theory (ATIT)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/atit54053.2021.9678788"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/lsp.2009.2035731",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Blind Source Separation by Entropy Rate Minimization"
+        ],
+        "author": [
+          {
+            "given": "G.",
+            "family": "Gomez-Herrero",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Rutanen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Egiazarian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Signal Processing Letters"
+        ],
+        "URL": "https://doi.org/10.1109/lsp.2009.2035731"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/tsp.2014.2333563",
+        "type": "journal-article",
+        "is-referenced-by-count": 39,
+        "title": [
+          "Blind Source Separation by Entropy Rate Minimization"
+        ],
+        "author": [
+          {
+            "given": "Geng-Shen",
+            "family": "Fu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Maryland,Baltimore County,  Dept. of CSEE, Baltimore, MD, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ronald",
+            "family": "Phlypo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Maryland, Baltimore County, Dept. of CSEE, Baltimore, MD, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthew",
+            "family": "Anderson",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Maryland, Baltimore County, Dept. of CSEE, Baltimore, MD, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xi-Lin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fortemedia, Sunnyvale, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T ü lay",
+            "family": "Adal ı",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Maryland, Baltimore County, Dept. of CSEE, Baltimore, MD, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/tsp.2014.2333563"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1989
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.45281",
+        "type": "journal-article",
+        "is-referenced-by-count": 202,
+        "title": [
+          "Some asymptotic properties of the entropy of a stationary ergodic data source with applications to data compression"
+        ],
+        "author": [
+          {
+            "given": "A.D.",
+            "family": "Wyner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Ziv",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.45281"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/tcad.2006.882600",
+        "type": "journal-article",
+        "is-referenced-by-count": 50,
+        "title": [
+          "Relationship Between Entropy and Test Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Kedarnath J.",
+            "family": "Balakrishnan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nur A.",
+            "family": "Touba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"
+        ],
+        "URL": "https://doi.org/10.1109/tcad.2006.882600"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/bigdata50022.2020.9378489",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Exploiting Data Entropy for Neural Network Compression"
+        ],
+        "author": [
+          {
+            "given": "Tse-Wen",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pangfeng",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jan-Jan",
+            "family": "Wu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2020 IEEE International Conference on Big Data (Big Data)"
+        ],
+        "URL": "https://doi.org/10.1109/bigdata50022.2020.9378489"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2005.1523736",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Analyticity of entropy rate in families of hidden markov chains"
+        ],
+        "author": [
+          {
+            "family": "Guangyue Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. International Symposium on Information Theory, 2005. ISIT 2005."
+        ],
+        "URL": "https://doi.org/10.1109/isit.2005.1523736"
+      },
+      {
+        "DOI": "10.1109/dcc.2005.18",
+        "title": [
+          "Asymptotics of the Entropy Rate for a Hidden Markov Process"
+        ],
+        "author": [
+          {
+            "given": "O.",
+            "family": "Zuk",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "I.",
+            "family": "Kanter",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Domany",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Data Compression Conference"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 6,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.2005.18"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              10,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1080/03610920701270964",
+        "type": "journal-article",
+        "is-referenced-by-count": 18,
+        "title": [
+          "Estimation of the Entropy Rate of a Countable Markov Chain"
+        ],
+        "author": [
+          {
+            "given": "Gabriela",
+            "family": "Ciuperca",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Valerie",
+            "family": "Girardin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Communications in Statistics - Theory and Methods"
+        ],
+        "URL": "https://doi.org/10.1080/03610920701270964"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ifacol.2023.10.967",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy Rate Maximization of Markov Decision Processes for Surveillance Tasks⋆"
+        ],
+        "author": [
+          {
+            "given": "Yu",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shaoyuan",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiang",
+            "family": "Yin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IFAC-PapersOnLine"
+        ],
+        "URL": "https://doi.org/10.1016/j.ifacol.2023.10.967"
+      },
+      {
+        "DOI": "10.1109/etsym.2004.1347615",
+        "title": [
+          "Relating entropy theory to test data compression"
+        ],
+        "author": [
+          {
+            "given": "K.J.",
+            "family": "Balakrishnan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.A.",
+            "family": "Touba",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. Ninth IEEE European Test Symposium, 2004. ETS 2004."
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 27,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/etsym.2004.1347615"
+      },
+      {
+        "publisher": "Cambridge University Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              5,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1017/cbo9780511819407.005",
+        "type": "book-chapter",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Bounds on the entropy rate of binary hidden Markov processes"
+        ],
+        "author": [
+          {
+            "given": "Erik",
+            "family": "Ordentlich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tsachy",
+            "family": "Weissman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Entropy of Hidden Markov Processes and Connections to Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1017/cbo9780511819407.005"
+      },
+      {
+        "publisher": "ACM Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "DOI": "10.1145/973620.973656",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Lossless compression algorithm for high entropy data"
+        ],
+        "author": [
+          {
+            "given": "Theodora",
+            "family": "Stojanova",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the 4th international conference conference on Computer systems and technologies e-Learning - CompSysTech '03"
+        ],
+        "URL": "https://doi.org/10.1145/973620.973656"
+      },
+      {
+        "DOI": "10.1109/itw.2004.1405285",
+        "title": [
+          "New bounds on the entropy rate of hidden Markov processes"
+        ],
+        "author": [
+          {
+            "given": "E.",
+            "family": "Ordentlich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Weissman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Manufacturing Engineer"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 32,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/itw.2004.1405285"
+      },
+      {
+        "publisher": "CASRP: Center of Advanced Scientific Research and Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              3,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.18869/acadpub.jsri.7.2.103",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Taylor Expansion for the Entropy Rate of Hidden Markov Chains"
+        ],
+        "author": [
+          {
+            "given": "H.",
+            "family": "Yar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Iran University of Science and Technology",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Z.",
+            "family": "Nikooravesh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Iran University of Science and Technology",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Statistical Research of Iran"
+        ],
+        "URL": "https://doi.org/10.18869/acadpub.jsri.7.2.103"
+      },
+      {
+        "publisher": "Bentham Science Publishers Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.2174/1876527001708010019",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "An Entropy Rate Theorem for a Hidden Inhomogeneous Markov Chain"
+        ],
+        "author": [
+          {
+            "given": "Yao",
+            "family": "Qi-feng",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dong",
+            "family": "Yun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wang",
+            "family": "Zhong-Zhi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Open Statistics &amp; Probability Journal"
+        ],
+        "URL": "https://doi.org/10.2174/1876527001708010019"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2005.1523737",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Approximations for the entropy rate of a hidden Markov process"
+        ],
+        "author": [
+          {
+            "given": "E.",
+            "family": "Ordentlich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.",
+            "family": "Weissman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. International Symposium on Information Theory, 2005. ISIT 2005."
+        ],
+        "URL": "https://doi.org/10.1109/isit.2005.1523737"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2015.7282805",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Third-order coding rate for universal compression of Markov sources"
+        ],
+        "author": [
+          {
+            "given": "Nematollah",
+            "family": "Iri",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Electrical, Computer and Energy Engineering, Arizona State University, Tempe, 85287, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Oliver",
+            "family": "Kosut",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electrical, Computer and Energy Engineering, Arizona State University, Tempe, 85287, USA"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 IEEE International Symposium on Information Theory (ISIT)"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2015.7282805"
+      },
+      {
+        "publisher": "American Mathematical Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1090/psapm/067.2/2605285",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Using the entropy production rate to enhance artificial compression"
+        ],
+        "author": [
+          {
+            "given": "Olivier",
+            "family": "Rouch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Paul",
+            "family": "Arminjon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of Symposia in Applied Mathematics",
+          "Hyperbolic Problems: Theory, Numerics and Applications"
+        ],
+        "URL": "https://doi.org/10.1090/psapm/067.2/2605285"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1140/epjb/e2013-30721-4",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Symbolic transfer entropy rate is equal to transfer entropy rate for bivariate finite-alphabet stationary ergodic Markov processes"
+        ],
+        "author": [
+          {
+            "given": "Taichi",
+            "family": "Haruna",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kohei",
+            "family": "Nakajima",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              5,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "The European Physical Journal B"
+        ],
+        "URL": "https://doi.org/10.1140/epjb/e2013-30721-4"
+      },
+      {
+        "DOI": "10.1049/pbte058e_ch6",
+        "title": [
+          "Source coding and lossless data compression"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              2,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Digital communications: Principles and systems"
+        ],
+        "publisher": "Institution of Engineering and Technology",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1049/pbte058e_ch6"
+      },
+      {
+        "DOI": "10.1007/978-3-540-32777-6_7",
+        "title": [
+          "Quantum Source Coding and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Dénes",
+            "family": "Petz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Bolyai Society Mathematical Studies",
+          "Entropy, Search, Complexity"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-32777-6_7"
+      },
+      {
+        "DOI": "10.1109/glocom.1994.512829",
+        "title": [
+          "Approximating a variable bit rate source by Markov processes"
+        ],
+        "author": [
+          {
+            "given": "N.",
+            "family": "Rananand",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1994 IEEE GLOBECOM. Communications: The Global Bridge"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/glocom.1994.512829"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/icasid.2010.5551511",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Homogeneous Markov source information entropy proof based on C-K equation"
+        ],
+        "author": [
+          {
+            "given": "Dexin",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 International Conference on Anti-Counterfeiting, Security and Identification"
+        ],
+        "URL": "https://doi.org/10.1109/icasid.2010.5551511"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1109/iccasm.2010.5623022",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Minimum sum rate distortion based distributed source compression"
+        ],
+        "author": [
+          {
+            "family": "Lan Huang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Pingyi Fan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Guinian Feng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 International Conference on Computer Application and System Modeling (ICCASM 2010)"
+        ],
+        "URL": "https://doi.org/10.1109/iccasm.2010.5623022"
+      },
+      {
+        "publisher": "Springer Vienna",
+        "published-print": {
+          "date-parts": [
+            [
+              1975
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-7091-2928-9_1",
+        "type": "book-chapter",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Rate Distortion Theory and Data Compression"
+        ],
+        "author": [
+          {
+            "given": "Toby",
+            "family": "Berger",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Advances in Source Coding"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-7091-2928-9_1"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.2009.2039094",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Asymptotics of Entropy Rate in Special Families of Hidden Markov Chains"
+        ],
+        "author": [
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Brian H.",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.2009.2039094"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.physa.2011.04.036",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Semi-Markov regime switching interest rate models and minimal entropy measure"
+        ],
+        "author": [
+          {
+            "given": "Julien",
+            "family": "Hunt",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Pierre",
+            "family": "Devolder",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physica A: Statistical Mechanics and its Applications"
+        ],
+        "URL": "https://doi.org/10.1016/j.physa.2011.04.036"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2006.261683",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Analyticity of Entropy Rate in Families of Hidden Markov Chains (II)"
+        ],
+        "author": [
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Brian",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2006 IEEE International Symposium on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2006.261683"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.2007.899467",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Derivatives of Entropy Rate in Special Families of Hidden Markov Chains"
+        ],
+        "author": [
+          {
+            "family": "Guangyue Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.2007.899467"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              8,
+              19
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.860848",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimizing GPS data transmission using entropy coding compression"
+        ],
+        "author": [
+          {
+            "given": "Alberto G.",
+            "family": "Villafranca",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Iu",
+            "family": "Mora",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Patrícia",
+            "family": "Ruiz-Rodríguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jordi",
+            "family": "Portell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Enrique",
+            "family": "García-Berro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Satellite Data Compression, Communications, and Processing VI"
+        ],
+        "URL": "https://doi.org/10.1117/12.860848"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.454829",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy-constrained predictive compression of SAR raw data"
+        ],
+        "author": [
+          {
+            "given": "Enrico",
+            "family": "Magli",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gabriella",
+            "family": "Olmo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Mathematics of Data/Image Coding, Compression, and Encryption V, with Applications"
+        ],
+        "URL": "https://doi.org/10.1117/12.454829"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreva.100.032301",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimality in quantum data compression using dynamical entropy"
+        ],
+        "author": [
+          {
+            "given": "George",
+            "family": "Androulakis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Duncan",
+            "family": "Wright",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/physreva.100.032301"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1017/s026996481800044x",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A NOTE ON RÉNYI'S ENTROPY RATE FOR TIME-INHOMOGENEOUS MARKOV CHAINS"
+        ],
+        "author": [
+          {
+            "given": "Wenxi",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4980-6940",
+            "authenticated-orcid": false,
+            "given": "Zhongzhi",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Probability in the Engineering and Informational Sciences"
+        ],
+        "URL": "https://doi.org/10.1017/s026996481800044x"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1109/nelex59773.2023.10421382",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Lossless Telemetric Data Compression using Lempel-Ziv-Markov-Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Siri Chandana",
+            "family": "Gummidela",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sree Madhu Kiran",
+            "family": "Bhupani",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ganga Sridhar",
+            "family": "Ikkurthi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Thanmai Lakshmi",
+            "family": "Bandaru",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hima Deepthi",
+            "family": "Vankayalapati",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Electronics and Communication Engineering,Kalasalingam Academy Of Research and Education,Tamil Nadu,India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 International Conference on Next Generation Electronics (NEleX)"
+        ],
+        "URL": "https://doi.org/10.1109/nelex59773.2023.10421382"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/ias.2018.8544486",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Weighted Entropy for Data Compression in Smart Grid"
+        ],
+        "author": [
+          {
+            "given": "Sharif",
+            "family": "Bhuiyan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jesmin",
+            "family": "Khan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gregory",
+            "family": "Murphy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 IEEE Industry Applications Society Annual Meeting (IAS)"
+        ],
+        "URL": "https://doi.org/10.1109/ias.2018.8544486"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1017/s0021900200012018",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Lumpings of Markov Chains, Entropy Rate Preservation, and Higher-Order Lumpability"
+        ],
+        "author": [
+          {
+            "given": "Bernhard C.",
+            "family": "Geiger",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christoph",
+            "family": "Temmel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Applied Probability"
+        ],
+        "URL": "https://doi.org/10.1017/s0021900200012018"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.335958",
+        "type": "journal-article",
+        "is-referenced-by-count": 29,
+        "title": [
+          "Order estimation and sequential universal data compression of a hidden Markov source by the method of mixtures"
+        ],
+        "author": [
+          {
+            "family": "Chuang-Chun Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Narayan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.335958"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "DOI": "10.1109/icc.2006.255039",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Taylor series expansions for the entropy rate of Hidden Markov Processes"
+        ],
+        "author": [
+          {
+            "given": "Or",
+            "family": "Zuk",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eytan",
+            "family": "Domany",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ido",
+            "family": "Kanter",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michael",
+            "family": "Aizenman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2006 IEEE International Conference on Communications"
+        ],
+        "URL": "https://doi.org/10.1109/icc.2006.255039"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.2015.2423558",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Analyticity of Entropy Rate of Hidden Markov Chains With Continuous Alphabet"
+        ],
+        "author": [
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Brian",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.2015.2423558"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1239/jap/1421763331",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Lumpings of Markov Chains, Entropy Rate Preservation, and Higher-Order Lumpability"
+        ],
+        "author": [
+          {
+            "given": "Bernhard C.",
+            "family": "Geiger",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christoph",
+            "family": "Temmel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Applied Probability"
+        ],
+        "URL": "https://doi.org/10.1239/jap/1421763331"
+      },
+      {
+        "DOI": "10.12681/eadd/57047",
+        "title": [
+          "Entropy in data compression, additive combinatorics and probability"
+        ],
+        "author": [
+          {
+            "given": "Λάμπρος",
+            "family": "Γαβαλάκης",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "National Documentation Centre (EKT)",
+        "is-referenced-by-count": 0,
+        "type": "dissertation",
+        "URL": "https://doi.org/10.12681/eadd/57047"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreva.78.022311",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Reexamination of quantum data compression and relative entropy"
+        ],
+        "author": [
+          {
+            "given": "Alexei",
+            "family": "Kaltchenko",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              8,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review A"
+        ],
+        "URL": "https://doi.org/10.1103/physreva.78.022311"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1007/s005740200020",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Learning Markov chains in fractal compression of image data"
+        ],
+        "author": [
+          {
+            "given": "Laura M.",
+            "family": "Morato",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Paola",
+            "family": "Siri",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Bulletin of the Brazilian Mathematical Society"
+        ],
+        "URL": "https://doi.org/10.1007/s005740200020"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11128-014-0763-5",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Quantum entropy-typical subspace and universal data compression"
+        ],
+        "author": [
+          {
+            "given": "Jingliang",
+            "family": "Gao",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yanbo",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              6,
+              4
+            ]
+          ]
+        },
+        "container-title": [
+          "Quantum Information Processing"
+        ],
+        "URL": "https://doi.org/10.1007/s11128-014-0763-5"
+      },
+      {
+        "DOI": "10.1109/icpr.1992.201918",
+        "title": [
+          "Image data compression without distortion by minimizing entropy"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Bijaoui",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings., 11th IAPR International Conference on Pattern Recognition. Vol. IV. Conference D: Architectures for Vision and Pattern Recognition,"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icpr.1992.201918"
+      },
+      {
+        "DOI": "10.1109/isit.1993.748527",
+        "title": [
+          "Data Compression with Side Information and Graph Entropy"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Orlitsky",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1993.748527"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/icassp.2013.6638258",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Algorithms for Markovian source separation by entropy rate minimization"
+        ],
+        "author": [
+          {
+            "given": "Geng-Shen",
+            "family": "Fu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ronald",
+            "family": "Phlypo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthew",
+            "family": "Anderson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xi-Lin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tulay",
+            "family": "Adali",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2013 IEEE International Conference on Acoustics, Speech and Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/icassp.2013.6638258"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/0167-7152(94)00080-r",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "A limit theorem for the entropy density of nonhomogeneous Markov information source"
+        ],
+        "author": [
+          {
+            "given": "Liu",
+            "family": "Wen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yang",
+            "family": "Weiguo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Statistics &amp; Probability Letters"
+        ],
+        "URL": "https://doi.org/10.1016/0167-7152(94)00080-r"
+      },
+      {
+        "publisher": "IOP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/0141-5425(91)90024-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "EEG data compression with source coding techniques"
+        ],
+        "author": [
+          {
+            "given": "H.",
+            "family": "Hinrichs",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Biomedical Engineering"
+        ],
+        "URL": "https://doi.org/10.1016/0141-5425(91)90024-2"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0219024900000292",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "MARKOV PROPERTIES OF HIGH FREQUENCY EXCHANGE RATE DATA"
+        ],
+        "author": [
+          {
+            "given": "C.",
+            "family": "RENNER",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Universitaet Oldenburg, D-26111 Oldenburg, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "PEINKE",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Universitaet Oldenburg, D-26111 Oldenburg, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "FRIEDRICH",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut fuer theoretische Physik, Universitaet Stuttgart, D-70550 Stuttgart, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Theoretical and Applied Finance"
+        ],
+        "URL": "https://doi.org/10.1142/s0219024900000292"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/tit.2023.3328825",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Markov Categories and Entropy"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-9123-9089",
+            "authenticated-orcid": false,
+            "given": "Paolo",
+            "family": "Perrone",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, University of Oxford, Oxford, U.K."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/tit.2023.3328825"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/sisy.2010.5647144",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Markov model and entropy of sequences in isodistributional surrogate data"
+        ],
+        "author": [
+          {
+            "given": "T.",
+            "family": "Loncar-Turukalo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Milovanovic",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Bajic",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE 8th International Symposium on Intelligent Systems and Informatics"
+        ],
+        "URL": "https://doi.org/10.1109/sisy.2010.5647144"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-39949-6_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Entropy Measures in Heart Rate Variability Data"
+        ],
+        "author": [
+          {
+            "given": "Niels",
+            "family": "Wessel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Agnes",
+            "family": "Schumann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alexander",
+            "family": "Schirdewan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andreas",
+            "family": "Voss",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jürgen",
+            "family": "Kurths",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              6,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Medical Data Analysis"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-39949-6_12"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/iembs.2011.6090339",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Improved entropy rate estimation in physiological data"
+        ],
+        "author": [
+          {
+            "given": "D. E.",
+            "family": "Lake",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2011 Annual International Conference of the IEEE Engineering in Medicine and Biology Society"
+        ],
+        "URL": "https://doi.org/10.1109/iembs.2011.6090339"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2008.4595468",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Asymptotics of entropy rate of hidden Markov chains at weak Black Holes"
+        ],
+        "author": [
+          {
+            "given": "Guangyue",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Brian",
+            "family": "Marcus",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 IEEE International Symposium on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2008.4595468"
+      },
+      {
+        "publisher": "Institution of Engineering and Technology (IET)",
+        "published-print": {
+          "date-parts": [
+            [
+              1979
+            ]
+          ]
+        },
+        "DOI": "10.1049/ij-cdt.1979.0026",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Some considerations relating to the performance of variable-information-rate-source to constant-transmission-rate schemes of data compression"
+        ],
+        "author": [
+          {
+            "given": "L.F.",
+            "family": "Turner",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Frangoulis",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Alcaim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEE Journal on Computers and Digital Techniques"
+        ],
+        "URL": "https://doi.org/10.1049/ij-cdt.1979.0026"
+      },
+      {
+        "publisher": "China Science Publishing & Media Ltd.",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.3724/sp.j.1249.2016.02154",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Semi-Markov regime switching interest rate models under minimal entropy martingale measure"
+        ],
+        "author": [
+          {
+            "given": "Xiangdong",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xingrui",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Shenzhen University Science and Engineering"
+        ],
+        "URL": "https://doi.org/10.3724/sp.j.1249.2016.02154"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/isita.2008.4895601",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Maximum entropy rate of Markov sources for systems with non-regular constraints"
+        ],
+        "author": [
+          {
+            "given": "G.",
+            "family": "Bocherer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.C.",
+            "family": "da Rocha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "C.",
+            "family": "Pimentel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Mathar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 International Symposium on Information Theory and Its Applications"
+        ],
+        "URL": "https://doi.org/10.1109/isita.2008.4895601"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/18.119685",
+        "type": "journal-article",
+        "is-referenced-by-count": 60,
+        "title": [
+          "Multiterminal detection with zero-rate data compression"
+        ],
+        "author": [
+          {
+            "given": "H.M.H.",
+            "family": "Shalaby",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Papamarcou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Theory"
+        ],
+        "URL": "https://doi.org/10.1109/18.119685"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/isit.2016.7541387",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Novel lower bounds on the entropy rate of binary hidden Markov processes"
+        ],
+        "author": [
+          {
+            "given": "Or",
+            "family": "Ordentlich",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "MIT, United States"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 IEEE International Symposium on Information Theory (ISIT)"
+        ],
+        "URL": "https://doi.org/10.1109/isit.2016.7541387"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

@@ -1,5 +1,5610 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=information+entropy+entropy+coding+compression&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 1543143,
+    "items": [
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf02837736",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy, coding and data compression"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Natarajan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Resonance"
+        ],
+        "URL": "https://doi.org/10.1007/bf02837736"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "DOI": "10.1038/lsa.2016.172",
+        "type": "journal-article",
+        "is-referenced-by-count": 312,
+        "title": [
+          "Information entropy of coding metasurface"
+        ],
+        "author": [
+          {
+            "given": "Tie-Jun",
+            "family": "Cui",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shuo",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lian-Lin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              6,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Light: Science &amp; Applications"
+        ],
+        "URL": "https://doi.org/10.1038/lsa.2016.172"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-58520-4_27",
+        "type": "book-chapter",
+        "is-referenced-by-count": 58,
+        "title": [
+          "Conditional Entropy Coding for Efficient Video Compression"
+        ],
+        "author": [
+          {
+            "given": "Jerry",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shenlong",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Wei-Chiu",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Meet",
+            "family": "Shah",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rui",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Pranaab",
+            "family": "Dhawan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Raquel",
+            "family": "Urtasun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              11,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Computer Vision – ECCV 2020"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-58520-4_27"
+      },
+      {
+        "publisher": "World Wide Journals",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.36106/ijsr/3135790",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "ENTROPY CODING FOR H.264 VIDEO COMPRESSION"
+        ],
+        "author": [
+          {
+            "given": "Vijayalaxmi",
+            "family": "S Patil",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Research Scholar, PDA College of Engineering, Kalaburagi, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "suffix": "Dr.",
+            "given": "Suvarna",
+            "family": "Nandyal",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Professor, PDA College of Engineering, Kalaburagi, India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "INTERNATIONAL JOURNAL OF SCIENTIFIC RESEARCH"
+        ],
+        "URL": "https://doi.org/10.36106/ijsr/3135790"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              8,
+              19
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.860848",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimizing GPS data transmission using entropy coding compression"
+        ],
+        "author": [
+          {
+            "given": "Alberto G.",
+            "family": "Villafranca",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Iu",
+            "family": "Mora",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Patrícia",
+            "family": "Ruiz-Rodríguez",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jordi",
+            "family": "Portell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Enrique",
+            "family": "García-Berro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Satellite Data Compression, Communications, and Processing VI"
+        ],
+        "URL": "https://doi.org/10.1117/12.860848"
+      },
+      {
+        "DOI": "10.1109/icip.1997.638682",
+        "title": [
+          "Fixed length entropy coding for robust video compression"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Llados-Bernaus",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.L.",
+            "family": "Stevenson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of International Conference on Image Processing"
+        ],
+        "publisher": "IEEE Comput. Soc",
+        "is-referenced-by-count": 4,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icip.1997.638682"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1998
+            ]
+          ]
+        },
+        "DOI": "10.1109/76.728418",
+        "type": "journal-article",
+        "is-referenced-by-count": 10,
+        "title": [
+          "Fixed-length entropy coding for robust video compression"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Llados-Bernaus",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "R.L.",
+            "family": "Stevenson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Circuits and Systems for Video Technology"
+        ],
+        "URL": "https://doi.org/10.1109/76.728418"
+      },
+      {
+        "publisher": "Korean Society of Computer Information",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.9708/jksci.2016.21.5.031",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "High Efficient Entropy Coding For Edge Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Jong-Woo",
+            "family": "Han",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Do-Hyun",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yoon",
+            "family": "Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the Korea Society of Computer and Information"
+        ],
+        "URL": "https://doi.org/10.9708/jksci.2016.21.5.031"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-14243-2_6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Wen",
+            "family": "Gao",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Siwei",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              1,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "Advanced Video Coding Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-14243-2_6"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-51249-1_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Gerald",
+            "family": "Schuller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              9,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Filter Banks and Audio Coding"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-51249-1_5"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              4,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1002/0470847832.ch8",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Coding"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2002,
+              6,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Video Codec Design"
+        ],
+        "URL": "https://doi.org/10.1002/0470847832.ch8"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              9,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118711743.ch8",
+        "type": "other",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy Coding"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Coding Video"
+        ],
+        "URL": "https://doi.org/10.1002/9781118711743.ch8"
+      },
+      {
+        "DOI": "10.1007/978-0-585-32313-8_7",
+        "title": [
+          "Entropy Coding"
+        ],
+        "container-title": [
+          "The Kluwer International Series in Engineering and Computer Science",
+          "Real-Time Video Compression"
+        ],
+        "publisher": "Springer US",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-585-32313-8_7"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4615-3626-0_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Allen",
+            "family": "Gersho",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert M.",
+            "family": "Gray",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Vector Quantization and Signal Compression"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4615-3626-0_9"
+      },
+      {
+        "publisher": "Springer Fachmedien Wiesbaden",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-658-34737-6_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Olaf",
+            "family": "Manz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              8,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "essentials",
+          "Well Packed – Not a Bit Too Much"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-658-34737-6_4"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              2,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118616611.ch4",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Nicolas",
+            "family": "Moreau",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              3,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Tools for Signal Compression"
+        ],
+        "URL": "https://doi.org/10.1002/9781118616611.ch4"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-44276-0_10",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Mathias",
+            "family": "Wien",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Signals and Communication Technology",
+          "High Efficiency Video Coding"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-44276-0_10"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-97-1957-0_6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Ge",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wei",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wen",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              3,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Point Cloud Compression"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-97-1957-0_6"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/iccda.2010.5541100",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Study on information entropy of combinatorics coding"
+        ],
+        "author": [
+          {
+            "family": "Lu Jun",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Liu Da-xin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2010 International Conference On Computer Design and Applications"
+        ],
+        "URL": "https://doi.org/10.1109/iccda.2010.5541100"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/cvprw59228.2023.00407",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Entropy Coding-based Lossless Compression of Asynchronous Event Sequences"
+        ],
+        "author": [
+          {
+            "given": "Ionut",
+            "family": "Schiopu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Huawei Technologies Oy (Finland) Co. Ltd,Tampere Handset Camera Innovation Lab,Tampere,Finland,33720"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Radu Ciprian",
+            "family": "Bilcu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Huawei Technologies Oy (Finland) Co. Ltd,Tampere Handset Camera Innovation Lab,Tampere,Finland,33720"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)"
+        ],
+        "URL": "https://doi.org/10.1109/cvprw59228.2023.00407"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1109/tensymp46218.2019.8971209",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Lossless Video Compression Using Bayesian Networks and Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Rochan Avlur",
+            "family": "Venkat",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Mahindra Ecole Centrale,Computer Science and Engineering,Hyderabad,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chandrasekar",
+            "family": "Vaidyanathan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Dayanand Sagar University,Chairman,Bangalore,India"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2019 IEEE Region 10 Symposium (TENSYMP)"
+        ],
+        "URL": "https://doi.org/10.1109/tensymp46218.2019.8971209"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              5,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.476612",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Modified fixed-length entropy coding for robust video compression"
+        ],
+        "author": [
+          {
+            "given": "Guanjun",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert L.",
+            "family": "Stevenson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Image and Video Communications and Processing 2003"
+        ],
+        "URL": "https://doi.org/10.1117/12.476612"
+      },
+      {
+        "DOI": "10.1109/dcc.1997.582058",
+        "title": [
+          "Conditional entropy coding of VQ indexes for image compression"
+        ],
+        "author": [
+          {
+            "family": "Xiaolin Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jiang Wen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Wing Hung Wong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '97. Data Compression Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1997.582058"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/pcs.2010.5702580",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "Entropy coding in video compression using probability interval partitioning"
+        ],
+        "author": [
+          {
+            "given": "Detlev",
+            "family": "Marpe",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Image Processing Department, Fraunhofer Institute for Telecommunications (HHI), Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Heiko",
+            "family": "Schwarz",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Image Processing Department, Fraunhofer Institute for Telecommunications (HHI), Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas",
+            "family": "Wiegand",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Image Processing Department, Fraunhofer Institute for Telecommunications (HHI), Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "28th Picture Coding Symposium"
+        ],
+        "URL": "https://doi.org/10.1109/pcs.2010.5702580"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              5,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.480466",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Block-based conditional entropy coding for medical image compression"
+        ],
+        "author": [
+          {
+            "given": "Sriperumbudur V.",
+            "family": "Bharath Kumar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nithin",
+            "family": "Nagaraj",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sudipta",
+            "family": "Mukhopadhyay",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaofeng",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Medical Imaging 2003: PACS and Integrated Medical Information Systems: Design and Evaluation"
+        ],
+        "URL": "https://doi.org/10.1117/12.480466"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/jetcas.2025.3538652",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Learned Image Compression With Efficient Cross-Platform Entropy Coding"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0002-4233-0211",
+            "authenticated-orcid": false,
+            "given": "Runyu",
+            "family": "Yang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "MOE Key Laboratory of Brain-Inspired Intelligent Perception and Cognition, University of Science and Technology of China, Hefei, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9100-2906",
+            "authenticated-orcid": false,
+            "given": "Dong",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "MOE Key Laboratory of Brain-Inspired Intelligent Perception and Cognition, University of Science and Technology of China, Hefei, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7266-5579",
+            "authenticated-orcid": false,
+            "given": "Feng",
+            "family": "Wu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "MOE Key Laboratory of Brain-Inspired Intelligent Perception and Cognition, University of Science and Technology of China, Hefei, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8070-802X",
+            "authenticated-orcid": false,
+            "given": "Wen",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Journal on Emerging and Selected Topics in Circuits and Systems"
+        ],
+        "URL": "https://doi.org/10.1109/jetcas.2025.3538652"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/pcs56426.2022.10018076",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Tensor Network-Based Entropy Coding For Learned Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Xiaoxuan",
+            "family": "Fan",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,School of Electronic Information and Electrical Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wen",
+            "family": "Fei",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,School of Electronic Information and Electrical Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wenrui",
+            "family": "Dai",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,School of Electronic Information and Electrical Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chenglin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,School of Electronic Information and Electrical Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Junni",
+            "family": "Zou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,School of Electronic Information and Electrical Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hongkai",
+            "family": "Xiong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,School of Electronic Information and Electrical Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2022 Picture Coding Symposium (PCS)"
+        ],
+        "URL": "https://doi.org/10.1109/pcs56426.2022.10018076"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1109/83.777082",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Conditional entropy coding of VQ indexes for image compression"
+        ],
+        "author": [
+          {
+            "family": "Xiaolin Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jiang Wen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Wing Hung Wong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Image Processing"
+        ],
+        "URL": "https://doi.org/10.1109/83.777082"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/dcc.2018.00017",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Entropy Coding and Entropy Coding Improvements of JPEG XS"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Richter",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fraunhofer-Inst. fr Integrierte Schaltungen, Erlangen, Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Joachim",
+            "family": "Keinert",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer-Inst. fr Integrierte Schaltungen, Erlangen, Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Antonin",
+            "family": "Descampe",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "intoPIX s.a., Mont St. Guibert, Belgium"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gael",
+            "family": "Rouvroy",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "intoPIX s.a., Mont St. Guibert, Belgium"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2018 Data Compression Conference"
+        ],
+        "URL": "https://doi.org/10.1109/dcc.2018.00017"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/pcs.2012.6213377",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A complexity scalable entropy coding scheme for video compression"
+        ],
+        "author": [
+          {
+            "given": "Tung",
+            "family": "Nguyen",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Detlev",
+            "family": "Marpe",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Bross",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Valeri",
+            "family": "George",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Heiner",
+            "family": "Kirchhoffer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Matthias",
+            "family": "Preiss",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mischa",
+            "family": "Siekmann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jan",
+            "family": "Stegemann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas",
+            "family": "Wiegand",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 Picture Coding Symposium"
+        ],
+        "URL": "https://doi.org/10.1109/pcs.2012.6213377"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1109/icaica52286.2021.9498040",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Algorithm of Genome Sequence Compression Based on Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Hui",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 IEEE International Conference on Artificial Intelligence and Computer Applications (ICAICA)"
+        ],
+        "URL": "https://doi.org/10.1109/icaica52286.2021.9498040"
+      },
+      {
+        "publisher": "Allerton Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.3103/s8756699011010079",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Efficient image compression by coding of low-entropy sources"
+        ],
+        "author": [
+          {
+            "given": "M. P.",
+            "family": "Bakulina",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              5,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Optoelectronics, Instrumentation and Data Processing"
+        ],
+        "URL": "https://doi.org/10.3103/s8756699011010079"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1109/access.2024.3350643",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "HDVC: Deep Video Compression With Hyperprior-Based Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Yusong",
+            "family": "Hu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Electronic Engineering, Xidian University, Xi&#x2019;an, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0299-7206",
+            "authenticated-orcid": false,
+            "given": "Cheolkon",
+            "family": "Jung",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electronic Engineering, Xidian University, Xi&#x2019;an, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Qipu",
+            "family": "Qin",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electronic Engineering, Xidian University, Xi&#x2019;an, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiang",
+            "family": "Han",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electronic Engineering, Xidian University, Xi&#x2019;an, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yang",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Guangdong OPPO Mobile Telecommunications Corporation Ltd., Dongguan, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ming",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Guangdong OPPO Mobile Telecommunications Corporation Ltd., Dongguan, China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Access"
+        ],
+        "URL": "https://doi.org/10.1109/access.2024.3350643"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-1754-6_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy and Coding"
+        ],
+        "author": [
+          {
+            "given": "Yuli",
+            "family": "You",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              6,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "Audio Coding"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-1754-6_8"
+      },
+      {
+        "DOI": "10.1017/cbo9780511984655.005",
+        "title": [
+          "Entropy coding techniques"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              10,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Digital Signal Compression"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511984655.005"
+      },
+      {
+        "DOI": "10.1017/cbo9781316588284.003",
+        "title": [
+          "Entropy and Coding"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              9,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Compact Data Structures"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9781316588284.003"
+      },
+      {
+        "DOI": "10.1017/cbo9780511810787.015",
+        "title": [
+          "Entropy and coding"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              9,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Mathematics of Digital Images"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/cbo9780511810787.015"
+      },
+      {
+        "publisher": "SPIE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              8,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1117/12.797357",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Split field coding: low complexity error-resilient entropy coding for image compression"
+        ],
+        "author": [
+          {
+            "given": "James J.",
+            "family": "Meany",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christopher J.",
+            "family": "Martens",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPIE Proceedings",
+          "Applications of Digital Image Processing XXXI"
+        ],
+        "URL": "https://doi.org/10.1117/12.797357"
+      },
+      {
+        "publisher": "Cambridge University Press (CUP)",
+        "published-print": {
+          "date-parts": [
+            [
+              1986,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1017/s014338570000359x",
+        "type": "journal-article",
+        "is-referenced-by-count": 44,
+        "title": [
+          "Chains, entropy, coding"
+        ],
+        "author": [
+          {
+            "given": "Karl",
+            "family": "Petersen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              9,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Ergodic Theory and Dynamical Systems"
+        ],
+        "URL": "https://doi.org/10.1017/s014338570000359x"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf01071523",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "?-Entropy data compression"
+        ],
+        "author": [
+          {
+            "given": "I. Ya.",
+            "family": "Tyrygin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Ukrainian Mathematical Journal"
+        ],
+        "URL": "https://doi.org/10.1007/bf01071523"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1007/3-540-55210-3_209",
+        "type": "book-chapter",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Compression and entropy"
+        ],
+        "author": [
+          {
+            "given": "Georges",
+            "family": "Hansel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dominique",
+            "family": "Perrin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Imre",
+            "family": "Simon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "STACS 92"
+        ],
+        "URL": "https://doi.org/10.1007/3-540-55210-3_209"
+      },
+      {
+        "publisher": "Institute of Advanced Engineering and Science",
+        "DOI": "10.11591/ijeecs.v38.i3.pp1870-1879",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Region based lossless compression for digital images using entropy coding"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-5285-9990",
+            "authenticated-orcid": false,
+            "given": "Mangalapalli",
+            "family": "Vamsikrishna",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0001-0481-0567",
+            "authenticated-orcid": false,
+            "given": "Oggi",
+            "family": "Sudhakar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0637-7258",
+            "authenticated-orcid": false,
+            "given": "Bhagya Prasad",
+            "family": "Bugge",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3417-803X",
+            "authenticated-orcid": false,
+            "given": "Asileti Suneel",
+            "family": "Kumar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3752-2075",
+            "authenticated-orcid": false,
+            "given": "Blessy",
+            "family": "Thankachan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3182-1528",
+            "authenticated-orcid": false,
+            "given": "K.B.V.S.R.",
+            "family": "Subrahmanyam",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1241-203X",
+            "authenticated-orcid": false,
+            "given": "Natha",
+            "family": "Deepthi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-3948-0601",
+            "authenticated-orcid": false,
+            "given": "Praveen",
+            "family": "Mande",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              6,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Indonesian Journal of Electrical Engineering and Computer Science"
+        ],
+        "URL": "https://doi.org/10.11591/ijeecs.v38.i3.pp1870-1879"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              5,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1145/3387902.3394037",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Adaptive entropy coding method for stream-based lossless data compression"
+        ],
+        "author": [
+          {
+            "given": "Shinichi",
+            "family": "Yamagiwa",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Tsukuba, Tsukuba, Ibaraki, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Eisaku",
+            "family": "Hayakawa",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Tsukuba, Tsukuba, Ibaraki, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Koichi",
+            "family": "Marumo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Tsukuba, Tsukuba, Ibaraki, Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              5,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 17th ACM International Conference on Computing Frontiers"
+        ],
+        "URL": "https://doi.org/10.1145/3387902.3394037"
+      },
+      {
+        "publisher": "IOSR Journals",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.9790/0661-1903035360",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy Driven Bit Coding For Image Compression In Medical Application"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Jagadeesh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Nagabhooshanam",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "IOSR Journal of Computer Engineering"
+        ],
+        "URL": "https://doi.org/10.9790/0661-1903035360"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/compsc.2014.7032638",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Entropy of Malayalam language and text compression using Huffman coding"
+        ],
+        "author": [
+          {
+            "given": "Melbin",
+            "family": "Kuruvila",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Deepa P.",
+            "family": "Gopinath",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2014 First International Conference on Computational Systems and Communications (ICCSC)"
+        ],
+        "URL": "https://doi.org/10.1109/compsc.2014.7032638"
+      },
+      {
+        "DOI": "10.1109/ccece.1998.685583",
+        "title": [
+          "Improving fractal image compression schemes through quantization and entropy coding"
+        ],
+        "author": [
+          {
+            "given": "M.",
+            "family": "Ghazel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.K.",
+            "family": "Khandani",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.R.",
+            "family": "Vrscay",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Conference Proceedings. IEEE Canadian Conference on Electrical and Computer Engineering (Cat. No.98TH8341)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/ccece.1998.685583"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/ecace.2017.7912997",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Edge-based transformation and entropy coding for lossless image compression"
+        ],
+        "author": [
+          {
+            "given": "Md. Ahasan",
+            "family": "Kabir",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M. Rubaiyat Hossain",
+            "family": "Mondal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2017 International Conference on Electrical, Computer and Communication Engineering (ECCE)"
+        ],
+        "URL": "https://doi.org/10.1109/ecace.2017.7912997"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1109/vcip53242.2021.9675405",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "GPU-Intensive Fast Entropy Coding Framework for Neural Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Hiroaki",
+            "family": "Akutsu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Research &#x0026; Development Group, Hitachi, Ltd.,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takahiro",
+            "family": "Naruko",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Research &#x0026; Development Group, Hitachi, Ltd.,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Akifumi",
+            "family": "Suzuki",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Research &#x0026; Development Group, Hitachi, Ltd.,Japan"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 International Conference on Visual Communications and Image Processing (VCIP)"
+        ],
+        "URL": "https://doi.org/10.1109/vcip53242.2021.9675405"
+      },
+      {
+        "publisher": "i-manager Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              15
+            ]
+          ]
+        },
+        "DOI": "10.26634/jip.1.3.2963",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "New Lifting Wavelets based Medical Image Compression with Entropy Coding"
+        ],
+        "author": [
+          {
+            "name": "Head, Department of Electronics and Communications, S V College of Engineering.",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Hazarathaiah",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B. Prabhakara",
+            "family": "Rao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Rector, Jawarhalal Nehru technological University, Kakinada.",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "i-manager's Journal on Image Processing"
+        ],
+        "URL": "https://doi.org/10.26634/jip.1.3.2963"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/technologies11050132",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Fast and Efficient Entropy Coding Architectures for Massive Data Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3208-9957",
+            "authenticated-orcid": false,
+            "given": "Francesc",
+            "family": "Auli-Llinas",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Information and Communications Engineering, Universitat Autònoma de Barcelona, 08193 Bellaterra, Spain"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              9,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Technologies"
+        ],
+        "URL": "https://doi.org/10.3390/technologies11050132"
+      },
+      {
+        "DOI": "10.1109/dcc.1997.582047",
+        "title": [
+          "Efficient context-based entropy coding for lossy wavelet image compression"
+        ],
+        "author": [
+          {
+            "given": "C.",
+            "family": "Chrysafis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Ortega",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings DCC '97. Data Compression Conference"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 72,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/dcc.1997.582047"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1109/aiid51893.2021.9456529",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Improved Model Compression Method Based on Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Chao",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wen-Han",
+            "family": "Dong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Duo-Xiu",
+            "family": "Hu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chen-Fei",
+            "family": "Zhai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2021 IEEE International Conference on Artificial Intelligence and Industrial Design (AIID)"
+        ],
+        "URL": "https://doi.org/10.1109/aiid51893.2021.9456529"
+      },
+      {
+        "DOI": "10.1109/isit.1993.748527",
+        "title": [
+          "Data Compression with Side Information and Graph Entropy"
+        ],
+        "author": [
+          {
+            "given": "A.",
+            "family": "Orlitsky",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings. IEEE International Symposium on Information Theory"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/isit.1993.748527"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.1109/radioelek.2007.371460",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Properties of Entropy Coding for 3D DCT Video Compression Method"
+        ],
+        "author": [
+          {
+            "given": "Tomas",
+            "family": "Fryza",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2007 17th International Conference Radioelektronika"
+        ],
+        "URL": "https://doi.org/10.1109/radioelek.2007.371460"
+      },
+      {
+        "DOI": "10.5040/9781350011816.ch-004",
+        "title": [
+          "Information Entropy and Physical Entropy"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "container-title": [
+          "An Epistemology of Noise"
+        ],
+        "publisher": "Bloomsbury Academic",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.5040/9781350011816.ch-004"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4614-1183-3_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Outlier-Resilient Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Jordi",
+            "family": "Portell",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Alberto G.",
+            "family": "Villafranca",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Enrique",
+            "family": "García-Berro",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Satellite Data Compression"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4614-1183-3_5"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-06895-4_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Entropy Coding in HEVC"
+        ],
+        "author": [
+          {
+            "given": "Vivienne",
+            "family": "Sze",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Detlev",
+            "family": "Marpe",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              6,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "Integrated Circuits and Systems",
+          "High Efficiency Video Coding (HEVC)"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-06895-4_8"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-009-7206-3_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Göran",
+            "family": "Lindblad",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Non-Equilibrium Entropy and Irreversibility"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-009-7206-3_3"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1109/26.380217",
+        "type": "journal-article",
+        "is-referenced-by-count": 17,
+        "title": [
+          "Block truncation coding with entropy coding"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Franti",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "O.",
+            "family": "Nevalainen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Communications"
+        ],
+        "URL": "https://doi.org/10.1109/26.380217"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4615-6199-6_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hardware for Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Vasudev",
+            "family": "Bhaskaran",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Konstantinos",
+            "family": "Konstantinides",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Image and Video Compression Standards"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4615-6199-6_12"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              1,
+              26
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780470041970.ch3",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Quantization and Entropy Coding"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              12,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Audio Signal Processing and Coding"
+        ],
+        "URL": "https://doi.org/10.1002/9780470041970.ch3"
+      },
+      {
+        "publisher": "Apple Academic Press",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              5,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1201/9780429022937-23",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Francisco",
+            "family": "Torrens",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gloria",
+            "family": "Castellano",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "New Frontiers in Nanochemistry"
+        ],
+        "URL": "https://doi.org/10.1201/9780429022937-23"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-06994-9_6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Carl S.",
+            "family": "Young",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Advanced Sciences and Technologies for Security Applications",
+          "Cybercomplexity"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-06994-9_6"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-88486-4_10",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Müller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Handbook of Dynamics and Probability"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-88486-4_10"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              1992
+            ]
+          ]
+        },
+        "DOI": "10.1109/icassp.1992.226503",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Chip set for high performance lossless image compression and entropy coding"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Venbrux",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "[Proceedings] ICASSP-92: 1992 IEEE International Conference on Acoustics, Speech, and Signal Processing"
+        ],
+        "URL": "https://doi.org/10.1109/icassp.1992.226503"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/vtcfall.2016.7881185",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Quantization and Entropy Coding Scheme for Dictionary Learning Based Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Juan",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiaoming",
+            "family": "Tao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xijia",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ning",
+            "family": "Ge",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jianhua",
+            "family": "Lu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2016 IEEE 84th Vehicular Technology Conference (VTC-Fall)"
+        ],
+        "URL": "https://doi.org/10.1109/vtcfall.2016.7881185"
+      },
+      {
+        "publisher": "SPIIRAS",
+        "DOI": "10.15622/sp.58.5",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Improving Efficiency of Entropy Coding Method in Modern Video Compression Standards"
+        ],
+        "author": [
+          {
+            "given": "Van Truong",
+            "family": "Nguyen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andrey Alexandrovitch",
+            "family": "Tropchenko",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              6,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "SPIIRAS Proceedings"
+        ],
+        "URL": "https://doi.org/10.15622/sp.58.5"
+      },
+      {
+        "publisher": "Foundation of Computer Science",
+        "DOI": "10.5120/ijca2016912147",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Medical Image Compression using Adaptive Prediction and Block based Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Ekta",
+            "family": "Ashok",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jagruti",
+            "family": "Save",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              11,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Computer Applications"
+        ],
+        "URL": "https://doi.org/10.5120/ijca2016912147"
+      },
+      {
+        "publisher": "Defense Technical Information Center",
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              4,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.21236/ada296328",
+        "type": "report",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Wideband Audio Compression using Subband Coding and Entropy-Constrained Scalar Quantization."
+        ],
+        "author": [
+          {
+            "given": "Trevor R.",
+            "family": "Trinkaus",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.21236/ada296328"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11071-018-4689-9",
+        "type": "journal-article",
+        "is-referenced-by-count": 34,
+        "title": [
+          "Joint image compression–encryption scheme using entropy coding and compressive sensing"
+        ],
+        "author": [
+          {
+            "given": "Yanjie",
+            "family": "Song",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7595-4720",
+            "authenticated-orcid": false,
+            "given": "Zhiliang",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wei",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Li",
+            "family": "Guo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xue",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hai",
+            "family": "Yu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "Nonlinear Dynamics"
+        ],
+        "URL": "https://doi.org/10.1007/s11071-018-4689-9"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/icip49359.2023.10222067",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Content-Adaptive Parallel Entropy Coding for End-to-End Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Shujia",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Peking University,Wangxuan Institute of Computer Technology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dezhao",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,Wangxuan Institute of Computer Technology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zejia",
+            "family": "Fan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,Wangxuan Institute of Computer Technology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jiaying",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,Wangxuan Institute of Computer Technology,Beijing,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2023 IEEE International Conference on Image Processing (ICIP)"
+        ],
+        "URL": "https://doi.org/10.1109/icip49359.2023.10222067"
+      },
+      {
+        "publisher": "Institute of Advanced Engineering and Science",
+        "DOI": "10.11591/ijeecs.v10.i1.pp176-183",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Comparison of Entropy Coding mechanism on IEEE1857.2 Lossless Audio Compression Standard"
+        ],
+        "author": [
+          {
+            "given": "Fathiah",
+            "family": "Abdul Muin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Teddy",
+            "family": "Surya Gunawan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mira",
+            "family": "Kartiwi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Elsheikh",
+            "family": "M.A. Elsheikh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Indonesian Journal of Electrical Engineering and Computer Science"
+        ],
+        "URL": "https://doi.org/10.11591/ijeecs.v10.i1.pp176-183"
+      },
+      {
+        "DOI": "10.1109/icassp.1997.595447",
+        "title": [
+          "Context modeling and entropy coding of wavelet coefficients for image compression"
+        ],
+        "author": [
+          {
+            "family": "Xiaolin Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jian-huo Chen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "1997 IEEE International Conference on Acoustics, Speech, and Signal Processing"
+        ],
+        "publisher": "IEEE Comput. Soc. Press",
+        "is-referenced-by-count": 0,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icassp.1997.595447"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1995
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-2358-8_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hardware for Entropy Coding"
+        ],
+        "author": [
+          {
+            "given": "Vasudev",
+            "family": "Bhaskaran",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Konstantinos",
+            "family": "Konstantinides",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Image and Video Compression Standards"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-2358-8_12"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2002
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4615-0799-4_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy and Coding Techniques"
+        ],
+        "author": [
+          {
+            "given": "David S.",
+            "family": "Taubman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Michael W.",
+            "family": "Marcellin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "JPEG2000 Image Compression Fundamentals, Standards and Practice"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4615-0799-4_2"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1980,
+              12,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1214/aop/1176994570",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Abstract Alphabet Sliding-Block Entropy Compression Coding with a Fidelity Criterion"
+        ],
+        "author": [
+          {
+            "given": "James G.",
+            "family": "Dunham",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Probability"
+        ],
+        "URL": "https://doi.org/10.1214/aop/1176994570"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/icip.2012.6466963",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A unified and complexity scalable entropy coding scheme for video compression"
+        ],
+        "author": [
+          {
+            "given": "Matthias",
+            "family": "Preiss",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Detlev",
+            "family": "Marpe",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Benjamin",
+            "family": "Bross",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Valeri",
+            "family": "George",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Heiner",
+            "family": "Kirchhoffer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Tung",
+            "family": "Nguyen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mischa",
+            "family": "Siekmann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jan",
+            "family": "Stegemann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Thomas",
+            "family": "Wiegand",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Image Processing Department, Einsteinufer 37, D-10587 Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2012 19th IEEE International Conference on Image Processing"
+        ],
+        "URL": "https://doi.org/10.1109/icip.2012.6466963"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.neunet.2026.109111",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "TextEconomizer: Enhancing lossy text compression with denoising transformers and entropy coding"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0006-6043-4507",
+            "authenticated-orcid": false,
+            "given": "Mahbub E",
+            "family": "Sobhani",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0009-3687-1370",
+            "authenticated-orcid": false,
+            "given": "Anika Tasnim",
+            "family": "Rodela",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Chowdhury Mofizur",
+            "family": "Rahman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6413-4898",
+            "authenticated-orcid": false,
+            "given": "Dewan Md.",
+            "family": "Farid",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0669-072X",
+            "authenticated-orcid": false,
+            "given": "Swakkhar",
+            "family": "Shatabda",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Neural Networks"
+        ],
+        "URL": "https://doi.org/10.1016/j.neunet.2026.109111"
+      },
+      {
+        "publisher": "EDP Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1051/epjconf/202024501001",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Fast and Efficient Entropy Compression of ALICE Data using ANS Coding"
+        ],
+        "author": [
+          {
+            "given": "Michael",
+            "family": "Lettrich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              11,
+              16
+            ]
+          ]
+        },
+        "container-title": [
+          "EPJ Web of Conferences"
+        ],
+        "URL": "https://doi.org/10.1051/epjconf/202024501001"
+      },
+      {
+        "publisher": "Springer Netherlands",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-009-0307-4_4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 23,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "J. A.",
+            "family": "Núñez",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P. M.",
+            "family": "Cincotta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F. C.",
+            "family": "Wachlin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chaos in Gravitational N-Body Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-94-009-0307-4_4"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.1007/bf00051604",
+        "type": "journal-article",
+        "is-referenced-by-count": 85,
+        "title": [
+          "Information entropy"
+        ],
+        "author": [
+          {
+            "given": "J. A.",
+            "family": "N��ez",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "P. M.",
+            "family": "Cincotta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "F. C.",
+            "family": "Wachlin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "CELESTIAL MECHANICS AND DYNAMICAL ASTRONOMY"
+        ],
+        "URL": "https://doi.org/10.1007/bf00051604"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/tip.2002.804279",
+        "type": "journal-article",
+        "is-referenced-by-count": 80,
+        "title": [
+          "Context-based entropy coding of block transform coefficients for image compression"
+        ],
+        "author": [
+          {
+            "given": "C.",
+            "family": "Tu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "T.D.",
+            "family": "Tran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Image Processing"
+        ],
+        "URL": "https://doi.org/10.1109/tip.2002.804279"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1006/jvci.1993.1025",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Entropy and Image Compression"
+        ],
+        "author": [
+          {
+            "given": "Nassrin",
+            "family": "Tavakoli",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Visual Communication and Image Representation"
+        ],
+        "URL": "https://doi.org/10.1006/jvci.1993.1025"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              12,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1109/vcip67698.2025.11396855",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Efficient Conditional Entropy Coding for Learned Progressive Image and Video Compression"
+        ],
+        "author": [
+          {
+            "given": "Haolin",
+            "family": "Luan",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shuoyu",
+            "family": "Ma",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shaohui",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Zhejiang University,College of Information Science and Electronic Engineering,Hangzhou,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wenrui",
+            "family": "Dai",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Nuowen",
+            "family": "Kan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chenglin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Junni",
+            "family": "Zou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hongkai",
+            "family": "Xiong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Shanghai Jiao Tong University,Department of Electronic Engineering,Shanghai,China"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2025 International Conference on Visual Communications and Image Processing (VCIP)"
+        ],
+        "URL": "https://doi.org/10.1109/vcip67698.2025.11396855"
+      },
+      {
+        "publisher": "Institute of Image Information and Television Engineers",
+        "published-print": {
+          "date-parts": [
+            [
+              1989
+            ]
+          ]
+        },
+        "DOI": "10.3169/itej1978.43.1361",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Introduction to image data compression techniques.(7). Image data coding algorithm. (IV). Entropy coding."
+        ],
+        "author": [
+          {
+            "given": "Shigeo",
+            "family": "Kato",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Journal of the Institute of Television Engineers of Japan"
+        ],
+        "URL": "https://doi.org/10.3169/itej1978.43.1361"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/innovations.2015.7381538",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "An enhanced fractal image compression integrating quantized quadtrees and entropy coding"
+        ],
+        "author": [
+          {
+            "given": "Rasha Adel",
+            "family": "Ibrahim",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sherin M.",
+            "family": "Youssef",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Saleh Mesbah",
+            "family": "Elkaffas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 11th International Conference on Innovations in Information Technology (IIT)"
+        ],
+        "URL": "https://doi.org/10.1109/innovations.2015.7381538"
+      },
+      {
+        "DOI": "10.1007/springerreference_16328",
+        "title": [
+          "information entropy"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_16328"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0613-6_8924",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "information entropy"
+        ],
+        "author": [
+          {
+            "given": "Martin H.",
+            "family": "Weik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Computer Science and Communications Dictionary"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0613-6_8924"
+      },
+      {
+        "publisher": "InTech",
+        "DOI": "10.5772/63401",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Jan",
+            "family": "Urban",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Applications from Engineering with MATLAB Concepts"
+        ],
+        "URL": "https://doi.org/10.5772/63401"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              3,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781118033265.ch3",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Data Compression and Entropy"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Foundations of Coding"
+        ],
+        "URL": "https://doi.org/10.1002/9781118033265.ch3"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-044453096-7/50003-x",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Information Entropy"
+        ],
+        "author": [
+          {
+            "given": "Kohei",
+            "family": "Ogawa",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chemical Engineering"
+        ],
+        "URL": "https://doi.org/10.1016/b978-044453096-7/50003-x"
+      },
+      {
+        "publisher": "Turkiye Klinikleri",
+        "DOI": "10.5336/biostatic.2020-74305",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Entropy, Information and Entropy Correlation Coefficient"
+        ],
+        "author": [
+          {
+            "given": "Mehmet Onur",
+            "family": "KAYA",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yunus",
+            "family": "GÜRAL",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mehmet",
+            "family": "GÜRCAN",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": [
+          "Turkiye Klinikleri Journal of Biostatistics"
+        ],
+        "URL": "https://doi.org/10.5336/biostatic.2020-74305"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              9,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.1002/047174882x.ch2",
+        "type": "other",
+        "is-referenced-by-count": 82,
+        "title": [
+          "Entropy, Relative Entropy, and Mutual Information"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              4,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Elements of Information Theory"
+        ],
+        "URL": "https://doi.org/10.1002/047174882x.ch2"
+      },
+      {
+        "DOI": "10.1002/0471200611.ch2",
+        "title": [
+          "Entropy, Relative Entropy and Mutual Information"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2001,
+              10,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Elements of Information Theory"
+        ],
+        "publisher": "Wiley",
+        "is-referenced-by-count": 95,
+        "type": "other",
+        "URL": "https://doi.org/10.1002/0471200611.ch2"
+      },
+      {
+        "DOI": "10.2139/ssrn.6458760",
+        "title": [
+          "War as Entropy Compression"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0003-4876-2610",
+            "authenticated-orcid": true,
+            "given": "Truong Xuan",
+            "family": "Khanh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0007-2598-6696",
+            "authenticated-orcid": true,
+            "given": "Quynh Hoa",
+            "family": "Truong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luong Thanh",
+            "family": "Tran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 0,
+        "type": "posted-content",
+        "URL": "https://doi.org/10.2139/ssrn.6458760"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              1996
+            ]
+          ]
+        },
+        "DOI": "10.1109/dcc.1996.488366",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Combination coding: a new entropy coding technique"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Fawcett",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of Data Compression Conference - DCC '96"
+        ],
+        "URL": "https://doi.org/10.1109/dcc.1996.488366"
+      },
+      {
+        "DOI": "10.1109/icassp.2006.1660404",
+        "title": [
+          "An Entropy Coding Scheme for Multi-Component Scalable Motion Information"
+        ],
+        "author": [
+          {
+            "given": "T.",
+            "family": "Zgaljic",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Mrak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N.",
+            "family": "Sprljan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Izquierdo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2006 IEEE International Conference on Acoustics Speed and Signal Processing Proceedings"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 1,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/icassp.2006.1660404"
+      },
+      {
+        "DOI": "10.1007/978-3-540-74607-2_98",
+        "title": [
+          "Improved Algorithm of Error-Resilient Entropy Coding Using State Information"
+        ],
+        "author": [
+          {
+            "given": "Yong",
+            "family": "Fang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gwanggil",
+            "family": "Jeon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jechang",
+            "family": "Jeong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Chengke",
+            "family": "Wu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yangli",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Advanced Concepts for Intelligent Vision Systems"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-74607-2_98"
+      },
+      {
+        "publisher": "Springer Science and Business Media LLC",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1007/s11227-021-03971-6",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "An efficient parallel entropy coding method for JPEG compression based on GPU"
+        ],
+        "author": [
+          {
+            "given": "Fushun",
+            "family": "Zhu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9231-3175",
+            "authenticated-orcid": false,
+            "given": "Hua",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              7,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "The Journal of Supercomputing"
+        ],
+        "URL": "https://doi.org/10.1007/s11227-021-03971-6"
+      },
+      {
+        "DOI": "10.1109/esscirc.2003.1257100",
+        "title": [
+          "A low-power entropy-coding analog/digital converter with integrated data compression"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Peck",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Schroeder",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "ESSCIRC 2004 - 29th European Solid-State Circuits Conference (IEEE Cat. No.03EX705)"
+        ],
+        "publisher": "IEEE",
+        "is-referenced-by-count": 7,
+        "type": "proceedings-article",
+        "URL": "https://doi.org/10.1109/esscirc.2003.1257100"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

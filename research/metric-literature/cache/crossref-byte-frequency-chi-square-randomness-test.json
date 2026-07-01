@@ -1,5 +1,3293 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=byte+frequency+chi-square+randomness+test&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 1338890,
+    "items": [
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1982,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0003-4975(10)60833-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Kenneth L.",
+            "family": "Kayser",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Thoracic Surgery"
+        ],
+        "URL": "https://doi.org/10.1016/s0003-4975(10)60833-8"
+      },
+      {
+        "DOI": "10.1056/nejm195910222611718",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1959,
+              10,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "New England Journal of Medicine"
+        ],
+        "publisher": "Massachusetts Medical Society",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1056/nejm195910222611718"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9780470479216.corpsy0174",
+        "type": "other",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Chi‐Square Test"
+        ],
+        "author": [
+          {
+            "given": "Joseph S.",
+            "family": "Rossi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "The Corsini Encyclopedia of Psychology"
+        ],
+        "URL": "https://doi.org/10.1002/9780470479216.corpsy0174"
+      },
+      {
+        "DOI": "10.4135/9780857020116.n19",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "container-title": [
+          "The SAGE Dictionary of Social Research Methods"
+        ],
+        "publisher": "SAGE Publications, Ltd",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9780857020116.n19"
+      },
+      {
+        "DOI": "10.4135/9781412983303.n2",
+        "title": [
+          "Chi Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1984
+            ]
+          ]
+        },
+        "container-title": [
+          "Analysis of Nominal Data"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4135/9781412983303.n2"
+      },
+      {
+        "DOI": "10.5040/9798216400646.ch-011",
+        "title": [
+          "Chi Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": [
+          "Practical Statistics for Educators"
+        ],
+        "publisher": "Rowman & Littlefield",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.5040/9798216400646.ch-011"
+      },
+      {
+        "DOI": "10.1007/978-0-387-32833-1_57",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "container-title": [
+          "The Concise Encyclopedia of Statistics"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 4,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-32833-1_57"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.4324/9780203067659-13",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Carsten",
+            "family": "Roever",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aek",
+            "family": "Phakiti",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Quantitative methods for Second Language Research"
+        ],
+        "URL": "https://doi.org/10.4324/9780203067659-13"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781003673903-7",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-square test"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3271-4230",
+            "authenticated-orcid": false,
+            "given": "Yeoh Sok",
+            "family": "Foon",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "An Introductory Guide to Quantitative Data Analysis and Interpretation using SPSS 30"
+        ],
+        "URL": "https://doi.org/10.4324/9781003673903-7"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4614-6227-9_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Randall",
+            "family": "Schumacker",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sara",
+            "family": "Tomek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              12,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Understanding Statistics Using R"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4614-6227-9_8"
+      },
+      {
+        "publisher": "Routledge India",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781032671703-11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "R.",
+            "family": "Panneerselvam",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Business Statistics Using Excel"
+        ],
+        "URL": "https://doi.org/10.4324/9781032671703-11"
+      },
+      {
+        "DOI": "10.1007/978-1-4020-5614-7_382",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Public Health"
+        ],
+        "publisher": "Springer Netherlands",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-1-4020-5614-7_382"
+      },
+      {
+        "DOI": "10.4135/9781412961288.n48",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Research Design"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781412961288.n48"
+      },
+      {
+        "DOI": "10.4135/9781071812082.n79",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "container-title": [
+          "The SAGE Encyclopedia of Research Design"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781071812082.n79"
+      },
+      {
+        "publisher": "ScopeMed",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.5455/jmood.20160803110534",
+        "type": "journal-article",
+        "is-referenced-by-count": 20,
+        "title": [
+          "Chi-square Test"
+        ],
+        "author": [
+          {
+            "given": "Selim",
+            "family": "Kilic",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Mood Disorders"
+        ],
+        "URL": "https://doi.org/10.5455/jmood.20160803110534"
+      },
+      {
+        "DOI": "10.4135/9781412953948.n69",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Epidemiology"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781412953948.n69"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              6,
+              13
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781315179803-36",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Fred",
+            "family": "Pyrczak",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Deborah M.",
+            "family": "Oh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Making Sense of Statistics"
+        ],
+        "URL": "https://doi.org/10.4324/9781315179803-36"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781405165518.wbeos0804",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi Square Test"
+        ],
+        "author": [
+          {
+            "given": "Nicolas",
+            "family": "Delorme",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "The Blackwell Encyclopedia of Sociology"
+        ],
+        "URL": "https://doi.org/10.1002/9781405165518.wbeos0804"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1054/ebog.2001.0223",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Chi-square test"
+        ],
+        "author": [
+          {
+            "given": "Salim",
+            "family": "Daya",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Evidence-based Obstetrics &amp; Gynecology"
+        ],
+        "URL": "https://doi.org/10.1054/ebog.2001.0223"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1982,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0003-4975(10)60834-x",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "suffix": "Jr.",
+            "given": "Jairus D.",
+            "family": "Flora",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Thoracic Surgery"
+        ],
+        "URL": "https://doi.org/10.1016/s0003-4975(10)60834-x"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              2014
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-41714-6_31813",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "chi-square test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Dictionary Geotechnical Engineering/Wörterbuch GeoTechnik"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-41714-6_31813"
+      },
+      {
+        "DOI": "10.1007/springerreference_60821",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 5,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_60821"
+      },
+      {
+        "DOI": "10.5040/9780761892625.ch-012",
+        "title": [
+          "Chi Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Practical Statistics for Business"
+        ],
+        "publisher": "University Press of America",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.5040/9780761892625.ch-012"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              5,
+              19
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781003299356-38",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Deborah",
+            "family": "Mikyo Oh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fred",
+            "family": "Pyrczak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Making Sense of Statistics"
+        ],
+        "URL": "https://doi.org/10.4324/9781003299356-38"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-99-7390-3_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Yanxia",
+            "family": "Luo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hongbo",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Textbook of Medical Statistics"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-99-7390-3_9"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119454205.ch9",
+        "type": "other",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Chi‐Square Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              14
+            ]
+          ]
+        },
+        "container-title": [
+          "An Introduction to Statistical Analysis in Research"
+        ],
+        "URL": "https://doi.org/10.1002/9781119454205.ch9"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1982,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0003-4975(10)60835-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Creighton B.",
+            "family": "Wright",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Thoracic Surgery"
+        ],
+        "URL": "https://doi.org/10.1016/s0003-4975(10)60835-1"
+      },
+      {
+        "DOI": "10.4135/9781412950589.n116",
+        "title": [
+          "CHI-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "container-title": [
+          "The SAGE Encyclopedia of Social Science Research Methods"
+        ],
+        "publisher": "Sage Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781412950589.n116"
+      },
+      {
+        "DOI": "10.1007/springerreference_81750",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 3,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_81750"
+      },
+      {
+        "DOI": "10.4135/9781473995734",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "publisher": "SAGE Publications Ltd",
+        "is-referenced-by-count": 3,
+        "URL": "https://doi.org/10.4135/9781473995734"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-58292-0_30471",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedic Dictionary of Archaeology"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-58292-0_30471"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              1987
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4612-4974-0_43",
+        "type": "book-chapter",
+        "is-referenced-by-count": 103,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Ronald J.",
+            "family": "Tallarida",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rodney B.",
+            "family": "Murray",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Manual of Pharmacologic Calculations"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4612-4974-0_43"
+      },
+      {
+        "publisher": "Qeios",
+        "DOI": "10.32388/mcmpyf",
+        "type": "reference-entry",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test"
+        ],
+        "author": [
+          {
+            "name": "National Cancer Institute",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Definitions"
+        ],
+        "URL": "https://doi.org/10.32388/mcmpyf"
+      },
+      {
+        "DOI": "10.4135/9781506326139.n109",
+        "title": [
+          "Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "container-title": [
+          "The SAGE Encyclopedia of Educational Research, Measurement, and\n\t\t\t\t\tEvaluation"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781506326139.n109"
+      },
+      {
+        "publisher": "Springer Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-13-0827-7_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Chi-Square Test (χ2 – Test)"
+        ],
+        "author": [
+          {
+            "given": "Charan Singh",
+            "family": "Rayat",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              8,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistical Methods in Medical Research"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-13-0827-7_9"
+      },
+      {
+        "DOI": "10.4135/9781412985987.n12",
+        "title": [
+          "The Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics for the Social Sciences"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 5,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4135/9781412985987.n12"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/0471667196.ess0239.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi‐Square Test—I"
+        ],
+        "author": [
+          {
+            "given": "Gary G.",
+            "family": "Koch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Vasant P.",
+            "family": "Bhapkar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess0239.pub2"
+      },
+      {
+        "DOI": "10.4135/9781412950589.n538",
+        "title": [
+          "McNemar's Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "container-title": [
+          "The SAGE Encyclopedia of Social Science Research Methods"
+        ],
+        "publisher": "Sage Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781412950589.n538"
+      },
+      {
+        "publisher": "Brill | Wageningen Academic",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              30
+            ]
+          ]
+        },
+        "DOI": "10.3920/9789086869282_009",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-square independence test"
+        ],
+        "author": [
+          {
+            "given": "J.",
+            "family": "Berčík",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Gálová",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Pavelka",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The use of consumer neuroscience in aroma marketing"
+        ],
+        "URL": "https://doi.org/10.3920/9789086869282_009"
+      },
+      {
+        "publisher": "Wiley",
+        "DOI": "10.1002/9781118445112.stat02721",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Friedman's Chi‐Square Test"
+        ],
+        "author": [
+          {
+            "given": "D. R.",
+            "family": "Jensen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              9,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Wiley StatsRef: Statistics Reference Online"
+        ],
+        "URL": "https://doi.org/10.1002/9781118445112.stat02721"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              6,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119383628.ch7",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Contingency Chi‐Square Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "A Practical Approach to Using Statistics in Health Research"
+        ],
+        "URL": "https://doi.org/10.1002/9781119383628.ch7"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              11,
+              20
+            ]
+          ]
+        },
+        "DOI": "10.1002/9781119531708.ch17",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Chi‐Square Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              11,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistical Applications for the Behavioral and Social Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/9781119531708.ch17"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ajodo.2016.08.009",
+        "type": "journal-article",
+        "is-referenced-by-count": 139,
+        "title": [
+          "The chi-square test"
+        ],
+        "author": [
+          {
+            "given": "Nikolaos",
+            "family": "Pandis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "American Journal of Orthodontics and Dentofacial Orthopedics"
+        ],
+        "URL": "https://doi.org/10.1016/j.ajodo.2016.08.009"
+      },
+      {
+        "DOI": "10.4135/9781529695380",
+        "title": [
+          "Chi-Square GOF Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "publisher": "Duke Learning Innovation",
+        "is-referenced-by-count": 0,
+        "type": "database",
+        "URL": "https://doi.org/10.4135/9781529695380"
+      },
+      {
+        "publisher": "Jaypee Brothers Medical Publishers (P) Ltd.",
+        "DOI": "10.5005/jp/books/12646_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Chi-square Test"
+        ],
+        "author": [
+          {
+            "given": "Arun",
+            "family": "Khanal",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "container-title": [
+          "Mahajan's Methods in Biostatistics for Medical Students and Research Workers"
+        ],
+        "URL": "https://doi.org/10.5005/jp/books/12646_12"
+      },
+      {
+        "publisher": "International Virtual Ophthalmic Research Center",
+        "DOI": "10.51329/mehdioptometry234",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Chi-square test applications"
+        ],
+        "author": [
+          {
+            "given": "Parisa",
+            "family": "Ataee Dizaji",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Fatemeh",
+            "family": "Heidary",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Reza",
+            "family": "Gharebaghi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Medical hypothesis, discovery &amp; innovation in optometry"
+        ],
+        "URL": "https://doi.org/10.51329/mehdioptometry234"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-0-387-78650-6_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "The Chi Square Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              7,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "The Uncertainty in Physical Measurements"
+        ],
+        "URL": "https://doi.org/10.1007/978-0-387-78650-6_11"
+      },
+      {
+        "publisher": "Jaypee Brothers Medical Publishers (P) Ltd.",
+        "DOI": "10.5005/jp/books/10102_15",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test (X2)"
+        ],
+        "author": [
+          {
+            "given": "GN",
+            "family": "Prabhakara",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "container-title": [
+          "Biostatistics"
+        ],
+        "URL": "https://doi.org/10.5005/jp/books/10102_15"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1177/1098214011426594",
+        "type": "journal-article",
+        "is-referenced-by-count": 401,
+        "title": [
+          "The Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Todd Michael",
+            "family": "Franke",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Social Welfare, Meyer and Rene Luskin School of Public Affairs, University of California, Los Angeles, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Timothy",
+            "family": "Ho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Education, Graduate School of Education and Information Sciences, University of California, Los Angeles, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christina A.",
+            "family": "Christie",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Education, Social Research Methods Division, Graduate School of Education and Information Sciences, University of California, Los Angeles, CA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "American Journal of Evaluation"
+        ],
+        "URL": "https://doi.org/10.1177/1098214011426594"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1002/0471667196.ess0832.pub2",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Friedman's Chi‐Square Test"
+        ],
+        "author": [
+          {
+            "given": "D. R.",
+            "family": "Jensen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              8,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Statistical Sciences"
+        ],
+        "URL": "https://doi.org/10.1002/0471667196.ess0832.pub2"
+      },
+      {
+        "publisher": "Springer Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-10-0401-8_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Abdul Quader",
+            "family": "Miah",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Applied Statistics for Social and Management Sciences"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-10-0401-8_8"
+      },
+      {
+        "DOI": "10.4324/9781410600875-39",
+        "title": [
+          "CHI-SQUARE TEST STATISTIC"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              3,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Understanding Statistical Concepts Using S-plus"
+        ],
+        "publisher": "Psychology Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9781410600875-39"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789812388889_0008",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Chi-Square Test"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistical Methods of Analysis"
+        ],
+        "URL": "https://doi.org/10.1142/9789812388889_0008"
+      },
+      {
+        "publisher": "Nepal Journals Online (JOL)",
+        "DOI": "10.3126/jucms.v3i3.24250",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "The Chi-Square test: a frequency data based statistical device"
+        ],
+        "author": [
+          {
+            "given": "Ashok",
+            "family": "Kumar",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Universal College of Medical Sciences"
+        ],
+        "URL": "https://doi.org/10.3126/jucms.v3i3.24250"
+      },
+      {
+        "DOI": "10.4324/9780203496787-25",
+        "title": [
+          "Analysing frequency data: chi-square"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              6,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics Explained"
+        ],
+        "publisher": "Routledge",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9780203496787-25"
+      },
+      {
+        "publisher": "SAGE Publications",
+        "published-print": {
+          "date-parts": [
+            [
+              1970,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1177/0008068319700304",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Robustness of Frequency Chi-Square"
+        ],
+        "author": [
+          {
+            "given": "Shoutir Kishore",
+            "family": "Chatterjee",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Calcutta University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1970,
+              9,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Calcutta Statistical Association Bulletin"
+        ],
+        "URL": "https://doi.org/10.1177/0008068319700304"
+      },
+      {
+        "publisher": "Springer Nature Singapore",
+        "published-print": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-981-19-4411-6_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Chi-Square Test of Significance"
+        ],
+        "author": [
+          {
+            "given": "Basant Kumar",
+            "family": "Das",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dharm Nath",
+            "family": "Jha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sanjeev Kumar",
+            "family": "Sahu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Anil Kumar",
+            "family": "Yadav",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rohan Kumar",
+            "family": "Raman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Kartikeyan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Concept Building in Fisheries Data Analysis"
+        ],
+        "URL": "https://doi.org/10.1007/978-981-19-4411-6_5"
+      },
+      {
+        "DOI": "10.1007/978-0-387-32833-1_58",
+        "title": [
+          "Chi-square Test of Independence"
+        ],
+        "container-title": [
+          "The Concise Encyclopedia of Statistics"
+        ],
+        "publisher": "Springer New York",
+        "is-referenced-by-count": 2,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-0-387-32833-1_58"
+      },
+      {
+        "DOI": "10.4324/9781410600004-15",
+        "title": [
+          "FREQUENCY DATA AND CHI-SQUARE"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              7,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Empirical Direction in Design and Analysis"
+        ],
+        "publisher": "Psychology Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9781410600004-15"
+      },
+      {
+        "DOI": "10.4324/9781315797564-26",
+        "title": [
+          "Analysing Frequency Data: Chi-Square"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              3,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics Explained"
+        ],
+        "publisher": "Routledge",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9781315797564-26"
+      },
+      {
+        "DOI": "10.4135/9781544318912.n21",
+        "title": [
+          "Chi-Square Test of Independence"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "container-title": [
+          "Using IBM® SPSS® Statistics: An Interactive Hands-On Approach"
+        ],
+        "publisher": "SAGE Publications, Inc",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4135/9781544318912.n21"
+      },
+      {
+        "DOI": "10.1007/978-1-4020-5614-7_3476",
+        "title": [
+          "Test of Independence, Chi-Square"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Public Health"
+        ],
+        "publisher": "Springer Netherlands",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-1-4020-5614-7_3476"
+      },
+      {
+        "DOI": "10.4135/9781483329543.n9",
+        "title": [
+          "Chi-Square Test of Independence"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Compassionate Statistics: Applied Quantitative Analysis for\n                    Social Services, with exercises and instructions in SPSS"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4135/9781483329543.n9"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              16
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781003377009-21",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test of Independence"
+        ],
+        "author": [
+          {
+            "given": "Deborah",
+            "family": "Mikyo Oh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Joshua",
+            "family": "Moonyup Kim",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPSS Basics"
+        ],
+        "URL": "https://doi.org/10.4324/9781003377009-21"
+      },
+      {
+        "DOI": "10.1201/9781482277814-23",
+        "title": [
+          "Chi Square Test of Significance"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              12,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Handbook of Statistics for Teaching and Research in Plant and Crop Science"
+        ],
+        "publisher": "CRC Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1201/9781482277814-23"
+      },
+      {
+        "DOI": "10.1007/978-1-4020-5614-7_3475",
+        "title": [
+          "Test of Homogeneity, Chi-Square"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Public Health"
+        ],
+        "publisher": "Springer Netherlands",
+        "is-referenced-by-count": 2,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-1-4020-5614-7_3475"
+      },
+      {
+        "publisher": "Chapman and Hall/CRC",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781315182452-15",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hypothesis Testing: Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Robert",
+            "family": "Ho",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Understanding Statistics for the Social Sciences with IBM SPSS"
+        ],
+        "URL": "https://doi.org/10.4324/9781315182452-15"
+      },
+      {
+        "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1137/1129052",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "A Sequential Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "A. P.",
+            "family": "Germogenov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A. F.",
+            "family": "Ronzhin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Theory of Probability &amp; Its Applications"
+        ],
+        "URL": "https://doi.org/10.1137/1129052"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-6247-8_15178",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-square Test of Independence"
+        ],
+        "author": [
+          {
+            "given": "Jan W.",
+            "family": "Gooch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedic Dictionary of Polymers"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-6247-8_15178"
+      },
+      {
+        "DOI": "10.4135/9781529695397",
+        "title": [
+          "The Chi-Square Independence Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "publisher": "Duke Learning Innovation",
+        "is-referenced-by-count": 0,
+        "type": "database",
+        "URL": "https://doi.org/10.4135/9781529695397"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-6247-8_15176",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-square Test of Association"
+        ],
+        "author": [
+          {
+            "given": "Jan W.",
+            "family": "Gooch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedic Dictionary of Polymers"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-6247-8_15176"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-6247-8_15177",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-square Test of Homogeneity"
+        ],
+        "author": [
+          {
+            "given": "Jan W.",
+            "family": "Gooch",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Encyclopedic Dictionary of Polymers"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-6247-8_15177"
+      },
+      {
+        "DOI": "10.7717/peerj.12743/table-3",
+        "title": [
+          "Table 3: Chi-square test."
+        ],
+        "publisher": "PeerJ",
+        "is-referenced-by-count": 0,
+        "type": "component",
+        "URL": "https://doi.org/10.7717/peerj.12743/table-3"
+      },
+      {
+        "DOI": "10.4135/9781412952644.n79",
+        "title": [
+          "Chi-Square Test for Independence"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Measurement and Statistics"
+        ],
+        "publisher": "Sage Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.4135/9781412952644.n79"
+      },
+      {
+        "DOI": "10.1007/springerreference_221286",
+        "title": [
+          "Chi-square Test of Independence"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_221286"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1961,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.2307/2003103",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Restricted Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Churchill",
+            "family": "Eisenhart",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E.",
+            "family": "Fix",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J. L.",
+            "family": "Hodges",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "E. L.",
+            "family": "Lehmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematics of Computation"
+        ],
+        "URL": "https://doi.org/10.2307/2003103"
+      },
+      {
+        "publisher": "University of Chicago Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1965,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1086/627087",
+        "type": "journal-article",
+        "is-referenced-by-count": 7,
+        "title": [
+          "The Tukey Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "G. V.",
+            "family": "Middleton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Journal of Geology"
+        ],
+        "URL": "https://doi.org/10.1086/627087"
+      },
+      {
+        "publisher": "International Academy Publishing (IAP)",
+        "DOI": "10.4304/jcp.8.10.2469-2477",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "A Malware Variant Detection Method Based on Byte Randomness Test"
+        ],
+        "author": [
+          {
+            "given": "Shuhui",
+            "family": "Qi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ming",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ning",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computers"
+        ],
+        "URL": "https://doi.org/10.4304/jcp.8.10.2469-2477"
+      },
+      {
+        "DOI": "10.1007/springerreference_84843",
+        "title": [
+          "Test of Homogeneity, Chi-Square"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_84843"
+      },
+      {
+        "DOI": "10.1007/springerreference_60822",
+        "title": [
+          "Chi-square Test of Independence"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 2,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_60822"
+      },
+      {
+        "publisher": "Jaypee Brothers Medical Publishers (P) Ltd.",
+        "DOI": "10.5005/jp/books/10462_21",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chapter-21 Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "JP",
+            "family": "Baride",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "container-title": [
+          "Manual of Biostatistics"
+        ],
+        "URL": "https://doi.org/10.5005/jp/books/10462_21"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1080/10485252.2011.608849",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Averaged shifted chi-square test"
+        ],
+        "author": [
+          {
+            "given": "Jyh-Shyang",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wen-Shuenn",
+            "family": "Deng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Nonparametric Statistics"
+        ],
+        "URL": "https://doi.org/10.1080/10485252.2011.608849"
+      },
+      {
+        "publisher": "Institute of Mathematical Statistics",
+        "published-print": {
+          "date-parts": [
+            [
+              1958,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1214/aoms/1177706453",
+        "type": "journal-article",
+        "is-referenced-by-count": 56,
+        "title": [
+          "On the Limiting Power Function of the Frequency Chi-Square Test"
+        ],
+        "author": [
+          {
+            "given": "Sujit Kumar",
+            "family": "Mitra",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Annals of Mathematical Statistics"
+        ],
+        "URL": "https://doi.org/10.1214/aoms/1177706453"
+      },
+      {
+        "publisher": "Macmillan Education UK",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-349-14777-9_16",
+        "type": "book-chapter",
+        "is-referenced-by-count": 7,
+        "title": [
+          "The chi-square test for independence"
+        ],
+        "author": [
+          {
+            "given": "George",
+            "family": "Argyrous",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Statistics for Social Research"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-349-14777-9_16"
+      },
+      {
+        "publisher": "Jaypee Brothers Medical Publishers (P) Ltd.",
+        "DOI": "10.5005/jp/books/11703_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Chapter-11 The Chi-square Test"
+        ],
+        "author": [
+          {
+            "given": "BK",
+            "family": "Mahajan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "container-title": [
+          "Methods in Biostatistics"
+        ],
+        "URL": "https://doi.org/10.5005/jp/books/11703_11"
+      },
+      {
+        "publisher": "Springer India",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-81-322-0786-3_3",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Chi-Square Test and Its Application"
+        ],
+        "author": [
+          {
+            "given": "J. P.",
+            "family": "Verma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              10,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Data Analysis in Management with SPSS Software"
+        ],
+        "URL": "https://doi.org/10.1007/978-81-322-0786-3_3"
+      },
+      {
+        "DOI": "10.7717/peerj.11975/supp-2",
+        "title": [
+          "Supplemental Information 2: Chi-square test"
+        ],
+        "publisher": "PeerJ",
+        "is-referenced-by-count": 0,
+        "type": "component",
+        "URL": "https://doi.org/10.7717/peerj.11975/supp-2"
+      },
+      {
+        "DOI": "10.2139/ssrn.1284265",
+        "title": [
+          "Chi-Square Goodness-of-Fit Test"
+        ],
+        "author": [
+          {
+            "given": "Phillip E.",
+            "family": "Pfeifer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SSRN Electronic Journal"
+        ],
+        "publisher": "Elsevier BV",
+        "is-referenced-by-count": 1,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.2139/ssrn.1284265"
+      },
+      {
+        "DOI": "10.4324/9780203851173-18",
+        "title": [
+          "The Chi-Square Test of Independence"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              1,
+              11
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics in Plain English"
+        ],
+        "publisher": "Routledge",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9780203851173-18"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-97289-8_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Chi-Square Test of Significance"
+        ],
+        "author": [
+          {
+            "given": "B. Roy",
+            "family": "Frieden",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Information Sciences",
+          "Probability, Statistical Optics, and Data Testing"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-97289-8_11"
+      },
+      {
+        "DOI": "10.4324/9781315266312-62",
+        "title": [
+          "Introduction to the Chi-Square Test"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              9,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Understanding Research Methods"
+        ],
+        "publisher": "Routledge",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4324/9781315266312-62"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789814566780_0005",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test for Categorical Variable"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              3
+            ]
+          ]
+        },
+        "container-title": [
+          "Medical Statistics and Computer Experiments"
+        ],
+        "URL": "https://doi.org/10.1142/9789814566780_0005"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              1,
+              27
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781003028154-18",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "The Chi-Square Test of Independence"
+        ],
+        "author": [
+          {
+            "given": "Ronald D.",
+            "family": "Yockey",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPSS Demystified"
+        ],
+        "URL": "https://doi.org/10.4324/9781003028154-18"
+      },
+      {
+        "DOI": "10.4135/9781506300160.n11",
+        "title": [
+          "Chi-Square Test for Categorical Data"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "container-title": [
+          "Learning Statistics Using R"
+        ],
+        "publisher": "SAGE Publications, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4135/9781506300160.n11"
+      },
+      {
+        "publisher": "SciVee, Inc",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              5,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.4016/48266.01",
+        "type": "dataset",
+        "is-referenced-by-count": 0,
+        "title": [
+          "STATA Tutorial - RxC/Chi Square Test"
+        ],
+        "author": [
+          {
+            "given": "T",
+            "family": "Tom",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S",
+            "family": "Choi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M",
+            "family": "Nguyen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SciVee"
+        ],
+        "URL": "https://doi.org/10.4016/48266.01"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-96732-0_11",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "The Chi-Square Test of Significance"
+        ],
+        "author": [
+          {
+            "given": "B. Roy",
+            "family": "Frieden",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Information Sciences",
+          "Probability, Statistical Optics, and Data Testing"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-642-96732-0_11"
+      },
+      {
+        "publisher": "Croatian Society for Medical Biochemistry and Laboratory Medicine",
+        "DOI": "10.11613/bm.2013.018",
+        "type": "journal-article",
+        "is-referenced-by-count": 2180,
+        "title": [
+          "The Chi-square test of independence"
+        ],
+        "author": [
+          {
+            "given": "Mary L.",
+            "family": "McHugh",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "container-title": [
+          "Biochemia Medica"
+        ],
+        "URL": "https://doi.org/10.11613/bm.2013.018"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789812793522_0006",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chi-Square Test for Categorical Variable"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              21
+            ]
+          ]
+        },
+        "container-title": [
+          "Medical Statistics and Computer Experiments"
+        ],
+        "URL": "https://doi.org/10.1142/9789812793522_0006"
+      },
+      {
+        "publisher": "Routledge",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              8,
+              22
+            ]
+          ]
+        },
+        "DOI": "10.4324/9781315268545-18",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "The Chi-Square Test of Independence"
+        ],
+        "author": [
+          {
+            "given": "Ronald D.",
+            "family": "Yockey",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SPSS® Demystified"
+        ],
+        "URL": "https://doi.org/10.4324/9781315268545-18"
+      },
+      {
+        "publisher": "Tohoku University Medical Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1959
+            ]
+          ]
+        },
+        "DOI": "10.1620/tjem.71.27",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Graphical Method of Chi-square Test"
+        ],
+        "author": [
+          {
+            "given": "Mitsuo",
+            "family": "Kamoi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Public Health, Tohoku University School of Medicine"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yoshio",
+            "family": "Noye",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Public Health, Tohoku University School of Medicine"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Tohoku Journal of Experimental Medicine"
+        ],
+        "URL": "https://doi.org/10.1620/tjem.71.27"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }

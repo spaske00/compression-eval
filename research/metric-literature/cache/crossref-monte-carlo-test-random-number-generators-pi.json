@@ -1,5 +1,4829 @@
 {
-  "_error": "TimeoutError",
-  "_body": "The read operation timed out",
-  "_url": "https://api.crossref.org/works?query.title=Monte+Carlo+test+random+number+generators+pi&rows=40&sort=is-referenced-by-count&order=desc&select=DOI%2Ctitle%2Cauthor%2Cpublished-print%2Cpublished-online%2Ccontainer-title%2Cpublisher%2Cis-referenced-by-count%2Ctype%2CURL&mailto=noreply%40example.com"
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 1354424,
+    "items": [
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789814635790_0018",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators and Monte Carlo Method"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              12,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Introduction to Computational Mathematics"
+        ],
+        "URL": "https://doi.org/10.1142/9789814635790_0018"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jval.2012.08.1514",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "PRM50 Random Number Generators in Monte Carlo Simulation"
+        ],
+        "author": [
+          {
+            "given": "P.",
+            "family": "Mcewan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "V.",
+            "family": "Foos",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Chraibi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Lloyd",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.L.",
+            "family": "Palmer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Lamotte",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "D.",
+            "family": "Grant",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Value in Health"
+        ],
+        "URL": "https://doi.org/10.1016/j.jval.2012.08.1514"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physreve.58.5183",
+        "type": "journal-article",
+        "is-referenced-by-count": 12,
+        "title": [
+          "Using random number generators in Monte Carlo simulations"
+        ],
+        "author": [
+          {
+            "given": "F. J.",
+            "family": "Resende",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B. V.",
+            "family": "Costa",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1998,
+              10,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review E"
+        ],
+        "URL": "https://doi.org/10.1103/physreve.58.5183"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129183194000726",
+        "type": "journal-article",
+        "is-referenced-by-count": 68,
+        "title": [
+          "ANALYSIS OF RANDOM NUMBER GENERATORS USING MONTE CARLO SIMULATION"
+        ],
+        "author": [
+          {
+            "given": "P.D.",
+            "family": "CODDINGTON",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Northeast Parallel Architectures Center, Syracuse University 111 College Place, Syracuse, NY 13244, U.S.A."
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Modern Physics C"
+        ],
+        "URL": "https://doi.org/10.1142/s0129183194000726"
+      },
+      {
+        "publisher": "Optica Publishing Group",
+        "published-print": {
+          "date-parts": [
+            [
+              1987
+            ]
+          ]
+        },
+        "DOI": "10.1364/optcomp.1987.md9",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte-Carlo Processor Arrays Using Optical Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "F.",
+            "family": "Devos",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.",
+            "family": "Madani",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "P.",
+            "family": "Chavel",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Taboury",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Topical Meeting on Optical Computing"
+        ],
+        "URL": "https://doi.org/10.1364/optcomp.1987.md9"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1515/mcma-2012-0005",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Parallel random number generators in Monte Carlo derivative pricing: An application-based test"
+        ],
+        "author": [
+          {
+            "given": "Michael",
+            "family": "Mascagni",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lin-Yee",
+            "family": "Hin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Monte Carlo Methods and Applications"
+        ],
+        "URL": "https://doi.org/10.1515/mcma-2012-0005"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1002/jcc.21509",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Random number generators tested on quantum Monte Carlo simulations"
+        ],
+        "author": [
+          {
+            "given": "Kenta",
+            "family": "Hongo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ryo",
+            "family": "Maezono",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kenichi",
+            "family": "Miura",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              6,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computational Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/jcc.21509"
+      },
+      {
+        "publisher": "American Physical Society (APS)",
+        "DOI": "10.1103/physrevlett.69.3382",
+        "type": "journal-article",
+        "is-referenced-by-count": 318,
+        "title": [
+          "Monte Carlo simulations: Hidden errors from ‘‘good’’ random number generators"
+        ],
+        "author": [
+          {
+            "given": "Alan M.",
+            "family": "Ferrenberg",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "D. P.",
+            "family": "Landau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Y. Joanna",
+            "family": "Wong",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              1992,
+              12,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Physical Review Letters"
+        ],
+        "URL": "https://doi.org/10.1103/physrevlett.69.3382"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.nima.2020.164172",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Selection of random number generators in GATE Monte Carlo toolkit"
+        ],
+        "author": [
+          {
+            "given": "Fatemeh",
+            "family": "Sepehri",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mahdi",
+            "family": "Hajivaliei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hossein",
+            "family": "Rajabi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment"
+        ],
+        "URL": "https://doi.org/10.1016/j.nima.2020.164172"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1984,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1080/00949658408810711",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Impact of random number generators in time series monte carlo simulation"
+        ],
+        "author": [
+          {
+            "given": "Jostein",
+            "family": "Paulsen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2007,
+              3,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Computation and Simulation"
+        ],
+        "URL": "https://doi.org/10.1080/00949658408810711"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129183195000642",
+        "type": "journal-article",
+        "is-referenced-by-count": 29,
+        "title": [
+          "ERRORS IN MONTE CARLO SIMULATIONS USING SHIFT REGISTER RANDOM NUMBER GENERATORS"
+        ],
+        "author": [
+          {
+            "given": "F.",
+            "family": "SCHMID",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institut für Physik, Johannes Gutenberg Universität Mainz, D-55099 Mainz, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "N. B.",
+            "family": "WILDING",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Institut für Physik, Johannes Gutenberg Universität Mainz, D-55099 Mainz, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              11,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Modern Physics C"
+        ],
+        "URL": "https://doi.org/10.1142/s0129183195000642"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1016/0266-9838(91)90002-8",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Testing random number generators for microcomputer applications of Monte Carlo simulation"
+        ],
+        "author": [
+          {
+            "given": "A.A.",
+            "family": "Jennings",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "S.",
+            "family": "Mohan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Environmental Software"
+        ],
+        "URL": "https://doi.org/10.1016/0266-9838(91)90002-8"
+      },
+      {
+        "publisher": "AIP Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              9,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1063/5.0199568",
+        "type": "journal-article",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Comparing pseudo- and quantum-random number generators with Monte Carlo simulations"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-1428-9397",
+            "authenticated-orcid": false,
+            "given": "David",
+            "family": "Cirauqui",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Quside Technologies SL, Mediterranean Technology Park 1 , 08860 Castelldefels, Barcelona, Spain"
+              },
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7092-838X",
+            "authenticated-orcid": false,
+            "given": "Miguel Ángel",
+            "family": "García-March",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              },
+              {
+                "name": "Instituto Universitario de Matemática Pura y Aplicada, Universitat Politècnica de València 3 , 46022 València, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Guillem",
+            "family": "Guigó Corominas",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8163-9353",
+            "authenticated-orcid": false,
+            "given": "Tobias",
+            "family": "Graß",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-2451-6776",
+            "authenticated-orcid": false,
+            "given": "Przemysław R.",
+            "family": "Grzybowski",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              },
+              {
+                "name": "Institute of Spintronics and Quantum Information, Faculty of Physics, Adam Mickiewicz University in Poznań 4 , Umultowska 85, 61-614 Poznań, Poland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9223-0660",
+            "authenticated-orcid": false,
+            "given": "Gorka",
+            "family": "Muñoz-Gil",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              },
+              {
+                "name": "Institute for Theoretical Physics, University of Innsbruck 5 , Technikerstr. 21a, A-6020 Innsbruck, Austria"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7966-9038",
+            "authenticated-orcid": false,
+            "given": "J. R. M.",
+            "family": "Saavedra",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Quside Technologies SL, Mediterranean Technology Park 1 , 08860 Castelldefels, Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0210-7800",
+            "authenticated-orcid": false,
+            "given": "Maciej",
+            "family": "Lewenstein",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "ICFO - Institut de Ciencies Fotòniques, The Barcelona Institute of Science and Technology 2 , 08860 Castelldefels, Barcelona, Spain"
+              },
+              {
+                "name": "ICREA 6 , Pg. Lluís Companys 23, 08010 Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              9,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "APL Quantum"
+        ],
+        "URL": "https://doi.org/10.1063/5.0199568"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/mwscas.2008.4616765",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Hardware accelerated Scalable Parallel Random Number Generators for Monte Carlo methods"
+        ],
+        "author": [
+          {
+            "family": "JunKyu Lee",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gregory D.",
+            "family": "Peterson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert J.",
+            "family": "Harrison",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Robert J.",
+            "family": "Hinde",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 51st Midwest Symposium on Circuits and Systems"
+        ],
+        "URL": "https://doi.org/10.1109/mwscas.2008.4616765"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1109/informatics.2015.7377817",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Monte Carlo simulation of the Young measures — Comparison of random-number generators"
+        ],
+        "author": [
+          {
+            "given": "Andrzej Z.",
+            "family": "Grzybowski",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Piotr",
+            "family": "Puchala",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2015 IEEE 13th International Scientific Conference on Informatics"
+        ],
+        "URL": "https://doi.org/10.1109/informatics.2015.7377817"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.jcp.2018.01.029",
+        "type": "journal-article",
+        "is-referenced-by-count": 21,
+        "title": [
+          "Random number generators for large-scale parallel Monte Carlo simulations on FPGA"
+        ],
+        "author": [
+          {
+            "given": "Y.",
+            "family": "Lin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3484-6349",
+            "authenticated-orcid": false,
+            "given": "F.",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Computational Physics"
+        ],
+        "URL": "https://doi.org/10.1016/j.jcp.2018.01.029"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cpc.2010.12.008",
+        "type": "journal-article",
+        "is-referenced-by-count": 29,
+        "title": [
+          "Pseudo-random number generators for Monte Carlo simulations on ATI Graphics Processing Units"
+        ],
+        "author": [
+          {
+            "given": "Vadim",
+            "family": "Demchik",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Physics Communications"
+        ],
+        "URL": "https://doi.org/10.1016/j.cpc.2010.12.008"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cpc.2007.10.002",
+        "type": "journal-article",
+        "is-referenced-by-count": 14,
+        "title": [
+          "Improving Random Number Generators in the Monte Carlo simulations via twisting and combining"
+        ],
+        "author": [
+          {
+            "given": "Lih-Yuan",
+            "family": "Deng",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Rui",
+            "family": "Guo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dennis K.J.",
+            "family": "Lin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fengshan",
+            "family": "Bai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Physics Communications"
+        ],
+        "URL": "https://doi.org/10.1016/j.cpc.2007.10.002"
+      },
+      {
+        "publisher": "Book Publisher International (a part of SCIENCEDOMAIN International)",
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              29
+            ]
+          ]
+        },
+        "DOI": "10.9734/bpi/ctmcs/v3/10247d",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "On the Evaluation Criteria for Random Number Generators Using Monte Carlo Integration Algorithm"
+        ],
+        "author": [
+          {
+            "given": "Kasra",
+            "family": "Amini",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aidin",
+            "family": "Momtaz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ehsan",
+            "family": "Qoreishi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sarah",
+            "family": "Amini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sanaz",
+            "family": "Haddadian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              6,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Current Topics on Mathematics and Computer Science Vol. 3"
+        ],
+        "URL": "https://doi.org/10.9734/bpi/ctmcs/v3/10247d"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1996,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1006/jpdc.1996.0132",
+        "type": "journal-article",
+        "is-referenced-by-count": 28,
+        "title": [
+          "Quasirandom Number Generators for Parallel Monte Carlo Algorithms"
+        ],
+        "author": [
+          {
+            "given": "B.C.",
+            "family": "Bromley",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Parallel and Distributed Computing"
+        ],
+        "URL": "https://doi.org/10.1006/jpdc.1996.0132"
+      },
+      {
+        "DOI": "10.2969/msjmemoirs/025010000",
+        "title": [
+          "Monte Carlo Method, Random Number, and Pseudorandom Number"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "container-title": [
+          "Mathematical Society of Japan Memoirs"
+        ],
+        "publisher": "The Mathematical Society of Japan",
+        "is-referenced-by-count": 3,
+        "type": "edited-book",
+        "URL": "https://doi.org/10.2969/msjmemoirs/025010000"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1016/0370-2693(85)90705-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 19,
+        "title": [
+          "Long range correlations in random number generators and their influence on Monte Carlo simulations"
+        ],
+        "author": [
+          {
+            "given": "Thomas",
+            "family": "Filk",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mihail",
+            "family": "Marcu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Klaus",
+            "family": "Fredenhagen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Physics Letters B"
+        ],
+        "URL": "https://doi.org/10.1016/0370-2693(85)90705-1"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/reconfig.2008.38",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 16,
+        "title": [
+          "FPGA Implementation of Pseudo Random Number Generators for Monte Carlo Methods in Quantitative Finance"
+        ],
+        "author": [
+          {
+            "given": "Simon",
+            "family": "Banks",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Philip",
+            "family": "Beadling",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Andras",
+            "family": "Ferencz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2008 International Conference on Reconfigurable Computing and FPGAs"
+        ],
+        "URL": "https://doi.org/10.1109/reconfig.2008.38"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1080/00401706.2000.10485723",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generation and Monte Carlo Methods"
+        ],
+        "author": [
+          {
+            "given": "Craig",
+            "family": "B. Borkowf",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Technometrics"
+        ],
+        "URL": "https://doi.org/10.1080/00401706.2000.10485723"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              1998
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4757-2960-3",
+        "type": "book",
+        "is-referenced-by-count": 189,
+        "title": [
+          "Random Number Generation and Monte Carlo Methods"
+        ],
+        "author": [
+          {
+            "given": "James E.",
+            "family": "Gentle",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Statistics and Computing"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4757-2960-3"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.2307/1270960",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Random Number Generation and Monte Carlo Methods"
+        ],
+        "author": [
+          {
+            "given": "Craig B.",
+            "family": "Borkowf",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "James E.",
+            "family": "Gentle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Technometrics"
+        ],
+        "URL": "https://doi.org/10.2307/1270960"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1198/tech.2004.s796",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Random Number Generation and Monte Carlo Methods"
+        ],
+        "author": [
+          {
+            "given": "B. D",
+            "family": "McCullough",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Technometrics"
+        ],
+        "URL": "https://doi.org/10.1198/tech.2004.s796"
+      },
+      {
+        "publisher": "Vieweg+Teubner Verlag",
+        "published-print": {
+          "date-parts": [
+            [
+              1983
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-663-14221-8_9",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte-Carlo-Pi"
+        ],
+        "author": [
+          {
+            "given": "Karl",
+            "family": "Achilles",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "BASIC und Pascal im Vergleich"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-663-14221-8_9"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1988
+            ]
+          ]
+        },
+        "DOI": "10.1109/49.192730",
+        "type": "journal-article",
+        "is-referenced-by-count": 54,
+        "title": [
+          "Monte Carlo simulation and random number generation"
+        ],
+        "author": [
+          {
+            "given": "R.F.W.",
+            "family": "Coates",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G.J.",
+            "family": "Janacek",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "K.V.",
+            "family": "Lever",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Journal on Selected Areas in Communications"
+        ],
+        "URL": "https://doi.org/10.1109/49.192730"
+      },
+      {
+        "DOI": "10.1108/k.2004.06733aae.007",
+        "title": [
+          "Random Number Generation and Monte Carlo methods"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2004,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Kybernetes"
+        ],
+        "publisher": "Emerald",
+        "is-referenced-by-count": 0,
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1108/k.2004.06733aae.007"
+      },
+      {
+        "DOI": "10.1007/b97336",
+        "title": [
+          "Random Number Generation and Monte Carlo Methods"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "container-title": [
+          "Statistics and Computing"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 14,
+        "type": "book",
+        "URL": "https://doi.org/10.1007/b97336"
+      },
+      {
+        "publisher": "Moscow University for Industry and Finance - Synergy",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              29
+            ]
+          ]
+        },
+        "DOI": "10.37791/2687-0649-2025-20-4-69-81",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Statistical g-test for random number generators"
+        ],
+        "author": [
+          {
+            "name": "Siberian State University of Telecommunications and Information Science",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0006-7660-9703",
+            "authenticated-orcid": false,
+            "given": "Semyon T.",
+            "family": "Afanasyev",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0361-2742",
+            "authenticated-orcid": false,
+            "given": "Ivan V.",
+            "family": "Nechta",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "Siberian State University of Telecommunications and Information Science",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal Of Applied Informatics"
+        ],
+        "URL": "https://doi.org/10.37791/2687-0649-2025-20-4-69-81"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-443-26598-3.00070-5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Monte Carlo event generators"
+        ],
+        "author": [
+          {
+            "given": "Jürgen",
+            "family": "Reuter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Reference Module in Materials Science and Materials Engineering"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-443-26598-3.00070-5"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1978,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1016/0010-4655(78)90080-2",
+        "type": "journal-article",
+        "is-referenced-by-count": 13,
+        "title": [
+          "Statistical test for pseudo-random number generators"
+        ],
+        "author": [
+          {
+            "given": "S.",
+            "family": "Garpman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "J.",
+            "family": "Randrup",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Physics Communications"
+        ],
+        "URL": "https://doi.org/10.1016/0010-4655(78)90080-2"
+      },
+      {
+        "publisher": "AIP",
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.2122130",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Monte Carlo event generators"
+        ],
+        "author": [
+          {
+            "given": "Stefano",
+            "family": "Frixione",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "AIP Conference Proceedings"
+        ],
+        "URL": "https://doi.org/10.1063/1.2122130"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-05362-2_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Monte Carlo Event Generators"
+        ],
+        "author": [
+          {
+            "given": "Michael H.",
+            "family": "Seymour",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Marilyn",
+            "family": "Marx",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              8,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "LHC Phenomenology"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-05362-2_8"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1993,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.2307/2290359",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Random Number Generation and Quasi-Monte Carlo Methods."
+        ],
+        "author": [
+          {
+            "given": "Bruce Jay",
+            "family": "Collings",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Harald",
+            "family": "Niederreiter",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the American Statistical Association"
+        ],
+        "URL": "https://doi.org/10.2307/2290359"
+      },
+      {
+        "publisher": "Society for Industrial and Applied Mathematics",
+        "published-print": {
+          "date-parts": [
+            [
+              1992,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1137/1.9781611970081",
+        "type": "monograph",
+        "is-referenced-by-count": 2084,
+        "title": [
+          "Random Number Generation and Quasi-Monte Carlo Methods"
+        ],
+        "author": [
+          {
+            "given": "Harald",
+            "family": "Niederreiter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              5,
+              25
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1137/1.9781611970081"
+      },
+      {
+        "DOI": "10.1017/9781009401531.026",
+        "title": [
+          "Monte Carlo event generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              7,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "Particle Detectors"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1017/9781009401531.026"
+      },
+      {
+        "publisher": "AIP",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.1063/1.3644298",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Monte Carlo Event Generators"
+        ],
+        "author": [
+          {
+            "given": "Steven",
+            "family": "Dytman",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B. S.",
+            "family": "Acharya",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Maury",
+            "family": "Goodman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Naba K.",
+            "family": "Mondal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "AIP Conference Proceedings"
+        ],
+        "URL": "https://doi.org/10.1063/1.3644298"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.nuclphysbps.2012.03.018",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Event Generators"
+        ],
+        "author": [
+          {
+            "given": "Stefan",
+            "family": "Gieseke",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Nuclear Physics B - Proceedings Supplements"
+        ],
+        "URL": "https://doi.org/10.1016/j.nuclphysbps.2012.03.018"
+      },
+      {
+        "DOI": "10.1017/cbo9780511534966.026",
+        "title": [
+          "Monte Carlo event generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              3,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Particle Detectors"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1017/cbo9780511534966.026"
+      },
+      {
+        "publisher": "Office of Scientific and Technical Information (OSTI)",
+        "DOI": "10.2172/973573",
+        "type": "report",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generation for Petascale Quantum Monte Carlo"
+        ],
+        "author": [
+          {
+            "family": "Ashok Srinivasan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              3,
+              16
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.2172/973573"
+      },
+      {
+        "publisher": "ACM",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              3,
+              24
+            ]
+          ]
+        },
+        "DOI": "10.1145/2016039.2016132",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Parallel random number generations for Monte Carlo simulation"
+        ],
+        "author": [
+          {
+            "given": "Ingyu",
+            "family": "Lee",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Troy University Troy, AL"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              3,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 49th Annual Southeast Regional Conference"
+        ],
+        "URL": "https://doi.org/10.1145/2016039.2016132"
+      },
+      {
+        "publisher": "Universal Wiser Publisher Pte. Ltd",
+        "DOI": "10.37256/cm.142020491",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Monte Carlo Approach Towards Evaluating Random Number Generators Based on Mathematical Schemes Driven from Chua's Circuit"
+        ],
+        "author": [
+          {
+            "given": "Kasra",
+            "family": "Amini",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Aidin Momtaz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Ehsan Qoreishi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Sarah Amini",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Sanaz Haddadian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              9,
+              17
+            ]
+          ]
+        },
+        "container-title": [
+          "Contemporary Mathematics"
+        ],
+        "URL": "https://doi.org/10.37256/cm.142020491"
+      },
+      {
+        "publisher": "American Nuclear Society",
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "DOI": "10.13182/xyz-47483",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Does Inherent Randomness in Monte Carlo Transport Calculations Mitigate the Effect of Poor Random Number Generators?"
+        ],
+        "author": [
+          {
+            "given": "Gibson",
+            "family": "Prall",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Christopher",
+            "family": "Perfetti",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering (M&amp;C 2025)"
+        ],
+        "URL": "https://doi.org/10.13182/xyz-47483"
+      },
+      {
+        "publisher": "Polish Mathematical Society",
+        "DOI": "10.14708/ma.v40i2.369",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Professor Ryszard Zieliński's contribution to Monte Carlo methods and random number generators. Uniform asymptotics in statistics"
+        ],
+        "author": [
+          {
+            "given": "Wojciech",
+            "family": "Niemiro",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              12,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Mathematica Applicanda"
+        ],
+        "URL": "https://doi.org/10.14708/ma.v40i2.369"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1109/led.2019.2919914",
+        "type": "journal-article",
+        "is-referenced-by-count": 33,
+        "title": [
+          "Physically Transient True Random Number Generators Based on Paired Threshold Switches Enabling Monte Carlo Method Applications"
+        ],
+        "author": [
+          {
+            "given": "Bingjie",
+            "family": "Dang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jing",
+            "family": "Sun",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Teng",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Saisai",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mo",
+            "family": "Zhao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Keqin",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Liying",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7319-3913",
+            "authenticated-orcid": false,
+            "given": "Jiadi",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Caidie",
+            "family": "Cheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Lin",
+            "family": "Bao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4674-4059",
+            "authenticated-orcid": false,
+            "given": "Yuchao",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0213-3523",
+            "authenticated-orcid": false,
+            "given": "Hong",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yue",
+            "family": "Hao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ru",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Electron Device Letters"
+        ],
+        "URL": "https://doi.org/10.1109/led.2019.2919914"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              12,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1002/jcc.25065",
+        "type": "journal-article",
+        "is-referenced-by-count": 11,
+        "title": [
+          "Comparison of a quantum random number generator with pseudorandom number generators for their use in molecular Monte Carlo simulations"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0630-0843",
+            "authenticated-orcid": false,
+            "given": "Dario",
+            "family": "Ghersi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Interdisciplinary Informatics University of Nebraska at Omaha Omaha Nebraska 68182"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Abhishek",
+            "family": "Parakh",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Interdisciplinary Informatics University of Nebraska at Omaha Omaha Nebraska 68182"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Mihaly",
+            "family": "Mezei",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Pharmacological Sciences Icahn School of Medicine at Mount Sinai New York New York 10029"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              9,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computational Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/jcc.25065"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              11,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1163/156939606779329017",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "A Repetition Test for Pseudo-Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Manuel",
+            "family": "Gil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gaston H.",
+            "family": "Gonnet",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wesley P.",
+            "family": "Petersen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Monte Carlo Methods and Applications"
+        ],
+        "URL": "https://doi.org/10.1163/156939606779329017"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/0360-8352(85)90008-7",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "New lagged product test for random number generators"
+        ],
+        "author": [
+          {
+            "given": "Kerry D.",
+            "family": "Figiel",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Dileep R.",
+            "family": "Sule",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computers &amp; Industrial Engineering"
+        ],
+        "URL": "https://doi.org/10.1016/0360-8352(85)90008-7"
+      },
+      {
+        "publisher": "MDPI AG",
+        "DOI": "10.3390/e22060630",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Time-Adaptive Statistical Test for Random Number Generators"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7232-9644",
+            "authenticated-orcid": false,
+            "given": "Boris",
+            "family": "Ryabko",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute of Computational Technologies of the Siberian Branch of the Russian Academy of Science, 630090 Novosibirsk, Russia"
+              },
+              {
+                "name": "Department of Information Technologies, Novosibirsk State University, 630090 Novosibirsk, Russia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Entropy"
+        ],
+        "URL": "https://doi.org/10.3390/e22060630"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.chaos.2018.11.024",
+        "type": "journal-article",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Spectral test of the MIXMAX random number generators"
+        ],
+        "author": [
+          {
+            "given": "Narek",
+            "family": "Martirosyan",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Konstantin",
+            "family": "Savvidy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "George",
+            "family": "Savvidy",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Chaos, Solitons &amp; Fractals"
+        ],
+        "URL": "https://doi.org/10.1016/j.chaos.2018.11.024"
+      },
+      {
+        "publisher": "Walter de Gruyter GmbH",
+        "published-print": {
+          "date-parts": [
+            [
+              2006,
+              1,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.1515/156939606779329017",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "A Repetition Test for Pseudo-Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Manuel",
+            "family": "Gil",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Gaston H.",
+            "family": "Gonnet",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Wesley P.",
+            "family": "Petersen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Monte Carlo Methods and Applications"
+        ],
+        "URL": "https://doi.org/10.1515/156939606779329017"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-12304-7_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Chuck",
+            "family": "Easttom",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "Modern Cryptography"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-12304-7_12"
+      },
+      {
+        "publisher": "Elsevier",
+        "published-print": {
+          "date-parts": [
+            [
+              1978
+            ]
+          ]
+        },
+        "DOI": "10.1016/b978-0-12-686150-1.50014-4",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "RANDOM NUMBER GENERATORS"
+        ],
+        "author": [
+          {
+            "given": "ARNE",
+            "family": "THESEN",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computer Methods in Operations Research"
+        ],
+        "URL": "https://doi.org/10.1016/b978-0-12-686150-1.50014-4"
+      },
+      {
+        "publisher": "Foundation for Open Access Statistic",
+        "DOI": "10.18637/jss.v011.b08",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Random Number Generation and Monte Carlo Methods (Second Edition)"
+        ],
+        "author": [
+          {
+            "given": "Rodney",
+            "family": "Sparapani",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2004
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Statistical Software"
+        ],
+        "URL": "https://doi.org/10.18637/jss.v011.b08"
+      },
+      {
+        "publisher": "Atomic Energy Society of Japan",
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "DOI": "10.3327/taesj.j10.023",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Study on Random Number Generator in Monte Carlo Code"
+        ],
+        "author": [
+          {
+            "given": "Kentaro",
+            "family": "OYA",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Takanori",
+            "family": "KITADA",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Shinichi",
+            "family": "TANAKA",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transactions of the Atomic Energy Society of Japan"
+        ],
+        "URL": "https://doi.org/10.3327/taesj.j10.023"
+      },
+      {
+        "publisher": "ACM Press",
+        "published-print": {
+          "date-parts": [
+            [
+              1959
+            ]
+          ]
+        },
+        "DOI": "10.1145/612201.612203",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Random number generators"
+        ],
+        "author": [
+          {
+            "given": "Martin",
+            "family": "Greenberger",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Preprints of papers presented at the 14th national meeting of the Association for Computing Machinery on   - ACM '59"
+        ],
+        "URL": "https://doi.org/10.1145/612201.612203"
+      },
+      {
+        "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+        "published-print": {
+          "date-parts": [
+            [
+              1962,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1137/1004061",
+        "type": "journal-article",
+        "is-referenced-by-count": 165,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "T. E.",
+            "family": "Hull",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "A. R.",
+            "family": "Dobell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "SIAM Review"
+        ],
+        "URL": "https://doi.org/10.1137/1004061"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1986
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-22246-1_27",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Manfred R.",
+            "family": "Schroeder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Information Sciences",
+          "Number Theory in Science and Communication"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-22246-1_27"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4615-5033-4_5",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random number generators"
+        ],
+        "author": [
+          {
+            "given": "Jerzy",
+            "family": "Tyszer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "The Kluwer International Series on Discrete Event Dynamic Systems",
+          "Object-Oriented Computer Simulation of Discrete-Event Systems"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4615-5033-4_5"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2008
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-0-387-69216-6_8",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Christiane",
+            "family": "Rousseau",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yvan",
+            "family": "Saint-Aubin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              7,
+              24
+            ]
+          ]
+        },
+        "container-title": [
+          "Springer Undergraduate Texts in Mathematics and Technology",
+          "Mathematics and Technology"
+        ],
+        "URL": "https://doi.org/10.1007/978-0-387-69216-6_8"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.apradiso.2009.11.037",
+        "type": "journal-article",
+        "is-referenced-by-count": 9,
+        "title": [
+          "Assessment of the suitability of different random number generators for Monte Carlo simulations in gamma-ray spectrometry"
+        ],
+        "author": [
+          {
+            "given": "N.",
+            "family": "Cornejo Díaz",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Vergara Gil",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Jurado Vargas",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Applied Radiation and Isotopes"
+        ],
+        "URL": "https://doi.org/10.1016/j.apradiso.2009.11.037"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-319-34115-6_6",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Esteban",
+            "family": "Tlelo-Cuautle",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "José de Jesús",
+            "family": "Rangel-Magdaleno",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Luis Gerardo",
+            "family": "De la Fraga",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              29
+            ]
+          ]
+        },
+        "container-title": [
+          "Engineering Applications of FPGAs"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-319-34115-6_6"
+      },
+      {
+        "publisher": "Informa UK Limited",
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1057/jors.1967.58",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "I. W.",
+            "family": "Harrison",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              12,
+              19
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of the Operational Research Society"
+        ],
+        "URL": "https://doi.org/10.1057/jors.1967.58"
+      },
+      {
+        "DOI": "10.1017/cbo9781139171397.020",
+        "title": [
+          "Random number generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              3,
+              22
+            ]
+          ]
+        },
+        "container-title": [
+          "Computational Physics"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "other",
+        "URL": "https://doi.org/10.1017/cbo9781139171397.020"
+      },
+      {
+        "DOI": "10.4018/978-1-6684-8947-5.ch012",
+        "title": [
+          "Random Number Generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              10,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "Advances in Computational Intelligence and Robotics",
+          "Deterministic and Stochastic Approaches in Computer Modeling and Simulation"
+        ],
+        "publisher": "IGI Global",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.4018/978-1-6684-8947-5.ch012"
+      },
+      {
+        "publisher": "Scilight Press Pty Ltd",
+        "DOI": "10.22237/jmasm/1051747320",
+        "type": "journal-article",
+        "is-referenced-by-count": 97,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "George",
+            "family": "Marsaglia",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Florida State University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2003,
+              5,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Modern Applied Statistical Methods"
+        ],
+        "URL": "https://doi.org/10.22237/jmasm/1051747320"
+      },
+      {
+        "DOI": "10.1007/3-540-26598-8_27",
+        "title": [
+          "Random Number Generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "container-title": [
+          "Springer Series in Information Sciences",
+          "Number Theory in Science and Communication"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/3-540-26598-8_27"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              4
+            ]
+          ]
+        },
+        "DOI": "10.2307/2004180",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Joel N.",
+            "family": "Franklin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Birger",
+            "family": "Jansson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Mathematics of Computation"
+        ],
+        "URL": "https://doi.org/10.2307/2004180"
+      },
+      {
+        "publisher": "WORLD SCIENTIFIC",
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              10
+            ]
+          ]
+        },
+        "DOI": "10.1142/9789819815128_0002",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              13
+            ]
+          ]
+        },
+        "container-title": [
+          "Mathematics of Computational Finance"
+        ],
+        "URL": "https://doi.org/10.1142/9789819815128_0002"
+      },
+      {
+        "publisher": "The Atomic Energy Society of Japan",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              10,
+              1
+            ]
+          ]
+        },
+        "DOI": "10.15669/pnst.2.51",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Quantum Monte Carlo Simulations with RANLUX Random Number Generator"
+        ],
+        "author": [
+          {
+            "given": "Kenta",
+            "family": "HONGO",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Information Science, Japan Advanced Institute of Science and Technology / Department of Chemistry and Chemical Biology, Harvard University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ryo",
+            "family": "MAEZONO",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information Science, Japan Advanced Institute of Science and Technology"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Progress in Nuclear Science and Technology"
+        ],
+        "URL": "https://doi.org/10.15669/pnst.2.51"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1002/jcc.21638",
+        "type": "journal-article",
+        "is-referenced-by-count": 37,
+        "title": [
+          "Quality of random number generators significantly affects results of Monte Carlo simulations for organic and biological systems"
+        ],
+        "author": [
+          {
+            "given": "Timothy H.",
+            "family": "Click",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aibing",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "George A.",
+            "family": "Kaminski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              8,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Computational Chemistry"
+        ],
+        "URL": "https://doi.org/10.1002/jcc.21638"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1967
+            ]
+          ]
+        },
+        "DOI": "10.2307/2344060",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators."
+        ],
+        "author": [
+          {
+            "given": "John M.",
+            "family": "Chambers",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Birger",
+            "family": "Jansson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of the Royal Statistical Society. Series A (General)"
+        ],
+        "URL": "https://doi.org/10.2307/2344060"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              1968,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1016/0010-4809(68)90014-1",
+        "type": "journal-article",
+        "is-referenced-by-count": 6,
+        "title": [
+          "Random-number generators"
+        ],
+        "author": [
+          {
+            "given": "Alan B.",
+            "family": "Forsythe",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Computers and Biomedical Research"
+        ],
+        "URL": "https://doi.org/10.1016/0010-4809(68)90014-1"
+      },
+      {
+        "publisher": "Springer Nature Switzerland",
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-031-82865-2",
+        "type": "book",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Luis Gerardo",
+            "family": "de la Fraga",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "José David",
+            "family": "Rodríguez-Muñoz",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Esteban",
+            "family": "Tlelo-Cuautle",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "URL": "https://doi.org/10.1007/978-3-031-82865-2"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1967,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.2307/3006992",
+        "type": "journal-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "I. W.",
+            "family": "Harrison",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Birger",
+            "family": "Jansson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "OR"
+        ],
+        "URL": "https://doi.org/10.2307/3006992"
+      },
+      {
+        "publisher": "Optica Publishing Group",
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "DOI": "10.1364/optcomp.1985.wa5",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "An Optical Random Number Generator for Monte Carlo Calculations"
+        ],
+        "author": [
+          {
+            "given": "Anthony J.",
+            "family": "Martino",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "G. Michael",
+            "family": "Morris",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Topical Meeting on Optical Computing"
+        ],
+        "URL": "https://doi.org/10.1364/optcomp.1985.wa5"
+      },
+      {
+        "DOI": "10.1007/springerreference_6053",
+        "title": [
+          "Random number generators"
+        ],
+        "container-title": [
+          "SpringerReference"
+        ],
+        "publisher": "Springer-Verlag",
+        "is-referenced-by-count": 0,
+        "type": "reference-entry",
+        "URL": "https://doi.org/10.1007/springerreference_6053"
+      },
+      {
+        "publisher": "Science Wise Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "DOI": "10.3360/dis.2007.6",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "QCD and Monte Carlo Generators"
+        ],
+        "author": [
+          {
+            "given": "Zoltán",
+            "family": "Nagy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "15th International Workshop on Deep-Inelastic Scattering and Related Subjects DIS 2007"
+        ],
+        "URL": "https://doi.org/10.3360/dis.2007.6"
+      },
+      {
+        "publisher": "JSTOR",
+        "published-print": {
+          "date-parts": [
+            [
+              1967
+            ]
+          ]
+        },
+        "DOI": "10.2307/1401645",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "F.",
+            "family": "Azorín",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "B.",
+            "family": "Jansson",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "F.",
+            "family": "Azorin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Revue de l'Institut International de Statistique / Review of the International Statistical Institute"
+        ],
+        "URL": "https://doi.org/10.2307/1401645"
+      },
+      {
+        "publisher": "Springer New York",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4614-6022-0_2",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Nick T.",
+            "family": "Thomopoulos",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              11,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "Essentials of Monte Carlo Simulation"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4614-6022-0_2"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2013
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-1-4419-1153-7_852",
+        "type": "book-chapter",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Pierre",
+            "family": "L’Ecuyer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              1,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Operations Research and Management Science"
+        ],
+        "URL": "https://doi.org/10.1007/978-1-4419-1153-7_852"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              6,
+              21
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780470640425.ch8",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              28
+            ]
+          ]
+        },
+        "container-title": [
+          "Engineering Optimization"
+        ],
+        "URL": "https://doi.org/10.1002/9780470640425.ch8"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1984
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-02395-2_27",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Manfred R.",
+            "family": "Schroeder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Information Sciences",
+          "Number Theory in Science and Communication"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-02395-2_27"
+      },
+      {
+        "DOI": "10.1007/978-3-540-85298-8_29",
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Manfred",
+            "family": "Schroeder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Number Theory in Science and Communication"
+        ],
+        "publisher": "Springer Berlin Heidelberg",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1007/978-3-540-85298-8_29"
+      },
+      {
+        "publisher": "Springer US",
+        "published-print": {
+          "date-parts": [
+            [
+              2001
+            ]
+          ]
+        },
+        "DOI": "10.1007/1-4020-0611-x_852",
+        "type": "book-chapter",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Random number generators"
+        ],
+        "author": [
+          {
+            "given": "Pierre",
+            "family": "L'Ecuyer",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              10,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Operations Research and Management Science"
+        ],
+        "URL": "https://doi.org/10.1007/1-4020-0611-x_852"
+      },
+      {
+        "DOI": "10.1515/9781400843046.175",
+        "title": [
+          "Random Number Generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Duelling Idiots and Other Probability Puzzlers"
+        ],
+        "publisher": "Princeton University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1515/9781400843046.175"
+      },
+      {
+        "publisher": "Springer Berlin Heidelberg",
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-03430-9_27",
+        "type": "book-chapter",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "Manfred R.",
+            "family": "Schroeder",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Springer Series in Information Sciences",
+          "Number Theory in Science and Communication"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-662-03430-9_27"
+      },
+      {
+        "publisher": "Wiley",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1002/9780470057339.var009",
+        "type": "other",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "B.D.",
+            "family": "Mccullough",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2006,
+              9,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Encyclopedia of Environmetrics"
+        ],
+        "URL": "https://doi.org/10.1002/9780470057339.var009"
+      },
+      {
+        "DOI": "10.1017/9781108966351.012",
+        "title": [
+          "Random Number Generators"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              31
+            ]
+          ]
+        },
+        "container-title": [
+          "Information Theory"
+        ],
+        "publisher": "Cambridge University Press",
+        "is-referenced-by-count": 0,
+        "type": "book-chapter",
+        "URL": "https://doi.org/10.1017/9781108966351.012"
+      },
+      {
+        "publisher": "Springer International Publishing",
+        "published-print": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-030-63115-4_12",
+        "type": "book-chapter",
+        "is-referenced-by-count": 3,
+        "title": [
+          "Random Number Generators"
+        ],
+        "author": [
+          {
+            "given": "William",
+            "family": "Easttom",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              20
+            ]
+          ]
+        },
+        "container-title": [
+          "Modern Cryptography"
+        ],
+        "URL": "https://doi.org/10.1007/978-3-030-63115-4_12"
+      },
+      {
+        "publisher": "EDP Sciences",
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1051/epjconf/202431501018",
+        "type": "journal-article",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Challenges for Monte Carlo generators"
+        ],
+        "author": [
+          {
+            "given": "Jürgen",
+            "family": "Reuter",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              12,
+              18
+            ]
+          ]
+        },
+        "container-title": [
+          "EPJ Web of Conferences"
+        ],
+        "URL": "https://doi.org/10.1051/epjconf/202431501018"
+      },
+      {
+        "publisher": "IEEE",
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "DOI": "10.1109/aiccsa.2009.5069452",
+        "type": "proceedings-article",
+        "is-referenced-by-count": 1,
+        "title": [
+          "FPGA-driven pseudorandom number generators aimed at accelerating Monte Carlo methods"
+        ],
+        "author": [
+          {
+            "given": "Tarek",
+            "family": "Ould Bachir",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jean-Jules",
+            "family": "Brault",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "2009 IEEE/ACS International Conference on Computer Systems and Applications"
+        ],
+        "URL": "https://doi.org/10.1109/aiccsa.2009.5069452"
+      },
+      {
+        "DOI": "10.3840/000779",
+        "title": [
+          "Monte Carlo Estimate for Pi"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/000779"
+      },
+      {
+        "DOI": "10.3840/07000779",
+        "title": [
+          "Monte Carlo Estimate for Pi"
+        ],
+        "container-title": [
+          "Wolfram Demonstrations Project"
+        ],
+        "publisher": "Wolfram Research, Inc.",
+        "is-referenced-by-count": 0,
+        "type": "dataset",
+        "URL": "https://doi.org/10.3840/07000779"
+      },
+      {
+        "publisher": "World Scientific Pub Co Pte Lt",
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.1142/s0129183199000619",
+        "type": "journal-article",
+        "is-referenced-by-count": 3,
+        "title": [
+          "ISING MODEL AS TEST FOR SIMPLE RANDOM NUMBER GENERATORS"
+        ],
+        "author": [
+          {
+            "given": "DIETRICH",
+            "family": "STAUFFER",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Institute for Theoretical Physics, Cologne University, D-50923 Köln, Euroland, Germany"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              4,
+              30
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Modern Physics C"
+        ],
+        "URL": "https://doi.org/10.1142/s0129183199000619"
+      },
+      {
+        "publisher": "Elsevier BV",
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.cam.2004.04.005",
+        "type": "journal-article",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Efficiency test of pseudorandom number generators using random walks"
+        ],
+        "author": [
+          {
+            "given": "Mihyun",
+            "family": "Kang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Journal of Computational and Applied Mathematics"
+        ],
+        "URL": "https://doi.org/10.1016/j.cam.2004.04.005"
+      },
+      {
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1109/tc.1985.1676623",
+        "type": "journal-article",
+        "is-referenced-by-count": 26,
+        "title": [
+          "Note on a Proposed Test for Random Number Generators"
+        ],
+        "author": [
+          {
+            "family": "Marsaglia",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Computer Science, Washington State University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Computers"
+        ],
+        "URL": "https://doi.org/10.1109/tc.1985.1676623"
+      }
+    ],
+    "items-per-page": 100,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
 }
