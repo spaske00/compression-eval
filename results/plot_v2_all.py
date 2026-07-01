@@ -3,6 +3,7 @@
 import argparse
 from pathlib import Path
 
+import plot_compressor_metrics
 import plot_v2_build_compression
 import plot_v2_build_stats
 import plot_v2_metrics
@@ -28,6 +29,8 @@ def main():
     plot_v2_build_compression.generate(args.nexus, args.out_dir)
     for metric in METRICS:
         plot_v2_metrics.plot_metric(args.nexus, args.out_dir, metric)
+    for metric in plot_compressor_metrics.METRICS:
+        plot_compressor_metrics.generate(args.nexus, args.out_dir, metric)
 
 
 if __name__ == "__main__":
