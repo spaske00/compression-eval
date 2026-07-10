@@ -1,0 +1,180 @@
+#line 1 "compositor_motion_blur.glsl"
+ 
+#line 17
+COMPUTE_SHADER_CREATE_INFO(compositor_motion_blur)
+#line 22
+#define g_depth_scale 100.0f
+#line 26
+float interleaved_gradient_noise(int2 p)
+{
+  return fract(52.9829189f * fract(0.06711056f * p.x + 0.00583715f * p.y));
+}
+
+float2 spread_compare(float center_motion_length, float sample_motion_length, float offset_length)
+{
+  return clamp(
+      float2(center_motion_length, sample_motion_length) - offset_length + 1.0f, 0.0f, 1.0f);
+}
+
+float2 depth_compare(float center_depth, float sample_depth)
+{
+  float2 depth_scale = float2(g_depth_scale, -g_depth_scale);
+  return clamp(0.5f + depth_scale * (sample_depth - center_depth), 0.0f, 1.0f);
+}
+#line 44
+float dir_compare(float2 offset, float2 sample_motion, float sample_motion_length)
+{
+  if (sample_motion_length < 0.5f) {
+    return 1.0f;
+  }
+  return (dot(offset, sample_motion) > 0.0f) ? 1.0f : 0.0f;
+}
+#line 53
+float2 sample_weights(float center_depth,
+                      float sample_depth,
+                      float center_motion_length,
+                      float sample_motion_length,
+                      float offset_length)
+{
+
+  float2 depth_weight = depth_compare(center_depth, sample_depth);
+
+  float2 spread_weight = spread_compare(center_motion_length, sample_motion_length, offset_length);
+  return depth_weight * spread_weight;
+}
+
+struct Accumulator {
+  float4 fg;
+  float4 bg;
+
+  float3 weight;
+};
+#line 66
+                           Accumulator Accumulator_ctor_() {Accumulator r;r.fg=float4(0);r.bg=float4(0);r.weight=float3(0);return r;}
+#line 73
+void gather_sample(float2 screen_uv,
+                   float center_depth,
+                   float center_motion_len,
+                   float2 offset,
+                   float offset_len,
+                   const bool next,
+                   _ref(Accumulator ,accum))
+{
+  float2 sample_uv = screen_uv - offset / float2(texture_size(input_tx));
+  float4 sample_vectors = texture(velocity_tx, sample_uv) *
+                          float4(float2(shutter_speed), float2(-shutter_speed));
+  float2 sample_motion = (next) ? sample_vectors.zw : sample_vectors.xy;
+  float sample_motion_len = length(sample_motion);
+  float sample_depth = texture(depth_tx, sample_uv).r;
+  float4 sample_color = texture(input_tx, sample_uv);
+
+  float3 weights;
+  weights.xy = sample_weights(
+      center_depth, sample_depth, center_motion_len, sample_motion_len, offset_len);
+  weights.z = dir_compare(offset, sample_motion, sample_motion_len);
+  weights.xy *= weights.z;
+
+  accum.fg += sample_color * weights.y;
+  accum.bg += sample_color * weights.x;
+  accum.weight += weights;
+}
+
+void gather_blur(float2 screen_uv,
+                 float2 center_motion,
+                 float center_depth,
+                 float2 max_motion,
+                 float ofs,
+                 const bool next,
+                 _ref(Accumulator ,accum))
+{
+  float center_motion_len = length(center_motion);
+  float max_motion_len = length(max_motion);
+#line 113
+  if (max_motion_len < center_motion_len) {
+    max_motion_len = center_motion_len;
+    max_motion = center_motion;
+  }
+
+  if (max_motion_len < 0.5f) {
+    return;
+  }
+
+  int i;
+  float t, inc = 1.0f / float(samples_count);
+  for (i = 0, t = ofs * inc; i < samples_count; i++, t += inc) {
+    gather_sample(screen_uv,
+                  center_depth,
+                  center_motion_len,
+                  max_motion * t,
+                  max_motion_len * t,
+                  next,
+                  accum);
+  }
+
+  if (center_motion_len < 0.5f) {
+    return;
+  }
+
+  for (i = 0, t = ofs * inc; i < samples_count; i++, t += inc) {
+#line 142
+    gather_sample(screen_uv,
+                  center_depth,
+                  center_motion_len,
+                  center_motion * t,
+                  center_motion_len * t,
+                  next,
+                  accum);
+  }
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float2 uv = (float2(texel) + 0.5f) / float2(texture_size(input_tx));
+#line 158
+  float center_depth = texture_load(depth_tx, texel).x;
+  float4 center_motion = texture(velocity_tx, uv) *
+                         float4(float2(shutter_speed), float2(-shutter_speed));
+  float4 center_color = textureLod(input_tx, uv, 0.0f);
+#line 165
+  float rand = interleaved_gradient_noise(texel);
+  int2 tile = (texel + int2(rand * 2.0f - 1.0f * float(MOTION_BLUR_TILE_SIZE) * 0.25f)) /
+              MOTION_BLUR_TILE_SIZE;
+
+  float4 max_motion;
+
+  int2 tile_prev;
+  motion_blur_tile_indirection_load(tile_indirection_buf, MOTION_PREV, uint2(tile), tile_prev);
+  max_motion.xy = texture_load(max_velocity_tx, tile_prev).xy;
+  int2 tile_next;
+  motion_blur_tile_indirection_load(tile_indirection_buf, MOTION_NEXT, uint2(tile), tile_next);
+  max_motion.zw = texture_load(max_velocity_tx, tile_next).zw;
+
+  max_motion *= float4(float2(shutter_speed), float2(-shutter_speed));
+
+  Accumulator accum;
+  accum.weight = float3(0.0f, 0.0f, 1.0f);
+  accum.bg = float4(0.0f);
+  accum.fg = float4(0.0f);
+
+  gather_blur(uv, center_motion.xy, center_depth, max_motion.xy, rand, false, accum);
+
+  gather_blur(uv, center_motion.zw, center_depth, max_motion.zw, rand, true, accum);
+
+#if 1
+
+  float w = 1.0f / (50.0f * float(samples_count) * 4.0f);
+  accum.bg += center_color * w;
+  accum.weight.x += w;
+#line 198
+  center_color = accum.bg / accum.weight.x;
+#endif
+
+  accum.fg += accum.bg;
+  accum.weight.y += accum.weight.x;
+#line 205
+  float blend_fac = clamp(1.0f - accum.weight.y / accum.weight.z, 0.0f, 1.0f);
+  float4 out_color = (accum.fg / accum.weight.z) + center_color * blend_fac;
+
+  imageStore(output_img, texel, out_color);
+}

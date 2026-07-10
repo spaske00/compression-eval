@@ -1,0 +1,177 @@
+#line 1 "draw_view_lib.glsl"
+ 
+#line 9
+SHADER_LIBRARY_CREATE_INFO(draw_view)
+
+#if !defined(DRAW_VIEW_CREATE_INFO) && !defined(GLSL_CPP_STUBS)
+#else
+#line 15
+ViewMatrices drw_view()
+{
+#line 19
+#if defined(CREATE_INFO_draw_view)
+#line 18
+  return buffer_get(draw_view, view_buf)[drw_view_id];
+
+#else
+#line 18
+  return ViewMatrices_ctor_();
+#endif
+#line 19
+}
+#line 22
+bool drw_view_is_perspective()
+{
+  return drw_view().winmat[3][3] == 0.0f;
+}
+#line 28
+float3 drw_view_forward()
+{
+  return drw_view().viewinv[2].xyz;
+}
+#line 34
+float3 drw_view_up()
+{
+  return drw_view().viewinv[1].xyz;
+}
+#line 40
+float3 drw_view_position()
+{
+  return drw_view().viewinv[3].xyz;
+}
+#line 46
+float drw_view_z_distance(float3 P)
+{
+  return dot(P - drw_view_position(), -drw_view_forward());
+}
+#line 52
+float drw_view_far()
+{
+  if (drw_view_is_perspective()) {
+    return -drw_view().winmat[3][2] / (drw_view().winmat[2][2] + 1.0f);
+  }
+  return -(drw_view().winmat[3][2] - 1.0f) / drw_view().winmat[2][2];
+}
+#line 61
+float drw_view_near()
+{
+  if (drw_view_is_perspective()) {
+    return -drw_view().winmat[3][2] / (drw_view().winmat[2][2] - 1.0f);
+  }
+  return -(drw_view().winmat[3][2] + 1.0f) / drw_view().winmat[2][2];
+}
+#line 73
+float3 drw_world_incident_vector(float3 P)
+{
+  return drw_view_is_perspective() ? normalize(drw_view_position() - P) : drw_view_forward();
+}
+#line 82
+float3 drw_view_incident_vector(float3 vP)
+{
+  return drw_view_is_perspective() ? normalize(-vP) : float3(0.0f, 0.0f, 1.0f);
+}
+#line 90
+float3 drw_screen_to_ndc(float3 ss_P)
+{
+  return ss_P * 2.0f - 1.0f;
+}
+float2 drw_screen_to_ndc(float2 ss_P)
+{
+  return ss_P * 2.0f - 1.0f;
+}
+float drw_screen_to_ndc(float ss_P)
+{
+  return ss_P * 2.0f - 1.0f;
+}
+#line 106
+float3 drw_ndc_to_screen(float3 ndc_P)
+{
+  return ndc_P * 0.5f + 0.5f;
+}
+float2 drw_ndc_to_screen(float2 ndc_P)
+{
+  return ndc_P * 0.5f + 0.5f;
+}
+float drw_ndc_to_screen(float ndc_P)
+{
+  return ndc_P * 0.5f + 0.5f;
+}
+#line 123
+float3 drw_normal_view_to_world(float3 vN)
+{
+  return (to_float3x3(drw_view().viewinv) * vN);
+}
+
+float3 drw_normal_world_to_view(float3 N)
+{
+  return (to_float3x3(drw_view().viewmat) * N);
+}
+#line 139
+float3 drw_perspective_divide(float4 hs_P)
+{
+  return hs_P.xyz / hs_P.w;
+}
+
+float3 drw_point_view_to_world(float3 vP)
+{
+  return (drw_view().viewinv * float4(vP, 1.0f)).xyz;
+}
+float4 drw_point_view_to_homogenous(float3 vP)
+{
+  return (drw_view().winmat * float4(vP, 1.0f));
+}
+float3 drw_point_view_to_ndc(float3 vP)
+{
+  return drw_perspective_divide(drw_point_view_to_homogenous(vP));
+}
+
+float3 drw_point_world_to_view(float3 P)
+{
+  return (drw_view().viewmat * float4(P, 1.0f)).xyz;
+}
+float4 drw_point_world_to_homogenous(float3 P)
+{
+  return (drw_view().winmat * (drw_view().viewmat * float4(P, 1.0f)));
+}
+float3 drw_point_world_to_ndc(float3 P)
+{
+  return drw_perspective_divide(drw_point_world_to_homogenous(P));
+}
+
+float3 drw_point_ndc_to_view(float3 ssP)
+{
+  return drw_perspective_divide(drw_view().wininv * float4(ssP, 1.0f));
+}
+float3 drw_point_ndc_to_world(float3 ssP)
+{
+  return drw_point_view_to_world(drw_point_ndc_to_view(ssP));
+}
+#line 185
+float3 drw_point_view_to_screen(float3 vP)
+{
+  return drw_ndc_to_screen(drw_point_view_to_ndc(vP));
+}
+float3 drw_point_world_to_screen(float3 vP)
+{
+  return drw_ndc_to_screen(drw_point_world_to_ndc(vP));
+}
+
+float3 drw_point_screen_to_view(float3 ssP)
+{
+  return drw_point_ndc_to_view(drw_screen_to_ndc(ssP));
+}
+float3 drw_point_screen_to_world(float3 ssP)
+{
+  return drw_point_view_to_world(drw_point_screen_to_view(ssP));
+}
+
+float drw_depth_view_to_screen(float v_depth)
+{
+  return drw_point_view_to_screen(float3(0.0f, 0.0f, v_depth)).z;
+}
+float drw_depth_screen_to_view(float ss_depth)
+{
+  return drw_point_screen_to_view(float3(0.0f, 0.0f, ss_depth)).z;
+}
+#line 213
+#endif

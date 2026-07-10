@@ -1,0 +1,49 @@
+#line 1 "overlay_outline_prepass_curves_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_outline_prepass_curves)
+#line 16
+uint outline_colorid_get()
+{
+  eObjectInfoFlag ob_flag = drw_object_infos().flag;
+  bool is_active = flag_test(ob_flag, OBJECT_ACTIVE);
+
+  if (is_transform) {
+    return 0u;
+  }
+  if (is_active) {
+    return 3u;
+  }
+  return 1u;
+}
+
+#if defined(GPU_NVIDIA) && defined(GPU_OPENGL)
+
+#  define const
+#endif
+
+void main()
+{
+  const curves_Point ls_pt = curves_point_get(uint(gl_VertexID));
+  curves_Point ws_pt = curves_object_to_world(ls_pt, drw_modelmat());
+
+  const float min_width_px = 1.25f;
+  const float min_width_ws = drw_point_world_to_homogenous(ws_pt.P).w * min_width_px *
+                             uniform_buf.size_viewport_inv.y * drw_view().wininv[1][1];
+#line 45
+  ws_pt.radius = max(ws_pt.radius, min_width_ws);
+
+  float3 world_pos = curves_shape_point_get(ws_pt, drw_world_incident_vector(ws_pt.P)).P;
+
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+#line 52
+  gl_Position.z -= 1e-3f;
+#line 55
+  interp.ob_id = uint(drw_resource_id() + 1);
+#line 58
+  uint outline_id = outline_colorid_get();
+#line 61
+  interp.ob_id = outline_id_pack(outline_id, interp.ob_id);
+
+  view_clipping_distances(world_pos);
+}

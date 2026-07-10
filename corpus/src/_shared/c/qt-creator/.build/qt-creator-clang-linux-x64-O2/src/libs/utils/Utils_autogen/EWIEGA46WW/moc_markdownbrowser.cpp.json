@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "MarkdownBrowser",
+            "lineNumber": 26,
+            "object": true,
+            "qualifiedClassName": "Utils::MarkdownBrowser",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QTextBrowser"
+                }
+            ]
+        }
+    ],
+    "inputFile": "markdownbrowser.h",
+    "outputRevision": 68
+}

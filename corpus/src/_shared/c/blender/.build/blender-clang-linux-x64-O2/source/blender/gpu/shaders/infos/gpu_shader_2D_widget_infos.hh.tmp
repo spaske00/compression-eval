@@ -1,0 +1,23 @@
+#line 1 "gpu_shader_2D_widget_infos.hh"
+ 
+#line 9
+#ifdef GPU_SHADER
+#line 15
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define widgetID 0
+#endif
+#line 29
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_2D_widget_shadow
+CREATE_INFO_RES_PASS_gpu_shader_2D_widget_shadow
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_2D_widget_shadow
+CREATE_INFO_RES_BATCH_gpu_shader_2D_widget_shadow
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_widget_shadow
+CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_widget_shadow
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_widget_shadow
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_widget_shadow
+#endif

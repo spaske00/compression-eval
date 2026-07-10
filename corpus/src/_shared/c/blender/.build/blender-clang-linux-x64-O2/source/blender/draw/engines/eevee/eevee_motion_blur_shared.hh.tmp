@@ -1,0 +1,24 @@
+#line 1 "eevee_motion_blur_shared.hh"
+ 
+#line 17
+#define MOTION_BLUR_TILE_SIZE 32
+#define MOTION_BLUR_MAX_TILE 512
+
+#define MotionBlurData_host_shared_ MotionBlurData
+#define MotionBlurData_host_shared_uniform_ MotionBlurData
+#line 19
+struct                 MotionBlurData {
+
+  float2 target_size_inv;
+
+  float2 motion_scale;
+
+  float depth_scale;
+
+  float _pad0;
+  float _pad1;
+  float _pad2;
+};
+#line 19
+                                              MotionBlurData MotionBlurData_ctor_() {MotionBlurData r;r.target_size_inv=float2(0);r.motion_scale=float2(0);r.depth_scale=0.0f;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 48

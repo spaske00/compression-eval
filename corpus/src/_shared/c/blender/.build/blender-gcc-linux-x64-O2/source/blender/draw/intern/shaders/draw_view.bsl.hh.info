@@ -1,0 +1,11 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(draw_View)
+.uniform_buf(DRW_VIEW_UBO_SLOT, "ViewMatrices", "view_buf[64]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

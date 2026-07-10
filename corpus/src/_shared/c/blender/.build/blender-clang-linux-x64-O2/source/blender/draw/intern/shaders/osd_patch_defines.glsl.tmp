@@ -1,0 +1,8 @@
+#line 1 "osd_patch_defines.glsl"
+ 
+#line 19
+#ifdef GPU_METAL
+#  define OSD_PATCH_BASIS_METAL 1
+#else
+#  define OSD_PATCH_BASIS_GLSL
+#endif

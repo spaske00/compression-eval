@@ -1,0 +1,14 @@
+#line 1 "overlay_paint_texture_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_paint_texture)
+#line 13
+void main()
+{
+  float3 world_pos = drw_point_object_to_world(pos);
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+
+  uv_interp = mu;
+
+  view_clipping_distances(world_pos);
+}

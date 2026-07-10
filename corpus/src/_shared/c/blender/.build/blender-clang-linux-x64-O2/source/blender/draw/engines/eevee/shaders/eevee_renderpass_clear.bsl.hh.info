@@ -1,0 +1,33 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_RenderPassClearFragOut)
+FRAGMENT_OUT(0, float4, eevee_RenderPassClearFragOut_background)
+GPU_SHADER_CREATE_END()
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_renderpass_clear_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_renderpass_clear_frag_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_CryptomatteOutput)
+ADDITIONAL_INFO(eevee_RenderPassOutput)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_RenderPassClearFragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_renderpass_clear)
+GRAPHIC_SOURCE("eevee_renderpass_clear.bsl.hh")
+VERTEX_FUNCTION("eevee_renderpass_clear_vert")
+FRAGMENT_FUNCTION("eevee_renderpass_clear_frag")
+ADDITIONAL_INFO(eevee_renderpass_clear_vert_infos_)
+ADDITIONAL_INFO(eevee_renderpass_clear_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

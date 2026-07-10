@@ -1,0 +1,27 @@
+#pragma once
+
+
+#define max_page uint(SHADOW_MAX_PAGE)
+
+#undef max_page
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_TileMaps)
+.storage_buf(8, Qualifier::read_write, "ShadowTileMapData", "tilemaps_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_Tiles)
+.storage_buf(9, Qualifier::read_write, "uint", "tiles_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_Statistics)
+.storage_buf(7, Qualifier::read_write, "ShadowStatistics", "statistics_buf", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_PageAllocator)
+.storage_buf(2, Qualifier::read_write, "ShadowPagesInfoData", "pages_infos_buf", Frequency::PASS)
+.storage_buf(1, Qualifier::read_write, "uint", "tiles_buf[]", Frequency::PASS)
+.storage_buf(3, Qualifier::read_write, "uint", "pages_free_buf[]", Frequency::PASS)
+.storage_buf(4, Qualifier::read_write, "uint2", "pages_cached_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

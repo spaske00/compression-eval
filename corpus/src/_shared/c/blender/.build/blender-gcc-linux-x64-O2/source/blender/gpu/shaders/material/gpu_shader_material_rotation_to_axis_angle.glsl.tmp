@@ -1,0 +1,9 @@
+#line 1 "gpu_shader_material_rotation_to_axis_angle.glsl"
+ 
+#line 8
+void rotation_to_axis_angle(float4 rotation, _ref(float3 ,axis), _ref(float ,angle))
+{
+  const AxisAngle aa = to_axis_angle(_ctor(Quaternion) UNPACK4(rotation) _rotc() );
+  axis = aa.axis;
+  angle = aa.angle;
+}

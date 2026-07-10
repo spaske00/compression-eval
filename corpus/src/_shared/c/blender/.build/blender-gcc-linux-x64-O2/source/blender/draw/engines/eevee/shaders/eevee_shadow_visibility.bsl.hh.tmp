@@ -1,0 +1,150 @@
+#line 1 "eevee_shadow_visibility.bsl.hh"
+ 
+#line 15
+COMPUTE_SHADER_CREATE_INFO(draw_view_culling)
+#line 26
+#define access_eevee_shadow_ViewVisibility_draw_view_culling() draw_view_culling
+#define access_eevee_shadow_ViewVisibility_infos_() draw_Infos_new_()
+#define access_eevee_shadow_ViewVisibility_resource_len() resource_len
+#define access_eevee_shadow_ViewVisibility_bounds_buf() bounds_buf
+#define access_eevee_shadow_ViewVisibility_visibility_buf() visibility_buf
+#define access_eevee_shadow_ViewVisibility_render_view_buf() render_view_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_ViewVisibility
+CREATE_INFO_RES_PASS_eevee_shadow_ViewVisibility
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_ViewVisibility
+CREATE_INFO_RES_BATCH_eevee_shadow_ViewVisibility
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_ViewVisibility
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_ViewVisibility
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_ViewVisibility
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_ViewVisibility
+#endif
+#line 26
+struct eevee_shadow_ViewVisibility {
+#line 29
+                           draw_Infos  infos_;
+#line 73
+};
+#line 76
+#ifndef GPU_METAL
+eevee_shadow_ViewVisibility eevee_shadow_ViewVisibility_ctor_();
+bool _shadow_linking_affects_caster(eevee_shadow_ViewVisibility  this_, uint view_id, uint resource_id);
+void _mask_visibility_bit(eevee_shadow_ViewVisibility  this_, uint view_id, uint3 global_id);
+bool _non_culling_tests(eevee_shadow_ViewVisibility  this_, uint view_id, uint resource_id);
+eevee_shadow_ViewVisibility eevee_shadow_ViewVisibility_new_();
+#endif
+#line 26
+                                           eevee_shadow_ViewVisibility eevee_shadow_ViewVisibility_ctor_() {eevee_shadow_ViewVisibility r;r.infos_=draw_Infos_ctor_();return r;}
+#line 37
+
+#if defined(CREATE_INFO_eevee_shadow_ViewVisibility)
+#line 37
+  bool _shadow_linking_affects_caster(eevee_shadow_ViewVisibility  this_, uint view_id, uint resource_id)
+  {
+    draw_Infos infos = srt_access(eevee_shadow_ViewVisibility, infos_);
+    ObjectInfos object_infos = _get(infos, resource_id);
+    return bitmask64_test(render_view_buf[view_id].shadow_set_membership,
+                          blocker_shadow_set_get(object_infos));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_ViewVisibility)
+#line 45
+  void _mask_visibility_bit(eevee_shadow_ViewVisibility  this_, uint view_id, uint3 global_id)
+  {
+    constexpr uint visibility_word_per_draw = uint(SHADOW_VIEW_MAX) / 32u;
+    uint index = global_id.x * visibility_word_per_draw + (view_id / 32u);
+    visibility_buf[index] &= ~(1u << (view_id & 31u));
+  }
+#endif
+#line 53
+
+#if defined(CREATE_INFO_eevee_shadow_ViewVisibility)
+#line 53
+  bool _non_culling_tests(eevee_shadow_ViewVisibility  this_, uint view_id, uint resource_id)
+  {
+    if (_shadow_linking_affects_caster(this_, view_id, resource_id) == false) {
+
+      return true;
+    }
+    if (drw_view_culling(view_id).bound_sphere.w == -1.0f) {
+
+      return true;
+    }
+    return false;
+  }
+#endif
+       eevee_shadow_ViewVisibility eevee_shadow_ViewVisibility_new_()
+{
+  eevee_shadow_ViewVisibility result;
+  result.infos_ = draw_Infos_new_();
+  return result;
+#line 64
+}
+#line 67
+
+#if defined(CREATE_INFO_eevee_shadow_ViewVisibility)
+#line 67
+
+#if defined(ENTRY_POINT_eevee_shadow_comp_main)
+#line 67
+
+void eevee_shadow_comp_main(
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 70
+  eevee_shadow_ViewVisibility srt = eevee_shadow_ViewVisibility_ctor_();
+  if (int(gl_GlobalInvocationID.x) >= srt_access(eevee_shadow_ViewVisibility, resource_len)) {
+    return;
+  }
+
+  ObjectBounds bounds = srt_access(eevee_shadow_ViewVisibility, bounds_buf)[gl_GlobalInvocationID.x];
+
+  if (drw_bounds_are_valid(bounds)) {
+    IsectBox box = isect_box_setup(bounds.bounding_corners[0].xyz,
+                                   bounds.bounding_corners[1].xyz,
+                                   bounds.bounding_corners[2].xyz,
+                                   bounds.bounding_corners[3].xyz);
+    Sphere bounding_sphere = shape_sphere(bounds.bounding_sphere.xyz, bounds.bounding_sphere.w);
+    Sphere inscribed_sphere = shape_sphere(bounds.bounding_sphere.xyz,
+                                           bounds._inner_sphere_radius);
+
+    for (uint view_id = 0u; view_id < uint(SHADOW_VIEW_MAX); view_id++) {
+      if (_non_culling_tests(srt, view_id, gl_GlobalInvocationID.x)) {
+        _mask_visibility_bit(srt, view_id, gl_GlobalInvocationID);
+      }
+      else if (drw_view_culling(view_id).bound_sphere.w == -1.0f) {
+
+        _mask_visibility_bit(srt, view_id, gl_GlobalInvocationID);
+      }
+      else if (intersect_view(inscribed_sphere, view_id) == true) {
+
+      }
+      else if (intersect_view(bounding_sphere, view_id) == false) {
+
+        _mask_visibility_bit(srt, view_id, gl_GlobalInvocationID);
+      }
+      else if (intersect_view(box, view_id) == false) {
+
+        _mask_visibility_bit(srt, view_id, gl_GlobalInvocationID);
+      }
+    }
+  }
+  else {
+
+    for (uint view_id = 0u; view_id < uint(SHADOW_VIEW_MAX); view_id++) {
+      if (_non_culling_tests(srt, view_id, gl_GlobalInvocationID.x)) {
+        _mask_visibility_bit(srt, view_id, gl_GlobalInvocationID);
+      }
+    }
+  }
+
+#endif
+#line 115
+}
+#endif
+#endif
+#line 120

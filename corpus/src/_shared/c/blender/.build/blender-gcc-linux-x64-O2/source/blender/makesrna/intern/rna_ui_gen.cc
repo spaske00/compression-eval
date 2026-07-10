@@ -1,0 +1,15702 @@
+
+/* Automatically generated struct definitions for the Data API.
+ * Do not edit manually, changes will be overwritten.           */
+
+#include <float.h>
+#include <stdio.h>
+#include <limits.h>
+#include <limits>
+#include <string.h>
+
+#include <stddef.h>
+
+#include <algorithm>
+
+#include "MEM_guardedalloc.h"
+
+#include "DNA_ID.h"
+#include "DNA_scene_types.h"
+#include "DNA_node_types.h"
+#include "BLI_fileops.hh"
+
+#include "BLI_listbase.hh"
+
+#include "BLI_path_utils.hh"
+
+#include "BLI_rect.hh"
+
+#include "BLI_string.hh"
+
+#include "BLI_string_utf8.hh"
+
+#include "BLI_utildefines.hh"
+
+#include "BKE_context.hh"
+#include "BKE_lib_id.hh"
+#include "BKE_main.hh"
+#include "BKE_report.hh"
+#include "RNA_define.hh"
+#include "RNA_types.hh"
+#include "rna_internal.hh"
+
+#include "RNA_prototypes.hh"
+
+#include "rna_prototypes_gen.hh"
+
+#include "rna_ui.cc"
+#include "rna_ui_api.cc"
+
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
+/* Auto-generated Functions. */
+
+namespace blender {
+
+
+extern PropertyRNA &rna_UILayout_rna_properties;
+extern PropertyRNA &rna_UILayout_rna_type;
+extern PropertyRNA &rna_UILayout_active;
+extern PropertyRNA &rna_UILayout_active_default;
+extern PropertyRNA &rna_UILayout_activate_init;
+extern PropertyRNA &rna_UILayout_operator_context;
+extern PropertyRNA &rna_UILayout_enabled;
+extern PropertyRNA &rna_UILayout_alert;
+extern PropertyRNA &rna_UILayout_alignment;
+extern PropertyRNA &rna_UILayout_direction;
+extern PropertyRNA &rna_UILayout_scale_x;
+extern PropertyRNA &rna_UILayout_scale_y;
+extern PropertyRNA &rna_UILayout_ui_units_x;
+extern PropertyRNA &rna_UILayout_ui_units_y;
+extern PropertyRNA &rna_UILayout_emboss;
+extern PropertyRNA &rna_UILayout_use_property_split;
+extern PropertyRNA &rna_UILayout_use_property_decorate;
+
+extern FunctionRNA *rna_UILayout_row_func;
+extern PropertyRNA &rna_UILayout_row_layout;
+extern PropertyRNA &rna_UILayout_row_align;
+extern PropertyRNA &rna_UILayout_row_heading;
+extern PropertyRNA &rna_UILayout_row_heading_ctxt;
+extern PropertyRNA &rna_UILayout_row_translate;
+
+extern FunctionRNA *rna_UILayout_column_func;
+extern PropertyRNA &rna_UILayout_column_layout;
+extern PropertyRNA &rna_UILayout_column_align;
+extern PropertyRNA &rna_UILayout_column_heading;
+extern PropertyRNA &rna_UILayout_column_heading_ctxt;
+extern PropertyRNA &rna_UILayout_column_translate;
+
+extern FunctionRNA *rna_UILayout_panel_func;
+extern PropertyRNA &rna_UILayout_panel_idname;
+extern PropertyRNA &rna_UILayout_panel_default_closed;
+extern PropertyRNA &rna_UILayout_panel_layout_header;
+extern PropertyRNA &rna_UILayout_panel_layout_body;
+
+extern FunctionRNA *rna_UILayout_panel_prop_func;
+extern PropertyRNA &rna_UILayout_panel_prop_data;
+extern PropertyRNA &rna_UILayout_panel_prop_property;
+extern PropertyRNA &rna_UILayout_panel_prop_layout_header;
+extern PropertyRNA &rna_UILayout_panel_prop_layout_body;
+
+extern FunctionRNA *rna_UILayout_column_flow_func;
+extern PropertyRNA &rna_UILayout_column_flow_columns;
+extern PropertyRNA &rna_UILayout_column_flow_layout;
+extern PropertyRNA &rna_UILayout_column_flow_align;
+
+extern FunctionRNA *rna_UILayout_grid_flow_func;
+extern PropertyRNA &rna_UILayout_grid_flow_row_major;
+extern PropertyRNA &rna_UILayout_grid_flow_columns;
+extern PropertyRNA &rna_UILayout_grid_flow_even_columns;
+extern PropertyRNA &rna_UILayout_grid_flow_even_rows;
+extern PropertyRNA &rna_UILayout_grid_flow_align;
+extern PropertyRNA &rna_UILayout_grid_flow_layout;
+
+extern FunctionRNA *rna_UILayout_box_func;
+extern PropertyRNA &rna_UILayout_box_layout;
+
+extern FunctionRNA *rna_UILayout_split_func;
+extern PropertyRNA &rna_UILayout_split_layout;
+extern PropertyRNA &rna_UILayout_split_factor;
+extern PropertyRNA &rna_UILayout_split_align;
+
+extern FunctionRNA *rna_UILayout_menu_pie_func;
+extern PropertyRNA &rna_UILayout_menu_pie_layout;
+
+extern FunctionRNA *rna_UILayout_icon_func;
+extern PropertyRNA &rna_UILayout_icon_icon_value;
+extern PropertyRNA &rna_UILayout_icon_data;
+
+extern FunctionRNA *rna_UILayout_enum_item_name_func;
+extern PropertyRNA &rna_UILayout_enum_item_name_name;
+extern PropertyRNA &rna_UILayout_enum_item_name_data;
+extern PropertyRNA &rna_UILayout_enum_item_name_property;
+extern PropertyRNA &rna_UILayout_enum_item_name_identifier;
+
+extern FunctionRNA *rna_UILayout_enum_item_description_func;
+extern PropertyRNA &rna_UILayout_enum_item_description_description;
+extern PropertyRNA &rna_UILayout_enum_item_description_data;
+extern PropertyRNA &rna_UILayout_enum_item_description_property;
+extern PropertyRNA &rna_UILayout_enum_item_description_identifier;
+
+extern FunctionRNA *rna_UILayout_enum_item_icon_func;
+extern PropertyRNA &rna_UILayout_enum_item_icon_icon_value;
+extern PropertyRNA &rna_UILayout_enum_item_icon_data;
+extern PropertyRNA &rna_UILayout_enum_item_icon_property;
+extern PropertyRNA &rna_UILayout_enum_item_icon_identifier;
+
+extern FunctionRNA *rna_UILayout_textbox_func;
+extern PropertyRNA &rna_UILayout_textbox_data;
+extern PropertyRNA &rna_UILayout_textbox_property;
+extern PropertyRNA &rna_UILayout_textbox_initial_visible_lines;
+extern PropertyRNA &rna_UILayout_textbox_placeholder;
+extern PropertyRNA &rna_UILayout_textbox_text_ctxt;
+extern PropertyRNA &rna_UILayout_textbox_translate;
+
+extern FunctionRNA *rna_UILayout_textbox_with_state_func;
+extern PropertyRNA &rna_UILayout_textbox_with_state_data;
+extern PropertyRNA &rna_UILayout_textbox_with_state_property;
+extern PropertyRNA &rna_UILayout_textbox_with_state_textbox_state;
+extern PropertyRNA &rna_UILayout_textbox_with_state_placeholder;
+extern PropertyRNA &rna_UILayout_textbox_with_state_text_ctxt;
+extern PropertyRNA &rna_UILayout_textbox_with_state_translate;
+
+extern FunctionRNA *rna_UILayout_prop_func;
+extern PropertyRNA &rna_UILayout_prop_data;
+extern PropertyRNA &rna_UILayout_prop_property;
+extern PropertyRNA &rna_UILayout_prop_text;
+extern PropertyRNA &rna_UILayout_prop_text_ctxt;
+extern PropertyRNA &rna_UILayout_prop_translate;
+extern PropertyRNA &rna_UILayout_prop_icon;
+extern PropertyRNA &rna_UILayout_prop_placeholder;
+extern PropertyRNA &rna_UILayout_prop_expand;
+extern PropertyRNA &rna_UILayout_prop_slider;
+extern PropertyRNA &rna_UILayout_prop_toggle;
+extern PropertyRNA &rna_UILayout_prop_icon_only;
+extern PropertyRNA &rna_UILayout_prop_event;
+extern PropertyRNA &rna_UILayout_prop_full_event;
+extern PropertyRNA &rna_UILayout_prop_emboss;
+extern PropertyRNA &rna_UILayout_prop_index;
+extern PropertyRNA &rna_UILayout_prop_icon_value;
+extern PropertyRNA &rna_UILayout_prop_invert_checkbox;
+extern PropertyRNA &rna_UILayout_prop_text_align;
+
+extern FunctionRNA *rna_UILayout_props_enum_func;
+extern PropertyRNA &rna_UILayout_props_enum_data;
+extern PropertyRNA &rna_UILayout_props_enum_property;
+
+extern FunctionRNA *rna_UILayout_prop_menu_enum_func;
+extern PropertyRNA &rna_UILayout_prop_menu_enum_data;
+extern PropertyRNA &rna_UILayout_prop_menu_enum_property;
+extern PropertyRNA &rna_UILayout_prop_menu_enum_text;
+extern PropertyRNA &rna_UILayout_prop_menu_enum_text_ctxt;
+extern PropertyRNA &rna_UILayout_prop_menu_enum_translate;
+extern PropertyRNA &rna_UILayout_prop_menu_enum_icon;
+
+extern FunctionRNA *rna_UILayout_prop_with_popover_func;
+extern PropertyRNA &rna_UILayout_prop_with_popover_data;
+extern PropertyRNA &rna_UILayout_prop_with_popover_property;
+extern PropertyRNA &rna_UILayout_prop_with_popover_text;
+extern PropertyRNA &rna_UILayout_prop_with_popover_text_ctxt;
+extern PropertyRNA &rna_UILayout_prop_with_popover_translate;
+extern PropertyRNA &rna_UILayout_prop_with_popover_icon;
+extern PropertyRNA &rna_UILayout_prop_with_popover_icon_only;
+extern PropertyRNA &rna_UILayout_prop_with_popover_panel;
+
+extern FunctionRNA *rna_UILayout_prop_with_menu_func;
+extern PropertyRNA &rna_UILayout_prop_with_menu_data;
+extern PropertyRNA &rna_UILayout_prop_with_menu_property;
+extern PropertyRNA &rna_UILayout_prop_with_menu_text;
+extern PropertyRNA &rna_UILayout_prop_with_menu_text_ctxt;
+extern PropertyRNA &rna_UILayout_prop_with_menu_translate;
+extern PropertyRNA &rna_UILayout_prop_with_menu_icon;
+extern PropertyRNA &rna_UILayout_prop_with_menu_icon_only;
+extern PropertyRNA &rna_UILayout_prop_with_menu_menu;
+
+extern FunctionRNA *rna_UILayout_prop_tabs_enum_func;
+extern PropertyRNA &rna_UILayout_prop_tabs_enum_data;
+extern PropertyRNA &rna_UILayout_prop_tabs_enum_property;
+extern PropertyRNA &rna_UILayout_prop_tabs_enum_data_highlight;
+extern PropertyRNA &rna_UILayout_prop_tabs_enum_property_highlight;
+extern PropertyRNA &rna_UILayout_prop_tabs_enum_icon_only;
+extern PropertyRNA &rna_UILayout_prop_tabs_enum_expand_as;
+
+extern FunctionRNA *rna_UILayout_prop_enum_func;
+extern PropertyRNA &rna_UILayout_prop_enum_data;
+extern PropertyRNA &rna_UILayout_prop_enum_property;
+extern PropertyRNA &rna_UILayout_prop_enum_value;
+extern PropertyRNA &rna_UILayout_prop_enum_text;
+extern PropertyRNA &rna_UILayout_prop_enum_text_ctxt;
+extern PropertyRNA &rna_UILayout_prop_enum_translate;
+extern PropertyRNA &rna_UILayout_prop_enum_icon;
+
+extern FunctionRNA *rna_UILayout_prop_search_func;
+extern PropertyRNA &rna_UILayout_prop_search_data;
+extern PropertyRNA &rna_UILayout_prop_search_property;
+extern PropertyRNA &rna_UILayout_prop_search_search_data;
+extern PropertyRNA &rna_UILayout_prop_search_search_property;
+extern PropertyRNA &rna_UILayout_prop_search_text;
+extern PropertyRNA &rna_UILayout_prop_search_text_ctxt;
+extern PropertyRNA &rna_UILayout_prop_search_translate;
+extern PropertyRNA &rna_UILayout_prop_search_icon;
+extern PropertyRNA &rna_UILayout_prop_search_results_are_suggestions;
+extern PropertyRNA &rna_UILayout_prop_search_item_search_property;
+
+extern FunctionRNA *rna_UILayout_prop_decorator_func;
+extern PropertyRNA &rna_UILayout_prop_decorator_data;
+extern PropertyRNA &rna_UILayout_prop_decorator_property;
+extern PropertyRNA &rna_UILayout_prop_decorator_index;
+
+extern FunctionRNA *rna_UILayout_operator_func;
+extern PropertyRNA &rna_UILayout_operator_operator;
+extern PropertyRNA &rna_UILayout_operator_text;
+extern PropertyRNA &rna_UILayout_operator_text_ctxt;
+extern PropertyRNA &rna_UILayout_operator_translate;
+extern PropertyRNA &rna_UILayout_operator_icon;
+extern PropertyRNA &rna_UILayout_operator_emboss;
+extern PropertyRNA &rna_UILayout_operator_depress;
+extern PropertyRNA &rna_UILayout_operator_icon_value;
+extern PropertyRNA &rna_UILayout_operator_search_weight;
+extern PropertyRNA &rna_UILayout_operator_properties;
+
+extern FunctionRNA *rna_UILayout_operator_menu_hold_func;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_operator;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_text;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_text_ctxt;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_translate;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_icon;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_emboss;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_depress;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_icon_value;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_menu;
+extern PropertyRNA &rna_UILayout_operator_menu_hold_properties;
+
+extern FunctionRNA *rna_UILayout_operator_enum_func;
+extern PropertyRNA &rna_UILayout_operator_enum_operator;
+extern PropertyRNA &rna_UILayout_operator_enum_property;
+extern PropertyRNA &rna_UILayout_operator_enum_icon_only;
+
+extern FunctionRNA *rna_UILayout_operator_menu_enum_func;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_operator;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_property;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_text;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_text_ctxt;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_translate;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_icon;
+extern PropertyRNA &rna_UILayout_operator_menu_enum_properties;
+
+extern FunctionRNA *rna_UILayout_label_func;
+extern PropertyRNA &rna_UILayout_label_text;
+extern PropertyRNA &rna_UILayout_label_text_ctxt;
+extern PropertyRNA &rna_UILayout_label_translate;
+extern PropertyRNA &rna_UILayout_label_icon;
+extern PropertyRNA &rna_UILayout_label_icon_value;
+
+extern FunctionRNA *rna_UILayout_link_func;
+extern PropertyRNA &rna_UILayout_link_url;
+extern PropertyRNA &rna_UILayout_link_text;
+extern PropertyRNA &rna_UILayout_link_text_ctxt;
+extern PropertyRNA &rna_UILayout_link_translate;
+extern PropertyRNA &rna_UILayout_link_icon;
+extern PropertyRNA &rna_UILayout_link_icon_value;
+
+extern FunctionRNA *rna_UILayout_menu_func;
+extern PropertyRNA &rna_UILayout_menu_menu;
+extern PropertyRNA &rna_UILayout_menu_text;
+extern PropertyRNA &rna_UILayout_menu_text_ctxt;
+extern PropertyRNA &rna_UILayout_menu_translate;
+extern PropertyRNA &rna_UILayout_menu_icon;
+extern PropertyRNA &rna_UILayout_menu_icon_value;
+
+extern FunctionRNA *rna_UILayout_menu_contents_func;
+extern PropertyRNA &rna_UILayout_menu_contents_menu;
+
+extern FunctionRNA *rna_UILayout_popover_func;
+extern PropertyRNA &rna_UILayout_popover_panel;
+extern PropertyRNA &rna_UILayout_popover_text;
+extern PropertyRNA &rna_UILayout_popover_text_ctxt;
+extern PropertyRNA &rna_UILayout_popover_translate;
+extern PropertyRNA &rna_UILayout_popover_icon;
+extern PropertyRNA &rna_UILayout_popover_icon_value;
+extern PropertyRNA &rna_UILayout_popover_direction;
+
+extern FunctionRNA *rna_UILayout_popover_group_func;
+extern PropertyRNA &rna_UILayout_popover_group_space_type;
+extern PropertyRNA &rna_UILayout_popover_group_region_type;
+extern PropertyRNA &rna_UILayout_popover_group_context;
+extern PropertyRNA &rna_UILayout_popover_group_category;
+
+extern FunctionRNA *rna_UILayout_separator_func;
+extern PropertyRNA &rna_UILayout_separator_factor;
+extern PropertyRNA &rna_UILayout_separator_type;
+
+extern FunctionRNA *rna_UILayout_separator_spacer_func;
+extern FunctionRNA *rna_UILayout_progress_func;
+extern PropertyRNA &rna_UILayout_progress_text;
+extern PropertyRNA &rna_UILayout_progress_text_ctxt;
+extern PropertyRNA &rna_UILayout_progress_translate;
+extern PropertyRNA &rna_UILayout_progress_factor;
+extern PropertyRNA &rna_UILayout_progress_type;
+
+extern FunctionRNA *rna_UILayout_context_pointer_set_func;
+extern PropertyRNA &rna_UILayout_context_pointer_set_name;
+extern PropertyRNA &rna_UILayout_context_pointer_set_data;
+
+extern FunctionRNA *rna_UILayout_context_string_set_func;
+extern PropertyRNA &rna_UILayout_context_string_set_name;
+extern PropertyRNA &rna_UILayout_context_string_set_value;
+
+extern FunctionRNA *rna_UILayout_template_header_func;
+extern FunctionRNA *rna_UILayout_template_ID_func;
+extern PropertyRNA &rna_UILayout_template_ID_data;
+extern PropertyRNA &rna_UILayout_template_ID_property;
+extern PropertyRNA &rna_UILayout_template_ID_new;
+extern PropertyRNA &rna_UILayout_template_ID_open;
+extern PropertyRNA &rna_UILayout_template_ID_unlink;
+extern PropertyRNA &rna_UILayout_template_ID_filter;
+extern PropertyRNA &rna_UILayout_template_ID_live_icon;
+extern PropertyRNA &rna_UILayout_template_ID_text;
+extern PropertyRNA &rna_UILayout_template_ID_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_ID_translate;
+
+extern FunctionRNA *rna_UILayout_template_ID_session_uid_func;
+extern PropertyRNA &rna_UILayout_template_ID_session_uid_data;
+extern PropertyRNA &rna_UILayout_template_ID_session_uid_property;
+extern PropertyRNA &rna_UILayout_template_ID_session_uid_id_type;
+
+extern FunctionRNA *rna_UILayout_template_ID_preview_func;
+extern PropertyRNA &rna_UILayout_template_ID_preview_data;
+extern PropertyRNA &rna_UILayout_template_ID_preview_property;
+extern PropertyRNA &rna_UILayout_template_ID_preview_new;
+extern PropertyRNA &rna_UILayout_template_ID_preview_open;
+extern PropertyRNA &rna_UILayout_template_ID_preview_unlink;
+extern PropertyRNA &rna_UILayout_template_ID_preview_rows;
+extern PropertyRNA &rna_UILayout_template_ID_preview_cols;
+extern PropertyRNA &rna_UILayout_template_ID_preview_filter;
+extern PropertyRNA &rna_UILayout_template_ID_preview_hide_buttons;
+
+extern FunctionRNA *rna_UILayout_template_matrix_func;
+extern PropertyRNA &rna_UILayout_template_matrix_data;
+extern PropertyRNA &rna_UILayout_template_matrix_property;
+
+extern FunctionRNA *rna_UILayout_template_any_ID_func;
+extern PropertyRNA &rna_UILayout_template_any_ID_data;
+extern PropertyRNA &rna_UILayout_template_any_ID_property;
+extern PropertyRNA &rna_UILayout_template_any_ID_type_property;
+extern PropertyRNA &rna_UILayout_template_any_ID_text;
+extern PropertyRNA &rna_UILayout_template_any_ID_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_any_ID_translate;
+
+extern FunctionRNA *rna_UILayout_template_ID_tabs_func;
+extern PropertyRNA &rna_UILayout_template_ID_tabs_data;
+extern PropertyRNA &rna_UILayout_template_ID_tabs_property;
+extern PropertyRNA &rna_UILayout_template_ID_tabs_new;
+extern PropertyRNA &rna_UILayout_template_ID_tabs_menu;
+extern PropertyRNA &rna_UILayout_template_ID_tabs_filter;
+
+extern FunctionRNA *rna_UILayout_template_action_func;
+extern PropertyRNA &rna_UILayout_template_action_id;
+extern PropertyRNA &rna_UILayout_template_action_new;
+extern PropertyRNA &rna_UILayout_template_action_unlink;
+extern PropertyRNA &rna_UILayout_template_action_text;
+extern PropertyRNA &rna_UILayout_template_action_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_action_translate;
+
+extern FunctionRNA *rna_UILayout_template_search_func;
+extern PropertyRNA &rna_UILayout_template_search_data;
+extern PropertyRNA &rna_UILayout_template_search_property;
+extern PropertyRNA &rna_UILayout_template_search_search_data;
+extern PropertyRNA &rna_UILayout_template_search_search_property;
+extern PropertyRNA &rna_UILayout_template_search_new;
+extern PropertyRNA &rna_UILayout_template_search_unlink;
+extern PropertyRNA &rna_UILayout_template_search_text;
+extern PropertyRNA &rna_UILayout_template_search_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_search_translate;
+
+extern FunctionRNA *rna_UILayout_template_search_preview_func;
+extern PropertyRNA &rna_UILayout_template_search_preview_data;
+extern PropertyRNA &rna_UILayout_template_search_preview_property;
+extern PropertyRNA &rna_UILayout_template_search_preview_search_data;
+extern PropertyRNA &rna_UILayout_template_search_preview_search_property;
+extern PropertyRNA &rna_UILayout_template_search_preview_new;
+extern PropertyRNA &rna_UILayout_template_search_preview_unlink;
+extern PropertyRNA &rna_UILayout_template_search_preview_text;
+extern PropertyRNA &rna_UILayout_template_search_preview_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_search_preview_translate;
+extern PropertyRNA &rna_UILayout_template_search_preview_rows;
+extern PropertyRNA &rna_UILayout_template_search_preview_cols;
+
+extern FunctionRNA *rna_UILayout_template_path_builder_func;
+extern PropertyRNA &rna_UILayout_template_path_builder_data;
+extern PropertyRNA &rna_UILayout_template_path_builder_property;
+extern PropertyRNA &rna_UILayout_template_path_builder_root;
+extern PropertyRNA &rna_UILayout_template_path_builder_text;
+extern PropertyRNA &rna_UILayout_template_path_builder_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_path_builder_translate;
+
+extern FunctionRNA *rna_UILayout_template_modifiers_func;
+extern FunctionRNA *rna_UILayout_template_strip_modifiers_func;
+extern FunctionRNA *rna_UILayout_template_collection_importer_func;
+extern FunctionRNA *rna_UILayout_template_collection_exporters_func;
+extern FunctionRNA *rna_UILayout_template_constraints_func;
+extern PropertyRNA &rna_UILayout_template_constraints_use_bone_constraints;
+
+extern FunctionRNA *rna_UILayout_template_shaderfx_func;
+extern FunctionRNA *rna_UILayout_template_greasepencil_color_func;
+extern PropertyRNA &rna_UILayout_template_greasepencil_color_data;
+extern PropertyRNA &rna_UILayout_template_greasepencil_color_property;
+extern PropertyRNA &rna_UILayout_template_greasepencil_color_rows;
+extern PropertyRNA &rna_UILayout_template_greasepencil_color_cols;
+extern PropertyRNA &rna_UILayout_template_greasepencil_color_scale;
+extern PropertyRNA &rna_UILayout_template_greasepencil_color_filter;
+
+extern FunctionRNA *rna_UILayout_template_constraint_header_func;
+extern PropertyRNA &rna_UILayout_template_constraint_header_data;
+
+extern FunctionRNA *rna_UILayout_template_preview_func;
+extern PropertyRNA &rna_UILayout_template_preview_id;
+extern PropertyRNA &rna_UILayout_template_preview_show_buttons;
+extern PropertyRNA &rna_UILayout_template_preview_parent;
+extern PropertyRNA &rna_UILayout_template_preview_slot;
+extern PropertyRNA &rna_UILayout_template_preview_preview_id;
+
+extern FunctionRNA *rna_UILayout_template_curve_mapping_func;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_data;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_property;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_type;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_levels;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_brush;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_use_negative_slope;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_show_tone;
+extern PropertyRNA &rna_UILayout_template_curve_mapping_show_presets;
+
+extern FunctionRNA *rna_UILayout_template_curveprofile_func;
+extern PropertyRNA &rna_UILayout_template_curveprofile_data;
+extern PropertyRNA &rna_UILayout_template_curveprofile_property;
+
+extern FunctionRNA *rna_UILayout_template_color_ramp_func;
+extern PropertyRNA &rna_UILayout_template_color_ramp_data;
+extern PropertyRNA &rna_UILayout_template_color_ramp_property;
+extern PropertyRNA &rna_UILayout_template_color_ramp_expand;
+
+extern FunctionRNA *rna_UILayout_template_icon_func;
+extern PropertyRNA &rna_UILayout_template_icon_icon_value;
+extern PropertyRNA &rna_UILayout_template_icon_scale;
+
+extern FunctionRNA *rna_UILayout_template_icon_view_func;
+extern PropertyRNA &rna_UILayout_template_icon_view_data;
+extern PropertyRNA &rna_UILayout_template_icon_view_property;
+extern PropertyRNA &rna_UILayout_template_icon_view_show_labels;
+extern PropertyRNA &rna_UILayout_template_icon_view_scale;
+extern PropertyRNA &rna_UILayout_template_icon_view_scale_popup;
+
+extern FunctionRNA *rna_UILayout_template_histogram_func;
+extern PropertyRNA &rna_UILayout_template_histogram_data;
+extern PropertyRNA &rna_UILayout_template_histogram_property;
+
+extern FunctionRNA *rna_UILayout_template_waveform_func;
+extern PropertyRNA &rna_UILayout_template_waveform_data;
+extern PropertyRNA &rna_UILayout_template_waveform_property;
+
+extern FunctionRNA *rna_UILayout_template_vectorscope_func;
+extern PropertyRNA &rna_UILayout_template_vectorscope_data;
+extern PropertyRNA &rna_UILayout_template_vectorscope_property;
+
+extern FunctionRNA *rna_UILayout_template_layers_func;
+extern PropertyRNA &rna_UILayout_template_layers_data;
+extern PropertyRNA &rna_UILayout_template_layers_property;
+extern PropertyRNA &rna_UILayout_template_layers_used_layers_data;
+extern PropertyRNA &rna_UILayout_template_layers_used_layers_property;
+extern PropertyRNA &rna_UILayout_template_layers_active_layer;
+
+extern FunctionRNA *rna_UILayout_template_color_picker_func;
+extern PropertyRNA &rna_UILayout_template_color_picker_data;
+extern PropertyRNA &rna_UILayout_template_color_picker_property;
+extern PropertyRNA &rna_UILayout_template_color_picker_value_slider;
+extern PropertyRNA &rna_UILayout_template_color_picker_lock;
+extern PropertyRNA &rna_UILayout_template_color_picker_lock_luminosity;
+extern PropertyRNA &rna_UILayout_template_color_picker_cubic;
+
+extern FunctionRNA *rna_UILayout_template_palette_func;
+extern PropertyRNA &rna_UILayout_template_palette_data;
+extern PropertyRNA &rna_UILayout_template_palette_property;
+
+extern FunctionRNA *rna_UILayout_template_image_layers_func;
+extern PropertyRNA &rna_UILayout_template_image_layers_image;
+extern PropertyRNA &rna_UILayout_template_image_layers_image_user;
+
+extern FunctionRNA *rna_UILayout_template_image_func;
+extern PropertyRNA &rna_UILayout_template_image_data;
+extern PropertyRNA &rna_UILayout_template_image_property;
+extern PropertyRNA &rna_UILayout_template_image_image_user;
+extern PropertyRNA &rna_UILayout_template_image_compact;
+extern PropertyRNA &rna_UILayout_template_image_multiview;
+
+extern FunctionRNA *rna_UILayout_template_image_settings_func;
+extern PropertyRNA &rna_UILayout_template_image_settings_image_settings;
+extern PropertyRNA &rna_UILayout_template_image_settings_color_management;
+
+extern FunctionRNA *rna_UILayout_template_image_stereo_3d_func;
+extern PropertyRNA &rna_UILayout_template_image_stereo_3d_stereo_3d_format;
+
+extern FunctionRNA *rna_UILayout_template_image_views_func;
+extern PropertyRNA &rna_UILayout_template_image_views_image_settings;
+
+extern FunctionRNA *rna_UILayout_template_movieclip_func;
+extern PropertyRNA &rna_UILayout_template_movieclip_data;
+extern PropertyRNA &rna_UILayout_template_movieclip_property;
+extern PropertyRNA &rna_UILayout_template_movieclip_compact;
+
+extern FunctionRNA *rna_UILayout_template_track_func;
+extern PropertyRNA &rna_UILayout_template_track_data;
+extern PropertyRNA &rna_UILayout_template_track_property;
+
+extern FunctionRNA *rna_UILayout_template_marker_func;
+extern PropertyRNA &rna_UILayout_template_marker_data;
+extern PropertyRNA &rna_UILayout_template_marker_property;
+extern PropertyRNA &rna_UILayout_template_marker_clip_user;
+extern PropertyRNA &rna_UILayout_template_marker_track;
+extern PropertyRNA &rna_UILayout_template_marker_compact;
+
+extern FunctionRNA *rna_UILayout_template_movieclip_information_func;
+extern PropertyRNA &rna_UILayout_template_movieclip_information_data;
+extern PropertyRNA &rna_UILayout_template_movieclip_information_property;
+extern PropertyRNA &rna_UILayout_template_movieclip_information_clip_user;
+
+extern FunctionRNA *rna_UILayout_template_list_func;
+extern PropertyRNA &rna_UILayout_template_list_listtype_name;
+extern PropertyRNA &rna_UILayout_template_list_list_id;
+extern PropertyRNA &rna_UILayout_template_list_dataptr;
+extern PropertyRNA &rna_UILayout_template_list_propname;
+extern PropertyRNA &rna_UILayout_template_list_active_dataptr;
+extern PropertyRNA &rna_UILayout_template_list_active_propname;
+extern PropertyRNA &rna_UILayout_template_list_item_dyntip_propname;
+extern PropertyRNA &rna_UILayout_template_list_rows;
+extern PropertyRNA &rna_UILayout_template_list_maxrows;
+extern PropertyRNA &rna_UILayout_template_list_type;
+extern PropertyRNA &rna_UILayout_template_list_columns;
+extern PropertyRNA &rna_UILayout_template_list_sort_reverse;
+extern PropertyRNA &rna_UILayout_template_list_sort_lock;
+
+extern FunctionRNA *rna_UILayout_template_running_jobs_func;
+extern FunctionRNA *rna_UILayout_template_operator_search_func;
+extern FunctionRNA *rna_UILayout_template_menu_search_func;
+extern FunctionRNA *rna_UILayout_template_header_3D_mode_func;
+extern FunctionRNA *rna_UILayout_template_edit_mode_selection_func;
+extern FunctionRNA *rna_UILayout_template_reports_banner_func;
+extern FunctionRNA *rna_UILayout_template_input_status_func;
+extern FunctionRNA *rna_UILayout_template_status_info_func;
+extern FunctionRNA *rna_UILayout_template_node_link_func;
+extern PropertyRNA &rna_UILayout_template_node_link_ntree;
+extern PropertyRNA &rna_UILayout_template_node_link_node;
+extern PropertyRNA &rna_UILayout_template_node_link_socket;
+
+extern FunctionRNA *rna_UILayout_template_node_view_func;
+extern PropertyRNA &rna_UILayout_template_node_view_ntree;
+extern PropertyRNA &rna_UILayout_template_node_view_node;
+extern PropertyRNA &rna_UILayout_template_node_view_socket;
+
+extern FunctionRNA *rna_UILayout_template_node_operator_registration_errors_func;
+extern PropertyRNA &rna_UILayout_template_node_operator_registration_errors_idname;
+
+extern FunctionRNA *rna_UILayout_template_node_asset_menu_items_func;
+extern PropertyRNA &rna_UILayout_template_node_asset_menu_items_catalog_path;
+extern PropertyRNA &rna_UILayout_template_node_asset_menu_items_operator;
+
+extern FunctionRNA *rna_UILayout_template_modifier_asset_menu_items_func;
+extern PropertyRNA &rna_UILayout_template_modifier_asset_menu_items_catalog_path;
+extern PropertyRNA &rna_UILayout_template_modifier_asset_menu_items_skip_essentials;
+
+extern FunctionRNA *rna_UILayout_template_node_operator_asset_menu_items_func;
+extern PropertyRNA &rna_UILayout_template_node_operator_asset_menu_items_catalog_path;
+
+extern FunctionRNA *rna_UILayout_template_node_operator_asset_root_items_func;
+extern FunctionRNA *rna_UILayout_template_texture_user_func;
+extern FunctionRNA *rna_UILayout_template_keymap_item_properties_func;
+extern PropertyRNA &rna_UILayout_template_keymap_item_properties_item;
+
+extern FunctionRNA *rna_UILayout_template_component_menu_func;
+extern PropertyRNA &rna_UILayout_template_component_menu_data;
+extern PropertyRNA &rna_UILayout_template_component_menu_property;
+extern PropertyRNA &rna_UILayout_template_component_menu_name;
+
+extern FunctionRNA *rna_UILayout_template_colorspace_settings_func;
+extern PropertyRNA &rna_UILayout_template_colorspace_settings_data;
+extern PropertyRNA &rna_UILayout_template_colorspace_settings_property;
+
+extern FunctionRNA *rna_UILayout_template_colormanaged_view_settings_func;
+extern PropertyRNA &rna_UILayout_template_colormanaged_view_settings_data;
+extern PropertyRNA &rna_UILayout_template_colormanaged_view_settings_property;
+
+extern FunctionRNA *rna_UILayout_template_node_socket_func;
+extern PropertyRNA &rna_UILayout_template_node_socket_color;
+
+extern FunctionRNA *rna_UILayout_template_cache_file_func;
+extern PropertyRNA &rna_UILayout_template_cache_file_data;
+extern PropertyRNA &rna_UILayout_template_cache_file_property;
+
+extern FunctionRNA *rna_UILayout_template_cache_file_velocity_func;
+extern PropertyRNA &rna_UILayout_template_cache_file_velocity_data;
+extern PropertyRNA &rna_UILayout_template_cache_file_velocity_property;
+
+extern FunctionRNA *rna_UILayout_template_cache_file_time_settings_func;
+extern PropertyRNA &rna_UILayout_template_cache_file_time_settings_data;
+extern PropertyRNA &rna_UILayout_template_cache_file_time_settings_property;
+
+extern FunctionRNA *rna_UILayout_template_cache_file_layers_func;
+extern PropertyRNA &rna_UILayout_template_cache_file_layers_data;
+extern PropertyRNA &rna_UILayout_template_cache_file_layers_property;
+
+extern FunctionRNA *rna_UILayout_template_recent_files_func;
+extern PropertyRNA &rna_UILayout_template_recent_files_rows;
+extern PropertyRNA &rna_UILayout_template_recent_files_found;
+
+extern FunctionRNA *rna_UILayout_template_file_select_path_func;
+extern PropertyRNA &rna_UILayout_template_file_select_path_params;
+
+extern FunctionRNA *rna_UILayout_template_event_from_keymap_item_func;
+extern PropertyRNA &rna_UILayout_template_event_from_keymap_item_item;
+extern PropertyRNA &rna_UILayout_template_event_from_keymap_item_text;
+extern PropertyRNA &rna_UILayout_template_event_from_keymap_item_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_event_from_keymap_item_translate;
+
+extern FunctionRNA *rna_UILayout_template_light_linking_collection_func;
+extern PropertyRNA &rna_UILayout_template_light_linking_collection_context_layout;
+extern PropertyRNA &rna_UILayout_template_light_linking_collection_data;
+extern PropertyRNA &rna_UILayout_template_light_linking_collection_property;
+
+extern FunctionRNA *rna_UILayout_template_bone_collection_tree_func;
+extern FunctionRNA *rna_UILayout_template_grease_pencil_layer_tree_func;
+extern FunctionRNA *rna_UILayout_template_node_tree_interface_func;
+extern PropertyRNA &rna_UILayout_template_node_tree_interface_interface;
+
+extern FunctionRNA *rna_UILayout_template_node_inputs_func;
+extern PropertyRNA &rna_UILayout_template_node_inputs_node;
+
+extern FunctionRNA *rna_UILayout_template_asset_shelf_popover_func;
+extern PropertyRNA &rna_UILayout_template_asset_shelf_popover_asset_shelf;
+extern PropertyRNA &rna_UILayout_template_asset_shelf_popover_name;
+extern PropertyRNA &rna_UILayout_template_asset_shelf_popover_icon;
+extern PropertyRNA &rna_UILayout_template_asset_shelf_popover_icon_value;
+
+extern FunctionRNA *rna_UILayout_template_popup_confirm_func;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_operator;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_text;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_text_ctxt;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_translate;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_icon;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_cancel_text;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_cancel_default;
+extern PropertyRNA &rna_UILayout_template_popup_confirm_properties;
+
+extern FunctionRNA *rna_UILayout_template_shape_key_tree_func;
+
+
+extern PropertyRNA &rna_Panel_rna_properties;
+extern PropertyRNA &rna_Panel_rna_type;
+extern PropertyRNA &rna_Panel_layout;
+extern PropertyRNA &rna_Panel_text;
+extern PropertyRNA &rna_Panel_custom_data;
+extern PropertyRNA &rna_Panel_bl_idname;
+extern PropertyRNA &rna_Panel_bl_label;
+extern PropertyRNA &rna_Panel_bl_translation_context;
+extern PropertyRNA &rna_Panel_bl_description;
+extern PropertyRNA &rna_Panel_bl_category;
+extern PropertyRNA &rna_Panel_bl_icon;
+extern PropertyRNA &rna_Panel_bl_icon_value;
+extern PropertyRNA &rna_Panel_bl_owner_id;
+extern PropertyRNA &rna_Panel_bl_space_type;
+extern PropertyRNA &rna_Panel_bl_region_type;
+extern PropertyRNA &rna_Panel_bl_context;
+extern PropertyRNA &rna_Panel_bl_options;
+extern PropertyRNA &rna_Panel_bl_parent_id;
+extern PropertyRNA &rna_Panel_bl_ui_units_x;
+extern PropertyRNA &rna_Panel_bl_order;
+extern PropertyRNA &rna_Panel_use_pin;
+extern PropertyRNA &rna_Panel_is_popover;
+
+extern FunctionRNA *rna_Panel_poll_func;
+extern PropertyRNA &rna_Panel_poll_visible;
+extern PropertyRNA &rna_Panel_poll_context;
+
+extern FunctionRNA *rna_Panel_draw_func;
+extern PropertyRNA &rna_Panel_draw_context;
+
+extern FunctionRNA *rna_Panel_draw_header_func;
+extern PropertyRNA &rna_Panel_draw_header_context;
+
+extern FunctionRNA *rna_Panel_draw_header_preset_func;
+extern PropertyRNA &rna_Panel_draw_header_preset_context;
+
+
+
+extern PropertyRNA &rna_UIList_rna_properties;
+extern PropertyRNA &rna_UIList_rna_type;
+extern PropertyRNA &rna_UIList_bl_idname;
+extern PropertyRNA &rna_UIList_list_id;
+extern PropertyRNA &rna_UIList_layout_type;
+extern PropertyRNA &rna_UIList_use_filter_show;
+extern PropertyRNA &rna_UIList_filter_name;
+extern PropertyRNA &rna_UIList_use_filter_invert;
+extern PropertyRNA &rna_UIList_use_filter_sort_alpha;
+extern PropertyRNA &rna_UIList_use_filter_sort_reverse;
+extern PropertyRNA &rna_UIList_use_filter_sort_lock;
+extern PropertyRNA &rna_UIList_bitflag_filter_item;
+extern PropertyRNA &rna_UIList_bitflag_item_never_show;
+
+extern FunctionRNA *rna_UIList_bl_system_properties_get_func;
+extern PropertyRNA &rna_UIList_bl_system_properties_get_do_create;
+extern PropertyRNA &rna_UIList_bl_system_properties_get_system_properties;
+
+extern FunctionRNA *rna_UIList_draw_item_func;
+extern PropertyRNA &rna_UIList_draw_item_context;
+extern PropertyRNA &rna_UIList_draw_item_layout;
+extern PropertyRNA &rna_UIList_draw_item_data;
+extern PropertyRNA &rna_UIList_draw_item_item;
+extern PropertyRNA &rna_UIList_draw_item_icon;
+extern PropertyRNA &rna_UIList_draw_item_active_data;
+extern PropertyRNA &rna_UIList_draw_item_active_property;
+extern PropertyRNA &rna_UIList_draw_item_index;
+extern PropertyRNA &rna_UIList_draw_item_flt_flag;
+
+extern FunctionRNA *rna_UIList_draw_filter_func;
+extern PropertyRNA &rna_UIList_draw_filter_context;
+extern PropertyRNA &rna_UIList_draw_filter_layout;
+
+extern FunctionRNA *rna_UIList_filter_items_func;
+extern PropertyRNA &rna_UIList_filter_items_context;
+extern PropertyRNA &rna_UIList_filter_items_data;
+extern PropertyRNA &rna_UIList_filter_items_property;
+extern PropertyRNA &rna_UIList_filter_items_filter_flags;
+extern PropertyRNA &rna_UIList_filter_items_filter_neworder;
+
+
+
+extern PropertyRNA &rna_Header_rna_properties;
+extern PropertyRNA &rna_Header_rna_type;
+extern PropertyRNA &rna_Header_layout;
+extern PropertyRNA &rna_Header_bl_idname;
+extern PropertyRNA &rna_Header_bl_space_type;
+extern PropertyRNA &rna_Header_bl_region_type;
+
+extern FunctionRNA *rna_Header_draw_func;
+extern PropertyRNA &rna_Header_draw_context;
+
+
+
+extern PropertyRNA &rna_Menu_rna_properties;
+extern PropertyRNA &rna_Menu_rna_type;
+extern PropertyRNA &rna_Menu_layout;
+extern PropertyRNA &rna_Menu_bl_idname;
+extern PropertyRNA &rna_Menu_bl_label;
+extern PropertyRNA &rna_Menu_bl_translation_context;
+extern PropertyRNA &rna_Menu_bl_description;
+extern PropertyRNA &rna_Menu_bl_owner_id;
+extern PropertyRNA &rna_Menu_bl_options;
+
+extern FunctionRNA *rna_Menu_poll_func;
+extern PropertyRNA &rna_Menu_poll_visible;
+extern PropertyRNA &rna_Menu_poll_context;
+
+extern FunctionRNA *rna_Menu_draw_func;
+extern PropertyRNA &rna_Menu_draw_context;
+
+
+
+extern PropertyRNA &rna_AssetShelf_rna_properties;
+extern PropertyRNA &rna_AssetShelf_rna_type;
+extern PropertyRNA &rna_AssetShelf_bl_idname;
+extern PropertyRNA &rna_AssetShelf_bl_space_type;
+extern PropertyRNA &rna_AssetShelf_bl_options;
+extern PropertyRNA &rna_AssetShelf_bl_activate_operator;
+extern PropertyRNA &rna_AssetShelf_bl_drag_operator;
+extern PropertyRNA &rna_AssetShelf_bl_default_preview_size;
+extern PropertyRNA &rna_AssetShelf_filter_action;
+extern PropertyRNA &rna_AssetShelf_filter_armature;
+extern PropertyRNA &rna_AssetShelf_filter_brush;
+extern PropertyRNA &rna_AssetShelf_filter_camera;
+extern PropertyRNA &rna_AssetShelf_filter_cachefile;
+extern PropertyRNA &rna_AssetShelf_filter_curve;
+extern PropertyRNA &rna_AssetShelf_filter_annotations;
+extern PropertyRNA &rna_AssetShelf_filter_grease_pencil;
+extern PropertyRNA &rna_AssetShelf_filter_group;
+extern PropertyRNA &rna_AssetShelf_filter_curves;
+extern PropertyRNA &rna_AssetShelf_filter_image;
+extern PropertyRNA &rna_AssetShelf_filter_light;
+extern PropertyRNA &rna_AssetShelf_filter_light_probe;
+extern PropertyRNA &rna_AssetShelf_filter_linestyle;
+extern PropertyRNA &rna_AssetShelf_filter_lattice;
+extern PropertyRNA &rna_AssetShelf_filter_material;
+extern PropertyRNA &rna_AssetShelf_filter_metaball;
+extern PropertyRNA &rna_AssetShelf_filter_movie_clip;
+extern PropertyRNA &rna_AssetShelf_filter_mesh;
+extern PropertyRNA &rna_AssetShelf_filter_mask;
+extern PropertyRNA &rna_AssetShelf_filter_node_tree;
+extern PropertyRNA &rna_AssetShelf_filter_object;
+extern PropertyRNA &rna_AssetShelf_filter_particle_settings;
+extern PropertyRNA &rna_AssetShelf_filter_palette;
+extern PropertyRNA &rna_AssetShelf_filter_paint_curve;
+extern PropertyRNA &rna_AssetShelf_filter_pointcloud;
+extern PropertyRNA &rna_AssetShelf_filter_scene;
+extern PropertyRNA &rna_AssetShelf_filter_speaker;
+extern PropertyRNA &rna_AssetShelf_filter_sound;
+extern PropertyRNA &rna_AssetShelf_filter_texture;
+extern PropertyRNA &rna_AssetShelf_filter_text;
+extern PropertyRNA &rna_AssetShelf_filter_font;
+extern PropertyRNA &rna_AssetShelf_filter_volume;
+extern PropertyRNA &rna_AssetShelf_filter_world;
+extern PropertyRNA &rna_AssetShelf_filter_work_space;
+extern PropertyRNA &rna_AssetShelf_asset_library_reference;
+extern PropertyRNA &rna_AssetShelf_show_names;
+extern PropertyRNA &rna_AssetShelf_preview_size;
+extern PropertyRNA &rna_AssetShelf_search_filter;
+
+extern FunctionRNA *rna_AssetShelf_poll_func;
+extern PropertyRNA &rna_AssetShelf_poll_visible;
+extern PropertyRNA &rna_AssetShelf_poll_context;
+
+extern FunctionRNA *rna_AssetShelf_asset_poll_func;
+extern PropertyRNA &rna_AssetShelf_asset_poll_visible;
+extern PropertyRNA &rna_AssetShelf_asset_poll_asset;
+
+extern FunctionRNA *rna_AssetShelf_get_active_asset_func;
+extern PropertyRNA &rna_AssetShelf_get_active_asset_asset_reference;
+
+extern FunctionRNA *rna_AssetShelf_draw_context_menu_func;
+extern PropertyRNA &rna_AssetShelf_draw_context_menu_context;
+extern PropertyRNA &rna_AssetShelf_draw_context_menu_asset;
+extern PropertyRNA &rna_AssetShelf_draw_context_menu_layout;
+
+
+
+extern PropertyRNA &rna_FileHandler_rna_properties;
+extern PropertyRNA &rna_FileHandler_rna_type;
+extern PropertyRNA &rna_FileHandler_bl_idname;
+extern PropertyRNA &rna_FileHandler_bl_import_operator;
+extern PropertyRNA &rna_FileHandler_bl_export_operator;
+extern PropertyRNA &rna_FileHandler_bl_label;
+extern PropertyRNA &rna_FileHandler_bl_file_extensions;
+
+extern FunctionRNA *rna_FileHandler_poll_drop_func;
+extern PropertyRNA &rna_FileHandler_poll_drop_is_usable;
+extern PropertyRNA &rna_FileHandler_poll_drop_context;
+
+
+
+extern PropertyRNA &rna_LayoutPanelState_rna_properties;
+extern PropertyRNA &rna_LayoutPanelState_rna_type;
+extern PropertyRNA &rna_LayoutPanelState_is_open;
+
+
+extern PropertyRNA &rna_TextboxState_rna_properties;
+extern PropertyRNA &rna_TextboxState_rna_type;
+extern PropertyRNA &rna_TextboxState_visible_lines;
+extern PropertyRNA &rna_TextboxState_scroll;
+
+static PointerRNA UILayout_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void UILayout_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_UILayout_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = UILayout_rna_properties_get(iter);
+    }
+}
+
+void UILayout_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = UILayout_rna_properties_get(iter);
+    }
+}
+
+void UILayout_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool UILayout_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA UILayout_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+bool UILayout_active_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_active_get;
+    return fn(ptr);
+}
+
+void UILayout_active_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_active_set;
+    fn(ptr, value);
+}
+
+bool UILayout_active_default_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_active_default_get;
+    return fn(ptr);
+}
+
+void UILayout_active_default_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_active_default_set;
+    fn(ptr, value);
+}
+
+bool UILayout_activate_init_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_activate_init_get;
+    return fn(ptr);
+}
+
+void UILayout_activate_init_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_activate_init_set;
+    fn(ptr, value);
+}
+
+int UILayout_operator_context_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_UILayout_op_context_get;
+    return fn(ptr);
+}
+
+void UILayout_operator_context_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_UILayout_op_context_set;
+    fn(ptr, value);
+}
+
+bool UILayout_enabled_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_enabled_get;
+    return fn(ptr);
+}
+
+void UILayout_enabled_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_enabled_set;
+    fn(ptr, value);
+}
+
+bool UILayout_alert_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_alert_get;
+    return fn(ptr);
+}
+
+void UILayout_alert_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_alert_set;
+    fn(ptr, value);
+}
+
+int UILayout_alignment_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_UILayout_alignment_get;
+    return fn(ptr);
+}
+
+void UILayout_alignment_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_UILayout_alignment_set;
+    fn(ptr, value);
+}
+
+int UILayout_direction_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_UILayout_direction_get;
+    return fn(ptr);
+}
+
+float UILayout_scale_x_get(PointerRNA *ptr)
+{
+    PropFloatGetFunc fn = rna_UILayout_scale_x_get;
+    return fn(ptr);
+}
+
+void UILayout_scale_x_set(PointerRNA *ptr, float value)
+{
+    PropFloatSetFunc fn = rna_UILayout_scale_x_set;
+    fn(ptr, value);
+}
+
+float UILayout_scale_y_get(PointerRNA *ptr)
+{
+    PropFloatGetFunc fn = rna_UILayout_scale_y_get;
+    return fn(ptr);
+}
+
+void UILayout_scale_y_set(PointerRNA *ptr, float value)
+{
+    PropFloatSetFunc fn = rna_UILayout_scale_y_set;
+    fn(ptr, value);
+}
+
+float UILayout_ui_units_x_get(PointerRNA *ptr)
+{
+    PropFloatGetFunc fn = rna_UILayout_units_x_get;
+    return fn(ptr);
+}
+
+void UILayout_ui_units_x_set(PointerRNA *ptr, float value)
+{
+    PropFloatSetFunc fn = rna_UILayout_units_x_set;
+    fn(ptr, value);
+}
+
+float UILayout_ui_units_y_get(PointerRNA *ptr)
+{
+    PropFloatGetFunc fn = rna_UILayout_units_y_get;
+    return fn(ptr);
+}
+
+void UILayout_ui_units_y_set(PointerRNA *ptr, float value)
+{
+    PropFloatSetFunc fn = rna_UILayout_units_y_set;
+    fn(ptr, value);
+}
+
+int UILayout_emboss_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_UILayout_emboss_get;
+    return fn(ptr);
+}
+
+void UILayout_emboss_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_UILayout_emboss_set;
+    fn(ptr, value);
+}
+
+bool UILayout_use_property_split_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_property_split_get;
+    return fn(ptr);
+}
+
+void UILayout_use_property_split_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_property_split_set;
+    fn(ptr, value);
+}
+
+bool UILayout_use_property_decorate_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_UILayout_property_decorate_get;
+    return fn(ptr);
+}
+
+void UILayout_use_property_decorate_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_UILayout_property_decorate_set;
+    fn(ptr, value);
+}
+
+static PointerRNA Panel_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void Panel_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Panel_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Panel_rna_properties_get(iter);
+    }
+}
+
+void Panel_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Panel_rna_properties_get(iter);
+    }
+}
+
+void Panel_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Panel_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA Panel_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA Panel_layout_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_UILayout, data->layout);
+}
+
+void Panel_text_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    if (data->drawname == nullptr) {
+        *value = '\0';
+        return;
+    }
+    strcpy(value, data->drawname);
+}
+
+int Panel_text_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (data->drawname == nullptr) ? 0 : strlen(data->drawname);
+}
+
+void Panel_text_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    if (data->drawname != nullptr) { MEM_delete(data->drawname); }
+    const size_t length = strlen(value);
+    if (length > 0) {
+        data->drawname = MEM_new_array_uninitialized<char>(length + 1, __func__);
+        memcpy(data->drawname, value, length + 1);
+    } else { data->drawname = nullptr; }
+}
+
+PointerRNA Panel_custom_data_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_Panel_custom_data_get;
+    return fn(ptr);
+}
+
+void Panel_bl_idname_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->idname) < sizeof(data->type->idname));
+    strcpy(value, data->type->idname);
+}
+
+int Panel_bl_idname_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->idname);
+}
+
+void Panel_bl_idname_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->idname, value, sizeof(data->type->idname));
+}
+
+void Panel_bl_label_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->label) < sizeof(data->type->label));
+    strcpy(value, data->type->label);
+}
+
+int Panel_bl_label_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->label);
+}
+
+void Panel_bl_label_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->label, value, sizeof(data->type->label));
+}
+
+void Panel_bl_translation_context_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->translation_context) < sizeof(data->type->translation_context));
+    strcpy(value, data->type->translation_context);
+}
+
+int Panel_bl_translation_context_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->translation_context);
+}
+
+void Panel_bl_translation_context_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->translation_context, value, sizeof(data->type->translation_context));
+}
+
+void Panel_bl_description_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->description) < 1024);
+    strcpy(value, data->type->description);
+}
+
+int Panel_bl_description_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->description);
+}
+
+void Panel_bl_description_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_Panel_bl_description_set;
+    fn(ptr, value);
+}
+
+void Panel_bl_category_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->category) < sizeof(data->type->category));
+    strcpy(value, data->type->category);
+}
+
+int Panel_bl_category_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->category);
+}
+
+void Panel_bl_category_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->category, value, sizeof(data->type->category));
+}
+
+int Panel_bl_icon_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->icon);
+}
+
+void Panel_bl_icon_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->icon = (std::remove_reference_t<decltype(data->type->icon)>)value;
+}
+
+int Panel_bl_icon_value_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->icon);
+}
+
+void Panel_bl_icon_value_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->icon = (std::remove_reference_t<decltype(data->type->icon)>)value;
+}
+
+void Panel_bl_owner_id_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->owner_id) < sizeof(data->type->owner_id));
+    strcpy(value, data->type->owner_id);
+}
+
+int Panel_bl_owner_id_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->owner_id);
+}
+
+void Panel_bl_owner_id_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->owner_id, value, sizeof(data->type->owner_id));
+}
+
+int Panel_bl_space_type_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->space_type);
+}
+
+void Panel_bl_space_type_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->space_type = (std::remove_reference_t<decltype(data->type->space_type)>)value;
+}
+
+int Panel_bl_region_type_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->region_type);
+}
+
+void Panel_bl_region_type_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->region_type = (std::remove_reference_t<decltype(data->type->region_type)>)value;
+}
+
+void Panel_bl_context_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->context) < sizeof(data->type->context));
+    strcpy(value, data->type->context);
+}
+
+int Panel_bl_context_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->context);
+}
+
+void Panel_bl_context_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->context, value, sizeof(data->type->context));
+}
+
+int Panel_bl_options_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->flag);
+}
+
+void Panel_bl_options_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->flag = (std::remove_reference_t<decltype(data->type->flag)>)value;
+}
+
+void Panel_bl_parent_id_get(PointerRNA *ptr, char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_assert(strlen(data->type->parent_id) < sizeof(data->type->parent_id));
+    strcpy(value, data->type->parent_id);
+}
+
+int Panel_bl_parent_id_length(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return strlen(data->type->parent_id);
+}
+
+void Panel_bl_parent_id_set(PointerRNA *ptr, const char *value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    BLI_strncpy_utf8(data->type->parent_id, value, sizeof(data->type->parent_id));
+}
+
+int Panel_bl_ui_units_x_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->ui_units_x);
+}
+
+void Panel_bl_ui_units_x_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->ui_units_x = (std::remove_reference_t<decltype(data->type->ui_units_x)>)std::clamp(value, 0, INT_MAX);
+}
+
+int Panel_bl_order_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return (int)(data->type->order);
+}
+
+void Panel_bl_order_set(PointerRNA *ptr, int value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    data->type->order = (std::remove_reference_t<decltype(data->type->order)>)std::clamp(value, 0, INT_MAX);
+}
+
+bool Panel_use_pin_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return ((uint64_t(data->flag) & 32) != 0);
+}
+
+void Panel_use_pin_set(PointerRNA *ptr, bool value)
+{
+    Panel *data = (Panel *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 32); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(32)); }
+}
+
+bool Panel_is_popover_get(PointerRNA *ptr)
+{
+    Panel *data = (Panel *)(ptr->data);
+    return ((uint64_t(data->flag) & 64) != 0);
+}
+
+static PointerRNA UIList_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void UIList_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_UIList_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = UIList_rna_properties_get(iter);
+    }
+}
+
+void UIList_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = UIList_rna_properties_get(iter);
+    }
+}
+
+void UIList_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool UIList_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA UIList_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void UIList_bl_idname_get(PointerRNA *ptr, char *value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    BLI_assert(strlen(data->type->idname) < sizeof(data->type->idname));
+    strcpy(value, data->type->idname);
+}
+
+int UIList_bl_idname_length(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return strlen(data->type->idname);
+}
+
+void UIList_bl_idname_set(PointerRNA *ptr, const char *value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    BLI_strncpy_utf8(data->type->idname, value, sizeof(data->type->idname));
+}
+
+void UIList_list_id_get(PointerRNA *ptr, char *value)
+{
+    PropStringGetFunc fn = rna_UIList_list_id_get;
+    fn(ptr, value);
+}
+
+int UIList_list_id_length(PointerRNA *ptr)
+{
+    PropStringLengthFunc fn = rna_UIList_list_id_length;
+    return fn(ptr);
+}
+
+int UIList_layout_type_get(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return (int)(data->layout_type);
+}
+
+bool UIList_use_filter_show_get(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return ((uint64_t(data->filter_flag) & 1) != 0);
+}
+
+void UIList_use_filter_show_set(PointerRNA *ptr, bool value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    if (value) { data->filter_flag = std::remove_reference_t<decltype(data->filter_flag)>(uint64_t(data->filter_flag) | 1); }
+    else { data->filter_flag = std::remove_reference_t<decltype(data->filter_flag)>(uint64_t(data->filter_flag) & ~uint64_t(1)); }
+}
+
+void UIList_filter_name_get(PointerRNA *ptr, char *value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    BLI_assert(strlen(data->filter_byname) < 256);
+    strcpy(value, data->filter_byname);
+}
+
+int UIList_filter_name_length(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return strlen(data->filter_byname);
+}
+
+void UIList_filter_name_set(PointerRNA *ptr, const char *value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    BLI_strncpy_utf8(data->filter_byname, value, 256);
+}
+
+bool UIList_use_filter_invert_get(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return ((uint64_t(data->filter_flag) & 1073741824) != 0);
+}
+
+void UIList_use_filter_invert_set(PointerRNA *ptr, bool value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    if (value) { data->filter_flag = std::remove_reference_t<decltype(data->filter_flag)>(uint64_t(data->filter_flag) | 1073741824); }
+    else { data->filter_flag = std::remove_reference_t<decltype(data->filter_flag)>(uint64_t(data->filter_flag) & ~uint64_t(1073741824)); }
+}
+
+bool UIList_use_filter_sort_alpha_get(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return ((uint64_t(data->filter_sort_flag) & 1) != 0);
+}
+
+void UIList_use_filter_sort_alpha_set(PointerRNA *ptr, bool value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    if (value) { data->filter_sort_flag = std::remove_reference_t<decltype(data->filter_sort_flag)>(uint64_t(data->filter_sort_flag) | 1); }
+    else { data->filter_sort_flag = std::remove_reference_t<decltype(data->filter_sort_flag)>(uint64_t(data->filter_sort_flag) & ~uint64_t(1)); }
+}
+
+bool UIList_use_filter_sort_reverse_get(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return ((uint64_t(data->filter_sort_flag) & INT_MIN) != 0);
+}
+
+void UIList_use_filter_sort_reverse_set(PointerRNA *ptr, bool value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    if (value) { data->filter_sort_flag = std::remove_reference_t<decltype(data->filter_sort_flag)>(uint64_t(data->filter_sort_flag) | INT_MIN); }
+    else { data->filter_sort_flag = std::remove_reference_t<decltype(data->filter_sort_flag)>(uint64_t(data->filter_sort_flag) & ~uint64_t(INT_MIN)); }
+}
+
+bool UIList_use_filter_sort_lock_get(PointerRNA *ptr)
+{
+    uiList *data = (uiList *)(ptr->data);
+    return ((uint64_t(data->filter_sort_flag) & 1073741824) != 0);
+}
+
+void UIList_use_filter_sort_lock_set(PointerRNA *ptr, bool value)
+{
+    uiList *data = (uiList *)(ptr->data);
+    if (value) { data->filter_sort_flag = std::remove_reference_t<decltype(data->filter_sort_flag)>(uint64_t(data->filter_sort_flag) | 1073741824); }
+    else { data->filter_sort_flag = std::remove_reference_t<decltype(data->filter_sort_flag)>(uint64_t(data->filter_sort_flag) & ~uint64_t(1073741824)); }
+}
+
+int UIList_bitflag_filter_item_get(PointerRNA *ptr)
+{
+    PropIntGetFunc fn = rna_UIList_filter_const_FILTER_ITEM_get;
+    return fn(ptr);
+}
+
+int UIList_bitflag_item_never_show_get(PointerRNA *ptr)
+{
+    PropIntGetFunc fn = rna_UIList_item_never_show;
+    return fn(ptr);
+}
+
+static PointerRNA Header_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void Header_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Header_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Header_rna_properties_get(iter);
+    }
+}
+
+void Header_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Header_rna_properties_get(iter);
+    }
+}
+
+void Header_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Header_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA Header_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA Header_layout_get(PointerRNA *ptr)
+{
+    Header *data = (Header *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_UILayout, data->layout);
+}
+
+void Header_bl_idname_get(PointerRNA *ptr, char *value)
+{
+    Header *data = (Header *)(ptr->data);
+    BLI_assert(strlen(data->type->idname) < sizeof(data->type->idname));
+    strcpy(value, data->type->idname);
+}
+
+int Header_bl_idname_length(PointerRNA *ptr)
+{
+    Header *data = (Header *)(ptr->data);
+    return strlen(data->type->idname);
+}
+
+void Header_bl_idname_set(PointerRNA *ptr, const char *value)
+{
+    Header *data = (Header *)(ptr->data);
+    BLI_strncpy_utf8(data->type->idname, value, sizeof(data->type->idname));
+}
+
+int Header_bl_space_type_get(PointerRNA *ptr)
+{
+    Header *data = (Header *)(ptr->data);
+    return (int)(data->type->space_type);
+}
+
+void Header_bl_space_type_set(PointerRNA *ptr, int value)
+{
+    Header *data = (Header *)(ptr->data);
+    data->type->space_type = (std::remove_reference_t<decltype(data->type->space_type)>)value;
+}
+
+int Header_bl_region_type_get(PointerRNA *ptr)
+{
+    Header *data = (Header *)(ptr->data);
+    return (int)(data->type->region_type);
+}
+
+void Header_bl_region_type_set(PointerRNA *ptr, int value)
+{
+    Header *data = (Header *)(ptr->data);
+    data->type->region_type = (std::remove_reference_t<decltype(data->type->region_type)>)value;
+}
+
+static PointerRNA Menu_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void Menu_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Menu_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Menu_rna_properties_get(iter);
+    }
+}
+
+void Menu_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Menu_rna_properties_get(iter);
+    }
+}
+
+void Menu_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Menu_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA Menu_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA Menu_layout_get(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_UILayout, data->layout);
+}
+
+void Menu_bl_idname_get(PointerRNA *ptr, char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_assert(strlen(data->type->idname) < sizeof(data->type->idname));
+    strcpy(value, data->type->idname);
+}
+
+int Menu_bl_idname_length(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return strlen(data->type->idname);
+}
+
+void Menu_bl_idname_set(PointerRNA *ptr, const char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_strncpy_utf8(data->type->idname, value, sizeof(data->type->idname));
+}
+
+void Menu_bl_label_get(PointerRNA *ptr, char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_assert(strlen(data->type->label) < sizeof(data->type->label));
+    strcpy(value, data->type->label);
+}
+
+int Menu_bl_label_length(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return strlen(data->type->label);
+}
+
+void Menu_bl_label_set(PointerRNA *ptr, const char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_strncpy_utf8(data->type->label, value, sizeof(data->type->label));
+}
+
+void Menu_bl_translation_context_get(PointerRNA *ptr, char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_assert(strlen(data->type->translation_context) < sizeof(data->type->translation_context));
+    strcpy(value, data->type->translation_context);
+}
+
+int Menu_bl_translation_context_length(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return strlen(data->type->translation_context);
+}
+
+void Menu_bl_translation_context_set(PointerRNA *ptr, const char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_strncpy_utf8(data->type->translation_context, value, sizeof(data->type->translation_context));
+}
+
+void Menu_bl_description_get(PointerRNA *ptr, char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_assert(strlen(data->type->description) < 1024);
+    strcpy(value, data->type->description);
+}
+
+int Menu_bl_description_length(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return strlen(data->type->description);
+}
+
+void Menu_bl_description_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_Menu_bl_description_set;
+    fn(ptr, value);
+}
+
+void Menu_bl_owner_id_get(PointerRNA *ptr, char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_assert(strlen(data->type->owner_id) < sizeof(data->type->owner_id));
+    strcpy(value, data->type->owner_id);
+}
+
+int Menu_bl_owner_id_length(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return strlen(data->type->owner_id);
+}
+
+void Menu_bl_owner_id_set(PointerRNA *ptr, const char *value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    BLI_strncpy_utf8(data->type->owner_id, value, sizeof(data->type->owner_id));
+}
+
+int Menu_bl_options_get(PointerRNA *ptr)
+{
+    Menu *data = (Menu *)(ptr->data);
+    return (int)(data->type->flag);
+}
+
+void Menu_bl_options_set(PointerRNA *ptr, int value)
+{
+    Menu *data = (Menu *)(ptr->data);
+    data->type->flag = (std::remove_reference_t<decltype(data->type->flag)>)value;
+}
+
+static PointerRNA AssetShelf_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void AssetShelf_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_AssetShelf_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = AssetShelf_rna_properties_get(iter);
+    }
+}
+
+void AssetShelf_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = AssetShelf_rna_properties_get(iter);
+    }
+}
+
+void AssetShelf_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool AssetShelf_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA AssetShelf_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void AssetShelf_bl_idname_get(PointerRNA *ptr, char *value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    BLI_assert(strlen(data->type->idname) < sizeof(data->type->idname));
+    strcpy(value, data->type->idname);
+}
+
+int AssetShelf_bl_idname_length(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return strlen(data->type->idname);
+}
+
+void AssetShelf_bl_idname_set(PointerRNA *ptr, const char *value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    BLI_strncpy_utf8(data->type->idname, value, sizeof(data->type->idname));
+}
+
+int AssetShelf_bl_space_type_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return (int)(data->type->space_type);
+}
+
+void AssetShelf_bl_space_type_set(PointerRNA *ptr, int value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    data->type->space_type = (std::remove_reference_t<decltype(data->type->space_type)>)value;
+}
+
+int AssetShelf_bl_options_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return (int)(data->type->flag);
+}
+
+void AssetShelf_bl_options_set(PointerRNA *ptr, int value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    data->type->flag = (std::remove_reference_t<decltype(data->type->flag)>)value;
+}
+
+void AssetShelf_bl_activate_operator_get(PointerRNA *ptr, char *value)
+{
+    PropStringGetFunc fn = rna_AssetShelf_activate_operator_get;
+    fn(ptr, value);
+}
+
+int AssetShelf_bl_activate_operator_length(PointerRNA *ptr)
+{
+    PropStringLengthFunc fn = rna_AssetShelf_activate_operator_length;
+    return fn(ptr);
+}
+
+void AssetShelf_bl_activate_operator_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_AssetShelf_activate_operator_set;
+    fn(ptr, value);
+}
+
+void AssetShelf_bl_drag_operator_get(PointerRNA *ptr, char *value)
+{
+    PropStringGetFunc fn = rna_AssetShelf_drag_operator_get;
+    fn(ptr, value);
+}
+
+int AssetShelf_bl_drag_operator_length(PointerRNA *ptr)
+{
+    PropStringLengthFunc fn = rna_AssetShelf_drag_operator_length;
+    return fn(ptr);
+}
+
+void AssetShelf_bl_drag_operator_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_AssetShelf_drag_operator_set;
+    fn(ptr, value);
+}
+
+int AssetShelf_bl_default_preview_size_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return (int)(data->type->default_preview_size);
+}
+
+void AssetShelf_bl_default_preview_size_set(PointerRNA *ptr, int value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    data->type->default_preview_size = (std::remove_reference_t<decltype(data->type->default_preview_size)>)std::clamp(value, 32, 256);
+}
+
+bool AssetShelf_filter_action_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 1) != 0);
+}
+
+void AssetShelf_filter_action_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 1); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(1)); }
+}
+
+bool AssetShelf_filter_armature_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 2) != 0);
+}
+
+void AssetShelf_filter_armature_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 2); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(2)); }
+}
+
+bool AssetShelf_filter_brush_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 4) != 0);
+}
+
+void AssetShelf_filter_brush_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 4); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(4)); }
+}
+
+bool AssetShelf_filter_camera_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 8) != 0);
+}
+
+void AssetShelf_filter_camera_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 8); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(8)); }
+}
+
+bool AssetShelf_filter_cachefile_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 268435456) != 0);
+}
+
+void AssetShelf_filter_cachefile_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 268435456); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(268435456)); }
+}
+
+bool AssetShelf_filter_curve_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 16) != 0);
+}
+
+void AssetShelf_filter_curve_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 16); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(16)); }
+}
+
+bool AssetShelf_filter_annotations_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 32) != 0);
+}
+
+void AssetShelf_filter_annotations_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 32); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(32)); }
+}
+
+bool AssetShelf_filter_grease_pencil_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 1099511627776LL) != 0);
+}
+
+void AssetShelf_filter_grease_pencil_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 1099511627776LL); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(1099511627776LL)); }
+}
+
+bool AssetShelf_filter_group_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 64) != 0);
+}
+
+void AssetShelf_filter_group_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 64); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(64)); }
+}
+
+bool AssetShelf_filter_curves_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 4294967296LL) != 0);
+}
+
+void AssetShelf_filter_curves_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 4294967296LL); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(4294967296LL)); }
+}
+
+bool AssetShelf_filter_image_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 128) != 0);
+}
+
+void AssetShelf_filter_image_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 128); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(128)); }
+}
+
+bool AssetShelf_filter_light_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 256) != 0);
+}
+
+void AssetShelf_filter_light_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 256); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(256)); }
+}
+
+bool AssetShelf_filter_light_probe_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 2147483648LL) != 0);
+}
+
+void AssetShelf_filter_light_probe_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 2147483648LL); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(2147483648LL)); }
+}
+
+bool AssetShelf_filter_linestyle_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 512) != 0);
+}
+
+void AssetShelf_filter_linestyle_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 512); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(512)); }
+}
+
+bool AssetShelf_filter_lattice_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 1024) != 0);
+}
+
+void AssetShelf_filter_lattice_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 1024); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(1024)); }
+}
+
+bool AssetShelf_filter_material_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 2048) != 0);
+}
+
+void AssetShelf_filter_material_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 2048); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(2048)); }
+}
+
+bool AssetShelf_filter_metaball_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 4096) != 0);
+}
+
+void AssetShelf_filter_metaball_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 4096); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(4096)); }
+}
+
+bool AssetShelf_filter_movie_clip_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 8192) != 0);
+}
+
+void AssetShelf_filter_movie_clip_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 8192); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(8192)); }
+}
+
+bool AssetShelf_filter_mesh_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 16384) != 0);
+}
+
+void AssetShelf_filter_mesh_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 16384); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(16384)); }
+}
+
+bool AssetShelf_filter_mask_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 32768) != 0);
+}
+
+void AssetShelf_filter_mask_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 32768); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(32768)); }
+}
+
+bool AssetShelf_filter_node_tree_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 65536) != 0);
+}
+
+void AssetShelf_filter_node_tree_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 65536); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(65536)); }
+}
+
+bool AssetShelf_filter_object_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 131072) != 0);
+}
+
+void AssetShelf_filter_object_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 131072); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(131072)); }
+}
+
+bool AssetShelf_filter_particle_settings_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 134217728) != 0);
+}
+
+void AssetShelf_filter_particle_settings_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 134217728); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(134217728)); }
+}
+
+bool AssetShelf_filter_palette_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 262144) != 0);
+}
+
+void AssetShelf_filter_palette_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 262144); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(262144)); }
+}
+
+bool AssetShelf_filter_paint_curve_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 524288) != 0);
+}
+
+void AssetShelf_filter_paint_curve_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 524288); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(524288)); }
+}
+
+bool AssetShelf_filter_pointcloud_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 8589934592LL) != 0);
+}
+
+void AssetShelf_filter_pointcloud_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 8589934592LL); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(8589934592LL)); }
+}
+
+bool AssetShelf_filter_scene_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 1048576) != 0);
+}
+
+void AssetShelf_filter_scene_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 1048576); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(1048576)); }
+}
+
+bool AssetShelf_filter_speaker_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 2097152) != 0);
+}
+
+void AssetShelf_filter_speaker_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 2097152); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(2097152)); }
+}
+
+bool AssetShelf_filter_sound_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 4194304) != 0);
+}
+
+void AssetShelf_filter_sound_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 4194304); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(4194304)); }
+}
+
+bool AssetShelf_filter_texture_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 8388608) != 0);
+}
+
+void AssetShelf_filter_texture_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 8388608); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(8388608)); }
+}
+
+bool AssetShelf_filter_text_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 16777216) != 0);
+}
+
+void AssetShelf_filter_text_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 16777216); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(16777216)); }
+}
+
+bool AssetShelf_filter_font_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 33554432) != 0);
+}
+
+void AssetShelf_filter_font_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 33554432); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(33554432)); }
+}
+
+bool AssetShelf_filter_volume_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 17179869184LL) != 0);
+}
+
+void AssetShelf_filter_volume_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 17179869184LL); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(17179869184LL)); }
+}
+
+bool AssetShelf_filter_world_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 67108864) != 0);
+}
+
+void AssetShelf_filter_world_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 67108864); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(67108864)); }
+}
+
+bool AssetShelf_filter_work_space_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->type->id_types_prefilter) & 536870912) != 0);
+}
+
+void AssetShelf_filter_work_space_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) | 536870912); }
+    else { data->type->id_types_prefilter = std::remove_reference_t<decltype(data->type->id_types_prefilter)>(uint64_t(data->type->id_types_prefilter) & ~uint64_t(536870912)); }
+}
+
+int AssetShelf_asset_library_reference_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_AssetShelf_asset_library_get;
+    return fn(ptr);
+}
+
+void AssetShelf_asset_library_reference_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_AssetShelf_asset_library_set;
+    fn(ptr, value);
+}
+
+bool AssetShelf_show_names_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return ((uint64_t(data->settings.display_flag) & 1) != 0);
+}
+
+void AssetShelf_show_names_set(PointerRNA *ptr, bool value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    if (value) { data->settings.display_flag = std::remove_reference_t<decltype(data->settings.display_flag)>(uint64_t(data->settings.display_flag) | 1); }
+    else { data->settings.display_flag = std::remove_reference_t<decltype(data->settings.display_flag)>(uint64_t(data->settings.display_flag) & ~uint64_t(1)); }
+}
+
+int AssetShelf_preview_size_get(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return (int)(data->settings.preview_size);
+}
+
+void AssetShelf_preview_size_set(PointerRNA *ptr, int value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    data->settings.preview_size = (std::remove_reference_t<decltype(data->settings.preview_size)>)std::clamp(value, 24, 256);
+}
+
+void AssetShelf_search_filter_get(PointerRNA *ptr, char *value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    BLI_assert(strlen(data->settings.search_string) < 64);
+    strcpy(value, data->settings.search_string);
+}
+
+int AssetShelf_search_filter_length(PointerRNA *ptr)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    return strlen(data->settings.search_string);
+}
+
+void AssetShelf_search_filter_set(PointerRNA *ptr, const char *value)
+{
+    AssetShelf *data = (AssetShelf *)(ptr->data);
+    BLI_strncpy_utf8(data->settings.search_string, value, 64);
+}
+
+static PointerRNA FileHandler_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void FileHandler_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FileHandler_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = FileHandler_rna_properties_get(iter);
+    }
+}
+
+void FileHandler_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FileHandler_rna_properties_get(iter);
+    }
+}
+
+void FileHandler_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool FileHandler_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA FileHandler_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void FileHandler_bl_idname_get(PointerRNA *ptr, char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_assert(strlen(data->type->idname) < sizeof(data->type->idname));
+    strcpy(value, data->type->idname);
+}
+
+int FileHandler_bl_idname_length(PointerRNA *ptr)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    return strlen(data->type->idname);
+}
+
+void FileHandler_bl_idname_set(PointerRNA *ptr, const char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_strncpy_utf8(data->type->idname, value, sizeof(data->type->idname));
+}
+
+void FileHandler_bl_import_operator_get(PointerRNA *ptr, char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_assert(strlen(data->type->import_operator) < sizeof(data->type->import_operator));
+    strcpy(value, data->type->import_operator);
+}
+
+int FileHandler_bl_import_operator_length(PointerRNA *ptr)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    return strlen(data->type->import_operator);
+}
+
+void FileHandler_bl_import_operator_set(PointerRNA *ptr, const char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_strncpy_utf8(data->type->import_operator, value, sizeof(data->type->import_operator));
+}
+
+void FileHandler_bl_export_operator_get(PointerRNA *ptr, char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_assert(strlen(data->type->export_operator) < sizeof(data->type->export_operator));
+    strcpy(value, data->type->export_operator);
+}
+
+int FileHandler_bl_export_operator_length(PointerRNA *ptr)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    return strlen(data->type->export_operator);
+}
+
+void FileHandler_bl_export_operator_set(PointerRNA *ptr, const char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_strncpy_utf8(data->type->export_operator, value, sizeof(data->type->export_operator));
+}
+
+void FileHandler_bl_label_get(PointerRNA *ptr, char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_assert(strlen(data->type->label) < sizeof(data->type->label));
+    strcpy(value, data->type->label);
+}
+
+int FileHandler_bl_label_length(PointerRNA *ptr)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    return strlen(data->type->label);
+}
+
+void FileHandler_bl_label_set(PointerRNA *ptr, const char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_strncpy_utf8(data->type->label, value, sizeof(data->type->label));
+}
+
+void FileHandler_bl_file_extensions_get(PointerRNA *ptr, char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_assert(strlen(data->type->file_extensions_str) < sizeof(data->type->file_extensions_str));
+    strcpy(value, data->type->file_extensions_str);
+}
+
+int FileHandler_bl_file_extensions_length(PointerRNA *ptr)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    return strlen(data->type->file_extensions_str);
+}
+
+void FileHandler_bl_file_extensions_set(PointerRNA *ptr, const char *value)
+{
+    FileHandler *data = (FileHandler *)(ptr->data);
+    BLI_strncpy_utf8(data->type->file_extensions_str, value, sizeof(data->type->file_extensions_str));
+}
+
+static PointerRNA LayoutPanelState_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LayoutPanelState_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LayoutPanelState_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LayoutPanelState_rna_properties_get(iter);
+    }
+}
+
+void LayoutPanelState_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LayoutPanelState_rna_properties_get(iter);
+    }
+}
+
+void LayoutPanelState_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LayoutPanelState_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LayoutPanelState_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+bool LayoutPanelState_is_open_get(PointerRNA *ptr)
+{
+    LayoutPanelState *data = (LayoutPanelState *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void LayoutPanelState_is_open_set(PointerRNA *ptr, bool value)
+{
+    LayoutPanelState *data = (LayoutPanelState *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+static PointerRNA TextboxState_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void TextboxState_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_TextboxState_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = TextboxState_rna_properties_get(iter);
+    }
+}
+
+void TextboxState_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = TextboxState_rna_properties_get(iter);
+    }
+}
+
+void TextboxState_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool TextboxState_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA TextboxState_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int TextboxState_visible_lines_get(PointerRNA *ptr)
+{
+    TextboxState *data = (TextboxState *)(ptr->data);
+    return (int)(data->visible_lines);
+}
+
+int TextboxState_scroll_get(PointerRNA *ptr)
+{
+    TextboxState *data = (TextboxState *)(ptr->data);
+    return (int)(data->scroll);
+}
+
+ui::Layout *UILayout_row_func(ui::Layout *_self, bool align, const char * heading, const char * heading_ctxt, bool translate)
+{
+	return rna_uiLayoutRowWithHeading(_self, align, heading, heading_ctxt, translate);
+}
+
+static void UILayout_row_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ui::Layout *layout;
+	bool align;
+	const char * heading;
+	const char * heading_ctxt;
+	bool translate;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	align = *((bool *)_data);
+	_data += 8;
+	heading = *((const char * *)_data);
+	_data += 8;
+	heading_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	layout = rna_uiLayoutRowWithHeading(_self, align, heading, heading_ctxt, translate);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+ui::Layout *UILayout_column_func(ui::Layout *_self, bool align, const char * heading, const char * heading_ctxt, bool translate)
+{
+	return rna_uiLayoutColumnWithHeading(_self, align, heading, heading_ctxt, translate);
+}
+
+static void UILayout_column_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ui::Layout *layout;
+	bool align;
+	const char * heading;
+	const char * heading_ctxt;
+	bool translate;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	align = *((bool *)_data);
+	_data += 8;
+	heading = *((const char * *)_data);
+	_data += 8;
+	heading_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	layout = rna_uiLayoutColumnWithHeading(_self, align, heading, heading_ctxt, translate);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+void UILayout_panel_func(ui::Layout *_self, bContext *C, ReportList *reports, const char * idname, bool default_closed, ui::Layout **layout_header, ui::Layout **layout_body)
+{
+	rna_uiLayoutPanel(_self, C, reports, idname, default_closed, layout_header, layout_body);
+}
+
+static void UILayout_panel_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * idname;
+	bool default_closed;
+	ui::Layout **layout_header;
+	ui::Layout **layout_body;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	idname = *((const char * *)_data);
+	_data += 8;
+	default_closed = *((bool *)_data);
+	_data += 8;
+	layout_header = ((ui::Layout **)_data);
+	_data += 8;
+	layout_body = ((ui::Layout **)_data);
+	
+	rna_uiLayoutPanel(_self, C, reports, idname, default_closed, layout_header, layout_body);
+}
+
+void UILayout_panel_prop_func(ui::Layout *_self, bContext *C, ReportList *reports, PointerRNA *data, const char * property, ui::Layout **layout_header, ui::Layout **layout_body)
+{
+	rna_uiLayoutPanelProp(_self, C, reports, data, property, layout_header, layout_body);
+}
+
+static void UILayout_panel_prop_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	ui::Layout **layout_header;
+	ui::Layout **layout_body;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	layout_header = ((ui::Layout **)_data);
+	_data += 8;
+	layout_body = ((ui::Layout **)_data);
+	
+	rna_uiLayoutPanelProp(_self, C, reports, data, property, layout_header, layout_body);
+}
+
+ui::Layout *UILayout_column_flow_func(ui::Layout *_self, int columns, bool align)
+{
+	return rna_uiLayoutColumnFlow(_self, columns, align);
+}
+
+static void UILayout_column_flow_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	int columns;
+	ui::Layout *layout;
+	bool align;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	columns = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	_data += 8;
+	align = *((bool *)_data);
+	
+	layout = rna_uiLayoutColumnFlow(_self, columns, align);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+ui::Layout *UILayout_grid_flow_func(ui::Layout *_self, bool row_major, int columns, bool even_columns, bool even_rows, bool align)
+{
+	return rna_uiLayoutGridFlow(_self, row_major, columns, even_columns, even_rows, align);
+}
+
+static void UILayout_grid_flow_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	bool row_major;
+	int columns;
+	bool even_columns;
+	bool even_rows;
+	bool align;
+	ui::Layout *layout;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	row_major = *((bool *)_data);
+	_data += 8;
+	columns = *((int *)_data);
+	_data += 8;
+	even_columns = *((bool *)_data);
+	_data += 8;
+	even_rows = *((bool *)_data);
+	_data += 8;
+	align = *((bool *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	layout = rna_uiLayoutGridFlow(_self, row_major, columns, even_columns, even_rows, align);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+ui::Layout *UILayout_box_func(ui::Layout *_self)
+{
+	return rna_uiLayoutBox(_self);
+}
+
+static void UILayout_box_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ui::Layout *layout;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	
+	layout = rna_uiLayoutBox(_self);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+ui::Layout *UILayout_split_func(ui::Layout *_self, float factor, bool align)
+{
+	return rna_uiLayoutSplit(_self, factor, align);
+}
+
+static void UILayout_split_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ui::Layout *layout;
+	float factor;
+	bool align;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	factor = *((float *)_data);
+	_data += 8;
+	align = *((bool *)_data);
+	
+	layout = rna_uiLayoutSplit(_self, factor, align);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+ui::Layout *UILayout_menu_pie_func(ui::Layout *_self)
+{
+	return rna_uiLayoutMenuPie(_self);
+}
+
+static void UILayout_menu_pie_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ui::Layout *layout;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	
+	layout = rna_uiLayoutMenuPie(_self);
+	*((ui::Layout **)_retdata) = layout;
+}
+
+int UILayout_icon_func(bContext *C, PointerRNA *data)
+{
+	return rna_ui_get_rnaptr_icon(C, data);
+}
+
+static void UILayout_icon_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	int icon_value;
+	PointerRNA *data;
+	char *_data, *_retdata;
+	
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	data = ((PointerRNA *)_data);
+	
+	icon_value = rna_ui_get_rnaptr_icon(C, data);
+	*((int *)_retdata) = icon_value;
+}
+
+const char * UILayout_enum_item_name_func(bContext *C, PointerRNA *data, const char * property, const char * identifier)
+{
+	return rna_ui_get_enum_name(C, data, property, identifier);
+}
+
+static void UILayout_enum_item_name_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	const char * name;
+	PointerRNA *data;
+	const char * property;
+	const char * identifier;
+	char *_data, *_retdata;
+	
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	identifier = *((const char * *)_data);
+	
+	name = rna_ui_get_enum_name(C, data, property, identifier);
+	*((const char * *)_retdata) = name;
+}
+
+const char * UILayout_enum_item_description_func(bContext *C, PointerRNA *data, const char * property, const char * identifier)
+{
+	return rna_ui_get_enum_description(C, data, property, identifier);
+}
+
+static void UILayout_enum_item_description_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	const char * description;
+	PointerRNA *data;
+	const char * property;
+	const char * identifier;
+	char *_data, *_retdata;
+	
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	identifier = *((const char * *)_data);
+	
+	description = rna_ui_get_enum_description(C, data, property, identifier);
+	*((const char * *)_retdata) = description;
+}
+
+int UILayout_enum_item_icon_func(bContext *C, PointerRNA *data, const char * property, const char * identifier)
+{
+	return rna_ui_get_enum_icon(C, data, property, identifier);
+}
+
+static void UILayout_enum_item_icon_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	int icon_value;
+	PointerRNA *data;
+	const char * property;
+	const char * identifier;
+	char *_data, *_retdata;
+	
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	_data += 8;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	identifier = *((const char * *)_data);
+	
+	icon_value = rna_ui_get_enum_icon(C, data, property, identifier);
+	*((int *)_retdata) = icon_value;
+}
+
+void UILayout_textbox_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, int initial_visible_lines, const char * placeholder, const char * text_ctxt, bool translate)
+{
+	rna_uiItemTextBox(_self, C, data, property, initial_visible_lines, placeholder, text_ctxt, translate);
+}
+
+static void UILayout_textbox_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	int initial_visible_lines;
+	const char * placeholder;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	initial_visible_lines = *((int *)_data);
+	_data += 8;
+	placeholder = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiItemTextBox(_self, C, data, property, initial_visible_lines, placeholder, text_ctxt, translate);
+}
+
+void UILayout_textbox_with_state_func(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *textbox_state, const char * placeholder, const char * text_ctxt, bool translate)
+{
+	rna_uiItemTextBoxWithState(_self, data, property, textbox_state, placeholder, text_ctxt, translate);
+}
+
+static void UILayout_textbox_with_state_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *textbox_state;
+	const char * placeholder;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	textbox_state = ((PointerRNA *)_data);
+	_data += 88;
+	placeholder = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiItemTextBoxWithState(_self, data, property, textbox_state, placeholder, text_ctxt, translate);
+}
+
+void UILayout_prop_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon, const char * placeholder, bool expand, bool slider, int toggle, bool icon_only, bool event, bool full_event, bool emboss, int index, int icon_value, bool invert_checkbox, int text_align)
+{
+	rna_uiItemR(_self, data, property, text, text_ctxt, translate, icon, placeholder, expand, slider, toggle, icon_only, event, full_event, emboss, index, icon_value, invert_checkbox, text_align);
+}
+
+static void UILayout_prop_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	const char * placeholder;
+	bool expand;
+	bool slider;
+	int toggle;
+	bool icon_only;
+	bool event;
+	bool full_event;
+	bool emboss;
+	int index;
+	int icon_value;
+	bool invert_checkbox;
+	int text_align;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	placeholder = *((const char * *)_data);
+	_data += 8;
+	expand = *((bool *)_data);
+	_data += 8;
+	slider = *((bool *)_data);
+	_data += 8;
+	toggle = *((int *)_data);
+	_data += 8;
+	icon_only = *((bool *)_data);
+	_data += 8;
+	event = *((bool *)_data);
+	_data += 8;
+	full_event = *((bool *)_data);
+	_data += 8;
+	emboss = *((bool *)_data);
+	_data += 8;
+	index = *((int *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	_data += 8;
+	invert_checkbox = *((bool *)_data);
+	_data += 8;
+	text_align = *((int *)_data);
+	
+	rna_uiItemR(_self, data, property, text, text_ctxt, translate, icon, placeholder, expand, slider, toggle, icon_only, event, full_event, emboss, index, icon_value, invert_checkbox, text_align);
+}
+
+void UILayout_props_enum_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	rna_uiItemsEnumR(_self, data, property);
+}
+
+static void UILayout_props_enum_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	rna_uiItemsEnumR(_self, data, property);
+}
+
+void UILayout_prop_menu_enum_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon)
+{
+	rna_uiItemMenuEnumR(_self, data, property, text, text_ctxt, translate, icon);
+}
+
+static void UILayout_prop_menu_enum_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	
+	rna_uiItemMenuEnumR(_self, data, property, text, text_ctxt, translate, icon);
+}
+
+void UILayout_prop_with_popover_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon, bool icon_only, const char * panel)
+{
+	rna_uiItemR_with_popover(_self, data, property, text, text_ctxt, translate, icon, icon_only, panel);
+}
+
+static void UILayout_prop_with_popover_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	bool icon_only;
+	const char * panel;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_only = *((bool *)_data);
+	_data += 8;
+	panel = *((const char * *)_data);
+	
+	rna_uiItemR_with_popover(_self, data, property, text, text_ctxt, translate, icon, icon_only, panel);
+}
+
+void UILayout_prop_with_menu_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon, bool icon_only, const char * menu)
+{
+	rna_uiItemR_with_menu(_self, data, property, text, text_ctxt, translate, icon, icon_only, menu);
+}
+
+static void UILayout_prop_with_menu_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	bool icon_only;
+	const char * menu;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_only = *((bool *)_data);
+	_data += 8;
+	menu = *((const char * *)_data);
+	
+	rna_uiItemR_with_menu(_self, data, property, text, text_ctxt, translate, icon, icon_only, menu);
+}
+
+void UILayout_prop_tabs_enum_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *data_highlight, const char * property_highlight, bool icon_only, int expand_as)
+{
+	rna_uiItemTabsEnumR(_self, C, data, property, data_highlight, property_highlight, icon_only, expand_as);
+}
+
+static void UILayout_prop_tabs_enum_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *data_highlight;
+	const char * property_highlight;
+	bool icon_only;
+	int expand_as;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	data_highlight = ((PointerRNA *)_data);
+	_data += 88;
+	property_highlight = *((const char * *)_data);
+	_data += 8;
+	icon_only = *((bool *)_data);
+	_data += 8;
+	expand_as = *((int *)_data);
+	
+	rna_uiItemTabsEnumR(_self, C, data, property, data_highlight, property_highlight, icon_only, expand_as);
+}
+
+void UILayout_prop_enum_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * value, const char * text, const char * text_ctxt, bool translate, int icon)
+{
+	rna_uiItemEnumR_string(_self, data, property, value, text, text_ctxt, translate, icon);
+}
+
+static void UILayout_prop_enum_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * value;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	value = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	
+	rna_uiItemEnumR_string(_self, data, property, value, text, text_ctxt, translate, icon);
+}
+
+void UILayout_prop_search_func(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *search_data, const char * search_property, const char * text, const char * text_ctxt, bool translate, int icon, bool results_are_suggestions, const char * item_search_property)
+{
+	rna_uiItemPointerR(_self, data, property, search_data, search_property, text, text_ctxt, translate, icon, results_are_suggestions, item_search_property);
+}
+
+static void UILayout_prop_search_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *search_data;
+	const char * search_property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	bool results_are_suggestions;
+	const char * item_search_property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	search_data = ((PointerRNA *)_data);
+	_data += 88;
+	search_property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	results_are_suggestions = *((bool *)_data);
+	_data += 8;
+	item_search_property = *((const char * *)_data);
+	
+	rna_uiItemPointerR(_self, data, property, search_data, search_property, text, text_ctxt, translate, icon, results_are_suggestions, item_search_property);
+}
+
+void UILayout_prop_decorator_func(ui::Layout *_self, PointerRNA *data, const char * property, int index)
+{
+	rna_uiLayoutDecorator(_self, data, property, index);
+}
+
+static void UILayout_prop_decorator_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	int index;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	index = *((int *)_data);
+	
+	rna_uiLayoutDecorator(_self, data, property, index);
+}
+
+PointerRNA UILayout_operator_func(ui::Layout *_self, const char * operator_value, const char * text, const char * text_ctxt, bool translate, int icon, bool emboss, bool depress, int icon_value, float search_weight)
+{
+	return rna_uiItemO(_self, operator_value, text, text_ctxt, translate, icon, emboss, depress, icon_value, search_weight);
+}
+
+static void UILayout_operator_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * operator_value;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	bool emboss;
+	bool depress;
+	int icon_value;
+	float search_weight;
+	PointerRNA properties;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	operator_value = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	emboss = *((bool *)_data);
+	_data += 8;
+	depress = *((bool *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	_data += 8;
+	search_weight = *((float *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	properties = rna_uiItemO(_self, operator_value, text, text_ctxt, translate, icon, emboss, depress, icon_value, search_weight);
+	*reinterpret_cast<PointerRNA *>(_retdata) = properties;
+}
+
+PointerRNA UILayout_operator_menu_hold_func(ui::Layout *_self, const char * operator_value, const char * text, const char * text_ctxt, bool translate, int icon, bool emboss, bool depress, int icon_value, const char * menu)
+{
+	return rna_uiItemOMenuHold(_self, operator_value, text, text_ctxt, translate, icon, emboss, depress, icon_value, menu);
+}
+
+static void UILayout_operator_menu_hold_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * operator_value;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	bool emboss;
+	bool depress;
+	int icon_value;
+	const char * menu;
+	PointerRNA properties;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	operator_value = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	emboss = *((bool *)_data);
+	_data += 8;
+	depress = *((bool *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	_data += 8;
+	menu = *((const char * *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	properties = rna_uiItemOMenuHold(_self, operator_value, text, text_ctxt, translate, icon, emboss, depress, icon_value, menu);
+	*reinterpret_cast<PointerRNA *>(_retdata) = properties;
+}
+
+void UILayout_operator_enum_func(ui::Layout *_self, const char * operator_value, const char * property, bool icon_only)
+{
+	rna_uiItemsEnumO(_self, operator_value, property, icon_only);
+}
+
+static void UILayout_operator_enum_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * operator_value;
+	const char * property;
+	bool icon_only;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	operator_value = *((const char * *)_data);
+	_data += 8;
+	property = *((const char * *)_data);
+	_data += 8;
+	icon_only = *((bool *)_data);
+	
+	rna_uiItemsEnumO(_self, operator_value, property, icon_only);
+}
+
+PointerRNA UILayout_operator_menu_enum_func(ui::Layout *_self, bContext *C, const char * operator_value, const char * property, const char * text, const char * text_ctxt, bool translate, int icon)
+{
+	return rna_uiItemMenuEnumO(_self, C, operator_value, property, text, text_ctxt, translate, icon);
+}
+
+static void UILayout_operator_menu_enum_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * operator_value;
+	const char * property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	PointerRNA properties;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	operator_value = *((const char * *)_data);
+	_data += 8;
+	property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	properties = rna_uiItemMenuEnumO(_self, C, operator_value, property, text, text_ctxt, translate, icon);
+	*reinterpret_cast<PointerRNA *>(_retdata) = properties;
+}
+
+void UILayout_label_func(ui::Layout *_self, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value)
+{
+	rna_uiItemL(_self, text, text_ctxt, translate, icon, icon_value);
+}
+
+static void UILayout_label_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	int icon_value;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	
+	rna_uiItemL(_self, text, text_ctxt, translate, icon, icon_value);
+}
+
+void UILayout_link_func(ui::Layout *_self, const char * url, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value)
+{
+	rna_layout_link(_self, url, text, text_ctxt, translate, icon, icon_value);
+}
+
+static void UILayout_link_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * url;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	int icon_value;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	url = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	
+	rna_layout_link(_self, url, text, text_ctxt, translate, icon, icon_value);
+}
+
+void UILayout_menu_func(ui::Layout *_self, const char * menu, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value)
+{
+	rna_uiItemM(_self, menu, text, text_ctxt, translate, icon, icon_value);
+}
+
+static void UILayout_menu_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * menu;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	int icon_value;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	menu = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	
+	rna_uiItemM(_self, menu, text, text_ctxt, translate, icon, icon_value);
+}
+
+void UILayout_menu_contents_func(ui::Layout *_self, const char * menu)
+{
+	rna_uiItemM_contents(_self, menu);
+}
+
+static void UILayout_menu_contents_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * menu;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	menu = *((const char * *)_data);
+	
+	rna_uiItemM_contents(_self, menu);
+}
+
+void UILayout_popover_func(ui::Layout *_self, bContext *C, const char * panel, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value, int direction)
+{
+	rna_uiItemPopoverPanel(_self, C, panel, text, text_ctxt, translate, icon, icon_value, direction);
+}
+
+static void UILayout_popover_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * panel;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	int icon_value;
+	int direction;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	panel = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	_data += 8;
+	direction = *((int *)_data);
+	
+	rna_uiItemPopoverPanel(_self, C, panel, text, text_ctxt, translate, icon, icon_value, direction);
+}
+
+void UILayout_popover_group_func(ui::Layout *_self, bContext *C, int space_type, int region_type, const char * context, const char * category)
+{
+	rna_uiItemPopoverPanelFromGroup(_self, C, space_type, region_type, context, category);
+}
+
+static void UILayout_popover_group_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	int space_type;
+	int region_type;
+	const char * context;
+	const char * category;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	space_type = *((int *)_data);
+	_data += 8;
+	region_type = *((int *)_data);
+	_data += 8;
+	context = *((const char * *)_data);
+	_data += 8;
+	category = *((const char * *)_data);
+	
+	rna_uiItemPopoverPanelFromGroup(_self, C, space_type, region_type, context, category);
+}
+
+void UILayout_separator_func(ui::Layout *_self, float factor, int type)
+{
+	rna_uiItemSeparator(_self, factor, type);
+}
+
+static void UILayout_separator_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	float factor;
+	int type;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	factor = *((float *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	
+	rna_uiItemSeparator(_self, factor, type);
+}
+
+void UILayout_separator_spacer_func(ui::Layout *_self)
+{
+	rna_uiLayoutSeparatorSpacer(_self);
+}
+
+static void UILayout_separator_spacer_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	rna_uiLayoutSeparatorSpacer(_self);
+}
+
+void UILayout_progress_func(ui::Layout *_self, const char * text, const char * text_ctxt, bool translate, float factor, int type)
+{
+	rna_uiItemProgress(_self, text, text_ctxt, translate, factor, type);
+}
+
+static void UILayout_progress_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	float factor;
+	int type;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	factor = *((float *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	
+	rna_uiItemProgress(_self, text, text_ctxt, translate, factor, type);
+}
+
+void UILayout_context_pointer_set_func(ui::Layout *_self, const char * name, PointerRNA *data)
+{
+	rna_uiLayoutContextPointerSet(_self, name, data);
+}
+
+static void UILayout_context_pointer_set_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * name;
+	PointerRNA *data;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	data = ((PointerRNA *)_data);
+	
+	rna_uiLayoutContextPointerSet(_self, name, data);
+}
+
+void UILayout_context_string_set_func(ui::Layout *_self, const char * name, const char * value)
+{
+	rna_uiLayoutContextStringSet(_self, name, value);
+}
+
+static void UILayout_context_string_set_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * name;
+	const char * value;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	value = *((const char * *)_data);
+	
+	rna_uiLayoutContextStringSet(_self, name, value);
+}
+
+void UILayout_template_header_func(ui::Layout *_self, bContext *C)
+{
+	template_header(_self, C);
+}
+
+static void UILayout_template_header_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_header(_self, C);
+}
+
+void UILayout_template_ID_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, const char * create, const char * open, const char * unlink, int filter, bool live_icon, const char * text, const char * text_ctxt, bool translate)
+{
+	rna_uiTemplateID(_self, C, data, property, create, open, unlink, filter, live_icon, text, text_ctxt, translate);
+}
+
+static void UILayout_template_ID_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * create;
+	const char * open;
+	const char * unlink;
+	int filter;
+	bool live_icon;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	create = *((const char * *)_data);
+	_data += 8;
+	open = *((const char * *)_data);
+	_data += 8;
+	unlink = *((const char * *)_data);
+	_data += 8;
+	filter = *((int *)_data);
+	_data += 8;
+	live_icon = *((bool *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiTemplateID(_self, C, data, property, create, open, unlink, filter, live_icon, text, text_ctxt, translate);
+}
+
+void UILayout_template_ID_session_uid_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, int id_type)
+{
+	rna_ui_template_ID_session_uid(_self, C, data, property, id_type);
+}
+
+static void UILayout_template_ID_session_uid_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	int id_type;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	id_type = *((int *)_data);
+	
+	rna_ui_template_ID_session_uid(_self, C, data, property, id_type);
+}
+
+void UILayout_template_ID_preview_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, const char * create, const char * open, const char * unlink, int rows, int cols, int filter, bool hide_buttons)
+{
+	template_id_preview(_self, C, data, property, create, open, unlink, rows, cols, filter, hide_buttons);
+}
+
+static void UILayout_template_ID_preview_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * create;
+	const char * open;
+	const char * unlink;
+	int rows;
+	int cols;
+	int filter;
+	bool hide_buttons;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	create = *((const char * *)_data);
+	_data += 8;
+	open = *((const char * *)_data);
+	_data += 8;
+	unlink = *((const char * *)_data);
+	_data += 8;
+	rows = *((int *)_data);
+	_data += 8;
+	cols = *((int *)_data);
+	_data += 8;
+	filter = *((int *)_data);
+	_data += 8;
+	hide_buttons = *((bool *)_data);
+	
+	template_id_preview(_self, C, data, property, create, open, unlink, rows, cols, filter, hide_buttons);
+}
+
+void UILayout_template_matrix_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_matrix(_self, data, property);
+}
+
+static void UILayout_template_matrix_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_matrix(_self, data, property);
+}
+
+void UILayout_template_any_ID_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * type_property, const char * text, const char * text_ctxt, bool translate)
+{
+	rna_uiTemplateAnyID(_self, data, property, type_property, text, text_ctxt, translate);
+}
+
+static void UILayout_template_any_ID_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * type_property;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	type_property = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiTemplateAnyID(_self, data, property, type_property, text, text_ctxt, translate);
+}
+
+void UILayout_template_ID_tabs_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, const char * create, const char * menu, int filter)
+{
+	template_id_tabs(_self, C, data, property, create, menu, filter);
+}
+
+static void UILayout_template_ID_tabs_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * create;
+	const char * menu;
+	int filter;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	create = *((const char * *)_data);
+	_data += 8;
+	menu = *((const char * *)_data);
+	_data += 8;
+	filter = *((int *)_data);
+	
+	template_id_tabs(_self, C, data, property, create, menu, filter);
+}
+
+void UILayout_template_action_func(ui::Layout *_self, bContext *C, ID *id, const char * create, const char * unlink, const char * text, const char * text_ctxt, bool translate)
+{
+	rna_uiTemplateAction(_self, C, id, create, unlink, text, text_ctxt, translate);
+}
+
+static void UILayout_template_action_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ID *id;
+	const char * create;
+	const char * unlink;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	id = *((ID **)_data);
+	_data += 8;
+	create = *((const char * *)_data);
+	_data += 8;
+	unlink = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiTemplateAction(_self, C, id, create, unlink, text, text_ctxt, translate);
+}
+
+void UILayout_template_search_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *search_data, const char * search_property, const char * create, const char * unlink, const char * text, const char * text_ctxt, bool translate)
+{
+	rna_uiTemplateSearch(_self, C, data, property, search_data, search_property, create, unlink, text, text_ctxt, translate);
+}
+
+static void UILayout_template_search_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *search_data;
+	const char * search_property;
+	const char * create;
+	const char * unlink;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	search_data = ((PointerRNA *)_data);
+	_data += 88;
+	search_property = *((const char * *)_data);
+	_data += 8;
+	create = *((const char * *)_data);
+	_data += 8;
+	unlink = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiTemplateSearch(_self, C, data, property, search_data, search_property, create, unlink, text, text_ctxt, translate);
+}
+
+void UILayout_template_search_preview_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *search_data, const char * search_property, const char * create, const char * unlink, const char * text, const char * text_ctxt, bool translate, int rows, int cols)
+{
+	rna_uiTemplateSearchPreview(_self, C, data, property, search_data, search_property, create, unlink, text, text_ctxt, translate, rows, cols);
+}
+
+static void UILayout_template_search_preview_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *search_data;
+	const char * search_property;
+	const char * create;
+	const char * unlink;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int rows;
+	int cols;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	search_data = ((PointerRNA *)_data);
+	_data += 88;
+	search_property = *((const char * *)_data);
+	_data += 8;
+	create = *((const char * *)_data);
+	_data += 8;
+	unlink = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	rows = *((int *)_data);
+	_data += 8;
+	cols = *((int *)_data);
+	
+	rna_uiTemplateSearchPreview(_self, C, data, property, search_data, search_property, create, unlink, text, text_ctxt, translate, rows, cols);
+}
+
+void UILayout_template_path_builder_func(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *root, const char * text, const char * text_ctxt, bool translate)
+{
+	rna_uiTemplatePathBuilder(_self, data, property, root, text, text_ctxt, translate);
+}
+
+static void UILayout_template_path_builder_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *root;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	root = ((PointerRNA *)_data);
+	_data += 88;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_uiTemplatePathBuilder(_self, data, property, root, text, text_ctxt, translate);
+}
+
+void UILayout_template_modifiers_func(ui::Layout *_self, bContext *C)
+{
+	template_modifiers(_self, C);
+}
+
+static void UILayout_template_modifiers_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_modifiers(_self, C);
+}
+
+void UILayout_template_strip_modifiers_func(ui::Layout *_self, bContext *C)
+{
+	template_strip_modifiers(_self, C);
+}
+
+static void UILayout_template_strip_modifiers_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_strip_modifiers(_self, C);
+}
+
+void UILayout_template_collection_importer_func(ui::Layout *_self, bContext *C)
+{
+	template_collection_importer(_self, C);
+}
+
+static void UILayout_template_collection_importer_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_collection_importer(_self, C);
+}
+
+void UILayout_template_collection_exporters_func(ui::Layout *_self, bContext *C)
+{
+	template_collection_exporters(_self, C);
+}
+
+static void UILayout_template_collection_exporters_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_collection_exporters(_self, C);
+}
+
+void UILayout_template_constraints_func(ui::Layout *_self, bContext *C, bool use_bone_constraints)
+{
+	template_constraints(_self, C, use_bone_constraints);
+}
+
+static void UILayout_template_constraints_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	bool use_bone_constraints;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	use_bone_constraints = *((bool *)_data);
+	
+	template_constraints(_self, C, use_bone_constraints);
+}
+
+void UILayout_template_shaderfx_func(ui::Layout *_self, bContext *C)
+{
+	template_shader_fx(_self, C);
+}
+
+static void UILayout_template_shaderfx_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_shader_fx(_self, C);
+}
+
+void UILayout_template_greasepencil_color_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, int rows, int cols, float scale, int filter)
+{
+	template_greasepencil_color_preview(_self, C, data, property, rows, cols, scale, filter);
+}
+
+static void UILayout_template_greasepencil_color_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	int rows;
+	int cols;
+	float scale;
+	int filter;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	rows = *((int *)_data);
+	_data += 8;
+	cols = *((int *)_data);
+	_data += 8;
+	scale = *((float *)_data);
+	_data += 8;
+	filter = *((int *)_data);
+	
+	template_greasepencil_color_preview(_self, C, data, property, rows, cols, scale, filter);
+}
+
+void UILayout_template_constraint_header_func(ui::Layout *_self, PointerRNA *data)
+{
+	template_constraint_header(_self, data);
+}
+
+static void UILayout_template_constraint_header_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	
+	template_constraint_header(_self, data);
+}
+
+void UILayout_template_preview_func(ui::Layout *_self, bContext *C, ID *id, bool show_buttons, ID *parent, MTex *slot, const char * preview_id)
+{
+	template_preview(_self, C, id, show_buttons, parent, slot, preview_id);
+}
+
+static void UILayout_template_preview_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ID *id;
+	bool show_buttons;
+	ID *parent;
+	MTex *slot;
+	const char * preview_id;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	id = *((ID **)_data);
+	_data += 8;
+	show_buttons = *((bool *)_data);
+	_data += 8;
+	parent = *((ID **)_data);
+	_data += 8;
+	slot = *((MTex **)_data);
+	_data += 8;
+	preview_id = *((const char * *)_data);
+	
+	template_preview(_self, C, id, show_buttons, parent, slot, preview_id);
+}
+
+void UILayout_template_curve_mapping_func(ui::Layout *_self, PointerRNA *data, const char * property, int type, bool levels, bool brush, bool use_negative_slope, bool show_tone, bool show_presets)
+{
+	template_curve_mapping(_self, data, property, type, levels, brush, use_negative_slope, show_tone, show_presets);
+}
+
+static void UILayout_template_curve_mapping_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	int type;
+	bool levels;
+	bool brush;
+	bool use_negative_slope;
+	bool show_tone;
+	bool show_presets;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	_data += 8;
+	levels = *((bool *)_data);
+	_data += 8;
+	brush = *((bool *)_data);
+	_data += 8;
+	use_negative_slope = *((bool *)_data);
+	_data += 8;
+	show_tone = *((bool *)_data);
+	_data += 8;
+	show_presets = *((bool *)_data);
+	
+	template_curve_mapping(_self, data, property, type, levels, brush, use_negative_slope, show_tone, show_presets);
+}
+
+void UILayout_template_curveprofile_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_curve_profile(_self, data, property);
+}
+
+static void UILayout_template_curveprofile_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_curve_profile(_self, data, property);
+}
+
+void UILayout_template_color_ramp_func(ui::Layout *_self, PointerRNA *data, const char * property, bool expand)
+{
+	template_color_ramp(_self, data, property, expand);
+}
+
+static void UILayout_template_color_ramp_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	bool expand;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	expand = *((bool *)_data);
+	
+	template_color_ramp(_self, data, property, expand);
+}
+
+void UILayout_template_icon_func(ui::Layout *_self, int icon_value, float scale)
+{
+	template_icon(_self, icon_value, scale);
+}
+
+static void UILayout_template_icon_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	int icon_value;
+	float scale;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	icon_value = *((int *)_data);
+	_data += 8;
+	scale = *((float *)_data);
+	
+	template_icon(_self, icon_value, scale);
+}
+
+void UILayout_template_icon_view_func(ui::Layout *_self, PointerRNA *data, const char * property, bool show_labels, float scale, float scale_popup)
+{
+	template_icon_view(_self, data, property, show_labels, scale, scale_popup);
+}
+
+static void UILayout_template_icon_view_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	bool show_labels;
+	float scale;
+	float scale_popup;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	show_labels = *((bool *)_data);
+	_data += 8;
+	scale = *((float *)_data);
+	_data += 8;
+	scale_popup = *((float *)_data);
+	
+	template_icon_view(_self, data, property, show_labels, scale, scale_popup);
+}
+
+void UILayout_template_histogram_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_histogram(_self, data, property);
+}
+
+static void UILayout_template_histogram_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_histogram(_self, data, property);
+}
+
+void UILayout_template_waveform_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_waveform(_self, data, property);
+}
+
+static void UILayout_template_waveform_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_waveform(_self, data, property);
+}
+
+void UILayout_template_vectorscope_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_vectorscope(_self, data, property);
+}
+
+static void UILayout_template_vectorscope_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_vectorscope(_self, data, property);
+}
+
+void UILayout_template_layers_func(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *used_layers_data, const char * used_layers_property, int active_layer)
+{
+	template_layers(_self, data, property, used_layers_data, used_layers_property, active_layer);
+}
+
+static void UILayout_template_layers_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *used_layers_data;
+	const char * used_layers_property;
+	int active_layer;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	used_layers_data = ((PointerRNA *)_data);
+	_data += 88;
+	used_layers_property = *((const char * *)_data);
+	_data += 8;
+	active_layer = *((int *)_data);
+	
+	template_layers(_self, data, property, used_layers_data, used_layers_property, active_layer);
+}
+
+void UILayout_template_color_picker_func(ui::Layout *_self, PointerRNA *data, const char * property, bool value_slider, bool lock, bool lock_luminosity, bool cubic)
+{
+	template_color_picker(_self, data, property, value_slider, lock, lock_luminosity, cubic);
+}
+
+static void UILayout_template_color_picker_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	bool value_slider;
+	bool lock;
+	bool lock_luminosity;
+	bool cubic;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	value_slider = *((bool *)_data);
+	_data += 8;
+	lock = *((bool *)_data);
+	_data += 8;
+	lock_luminosity = *((bool *)_data);
+	_data += 8;
+	cubic = *((bool *)_data);
+	
+	template_color_picker(_self, data, property, value_slider, lock, lock_luminosity, cubic);
+}
+
+void UILayout_template_palette_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_palette(_self, data, property);
+}
+
+static void UILayout_template_palette_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_palette(_self, data, property);
+}
+
+void UILayout_template_image_layers_func(ui::Layout *_self, bContext *C, Image *image, ImageUser *image_user)
+{
+	uiTemplateImageLayers(_self, C, image, image_user);
+}
+
+static void UILayout_template_image_layers_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	Image *image;
+	ImageUser *image_user;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	image = *((Image **)_data);
+	_data += 8;
+	image_user = *((ImageUser **)_data);
+	
+	uiTemplateImageLayers(_self, C, image, image_user);
+}
+
+void UILayout_template_image_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *image_user, bool compact, bool multiview)
+{
+	uiTemplateImage(_self, C, data, property, image_user, compact, multiview);
+}
+
+static void UILayout_template_image_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *image_user;
+	bool compact;
+	bool multiview;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	image_user = ((PointerRNA *)_data);
+	_data += 88;
+	compact = *((bool *)_data);
+	_data += 8;
+	multiview = *((bool *)_data);
+	
+	uiTemplateImage(_self, C, data, property, image_user, compact, multiview);
+}
+
+void UILayout_template_image_settings_func(ui::Layout *_self, bContext *C, PointerRNA *image_settings, bool color_management)
+{
+	uiTemplateImageSettings(_self, C, image_settings, color_management);
+}
+
+static void UILayout_template_image_settings_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *image_settings;
+	bool color_management;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	image_settings = ((PointerRNA *)_data);
+	_data += 88;
+	color_management = *((bool *)_data);
+	
+	uiTemplateImageSettings(_self, C, image_settings, color_management);
+}
+
+void UILayout_template_image_stereo_3d_func(ui::Layout *_self, PointerRNA *stereo_3d_format)
+{
+	uiTemplateImageStereo3d(_self, stereo_3d_format);
+}
+
+static void UILayout_template_image_stereo_3d_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *stereo_3d_format;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	stereo_3d_format = ((PointerRNA *)_data);
+	
+	uiTemplateImageStereo3d(_self, stereo_3d_format);
+}
+
+void UILayout_template_image_views_func(ui::Layout *_self, PointerRNA *image_settings)
+{
+	uiTemplateImageViews(_self, image_settings);
+}
+
+static void UILayout_template_image_views_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *image_settings;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	image_settings = ((PointerRNA *)_data);
+	
+	uiTemplateImageViews(_self, image_settings);
+}
+
+void UILayout_template_movieclip_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, bool compact)
+{
+	uiTemplateMovieClip(_self, C, data, property, compact);
+}
+
+static void UILayout_template_movieclip_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	bool compact;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	compact = *((bool *)_data);
+	
+	uiTemplateMovieClip(_self, C, data, property, compact);
+}
+
+void UILayout_template_track_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	uiTemplateTrack(_self, data, property);
+}
+
+static void UILayout_template_track_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	uiTemplateTrack(_self, data, property);
+}
+
+void UILayout_template_marker_func(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *clip_user, PointerRNA *track, bool compact)
+{
+	uiTemplateMarker(_self, data, property, clip_user, track, compact);
+}
+
+static void UILayout_template_marker_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *clip_user;
+	PointerRNA *track;
+	bool compact;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	clip_user = ((PointerRNA *)_data);
+	_data += 88;
+	track = ((PointerRNA *)_data);
+	_data += 88;
+	compact = *((bool *)_data);
+	
+	uiTemplateMarker(_self, data, property, clip_user, track, compact);
+}
+
+void UILayout_template_movieclip_information_func(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *clip_user)
+{
+	uiTemplateMovieclipInformation(_self, data, property, clip_user);
+}
+
+static void UILayout_template_movieclip_information_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	PointerRNA *clip_user;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	clip_user = ((PointerRNA *)_data);
+	
+	uiTemplateMovieclipInformation(_self, data, property, clip_user);
+}
+
+void UILayout_template_list_func(ui::Layout *_self, bContext *C, const char * listtype_name, const char * list_id, PointerRNA *dataptr, const char * propname, PointerRNA *active_dataptr, const char * active_propname, const char * item_dyntip_propname, int rows, int maxrows, int type, int columns, bool sort_reverse, bool sort_lock)
+{
+	rna_template_list(_self, C, listtype_name, list_id, dataptr, propname, active_dataptr, active_propname, item_dyntip_propname, rows, maxrows, type, columns, sort_reverse, sort_lock);
+}
+
+static void UILayout_template_list_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * listtype_name;
+	const char * list_id;
+	PointerRNA *dataptr;
+	const char * propname;
+	PointerRNA *active_dataptr;
+	const char * active_propname;
+	const char * item_dyntip_propname;
+	int rows;
+	int maxrows;
+	int type;
+	int columns;
+	bool sort_reverse;
+	bool sort_lock;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	listtype_name = *((const char * *)_data);
+	_data += 8;
+	list_id = *((const char * *)_data);
+	_data += 8;
+	dataptr = ((PointerRNA *)_data);
+	_data += 88;
+	propname = *((const char * *)_data);
+	_data += 8;
+	active_dataptr = ((PointerRNA *)_data);
+	_data += 88;
+	active_propname = *((const char * *)_data);
+	_data += 8;
+	item_dyntip_propname = *((const char * *)_data);
+	_data += 8;
+	rows = *((int *)_data);
+	_data += 8;
+	maxrows = *((int *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	_data += 8;
+	columns = *((int *)_data);
+	_data += 8;
+	sort_reverse = *((bool *)_data);
+	_data += 8;
+	sort_lock = *((bool *)_data);
+	
+	rna_template_list(_self, C, listtype_name, list_id, dataptr, propname, active_dataptr, active_propname, item_dyntip_propname, rows, maxrows, type, columns, sort_reverse, sort_lock);
+}
+
+void UILayout_template_running_jobs_func(ui::Layout *_self, bContext *C)
+{
+	template_running_jobs(_self, C);
+}
+
+static void UILayout_template_running_jobs_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_running_jobs(_self, C);
+}
+
+void UILayout_template_operator_search_func(ui::Layout *_self)
+{
+	uiTemplateOperatorSearch(_self);
+}
+
+static void UILayout_template_operator_search_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateOperatorSearch(_self);
+}
+
+void UILayout_template_menu_search_func(ui::Layout *_self)
+{
+	uiTemplateMenuSearch(_self);
+}
+
+static void UILayout_template_menu_search_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateMenuSearch(_self);
+}
+
+void UILayout_template_header_3D_mode_func(ui::Layout *_self, bContext *C)
+{
+	template_header3D_mode(_self, C);
+}
+
+static void UILayout_template_header_3D_mode_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_header3D_mode(_self, C);
+}
+
+void UILayout_template_edit_mode_selection_func(ui::Layout *_self, bContext *C)
+{
+	uiTemplateEditModeSelection(_self, C);
+}
+
+static void UILayout_template_edit_mode_selection_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateEditModeSelection(_self, C);
+}
+
+void UILayout_template_reports_banner_func(ui::Layout *_self, bContext *C)
+{
+	uiTemplateReportsBanner(_self, C);
+}
+
+static void UILayout_template_reports_banner_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateReportsBanner(_self, C);
+}
+
+void UILayout_template_input_status_func(ui::Layout *_self, bContext *C)
+{
+	uiTemplateInputStatus(_self, C);
+}
+
+static void UILayout_template_input_status_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateInputStatus(_self, C);
+}
+
+void UILayout_template_status_info_func(ui::Layout *_self, bContext *C)
+{
+	uiTemplateStatusInfo(_self, C);
+}
+
+static void UILayout_template_status_info_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateStatusInfo(_self, C);
+}
+
+void UILayout_template_node_link_func(ui::Layout *_self, bContext *C, bNodeTree *ntree, bNode *node, bNodeSocket *socket)
+{
+	uiTemplateNodeLink(_self, C, ntree, node, socket);
+}
+
+static void UILayout_template_node_link_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	bNodeTree *ntree;
+	bNode *node;
+	bNodeSocket *socket;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	ntree = *((bNodeTree **)_data);
+	_data += 8;
+	node = *((bNode **)_data);
+	_data += 8;
+	socket = *((bNodeSocket **)_data);
+	
+	uiTemplateNodeLink(_self, C, ntree, node, socket);
+}
+
+void UILayout_template_node_view_func(ui::Layout *_self, bContext *C, bNodeTree *ntree, bNode *node, bNodeSocket *socket)
+{
+	uiTemplateNodeView(_self, C, ntree, node, socket);
+}
+
+static void UILayout_template_node_view_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	bNodeTree *ntree;
+	bNode *node;
+	bNodeSocket *socket;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	ntree = *((bNodeTree **)_data);
+	_data += 8;
+	node = *((bNode **)_data);
+	_data += 8;
+	socket = *((bNodeSocket **)_data);
+	
+	uiTemplateNodeView(_self, C, ntree, node, socket);
+}
+
+void UILayout_template_node_operator_registration_errors_func(ui::Layout *_self, const char * idname)
+{
+	rna_uiLayout_template_node_operator_registration_errors(_self, idname);
+}
+
+static void UILayout_template_node_operator_registration_errors_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * idname;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	idname = *((const char * *)_data);
+	
+	rna_uiLayout_template_node_operator_registration_errors(_self, idname);
+}
+
+void UILayout_template_node_asset_menu_items_func(ui::Layout *_self, bContext *C, const char * catalog_path, int operator_value)
+{
+	rna_uiLayout_template_node_asset_menu_items(_self, C, catalog_path, operator_value);
+}
+
+static void UILayout_template_node_asset_menu_items_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * catalog_path;
+	int operator_value;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	catalog_path = *((const char * *)_data);
+	_data += 8;
+	operator_value = *((int *)_data);
+	
+	rna_uiLayout_template_node_asset_menu_items(_self, C, catalog_path, operator_value);
+}
+
+void UILayout_template_modifier_asset_menu_items_func(ui::Layout *_self, const char * catalog_path, bool skip_essentials)
+{
+	rna_uiLayout_template_modifier_asset_menu_items(_self, catalog_path, skip_essentials);
+}
+
+static void UILayout_template_modifier_asset_menu_items_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * catalog_path;
+	bool skip_essentials;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	catalog_path = *((const char * *)_data);
+	_data += 8;
+	skip_essentials = *((bool *)_data);
+	
+	rna_uiLayout_template_modifier_asset_menu_items(_self, catalog_path, skip_essentials);
+}
+
+void UILayout_template_node_operator_asset_menu_items_func(ui::Layout *_self, bContext *C, const char * catalog_path)
+{
+	rna_uiLayout_template_node_operator_asset_menu_items(_self, C, catalog_path);
+}
+
+static void UILayout_template_node_operator_asset_menu_items_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * catalog_path;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	catalog_path = *((const char * *)_data);
+	
+	rna_uiLayout_template_node_operator_asset_menu_items(_self, C, catalog_path);
+}
+
+void UILayout_template_node_operator_asset_root_items_func(ui::Layout *_self, bContext *C)
+{
+	rna_uiLayout_template_node_operator_root_items(_self, C);
+}
+
+static void UILayout_template_node_operator_asset_root_items_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	rna_uiLayout_template_node_operator_root_items(_self, C);
+}
+
+void UILayout_template_texture_user_func(ui::Layout *_self, bContext *C)
+{
+	uiTemplateTextureUser(_self, C);
+}
+
+static void UILayout_template_texture_user_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	uiTemplateTextureUser(_self, C);
+}
+
+void UILayout_template_keymap_item_properties_func(ui::Layout *_self, PointerRNA *item)
+{
+	uiTemplateKeymapItemProperties(_self, item);
+}
+
+static void UILayout_template_keymap_item_properties_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *item;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	item = ((PointerRNA *)_data);
+	
+	uiTemplateKeymapItemProperties(_self, item);
+}
+
+void UILayout_template_component_menu_func(ui::Layout *_self, PointerRNA *data, const char * property, const char * name)
+{
+	template_component_menu(_self, data, property, name);
+}
+
+static void UILayout_template_component_menu_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	const char * name;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	_data += 8;
+	name = *((const char * *)_data);
+	
+	template_component_menu(_self, data, property, name);
+}
+
+void UILayout_template_colorspace_settings_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	template_colorspace_settings(_self, data, property);
+}
+
+static void UILayout_template_colorspace_settings_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_colorspace_settings(_self, data, property);
+}
+
+void UILayout_template_colormanaged_view_settings_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property)
+{
+	template_colormanaged_view_settings(_self, C, data, property);
+}
+
+static void UILayout_template_colormanaged_view_settings_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_colormanaged_view_settings(_self, C, data, property);
+}
+
+void UILayout_template_node_socket_func(ui::Layout *_self, bContext *C, float color[4])
+{
+	template_node_socket(_self, C, color);
+}
+
+static void UILayout_template_node_socket_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const float *color;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	color = ((const float *)_data);
+	
+	template_node_socket(_self, C, color);
+}
+
+void UILayout_template_cache_file_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property)
+{
+	rna_template_cache_file(_self, C, data, property);
+}
+
+static void UILayout_template_cache_file_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	rna_template_cache_file(_self, C, data, property);
+}
+
+void UILayout_template_cache_file_velocity_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	rna_template_cache_file_velocity(_self, data, property);
+}
+
+static void UILayout_template_cache_file_velocity_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	rna_template_cache_file_velocity(_self, data, property);
+}
+
+void UILayout_template_cache_file_time_settings_func(ui::Layout *_self, PointerRNA *data, const char * property)
+{
+	rna_template_cache_file_time_settings(_self, data, property);
+}
+
+static void UILayout_template_cache_file_time_settings_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	rna_template_cache_file_time_settings(_self, data, property);
+}
+
+void UILayout_template_cache_file_layers_func(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property)
+{
+	rna_template_uilist_flags(_self, C, data, property);
+}
+
+static void UILayout_template_cache_file_layers_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	rna_template_uilist_flags(_self, C, data, property);
+}
+
+int UILayout_template_recent_files_func(ui::Layout *_self, int rows)
+{
+	return template_recent_files(_self, rows);
+}
+
+static void UILayout_template_recent_files_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	int rows;
+	int found;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	rows = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	found = template_recent_files(_self, rows);
+	*((int *)_retdata) = found;
+}
+
+void UILayout_template_file_select_path_func(ui::Layout *_self, bContext *C, FileSelectParams *params)
+{
+	template_file_select_path(_self, C, params);
+}
+
+static void UILayout_template_file_select_path_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	FileSelectParams *params;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	params = *((FileSelectParams **)_data);
+	
+	template_file_select_path(_self, C, params);
+}
+
+void UILayout_template_event_from_keymap_item_func(ui::Layout *_self, wmKeyMapItem *item, const char * text, const char * text_ctxt, bool translate)
+{
+	rna_template_event_from_keymap_item(_self, item, text, text_ctxt, translate);
+}
+
+static void UILayout_template_event_from_keymap_item_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	wmKeyMapItem *item;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	item = *((wmKeyMapItem **)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	
+	rna_template_event_from_keymap_item(_self, item, text, text_ctxt, translate);
+}
+
+void UILayout_template_light_linking_collection_func(ui::Layout *_self, bContext *C, ui::Layout *context_layout, PointerRNA *data, const char * property)
+{
+	template_light_linking_collection(_self, C, context_layout, data, property);
+}
+
+static void UILayout_template_light_linking_collection_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	ui::Layout *context_layout;
+	PointerRNA *data;
+	const char * property;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	context_layout = *((ui::Layout **)_data);
+	_data += 8;
+	data = ((PointerRNA *)_data);
+	_data += 88;
+	property = *((const char * *)_data);
+	
+	template_light_linking_collection(_self, C, context_layout, data, property);
+}
+
+void UILayout_template_bone_collection_tree_func(ui::Layout *_self, bContext *C)
+{
+	template_bone_collection_tree(_self, C);
+}
+
+static void UILayout_template_bone_collection_tree_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_bone_collection_tree(_self, C);
+}
+
+void UILayout_template_grease_pencil_layer_tree_func(ui::Layout *_self, bContext *C)
+{
+	template_grease_pencil_layer_tree(_self, C);
+}
+
+static void UILayout_template_grease_pencil_layer_tree_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	template_grease_pencil_layer_tree(_self, C);
+}
+
+void UILayout_template_node_tree_interface_func(ui::Layout *_self, bContext *C, PointerRNA *interface)
+{
+	template_tree_interface(_self, C, interface);
+}
+
+static void UILayout_template_node_tree_interface_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *interface;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	interface = ((PointerRNA *)_data);
+	
+	template_tree_interface(_self, C, interface);
+}
+
+void UILayout_template_node_inputs_func(ui::Layout *_self, bContext *C, PointerRNA *node)
+{
+	template_node_inputs(_self, C, node);
+}
+
+static void UILayout_template_node_inputs_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	PointerRNA *node;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	node = ((PointerRNA *)_data);
+	
+	template_node_inputs(_self, C, node);
+}
+
+void UILayout_template_asset_shelf_popover_func(ui::Layout *_self, bContext *C, const char * asset_shelf, const char * name, int icon, int icon_value)
+{
+	rna_uiTemplateAssetShelfPopover(_self, C, asset_shelf, name, icon, icon_value);
+}
+
+static void UILayout_template_asset_shelf_popover_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * asset_shelf;
+	const char * name;
+	int icon;
+	int icon_value;
+	char *_data;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	asset_shelf = *((const char * *)_data);
+	_data += 8;
+	name = *((const char * *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	icon_value = *((int *)_data);
+	
+	rna_uiTemplateAssetShelfPopover(_self, C, asset_shelf, name, icon, icon_value);
+}
+
+PointerRNA UILayout_template_popup_confirm_func(ui::Layout *_self, ReportList *reports, const char * operator_value, const char * text, const char * text_ctxt, bool translate, int icon, const char * cancel_text, bool cancel_default)
+{
+	return rna_uiTemplatePopupConfirm(_self, reports, operator_value, text, text_ctxt, translate, icon, cancel_text, cancel_default);
+}
+
+static void UILayout_template_popup_confirm_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	const char * operator_value;
+	const char * text;
+	const char * text_ctxt;
+	bool translate;
+	int icon;
+	const char * cancel_text;
+	bool cancel_default;
+	PointerRNA properties;
+	char *_data, *_retdata;
+	
+	_self = (ui::Layout *)_ptr->data;
+	_data = (char *)_parms->data;
+	operator_value = *((const char * *)_data);
+	_data += 8;
+	text = *((const char * *)_data);
+	_data += 8;
+	text_ctxt = *((const char * *)_data);
+	_data += 8;
+	translate = *((bool *)_data);
+	_data += 8;
+	icon = *((int *)_data);
+	_data += 8;
+	cancel_text = *((const char * *)_data);
+	_data += 8;
+	cancel_default = *((bool *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	properties = rna_uiTemplatePopupConfirm(_self, reports, operator_value, text, text_ctxt, translate, icon, cancel_text, cancel_default);
+	*reinterpret_cast<PointerRNA *>(_retdata) = properties;
+}
+
+void UILayout_template_shape_key_tree_func(ui::Layout *_self, bContext *C)
+{
+	ed::object::shapekey::template_tree(_self, C);
+}
+
+static void UILayout_template_shape_key_tree_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ui::Layout *_self;
+	_self = (ui::Layout *)_ptr->data;
+	
+	ed::object::shapekey::template_tree(_self, C);
+}
+
+/* Repeated prototypes to detect errors */
+
+ui::Layout *rna_uiLayoutRowWithHeading(ui::Layout *_self, bool align, const char * heading, const char * heading_ctxt, bool translate);
+ui::Layout *rna_uiLayoutColumnWithHeading(ui::Layout *_self, bool align, const char * heading, const char * heading_ctxt, bool translate);
+void rna_uiLayoutPanel(ui::Layout *_self, bContext *C, ReportList *reports, const char * idname, bool default_closed, ui::Layout **layout_header, ui::Layout **layout_body);
+void rna_uiLayoutPanelProp(ui::Layout *_self, bContext *C, ReportList *reports, PointerRNA *data, const char * property, ui::Layout **layout_header, ui::Layout **layout_body);
+ui::Layout *rna_uiLayoutColumnFlow(ui::Layout *_self, int columns, bool align);
+ui::Layout *rna_uiLayoutGridFlow(ui::Layout *_self, bool row_major, int columns, bool even_columns, bool even_rows, bool align);
+ui::Layout *rna_uiLayoutBox(ui::Layout *_self);
+ui::Layout *rna_uiLayoutSplit(ui::Layout *_self, float factor, bool align);
+ui::Layout *rna_uiLayoutMenuPie(ui::Layout *_self);
+int rna_ui_get_rnaptr_icon(bContext *C, PointerRNA *data);
+const char * rna_ui_get_enum_name(bContext *C, PointerRNA *data, const char * property, const char * identifier);
+const char * rna_ui_get_enum_description(bContext *C, PointerRNA *data, const char * property, const char * identifier);
+int rna_ui_get_enum_icon(bContext *C, PointerRNA *data, const char * property, const char * identifier);
+void rna_uiItemTextBox(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, int initial_visible_lines, const char * placeholder, const char * text_ctxt, bool translate);
+void rna_uiItemTextBoxWithState(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *textbox_state, const char * placeholder, const char * text_ctxt, bool translate);
+void rna_uiItemR(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon, const char * placeholder, bool expand, bool slider, int toggle, bool icon_only, bool event, bool full_event, bool emboss, int index, int icon_value, bool invert_checkbox, int text_align);
+void rna_uiItemsEnumR(ui::Layout *_self, PointerRNA *data, const char * property);
+void rna_uiItemMenuEnumR(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon);
+void rna_uiItemR_with_popover(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon, bool icon_only, const char * panel);
+void rna_uiItemR_with_menu(ui::Layout *_self, PointerRNA *data, const char * property, const char * text, const char * text_ctxt, bool translate, int icon, bool icon_only, const char * menu);
+void rna_uiItemTabsEnumR(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *data_highlight, const char * property_highlight, bool icon_only, int expand_as);
+void rna_uiItemEnumR_string(ui::Layout *_self, PointerRNA *data, const char * property, const char * value, const char * text, const char * text_ctxt, bool translate, int icon);
+void rna_uiItemPointerR(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *search_data, const char * search_property, const char * text, const char * text_ctxt, bool translate, int icon, bool results_are_suggestions, const char * item_search_property);
+void rna_uiLayoutDecorator(ui::Layout *_self, PointerRNA *data, const char * property, int index);
+PointerRNA rna_uiItemO(ui::Layout *_self, const char * operator_value, const char * text, const char * text_ctxt, bool translate, int icon, bool emboss, bool depress, int icon_value, float search_weight);
+PointerRNA rna_uiItemOMenuHold(ui::Layout *_self, const char * operator_value, const char * text, const char * text_ctxt, bool translate, int icon, bool emboss, bool depress, int icon_value, const char * menu);
+void rna_uiItemsEnumO(ui::Layout *_self, const char * operator_value, const char * property, bool icon_only);
+PointerRNA rna_uiItemMenuEnumO(ui::Layout *_self, bContext *C, const char * operator_value, const char * property, const char * text, const char * text_ctxt, bool translate, int icon);
+void rna_uiItemL(ui::Layout *_self, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value);
+void rna_layout_link(ui::Layout *_self, const char * url, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value);
+void rna_uiItemM(ui::Layout *_self, const char * menu, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value);
+void rna_uiItemM_contents(ui::Layout *_self, const char * menu);
+void rna_uiItemPopoverPanel(ui::Layout *_self, bContext *C, const char * panel, const char * text, const char * text_ctxt, bool translate, int icon, int icon_value, int direction);
+void rna_uiItemPopoverPanelFromGroup(ui::Layout *_self, bContext *C, int space_type, int region_type, const char * context, const char * category);
+void rna_uiItemSeparator(ui::Layout *_self, float factor, int type);
+void rna_uiLayoutSeparatorSpacer(ui::Layout *_self);
+void rna_uiItemProgress(ui::Layout *_self, const char * text, const char * text_ctxt, bool translate, float factor, int type);
+void rna_uiLayoutContextPointerSet(ui::Layout *_self, const char * name, PointerRNA *data);
+void rna_uiLayoutContextStringSet(ui::Layout *_self, const char * name, const char * value);
+void template_header(ui::Layout *_self, bContext *C);
+void rna_uiTemplateID(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, const char * create, const char * open, const char * unlink, int filter, bool live_icon, const char * text, const char * text_ctxt, bool translate);
+void rna_ui_template_ID_session_uid(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, int id_type);
+void template_id_preview(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, const char * create, const char * open, const char * unlink, int rows, int cols, int filter, bool hide_buttons);
+void template_matrix(ui::Layout *_self, PointerRNA *data, const char * property);
+void rna_uiTemplateAnyID(ui::Layout *_self, PointerRNA *data, const char * property, const char * type_property, const char * text, const char * text_ctxt, bool translate);
+void template_id_tabs(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, const char * create, const char * menu, int filter);
+void rna_uiTemplateAction(ui::Layout *_self, bContext *C, ID *id, const char * create, const char * unlink, const char * text, const char * text_ctxt, bool translate);
+void rna_uiTemplateSearch(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *search_data, const char * search_property, const char * create, const char * unlink, const char * text, const char * text_ctxt, bool translate);
+void rna_uiTemplateSearchPreview(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *search_data, const char * search_property, const char * create, const char * unlink, const char * text, const char * text_ctxt, bool translate, int rows, int cols);
+void rna_uiTemplatePathBuilder(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *root, const char * text, const char * text_ctxt, bool translate);
+void template_modifiers(ui::Layout *_self, bContext *C);
+void template_strip_modifiers(ui::Layout *_self, bContext *C);
+void template_collection_importer(ui::Layout *_self, bContext *C);
+void template_collection_exporters(ui::Layout *_self, bContext *C);
+void template_constraints(ui::Layout *_self, bContext *C, bool use_bone_constraints);
+void template_shader_fx(ui::Layout *_self, bContext *C);
+void template_greasepencil_color_preview(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, int rows, int cols, float scale, int filter);
+void template_constraint_header(ui::Layout *_self, PointerRNA *data);
+void template_preview(ui::Layout *_self, bContext *C, ID *id, bool show_buttons, ID *parent, MTex *slot, const char * preview_id);
+void template_curve_mapping(ui::Layout *_self, PointerRNA *data, const char * property, int type, bool levels, bool brush, bool use_negative_slope, bool show_tone, bool show_presets);
+void template_curve_profile(ui::Layout *_self, PointerRNA *data, const char * property);
+void template_color_ramp(ui::Layout *_self, PointerRNA *data, const char * property, bool expand);
+void template_icon(ui::Layout *_self, int icon_value, float scale);
+void template_icon_view(ui::Layout *_self, PointerRNA *data, const char * property, bool show_labels, float scale, float scale_popup);
+void template_histogram(ui::Layout *_self, PointerRNA *data, const char * property);
+void template_waveform(ui::Layout *_self, PointerRNA *data, const char * property);
+void template_vectorscope(ui::Layout *_self, PointerRNA *data, const char * property);
+void template_layers(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *used_layers_data, const char * used_layers_property, int active_layer);
+void template_color_picker(ui::Layout *_self, PointerRNA *data, const char * property, bool value_slider, bool lock, bool lock_luminosity, bool cubic);
+void template_palette(ui::Layout *_self, PointerRNA *data, const char * property);
+void uiTemplateImageLayers(ui::Layout *_self, bContext *C, Image *image, ImageUser *image_user);
+void uiTemplateImage(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, PointerRNA *image_user, bool compact, bool multiview);
+void uiTemplateImageSettings(ui::Layout *_self, bContext *C, PointerRNA *image_settings, bool color_management);
+void uiTemplateImageStereo3d(ui::Layout *_self, PointerRNA *stereo_3d_format);
+void uiTemplateImageViews(ui::Layout *_self, PointerRNA *image_settings);
+void uiTemplateMovieClip(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property, bool compact);
+void uiTemplateTrack(ui::Layout *_self, PointerRNA *data, const char * property);
+void uiTemplateMarker(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *clip_user, PointerRNA *track, bool compact);
+void uiTemplateMovieclipInformation(ui::Layout *_self, PointerRNA *data, const char * property, PointerRNA *clip_user);
+void rna_template_list(ui::Layout *_self, bContext *C, const char * listtype_name, const char * list_id, PointerRNA *dataptr, const char * propname, PointerRNA *active_dataptr, const char * active_propname, const char * item_dyntip_propname, int rows, int maxrows, int type, int columns, bool sort_reverse, bool sort_lock);
+void template_running_jobs(ui::Layout *_self, bContext *C);
+void uiTemplateOperatorSearch(ui::Layout *_self);
+void uiTemplateMenuSearch(ui::Layout *_self);
+void template_header3D_mode(ui::Layout *_self, bContext *C);
+void uiTemplateEditModeSelection(ui::Layout *_self, bContext *C);
+void uiTemplateReportsBanner(ui::Layout *_self, bContext *C);
+void uiTemplateInputStatus(ui::Layout *_self, bContext *C);
+void uiTemplateStatusInfo(ui::Layout *_self, bContext *C);
+void uiTemplateNodeLink(ui::Layout *_self, bContext *C, bNodeTree *ntree, bNode *node, bNodeSocket *socket);
+void uiTemplateNodeView(ui::Layout *_self, bContext *C, bNodeTree *ntree, bNode *node, bNodeSocket *socket);
+void rna_uiLayout_template_node_operator_registration_errors(ui::Layout *_self, const char * idname);
+void rna_uiLayout_template_node_asset_menu_items(ui::Layout *_self, bContext *C, const char * catalog_path, int operator_value);
+void rna_uiLayout_template_modifier_asset_menu_items(ui::Layout *_self, const char * catalog_path, bool skip_essentials);
+void rna_uiLayout_template_node_operator_asset_menu_items(ui::Layout *_self, bContext *C, const char * catalog_path);
+void rna_uiLayout_template_node_operator_root_items(ui::Layout *_self, bContext *C);
+void uiTemplateTextureUser(ui::Layout *_self, bContext *C);
+void uiTemplateKeymapItemProperties(ui::Layout *_self, PointerRNA *item);
+void template_component_menu(ui::Layout *_self, PointerRNA *data, const char * property, const char * name);
+void template_colorspace_settings(ui::Layout *_self, PointerRNA *data, const char * property);
+void template_colormanaged_view_settings(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property);
+void template_node_socket(ui::Layout *_self, bContext *C, float color[4]);
+void rna_template_cache_file(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property);
+void rna_template_cache_file_velocity(ui::Layout *_self, PointerRNA *data, const char * property);
+void rna_template_cache_file_time_settings(ui::Layout *_self, PointerRNA *data, const char * property);
+void rna_template_uilist_flags(ui::Layout *_self, bContext *C, PointerRNA *data, const char * property);
+int template_recent_files(ui::Layout *_self, int rows);
+void template_file_select_path(ui::Layout *_self, bContext *C, FileSelectParams *params);
+void rna_template_event_from_keymap_item(ui::Layout *_self, wmKeyMapItem *item, const char * text, const char * text_ctxt, bool translate);
+void template_light_linking_collection(ui::Layout *_self, bContext *C, ui::Layout *context_layout, PointerRNA *data, const char * property);
+void template_bone_collection_tree(ui::Layout *_self, bContext *C);
+void template_grease_pencil_layer_tree(ui::Layout *_self, bContext *C);
+void template_tree_interface(ui::Layout *_self, bContext *C, PointerRNA *interface);
+void template_node_inputs(ui::Layout *_self, bContext *C, PointerRNA *node);
+void rna_uiTemplateAssetShelfPopover(ui::Layout *_self, bContext *C, const char * asset_shelf, const char * name, int icon, int icon_value);
+PointerRNA rna_uiTemplatePopupConfirm(ui::Layout *_self, ReportList *reports, const char * operator_value, const char * text, const char * text_ctxt, bool translate, int icon, const char * cancel_text, bool cancel_default);
+void ed::object::shapekey::template_tree(ui::Layout *_self, bContext *C);
+
+
+IDPropertyGroup *UIList_bl_system_properties_get_func(PointerRNA _self, bool do_create)
+{
+	return rna_struct_system_properties_get_func(_self, do_create);
+}
+
+static void UIList_bl_system_properties_get_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	PointerRNA _self;
+	bool do_create;
+	IDPropertyGroup *system_properties;
+	char *_data, *_retdata;
+	
+	_self = *_ptr;
+	_data = (char *)_parms->data;
+	do_create = *((bool *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	system_properties = rna_struct_system_properties_get_func(_self, do_create);
+	*((IDPropertyGroup **)_retdata) = system_properties;
+}
+
+/* Repeated prototypes to detect errors */
+
+IDPropertyGroup *rna_struct_system_properties_get_func(PointerRNA _self, bool do_create);
+
+
+
+
+
+
+
+/* UI Layout */
+static CollectionPropertyRNA rna_UILayout_rna_properties_;
+PropertyRNA &rna_UILayout_rna_properties = reinterpret_cast<PropertyRNA &>(rna_UILayout_rna_properties_);
+
+static PointerPropertyRNA rna_UILayout_rna_type_;
+PropertyRNA &rna_UILayout_rna_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_rna_type_);
+
+static BoolPropertyRNA rna_UILayout_active_;
+PropertyRNA &rna_UILayout_active = reinterpret_cast<PropertyRNA &>(rna_UILayout_active_);
+
+static BoolPropertyRNA rna_UILayout_active_default_;
+PropertyRNA &rna_UILayout_active_default = reinterpret_cast<PropertyRNA &>(rna_UILayout_active_default_);
+
+static BoolPropertyRNA rna_UILayout_activate_init_;
+PropertyRNA &rna_UILayout_activate_init = reinterpret_cast<PropertyRNA &>(rna_UILayout_activate_init_);
+
+static EnumPropertyRNA rna_UILayout_operator_context_;
+PropertyRNA &rna_UILayout_operator_context = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_context_);
+
+static BoolPropertyRNA rna_UILayout_enabled_;
+PropertyRNA &rna_UILayout_enabled = reinterpret_cast<PropertyRNA &>(rna_UILayout_enabled_);
+
+static BoolPropertyRNA rna_UILayout_alert_;
+PropertyRNA &rna_UILayout_alert = reinterpret_cast<PropertyRNA &>(rna_UILayout_alert_);
+
+static EnumPropertyRNA rna_UILayout_alignment_;
+PropertyRNA &rna_UILayout_alignment = reinterpret_cast<PropertyRNA &>(rna_UILayout_alignment_);
+
+static EnumPropertyRNA rna_UILayout_direction_;
+PropertyRNA &rna_UILayout_direction = reinterpret_cast<PropertyRNA &>(rna_UILayout_direction_);
+
+static FloatPropertyRNA rna_UILayout_scale_x_;
+PropertyRNA &rna_UILayout_scale_x = reinterpret_cast<PropertyRNA &>(rna_UILayout_scale_x_);
+
+static FloatPropertyRNA rna_UILayout_scale_y_;
+PropertyRNA &rna_UILayout_scale_y = reinterpret_cast<PropertyRNA &>(rna_UILayout_scale_y_);
+
+static FloatPropertyRNA rna_UILayout_ui_units_x_;
+PropertyRNA &rna_UILayout_ui_units_x = reinterpret_cast<PropertyRNA &>(rna_UILayout_ui_units_x_);
+
+static FloatPropertyRNA rna_UILayout_ui_units_y_;
+PropertyRNA &rna_UILayout_ui_units_y = reinterpret_cast<PropertyRNA &>(rna_UILayout_ui_units_y_);
+
+static EnumPropertyRNA rna_UILayout_emboss_;
+PropertyRNA &rna_UILayout_emboss = reinterpret_cast<PropertyRNA &>(rna_UILayout_emboss_);
+
+static BoolPropertyRNA rna_UILayout_use_property_split_;
+PropertyRNA &rna_UILayout_use_property_split = reinterpret_cast<PropertyRNA &>(rna_UILayout_use_property_split_);
+
+static BoolPropertyRNA rna_UILayout_use_property_decorate_;
+PropertyRNA &rna_UILayout_use_property_decorate = reinterpret_cast<PropertyRNA &>(rna_UILayout_use_property_decorate_);
+
+static PointerPropertyRNA rna_UILayout_row_layout_;
+PropertyRNA &rna_UILayout_row_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_row_layout_);
+
+static BoolPropertyRNA rna_UILayout_row_align_;
+PropertyRNA &rna_UILayout_row_align = reinterpret_cast<PropertyRNA &>(rna_UILayout_row_align_);
+
+static StringPropertyRNA rna_UILayout_row_heading_;
+PropertyRNA &rna_UILayout_row_heading = reinterpret_cast<PropertyRNA &>(rna_UILayout_row_heading_);
+
+static StringPropertyRNA rna_UILayout_row_heading_ctxt_;
+PropertyRNA &rna_UILayout_row_heading_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_row_heading_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_row_translate_;
+PropertyRNA &rna_UILayout_row_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_row_translate_);
+
+FunctionRNA *rna_UILayout_row_func;
+static PointerPropertyRNA rna_UILayout_column_layout_;
+PropertyRNA &rna_UILayout_column_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_layout_);
+
+static BoolPropertyRNA rna_UILayout_column_align_;
+PropertyRNA &rna_UILayout_column_align = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_align_);
+
+static StringPropertyRNA rna_UILayout_column_heading_;
+PropertyRNA &rna_UILayout_column_heading = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_heading_);
+
+static StringPropertyRNA rna_UILayout_column_heading_ctxt_;
+PropertyRNA &rna_UILayout_column_heading_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_heading_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_column_translate_;
+PropertyRNA &rna_UILayout_column_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_translate_);
+
+FunctionRNA *rna_UILayout_column_func;
+static StringPropertyRNA rna_UILayout_panel_idname_;
+PropertyRNA &rna_UILayout_panel_idname = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_idname_);
+
+static BoolPropertyRNA rna_UILayout_panel_default_closed_;
+PropertyRNA &rna_UILayout_panel_default_closed = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_default_closed_);
+
+static PointerPropertyRNA rna_UILayout_panel_layout_header_;
+PropertyRNA &rna_UILayout_panel_layout_header = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_layout_header_);
+
+static PointerPropertyRNA rna_UILayout_panel_layout_body_;
+PropertyRNA &rna_UILayout_panel_layout_body = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_layout_body_);
+
+FunctionRNA *rna_UILayout_panel_func;
+static PointerPropertyRNA rna_UILayout_panel_prop_data_;
+PropertyRNA &rna_UILayout_panel_prop_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_prop_data_);
+
+static StringPropertyRNA rna_UILayout_panel_prop_property_;
+PropertyRNA &rna_UILayout_panel_prop_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_prop_property_);
+
+static PointerPropertyRNA rna_UILayout_panel_prop_layout_header_;
+PropertyRNA &rna_UILayout_panel_prop_layout_header = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_prop_layout_header_);
+
+static PointerPropertyRNA rna_UILayout_panel_prop_layout_body_;
+PropertyRNA &rna_UILayout_panel_prop_layout_body = reinterpret_cast<PropertyRNA &>(rna_UILayout_panel_prop_layout_body_);
+
+FunctionRNA *rna_UILayout_panel_prop_func;
+static IntPropertyRNA rna_UILayout_column_flow_columns_;
+PropertyRNA &rna_UILayout_column_flow_columns = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_flow_columns_);
+
+static PointerPropertyRNA rna_UILayout_column_flow_layout_;
+PropertyRNA &rna_UILayout_column_flow_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_flow_layout_);
+
+static BoolPropertyRNA rna_UILayout_column_flow_align_;
+PropertyRNA &rna_UILayout_column_flow_align = reinterpret_cast<PropertyRNA &>(rna_UILayout_column_flow_align_);
+
+FunctionRNA *rna_UILayout_column_flow_func;
+static BoolPropertyRNA rna_UILayout_grid_flow_row_major_;
+PropertyRNA &rna_UILayout_grid_flow_row_major = reinterpret_cast<PropertyRNA &>(rna_UILayout_grid_flow_row_major_);
+
+static IntPropertyRNA rna_UILayout_grid_flow_columns_;
+PropertyRNA &rna_UILayout_grid_flow_columns = reinterpret_cast<PropertyRNA &>(rna_UILayout_grid_flow_columns_);
+
+static BoolPropertyRNA rna_UILayout_grid_flow_even_columns_;
+PropertyRNA &rna_UILayout_grid_flow_even_columns = reinterpret_cast<PropertyRNA &>(rna_UILayout_grid_flow_even_columns_);
+
+static BoolPropertyRNA rna_UILayout_grid_flow_even_rows_;
+PropertyRNA &rna_UILayout_grid_flow_even_rows = reinterpret_cast<PropertyRNA &>(rna_UILayout_grid_flow_even_rows_);
+
+static BoolPropertyRNA rna_UILayout_grid_flow_align_;
+PropertyRNA &rna_UILayout_grid_flow_align = reinterpret_cast<PropertyRNA &>(rna_UILayout_grid_flow_align_);
+
+static PointerPropertyRNA rna_UILayout_grid_flow_layout_;
+PropertyRNA &rna_UILayout_grid_flow_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_grid_flow_layout_);
+
+FunctionRNA *rna_UILayout_grid_flow_func;
+static PointerPropertyRNA rna_UILayout_box_layout_;
+PropertyRNA &rna_UILayout_box_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_box_layout_);
+
+FunctionRNA *rna_UILayout_box_func;
+static PointerPropertyRNA rna_UILayout_split_layout_;
+PropertyRNA &rna_UILayout_split_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_split_layout_);
+
+static FloatPropertyRNA rna_UILayout_split_factor_;
+PropertyRNA &rna_UILayout_split_factor = reinterpret_cast<PropertyRNA &>(rna_UILayout_split_factor_);
+
+static BoolPropertyRNA rna_UILayout_split_align_;
+PropertyRNA &rna_UILayout_split_align = reinterpret_cast<PropertyRNA &>(rna_UILayout_split_align_);
+
+FunctionRNA *rna_UILayout_split_func;
+static PointerPropertyRNA rna_UILayout_menu_pie_layout_;
+PropertyRNA &rna_UILayout_menu_pie_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_pie_layout_);
+
+FunctionRNA *rna_UILayout_menu_pie_func;
+static IntPropertyRNA rna_UILayout_icon_icon_value_;
+PropertyRNA &rna_UILayout_icon_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_icon_icon_value_);
+
+static PointerPropertyRNA rna_UILayout_icon_data_;
+PropertyRNA &rna_UILayout_icon_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_icon_data_);
+
+FunctionRNA *rna_UILayout_icon_func;
+static StringPropertyRNA rna_UILayout_enum_item_name_name_;
+PropertyRNA &rna_UILayout_enum_item_name_name = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_name_name_);
+
+static PointerPropertyRNA rna_UILayout_enum_item_name_data_;
+PropertyRNA &rna_UILayout_enum_item_name_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_name_data_);
+
+static StringPropertyRNA rna_UILayout_enum_item_name_property_;
+PropertyRNA &rna_UILayout_enum_item_name_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_name_property_);
+
+static StringPropertyRNA rna_UILayout_enum_item_name_identifier_;
+PropertyRNA &rna_UILayout_enum_item_name_identifier = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_name_identifier_);
+
+FunctionRNA *rna_UILayout_enum_item_name_func;
+static StringPropertyRNA rna_UILayout_enum_item_description_description_;
+PropertyRNA &rna_UILayout_enum_item_description_description = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_description_description_);
+
+static PointerPropertyRNA rna_UILayout_enum_item_description_data_;
+PropertyRNA &rna_UILayout_enum_item_description_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_description_data_);
+
+static StringPropertyRNA rna_UILayout_enum_item_description_property_;
+PropertyRNA &rna_UILayout_enum_item_description_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_description_property_);
+
+static StringPropertyRNA rna_UILayout_enum_item_description_identifier_;
+PropertyRNA &rna_UILayout_enum_item_description_identifier = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_description_identifier_);
+
+FunctionRNA *rna_UILayout_enum_item_description_func;
+static IntPropertyRNA rna_UILayout_enum_item_icon_icon_value_;
+PropertyRNA &rna_UILayout_enum_item_icon_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_icon_icon_value_);
+
+static PointerPropertyRNA rna_UILayout_enum_item_icon_data_;
+PropertyRNA &rna_UILayout_enum_item_icon_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_icon_data_);
+
+static StringPropertyRNA rna_UILayout_enum_item_icon_property_;
+PropertyRNA &rna_UILayout_enum_item_icon_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_icon_property_);
+
+static StringPropertyRNA rna_UILayout_enum_item_icon_identifier_;
+PropertyRNA &rna_UILayout_enum_item_icon_identifier = reinterpret_cast<PropertyRNA &>(rna_UILayout_enum_item_icon_identifier_);
+
+FunctionRNA *rna_UILayout_enum_item_icon_func;
+static PointerPropertyRNA rna_UILayout_textbox_data_;
+PropertyRNA &rna_UILayout_textbox_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_data_);
+
+static StringPropertyRNA rna_UILayout_textbox_property_;
+PropertyRNA &rna_UILayout_textbox_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_property_);
+
+static IntPropertyRNA rna_UILayout_textbox_initial_visible_lines_;
+PropertyRNA &rna_UILayout_textbox_initial_visible_lines = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_initial_visible_lines_);
+
+static StringPropertyRNA rna_UILayout_textbox_placeholder_;
+PropertyRNA &rna_UILayout_textbox_placeholder = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_placeholder_);
+
+static StringPropertyRNA rna_UILayout_textbox_text_ctxt_;
+PropertyRNA &rna_UILayout_textbox_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_textbox_translate_;
+PropertyRNA &rna_UILayout_textbox_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_translate_);
+
+FunctionRNA *rna_UILayout_textbox_func;
+static PointerPropertyRNA rna_UILayout_textbox_with_state_data_;
+PropertyRNA &rna_UILayout_textbox_with_state_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_with_state_data_);
+
+static StringPropertyRNA rna_UILayout_textbox_with_state_property_;
+PropertyRNA &rna_UILayout_textbox_with_state_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_with_state_property_);
+
+static PointerPropertyRNA rna_UILayout_textbox_with_state_textbox_state_;
+PropertyRNA &rna_UILayout_textbox_with_state_textbox_state = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_with_state_textbox_state_);
+
+static StringPropertyRNA rna_UILayout_textbox_with_state_placeholder_;
+PropertyRNA &rna_UILayout_textbox_with_state_placeholder = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_with_state_placeholder_);
+
+static StringPropertyRNA rna_UILayout_textbox_with_state_text_ctxt_;
+PropertyRNA &rna_UILayout_textbox_with_state_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_with_state_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_textbox_with_state_translate_;
+PropertyRNA &rna_UILayout_textbox_with_state_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_textbox_with_state_translate_);
+
+FunctionRNA *rna_UILayout_textbox_with_state_func;
+static PointerPropertyRNA rna_UILayout_prop_data_;
+PropertyRNA &rna_UILayout_prop_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_data_);
+
+static StringPropertyRNA rna_UILayout_prop_property_;
+PropertyRNA &rna_UILayout_prop_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_property_);
+
+static StringPropertyRNA rna_UILayout_prop_text_;
+PropertyRNA &rna_UILayout_prop_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_text_);
+
+static StringPropertyRNA rna_UILayout_prop_text_ctxt_;
+PropertyRNA &rna_UILayout_prop_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_prop_translate_;
+PropertyRNA &rna_UILayout_prop_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_translate_);
+
+static EnumPropertyRNA rna_UILayout_prop_icon_;
+PropertyRNA &rna_UILayout_prop_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_icon_);
+
+static StringPropertyRNA rna_UILayout_prop_placeholder_;
+PropertyRNA &rna_UILayout_prop_placeholder = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_placeholder_);
+
+static BoolPropertyRNA rna_UILayout_prop_expand_;
+PropertyRNA &rna_UILayout_prop_expand = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_expand_);
+
+static BoolPropertyRNA rna_UILayout_prop_slider_;
+PropertyRNA &rna_UILayout_prop_slider = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_slider_);
+
+static IntPropertyRNA rna_UILayout_prop_toggle_;
+PropertyRNA &rna_UILayout_prop_toggle = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_toggle_);
+
+static BoolPropertyRNA rna_UILayout_prop_icon_only_;
+PropertyRNA &rna_UILayout_prop_icon_only = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_icon_only_);
+
+static BoolPropertyRNA rna_UILayout_prop_event_;
+PropertyRNA &rna_UILayout_prop_event = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_event_);
+
+static BoolPropertyRNA rna_UILayout_prop_full_event_;
+PropertyRNA &rna_UILayout_prop_full_event = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_full_event_);
+
+static BoolPropertyRNA rna_UILayout_prop_emboss_;
+PropertyRNA &rna_UILayout_prop_emboss = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_emboss_);
+
+static IntPropertyRNA rna_UILayout_prop_index_;
+PropertyRNA &rna_UILayout_prop_index = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_index_);
+
+static IntPropertyRNA rna_UILayout_prop_icon_value_;
+PropertyRNA &rna_UILayout_prop_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_icon_value_);
+
+static BoolPropertyRNA rna_UILayout_prop_invert_checkbox_;
+PropertyRNA &rna_UILayout_prop_invert_checkbox = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_invert_checkbox_);
+
+static EnumPropertyRNA rna_UILayout_prop_text_align_;
+PropertyRNA &rna_UILayout_prop_text_align = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_text_align_);
+
+FunctionRNA *rna_UILayout_prop_func;
+static PointerPropertyRNA rna_UILayout_props_enum_data_;
+PropertyRNA &rna_UILayout_props_enum_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_props_enum_data_);
+
+static StringPropertyRNA rna_UILayout_props_enum_property_;
+PropertyRNA &rna_UILayout_props_enum_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_props_enum_property_);
+
+FunctionRNA *rna_UILayout_props_enum_func;
+static PointerPropertyRNA rna_UILayout_prop_menu_enum_data_;
+PropertyRNA &rna_UILayout_prop_menu_enum_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_menu_enum_data_);
+
+static StringPropertyRNA rna_UILayout_prop_menu_enum_property_;
+PropertyRNA &rna_UILayout_prop_menu_enum_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_menu_enum_property_);
+
+static StringPropertyRNA rna_UILayout_prop_menu_enum_text_;
+PropertyRNA &rna_UILayout_prop_menu_enum_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_menu_enum_text_);
+
+static StringPropertyRNA rna_UILayout_prop_menu_enum_text_ctxt_;
+PropertyRNA &rna_UILayout_prop_menu_enum_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_menu_enum_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_prop_menu_enum_translate_;
+PropertyRNA &rna_UILayout_prop_menu_enum_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_menu_enum_translate_);
+
+static EnumPropertyRNA rna_UILayout_prop_menu_enum_icon_;
+PropertyRNA &rna_UILayout_prop_menu_enum_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_menu_enum_icon_);
+
+FunctionRNA *rna_UILayout_prop_menu_enum_func;
+static PointerPropertyRNA rna_UILayout_prop_with_popover_data_;
+PropertyRNA &rna_UILayout_prop_with_popover_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_data_);
+
+static StringPropertyRNA rna_UILayout_prop_with_popover_property_;
+PropertyRNA &rna_UILayout_prop_with_popover_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_property_);
+
+static StringPropertyRNA rna_UILayout_prop_with_popover_text_;
+PropertyRNA &rna_UILayout_prop_with_popover_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_text_);
+
+static StringPropertyRNA rna_UILayout_prop_with_popover_text_ctxt_;
+PropertyRNA &rna_UILayout_prop_with_popover_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_prop_with_popover_translate_;
+PropertyRNA &rna_UILayout_prop_with_popover_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_translate_);
+
+static EnumPropertyRNA rna_UILayout_prop_with_popover_icon_;
+PropertyRNA &rna_UILayout_prop_with_popover_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_icon_);
+
+static BoolPropertyRNA rna_UILayout_prop_with_popover_icon_only_;
+PropertyRNA &rna_UILayout_prop_with_popover_icon_only = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_icon_only_);
+
+static StringPropertyRNA rna_UILayout_prop_with_popover_panel_;
+PropertyRNA &rna_UILayout_prop_with_popover_panel = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_popover_panel_);
+
+FunctionRNA *rna_UILayout_prop_with_popover_func;
+static PointerPropertyRNA rna_UILayout_prop_with_menu_data_;
+PropertyRNA &rna_UILayout_prop_with_menu_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_data_);
+
+static StringPropertyRNA rna_UILayout_prop_with_menu_property_;
+PropertyRNA &rna_UILayout_prop_with_menu_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_property_);
+
+static StringPropertyRNA rna_UILayout_prop_with_menu_text_;
+PropertyRNA &rna_UILayout_prop_with_menu_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_text_);
+
+static StringPropertyRNA rna_UILayout_prop_with_menu_text_ctxt_;
+PropertyRNA &rna_UILayout_prop_with_menu_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_prop_with_menu_translate_;
+PropertyRNA &rna_UILayout_prop_with_menu_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_translate_);
+
+static EnumPropertyRNA rna_UILayout_prop_with_menu_icon_;
+PropertyRNA &rna_UILayout_prop_with_menu_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_icon_);
+
+static BoolPropertyRNA rna_UILayout_prop_with_menu_icon_only_;
+PropertyRNA &rna_UILayout_prop_with_menu_icon_only = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_icon_only_);
+
+static StringPropertyRNA rna_UILayout_prop_with_menu_menu_;
+PropertyRNA &rna_UILayout_prop_with_menu_menu = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_with_menu_menu_);
+
+FunctionRNA *rna_UILayout_prop_with_menu_func;
+static PointerPropertyRNA rna_UILayout_prop_tabs_enum_data_;
+PropertyRNA &rna_UILayout_prop_tabs_enum_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_tabs_enum_data_);
+
+static StringPropertyRNA rna_UILayout_prop_tabs_enum_property_;
+PropertyRNA &rna_UILayout_prop_tabs_enum_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_tabs_enum_property_);
+
+static PointerPropertyRNA rna_UILayout_prop_tabs_enum_data_highlight_;
+PropertyRNA &rna_UILayout_prop_tabs_enum_data_highlight = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_tabs_enum_data_highlight_);
+
+static StringPropertyRNA rna_UILayout_prop_tabs_enum_property_highlight_;
+PropertyRNA &rna_UILayout_prop_tabs_enum_property_highlight = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_tabs_enum_property_highlight_);
+
+static BoolPropertyRNA rna_UILayout_prop_tabs_enum_icon_only_;
+PropertyRNA &rna_UILayout_prop_tabs_enum_icon_only = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_tabs_enum_icon_only_);
+
+static EnumPropertyRNA rna_UILayout_prop_tabs_enum_expand_as_;
+PropertyRNA &rna_UILayout_prop_tabs_enum_expand_as = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_tabs_enum_expand_as_);
+
+FunctionRNA *rna_UILayout_prop_tabs_enum_func;
+static PointerPropertyRNA rna_UILayout_prop_enum_data_;
+PropertyRNA &rna_UILayout_prop_enum_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_data_);
+
+static StringPropertyRNA rna_UILayout_prop_enum_property_;
+PropertyRNA &rna_UILayout_prop_enum_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_property_);
+
+static StringPropertyRNA rna_UILayout_prop_enum_value_;
+PropertyRNA &rna_UILayout_prop_enum_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_value_);
+
+static StringPropertyRNA rna_UILayout_prop_enum_text_;
+PropertyRNA &rna_UILayout_prop_enum_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_text_);
+
+static StringPropertyRNA rna_UILayout_prop_enum_text_ctxt_;
+PropertyRNA &rna_UILayout_prop_enum_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_prop_enum_translate_;
+PropertyRNA &rna_UILayout_prop_enum_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_translate_);
+
+static EnumPropertyRNA rna_UILayout_prop_enum_icon_;
+PropertyRNA &rna_UILayout_prop_enum_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_enum_icon_);
+
+FunctionRNA *rna_UILayout_prop_enum_func;
+static PointerPropertyRNA rna_UILayout_prop_search_data_;
+PropertyRNA &rna_UILayout_prop_search_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_data_);
+
+static StringPropertyRNA rna_UILayout_prop_search_property_;
+PropertyRNA &rna_UILayout_prop_search_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_property_);
+
+static PointerPropertyRNA rna_UILayout_prop_search_search_data_;
+PropertyRNA &rna_UILayout_prop_search_search_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_search_data_);
+
+static StringPropertyRNA rna_UILayout_prop_search_search_property_;
+PropertyRNA &rna_UILayout_prop_search_search_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_search_property_);
+
+static StringPropertyRNA rna_UILayout_prop_search_text_;
+PropertyRNA &rna_UILayout_prop_search_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_text_);
+
+static StringPropertyRNA rna_UILayout_prop_search_text_ctxt_;
+PropertyRNA &rna_UILayout_prop_search_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_prop_search_translate_;
+PropertyRNA &rna_UILayout_prop_search_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_translate_);
+
+static EnumPropertyRNA rna_UILayout_prop_search_icon_;
+PropertyRNA &rna_UILayout_prop_search_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_icon_);
+
+static BoolPropertyRNA rna_UILayout_prop_search_results_are_suggestions_;
+PropertyRNA &rna_UILayout_prop_search_results_are_suggestions = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_results_are_suggestions_);
+
+static StringPropertyRNA rna_UILayout_prop_search_item_search_property_;
+PropertyRNA &rna_UILayout_prop_search_item_search_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_search_item_search_property_);
+
+FunctionRNA *rna_UILayout_prop_search_func;
+static PointerPropertyRNA rna_UILayout_prop_decorator_data_;
+PropertyRNA &rna_UILayout_prop_decorator_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_decorator_data_);
+
+static StringPropertyRNA rna_UILayout_prop_decorator_property_;
+PropertyRNA &rna_UILayout_prop_decorator_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_decorator_property_);
+
+static IntPropertyRNA rna_UILayout_prop_decorator_index_;
+PropertyRNA &rna_UILayout_prop_decorator_index = reinterpret_cast<PropertyRNA &>(rna_UILayout_prop_decorator_index_);
+
+FunctionRNA *rna_UILayout_prop_decorator_func;
+static StringPropertyRNA rna_UILayout_operator_operator_;
+PropertyRNA &rna_UILayout_operator_operator = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_operator_);
+
+static StringPropertyRNA rna_UILayout_operator_text_;
+PropertyRNA &rna_UILayout_operator_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_text_);
+
+static StringPropertyRNA rna_UILayout_operator_text_ctxt_;
+PropertyRNA &rna_UILayout_operator_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_operator_translate_;
+PropertyRNA &rna_UILayout_operator_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_translate_);
+
+static EnumPropertyRNA rna_UILayout_operator_icon_;
+PropertyRNA &rna_UILayout_operator_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_icon_);
+
+static BoolPropertyRNA rna_UILayout_operator_emboss_;
+PropertyRNA &rna_UILayout_operator_emboss = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_emboss_);
+
+static BoolPropertyRNA rna_UILayout_operator_depress_;
+PropertyRNA &rna_UILayout_operator_depress = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_depress_);
+
+static IntPropertyRNA rna_UILayout_operator_icon_value_;
+PropertyRNA &rna_UILayout_operator_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_icon_value_);
+
+static FloatPropertyRNA rna_UILayout_operator_search_weight_;
+PropertyRNA &rna_UILayout_operator_search_weight = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_search_weight_);
+
+static PointerPropertyRNA rna_UILayout_operator_properties_;
+PropertyRNA &rna_UILayout_operator_properties = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_properties_);
+
+FunctionRNA *rna_UILayout_operator_func;
+static StringPropertyRNA rna_UILayout_operator_menu_hold_operator_;
+PropertyRNA &rna_UILayout_operator_menu_hold_operator = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_operator_);
+
+static StringPropertyRNA rna_UILayout_operator_menu_hold_text_;
+PropertyRNA &rna_UILayout_operator_menu_hold_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_text_);
+
+static StringPropertyRNA rna_UILayout_operator_menu_hold_text_ctxt_;
+PropertyRNA &rna_UILayout_operator_menu_hold_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_operator_menu_hold_translate_;
+PropertyRNA &rna_UILayout_operator_menu_hold_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_translate_);
+
+static EnumPropertyRNA rna_UILayout_operator_menu_hold_icon_;
+PropertyRNA &rna_UILayout_operator_menu_hold_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_icon_);
+
+static BoolPropertyRNA rna_UILayout_operator_menu_hold_emboss_;
+PropertyRNA &rna_UILayout_operator_menu_hold_emboss = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_emboss_);
+
+static BoolPropertyRNA rna_UILayout_operator_menu_hold_depress_;
+PropertyRNA &rna_UILayout_operator_menu_hold_depress = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_depress_);
+
+static IntPropertyRNA rna_UILayout_operator_menu_hold_icon_value_;
+PropertyRNA &rna_UILayout_operator_menu_hold_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_icon_value_);
+
+static StringPropertyRNA rna_UILayout_operator_menu_hold_menu_;
+PropertyRNA &rna_UILayout_operator_menu_hold_menu = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_menu_);
+
+static PointerPropertyRNA rna_UILayout_operator_menu_hold_properties_;
+PropertyRNA &rna_UILayout_operator_menu_hold_properties = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_hold_properties_);
+
+FunctionRNA *rna_UILayout_operator_menu_hold_func;
+static StringPropertyRNA rna_UILayout_operator_enum_operator_;
+PropertyRNA &rna_UILayout_operator_enum_operator = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_enum_operator_);
+
+static StringPropertyRNA rna_UILayout_operator_enum_property_;
+PropertyRNA &rna_UILayout_operator_enum_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_enum_property_);
+
+static BoolPropertyRNA rna_UILayout_operator_enum_icon_only_;
+PropertyRNA &rna_UILayout_operator_enum_icon_only = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_enum_icon_only_);
+
+FunctionRNA *rna_UILayout_operator_enum_func;
+static StringPropertyRNA rna_UILayout_operator_menu_enum_operator_;
+PropertyRNA &rna_UILayout_operator_menu_enum_operator = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_operator_);
+
+static StringPropertyRNA rna_UILayout_operator_menu_enum_property_;
+PropertyRNA &rna_UILayout_operator_menu_enum_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_property_);
+
+static StringPropertyRNA rna_UILayout_operator_menu_enum_text_;
+PropertyRNA &rna_UILayout_operator_menu_enum_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_text_);
+
+static StringPropertyRNA rna_UILayout_operator_menu_enum_text_ctxt_;
+PropertyRNA &rna_UILayout_operator_menu_enum_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_operator_menu_enum_translate_;
+PropertyRNA &rna_UILayout_operator_menu_enum_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_translate_);
+
+static EnumPropertyRNA rna_UILayout_operator_menu_enum_icon_;
+PropertyRNA &rna_UILayout_operator_menu_enum_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_icon_);
+
+static PointerPropertyRNA rna_UILayout_operator_menu_enum_properties_;
+PropertyRNA &rna_UILayout_operator_menu_enum_properties = reinterpret_cast<PropertyRNA &>(rna_UILayout_operator_menu_enum_properties_);
+
+FunctionRNA *rna_UILayout_operator_menu_enum_func;
+static StringPropertyRNA rna_UILayout_label_text_;
+PropertyRNA &rna_UILayout_label_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_label_text_);
+
+static StringPropertyRNA rna_UILayout_label_text_ctxt_;
+PropertyRNA &rna_UILayout_label_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_label_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_label_translate_;
+PropertyRNA &rna_UILayout_label_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_label_translate_);
+
+static EnumPropertyRNA rna_UILayout_label_icon_;
+PropertyRNA &rna_UILayout_label_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_label_icon_);
+
+static IntPropertyRNA rna_UILayout_label_icon_value_;
+PropertyRNA &rna_UILayout_label_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_label_icon_value_);
+
+FunctionRNA *rna_UILayout_label_func;
+static StringPropertyRNA rna_UILayout_link_url_;
+PropertyRNA &rna_UILayout_link_url = reinterpret_cast<PropertyRNA &>(rna_UILayout_link_url_);
+
+static StringPropertyRNA rna_UILayout_link_text_;
+PropertyRNA &rna_UILayout_link_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_link_text_);
+
+static StringPropertyRNA rna_UILayout_link_text_ctxt_;
+PropertyRNA &rna_UILayout_link_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_link_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_link_translate_;
+PropertyRNA &rna_UILayout_link_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_link_translate_);
+
+static EnumPropertyRNA rna_UILayout_link_icon_;
+PropertyRNA &rna_UILayout_link_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_link_icon_);
+
+static IntPropertyRNA rna_UILayout_link_icon_value_;
+PropertyRNA &rna_UILayout_link_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_link_icon_value_);
+
+FunctionRNA *rna_UILayout_link_func;
+static StringPropertyRNA rna_UILayout_menu_menu_;
+PropertyRNA &rna_UILayout_menu_menu = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_menu_);
+
+static StringPropertyRNA rna_UILayout_menu_text_;
+PropertyRNA &rna_UILayout_menu_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_text_);
+
+static StringPropertyRNA rna_UILayout_menu_text_ctxt_;
+PropertyRNA &rna_UILayout_menu_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_menu_translate_;
+PropertyRNA &rna_UILayout_menu_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_translate_);
+
+static EnumPropertyRNA rna_UILayout_menu_icon_;
+PropertyRNA &rna_UILayout_menu_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_icon_);
+
+static IntPropertyRNA rna_UILayout_menu_icon_value_;
+PropertyRNA &rna_UILayout_menu_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_icon_value_);
+
+FunctionRNA *rna_UILayout_menu_func;
+static StringPropertyRNA rna_UILayout_menu_contents_menu_;
+PropertyRNA &rna_UILayout_menu_contents_menu = reinterpret_cast<PropertyRNA &>(rna_UILayout_menu_contents_menu_);
+
+FunctionRNA *rna_UILayout_menu_contents_func;
+static StringPropertyRNA rna_UILayout_popover_panel_;
+PropertyRNA &rna_UILayout_popover_panel = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_panel_);
+
+static StringPropertyRNA rna_UILayout_popover_text_;
+PropertyRNA &rna_UILayout_popover_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_text_);
+
+static StringPropertyRNA rna_UILayout_popover_text_ctxt_;
+PropertyRNA &rna_UILayout_popover_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_popover_translate_;
+PropertyRNA &rna_UILayout_popover_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_translate_);
+
+static EnumPropertyRNA rna_UILayout_popover_icon_;
+PropertyRNA &rna_UILayout_popover_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_icon_);
+
+static IntPropertyRNA rna_UILayout_popover_icon_value_;
+PropertyRNA &rna_UILayout_popover_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_icon_value_);
+
+static EnumPropertyRNA rna_UILayout_popover_direction_;
+PropertyRNA &rna_UILayout_popover_direction = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_direction_);
+
+FunctionRNA *rna_UILayout_popover_func;
+static EnumPropertyRNA rna_UILayout_popover_group_space_type_;
+PropertyRNA &rna_UILayout_popover_group_space_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_group_space_type_);
+
+static EnumPropertyRNA rna_UILayout_popover_group_region_type_;
+PropertyRNA &rna_UILayout_popover_group_region_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_group_region_type_);
+
+static StringPropertyRNA rna_UILayout_popover_group_context_;
+PropertyRNA &rna_UILayout_popover_group_context = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_group_context_);
+
+static StringPropertyRNA rna_UILayout_popover_group_category_;
+PropertyRNA &rna_UILayout_popover_group_category = reinterpret_cast<PropertyRNA &>(rna_UILayout_popover_group_category_);
+
+FunctionRNA *rna_UILayout_popover_group_func;
+static FloatPropertyRNA rna_UILayout_separator_factor_;
+PropertyRNA &rna_UILayout_separator_factor = reinterpret_cast<PropertyRNA &>(rna_UILayout_separator_factor_);
+
+static EnumPropertyRNA rna_UILayout_separator_type_;
+PropertyRNA &rna_UILayout_separator_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_separator_type_);
+
+FunctionRNA *rna_UILayout_separator_func;
+FunctionRNA *rna_UILayout_separator_spacer_func;
+static StringPropertyRNA rna_UILayout_progress_text_;
+PropertyRNA &rna_UILayout_progress_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_progress_text_);
+
+static StringPropertyRNA rna_UILayout_progress_text_ctxt_;
+PropertyRNA &rna_UILayout_progress_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_progress_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_progress_translate_;
+PropertyRNA &rna_UILayout_progress_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_progress_translate_);
+
+static FloatPropertyRNA rna_UILayout_progress_factor_;
+PropertyRNA &rna_UILayout_progress_factor = reinterpret_cast<PropertyRNA &>(rna_UILayout_progress_factor_);
+
+static EnumPropertyRNA rna_UILayout_progress_type_;
+PropertyRNA &rna_UILayout_progress_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_progress_type_);
+
+FunctionRNA *rna_UILayout_progress_func;
+static StringPropertyRNA rna_UILayout_context_pointer_set_name_;
+PropertyRNA &rna_UILayout_context_pointer_set_name = reinterpret_cast<PropertyRNA &>(rna_UILayout_context_pointer_set_name_);
+
+static PointerPropertyRNA rna_UILayout_context_pointer_set_data_;
+PropertyRNA &rna_UILayout_context_pointer_set_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_context_pointer_set_data_);
+
+FunctionRNA *rna_UILayout_context_pointer_set_func;
+static StringPropertyRNA rna_UILayout_context_string_set_name_;
+PropertyRNA &rna_UILayout_context_string_set_name = reinterpret_cast<PropertyRNA &>(rna_UILayout_context_string_set_name_);
+
+static StringPropertyRNA rna_UILayout_context_string_set_value_;
+PropertyRNA &rna_UILayout_context_string_set_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_context_string_set_value_);
+
+FunctionRNA *rna_UILayout_context_string_set_func;
+FunctionRNA *rna_UILayout_template_header_func;
+static PointerPropertyRNA rna_UILayout_template_ID_data_;
+PropertyRNA &rna_UILayout_template_ID_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_data_);
+
+static StringPropertyRNA rna_UILayout_template_ID_property_;
+PropertyRNA &rna_UILayout_template_ID_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_property_);
+
+static StringPropertyRNA rna_UILayout_template_ID_new_;
+PropertyRNA &rna_UILayout_template_ID_new = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_new_);
+
+static StringPropertyRNA rna_UILayout_template_ID_open_;
+PropertyRNA &rna_UILayout_template_ID_open = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_open_);
+
+static StringPropertyRNA rna_UILayout_template_ID_unlink_;
+PropertyRNA &rna_UILayout_template_ID_unlink = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_unlink_);
+
+static EnumPropertyRNA rna_UILayout_template_ID_filter_;
+PropertyRNA &rna_UILayout_template_ID_filter = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_filter_);
+
+static BoolPropertyRNA rna_UILayout_template_ID_live_icon_;
+PropertyRNA &rna_UILayout_template_ID_live_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_live_icon_);
+
+static StringPropertyRNA rna_UILayout_template_ID_text_;
+PropertyRNA &rna_UILayout_template_ID_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_text_);
+
+static StringPropertyRNA rna_UILayout_template_ID_text_ctxt_;
+PropertyRNA &rna_UILayout_template_ID_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_ID_translate_;
+PropertyRNA &rna_UILayout_template_ID_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_translate_);
+
+FunctionRNA *rna_UILayout_template_ID_func;
+static PointerPropertyRNA rna_UILayout_template_ID_session_uid_data_;
+PropertyRNA &rna_UILayout_template_ID_session_uid_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_session_uid_data_);
+
+static StringPropertyRNA rna_UILayout_template_ID_session_uid_property_;
+PropertyRNA &rna_UILayout_template_ID_session_uid_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_session_uid_property_);
+
+static EnumPropertyRNA rna_UILayout_template_ID_session_uid_id_type_;
+PropertyRNA &rna_UILayout_template_ID_session_uid_id_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_session_uid_id_type_);
+
+FunctionRNA *rna_UILayout_template_ID_session_uid_func;
+static PointerPropertyRNA rna_UILayout_template_ID_preview_data_;
+PropertyRNA &rna_UILayout_template_ID_preview_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_data_);
+
+static StringPropertyRNA rna_UILayout_template_ID_preview_property_;
+PropertyRNA &rna_UILayout_template_ID_preview_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_property_);
+
+static StringPropertyRNA rna_UILayout_template_ID_preview_new_;
+PropertyRNA &rna_UILayout_template_ID_preview_new = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_new_);
+
+static StringPropertyRNA rna_UILayout_template_ID_preview_open_;
+PropertyRNA &rna_UILayout_template_ID_preview_open = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_open_);
+
+static StringPropertyRNA rna_UILayout_template_ID_preview_unlink_;
+PropertyRNA &rna_UILayout_template_ID_preview_unlink = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_unlink_);
+
+static IntPropertyRNA rna_UILayout_template_ID_preview_rows_;
+PropertyRNA &rna_UILayout_template_ID_preview_rows = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_rows_);
+
+static IntPropertyRNA rna_UILayout_template_ID_preview_cols_;
+PropertyRNA &rna_UILayout_template_ID_preview_cols = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_cols_);
+
+static EnumPropertyRNA rna_UILayout_template_ID_preview_filter_;
+PropertyRNA &rna_UILayout_template_ID_preview_filter = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_filter_);
+
+static BoolPropertyRNA rna_UILayout_template_ID_preview_hide_buttons_;
+PropertyRNA &rna_UILayout_template_ID_preview_hide_buttons = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_preview_hide_buttons_);
+
+FunctionRNA *rna_UILayout_template_ID_preview_func;
+static PointerPropertyRNA rna_UILayout_template_matrix_data_;
+PropertyRNA &rna_UILayout_template_matrix_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_matrix_data_);
+
+static StringPropertyRNA rna_UILayout_template_matrix_property_;
+PropertyRNA &rna_UILayout_template_matrix_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_matrix_property_);
+
+FunctionRNA *rna_UILayout_template_matrix_func;
+static PointerPropertyRNA rna_UILayout_template_any_ID_data_;
+PropertyRNA &rna_UILayout_template_any_ID_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_any_ID_data_);
+
+static StringPropertyRNA rna_UILayout_template_any_ID_property_;
+PropertyRNA &rna_UILayout_template_any_ID_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_any_ID_property_);
+
+static StringPropertyRNA rna_UILayout_template_any_ID_type_property_;
+PropertyRNA &rna_UILayout_template_any_ID_type_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_any_ID_type_property_);
+
+static StringPropertyRNA rna_UILayout_template_any_ID_text_;
+PropertyRNA &rna_UILayout_template_any_ID_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_any_ID_text_);
+
+static StringPropertyRNA rna_UILayout_template_any_ID_text_ctxt_;
+PropertyRNA &rna_UILayout_template_any_ID_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_any_ID_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_any_ID_translate_;
+PropertyRNA &rna_UILayout_template_any_ID_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_any_ID_translate_);
+
+FunctionRNA *rna_UILayout_template_any_ID_func;
+static PointerPropertyRNA rna_UILayout_template_ID_tabs_data_;
+PropertyRNA &rna_UILayout_template_ID_tabs_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_tabs_data_);
+
+static StringPropertyRNA rna_UILayout_template_ID_tabs_property_;
+PropertyRNA &rna_UILayout_template_ID_tabs_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_tabs_property_);
+
+static StringPropertyRNA rna_UILayout_template_ID_tabs_new_;
+PropertyRNA &rna_UILayout_template_ID_tabs_new = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_tabs_new_);
+
+static StringPropertyRNA rna_UILayout_template_ID_tabs_menu_;
+PropertyRNA &rna_UILayout_template_ID_tabs_menu = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_tabs_menu_);
+
+static EnumPropertyRNA rna_UILayout_template_ID_tabs_filter_;
+PropertyRNA &rna_UILayout_template_ID_tabs_filter = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_ID_tabs_filter_);
+
+FunctionRNA *rna_UILayout_template_ID_tabs_func;
+static PointerPropertyRNA rna_UILayout_template_action_id_;
+PropertyRNA &rna_UILayout_template_action_id = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_action_id_);
+
+static StringPropertyRNA rna_UILayout_template_action_new_;
+PropertyRNA &rna_UILayout_template_action_new = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_action_new_);
+
+static StringPropertyRNA rna_UILayout_template_action_unlink_;
+PropertyRNA &rna_UILayout_template_action_unlink = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_action_unlink_);
+
+static StringPropertyRNA rna_UILayout_template_action_text_;
+PropertyRNA &rna_UILayout_template_action_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_action_text_);
+
+static StringPropertyRNA rna_UILayout_template_action_text_ctxt_;
+PropertyRNA &rna_UILayout_template_action_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_action_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_action_translate_;
+PropertyRNA &rna_UILayout_template_action_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_action_translate_);
+
+FunctionRNA *rna_UILayout_template_action_func;
+static PointerPropertyRNA rna_UILayout_template_search_data_;
+PropertyRNA &rna_UILayout_template_search_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_data_);
+
+static StringPropertyRNA rna_UILayout_template_search_property_;
+PropertyRNA &rna_UILayout_template_search_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_property_);
+
+static PointerPropertyRNA rna_UILayout_template_search_search_data_;
+PropertyRNA &rna_UILayout_template_search_search_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_search_data_);
+
+static StringPropertyRNA rna_UILayout_template_search_search_property_;
+PropertyRNA &rna_UILayout_template_search_search_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_search_property_);
+
+static StringPropertyRNA rna_UILayout_template_search_new_;
+PropertyRNA &rna_UILayout_template_search_new = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_new_);
+
+static StringPropertyRNA rna_UILayout_template_search_unlink_;
+PropertyRNA &rna_UILayout_template_search_unlink = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_unlink_);
+
+static StringPropertyRNA rna_UILayout_template_search_text_;
+PropertyRNA &rna_UILayout_template_search_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_text_);
+
+static StringPropertyRNA rna_UILayout_template_search_text_ctxt_;
+PropertyRNA &rna_UILayout_template_search_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_search_translate_;
+PropertyRNA &rna_UILayout_template_search_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_translate_);
+
+FunctionRNA *rna_UILayout_template_search_func;
+static PointerPropertyRNA rna_UILayout_template_search_preview_data_;
+PropertyRNA &rna_UILayout_template_search_preview_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_data_);
+
+static StringPropertyRNA rna_UILayout_template_search_preview_property_;
+PropertyRNA &rna_UILayout_template_search_preview_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_property_);
+
+static PointerPropertyRNA rna_UILayout_template_search_preview_search_data_;
+PropertyRNA &rna_UILayout_template_search_preview_search_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_search_data_);
+
+static StringPropertyRNA rna_UILayout_template_search_preview_search_property_;
+PropertyRNA &rna_UILayout_template_search_preview_search_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_search_property_);
+
+static StringPropertyRNA rna_UILayout_template_search_preview_new_;
+PropertyRNA &rna_UILayout_template_search_preview_new = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_new_);
+
+static StringPropertyRNA rna_UILayout_template_search_preview_unlink_;
+PropertyRNA &rna_UILayout_template_search_preview_unlink = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_unlink_);
+
+static StringPropertyRNA rna_UILayout_template_search_preview_text_;
+PropertyRNA &rna_UILayout_template_search_preview_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_text_);
+
+static StringPropertyRNA rna_UILayout_template_search_preview_text_ctxt_;
+PropertyRNA &rna_UILayout_template_search_preview_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_search_preview_translate_;
+PropertyRNA &rna_UILayout_template_search_preview_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_translate_);
+
+static IntPropertyRNA rna_UILayout_template_search_preview_rows_;
+PropertyRNA &rna_UILayout_template_search_preview_rows = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_rows_);
+
+static IntPropertyRNA rna_UILayout_template_search_preview_cols_;
+PropertyRNA &rna_UILayout_template_search_preview_cols = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_search_preview_cols_);
+
+FunctionRNA *rna_UILayout_template_search_preview_func;
+static PointerPropertyRNA rna_UILayout_template_path_builder_data_;
+PropertyRNA &rna_UILayout_template_path_builder_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_path_builder_data_);
+
+static StringPropertyRNA rna_UILayout_template_path_builder_property_;
+PropertyRNA &rna_UILayout_template_path_builder_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_path_builder_property_);
+
+static PointerPropertyRNA rna_UILayout_template_path_builder_root_;
+PropertyRNA &rna_UILayout_template_path_builder_root = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_path_builder_root_);
+
+static StringPropertyRNA rna_UILayout_template_path_builder_text_;
+PropertyRNA &rna_UILayout_template_path_builder_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_path_builder_text_);
+
+static StringPropertyRNA rna_UILayout_template_path_builder_text_ctxt_;
+PropertyRNA &rna_UILayout_template_path_builder_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_path_builder_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_path_builder_translate_;
+PropertyRNA &rna_UILayout_template_path_builder_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_path_builder_translate_);
+
+FunctionRNA *rna_UILayout_template_path_builder_func;
+FunctionRNA *rna_UILayout_template_modifiers_func;
+FunctionRNA *rna_UILayout_template_strip_modifiers_func;
+FunctionRNA *rna_UILayout_template_collection_importer_func;
+FunctionRNA *rna_UILayout_template_collection_exporters_func;
+static BoolPropertyRNA rna_UILayout_template_constraints_use_bone_constraints_;
+PropertyRNA &rna_UILayout_template_constraints_use_bone_constraints = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_constraints_use_bone_constraints_);
+
+FunctionRNA *rna_UILayout_template_constraints_func;
+FunctionRNA *rna_UILayout_template_shaderfx_func;
+static PointerPropertyRNA rna_UILayout_template_greasepencil_color_data_;
+PropertyRNA &rna_UILayout_template_greasepencil_color_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_greasepencil_color_data_);
+
+static StringPropertyRNA rna_UILayout_template_greasepencil_color_property_;
+PropertyRNA &rna_UILayout_template_greasepencil_color_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_greasepencil_color_property_);
+
+static IntPropertyRNA rna_UILayout_template_greasepencil_color_rows_;
+PropertyRNA &rna_UILayout_template_greasepencil_color_rows = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_greasepencil_color_rows_);
+
+static IntPropertyRNA rna_UILayout_template_greasepencil_color_cols_;
+PropertyRNA &rna_UILayout_template_greasepencil_color_cols = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_greasepencil_color_cols_);
+
+static FloatPropertyRNA rna_UILayout_template_greasepencil_color_scale_;
+PropertyRNA &rna_UILayout_template_greasepencil_color_scale = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_greasepencil_color_scale_);
+
+static EnumPropertyRNA rna_UILayout_template_greasepencil_color_filter_;
+PropertyRNA &rna_UILayout_template_greasepencil_color_filter = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_greasepencil_color_filter_);
+
+FunctionRNA *rna_UILayout_template_greasepencil_color_func;
+static PointerPropertyRNA rna_UILayout_template_constraint_header_data_;
+PropertyRNA &rna_UILayout_template_constraint_header_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_constraint_header_data_);
+
+FunctionRNA *rna_UILayout_template_constraint_header_func;
+static PointerPropertyRNA rna_UILayout_template_preview_id_;
+PropertyRNA &rna_UILayout_template_preview_id = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_preview_id_);
+
+static BoolPropertyRNA rna_UILayout_template_preview_show_buttons_;
+PropertyRNA &rna_UILayout_template_preview_show_buttons = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_preview_show_buttons_);
+
+static PointerPropertyRNA rna_UILayout_template_preview_parent_;
+PropertyRNA &rna_UILayout_template_preview_parent = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_preview_parent_);
+
+static PointerPropertyRNA rna_UILayout_template_preview_slot_;
+PropertyRNA &rna_UILayout_template_preview_slot = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_preview_slot_);
+
+static StringPropertyRNA rna_UILayout_template_preview_preview_id_;
+PropertyRNA &rna_UILayout_template_preview_preview_id = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_preview_preview_id_);
+
+FunctionRNA *rna_UILayout_template_preview_func;
+static PointerPropertyRNA rna_UILayout_template_curve_mapping_data_;
+PropertyRNA &rna_UILayout_template_curve_mapping_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_data_);
+
+static StringPropertyRNA rna_UILayout_template_curve_mapping_property_;
+PropertyRNA &rna_UILayout_template_curve_mapping_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_property_);
+
+static EnumPropertyRNA rna_UILayout_template_curve_mapping_type_;
+PropertyRNA &rna_UILayout_template_curve_mapping_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_type_);
+
+static BoolPropertyRNA rna_UILayout_template_curve_mapping_levels_;
+PropertyRNA &rna_UILayout_template_curve_mapping_levels = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_levels_);
+
+static BoolPropertyRNA rna_UILayout_template_curve_mapping_brush_;
+PropertyRNA &rna_UILayout_template_curve_mapping_brush = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_brush_);
+
+static BoolPropertyRNA rna_UILayout_template_curve_mapping_use_negative_slope_;
+PropertyRNA &rna_UILayout_template_curve_mapping_use_negative_slope = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_use_negative_slope_);
+
+static BoolPropertyRNA rna_UILayout_template_curve_mapping_show_tone_;
+PropertyRNA &rna_UILayout_template_curve_mapping_show_tone = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_show_tone_);
+
+static BoolPropertyRNA rna_UILayout_template_curve_mapping_show_presets_;
+PropertyRNA &rna_UILayout_template_curve_mapping_show_presets = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curve_mapping_show_presets_);
+
+FunctionRNA *rna_UILayout_template_curve_mapping_func;
+static PointerPropertyRNA rna_UILayout_template_curveprofile_data_;
+PropertyRNA &rna_UILayout_template_curveprofile_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curveprofile_data_);
+
+static StringPropertyRNA rna_UILayout_template_curveprofile_property_;
+PropertyRNA &rna_UILayout_template_curveprofile_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_curveprofile_property_);
+
+FunctionRNA *rna_UILayout_template_curveprofile_func;
+static PointerPropertyRNA rna_UILayout_template_color_ramp_data_;
+PropertyRNA &rna_UILayout_template_color_ramp_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_ramp_data_);
+
+static StringPropertyRNA rna_UILayout_template_color_ramp_property_;
+PropertyRNA &rna_UILayout_template_color_ramp_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_ramp_property_);
+
+static BoolPropertyRNA rna_UILayout_template_color_ramp_expand_;
+PropertyRNA &rna_UILayout_template_color_ramp_expand = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_ramp_expand_);
+
+FunctionRNA *rna_UILayout_template_color_ramp_func;
+static IntPropertyRNA rna_UILayout_template_icon_icon_value_;
+PropertyRNA &rna_UILayout_template_icon_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_icon_value_);
+
+static FloatPropertyRNA rna_UILayout_template_icon_scale_;
+PropertyRNA &rna_UILayout_template_icon_scale = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_scale_);
+
+FunctionRNA *rna_UILayout_template_icon_func;
+static PointerPropertyRNA rna_UILayout_template_icon_view_data_;
+PropertyRNA &rna_UILayout_template_icon_view_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_view_data_);
+
+static StringPropertyRNA rna_UILayout_template_icon_view_property_;
+PropertyRNA &rna_UILayout_template_icon_view_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_view_property_);
+
+static BoolPropertyRNA rna_UILayout_template_icon_view_show_labels_;
+PropertyRNA &rna_UILayout_template_icon_view_show_labels = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_view_show_labels_);
+
+static FloatPropertyRNA rna_UILayout_template_icon_view_scale_;
+PropertyRNA &rna_UILayout_template_icon_view_scale = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_view_scale_);
+
+static FloatPropertyRNA rna_UILayout_template_icon_view_scale_popup_;
+PropertyRNA &rna_UILayout_template_icon_view_scale_popup = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_icon_view_scale_popup_);
+
+FunctionRNA *rna_UILayout_template_icon_view_func;
+static PointerPropertyRNA rna_UILayout_template_histogram_data_;
+PropertyRNA &rna_UILayout_template_histogram_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_histogram_data_);
+
+static StringPropertyRNA rna_UILayout_template_histogram_property_;
+PropertyRNA &rna_UILayout_template_histogram_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_histogram_property_);
+
+FunctionRNA *rna_UILayout_template_histogram_func;
+static PointerPropertyRNA rna_UILayout_template_waveform_data_;
+PropertyRNA &rna_UILayout_template_waveform_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_waveform_data_);
+
+static StringPropertyRNA rna_UILayout_template_waveform_property_;
+PropertyRNA &rna_UILayout_template_waveform_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_waveform_property_);
+
+FunctionRNA *rna_UILayout_template_waveform_func;
+static PointerPropertyRNA rna_UILayout_template_vectorscope_data_;
+PropertyRNA &rna_UILayout_template_vectorscope_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_vectorscope_data_);
+
+static StringPropertyRNA rna_UILayout_template_vectorscope_property_;
+PropertyRNA &rna_UILayout_template_vectorscope_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_vectorscope_property_);
+
+FunctionRNA *rna_UILayout_template_vectorscope_func;
+static PointerPropertyRNA rna_UILayout_template_layers_data_;
+PropertyRNA &rna_UILayout_template_layers_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_layers_data_);
+
+static StringPropertyRNA rna_UILayout_template_layers_property_;
+PropertyRNA &rna_UILayout_template_layers_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_layers_property_);
+
+static PointerPropertyRNA rna_UILayout_template_layers_used_layers_data_;
+PropertyRNA &rna_UILayout_template_layers_used_layers_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_layers_used_layers_data_);
+
+static StringPropertyRNA rna_UILayout_template_layers_used_layers_property_;
+PropertyRNA &rna_UILayout_template_layers_used_layers_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_layers_used_layers_property_);
+
+static IntPropertyRNA rna_UILayout_template_layers_active_layer_;
+PropertyRNA &rna_UILayout_template_layers_active_layer = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_layers_active_layer_);
+
+FunctionRNA *rna_UILayout_template_layers_func;
+static PointerPropertyRNA rna_UILayout_template_color_picker_data_;
+PropertyRNA &rna_UILayout_template_color_picker_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_picker_data_);
+
+static StringPropertyRNA rna_UILayout_template_color_picker_property_;
+PropertyRNA &rna_UILayout_template_color_picker_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_picker_property_);
+
+static BoolPropertyRNA rna_UILayout_template_color_picker_value_slider_;
+PropertyRNA &rna_UILayout_template_color_picker_value_slider = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_picker_value_slider_);
+
+static BoolPropertyRNA rna_UILayout_template_color_picker_lock_;
+PropertyRNA &rna_UILayout_template_color_picker_lock = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_picker_lock_);
+
+static BoolPropertyRNA rna_UILayout_template_color_picker_lock_luminosity_;
+PropertyRNA &rna_UILayout_template_color_picker_lock_luminosity = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_picker_lock_luminosity_);
+
+static BoolPropertyRNA rna_UILayout_template_color_picker_cubic_;
+PropertyRNA &rna_UILayout_template_color_picker_cubic = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_color_picker_cubic_);
+
+FunctionRNA *rna_UILayout_template_color_picker_func;
+static PointerPropertyRNA rna_UILayout_template_palette_data_;
+PropertyRNA &rna_UILayout_template_palette_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_palette_data_);
+
+static StringPropertyRNA rna_UILayout_template_palette_property_;
+PropertyRNA &rna_UILayout_template_palette_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_palette_property_);
+
+FunctionRNA *rna_UILayout_template_palette_func;
+static PointerPropertyRNA rna_UILayout_template_image_layers_image_;
+PropertyRNA &rna_UILayout_template_image_layers_image = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_layers_image_);
+
+static PointerPropertyRNA rna_UILayout_template_image_layers_image_user_;
+PropertyRNA &rna_UILayout_template_image_layers_image_user = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_layers_image_user_);
+
+FunctionRNA *rna_UILayout_template_image_layers_func;
+static PointerPropertyRNA rna_UILayout_template_image_data_;
+PropertyRNA &rna_UILayout_template_image_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_data_);
+
+static StringPropertyRNA rna_UILayout_template_image_property_;
+PropertyRNA &rna_UILayout_template_image_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_property_);
+
+static PointerPropertyRNA rna_UILayout_template_image_image_user_;
+PropertyRNA &rna_UILayout_template_image_image_user = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_image_user_);
+
+static BoolPropertyRNA rna_UILayout_template_image_compact_;
+PropertyRNA &rna_UILayout_template_image_compact = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_compact_);
+
+static BoolPropertyRNA rna_UILayout_template_image_multiview_;
+PropertyRNA &rna_UILayout_template_image_multiview = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_multiview_);
+
+FunctionRNA *rna_UILayout_template_image_func;
+static PointerPropertyRNA rna_UILayout_template_image_settings_image_settings_;
+PropertyRNA &rna_UILayout_template_image_settings_image_settings = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_settings_image_settings_);
+
+static BoolPropertyRNA rna_UILayout_template_image_settings_color_management_;
+PropertyRNA &rna_UILayout_template_image_settings_color_management = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_settings_color_management_);
+
+FunctionRNA *rna_UILayout_template_image_settings_func;
+static PointerPropertyRNA rna_UILayout_template_image_stereo_3d_stereo_3d_format_;
+PropertyRNA &rna_UILayout_template_image_stereo_3d_stereo_3d_format = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_stereo_3d_stereo_3d_format_);
+
+FunctionRNA *rna_UILayout_template_image_stereo_3d_func;
+static PointerPropertyRNA rna_UILayout_template_image_views_image_settings_;
+PropertyRNA &rna_UILayout_template_image_views_image_settings = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_image_views_image_settings_);
+
+FunctionRNA *rna_UILayout_template_image_views_func;
+static PointerPropertyRNA rna_UILayout_template_movieclip_data_;
+PropertyRNA &rna_UILayout_template_movieclip_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_movieclip_data_);
+
+static StringPropertyRNA rna_UILayout_template_movieclip_property_;
+PropertyRNA &rna_UILayout_template_movieclip_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_movieclip_property_);
+
+static BoolPropertyRNA rna_UILayout_template_movieclip_compact_;
+PropertyRNA &rna_UILayout_template_movieclip_compact = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_movieclip_compact_);
+
+FunctionRNA *rna_UILayout_template_movieclip_func;
+static PointerPropertyRNA rna_UILayout_template_track_data_;
+PropertyRNA &rna_UILayout_template_track_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_track_data_);
+
+static StringPropertyRNA rna_UILayout_template_track_property_;
+PropertyRNA &rna_UILayout_template_track_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_track_property_);
+
+FunctionRNA *rna_UILayout_template_track_func;
+static PointerPropertyRNA rna_UILayout_template_marker_data_;
+PropertyRNA &rna_UILayout_template_marker_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_marker_data_);
+
+static StringPropertyRNA rna_UILayout_template_marker_property_;
+PropertyRNA &rna_UILayout_template_marker_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_marker_property_);
+
+static PointerPropertyRNA rna_UILayout_template_marker_clip_user_;
+PropertyRNA &rna_UILayout_template_marker_clip_user = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_marker_clip_user_);
+
+static PointerPropertyRNA rna_UILayout_template_marker_track_;
+PropertyRNA &rna_UILayout_template_marker_track = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_marker_track_);
+
+static BoolPropertyRNA rna_UILayout_template_marker_compact_;
+PropertyRNA &rna_UILayout_template_marker_compact = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_marker_compact_);
+
+FunctionRNA *rna_UILayout_template_marker_func;
+static PointerPropertyRNA rna_UILayout_template_movieclip_information_data_;
+PropertyRNA &rna_UILayout_template_movieclip_information_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_movieclip_information_data_);
+
+static StringPropertyRNA rna_UILayout_template_movieclip_information_property_;
+PropertyRNA &rna_UILayout_template_movieclip_information_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_movieclip_information_property_);
+
+static PointerPropertyRNA rna_UILayout_template_movieclip_information_clip_user_;
+PropertyRNA &rna_UILayout_template_movieclip_information_clip_user = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_movieclip_information_clip_user_);
+
+FunctionRNA *rna_UILayout_template_movieclip_information_func;
+static StringPropertyRNA rna_UILayout_template_list_listtype_name_;
+PropertyRNA &rna_UILayout_template_list_listtype_name = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_listtype_name_);
+
+static StringPropertyRNA rna_UILayout_template_list_list_id_;
+PropertyRNA &rna_UILayout_template_list_list_id = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_list_id_);
+
+static PointerPropertyRNA rna_UILayout_template_list_dataptr_;
+PropertyRNA &rna_UILayout_template_list_dataptr = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_dataptr_);
+
+static StringPropertyRNA rna_UILayout_template_list_propname_;
+PropertyRNA &rna_UILayout_template_list_propname = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_propname_);
+
+static PointerPropertyRNA rna_UILayout_template_list_active_dataptr_;
+PropertyRNA &rna_UILayout_template_list_active_dataptr = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_active_dataptr_);
+
+static StringPropertyRNA rna_UILayout_template_list_active_propname_;
+PropertyRNA &rna_UILayout_template_list_active_propname = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_active_propname_);
+
+static StringPropertyRNA rna_UILayout_template_list_item_dyntip_propname_;
+PropertyRNA &rna_UILayout_template_list_item_dyntip_propname = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_item_dyntip_propname_);
+
+static IntPropertyRNA rna_UILayout_template_list_rows_;
+PropertyRNA &rna_UILayout_template_list_rows = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_rows_);
+
+static IntPropertyRNA rna_UILayout_template_list_maxrows_;
+PropertyRNA &rna_UILayout_template_list_maxrows = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_maxrows_);
+
+static EnumPropertyRNA rna_UILayout_template_list_type_;
+PropertyRNA &rna_UILayout_template_list_type = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_type_);
+
+static IntPropertyRNA rna_UILayout_template_list_columns_;
+PropertyRNA &rna_UILayout_template_list_columns = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_columns_);
+
+static BoolPropertyRNA rna_UILayout_template_list_sort_reverse_;
+PropertyRNA &rna_UILayout_template_list_sort_reverse = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_sort_reverse_);
+
+static BoolPropertyRNA rna_UILayout_template_list_sort_lock_;
+PropertyRNA &rna_UILayout_template_list_sort_lock = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_list_sort_lock_);
+
+FunctionRNA *rna_UILayout_template_list_func;
+FunctionRNA *rna_UILayout_template_running_jobs_func;
+FunctionRNA *rna_UILayout_template_operator_search_func;
+FunctionRNA *rna_UILayout_template_menu_search_func;
+FunctionRNA *rna_UILayout_template_header_3D_mode_func;
+FunctionRNA *rna_UILayout_template_edit_mode_selection_func;
+FunctionRNA *rna_UILayout_template_reports_banner_func;
+FunctionRNA *rna_UILayout_template_input_status_func;
+FunctionRNA *rna_UILayout_template_status_info_func;
+static PointerPropertyRNA rna_UILayout_template_node_link_ntree_;
+PropertyRNA &rna_UILayout_template_node_link_ntree = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_link_ntree_);
+
+static PointerPropertyRNA rna_UILayout_template_node_link_node_;
+PropertyRNA &rna_UILayout_template_node_link_node = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_link_node_);
+
+static PointerPropertyRNA rna_UILayout_template_node_link_socket_;
+PropertyRNA &rna_UILayout_template_node_link_socket = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_link_socket_);
+
+FunctionRNA *rna_UILayout_template_node_link_func;
+static PointerPropertyRNA rna_UILayout_template_node_view_ntree_;
+PropertyRNA &rna_UILayout_template_node_view_ntree = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_view_ntree_);
+
+static PointerPropertyRNA rna_UILayout_template_node_view_node_;
+PropertyRNA &rna_UILayout_template_node_view_node = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_view_node_);
+
+static PointerPropertyRNA rna_UILayout_template_node_view_socket_;
+PropertyRNA &rna_UILayout_template_node_view_socket = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_view_socket_);
+
+FunctionRNA *rna_UILayout_template_node_view_func;
+static StringPropertyRNA rna_UILayout_template_node_operator_registration_errors_idname_;
+PropertyRNA &rna_UILayout_template_node_operator_registration_errors_idname = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_operator_registration_errors_idname_);
+
+FunctionRNA *rna_UILayout_template_node_operator_registration_errors_func;
+static StringPropertyRNA rna_UILayout_template_node_asset_menu_items_catalog_path_;
+PropertyRNA &rna_UILayout_template_node_asset_menu_items_catalog_path = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_asset_menu_items_catalog_path_);
+
+static EnumPropertyRNA rna_UILayout_template_node_asset_menu_items_operator_;
+PropertyRNA &rna_UILayout_template_node_asset_menu_items_operator = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_asset_menu_items_operator_);
+
+FunctionRNA *rna_UILayout_template_node_asset_menu_items_func;
+static StringPropertyRNA rna_UILayout_template_modifier_asset_menu_items_catalog_path_;
+PropertyRNA &rna_UILayout_template_modifier_asset_menu_items_catalog_path = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_modifier_asset_menu_items_catalog_path_);
+
+static BoolPropertyRNA rna_UILayout_template_modifier_asset_menu_items_skip_essentials_;
+PropertyRNA &rna_UILayout_template_modifier_asset_menu_items_skip_essentials = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_modifier_asset_menu_items_skip_essentials_);
+
+FunctionRNA *rna_UILayout_template_modifier_asset_menu_items_func;
+static StringPropertyRNA rna_UILayout_template_node_operator_asset_menu_items_catalog_path_;
+PropertyRNA &rna_UILayout_template_node_operator_asset_menu_items_catalog_path = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_operator_asset_menu_items_catalog_path_);
+
+FunctionRNA *rna_UILayout_template_node_operator_asset_menu_items_func;
+FunctionRNA *rna_UILayout_template_node_operator_asset_root_items_func;
+FunctionRNA *rna_UILayout_template_texture_user_func;
+static PointerPropertyRNA rna_UILayout_template_keymap_item_properties_item_;
+PropertyRNA &rna_UILayout_template_keymap_item_properties_item = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_keymap_item_properties_item_);
+
+FunctionRNA *rna_UILayout_template_keymap_item_properties_func;
+static PointerPropertyRNA rna_UILayout_template_component_menu_data_;
+PropertyRNA &rna_UILayout_template_component_menu_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_component_menu_data_);
+
+static StringPropertyRNA rna_UILayout_template_component_menu_property_;
+PropertyRNA &rna_UILayout_template_component_menu_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_component_menu_property_);
+
+static StringPropertyRNA rna_UILayout_template_component_menu_name_;
+PropertyRNA &rna_UILayout_template_component_menu_name = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_component_menu_name_);
+
+FunctionRNA *rna_UILayout_template_component_menu_func;
+static PointerPropertyRNA rna_UILayout_template_colorspace_settings_data_;
+PropertyRNA &rna_UILayout_template_colorspace_settings_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_colorspace_settings_data_);
+
+static StringPropertyRNA rna_UILayout_template_colorspace_settings_property_;
+PropertyRNA &rna_UILayout_template_colorspace_settings_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_colorspace_settings_property_);
+
+FunctionRNA *rna_UILayout_template_colorspace_settings_func;
+static PointerPropertyRNA rna_UILayout_template_colormanaged_view_settings_data_;
+PropertyRNA &rna_UILayout_template_colormanaged_view_settings_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_colormanaged_view_settings_data_);
+
+static StringPropertyRNA rna_UILayout_template_colormanaged_view_settings_property_;
+PropertyRNA &rna_UILayout_template_colormanaged_view_settings_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_colormanaged_view_settings_property_);
+
+FunctionRNA *rna_UILayout_template_colormanaged_view_settings_func;
+static FloatPropertyRNA rna_UILayout_template_node_socket_color_;
+PropertyRNA &rna_UILayout_template_node_socket_color = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_socket_color_);
+
+FunctionRNA *rna_UILayout_template_node_socket_func;
+static PointerPropertyRNA rna_UILayout_template_cache_file_data_;
+PropertyRNA &rna_UILayout_template_cache_file_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_data_);
+
+static StringPropertyRNA rna_UILayout_template_cache_file_property_;
+PropertyRNA &rna_UILayout_template_cache_file_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_property_);
+
+FunctionRNA *rna_UILayout_template_cache_file_func;
+static PointerPropertyRNA rna_UILayout_template_cache_file_velocity_data_;
+PropertyRNA &rna_UILayout_template_cache_file_velocity_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_velocity_data_);
+
+static StringPropertyRNA rna_UILayout_template_cache_file_velocity_property_;
+PropertyRNA &rna_UILayout_template_cache_file_velocity_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_velocity_property_);
+
+FunctionRNA *rna_UILayout_template_cache_file_velocity_func;
+static PointerPropertyRNA rna_UILayout_template_cache_file_time_settings_data_;
+PropertyRNA &rna_UILayout_template_cache_file_time_settings_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_time_settings_data_);
+
+static StringPropertyRNA rna_UILayout_template_cache_file_time_settings_property_;
+PropertyRNA &rna_UILayout_template_cache_file_time_settings_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_time_settings_property_);
+
+FunctionRNA *rna_UILayout_template_cache_file_time_settings_func;
+static PointerPropertyRNA rna_UILayout_template_cache_file_layers_data_;
+PropertyRNA &rna_UILayout_template_cache_file_layers_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_layers_data_);
+
+static StringPropertyRNA rna_UILayout_template_cache_file_layers_property_;
+PropertyRNA &rna_UILayout_template_cache_file_layers_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_cache_file_layers_property_);
+
+FunctionRNA *rna_UILayout_template_cache_file_layers_func;
+static IntPropertyRNA rna_UILayout_template_recent_files_rows_;
+PropertyRNA &rna_UILayout_template_recent_files_rows = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_recent_files_rows_);
+
+static IntPropertyRNA rna_UILayout_template_recent_files_found_;
+PropertyRNA &rna_UILayout_template_recent_files_found = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_recent_files_found_);
+
+FunctionRNA *rna_UILayout_template_recent_files_func;
+static PointerPropertyRNA rna_UILayout_template_file_select_path_params_;
+PropertyRNA &rna_UILayout_template_file_select_path_params = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_file_select_path_params_);
+
+FunctionRNA *rna_UILayout_template_file_select_path_func;
+static PointerPropertyRNA rna_UILayout_template_event_from_keymap_item_item_;
+PropertyRNA &rna_UILayout_template_event_from_keymap_item_item = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_event_from_keymap_item_item_);
+
+static StringPropertyRNA rna_UILayout_template_event_from_keymap_item_text_;
+PropertyRNA &rna_UILayout_template_event_from_keymap_item_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_event_from_keymap_item_text_);
+
+static StringPropertyRNA rna_UILayout_template_event_from_keymap_item_text_ctxt_;
+PropertyRNA &rna_UILayout_template_event_from_keymap_item_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_event_from_keymap_item_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_event_from_keymap_item_translate_;
+PropertyRNA &rna_UILayout_template_event_from_keymap_item_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_event_from_keymap_item_translate_);
+
+FunctionRNA *rna_UILayout_template_event_from_keymap_item_func;
+static PointerPropertyRNA rna_UILayout_template_light_linking_collection_context_layout_;
+PropertyRNA &rna_UILayout_template_light_linking_collection_context_layout = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_light_linking_collection_context_layout_);
+
+static PointerPropertyRNA rna_UILayout_template_light_linking_collection_data_;
+PropertyRNA &rna_UILayout_template_light_linking_collection_data = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_light_linking_collection_data_);
+
+static StringPropertyRNA rna_UILayout_template_light_linking_collection_property_;
+PropertyRNA &rna_UILayout_template_light_linking_collection_property = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_light_linking_collection_property_);
+
+FunctionRNA *rna_UILayout_template_light_linking_collection_func;
+FunctionRNA *rna_UILayout_template_bone_collection_tree_func;
+FunctionRNA *rna_UILayout_template_grease_pencil_layer_tree_func;
+static PointerPropertyRNA rna_UILayout_template_node_tree_interface_interface_;
+PropertyRNA &rna_UILayout_template_node_tree_interface_interface = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_tree_interface_interface_);
+
+FunctionRNA *rna_UILayout_template_node_tree_interface_func;
+static PointerPropertyRNA rna_UILayout_template_node_inputs_node_;
+PropertyRNA &rna_UILayout_template_node_inputs_node = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_node_inputs_node_);
+
+FunctionRNA *rna_UILayout_template_node_inputs_func;
+static StringPropertyRNA rna_UILayout_template_asset_shelf_popover_asset_shelf_;
+PropertyRNA &rna_UILayout_template_asset_shelf_popover_asset_shelf = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_asset_shelf_popover_asset_shelf_);
+
+static StringPropertyRNA rna_UILayout_template_asset_shelf_popover_name_;
+PropertyRNA &rna_UILayout_template_asset_shelf_popover_name = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_asset_shelf_popover_name_);
+
+static EnumPropertyRNA rna_UILayout_template_asset_shelf_popover_icon_;
+PropertyRNA &rna_UILayout_template_asset_shelf_popover_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_asset_shelf_popover_icon_);
+
+static IntPropertyRNA rna_UILayout_template_asset_shelf_popover_icon_value_;
+PropertyRNA &rna_UILayout_template_asset_shelf_popover_icon_value = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_asset_shelf_popover_icon_value_);
+
+FunctionRNA *rna_UILayout_template_asset_shelf_popover_func;
+static StringPropertyRNA rna_UILayout_template_popup_confirm_operator_;
+PropertyRNA &rna_UILayout_template_popup_confirm_operator = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_operator_);
+
+static StringPropertyRNA rna_UILayout_template_popup_confirm_text_;
+PropertyRNA &rna_UILayout_template_popup_confirm_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_text_);
+
+static StringPropertyRNA rna_UILayout_template_popup_confirm_text_ctxt_;
+PropertyRNA &rna_UILayout_template_popup_confirm_text_ctxt = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_text_ctxt_);
+
+static BoolPropertyRNA rna_UILayout_template_popup_confirm_translate_;
+PropertyRNA &rna_UILayout_template_popup_confirm_translate = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_translate_);
+
+static EnumPropertyRNA rna_UILayout_template_popup_confirm_icon_;
+PropertyRNA &rna_UILayout_template_popup_confirm_icon = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_icon_);
+
+static StringPropertyRNA rna_UILayout_template_popup_confirm_cancel_text_;
+PropertyRNA &rna_UILayout_template_popup_confirm_cancel_text = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_cancel_text_);
+
+static BoolPropertyRNA rna_UILayout_template_popup_confirm_cancel_default_;
+PropertyRNA &rna_UILayout_template_popup_confirm_cancel_default = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_cancel_default_);
+
+static PointerPropertyRNA rna_UILayout_template_popup_confirm_properties_;
+PropertyRNA &rna_UILayout_template_popup_confirm_properties = reinterpret_cast<PropertyRNA &>(rna_UILayout_template_popup_confirm_properties_);
+
+FunctionRNA *rna_UILayout_template_popup_confirm_func;
+FunctionRNA *rna_UILayout_template_shape_key_tree_func;
+StructRNA *RNA_UILayout;
+void register_struct_UILayout(BlenderRNA &brna)
+{
+	rna_UILayout_rna_properties_ = {
+		{&rna_UILayout_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_rna_properties_begin, UILayout_rna_properties_next, UILayout_rna_properties_end, UILayout_rna_properties_get, nullptr, nullptr, UILayout_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_UILayout_rna_type_ = {
+		{&rna_UILayout_active, 	&rna_UILayout_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_UILayout_active_ = {
+		{&rna_UILayout_active_default, 	&rna_UILayout_rna_type,
+		-1, "active", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "active",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_active_get, UILayout_active_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UILayout_active_default_ = {
+		{&rna_UILayout_activate_init, 	&rna_UILayout_active,
+		-1, "active_default", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Default",
+		"When true, an operator button defined after this will be activated when pressing return(use with popup dialogs)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_active_default_get, UILayout_active_default_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UILayout_activate_init_ = {
+		{&rna_UILayout_operator_context, 	&rna_UILayout_active_default,
+		-1, "activate_init", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Activate on Init",
+		"When true, buttons defined in popups will be activated on first display (use so you can type into a field without having to click on it first)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_activate_init_get, UILayout_activate_init_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UILayout_operator_context_ = {
+		{&rna_UILayout_enabled, 	&rna_UILayout_activate_init,
+		-1, "operator_context", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Operator Context",
+		"Typically set to \'INVOKE_REGION_WIN\', except some cases in :class:`bpy.types.Menu` when it\'s set to \'EXEC_REGION_WIN\'.",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_operator_context_get, UILayout_operator_context_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_operator_context_items, 12, 0
+	};
+
+	rna_UILayout_enabled_ = {
+		{&rna_UILayout_alert, 	&rna_UILayout_operator_context,
+		-1, "enabled", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Enabled",
+		"When false, this (sub)layout is grayed out",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_enabled_get, UILayout_enabled_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UILayout_alert_ = {
+		{&rna_UILayout_alignment, 	&rna_UILayout_enabled,
+		-1, "alert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "alert",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_alert_get, UILayout_alert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_UILayout_alignment_items[5] = {
+		{0, "EXPAND", 0, "Expand", ""	},
+		{1, "LEFT", 0, "Left", ""	},
+		{2, "CENTER", 0, "Center", ""	},
+		{3, "RIGHT", 0, "Right", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_alignment_ = {
+		{&rna_UILayout_direction, 	&rna_UILayout_alert,
+		-1, "alignment", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "alignment",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_alignment_get, UILayout_alignment_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_alignment_items, 4, 0
+	};
+
+	static const EnumPropertyItem rna_UILayout_direction_items[3] = {
+		{0, "HORIZONTAL", 0, "Horizontal", ""	},
+		{1, "VERTICAL", 0, "Vertical", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_direction_ = {
+		{&rna_UILayout_scale_x, 	&rna_UILayout_alignment,
+		-1, "direction", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "direction",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_direction_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_direction_items, 2, 0
+	};
+
+	rna_UILayout_scale_x_ = {
+		{&rna_UILayout_scale_y, 	&rna_UILayout_direction,
+		-1, "scale_x", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scale X",
+		"Scale factor along the X for items in this (sub)layout",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_scale_x_get, UILayout_scale_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_UILayout_scale_y_ = {
+		{&rna_UILayout_ui_units_x, 	&rna_UILayout_scale_x,
+		-1, "scale_y", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scale Y",
+		"Scale factor along the Y for items in this (sub)layout",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_scale_y_get, UILayout_scale_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_UILayout_ui_units_x_ = {
+		{&rna_UILayout_ui_units_y, 	&rna_UILayout_scale_y,
+		-1, "ui_units_x", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Units X",
+		"Fixed size along the X for items in this (sub)layout",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_ui_units_x_get, UILayout_ui_units_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_UILayout_ui_units_y_ = {
+		{&rna_UILayout_emboss, 	&rna_UILayout_ui_units_x,
+		-1, "ui_units_y", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Units Y",
+		"Fixed size along the Y for items in this (sub)layout",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_ui_units_y_get, UILayout_ui_units_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	static const EnumPropertyItem rna_UILayout_emboss_items[6] = {
+		{0, "NORMAL", 0, "Regular", "Draw standard button emboss style"	},
+		{1, "NONE", 0, "None", "Draw only text and icons"	},
+		{2, "PULLDOWN_MENU", 0, "Pull-down Menu", "Draw pull-down menu style"	},
+		{3, "PIE_MENU", 0, "Pie Menu", "Draw radial menu style"	},
+		{4, "NONE_OR_STATUS", 0, "None or Status", "Draw with no emboss unless the button has a coloring status like an animation state"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_emboss_ = {
+		{&rna_UILayout_use_property_split, 	&rna_UILayout_ui_units_y,
+		-1, "emboss", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "emboss",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_emboss_get, UILayout_emboss_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_emboss_items, 5, 0
+	};
+
+	rna_UILayout_use_property_split_ = {
+		{&rna_UILayout_use_property_decorate, 	&rna_UILayout_emboss,
+		-1, "use_property_split", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "use_property_split",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_use_property_split_get, UILayout_use_property_split_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UILayout_use_property_decorate_ = {
+		{nullptr, 	&rna_UILayout_use_property_split,
+		-1, "use_property_decorate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "use_property_decorate",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UILayout_use_property_decorate_get, UILayout_use_property_decorate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_UILayout;
+	srna->cont.properties = {&rna_UILayout_rna_properties, &rna_UILayout_use_property_decorate};
+	srna->identifier = "UILayout";
+	srna->flag = 516;
+	srna->name = "UI Layout";
+	srna->description = "User interface layout in a panel or header";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_UILayout_rna_properties;
+	{
+	rna_UILayout_row_layout_ = {
+		{&rna_UILayout_row_align, 	nullptr,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_row_align_ = {
+		{&rna_UILayout_row_heading, 	&rna_UILayout_row_layout,
+		-1, "align", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Align buttons to each other",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_row_heading_ = {
+		{&rna_UILayout_row_heading_ctxt, 	&rna_UILayout_row_align,
+		-1, "heading", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Heading",
+		"Label to insert into the layout for this sub-layout",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 256, ""
+	};
+	rna_UILayout_row_heading_ctxt_ = {
+		{&rna_UILayout_row_translate, 	&rna_UILayout_row_heading,
+		-1, "heading_ctxt", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given heading",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_row_translate_ = {
+		{nullptr, 	&rna_UILayout_row_heading_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given heading, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_row_layout, &rna_UILayout_row_translate};
+		func->identifier = "row";
+		func->description = "Sub-layout. Items placed in this sublayout are placed next to each other in a row.";
+		func->call = UILayout_row_call;
+		func->c_ret = &rna_UILayout_row_layout;
+		rna_UILayout_row_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_column_layout_ = {
+		{&rna_UILayout_column_align, 	nullptr,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_column_align_ = {
+		{&rna_UILayout_column_heading, 	&rna_UILayout_column_layout,
+		-1, "align", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Align buttons to each other",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_column_heading_ = {
+		{&rna_UILayout_column_heading_ctxt, 	&rna_UILayout_column_align,
+		-1, "heading", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Heading",
+		"Label to insert into the layout for this sub-layout",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 256, ""
+	};
+	rna_UILayout_column_heading_ctxt_ = {
+		{&rna_UILayout_column_translate, 	&rna_UILayout_column_heading,
+		-1, "heading_ctxt", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given heading",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_column_translate_ = {
+		{nullptr, 	&rna_UILayout_column_heading_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given heading, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_column_layout, &rna_UILayout_column_translate};
+		func->identifier = "column";
+		func->description = "Sub-layout. Items placed in this sublayout are placed under each other in a column.";
+		func->call = UILayout_column_call;
+		func->c_ret = &rna_UILayout_column_layout;
+		rna_UILayout_column_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_panel_idname_ = {
+		{&rna_UILayout_panel_default_closed, 	nullptr,
+		-1, "idname", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the panel",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_panel_default_closed_ = {
+		{&rna_UILayout_panel_layout_header, 	&rna_UILayout_panel_idname,
+		-1, "default_closed", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Open by Default",
+		"When true, the panel will be open the first time it is shown",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_panel_layout_header_ = {
+		{&rna_UILayout_panel_layout_body, 	&rna_UILayout_panel_default_closed,
+		-1, "layout_header", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_panel_layout_body_ = {
+		{nullptr, 	&rna_UILayout_panel_layout_header,
+		-1, "layout_body", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in. Will be none if the panel is collapsed.",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_panel_idname, &rna_UILayout_panel_layout_body};
+		func->identifier = "panel";
+		func->flag = 24;
+		func->description = "Creates a collapsible panel. Whether it is open or closed is stored in the region using the given idname. This can only be used when the panel has the full width of the panel region available to it. So it can\'t be used in e.g. in a box or columns.";
+		func->call = UILayout_panel_call;
+		rna_UILayout_panel_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_panel_prop_data_ = {
+		{&rna_UILayout_panel_prop_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take the open-state property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_panel_prop_property_ = {
+		{&rna_UILayout_panel_prop_layout_header, 	&rna_UILayout_panel_prop_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the boolean property that determines whether the panel is open or closed",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_panel_prop_layout_header_ = {
+		{&rna_UILayout_panel_prop_layout_body, 	&rna_UILayout_panel_prop_property,
+		-1, "layout_header", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_panel_prop_layout_body_ = {
+		{nullptr, 	&rna_UILayout_panel_prop_layout_header,
+		-1, "layout_body", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in. Will be none if the panel is collapsed.",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_panel_prop_data, &rna_UILayout_panel_prop_layout_body};
+		func->identifier = "panel_prop";
+		func->flag = 24;
+		func->description = "Similar to ``.panel(...)`` but instead of storing whether it is open or closed in the region, it is stored in the provided boolean property. This should be used when multiple instances of the same panel can exist. For example one for every item in a collection property or list. This can only be used when the panel has the full width of the panel region available to it. So it can\'t be used in e.g. in a box or columns.";
+		func->call = UILayout_panel_prop_call;
+		rna_UILayout_panel_prop_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_column_flow_columns_ = {
+		{&rna_UILayout_column_flow_layout, 	nullptr,
+		-1, "columns", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Number of columns, 0 is automatic",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_column_flow_layout_ = {
+		{&rna_UILayout_column_flow_align, 	&rna_UILayout_column_flow_columns,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_column_flow_align_ = {
+		{nullptr, 	&rna_UILayout_column_flow_layout,
+		-1, "align", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Align buttons to each other",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_column_flow_columns, &rna_UILayout_column_flow_align};
+		func->identifier = "column_flow";
+		func->description = "column_flow";
+		func->call = UILayout_column_flow_call;
+		func->c_ret = &rna_UILayout_column_flow_layout;
+		rna_UILayout_column_flow_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_grid_flow_row_major_ = {
+		{&rna_UILayout_grid_flow_columns, 	nullptr,
+		-1, "row_major", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Fill row by row, instead of column by column",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_grid_flow_columns_ = {
+		{&rna_UILayout_grid_flow_even_columns, 	&rna_UILayout_grid_flow_row_major,
+		-1, "columns", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Number of columns, positive are absolute fixed numbers, 0 is automatic, negative are automatic multiple numbers along major axis (e.g. -2 will only produce 2, 4, 6 etc. columns for row major layout, and 2, 4, 6 etc. rows for column major layout).",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, INT_MIN, INT_MAX, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_grid_flow_even_columns_ = {
+		{&rna_UILayout_grid_flow_even_rows, 	&rna_UILayout_grid_flow_columns,
+		-1, "even_columns", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"All columns will have the same width",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_grid_flow_even_rows_ = {
+		{&rna_UILayout_grid_flow_align, 	&rna_UILayout_grid_flow_even_columns,
+		-1, "even_rows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"All rows will have the same height",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_grid_flow_align_ = {
+		{&rna_UILayout_grid_flow_layout, 	&rna_UILayout_grid_flow_even_rows,
+		-1, "align", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Align buttons to each other",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_grid_flow_layout_ = {
+		{nullptr, 	&rna_UILayout_grid_flow_align,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_grid_flow_row_major, &rna_UILayout_grid_flow_layout};
+		func->identifier = "grid_flow";
+		func->description = "grid_flow";
+		func->call = UILayout_grid_flow_call;
+		func->c_ret = &rna_UILayout_grid_flow_layout;
+		rna_UILayout_grid_flow_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_box_layout_ = {
+		{nullptr, 	nullptr,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_box_layout, &rna_UILayout_box_layout};
+		func->identifier = "box";
+		func->description = "Sublayout (items placed in this sublayout are placed under each other in a column and are surrounded by a box)";
+		func->call = UILayout_box_call;
+		func->c_ret = &rna_UILayout_box_layout;
+		rna_UILayout_box_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_split_layout_ = {
+		{&rna_UILayout_split_factor, 	nullptr,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_split_factor_ = {
+		{&rna_UILayout_split_align, 	&rna_UILayout_split_layout,
+		-1, "factor", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Percentage",
+		"Percentage of width to split at (leave unset for automatic calculation)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+	rna_UILayout_split_align_ = {
+		{nullptr, 	&rna_UILayout_split_factor,
+		-1, "align", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Align buttons to each other",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_split_layout, &rna_UILayout_split_align};
+		func->identifier = "split";
+		func->description = "split";
+		func->call = UILayout_split_call;
+		func->c_ret = &rna_UILayout_split_layout;
+		rna_UILayout_split_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_menu_pie_layout_ = {
+		{nullptr, 	nullptr,
+		-1, "layout", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Sub-layout to put items in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_menu_pie_layout, &rna_UILayout_menu_pie_layout};
+		func->identifier = "menu_pie";
+		func->description = "Sublayout. Items placed in this sublayout are placed in a radial fashion around the menu center).";
+		func->call = UILayout_menu_pie_call;
+		func->c_ret = &rna_UILayout_menu_pie_layout;
+		rna_UILayout_menu_pie_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_icon_icon_value_ = {
+		{&rna_UILayout_icon_data, 	nullptr,
+		-1, "icon_value", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Icon identifier",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_icon_data_ = {
+		{nullptr, 	&rna_UILayout_icon_icon_value,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take the icon",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_icon_icon_value, &rna_UILayout_icon_data};
+		func->identifier = "icon";
+		func->flag = 9;
+		func->description = "Return the custom icon for this data, use it e.g. to get materials or texture icons.";
+		func->call = UILayout_icon_call;
+		func->c_ret = &rna_UILayout_icon_icon_value;
+		rna_UILayout_icon_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_enum_item_name_name_ = {
+		{&rna_UILayout_enum_item_name_data, 	nullptr,
+		-1, "name", 262145, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"UI name of the enum item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_enum_item_name_data_ = {
+		{&rna_UILayout_enum_item_name_property, 	&rna_UILayout_enum_item_name_name,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_enum_item_name_property_ = {
+		{&rna_UILayout_enum_item_name_identifier, 	&rna_UILayout_enum_item_name_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_enum_item_name_identifier_ = {
+		{nullptr, 	&rna_UILayout_enum_item_name_property,
+		-1, "identifier", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the enum item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_enum_item_name_name, &rna_UILayout_enum_item_name_identifier};
+		func->identifier = "enum_item_name";
+		func->flag = 9;
+		func->description = "Return the UI name for this enum item";
+		func->call = UILayout_enum_item_name_call;
+		func->c_ret = &rna_UILayout_enum_item_name_name;
+		rna_UILayout_enum_item_name_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_enum_item_description_description_ = {
+		{&rna_UILayout_enum_item_description_data, 	nullptr,
+		-1, "description", 262145, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"UI description of the enum item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_enum_item_description_data_ = {
+		{&rna_UILayout_enum_item_description_property, 	&rna_UILayout_enum_item_description_description,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_enum_item_description_property_ = {
+		{&rna_UILayout_enum_item_description_identifier, 	&rna_UILayout_enum_item_description_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_enum_item_description_identifier_ = {
+		{nullptr, 	&rna_UILayout_enum_item_description_property,
+		-1, "identifier", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the enum item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_enum_item_description_description, &rna_UILayout_enum_item_description_identifier};
+		func->identifier = "enum_item_description";
+		func->flag = 9;
+		func->description = "Return the UI description for this enum item";
+		func->call = UILayout_enum_item_description_call;
+		func->c_ret = &rna_UILayout_enum_item_description_description;
+		rna_UILayout_enum_item_description_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_enum_item_icon_icon_value_ = {
+		{&rna_UILayout_enum_item_icon_data, 	nullptr,
+		-1, "icon_value", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Icon identifier",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_enum_item_icon_data_ = {
+		{&rna_UILayout_enum_item_icon_property, 	&rna_UILayout_enum_item_icon_icon_value,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_enum_item_icon_property_ = {
+		{&rna_UILayout_enum_item_icon_identifier, 	&rna_UILayout_enum_item_icon_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_enum_item_icon_identifier_ = {
+		{nullptr, 	&rna_UILayout_enum_item_icon_property,
+		-1, "identifier", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the enum item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_enum_item_icon_icon_value, &rna_UILayout_enum_item_icon_identifier};
+		func->identifier = "enum_item_icon";
+		func->flag = 9;
+		func->description = "Return the icon for this enum item";
+		func->call = UILayout_enum_item_icon_call;
+		func->c_ret = &rna_UILayout_enum_item_icon_icon_value;
+		rna_UILayout_enum_item_icon_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_textbox_data_ = {
+		{&rna_UILayout_textbox_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_textbox_property_ = {
+		{&rna_UILayout_textbox_initial_visible_lines, 	&rna_UILayout_textbox_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_textbox_initial_visible_lines_ = {
+		{&rna_UILayout_textbox_placeholder, 	&rna_UILayout_textbox_property,
+		-1, "initial_visible_lines", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Initial Visible Lines",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, INT_MAX, 1, INT_MAX, 1, nullptr, nullptr, 3, nullptr
+	};
+	rna_UILayout_textbox_placeholder_ = {
+		{&rna_UILayout_textbox_text_ctxt, 	&rna_UILayout_textbox_initial_visible_lines,
+		-1, "placeholder", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Hint describing the expected value when empty",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_textbox_text_ctxt_ = {
+		{&rna_UILayout_textbox_translate, 	&rna_UILayout_textbox_placeholder,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_textbox_translate_ = {
+		{nullptr, 	&rna_UILayout_textbox_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_textbox_data, &rna_UILayout_textbox_translate};
+		func->identifier = "textbox";
+		func->flag = 8;
+		func->description = "Exposes an RNA string property in the layout using a text-box widget with multi-line support. Text-box state will be stored in the current context region.";
+		func->call = UILayout_textbox_call;
+		rna_UILayout_textbox_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_textbox_with_state_data_ = {
+		{&rna_UILayout_textbox_with_state_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_textbox_with_state_property_ = {
+		{&rna_UILayout_textbox_with_state_textbox_state, 	&rna_UILayout_textbox_with_state_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_textbox_with_state_textbox_state_ = {
+		{&rna_UILayout_textbox_with_state_placeholder, 	&rna_UILayout_textbox_with_state_property,
+		-1, "textbox_state", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Pointer to a pre-allocated text-box state storage (builtin)",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_TextboxState
+	};
+	rna_UILayout_textbox_with_state_placeholder_ = {
+		{&rna_UILayout_textbox_with_state_text_ctxt, 	&rna_UILayout_textbox_with_state_textbox_state,
+		-1, "placeholder", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Hint describing the expected value when empty",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_textbox_with_state_text_ctxt_ = {
+		{&rna_UILayout_textbox_with_state_translate, 	&rna_UILayout_textbox_with_state_placeholder,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_textbox_with_state_translate_ = {
+		{nullptr, 	&rna_UILayout_textbox_with_state_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_textbox_with_state_data, &rna_UILayout_textbox_with_state_translate};
+		func->identifier = "textbox_with_state";
+		func->description = "Exposes an RNA string property in the layout using a text-box widget with multi-line support";
+		func->call = UILayout_textbox_with_state_call;
+		rna_UILayout_textbox_with_state_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_data_ = {
+		{&rna_UILayout_prop_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_property_ = {
+		{&rna_UILayout_prop_text, 	&rna_UILayout_prop_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_text_ = {
+		{&rna_UILayout_prop_text_ctxt, 	&rna_UILayout_prop_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_text_ctxt_ = {
+		{&rna_UILayout_prop_translate, 	&rna_UILayout_prop_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_translate_ = {
+		{&rna_UILayout_prop_icon, 	&rna_UILayout_prop_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_icon_ = {
+		{&rna_UILayout_prop_placeholder, 	&rna_UILayout_prop_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_prop_placeholder_ = {
+		{&rna_UILayout_prop_expand, 	&rna_UILayout_prop_icon,
+		-1, "placeholder", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Hint describing the expected value when empty",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_expand_ = {
+		{&rna_UILayout_prop_slider, 	&rna_UILayout_prop_placeholder,
+		-1, "expand", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Expand button to show more detail",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_slider_ = {
+		{&rna_UILayout_prop_toggle, 	&rna_UILayout_prop_expand,
+		-1, "slider", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use slider widget for numeric values",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_toggle_ = {
+		{&rna_UILayout_prop_icon_only, 	&rna_UILayout_prop_slider,
+		-1, "toggle", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use toggle widget for boolean values, or a checkbox when disabled (the default is -1 which uses toggle only when an icon is displayed)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -1, 1, -1, 1, 1, nullptr, nullptr, -1, nullptr
+	};
+	rna_UILayout_prop_icon_only_ = {
+		{&rna_UILayout_prop_event, 	&rna_UILayout_prop_toggle,
+		-1, "icon_only", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw only icons in buttons, no text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_event_ = {
+		{&rna_UILayout_prop_full_event, 	&rna_UILayout_prop_icon_only,
+		-1, "event", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use button to input key events",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_full_event_ = {
+		{&rna_UILayout_prop_emboss, 	&rna_UILayout_prop_event,
+		-1, "full_event", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use button to input full events including modifiers",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_emboss_ = {
+		{&rna_UILayout_prop_index, 	&rna_UILayout_prop_full_event,
+		-1, "emboss", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw the button itself, not just the icon/text. When false, corresponds to the \'NONE_OR_STATUS\' layout emboss type.",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_index_ = {
+		{&rna_UILayout_prop_icon_value, 	&rna_UILayout_prop_emboss,
+		-1, "index", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"The index of this button, when set a single member of an array can be accessed, when set to -1 all array members are used",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -2, INT_MAX, -2, INT_MAX, 1, nullptr, nullptr, -1, nullptr
+	};
+	rna_UILayout_prop_icon_value_ = {
+		{&rna_UILayout_prop_invert_checkbox, 	&rna_UILayout_prop_index,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_invert_checkbox_ = {
+		{&rna_UILayout_prop_text_align, 	&rna_UILayout_prop_icon_value,
+		-1, "invert_checkbox", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw checkbox value inverted",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_prop_text_align_items[3] = {
+		{0, "LEFT", 0, "", ""	},
+		{1, "RIGHT", 0, "", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_prop_text_align_ = {
+		{nullptr, 	&rna_UILayout_prop_invert_checkbox,
+		-1, "text_align", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Text alignment",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_prop_text_align_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_data, &rna_UILayout_prop_text_align};
+		func->identifier = "prop";
+		func->description = "Item. Exposes an RNA item and places it into the layout.";
+		func->call = UILayout_prop_call;
+		rna_UILayout_prop_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_props_enum_data_ = {
+		{&rna_UILayout_props_enum_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_props_enum_property_ = {
+		{nullptr, 	&rna_UILayout_props_enum_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_props_enum_data, &rna_UILayout_props_enum_property};
+		func->identifier = "props_enum";
+		func->description = "props_enum";
+		func->call = UILayout_props_enum_call;
+		rna_UILayout_props_enum_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_menu_enum_data_ = {
+		{&rna_UILayout_prop_menu_enum_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_menu_enum_property_ = {
+		{&rna_UILayout_prop_menu_enum_text, 	&rna_UILayout_prop_menu_enum_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_menu_enum_text_ = {
+		{&rna_UILayout_prop_menu_enum_text_ctxt, 	&rna_UILayout_prop_menu_enum_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_menu_enum_text_ctxt_ = {
+		{&rna_UILayout_prop_menu_enum_translate, 	&rna_UILayout_prop_menu_enum_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_menu_enum_translate_ = {
+		{&rna_UILayout_prop_menu_enum_icon, 	&rna_UILayout_prop_menu_enum_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_menu_enum_icon_ = {
+		{nullptr, 	&rna_UILayout_prop_menu_enum_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_menu_enum_data, &rna_UILayout_prop_menu_enum_icon};
+		func->identifier = "prop_menu_enum";
+		func->description = "prop_menu_enum";
+		func->call = UILayout_prop_menu_enum_call;
+		rna_UILayout_prop_menu_enum_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_with_popover_data_ = {
+		{&rna_UILayout_prop_with_popover_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_with_popover_property_ = {
+		{&rna_UILayout_prop_with_popover_text, 	&rna_UILayout_prop_with_popover_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_with_popover_text_ = {
+		{&rna_UILayout_prop_with_popover_text_ctxt, 	&rna_UILayout_prop_with_popover_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_with_popover_text_ctxt_ = {
+		{&rna_UILayout_prop_with_popover_translate, 	&rna_UILayout_prop_with_popover_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_with_popover_translate_ = {
+		{&rna_UILayout_prop_with_popover_icon, 	&rna_UILayout_prop_with_popover_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_with_popover_icon_ = {
+		{&rna_UILayout_prop_with_popover_icon_only, 	&rna_UILayout_prop_with_popover_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_prop_with_popover_icon_only_ = {
+		{&rna_UILayout_prop_with_popover_panel, 	&rna_UILayout_prop_with_popover_icon,
+		-1, "icon_only", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw only icons in tabs, no text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_with_popover_panel_ = {
+		{nullptr, 	&rna_UILayout_prop_with_popover_icon_only,
+		-1, "panel", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the panel",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_with_popover_data, &rna_UILayout_prop_with_popover_panel};
+		func->identifier = "prop_with_popover";
+		func->description = "prop_with_popover";
+		func->call = UILayout_prop_with_popover_call;
+		rna_UILayout_prop_with_popover_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_with_menu_data_ = {
+		{&rna_UILayout_prop_with_menu_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_with_menu_property_ = {
+		{&rna_UILayout_prop_with_menu_text, 	&rna_UILayout_prop_with_menu_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_with_menu_text_ = {
+		{&rna_UILayout_prop_with_menu_text_ctxt, 	&rna_UILayout_prop_with_menu_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_with_menu_text_ctxt_ = {
+		{&rna_UILayout_prop_with_menu_translate, 	&rna_UILayout_prop_with_menu_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_with_menu_translate_ = {
+		{&rna_UILayout_prop_with_menu_icon, 	&rna_UILayout_prop_with_menu_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_with_menu_icon_ = {
+		{&rna_UILayout_prop_with_menu_icon_only, 	&rna_UILayout_prop_with_menu_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_prop_with_menu_icon_only_ = {
+		{&rna_UILayout_prop_with_menu_menu, 	&rna_UILayout_prop_with_menu_icon,
+		-1, "icon_only", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw only icons in tabs, no text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_with_menu_menu_ = {
+		{nullptr, 	&rna_UILayout_prop_with_menu_icon_only,
+		-1, "menu", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the menu",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_with_menu_data, &rna_UILayout_prop_with_menu_menu};
+		func->identifier = "prop_with_menu";
+		func->description = "prop_with_menu";
+		func->call = UILayout_prop_with_menu_call;
+		rna_UILayout_prop_with_menu_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_tabs_enum_data_ = {
+		{&rna_UILayout_prop_tabs_enum_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_tabs_enum_property_ = {
+		{&rna_UILayout_prop_tabs_enum_data_highlight, 	&rna_UILayout_prop_tabs_enum_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_tabs_enum_data_highlight_ = {
+		{&rna_UILayout_prop_tabs_enum_property_highlight, 	&rna_UILayout_prop_tabs_enum_property,
+		-1, "data_highlight", 8650752, 0, 4, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take highlight property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_tabs_enum_property_highlight_ = {
+		{&rna_UILayout_prop_tabs_enum_icon_only, 	&rna_UILayout_prop_tabs_enum_data_highlight,
+		-1, "property_highlight", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of highlight property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_tabs_enum_icon_only_ = {
+		{&rna_UILayout_prop_tabs_enum_expand_as, 	&rna_UILayout_prop_tabs_enum_property_highlight,
+		-1, "icon_only", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw only icons in tabs, no text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_prop_tabs_enum_expand_as_items[3] = {
+		{0, "DEFAULT", 0, "", ""	},
+		{1, "ROW", 0, "", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_prop_tabs_enum_expand_as_ = {
+		{nullptr, 	&rna_UILayout_prop_tabs_enum_icon_only,
+		-1, "expand_as", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_prop_tabs_enum_expand_as_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_tabs_enum_data, &rna_UILayout_prop_tabs_enum_expand_as};
+		func->identifier = "prop_tabs_enum";
+		func->flag = 8;
+		func->description = "prop_tabs_enum";
+		func->call = UILayout_prop_tabs_enum_call;
+		rna_UILayout_prop_tabs_enum_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_enum_data_ = {
+		{&rna_UILayout_prop_enum_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_enum_property_ = {
+		{&rna_UILayout_prop_enum_value, 	&rna_UILayout_prop_enum_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_enum_value_ = {
+		{&rna_UILayout_prop_enum_text, 	&rna_UILayout_prop_enum_property,
+		-1, "value", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Enum property value",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_enum_text_ = {
+		{&rna_UILayout_prop_enum_text_ctxt, 	&rna_UILayout_prop_enum_value,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_enum_text_ctxt_ = {
+		{&rna_UILayout_prop_enum_translate, 	&rna_UILayout_prop_enum_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_enum_translate_ = {
+		{&rna_UILayout_prop_enum_icon, 	&rna_UILayout_prop_enum_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_enum_icon_ = {
+		{nullptr, 	&rna_UILayout_prop_enum_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_enum_data, &rna_UILayout_prop_enum_icon};
+		func->identifier = "prop_enum";
+		func->description = "prop_enum";
+		func->call = UILayout_prop_enum_call;
+		rna_UILayout_prop_enum_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_search_data_ = {
+		{&rna_UILayout_prop_search_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_search_property_ = {
+		{&rna_UILayout_prop_search_search_data, 	&rna_UILayout_prop_search_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_search_search_data_ = {
+		{&rna_UILayout_prop_search_search_property, 	&rna_UILayout_prop_search_property,
+		-1, "search_data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take collection to search in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_search_search_property_ = {
+		{&rna_UILayout_prop_search_text, 	&rna_UILayout_prop_search_search_data,
+		-1, "search_property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of search collection property",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_search_text_ = {
+		{&rna_UILayout_prop_search_text_ctxt, 	&rna_UILayout_prop_search_search_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_search_text_ctxt_ = {
+		{&rna_UILayout_prop_search_translate, 	&rna_UILayout_prop_search_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_search_translate_ = {
+		{&rna_UILayout_prop_search_icon, 	&rna_UILayout_prop_search_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_prop_search_icon_ = {
+		{&rna_UILayout_prop_search_results_are_suggestions, 	&rna_UILayout_prop_search_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_prop_search_results_are_suggestions_ = {
+		{&rna_UILayout_prop_search_item_search_property, 	&rna_UILayout_prop_search_icon,
+		-1, "results_are_suggestions", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Accept inputs that do not match any item",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_prop_search_item_search_property_ = {
+		{nullptr, 	&rna_UILayout_prop_search_results_are_suggestions,
+		-1, "item_search_property", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the string property in each collection\'s items to use for searching (defaults to the items\' type \'name property\')",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_search_data, &rna_UILayout_prop_search_item_search_property};
+		func->identifier = "prop_search";
+		func->description = "prop_search";
+		func->call = UILayout_prop_search_call;
+		rna_UILayout_prop_search_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_prop_decorator_data_ = {
+		{&rna_UILayout_prop_decorator_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_prop_decorator_property_ = {
+		{&rna_UILayout_prop_decorator_index, 	&rna_UILayout_prop_decorator_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_prop_decorator_index_ = {
+		{nullptr, 	&rna_UILayout_prop_decorator_property,
+		-1, "index", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"The index of this button, when set a single member of an array can be accessed, when set to -1 all array members are used",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -2, INT_MAX, -2, INT_MAX, 1, nullptr, nullptr, -1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_prop_decorator_data, &rna_UILayout_prop_decorator_index};
+		func->identifier = "prop_decorator";
+		func->description = "prop_decorator";
+		func->call = UILayout_prop_decorator_call;
+		rna_UILayout_prop_decorator_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_operator_operator_ = {
+		{&rna_UILayout_operator_text, 	nullptr,
+		-1, "operator", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_text_ = {
+		{&rna_UILayout_operator_text_ctxt, 	&rna_UILayout_operator_operator,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_text_ctxt_ = {
+		{&rna_UILayout_operator_translate, 	&rna_UILayout_operator_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_translate_ = {
+		{&rna_UILayout_operator_icon, 	&rna_UILayout_operator_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_operator_icon_ = {
+		{&rna_UILayout_operator_emboss, 	&rna_UILayout_operator_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_operator_emboss_ = {
+		{&rna_UILayout_operator_depress, 	&rna_UILayout_operator_icon,
+		-1, "emboss", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw the button itself, not just the icon/text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_operator_depress_ = {
+		{&rna_UILayout_operator_icon_value, 	&rna_UILayout_operator_emboss,
+		-1, "depress", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw pressed in",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_operator_icon_value_ = {
+		{&rna_UILayout_operator_search_weight, 	&rna_UILayout_operator_depress,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_operator_search_weight_ = {
+		{&rna_UILayout_operator_properties, 	&rna_UILayout_operator_icon_value,
+		-1, "search_weight", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Search Weight",
+		"Influences the sorting when using menu-seach",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -FLT_MAX, FLT_MAX, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+	rna_UILayout_operator_properties_ = {
+		{nullptr, 	&rna_UILayout_operator_search_weight,
+		-1, "properties", 8388608, 0, 7, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator properties to fill in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_OperatorProperties
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_operator_operator, &rna_UILayout_operator_properties};
+		func->identifier = "operator";
+		func->description = "Item. Places a button into the layout to call an Operator.";
+		func->call = UILayout_operator_call;
+		func->c_ret = &rna_UILayout_operator_properties;
+		rna_UILayout_operator_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_operator_menu_hold_operator_ = {
+		{&rna_UILayout_operator_menu_hold_text, 	nullptr,
+		-1, "operator", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_hold_text_ = {
+		{&rna_UILayout_operator_menu_hold_text_ctxt, 	&rna_UILayout_operator_menu_hold_operator,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_hold_text_ctxt_ = {
+		{&rna_UILayout_operator_menu_hold_translate, 	&rna_UILayout_operator_menu_hold_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_hold_translate_ = {
+		{&rna_UILayout_operator_menu_hold_icon, 	&rna_UILayout_operator_menu_hold_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_operator_menu_hold_icon_ = {
+		{&rna_UILayout_operator_menu_hold_emboss, 	&rna_UILayout_operator_menu_hold_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_operator_menu_hold_emboss_ = {
+		{&rna_UILayout_operator_menu_hold_depress, 	&rna_UILayout_operator_menu_hold_icon,
+		-1, "emboss", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw the button itself, not just the icon/text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_operator_menu_hold_depress_ = {
+		{&rna_UILayout_operator_menu_hold_icon_value, 	&rna_UILayout_operator_menu_hold_emboss,
+		-1, "depress", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw pressed in",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_operator_menu_hold_icon_value_ = {
+		{&rna_UILayout_operator_menu_hold_menu, 	&rna_UILayout_operator_menu_hold_depress,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_operator_menu_hold_menu_ = {
+		{&rna_UILayout_operator_menu_hold_properties, 	&rna_UILayout_operator_menu_hold_icon_value,
+		-1, "menu", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the menu",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_hold_properties_ = {
+		{nullptr, 	&rna_UILayout_operator_menu_hold_menu,
+		-1, "properties", 8388608, 0, 7, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator properties to fill in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_OperatorProperties
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_operator_menu_hold_operator, &rna_UILayout_operator_menu_hold_properties};
+		func->identifier = "operator_menu_hold";
+		func->description = "Item. Places a button into the layout to call an Operator.";
+		func->call = UILayout_operator_menu_hold_call;
+		func->c_ret = &rna_UILayout_operator_menu_hold_properties;
+		rna_UILayout_operator_menu_hold_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_operator_enum_operator_ = {
+		{&rna_UILayout_operator_enum_property, 	nullptr,
+		-1, "operator", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_enum_property_ = {
+		{&rna_UILayout_operator_enum_icon_only, 	&rna_UILayout_operator_enum_operator,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_enum_icon_only_ = {
+		{nullptr, 	&rna_UILayout_operator_enum_property,
+		-1, "icon_only", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Draw only icons in buttons, no text",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_operator_enum_operator, &rna_UILayout_operator_enum_icon_only};
+		func->identifier = "operator_enum";
+		func->description = "operator_enum";
+		func->call = UILayout_operator_enum_call;
+		rna_UILayout_operator_enum_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_operator_menu_enum_operator_ = {
+		{&rna_UILayout_operator_menu_enum_property, 	nullptr,
+		-1, "operator", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_enum_property_ = {
+		{&rna_UILayout_operator_menu_enum_text, 	&rna_UILayout_operator_menu_enum_operator,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_enum_text_ = {
+		{&rna_UILayout_operator_menu_enum_text_ctxt, 	&rna_UILayout_operator_menu_enum_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_enum_text_ctxt_ = {
+		{&rna_UILayout_operator_menu_enum_translate, 	&rna_UILayout_operator_menu_enum_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_operator_menu_enum_translate_ = {
+		{&rna_UILayout_operator_menu_enum_icon, 	&rna_UILayout_operator_menu_enum_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_operator_menu_enum_icon_ = {
+		{&rna_UILayout_operator_menu_enum_properties, 	&rna_UILayout_operator_menu_enum_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_operator_menu_enum_properties_ = {
+		{nullptr, 	&rna_UILayout_operator_menu_enum_icon,
+		-1, "properties", 8388608, 0, 7, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator properties to fill in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_OperatorProperties
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_operator_menu_enum_operator, &rna_UILayout_operator_menu_enum_properties};
+		func->identifier = "operator_menu_enum";
+		func->flag = 8;
+		func->description = "operator_menu_enum";
+		func->call = UILayout_operator_menu_enum_call;
+		func->c_ret = &rna_UILayout_operator_menu_enum_properties;
+		rna_UILayout_operator_menu_enum_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_label_text_ = {
+		{&rna_UILayout_label_text_ctxt, 	nullptr,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_label_text_ctxt_ = {
+		{&rna_UILayout_label_translate, 	&rna_UILayout_label_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_label_translate_ = {
+		{&rna_UILayout_label_icon, 	&rna_UILayout_label_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_label_icon_ = {
+		{&rna_UILayout_label_icon_value, 	&rna_UILayout_label_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_label_icon_value_ = {
+		{nullptr, 	&rna_UILayout_label_icon,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_label_text, &rna_UILayout_label_icon_value};
+		func->identifier = "label";
+		func->description = "Item. Displays text and/or icon in the layout.";
+		func->call = UILayout_label_call;
+		rna_UILayout_label_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_link_url_ = {
+		{&rna_UILayout_link_text, 	nullptr,
+		-1, "url", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_link_text_ = {
+		{&rna_UILayout_link_text_ctxt, 	&rna_UILayout_link_url,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_link_text_ctxt_ = {
+		{&rna_UILayout_link_translate, 	&rna_UILayout_link_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_link_translate_ = {
+		{&rna_UILayout_link_icon, 	&rna_UILayout_link_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_link_icon_ = {
+		{&rna_UILayout_link_icon_value, 	&rna_UILayout_link_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_link_icon_value_ = {
+		{nullptr, 	&rna_UILayout_link_icon,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_link_url, &rna_UILayout_link_icon_value};
+		func->identifier = "link";
+		func->description = "Item. Displays a url that can be clicked in the layout.";
+		func->call = UILayout_link_call;
+		rna_UILayout_link_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_menu_menu_ = {
+		{&rna_UILayout_menu_text, 	nullptr,
+		-1, "menu", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the menu",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_menu_text_ = {
+		{&rna_UILayout_menu_text_ctxt, 	&rna_UILayout_menu_menu,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_menu_text_ctxt_ = {
+		{&rna_UILayout_menu_translate, 	&rna_UILayout_menu_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_menu_translate_ = {
+		{&rna_UILayout_menu_icon, 	&rna_UILayout_menu_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_menu_icon_ = {
+		{&rna_UILayout_menu_icon_value, 	&rna_UILayout_menu_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_menu_icon_value_ = {
+		{nullptr, 	&rna_UILayout_menu_icon,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_menu_menu, &rna_UILayout_menu_icon_value};
+		func->identifier = "menu";
+		func->description = "menu";
+		func->call = UILayout_menu_call;
+		rna_UILayout_menu_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_menu_contents_menu_ = {
+		{nullptr, 	nullptr,
+		-1, "menu", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the menu",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_menu_contents_menu, &rna_UILayout_menu_contents_menu};
+		func->identifier = "menu_contents";
+		func->description = "menu_contents";
+		func->call = UILayout_menu_contents_call;
+		rna_UILayout_menu_contents_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_popover_panel_ = {
+		{&rna_UILayout_popover_text, 	nullptr,
+		-1, "panel", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the panel",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_popover_text_ = {
+		{&rna_UILayout_popover_text_ctxt, 	&rna_UILayout_popover_panel,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_popover_text_ctxt_ = {
+		{&rna_UILayout_popover_translate, 	&rna_UILayout_popover_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_popover_translate_ = {
+		{&rna_UILayout_popover_icon, 	&rna_UILayout_popover_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_popover_icon_ = {
+		{&rna_UILayout_popover_icon_value, 	&rna_UILayout_popover_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_popover_icon_value_ = {
+		{&rna_UILayout_popover_direction, 	&rna_UILayout_popover_icon,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_popover_direction_items[3] = {
+		{0, "VERTICAL", 0, "Vertical", "Draw popup panel above or below the button"	},
+		{1, "HORIZONTAL", 0, "Horizontal", "Draw popup panel to the side of the button"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_popover_direction_ = {
+		{nullptr, 	&rna_UILayout_popover_icon_value,
+		-1, "direction", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Popup Direction",
+		"The direction in which the popup panel is drawn relative to button position",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_popover_direction_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_popover_panel, &rna_UILayout_popover_direction};
+		func->identifier = "popover";
+		func->flag = 8;
+		func->description = "popover";
+		func->call = UILayout_popover_call;
+		rna_UILayout_popover_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_popover_group_space_type_ = {
+		{&rna_UILayout_popover_group_region_type, 	nullptr,
+		-1, "space_type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "Space Type",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_space_type_items, 24, 0
+	};
+	rna_UILayout_popover_group_region_type_ = {
+		{&rna_UILayout_popover_group_context, 	&rna_UILayout_popover_group_space_type,
+		-1, "region_type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "Region Type",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_region_type_items, 17, 0
+	};
+	rna_UILayout_popover_group_context_ = {
+		{&rna_UILayout_popover_group_category, 	&rna_UILayout_popover_group_region_type,
+		-1, "context", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"panel type context",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_popover_group_category_ = {
+		{nullptr, 	&rna_UILayout_popover_group_context,
+		-1, "category", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"panel type category",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_popover_group_space_type, &rna_UILayout_popover_group_category};
+		func->identifier = "popover_group";
+		func->flag = 8;
+		func->description = "popover_group";
+		func->call = UILayout_popover_group_call;
+		rna_UILayout_popover_group_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_separator_factor_ = {
+		{&rna_UILayout_separator_type, 	nullptr,
+		-1, "factor", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Percentage",
+		"Percentage of width to space (leave unset for default space)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_separator_type_items[4] = {
+		{0, "AUTO", 0, "Auto", "Best guess at what type of separator is needed."	},
+		{1, "SPACE", 0, "Empty space", "Horizontal or Vertical empty space, depending on layout direction."	},
+		{2, "LINE", 0, "Line", "Horizontal or Vertical line, depending on layout direction."	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_separator_type_ = {
+		{nullptr, 	&rna_UILayout_separator_factor,
+		-1, "type", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Type",
+		"The type of the separator",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_separator_type_items, 3, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_separator_factor, &rna_UILayout_separator_type};
+		func->identifier = "separator";
+		func->description = "Item. Inserts empty space into the layout between items.";
+		func->call = UILayout_separator_call;
+		rna_UILayout_separator_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "separator_spacer";
+		func->description = "Item. Inserts horizontal spacing empty space into the layout between items.";
+		func->call = UILayout_separator_spacer_call;
+		rna_UILayout_separator_spacer_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_progress_text_ = {
+		{&rna_UILayout_progress_text_ctxt, 	nullptr,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_progress_text_ctxt_ = {
+		{&rna_UILayout_progress_translate, 	&rna_UILayout_progress_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_progress_translate_ = {
+		{&rna_UILayout_progress_factor, 	&rna_UILayout_progress_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_progress_factor_ = {
+		{&rna_UILayout_progress_type, 	&rna_UILayout_progress_translate,
+		-1, "factor", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Factor",
+		"Amount of progress from 0.0f to 1.0f",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_progress_type_items[3] = {
+		{0, "BAR", 0, "Bar", ""	},
+		{1, "RING", 0, "Ring", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_progress_type_ = {
+		{nullptr, 	&rna_UILayout_progress_factor,
+		-1, "type", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Type",
+		"The type of progress indicator",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_progress_type_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_progress_text, &rna_UILayout_progress_type};
+		func->identifier = "progress";
+		func->description = "Progress indicator";
+		func->call = UILayout_progress_call;
+		rna_UILayout_progress_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_context_pointer_set_name_ = {
+		{&rna_UILayout_context_pointer_set_data, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "Name",
+		"Name of entry in the context",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_context_pointer_set_data_ = {
+		{nullptr, 	&rna_UILayout_context_pointer_set_name,
+		-1, "data", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Pointer to put in context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_context_pointer_set_name, &rna_UILayout_context_pointer_set_data};
+		func->identifier = "context_pointer_set";
+		func->description = "context_pointer_set";
+		func->call = UILayout_context_pointer_set_call;
+		rna_UILayout_context_pointer_set_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_context_string_set_name_ = {
+		{&rna_UILayout_context_string_set_value, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "Name",
+		"Name of entry in the context",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_context_string_set_value_ = {
+		{nullptr, 	&rna_UILayout_context_string_set_name,
+		-1, "value", 262145, 0, 5, 0, 0, PropertyPathTemplateType(0), "Value",
+		"String to put in context",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_context_string_set_name, &rna_UILayout_context_string_set_value};
+		func->identifier = "context_string_set";
+		func->description = "context_string_set";
+		func->call = UILayout_context_string_set_call;
+		rna_UILayout_context_string_set_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_header";
+		func->flag = 8;
+		func->description = "Inserts common Space header UI (editor type selector)";
+		func->call = UILayout_template_header_call;
+		rna_UILayout_template_header_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_ID_data_ = {
+		{&rna_UILayout_template_ID_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_ID_property_ = {
+		{&rna_UILayout_template_ID_new, 	&rna_UILayout_template_ID_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_new_ = {
+		{&rna_UILayout_template_ID_open, 	&rna_UILayout_template_ID_property,
+		-1, "new", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to create a new ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_open_ = {
+		{&rna_UILayout_template_ID_unlink, 	&rna_UILayout_template_ID_new,
+		-1, "open", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to open a file for creating a new ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_unlink_ = {
+		{&rna_UILayout_template_ID_filter, 	&rna_UILayout_template_ID_open,
+		-1, "unlink", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to unlink the ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	static const EnumPropertyItem rna_UILayout_template_ID_filter_items[3] = {
+		{0, "ALL", 0, "All", ""	},
+		{1, "AVAILABLE", 0, "Available", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_template_ID_filter_ = {
+		{&rna_UILayout_template_ID_live_icon, 	&rna_UILayout_template_ID_unlink,
+		-1, "filter", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Optionally limit the items which can be selected",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_template_ID_filter_items, 2, 0
+	};
+	rna_UILayout_template_ID_live_icon_ = {
+		{&rna_UILayout_template_ID_text, 	&rna_UILayout_template_ID_filter,
+		-1, "live_icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show preview instead of fixed icon",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_ID_text_ = {
+		{&rna_UILayout_template_ID_text_ctxt, 	&rna_UILayout_template_ID_live_icon,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_text_ctxt_ = {
+		{&rna_UILayout_template_ID_translate, 	&rna_UILayout_template_ID_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_translate_ = {
+		{nullptr, 	&rna_UILayout_template_ID_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_ID_data, &rna_UILayout_template_ID_translate};
+		func->identifier = "template_ID";
+		func->flag = 8;
+		func->description = "template_ID";
+		func->call = UILayout_template_ID_call;
+		rna_UILayout_template_ID_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_ID_session_uid_data_ = {
+		{&rna_UILayout_template_ID_session_uid_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_ID_session_uid_property_ = {
+		{&rna_UILayout_template_ID_session_uid_id_type, 	&rna_UILayout_template_ID_session_uid_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_session_uid_id_type_ = {
+		{nullptr, 	&rna_UILayout_template_ID_session_uid_property,
+		-1, "id_type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Type of ID to display in the search list",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_id_type_items, 39, 17217
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_ID_session_uid_data, &rna_UILayout_template_ID_session_uid_id_type};
+		func->identifier = "template_ID_session_uid";
+		func->flag = 8;
+		func->description = "Template ID search menu button for session_uid Int properties";
+		func->call = UILayout_template_ID_session_uid_call;
+		rna_UILayout_template_ID_session_uid_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_ID_preview_data_ = {
+		{&rna_UILayout_template_ID_preview_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_ID_preview_property_ = {
+		{&rna_UILayout_template_ID_preview_new, 	&rna_UILayout_template_ID_preview_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_preview_new_ = {
+		{&rna_UILayout_template_ID_preview_open, 	&rna_UILayout_template_ID_preview_property,
+		-1, "new", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to create a new ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_preview_open_ = {
+		{&rna_UILayout_template_ID_preview_unlink, 	&rna_UILayout_template_ID_preview_new,
+		-1, "open", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to open a file for creating a new ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_preview_unlink_ = {
+		{&rna_UILayout_template_ID_preview_rows, 	&rna_UILayout_template_ID_preview_open,
+		-1, "unlink", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to unlink the ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_preview_rows_ = {
+		{&rna_UILayout_template_ID_preview_cols, 	&rna_UILayout_template_ID_preview_unlink,
+		-1, "rows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Number of thumbnail preview rows to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_ID_preview_cols_ = {
+		{&rna_UILayout_template_ID_preview_filter, 	&rna_UILayout_template_ID_preview_rows,
+		-1, "cols", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Number of thumbnail preview columns to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_template_ID_preview_filter_items[3] = {
+		{0, "ALL", 0, "All", ""	},
+		{1, "AVAILABLE", 0, "Available", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_template_ID_preview_filter_ = {
+		{&rna_UILayout_template_ID_preview_hide_buttons, 	&rna_UILayout_template_ID_preview_cols,
+		-1, "filter", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Optionally limit the items which can be selected",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_template_ID_preview_filter_items, 2, 0
+	};
+	rna_UILayout_template_ID_preview_hide_buttons_ = {
+		{nullptr, 	&rna_UILayout_template_ID_preview_filter,
+		-1, "hide_buttons", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show only list, no buttons",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_ID_preview_data, &rna_UILayout_template_ID_preview_hide_buttons};
+		func->identifier = "template_ID_preview";
+		func->flag = 8;
+		func->description = "template_ID_preview";
+		func->call = UILayout_template_ID_preview_call;
+		rna_UILayout_template_ID_preview_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_matrix_data_ = {
+		{&rna_UILayout_template_matrix_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_matrix_property_ = {
+		{nullptr, 	&rna_UILayout_template_matrix_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_matrix_data, &rna_UILayout_template_matrix_property};
+		func->identifier = "template_matrix";
+		func->description = "Insert a readonly Matrix UI. The UI displays the matrix components - translation, rotation and scale. The **property** argument must be the identifier of an existing 4x4 float vector property of subtype \'MATRIX\'.";
+		func->call = UILayout_template_matrix_call;
+		rna_UILayout_template_matrix_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_any_ID_data_ = {
+		{&rna_UILayout_template_any_ID_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_any_ID_property_ = {
+		{&rna_UILayout_template_any_ID_type_property, 	&rna_UILayout_template_any_ID_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_any_ID_type_property_ = {
+		{&rna_UILayout_template_any_ID_text, 	&rna_UILayout_template_any_ID_property,
+		-1, "type_property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data giving the type of the ID-blocks to use",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_any_ID_text_ = {
+		{&rna_UILayout_template_any_ID_text_ctxt, 	&rna_UILayout_template_any_ID_type_property,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_any_ID_text_ctxt_ = {
+		{&rna_UILayout_template_any_ID_translate, 	&rna_UILayout_template_any_ID_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_any_ID_translate_ = {
+		{nullptr, 	&rna_UILayout_template_any_ID_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_any_ID_data, &rna_UILayout_template_any_ID_translate};
+		func->identifier = "template_any_ID";
+		func->description = "template_any_ID";
+		func->call = UILayout_template_any_ID_call;
+		rna_UILayout_template_any_ID_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_ID_tabs_data_ = {
+		{&rna_UILayout_template_ID_tabs_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_ID_tabs_property_ = {
+		{&rna_UILayout_template_ID_tabs_new, 	&rna_UILayout_template_ID_tabs_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_tabs_new_ = {
+		{&rna_UILayout_template_ID_tabs_menu, 	&rna_UILayout_template_ID_tabs_property,
+		-1, "new", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to create a new ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_ID_tabs_menu_ = {
+		{&rna_UILayout_template_ID_tabs_filter, 	&rna_UILayout_template_ID_tabs_new,
+		-1, "menu", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Context menu identifier",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	static const EnumPropertyItem rna_UILayout_template_ID_tabs_filter_items[3] = {
+		{0, "ALL", 0, "All", ""	},
+		{1, "AVAILABLE", 0, "Available", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_template_ID_tabs_filter_ = {
+		{nullptr, 	&rna_UILayout_template_ID_tabs_menu,
+		-1, "filter", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Optionally limit the items which can be selected",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_template_ID_tabs_filter_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_ID_tabs_data, &rna_UILayout_template_ID_tabs_filter};
+		func->identifier = "template_ID_tabs";
+		func->flag = 8;
+		func->description = "template_ID_tabs";
+		func->call = UILayout_template_ID_tabs_call;
+		rna_UILayout_template_ID_tabs_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_action_id_ = {
+		{&rna_UILayout_template_action_new, 	nullptr,
+		-1, "id", 8650880, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The data-block for which to select an Action",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ID
+	};
+	rna_UILayout_template_action_new_ = {
+		{&rna_UILayout_template_action_unlink, 	&rna_UILayout_template_action_id,
+		-1, "new", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to create a new ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_action_unlink_ = {
+		{&rna_UILayout_template_action_text, 	&rna_UILayout_template_action_new,
+		-1, "unlink", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to unlink the ID block",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_action_text_ = {
+		{&rna_UILayout_template_action_text_ctxt, 	&rna_UILayout_template_action_unlink,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_action_text_ctxt_ = {
+		{&rna_UILayout_template_action_translate, 	&rna_UILayout_template_action_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_action_translate_ = {
+		{nullptr, 	&rna_UILayout_template_action_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_action_id, &rna_UILayout_template_action_translate};
+		func->identifier = "template_action";
+		func->flag = 8;
+		func->description = "template_action";
+		func->call = UILayout_template_action_call;
+		rna_UILayout_template_action_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_search_data_ = {
+		{&rna_UILayout_template_search_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_search_property_ = {
+		{&rna_UILayout_template_search_search_data, 	&rna_UILayout_template_search_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_search_data_ = {
+		{&rna_UILayout_template_search_search_property, 	&rna_UILayout_template_search_property,
+		-1, "search_data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take collection to search in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_search_search_property_ = {
+		{&rna_UILayout_template_search_new, 	&rna_UILayout_template_search_search_data,
+		-1, "search_property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of search collection property",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_new_ = {
+		{&rna_UILayout_template_search_unlink, 	&rna_UILayout_template_search_search_property,
+		-1, "new", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to create a new item for the collection",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_unlink_ = {
+		{&rna_UILayout_template_search_text, 	&rna_UILayout_template_search_new,
+		-1, "unlink", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to unlink or delete the active item from the collection",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_text_ = {
+		{&rna_UILayout_template_search_text_ctxt, 	&rna_UILayout_template_search_unlink,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_text_ctxt_ = {
+		{&rna_UILayout_template_search_translate, 	&rna_UILayout_template_search_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_translate_ = {
+		{nullptr, 	&rna_UILayout_template_search_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_search_data, &rna_UILayout_template_search_translate};
+		func->identifier = "template_search";
+		func->flag = 8;
+		func->description = "template_search";
+		func->call = UILayout_template_search_call;
+		rna_UILayout_template_search_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_search_preview_data_ = {
+		{&rna_UILayout_template_search_preview_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_search_preview_property_ = {
+		{&rna_UILayout_template_search_preview_search_data, 	&rna_UILayout_template_search_preview_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_preview_search_data_ = {
+		{&rna_UILayout_template_search_preview_search_property, 	&rna_UILayout_template_search_preview_property,
+		-1, "search_data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take collection to search in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_search_preview_search_property_ = {
+		{&rna_UILayout_template_search_preview_new, 	&rna_UILayout_template_search_preview_search_data,
+		-1, "search_property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of search collection property",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_preview_new_ = {
+		{&rna_UILayout_template_search_preview_unlink, 	&rna_UILayout_template_search_preview_search_property,
+		-1, "new", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to create a new item for the collection",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_preview_unlink_ = {
+		{&rna_UILayout_template_search_preview_text, 	&rna_UILayout_template_search_preview_new,
+		-1, "unlink", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator identifier to unlink or delete the active item from the collection",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_preview_text_ = {
+		{&rna_UILayout_template_search_preview_text_ctxt, 	&rna_UILayout_template_search_preview_unlink,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_preview_text_ctxt_ = {
+		{&rna_UILayout_template_search_preview_translate, 	&rna_UILayout_template_search_preview_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_search_preview_translate_ = {
+		{&rna_UILayout_template_search_preview_rows, 	&rna_UILayout_template_search_preview_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_template_search_preview_rows_ = {
+		{&rna_UILayout_template_search_preview_cols, 	&rna_UILayout_template_search_preview_translate,
+		-1, "rows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Number of thumbnail preview rows to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_search_preview_cols_ = {
+		{nullptr, 	&rna_UILayout_template_search_preview_rows,
+		-1, "cols", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Number of thumbnail preview columns to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_search_preview_data, &rna_UILayout_template_search_preview_cols};
+		func->identifier = "template_search_preview";
+		func->flag = 8;
+		func->description = "template_search_preview";
+		func->call = UILayout_template_search_preview_call;
+		rna_UILayout_template_search_preview_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_path_builder_data_ = {
+		{&rna_UILayout_template_path_builder_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_path_builder_property_ = {
+		{&rna_UILayout_template_path_builder_root, 	&rna_UILayout_template_path_builder_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_path_builder_root_ = {
+		{&rna_UILayout_template_path_builder_text, 	&rna_UILayout_template_path_builder_property,
+		-1, "root", 8388736, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"ID-block from which path is evaluated from",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ID
+	};
+	rna_UILayout_template_path_builder_text_ = {
+		{&rna_UILayout_template_path_builder_text_ctxt, 	&rna_UILayout_template_path_builder_root,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_path_builder_text_ctxt_ = {
+		{&rna_UILayout_template_path_builder_translate, 	&rna_UILayout_template_path_builder_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_path_builder_translate_ = {
+		{nullptr, 	&rna_UILayout_template_path_builder_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_path_builder_data, &rna_UILayout_template_path_builder_translate};
+		func->identifier = "template_path_builder";
+		func->description = "template_path_builder";
+		func->call = UILayout_template_path_builder_call;
+		rna_UILayout_template_path_builder_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_modifiers";
+		func->flag = 8;
+		func->description = "Generates the UI layout for the modifier stack";
+		func->call = UILayout_template_modifiers_call;
+		rna_UILayout_template_modifiers_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_strip_modifiers";
+		func->flag = 8;
+		func->description = "Generates the UI layout for the strip modifier stack";
+		func->call = UILayout_template_strip_modifiers_call;
+		rna_UILayout_template_strip_modifiers_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_collection_importer";
+		func->flag = 8;
+		func->description = "Generates the UI layout for the collection importer";
+		func->call = UILayout_template_collection_importer_call;
+		rna_UILayout_template_collection_importer_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_collection_exporters";
+		func->flag = 8;
+		func->description = "Generates the UI layout for collection exporters";
+		func->call = UILayout_template_collection_exporters_call;
+		rna_UILayout_template_collection_exporters_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_constraints_use_bone_constraints_ = {
+		{nullptr, 	nullptr,
+		-1, "use_bone_constraints", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Add panels for bone constraints instead of object constraints",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_constraints_use_bone_constraints, &rna_UILayout_template_constraints_use_bone_constraints};
+		func->identifier = "template_constraints";
+		func->flag = 8;
+		func->description = "Generates the panels for the constraint stack";
+		func->call = UILayout_template_constraints_call;
+		rna_UILayout_template_constraints_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_shaderfx";
+		func->flag = 8;
+		func->description = "Generates the panels for the shader effect stack";
+		func->call = UILayout_template_shaderfx_call;
+		rna_UILayout_template_shaderfx_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_greasepencil_color_data_ = {
+		{&rna_UILayout_template_greasepencil_color_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_greasepencil_color_property_ = {
+		{&rna_UILayout_template_greasepencil_color_rows, 	&rna_UILayout_template_greasepencil_color_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_greasepencil_color_rows_ = {
+		{&rna_UILayout_template_greasepencil_color_cols, 	&rna_UILayout_template_greasepencil_color_property,
+		-1, "rows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Number of thumbnail preview rows to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_greasepencil_color_cols_ = {
+		{&rna_UILayout_template_greasepencil_color_scale, 	&rna_UILayout_template_greasepencil_color_rows,
+		-1, "cols", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Number of thumbnail preview columns to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_greasepencil_color_scale_ = {
+		{&rna_UILayout_template_greasepencil_color_filter, 	&rna_UILayout_template_greasepencil_color_cols,
+		-1, "scale", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scale of the image thumbnails",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.5000000000f, 1.0f, 0.1000000015f, 1.5000000000f, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+	static const EnumPropertyItem rna_UILayout_template_greasepencil_color_filter_items[3] = {
+		{0, "ALL", 0, "All", ""	},
+		{1, "AVAILABLE", 0, "Available", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_template_greasepencil_color_filter_ = {
+		{nullptr, 	&rna_UILayout_template_greasepencil_color_scale,
+		-1, "filter", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Optionally limit the items which can be selected",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_template_greasepencil_color_filter_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_greasepencil_color_data, &rna_UILayout_template_greasepencil_color_filter};
+		func->identifier = "template_greasepencil_color";
+		func->flag = 8;
+		func->description = "template_greasepencil_color";
+		func->call = UILayout_template_greasepencil_color_call;
+		rna_UILayout_template_greasepencil_color_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_constraint_header_data_ = {
+		{nullptr, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Constraint data",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Constraint
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_constraint_header_data, &rna_UILayout_template_constraint_header_data};
+		func->identifier = "template_constraint_header";
+		func->description = "Generates the header for constraint panels";
+		func->call = UILayout_template_constraint_header_call;
+		rna_UILayout_template_constraint_header_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_preview_id_ = {
+		{&rna_UILayout_template_preview_show_buttons, 	nullptr,
+		-1, "id", 8388736, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"ID data-block",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ID
+	};
+	rna_UILayout_template_preview_show_buttons_ = {
+		{&rna_UILayout_template_preview_parent, 	&rna_UILayout_template_preview_id,
+		-1, "show_buttons", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show preview buttons\?",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_template_preview_parent_ = {
+		{&rna_UILayout_template_preview_slot, 	&rna_UILayout_template_preview_show_buttons,
+		-1, "parent", 8388736, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"ID data-block",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ID
+	};
+	rna_UILayout_template_preview_slot_ = {
+		{&rna_UILayout_template_preview_preview_id, 	&rna_UILayout_template_preview_parent,
+		-1, "slot", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Texture slot",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_TextureSlot
+	};
+	rna_UILayout_template_preview_preview_id_ = {
+		{nullptr, 	&rna_UILayout_template_preview_slot,
+		-1, "preview_id", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of this preview widget, if not set the ID type will be used (i.e. all previews of materials without explicit ID will have the same size...).",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_preview_id, &rna_UILayout_template_preview_preview_id};
+		func->identifier = "template_preview";
+		func->flag = 8;
+		func->description = "Item. A preview window for materials, textures, lights or worlds.";
+		func->call = UILayout_template_preview_call;
+		rna_UILayout_template_preview_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_curve_mapping_data_ = {
+		{&rna_UILayout_template_curve_mapping_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_curve_mapping_property_ = {
+		{&rna_UILayout_template_curve_mapping_type, 	&rna_UILayout_template_curve_mapping_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	static const EnumPropertyItem rna_UILayout_template_curve_mapping_type_items[5] = {
+		{0, "NONE", 0, "None", ""	},
+		{118, "VECTOR", 0, "Vector", ""	},
+		{99, "COLOR", 0, "Color", ""	},
+		{104, "HUE", 0, "Hue", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_template_curve_mapping_type_ = {
+		{&rna_UILayout_template_curve_mapping_levels, 	&rna_UILayout_template_curve_mapping_property,
+		-1, "type", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Type",
+		"Type of curves to display",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_template_curve_mapping_type_items, 4, 0
+	};
+	rna_UILayout_template_curve_mapping_levels_ = {
+		{&rna_UILayout_template_curve_mapping_brush, 	&rna_UILayout_template_curve_mapping_type,
+		-1, "levels", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show black/white levels",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_curve_mapping_brush_ = {
+		{&rna_UILayout_template_curve_mapping_use_negative_slope, 	&rna_UILayout_template_curve_mapping_levels,
+		-1, "brush", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show brush options",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_curve_mapping_use_negative_slope_ = {
+		{&rna_UILayout_template_curve_mapping_show_tone, 	&rna_UILayout_template_curve_mapping_brush,
+		-1, "use_negative_slope", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use a negative slope by default",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_curve_mapping_show_tone_ = {
+		{&rna_UILayout_template_curve_mapping_show_presets, 	&rna_UILayout_template_curve_mapping_use_negative_slope,
+		-1, "show_tone", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show tone options",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_curve_mapping_show_presets_ = {
+		{nullptr, 	&rna_UILayout_template_curve_mapping_show_tone,
+		-1, "show_presets", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show preset options",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_curve_mapping_data, &rna_UILayout_template_curve_mapping_show_presets};
+		func->identifier = "template_curve_mapping";
+		func->description = "Item. A curve mapping widget used for e.g falloff curves for lights.";
+		func->call = UILayout_template_curve_mapping_call;
+		rna_UILayout_template_curve_mapping_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_curveprofile_data_ = {
+		{&rna_UILayout_template_curveprofile_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_curveprofile_property_ = {
+		{nullptr, 	&rna_UILayout_template_curveprofile_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_curveprofile_data, &rna_UILayout_template_curveprofile_property};
+		func->identifier = "template_curveprofile";
+		func->description = "A profile path editor used for custom profiles";
+		func->call = UILayout_template_curveprofile_call;
+		rna_UILayout_template_curveprofile_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_color_ramp_data_ = {
+		{&rna_UILayout_template_color_ramp_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_color_ramp_property_ = {
+		{&rna_UILayout_template_color_ramp_expand, 	&rna_UILayout_template_color_ramp_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_color_ramp_expand_ = {
+		{nullptr, 	&rna_UILayout_template_color_ramp_property,
+		-1, "expand", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Expand button to show more detail",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_color_ramp_data, &rna_UILayout_template_color_ramp_expand};
+		func->identifier = "template_color_ramp";
+		func->description = "Item. A color ramp widget.";
+		func->call = UILayout_template_color_ramp_call;
+		rna_UILayout_template_color_ramp_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_icon_icon_value_ = {
+		{&rna_UILayout_template_icon_scale, 	nullptr,
+		-1, "icon_value", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "Icon to display",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_icon_scale_ = {
+		{nullptr, 	&rna_UILayout_template_icon_icon_value,
+		-1, "scale", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scale",
+		"Scale the icon size (by the button size)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 1.0f, 100.0f, 1.0f, 100.0f, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_icon_icon_value, &rna_UILayout_template_icon_scale};
+		func->identifier = "template_icon";
+		func->description = "Display a large icon";
+		func->call = UILayout_template_icon_call;
+		rna_UILayout_template_icon_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_icon_view_data_ = {
+		{&rna_UILayout_template_icon_view_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_icon_view_property_ = {
+		{&rna_UILayout_template_icon_view_show_labels, 	&rna_UILayout_template_icon_view_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_icon_view_show_labels_ = {
+		{&rna_UILayout_template_icon_view_scale, 	&rna_UILayout_template_icon_view_property,
+		-1, "show_labels", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show enum label in preview buttons",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_icon_view_scale_ = {
+		{&rna_UILayout_template_icon_view_scale_popup, 	&rna_UILayout_template_icon_view_show_labels,
+		-1, "scale", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "UI Units",
+		"Scale the button icon size (by the button size)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 1.0f, 100.0f, 1.0f, 100.0f, 1.0f, 3, nullptr, nullptr, 6.0f, nullptr
+	};
+	rna_UILayout_template_icon_view_scale_popup_ = {
+		{nullptr, 	&rna_UILayout_template_icon_view_scale,
+		-1, "scale_popup", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scale",
+		"Scale the popup icon size (by the button size)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 1.0f, 100.0f, 1.0f, 100.0f, 1.0f, 3, nullptr, nullptr, 5.0f, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_icon_view_data, &rna_UILayout_template_icon_view_scale_popup};
+		func->identifier = "template_icon_view";
+		func->description = "Enum. Large widget showing Icon previews.";
+		func->call = UILayout_template_icon_view_call;
+		rna_UILayout_template_icon_view_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_histogram_data_ = {
+		{&rna_UILayout_template_histogram_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_histogram_property_ = {
+		{nullptr, 	&rna_UILayout_template_histogram_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_histogram_data, &rna_UILayout_template_histogram_property};
+		func->identifier = "template_histogram";
+		func->description = "Item. A histogramm widget to analyze imaga data.";
+		func->call = UILayout_template_histogram_call;
+		rna_UILayout_template_histogram_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_waveform_data_ = {
+		{&rna_UILayout_template_waveform_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_waveform_property_ = {
+		{nullptr, 	&rna_UILayout_template_waveform_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_waveform_data, &rna_UILayout_template_waveform_property};
+		func->identifier = "template_waveform";
+		func->description = "Item. A waveform widget to analyze imaga data.";
+		func->call = UILayout_template_waveform_call;
+		rna_UILayout_template_waveform_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_vectorscope_data_ = {
+		{&rna_UILayout_template_vectorscope_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_vectorscope_property_ = {
+		{nullptr, 	&rna_UILayout_template_vectorscope_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_vectorscope_data, &rna_UILayout_template_vectorscope_property};
+		func->identifier = "template_vectorscope";
+		func->description = "Item. A vectorscope widget to analyze imaga data.";
+		func->call = UILayout_template_vectorscope_call;
+		rna_UILayout_template_vectorscope_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_layers_data_ = {
+		{&rna_UILayout_template_layers_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_layers_property_ = {
+		{&rna_UILayout_template_layers_used_layers_data, 	&rna_UILayout_template_layers_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_layers_used_layers_data_ = {
+		{&rna_UILayout_template_layers_used_layers_property, 	&rna_UILayout_template_layers_property,
+		-1, "used_layers_data", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_layers_used_layers_property_ = {
+		{&rna_UILayout_template_layers_active_layer, 	&rna_UILayout_template_layers_used_layers_data,
+		-1, "used_layers_property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_layers_active_layer_ = {
+		{nullptr, 	&rna_UILayout_template_layers_used_layers_property,
+		-1, "active_layer", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "Active Layer",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_layers_data, &rna_UILayout_template_layers_active_layer};
+		func->identifier = "template_layers";
+		func->description = "template_layers";
+		func->call = UILayout_template_layers_call;
+		rna_UILayout_template_layers_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_color_picker_data_ = {
+		{&rna_UILayout_template_color_picker_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_color_picker_property_ = {
+		{&rna_UILayout_template_color_picker_value_slider, 	&rna_UILayout_template_color_picker_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_color_picker_value_slider_ = {
+		{&rna_UILayout_template_color_picker_lock, 	&rna_UILayout_template_color_picker_property,
+		-1, "value_slider", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Display the value slider to the right of the color wheel",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_color_picker_lock_ = {
+		{&rna_UILayout_template_color_picker_lock_luminosity, 	&rna_UILayout_template_color_picker_value_slider,
+		-1, "lock", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Lock the color wheel display to value 1.0 regardless of actual color",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_color_picker_lock_luminosity_ = {
+		{&rna_UILayout_template_color_picker_cubic, 	&rna_UILayout_template_color_picker_lock,
+		-1, "lock_luminosity", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Keep the color at its original vector length",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_color_picker_cubic_ = {
+		{nullptr, 	&rna_UILayout_template_color_picker_lock_luminosity,
+		-1, "cubic", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Cubic saturation for picking values close to white",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_color_picker_data, &rna_UILayout_template_color_picker_cubic};
+		func->identifier = "template_color_picker";
+		func->description = "Item. A color wheel widget to pick colors.";
+		func->call = UILayout_template_color_picker_call;
+		rna_UILayout_template_color_picker_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_palette_data_ = {
+		{&rna_UILayout_template_palette_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_palette_property_ = {
+		{nullptr, 	&rna_UILayout_template_palette_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_palette_data, &rna_UILayout_template_palette_property};
+		func->identifier = "template_palette";
+		func->description = "Item. A palette used to pick colors.";
+		func->call = UILayout_template_palette_call;
+		rna_UILayout_template_palette_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_image_layers_image_ = {
+		{&rna_UILayout_template_image_layers_image_user, 	nullptr,
+		-1, "image", 8388736, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Image data-block to display layers for",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Image
+	};
+	rna_UILayout_template_image_layers_image_user_ = {
+		{nullptr, 	&rna_UILayout_template_image_layers_image,
+		-1, "image_user", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Image user reading from the image",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ImageUser
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_image_layers_image, &rna_UILayout_template_image_layers_image_user};
+		func->identifier = "template_image_layers";
+		func->flag = 8;
+		func->description = "template_image_layers";
+		func->call = UILayout_template_image_layers_call;
+		rna_UILayout_template_image_layers_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_image_data_ = {
+		{&rna_UILayout_template_image_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_image_property_ = {
+		{&rna_UILayout_template_image_image_user, 	&rna_UILayout_template_image_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_image_image_user_ = {
+		{&rna_UILayout_template_image_compact, 	&rna_UILayout_template_image_property,
+		-1, "image_user", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ImageUser
+	};
+	rna_UILayout_template_image_compact_ = {
+		{&rna_UILayout_template_image_multiview, 	&rna_UILayout_template_image_image_user,
+		-1, "compact", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use more compact layout",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_image_multiview_ = {
+		{nullptr, 	&rna_UILayout_template_image_compact,
+		-1, "multiview", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Expose Multi-View options",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_image_data, &rna_UILayout_template_image_multiview};
+		func->identifier = "template_image";
+		func->flag = 8;
+		func->description = "Item(s). User interface for selecting images and their source paths.";
+		func->call = UILayout_template_image_call;
+		rna_UILayout_template_image_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_image_settings_image_settings_ = {
+		{&rna_UILayout_template_image_settings_color_management, 	nullptr,
+		-1, "image_settings", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ImageFormatSettings
+	};
+	rna_UILayout_template_image_settings_color_management_ = {
+		{nullptr, 	&rna_UILayout_template_image_settings_image_settings,
+		-1, "color_management", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Show color management settings",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_image_settings_image_settings, &rna_UILayout_template_image_settings_color_management};
+		func->identifier = "template_image_settings";
+		func->flag = 8;
+		func->description = "User interface for setting image format options";
+		func->call = UILayout_template_image_settings_call;
+		rna_UILayout_template_image_settings_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_image_stereo_3d_stereo_3d_format_ = {
+		{nullptr, 	nullptr,
+		-1, "stereo_3d_format", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Stereo3dFormat
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_image_stereo_3d_stereo_3d_format, &rna_UILayout_template_image_stereo_3d_stereo_3d_format};
+		func->identifier = "template_image_stereo_3d";
+		func->description = "User interface for setting image stereo 3d options";
+		func->call = UILayout_template_image_stereo_3d_call;
+		rna_UILayout_template_image_stereo_3d_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_image_views_image_settings_ = {
+		{nullptr, 	nullptr,
+		-1, "image_settings", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ImageFormatSettings
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_image_views_image_settings, &rna_UILayout_template_image_views_image_settings};
+		func->identifier = "template_image_views";
+		func->description = "User interface for setting image views output options";
+		func->call = UILayout_template_image_views_call;
+		rna_UILayout_template_image_views_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_movieclip_data_ = {
+		{&rna_UILayout_template_movieclip_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_movieclip_property_ = {
+		{&rna_UILayout_template_movieclip_compact, 	&rna_UILayout_template_movieclip_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_movieclip_compact_ = {
+		{nullptr, 	&rna_UILayout_template_movieclip_property,
+		-1, "compact", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use more compact layout",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_movieclip_data, &rna_UILayout_template_movieclip_compact};
+		func->identifier = "template_movieclip";
+		func->flag = 8;
+		func->description = "Item(s). User interface for selecting movie clips and their source paths.";
+		func->call = UILayout_template_movieclip_call;
+		rna_UILayout_template_movieclip_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_track_data_ = {
+		{&rna_UILayout_template_track_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_track_property_ = {
+		{nullptr, 	&rna_UILayout_template_track_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_track_data, &rna_UILayout_template_track_property};
+		func->identifier = "template_track";
+		func->description = "Item. A movie-track widget to preview tracking image.";
+		func->call = UILayout_template_track_call;
+		rna_UILayout_template_track_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_marker_data_ = {
+		{&rna_UILayout_template_marker_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_marker_property_ = {
+		{&rna_UILayout_template_marker_clip_user, 	&rna_UILayout_template_marker_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_marker_clip_user_ = {
+		{&rna_UILayout_template_marker_track, 	&rna_UILayout_template_marker_property,
+		-1, "clip_user", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_MovieClipUser
+	};
+	rna_UILayout_template_marker_track_ = {
+		{&rna_UILayout_template_marker_compact, 	&rna_UILayout_template_marker_clip_user,
+		-1, "track", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_MovieTrackingTrack
+	};
+	rna_UILayout_template_marker_compact_ = {
+		{nullptr, 	&rna_UILayout_template_marker_track,
+		-1, "compact", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Use more compact layout",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_marker_data, &rna_UILayout_template_marker_compact};
+		func->identifier = "template_marker";
+		func->description = "Item. A widget to control single marker settings.";
+		func->call = UILayout_template_marker_call;
+		rna_UILayout_template_marker_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_movieclip_information_data_ = {
+		{&rna_UILayout_template_movieclip_information_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_movieclip_information_property_ = {
+		{&rna_UILayout_template_movieclip_information_clip_user, 	&rna_UILayout_template_movieclip_information_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_movieclip_information_clip_user_ = {
+		{nullptr, 	&rna_UILayout_template_movieclip_information_property,
+		-1, "clip_user", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_MovieClipUser
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_movieclip_information_data, &rna_UILayout_template_movieclip_information_clip_user};
+		func->identifier = "template_movieclip_information";
+		func->description = "Item. Movie clip information data.";
+		func->call = UILayout_template_movieclip_information_call;
+		rna_UILayout_template_movieclip_information_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_list_listtype_name_ = {
+		{&rna_UILayout_template_list_list_id, 	nullptr,
+		-1, "listtype_name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the list type to use",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_list_list_id_ = {
+		{&rna_UILayout_template_list_dataptr, 	&rna_UILayout_template_list_listtype_name,
+		-1, "list_id", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of this list widget. Necessary to tell apart different list widgets. Mandatory when using default \"UI_UL_list\" class. If this not an empty string, the uilist gets a custom ID, otherwise it takes the name of the class used to define the uilist (for example, if the class name is \"OBJECT_UL_vgroups\", and list_id is not set by the script, then bl_idname = \"OBJECT_UL_vgroups\")",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_list_dataptr_ = {
+		{&rna_UILayout_template_list_propname, 	&rna_UILayout_template_list_list_id,
+		-1, "dataptr", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take the Collection property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_list_propname_ = {
+		{&rna_UILayout_template_list_active_dataptr, 	&rna_UILayout_template_list_dataptr,
+		-1, "propname", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the Collection property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_list_active_dataptr_ = {
+		{&rna_UILayout_template_list_active_propname, 	&rna_UILayout_template_list_propname,
+		-1, "active_dataptr", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take the integer property, index of the active item",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_list_active_propname_ = {
+		{&rna_UILayout_template_list_item_dyntip_propname, 	&rna_UILayout_template_list_active_dataptr,
+		-1, "active_propname", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the integer property in active_data, index of the active item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_list_item_dyntip_propname_ = {
+		{&rna_UILayout_template_list_rows, 	&rna_UILayout_template_list_active_propname,
+		-1, "item_dyntip_propname", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of a string property in items, to use as tooltip content",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_list_rows_ = {
+		{&rna_UILayout_template_list_maxrows, 	&rna_UILayout_template_list_item_dyntip_propname,
+		-1, "rows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Default and minimum number of rows to display",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 5, nullptr
+	};
+	rna_UILayout_template_list_maxrows_ = {
+		{&rna_UILayout_template_list_type, 	&rna_UILayout_template_list_rows,
+		-1, "maxrows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Default maximum number of rows to display",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 5, nullptr
+	};
+	rna_UILayout_template_list_type_ = {
+		{&rna_UILayout_template_list_columns, 	&rna_UILayout_template_list_maxrows,
+		-1, "type", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Type",
+		"Type of layout to use",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_uilist_layout_type_items, 2, 0
+	};
+	static const DeprecatedRNA rna_UILayout_template_list_columns_deprecated = {
+	"Unused but kept for compatibility reasons. Setting the parameter has no effect, there will always be a single column.",
+		501, 600,
+};
+
+	rna_UILayout_template_list_columns_ = {
+		{&rna_UILayout_template_list_sort_reverse, 	&rna_UILayout_template_list_type,
+		-1, "columns", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Number of items to display per row, for GRID layout",
+		0, "*",
+		&rna_UILayout_template_list_columns_deprecated,		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 9, nullptr
+	};
+	rna_UILayout_template_list_sort_reverse_ = {
+		{&rna_UILayout_template_list_sort_lock, 	&rna_UILayout_template_list_columns,
+		-1, "sort_reverse", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Display items in reverse order by default",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_list_sort_lock_ = {
+		{nullptr, 	&rna_UILayout_template_list_sort_reverse,
+		-1, "sort_lock", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Lock display order to default value",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_list_listtype_name, &rna_UILayout_template_list_sort_lock};
+		func->identifier = "template_list";
+		func->flag = 8;
+		func->description = "Item. A list widget to display data, e.g. vertexgroups.";
+		func->call = UILayout_template_list_call;
+		rna_UILayout_template_list_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_running_jobs";
+		func->flag = 8;
+		func->description = "template_running_jobs";
+		func->call = UILayout_template_running_jobs_call;
+		rna_UILayout_template_running_jobs_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_operator_search";
+		func->description = "template_operator_search";
+		func->call = UILayout_template_operator_search_call;
+		rna_UILayout_template_operator_search_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_menu_search";
+		func->description = "template_menu_search";
+		func->call = UILayout_template_menu_search_call;
+		rna_UILayout_template_menu_search_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_header_3D_mode";
+		func->flag = 8;
+		func->description = "";
+		func->call = UILayout_template_header_3D_mode_call;
+		rna_UILayout_template_header_3D_mode_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_edit_mode_selection";
+		func->flag = 8;
+		func->description = "Inserts common 3DView Edit modes header UI (selector for selection mode)";
+		func->call = UILayout_template_edit_mode_selection_call;
+		rna_UILayout_template_edit_mode_selection_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_reports_banner";
+		func->flag = 8;
+		func->description = "template_reports_banner";
+		func->call = UILayout_template_reports_banner_call;
+		rna_UILayout_template_reports_banner_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_input_status";
+		func->flag = 8;
+		func->description = "template_input_status";
+		func->call = UILayout_template_input_status_call;
+		rna_UILayout_template_input_status_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_status_info";
+		func->flag = 8;
+		func->description = "template_status_info";
+		func->call = UILayout_template_status_info_call;
+		rna_UILayout_template_status_info_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_link_ntree_ = {
+		{&rna_UILayout_template_node_link_node, 	nullptr,
+		-1, "ntree", 8388736, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Node tree containing the node",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_NodeTree
+	};
+	rna_UILayout_template_node_link_node_ = {
+		{&rna_UILayout_template_node_link_socket, 	&rna_UILayout_template_node_link_ntree,
+		-1, "node", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Node owning the socket",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Node
+	};
+	rna_UILayout_template_node_link_socket_ = {
+		{nullptr, 	&rna_UILayout_template_node_link_node,
+		-1, "socket", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Socket to display the link for",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_NodeSocket
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_link_ntree, &rna_UILayout_template_node_link_socket};
+		func->identifier = "template_node_link";
+		func->flag = 8;
+		func->description = "template_node_link";
+		func->call = UILayout_template_node_link_call;
+		rna_UILayout_template_node_link_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_view_ntree_ = {
+		{&rna_UILayout_template_node_view_node, 	nullptr,
+		-1, "ntree", 8388736, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Node tree containing the node",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_NodeTree
+	};
+	rna_UILayout_template_node_view_node_ = {
+		{&rna_UILayout_template_node_view_socket, 	&rna_UILayout_template_node_view_ntree,
+		-1, "node", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Node to display",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Node
+	};
+	rna_UILayout_template_node_view_socket_ = {
+		{nullptr, 	&rna_UILayout_template_node_view_node,
+		-1, "socket", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Socket to display",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_NodeSocket
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_view_ntree, &rna_UILayout_template_node_view_socket};
+		func->identifier = "template_node_view";
+		func->flag = 8;
+		func->description = "template_node_view";
+		func->call = UILayout_template_node_view_call;
+		rna_UILayout_template_node_view_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_operator_registration_errors_idname_ = {
+		{nullptr, 	nullptr,
+		-1, "idname", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_operator_registration_errors_idname, &rna_UILayout_template_node_operator_registration_errors_idname};
+		func->identifier = "template_node_operator_registration_errors";
+		func->description = "template_node_operator_registration_errors";
+		func->call = UILayout_template_node_operator_registration_errors_call;
+		rna_UILayout_template_node_operator_registration_errors_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_asset_menu_items_catalog_path_ = {
+		{&rna_UILayout_template_node_asset_menu_items_operator, 	nullptr,
+		-1, "catalog_path", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	static const EnumPropertyItem rna_UILayout_template_node_asset_menu_items_operator_items[3] = {
+		{0, "ADD", 0, "Add Node", "Add a node to the active tree."	},
+		{1, "SWAP", 0, "Swap Node", "Replace the selected nodes with the specified type."	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UILayout_template_node_asset_menu_items_operator_ = {
+		{nullptr, 	&rna_UILayout_template_node_asset_menu_items_catalog_path,
+		-1, "operator", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Operator",
+		"The operator the asset menu will use",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UILayout_template_node_asset_menu_items_operator_items, 2, 0
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_asset_menu_items_catalog_path, &rna_UILayout_template_node_asset_menu_items_operator};
+		func->identifier = "template_node_asset_menu_items";
+		func->flag = 8;
+		func->description = "template_node_asset_menu_items";
+		func->call = UILayout_template_node_asset_menu_items_call;
+		rna_UILayout_template_node_asset_menu_items_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_modifier_asset_menu_items_catalog_path_ = {
+		{&rna_UILayout_template_modifier_asset_menu_items_skip_essentials, 	nullptr,
+		-1, "catalog_path", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_modifier_asset_menu_items_skip_essentials_ = {
+		{nullptr, 	&rna_UILayout_template_modifier_asset_menu_items_catalog_path,
+		-1, "skip_essentials", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_modifier_asset_menu_items_catalog_path, &rna_UILayout_template_modifier_asset_menu_items_skip_essentials};
+		func->identifier = "template_modifier_asset_menu_items";
+		func->description = "template_modifier_asset_menu_items";
+		func->call = UILayout_template_modifier_asset_menu_items_call;
+		rna_UILayout_template_modifier_asset_menu_items_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_operator_asset_menu_items_catalog_path_ = {
+		{nullptr, 	nullptr,
+		-1, "catalog_path", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_operator_asset_menu_items_catalog_path, &rna_UILayout_template_node_operator_asset_menu_items_catalog_path};
+		func->identifier = "template_node_operator_asset_menu_items";
+		func->flag = 8;
+		func->description = "template_node_operator_asset_menu_items";
+		func->call = UILayout_template_node_operator_asset_menu_items_call;
+		rna_UILayout_template_node_operator_asset_menu_items_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_node_operator_asset_root_items";
+		func->flag = 8;
+		func->description = "template_node_operator_asset_root_items";
+		func->call = UILayout_template_node_operator_asset_root_items_call;
+		rna_UILayout_template_node_operator_asset_root_items_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_texture_user";
+		func->flag = 8;
+		func->description = "template_texture_user";
+		func->call = UILayout_template_texture_user_call;
+		rna_UILayout_template_texture_user_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_keymap_item_properties_item_ = {
+		{nullptr, 	nullptr,
+		-1, "item", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_KeyMapItem
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_keymap_item_properties_item, &rna_UILayout_template_keymap_item_properties_item};
+		func->identifier = "template_keymap_item_properties";
+		func->description = "template_keymap_item_properties";
+		func->call = UILayout_template_keymap_item_properties_call;
+		rna_UILayout_template_keymap_item_properties_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_component_menu_data_ = {
+		{&rna_UILayout_template_component_menu_property, 	nullptr,
+		-1, "data", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_component_menu_property_ = {
+		{&rna_UILayout_template_component_menu_name, 	&rna_UILayout_template_component_menu_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_component_menu_name_ = {
+		{nullptr, 	&rna_UILayout_template_component_menu_property,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_component_menu_data, &rna_UILayout_template_component_menu_name};
+		func->identifier = "template_component_menu";
+		func->description = "Item. Display expanded property in a popup menu";
+		func->call = UILayout_template_component_menu_call;
+		rna_UILayout_template_component_menu_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_colorspace_settings_data_ = {
+		{&rna_UILayout_template_colorspace_settings_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_colorspace_settings_property_ = {
+		{nullptr, 	&rna_UILayout_template_colorspace_settings_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_colorspace_settings_data, &rna_UILayout_template_colorspace_settings_property};
+		func->identifier = "template_colorspace_settings";
+		func->description = "Item. A widget to control input color space settings.";
+		func->call = UILayout_template_colorspace_settings_call;
+		rna_UILayout_template_colorspace_settings_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_colormanaged_view_settings_data_ = {
+		{&rna_UILayout_template_colormanaged_view_settings_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_colormanaged_view_settings_property_ = {
+		{nullptr, 	&rna_UILayout_template_colormanaged_view_settings_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_colormanaged_view_settings_data, &rna_UILayout_template_colormanaged_view_settings_property};
+		func->identifier = "template_colormanaged_view_settings";
+		func->flag = 8;
+		func->description = "Item. A widget to control color managed view settings.";
+		func->call = UILayout_template_colormanaged_view_settings_call;
+		rna_UILayout_template_colormanaged_view_settings_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	static float rna_UILayout_template_node_socket_color_default[4] = {
+		0.0f,
+		0.0f,
+		0.0f,
+		1.0f
+	};
+	rna_UILayout_template_node_socket_color_ = {
+		{nullptr, 	nullptr,
+		-1, "color", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 1, {4, 0, 0}, 4,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 3, nullptr, nullptr, 0.0f, rna_UILayout_template_node_socket_color_default
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_socket_color, &rna_UILayout_template_node_socket_color};
+		func->identifier = "template_node_socket";
+		func->flag = 8;
+		func->description = "Node Socket Icon";
+		func->call = UILayout_template_node_socket_call;
+		rna_UILayout_template_node_socket_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_cache_file_data_ = {
+		{&rna_UILayout_template_cache_file_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_cache_file_property_ = {
+		{nullptr, 	&rna_UILayout_template_cache_file_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_cache_file_data, &rna_UILayout_template_cache_file_property};
+		func->identifier = "template_cache_file";
+		func->flag = 8;
+		func->description = "Item(s). User interface for selecting cache files and their source paths";
+		func->call = UILayout_template_cache_file_call;
+		rna_UILayout_template_cache_file_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_cache_file_velocity_data_ = {
+		{&rna_UILayout_template_cache_file_velocity_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_cache_file_velocity_property_ = {
+		{nullptr, 	&rna_UILayout_template_cache_file_velocity_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_cache_file_velocity_data, &rna_UILayout_template_cache_file_velocity_property};
+		func->identifier = "template_cache_file_velocity";
+		func->description = "Show cache files velocity properties";
+		func->call = UILayout_template_cache_file_velocity_call;
+		rna_UILayout_template_cache_file_velocity_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_cache_file_time_settings_data_ = {
+		{&rna_UILayout_template_cache_file_time_settings_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_cache_file_time_settings_property_ = {
+		{nullptr, 	&rna_UILayout_template_cache_file_time_settings_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_cache_file_time_settings_data, &rna_UILayout_template_cache_file_time_settings_property};
+		func->identifier = "template_cache_file_time_settings";
+		func->description = "Show cache files time settings";
+		func->call = UILayout_template_cache_file_time_settings_call;
+		rna_UILayout_template_cache_file_time_settings_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_cache_file_layers_data_ = {
+		{&rna_UILayout_template_cache_file_layers_property, 	nullptr,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_cache_file_layers_property_ = {
+		{nullptr, 	&rna_UILayout_template_cache_file_layers_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_cache_file_layers_data, &rna_UILayout_template_cache_file_layers_property};
+		func->identifier = "template_cache_file_layers";
+		func->flag = 8;
+		func->description = "Show cache files override layers properties";
+		func->call = UILayout_template_cache_file_layers_call;
+		rna_UILayout_template_cache_file_layers_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_recent_files_rows_ = {
+		{&rna_UILayout_template_recent_files_found, 	nullptr,
+		-1, "rows", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Maximum number of items to show",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, INT_MAX, 1, INT_MAX, 1, nullptr, nullptr, 6, nullptr
+	};
+	rna_UILayout_template_recent_files_found_ = {
+		{nullptr, 	&rna_UILayout_template_recent_files_rows,
+		-1, "found", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Number of items drawn",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_recent_files_rows, &rna_UILayout_template_recent_files_found};
+		func->identifier = "template_recent_files";
+		func->description = "Show list of recently saved .blend files";
+		func->call = UILayout_template_recent_files_call;
+		func->c_ret = &rna_UILayout_template_recent_files_found;
+		rna_UILayout_template_recent_files_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_file_select_path_params_ = {
+		{nullptr, 	nullptr,
+		-1, "params", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"File browser parameters whose path is edited",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_FileSelectParams
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_file_select_path_params, &rna_UILayout_template_file_select_path_params};
+		func->identifier = "template_file_select_path";
+		func->flag = 8;
+		func->description = "Item. A text button to set the active file browser path.";
+		func->call = UILayout_template_file_select_path_call;
+		rna_UILayout_template_file_select_path_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_event_from_keymap_item_item_ = {
+		{&rna_UILayout_template_event_from_keymap_item_text, 	nullptr,
+		-1, "item", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "Item",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_KeyMapItem
+	};
+	rna_UILayout_template_event_from_keymap_item_text_ = {
+		{&rna_UILayout_template_event_from_keymap_item_text_ctxt, 	&rna_UILayout_template_event_from_keymap_item_item,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_event_from_keymap_item_text_ctxt_ = {
+		{&rna_UILayout_template_event_from_keymap_item_translate, 	&rna_UILayout_template_event_from_keymap_item_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_event_from_keymap_item_translate_ = {
+		{nullptr, 	&rna_UILayout_template_event_from_keymap_item_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_event_from_keymap_item_item, &rna_UILayout_template_event_from_keymap_item_translate};
+		func->identifier = "template_event_from_keymap_item";
+		func->description = "Display keymap item as icons/text";
+		func->call = UILayout_template_event_from_keymap_item_call;
+		rna_UILayout_template_event_from_keymap_item_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_light_linking_collection_context_layout_ = {
+		{&rna_UILayout_template_light_linking_collection_data, 	nullptr,
+		-1, "context_layout", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Layout to set active list element as context properties",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UILayout_template_light_linking_collection_data_ = {
+		{&rna_UILayout_template_light_linking_collection_property, 	&rna_UILayout_template_light_linking_collection_context_layout,
+		-1, "data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UILayout_template_light_linking_collection_property_ = {
+		{nullptr, 	&rna_UILayout_template_light_linking_collection_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_light_linking_collection_context_layout, &rna_UILayout_template_light_linking_collection_property};
+		func->identifier = "template_light_linking_collection";
+		func->flag = 8;
+		func->description = "Visualization of a content of a light linking collection";
+		func->call = UILayout_template_light_linking_collection_call;
+		rna_UILayout_template_light_linking_collection_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_bone_collection_tree";
+		func->flag = 8;
+		func->description = "Show bone collections tree";
+		func->call = UILayout_template_bone_collection_tree_call;
+		rna_UILayout_template_bone_collection_tree_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_grease_pencil_layer_tree";
+		func->flag = 8;
+		func->description = "View of the active Grease Pencil layer tree";
+		func->call = UILayout_template_grease_pencil_layer_tree_call;
+		rna_UILayout_template_grease_pencil_layer_tree_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_tree_interface_interface_ = {
+		{nullptr, 	nullptr,
+		-1, "interface", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "Node Tree Interface",
+		"Interface of a node tree to display",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_NodeTreeInterface
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_tree_interface_interface, &rna_UILayout_template_node_tree_interface_interface};
+		func->identifier = "template_node_tree_interface";
+		func->flag = 8;
+		func->description = "Show a node tree interface";
+		func->call = UILayout_template_node_tree_interface_call;
+		rna_UILayout_template_node_tree_interface_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_node_inputs_node_ = {
+		{nullptr, 	nullptr,
+		-1, "node", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "Node",
+		"Display inputs of this node",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Node
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_node_inputs_node, &rna_UILayout_template_node_inputs_node};
+		func->identifier = "template_node_inputs";
+		func->flag = 8;
+		func->description = "Show a node settings and input socket values";
+		func->call = UILayout_template_node_inputs_call;
+		rna_UILayout_template_node_inputs_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_asset_shelf_popover_asset_shelf_ = {
+		{&rna_UILayout_template_asset_shelf_popover_name, 	nullptr,
+		-1, "asset_shelf", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the asset shelf to display (``bl_idname``)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_asset_shelf_popover_name_ = {
+		{&rna_UILayout_template_asset_shelf_popover_icon, 	&rna_UILayout_template_asset_shelf_popover_asset_shelf,
+		-1, "name", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Optional name to indicate the active asset",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_asset_shelf_popover_icon_ = {
+		{&rna_UILayout_template_asset_shelf_popover_icon_value, 	&rna_UILayout_template_asset_shelf_popover_name,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_template_asset_shelf_popover_icon_value_ = {
+		{nullptr, 	&rna_UILayout_template_asset_shelf_popover_icon,
+		-1, "icon_value", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_asset_shelf_popover_asset_shelf, &rna_UILayout_template_asset_shelf_popover_icon_value};
+		func->identifier = "template_asset_shelf_popover";
+		func->flag = 8;
+		func->description = "Create a button to open an asset shelf in a popover";
+		func->call = UILayout_template_asset_shelf_popover_call;
+		rna_UILayout_template_asset_shelf_popover_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UILayout_template_popup_confirm_operator_ = {
+		{&rna_UILayout_template_popup_confirm_text, 	nullptr,
+		-1, "operator", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of the operator",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_popup_confirm_text_ = {
+		{&rna_UILayout_template_popup_confirm_text_ctxt, 	&rna_UILayout_template_popup_confirm_operator,
+		-1, "text", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic text of the item",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_popup_confirm_text_ctxt_ = {
+		{&rna_UILayout_template_popup_confirm_translate, 	&rna_UILayout_template_popup_confirm_text,
+		-1, "text_ctxt", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Override automatic translation context of the given text",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_popup_confirm_translate_ = {
+		{&rna_UILayout_template_popup_confirm_icon, 	&rna_UILayout_template_popup_confirm_text_ctxt,
+		-1, "translate", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Translate the given text, when UI translation is enabled",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+	rna_UILayout_template_popup_confirm_icon_ = {
+		{&rna_UILayout_template_popup_confirm_cancel_text, 	&rna_UILayout_template_popup_confirm_translate,
+		-1, "icon", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Override automatic icon of the item",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+	rna_UILayout_template_popup_confirm_cancel_text_ = {
+		{&rna_UILayout_template_popup_confirm_cancel_default, 	&rna_UILayout_template_popup_confirm_icon,
+		-1, "cancel_text", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Optional text to use for the cancel, not shown when an empty string",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UILayout_template_popup_confirm_cancel_default_ = {
+		{&rna_UILayout_template_popup_confirm_properties, 	&rna_UILayout_template_popup_confirm_cancel_text,
+		-1, "cancel_default", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Cancel button by default",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UILayout_template_popup_confirm_properties_ = {
+		{nullptr, 	&rna_UILayout_template_popup_confirm_cancel_default,
+		-1, "properties", 8388608, 0, 7, 0, 0, PropertyPathTemplateType(0), "",
+		"Operator properties to fill in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_OperatorProperties
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UILayout_template_popup_confirm_operator, &rna_UILayout_template_popup_confirm_properties};
+		func->identifier = "template_popup_confirm";
+		func->flag = 16;
+		func->description = "Add confirm & cancel buttons into a popup which will close the popup when pressed";
+		func->call = UILayout_template_popup_confirm_call;
+		func->c_ret = &rna_UILayout_template_popup_confirm_properties;
+		rna_UILayout_template_popup_confirm_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "template_shape_key_tree";
+		func->flag = 8;
+		func->description = "Shape Key tree view";
+		func->call = UILayout_template_shape_key_tree_call;
+		rna_UILayout_template_shape_key_tree_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Panel */
+static CollectionPropertyRNA rna_Panel_rna_properties_;
+PropertyRNA &rna_Panel_rna_properties = reinterpret_cast<PropertyRNA &>(rna_Panel_rna_properties_);
+
+static PointerPropertyRNA rna_Panel_rna_type_;
+PropertyRNA &rna_Panel_rna_type = reinterpret_cast<PropertyRNA &>(rna_Panel_rna_type_);
+
+static PointerPropertyRNA rna_Panel_layout_;
+PropertyRNA &rna_Panel_layout = reinterpret_cast<PropertyRNA &>(rna_Panel_layout_);
+
+static StringPropertyRNA rna_Panel_text_;
+PropertyRNA &rna_Panel_text = reinterpret_cast<PropertyRNA &>(rna_Panel_text_);
+
+static PointerPropertyRNA rna_Panel_custom_data_;
+PropertyRNA &rna_Panel_custom_data = reinterpret_cast<PropertyRNA &>(rna_Panel_custom_data_);
+
+static StringPropertyRNA rna_Panel_bl_idname_;
+PropertyRNA &rna_Panel_bl_idname = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_idname_);
+
+static StringPropertyRNA rna_Panel_bl_label_;
+PropertyRNA &rna_Panel_bl_label = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_label_);
+
+static StringPropertyRNA rna_Panel_bl_translation_context_;
+PropertyRNA &rna_Panel_bl_translation_context = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_translation_context_);
+
+static StringPropertyRNA rna_Panel_bl_description_;
+PropertyRNA &rna_Panel_bl_description = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_description_);
+
+static StringPropertyRNA rna_Panel_bl_category_;
+PropertyRNA &rna_Panel_bl_category = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_category_);
+
+static EnumPropertyRNA rna_Panel_bl_icon_;
+PropertyRNA &rna_Panel_bl_icon = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_icon_);
+
+static IntPropertyRNA rna_Panel_bl_icon_value_;
+PropertyRNA &rna_Panel_bl_icon_value = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_icon_value_);
+
+static StringPropertyRNA rna_Panel_bl_owner_id_;
+PropertyRNA &rna_Panel_bl_owner_id = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_owner_id_);
+
+static EnumPropertyRNA rna_Panel_bl_space_type_;
+PropertyRNA &rna_Panel_bl_space_type = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_space_type_);
+
+static EnumPropertyRNA rna_Panel_bl_region_type_;
+PropertyRNA &rna_Panel_bl_region_type = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_region_type_);
+
+static StringPropertyRNA rna_Panel_bl_context_;
+PropertyRNA &rna_Panel_bl_context = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_context_);
+
+static EnumPropertyRNA rna_Panel_bl_options_;
+PropertyRNA &rna_Panel_bl_options = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_options_);
+
+static StringPropertyRNA rna_Panel_bl_parent_id_;
+PropertyRNA &rna_Panel_bl_parent_id = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_parent_id_);
+
+static IntPropertyRNA rna_Panel_bl_ui_units_x_;
+PropertyRNA &rna_Panel_bl_ui_units_x = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_ui_units_x_);
+
+static IntPropertyRNA rna_Panel_bl_order_;
+PropertyRNA &rna_Panel_bl_order = reinterpret_cast<PropertyRNA &>(rna_Panel_bl_order_);
+
+static BoolPropertyRNA rna_Panel_use_pin_;
+PropertyRNA &rna_Panel_use_pin = reinterpret_cast<PropertyRNA &>(rna_Panel_use_pin_);
+
+static BoolPropertyRNA rna_Panel_is_popover_;
+PropertyRNA &rna_Panel_is_popover = reinterpret_cast<PropertyRNA &>(rna_Panel_is_popover_);
+
+static BoolPropertyRNA rna_Panel_poll_visible_;
+PropertyRNA &rna_Panel_poll_visible = reinterpret_cast<PropertyRNA &>(rna_Panel_poll_visible_);
+
+static PointerPropertyRNA rna_Panel_poll_context_;
+PropertyRNA &rna_Panel_poll_context = reinterpret_cast<PropertyRNA &>(rna_Panel_poll_context_);
+
+FunctionRNA *rna_Panel_poll_func;
+static PointerPropertyRNA rna_Panel_draw_context_;
+PropertyRNA &rna_Panel_draw_context = reinterpret_cast<PropertyRNA &>(rna_Panel_draw_context_);
+
+FunctionRNA *rna_Panel_draw_func;
+static PointerPropertyRNA rna_Panel_draw_header_context_;
+PropertyRNA &rna_Panel_draw_header_context = reinterpret_cast<PropertyRNA &>(rna_Panel_draw_header_context_);
+
+FunctionRNA *rna_Panel_draw_header_func;
+static PointerPropertyRNA rna_Panel_draw_header_preset_context_;
+PropertyRNA &rna_Panel_draw_header_preset_context = reinterpret_cast<PropertyRNA &>(rna_Panel_draw_header_preset_context_);
+
+FunctionRNA *rna_Panel_draw_header_preset_func;
+StructRNA *RNA_Panel;
+void register_struct_Panel(BlenderRNA &brna)
+{
+	rna_Panel_rna_properties_ = {
+		{&rna_Panel_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_rna_properties_begin, Panel_rna_properties_next, Panel_rna_properties_end, Panel_rna_properties_get, nullptr, nullptr, Panel_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_Panel_rna_type_ = {
+		{&rna_Panel_layout, 	&rna_Panel_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_Panel_layout_ = {
+		{&rna_Panel_text, 	&rna_Panel_rna_type,
+		-1, "layout", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Layout",
+		"Defines the structure of the panel in the UI",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_layout_get, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+
+	rna_Panel_text_ = {
+		{&rna_Panel_custom_data, 	&rna_Panel_layout,
+		-1, "text", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Text",
+		"Override for the panel label in the UI",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_text_get, Panel_text_length, Panel_text_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Panel_custom_data_ = {
+		{&rna_Panel_bl_idname, 	&rna_Panel_text,
+		-1, "custom_data", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Custom Data",
+		"Panel data",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_custom_data_get, nullptr, rna_Panel_custom_data_typef, nullptr,RNA_Constraint
+	};
+
+	rna_Panel_bl_idname_ = {
+		{&rna_Panel_bl_label, 	&rna_Panel_custom_data,
+		-1, "bl_idname", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "ID Name",
+		"If this is set, the panel gets a custom ID, otherwise it takes the name of the class used to define the panel. For example, if the class name is \"OBJECT_PT_hello\", and bl_idname is not set by the script, then bl_idname = \"OBJECT_PT_hello\".",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_idname_get, Panel_bl_idname_length, Panel_bl_idname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Panel_bl_label_ = {
+		{&rna_Panel_bl_translation_context, 	&rna_Panel_bl_idname,
+		-1, "bl_label", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "Label",
+		"The panel label, shows up in the panel header at the right of the triangle used to collapse the panel",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_label_get, Panel_bl_label_length, Panel_bl_label_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Panel_bl_translation_context_ = {
+		{&rna_Panel_bl_description, 	&rna_Panel_bl_label,
+		-1, "bl_translation_context", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Specific translation context, only define when the label needs to be disambiguated from others using the exact same label",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_translation_context_get, Panel_bl_translation_context_length, Panel_bl_translation_context_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "*"
+	};
+
+	rna_Panel_bl_description_ = {
+		{&rna_Panel_bl_category, 	&rna_Panel_bl_translation_context,
+		-1, "bl_description", 49, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"The panel tooltip",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_description_get, Panel_bl_description_length, Panel_bl_description_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 1024, ""
+	};
+
+	rna_Panel_bl_category_ = {
+		{&rna_Panel_bl_icon, 	&rna_Panel_bl_description,
+		-1, "bl_category", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"The category (tab) in which the panel will be displayed, when applicable",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_category_get, Panel_bl_category_length, Panel_bl_category_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Panel_bl_icon_ = {
+		{&rna_Panel_bl_icon_value, 	&rna_Panel_bl_category,
+		-1, "bl_icon", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon",
+		"Icon override for the panel category tab",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_icon_get, Panel_bl_icon_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_icon_items, 1029, 0
+	};
+
+	rna_Panel_bl_icon_value_ = {
+		{&rna_Panel_bl_owner_id, 	&rna_Panel_bl_icon,
+		-1, "bl_icon_value", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Icon Value",
+		"Icon value override for the panel category tab",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_icon_value_get, Panel_bl_icon_value_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Panel_bl_owner_id_ = {
+		{&rna_Panel_bl_space_type, 	&rna_Panel_bl_icon_value,
+		-1, "bl_owner_id", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"The ID owning the data displayed in the panel, if any",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_owner_id_get, Panel_bl_owner_id_length, Panel_bl_owner_id_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Panel_bl_space_type_ = {
+		{&rna_Panel_bl_region_type, 	&rna_Panel_bl_owner_id,
+		-1, "bl_space_type", 19, 0, 0, 0, 0, PropertyPathTemplateType(0), "Space Type",
+		"The space where the panel is going to be used in",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_space_type_get, Panel_bl_space_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_space_type_items, 24, 0
+	};
+
+	rna_Panel_bl_region_type_ = {
+		{&rna_Panel_bl_context, 	&rna_Panel_bl_space_type,
+		-1, "bl_region_type", 19, 0, 0, 0, 0, PropertyPathTemplateType(0), "Region Type",
+		"The region where the panel is going to be used in",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_region_type_get, Panel_bl_region_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_region_type_items, 17, 0
+	};
+
+	rna_Panel_bl_context_ = {
+		{&rna_Panel_bl_options, 	&rna_Panel_bl_region_type,
+		-1, "bl_context", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "Context",
+		"The context in which the panel belongs to. (TODO: explain the possible combinations bl_context/bl_region_type/bl_space_type)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_context_get, Panel_bl_context_length, Panel_bl_context_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	static const EnumPropertyItem rna_Panel_bl_options_items[5] = {
+		{1, "DEFAULT_CLOSED", 0, "Default Closed", "Defines if the panel has to be open or collapsed at the time of its creation"	},
+		{2, "HIDE_HEADER", 0, "Hide Header", "If set to False, the panel shows a header, which contains a clickable arrow to collapse the panel and the label (see bl_label)"	},
+		{16, "INSTANCED", 0, "Instanced Panel", "Multiple panels with this type can be used as part of a list depending on data external to the UI. Used to create panels for the modifiers and other stacks."	},
+		{4, "HEADER_LAYOUT_EXPAND", 0, "Expand Header Layout", "Allow buttons in the header to stretch and shrink to fill the entire layout width"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Panel_bl_options_ = {
+		{&rna_Panel_bl_parent_id, 	&rna_Panel_bl_context,
+		-1, "bl_options", 2097203, 0, 0, 0, 0, PropertyPathTemplateType(0), "Options",
+		"Options for this panel type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_options_get, Panel_bl_options_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Panel_bl_options_items, 4, 0
+	};
+
+	rna_Panel_bl_parent_id_ = {
+		{&rna_Panel_bl_ui_units_x, 	&rna_Panel_bl_options,
+		-1, "bl_parent_id", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "Parent ID Name",
+		"If this is set, the panel becomes a sub-panel",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_parent_id_get, Panel_bl_parent_id_length, Panel_bl_parent_id_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Panel_bl_ui_units_x_ = {
+		{&rna_Panel_bl_order, 	&rna_Panel_bl_parent_id,
+		-1, "bl_ui_units_x", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Units X",
+		"When set, defines popup panel width",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_ui_units_x_get, Panel_bl_ui_units_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Panel_bl_order_ = {
+		{&rna_Panel_use_pin, 	&rna_Panel_bl_ui_units_x,
+		-1, "bl_order", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Order",
+		"Panels with lower numbers are default ordered before panels with higher numbers",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_bl_order_get, Panel_bl_order_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Panel_use_pin_ = {
+		{&rna_Panel_is_popover, 	&rna_Panel_bl_order,
+		-1, "use_pin", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Pin Panel",
+		"Show the panel on all tabs",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_use_pin_get, Panel_use_pin_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Panel_is_popover_ = {
+		{nullptr, 	&rna_Panel_use_pin,
+		-1, "is_popover", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "Popover",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Panel_is_popover_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_Panel;
+	srna->cont.properties = {&rna_Panel_rna_properties, &rna_Panel_is_popover};
+	srna->identifier = "Panel";
+	srna->flag = 1540;
+	srna->name = "Panel";
+	srna->description = "Panel containing UI elements";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_Panel_rna_properties;
+	srna->refine = rna_Panel_refine;
+	srna->reg = rna_Panel_register;
+	srna->unreg = rna_Panel_unregister;
+	{
+	rna_Panel_poll_visible_ = {
+		{&rna_Panel_poll_context, 	nullptr,
+		-1, "visible", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_Panel_poll_context_ = {
+		{nullptr, 	&rna_Panel_poll_visible,
+		-1, "context", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Panel_poll_visible, &rna_Panel_poll_context};
+		func->identifier = "poll";
+		func->flag = 97;
+		func->description = "If this method returns a non-null output, then the panel can be drawn";
+		func->c_ret = &rna_Panel_poll_visible;
+		rna_Panel_poll_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Panel_draw_context_ = {
+		{nullptr, 	nullptr,
+		-1, "context", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Panel_draw_context, &rna_Panel_draw_context};
+		func->identifier = "draw";
+		func->flag = 32;
+		func->description = "Draw UI elements into the panel UI layout";
+		rna_Panel_draw_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Panel_draw_header_context_ = {
+		{nullptr, 	nullptr,
+		-1, "context", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Panel_draw_header_context, &rna_Panel_draw_header_context};
+		func->identifier = "draw_header";
+		func->flag = 96;
+		func->description = "Draw UI elements into the panel\'s header UI layout";
+		rna_Panel_draw_header_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Panel_draw_header_preset_context_ = {
+		{nullptr, 	nullptr,
+		-1, "context", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Panel_draw_header_preset_context, &rna_Panel_draw_header_preset_context};
+		func->identifier = "draw_header_preset";
+		func->flag = 96;
+		func->description = "Draw UI elements for presets in the panel\'s header";
+		rna_Panel_draw_header_preset_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* UIList */
+static CollectionPropertyRNA rna_UIList_rna_properties_;
+PropertyRNA &rna_UIList_rna_properties = reinterpret_cast<PropertyRNA &>(rna_UIList_rna_properties_);
+
+static PointerPropertyRNA rna_UIList_rna_type_;
+PropertyRNA &rna_UIList_rna_type = reinterpret_cast<PropertyRNA &>(rna_UIList_rna_type_);
+
+static StringPropertyRNA rna_UIList_bl_idname_;
+PropertyRNA &rna_UIList_bl_idname = reinterpret_cast<PropertyRNA &>(rna_UIList_bl_idname_);
+
+static StringPropertyRNA rna_UIList_list_id_;
+PropertyRNA &rna_UIList_list_id = reinterpret_cast<PropertyRNA &>(rna_UIList_list_id_);
+
+static EnumPropertyRNA rna_UIList_layout_type_;
+PropertyRNA &rna_UIList_layout_type = reinterpret_cast<PropertyRNA &>(rna_UIList_layout_type_);
+
+static BoolPropertyRNA rna_UIList_use_filter_show_;
+PropertyRNA &rna_UIList_use_filter_show = reinterpret_cast<PropertyRNA &>(rna_UIList_use_filter_show_);
+
+static StringPropertyRNA rna_UIList_filter_name_;
+PropertyRNA &rna_UIList_filter_name = reinterpret_cast<PropertyRNA &>(rna_UIList_filter_name_);
+
+static BoolPropertyRNA rna_UIList_use_filter_invert_;
+PropertyRNA &rna_UIList_use_filter_invert = reinterpret_cast<PropertyRNA &>(rna_UIList_use_filter_invert_);
+
+static BoolPropertyRNA rna_UIList_use_filter_sort_alpha_;
+PropertyRNA &rna_UIList_use_filter_sort_alpha = reinterpret_cast<PropertyRNA &>(rna_UIList_use_filter_sort_alpha_);
+
+static BoolPropertyRNA rna_UIList_use_filter_sort_reverse_;
+PropertyRNA &rna_UIList_use_filter_sort_reverse = reinterpret_cast<PropertyRNA &>(rna_UIList_use_filter_sort_reverse_);
+
+static BoolPropertyRNA rna_UIList_use_filter_sort_lock_;
+PropertyRNA &rna_UIList_use_filter_sort_lock = reinterpret_cast<PropertyRNA &>(rna_UIList_use_filter_sort_lock_);
+
+static IntPropertyRNA rna_UIList_bitflag_filter_item_;
+PropertyRNA &rna_UIList_bitflag_filter_item = reinterpret_cast<PropertyRNA &>(rna_UIList_bitflag_filter_item_);
+
+static IntPropertyRNA rna_UIList_bitflag_item_never_show_;
+PropertyRNA &rna_UIList_bitflag_item_never_show = reinterpret_cast<PropertyRNA &>(rna_UIList_bitflag_item_never_show_);
+
+static BoolPropertyRNA rna_UIList_bl_system_properties_get_do_create_;
+PropertyRNA &rna_UIList_bl_system_properties_get_do_create = reinterpret_cast<PropertyRNA &>(rna_UIList_bl_system_properties_get_do_create_);
+
+static PointerPropertyRNA rna_UIList_bl_system_properties_get_system_properties_;
+PropertyRNA &rna_UIList_bl_system_properties_get_system_properties = reinterpret_cast<PropertyRNA &>(rna_UIList_bl_system_properties_get_system_properties_);
+
+FunctionRNA *rna_UIList_bl_system_properties_get_func;
+static PointerPropertyRNA rna_UIList_draw_item_context_;
+PropertyRNA &rna_UIList_draw_item_context = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_context_);
+
+static PointerPropertyRNA rna_UIList_draw_item_layout_;
+PropertyRNA &rna_UIList_draw_item_layout = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_layout_);
+
+static PointerPropertyRNA rna_UIList_draw_item_data_;
+PropertyRNA &rna_UIList_draw_item_data = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_data_);
+
+static PointerPropertyRNA rna_UIList_draw_item_item_;
+PropertyRNA &rna_UIList_draw_item_item = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_item_);
+
+static IntPropertyRNA rna_UIList_draw_item_icon_;
+PropertyRNA &rna_UIList_draw_item_icon = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_icon_);
+
+static PointerPropertyRNA rna_UIList_draw_item_active_data_;
+PropertyRNA &rna_UIList_draw_item_active_data = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_active_data_);
+
+static StringPropertyRNA rna_UIList_draw_item_active_property_;
+PropertyRNA &rna_UIList_draw_item_active_property = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_active_property_);
+
+static IntPropertyRNA rna_UIList_draw_item_index_;
+PropertyRNA &rna_UIList_draw_item_index = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_index_);
+
+static IntPropertyRNA rna_UIList_draw_item_flt_flag_;
+PropertyRNA &rna_UIList_draw_item_flt_flag = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_item_flt_flag_);
+
+FunctionRNA *rna_UIList_draw_item_func;
+static PointerPropertyRNA rna_UIList_draw_filter_context_;
+PropertyRNA &rna_UIList_draw_filter_context = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_filter_context_);
+
+static PointerPropertyRNA rna_UIList_draw_filter_layout_;
+PropertyRNA &rna_UIList_draw_filter_layout = reinterpret_cast<PropertyRNA &>(rna_UIList_draw_filter_layout_);
+
+FunctionRNA *rna_UIList_draw_filter_func;
+static PointerPropertyRNA rna_UIList_filter_items_context_;
+PropertyRNA &rna_UIList_filter_items_context = reinterpret_cast<PropertyRNA &>(rna_UIList_filter_items_context_);
+
+static PointerPropertyRNA rna_UIList_filter_items_data_;
+PropertyRNA &rna_UIList_filter_items_data = reinterpret_cast<PropertyRNA &>(rna_UIList_filter_items_data_);
+
+static StringPropertyRNA rna_UIList_filter_items_property_;
+PropertyRNA &rna_UIList_filter_items_property = reinterpret_cast<PropertyRNA &>(rna_UIList_filter_items_property_);
+
+static IntPropertyRNA rna_UIList_filter_items_filter_flags_;
+PropertyRNA &rna_UIList_filter_items_filter_flags = reinterpret_cast<PropertyRNA &>(rna_UIList_filter_items_filter_flags_);
+
+static IntPropertyRNA rna_UIList_filter_items_filter_neworder_;
+PropertyRNA &rna_UIList_filter_items_filter_neworder = reinterpret_cast<PropertyRNA &>(rna_UIList_filter_items_filter_neworder_);
+
+FunctionRNA *rna_UIList_filter_items_func;
+StructRNA *RNA_UIList;
+void register_struct_UIList(BlenderRNA &brna)
+{
+	rna_UIList_rna_properties_ = {
+		{&rna_UIList_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_rna_properties_begin, UIList_rna_properties_next, UIList_rna_properties_end, UIList_rna_properties_get, nullptr, nullptr, UIList_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_UIList_rna_type_ = {
+		{&rna_UIList_bl_idname, 	&rna_UIList_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_UIList_bl_idname_ = {
+		{&rna_UIList_list_id, 	&rna_UIList_rna_type,
+		-1, "bl_idname", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "ID Name",
+		"If this is set, the uilist gets a custom ID, otherwise it takes the name of the class used to define the uilist (for example, if the class name is \"OBJECT_UL_vgroups\", and bl_idname is not set by the script, then bl_idname = \"OBJECT_UL_vgroups\")",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_bl_idname_get, UIList_bl_idname_length, UIList_bl_idname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_UIList_list_id_ = {
+		{&rna_UIList_layout_type, 	&rna_UIList_bl_idname,
+		-1, "list_id", 262144, 0, 0, 0, 0, PropertyPathTemplateType(0), "List Name",
+		"Identifier of the list, if any was passed to the \"list_id\" parameter of \"template_list()\"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {256, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_list_id_get, UIList_list_id_length, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 256, ""
+	};
+
+	rna_UIList_layout_type_ = {
+		{&rna_UIList_use_filter_show, 	&rna_UIList_list_id,
+		-1, "layout_type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "layout_type",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(uiList, layout_type), RawPropertyType(0), nullptr},
+		UIList_layout_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_uilist_layout_type_items, 2, 0
+	};
+
+	rna_UIList_use_filter_show_ = {
+		{&rna_UIList_filter_name, 	&rna_UIList_layout_type,
+		-1, "use_filter_show", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Show Filter",
+		"Show filtering options",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_use_filter_show_get, UIList_use_filter_show_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UIList_filter_name_ = {
+		{&rna_UIList_use_filter_invert, 	&rna_UIList_use_filter_show,
+		-1, "filter_name", -2147221503, 0, 0, 0, 0, PropertyPathTemplateType(0), "Filter by Name",
+		"Only show items matching this name (use \'*\' as wildcard)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {256, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_filter_name_get, UIList_filter_name_length, UIList_filter_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 256, ""
+	};
+
+	rna_UIList_use_filter_invert_ = {
+		{&rna_UIList_use_filter_sort_alpha, 	&rna_UIList_filter_name,
+		-1, "use_filter_invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert filtering (show hidden items, and vice versa)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_use_filter_invert_get, UIList_use_filter_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UIList_use_filter_sort_alpha_ = {
+		{&rna_UIList_use_filter_sort_reverse, 	&rna_UIList_use_filter_invert,
+		-1, "use_filter_sort_alpha", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sort by Name",
+		"Sort items by their name",
+		700, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_use_filter_sort_alpha_get, UIList_use_filter_sort_alpha_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UIList_use_filter_sort_reverse_ = {
+		{&rna_UIList_use_filter_sort_lock, 	&rna_UIList_use_filter_sort_alpha,
+		-1, "use_filter_sort_reverse", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Reverse",
+		"Reverse the order of shown items",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_use_filter_sort_reverse_get, UIList_use_filter_sort_reverse_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UIList_use_filter_sort_lock_ = {
+		{&rna_UIList_bitflag_filter_item, 	&rna_UIList_use_filter_sort_reverse,
+		-1, "use_filter_sort_lock", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lock Order",
+		"Lock the order of shown items (user cannot change it)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_use_filter_sort_lock_get, UIList_use_filter_sort_lock_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UIList_bitflag_filter_item_ = {
+		{&rna_UIList_bitflag_item_never_show, 	&rna_UIList_use_filter_sort_lock,
+		-1, "bitflag_filter_item", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "FILTER_ITEM",
+		"The value of the reserved bitflag \'FILTER_ITEM\' (in filter_flags values)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_bitflag_filter_item_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UIList_bitflag_item_never_show_ = {
+		{nullptr, 	&rna_UIList_bitflag_filter_item,
+		-1, "bitflag_item_never_show", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "ITEM_NEVER_SHOW",
+		"Skip the item from displaying in the list",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UIList_bitflag_item_never_show_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_UIList;
+	srna->cont.properties = {&rna_UIList_rna_properties, &rna_UIList_bitflag_item_never_show};
+	srna->identifier = "UIList";
+	srna->flag = 1668;
+	srna->name = "UIList";
+	srna->description = "UI list containing the elements of a collection";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_UIList_rna_properties;
+	srna->refine = rna_UIList_refine;
+	srna->reg = rna_UIList_register;
+	srna->unreg = rna_UIList_unregister;
+	srna->system_idproperties = rna_UIList_idprops;
+	{
+	rna_UIList_bl_system_properties_get_do_create_ = {
+		{&rna_UIList_bl_system_properties_get_system_properties, 	nullptr,
+		-1, "do_create", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Ensure that system properties are created if they do not exist yet",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_UIList_bl_system_properties_get_system_properties_ = {
+		{nullptr, 	&rna_UIList_bl_system_properties_get_do_create,
+		-1, "system_properties", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"The system properties root container, or None if there are no system properties stored in this data yet, and its creation was not requested",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_PropertyGroup
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UIList_bl_system_properties_get_do_create, &rna_UIList_bl_system_properties_get_system_properties};
+		func->identifier = "bl_system_properties_get";
+		func->flag = 8192;
+		func->description = "DEBUG ONLY. Internal access to runtime-defined RNA data storage, intended solely for testing and debugging purposes. Do not access it in regular scripting work, and in particular, do not assume that it contains writable data";
+		func->call = UIList_bl_system_properties_get_call;
+		func->c_ret = &rna_UIList_bl_system_properties_get_system_properties;
+		rna_UIList_bl_system_properties_get_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UIList_draw_item_context_ = {
+		{&rna_UIList_draw_item_layout, 	nullptr,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+	rna_UIList_draw_item_layout_ = {
+		{&rna_UIList_draw_item_data, 	&rna_UIList_draw_item_context,
+		-1, "layout", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Layout to draw the item",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+	rna_UIList_draw_item_data_ = {
+		{&rna_UIList_draw_item_item, 	&rna_UIList_draw_item_layout,
+		-1, "data", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take Collection property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UIList_draw_item_item_ = {
+		{&rna_UIList_draw_item_icon, 	&rna_UIList_draw_item_data,
+		-1, "item", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Item of the collection property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UIList_draw_item_icon_ = {
+		{&rna_UIList_draw_item_active_data, 	&rna_UIList_draw_item_item,
+		-1, "icon", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Icon of the item in the collection",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UIList_draw_item_active_data_ = {
+		{&rna_UIList_draw_item_active_property, 	&rna_UIList_draw_item_icon,
+		-1, "active_data", 8650752, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take property for the active element",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UIList_draw_item_active_property_ = {
+		{&rna_UIList_draw_item_index, 	&rna_UIList_draw_item_active_data,
+		-1, "active_property", 262145, 0, 9, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in active_data, for the active element",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	rna_UIList_draw_item_index_ = {
+		{&rna_UIList_draw_item_flt_flag, 	&rna_UIList_draw_item_active_property,
+		-1, "index", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Index of the item in the collection",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_UIList_draw_item_flt_flag_ = {
+		{nullptr, 	&rna_UIList_draw_item_index,
+		-1, "flt_flag", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The filter-flag result for this item",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UIList_draw_item_context, &rna_UIList_draw_item_flt_flag};
+		func->identifier = "draw_item";
+		func->flag = 96;
+		func->description = "Draw an item in the list (NOTE: when you define your own draw_item function, you may want to check given \'item\' is of the right type...)";
+		rna_UIList_draw_item_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UIList_draw_filter_context_ = {
+		{&rna_UIList_draw_filter_layout, 	nullptr,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+	rna_UIList_draw_filter_layout_ = {
+		{nullptr, 	&rna_UIList_draw_filter_context,
+		-1, "layout", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Layout to draw the item",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UIList_draw_filter_context, &rna_UIList_draw_filter_layout};
+		func->identifier = "draw_filter";
+		func->flag = 96;
+		func->description = "Draw filtering options";
+		rna_UIList_draw_filter_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_UIList_filter_items_context_ = {
+		{&rna_UIList_filter_items_data, 	nullptr,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+	rna_UIList_filter_items_data_ = {
+		{&rna_UIList_filter_items_property, 	&rna_UIList_filter_items_context,
+		-1, "data", 8388608, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Data from which to take Collection property",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AnyType
+	};
+	rna_UIList_filter_items_property_ = {
+		{&rna_UIList_filter_items_filter_flags, 	&rna_UIList_filter_items_data,
+		-1, "property", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Identifier of property in data, for the collection",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+	static int rna_UIList_filter_items_filter_flags_default[1] = {
+		0
+	};
+	rna_UIList_filter_items_filter_flags_ = {
+		{&rna_UIList_filter_items_filter_neworder, 	&rna_UIList_filter_items_property,
+		-1, "filter_flags", 131075, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"An array of filter flags, one for each item in the collection (NOTE: The upper 16 bits, including FILTER_ITEM, are reserved, only use the lower 16 bits for custom usages)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 1, {1, 0, 0}, 1,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, rna_UIList_filter_items_filter_flags_default
+	};
+	static int rna_UIList_filter_items_filter_neworder_default[1] = {
+		0
+	};
+	rna_UIList_filter_items_filter_neworder_ = {
+		{nullptr, 	&rna_UIList_filter_items_filter_flags,
+		-1, "filter_neworder", 131075, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"An array of indices, one for each item in the collection, mapping the org index to the new one",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 1, {1, 0, 0}, 1,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, rna_UIList_filter_items_filter_neworder_default
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_UIList_filter_items_context, &rna_UIList_filter_items_filter_neworder};
+		func->identifier = "filter_items";
+		func->flag = 96;
+		func->description = "Filter and/or re-order items of the collection (output filter results in filter_flags, and reorder results in filter_neworder arrays)";
+		rna_UIList_filter_items_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Header */
+static CollectionPropertyRNA rna_Header_rna_properties_;
+PropertyRNA &rna_Header_rna_properties = reinterpret_cast<PropertyRNA &>(rna_Header_rna_properties_);
+
+static PointerPropertyRNA rna_Header_rna_type_;
+PropertyRNA &rna_Header_rna_type = reinterpret_cast<PropertyRNA &>(rna_Header_rna_type_);
+
+static PointerPropertyRNA rna_Header_layout_;
+PropertyRNA &rna_Header_layout = reinterpret_cast<PropertyRNA &>(rna_Header_layout_);
+
+static StringPropertyRNA rna_Header_bl_idname_;
+PropertyRNA &rna_Header_bl_idname = reinterpret_cast<PropertyRNA &>(rna_Header_bl_idname_);
+
+static EnumPropertyRNA rna_Header_bl_space_type_;
+PropertyRNA &rna_Header_bl_space_type = reinterpret_cast<PropertyRNA &>(rna_Header_bl_space_type_);
+
+static EnumPropertyRNA rna_Header_bl_region_type_;
+PropertyRNA &rna_Header_bl_region_type = reinterpret_cast<PropertyRNA &>(rna_Header_bl_region_type_);
+
+static PointerPropertyRNA rna_Header_draw_context_;
+PropertyRNA &rna_Header_draw_context = reinterpret_cast<PropertyRNA &>(rna_Header_draw_context_);
+
+FunctionRNA *rna_Header_draw_func;
+StructRNA *RNA_Header;
+void register_struct_Header(BlenderRNA &brna)
+{
+	rna_Header_rna_properties_ = {
+		{&rna_Header_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Header_rna_properties_begin, Header_rna_properties_next, Header_rna_properties_end, Header_rna_properties_get, nullptr, nullptr, Header_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_Header_rna_type_ = {
+		{&rna_Header_layout, 	&rna_Header_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Header_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_Header_layout_ = {
+		{&rna_Header_bl_idname, 	&rna_Header_rna_type,
+		-1, "layout", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Layout",
+		"Structure of the header in the UI",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Header_layout_get, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+
+	rna_Header_bl_idname_ = {
+		{&rna_Header_bl_space_type, 	&rna_Header_layout,
+		-1, "bl_idname", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "ID Name",
+		"If this is set, the header gets a custom ID, otherwise it takes the name of the class used to define the header; for example, if the class name is \"OBJECT_HT_hello\", and bl_idname is not set by the script, then bl_idname = \"OBJECT_HT_hello\"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Header_bl_idname_get, Header_bl_idname_length, Header_bl_idname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Header_bl_space_type_ = {
+		{&rna_Header_bl_region_type, 	&rna_Header_bl_idname,
+		-1, "bl_space_type", 19, 0, 0, 0, 0, PropertyPathTemplateType(0), "Space Type",
+		"The space where the header is going to be used in",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Header_bl_space_type_get, Header_bl_space_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_space_type_items, 24, 0
+	};
+
+	rna_Header_bl_region_type_ = {
+		{nullptr, 	&rna_Header_bl_space_type,
+		-1, "bl_region_type", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Region Type",
+		"The region where the header is going to be used in (defaults to header region)",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Header_bl_region_type_get, Header_bl_region_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_region_type_items, 17, 1
+	};
+
+	StructRNA *srna = RNA_Header;
+	srna->cont.properties = {&rna_Header_rna_properties, &rna_Header_bl_region_type};
+	srna->identifier = "Header";
+	srna->flag = 1540;
+	srna->name = "Header";
+	srna->description = "Editor header containing UI elements";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_Header_rna_properties;
+	srna->refine = rna_Header_refine;
+	srna->reg = rna_Header_register;
+	srna->unreg = rna_Header_unregister;
+	{
+	rna_Header_draw_context_ = {
+		{nullptr, 	nullptr,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Header_draw_context, &rna_Header_draw_context};
+		func->identifier = "draw";
+		func->flag = 32;
+		func->description = "Draw UI elements into the header UI layout";
+		rna_Header_draw_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Menu */
+static CollectionPropertyRNA rna_Menu_rna_properties_;
+PropertyRNA &rna_Menu_rna_properties = reinterpret_cast<PropertyRNA &>(rna_Menu_rna_properties_);
+
+static PointerPropertyRNA rna_Menu_rna_type_;
+PropertyRNA &rna_Menu_rna_type = reinterpret_cast<PropertyRNA &>(rna_Menu_rna_type_);
+
+static PointerPropertyRNA rna_Menu_layout_;
+PropertyRNA &rna_Menu_layout = reinterpret_cast<PropertyRNA &>(rna_Menu_layout_);
+
+static StringPropertyRNA rna_Menu_bl_idname_;
+PropertyRNA &rna_Menu_bl_idname = reinterpret_cast<PropertyRNA &>(rna_Menu_bl_idname_);
+
+static StringPropertyRNA rna_Menu_bl_label_;
+PropertyRNA &rna_Menu_bl_label = reinterpret_cast<PropertyRNA &>(rna_Menu_bl_label_);
+
+static StringPropertyRNA rna_Menu_bl_translation_context_;
+PropertyRNA &rna_Menu_bl_translation_context = reinterpret_cast<PropertyRNA &>(rna_Menu_bl_translation_context_);
+
+static StringPropertyRNA rna_Menu_bl_description_;
+PropertyRNA &rna_Menu_bl_description = reinterpret_cast<PropertyRNA &>(rna_Menu_bl_description_);
+
+static StringPropertyRNA rna_Menu_bl_owner_id_;
+PropertyRNA &rna_Menu_bl_owner_id = reinterpret_cast<PropertyRNA &>(rna_Menu_bl_owner_id_);
+
+static EnumPropertyRNA rna_Menu_bl_options_;
+PropertyRNA &rna_Menu_bl_options = reinterpret_cast<PropertyRNA &>(rna_Menu_bl_options_);
+
+static BoolPropertyRNA rna_Menu_poll_visible_;
+PropertyRNA &rna_Menu_poll_visible = reinterpret_cast<PropertyRNA &>(rna_Menu_poll_visible_);
+
+static PointerPropertyRNA rna_Menu_poll_context_;
+PropertyRNA &rna_Menu_poll_context = reinterpret_cast<PropertyRNA &>(rna_Menu_poll_context_);
+
+FunctionRNA *rna_Menu_poll_func;
+static PointerPropertyRNA rna_Menu_draw_context_;
+PropertyRNA &rna_Menu_draw_context = reinterpret_cast<PropertyRNA &>(rna_Menu_draw_context_);
+
+FunctionRNA *rna_Menu_draw_func;
+StructRNA *RNA_Menu;
+void register_struct_Menu(BlenderRNA &brna)
+{
+	rna_Menu_rna_properties_ = {
+		{&rna_Menu_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_rna_properties_begin, Menu_rna_properties_next, Menu_rna_properties_end, Menu_rna_properties_get, nullptr, nullptr, Menu_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_Menu_rna_type_ = {
+		{&rna_Menu_layout, 	&rna_Menu_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_Menu_layout_ = {
+		{&rna_Menu_bl_idname, 	&rna_Menu_rna_type,
+		-1, "layout", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Layout",
+		"Defines the structure of the menu in the UI",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_layout_get, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+
+	rna_Menu_bl_idname_ = {
+		{&rna_Menu_bl_label, 	&rna_Menu_layout,
+		-1, "bl_idname", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "ID Name",
+		"If this is set, the menu gets a custom ID, otherwise it takes the name of the class used to define the menu (for example, if the class name is \"OBJECT_MT_hello\", and bl_idname is not set by the script, then bl_idname = \"OBJECT_MT_hello\")",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_bl_idname_get, Menu_bl_idname_length, Menu_bl_idname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Menu_bl_label_ = {
+		{&rna_Menu_bl_translation_context, 	&rna_Menu_bl_idname,
+		-1, "bl_label", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "Label",
+		"The menu label",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_bl_label_get, Menu_bl_label_length, Menu_bl_label_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_Menu_bl_translation_context_ = {
+		{&rna_Menu_bl_description, 	&rna_Menu_bl_label,
+		-1, "bl_translation_context", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "bl_translation_context",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_bl_translation_context_get, Menu_bl_translation_context_length, Menu_bl_translation_context_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "*"
+	};
+
+	rna_Menu_bl_description_ = {
+		{&rna_Menu_bl_owner_id, 	&rna_Menu_bl_translation_context,
+		-1, "bl_description", 49, 0, 0, 0, 0, PropertyPathTemplateType(0), "bl_description",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_bl_description_get, Menu_bl_description_length, Menu_bl_description_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 1024, ""
+	};
+
+	rna_Menu_bl_owner_id_ = {
+		{&rna_Menu_bl_options, 	&rna_Menu_bl_description,
+		-1, "bl_owner_id", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "bl_owner_id",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_bl_owner_id_get, Menu_bl_owner_id_length, Menu_bl_owner_id_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	static const EnumPropertyItem rna_Menu_bl_options_items[2] = {
+		{2, "SEARCH_ON_KEY_PRESS", 0, "Search on Key Press", "Open a menu search when a key pressed while the menu is open"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Menu_bl_options_ = {
+		{nullptr, 	&rna_Menu_bl_owner_id,
+		-1, "bl_options", 2097203, 0, 0, 0, 0, PropertyPathTemplateType(0), "Options",
+		"Options for this menu type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Menu_bl_options_get, Menu_bl_options_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Menu_bl_options_items, 1, 0
+	};
+
+	StructRNA *srna = RNA_Menu;
+	srna->cont.properties = {&rna_Menu_rna_properties, &rna_Menu_bl_options};
+	srna->identifier = "Menu";
+	srna->flag = 1540;
+	srna->name = "Menu";
+	srna->description = "Editor menu containing buttons";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_Menu_rna_properties;
+	srna->refine = rna_Menu_refine;
+	srna->reg = rna_Menu_register;
+	srna->unreg = rna_Menu_unregister;
+	{
+	rna_Menu_poll_visible_ = {
+		{&rna_Menu_poll_context, 	nullptr,
+		-1, "visible", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_Menu_poll_context_ = {
+		{nullptr, 	&rna_Menu_poll_visible,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Menu_poll_visible, &rna_Menu_poll_context};
+		func->identifier = "poll";
+		func->flag = 97;
+		func->description = "If this method returns a non-null output, then the menu can be drawn";
+		func->c_ret = &rna_Menu_poll_visible;
+		rna_Menu_poll_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Menu_draw_context_ = {
+		{nullptr, 	nullptr,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Menu_draw_context, &rna_Menu_draw_context};
+		func->identifier = "draw";
+		func->flag = 32;
+		func->description = "Draw UI elements into the menu UI layout";
+		rna_Menu_draw_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Asset Shelf */
+static CollectionPropertyRNA rna_AssetShelf_rna_properties_;
+PropertyRNA &rna_AssetShelf_rna_properties = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_rna_properties_);
+
+static PointerPropertyRNA rna_AssetShelf_rna_type_;
+PropertyRNA &rna_AssetShelf_rna_type = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_rna_type_);
+
+static StringPropertyRNA rna_AssetShelf_bl_idname_;
+PropertyRNA &rna_AssetShelf_bl_idname = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_bl_idname_);
+
+static EnumPropertyRNA rna_AssetShelf_bl_space_type_;
+PropertyRNA &rna_AssetShelf_bl_space_type = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_bl_space_type_);
+
+static EnumPropertyRNA rna_AssetShelf_bl_options_;
+PropertyRNA &rna_AssetShelf_bl_options = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_bl_options_);
+
+static StringPropertyRNA rna_AssetShelf_bl_activate_operator_;
+PropertyRNA &rna_AssetShelf_bl_activate_operator = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_bl_activate_operator_);
+
+static StringPropertyRNA rna_AssetShelf_bl_drag_operator_;
+PropertyRNA &rna_AssetShelf_bl_drag_operator = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_bl_drag_operator_);
+
+static IntPropertyRNA rna_AssetShelf_bl_default_preview_size_;
+PropertyRNA &rna_AssetShelf_bl_default_preview_size = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_bl_default_preview_size_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_action_;
+PropertyRNA &rna_AssetShelf_filter_action = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_action_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_armature_;
+PropertyRNA &rna_AssetShelf_filter_armature = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_armature_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_brush_;
+PropertyRNA &rna_AssetShelf_filter_brush = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_brush_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_camera_;
+PropertyRNA &rna_AssetShelf_filter_camera = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_camera_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_cachefile_;
+PropertyRNA &rna_AssetShelf_filter_cachefile = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_cachefile_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_curve_;
+PropertyRNA &rna_AssetShelf_filter_curve = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_curve_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_annotations_;
+PropertyRNA &rna_AssetShelf_filter_annotations = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_annotations_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_grease_pencil_;
+PropertyRNA &rna_AssetShelf_filter_grease_pencil = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_grease_pencil_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_group_;
+PropertyRNA &rna_AssetShelf_filter_group = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_group_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_curves_;
+PropertyRNA &rna_AssetShelf_filter_curves = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_curves_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_image_;
+PropertyRNA &rna_AssetShelf_filter_image = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_image_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_light_;
+PropertyRNA &rna_AssetShelf_filter_light = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_light_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_light_probe_;
+PropertyRNA &rna_AssetShelf_filter_light_probe = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_light_probe_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_linestyle_;
+PropertyRNA &rna_AssetShelf_filter_linestyle = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_linestyle_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_lattice_;
+PropertyRNA &rna_AssetShelf_filter_lattice = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_lattice_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_material_;
+PropertyRNA &rna_AssetShelf_filter_material = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_material_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_metaball_;
+PropertyRNA &rna_AssetShelf_filter_metaball = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_metaball_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_movie_clip_;
+PropertyRNA &rna_AssetShelf_filter_movie_clip = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_movie_clip_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_mesh_;
+PropertyRNA &rna_AssetShelf_filter_mesh = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_mesh_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_mask_;
+PropertyRNA &rna_AssetShelf_filter_mask = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_mask_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_node_tree_;
+PropertyRNA &rna_AssetShelf_filter_node_tree = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_node_tree_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_object_;
+PropertyRNA &rna_AssetShelf_filter_object = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_object_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_particle_settings_;
+PropertyRNA &rna_AssetShelf_filter_particle_settings = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_particle_settings_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_palette_;
+PropertyRNA &rna_AssetShelf_filter_palette = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_palette_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_paint_curve_;
+PropertyRNA &rna_AssetShelf_filter_paint_curve = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_paint_curve_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_pointcloud_;
+PropertyRNA &rna_AssetShelf_filter_pointcloud = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_pointcloud_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_scene_;
+PropertyRNA &rna_AssetShelf_filter_scene = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_scene_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_speaker_;
+PropertyRNA &rna_AssetShelf_filter_speaker = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_speaker_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_sound_;
+PropertyRNA &rna_AssetShelf_filter_sound = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_sound_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_texture_;
+PropertyRNA &rna_AssetShelf_filter_texture = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_texture_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_text_;
+PropertyRNA &rna_AssetShelf_filter_text = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_text_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_font_;
+PropertyRNA &rna_AssetShelf_filter_font = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_font_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_volume_;
+PropertyRNA &rna_AssetShelf_filter_volume = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_volume_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_world_;
+PropertyRNA &rna_AssetShelf_filter_world = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_world_);
+
+static BoolPropertyRNA rna_AssetShelf_filter_work_space_;
+PropertyRNA &rna_AssetShelf_filter_work_space = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_filter_work_space_);
+
+static EnumPropertyRNA rna_AssetShelf_asset_library_reference_;
+PropertyRNA &rna_AssetShelf_asset_library_reference = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_asset_library_reference_);
+
+static BoolPropertyRNA rna_AssetShelf_show_names_;
+PropertyRNA &rna_AssetShelf_show_names = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_show_names_);
+
+static IntPropertyRNA rna_AssetShelf_preview_size_;
+PropertyRNA &rna_AssetShelf_preview_size = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_preview_size_);
+
+static StringPropertyRNA rna_AssetShelf_search_filter_;
+PropertyRNA &rna_AssetShelf_search_filter = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_search_filter_);
+
+static BoolPropertyRNA rna_AssetShelf_poll_visible_;
+PropertyRNA &rna_AssetShelf_poll_visible = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_poll_visible_);
+
+static PointerPropertyRNA rna_AssetShelf_poll_context_;
+PropertyRNA &rna_AssetShelf_poll_context = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_poll_context_);
+
+FunctionRNA *rna_AssetShelf_poll_func;
+static BoolPropertyRNA rna_AssetShelf_asset_poll_visible_;
+PropertyRNA &rna_AssetShelf_asset_poll_visible = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_asset_poll_visible_);
+
+static PointerPropertyRNA rna_AssetShelf_asset_poll_asset_;
+PropertyRNA &rna_AssetShelf_asset_poll_asset = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_asset_poll_asset_);
+
+FunctionRNA *rna_AssetShelf_asset_poll_func;
+static PointerPropertyRNA rna_AssetShelf_get_active_asset_asset_reference_;
+PropertyRNA &rna_AssetShelf_get_active_asset_asset_reference = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_get_active_asset_asset_reference_);
+
+FunctionRNA *rna_AssetShelf_get_active_asset_func;
+static PointerPropertyRNA rna_AssetShelf_draw_context_menu_context_;
+PropertyRNA &rna_AssetShelf_draw_context_menu_context = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_draw_context_menu_context_);
+
+static PointerPropertyRNA rna_AssetShelf_draw_context_menu_asset_;
+PropertyRNA &rna_AssetShelf_draw_context_menu_asset = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_draw_context_menu_asset_);
+
+static PointerPropertyRNA rna_AssetShelf_draw_context_menu_layout_;
+PropertyRNA &rna_AssetShelf_draw_context_menu_layout = reinterpret_cast<PropertyRNA &>(rna_AssetShelf_draw_context_menu_layout_);
+
+FunctionRNA *rna_AssetShelf_draw_context_menu_func;
+StructRNA *RNA_AssetShelf;
+void register_struct_AssetShelf(BlenderRNA &brna)
+{
+	rna_AssetShelf_rna_properties_ = {
+		{&rna_AssetShelf_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_rna_properties_begin, AssetShelf_rna_properties_next, AssetShelf_rna_properties_end, AssetShelf_rna_properties_get, nullptr, nullptr, AssetShelf_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_AssetShelf_rna_type_ = {
+		{&rna_AssetShelf_bl_idname, 	&rna_AssetShelf_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_AssetShelf_bl_idname_ = {
+		{&rna_AssetShelf_bl_space_type, 	&rna_AssetShelf_rna_type,
+		-1, "bl_idname", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "ID Name",
+		"If this is set, the asset gets a custom ID, otherwise it takes the name of the class used to define the asset (for example, if the class name is \"OBJECT_AST_hello\", and bl_idname is not set by the script, then bl_idname = \"OBJECT_AST_hello\")",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_bl_idname_get, AssetShelf_bl_idname_length, AssetShelf_bl_idname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_AssetShelf_bl_space_type_ = {
+		{&rna_AssetShelf_bl_options, 	&rna_AssetShelf_bl_idname,
+		-1, "bl_space_type", 19, 0, 0, 0, 0, PropertyPathTemplateType(0), "Space Type",
+		"The space where the asset shelf will show up in. Ignored for popup asset shelves which can be displayed in any space.",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_bl_space_type_get, AssetShelf_bl_space_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_space_type_items, 24, 0
+	};
+
+	static const EnumPropertyItem rna_AssetShelf_bl_options_items[5] = {
+		{1, "NO_ASSET_DRAG", 0, "No Asset Dragging", "Disable the default asset dragging on drag events. Useful for implementing custom dragging via custom key-map items."	},
+		{2, "DEFAULT_VISIBLE", 0, "Visible by Default", "Unhide the asset shelf when it\'s available for the first time, otherwise it will be hidden"	},
+		{4, "STORE_ENABLED_CATALOGS_IN_PREFERENCES", 0, "Store Enabled Catalogs in Preferences", "Store the shelf\'s enabled catalogs in the preferences rather than the local asset shelf settings"	},
+		{8, "ACTIVATE_FOR_CONTEXT_MENU", 0, "", "When spawning a context menu for an asset, activate the asset and call `bl_activate_operator` if present, rather than just highlighting the asset"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_AssetShelf_bl_options_ = {
+		{&rna_AssetShelf_bl_activate_operator, 	&rna_AssetShelf_bl_space_type,
+		-1, "bl_options", 2097203, 0, 0, 0, 0, PropertyPathTemplateType(0), "Options",
+		"Options for this asset shelf type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_bl_options_get, AssetShelf_bl_options_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_AssetShelf_bl_options_items, 4, 0
+	};
+
+	rna_AssetShelf_bl_activate_operator_ = {
+		{&rna_AssetShelf_bl_drag_operator, 	&rna_AssetShelf_bl_options,
+		-1, "bl_activate_operator", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "Activate Operator",
+		"Operator to call when activating an item with asset reference properties",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_bl_activate_operator_get, AssetShelf_bl_activate_operator_length, AssetShelf_bl_activate_operator_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_AssetShelf_bl_drag_operator_ = {
+		{&rna_AssetShelf_bl_default_preview_size, 	&rna_AssetShelf_bl_activate_operator,
+		-1, "bl_drag_operator", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "Drag Operator",
+		"Operator to call when dragging an item with asset reference properties",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_bl_drag_operator_get, AssetShelf_bl_drag_operator_length, AssetShelf_bl_drag_operator_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_AssetShelf_bl_default_preview_size_ = {
+		{&rna_AssetShelf_filter_action, 	&rna_AssetShelf_bl_drag_operator,
+		-1, "bl_default_preview_size", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Default Preview Size",
+		"Default size of the asset preview thumbnails in pixels",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_bl_default_preview_size_get, AssetShelf_bl_default_preview_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 32, 256, 32, 256, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_action_ = {
+		{&rna_AssetShelf_filter_armature, 	&rna_AssetShelf_bl_default_preview_size,
+		-1, "filter_action", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Actions",
+		"Show Action data-blocks",
+		134, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_action_get, AssetShelf_filter_action_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_armature_ = {
+		{&rna_AssetShelf_filter_brush, 	&rna_AssetShelf_filter_action,
+		-1, "filter_armature", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Armatures",
+		"Show Armature data-blocks",
+		179, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_armature_get, AssetShelf_filter_armature_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_brush_ = {
+		{&rna_AssetShelf_filter_camera, 	&rna_AssetShelf_filter_armature,
+		-1, "filter_brush", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Brushes",
+		"Show Brushes data-blocks",
+		196, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_brush_get, AssetShelf_filter_brush_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_camera_ = {
+		{&rna_AssetShelf_filter_cachefile, 	&rna_AssetShelf_filter_brush,
+		-1, "filter_camera", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cameras",
+		"Show Camera data-blocks",
+		181, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_camera_get, AssetShelf_filter_camera_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_cachefile_ = {
+		{&rna_AssetShelf_filter_curve, 	&rna_AssetShelf_filter_camera,
+		-1, "filter_cachefile", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cache Files",
+		"Show Cache File data-blocks",
+		208, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_cachefile_get, AssetShelf_filter_cachefile_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_curve_ = {
+		{&rna_AssetShelf_filter_annotations, 	&rna_AssetShelf_filter_cachefile,
+		-1, "filter_curve", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curves",
+		"Show Curve data-blocks",
+		182, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_curve_get, AssetShelf_filter_curve_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_annotations_ = {
+		{&rna_AssetShelf_filter_grease_pencil, 	&rna_AssetShelf_filter_curve,
+		-1, "filter_annotations", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Annotations",
+		"Show Annotation data-blocks",
+		262, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_annotations_get, AssetShelf_filter_annotations_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_grease_pencil_ = {
+		{&rna_AssetShelf_filter_group, 	&rna_AssetShelf_filter_annotations,
+		-1, "filter_grease_pencil", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil",
+		"Show Grease Pencil data-blocks",
+		209, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_grease_pencil_get, AssetShelf_filter_grease_pencil_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_group_ = {
+		{&rna_AssetShelf_filter_curves, 	&rna_AssetShelf_filter_grease_pencil,
+		-1, "filter_group", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Collections",
+		"Show Collection data-blocks",
+		176, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_group_get, AssetShelf_filter_group_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_curves_ = {
+		{&rna_AssetShelf_filter_image, 	&rna_AssetShelf_filter_group,
+		-1, "filter_curves", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Hair Curves",
+		"Show/hide Curves data-blocks",
+		254, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_curves_get, AssetShelf_filter_curves_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_image_ = {
+		{&rna_AssetShelf_filter_light, 	&rna_AssetShelf_filter_curves,
+		-1, "filter_image", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Images",
+		"Show Image data-blocks",
+		197, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_image_get, AssetShelf_filter_image_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_light_ = {
+		{&rna_AssetShelf_filter_light_probe, 	&rna_AssetShelf_filter_image,
+		-1, "filter_light", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lights",
+		"Show Light data-blocks",
+		186, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_light_get, AssetShelf_filter_light_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_light_probe_ = {
+		{&rna_AssetShelf_filter_linestyle, 	&rna_AssetShelf_filter_light,
+		-1, "filter_light_probe", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Light Probes",
+		"Show Light Probe data-blocks",
+		265, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_light_probe_get, AssetShelf_filter_light_probe_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_linestyle_ = {
+		{&rna_AssetShelf_filter_lattice, 	&rna_AssetShelf_filter_light_probe,
+		-1, "filter_linestyle", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Freestyle Linestyles",
+		"Show Freestyle\'s Line Style data-blocks",
+		198, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_linestyle_get, AssetShelf_filter_linestyle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_lattice_ = {
+		{&rna_AssetShelf_filter_material, 	&rna_AssetShelf_filter_linestyle,
+		-1, "filter_lattice", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lattices",
+		"Show Lattice data-blocks",
+		185, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_lattice_get, AssetShelf_filter_lattice_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_material_ = {
+		{&rna_AssetShelf_filter_metaball, 	&rna_AssetShelf_filter_lattice,
+		-1, "filter_material", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Materials",
+		"Show Material data-blocks",
+		199, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_material_get, AssetShelf_filter_material_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_metaball_ = {
+		{&rna_AssetShelf_filter_movie_clip, 	&rna_AssetShelf_filter_material,
+		-1, "filter_metaball", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Metaballs",
+		"Show Metaball data-blocks",
+		188, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_metaball_get, AssetShelf_filter_metaball_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_movie_clip_ = {
+		{&rna_AssetShelf_filter_mesh, 	&rna_AssetShelf_filter_metaball,
+		-1, "filter_movie_clip", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Movie Clips",
+		"Show Movie Clip data-blocks",
+		154, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_movie_clip_get, AssetShelf_filter_movie_clip_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_mesh_ = {
+		{&rna_AssetShelf_filter_mask, 	&rna_AssetShelf_filter_movie_clip,
+		-1, "filter_mesh", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Meshes",
+		"Show Mesh data-blocks",
+		187, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_mesh_get, AssetShelf_filter_mesh_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_mask_ = {
+		{&rna_AssetShelf_filter_node_tree, 	&rna_AssetShelf_filter_mesh,
+		-1, "filter_mask", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Masks",
+		"Show Mask data-blocks",
+		470, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_mask_get, AssetShelf_filter_mask_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_node_tree_ = {
+		{&rna_AssetShelf_filter_object, 	&rna_AssetShelf_filter_mask,
+		-1, "filter_node_tree", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Node Trees",
+		"Show Node Tree data-blocks",
+		146, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_node_tree_get, AssetShelf_filter_node_tree_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_object_ = {
+		{&rna_AssetShelf_filter_particle_settings, 	&rna_AssetShelf_filter_node_tree,
+		-1, "filter_object", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Objects",
+		"Show Object data-blocks",
+		192, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_object_get, AssetShelf_filter_object_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_particle_settings_ = {
+		{&rna_AssetShelf_filter_palette, 	&rna_AssetShelf_filter_object,
+		-1, "filter_particle_settings", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Particles Settings",
+		"Show Particle Settings data-blocks",
+		189, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_particle_settings_get, AssetShelf_filter_particle_settings_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_palette_ = {
+		{&rna_AssetShelf_filter_paint_curve, 	&rna_AssetShelf_filter_particle_settings,
+		-1, "filter_palette", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Palettes",
+		"Show Palette data-blocks",
+		59, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_palette_get, AssetShelf_filter_palette_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_paint_curve_ = {
+		{&rna_AssetShelf_filter_pointcloud, 	&rna_AssetShelf_filter_palette,
+		-1, "filter_paint_curve", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Paint Curves",
+		"Show Paint Curve data-blocks",
+		321, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_paint_curve_get, AssetShelf_filter_paint_curve_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_pointcloud_ = {
+		{&rna_AssetShelf_filter_scene, 	&rna_AssetShelf_filter_paint_curve,
+		-1, "filter_pointcloud", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Point Clouds",
+		"Show/hide Point Cloud data-blocks",
+		272, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_pointcloud_get, AssetShelf_filter_pointcloud_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_scene_ = {
+		{&rna_AssetShelf_filter_speaker, 	&rna_AssetShelf_filter_pointcloud,
+		-1, "filter_scene", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scenes",
+		"Show Scene data-blocks",
+		195, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_scene_get, AssetShelf_filter_scene_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_speaker_ = {
+		{&rna_AssetShelf_filter_sound, 	&rna_AssetShelf_filter_scene,
+		-1, "filter_speaker", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Speakers",
+		"Show Speaker data-blocks",
+		122, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_speaker_get, AssetShelf_filter_speaker_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_sound_ = {
+		{&rna_AssetShelf_filter_texture, 	&rna_AssetShelf_filter_speaker,
+		-1, "filter_sound", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sounds",
+		"Show Sound data-blocks",
+		151, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_sound_get, AssetShelf_filter_sound_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_texture_ = {
+		{&rna_AssetShelf_filter_text, 	&rna_AssetShelf_filter_sound,
+		-1, "filter_texture", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Textures",
+		"Show Texture data-blocks",
+		200, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_texture_get, AssetShelf_filter_texture_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_text_ = {
+		{&rna_AssetShelf_filter_font, 	&rna_AssetShelf_filter_texture,
+		-1, "filter_text", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Texts",
+		"Show Text data-blocks",
+		133, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_text_get, AssetShelf_filter_text_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_font_ = {
+		{&rna_AssetShelf_filter_volume, 	&rna_AssetShelf_filter_text,
+		-1, "filter_font", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Fonts",
+		"Show Font data-blocks",
+		184, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_font_get, AssetShelf_filter_font_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_volume_ = {
+		{&rna_AssetShelf_filter_world, 	&rna_AssetShelf_filter_font,
+		-1, "filter_volume", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Volumes",
+		"Show/hide Volume data-blocks",
+		274, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_volume_get, AssetShelf_filter_volume_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_world_ = {
+		{&rna_AssetShelf_filter_work_space, 	&rna_AssetShelf_filter_volume,
+		-1, "filter_world", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Worlds",
+		"Show World data-blocks",
+		201, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_world_get, AssetShelf_filter_world_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_filter_work_space_ = {
+		{&rna_AssetShelf_asset_library_reference, 	&rna_AssetShelf_filter_world,
+		-1, "filter_work_space", 51, 0, 0, 0, 0, PropertyPathTemplateType(0), "Workspaces",
+		"Show workspace data-blocks",
+		111, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_filter_work_space_get, AssetShelf_filter_work_space_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_AssetShelf_asset_library_reference_items[6] = {
+		{2, "ALL", 0, "All Libraries", "Show assets from all of the listed asset libraries"	},
+		{1, "LOCAL", 0, "Current File", "Show the assets currently available in this Blender session"	},
+		{3, "ESSENTIALS", 0, "Essentials", "Show basic building blocks and utilities coming with Blender"	},
+		{4, "ONLINE_ESSENTIALS", 0, "Online Essentials", "Show additional building blocks and utilities available online"	},
+		{100, "CUSTOM", 0, "Custom", "Show assets from the asset libraries configured in the Preferences"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_AssetShelf_asset_library_reference_ = {
+		{&rna_AssetShelf_show_names, 	&rna_AssetShelf_filter_work_space,
+		-1, "asset_library_reference", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Asset Library",
+		"Choose the asset library to display assets from",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 269942784, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_asset_library_reference_get, AssetShelf_asset_library_reference_set, rna_asset_library_ui_reference_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_AssetShelf_asset_library_reference_items, 5, 2
+	};
+
+	rna_AssetShelf_show_names_ = {
+		{&rna_AssetShelf_preview_size, 	&rna_AssetShelf_asset_library_reference,
+		-1, "show_names", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Show Names",
+		"Show the asset name together with the preview. Otherwise only the preview will be visible.",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 269942784, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_show_names_get, AssetShelf_show_names_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_preview_size_ = {
+		{&rna_AssetShelf_search_filter, 	&rna_AssetShelf_show_names,
+		-1, "preview_size", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Preview Size",
+		"Size of the asset preview thumbnails in pixels",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 269942784, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(AssetShelf, settings.preview_size), RawPropertyType(1), nullptr},
+		AssetShelf_preview_size_get, AssetShelf_preview_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 24, 256, 24, 256, 1, rna_AssetShelf_preview_size_default, nullptr, 0, nullptr
+	};
+
+	rna_AssetShelf_search_filter_ = {
+		{nullptr, 	&rna_AssetShelf_preview_size,
+		-1, "search_filter", -2147221503, 0, 0, 0, 0, PropertyPathTemplateType(0), "Display Filter",
+		"Filter assets by name",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 269942784, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AssetShelf_search_filter_get, AssetShelf_search_filter_length, AssetShelf_search_filter_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_AssetShelf;
+	srna->cont.properties = {&rna_AssetShelf_rna_properties, &rna_AssetShelf_search_filter};
+	srna->identifier = "AssetShelf";
+	srna->flag = 1540;
+	srna->name = "Asset Shelf";
+	srna->description = "Regions for quick access to assets";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_AssetShelf_rna_properties;
+	srna->refine = rna_AssetShelf_refine;
+	srna->reg = rna_AssetShelf_register;
+	srna->unreg = rna_AssetShelf_unregister;
+	{
+	rna_AssetShelf_poll_visible_ = {
+		{&rna_AssetShelf_poll_context, 	nullptr,
+		-1, "visible", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_AssetShelf_poll_context_ = {
+		{nullptr, 	&rna_AssetShelf_poll_visible,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_AssetShelf_poll_visible, &rna_AssetShelf_poll_context};
+		func->identifier = "poll";
+		func->flag = 97;
+		func->description = "If this method returns a non-null output, the asset shelf will be visible";
+		func->c_ret = &rna_AssetShelf_poll_visible;
+		rna_AssetShelf_poll_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_AssetShelf_asset_poll_visible_ = {
+		{&rna_AssetShelf_asset_poll_asset, 	nullptr,
+		-1, "visible", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_AssetShelf_asset_poll_asset_ = {
+		{nullptr, 	&rna_AssetShelf_asset_poll_visible,
+		-1, "asset", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The asset to test for visibility",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AssetRepresentation
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_AssetShelf_asset_poll_visible, &rna_AssetShelf_asset_poll_asset};
+		func->identifier = "asset_poll";
+		func->flag = 97;
+		func->description = "Determine if an asset should be visible in the asset shelf. If this method returns a non-null output, the asset will be visible.";
+		func->c_ret = &rna_AssetShelf_asset_poll_visible;
+		rna_AssetShelf_asset_poll_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_AssetShelf_get_active_asset_asset_reference_ = {
+		{nullptr, 	nullptr,
+		-1, "asset_reference", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"The weak reference to the asset to be highlighted as active, or None",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AssetWeakReference
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_AssetShelf_get_active_asset_asset_reference, &rna_AssetShelf_get_active_asset_asset_reference};
+		func->identifier = "get_active_asset";
+		func->flag = 97;
+		func->description = "Return a reference to the asset that should be highlighted as active in the asset shelf";
+		func->c_ret = &rna_AssetShelf_get_active_asset_asset_reference;
+		rna_AssetShelf_get_active_asset_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_AssetShelf_draw_context_menu_context_ = {
+		{&rna_AssetShelf_draw_context_menu_asset, 	nullptr,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+	rna_AssetShelf_draw_context_menu_asset_ = {
+		{&rna_AssetShelf_draw_context_menu_layout, 	&rna_AssetShelf_draw_context_menu_context,
+		-1, "asset", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The active asset",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_AssetRepresentation
+	};
+	rna_AssetShelf_draw_context_menu_layout_ = {
+		{nullptr, 	&rna_AssetShelf_draw_context_menu_asset,
+		-1, "layout", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The layout to draw into",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_UILayout
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_AssetShelf_draw_context_menu_context, &rna_AssetShelf_draw_context_menu_layout};
+		func->identifier = "draw_context_menu";
+		func->flag = 97;
+		func->description = "Draw UI elements into the context menu UI layout displayed on right click";
+		rna_AssetShelf_draw_context_menu_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* File Handler Type */
+static CollectionPropertyRNA rna_FileHandler_rna_properties_;
+PropertyRNA &rna_FileHandler_rna_properties = reinterpret_cast<PropertyRNA &>(rna_FileHandler_rna_properties_);
+
+static PointerPropertyRNA rna_FileHandler_rna_type_;
+PropertyRNA &rna_FileHandler_rna_type = reinterpret_cast<PropertyRNA &>(rna_FileHandler_rna_type_);
+
+static StringPropertyRNA rna_FileHandler_bl_idname_;
+PropertyRNA &rna_FileHandler_bl_idname = reinterpret_cast<PropertyRNA &>(rna_FileHandler_bl_idname_);
+
+static StringPropertyRNA rna_FileHandler_bl_import_operator_;
+PropertyRNA &rna_FileHandler_bl_import_operator = reinterpret_cast<PropertyRNA &>(rna_FileHandler_bl_import_operator_);
+
+static StringPropertyRNA rna_FileHandler_bl_export_operator_;
+PropertyRNA &rna_FileHandler_bl_export_operator = reinterpret_cast<PropertyRNA &>(rna_FileHandler_bl_export_operator_);
+
+static StringPropertyRNA rna_FileHandler_bl_label_;
+PropertyRNA &rna_FileHandler_bl_label = reinterpret_cast<PropertyRNA &>(rna_FileHandler_bl_label_);
+
+static StringPropertyRNA rna_FileHandler_bl_file_extensions_;
+PropertyRNA &rna_FileHandler_bl_file_extensions = reinterpret_cast<PropertyRNA &>(rna_FileHandler_bl_file_extensions_);
+
+static BoolPropertyRNA rna_FileHandler_poll_drop_is_usable_;
+PropertyRNA &rna_FileHandler_poll_drop_is_usable = reinterpret_cast<PropertyRNA &>(rna_FileHandler_poll_drop_is_usable_);
+
+static PointerPropertyRNA rna_FileHandler_poll_drop_context_;
+PropertyRNA &rna_FileHandler_poll_drop_context = reinterpret_cast<PropertyRNA &>(rna_FileHandler_poll_drop_context_);
+
+FunctionRNA *rna_FileHandler_poll_drop_func;
+StructRNA *RNA_FileHandler;
+void register_struct_FileHandler(BlenderRNA &brna)
+{
+	rna_FileHandler_rna_properties_ = {
+		{&rna_FileHandler_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_rna_properties_begin, FileHandler_rna_properties_next, FileHandler_rna_properties_end, FileHandler_rna_properties_get, nullptr, nullptr, FileHandler_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_FileHandler_rna_type_ = {
+		{&rna_FileHandler_bl_idname, 	&rna_FileHandler_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_FileHandler_bl_idname_ = {
+		{&rna_FileHandler_bl_import_operator, 	&rna_FileHandler_rna_type,
+		-1, "bl_idname", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "ID Name",
+		"If this is set, the file handler gets a custom ID, otherwise it takes the name of the class used to define the file handler (for example, if the class name is \"OBJECT_FH_hello\", and bl_idname is not set by the script, then bl_idname = \"OBJECT_FH_hello\")",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_bl_idname_get, FileHandler_bl_idname_length, FileHandler_bl_idname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_FileHandler_bl_import_operator_ = {
+		{&rna_FileHandler_bl_export_operator, 	&rna_FileHandler_bl_idname,
+		-1, "bl_import_operator", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "Operator",
+		"Operator that can handle import for files with the extensions given in bl_file_extensions",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_bl_import_operator_get, FileHandler_bl_import_operator_length, FileHandler_bl_import_operator_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_FileHandler_bl_export_operator_ = {
+		{&rna_FileHandler_bl_label, 	&rna_FileHandler_bl_import_operator,
+		-1, "bl_export_operator", 262193, 0, 0, 0, 0, PropertyPathTemplateType(0), "Operator",
+		"Operator that can handle export for files with the extensions given in bl_file_extensions",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_bl_export_operator_get, FileHandler_bl_export_operator_length, FileHandler_bl_export_operator_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_FileHandler_bl_label_ = {
+		{&rna_FileHandler_bl_file_extensions, 	&rna_FileHandler_bl_export_operator,
+		-1, "bl_label", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "Label",
+		"The file handler label",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_bl_label_get, FileHandler_bl_label_length, FileHandler_bl_label_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_FileHandler_bl_file_extensions_ = {
+		{nullptr, 	&rna_FileHandler_bl_label,
+		-1, "bl_file_extensions", 262161, 0, 0, 0, 0, PropertyPathTemplateType(0), "File Extensions",
+		"Formatted string of file extensions supported by the file handler, each extension should start with a \".\" and be separated by \";\".\nFor Example: ``\".blend;.ble\"``",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FileHandler_bl_file_extensions_get, FileHandler_bl_file_extensions_length, FileHandler_bl_file_extensions_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	StructRNA *srna = RNA_FileHandler;
+	srna->cont.properties = {&rna_FileHandler_rna_properties, &rna_FileHandler_bl_file_extensions};
+	srna->identifier = "FileHandler";
+	srna->flag = 1540;
+	srna->name = "File Handler Type";
+	srna->description = "Extends functionality to operators that manages files, such as adding drag and drop support";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_FileHandler_rna_properties;
+	srna->refine = rna_FileHandler_refine;
+	srna->reg = rna_FileHandler_register;
+	srna->unreg = rna_FileHandler_unregister;
+	{
+	rna_FileHandler_poll_drop_is_usable_ = {
+		{&rna_FileHandler_poll_drop_context, 	nullptr,
+		-1, "is_usable", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_FileHandler_poll_drop_context_ = {
+		{nullptr, 	&rna_FileHandler_poll_drop_is_usable,
+		-1, "context", 8388608, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The context",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Context
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_FileHandler_poll_drop_is_usable, &rna_FileHandler_poll_drop_context};
+		func->identifier = "poll_drop";
+		func->flag = 97;
+		func->description = "If this method returns True, can be used to handle the drop of a drag-and-drop action";
+		func->c_ret = &rna_FileHandler_poll_drop_is_usable;
+		rna_FileHandler_poll_drop_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* LayoutPanelState */
+static CollectionPropertyRNA rna_LayoutPanelState_rna_properties_;
+PropertyRNA &rna_LayoutPanelState_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LayoutPanelState_rna_properties_);
+
+static PointerPropertyRNA rna_LayoutPanelState_rna_type_;
+PropertyRNA &rna_LayoutPanelState_rna_type = reinterpret_cast<PropertyRNA &>(rna_LayoutPanelState_rna_type_);
+
+static BoolPropertyRNA rna_LayoutPanelState_is_open_;
+PropertyRNA &rna_LayoutPanelState_is_open = reinterpret_cast<PropertyRNA &>(rna_LayoutPanelState_is_open_);
+
+StructRNA *RNA_LayoutPanelState;
+void register_struct_LayoutPanelState(BlenderRNA &brna)
+{
+	rna_LayoutPanelState_rna_properties_ = {
+		{&rna_LayoutPanelState_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LayoutPanelState_rna_properties_begin, LayoutPanelState_rna_properties_next, LayoutPanelState_rna_properties_end, LayoutPanelState_rna_properties_get, nullptr, nullptr, LayoutPanelState_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LayoutPanelState_rna_type_ = {
+		{&rna_LayoutPanelState_is_open, 	&rna_LayoutPanelState_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LayoutPanelState_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_LayoutPanelState_is_open_ = {
+		{nullptr, 	&rna_LayoutPanelState_rna_type,
+		-1, "is_open", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Is Open",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LayoutPanelState_is_open_get, LayoutPanelState_is_open_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LayoutPanelState;
+	srna->cont.properties = {&rna_LayoutPanelState_rna_properties, &rna_LayoutPanelState_is_open};
+	srna->identifier = "LayoutPanelState";
+	srna->flag = 516;
+	srna->name = "LayoutPanelState";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LayoutPanelState_rna_properties;
+};
+
+/* TextboxState */
+static CollectionPropertyRNA rna_TextboxState_rna_properties_;
+PropertyRNA &rna_TextboxState_rna_properties = reinterpret_cast<PropertyRNA &>(rna_TextboxState_rna_properties_);
+
+static PointerPropertyRNA rna_TextboxState_rna_type_;
+PropertyRNA &rna_TextboxState_rna_type = reinterpret_cast<PropertyRNA &>(rna_TextboxState_rna_type_);
+
+static IntPropertyRNA rna_TextboxState_visible_lines_;
+PropertyRNA &rna_TextboxState_visible_lines = reinterpret_cast<PropertyRNA &>(rna_TextboxState_visible_lines_);
+
+static IntPropertyRNA rna_TextboxState_scroll_;
+PropertyRNA &rna_TextboxState_scroll = reinterpret_cast<PropertyRNA &>(rna_TextboxState_scroll_);
+
+StructRNA *RNA_TextboxState;
+void register_struct_TextboxState(BlenderRNA &brna)
+{
+	rna_TextboxState_rna_properties_ = {
+		{&rna_TextboxState_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TextboxState_rna_properties_begin, TextboxState_rna_properties_next, TextboxState_rna_properties_end, TextboxState_rna_properties_get, nullptr, nullptr, TextboxState_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_TextboxState_rna_type_ = {
+		{&rna_TextboxState_visible_lines, 	&rna_TextboxState_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TextboxState_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_TextboxState_visible_lines_ = {
+		{&rna_TextboxState_scroll, 	&rna_TextboxState_rna_type,
+		-1, "visible_lines", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "visible_lines",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(TextboxState, visible_lines), RawPropertyType(0), nullptr},
+		TextboxState_visible_lines_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 3, nullptr
+	};
+
+	rna_TextboxState_scroll_ = {
+		{nullptr, 	&rna_TextboxState_visible_lines,
+		-1, "scroll", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "scroll",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(TextboxState, scroll), RawPropertyType(0), nullptr},
+		TextboxState_scroll_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_TextboxState;
+	srna->cont.properties = {&rna_TextboxState_rna_properties, &rna_TextboxState_scroll};
+	srna->identifier = "TextboxState";
+	srna->flag = 516;
+	srna->name = "TextboxState";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_TextboxState_rna_properties;
+};
+
+
+}  // namespace blender

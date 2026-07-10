@@ -1,0 +1,431 @@
+#line 1 "eevee_lightprobe_display.bsl.hh"
+ 
+#line 18
+struct eevee_lightprobe_planar_display_VertOut {
+           int display_index;
+           int probe_index;
+};
+#line 18
+                                                       eevee_lightprobe_planar_display_VertOut eevee_lightprobe_planar_display_VertOut_ctor_() {eevee_lightprobe_planar_display_VertOut r;r.display_index=0;r.probe_index=0;return r;}
+#line 23
+struct eevee_lightprobe_planar_display_FragOut {
+                    float4 color;
+};
+#line 23
+                                                       eevee_lightprobe_planar_display_FragOut eevee_lightprobe_planar_display_FragOut_ctor_() {eevee_lightprobe_planar_display_FragOut r;r.color=float4(0);return r;}
+#line 27
+#define access_eevee_lightprobe_planar_display_Resources_world_coord_packed() world_coord_packed
+#define access_eevee_lightprobe_planar_display_Resources_display_data_buf() display_data_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_planar_display_Resources
+CREATE_INFO_RES_PASS_eevee_lightprobe_planar_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_planar_display_Resources
+CREATE_INFO_RES_BATCH_eevee_lightprobe_planar_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_planar_display_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_planar_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_planar_display_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_planar_display_Resources
+#endif
+#line 27
+struct eevee_lightprobe_planar_display_Resources {
+#line 39
+int _pad;};
+#line 42
+#ifndef GPU_METAL
+eevee_lightprobe_planar_display_Resources eevee_lightprobe_planar_display_Resources_ctor_();
+eevee_lightprobe_planar_display_Resources eevee_lightprobe_planar_display_Resources_new_();
+#endif
+#line 27
+                                                         eevee_lightprobe_planar_display_Resources eevee_lightprobe_planar_display_Resources_ctor_() {eevee_lightprobe_planar_display_Resources r;r._pad=0;return r;}
+#line 32
+       eevee_lightprobe_planar_display_Resources eevee_lightprobe_planar_display_Resources_new_()
+{
+  eevee_lightprobe_planar_display_Resources result;
+  result._pad = 0;
+  return result;
+#line 30
+}
+#line 33
+
+#if defined(CREATE_INFO_eevee_lightprobe_planar_display_Resources) && defined(CREATE_INFO_draw_View)
+#line 33
+
+#if defined(ENTRY_POINT_eevee_lightprobe_planar_display_vert_main)
+#line 33
+
+void eevee_lightprobe_planar_display_vert_main(
+#line 38
+                                                                     )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 39
+  eevee_lightprobe_planar_display_Resources srt = eevee_lightprobe_planar_display_Resources_ctor_(); draw_View views = draw_View_ctor_();
+#line 42
+  constexpr float2 pos[6] = ARRAY_T(float2) ARRAY_V( float2(-1.0f, -1.0f),
+                             float2(1.0f, -1.0f),
+                             float2(-1.0f, 1.0f),
+
+                             float2(1.0f, -1.0f),
+                             float2(1.0f, 1.0f),
+                             float2(-1.0f, 1.0f) );
+
+  float2 lP = pos[gl_VertexID % 6];
+
+  eevee_lightprobe_planar_display_VertOut_display_index = gl_VertexID / 6;
+  eevee_lightprobe_planar_display_VertOut_probe_index = srt_access(eevee_lightprobe_planar_display_Resources, display_data_buf)[eevee_lightprobe_planar_display_VertOut_display_index].probe_index;
+
+  float4x4 plane_to_world = srt_access(eevee_lightprobe_planar_display_Resources, display_data_buf)[eevee_lightprobe_planar_display_VertOut_display_index].plane_to_world;
+
+  float3 P = transform_point(plane_to_world, float3(lP, 0.0f));
+  gl_Position = _point_world_to_homogenous(_get(views, 0), P);
+
+  gl_Position.z -= 0.0001f;
+  gl_Position = reverse_z_transform(gl_Position);
+
+#endif
+#line 62
+}
+#endif
+#endif
+#line 64
+
+#if defined(CREATE_INFO_eevee_lightprobe_planar_display_Resources) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightprobeSphereRenderData) && defined(CREATE_INFO_eevee_LightprobePlaneRenderData)
+#line 64
+
+#if defined(ENTRY_POINT_eevee_lightprobe_planar_display_frag_main)
+#line 64
+
+void eevee_lightprobe_planar_display_frag_main(
+#line 71
+                                                                        )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 72
+  eevee_lightprobe_planar_display_Resources srt = eevee_lightprobe_planar_display_Resources_ctor_(); draw_View views = draw_View_ctor_(); eevee_LightprobeSphereRenderData spheres = eevee_LightprobeSphereRenderData_ctor_(); eevee_LightprobePlaneRenderData planes = eevee_LightprobePlaneRenderData_ctor_();
+  float4x4 plane_to_world = srt_access(eevee_lightprobe_planar_display_Resources, display_data_buf)[eevee_lightprobe_planar_display_VertOut_display_index].plane_to_world;
+
+  float2 uv = gl_FragCoord.xy / float2(textureSize(srt_access(eevee_LightprobePlaneRenderData, planar_radiance_tx), 0).xy);
+
+  float2 planar_uv = float2(uv.x, 1.0f - uv.y);
+
+  const ViewMatrices view = _get(views, 0);
+
+  float depth = reverse_z_read(
+      textureLod(srt_access(eevee_LightprobePlaneRenderData, planar_depth_tx), float3(planar_uv, eevee_lightprobe_planar_display_VertOut_probe_index), 0.0f).r);
+  if (depth == 1.0f) {
+    float3 ndc = _screen_to_ndc(view, float3(uv, 0.0f));
+    float3 wP = _point_ndc_to_world(view, ndc);
+    float3 V = _world_incident_vector(view, wP);
+    float3 R = -reflect(V, safe_normalize(float3(plane_to_world[2].xyz)));
+
+    SphereProbeUvArea world_atlas_coord = eevee_reinterpret_as_atlas_coord(srt_access(eevee_lightprobe_planar_display_Resources, world_coord_packed));
+    eevee_lightprobe_planar_display_FragOut_color = _sample_probe(spheres, R, 0.0f, world_atlas_coord);
+  }
+  else {
+    eevee_lightprobe_planar_display_FragOut_color = textureLod(
+        srt_access(eevee_LightprobePlaneRenderData, planar_radiance_tx), float3(planar_uv, eevee_lightprobe_planar_display_VertOut_probe_index), 0.0f);
+  }
+  eevee_lightprobe_planar_display_FragOut_color.a = 0.0f;
+
+#endif
+#line 97
+}
+#endif
+#endif
+#line 103
+struct eevee_lightprobe_volume_display_VertOut {
+             float2 lP;
+           int3 cell;
+};
+#line 103
+                                                       eevee_lightprobe_volume_display_VertOut eevee_lightprobe_volume_display_VertOut_ctor_() {eevee_lightprobe_volume_display_VertOut r;r.lP=float2(0);r.cell=int3(0);return r;}
+#line 108
+struct eevee_lightprobe_volume_display_FragOut {
+                    float4 color;
+};
+#line 108
+                                                       eevee_lightprobe_volume_display_FragOut eevee_lightprobe_volume_display_FragOut_ctor_() {eevee_lightprobe_volume_display_FragOut r;r.color=float4(0);return r;}
+#line 112
+#define access_eevee_lightprobe_volume_display_Resources_sphere_radius() sphere_radius
+#define access_eevee_lightprobe_volume_display_Resources_grid_resolution() grid_resolution
+#define access_eevee_lightprobe_volume_display_Resources_grid_to_world() grid_to_world
+#define access_eevee_lightprobe_volume_display_Resources_world_to_grid() world_to_grid
+#define access_eevee_lightprobe_volume_display_Resources_display_validity() display_validity
+#define access_eevee_lightprobe_volume_display_Resources_irradiance_a_tx() irradiance_a_tx
+#define access_eevee_lightprobe_volume_display_Resources_irradiance_b_tx() irradiance_b_tx
+#define access_eevee_lightprobe_volume_display_Resources_irradiance_c_tx() irradiance_c_tx
+#define access_eevee_lightprobe_volume_display_Resources_irradiance_d_tx() irradiance_d_tx
+#define access_eevee_lightprobe_volume_display_Resources_validity_tx() validity_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_volume_display_Resources
+CREATE_INFO_RES_PASS_eevee_lightprobe_volume_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_display_Resources
+CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_display_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_display_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_display_Resources
+#endif
+#line 112
+struct eevee_lightprobe_volume_display_Resources {
+#line 132
+int _pad;};
+#line 135
+#ifndef GPU_METAL
+eevee_lightprobe_volume_display_Resources eevee_lightprobe_volume_display_Resources_ctor_();
+eevee_lightprobe_volume_display_Resources eevee_lightprobe_volume_display_Resources_new_();
+#endif
+#line 112
+                                                         eevee_lightprobe_volume_display_Resources eevee_lightprobe_volume_display_Resources_ctor_() {eevee_lightprobe_volume_display_Resources r;r._pad=0;return r;}
+#line 125
+       eevee_lightprobe_volume_display_Resources eevee_lightprobe_volume_display_Resources_new_()
+{
+  eevee_lightprobe_volume_display_Resources result;
+  result._pad = 0;
+  return result;
+#line 123
+}
+#line 126
+
+#if defined(CREATE_INFO_eevee_lightprobe_volume_display_Resources) && defined(CREATE_INFO_draw_View)
+#line 126
+
+#if defined(ENTRY_POINT_eevee_lightprobe_volume_display_vert_main)
+#line 126
+
+void eevee_lightprobe_volume_display_vert_main(
+#line 131
+                                                                     )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 132
+  eevee_lightprobe_volume_display_Resources srt = eevee_lightprobe_volume_display_Resources_ctor_(); draw_View views = draw_View_ctor_();
+#line 135
+  constexpr float2 pos[6] = float2_array(float2(-1.0f, -1.0f),
+                                         float2(1.0f, -1.0f),
+                                         float2(-1.0f, 1.0f),
+
+                                         float2(1.0f, -1.0f),
+                                         float2(1.0f, 1.0f),
+                                         float2(-1.0f, 1.0f));
+
+  eevee_lightprobe_volume_display_VertOut_lP = pos[gl_VertexID % 6];
+  int cell_index = gl_VertexID / 6;
+
+  int3 grid_res = srt_access(eevee_lightprobe_volume_display_Resources, grid_resolution);
+
+  eevee_lightprobe_volume_display_VertOut_cell = int3(cell_index / (grid_res.z * grid_res.y),
+                    (cell_index / grid_res.z) % grid_res.y,
+                    cell_index % grid_res.z);
+
+  float3 ws_cell_pos = eevee_lightprobe_volume_grid_sample_position(
+      srt_access(eevee_lightprobe_volume_display_Resources, grid_to_world), grid_res, eevee_lightprobe_volume_display_VertOut_cell);
+
+  float sphere_radius_final = srt_access(eevee_lightprobe_volume_display_Resources, sphere_radius);
+  if (srt_access(eevee_lightprobe_volume_display_Resources, display_validity)) {
+    float validity = texelFetch(srt_access(eevee_lightprobe_volume_display_Resources, validity_tx), eevee_lightprobe_volume_display_VertOut_cell, 0).r;
+    sphere_radius_final *= mix(1.0f, 0.1f, validity);
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 vs_offset = float3(eevee_lightprobe_volume_display_VertOut_lP, 0.0f) * sphere_radius_final;
+  float3 vP = _point_world_to_view(view, ws_cell_pos) + vs_offset;
+
+  gl_Position = _point_view_to_homogenous(view, vP);
+
+  gl_Position.z += 0.0001f;
+  gl_Position = reverse_z_transform(gl_Position);
+
+#endif
+#line 170
+}
+#endif
+#endif
+#line 172
+
+#if defined(CREATE_INFO_eevee_lightprobe_volume_display_Resources) && defined(CREATE_INFO_draw_View)
+#line 172
+
+#if defined(ENTRY_POINT_eevee_lightprobe_volume_display_frag_main)
+#line 172
+
+void eevee_lightprobe_volume_display_frag_main(
+#line 176
+                                                                        )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 177
+  eevee_lightprobe_volume_display_Resources srt = eevee_lightprobe_volume_display_Resources_ctor_(); draw_View views = draw_View_ctor_();
+  float dist_squared = length_squared(eevee_lightprobe_volume_display_VertOut_lP);
+#line 181
+  if (dist_squared > 1.0f) {
+    gpu_discard_fragment();
+    return;
+  }
+
+  SphericalHarmonicL1Tfloat4 sh;
+  sh.L0.M0 = texelFetch(srt_access(eevee_lightprobe_volume_display_Resources, irradiance_a_tx), eevee_lightprobe_volume_display_VertOut_cell, 0);
+  sh.L1.Mn1 = texelFetch(srt_access(eevee_lightprobe_volume_display_Resources, irradiance_b_tx), eevee_lightprobe_volume_display_VertOut_cell, 0);
+  sh.L1.M0 = texelFetch(srt_access(eevee_lightprobe_volume_display_Resources, irradiance_c_tx), eevee_lightprobe_volume_display_VertOut_cell, 0);
+  sh.L1.Mp1 = texelFetch(srt_access(eevee_lightprobe_volume_display_Resources, irradiance_d_tx), eevee_lightprobe_volume_display_VertOut_cell, 0);
+  float validity = texelFetch(srt_access(eevee_lightprobe_volume_display_Resources, validity_tx), eevee_lightprobe_volume_display_VertOut_cell, 0).r;
+
+  float3 vN = float3(eevee_lightprobe_volume_display_VertOut_lP, sqrt(max(0.0f, 1.0f - dist_squared)));
+  float3 N = _normal_view_to_world(_get(views, 0), vN);
+  float3 lN = transform_direction(srt_access(eevee_lightprobe_volume_display_Resources, world_to_grid), N);
+
+  float3 irradiance = _evaluate_lambert(sh, lN).rgb;
+
+  if (srt_access(eevee_lightprobe_volume_display_Resources, display_validity)) {
+    eevee_lightprobe_volume_display_FragOut_color = float4(mix(float3(1.0f, 0.0f, 0.0f), float3(0.0f, 1.0f, 0.0f), validity),
+                            0.0f);
+  }
+  else {
+    eevee_lightprobe_volume_display_FragOut_color = float4(irradiance, 0.0f);
+  }
+
+#endif
+#line 206
+}
+#endif
+#endif
+#line 212
+struct eevee_lightprobe_sphere_display_VertOut {
+             float3 P;
+             float2 lP;
+           int probe_index;
+};
+#line 212
+                                                       eevee_lightprobe_sphere_display_VertOut eevee_lightprobe_sphere_display_VertOut_ctor_() {eevee_lightprobe_sphere_display_VertOut r;r.P=float3(0);r.lP=float2(0);r.probe_index=0;return r;}
+#line 218
+struct eevee_lightprobe_sphere_display_FragOut {
+                    float4 color;
+};
+#line 218
+                                                       eevee_lightprobe_sphere_display_FragOut eevee_lightprobe_sphere_display_FragOut_ctor_() {eevee_lightprobe_sphere_display_FragOut r;r.color=float4(0);return r;}
+#line 222
+#define access_eevee_lightprobe_sphere_display_Resources_lightprobe_sphere() eevee_LightprobeSphereRenderData_new_()
+#define access_eevee_lightprobe_sphere_display_Resources_display_data_buf() display_data_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_display_Resources
+CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_display_Resources
+CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_display_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_display_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_display_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_display_Resources
+#endif
+#line 222
+struct eevee_lightprobe_sphere_display_Resources {
+                           eevee_LightprobeSphereRenderData  lightprobe_sphere;
+#line 234
+};
+#line 237
+#ifndef GPU_METAL
+eevee_lightprobe_sphere_display_Resources eevee_lightprobe_sphere_display_Resources_ctor_();
+eevee_lightprobe_sphere_display_Resources eevee_lightprobe_sphere_display_Resources_new_();
+#endif
+#line 222
+                                                         eevee_lightprobe_sphere_display_Resources eevee_lightprobe_sphere_display_Resources_ctor_() {eevee_lightprobe_sphere_display_Resources r;r.lightprobe_sphere=eevee_LightprobeSphereRenderData_ctor_();return r;}
+#line 227
+       eevee_lightprobe_sphere_display_Resources eevee_lightprobe_sphere_display_Resources_new_()
+{
+  eevee_lightprobe_sphere_display_Resources result;
+  result.lightprobe_sphere = eevee_LightprobeSphereRenderData_new_();
+  return result;
+#line 225
+}
+#line 228
+
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_display_Resources) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightprobeSphereRenderData)
+#line 228
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_display_vert_main)
+#line 228
+
+void eevee_lightprobe_sphere_display_vert_main(
+#line 234
+                                                                     )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 235
+  eevee_lightprobe_sphere_display_Resources srt = eevee_lightprobe_sphere_display_Resources_ctor_(); draw_View views = draw_View_ctor_(); eevee_LightprobeSphereRenderData spheres = eevee_LightprobeSphereRenderData_ctor_();
+#line 238
+  constexpr float2 pos[6] = float2_array(float2(-1.0f, -1.0f),
+                                         float2(1.0f, -1.0f),
+                                         float2(-1.0f, 1.0f),
+
+                                         float2(1.0f, -1.0f),
+                                         float2(1.0f, 1.0f),
+                                         float2(-1.0f, 1.0f));
+
+  eevee_lightprobe_sphere_display_VertOut_lP = pos[gl_VertexID % 6];
+  int display_index = gl_VertexID / 6;
+
+  eevee_lightprobe_sphere_display_VertOut_probe_index = srt_access(eevee_lightprobe_sphere_display_Resources, display_data_buf)[display_index].probe_index;
+  float sphere_radius = srt_access(eevee_lightprobe_sphere_display_Resources, display_data_buf)[display_index].display_size;
+
+  float3 ws_probe_pos = srt_access(eevee_LightprobeSphereRenderData, lightprobe_sphere_buf)[eevee_lightprobe_sphere_display_VertOut_probe_index].location;
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 vs_offset = float3(eevee_lightprobe_sphere_display_VertOut_lP, 0.0f) * sphere_radius;
+  float3 vP = _point_world_to_view(view, ws_probe_pos) + vs_offset;
+  eevee_lightprobe_sphere_display_VertOut_P = _point_view_to_world(view, vP);
+
+  gl_Position = _point_view_to_homogenous(view, vP);
+
+  gl_Position.z += 0.0001f;
+  gl_Position = reverse_z_transform(gl_Position);
+
+#endif
+#line 264
+}
+#endif
+#endif
+#line 266
+
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_display_Resources) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightprobeSphereRenderData)
+#line 266
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_display_frag_main)
+#line 266
+
+void eevee_lightprobe_sphere_display_frag_main(
+#line 271
+                                                                        )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 272
+  eevee_lightprobe_sphere_display_Resources _0 = eevee_lightprobe_sphere_display_Resources_ctor_(); draw_View views = draw_View_ctor_(); eevee_LightprobeSphereRenderData spheres = eevee_LightprobeSphereRenderData_ctor_();
+  float dist_squared = length_squared(eevee_lightprobe_sphere_display_VertOut_lP);
+#line 276
+  if (dist_squared > 1.0f) {
+    gpu_discard_fragment();
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 vN = float3(eevee_lightprobe_sphere_display_VertOut_lP, sqrt(max(0.0f, 1.0f - dist_squared)));
+  float3 N = _normal_view_to_world(view, vN);
+  float3 V = _world_incident_vector(view, eevee_lightprobe_sphere_display_VertOut_P);
+  float3 L = reflect(-V, N);
+
+  eevee_lightprobe_sphere_display_FragOut_color = _sample_probe(spheres, L, 0, srt_access(eevee_LightprobeSphereRenderData, lightprobe_sphere_buf)[eevee_lightprobe_sphere_display_VertOut_probe_index].atlas_coord);
+  eevee_lightprobe_sphere_display_FragOut_color.a = 0.0f;
+
+#endif
+#line 290
+}
+#endif
+#endif
+#line 302

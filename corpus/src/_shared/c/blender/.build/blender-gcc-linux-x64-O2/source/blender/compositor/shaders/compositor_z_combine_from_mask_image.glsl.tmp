@@ -1,0 +1,22 @@
+#line 1 "compositor_z_combine_from_mask_image.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_z_combine_from_mask_image)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 first_color = texture_load(first_tx, texel);
+  float4 second_color = texture_load(second_tx, texel);
+  float mask_value = texture_load(mask_tx, texel).x;
+#line 22
+  float4 foreground_color = mix(second_color, first_color, mask_value);
+  float4 background_color = mix(first_color, second_color, mask_value);
+  float mix_factor = use_alpha ? foreground_color.a : 1.0f;
+  float4 combined_color = mix(background_color, foreground_color, mix_factor);
+#line 28
+  combined_color.a = use_alpha ? max(second_color.a, first_color.a) : combined_color.a;
+
+  imageStore(combined_img, texel, combined_color);
+}

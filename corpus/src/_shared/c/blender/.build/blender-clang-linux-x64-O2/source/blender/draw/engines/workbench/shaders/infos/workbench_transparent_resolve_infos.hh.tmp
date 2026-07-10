@@ -1,0 +1,18 @@
+#line 1 "workbench_transparent_resolve_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 12
+#ifdef CREATE_INFO_RES_PASS_workbench_transparent_resolve
+CREATE_INFO_RES_PASS_workbench_transparent_resolve
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_transparent_resolve
+CREATE_INFO_RES_BATCH_workbench_transparent_resolve
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_transparent_resolve
+CREATE_INFO_RES_GEOMETRY_workbench_transparent_resolve
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_transparent_resolve
+CREATE_INFO_RES_SHARED_VARS_workbench_transparent_resolve
+#endif

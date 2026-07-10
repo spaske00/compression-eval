@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "clickhouse",
+  "input_url": "https://github.com/ClickHouse/ClickHouse",
+  "canonical_url": "https://github.com/ClickHouse/ClickHouse",
+  "source_directory": "clickhouse/upstream",
+  "commit": "02dd674fc494dd9fcae4277f39e1d1e2c7a32c44",
+  "nested_submodules": []
+}

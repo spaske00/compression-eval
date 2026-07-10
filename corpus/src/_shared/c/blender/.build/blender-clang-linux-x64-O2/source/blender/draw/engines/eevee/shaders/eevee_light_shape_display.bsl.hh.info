@@ -1,0 +1,46 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_light_ShapeDisplayFragOut)
+FRAGMENT_OUT(0, float4, eevee_light_ShapeDisplayFragOut_out_color)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(eevee_light_ShapeDisplayVertOut_t)
+SMOOTH(float2, eevee_light_ShapeDisplayVertOut_lP)
+SMOOTH(float3, eevee_light_ShapeDisplayVertOut_P)
+FLAT(float3, eevee_light_ShapeDisplayVertOut_radiance)
+FLAT(int, eevee_light_ShapeDisplayVertOut_light_index)
+FLAT(uint, eevee_light_ShapeDisplayVertOut_light_type)
+GPU_SHADER_INTERFACE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_light_shape_display_vert_infos_)
+BUILTINS(BuiltinBits::CLIP_CONTROL)
+BUILTINS(BuiltinBits::VERTEX_ID)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_LightRenderData)
+VERTEX_OUT(eevee_light_ShapeDisplayVertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_light_shape_display_frag_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_LightRenderData)
+ADDITIONAL_INFO(UnifiedVolumeData)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_light_ShapeDisplayFragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_light_shape_display)
+GRAPHIC_SOURCE("eevee_light_shape_display.bsl.hh")
+VERTEX_FUNCTION("eevee_light_shape_display_vert")
+FRAGMENT_FUNCTION("eevee_light_shape_display_frag")
+ADDITIONAL_INFO(eevee_light_shape_display_vert_infos_)
+ADDITIONAL_INFO(eevee_light_shape_display_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

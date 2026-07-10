@@ -1,0 +1,12 @@
+#line 1 "gpu_shader_material_implicit_defaults.glsl"
+ 
+#line 6
+void world_normals_get(_ref(float3 ,N))
+{
+  N = g_data.N;
+}
+#line 12
+void world_position_get(_ref(float3 ,P))
+{
+  P = g_data.P;
+}

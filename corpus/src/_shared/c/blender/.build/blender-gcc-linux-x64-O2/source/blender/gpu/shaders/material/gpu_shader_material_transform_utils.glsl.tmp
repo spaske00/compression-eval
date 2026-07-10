@@ -1,0 +1,122 @@
+#line 1 "gpu_shader_material_transform_utils.glsl"
+ 
+#line 8
+void normal_transform_object_to_world(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+
+  vout = vin * to_float3x3(obj.model_inverse);
+}
+#line 16
+void normal_transform_world_to_object(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+
+  vout = vin * to_float3x3(obj.model);
+}
+#line 24
+void normal_transform_object_to_view(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  const ViewMatrices view = view_matrices_get();
+  vout = vin * to_float3x3(obj.model_inverse);
+  vout = to_float3x3(view.viewmat) * vout;
+}
+#line 33
+void normal_transform_view_to_world(float3 vin, _ref(float3 ,vout))
+{
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(view.viewinv) * vin;
+}
+#line 40
+void normal_transform_view_to_object(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(view.viewinv) * vin;
+  vout = vout * to_float3x3(obj.model);
+}
+#line 49
+void normal_transform_world_to_view(float3 vin, _ref(float3 ,vout))
+{
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(view.viewmat) * vin;
+}
+#line 56
+void direction_transform_object_to_world(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  vout = to_float3x3(obj.model) * vin;
+}
+#line 63
+void direction_transform_object_to_view(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(obj.model) * vin;
+  vout = to_float3x3(view.viewmat) * vout;
+}
+#line 72
+void direction_transform_view_to_world(float3 vin, _ref(float3 ,vout))
+{
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(view.viewinv) * vin;
+}
+#line 79
+void direction_transform_view_to_object(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(view.viewinv) * vin;
+  vout = to_float3x3(obj.model_inverse) * vout;
+}
+#line 88
+void direction_transform_world_to_view(float3 vin, _ref(float3 ,vout))
+{
+  const ViewMatrices view = view_matrices_get();
+  vout = to_float3x3(view.viewmat) * vin;
+}
+#line 95
+void direction_transform_world_to_object(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  vout = to_float3x3(obj.model_inverse) * vin;
+}
+#line 102
+void point_transform_object_to_world(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  vout = (obj.model * float4(vin, 1.0f)).xyz;
+}
+#line 109
+void point_transform_object_to_view(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  const ViewMatrices view = view_matrices_get();
+  vout = (view.viewmat * (obj.model * float4(vin, 1.0f))).xyz;
+}
+#line 117
+void point_transform_view_to_world(float3 vin, _ref(float3 ,vout))
+{
+  const ViewMatrices view = view_matrices_get();
+  vout = (view.viewinv * float4(vin, 1.0f)).xyz;
+}
+#line 124
+void point_transform_view_to_object(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  const ViewMatrices view = view_matrices_get();
+  vout = (obj.model_inverse * (view.viewinv * float4(vin, 1.0f))).xyz;
+}
+#line 132
+void point_transform_world_to_view(float3 vin, _ref(float3 ,vout))
+{
+  const ViewMatrices view = view_matrices_get();
+  vout = (view.viewmat * float4(vin, 1.0f)).xyz;
+}
+#line 139
+void point_transform_world_to_object(float3 vin, _ref(float3 ,vout))
+{
+  const ObjectMatrices obj = object_matrices_get();
+  vout = (obj.model_inverse * float4(vin, 1.0f)).xyz;
+}

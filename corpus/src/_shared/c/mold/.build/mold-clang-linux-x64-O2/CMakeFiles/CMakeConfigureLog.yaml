@@ -1,0 +1,780 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      The system is: Linux - 6.17.0-35-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: -O2
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/3.31.10/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: -O2
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/3.31.10/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_b160e
+        [1/2] /usr/bin/clang   -O2    -v -MD -MT CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -x c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang -O2 -O2 -v -Wl,-v CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -o cmTC_b160e   && :
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b160e /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_b160e]
+        ignore line: [[1/2] /usr/bin/clang   -O2    -v -MD -MT CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-pZgvAb -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -x c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang -O2 -O2 -v -Wl -v CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -o cmTC_b160e   && :]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b160e /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_b160e] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_b160e.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_6e8ac
+        [1/2] /usr/bin/clang++   -O2    -v -MD -MT CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang++ -O2 -O2 -v -Wl,-v CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_6e8ac   && :
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6e8ac /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14]
+          add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14]
+          add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward]
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14] ==> [/usr/include/x86_64-linux-gnu/c++/14]
+        collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/x86_64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_6e8ac]
+        ignore line: [[1/2] /usr/bin/clang++   -O2    -v -MD -MT CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-J26ItR -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14]
+        ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14]
+        ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang++ -O2 -O2 -v -Wl -v CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_6e8ac   && :]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6e8ac /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_6e8ac] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_6e8ac.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1251 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "third-party/blake3/c/CMakeLists.txt:12 (project)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      Ubuntu clang version 18.1.3 (1ubuntu1)
+      Target: x86_64-pc-linux-gnu
+      Thread model: posix
+      InstalledDir: /usr/bin
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1251 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "third-party/blake3/c/CMakeLists.txt:12 (project)"
+    message: |
+      Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
+      Ubuntu clang version 18.1.3 (1ubuntu1)
+      Target: x86_64-pc-linux-gnu
+      Thread model: posix
+      InstalledDir: /usr/bin
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1238 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "third-party/blake3/c/CMakeLists.txt:12 (project)"
+    message: |
+      Checking whether the ASM compiler is Clang using "--version" matched "(clang version)":
+      Ubuntu clang version 18.1.3 (1ubuntu1)
+      Target: x86_64-pc-linux-gnu
+      Thread model: posix
+      InstalledDir: /usr/bin
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:178 (check_include_file)"
+    checks:
+      - "Looking for zstd.h"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-dbFR2i"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-dbFR2i"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "HAVE_ZSTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-dbFR2i'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_348e6
+        [1/2] /usr/bin/clang   -O2 -MD -MT CMakeFiles/cmTC_348e6.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_348e6.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_348e6.dir/CheckIncludeFile.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-dbFR2i/CheckIncludeFile.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_348e6.dir/CheckIncludeFile.c.o -o cmTC_348e6   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "third-party/mimalloc/CMakeLists.txt:470 (check_linker_flag)"
+      - "third-party/mimalloc/CMakeLists.txt:489 (find_link_library)"
+    checks:
+      - "Performing Test mi_has_libpthread"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UHN47I"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UHN47I"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "mi_has_libpthread"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UHN47I'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_5e729
+        [1/2] /usr/bin/clang -Dmi_has_libpthread  -O2  -std=gnu11 -MD -MT CMakeFiles/cmTC_5e729.dir/src.c.o -MF CMakeFiles/cmTC_5e729.dir/src.c.o.d -o CMakeFiles/cmTC_5e729.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UHN47I/src.c
+        [2/2] : && /usr/bin/clang -O2 -O2    -lpthread CMakeFiles/cmTC_5e729.dir/src.c.o -o cmTC_5e729   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "third-party/mimalloc/CMakeLists.txt:470 (check_linker_flag)"
+      - "third-party/mimalloc/CMakeLists.txt:493 (find_link_library)"
+    checks:
+      - "Performing Test mi_has_librt"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zYYDu7"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zYYDu7"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "mi_has_librt"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zYYDu7'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_eb574
+        [1/2] /usr/bin/clang -Dmi_has_librt  -O2  -std=gnu11 -MD -MT CMakeFiles/cmTC_eb574.dir/src.c.o -MF CMakeFiles/cmTC_eb574.dir/src.c.o.d -o CMakeFiles/cmTC_eb574.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zYYDu7/src.c
+        [2/2] : && /usr/bin/clang -O2 -O2    -lrt CMakeFiles/cmTC_eb574.dir/src.c.o -o cmTC_eb574   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "third-party/mimalloc/CMakeLists.txt:470 (check_linker_flag)"
+      - "third-party/mimalloc/CMakeLists.txt:497 (find_link_library)"
+    checks:
+      - "Performing Test mi_has_libatomic"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-QMdbak"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-QMdbak"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "mi_has_libatomic"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-QMdbak'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_ae9da
+        [1/2] /usr/bin/clang -Dmi_has_libatomic  -O2  -std=gnu11 -MD -MT CMakeFiles/cmTC_ae9da.dir/src.c.o -MF CMakeFiles/cmTC_ae9da.dir/src.c.o.d -o CMakeFiles/cmTC_ae9da.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-QMdbak/src.c
+        [2/2] : && /usr/bin/clang -O2 -O2    -latomic CMakeFiles/cmTC_ae9da.dir/src.c.o -o cmTC_ae9da   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "third-party/tbb/CMakeLists.txt:228 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ysSUXd"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ysSUXd"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ysSUXd'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_64215
+        [1/2] /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -O2  -fPIE -MD -MT CMakeFiles/cmTC_64215.dir/src.c.o -MF CMakeFiles/cmTC_64215.dir/src.c.o.d -o CMakeFiles/cmTC_64215.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ysSUXd/src.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_64215.dir/src.c.o -o cmTC_64215   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "third-party/tbb/cmake/resumable_tasks.cmake:23 (check_symbol_exists)"
+      - "third-party/tbb/CMakeLists.txt:233 (include)"
+    checks:
+      - "Looking for getcontext"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hIWhBZ"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hIWhBZ"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "_tbb_have_ucontext"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hIWhBZ'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_0ad00
+        [1/2] /usr/bin/clang   -O2 -Wno-deprecated-declarations -fPIE -MD -MT CMakeFiles/cmTC_0ad00.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_0ad00.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_0ad00.dir/CheckSymbolExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hIWhBZ/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -O2 -Wno-deprecated-declarations -O2 CMakeFiles/cmTC_0ad00.dir/CheckSymbolExists.c.o -o cmTC_0ad00   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "CMakeLists.txt:267 (check_library_exists)"
+    checks:
+      - "Looking for pow in m"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-vCfl85"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-vCfl85"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "LIBM_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-vCfl85'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_71cb6
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=pow -MD -MT CMakeFiles/cmTC_71cb6.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_71cb6.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_71cb6.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-vCfl85/CheckFunctionExists.c
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-vCfl85/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'pow' [-Wincompatible-library-redeclaration]
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^
+        <command line>:1:31: note: expanded from macro 'CHECK_FUNCTION_EXISTS'
+            1 | #define CHECK_FUNCTION_EXISTS pow
+              |                               ^
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-vCfl85/CheckFunctionExists.c:7:3: note: 'pow' is a builtin with type 'double (double, double)'
+        <command line>:1:31: note: expanded from macro 'CHECK_FUNCTION_EXISTS'
+            1 | #define CHECK_FUNCTION_EXISTS pow
+              |                               ^
+        1 warning generated.
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=pow -O2 CMakeFiles/cmTC_71cb6.dir/CheckFunctionExists.c.o -o cmTC_71cb6  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:287 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test HAVE_FULL_ATOMIC_SUPPORT"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-cf9RX5"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-cf9RX5"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "HAVE_FULL_ATOMIC_SUPPORT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-cf9RX5'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_77064
+        [1/2] /usr/bin/clang++ -DHAVE_FULL_ATOMIC_SUPPORT  -O2 -MD -MT CMakeFiles/cmTC_77064.dir/src.cxx.o -MF CMakeFiles/cmTC_77064.dir/src.cxx.o.d -o CMakeFiles/cmTC_77064.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-cf9RX5/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -O2 CMakeFiles/cmTC_77064.dir/src.cxx.o -o cmTC_77064   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:306 (check_symbol_exists)"
+    checks:
+      - "Looking for madvise"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ignvRJ"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ignvRJ"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "HAVE_MADVISE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ignvRJ'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_d52ca
+        [1/2] /usr/bin/clang   -O2 -MD -MT CMakeFiles/cmTC_d52ca.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_d52ca.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_d52ca.dir/CheckSymbolExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ignvRJ/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_d52ca.dir/CheckSymbolExists.c.o -o cmTC_d52ca   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:307 (check_symbol_exists)"
+    checks:
+      - "Looking for uname"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-gg9r26"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-gg9r26"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+    buildResult:
+      variable: "HAVE_UNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-gg9r26'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_4ab3f
+        [1/2] /usr/bin/clang   -O2 -MD -MT CMakeFiles/cmTC_4ab3f.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_4ab3f.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_4ab3f.dir/CheckSymbolExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/mold/.build/mold-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-gg9r26/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_4ab3f.dir/CheckSymbolExists.c.o -o cmTC_4ab3f   && :
+        
+      exitCode: 0
+...

@@ -1,0 +1,302 @@
+#line 1 "eevee_shadow_tilemap_lib.bsl.hh"
+ 
+#line 18
+int2 shadow_viewport_size_get(uint viewport_index)
+{
+
+  return int2(int(1u << viewport_index));
+}
+#line 28
+int shadow_tile_index(int2 tile)
+{
+  return tile.x + tile.y * SHADOW_TILEMAP_RES;
+}
+
+uint2 shadow_tile_coord(int tile_index)
+{
+  return uint2(uint(tile_index % SHADOW_TILEMAP_RES), uint(tile_index / SHADOW_TILEMAP_RES));
+}
+#line 39
+uint2 shadow_tilemap_start(int tilemap_index)
+{
+  return SHADOW_TILEMAP_RES * uint2(uint(tilemap_index % SHADOW_TILEMAP_PER_ROW),
+                                    uint(tilemap_index / SHADOW_TILEMAP_PER_ROW));
+}
+
+uint2 shadow_tile_coord_in_atlas(uint2 tile, int tilemap_index)
+{
+  return shadow_tilemap_start(tilemap_index) + tile;
+}
+#line 54
+int shadow_tile_offset(uint2 tile, int tiles_index, int lod)
+{
+#if SHADOW_TILEMAP_LOD > 5
+#  error This needs to be adjusted
+#endif
+  constexpr int lod0_width = SHADOW_TILEMAP_RES / 1;
+  constexpr int lod1_width = SHADOW_TILEMAP_RES / 2;
+  constexpr int lod2_width = SHADOW_TILEMAP_RES / 4;
+  constexpr int lod3_width = SHADOW_TILEMAP_RES / 8;
+  constexpr int lod4_width = SHADOW_TILEMAP_RES / 16;
+  constexpr int lod5_width = SHADOW_TILEMAP_RES / 32;
+  constexpr int lod0_size = lod0_width * lod0_width;
+  constexpr int lod1_size = lod1_width * lod1_width;
+  constexpr int lod2_size = lod2_width * lod2_width;
+  constexpr int lod3_size = lod3_width * lod3_width;
+  constexpr int lod4_size = lod4_width * lod4_width;
+#line 72
+  int offset = tiles_index;
+  switch (lod) {
+    case 5:
+      offset += lod0_size + lod1_size + lod2_size + lod3_size + lod4_size;
+      offset += int(tile.y) * lod5_width;
+      break;
+    case 4:
+      offset += lod0_size + lod1_size + lod2_size + lod3_size;
+      offset += int(tile.y) * lod4_width;
+      break;
+    case 3:
+      offset += lod0_size + lod1_size + lod2_size;
+      offset += int(tile.y) * lod3_width;
+      break;
+    case 2:
+      offset += lod0_size + lod1_size;
+      offset += int(tile.y) * lod2_width;
+      break;
+    case 1:
+      offset += lod0_size;
+      offset += int(tile.y) * lod1_width;
+      break;
+    case 0:
+    default:
+      offset += int(tile.y) * lod0_width;
+      break;
+  }
+  offset += int(tile.x);
+  return offset;
+}
+#line 110
+ShadowSamplingTile shadow_tile_load(usampler2D tilemaps_tx, uint2 tile_co, int tilemap_index)
+{
+#line 114
+  tile_co = clamp(tile_co, uint2(0), uint2(SHADOW_TILEMAP_RES - 1));
+  uint2 texel = shadow_tile_coord_in_atlas(tile_co, tilemap_index);
+  uint tile_data = texelFetch(tilemaps_tx, int2(texel), 0).x;
+  return shadow_sampling_tile_unpack(tile_data);
+}
+#line 157
+float shadow_directional_level_fractional(LightData light, float3 lP)
+{
+  float lod;
+  if (light.type == LIGHT_SUN) {
+
+    constexpr float narrowing = float(SHADOW_TILEMAP_RES) / (float(SHADOW_TILEMAP_RES) - 1.0001f);
+#line 166
+    lod = log2(length(lP) * narrowing * 2.0f);
+
+    lod = max(lod + light.lod_bias, light.lod_min);
+  }
+  else {
+
+    constexpr float narrowing = float(SHADOW_TILEMAP_RES) / (float(SHADOW_TILEMAP_RES) - 2.5001f);
+
+    float clipmap_lod_min_minus_one = float(_sun(light).clipmap_lod_min - 1);
+    float lod_min_half_size = exp2(clipmap_lod_min_minus_one);
+    lod = length(lP.xy) * narrowing / lod_min_half_size;
+
+    lod += clipmap_lod_min_minus_one;
+  }
+  return clamp(lod, float(_sun(light).clipmap_lod_min), float(_sun(light).clipmap_lod_max));
+}
+
+int shadow_directional_level(LightData light, float3 lP)
+{
+#line 187
+  return int(ceil(shadow_directional_level_fractional(light, lP)));
+}
+#line 194
+float shadow_punctual_pixel_ratio(LightData light,
+                                  float3 lP,
+                                  bool is_perspective,
+                                  float distance_to_camera,
+                                  float film_pixel_radius)
+{
+  film_pixel_radius *= exp2(light.lod_bias);
+
+  float distance_to_light = reduce_max(abs(lP));
+#line 207
+  float film_pixel_footprint = (is_perspective) ? film_pixel_radius * distance_to_camera :
+                                                  film_pixel_radius;
+
+  film_pixel_footprint = max(film_pixel_footprint, light.lod_min);
+
+  film_pixel_footprint /= distance_to_light;
+
+  film_pixel_footprint = max(film_pixel_footprint, -light.lod_min);
+
+  constexpr float shadow_pixel_radius = (2.0f * M_SQRT2) / SHADOW_MAP_MAX_RES;
+  return saturate(shadow_pixel_radius / film_pixel_footprint);
+}
+#line 224
+float shadow_punctual_level_fractional(LightData light,
+                                       float3 lP,
+                                       bool is_perspective,
+                                       float distance_to_camera,
+                                       float film_pixel_radius)
+{
+  float ratio = shadow_punctual_pixel_ratio(
+      light, lP, is_perspective, distance_to_camera, film_pixel_radius);
+  return clamp(-log2(ratio), 0.0f, float(SHADOW_TILEMAP_LOD));
+}
+
+int shadow_punctual_level(LightData light,
+                          float3 lP,
+                          bool is_perspective,
+                          float distance_to_camera,
+                          float film_pixel_radius)
+{
+
+  return int(shadow_punctual_level_fractional(
+      light, lP, is_perspective, distance_to_camera, film_pixel_radius));
+}
+
+struct ShadowCoordinates {
+
+  int tilemap_index;
+
+  uint2 tilemap_texel;
+
+  uint2 tilemap_tile;
+};
+#line 246
+                                 ShadowCoordinates ShadowCoordinates_ctor_() {ShadowCoordinates r;r.tilemap_index=0;r.tilemap_texel=uint2(0);r.tilemap_tile=uint2(0);return r;}
+#line 256
+ShadowCoordinates shadow_coordinate_from_uvs(int tilemap_index, float2 tilemap_uv)
+{
+  ShadowCoordinates ret;
+  ret.tilemap_index = tilemap_index;
+  ret.tilemap_texel = uint2(tilemap_uv * (float(SHADOW_MAP_MAX_RES) - 1e-2f));
+  ret.tilemap_tile = ret.tilemap_texel >> uint(SHADOW_PAGE_LOD);
+  return ret;
+}
+#line 266
+int2 shadow_decompress_grid_offset(eLightType light_type,
+                                   int2 offset_neg,
+                                   int2 offset_pos,
+                                   int level_relative)
+{
+  if (light_type == LIGHT_SUN_ORTHO) {
+    return shadow_cascade_grid_offset(offset_pos, level_relative);
+  }
+  return (offset_pos >> level_relative) - (offset_neg >> level_relative);
+}
+#line 280
+ShadowCoordinates shadow_directional_coordinates_at_level(LightData light, float3 lP, int level)
+{
+#line 284
+  int level_relative = level - _sun(light).clipmap_lod_min;
+  int lod_relative = (light.type == LIGHT_SUN_ORTHO) ? _sun(light).clipmap_lod_min : level;
+
+  int2 clipmap_offset = shadow_decompress_grid_offset(light.type,
+                                                      _sun(light).clipmap_base_offset_neg,
+                                                      _sun(light).clipmap_base_offset_pos,
+                                                      level_relative);
+
+  float2 tilemap_uv = lP.xy - _sun(light).clipmap_origin;
+  tilemap_uv *= exp2(float(-lod_relative));
+  tilemap_uv -= float2(clipmap_offset) * (1.0f / float(SHADOW_TILEMAP_RES));
+  tilemap_uv = saturate(tilemap_uv + 0.5f);
+
+  return shadow_coordinate_from_uvs(light.tilemap_index + level_relative, tilemap_uv);
+}
+#line 303
+ShadowCoordinates shadow_directional_coordinates(LightData light, float3 lP)
+{
+  int level = shadow_directional_level(light, lP - _position(light));
+  return shadow_directional_coordinates_at_level(light, lP, level);
+}
+#line 310
+float3 shadow_punctual_local_position_to_face_local(int face_id, float3 lL)
+{
+  switch (face_id) {
+    case 1:
+      return float3(-lL.y, lL.z, -lL.x);
+    case 2:
+      return float3(lL.y, lL.z, lL.x);
+    case 3:
+      return float3(lL.x, lL.z, -lL.y);
+    case 4:
+      return float3(-lL.x, lL.z, lL.y);
+    case 5:
+      return float3(lL.x, -lL.y, -lL.z);
+    default:
+      return lL;
+  }
+}
+
+float3 shadow_punctual_face_local_to_local_position(int face_id, float3 fL)
+{
+  switch (face_id) {
+    case 1:
+      return float3(-fL.z, -fL.x, fL.y);
+    case 2:
+      return float3(fL.z, fL.x, fL.y);
+    case 3:
+      return float3(fL.x, -fL.z, fL.y);
+    case 4:
+      return float3(-fL.x, fL.z, fL.y);
+    case 5:
+      return float3(fL.x, -fL.y, -fL.z);
+    default:
+      return fL;
+  }
+}
+#line 348
+int shadow_punctual_face_index_get(float3 lL)
+{
+  float3 aP = abs(lL);
+  if (all(greaterThan(aP.xx, aP.yz))) {
+    return (lL.x > 0.0f) ? 1 : 2;
+  }
+  if (all(greaterThan(aP.yy, aP.xz))) {
+    return (lL.y > 0.0f) ? 3 : 4;
+  }
+  return (lL.z > 0.0f) ? 5 : 0;
+}
+#line 364
+ShadowCoordinates shadow_punctual_coordinates(LightData light, float3 lP, int face_id)
+{
+
+  float2 tilemap_uv = lP.xy / abs(lP.z);
+
+  tilemap_uv = saturate(tilemap_uv * 0.5f + 0.5f);
+
+  return shadow_coordinate_from_uvs(light.tilemap_index + face_id, tilemap_uv);
+}
+#line 380
+float3 shadow_tile_corner_persp(ShadowTileMapData tilemap, int2 tile)
+{
+  return tilemap.corners[1].xyz + tilemap.corners[2].xyz * float(tile.x) +
+         tilemap.corners[3].xyz * float(tile.y);
+}
+
+Pyramid shadow_tilemap_cubeface_bounds(ShadowTileMapData tilemap,
+                                       int2 tile_start,
+                                       const int2 extent)
+{
+  Pyramid shape;
+  shape.corners[0] = tilemap.corners[0].xyz;
+  shape.corners[1] = shadow_tile_corner_persp(tilemap, tile_start + int2(0, 0));
+  shape.corners[2] = shadow_tile_corner_persp(tilemap, tile_start + int2(extent.x, 0));
+  shape.corners[3] = shadow_tile_corner_persp(tilemap, tile_start + extent);
+  shape.corners[4] = shadow_tile_corner_persp(tilemap, tile_start + int2(0, extent.y));
+  return shape;
+}
+#line 408
+int shadow_render_page_index_get(int view_index, int2 tile_coordinate_in_lod)
+{
+  return view_index * SHADOW_TILEMAP_LOD0_LEN + tile_coordinate_in_lod.y * SHADOW_TILEMAP_RES +
+         tile_coordinate_in_lod.x;
+}
+
+

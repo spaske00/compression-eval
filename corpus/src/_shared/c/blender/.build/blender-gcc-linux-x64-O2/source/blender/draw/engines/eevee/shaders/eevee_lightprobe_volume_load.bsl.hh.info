@@ -1,0 +1,68 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_AtlasStore)
+.image(0, blender::gpu::TextureFormat::VOLUME_PROBE_FORMAT, Qualifier::write, ImageReadWriteType::image3D, "irradiance_atlas_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_LoadGrid)
+PUSH_CONSTANT(float4x4, grid_local_to_world)
+PUSH_CONSTANT(int, grid_index)
+PUSH_CONSTANT(int, grid_start_index)
+PUSH_CONSTANT(float, validity_threshold)
+PUSH_CONSTANT(float, dilation_threshold)
+PUSH_CONSTANT(float, dilation_radius)
+PUSH_CONSTANT(float, grid_intensity_factor)
+.sampler(0, ImageType::sampler3D, "irradiance_a_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler3D, "irradiance_b_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(2, ImageType::sampler3D, "irradiance_c_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(3, ImageType::sampler3D, "irradiance_d_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(4, ImageType::sampler3D, "visibility_a_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(5, ImageType::sampler3D, "visibility_b_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(7, ImageType::sampler3D, "visibility_c_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(8, ImageType::sampler3D, "visibility_d_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(9, ImageType::sampler3D, "validity_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_LoadWorld)
+PUSH_CONSTANT(int, grid_index)
+.storage_buf(1, Qualifier::read, "SphereProbeHarmonic", "harmonic_buf", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_load_grid_infos_)
+LOCAL_GROUP_SIZE(IRRADIANCE_GRID_BRICK_SIZE,
+                         IRRADIANCE_GRID_BRICK_SIZE,
+                         IRRADIANCE_GRID_BRICK_SIZE)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lightprobe_volume_LoadGrid)
+ADDITIONAL_INFO(eevee_LightprobeVolumeRenderData)
+ADDITIONAL_INFO(eevee_lightprobe_volume_AtlasStore)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_load_world_infos_)
+LOCAL_GROUP_SIZE(IRRADIANCE_GRID_BRICK_SIZE,
+                         IRRADIANCE_GRID_BRICK_SIZE,
+                         IRRADIANCE_GRID_BRICK_SIZE)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lightprobe_volume_LoadWorld)
+ADDITIONAL_INFO(eevee_LightprobeVolumeRenderData)
+ADDITIONAL_INFO(eevee_lightprobe_volume_AtlasStore)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_load)
+COMPUTE_SOURCE("eevee_lightprobe_volume_load.bsl.hh")
+COMPUTE_FUNCTION("eevee_lightprobe_volume_load_grid")
+ADDITIONAL_INFO(eevee_lightprobe_volume_load_grid_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_world)
+COMPUTE_SOURCE("eevee_lightprobe_volume_load.bsl.hh")
+COMPUTE_FUNCTION("eevee_lightprobe_volume_load_world")
+ADDITIONAL_INFO(eevee_lightprobe_volume_load_world_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

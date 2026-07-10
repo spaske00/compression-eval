@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_invert_rotation.glsl"
+ 
+#line 8
+void invert_rotation(float4 rotation, _ref(float4 ,result))
+{
+  result = _as_float4(quaternion_conjugate(_ctor(Quaternion) UNPACK4(rotation) _rotc() ));
+}

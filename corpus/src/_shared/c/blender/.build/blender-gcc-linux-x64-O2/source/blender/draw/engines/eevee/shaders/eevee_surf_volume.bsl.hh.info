@@ -1,0 +1,39 @@
+#pragma once
+
+
+#  define MAT_VOLUME
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfVolume)
+.noop()
+
+.noop()
+
+.noop()
+
+ADDITIONAL_INFO(draw_modelmat_common)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+.image(VOLUME_OCCUPANCY_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read, ImageReadWriteType::uimage3DAtomic, "occupancy_img", Frequency::PASS)
+.image(VOLUME_PROP_SCATTERING_IMG_SLOT, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read_write, ImageReadWriteType::image3D, "out_scattering_img", Frequency::PASS)
+.image(VOLUME_PROP_EXTINCTION_IMG_SLOT, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read_write, ImageReadWriteType::image3D, "out_extinction_img", Frequency::PASS)
+.image(VOLUME_PROP_EMISSION_IMG_SLOT, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read_write, ImageReadWriteType::image3D, "out_emissive_img", Frequency::PASS)
+.image(VOLUME_PROP_PHASE_IMG_SLOT, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::read_write, ImageReadWriteType::image3D, "out_phase_img", Frequency::PASS)
+.image(VOLUME_PROP_PHASE_WEIGHT_IMG_SLOT, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::read_write, ImageReadWriteType::image3D, "out_phase_weight_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_volume_infos_)
+EARLY_FRAGMENT_TEST(true)
+BUILTINS(BuiltinBits::TEXTURE_ATOMIC)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_SurfVolume)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_Model)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Infos)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+GPU_SHADER_CREATE_END()
+

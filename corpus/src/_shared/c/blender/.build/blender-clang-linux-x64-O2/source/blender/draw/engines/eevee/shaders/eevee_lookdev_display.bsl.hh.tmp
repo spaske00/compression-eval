@@ -1,0 +1,132 @@
+#line 1 "eevee_lookdev_display.bsl.hh"
+ 
+#line 16
+struct eevee_lookdev_DisplayVertOut {
+             float2 uv_coord;
+           uint sphere_id;
+};
+#line 16
+                                            eevee_lookdev_DisplayVertOut eevee_lookdev_DisplayVertOut_ctor_() {eevee_lookdev_DisplayVertOut r;r.uv_coord=float2(0);r.sphere_id=0u;return r;}
+#line 21
+struct eevee_lookdev_DisplayFragOut {
+                    float4 color;
+};
+#line 21
+                                            eevee_lookdev_DisplayFragOut eevee_lookdev_DisplayFragOut_ctor_() {eevee_lookdev_DisplayFragOut r;r.color=float4(0);return r;}
+#line 25
+#define access_eevee_lookdev_Display_viewportSize() viewportSize
+#define access_eevee_lookdev_Display_invertedViewportSize() invertedViewportSize
+#define access_eevee_lookdev_Display_anchor() anchor
+#define access_eevee_lookdev_Display_metallic_tx() metallic_tx
+#define access_eevee_lookdev_Display_diffuse_tx() diffuse_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_lookdev_Display
+CREATE_INFO_RES_PASS_eevee_lookdev_Display
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lookdev_Display
+CREATE_INFO_RES_BATCH_eevee_lookdev_Display
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lookdev_Display
+CREATE_INFO_RES_GEOMETRY_eevee_lookdev_Display
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lookdev_Display
+CREATE_INFO_RES_SHARED_VARS_eevee_lookdev_Display
+#endif
+#line 25
+struct eevee_lookdev_Display {
+#line 40
+int _pad;};
+#line 43
+#ifndef GPU_METAL
+eevee_lookdev_Display eevee_lookdev_Display_ctor_();
+eevee_lookdev_Display eevee_lookdev_Display_new_();
+#endif
+#line 25
+                                     eevee_lookdev_Display eevee_lookdev_Display_ctor_() {eevee_lookdev_Display r;r._pad=0;return r;}
+#line 33
+       eevee_lookdev_Display eevee_lookdev_Display_new_()
+{
+  eevee_lookdev_Display result;
+  result._pad = 0;
+  return result;
+#line 31
+}
+#line 34
+
+#if defined(CREATE_INFO_eevee_lookdev_Display)
+#line 34
+
+#if defined(ENTRY_POINT_eevee_lookdev_display_vert)
+#line 34
+
+void eevee_lookdev_display_vert(
+#line 39
+                                                             )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 40
+  eevee_lookdev_Display srt = eevee_lookdev_Display_ctor_();
+  uint vert_index = (gl_VertexID < 3) ? uint(gl_VertexID) : uint(gl_VertexID - 2);
+
+  float2 uv = float2(vert_index / 2, vert_index % 2);
+  eevee_lookdev_DisplayVertOut_uv_coord = uv;
+  eevee_lookdev_DisplayVertOut_sphere_id = uint(gl_InstanceID);
+
+  float2 sphere_size = float2(textureSize(srt_access(eevee_lookdev_Display, metallic_tx), 0)) * srt_access(eevee_lookdev_Display, invertedViewportSize);
+  float2 margin = float2(0.125f, -0.125f) * sphere_size;
+  float2 anchor_point = float2(1.0f, -1.0f) -
+                        float2(srt_access(eevee_lookdev_Display, viewportSize).x - srt_access(eevee_lookdev_Display, anchor).x, -srt_access(eevee_lookdev_Display, anchor).y) *
+                            srt_access(eevee_lookdev_Display, invertedViewportSize) * float2(2.0f) -
+                        margin;
+
+  float2 offset = anchor_point -
+                  float2(sphere_size.x * (gl_InstanceID + 1) + margin.x * 2.0f * gl_InstanceID, 0.0f);
+  float2 co = uv * sphere_size + offset;
+  gl_Position = float4(co, 0.0f, 1.0f);
+
+#endif
+#line 58
+}
+#endif
+#endif
+#line 60
+
+#if defined(CREATE_INFO_eevee_lookdev_Display)
+#line 60
+
+#if defined(ENTRY_POINT_eevee_lookdev_display_frag)
+#line 60
+
+void eevee_lookdev_display_frag(
+#line 64
+                                                      )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 65
+  eevee_lookdev_Display srt = eevee_lookdev_Display_ctor_();
+  float2 texture_size = float2(textureSize(srt_access(eevee_lookdev_Display, metallic_tx), 0));
+  float2 texel_size = float2(1.0f) / texture_size;
+
+  float distance_from_center = distance(eevee_lookdev_DisplayVertOut_uv_coord, float2(0.5f));
+  if (distance_from_center > 0.5f) {
+    gpu_discard_fragment();
+    return;
+  }
+  float smooth_size = texel_size.x * 1.5f;
+  float smooth_offset = texel_size.x * 0.5f;
+  float factor = (distance_from_center - 0.5f + smooth_offset + smooth_size) *
+                 (1.0f / smooth_size);
+  float alpha = clamp(1.0f - factor, 0.0f, 1.0f);
+
+  float4 color = eevee_lookdev_DisplayVertOut_sphere_id == 0 ? texture(srt_access(eevee_lookdev_Display, metallic_tx), eevee_lookdev_DisplayVertOut_uv_coord.xy, 0) :
+                                        texture(srt_access(eevee_lookdev_Display, diffuse_tx), eevee_lookdev_DisplayVertOut_uv_coord.xy, 0);
+  color.a = alpha;
+  eevee_lookdev_DisplayFragOut_color = color;
+#line 86
+  gl_FragDepth = 0.0f;
+
+#endif
+#line 87
+}
+#endif
+#endif
+#line 92

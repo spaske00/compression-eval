@@ -1,0 +1,71 @@
+#line 1 "eevee_surfel_cluster.bsl.hh"
+ 
+#line 11
+#define access_eevee_surfel_Resources_cluster_list_img() cluster_list_img
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_Resources
+CREATE_INFO_RES_PASS_eevee_surfel_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_Resources
+CREATE_INFO_RES_BATCH_eevee_surfel_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_Resources
+#endif
+#line 11
+struct eevee_surfel_Resources {
+#line 21
+int _pad;};
+#line 31
+#ifndef GPU_METAL
+eevee_surfel_Resources eevee_surfel_Resources_ctor_();
+eevee_surfel_Resources eevee_surfel_Resources_new_();
+#endif
+#line 11
+                                      eevee_surfel_Resources eevee_surfel_Resources_ctor_() {eevee_surfel_Resources r;r._pad=0;return r;}
+#line 14
+       eevee_surfel_Resources eevee_surfel_Resources_new_()
+{
+  eevee_surfel_Resources result;
+  result._pad = 0;
+  return result;
+#line 12
+}
+#line 22
+
+#if defined(CREATE_INFO_eevee_surfel_Resources) && defined(CREATE_INFO_SurfelData)
+#line 22
+
+#if defined(ENTRY_POINT_eevee_surfel_build_cluster)
+#line 22
+
+void eevee_surfel_build_cluster(
+
+                                                                 )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 26
+  eevee_surfel_Resources srt = eevee_surfel_Resources_ctor_(); SurfelData surfels = SurfelData_ctor_();
+  int surfel_index = int(gl_GlobalInvocationID.x);
+  if (surfel_index >= int(srt_access(SurfelData, capture_info_buf).surfel_len)) {
+    return;
+  }
+
+  int3 cluster = eevee_surfel_cluster_index_get(
+      imageSize(srt_access(eevee_surfel_Resources, cluster_list_img)),
+      srt_access(SurfelData, capture_info_buf).irradiance_grid_world_to_local,
+      srt_access(SurfelData, surfel_buf)[surfel_index].position);
+
+  srt_access(SurfelData, surfel_buf)[surfel_index].cluster_id = cluster.x + cluster.y * 1000 + cluster.z * 1000000;
+#line 40
+  srt_access(SurfelData, surfel_buf)[surfel_index].next = imageAtomicExchange(
+      srt_access(eevee_surfel_Resources, cluster_list_img), cluster, surfel_index);
+
+#endif
+#line 42
+}
+#endif
+#endif
+#line 47

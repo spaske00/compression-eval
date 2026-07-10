@@ -1,0 +1,142 @@
+{
+    "classes": [
+        {
+            "className": "FileCrumbLabel",
+            "lineNumber": 86,
+            "object": true,
+            "qualifiedClassName": "Utils::FileCrumbLabel",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "FilePath"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "pathClicked",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QLabel"
+                }
+            ]
+        },
+        {
+            "className": "TextFieldCheckBox",
+            "lineNumber": 185,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "compareText",
+                    "read": "text",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "trueText",
+                    "read": "trueText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setTrueText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "falseText",
+                    "read": "falseText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setFalseText"
+                }
+            ],
+            "qualifiedClassName": "Utils::TextFieldCheckBox",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "textChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QCheckBox"
+                }
+            ]
+        },
+        {
+            "className": "TextFieldComboBox",
+            "lineNumber": 214,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "indexText",
+                    "read": "text",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setText"
+                }
+            ],
+            "qualifiedClassName": "Utils::TextFieldComboBox",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "text4Changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QComboBox"
+                }
+            ]
+        }
+    ],
+    "inputFile": "widgets.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,519 @@
+#line 1 "workbench_prepass.bsl.hh"
+ 
+#line 9
+VERTEX_SHADER_CREATE_INFO(draw_modelmat_with_custom_id)
+#line 26
+#define WORKBENCH_LIGHTING_STUDIO 0
+#define WORKBENCH_LIGHTING_MATCAP 1
+#define WORKBENCH_LIGHTING_FLAT 2
+#line 31
+float workbench_prepass_linear_zdepth(float depth, float4x4 proj_mat)
+{
+  if (proj_mat[3][3] == 0.0f) {
+    float d = 2.0f * depth - 1.0f;
+    return -proj_mat[3][2] / (d + proj_mat[2][2]);
+  }
+
+  float z_delta = -2.0f / proj_mat[2][2];
+  return depth * z_delta;
+}
+#line 46
+float workbench_prepass_calculate_transparent_weight(float frag_z, float4x4 proj_mat)
+{
+  float z = workbench_prepass_linear_zdepth(frag_z, proj_mat);
+#if 0
+#line 54
+#else
+#line 60
+  float a = abs(z) / 5.0f;
+  float b = abs(z) / 200.0f;
+  b *= b;
+  float w = 10.0f / ((1e-5f + a * a) + b * (b * b));
+#endif
+  return clamp(w, 1e-2f, 3e2f);
+}
+#line 69
+float workbench_prepass_integer_noise(int n)
+{
+#line 73
+  uint nn = (uint(n) >> 13u) ^ uint(n);
+  nn = (nn * (nn * nn * 60493u + 19990303u) + 1376312589u) & 0x7fffffffu;
+  return (float(nn) / 1073741824.0f);
+}
+
+float3 workbench_prepass_hair_random_normal(float3 tangent, float3 binor, float3 nor, float rand)
+{
+
+  nor = normalize(mix(nor, -tangent, rand * 0.1f));
+  float cos_theta = (rand * 2.0f - 1.0f) * 0.2f;
+  float sin_theta = sin_from_cos(cos_theta);
+  nor = nor * sin_theta + binor * cos_theta;
+  return nor;
+}
+
+void workbench_prepass_hair_random_material(float rand, _ref(float3 ,color), _ref(float ,roughness), _ref(float ,metallic))
+{
+
+  rand -= 0.5f;
+  rand *= 0.1f;
+
+  metallic = saturate(metallic + rand);
+  roughness = saturate(roughness + rand);
+
+  color = saturate(color + rand * (color + 0.05f));
+}
+
+struct workbench_prepass_VertOut {
+             float3 normal;
+             float3 color;
+             float2 uv;
+             float alpha;
+           int object_id;
+           float roughness;
+           float metallic;
+};
+#line 100
+                                         workbench_prepass_VertOut workbench_prepass_VertOut_ctor_() {workbench_prepass_VertOut r;r.normal=float3(0);r.color=float3(0);r.uv=float2(0);r.alpha=0.0f;r.object_id=0;r.roughness=0.0f;r.metallic=0.0f;return r;}
+#line 110
+struct workbench_prepass_MeshIn {
+                   float3 pos;
+                   float3 nor;
+                   float4 ac;
+                   float2 au;
+};
+#line 110
+                                        workbench_prepass_MeshIn workbench_prepass_MeshIn_ctor_() {workbench_prepass_MeshIn r;r.pos=float3(0);r.nor=float3(0);r.ac=float4(0);r.au=float2(0);return r;}
+#line 117
+#define access_workbench_prepass_Mesh_drw_clipped() drw_clipped
+#define access_workbench_prepass_Mesh_use_clipping() use_clipping
+#ifdef CREATE_INFO_RES_PASS_workbench_prepass_Mesh
+CREATE_INFO_RES_PASS_workbench_prepass_Mesh
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_prepass_Mesh
+CREATE_INFO_RES_BATCH_workbench_prepass_Mesh
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_prepass_Mesh
+CREATE_INFO_RES_GEOMETRY_workbench_prepass_Mesh
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_prepass_Mesh
+CREATE_INFO_RES_SHARED_VARS_workbench_prepass_Mesh
+#endif
+#line 117
+struct workbench_prepass_Mesh {
+#line 131
+int _pad;};
+#line 134
+#ifndef GPU_METAL
+workbench_prepass_Mesh workbench_prepass_Mesh_ctor_();
+workbench_prepass_Mesh workbench_prepass_Mesh_new_();
+#endif
+#line 117
+                                      workbench_prepass_Mesh workbench_prepass_Mesh_ctor_() {workbench_prepass_Mesh r;r._pad=0;return r;}
+#line 124
+       workbench_prepass_Mesh workbench_prepass_Mesh_new_()
+{
+  workbench_prepass_Mesh result;
+  result._pad = 0;
+  return result;
+#line 122
+}
+#line 125
+
+#if defined(CREATE_INFO_workbench_prepass_Mesh) && defined(CREATE_INFO_workbench_color_Materials) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_ResourceCustomID)
+#line 125
+
+#if defined(ENTRY_POINT_workbench_prepass_vert_mesh)
+#line 125
+           void workbench_prepass_vert_mesh(
+#line 133
+                                                           )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 134
+  workbench_prepass_Mesh mesh = workbench_prepass_Mesh_ctor_(); workbench_color_Materials materials = workbench_color_Materials_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_ResourceCustomID resources = draw_ResourceCustomID_ctor_();
+  int custom_id = int(_get_custom_id(resources, gpu_InstanceIndex));
+
+  draw_ID id = _get(resources, gpu_InstanceIndex);
+  ViewMatrices view = _get(views, _view_idT1(id));
+  ObjectMatrices obj = _get(models, _resource_idT1(id));
+
+  float3 world_pos = _point_object_to_world(obj, pos);
+  gl_Position = _point_world_to_homogenous(view, world_pos);
+#line 145
+#if SRT_CONSTANT_use_clipping
+#line 144
+                                                                          {
+    view_clipping_distances(world_pos);
+  }
+#endif
+  workbench_prepass_VertOut_uv = au;
+
+  workbench_prepass_VertOut_normal = normalize(_normal_object_to_view(obj, view, nor));
+
+  workbench_prepass_VertOut_object_id = int(_resource_idT1(id) & 0xFFFFu) + 1;
+
+  _material_data_get(materials, custom_id, ac.rgb, workbench_prepass_VertOut_color, workbench_prepass_VertOut_alpha, workbench_prepass_VertOut_roughness, workbench_prepass_VertOut_metallic);
+
+#endif
+#line 155
+}
+#endif
+#endif
+#line 157
+#define access_workbench_prepass_Curves_draw_curves() draw_curves
+#define access_workbench_prepass_Curves_draw_curves_infos() draw_curves_infos
+#define access_workbench_prepass_Curves_drw_clipped() drw_clipped
+#define access_workbench_prepass_Curves_use_clipping() use_clipping
+#define access_workbench_prepass_Curves_ac() ac
+#define access_workbench_prepass_Curves_au() au
+#define access_workbench_prepass_Curves_emitter_object_id() emitter_object_id
+#ifdef CREATE_INFO_RES_PASS_workbench_prepass_Curves
+CREATE_INFO_RES_PASS_workbench_prepass_Curves
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_prepass_Curves
+CREATE_INFO_RES_BATCH_workbench_prepass_Curves
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_prepass_Curves
+CREATE_INFO_RES_GEOMETRY_workbench_prepass_Curves
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_prepass_Curves
+CREATE_INFO_RES_SHARED_VARS_workbench_prepass_Curves
+#endif
+#line 158
+struct workbench_prepass_Curves {
+#line 178
+int _pad;};
+#line 181
+#ifndef GPU_METAL
+workbench_prepass_Curves workbench_prepass_Curves_ctor_();
+workbench_prepass_Curves workbench_prepass_Curves_new_();
+#endif
+#line 158
+                                        workbench_prepass_Curves workbench_prepass_Curves_ctor_() {workbench_prepass_Curves r;r._pad=0;return r;}
+#line 171
+       workbench_prepass_Curves workbench_prepass_Curves_new_()
+{
+  workbench_prepass_Curves result;
+  result._pad = 0;
+  return result;
+#line 169
+}
+#line 172
+
+#if defined(CREATE_INFO_workbench_prepass_Curves) && defined(CREATE_INFO_workbench_color_Materials) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_ResourceCustomID)
+#line 172
+
+#if defined(ENTRY_POINT_workbench_prepass_vert_curves)
+#line 172
+           void workbench_prepass_vert_curves(
+#line 180
+                                                             )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 182
+#if defined(CREATE_INFO_draw_curves_infos)
+#line 181
+  workbench_prepass_Curves curves = workbench_prepass_Curves_ctor_(); workbench_color_Materials materials = workbench_color_Materials_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_ResourceCustomID resources = draw_ResourceCustomID_ctor_();
+  int custom_id = int(_get_custom_id(resources, gpu_InstanceIndex));
+
+  draw_ID id = _get(resources, gpu_InstanceIndex);
+  ViewMatrices view = _get(views, _view_idT1(id));
+  ObjectMatrices obj = _get(models, _resource_idT1(id));
+#line 190
+  const curves_Point ls_pt = curves_point_get(uint(gl_VertexID));
+  const curves_Point ws_pt = curves_object_to_world(ls_pt, obj.model);
+  const curves_ShapePoint pt = curves_shape_point_get(ws_pt,
+                                                        _world_incident_vector(view, ws_pt.P));
+  float3 world_pos = pt.P;
+
+  gl_Position = _point_world_to_homogenous(view, world_pos);
+
+  float hair_rand = workbench_prepass_integer_noise(ws_pt.curve_id);
+
+  float3 nor = pt.N;
+  if (buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count == 1) {
+#line 206
+    nor = pt.N + pt.curve_N;
+  }
+  else if (buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count == 0) {
+    nor = workbench_prepass_hair_random_normal(pt.curve_T, pt.curve_B, pt.curve_N, hair_rand);
+  }
+#line 213
+#if SRT_CONSTANT_use_clipping
+#line 212
+                                                                            {
+    view_clipping_distances(world_pos);
+  }
+#endif
+  workbench_prepass_VertOut_uv = curves_get_customdata_vec2(ws_pt.curve_id, srt_access(workbench_prepass_Curves, au));
+
+  workbench_prepass_VertOut_normal = normalize(_normal_world_to_view(view, nor));
+
+  float3 vert_col = curves_get_customdata_vec3(ws_pt.curve_id, srt_access(workbench_prepass_Curves, ac));
+  _material_data_get(materials, custom_id, vert_col, workbench_prepass_VertOut_color, workbench_prepass_VertOut_alpha, workbench_prepass_VertOut_roughness, workbench_prepass_VertOut_metallic);
+#line 225
+  workbench_prepass_VertOut_alpha *= 0.3f;
+
+  workbench_prepass_hair_random_material(hair_rand, workbench_prepass_VertOut_color, workbench_prepass_VertOut_roughness, workbench_prepass_VertOut_metallic);
+
+  workbench_prepass_VertOut_object_id = int(_resource_idT1(id) & 0xFFFFu) + 1;
+
+  if (srt_access(workbench_prepass_Curves, emitter_object_id) != 0) {
+    workbench_prepass_VertOut_object_id = int(uint(srt_access(workbench_prepass_Curves, emitter_object_id)) & 0xFFFFu) + 1;
+  }
+
+#endif
+
+#endif
+#line 235
+}
+#endif
+#endif
+#line 237
+#define access_workbench_prepass_PointCloud_draw_pointcloud() draw_pointcloud
+#define access_workbench_prepass_PointCloud_drw_clipped() drw_clipped
+#define access_workbench_prepass_PointCloud_use_clipping() use_clipping
+#ifdef CREATE_INFO_RES_PASS_workbench_prepass_PointCloud
+CREATE_INFO_RES_PASS_workbench_prepass_PointCloud
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_prepass_PointCloud
+CREATE_INFO_RES_BATCH_workbench_prepass_PointCloud
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_prepass_PointCloud
+CREATE_INFO_RES_GEOMETRY_workbench_prepass_PointCloud
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_prepass_PointCloud
+CREATE_INFO_RES_SHARED_VARS_workbench_prepass_PointCloud
+#endif
+#line 237
+struct workbench_prepass_PointCloud {
+#line 252
+int _pad;};
+#line 255
+#ifndef GPU_METAL
+workbench_prepass_PointCloud workbench_prepass_PointCloud_ctor_();
+workbench_prepass_PointCloud workbench_prepass_PointCloud_new_();
+#endif
+#line 237
+                                            workbench_prepass_PointCloud workbench_prepass_PointCloud_ctor_() {workbench_prepass_PointCloud r;r._pad=0;return r;}
+#line 245
+       workbench_prepass_PointCloud workbench_prepass_PointCloud_new_()
+{
+  workbench_prepass_PointCloud result;
+  result._pad = 0;
+  return result;
+#line 243
+}
+#line 246
+
+#if defined(CREATE_INFO_workbench_prepass_PointCloud) && defined(CREATE_INFO_workbench_color_Materials) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_ResourceCustomID)
+#line 246
+
+#if defined(ENTRY_POINT_workbench_prepass_vert_pointcloud)
+#line 246
+           void workbench_prepass_vert_pointcloud(
+#line 254
+                                                                 )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 256
+#if defined(CREATE_INFO_draw_object_infos)
+#line 255
+  workbench_prepass_PointCloud point_cloud = workbench_prepass_PointCloud_ctor_(); workbench_color_Materials materials = workbench_color_Materials_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_ResourceCustomID resources = draw_ResourceCustomID_ctor_();
+  int custom_id = int(_get_custom_id(resources, gpu_InstanceIndex));
+
+  draw_ID id = _get(resources, gpu_InstanceIndex);
+  uint res_id = _resource_idT1(id);
+
+  ViewMatrices view = _get(views, _view_idT1(id));
+  ObjectMatrices obj = _get(models, res_id);
+
+  const eObjectInfoFlag ob_flag = buffer_get(draw_object_infos, drw_infos)[res_id].flag;
+
+  const pointcloud_Point ls_pt = pointcloud_point_get(uint(gl_VertexID));
+  const pointcloud_Point ws_pt = pointcloud_object_to_world(ls_pt, obj.model);
+  const pointcloud_ShapePoint pt = pointcloud_shape_point_get(
+      ws_pt, _world_incident_vector(view, ws_pt.P), _up(view), ob_flag);
+
+  workbench_prepass_VertOut_normal = normalize(_normal_world_to_view(view, pt.N));
+
+  gl_Position = _point_world_to_homogenous(view, pt.P);
+#line 276
+#if SRT_CONSTANT_use_clipping
+#line 275
+                                                                                {
+    view_clipping_distances(pt.P);
+  }
+#endif
+  workbench_prepass_VertOut_uv = float2(0.0f);
+
+  _material_data_get(materials, custom_id, float3(1.0f), workbench_prepass_VertOut_color, workbench_prepass_VertOut_alpha, workbench_prepass_VertOut_roughness, workbench_prepass_VertOut_metallic);
+
+  workbench_prepass_VertOut_object_id = int(_resource_idT1(id) & 0xFFFFu) + 1;
+
+#endif
+
+#endif
+#line 285
+}
+#endif
+#endif
+#line 287
+#define access_workbench_prepass_Resources_lighting_mode() lighting_mode
+#define access_workbench_prepass_Resources_use_texture() use_texture
+#define access_workbench_prepass_Resources_force_shadowing() force_shadowing
+#define access_workbench_prepass_Resources_texture() workbench_color_Texture_new_()
+#define access_workbench_prepass_Resources_matcap_tx() matcap_tx
+#ifdef CREATE_INFO_RES_PASS_workbench_prepass_Resources
+CREATE_INFO_RES_PASS_workbench_prepass_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_prepass_Resources
+CREATE_INFO_RES_BATCH_workbench_prepass_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_prepass_Resources
+CREATE_INFO_RES_GEOMETRY_workbench_prepass_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_prepass_Resources
+CREATE_INFO_RES_SHARED_VARS_workbench_prepass_Resources
+#endif
+#line 287
+struct workbench_prepass_Resources {
+#line 294
+                                                   workbench_color_Texture  texture;
+#line 306
+};
+#line 309
+#ifndef GPU_METAL
+workbench_prepass_Resources workbench_prepass_Resources_ctor_();
+workbench_prepass_Resources workbench_prepass_Resources_new_();
+#endif
+#line 287
+                                           workbench_prepass_Resources workbench_prepass_Resources_ctor_() {workbench_prepass_Resources r;r.texture=workbench_color_Texture_ctor_();return r;}
+#line 299
+       workbench_prepass_Resources workbench_prepass_Resources_new_()
+{
+  workbench_prepass_Resources result;
+  result.texture = workbench_color_Texture_new_();
+  return result;
+#line 297
+}
+#line 300
+struct workbench_prepass_OpaqueOut {
+                    float4 material;
+                    float2 normal;
+                    uint object_id;
+};
+#line 300
+                                           workbench_prepass_OpaqueOut workbench_prepass_OpaqueOut_ctor_() {workbench_prepass_OpaqueOut r;r.material=float4(0);r.normal=float2(0);r.object_id=0u;return r;}
+#line 306
+
+#if defined(CREATE_INFO_workbench_prepass_Resources)
+#line 306
+
+#if defined(ENTRY_POINT_workbench_prepass_frag_opaque)
+#line 306
+             void workbench_prepass_frag_opaque(
+#line 309
+                                                                           )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 310
+  workbench_prepass_Resources srt = workbench_prepass_Resources_ctor_();
+  workbench_prepass_OpaqueOut_object_id = uint(workbench_prepass_VertOut_object_id);
+  workbench_prepass_OpaqueOut_normal = workbench_normal_encode(gl_FrontFacing, workbench_prepass_VertOut_normal);
+
+  workbench_prepass_OpaqueOut_material = float4(workbench_prepass_VertOut_color, workbench_float_pair_encode(workbench_prepass_VertOut_roughness, workbench_prepass_VertOut_metallic));
+#line 317
+#if SRT_CONSTANT_use_texture
+#line 316
+                                                                              {
+    workbench_prepass_OpaqueOut_material.rgb = workbench_color_image_color(srt_access(workbench_prepass_Resources, texture), workbench_prepass_VertOut_uv);
+  }
+#endif
+
+#if SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_MATCAP
+#line 320
+                                                                                                             {
+
+    workbench_prepass_OpaqueOut_material.a = float(gl_FrontFacing);
+  }
+#endif
+#endif
+#line 324
+}
+#endif
+#endif
+#line 326
+struct workbench_prepass_TransparentOut {
+                    float4 transparent_accum;
+                    float4 revealage_accum;
+                    uint object_id;
+};
+#line 326
+                                                workbench_prepass_TransparentOut workbench_prepass_TransparentOut_ctor_() {workbench_prepass_TransparentOut r;r.transparent_accum=float4(0);r.revealage_accum=float4(0);r.object_id=0u;return r;}
+#line 332
+
+#if defined(CREATE_INFO_workbench_prepass_Resources) && defined(CREATE_INFO_workbench_World) && defined(CREATE_INFO_draw_View)
+#line 332
+
+#if defined(ENTRY_POINT_workbench_prepass_frag_transparent)
+#line 332
+             void workbench_prepass_frag_transparent(
+#line 337
+                                                                                     )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 338
+  workbench_prepass_Resources srt = workbench_prepass_Resources_ctor_(); workbench_World world = workbench_World_ctor_(); draw_View views = draw_View_ctor_();
+  const ViewMatrices view = _get(views, 0);
+
+  float2 uv_viewport = gl_FragCoord.xy * srt_access(workbench_World, world_data).viewport_size_inv;
+  float3 vP = _point_screen_to_view(view, float3(uv_viewport, 0.5f));
+  float3 I = _view_incident_vector(view, vP);
+  float3 N = normalize(workbench_prepass_VertOut_normal);
+
+  float3 color = workbench_prepass_VertOut_color;
+#line 349
+#if SRT_CONSTANT_use_texture
+#line 348
+                                                                              {
+    color = workbench_color_image_color(srt_access(workbench_prepass_Resources, texture), workbench_prepass_VertOut_uv);
+  }
+#endif
+  float3 shaded_color = float3(0.0f, 1.0f, 1.0f);
+
+#if SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_MATCAP
+#line 353
+                                                                                                             {
+    shaded_color = workbench_get_matcap_lighting(world, srt_access(workbench_prepass_Resources, matcap_tx), color, N, I);
+  }
+
+#elif SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_STUDIO
+#line 356
+                                                                                                                  {
+    shaded_color = workbench_get_world_lighting(world, color, workbench_prepass_VertOut_roughness, workbench_prepass_VertOut_metallic, N, I);
+  }
+
+#elif SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_FLAT
+#line 359
+                                                                                                                {
+    shaded_color = color;
+  }
+#endif
+  shaded_color *= workbench_get_shadow(world, N, srt_access(workbench_prepass_Resources, force_shadowing));
+#line 366
+  float alpha = workbench_prepass_VertOut_alpha * srt_access(workbench_World, world_data).xray_alpha;
+  float weight = workbench_prepass_calculate_transparent_weight(gl_FragCoord.z, view.winmat) * alpha;
+  workbench_prepass_TransparentOut_transparent_accum = float4(shaded_color * weight, alpha);
+  workbench_prepass_TransparentOut_revealage_accum = float4(weight);
+
+  workbench_prepass_TransparentOut_object_id = uint(workbench_prepass_VertOut_object_id);
+
+#endif
+#line 372
+}
+#endif
+#endif
+#line 450

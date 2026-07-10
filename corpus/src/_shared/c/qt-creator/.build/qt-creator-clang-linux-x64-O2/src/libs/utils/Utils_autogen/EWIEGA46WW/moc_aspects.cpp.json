@@ -1,0 +1,522 @@
+{
+    "classes": [
+        {
+            "className": "BaseAspect",
+            "lineNumber": 60,
+            "object": true,
+            "qualifiedClassName": "Utils::BaseAspect",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "changed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "volatileValueChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "link",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "labelLinkActivated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "checkedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "enabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "readOnlyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "visibleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "tooltip",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "tooltipChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "labelTextChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "name": "labelPixmapChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "BoolAspect",
+            "lineNumber": 479,
+            "object": true,
+            "qualifiedClassName": "Utils::BoolAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<bool>"
+                }
+            ]
+        },
+        {
+            "className": "ColorAspect",
+            "lineNumber": 557,
+            "object": true,
+            "qualifiedClassName": "Utils::ColorAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QColor>"
+                }
+            ]
+        },
+        {
+            "className": "FontFamilyAspect",
+            "lineNumber": 573,
+            "object": true,
+            "qualifiedClassName": "Utils::FontFamilyAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QString>"
+                }
+            ]
+        },
+        {
+            "className": "SelectionAspect",
+            "lineNumber": 598,
+            "object": true,
+            "qualifiedClassName": "Utils::SelectionAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<int>"
+                }
+            ]
+        },
+        {
+            "className": "MultiSelectionAspect",
+            "lineNumber": 681,
+            "object": true,
+            "qualifiedClassName": "Utils::MultiSelectionAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QStringList>"
+                }
+            ]
+        },
+        {
+            "className": "StringAspect",
+            "lineNumber": 708,
+            "object": true,
+            "qualifiedClassName": "Utils::StringAspect",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "validState",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "validChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "elideMode",
+                            "type": "Qt::TextElideMode"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "elideModeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "historyCompleterKey",
+                            "type": "Key"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "historyCompleterKeyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "acceptRichText",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "acceptRichTextChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "validator",
+                            "type": "FancyLineEdit::ValidationFunction"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "validationFunctionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "placeholderText",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "placeholderTextChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "rightSideIconClicked",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QString>"
+                }
+            ]
+        },
+        {
+            "className": "ByteArrayAspect",
+            "lineNumber": 776,
+            "object": true,
+            "qualifiedClassName": "Utils::ByteArrayAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QByteArray>"
+                }
+            ]
+        },
+        {
+            "className": "FilePathAspect",
+            "lineNumber": 785,
+            "object": true,
+            "qualifiedClassName": "Utils::FilePathAspect",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "validState",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "validChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QString>"
+                }
+            ]
+        },
+        {
+            "className": "IntegerAspect",
+            "lineNumber": 863,
+            "object": true,
+            "qualifiedClassName": "Utils::IntegerAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<qint64>"
+                }
+            ]
+        },
+        {
+            "className": "DoubleAspect",
+            "lineNumber": 893,
+            "object": true,
+            "qualifiedClassName": "Utils::DoubleAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<double>"
+                }
+            ]
+        },
+        {
+            "className": "TriStateAspect",
+            "lineNumber": 940,
+            "object": true,
+            "qualifiedClassName": "Utils::TriStateAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::SelectionAspect",
+                    "name": "SelectionAspect"
+                }
+            ]
+        },
+        {
+            "className": "StringListAspect",
+            "lineNumber": 964,
+            "object": true,
+            "qualifiedClassName": "Utils::StringListAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QStringList>"
+                }
+            ]
+        },
+        {
+            "className": "FilePathListAspect",
+            "lineNumber": 997,
+            "object": true,
+            "qualifiedClassName": "Utils::FilePathListAspect",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "placeHolderText",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "placeHolderTextChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QStringList>"
+                }
+            ]
+        },
+        {
+            "className": "IntegersAspect",
+            "lineNumber": 1025,
+            "object": true,
+            "qualifiedClassName": "Utils::IntegersAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<QList<int>>"
+                }
+            ]
+        },
+        {
+            "className": "IdAspect",
+            "lineNumber": 1036,
+            "object": true,
+            "qualifiedClassName": "Utils::IdAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TypedAspect<Id>"
+                }
+            ]
+        },
+        {
+            "className": "TextDisplay",
+            "lineNumber": 1044,
+            "object": true,
+            "qualifiedClassName": "Utils::TextDisplay",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "link",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "linkActivated",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::BaseAspect",
+                    "name": "BaseAspect"
+                }
+            ]
+        },
+        {
+            "className": "AspectContainer",
+            "lineNumber": 1100,
+            "object": true,
+            "qualifiedClassName": "Utils::AspectContainer",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "applied",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "fromMapFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "aspect",
+                            "type": "BaseAspect*"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "subAspectChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::BaseAspect",
+                    "name": "BaseAspect"
+                }
+            ]
+        },
+        {
+            "className": "UndoSignaller",
+            "lineNumber": 1179,
+            "object": true,
+            "qualifiedClassName": "Utils::UndoSignaller",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "StringSelectionAspect",
+            "lineNumber": 1240,
+            "object": true,
+            "qualifiedClassName": "Utils::StringSelectionAspect",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "refillRequested",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "isChanging",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "modelChange",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "Utils::TypedAspect<QString>"
+                }
+            ]
+        },
+        {
+            "className": "FontAspect",
+            "lineNumber": 1276,
+            "object": true,
+            "qualifiedClassName": "Utils::FontAspect",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::AspectContainer",
+                    "name": "AspectContainer"
+                }
+            ]
+        }
+    ],
+    "inputFile": "aspects.h",
+    "outputRevision": 68
+}

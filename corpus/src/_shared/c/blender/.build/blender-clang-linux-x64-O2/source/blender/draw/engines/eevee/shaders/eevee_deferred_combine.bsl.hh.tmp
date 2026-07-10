@@ -1,0 +1,361 @@
+#line 1 "eevee_deferred_combine.bsl.hh"
+ 
+#line 17
+#define access_eevee_deferred_Combine_render_pass_diffuse_light_enabled() render_pass_diffuse_light_enabled
+#define access_eevee_deferred_Combine_render_pass_specular_light_enabled() render_pass_specular_light_enabled
+#define access_eevee_deferred_Combine_render_pass_normal_enabled() render_pass_normal_enabled
+#define access_eevee_deferred_Combine_render_pass_position_enabled() render_pass_position_enabled
+#define access_eevee_deferred_Combine_use_radiance_feedback() use_radiance_feedback
+#define access_eevee_deferred_Combine_use_split_radiance() use_split_radiance
+#define access_eevee_deferred_Combine_direct_radiance_1_tx() direct_radiance_1_tx
+#define access_eevee_deferred_Combine_direct_radiance_2_tx() direct_radiance_2_tx
+#define access_eevee_deferred_Combine_direct_radiance_3_tx() direct_radiance_3_tx
+#define access_eevee_deferred_Combine_indirect_radiance_1_tx() indirect_radiance_1_tx
+#define access_eevee_deferred_Combine_indirect_radiance_2_tx() indirect_radiance_2_tx
+#define access_eevee_deferred_Combine_indirect_radiance_3_tx() indirect_radiance_3_tx
+#define access_eevee_deferred_Combine_radiance_feedback_img() radiance_feedback_img
+#ifdef CREATE_INFO_RES_PASS_eevee_deferred_Combine
+CREATE_INFO_RES_PASS_eevee_deferred_Combine
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_deferred_Combine
+CREATE_INFO_RES_BATCH_eevee_deferred_Combine
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_deferred_Combine
+CREATE_INFO_RES_GEOMETRY_eevee_deferred_Combine
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_deferred_Combine
+CREATE_INFO_RES_SHARED_VARS_eevee_deferred_Combine
+#endif
+#line 17
+struct eevee_deferred_Combine {
+#line 78
+int _pad;};
+#line 81
+#ifndef GPU_METAL
+eevee_deferred_Combine eevee_deferred_Combine_ctor_();
+float3 _load_radiance_direct(eevee_deferred_Combine  this_, int2 texel, uchar i);
+float3 _load_radiance_indirect(eevee_deferred_Combine  this_, int2 texel, uchar i);
+eevee_deferred_Combine eevee_deferred_Combine_new_();
+#endif
+#line 17
+                                      eevee_deferred_Combine eevee_deferred_Combine_ctor_() {eevee_deferred_Combine r;r._pad=0;return r;}
+#line 37
+
+#if defined(CREATE_INFO_eevee_deferred_Combine)
+#line 37
+  float3 _load_radiance_direct(eevee_deferred_Combine  this_, int2 texel, uchar i)
+  {
+    uint data = 0u;
+    switch (i) {
+      case 0:
+        data = texelFetch(srt_access(eevee_deferred_Combine, direct_radiance_1_tx), texel, 0).r;
+        break;
+      case 1:
+        data = texelFetch(srt_access(eevee_deferred_Combine, direct_radiance_2_tx), texel, 0).r;
+        break;
+      case 2:
+        data = texelFetch(srt_access(eevee_deferred_Combine, direct_radiance_3_tx), texel, 0).r;
+        break;
+      default:
+        break;
+    }
+    return rgb9e5_decode(data);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_deferred_Combine)
+#line 56
+  float3 _load_radiance_indirect(eevee_deferred_Combine  this_, int2 texel, uchar i)
+  {
+    switch (i) {
+      case 0:
+        return texelFetch(srt_access(eevee_deferred_Combine, indirect_radiance_1_tx), texel, 0).rgb;
+      case 1:
+        return texelFetch(srt_access(eevee_deferred_Combine, indirect_radiance_2_tx), texel, 0).rgb;
+      case 2:
+        return texelFetch(srt_access(eevee_deferred_Combine, indirect_radiance_3_tx), texel, 0).rgb;
+      default:
+        return float3(0);
+    }
+    return float3(0);
+  }
+#endif
+       eevee_deferred_Combine eevee_deferred_Combine_new_()
+{
+  eevee_deferred_Combine result;
+  result._pad = 0;
+  return result;
+#line 69
+}
+#line 72
+struct eevee_deferred_CombineVertOut {
+             float2 screen_uv;
+};
+#line 72
+                                             eevee_deferred_CombineVertOut eevee_deferred_CombineVertOut_ctor_() {eevee_deferred_CombineVertOut r;r.screen_uv=float2(0);return r;}
+#line 76
+
+#if defined(ENTRY_POINT_eevee_deferred_combine_vert)
+#line 76
+
+void eevee_deferred_combine_vert(
+
+                                                              )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 81
+  fullscreen_vertex(gl_VertexID, gl_Position, eevee_deferred_CombineVertOut_screen_uv);
+
+#endif
+#line 82
+}
+#endif
+struct eevee_deferred_CombineFragOut {
+                    float4 combined;
+};
+#line 84
+                                             eevee_deferred_CombineFragOut eevee_deferred_CombineFragOut_ctor_() {eevee_deferred_CombineFragOut r;r.combined=float4(0);return r;}
+#line 93
+
+#if defined(CREATE_INFO_eevee_deferred_Combine) && defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_gbuffer_Reader)
+#line 93
+
+#if defined(ENTRY_POINT_eevee_deferred_combine_frag)
+#line 93
+
+void eevee_deferred_combine_frag(
+#line 102
+                                                                 )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 103
+  eevee_deferred_Combine srt = eevee_deferred_Combine_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_(); draw_View views = draw_View_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  const gbuffer_Layers gbuf = _read_layers(reader, texel);
+  const uchar closure_count = _closure_len(gbuf.header);
+  const uint3 bin_indices = _bin_index_per_layer(gbuf.header);
+
+  float3 diffuse_color = float3(0.0f);
+  float3 diffuse_direct = float3(0.0f);
+  float3 diffuse_indirect = float3(0.0f);
+  float3 specular_color = float3(0.0f);
+  float3 specular_direct = float3(0.0f);
+  float3 specular_indirect = float3(0.0f);
+  float3 out_direct = float3(0.0f);
+  float3 out_indirect = float3(0.0f);
+  float3 average_normal = float3(0.0f);
+#line 124
+{
+#line 121
+                                                                 {
+    if (0 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[0];
+      if (cl.type != CLOSURE_NONE_ID) {
+
+        uchar layer_index = bin_indices[0];
+        float3 closure_direct_light = _load_radiance_direct(srt, texel, layer_index);
+        float3 closure_indirect_light = float3(0.0f);
+
+        if (srt_access(eevee_deferred_Combine, use_split_radiance)) {
+          closure_indirect_light = _load_radiance_indirect(srt, texel, layer_index);
+        }
+
+        average_normal += cl.N * reduce_add(cl.color);
+
+        switch (cl.type) {
+          case CLOSURE_BSDF_TRANSLUCENT_ID:
+          case CLOSURE_BSSRDF_BURLEY_ID:
+          case CLOSURE_BSDF_DIFFUSE_ID:
+            diffuse_color += cl.color;
+            diffuse_direct += closure_direct_light * cl.color;
+            diffuse_indirect += closure_indirect_light * cl.color;
+            break;
+          case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+          case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+          case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+            specular_color += cl.color;
+            specular_direct += closure_direct_light * cl.color;
+            specular_indirect += closure_indirect_light * cl.color;
+            break;
+          case CLOSURE_NONE_ID:
+            ;
+            break;
+        }
+
+        if ((cl.type == CLOSURE_BSDF_TRANSLUCENT_ID ||
+             cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID) &&
+            (_value(_read_thickness(reader, gbuf.header, texel)) != 0.0f))
+        {
+
+          cl.color *= cl.color;
+        }
+
+        out_direct += closure_direct_light * cl.color;
+        out_indirect += closure_indirect_light * cl.color;
+      }
+    }
+  }
+#line 121
+                                                                 {
+    if (1 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[1];
+      if (cl.type != CLOSURE_NONE_ID) {
+
+        uchar layer_index = bin_indices[1];
+        float3 closure_direct_light = _load_radiance_direct(srt, texel, layer_index);
+        float3 closure_indirect_light = float3(0.0f);
+
+        if (srt_access(eevee_deferred_Combine, use_split_radiance)) {
+          closure_indirect_light = _load_radiance_indirect(srt, texel, layer_index);
+        }
+
+        average_normal += cl.N * reduce_add(cl.color);
+
+        switch (cl.type) {
+          case CLOSURE_BSDF_TRANSLUCENT_ID:
+          case CLOSURE_BSSRDF_BURLEY_ID:
+          case CLOSURE_BSDF_DIFFUSE_ID:
+            diffuse_color += cl.color;
+            diffuse_direct += closure_direct_light * cl.color;
+            diffuse_indirect += closure_indirect_light * cl.color;
+            break;
+          case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+          case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+          case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+            specular_color += cl.color;
+            specular_direct += closure_direct_light * cl.color;
+            specular_indirect += closure_indirect_light * cl.color;
+            break;
+          case CLOSURE_NONE_ID:
+            ;
+            break;
+        }
+
+        if ((cl.type == CLOSURE_BSDF_TRANSLUCENT_ID ||
+             cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID) &&
+            (_value(_read_thickness(reader, gbuf.header, texel)) != 0.0f))
+        {
+
+          cl.color *= cl.color;
+        }
+
+        out_direct += closure_direct_light * cl.color;
+        out_indirect += closure_indirect_light * cl.color;
+      }
+    }
+  }
+#line 121
+                                                                 {
+    if (2 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[2];
+      if (cl.type != CLOSURE_NONE_ID) {
+
+        uchar layer_index = bin_indices[2];
+        float3 closure_direct_light = _load_radiance_direct(srt, texel, layer_index);
+        float3 closure_indirect_light = float3(0.0f);
+
+        if (srt_access(eevee_deferred_Combine, use_split_radiance)) {
+          closure_indirect_light = _load_radiance_indirect(srt, texel, layer_index);
+        }
+
+        average_normal += cl.N * reduce_add(cl.color);
+
+        switch (cl.type) {
+          case CLOSURE_BSDF_TRANSLUCENT_ID:
+          case CLOSURE_BSSRDF_BURLEY_ID:
+          case CLOSURE_BSDF_DIFFUSE_ID:
+            diffuse_color += cl.color;
+            diffuse_direct += closure_direct_light * cl.color;
+            diffuse_indirect += closure_indirect_light * cl.color;
+            break;
+          case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+          case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+          case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+            specular_color += cl.color;
+            specular_direct += closure_direct_light * cl.color;
+            specular_indirect += closure_indirect_light * cl.color;
+            break;
+          case CLOSURE_NONE_ID:
+            ;
+            break;
+        }
+
+        if ((cl.type == CLOSURE_BSDF_TRANSLUCENT_ID ||
+             cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID) &&
+            (_value(_read_thickness(reader, gbuf.header, texel)) != 0.0f))
+        {
+
+          cl.color *= cl.color;
+        }
+
+        out_direct += closure_direct_light * cl.color;
+        out_indirect += closure_indirect_light * cl.color;
+      }
+    }
+  }
+#line 168
+  }
+
+  if (srt_access(eevee_deferred_Combine, use_radiance_feedback)) {
+
+    float3 out_radiance = imageLoad(srt_access(eevee_deferred_Combine, radiance_feedback_img), texel).rgb;
+    out_radiance += out_direct + out_indirect;
+
+    out_radiance = any(isnan(out_radiance)) ? float3(0.0f) : out_radiance;
+    imageStore(srt_access(eevee_deferred_Combine, radiance_feedback_img), texel, float4(out_radiance, 0.0f));
+  }
+#line 180
+  float clamp_direct = srt_access(eevee_Uniform, uniform_buf).clamp.surface_direct;
+  float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+  out_direct = colorspace_brightness_clamp_max(out_direct, clamp_direct);
+  out_indirect = colorspace_brightness_clamp_max(out_indirect, clamp_indirect);
+
+  out_direct *= srt_access(eevee_Uniform, uniform_buf).clamp.direct_scale;
+  out_indirect *= srt_access(eevee_Uniform, uniform_buf).clamp.indirect_scale;
+#line 189
+  diffuse_direct = colorspace_brightness_clamp_max(diffuse_direct, clamp_direct);
+  diffuse_indirect = colorspace_brightness_clamp_max(diffuse_indirect, clamp_indirect);
+  specular_direct = colorspace_brightness_clamp_max(specular_direct, clamp_direct);
+  specular_indirect = colorspace_brightness_clamp_max(specular_indirect, clamp_indirect);
+
+  diffuse_direct *= srt_access(eevee_Uniform, uniform_buf).clamp.direct_scale;
+  diffuse_indirect *= srt_access(eevee_Uniform, uniform_buf).clamp.indirect_scale;
+  specular_direct *= srt_access(eevee_Uniform, uniform_buf).clamp.direct_scale;
+  specular_indirect *= srt_access(eevee_Uniform, uniform_buf).clamp.indirect_scale;
+#line 200
+  if (srt_access(eevee_deferred_Combine, render_pass_diffuse_light_enabled)) {
+    float3 diffuse_light = diffuse_direct + diffuse_indirect;
+    _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.diffuse_color_id, float4(diffuse_color, 1.0f));
+    _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.diffuse_light_id, float4(diffuse_light, 1.0f));
+  }
+  if (srt_access(eevee_deferred_Combine, render_pass_specular_light_enabled)) {
+    float3 specular_light = specular_direct + specular_indirect;
+    _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.specular_color_id, float4(specular_color, 1.0f));
+    _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.specular_light_id, float4(specular_light, 1.0f));
+  }
+  if (srt_access(eevee_deferred_Combine, render_pass_normal_enabled)) {
+    float normal_len = length(average_normal);
+
+    average_normal = (normal_len < 1e-5f) ? _surface_N(gbuf) : (average_normal / normal_len);
+    _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.normal_id, float4(average_normal, 1.0f));
+  }
+  if (srt_access(eevee_deferred_Combine, render_pass_position_enabled)) {
+    const ViewMatrices view = _get(views, 0);
+    float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r;
+    float3 P = _point_screen_to_world(view, float3(eevee_deferred_CombineVertOut_screen_uv, depth));
+    _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.position_id, float4(P, 1.0f));
+  }
+
+  eevee_deferred_CombineFragOut_combined = float4(out_direct + out_indirect, 0.0f);
+  eevee_deferred_CombineFragOut_combined = any(isnan(eevee_deferred_CombineFragOut_combined)) ? float4(1.0f, 0.0f, 1.0f, 0.0f) :
+                                                      eevee_deferred_CombineFragOut_combined;
+  eevee_deferred_CombineFragOut_combined = colorspace_safe_color(eevee_deferred_CombineFragOut_combined);
+
+#endif
+#line 227
+}
+#endif
+#endif
+#line 233

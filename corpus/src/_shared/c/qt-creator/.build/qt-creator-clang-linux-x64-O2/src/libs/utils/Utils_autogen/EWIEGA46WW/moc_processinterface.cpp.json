@@ -1,0 +1,77 @@
+{
+    "classes": [
+        {
+            "className": "ProcessInterface",
+            "lineNumber": 135,
+            "object": true,
+            "qualifiedClassName": "Utils::ProcessInterface",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "processId",
+                            "type": "qint64"
+                        },
+                        {
+                            "name": "applicationMainThreadId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "started",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "processId",
+                            "type": "qint64"
+                        }
+                    ],
+                    "index": 1,
+                    "isCloned": true,
+                    "name": "started",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "outputData",
+                            "type": "QByteArray"
+                        },
+                        {
+                            "name": "errorData",
+                            "type": "QByteArray"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "readyRead",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "resultData",
+                            "type": "ProcessResultData"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "done",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "processinterface.h",
+    "outputRevision": 68
+}

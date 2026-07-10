@@ -1,0 +1,40 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_forward_ForwardResolveFragOut)
+FRAGMENT_OUT_DUAL(0, float4, eevee_forward_ForwardResolveFragOut_radiance, SRC_0)
+FRAGMENT_OUT_DUAL(0, float4, eevee_forward_ForwardResolveFragOut_transmittance, SRC_1)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_forward_ForwardResolve)
+.sampler(0, ImageType::sampler2D, "transparency_r_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2D, "transparency_g_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(2, ImageType::sampler2D, "transparency_b_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(3, ImageType::sampler2D, "transparency_a_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_forward_fullscreen_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_forward_resolve_frag_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_forward_ForwardResolve)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_RenderPassOutput)
+ADDITIONAL_INFO(eevee_forward_ForwardResolveFragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_forward_resolve)
+GRAPHIC_SOURCE("eevee_forward_resolve.bsl.hh")
+VERTEX_FUNCTION("eevee_forward_fullscreen_vert")
+FRAGMENT_FUNCTION("eevee_forward_resolve_frag")
+ADDITIONAL_INFO(eevee_forward_fullscreen_vert_infos_)
+ADDITIONAL_INFO(eevee_forward_resolve_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

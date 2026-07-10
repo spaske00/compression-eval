@@ -1,0 +1,181 @@
+{
+    "classes": [
+        {
+            "className": "ProjectIntroPage",
+            "lineNumber": 15,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "description",
+                    "read": "description",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setDescription"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "filePath",
+                    "read": "filePath",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "Utils::FilePath",
+                    "user": false,
+                    "write": "setFilePath"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "projectName",
+                    "read": "projectName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setProjectName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "useAsDefaultPath",
+                    "read": "useAsDefaultPath",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setUseAsDefaultPath"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "forceSubProject",
+                    "read": "forceSubProject",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setForceSubProject"
+                }
+            ],
+            "qualifiedClassName": "Utils::ProjectIntroPage",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "activated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "type",
+                            "type": "InfoLabel::InfoType"
+                        },
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "statusMessageChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "FilePath"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "setFilePath",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "setProjectName",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "description",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "setDescription",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "u",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "setUseAsDefaultPath",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "regEx",
+                            "type": "QRegularExpression"
+                        },
+                        {
+                            "name": "userErrorMessage",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "setProjectNameRegularExpression",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::WizardPage",
+                    "name": "WizardPage"
+                }
+            ]
+        }
+    ],
+    "inputFile": "projectintropage.h",
+    "outputRevision": 68
+}

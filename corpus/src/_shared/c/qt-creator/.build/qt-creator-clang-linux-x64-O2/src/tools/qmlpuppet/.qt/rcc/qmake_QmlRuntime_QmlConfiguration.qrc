@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QmlRuntime/QmlConfiguration">
+    <file alias="qmldir">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/qml_modules/QmlRuntime/QmlConfiguration/qmldir</file>
+  </qresource>
+</RCC>
+

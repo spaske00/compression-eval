@@ -1,0 +1,43 @@
+#line 1 "gpu_shader_math_matrix_transform_lib.glsl"
+ 
+#line 16
+float3 transform_point(float3x3 mat, float3 point)
+{
+  return mat * point;
+}
+#line 24
+float3 transform_point(float4x4 mat, float3 point)
+{
+  return (mat * float4(point, 1.0f)).xyz;
+}
+#line 32
+float2 transform_point(float3x3 mat, float2 point)
+{
+  return (mat * float3(point, 1.0f)).xy;
+}
+#line 40
+float3 transform_direction(float3x3 mat, float3 direction)
+{
+  return mat * direction;
+}
+#line 48
+float3 transform_direction(float4x4 mat, float3 direction)
+{
+  return to_float3x3(mat) * direction;
+}
+#line 56
+float2 project_point(float3x3 mat, float2 point)
+{
+  float3 tmp = mat * float3(point, 1.0f);
+
+  return tmp.xy / abs(tmp.z);
+}
+#line 65
+float3 project_point(float4x4 mat, float3 point)
+{
+  float4 tmp = mat * float4(point, 1.0f);
+
+  return tmp.xyz / abs(tmp.w);
+}
+
+

@@ -1,0 +1,30 @@
+#line 1 "compositor_glare_ghost_accumulate.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_glare_ghost_accumulate)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int2 input_size = texture_size(input_ghost_tx);
+#line 18
+  float2 coordinates = (float2(texel) + float2(0.5f)) / float2(input_size);
+#line 22
+  float4 accumulated_ghost = float4(0.0f);
+  for (int i = 0; i < 4; i++) {
+    float scale = scales[i];
+    float4 color_modulator = color_modulators[i];
+#line 29
+    float2 scaled_coordinates = (coordinates - 0.5f) * scale + 0.5f;
+#line 35
+    float distance_to_center = distance(coordinates, float2(0.5f)) * 2.0f;
+    float attenuator = max(0.0f, 1.0f - distance_to_center * abs(scale)) / 4.0f;
+#line 39
+    float4 multiplier = attenuator * color_modulator;
+    accumulated_ghost += texture(input_ghost_tx, scaled_coordinates) * multiplier;
+  }
+
+  float4 current_accumulated_ghost = imageLoad(accumulated_ghost_img, texel);
+  float4 combined_ghost = current_accumulated_ghost + accumulated_ghost;
+  imageStore(accumulated_ghost_img, texel, float4(combined_ghost.rgb, 1.0f));
+}

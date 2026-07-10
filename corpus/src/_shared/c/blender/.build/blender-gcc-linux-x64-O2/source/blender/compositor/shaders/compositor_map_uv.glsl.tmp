@@ -1,0 +1,19 @@
+#line 1 "compositor_map_uv.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_map_uv)
+#line 12
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float2 uv_coordinates = texture_load(uv_tx, texel).xy;
+
+  float4 sampled_color = SAMPLER_FUNCTION(input_tx, uv_coordinates);
+#line 25
+  float alpha = texture_load(uv_tx, texel).z;
+
+  float4 result = sampled_color * alpha;
+
+  imageStore(output_img, texel, result);
+}

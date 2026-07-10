@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then
+    echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2
+    exit 2
+fi
+
+cc=$1
+cxx=$2
+raw_target=$3
+shift 3
+flags=("$@")
+target=${raw_target%.out}
+case "$target" in
+    ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;;
+esac
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+build_dir="$root/.build/$target"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$build_dir/REPLACE_WITH_UPSTREAM_ARTIFACT"
+
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$build_dir" "$temporary"
+
+# Replace this line with the documented upstream configuration and build flow.
+# It must use "$cc", "$cxx", "${flags[@]}", and "${JOBS:-8}" and must not fetch.
+echo "project adapter has not replaced the wrapper skeleton" >&2
+exit 1
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

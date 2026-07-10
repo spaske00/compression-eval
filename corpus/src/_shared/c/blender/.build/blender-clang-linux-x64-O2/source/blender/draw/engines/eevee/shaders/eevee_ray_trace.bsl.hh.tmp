@@ -1,0 +1,468 @@
+#line 1 "eevee_ray_trace.bsl.hh"
+ 
+#line 23
+#define access_eevee_raytrace_screen_Resources_closure_index() closure_index
+#define access_eevee_raytrace_screen_Resources_trace_refraction() trace_refraction
+#define access_eevee_raytrace_screen_Resources_depth_tx() depth_tx
+#define access_eevee_raytrace_screen_Resources_radiance_front_tx() radiance_front_tx
+#define access_eevee_raytrace_screen_Resources_radiance_back_tx() radiance_back_tx
+#define access_eevee_raytrace_screen_Resources_hiz_front_tx() hiz_front_tx
+#define access_eevee_raytrace_screen_Resources_hiz_back_tx() hiz_back_tx
+#define access_eevee_raytrace_screen_Resources_ray_data_img() ray_data_img
+#define access_eevee_raytrace_screen_Resources_ray_time_img() ray_time_img
+#define access_eevee_raytrace_screen_Resources_ray_radiance_img() ray_radiance_img
+#define access_eevee_raytrace_screen_Resources_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_raytrace_screen_Resources
+CREATE_INFO_RES_PASS_eevee_raytrace_screen_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytrace_screen_Resources
+CREATE_INFO_RES_BATCH_eevee_raytrace_screen_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytrace_screen_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_raytrace_screen_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytrace_screen_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_raytrace_screen_Resources
+#endif
+#line 23
+struct eevee_raytrace_screen_Resources {
+#line 46
+int _pad;};
+#line 52
+#ifndef GPU_METAL
+eevee_raytrace_screen_Resources eevee_raytrace_screen_Resources_ctor_();
+eevee_raytrace_screen_Resources eevee_raytrace_screen_Resources_new_();
+#endif
+#line 23
+                                               eevee_raytrace_screen_Resources eevee_raytrace_screen_Resources_ctor_() {eevee_raytrace_screen_Resources r;r._pad=0;return r;}
+#line 39
+       eevee_raytrace_screen_Resources eevee_raytrace_screen_Resources_new_()
+{
+  eevee_raytrace_screen_Resources result;
+  result._pad = 0;
+  return result;
+#line 37
+}
+#line 43
+
+#if defined(CREATE_INFO_eevee_raytrace_screen_Resources) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_gbuffer_Reader)
+#line 43
+
+#if defined(ENTRY_POINT_eevee_raytrace_screen_trace)
+#line 46
+void eevee_raytrace_screen_trace(
+#line 53
+                                                       )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 54
+  eevee_raytrace_screen_Resources srt = eevee_raytrace_screen_Resources_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_raytrace_screen_Resources, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+#line 61
+  if (any(greaterThanEqual(texel, imageSize(srt_access(eevee_raytrace_screen_Resources, ray_data_img)).xy)) ||
+      any(lessThan(texel, int2(0))))
+  {
+    return;
+  }
+
+  float4 ray_data_im = imageLoadFast(srt_access(eevee_raytrace_screen_Resources, ray_data_img), texel);
+  float ray_pdf_inv = ray_data_im.w;
+
+  if (ray_pdf_inv < 0.0f) {
+
+    return;
+  }
+
+  if (ray_pdf_inv == 0.0f) {
+
+    imageStoreFast(srt_access(eevee_raytrace_screen_Resources, ray_time_img), texel, float4(0.0f));
+    imageStoreFast(srt_access(eevee_raytrace_screen_Resources, ray_radiance_img), texel, float4(0.0f));
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).trace_pixel_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).trace_pixel_offset;
+
+  gbuffer_Header gbuf_header = _read_header(reader, texel_fullres);
+  ClosureType closure_type = gbuffer_mode_to_closure_type(
+      _bin_type(gbuf_header, srt_access(eevee_raytrace_screen_Resources, closure_index)));
+
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_raytrace_screen_Resources, depth_tx), texel_fullres, 0).r);
+  float2 uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+
+  float3 P = _point_screen_to_world(view, float3(uv, depth));
+  float3 V = _world_incident_vector(view, P);
+  Ray ray;
+  ray.origin = P;
+  ray.direction = ray_data_im.xyz;
+#line 101
+  if (srt_access(eevee_raytrace_screen_Resources, closure_index) == 0) {
+    const Thickness thickness = _read_thickness(reader, gbuf_header, texel_fullres);
+    if (_value(thickness) != 0.0f) {
+      ClosureUndetermined cl = _read_bin(reader, texel_fullres, srt_access(eevee_raytrace_screen_Resources, closure_index));
+      ray = raytrace_thickness_ray_amend(ray, cl, V, thickness);
+    }
+  }
+
+  float3 radiance = float3(0.0f);
+  float noise_offset = _rng_1D_get(sampling, SAMPLING_RAYTRACE_W);
+  float rand_trace = interleaved_gradient_noise(float2(texel), 5.0f, noise_offset);
+
+  ClosureUndetermined cl = _read_bin(reader, texel_fullres, srt_access(eevee_raytrace_screen_Resources, closure_index));
+  float roughness = closure_apparent_roughness_get(cl);
+#line 117
+  Ray ray_view;
+  ray_view.origin = transform_point(view.viewmat, ray.origin);
+  ray_view.direction = transform_direction(view.viewmat, ray.direction);
+
+  ray_view.max_time = abs(_far(view) - _near(view));
+
+  ScreenTraceHitData hit;
+  hit.valid = false;
+#line 129
+  if (!closure_has_transmission(closure_type)) {
+    hit = raytrace_screen(view,
+                          srt_access(eevee_Uniform, raytrace_buf),
+                          srt_access(eevee_Uniform, uniform_buf).hiz,
+                          srt_access(eevee_raytrace_screen_Resources, hiz_front_tx),
+                          rand_trace,
+                          roughness,
+                          false,
+                          ray_view);
+
+    if (hit.valid) {
+      float3 hit_P = transform_point(view.viewinv, hit.v_hit_P);
+
+      float2 history_ndc_hit_P = project_point(srt_access(eevee_Uniform, raytrace_buf).history_persmat, hit_P).xy;
+#line 146
+      hit.valid = all(lessThan(abs(history_ndc_hit_P), float2(1.0f)));
+
+      float2 history_ss_hit_P = history_ndc_hit_P * 0.5f + 0.5f;
+#line 151
+      radiance = raytrace_sample_screen(
+          view, srt_access(eevee_raytrace_screen_Resources, radiance_front_tx), srt_access(eevee_Uniform, raytrace_buf), hit, roughness, history_ss_hit_P);
+
+      if (hit.hit_backface) {
+        radiance *= srt_access(eevee_Uniform, raytrace_buf).backface_hit_scale;
+
+        if (!srt_access(eevee_Uniform, raytrace_buf).use_backface_hit) {
+          hit.valid = false;
+        }
+      }
+    }
+  }
+  else if (srt_access(eevee_raytrace_screen_Resources, trace_refraction)) {
+    hit = raytrace_screen(view,
+                          srt_access(eevee_Uniform, raytrace_buf),
+                          srt_access(eevee_Uniform, uniform_buf).hiz,
+                          srt_access(eevee_raytrace_screen_Resources, hiz_back_tx),
+                          rand_trace,
+                          roughness,
+                          true,
+                          ray_view);
+
+    if (hit.valid) {
+
+      radiance = raytrace_sample_screen(
+          view, srt_access(eevee_raytrace_screen_Resources, radiance_back_tx), srt_access(eevee_Uniform, raytrace_buf), hit, roughness, hit.ss_hit_P.xy);
+    }
+  }
+
+  if (!hit.valid) {
+#line 184
+    float3 Ng = ray.direction;
+
+    eevee_LightProbeSample samp = _load(lightprobes, float2(texel), ray.origin, Ng, V);
+
+    float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+    samp.volume_irradiance = spherical_harmonics_clamp_energy(samp.volume_irradiance,
+                                                               clamp_indirect);
+    radiance = _eval_direction(lightprobes, samp, ray.origin, ray.direction, roughness);
+
+    hit.time = 10000.0f;
+  }
+
+  radiance = colorspace_brightness_clamp_max(radiance, srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect);
+
+  imageStoreFast(srt_access(eevee_raytrace_screen_Resources, ray_time_img), texel, float4(hit.time));
+  imageStoreFast(srt_access(eevee_raytrace_screen_Resources, ray_radiance_img), texel, float4(radiance, 0.0f));
+
+#endif
+#line 200
+}
+#endif
+#endif
+#line 206
+#define access_eevee_raytrace_planar_Resources_closure_index() closure_index
+#define access_eevee_raytrace_planar_Resources_depth_tx() depth_tx
+#define access_eevee_raytrace_planar_Resources_ray_data_img() ray_data_img
+#define access_eevee_raytrace_planar_Resources_ray_time_img() ray_time_img
+#define access_eevee_raytrace_planar_Resources_ray_radiance_img() ray_radiance_img
+#define access_eevee_raytrace_planar_Resources_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_raytrace_planar_Resources
+CREATE_INFO_RES_PASS_eevee_raytrace_planar_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytrace_planar_Resources
+CREATE_INFO_RES_BATCH_eevee_raytrace_planar_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytrace_planar_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_raytrace_planar_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytrace_planar_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_raytrace_planar_Resources
+#endif
+#line 206
+struct eevee_raytrace_planar_Resources {
+#line 224
+int _pad;};
+#line 233
+#ifndef GPU_METAL
+eevee_raytrace_planar_Resources eevee_raytrace_planar_Resources_ctor_();
+eevee_raytrace_planar_Resources eevee_raytrace_planar_Resources_new_();
+#endif
+#line 206
+                                               eevee_raytrace_planar_Resources eevee_raytrace_planar_Resources_ctor_() {eevee_raytrace_planar_Resources r;r._pad=0;return r;}
+#line 217
+       eevee_raytrace_planar_Resources eevee_raytrace_planar_Resources_new_()
+{
+  eevee_raytrace_planar_Resources result;
+  result._pad = 0;
+  return result;
+#line 215
+}
+#line 224
+
+#if defined(CREATE_INFO_eevee_raytrace_planar_Resources) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_eevee_LightprobePlaneRenderData) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_gbuffer_Reader)
+#line 224
+
+#if defined(ENTRY_POINT_eevee_raytrace_planar_trace)
+#line 224
+
+void eevee_raytrace_planar_trace(
+#line 233
+                                                       )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 234
+  eevee_raytrace_planar_Resources srt = eevee_raytrace_planar_Resources_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_(); eevee_LightprobePlaneRenderData lightprobe_planes = eevee_LightprobePlaneRenderData_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_raytrace_planar_Resources, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+#line 241
+  if (any(greaterThanEqual(texel, imageSize(srt_access(eevee_raytrace_planar_Resources, ray_time_img)).xy))) {
+    return;
+  }
+
+  float4 ray_data_im = imageLoadFast(srt_access(eevee_raytrace_planar_Resources, ray_data_img), texel);
+  float ray_pdf_inv = ray_data_im.w;
+
+  if (ray_pdf_inv == 0.0f) {
+
+    imageStoreFast(srt_access(eevee_raytrace_planar_Resources, ray_time_img), texel, float4(0.0f));
+    imageStoreFast(srt_access(eevee_raytrace_planar_Resources, ray_radiance_img), texel, float4(0.0f));
+    return;
+  }
+
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).trace_pixel_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).trace_pixel_offset;
+
+  gbuffer_Header gbuf_header = _read_header(reader, texel_fullres);
+  ClosureType closure_type = gbuffer_mode_to_closure_type(
+      _bin_type(gbuf_header, srt_access(eevee_raytrace_planar_Resources, closure_index)));
+
+  if (closure_has_transmission(closure_type)) {
+
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  ClosureUndetermined cl = _read_bin(reader, texel_fullres, srt_access(eevee_raytrace_planar_Resources, closure_index));
+  float roughness = closure_apparent_roughness_get(cl);
+
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_raytrace_planar_Resources, depth_tx), texel_fullres, 0).r);
+  float2 uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+
+  float3 P = _point_screen_to_world(view, float3(uv, depth));
+  float3 V = _world_incident_vector(view, P);
+
+  int planar_id = _select_probe(lightprobe_planes, P, ray_data_im.xyz);
+  if (planar_id == -1) {
+    return;
+  }
+
+  PlanarProbeData planar = srt_access(eevee_LightprobePlaneRenderData, probe_planar_buf)[planar_id];
+#line 286
+  imageStoreFast(srt_access(eevee_raytrace_planar_Resources, ray_data_img), texel, float4(ray_data_im.xyz, -ray_data_im.w));
+
+  Ray ray;
+  ray.origin = P;
+  ray.direction = ray_data_im.xyz;
+
+  float3 radiance = float3(0.0f);
+  float noise_offset = _rng_1D_get(sampling, SAMPLING_RAYTRACE_W);
+  float rand_trace = interleaved_gradient_noise(float2(texel), 5.0f, noise_offset);
+#line 301
+  Ray ray_view;
+  ray_view.origin = transform_point(planar.viewmat, ray.origin);
+  ray_view.direction = transform_direction(planar.viewmat, ray.direction);
+
+  ray_view.max_time = 1000.0f;
+
+  ScreenTraceHitData hit = raytrace_planar(
+      view, srt_access(eevee_Uniform, raytrace_buf), srt_access(eevee_LightprobePlaneRenderData, planar_depth_tx), planar, rand_trace, ray_view);
+
+  if (hit.valid) {
+
+    radiance = raytrace_sample_screen(view,
+                                      srt_access(eevee_LightprobePlaneRenderData, planar_radiance_tx),
+                                      srt_access(eevee_Uniform, raytrace_buf),
+                                      hit,
+                                      roughness,
+                                      hit.ss_hit_P.xy,
+                                      planar_id);
+  }
+  else {
+#line 324
+    float3 Ng = ray.direction;
+
+    eevee_LightProbeSample samp = _load(lightprobes, float2(texel), P, Ng, V);
+    radiance = _eval_direction(lightprobes, samp, P, ray.direction, roughness);
+
+    hit.time = 10000.0f;
+  }
+
+  radiance = colorspace_brightness_clamp_max(radiance, srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect);
+
+  imageStoreFast(srt_access(eevee_raytrace_planar_Resources, ray_time_img), texel, float4(hit.time));
+  imageStoreFast(srt_access(eevee_raytrace_planar_Resources, ray_radiance_img), texel, float4(radiance, 0.0f));
+
+#endif
+#line 336
+}
+#endif
+#endif
+#line 342
+#define access_eevee_raytrace_fallback_Resources_closure_index() closure_index
+#define access_eevee_raytrace_fallback_Resources_depth_tx() depth_tx
+#define access_eevee_raytrace_fallback_Resources_ray_data_img() ray_data_img
+#define access_eevee_raytrace_fallback_Resources_ray_time_img() ray_time_img
+#define access_eevee_raytrace_fallback_Resources_ray_radiance_img() ray_radiance_img
+#define access_eevee_raytrace_fallback_Resources_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_raytrace_fallback_Resources
+CREATE_INFO_RES_PASS_eevee_raytrace_fallback_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytrace_fallback_Resources
+CREATE_INFO_RES_BATCH_eevee_raytrace_fallback_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytrace_fallback_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_raytrace_fallback_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytrace_fallback_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_raytrace_fallback_Resources
+#endif
+#line 342
+struct eevee_raytrace_fallback_Resources {
+#line 360
+int _pad;};
+#line 366
+#ifndef GPU_METAL
+eevee_raytrace_fallback_Resources eevee_raytrace_fallback_Resources_ctor_();
+eevee_raytrace_fallback_Resources eevee_raytrace_fallback_Resources_new_();
+#endif
+#line 342
+                                                 eevee_raytrace_fallback_Resources eevee_raytrace_fallback_Resources_ctor_() {eevee_raytrace_fallback_Resources r;r._pad=0;return r;}
+#line 353
+       eevee_raytrace_fallback_Resources eevee_raytrace_fallback_Resources_new_()
+{
+  eevee_raytrace_fallback_Resources result;
+  result._pad = 0;
+  return result;
+#line 351
+}
+#line 357
+
+#if defined(CREATE_INFO_eevee_raytrace_fallback_Resources) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View)
+#line 357
+
+#if defined(ENTRY_POINT_eevee_raytrace_fallback_trace)
+#line 357
+
+void eevee_raytrace_fallback_trace(
+#line 364
+                                                       )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 365
+  eevee_raytrace_fallback_Resources srt = eevee_raytrace_fallback_Resources_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_raytrace_fallback_Resources, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).trace_pixel_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).trace_pixel_offset;
+#line 375
+  if (any(greaterThanEqual(texel, imageSize(srt_access(eevee_raytrace_fallback_Resources, ray_time_img)).xy))) {
+    return;
+  }
+
+  ClosureUndetermined cl = _read_bin(reader, texel_fullres, srt_access(eevee_raytrace_fallback_Resources, closure_index));
+  float roughness = closure_apparent_roughness_get(cl);
+
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_raytrace_fallback_Resources, depth_tx), texel_fullres, 0).r);
+  float2 uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+
+  float4 ray_data_im = imageLoadFast(srt_access(eevee_raytrace_fallback_Resources, ray_data_img), texel);
+  float ray_pdf_inv = ray_data_im.w;
+
+  if (ray_pdf_inv == 0.0f) {
+
+    imageStoreFast(srt_access(eevee_raytrace_fallback_Resources, ray_time_img), texel, float4(0.0f));
+    imageStoreFast(srt_access(eevee_raytrace_fallback_Resources, ray_radiance_img), texel, float4(0.0f));
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 P = _point_screen_to_world(view, float3(uv, depth));
+  float3 V = _world_incident_vector(view, P);
+
+  Ray ray;
+  ray.origin = P;
+  ray.direction = ray_data_im.xyz;
+#line 405
+  if (srt_access(eevee_raytrace_fallback_Resources, closure_index) == 0) {
+    const gbuffer_Header gbuf_header = _read_header(reader, texel_fullres);
+    const Thickness thickness = _read_thickness(reader, gbuf_header, texel_fullres);
+    if (_value(thickness) != 0.0f) {
+      ClosureUndetermined cl = _read_bin(reader, texel_fullres, srt_access(eevee_raytrace_fallback_Resources, closure_index));
+      ray = raytrace_thickness_ray_amend(ray, cl, V, thickness);
+    }
+  }
+#line 417
+  float3 Ng = ray.direction;
+  eevee_LightProbeSample samp = _load(lightprobes, float2(texel), ray.origin, Ng, V);
+
+  float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+  samp.volume_irradiance = spherical_harmonics_clamp_energy(samp.volume_irradiance,
+                                                             clamp_indirect);
+
+  float3 radiance = _eval_direction(lightprobes, samp, ray.origin, ray.direction, roughness);
+
+  float hit_time = 1000.0f;
+
+  radiance = colorspace_brightness_clamp_max(radiance, srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect);
+
+  imageStoreFast(srt_access(eevee_raytrace_fallback_Resources, ray_time_img), texel, float4(hit_time));
+  imageStoreFast(srt_access(eevee_raytrace_fallback_Resources, ray_radiance_img), texel, float4(radiance, 0.0f));
+
+#endif
+#line 432
+}
+#endif
+#endif
+#line 440

@@ -1,0 +1,108 @@
+#line 1 "gpu_shader_math_base_lib.glsl"
+ 
+#line 20
+float endvalue_preserving_mix(float a, float b, float t)
+{
+  return (1.0f - t) * a + t * b;
+}
+#line 27
+float pow2f(float x)
+{
+  return x * x;
+}
+float pow3f(float x)
+{
+  return x * x * x;
+}
+float pow4f(float x)
+{
+  return pow2f(pow2f(x));
+}
+float pow5f(float x)
+{
+  return pow4f(x) * x;
+}
+float pow6f(float x)
+{
+  return pow2f(pow3f(x));
+}
+float pow7f(float x)
+{
+  return pow6f(x) * x;
+}
+float pow8f(float x)
+{
+  return pow2f(pow4f(x));
+}
+
+float square(float v)
+{
+  return v * v;
+}
+float2 square(float2 v)
+{
+  return v * v;
+}
+float3 square(float3 v)
+{
+  return v * v;
+}
+float4 square(float4 v)
+{
+  return v * v;
+}
+
+float hypot(float x, float y)
+{
+  return sqrt(x * x + y * y);
+}
+#line 81
+float _atan2(float y, float x)
+{
+  return atan(y, x);
+}
+#define atan2 _atan2
+#line 92
+int ceil_to_multiple(int a, int b)
+{
+  return ((a + b - 1) / b) * b;
+}
+uint ceil_to_multiple(uint a, uint b)
+{
+  return ((a + b - 1u) / b) * b;
+}
+#line 105
+int divide_ceil(int a, int b)
+{
+  return (a + b - 1) / b;
+}
+uint divide_ceil(uint a, uint b)
+{
+  return (a + b - 1u) / b;
+}
+#line 117
+void min_max(float value, _ref(float ,min_v), _ref(float ,max_v))
+{
+  min_v = min(value, min_v);
+  max_v = max(value, max_v);
+}
+#line 126
+bool is_equal(float a, float b, const float epsilon)
+{
+  return abs(a - b) <= epsilon;
+}
+
+float sin_from_cos(float c)
+{
+  return sqrt(max(0.0f, 1.0f - square(c)));
+}
+
+float cos_from_sin(float s)
+{
+  return sqrt(max(0.0f, 1.0f - square(s)));
+}
+
+float cos_from_tan(float t)
+{
+  return inversesqrt(1.0f + square(t));
+}

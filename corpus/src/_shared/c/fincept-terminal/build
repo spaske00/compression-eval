@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then
+    echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2
+    exit 2
+fi
+
+cc=$1
+cxx=$2
+raw_target=$3
+shift 3
+flags=("$@")
+target=${raw_target%.out}
+case "$target" in
+    ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;;
+esac
+case "$(basename -- "$cc"):$(basename -- "$cxx")" in
+    gcc*:g++*|clang*:clang++*) ;;
+    *) echo "FinceptTerminal requires a matching GCC/G++ or Clang/Clang++ toolchain: $cc, $cxx" >&2; exit 2 ;;
+esac
+command -v "$cc" >/dev/null || { echo "compiler not found: $cc" >&2; exit 2; }
+command -v "$cxx" >/dev/null || { echo "compiler not found: $cxx" >&2; exit 2; }
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+build_dir="$root/.build/$target"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$build_dir/FinceptTerminal"
+qt_prefix="$root/deps/qt/6.8.3/gcc_64"
+declare -A dependency_commits=(
+    [qxlsx]=3192b808a283f8eb18c97b9a087bf085054e9bb0
+    [md4c]=729e6b8b320caa96328968ab27d7db2235e4fb47
+    [qgeoview]=4b2c52c80940e1073c259ded1a57df83036ba1c9
+    [qtads]=87cffe5d40307c61141c88b88c10c5e7d181d880
+    [ed25519]=b1f19fab4aebe607805620d25a5e42566ce46a0e
+)
+for dependency in qxlsx md4c qgeoview qtads ed25519; do
+    if [[ ! -d "$root/deps/sources/$dependency/.git" ]]; then
+        echo "FinceptTerminal acquisition is incomplete: missing deps/sources/$dependency" >&2
+        exit 1
+    fi
+    actual=$(git -C "$root/deps/sources/$dependency" rev-parse HEAD)
+    if [[ "$actual" != "${dependency_commits[$dependency]}" ]]; then
+        echo "FinceptTerminal dependency drift: $dependency is at $actual" >&2
+        exit 1
+    fi
+done
+if [[ ! -f "$qt_prefix/lib/cmake/Qt6/Qt6Config.cmake" ]]; then
+    echo "FinceptTerminal acquisition is incomplete: missing Qt 6.8.3 linux_gcc_64" >&2
+    exit 1
+fi
+ytdlp="$root/deps/assets/yt-dlp_linux"
+expected_ytdlp=c2b0189f581fe4a2ddd41954f1bcb7d327db04b07ed0dea97e4f1b3e09b5dd8e
+if [[ ! -f "$ytdlp" || "$(sha256sum "$ytdlp" | cut -d' ' -f1)" != "$expected_ytdlp" ]]; then
+    echo "FinceptTerminal acquisition is incomplete: missing or invalid pinned yt-dlp_linux" >&2
+    exit 1
+fi
+
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$build_dir" "$temporary"
+mkdir -p -- "$build_dir/_deps"
+ln -s -- "$root/deps/sources/qtads" "$build_dir/_deps/qtads-src"
+
+cmake -S "$root/upstream/fincept-qt" -B "$build_dir" -G Ninja \
+    -DCMAKE_C_COMPILER="$cc" -DCMAKE_CXX_COMPILER="$cxx" \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_PREFIX_PATH="$qt_prefix" \
+    -DCMAKE_C_FLAGS="${flags[*]}" -DCMAKE_CXX_FLAGS="${flags[*]}" \
+    -DCMAKE_EXE_LINKER_FLAGS="${flags[*]}" \
+    -DFETCHCONTENT_FULLY_DISCONNECTED=ON \
+    -DFETCHCONTENT_UPDATES_DISCONNECTED=ON \
+    -DFETCHCONTENT_SOURCE_DIR_QXLSX="$root/deps/sources/qxlsx" \
+    -DFETCHCONTENT_SOURCE_DIR_MD4C="$root/deps/sources/md4c" \
+    -DFETCHCONTENT_SOURCE_DIR_QGEOVIEW="$root/deps/sources/qgeoview" \
+    -DFETCHCONTENT_SOURCE_DIR_QTADS="$root/deps/sources/qtads" \
+    -DFETCHCONTENT_SOURCE_DIR_ED25519="$root/deps/sources/ed25519" \
+    -DFINCEPT_DOWNLOAD_YTDLP=OFF \
+    -DFINCEPT_YTDLP_EXE="$ytdlp"
+cmake --build "$build_dir" --target FinceptTerminal --parallel "${JOBS:-8}"
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

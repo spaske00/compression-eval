@@ -1,0 +1,49 @@
+#line 1 "compositor_gamma_correct_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 8
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define FUNCTION(x) (x * x)
+#endif
+#line 16
+#ifdef CREATE_INFO_RES_PASS_compositor_gamma_correct_shared
+CREATE_INFO_RES_PASS_compositor_gamma_correct_shared
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_gamma_correct_shared
+CREATE_INFO_RES_BATCH_compositor_gamma_correct_shared
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_gamma_correct_shared
+CREATE_INFO_RES_GEOMETRY_compositor_gamma_correct_shared
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_gamma_correct_shared
+CREATE_INFO_RES_SHARED_VARS_compositor_gamma_correct_shared
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_compositor_gamma_correct
+CREATE_INFO_RES_PASS_compositor_gamma_correct
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_gamma_correct
+CREATE_INFO_RES_BATCH_compositor_gamma_correct
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_gamma_correct
+CREATE_INFO_RES_GEOMETRY_compositor_gamma_correct
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_gamma_correct
+CREATE_INFO_RES_SHARED_VARS_compositor_gamma_correct
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_compositor_gamma_uncorrect
+CREATE_INFO_RES_PASS_compositor_gamma_uncorrect
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_gamma_uncorrect
+CREATE_INFO_RES_BATCH_compositor_gamma_uncorrect
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_gamma_uncorrect
+CREATE_INFO_RES_GEOMETRY_compositor_gamma_uncorrect
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_gamma_uncorrect
+CREATE_INFO_RES_SHARED_VARS_compositor_gamma_uncorrect
+#endif

@@ -1,0 +1,18 @@
+#line 1 "compositor_pixelate_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 12
+#ifdef CREATE_INFO_RES_PASS_compositor_pixelate
+CREATE_INFO_RES_PASS_compositor_pixelate
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_pixelate
+CREATE_INFO_RES_BATCH_compositor_pixelate
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_pixelate
+CREATE_INFO_RES_GEOMETRY_compositor_pixelate
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_pixelate
+CREATE_INFO_RES_SHARED_VARS_compositor_pixelate
+#endif

@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_function_matrix_multiply.glsl"
+ 
+#line 6
+void node_function_matrix_multiply(const float4x4 a, const float4x4 b, _ref(float4x4 ,result))
+{
+  result = a * b;
+}

@@ -1,0 +1,153 @@
+#line 1 "draw_pointcloud_lib.glsl"
+ 
+#line 9
+SHADER_LIBRARY_CREATE_INFO(draw_pointcloud)
+#line 20
+struct pointcloud_Point {
+  float3 P;
+  float radius;
+
+  int point_id;
+
+  float3 shape_pos;
+};
+#line 20
+                                pointcloud_Point pointcloud_Point_ctor_() {pointcloud_Point r;r.P=float3(0);r.radius=0.0f;r.point_id=0;r.shape_pos=float3(0);return r;}
+#line 29
+int pointcloud_point_id_get(uint vert_id)
+{
+
+  return int(vert_id / uint(DRW_POINTCLOUD_STRIP_TILE_SIZE));
+}
+#line 36
+pointcloud_Point pointcloud_point_get(uint vert_id)
+{
+
+#if defined(CREATE_INFO_draw_pointcloud)
+#line 38
+  pointcloud_Point pt;
+  pt.point_id = pointcloud_point_id_get(vert_id);
+#line 42
+  float4 pos_rad = texelFetch(sampler_get(draw_pointcloud, ptcloud_pos_rad_tx), pt.point_id);
+  pt.P = pos_rad.xyz;
+  pt.radius = pos_rad.w;
+  pt.shape_pos = float3(NAN_FLT);
+  switch (vert_id % DRW_POINTCLOUD_STRIP_TILE_SIZE) {
+    case 0:
+      pt.shape_pos = float3(-1.0, 0.0, 0.0);
+      break;
+    case 1:
+      pt.shape_pos = float3(0.0, -1.0, 0.0);
+      break;
+    case 2:
+      pt.shape_pos = float3(0.0, 0.0, 1.0);
+      break;
+    case 3:
+      pt.shape_pos = float3(1.0, 0.0, 0.0);
+      break;
+    case 4:
+      pt.shape_pos = float3(0.0, 0.0, 1.0);
+      break;
+    case 5:
+      pt.shape_pos = float3(0.0, 1.0, 0.0);
+      break;
+    case 6:
+      pt.shape_pos = float3(-1.0, 0.0, 0.0);
+      break;
+    default:
+      break;
+  }
+  return pt;
+
+#else
+#line 38
+  return pointcloud_Point_ctor_();
+#endif
+#line 72
+}
+
+pointcloud_Point pointcloud_object_to_world(pointcloud_Point pt, float4x4 object_to_world)
+{
+  pt.P = transform_point(object_to_world, pt.P);
+  pt.radius *= length(to_scale(object_to_world)) * M_SQRT1_3;
+  return pt;
+}
+
+struct pointcloud_ShapePoint {
+
+  float3 P;
+
+  float3 N;
+};
+#line 81
+                                     pointcloud_ShapePoint pointcloud_ShapePoint_ctor_() {pointcloud_ShapePoint r;r.P=float3(0);r.N=float3(0);return r;}
+#line 88
+float3x3 pointcloud_facing_matrix(const float3 V, const float3 up_axis)
+{
+  float3x3 facing_mat;
+  facing_mat[2] = V;
+#ifdef MAT_GEOM_POINTCLOUD
+  if (ptcloud_backface) {
+    facing_mat[2] = -facing_mat[2];
+  }
+#endif
+  facing_mat[1] = normalize(cross(up_axis, facing_mat[2]));
+  facing_mat[0] = cross(facing_mat[1], facing_mat[2]);
+  return facing_mat;
+}
+#line 107
+pointcloud_ShapePoint pointcloud_shape_point_get(const pointcloud_Point pt,
+                           const float3 V,
+                           const float3 up_axis,
+                           const eObjectInfoFlag ob_flag)
+{
+  pointcloud_ShapePoint shape;
+  shape.N = pointcloud_facing_matrix(V, up_axis) * pt.shape_pos;
+  if (flag_test(ob_flag, OBJECT_NEGATIVE_SCALE)) {
+    shape.N = -shape.N;
+  }
+  shape.P = pt.P + shape.N * pt.radius;
+  return shape;
+}
+
+float3 pointcloud_get_point_position(const int point_id)
+{
+
+#if defined(CREATE_INFO_draw_pointcloud)
+#line 123
+
+  return texelFetch(sampler_get(draw_pointcloud, ptcloud_pos_rad_tx), point_id).xyz;
+
+#else
+#line 123
+  return float3(0);
+#endif
+}
+
+float pointcloud_get_customdata_float(const int point_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, point_id).r;
+}
+
+float2 pointcloud_get_customdata_vec2(const int point_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, point_id).rg;
+}
+
+float3 pointcloud_get_customdata_vec3(const int point_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, point_id).rgb;
+}
+
+float4 pointcloud_get_customdata_vec4(const int point_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, point_id).rgba;
+}
+
+float2 pointcloud_get_barycentric()
+{
+
+  return float2(0.0f);
+}
+
+

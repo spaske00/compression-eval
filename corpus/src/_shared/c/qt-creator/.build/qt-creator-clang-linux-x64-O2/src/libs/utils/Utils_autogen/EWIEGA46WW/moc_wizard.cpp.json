@@ -1,0 +1,314 @@
+{
+    "classes": [
+        {
+            "className": "Wizard",
+            "lineNumber": 26,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "automaticProgressCreationEnabled",
+                    "read": "isAutomaticProgressCreationEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAutomaticProgressCreationEnabled"
+                }
+            ],
+            "qualifiedClassName": "Utils::Wizard",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWizard"
+                }
+            ]
+        },
+        {
+            "className": "WizardProgress",
+            "lineNumber": 82,
+            "object": true,
+            "qualifiedClassName": "Utils::WizardProgress",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "currentItemChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "itemChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "itemAdded",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "itemRemoved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        },
+                        {
+                            "name": "items",
+                            "type": "QList<WizardProgressItem*>"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "nextItemsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        },
+                        {
+                            "name": "nextShownItem",
+                            "type": "WizardProgressItem*"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "nextShownItemChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "item",
+                            "type": "WizardProgressItem*"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "startItemChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "ObjectToFieldWidgetConverter",
+            "lineNumber": 167,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "value",
+                    "notify": "valueChanged",
+                    "read": "value",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "Utils::Internal::ObjectToFieldWidgetConverter",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "valueChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        },
+        {
+            "className": "WizardPage",
+            "lineNumber": 198,
+            "object": true,
+            "qualifiedClassName": "Utils::WizardPage",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "errorMessage",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "reportError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWizardPage"
+                }
+            ]
+        },
+        {
+            "className": "FileWizardPage",
+            "lineNumber": 241,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "path",
+                    "read": "path",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setPath"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "fileName",
+                    "read": "fileName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setFileName"
+                }
+            ],
+            "qualifiedClassName": "Utils::FileWizardPage",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "activated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "pathChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "setPath",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "visible",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "setPathVisible",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "setFileName",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "setFilePath",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::WizardPage",
+                    "name": "WizardPage"
+                }
+            ]
+        }
+    ],
+    "inputFile": "wizard.h",
+    "outputRevision": 68
+}

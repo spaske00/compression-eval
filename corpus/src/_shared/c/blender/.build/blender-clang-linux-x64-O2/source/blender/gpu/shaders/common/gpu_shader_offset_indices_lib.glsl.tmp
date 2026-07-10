@@ -1,0 +1,13 @@
+#line 1 "gpu_shader_offset_indices_lib.glsl"
+ 
+#line 20
+#ifdef GLSL_CPP_STUBS
+#line 23
+              IndexRange offset_indices_load_range_from_buffer(int buf[], int i)
+{
+  return IndexRange_from_begin_end(buf[i], buf[i + 1]);
+}
+#endif
+#line 32
+#define offset_indices_load_range_from_buffer(buf_, i_) \
+  IndexRange_from_begin_end(buf_[i_], buf_[i_ + 1])

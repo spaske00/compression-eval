@@ -1,0 +1,23 @@
+#line 1 "overlay_grid_common_lib.glsl"
+ 
+#line 10
+float3 grid_unpack_xy_to_xyz(float2 xy, uint grid_flag)
+{
+  if (flag_test(grid_flag, PLANE_XZ)) {
+    return float3(xy.x, 0.0f, xy.y);
+  }
+  else if (flag_test(grid_flag, PLANE_YZ)) {
+    return float3(0.0f, xy);
+  }
+  else {
+    return float3(xy, 0.0f);
+  }
+}
+#line 24
+float grid_unpack_xy_to_axis(float2 xy, uint grid_flag, uint axis)
+{
+  float3 xyz = grid_unpack_xy_to_xyz(xy, grid_flag);
+  return xyz[axis];
+}
+
+

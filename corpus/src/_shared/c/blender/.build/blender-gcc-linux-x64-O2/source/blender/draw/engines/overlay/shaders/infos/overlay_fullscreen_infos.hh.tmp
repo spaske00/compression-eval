@@ -1,0 +1,18 @@
+#line 1 "overlay_fullscreen_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 16
+#ifdef CREATE_INFO_RES_PASS_overlay_fullscreen
+CREATE_INFO_RES_PASS_overlay_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_fullscreen
+CREATE_INFO_RES_BATCH_overlay_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_fullscreen
+CREATE_INFO_RES_GEOMETRY_overlay_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_fullscreen
+CREATE_INFO_RES_SHARED_VARS_overlay_fullscreen
+#endif

@@ -1,0 +1,10 @@
+Nanotrace_autogen/timestamp: \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/CMakeLists.txt \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/nanotrace.cpp \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/nanotrace.h \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/nanotraceglobals.h \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/nanotracehr.cpp \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/nanotracehr.h \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/nanotracehrfwd.h \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/nanotrace/staticstring.h \
+	/opt/cmake-3.31.10-linux-x86_64/bin/cmake

@@ -1,0 +1,14 @@
+#pragma once
+
+
+#define LIGHT_ATTENUATION_THRESHOLD 1e-6f
+
+                                                                            
+                         
+        
+
+
+
+
+
+

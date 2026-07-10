@@ -1,0 +1,77 @@
+#line 1 "eevee_lightprobe_sphere_culling.bsl.hh"
+ 
+#line 15
+#define access_eevee_lightprobe_sphere_Cull_lightprobe_sphere_count() lightprobe_sphere_count
+#define access_eevee_lightprobe_sphere_Cull_lightprobe_sphere_buf() lightprobe_sphere_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_Cull
+CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_Cull
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_Cull
+CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_Cull
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_Cull
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_Cull
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_Cull
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_Cull
+#endif
+#line 15
+struct eevee_lightprobe_sphere_Cull {
+#line 27
+int _pad;};
+#line 34
+#ifndef GPU_METAL
+eevee_lightprobe_sphere_Cull eevee_lightprobe_sphere_Cull_ctor_();
+eevee_lightprobe_sphere_Cull eevee_lightprobe_sphere_Cull_new_();
+#endif
+#line 15
+                                            eevee_lightprobe_sphere_Cull eevee_lightprobe_sphere_Cull_ctor_() {eevee_lightprobe_sphere_Cull r;r._pad=0;return r;}
+#line 20
+       eevee_lightprobe_sphere_Cull eevee_lightprobe_sphere_Cull_new_()
+{
+  eevee_lightprobe_sphere_Cull result;
+  result._pad = 0;
+  return result;
+#line 18
+}
+#line 25
+
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_Cull) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_LightprobeVolumeRenderData)
+#line 25
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_cull)
+#line 25
+
+void eevee_lightprobe_sphere_cull(
+#line 29
+                                                        )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 30
+  eevee_lightprobe_sphere_Cull srt = eevee_lightprobe_sphere_Cull_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_LightprobeVolumeRenderData volumes = eevee_LightprobeVolumeRenderData_ctor_();
+  int idx = int(gl_GlobalInvocationID.x);
+  if (idx >= srt_access(eevee_lightprobe_sphere_Cull, lightprobe_sphere_count)) {
+    return;
+  }
+
+  SphericalHarmonicL1Tfloat4 sh;
+  if (idx == srt_access(eevee_lightprobe_sphere_Cull, lightprobe_sphere_count) - 1) {
+    sh = _world(volumes);
+  }
+  else {
+    float3 probe_center = srt_access(eevee_lightprobe_sphere_Cull, lightprobe_sphere_buf)[idx].location;
+    sh = _sample_probe_no_dithered_no_biases(volumes, probe_center);
+  }
+
+  float clamp_indirect_sh = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+  sh = spherical_harmonics_clamp_energy(sh, clamp_indirect_sh);
+
+  srt_access(eevee_lightprobe_sphere_Cull, lightprobe_sphere_buf)[idx].low_freq_light = eevee_lightprobe_sphere_extract_low_freq_lighting(
+      sh);
+
+#endif
+#line 50
+}
+#endif
+#endif
+#line 55

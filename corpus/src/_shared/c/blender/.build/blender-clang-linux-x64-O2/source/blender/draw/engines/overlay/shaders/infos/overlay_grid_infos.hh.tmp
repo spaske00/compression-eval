@@ -1,0 +1,44 @@
+#line 1 "overlay_grid_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 31
+#ifdef CREATE_INFO_RES_PASS_overlay_grid_next
+CREATE_INFO_RES_PASS_overlay_grid_next
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_grid_next
+CREATE_INFO_RES_BATCH_overlay_grid_next
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_grid_next
+CREATE_INFO_RES_GEOMETRY_overlay_grid_next
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_grid_next
+CREATE_INFO_RES_SHARED_VARS_overlay_grid_next
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_overlay_grid_background
+CREATE_INFO_RES_PASS_overlay_grid_background
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_grid_background
+CREATE_INFO_RES_BATCH_overlay_grid_background
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_grid_background
+CREATE_INFO_RES_GEOMETRY_overlay_grid_background
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_grid_background
+CREATE_INFO_RES_SHARED_VARS_overlay_grid_background
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_overlay_grid_image
+CREATE_INFO_RES_PASS_overlay_grid_image
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_grid_image
+CREATE_INFO_RES_BATCH_overlay_grid_image
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_grid_image
+CREATE_INFO_RES_GEOMETRY_overlay_grid_image
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_grid_image
+CREATE_INFO_RES_SHARED_VARS_overlay_grid_image
+#endif

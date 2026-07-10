@@ -1,0 +1,211 @@
+{
+    "classes": [
+        {
+            "className": "CompletingLineEdit",
+            "lineNumber": 24,
+            "object": true,
+            "qualifiedClassName": "Utils::CompletingLineEdit",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QLineEdit"
+                }
+            ]
+        },
+        {
+            "className": "FancyLineEdit",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Side",
+                    "values": [
+                        "Left",
+                        "Right"
+                    ]
+                }
+            ],
+            "lineNumber": 38,
+            "object": true,
+            "qualifiedClassName": "Utils::FancyLineEdit",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "side",
+                            "type": "FancyLineEdit::Side"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "buttonClicked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "leftButtonClicked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "rightButtonClicked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "filterChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "validState",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "validChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "validReturnPressed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::CompletingLineEdit",
+                    "name": "CompletingLineEdit"
+                }
+            ]
+        },
+        {
+            "className": "ClassNameValidatingLineEdit",
+            "lineNumber": 160,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "namespacesEnabled",
+                    "read": "namespacesEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setNamespacesEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "lowerCaseFileName",
+                    "read": "lowerCaseFileName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setLowerCaseFileName"
+                }
+            ],
+            "qualifiedClassName": "Utils::ClassNameValidatingLineEdit",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "t",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "updateFileName",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::FancyLineEdit",
+                    "name": "FancyLineEdit"
+                }
+            ]
+        },
+        {
+            "className": "FileNameValidatingLineEdit",
+            "lineNumber": 201,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "allowDirectories",
+                    "read": "allowDirectories",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAllowDirectories"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "requiredExtensions",
+                    "read": "requiredExtensions",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "write": "setRequiredExtensions"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "forceFirstCapitalLetter",
+                    "read": "forceFirstCapitalLetter",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setForceFirstCapitalLetter"
+                }
+            ],
+            "qualifiedClassName": "Utils::FileNameValidatingLineEdit",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::FancyLineEdit",
+                    "name": "FancyLineEdit"
+                }
+            ]
+        }
+    ],
+    "inputFile": "fancylineedit.h",
+    "outputRevision": 68
+}

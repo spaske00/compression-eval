@@ -1,0 +1,83 @@
+#line 1 "workbench_shader_shared.hh"
+ 
+#line 9
+#define WORKBENCH_SHADER_SHARED_H
+#line 12
+#define SolidLightData_host_shared_ SolidLightData
+#define SolidLightData_host_shared_uniform_ SolidLightData
+#line 11
+struct                 SolidLightData {
+  float4 direction;
+  float4 specular_color;
+  float4 diffuse_color_wrap;
+};
+#line 11
+                                              SolidLightData SolidLightData_ctor_() {SolidLightData r;r.direction=float4(0);r.specular_color=float4(0);r.diffuse_color_wrap=float4(0);return r;}
+#line 18
+#define WorldData_host_shared_ WorldData
+#define WorldData_host_shared_uniform_ WorldData
+#line 17
+struct                 WorldData {
+  float2 viewport_size;
+  float2 viewport_size_inv;
+  float4 object_outline_color;
+  float4 shadow_direction_vs;
+  float shadow_focus;
+  float shadow_shift;
+  float shadow_mul;
+  float shadow_add;
+
+         SolidLightData lights[4];
+  float4 ambient_color;
+
+  int cavity_sample_start;
+  int cavity_sample_end;
+  float cavity_sample_count_inv;
+  float cavity_jitter_scale;
+
+  float cavity_valley_factor;
+  float cavity_ridge_factor;
+  float cavity_attenuation;
+  float cavity_distance;
+
+  float curvature_ridge;
+  float curvature_valley;
+  float ui_scale;
+  float _pad0;
+
+  int matcap_orientation;
+  bool32_t use_specular;
+  float xray_alpha;
+  int _pad1;
+
+  float4 background_color;
+};
+#line 17
+                                         WorldData WorldData_ctor_() {WorldData r;r.viewport_size=float2(0);r.viewport_size_inv=float2(0);r.object_outline_color=float4(0);r.shadow_direction_vs=float4(0);r.shadow_focus=0.0f;r.shadow_shift=0.0f;r.shadow_mul=0.0f;r.shadow_add=0.0f;r.ambient_color=float4(0);r.cavity_sample_start=0;r.cavity_sample_end=0;r.cavity_sample_count_inv=0.0f;r.cavity_jitter_scale=0.0f;r.cavity_valley_factor=0.0f;r.cavity_ridge_factor=0.0f;r.cavity_attenuation=0.0f;r.cavity_distance=0.0f;r.curvature_ridge=0.0f;r.curvature_valley=0.0f;r.ui_scale=0.0f;r._pad0=0.0f;r.matcap_orientation=0;r.use_specular=bool32_t(0);r.xray_alpha=0.0f;r._pad1=0;r.background_color=float4(0);r.lights[0]=SolidLightData_ctor_();r.lights[1]=SolidLightData_ctor_();r.lights[2]=SolidLightData_ctor_();r.lights[3]=SolidLightData_ctor_();return r;}
+#line 54
+#define ExtrudedFrustum_host_shared_ ExtrudedFrustum
+#define ExtrudedFrustum_host_shared_uniform_ ExtrudedFrustum
+#line 53
+struct                 ExtrudedFrustum {
+
+  float4 corners[16];
+  float4 planes[12];
+  int corners_count;
+  int planes_count;
+  int _pad0;
+  int _pad1;
+};
+#line 53
+                                               ExtrudedFrustum ExtrudedFrustum_ctor_() {ExtrudedFrustum r;r.corners_count=0;r.planes_count=0;r._pad0=0;r._pad1=0;r.corners[0]=float4(0);r.corners[1]=float4(0);r.corners[2]=float4(0);r.corners[3]=float4(0);r.corners[4]=float4(0);r.corners[5]=float4(0);r.corners[6]=float4(0);r.corners[7]=float4(0);r.corners[8]=float4(0);r.corners[9]=float4(0);r.corners[10]=float4(0);r.corners[11]=float4(0);r.corners[12]=float4(0);r.corners[13]=float4(0);r.corners[14]=float4(0);r.corners[15]=float4(0);r.planes[0]=float4(0);r.planes[1]=float4(0);r.planes[2]=float4(0);r.planes[3]=float4(0);r.planes[4]=float4(0);r.planes[5]=float4(0);r.planes[6]=float4(0);r.planes[7]=float4(0);r.planes[8]=float4(0);r.planes[9]=float4(0);r.planes[10]=float4(0);r.planes[11]=float4(0);return r;}
+#line 64
+#define ShadowPassData_host_shared_ ShadowPassData
+#define ShadowPassData_host_shared_uniform_ ShadowPassData
+#line 63
+struct                 ShadowPassData {
+  float4 far_plane;
+  packed_float3 light_direction_ws;
+  int _padding;
+};
+#line 63
+                                              ShadowPassData ShadowPassData_ctor_() {ShadowPassData r;r.far_plane=float4(0);r.light_direction_ws=packed_float3(0);r._padding=0;return r;}
+#line 68

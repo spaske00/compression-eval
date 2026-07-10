@@ -1,0 +1,57 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_CombineFragOut)
+FRAGMENT_OUT(0, float4, eevee_deferred_CombineFragOut_combined)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(eevee_deferred_CombineVertOut_t)
+SMOOTH(float2, eevee_deferred_CombineVertOut_screen_uv)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_Combine)
+SPECIALIZATION_CONSTANT(bool, render_pass_diffuse_light_enabled, false)
+SPECIALIZATION_CONSTANT(bool, render_pass_specular_light_enabled, false)
+SPECIALIZATION_CONSTANT(bool, render_pass_normal_enabled, false)
+SPECIALIZATION_CONSTANT(bool, render_pass_position_enabled, false)
+SPECIALIZATION_CONSTANT(bool, use_radiance_feedback, false)
+SPECIALIZATION_CONSTANT(bool, use_split_radiance, true)
+.sampler(2, ImageType::usampler2D, "direct_radiance_1_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(4, ImageType::usampler2D, "direct_radiance_2_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(5, ImageType::usampler2D, "direct_radiance_3_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(6, ImageType::sampler2D, "indirect_radiance_1_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(7, ImageType::sampler2D, "indirect_radiance_2_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(8, ImageType::sampler2D, "indirect_radiance_3_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(5, blender::gpu::TextureFormat::SFLOAT_16_16_16_16, Qualifier::read_write, ImageReadWriteType::image2D, "radiance_feedback_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_combine_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+VERTEX_OUT(eevee_deferred_CombineVertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_combine_frag_infos_)
+EARLY_FRAGMENT_TEST(true)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_deferred_Combine)
+ADDITIONAL_INFO(eevee_RenderPassOutput)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_HiZ)
+ADDITIONAL_INFO(gbuffer_Reader)
+ADDITIONAL_INFO(eevee_deferred_CombineFragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_combine)
+GRAPHIC_SOURCE("eevee_deferred_combine.bsl.hh")
+VERTEX_FUNCTION("eevee_deferred_combine_vert")
+FRAGMENT_FUNCTION("eevee_deferred_combine_frag")
+ADDITIONAL_INFO(eevee_deferred_combine_vert_infos_)
+ADDITIONAL_INFO(eevee_deferred_combine_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

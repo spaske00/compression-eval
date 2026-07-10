@@ -1,0 +1,161 @@
+#line 1 "compositor_kuwahara_anisotropic.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_kuwahara_anisotropic_variable_size)
+#line 32
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 38
+  float4 encoded_structure_tensor = texture_load(structure_tensor_tx, texel);
+  float dxdx = encoded_structure_tensor.x;
+  float dxdy = encoded_structure_tensor.y;
+  float dydy = encoded_structure_tensor.w;
+#line 45
+  float eigenvalue_first_term = (dxdx + dydy) / 2.0f;
+  float eigenvalue_square_root_term = sqrt(square(dxdx - dydy) + 4.0f * square(dxdy)) / 2.0f;
+  float first_eigenvalue = eigenvalue_first_term + eigenvalue_square_root_term;
+  float second_eigenvalue = eigenvalue_first_term - eigenvalue_square_root_term;
+#line 53
+  float2 eigenvector = float2(first_eigenvalue - dxdx, -dxdy);
+  float eigenvector_length = length(eigenvector);
+  float2 unit_eigenvector = eigenvector_length != 0.0f ? eigenvector / eigenvector_length :
+                                                         float2(1.0f);
+#line 61
+  float eigenvalue_sum = first_eigenvalue + second_eigenvalue;
+  float eigenvalue_difference = first_eigenvalue - second_eigenvalue;
+  float anisotropy = eigenvalue_sum > 0.0f ? eigenvalue_difference / eigenvalue_sum : 0.0f;
+
+#if defined(VARIABLE_SIZE)
+  float radius = max(0.0f, texture_load(size_tx, texel).x);
+#elif defined(CONSTANT_SIZE)
+  float radius = max(0.0f, size);
+#endif
+  if (radius == 0) {
+    imageStore(output_img, texel, texture_load(input_tx, texel));
+    return;
+  }
+#line 80
+  float ellipse_width_factor = (eccentricity + anisotropy) / eccentricity;
+  float ellipse_width = ellipse_width_factor * radius;
+  float ellipse_height = radius / ellipse_width_factor;
+#line 87
+  float cosine = unit_eigenvector.x;
+  float sine = unit_eigenvector.y;
+#line 93
+  float2x2 inverse_ellipse_matrix = float2x2(cosine / ellipse_width,
+                                             -sine / ellipse_height,
+                                             sine / ellipse_width,
+                                             cosine / ellipse_height);
+#line 106
+  float2 ellipse_major_axis = ellipse_width * unit_eigenvector;
+  float2 ellipse_minor_axis = ellipse_height * unit_eigenvector.yx * float2(-1, 1);
+  int2 ellipse_bounds = int2(ceil(sqrt(square(ellipse_major_axis) + square(ellipse_minor_axis))));
+#line 113
+  constexpr int number_of_sectors = 8;
+  float sector_center_overlap_parameter = 2.0f / radius;
+  float sector_envelope_angle = ((3.0f / 2.0f) * M_PI) / number_of_sectors;
+  float cross_sector_overlap_parameter = (sector_center_overlap_parameter +
+                                          cos(sector_envelope_angle)) /
+                                         square(sin(sector_envelope_angle));
+#line 123
+  float4 weighted_mean_of_squared_color_of_sectors[8];
+  float4 weighted_mean_of_color_of_sectors[8];
+  float sum_of_weights_of_sectors[8];
+#line 132
+  float4 center_color = texture_load(input_tx, texel);
+  float4 center_color_squared = center_color * center_color;
+  float center_weight = 1.0f / number_of_sectors;
+  float4 weighted_center_color = center_color * center_weight;
+  float4 weighted_center_color_squared = center_color_squared * center_weight;
+  for (int i = 0; i < number_of_sectors; i++) {
+    weighted_mean_of_squared_color_of_sectors[i] = weighted_center_color_squared;
+    weighted_mean_of_color_of_sectors[i] = weighted_center_color;
+    sum_of_weights_of_sectors[i] = center_weight;
+  }
+#line 147
+  for (int j = 0; j <= ellipse_bounds.y; j++) {
+    for (int i = -ellipse_bounds.x; i <= ellipse_bounds.x; i++) {
+#line 156
+      if (j == 0 && i <= 0) {
+        continue;
+      }
+#line 162
+      float2 disk_point = inverse_ellipse_matrix * float2(i, j);
+      float disk_point_length_squared = dot(disk_point, disk_point);
+      if (disk_point_length_squared > 1.0f) {
+        continue;
+      }
+#line 172
+      float sector_weights[8];
+#line 181
+      float2 polynomial = sector_center_overlap_parameter -
+                          cross_sector_overlap_parameter * square(disk_point);
+      sector_weights[0] = square(max(0.0f, disk_point.y + polynomial.x));
+      sector_weights[2] = square(max(0.0f, -disk_point.x + polynomial.y));
+      sector_weights[4] = square(max(0.0f, -disk_point.y + polynomial.x));
+      sector_weights[6] = square(max(0.0f, disk_point.x + polynomial.y));
+#line 190
+      float2 rotated_disk_point = M_SQRT1_2 *
+                                  float2(disk_point.x - disk_point.y, disk_point.x + disk_point.y);
+#line 195
+      float2 rotated_polynomial = sector_center_overlap_parameter -
+                                  cross_sector_overlap_parameter * square(rotated_disk_point);
+      sector_weights[1] = square(max(0.0f, rotated_disk_point.y + rotated_polynomial.x));
+      sector_weights[3] = square(max(0.0f, -rotated_disk_point.x + rotated_polynomial.y));
+      sector_weights[5] = square(max(0.0f, -rotated_disk_point.y + rotated_polynomial.x));
+      sector_weights[7] = square(max(0.0f, rotated_disk_point.x + rotated_polynomial.y));
+#line 206
+      float sector_weights_sum = sector_weights[0] + sector_weights[1] + sector_weights[2] +
+                                 sector_weights[3] + sector_weights[4] + sector_weights[5] +
+                                 sector_weights[6] + sector_weights[7];
+      float radial_gaussian_weight = exp(-M_PI * disk_point_length_squared) / sector_weights_sum;
+#line 212
+      float4 upper_color = texture_load(input_tx, texel + int2(i, j));
+      float4 lower_color = texture_load(input_tx, texel - int2(i, j));
+      float4 upper_color_squared = upper_color * upper_color;
+      float4 lower_color_squared = lower_color * lower_color;
+
+      for (int k = 0; k < number_of_sectors; k++) {
+        float weight = sector_weights[k] * radial_gaussian_weight;
+#line 221
+        int upper_index = k;
+        sum_of_weights_of_sectors[upper_index] += weight;
+        weighted_mean_of_color_of_sectors[upper_index] += upper_color * weight;
+        weighted_mean_of_squared_color_of_sectors[upper_index] += upper_color_squared * weight;
+#line 227
+        int lower_index = (k + number_of_sectors / 2) % number_of_sectors;
+        sum_of_weights_of_sectors[lower_index] += weight;
+        weighted_mean_of_color_of_sectors[lower_index] += lower_color * weight;
+        weighted_mean_of_squared_color_of_sectors[lower_index] += lower_color_squared * weight;
+      }
+    }
+  }
+#line 237
+  float sum_of_weights = 0.0f;
+  float4 weighted_sum = float4(0.0f);
+  for (int i = 0; i < number_of_sectors; i++) {
+    weighted_mean_of_color_of_sectors[i] /= sum_of_weights_of_sectors[i];
+    weighted_mean_of_squared_color_of_sectors[i] /= sum_of_weights_of_sectors[i];
+
+    float4 color_mean = weighted_mean_of_color_of_sectors[i];
+    float4 squared_color_mean = weighted_mean_of_squared_color_of_sectors[i];
+    float4 color_variance = abs(squared_color_mean - color_mean * color_mean);
+
+    float standard_deviation = dot(sqrt(color_variance.rgb), float3(1.0f));
+#line 252
+    float weight = 1.0f / pow(max(0.02f, standard_deviation), sharpness);
+
+    sum_of_weights += weight;
+    weighted_sum += color_mean * weight;
+  }
+#line 260
+  if (sum_of_weights == 0.0f) {
+    weighted_sum = center_color;
+  }
+  else {
+    weighted_sum /= sum_of_weights;
+  }
+
+  imageStore(output_img, texel, weighted_sum);
+}

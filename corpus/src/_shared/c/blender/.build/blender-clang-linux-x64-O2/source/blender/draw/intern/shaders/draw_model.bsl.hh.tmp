@@ -1,0 +1,243 @@
+#line 1 "draw_model.bsl.hh"
+ 
+#line 13
+struct draw_ID {
+  uint raw_id;
+#line 38
+};
+#line 46
+#ifndef GPU_METAL
+draw_ID draw_ID_ctor_();
+uint _view_idT1(const draw_ID this_);
+uint _view_idT64(const draw_ID this_);
+uint _resource_idT1(const draw_ID this_);
+uint _resource_idT64(const draw_ID this_);
+#endif
+#line 13
+                       draw_ID draw_ID_ctor_() {draw_ID r;r.raw_id=0u;return r;}
+#line 16
+uint _view_idT1(const draw_ID this_)
+  {
+
+    return this_.raw_id & ~(0xFFFFFFFFu << ((1 > 32) ? 6 :
+                                      (1 > 16) ? 5 :
+                                      (1 > 8)  ? 4 :
+                                      (1 > 4)  ? 3 :
+                                      (1 > 2)  ? 2 :
+                                      (1 > 1)  ? 1 :
+                                                          0));
+  }
+#line 16
+uint _view_idT64(const draw_ID this_)
+  {
+
+    return this_.raw_id & ~(0xFFFFFFFFu << ((64 > 32) ? 6 :
+                                      (64 > 16) ? 5 :
+                                      (64 > 8)  ? 4 :
+                                      (64 > 4)  ? 3 :
+                                      (64 > 2)  ? 2 :
+                                      (64 > 1)  ? 1 :
+                                                          0));
+  }
+#line 28
+uint _resource_idT1(const draw_ID this_)
+  {
+    return this_.raw_id >> ((1 > 32) ? 6 :
+                      (1 > 16) ? 5 :
+                      (1 > 8)  ? 4 :
+                      (1 > 4)  ? 3 :
+                      (1 > 2)  ? 2 :
+                      (1 > 1)  ? 1 :
+                                          0);
+  }
+#line 28
+uint _resource_idT64(const draw_ID this_)
+  {
+    return this_.raw_id >> ((64 > 32) ? 6 :
+                      (64 > 16) ? 5 :
+                      (64 > 8)  ? 4 :
+                      (64 > 4)  ? 3 :
+                      (64 > 2)  ? 2 :
+                      (64 > 1)  ? 1 :
+                                          0);
+  }
+#line 45
+#define access_draw_Resource_res_id_buf() res_id_buf
+#ifdef CREATE_INFO_RES_PASS_draw_Resource
+CREATE_INFO_RES_PASS_draw_Resource
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_Resource
+CREATE_INFO_RES_BATCH_draw_Resource
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_Resource
+CREATE_INFO_RES_GEOMETRY_draw_Resource
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_Resource
+CREATE_INFO_RES_SHARED_VARS_draw_Resource
+#endif
+#line 45
+struct draw_Resource {
+#line 62
+int _pad;};
+#line 65
+#ifndef GPU_METAL
+draw_Resource draw_Resource_ctor_();
+draw_ID _get(draw_Resource  this_, int instance_index);
+draw_Resource draw_Resource_new_();
+#endif
+#line 45
+                             draw_Resource draw_Resource_ctor_() {draw_Resource r;r._pad=0;return r;}
+#line 49
+
+#if defined(CREATE_INFO_draw_Resource)
+#line 49
+  draw_ID _get(draw_Resource  this_, int instance_index)
+  {
+    uint raw = res_id_buf[instance_index];
+    return _ctor(draw_ID) raw _rotc() ;
+  }
+#endif
+       draw_Resource draw_Resource_new_()
+{
+  draw_Resource result;
+  result._pad = 0;
+  return result;
+#line 53
+}
+#line 56
+#define access_draw_ResourceCustomID_res_id_with_custom_id_buf() res_id_with_custom_id_buf
+#ifdef CREATE_INFO_RES_PASS_draw_ResourceCustomID
+CREATE_INFO_RES_PASS_draw_ResourceCustomID
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_ResourceCustomID
+CREATE_INFO_RES_BATCH_draw_ResourceCustomID
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_ResourceCustomID
+CREATE_INFO_RES_GEOMETRY_draw_ResourceCustomID
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_ResourceCustomID
+CREATE_INFO_RES_SHARED_VARS_draw_ResourceCustomID
+#endif
+#line 56
+struct draw_ResourceCustomID {
+#line 78
+int _pad;};
+#line 81
+#ifndef GPU_METAL
+draw_ResourceCustomID draw_ResourceCustomID_ctor_();
+draw_ID _get(draw_ResourceCustomID  this_, int instance_index);
+uint _get_custom_id(draw_ResourceCustomID  this_, int instance_index);
+draw_ResourceCustomID draw_ResourceCustomID_new_();
+#endif
+#line 56
+                                     draw_ResourceCustomID draw_ResourceCustomID_ctor_() {draw_ResourceCustomID r;r._pad=0;return r;}
+#line 60
+
+#if defined(CREATE_INFO_draw_ResourceCustomID)
+#line 60
+  draw_ID _get(draw_ResourceCustomID  this_, int instance_index)
+  {
+    return _ctor(draw_ID) res_id_with_custom_id_buf[instance_index].x _rotc() ;
+  }
+#endif
+#line 66
+
+#if defined(CREATE_INFO_draw_ResourceCustomID)
+#line 66
+  uint _get_custom_id(draw_ResourceCustomID  this_, int instance_index)
+  {
+    return res_id_with_custom_id_buf[instance_index].y;
+  }
+#endif
+       draw_ResourceCustomID draw_ResourceCustomID_new_()
+{
+  draw_ResourceCustomID result;
+  result._pad = 0;
+  return result;
+#line 69
+}
+#line 72
+#define access_draw_Model_drw_matrix_buf() drw_matrix_buf
+#ifdef CREATE_INFO_RES_PASS_draw_Model
+CREATE_INFO_RES_PASS_draw_Model
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_Model
+CREATE_INFO_RES_BATCH_draw_Model
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_Model
+CREATE_INFO_RES_GEOMETRY_draw_Model
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_Model
+CREATE_INFO_RES_SHARED_VARS_draw_Model
+#endif
+#line 72
+struct draw_Model {
+#line 88
+int _pad;};
+#line 91
+#ifndef GPU_METAL
+draw_Model draw_Model_ctor_();
+ObjectMatrices _get(draw_Model  this_, uint resource_id);
+draw_Model draw_Model_new_();
+#endif
+#line 72
+                          draw_Model draw_Model_ctor_() {draw_Model r;r._pad=0;return r;}
+#line 76
+
+#if defined(CREATE_INFO_draw_Model)
+#line 76
+  ObjectMatrices _get(draw_Model  this_, uint resource_id)
+  {
+    return drw_matrix_buf[resource_id];
+  }
+#endif
+       draw_Model draw_Model_new_()
+{
+  draw_Model result;
+  result._pad = 0;
+  return result;
+#line 79
+}
+#line 82
+#define access_draw_Infos_drw_infos() drw_infos
+#ifdef CREATE_INFO_RES_PASS_draw_Infos
+CREATE_INFO_RES_PASS_draw_Infos
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_Infos
+CREATE_INFO_RES_BATCH_draw_Infos
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_Infos
+CREATE_INFO_RES_GEOMETRY_draw_Infos
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_Infos
+CREATE_INFO_RES_SHARED_VARS_draw_Infos
+#endif
+#line 82
+struct draw_Infos {
+#line 98
+int _pad;};
+#line 102
+#ifndef GPU_METAL
+draw_Infos draw_Infos_ctor_();
+ObjectInfos _get(draw_Infos  this_, uint resource_id);
+draw_Infos draw_Infos_new_();
+#endif
+#line 82
+                          draw_Infos draw_Infos_ctor_() {draw_Infos r;r._pad=0;return r;}
+#line 86
+
+#if defined(CREATE_INFO_draw_Infos)
+#line 86
+  ObjectInfos _get(draw_Infos  this_, uint resource_id)
+  {
+    return drw_infos[resource_id];
+  }
+#endif
+       draw_Infos draw_Infos_new_()
+{
+  draw_Infos result;
+  result._pad = 0;
+  return result;
+#line 89
+}
+#line 93

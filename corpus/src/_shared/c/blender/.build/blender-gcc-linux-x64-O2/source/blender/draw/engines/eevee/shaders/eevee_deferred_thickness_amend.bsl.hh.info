@@ -1,0 +1,42 @@
+#pragma once
+
+
+
+
+
+GPU_SHADER_INTERFACE_INFO(eevee_VertOut_t)
+SMOOTH(float2, eevee_VertOut_uv)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(eevee_ThicknessAmend)
+.sampler(0, ImageType::usampler2DArray, "gbuf_header_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(0, blender::gpu::TextureFormat::UNORM_16_16, Qualifier::read_write, ImageReadWriteType::image2DArray, "gbuf_normal_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_amend_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+VERTEX_OUT(eevee_VertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_amend_frag_infos_)
+EARLY_FRAGMENT_TEST(true)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_ThicknessAmend)
+ADDITIONAL_INFO(eevee_ShadowRenderData)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_LightRenderData)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_HiZ)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_thickness_amend)
+GRAPHIC_SOURCE("eevee_deferred_thickness_amend.bsl.hh")
+VERTEX_FUNCTION("eevee_amend_vert")
+FRAGMENT_FUNCTION("eevee_amend_frag")
+ADDITIONAL_INFO(eevee_amend_vert_infos_)
+ADDITIONAL_INFO(eevee_amend_frag_infos_)
+COMPILATION_CONSTANT(bool, shadow_random, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

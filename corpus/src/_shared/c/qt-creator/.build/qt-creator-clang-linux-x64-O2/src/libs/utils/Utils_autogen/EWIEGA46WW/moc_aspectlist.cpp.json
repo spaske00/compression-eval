@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "AspectList",
+            "lineNumber": 13,
+            "object": true,
+            "qualifiedClassName": "Utils::AspectList",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "volatileItemListChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "Utils::BaseAspect"
+                }
+            ]
+        }
+    ],
+    "inputFile": "aspectlist.h",
+    "outputRevision": 68
+}

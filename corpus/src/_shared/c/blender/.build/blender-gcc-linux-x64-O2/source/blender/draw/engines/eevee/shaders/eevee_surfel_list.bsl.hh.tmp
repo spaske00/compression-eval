@@ -1,0 +1,434 @@
+#line 1 "eevee_surfel_list.bsl.hh"
+ 
+#line 19
+int eevee_surfel_list_index_get(const ViewMatrices view, int2 ray_grid_size, float3 P, _ref(float ,r_ray_distance))
+{
+  float3 ssP = _point_world_to_screen(view, P);
+  r_ray_distance = -ssP.z;
+  int2 ray_coord_on_grid = int2(ssP.xy * float2(ray_grid_size));
+  ray_coord_on_grid = clamp(ray_coord_on_grid, int2(0), ray_grid_size - 1);
+
+  int list_index = ray_coord_on_grid.y * ray_grid_size.x + ray_coord_on_grid.x;
+  return list_index;
+}
+#line 34
+int3 eevee_surfel_cluster_index_get(int3 cluster_grid_size, float4x4 irradiance_grid_world_to_local, float3 P)
+{
+  float3 lP = transform_point(irradiance_grid_world_to_local, P) * 0.5f + 0.5f;
+  int3 cluster_index = int3(lP * float3(cluster_grid_size));
+  cluster_index = clamp(cluster_index, int3(0), cluster_grid_size - 1);
+  return cluster_index;
+}
+#line 44
+#define access_eevee_surfel_list_prepare_Resources_list_info_buf() list_info_buf
+#define access_eevee_surfel_list_prepare_Resources_list_counter_buf() list_counter_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_list_prepare_Resources
+CREATE_INFO_RES_PASS_eevee_surfel_list_prepare_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_list_prepare_Resources
+CREATE_INFO_RES_BATCH_eevee_surfel_list_prepare_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_prepare_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_prepare_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_prepare_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_prepare_Resources
+#endif
+#line 44
+struct eevee_surfel_list_prepare_Resources {
+#line 55
+int _pad;};
+#line 70
+#ifndef GPU_METAL
+eevee_surfel_list_prepare_Resources eevee_surfel_list_prepare_Resources_ctor_();
+eevee_surfel_list_prepare_Resources eevee_surfel_list_prepare_Resources_new_();
+#endif
+#line 44
+                                                   eevee_surfel_list_prepare_Resources eevee_surfel_list_prepare_Resources_ctor_() {eevee_surfel_list_prepare_Resources r;r._pad=0;return r;}
+#line 48
+       eevee_surfel_list_prepare_Resources eevee_surfel_list_prepare_Resources_new_()
+{
+  eevee_surfel_list_prepare_Resources result;
+  result._pad = 0;
+  return result;
+#line 46
+}
+#line 61
+
+#if defined(CREATE_INFO_eevee_surfel_list_prepare_Resources) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_SurfelData)
+#line 61
+
+#if defined(ENTRY_POINT_eevee_surfel_list_prepare_prepare_comp)
+#line 61
+
+void eevee_surfel_list_prepare_prepare_comp(
+#line 65
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 66
+  eevee_surfel_list_prepare_Resources srt = eevee_surfel_list_prepare_Resources_ctor_(); draw_View views = draw_View_ctor_(); SurfelData surfels = SurfelData_ctor_();
+  const int surfel_id = int(gl_GlobalInvocationID.x);
+  if (surfel_id >= int(srt_access(SurfelData, capture_info_buf).surfel_len)) {
+    return;
+  }
+  const ViewMatrices view = _get(views, 0);
+
+  float ray_distance;
+  int list_id = eevee_surfel_list_index_get(
+      view, srt_access(eevee_surfel_list_prepare_Resources, list_info_buf).ray_grid_size, srt_access(SurfelData, surfel_buf)[surfel_id].position, ray_distance);
+
+  atomicAdd(srt_access(eevee_surfel_list_prepare_Resources, list_counter_buf)[list_id], 1);
+#line 80
+  srt_access(SurfelData, surfel_buf)[surfel_id].ray_distance = ray_distance;
+  srt_access(SurfelData, surfel_buf)[surfel_id].list_id = list_id;
+#line 84
+  if (gl_GlobalInvocationID.x == 0u) {
+    srt_access(eevee_surfel_list_prepare_Resources, list_info_buf).list_prefix_sum = 0;
+  }
+
+#endif
+#line 87
+}
+#endif
+#endif
+#line 93
+#define access_eevee_surfel_list_prefix_sum_Resources_list_info_buf() list_info_buf
+#define access_eevee_surfel_list_prefix_sum_Resources_list_counter_buf() list_counter_buf
+#define access_eevee_surfel_list_prefix_sum_Resources_list_range_buf() list_range_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_list_prefix_sum_Resources
+CREATE_INFO_RES_PASS_eevee_surfel_list_prefix_sum_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_list_prefix_sum_Resources
+CREATE_INFO_RES_BATCH_eevee_surfel_list_prefix_sum_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_prefix_sum_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_prefix_sum_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_prefix_sum_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_prefix_sum_Resources
+#endif
+#line 93
+struct eevee_surfel_list_prefix_sum_Resources {
+#line 105
+int _pad;};
+#line 114
+#ifndef GPU_METAL
+eevee_surfel_list_prefix_sum_Resources eevee_surfel_list_prefix_sum_Resources_ctor_();
+eevee_surfel_list_prefix_sum_Resources eevee_surfel_list_prefix_sum_Resources_new_();
+#endif
+#line 93
+                                                      eevee_surfel_list_prefix_sum_Resources eevee_surfel_list_prefix_sum_Resources_ctor_() {eevee_surfel_list_prefix_sum_Resources r;r._pad=0;return r;}
+#line 98
+       eevee_surfel_list_prefix_sum_Resources eevee_surfel_list_prefix_sum_Resources_new_()
+{
+  eevee_surfel_list_prefix_sum_Resources result;
+  result._pad = 0;
+  return result;
+#line 96
+}
+#line 105
+
+#if defined(CREATE_INFO_eevee_surfel_list_prefix_sum_Resources)
+#line 105
+
+#if defined(ENTRY_POINT_eevee_surfel_list_prefix_sum_prefix_sum_comp)
+#line 105
+
+void eevee_surfel_list_prefix_sum_prefix_sum_comp(
+                                                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 108
+  eevee_surfel_list_prefix_sum_Resources srt = eevee_surfel_list_prefix_sum_Resources_ctor_();
+  const int list_id = int(gl_GlobalInvocationID.x);
+  if (list_id >= srt_access(eevee_surfel_list_prefix_sum_Resources, list_info_buf).list_max) {
+    return;
+  }
+
+  int list_item_count = srt_access(eevee_surfel_list_prefix_sum_Resources, list_counter_buf)[list_id];
+  int list_item_start = atomicAdd(srt_access(eevee_surfel_list_prefix_sum_Resources, list_info_buf).list_prefix_sum, list_item_count);
+
+  srt_access(eevee_surfel_list_prefix_sum_Resources, list_range_buf)[list_id * 2 + 0] = list_item_start;
+  srt_access(eevee_surfel_list_prefix_sum_Resources, list_range_buf)[list_id * 2 + 1] = list_item_count;
+
+#endif
+#line 119
+}
+#endif
+#endif
+#line 125
+#define access_eevee_surfel_list_flatten_Resources_list_info_buf() list_info_buf
+#define access_eevee_surfel_list_flatten_Resources_list_counter_buf() list_counter_buf
+#define access_eevee_surfel_list_flatten_Resources_list_range_buf() list_range_buf
+#define access_eevee_surfel_list_flatten_Resources_list_item_distance_buf() list_item_distance_buf
+#define access_eevee_surfel_list_flatten_Resources_list_item_surfel_id_buf() list_item_surfel_id_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_list_flatten_Resources
+CREATE_INFO_RES_PASS_eevee_surfel_list_flatten_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_list_flatten_Resources
+CREATE_INFO_RES_BATCH_eevee_surfel_list_flatten_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_flatten_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_flatten_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_flatten_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_flatten_Resources
+#endif
+#line 125
+struct eevee_surfel_list_flatten_Resources {
+#line 139
+int _pad;};
+#line 148
+#ifndef GPU_METAL
+eevee_surfel_list_flatten_Resources eevee_surfel_list_flatten_Resources_ctor_();
+eevee_surfel_list_flatten_Resources eevee_surfel_list_flatten_Resources_new_();
+#endif
+#line 125
+                                                   eevee_surfel_list_flatten_Resources eevee_surfel_list_flatten_Resources_ctor_() {eevee_surfel_list_flatten_Resources r;r._pad=0;return r;}
+#line 132
+       eevee_surfel_list_flatten_Resources eevee_surfel_list_flatten_Resources_new_()
+{
+  eevee_surfel_list_flatten_Resources result;
+  result._pad = 0;
+  return result;
+#line 130
+}
+#line 139
+
+#if defined(CREATE_INFO_eevee_surfel_list_flatten_Resources) && defined(CREATE_INFO_SurfelData)
+#line 139
+
+#if defined(ENTRY_POINT_eevee_surfel_list_flatten_flatten_comp)
+#line 139
+
+void eevee_surfel_list_flatten_flatten_comp(
+
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 143
+  eevee_surfel_list_flatten_Resources srt = eevee_surfel_list_flatten_Resources_ctor_(); SurfelData surfels = SurfelData_ctor_();
+  const int surfel_id = int(gl_GlobalInvocationID.x);
+  if (surfel_id >= int(srt_access(SurfelData, capture_info_buf).surfel_len)) {
+    return;
+  }
+
+  int list_id = srt_access(SurfelData, surfel_buf)[surfel_id].list_id;
+  int item_id = atomicAdd(srt_access(eevee_surfel_list_flatten_Resources, list_counter_buf)[list_id], -1) - 1;
+  item_id += srt_access(eevee_surfel_list_flatten_Resources, list_range_buf)[list_id * 2 + 0];
+
+  srt_access(eevee_surfel_list_flatten_Resources, list_item_distance_buf)[item_id] = srt_access(SurfelData, surfel_buf)[surfel_id].ray_distance;
+  srt_access(eevee_surfel_list_flatten_Resources, list_item_surfel_id_buf)[item_id] = surfel_id;
+
+#endif
+#line 155
+}
+#endif
+#endif
+#line 161
+#define access_eevee_surfel_list_sort_Resources_list_info_buf() list_info_buf
+#define access_eevee_surfel_list_sort_Resources_list_range_buf() list_range_buf
+#define access_eevee_surfel_list_sort_Resources_list_item_surfel_id_buf() list_item_surfel_id_buf
+#define access_eevee_surfel_list_sort_Resources_list_item_distance_buf() list_item_distance_buf
+#define access_eevee_surfel_list_sort_Resources_sorted_surfel_id_buf() sorted_surfel_id_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_list_sort_Resources
+CREATE_INFO_RES_PASS_eevee_surfel_list_sort_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_list_sort_Resources
+CREATE_INFO_RES_BATCH_eevee_surfel_list_sort_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_sort_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_sort_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_sort_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_sort_Resources
+#endif
+#line 161
+struct eevee_surfel_list_sort_Resources {
+#line 175
+int _pad;};
+#line 188
+#ifndef GPU_METAL
+eevee_surfel_list_sort_Resources eevee_surfel_list_sort_Resources_ctor_();
+eevee_surfel_list_sort_Resources eevee_surfel_list_sort_Resources_new_();
+#endif
+#line 161
+                                                eevee_surfel_list_sort_Resources eevee_surfel_list_sort_Resources_ctor_() {eevee_surfel_list_sort_Resources r;r._pad=0;return r;}
+#line 168
+       eevee_surfel_list_sort_Resources eevee_surfel_list_sort_Resources_new_()
+{
+  eevee_surfel_list_sort_Resources result;
+  result._pad = 0;
+  return result;
+#line 166
+}
+#line 179
+
+#if defined(CREATE_INFO_eevee_surfel_list_sort_Resources) && defined(CREATE_INFO_SurfelData)
+#line 179
+
+#if defined(ENTRY_POINT_eevee_surfel_list_sort_sort_comp)
+#line 179
+
+void eevee_surfel_list_sort_sort_comp(
+
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 183
+  eevee_surfel_list_sort_Resources srt = eevee_surfel_list_sort_Resources_ctor_(); SurfelData surfels = SurfelData_ctor_();
+  const int item_id = int(gl_GlobalInvocationID.x);
+  if (item_id >= int(srt_access(SurfelData, capture_info_buf).surfel_len)) {
+    return;
+  }
+
+  int surfel_id = srt_access(eevee_surfel_list_sort_Resources, list_item_surfel_id_buf)[item_id];
+  int list_id = srt_access(SurfelData, surfel_buf)[surfel_id].list_id;
+  float ray_distance = srt_access(eevee_surfel_list_sort_Resources, list_item_distance_buf)[item_id];
+
+  IndexRange list_range = _ctor(IndexRange) srt_access(eevee_surfel_list_sort_Resources, list_range_buf)[list_id * 2 + 0], srt_access(eevee_surfel_list_sort_Resources, list_range_buf)[list_id * 2 + 1] _rotc() ;
+  int prefix = 0;
+
+  for (int i = _start(list_range); i <= _last(list_range); i++) {
+    if (srt_access(eevee_surfel_list_sort_Resources, list_item_distance_buf)[i] > ray_distance) {
+      prefix++;
+    }
+    else if (srt_access(eevee_surfel_list_sort_Resources, list_item_distance_buf)[i] == ray_distance) {
+
+      if (i > item_id) {
+        prefix++;
+      }
+    }
+  }
+
+  int sorted_id = _start(list_range) + prefix;
+  srt_access(eevee_surfel_list_sort_Resources, sorted_surfel_id_buf)[sorted_id] = surfel_id;
+  srt_access(SurfelData, surfel_buf)[surfel_id].index_in_sorted_list = sorted_id;
+
+#endif
+#line 211
+}
+#endif
+#endif
+#line 217
+#define access_eevee_surfel_list_build_Resources_list_info_buf() list_info_buf
+#define access_eevee_surfel_list_build_Resources_list_start_buf() list_start_buf
+#define access_eevee_surfel_list_build_Resources_list_range_buf() list_range_buf
+#define access_eevee_surfel_list_build_Resources_sorted_surfel_id_buf() sorted_surfel_id_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_list_build_Resources
+CREATE_INFO_RES_PASS_eevee_surfel_list_build_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_list_build_Resources
+CREATE_INFO_RES_BATCH_eevee_surfel_list_build_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_build_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_list_build_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_build_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_list_build_Resources
+#endif
+#line 217
+struct eevee_surfel_list_build_Resources {
+#line 230
+int _pad;};
+#line 240
+#ifndef GPU_METAL
+eevee_surfel_list_build_Resources eevee_surfel_list_build_Resources_ctor_();
+eevee_surfel_list_build_Resources eevee_surfel_list_build_Resources_new_();
+#endif
+#line 217
+                                                 eevee_surfel_list_build_Resources eevee_surfel_list_build_Resources_ctor_() {eevee_surfel_list_build_Resources r;r._pad=0;return r;}
+#line 223
+       eevee_surfel_list_build_Resources eevee_surfel_list_build_Resources_new_()
+{
+  eevee_surfel_list_build_Resources result;
+  result._pad = 0;
+  return result;
+#line 221
+}
+#line 231
+
+#if defined(CREATE_INFO_eevee_surfel_list_build_Resources) && defined(CREATE_INFO_SurfelData)
+#line 231
+
+#if defined(ENTRY_POINT_eevee_surfel_list_build_build_comp)
+#line 231
+
+void eevee_surfel_list_build_build_comp(
+
+                                                              )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 235
+  eevee_surfel_list_build_Resources srt = eevee_surfel_list_build_Resources_ctor_(); SurfelData surfels = SurfelData_ctor_();
+  const int list_id = int(gl_GlobalInvocationID.x);
+  if (list_id >= srt_access(eevee_surfel_list_build_Resources, list_info_buf).list_max) {
+    return;
+  }
+
+  const IndexRange list_range = _ctor(IndexRange) srt_access(eevee_surfel_list_build_Resources, list_range_buf)[list_id * 2 + 0],
+                              srt_access(eevee_surfel_list_build_Resources, list_range_buf)[list_id * 2 + 1] _rotc() ;
+  if (_size(list_range) == 0) {
+    srt_access(eevee_surfel_list_build_Resources, list_start_buf)[list_id] = -1;
+    return;
+  }
+
+  const int first_item = _start(list_range);
+  const int last_item = _last(list_range);
+
+  const int sorted_list_first = srt_access(eevee_surfel_list_build_Resources, sorted_surfel_id_buf)[first_item];
+  {
+
+    int prev = -1;
+    int curr = srt_access(eevee_surfel_list_build_Resources, sorted_surfel_id_buf)[first_item];
+    for (int i = first_item; i <= last_item; i++) {
+      int next = (i == last_item) ? -1 : srt_access(eevee_surfel_list_build_Resources, sorted_surfel_id_buf)[i + 1];
+      srt_access(SurfelData, surfel_buf)[curr].next = next;
+      srt_access(SurfelData, surfel_buf)[curr].prev = prev;
+      prev = curr;
+      curr = next;
+    }
+  }
+
+  srt_access(eevee_surfel_list_build_Resources, list_start_buf)[list_id] = sorted_list_first;
+#line 278
+  const int max_search = 2000;
+  uint search_count = 0;
+#line 282
+  for (int i = sorted_list_first, next = -1; i > -1; i = next) {
+    next = srt_access(SurfelData, surfel_buf)[i].next;
+
+    int valid_next = srt_access(SurfelData, surfel_buf)[i].next;
+    int valid_prev = srt_access(SurfelData, surfel_buf)[i].prev;
+#line 289
+    while (search_count < max_search) {
+      if (valid_next == -1) {
+        break;
+      }
+      if (_is_valid_surfel_link(surfels, i, valid_next)) {
+        break;
+      }
+      valid_next = srt_access(SurfelData, surfel_buf)[valid_next].next;
+      search_count++;
+    }
+    while (search_count < max_search) {
+      if (valid_prev == -1) {
+        break;
+      }
+      if (_is_valid_surfel_link(surfels, i, valid_prev)) {
+        break;
+      }
+      valid_prev = srt_access(SurfelData, surfel_buf)[valid_prev].prev;
+      search_count++;
+    }
+
+    srt_access(SurfelData, surfel_buf)[i].next = valid_next;
+    srt_access(SurfelData, surfel_buf)[i].prev = valid_prev;
+  }
+#endif
+#line 325
+}
+#endif
+#endif
+#line 336

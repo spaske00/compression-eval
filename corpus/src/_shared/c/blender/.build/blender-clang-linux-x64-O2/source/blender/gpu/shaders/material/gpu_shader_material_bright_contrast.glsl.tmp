@@ -1,0 +1,13 @@
+#line 1 "gpu_shader_material_bright_contrast.glsl"
+ 
+#line 6
+void brightness_contrast(float4 col, float brightness, float contrast, _ref(float4 ,outcol))
+{
+  float a = 1.0f + contrast;
+  float b = brightness - contrast * 0.5f;
+
+  outcol.r = max(a * col.r + b, 0.0f);
+  outcol.g = max(a * col.g + b, 0.0f);
+  outcol.b = max(a * col.b + b, 0.0f);
+  outcol.a = col.a;
+}

@@ -1,0 +1,133 @@
+#line 1 "eevee_surf_shadow.bsl.hh"
+ 
+#line 19
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+FRAGMENT_SHADER_CREATE_INFO(eevee_geom_iface_info)
+#line 28
+float4 closure_to_rgba_shadow(Closure _0)
+{
+  float3 transmittance = g_transmittance;
+  closure_weights_reset(0.0f);
+  return float4(0.0f, 0.0f, 0.0f, saturate(1.0f - average(transmittance)));
+}
+#line 37
+#define access_eevee_SurfShadow_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_SurfShadow_shadow_atlas_img() shadow_atlas_img
+#define access_eevee_SurfShadow_render_map_buf() render_map_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfShadow
+CREATE_INFO_RES_PASS_eevee_SurfShadow
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfShadow
+CREATE_INFO_RES_BATCH_eevee_SurfShadow
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfShadow
+CREATE_INFO_RES_GEOMETRY_eevee_SurfShadow
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfShadow
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfShadow
+#endif
+#line 37
+struct eevee_SurfShadow {
+#line 52
+int _pad;};
+#line 55
+#ifndef GPU_METAL
+eevee_SurfShadow eevee_SurfShadow_ctor_();
+eevee_SurfShadow eevee_SurfShadow_new_();
+#endif
+#line 37
+                                eevee_SurfShadow eevee_SurfShadow_ctor_() {eevee_SurfShadow r;r._pad=0;return r;}
+#line 45
+       eevee_SurfShadow eevee_SurfShadow_new_()
+{
+  eevee_SurfShadow result;
+  result._pad = 0;
+  return result;
+#line 43
+}
+#line 46
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_SurfShadow) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture)
+#line 46
+
+#if defined(ENTRY_POINT_eevee_surf_shadow)
+#line 46
+
+void eevee_surf_shadow(
+#line 54
+                                                    )
+{
+
+#if defined(GPU_FRAGMENT_SHADER)
+#line 56
+#if defined(CREATE_INFO_eevee_shadow_iface_info)
+#line 55
+
+#if defined(CREATE_INFO_eevee_shadow_iface_info)
+#line 55
+  eevee_PipelineConstants pipe = eevee_PipelineConstants_ctor_(); eevee_SurfShadow srt = eevee_SurfShadow_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture _0 = UtilityTexture_ctor_();
+#line 59
+  float linear_depth = length(interface_get(eevee_shadow_iface_info, shadow_clip).position);
+#line 62
+  if (dot(interface_get(eevee_shadow_iface_info, shadow_clip).vector, interface_get(eevee_shadow_iface_info, shadow_clip).vector) < 1.0f) {
+    gpu_discard_fragment();
+    return;
+  }
+#line 68
+#if SRT_CONSTANT_use_transparency
+#line 67
+                                                                               {
+    const ViewMatrices view = _get(views, interface_get(eevee_shadow_iface_info, shadow_iface).shadow_view_id);
+    init_globals(uni, view, gl_FrontFacing);
+
+    nodetree_surface(0.0f);
+
+    float noise_offset = _rng_1D_get(sampling, SAMPLING_TRANSPARENCY);
+    float random_threshold = pcg4d(float4(g_data.P, noise_offset)).x;
+
+    float transparency = average(g_transmittance);
+    if (transparency > random_threshold) {
+      gpu_discard_fragment();
+      return;
+    }
+  }
+#endif
+  int2 texel_co = int2(gl_FragCoord.xy);
+#line 86
+  constexpr int page_shift = SHADOW_PAGE_LOD;
+  constexpr int page_mask = ~(0xFFFFFFFF << SHADOW_PAGE_LOD);
+
+  int2 tile_co = texel_co >> page_shift;
+  int2 texel_page = texel_co & page_mask;
+
+  int view_index = interface_get(eevee_shadow_iface_info, shadow_iface).shadow_view_id;
+
+  int render_page_index = shadow_render_page_index_get(view_index, tile_co);
+  uint page_packed = srt_access(eevee_SurfShadow, render_map_buf)[render_page_index];
+
+  int3 page = int3(shadow_page_unpack(page_packed));
+#line 102
+  page.z = page_packed < SHADOW_MAX_PAGE ? page.z : -1;
+
+  int3 out_texel = int3((page.xy << page_shift) | texel_page, page.z);
+
+  uint u_depth = floatBitsToUint(linear_depth);
+#line 114
+  u_depth += 2;
+
+  if (srt_access(eevee_Uniform, uniform_buf).shadow.use_debug_cost) {
+    imageAtomicAdd(srt_access(eevee_SurfShadow, shadow_atlas_img), out_texel, 1u);
+  }
+  else {
+    imageAtomicMin(srt_access(eevee_SurfShadow, shadow_atlas_img), out_texel, u_depth);
+  }
+
+#endif
+
+#endif
+
+#endif
+#line 122
+}
+#endif
+#endif

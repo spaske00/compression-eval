@@ -1,0 +1,347 @@
+{
+	"BUILD_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/sdktoolLib_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool",
+	"CMAKE_EXECUTABLE" : "/opt/cmake-3.31.10-linux-x86_64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/CMakeLists.txt",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/app/app_version.h.cmakein"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/sdktoolLib_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "sdktoolLib_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addabiflavor.h",
+			"MU",
+			"EWIEGA46WW/moc_addabiflavor.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addcmakeoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_addcmakeoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/adddebuggeroperation.h",
+			"MU",
+			"EWIEGA46WW/moc_adddebuggeroperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/adddeviceoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_adddeviceoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addkeysoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_addkeysoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addkitoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_addkitoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addqtoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_addqtoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addtoolchainoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_addtoolchainoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addvalueoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_addvalueoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/findkeyoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_findkeyoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/findvalueoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_findvalueoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/getoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_getoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/operation.h",
+			"MU",
+			"EWIEGA46WW/moc_operation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmcmakeoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmcmakeoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmdebuggeroperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmdebuggeroperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmdeviceoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmdeviceoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmkeysoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmkeysoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmkitoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmkitoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmqtoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmqtoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmtoolchainoperation.h",
+			"MU",
+			"EWIEGA46WW/moc_rmtoolchainoperation.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/sdkpersistentsettings.h",
+			"MU",
+			"EWIEGA46WW/moc_sdkpersistentsettings.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/settings.h",
+			"MU",
+			"EWIEGA46WW/moc_settings.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/sdktoolLib_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/sdktoolLib_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"DATA_PATH=\"../../share/qtcreator\"",
+		"QT_CORE_LIB",
+		"QT_CREATOR",
+		"QT_DISABLE_DEPRECATED_UP_TO=0x050900",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_DEBUG",
+		"QT_NO_FOREACH",
+		"QT_NO_JAVA_STYLE_ITERATORS",
+		"QT_RESTRICTED_CAST_FROM_ASCII",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WARN_DEPRECATED_UP_TO=0x060400",
+		"RELATIVE_DATA_PATH=\"../share/qtcreator\"",
+		"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"",
+		"RELATIVE_LIBEXEC_PATH=\"../libexec/qtcreator\"",
+		"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"",
+		"SDKTOOLLIB_LIBRARY"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtCore",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/mkspecs/linux-g++",
+		"/usr/include/c++/14",
+		"/usr/include/x86_64-linux-gnu/c++/14",
+		"/usr/include/c++/14/backward",
+		"/usr/lib/llvm-18/lib/clang/18/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-std=c++20",
+		"-w",
+		"-dM",
+		"-E",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/sdktoolLib_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 16,
+	"PARSE_CACHE_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/CMakeFiles/sdktoolLib_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/tools/sdktool/CMakeFiles/sdktoolLib_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addabiflavor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addcmakeoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/adddebuggeroperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/adddeviceoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addkeysoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addkitoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addqtoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addtoolchainoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/addvalueoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/findkeyoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/findvalueoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/getoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/operation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmcmakeoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmdebuggeroperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmdeviceoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmkeysoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmkitoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmqtoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/rmtoolchainoperation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/sdkpersistentsettings.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/tools/sdktool/settings.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

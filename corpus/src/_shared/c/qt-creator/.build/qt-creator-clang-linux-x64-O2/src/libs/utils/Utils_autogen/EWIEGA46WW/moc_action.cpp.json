@@ -1,0 +1,86 @@
+{
+    "classes": [
+        {
+            "className": "Action",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "EnablingMode",
+                    "values": [
+                        "AlwaysEnabled",
+                        "EnabledWithParameter"
+                    ]
+                }
+            ],
+            "lineNumber": 12,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "emptyText",
+                    "read": "emptyText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setEmptyText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "parameterText",
+                    "read": "parameterText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setParameterText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "enablingMode",
+                    "read": "enablingMode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "EnablingMode",
+                    "user": false,
+                    "write": "setEnablingMode"
+                }
+            ],
+            "qualifiedClassName": "Utils::Action",
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "setParameter",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAction"
+                }
+            ]
+        }
+    ],
+    "inputFile": "action.h",
+    "outputRevision": 68
+}

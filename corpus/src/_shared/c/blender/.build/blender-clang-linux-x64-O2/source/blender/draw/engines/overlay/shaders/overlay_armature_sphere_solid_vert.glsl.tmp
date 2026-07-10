@@ -1,0 +1,67 @@
+#line 1 "overlay_armature_sphere_solid_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_armature_sphere_solid)
+#line 15
+#define rad 0.05f
+
+void main()
+{
+  select_id_set(in_select_buf[gl_InstanceID]);
+
+  float4 bone_color, state_color;
+  float4x4 inst_obmat = data_buf[gl_InstanceID];
+  float4x4 model_mat = extract_matrix_packed_data(inst_obmat, state_color, bone_color);
+
+  float4x4 model_view_matrix = drw_view().viewmat * model_mat;
+  const float4x4 sphere_matrix = inverse(model_view_matrix);
+  sphere_matrix0 = sphere_matrix[0];
+  sphere_matrix1 = sphere_matrix[1];
+  sphere_matrix2 = sphere_matrix[2];
+  sphere_matrix3 = sphere_matrix[3];
+
+  bool is_persp = (drw_view().winmat[3][3] == 0.0f);
+#line 37
+  float3 cam_ray = (is_persp) ? model_view_matrix[3].xyz : float3(0.0f, 0.0f, -1.0f);
+  cam_ray = to_float3x3(sphere_matrix) * cam_ray;
+#line 41
+  float cam_dist = length(cam_ray);
+#line 44
+  float3 z_axis = cam_ray / cam_dist;
+  float3 x_axis = normalize(cross(sphere_matrix[1].xyz, z_axis));
+  float3 y_axis = cross(z_axis, x_axis);
+
+  float z_ofs = -rad - 1e-8f;
+  if (is_persp) {
+#line 54
+    constexpr float half_pi = 3.1415926f * 0.5f;
+#line 60
+    float a = half_pi - asin(rad / cam_dist);
+    float cos_b = cos(a);
+    float sin_b = sqrt(clamp(1.0f - cos_b * cos_b, 0.0f, 1.0f));
+#if 1
+#line 68
+    float minor = cam_dist - rad;
+    float major = cam_dist - cos_b * rad;
+    float fac = minor / major;
+    sin_b *= fac;
+#else
+    z_ofs = -rad * cos_b;
+#endif
+    x_axis *= sin_b;
+    y_axis *= sin_b;
+  }
+#line 80
+  float3 cam_pos = x_axis * pos.x + y_axis * pos.y + z_axis * z_ofs;
+
+  float4 pos_4d = float4(cam_pos, 1.0f);
+  float4 V = model_view_matrix * pos_4d;
+  gl_Position = drw_view().winmat * V;
+  view_position = V.xyz;
+
+  final_state_color = state_color.xyz;
+  final_bone_color = bone_color.xyz;
+
+  float4 world_pos = model_mat * pos_4d;
+  view_clipping_distances(world_pos.xyz);
+}

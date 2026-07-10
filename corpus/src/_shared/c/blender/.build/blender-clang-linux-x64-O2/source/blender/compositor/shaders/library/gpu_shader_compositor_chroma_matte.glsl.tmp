@@ -1,0 +1,35 @@
+#line 1 "gpu_shader_compositor_chroma_matte.glsl"
+ 
+#line 10
+void node_composite_chroma_matte(float4 color,
+                                 float4 key,
+                                 float minimum,
+                                 float maximum,
+                                 float falloff,
+                                 _ref(float4 ,result),
+                                 _ref(float ,matte))
+{
+  float4 color_ycca;
+  rgba_to_ycca_itu_709(color, color_ycca);
+  float4 key_ycca;
+  rgba_to_ycca_itu_709(key, key_ycca);
+#line 24
+  float2 color_cc = color_ycca.yz * 2.0f - 1.0f;
+  float2 key_cc = normalize(key_ycca.yz * 2.0f - 1.0f);
+#line 29
+  color_cc = from_direction(key_cc * float2(1.0f, -1.0f)) * color_cc;
+#line 32
+  float foreground_key = color_cc.x - (abs(color_cc.y) / tan(maximum / 2.0f));
+#line 36
+  float alpha = color.a;
+  if (foreground_key > 0.0f) {
+    alpha = 1.0f - (foreground_key / falloff);
+
+    if (abs(atan(color_cc.y, color_cc.x)) < (minimum / 2.0f)) {
+      alpha = 0.0f;
+    }
+  }
+#line 46
+  matte = min(alpha, color.a);
+  result = color * matte;
+}

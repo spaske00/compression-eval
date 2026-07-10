@@ -1,0 +1,32 @@
+#line 1 "gpu_shader_math_euler_lib.glsl"
+ 
+#line 9
+struct EulerXYZ {
+  float x;float y;float z;
+#line 26
+};
+
+#ifndef GPU_METAL
+EulerXYZ EulerXYZ_ctor_();
+EulerXYZ EulerXYZ_from_float3(float3 eul);
+EulerXYZ EulerXYZ_identity();
+float3 _as_float3(const EulerXYZ this_);
+#endif
+#line 9
+                        EulerXYZ EulerXYZ_ctor_() {EulerXYZ r;r.x=0.0f;r.y=0.0f;r.z=0.0f;return r;}
+#line 12
+         EulerXYZ EulerXYZ_from_float3(float3 eul)
+  {
+    return _ctor(EulerXYZ) eul.x, eul.y, eul.z _rotc() ;
+  }
+#line 17
+         EulerXYZ EulerXYZ_identity()
+  {
+    return _ctor(EulerXYZ) 0, 0, 0 _rotc() ;
+  }
+#line 22
+  float3 _as_float3(const EulerXYZ this_)
+  {
+    return float3(this_.x, this_.y, this_.z);
+  }
+#line 27

@@ -1,0 +1,38 @@
+#line 1 "gpu_shader_material_glossy.glsl"
+ 
+#line 9
+void node_bsdf_glossy(float4 color,
+                      float roughness,
+                      float anisotropy,
+                      float rotation,
+                      float3 N,
+                      float3 T,
+                      float weight,
+                      const float do_multiscatter,
+                      _ref(Closure ,result))
+{
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 19
+  color = max(color, float4(0.0f));
+  roughness = saturate(roughness);
+  N = safe_normalize(N);
+#line 24
+  float3 V = coordinate_incoming(g_data.P);
+  float NV = dot(N, V);
+#line 28
+  eevee_lut_GGXBrdfData lut = eevee_lut_GGXBrdfData_sample_utility_tx(resource_table_get(UtilityTexture), NV, roughness);
+
+  ClosureReflection reflection_data;
+  reflection_data.weight = weight;
+  reflection_data.color = (do_multiscatter != 0.0f) ?
+                              F_brdf_multi_scatter(color.rgb, color.rgb, lut) :
+                              F_brdf_single_scatter(color.rgb, color.rgb, lut);
+  reflection_data.N = N;
+  reflection_data.roughness = roughness;
+
+  result = closure_eval(reflection_data);
+
+#endif
+#line 39
+}

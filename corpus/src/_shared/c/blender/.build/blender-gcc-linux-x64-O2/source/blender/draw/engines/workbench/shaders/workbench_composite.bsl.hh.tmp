@@ -1,0 +1,164 @@
+#line 1 "workbench_composite.bsl.hh"
+ 
+#line 21
+#define WORKBENCH_LIGHTING_STUDIO 0
+#define WORKBENCH_LIGHTING_MATCAP 1
+#define WORKBENCH_LIGHTING_FLAT 2
+#line 27
+#define access_workbench_resolve_Resources_lighting_mode() lighting_mode
+#define access_workbench_resolve_Resources_use_cavity() use_cavity
+#define access_workbench_resolve_Resources_use_curvature() use_curvature
+#define access_workbench_resolve_Resources_use_shadow() use_shadow
+#define access_workbench_resolve_Resources_draw_view() draw_view
+#define access_workbench_resolve_Resources_depth_tx() depth_tx
+#define access_workbench_resolve_Resources_normal_tx() normal_tx
+#define access_workbench_resolve_Resources_material_tx() material_tx
+#define access_workbench_resolve_Resources_object_id_tx() object_id_tx
+#define access_workbench_resolve_Resources_stencil_tx() stencil_tx
+#define access_workbench_resolve_Resources_matcap_tx() matcap_tx
+#define access_workbench_resolve_Resources_world() workbench_World_new_()
+#define access_workbench_resolve_Resources_cavity() workbench_Cavity_new_()
+#ifdef CREATE_INFO_RES_PASS_workbench_resolve_Resources
+CREATE_INFO_RES_PASS_workbench_resolve_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_resolve_Resources
+CREATE_INFO_RES_BATCH_workbench_resolve_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_resolve_Resources
+CREATE_INFO_RES_GEOMETRY_workbench_resolve_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_resolve_Resources
+CREATE_INFO_RES_SHARED_VARS_workbench_resolve_Resources
+#endif
+#line 27
+struct workbench_resolve_Resources {
+#line 45
+                           workbench_World  world;
+
+                                                  workbench_Cavity  cavity;
+#line 57
+};
+#line 60
+#ifndef GPU_METAL
+workbench_resolve_Resources workbench_resolve_Resources_ctor_();
+workbench_resolve_Resources workbench_resolve_Resources_new_();
+#endif
+#line 27
+                                           workbench_resolve_Resources workbench_resolve_Resources_ctor_() {workbench_resolve_Resources r;r.world=workbench_World_ctor_();r.cavity=workbench_Cavity_ctor_();return r;}
+#line 49
+       workbench_resolve_Resources workbench_resolve_Resources_new_()
+{
+  workbench_resolve_Resources result;
+  result.world = workbench_World_new_();
+  result.cavity = workbench_Cavity_new_();
+  return result;
+#line 47
+}
+#line 50
+
+#if defined(ENTRY_POINT_workbench_resolve_vert)
+#line 50
+           void workbench_resolve_vert(                                                              )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 52
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 53
+}
+#endif
+struct workbench_resolve_FragOut {
+                    float4 color;
+};
+#line 55
+                                         workbench_resolve_FragOut workbench_resolve_FragOut_ctor_() {workbench_resolve_FragOut r;r.color=float4(0);return r;}
+#line 59
+
+#if defined(CREATE_INFO_workbench_resolve_Resources)
+#line 59
+
+#if defined(ENTRY_POINT_workbench_resolve_frag)
+#line 59
+             void workbench_resolve_frag(
+
+                                                                  )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 62
+  workbench_resolve_Resources srt = workbench_resolve_Resources_ctor_();
+  float2 uv = gl_FragCoord.xy / float2(textureSize(srt_access(workbench_resolve_Resources, depth_tx), 0).xy);
+
+  float depth = texture(srt_access(workbench_resolve_Resources, depth_tx), uv).r;
+  if (depth == 1.0f) {
+
+    gpu_discard_fragment();
+    return;
+  }
+#line 73
+  float3 P = drw_point_screen_to_view(float3(uv, 0.5f));
+  float3 V = drw_view_incident_vector(P);
+  float3 N = workbench_normal_decode(texture(srt_access(workbench_resolve_Resources, normal_tx), uv));
+  float4 mat_data = texture(srt_access(workbench_resolve_Resources, material_tx), uv);
+
+  float3 base_color = mat_data.rgb;
+  float4 color = float4(1.0f);
+#line 82
+#if SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_MATCAP
+#line 81
+                                                                                                             {
+
+    N = (mat_data.a > 0.0f) ? N : -N;
+    color.rgb = workbench_get_matcap_lighting(srt_access(workbench_resolve_Resources, world), srt_access(workbench_resolve_Resources, matcap_tx), base_color, N, V);
+  }
+
+#elif SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_STUDIO
+#line 86
+                                                                                                                  {
+    float roughness = 0.0f, metallic = 0.0f;
+    workbench_float_pair_decode(mat_data.a, roughness, metallic);
+    color.rgb = workbench_get_world_lighting(srt_access(workbench_resolve_Resources, world), base_color, roughness, metallic, N, V);
+  }
+
+#elif SRT_CONSTANT_lighting_mode == WORKBENCH_LIGHTING_FLAT
+#line 91
+                                                                                                                {
+    color.rgb = base_color;
+  }
+#endif
+  float cavity = 0.0f, edges = 0.0f, curvature = 0.0f;
+
+#if SRT_CONSTANT_use_cavity
+#line 96
+                                                                             {
+    workbench_cavity_compute(
+        srt_access(workbench_resolve_Resources, cavity), srt_access(workbench_resolve_Resources, world), srt_access(workbench_resolve_Resources, depth_tx), srt_access(workbench_resolve_Resources, normal_tx), uv, cavity, edges);
+  }
+#endif
+
+#if SRT_CONSTANT_use_curvature
+#line 101
+                                                                                {
+    workbench_curvature_compute(srt_access(workbench_resolve_Resources, world), srt_access(workbench_resolve_Resources, object_id_tx), srt_access(workbench_resolve_Resources, normal_tx), uv, curvature);
+  }
+
+#endif
+#line 104
+  color.rgb *= clamp((1.0f - cavity) * (1.0f + edges) * (1.0f + curvature), 0.0f, 4.0f);
+#line 107
+#if SRT_CONSTANT_use_shadow
+#line 106
+                                                                             {
+    bool shadow = texture(srt_access(workbench_resolve_Resources, stencil_tx), uv).r != 0;
+    color.rgb *= workbench_get_shadow(srt_access(workbench_resolve_Resources, world), N, shadow);
+  }
+#endif
+  workbench_resolve_FragOut_color = color;
+
+#endif
+#line 112
+}
+#endif
+#endif
+#line 142

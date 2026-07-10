@@ -1,0 +1,64 @@
+#line 1 "eevee_shadow_page_clear.bsl.hh"
+ 
+#line 13
+#define access_eevee_shadow_PageClear_shadow_atlas_img() shadow_atlas_img
+#define access_eevee_shadow_PageClear_pages_infos_buf() pages_infos_buf
+#define access_eevee_shadow_PageClear_dst_coord_buf() dst_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_PageClear
+CREATE_INFO_RES_PASS_eevee_shadow_PageClear
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_PageClear
+CREATE_INFO_RES_BATCH_eevee_shadow_PageClear
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_PageClear
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_PageClear
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_PageClear
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_PageClear
+#endif
+#line 13
+struct eevee_shadow_PageClear {
+#line 25
+int _pad;};
+#line 33
+#ifndef GPU_METAL
+eevee_shadow_PageClear eevee_shadow_PageClear_ctor_();
+eevee_shadow_PageClear eevee_shadow_PageClear_new_();
+#endif
+#line 13
+                                      eevee_shadow_PageClear eevee_shadow_PageClear_ctor_() {eevee_shadow_PageClear r;r._pad=0;return r;}
+#line 18
+       eevee_shadow_PageClear eevee_shadow_PageClear_new_()
+{
+  eevee_shadow_PageClear result;
+  result._pad = 0;
+  return result;
+#line 16
+}
+#line 24
+
+#if defined(CREATE_INFO_eevee_shadow_PageClear)
+#line 24
+
+#if defined(ENTRY_POINT_eevee_shadow_page_clear_comp)
+#line 24
+
+void eevee_shadow_page_clear_comp(
+                                                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 27
+  eevee_shadow_PageClear srt = eevee_shadow_PageClear_ctor_();
+
+  uint page_packed = srt_access(eevee_shadow_PageClear, dst_coord_buf)[gl_GlobalInvocationID.z];
+  uint3 page_co = shadow_page_unpack(page_packed);
+  page_co.xy = page_co.xy * SHADOW_PAGE_RES + gl_GlobalInvocationID.xy;
+
+  imageStoreFast(srt_access(eevee_shadow_PageClear, shadow_atlas_img), int3(page_co), uint4(floatBitsToUint(FLT_MAX)));
+
+#endif
+#line 34
+}
+#endif
+#endif
+#line 39

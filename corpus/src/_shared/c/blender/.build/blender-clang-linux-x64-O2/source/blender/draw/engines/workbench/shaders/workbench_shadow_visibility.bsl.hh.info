@@ -1,0 +1,45 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(workbench_shadow_visibility_Resources)
+.noop()
+
+ADDITIONAL_INFO(draw_view)
+ADDITIONAL_INFO(draw_view_culling)
+PUSH_CONSTANT(int, resource_len)
+PUSH_CONSTANT(int, view_len)
+PUSH_CONSTANT(bool, force_fail_method)
+PUSH_CONSTANT(float3, shadow_direction)
+.uniform_buf(2, "ExtrudedFrustum", "extruded_frustum", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "ObjectBounds", "bounds_buf[]", Frequency::PASS)
+.storage_buf(1, Qualifier::read_write, "uint", "visibility_buf[]", Frequency::PASS, [](blender::Span<CompilationConstant> constants) { int dynamic_pass_selection = ShaderCreateInfo::find_constant(constants, "dynamic_pass_selection"); return (!dynamic_pass_selection);})
+.storage_buf(1, Qualifier::read_write, "uint", "pass_visibility_buf[]", Frequency::PASS, [](blender::Span<CompilationConstant> constants) { int dynamic_pass_selection = ShaderCreateInfo::find_constant(constants, "dynamic_pass_selection"); return (dynamic_pass_selection);})
+.storage_buf(2, Qualifier::read_write, "uint", "fail_visibility_buf[]", Frequency::PASS, [](blender::Span<CompilationConstant> constants) { int dynamic_pass_selection = ShaderCreateInfo::find_constant(constants, "dynamic_pass_selection"); return (dynamic_pass_selection);})
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(workbench_shadow_visibility_culling_main_infos_)
+LOCAL_GROUP_SIZE(DRW_VISIBILITY_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(workbench_shadow_visibility_Resources)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(workbench_shadow_visibility_compute_dynamic_pass_type)
+COMPUTE_SOURCE("workbench_shadow_visibility.bsl.hh")
+COMPUTE_FUNCTION("workbench_shadow_visibility_culling_main")
+ADDITIONAL_INFO(workbench_shadow_visibility_culling_main_infos_)
+COMPILATION_CONSTANT(bool, dynamic_pass_selection, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(workbench_shadow_visibility_compute_static_pass_type)
+COMPUTE_SOURCE("workbench_shadow_visibility.bsl.hh")
+COMPUTE_FUNCTION("workbench_shadow_visibility_culling_main")
+ADDITIONAL_INFO(workbench_shadow_visibility_culling_main_infos_)
+COMPILATION_CONSTANT(bool, dynamic_pass_selection, false)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

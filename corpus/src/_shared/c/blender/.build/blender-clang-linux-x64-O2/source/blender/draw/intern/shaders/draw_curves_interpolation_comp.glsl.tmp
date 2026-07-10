@@ -1,0 +1,1733 @@
+#line 1 "draw_curves_interpolation_comp.glsl"
+ 
+#line 21
+struct InterpPosition {
+
+  float4 data;
+};
+#line 21
+                              InterpPosition InterpPosition_ctor_() {InterpPosition r;r.data=float4(0);return r;}
+#line 33
+InterpPosition input_loadTInterpPosition(int point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 35
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 35
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+  InterpPosition interp;
+  interp.data.xyz = gpu_attr_load_float3(buffer_get(draw_curves_interpolate_position, positions_buf), int2(3, 0), uint(point_index));
+  interp.data.w = buffer_get(draw_curves_interpolate_position, radii_buf)[point_index];
+
+  interp.data.xyz = transform_point(push_constant_get(draw_curves_interpolate_position, transform), interp.data.xyz);
+  return interp;
+
+#else
+#line 35
+  return InterpPosition_ctor_();
+#endif
+#line 43
+
+#else
+#line 35
+  return InterpPosition_ctor_();
+#endif
+#line 43
+
+#else
+#line 35
+  return InterpPosition_ctor_();
+#endif
+#line 43
+}
+           float4 input_loadTfloat4(int point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float4_attribute)
+#line 46
+  StoredFloat4 data = buffer_get(draw_curves_interpolate_float4_attribute,
+                                 attribute_float4_buf)[point_index];
+  return load_data(data);
+
+#else
+#line 46
+  return float4(0);
+#endif
+#line 49
+}
+           float3 input_loadTfloat3(int point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float3_attribute)
+#line 52
+  StoredFloat3 data = buffer_get(draw_curves_interpolate_float3_attribute,
+                                 attribute_float3_buf)[point_index];
+  return load_data(data);
+
+#else
+#line 52
+  return float3(0);
+#endif
+#line 55
+}
+           float2 input_loadTfloat2(int point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float2_attribute)
+#line 58
+  StoredFloat2 data = buffer_get(draw_curves_interpolate_float2_attribute,
+                                 attribute_float2_buf)[point_index];
+  return load_data(data);
+
+#else
+#line 58
+  return float2(0);
+#endif
+#line 61
+}
+           float input_loadTfloat(int point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float_attribute)
+#line 64
+  StoredFloat data = buffer_get(draw_curves_interpolate_float_attribute,
+                                attribute_float_buf)[point_index];
+  return load_data(data);
+
+#else
+#line 64
+  return float(0);
+#endif
+#line 67
+}
+#line 76
+           InterpPosition output_loadTInterpPosition(int evaluated_point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 78
+  InterpPosition data;
+  data.data = buffer_get(draw_curves_interpolate_position,
+                         evaluated_positions_radii_buf)[evaluated_point_index];
+  return data;
+
+#else
+#line 78
+  return InterpPosition_ctor_();
+#endif
+#line 82
+}
+           float4 output_loadTfloat4(int evaluated_point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float4_attribute)
+#line 85
+  StoredFloat4 data = buffer_get(draw_curves_interpolate_float4_attribute,
+                                 evaluated_float4_buf)[evaluated_point_index];
+  return load_data(data);
+
+#else
+#line 85
+  return float4(0);
+#endif
+#line 88
+}
+           float3 output_loadTfloat3(int evaluated_point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float3_attribute)
+#line 91
+  StoredFloat3 data = buffer_get(draw_curves_interpolate_float3_attribute,
+                                 evaluated_float3_buf)[evaluated_point_index];
+  return load_data(data);
+
+#else
+#line 91
+  return float3(0);
+#endif
+#line 94
+}
+           float2 output_loadTfloat2(int evaluated_point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float2_attribute)
+#line 97
+  StoredFloat2 data = buffer_get(draw_curves_interpolate_float2_attribute,
+                                 evaluated_float2_buf)[evaluated_point_index];
+  return load_data(data);
+
+#else
+#line 97
+  return float2(0);
+#endif
+#line 100
+}
+           float output_loadTfloat(int evaluated_point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float_attribute)
+#line 103
+  StoredFloat data = buffer_get(draw_curves_interpolate_float_attribute,
+                                evaluated_float_buf)[evaluated_point_index];
+  return load_data(data);
+
+#else
+#line 103
+  return float(0);
+#endif
+#line 106
+}
+#line 110
+void output_write(int evaluated_point_index, InterpPosition interp)
+{
+#line 114
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 113
+  interp.data.w = max(0.0f, interp.data.w);
+  buffer_get(draw_curves_interpolate_position,
+             evaluated_positions_radii_buf)[evaluated_point_index] = interp.data;
+
+#endif
+#line 116
+}
+void output_write(int evaluated_point_index, const float4 interp)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float4_attribute)
+#line 119
+  buffer_get(draw_curves_interpolate_float4_attribute,
+             evaluated_float4_buf)[evaluated_point_index] = as_data(interp);
+
+#endif
+#line 121
+}
+void output_write(int evaluated_point_index, const float3 interp)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float3_attribute)
+#line 124
+  buffer_get(draw_curves_interpolate_float3_attribute,
+             evaluated_float3_buf)[evaluated_point_index] = as_data(interp);
+
+#endif
+#line 126
+}
+void output_write(int evaluated_point_index, const float2 interp)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float2_attribute)
+#line 129
+  buffer_get(draw_curves_interpolate_float2_attribute,
+             evaluated_float2_buf)[evaluated_point_index] = as_data(interp);
+
+#endif
+#line 131
+}
+void output_write(int evaluated_point_index, const float interp)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_float_attribute)
+#line 134
+  buffer_get(draw_curves_interpolate_float_attribute,
+             evaluated_float_buf)[evaluated_point_index] = as_data(interp);
+
+#endif
+#line 136
+}
+#line 140
+void output_weighted_add(int evaluated_point_index, float w, const InterpPosition src)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 142
+  buffer_get(draw_curves_interpolate_position,
+             evaluated_positions_radii_buf)[evaluated_point_index] += src.data * w;
+
+#endif
+#line 144
+}
+#line 147
+void output_weighted_add(int evaluated_point_index, float w, const float4 src)
+{
+  float4 dst = output_loadTfloat4(evaluated_point_index);
+  dst += src * w;
+  output_write(evaluated_point_index, dst);
+}
+#line 147
+void output_weighted_add(int evaluated_point_index, float w, const float3 src)
+{
+  float3 dst = output_loadTfloat3(evaluated_point_index);
+  dst += src * w;
+  output_write(evaluated_point_index, dst);
+}
+#line 147
+void output_weighted_add(int evaluated_point_index, float w, const float2 src)
+{
+  float2 dst = output_loadTfloat2(evaluated_point_index);
+  dst += src * w;
+  output_write(evaluated_point_index, dst);
+}
+#line 147
+void output_weighted_add(int evaluated_point_index, float w, const float src)
+{
+  float dst = output_loadTfloat(evaluated_point_index);
+  dst += src * w;
+  output_write(evaluated_point_index, dst);
+}
+#line 160
+void output_mulTfloat4(int evaluated_point_index, float w)
+{
+  float4 dst = output_loadTfloat4(evaluated_point_index);
+  dst *= w;
+  output_write(evaluated_point_index, dst);
+}
+#line 160
+void output_mulTfloat3(int evaluated_point_index, float w)
+{
+  float3 dst = output_loadTfloat3(evaluated_point_index);
+  dst *= w;
+  output_write(evaluated_point_index, dst);
+}
+#line 160
+void output_mulTfloat2(int evaluated_point_index, float w)
+{
+  float2 dst = output_loadTfloat2(evaluated_point_index);
+  dst *= w;
+  output_write(evaluated_point_index, dst);
+}
+#line 160
+void output_mulTfloat(int evaluated_point_index, float w)
+{
+  float dst = output_loadTfloat(evaluated_point_index);
+  dst *= w;
+  output_write(evaluated_point_index, dst);
+}
+#line 170
+void output_mulTInterpPosition(int evaluated_point_index, float w)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 172
+  buffer_get(draw_curves_interpolate_position,
+             evaluated_positions_radii_buf)[evaluated_point_index] *= w;
+
+#endif
+#line 174
+}
+#line 178
+void output_set_zeroTfloat4(int evaluated_point_index)
+{
+  output_write(evaluated_point_index, float4(0.0f));
+}
+#line 178
+void output_set_zeroTfloat3(int evaluated_point_index)
+{
+  output_write(evaluated_point_index, float3(0.0f));
+}
+#line 178
+void output_set_zeroTfloat2(int evaluated_point_index)
+{
+  output_write(evaluated_point_index, float2(0.0f));
+}
+#line 178
+void output_set_zeroTfloat(int evaluated_point_index)
+{
+  output_write(evaluated_point_index, float(0.0f));
+}
+#line 186
+void output_set_zeroTInterpPosition(int evaluated_point_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 188
+  buffer_get(draw_curves_interpolate_position,
+             evaluated_positions_radii_buf)[evaluated_point_index] = float4(0.0);
+
+#endif
+#line 190
+}
+#line 194
+InterpPosition mix4(
+    InterpPosition v0, InterpPosition v1, InterpPosition v2, InterpPosition v3, float4 w)
+{
+  v0.data = v0.data * w.x + v1.data * w.y + v2.data * w.z + v3.data * w.w;
+  return v0;
+}
+#line 201
+float4 mix4(float4 v0, float4 v1, float4 v2, float4 v3, float4 w)
+{
+  v0 = v0 * w.x + v1 * w.y + v2 * w.z + v3 * w.w;
+  return v0;
+}
+#line 201
+float3 mix4(float3 v0, float3 v1, float3 v2, float3 v3, float4 w)
+{
+  v0 = v0 * w.x + v1 * w.y + v2 * w.z + v3 * w.w;
+  return v0;
+}
+#line 201
+float2 mix4(float2 v0, float2 v1, float2 v2, float2 v3, float4 w)
+{
+  v0 = v0 * w.x + v1 * w.y + v2 * w.z + v3 * w.w;
+  return v0;
+}
+#line 201
+float mix4(float v0, float v1, float v2, float v3, float4 w)
+{
+  v0 = v0 * w.x + v1 * w.y + v2 * w.z + v3 * w.w;
+  return v0;
+}
+#line 213
+bool curve_cyclic_get(int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 215
+
+#if defined(CREATE_INFO_draw_curves_data)
+  if (push_constant_get(draw_curves_data, use_cyclic)) {
+    return gpu_attr_load_bool(buffer_get(draw_curves_data, curves_cyclic_buf), curve_index);
+  }
+  return false;
+
+#else
+#line 215
+  return bool_ctor_();
+#endif
+#line 221
+
+#else
+#line 215
+  return bool_ctor_();
+#endif
+#line 221
+}
+#line 225
+float4 catmull_rom_calculate_basis(const float parameter)
+{
+
+  const float t = parameter;
+  const float s = 1.0f - parameter;
+  return 0.5f * float4(-t * s * s,
+                       2.0f + t * t * (3.0f * t - 5.0f),
+                       2.0f + s * s * (3.0f * s - 5.0f),
+                       -s * t * t);
+}
+
+int4 catmull_rom_get_points(uint point_id, IndexRange points, const bool cyclic)
+{
+  int4 point_ids = int(point_id) + int4(-1, +0, +1, +2);
+  if (cyclic) {
+
+    point_ids = ((point_ids + _size(points)) % _size(points));
+  }
+  else {
+    point_ids = clamp(point_ids, int4(0), int4(_size(points) - 1));
+  }
+  return _start(points) + point_ids;
+}
+#line 250
+void catmull_rom_evaluate_curveTInterpPosition(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 254
+
+  const uint curve_resolution = buffer_get(draw_curves_data, curves_resolution_buf)[curve_index];
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  const uint evaluated_points_count = uint(_size(evaluated_points));
+  for (uint i = 0; i < evaluated_points_count; i++) {
+    const int evaluated_point_id = _start(evaluated_points) + int(i);
+    const uint point_id = i / curve_resolution;
+    const float parameter = float(i % curve_resolution) / float(curve_resolution);
+    const float4 weights = catmull_rom_calculate_basis(parameter);
+    const int4 point_ids = catmull_rom_get_points(point_id, points, is_curve_cyclic);
+
+    InterpPosition p0 = input_loadTInterpPosition(point_ids.x);
+    InterpPosition p1 = input_loadTInterpPosition(point_ids.y);
+    InterpPosition p2 = input_loadTInterpPosition(point_ids.z);
+    InterpPosition p3 = input_loadTInterpPosition(point_ids.w);
+    InterpPosition result = mix4(p0, p1, p2, p3, weights);
+
+    output_write(evaluated_point_id, result);
+  }
+
+#endif
+#line 274
+}
+#line 250
+void catmull_rom_evaluate_curveTfloat(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 254
+
+  const uint curve_resolution = buffer_get(draw_curves_data, curves_resolution_buf)[curve_index];
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  const uint evaluated_points_count = uint(_size(evaluated_points));
+  for (uint i = 0; i < evaluated_points_count; i++) {
+    const int evaluated_point_id = _start(evaluated_points) + int(i);
+    const uint point_id = i / curve_resolution;
+    const float parameter = float(i % curve_resolution) / float(curve_resolution);
+    const float4 weights = catmull_rom_calculate_basis(parameter);
+    const int4 point_ids = catmull_rom_get_points(point_id, points, is_curve_cyclic);
+
+    float p0 = input_loadTfloat(point_ids.x);
+    float p1 = input_loadTfloat(point_ids.y);
+    float p2 = input_loadTfloat(point_ids.z);
+    float p3 = input_loadTfloat(point_ids.w);
+    float result = mix4(p0, p1, p2, p3, weights);
+
+    output_write(evaluated_point_id, result);
+  }
+
+#endif
+#line 274
+}
+#line 250
+void catmull_rom_evaluate_curveTfloat2(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 254
+
+  const uint curve_resolution = buffer_get(draw_curves_data, curves_resolution_buf)[curve_index];
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  const uint evaluated_points_count = uint(_size(evaluated_points));
+  for (uint i = 0; i < evaluated_points_count; i++) {
+    const int evaluated_point_id = _start(evaluated_points) + int(i);
+    const uint point_id = i / curve_resolution;
+    const float parameter = float(i % curve_resolution) / float(curve_resolution);
+    const float4 weights = catmull_rom_calculate_basis(parameter);
+    const int4 point_ids = catmull_rom_get_points(point_id, points, is_curve_cyclic);
+
+    float2 p0 = input_loadTfloat2(point_ids.x);
+    float2 p1 = input_loadTfloat2(point_ids.y);
+    float2 p2 = input_loadTfloat2(point_ids.z);
+    float2 p3 = input_loadTfloat2(point_ids.w);
+    float2 result = mix4(p0, p1, p2, p3, weights);
+
+    output_write(evaluated_point_id, result);
+  }
+
+#endif
+#line 274
+}
+#line 250
+void catmull_rom_evaluate_curveTfloat3(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 254
+
+  const uint curve_resolution = buffer_get(draw_curves_data, curves_resolution_buf)[curve_index];
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  const uint evaluated_points_count = uint(_size(evaluated_points));
+  for (uint i = 0; i < evaluated_points_count; i++) {
+    const int evaluated_point_id = _start(evaluated_points) + int(i);
+    const uint point_id = i / curve_resolution;
+    const float parameter = float(i % curve_resolution) / float(curve_resolution);
+    const float4 weights = catmull_rom_calculate_basis(parameter);
+    const int4 point_ids = catmull_rom_get_points(point_id, points, is_curve_cyclic);
+
+    float3 p0 = input_loadTfloat3(point_ids.x);
+    float3 p1 = input_loadTfloat3(point_ids.y);
+    float3 p2 = input_loadTfloat3(point_ids.z);
+    float3 p3 = input_loadTfloat3(point_ids.w);
+    float3 result = mix4(p0, p1, p2, p3, weights);
+
+    output_write(evaluated_point_id, result);
+  }
+
+#endif
+#line 274
+}
+#line 250
+void catmull_rom_evaluate_curveTfloat4(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 254
+
+  const uint curve_resolution = buffer_get(draw_curves_data, curves_resolution_buf)[curve_index];
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  const uint evaluated_points_count = uint(_size(evaluated_points));
+  for (uint i = 0; i < evaluated_points_count; i++) {
+    const int evaluated_point_id = _start(evaluated_points) + int(i);
+    const uint point_id = i / curve_resolution;
+    const float parameter = float(i % curve_resolution) / float(curve_resolution);
+    const float4 weights = catmull_rom_calculate_basis(parameter);
+    const int4 point_ids = catmull_rom_get_points(point_id, points, is_curve_cyclic);
+
+    float4 p0 = input_loadTfloat4(point_ids.x);
+    float4 p1 = input_loadTfloat4(point_ids.y);
+    float4 p2 = input_loadTfloat4(point_ids.z);
+    float4 p3 = input_loadTfloat4(point_ids.w);
+    float4 result = mix4(p0, p1, p2, p3, weights);
+
+    output_write(evaluated_point_id, result);
+  }
+
+#endif
+#line 274
+}
+#line 297
+void bezier_evaluate_segmentTInterpPosition(const int2 points, const IndexRange result)
+{
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 299
+
+#if defined(CREATE_INFO_draw_curves_interpolate_position)
+#line 304
+  InterpPosition p0 = input_loadTInterpPosition(points.x);
+  InterpPosition p1 = input_loadTInterpPosition(points.y);
+
+  const float3 point_0 = p0.data.xyz;
+  const float3 point_1 = gpu_attr_load_float3(buffer_get(draw_curves_interpolate_position,
+                                         handles_positions_right_buf), int2(3, 0), uint(points.x));
+  const float3 point_2 = gpu_attr_load_float3(buffer_get(draw_curves_interpolate_position,
+                                        handles_positions_left_buf), int2(3, 0), uint(points.y));
+  const float3 point_3 = p1.data.xyz;
+
+  const float rad_0 = p0.data.w;
+  const float rad_1 = p1.data.w;
+
+  ;
+  const float inv_len = 1.0f / float(_size(result));
+  const float inv_len_squared = inv_len * inv_len;
+  const float inv_len_cubed = inv_len_squared * inv_len;
+
+  const float3 rt1 = 3.0f * (point_1 - point_0) * inv_len;
+  const float3 rt2 = 3.0f * (point_0 - 2.0f * point_1 + point_2) * inv_len_squared;
+  const float3 rt3 = (point_3 - point_0 + 3.0f * (point_1 - point_2)) * inv_len_cubed;
+
+  float3 q0 = point_0;
+  float3 q1 = rt1 + rt2 + rt3;
+  float3 q2 = 2.0f * rt2 + 6.0f * rt3;
+  float3 q3 = 6.0f * rt3;
+  for (int i = 0; i < _size(result); i++) {
+    float rad = mix(rad_0, rad_1, float(i) * inv_len);
+    InterpPosition interp;
+    interp.data = float4(q0, rad);
+    output_write(_start(result) + i, interp);
+    q0 += q1;
+    q1 += q2;
+    q2 += q3;
+  }
+
+#endif
+
+#endif
+#line 337
+}
+#line 286
+void bezier_evaluate_segmentTfloat(const int2 points, const IndexRange result)
+{
+  float p0 = input_loadTfloat(points.x);
+  float p1 = input_loadTfloat(points.y);
+
+  const float step = 1.0f / float(_size(result));
+  for (int i = 0; i < _size(result); i++) {
+    output_write(_start(result) + i, mix(p0, p1, float(i) * step));
+  }
+}
+#line 286
+void bezier_evaluate_segmentTfloat2(const int2 points, const IndexRange result)
+{
+  float2 p0 = input_loadTfloat2(points.x);
+  float2 p1 = input_loadTfloat2(points.y);
+
+  const float step = 1.0f / float(_size(result));
+  for (int i = 0; i < _size(result); i++) {
+    output_write(_start(result) + i, mix(p0, p1, float(i) * step));
+  }
+}
+#line 286
+void bezier_evaluate_segmentTfloat3(const int2 points, const IndexRange result)
+{
+  float3 p0 = input_loadTfloat3(points.x);
+  float3 p1 = input_loadTfloat3(points.y);
+
+  const float step = 1.0f / float(_size(result));
+  for (int i = 0; i < _size(result); i++) {
+    output_write(_start(result) + i, mix(p0, p1, float(i) * step));
+  }
+}
+#line 286
+void bezier_evaluate_segmentTfloat4(const int2 points, const IndexRange result)
+{
+  float4 p0 = input_loadTfloat4(points.x);
+  float4 p1 = input_loadTfloat4(points.y);
+
+  const float step = 1.0f / float(_size(result));
+  for (int i = 0; i < _size(result); i++) {
+    output_write(_start(result) + i, mix(p0, p1, float(i) * step));
+  }
+}
+#line 344
+IndexRange bezier_per_curve_point_offsets_range(const IndexRange points, const int curve_index)
+{
+  return _ctor(IndexRange) curve_index + _start(points), _size(points) + 1 _rotc() ;
+}
+
+int2 bezier_get_points(uint point_id, IndexRange points, const bool cyclic)
+{
+  int2 point_ids = int(point_id) + int2(+0, +1);
+  if (cyclic) {
+
+    point_ids = ((point_ids + _size(points)) % _size(points));
+  }
+  else {
+    point_ids = clamp(point_ids, int2(0), int2(_size(points) - 1));
+  }
+  return _start(points) + point_ids;
+}
+#line 363
+void bezier_evaluate_curveTInterpPosition(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+  const IndexRange offsets = bezier_per_curve_point_offsets_range(points, curve_index);
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+
+    const IndexRange segment_range = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, bezier_offsets_buf),
+                                                                            _start(offsets) + i);
+    const IndexRange evaluated_segment_range = _slice(evaluated_points, segment_range);
+    const int2 point_ids = bezier_get_points(uint(i), points, is_curve_cyclic);
+
+    bezier_evaluate_segmentTInterpPosition(point_ids, evaluated_segment_range);
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTInterpPosition(_first(evaluated_points)));
+  }
+
+#endif
+#line 386
+}
+#line 363
+void bezier_evaluate_curveTfloat(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+  const IndexRange offsets = bezier_per_curve_point_offsets_range(points, curve_index);
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+
+    const IndexRange segment_range = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, bezier_offsets_buf),
+                                                                            _start(offsets) + i);
+    const IndexRange evaluated_segment_range = _slice(evaluated_points, segment_range);
+    const int2 point_ids = bezier_get_points(uint(i), points, is_curve_cyclic);
+
+    bezier_evaluate_segmentTfloat(point_ids, evaluated_segment_range);
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat(_first(evaluated_points)));
+  }
+
+#endif
+#line 386
+}
+#line 363
+void bezier_evaluate_curveTfloat2(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+  const IndexRange offsets = bezier_per_curve_point_offsets_range(points, curve_index);
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+
+    const IndexRange segment_range = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, bezier_offsets_buf),
+                                                                            _start(offsets) + i);
+    const IndexRange evaluated_segment_range = _slice(evaluated_points, segment_range);
+    const int2 point_ids = bezier_get_points(uint(i), points, is_curve_cyclic);
+
+    bezier_evaluate_segmentTfloat2(point_ids, evaluated_segment_range);
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat2(_first(evaluated_points)));
+  }
+
+#endif
+#line 386
+}
+#line 363
+void bezier_evaluate_curveTfloat3(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+  const IndexRange offsets = bezier_per_curve_point_offsets_range(points, curve_index);
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+
+    const IndexRange segment_range = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, bezier_offsets_buf),
+                                                                            _start(offsets) + i);
+    const IndexRange evaluated_segment_range = _slice(evaluated_points, segment_range);
+    const int2 point_ids = bezier_get_points(uint(i), points, is_curve_cyclic);
+
+    bezier_evaluate_segmentTfloat3(point_ids, evaluated_segment_range);
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat3(_first(evaluated_points)));
+  }
+
+#endif
+#line 386
+}
+#line 363
+void bezier_evaluate_curveTfloat4(const IndexRange points,
+                    const IndexRange evaluated_points,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+  const IndexRange offsets = bezier_per_curve_point_offsets_range(points, curve_index);
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+
+    const IndexRange segment_range = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, bezier_offsets_buf),
+                                                                            _start(offsets) + i);
+    const IndexRange evaluated_segment_range = _slice(evaluated_points, segment_range);
+    const int2 point_ids = bezier_get_points(uint(i), points, is_curve_cyclic);
+
+    bezier_evaluate_segmentTfloat4(point_ids, evaluated_segment_range);
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat4(_first(evaluated_points)));
+  }
+
+#endif
+#line 386
+}
+#line 397
+void copy_curve_dataTInterpPosition(const IndexRange points,
+                     const IndexRange evaluated_points,
+                     const int curve_index)
+{
+  ;
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+    output_write(_start(evaluated_points) + i, input_loadTInterpPosition(_start(points) + i));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTInterpPosition(_first(evaluated_points)));
+  }
+}
+#line 397
+void copy_curve_dataTfloat(const IndexRange points,
+                     const IndexRange evaluated_points,
+                     const int curve_index)
+{
+  ;
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+    output_write(_start(evaluated_points) + i, input_loadTfloat(_start(points) + i));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat(_first(evaluated_points)));
+  }
+}
+#line 397
+void copy_curve_dataTfloat2(const IndexRange points,
+                     const IndexRange evaluated_points,
+                     const int curve_index)
+{
+  ;
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+    output_write(_start(evaluated_points) + i, input_loadTfloat2(_start(points) + i));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat2(_first(evaluated_points)));
+  }
+}
+#line 397
+void copy_curve_dataTfloat3(const IndexRange points,
+                     const IndexRange evaluated_points,
+                     const int curve_index)
+{
+  ;
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+    output_write(_start(evaluated_points) + i, input_loadTfloat3(_start(points) + i));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat3(_first(evaluated_points)));
+  }
+}
+#line 397
+void copy_curve_dataTfloat4(const IndexRange points,
+                     const IndexRange evaluated_points,
+                     const int curve_index)
+{
+  ;
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+
+  for (int i = 0; i < _size(points); i++) {
+    output_write(_start(evaluated_points) + i, input_loadTfloat4(_start(points) + i));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points), output_loadTfloat4(_first(evaluated_points)));
+  }
+}
+#line 423
+void nurbs_evaluate_curveTInterpPosition(const IndexRange points,
+                    const IndexRange evaluated_points_padded,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 432
+  const int order = int(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_resolution_buf), curve_index));
+
+  const int basis_cache_start = buffer_get(draw_curves_data, bezier_offsets_buf)[curve_index];
+  const bool invalid = basis_cache_start < 0;
+
+  if (invalid) {
+    copy_curve_dataTInterpPosition(points, evaluated_points_padded, curve_index);
+    return;
+  }
+#line 443
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+#line 446
+  const IndexRange evaluated_points = _ctor(IndexRange) _start(evaluated_points_padded),
+                                    _size(evaluated_points_padded) - int(push_constant_get(draw_curves_data, use_cyclic)) _rotc() ;
+
+  const int start_indices_range_start = basis_cache_start;
+  const int weights_range_start = basis_cache_start + _size(evaluated_points);
+#line 456
+  for (int i = 0; i < _size(evaluated_points); i++) {
+    int evaluated_point_index = _start(evaluated_points) + i;
+
+    output_set_zeroTInterpPosition(evaluated_point_index);
+    float total_weight = 0.0f;
+
+    const IndexRange point_weights = _ctor(IndexRange) weights_range_start + i * order, order _rotc() ;
+    const int start_index = floatBitsToInt(buffer_get(draw_curves_data, handles_positions_left_buf)[start_indices_range_start + i]);
+
+    for (int j = 0; j < _size(point_weights); j++) {
+      const int point_index = _start(points) + (start_index + j) % _size(points);
+      const float point_weight = buffer_get(draw_curves_data, handles_positions_left_buf)[_start(point_weights) + j];
+      const float control_weight = push_constant_get(draw_curves_data, use_point_weight)? buffer_get(draw_curves_data, handles_positions_right_buf)[point_index] : 1.0f;
+      const float weight = point_weight * control_weight;
+
+      output_weighted_add(evaluated_point_index, weight, input_loadTInterpPosition(point_index));
+      total_weight += weight;
+    }
+
+    output_mulTInterpPosition(evaluated_point_index, safe_rcp(total_weight));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points_padded),
+                 output_loadTInterpPosition(_first(evaluated_points_padded)));
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 483
+}
+#line 423
+void nurbs_evaluate_curveTfloat(const IndexRange points,
+                    const IndexRange evaluated_points_padded,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 432
+  const int order = int(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_resolution_buf), curve_index));
+
+  const int basis_cache_start = buffer_get(draw_curves_data, bezier_offsets_buf)[curve_index];
+  const bool invalid = basis_cache_start < 0;
+
+  if (invalid) {
+    copy_curve_dataTfloat(points, evaluated_points_padded, curve_index);
+    return;
+  }
+#line 443
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+#line 446
+  const IndexRange evaluated_points = _ctor(IndexRange) _start(evaluated_points_padded),
+                                    _size(evaluated_points_padded) - int(push_constant_get(draw_curves_data, use_cyclic)) _rotc() ;
+
+  const int start_indices_range_start = basis_cache_start;
+  const int weights_range_start = basis_cache_start + _size(evaluated_points);
+#line 456
+  for (int i = 0; i < _size(evaluated_points); i++) {
+    int evaluated_point_index = _start(evaluated_points) + i;
+
+    output_set_zeroTfloat(evaluated_point_index);
+    float total_weight = 0.0f;
+
+    const IndexRange point_weights = _ctor(IndexRange) weights_range_start + i * order, order _rotc() ;
+    const int start_index = floatBitsToInt(buffer_get(draw_curves_data, handles_positions_left_buf)[start_indices_range_start + i]);
+
+    for (int j = 0; j < _size(point_weights); j++) {
+      const int point_index = _start(points) + (start_index + j) % _size(points);
+      const float point_weight = buffer_get(draw_curves_data, handles_positions_left_buf)[_start(point_weights) + j];
+      const float control_weight = push_constant_get(draw_curves_data, use_point_weight)? buffer_get(draw_curves_data, handles_positions_right_buf)[point_index] : 1.0f;
+      const float weight = point_weight * control_weight;
+
+      output_weighted_add(evaluated_point_index, weight, input_loadTfloat(point_index));
+      total_weight += weight;
+    }
+
+    output_mulTfloat(evaluated_point_index, safe_rcp(total_weight));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points_padded),
+                 output_loadTfloat(_first(evaluated_points_padded)));
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 483
+}
+#line 423
+void nurbs_evaluate_curveTfloat2(const IndexRange points,
+                    const IndexRange evaluated_points_padded,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 432
+  const int order = int(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_resolution_buf), curve_index));
+
+  const int basis_cache_start = buffer_get(draw_curves_data, bezier_offsets_buf)[curve_index];
+  const bool invalid = basis_cache_start < 0;
+
+  if (invalid) {
+    copy_curve_dataTfloat2(points, evaluated_points_padded, curve_index);
+    return;
+  }
+#line 443
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+#line 446
+  const IndexRange evaluated_points = _ctor(IndexRange) _start(evaluated_points_padded),
+                                    _size(evaluated_points_padded) - int(push_constant_get(draw_curves_data, use_cyclic)) _rotc() ;
+
+  const int start_indices_range_start = basis_cache_start;
+  const int weights_range_start = basis_cache_start + _size(evaluated_points);
+#line 456
+  for (int i = 0; i < _size(evaluated_points); i++) {
+    int evaluated_point_index = _start(evaluated_points) + i;
+
+    output_set_zeroTfloat2(evaluated_point_index);
+    float total_weight = 0.0f;
+
+    const IndexRange point_weights = _ctor(IndexRange) weights_range_start + i * order, order _rotc() ;
+    const int start_index = floatBitsToInt(buffer_get(draw_curves_data, handles_positions_left_buf)[start_indices_range_start + i]);
+
+    for (int j = 0; j < _size(point_weights); j++) {
+      const int point_index = _start(points) + (start_index + j) % _size(points);
+      const float point_weight = buffer_get(draw_curves_data, handles_positions_left_buf)[_start(point_weights) + j];
+      const float control_weight = push_constant_get(draw_curves_data, use_point_weight)? buffer_get(draw_curves_data, handles_positions_right_buf)[point_index] : 1.0f;
+      const float weight = point_weight * control_weight;
+
+      output_weighted_add(evaluated_point_index, weight, input_loadTfloat2(point_index));
+      total_weight += weight;
+    }
+
+    output_mulTfloat2(evaluated_point_index, safe_rcp(total_weight));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points_padded),
+                 output_loadTfloat2(_first(evaluated_points_padded)));
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 483
+}
+#line 423
+void nurbs_evaluate_curveTfloat3(const IndexRange points,
+                    const IndexRange evaluated_points_padded,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 432
+  const int order = int(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_resolution_buf), curve_index));
+
+  const int basis_cache_start = buffer_get(draw_curves_data, bezier_offsets_buf)[curve_index];
+  const bool invalid = basis_cache_start < 0;
+
+  if (invalid) {
+    copy_curve_dataTfloat3(points, evaluated_points_padded, curve_index);
+    return;
+  }
+#line 443
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+#line 446
+  const IndexRange evaluated_points = _ctor(IndexRange) _start(evaluated_points_padded),
+                                    _size(evaluated_points_padded) - int(push_constant_get(draw_curves_data, use_cyclic)) _rotc() ;
+
+  const int start_indices_range_start = basis_cache_start;
+  const int weights_range_start = basis_cache_start + _size(evaluated_points);
+#line 456
+  for (int i = 0; i < _size(evaluated_points); i++) {
+    int evaluated_point_index = _start(evaluated_points) + i;
+
+    output_set_zeroTfloat3(evaluated_point_index);
+    float total_weight = 0.0f;
+
+    const IndexRange point_weights = _ctor(IndexRange) weights_range_start + i * order, order _rotc() ;
+    const int start_index = floatBitsToInt(buffer_get(draw_curves_data, handles_positions_left_buf)[start_indices_range_start + i]);
+
+    for (int j = 0; j < _size(point_weights); j++) {
+      const int point_index = _start(points) + (start_index + j) % _size(points);
+      const float point_weight = buffer_get(draw_curves_data, handles_positions_left_buf)[_start(point_weights) + j];
+      const float control_weight = push_constant_get(draw_curves_data, use_point_weight)? buffer_get(draw_curves_data, handles_positions_right_buf)[point_index] : 1.0f;
+      const float weight = point_weight * control_weight;
+
+      output_weighted_add(evaluated_point_index, weight, input_loadTfloat3(point_index));
+      total_weight += weight;
+    }
+
+    output_mulTfloat3(evaluated_point_index, safe_rcp(total_weight));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points_padded),
+                 output_loadTfloat3(_first(evaluated_points_padded)));
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 483
+}
+#line 423
+void nurbs_evaluate_curveTfloat4(const IndexRange points,
+                    const IndexRange evaluated_points_padded,
+                    const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 427
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 432
+  const int order = int(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_resolution_buf), curve_index));
+
+  const int basis_cache_start = buffer_get(draw_curves_data, bezier_offsets_buf)[curve_index];
+  const bool invalid = basis_cache_start < 0;
+
+  if (invalid) {
+    copy_curve_dataTfloat4(points, evaluated_points_padded, curve_index);
+    return;
+  }
+#line 443
+  const bool is_curve_cyclic = curve_cyclic_get(curve_index);
+#line 446
+  const IndexRange evaluated_points = _ctor(IndexRange) _start(evaluated_points_padded),
+                                    _size(evaluated_points_padded) - int(push_constant_get(draw_curves_data, use_cyclic)) _rotc() ;
+
+  const int start_indices_range_start = basis_cache_start;
+  const int weights_range_start = basis_cache_start + _size(evaluated_points);
+#line 456
+  for (int i = 0; i < _size(evaluated_points); i++) {
+    int evaluated_point_index = _start(evaluated_points) + i;
+
+    output_set_zeroTfloat4(evaluated_point_index);
+    float total_weight = 0.0f;
+
+    const IndexRange point_weights = _ctor(IndexRange) weights_range_start + i * order, order _rotc() ;
+    const int start_index = floatBitsToInt(buffer_get(draw_curves_data, handles_positions_left_buf)[start_indices_range_start + i]);
+
+    for (int j = 0; j < _size(point_weights); j++) {
+      const int point_index = _start(points) + (start_index + j) % _size(points);
+      const float point_weight = buffer_get(draw_curves_data, handles_positions_left_buf)[_start(point_weights) + j];
+      const float control_weight = push_constant_get(draw_curves_data, use_point_weight)? buffer_get(draw_curves_data, handles_positions_right_buf)[point_index] : 1.0f;
+      const float weight = point_weight * control_weight;
+
+      output_weighted_add(evaluated_point_index, weight, input_loadTfloat4(point_index));
+      total_weight += weight;
+    }
+
+    output_mulTfloat4(evaluated_point_index, safe_rcp(total_weight));
+  }
+
+  if (is_curve_cyclic) {
+
+    output_write(_last(evaluated_points_padded),
+                 output_loadTfloat4(_first(evaluated_points_padded)));
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 483
+}
+#line 493
+void evaluate_curveTInterpPosition()
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 505
+  COMPUTE_SHADER_CREATE_INFO(draw_curves_interpolate_position)
+
+  if (gl_GlobalInvocationID.x >= uint(push_constant_get(draw_curves_data, curves_count))) {
+    return;
+  }
+  int curve_index = int(gl_GlobalInvocationID.x) + push_constant_get(draw_curves_data, curves_start);
+
+  const CurveType curve_type = CurveType(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_type_buf), curve_index));
+  if (curve_type != CurveType(push_constant_get(draw_curves_data, evaluated_type))) {
+    return;
+  }
+  IndexRange points = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, points_by_curve_buf), curve_index);
+  IndexRange evaluated_points = offset_indices_load_range_from_buffer(
+      buffer_get(draw_curves_data,
+                                                         evaluated_points_by_curve_buf), curve_index);
+
+  if (push_constant_get(draw_curves_data, use_cyclic)) {
+    evaluated_points = _ctor(IndexRange) _start(evaluated_points) + curve_index,
+                                  _size(evaluated_points) + 1 _rotc() ;
+  }
+
+  if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_CATMULL_ROM) {
+    catmull_rom_evaluate_curveTInterpPosition(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_BEZIER) {
+    bezier_evaluate_curveTInterpPosition(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_NURBS) {
+    nurbs_evaluate_curveTInterpPosition(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_POLY) {
+
+    copy_curve_dataTInterpPosition(points, evaluated_points, curve_index);
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 538
+}
+#line 493
+void evaluate_curveTfloat()
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 505
+  COMPUTE_SHADER_CREATE_INFO(draw_curves_interpolate_position)
+
+  if (gl_GlobalInvocationID.x >= uint(push_constant_get(draw_curves_data, curves_count))) {
+    return;
+  }
+  int curve_index = int(gl_GlobalInvocationID.x) + push_constant_get(draw_curves_data, curves_start);
+
+  const CurveType curve_type = CurveType(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_type_buf), curve_index));
+  if (curve_type != CurveType(push_constant_get(draw_curves_data, evaluated_type))) {
+    return;
+  }
+  IndexRange points = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, points_by_curve_buf), curve_index);
+  IndexRange evaluated_points = offset_indices_load_range_from_buffer(
+      buffer_get(draw_curves_data,
+                                                         evaluated_points_by_curve_buf), curve_index);
+
+  if (push_constant_get(draw_curves_data, use_cyclic)) {
+    evaluated_points = _ctor(IndexRange) _start(evaluated_points) + curve_index,
+                                  _size(evaluated_points) + 1 _rotc() ;
+  }
+
+  if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_CATMULL_ROM) {
+    catmull_rom_evaluate_curveTfloat(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_BEZIER) {
+    bezier_evaluate_curveTfloat(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_NURBS) {
+    nurbs_evaluate_curveTfloat(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_POLY) {
+
+    copy_curve_dataTfloat(points, evaluated_points, curve_index);
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 538
+}
+#line 493
+void evaluate_curveTfloat2()
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 505
+  COMPUTE_SHADER_CREATE_INFO(draw_curves_interpolate_position)
+
+  if (gl_GlobalInvocationID.x >= uint(push_constant_get(draw_curves_data, curves_count))) {
+    return;
+  }
+  int curve_index = int(gl_GlobalInvocationID.x) + push_constant_get(draw_curves_data, curves_start);
+
+  const CurveType curve_type = CurveType(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_type_buf), curve_index));
+  if (curve_type != CurveType(push_constant_get(draw_curves_data, evaluated_type))) {
+    return;
+  }
+  IndexRange points = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, points_by_curve_buf), curve_index);
+  IndexRange evaluated_points = offset_indices_load_range_from_buffer(
+      buffer_get(draw_curves_data,
+                                                         evaluated_points_by_curve_buf), curve_index);
+
+  if (push_constant_get(draw_curves_data, use_cyclic)) {
+    evaluated_points = _ctor(IndexRange) _start(evaluated_points) + curve_index,
+                                  _size(evaluated_points) + 1 _rotc() ;
+  }
+
+  if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_CATMULL_ROM) {
+    catmull_rom_evaluate_curveTfloat2(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_BEZIER) {
+    bezier_evaluate_curveTfloat2(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_NURBS) {
+    nurbs_evaluate_curveTfloat2(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_POLY) {
+
+    copy_curve_dataTfloat2(points, evaluated_points, curve_index);
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 538
+}
+#line 493
+void evaluate_curveTfloat3()
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 505
+  COMPUTE_SHADER_CREATE_INFO(draw_curves_interpolate_position)
+
+  if (gl_GlobalInvocationID.x >= uint(push_constant_get(draw_curves_data, curves_count))) {
+    return;
+  }
+  int curve_index = int(gl_GlobalInvocationID.x) + push_constant_get(draw_curves_data, curves_start);
+
+  const CurveType curve_type = CurveType(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_type_buf), curve_index));
+  if (curve_type != CurveType(push_constant_get(draw_curves_data, evaluated_type))) {
+    return;
+  }
+  IndexRange points = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, points_by_curve_buf), curve_index);
+  IndexRange evaluated_points = offset_indices_load_range_from_buffer(
+      buffer_get(draw_curves_data,
+                                                         evaluated_points_by_curve_buf), curve_index);
+
+  if (push_constant_get(draw_curves_data, use_cyclic)) {
+    evaluated_points = _ctor(IndexRange) _start(evaluated_points) + curve_index,
+                                  _size(evaluated_points) + 1 _rotc() ;
+  }
+
+  if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_CATMULL_ROM) {
+    catmull_rom_evaluate_curveTfloat3(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_BEZIER) {
+    bezier_evaluate_curveTfloat3(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_NURBS) {
+    nurbs_evaluate_curveTfloat3(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_POLY) {
+
+    copy_curve_dataTfloat3(points, evaluated_points, curve_index);
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 538
+}
+#line 493
+void evaluate_curveTfloat4()
+{
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 495
+
+#if defined(CREATE_INFO_draw_curves_data)
+#line 505
+  COMPUTE_SHADER_CREATE_INFO(draw_curves_interpolate_position)
+
+  if (gl_GlobalInvocationID.x >= uint(push_constant_get(draw_curves_data, curves_count))) {
+    return;
+  }
+  int curve_index = int(gl_GlobalInvocationID.x) + push_constant_get(draw_curves_data, curves_start);
+
+  const CurveType curve_type = CurveType(gpu_attr_load_uchar(buffer_get(draw_curves_data, curves_type_buf), curve_index));
+  if (curve_type != CurveType(push_constant_get(draw_curves_data, evaluated_type))) {
+    return;
+  }
+  IndexRange points = offset_indices_load_range_from_buffer(buffer_get(draw_curves_data, points_by_curve_buf), curve_index);
+  IndexRange evaluated_points = offset_indices_load_range_from_buffer(
+      buffer_get(draw_curves_data,
+                                                         evaluated_points_by_curve_buf), curve_index);
+
+  if (push_constant_get(draw_curves_data, use_cyclic)) {
+    evaluated_points = _ctor(IndexRange) _start(evaluated_points) + curve_index,
+                                  _size(evaluated_points) + 1 _rotc() ;
+  }
+
+  if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_CATMULL_ROM) {
+    catmull_rom_evaluate_curveTfloat4(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_BEZIER) {
+    bezier_evaluate_curveTfloat4(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_NURBS) {
+    nurbs_evaluate_curveTfloat4(points, evaluated_points, curve_index);
+  }
+  else if (CurveType(push_constant_get(draw_curves_data, evaluated_type)) == CURVE_TYPE_POLY) {
+
+    copy_curve_dataTfloat4(points, evaluated_points, curve_index);
+  }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 538
+}
+#line 546
+void evaluate_position_radius()
+{
+  evaluate_curveTInterpPosition();
+}
+
+void evaluate_attribute_float()
+{
+  evaluate_curveTfloat();
+}
+
+void evaluate_attribute_float2()
+{
+  evaluate_curveTfloat2();
+}
+
+void evaluate_attribute_float3()
+{
+  evaluate_curveTfloat3();
+}
+
+void evaluate_attribute_float4()
+{
+  evaluate_curveTfloat4();
+}

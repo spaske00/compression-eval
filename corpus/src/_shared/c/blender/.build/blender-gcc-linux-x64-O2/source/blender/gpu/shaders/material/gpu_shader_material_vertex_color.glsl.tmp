@@ -1,0 +1,8 @@
+#line 1 "gpu_shader_material_vertex_color.glsl"
+ 
+#line 6
+void node_vertex_color(float4 vertexColor, _ref(float4 ,outColor), _ref(float ,outAlpha))
+{
+  outColor = vertexColor;
+  outAlpha = vertexColor.a;
+}

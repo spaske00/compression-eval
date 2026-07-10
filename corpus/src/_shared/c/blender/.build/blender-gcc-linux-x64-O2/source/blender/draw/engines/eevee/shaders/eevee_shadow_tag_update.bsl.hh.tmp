@@ -1,0 +1,185 @@
+#line 1 "eevee_shadow_tag_update.bsl.hh"
+ 
+#line 25
+#define access_eevee_shadow_TagUpdate_draw_view_culling() draw_view_culling
+#define access_eevee_shadow_TagUpdate_tilemap_count() tilemap_count
+#define access_eevee_shadow_TagUpdate_bounds_buf() bounds_buf
+#define access_eevee_shadow_TagUpdate_resource_ids_buf() resource_ids_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_TagUpdate
+CREATE_INFO_RES_PASS_eevee_shadow_TagUpdate
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_TagUpdate
+CREATE_INFO_RES_BATCH_eevee_shadow_TagUpdate
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_TagUpdate
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_TagUpdate
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TagUpdate
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TagUpdate
+#endif
+#line 25
+struct eevee_shadow_TagUpdate {
+#line 40
+int _pad;};
+#line 43
+#ifndef GPU_METAL
+eevee_shadow_TagUpdate eevee_shadow_TagUpdate_ctor_();
+eevee_shadow_TagUpdate eevee_shadow_TagUpdate_new_();
+#endif
+#line 25
+                                      eevee_shadow_TagUpdate eevee_shadow_TagUpdate_ctor_() {eevee_shadow_TagUpdate r;r._pad=0;return r;}
+#line 33
+       eevee_shadow_TagUpdate eevee_shadow_TagUpdate_new_()
+{
+  eevee_shadow_TagUpdate result;
+  result._pad = 0;
+  return result;
+#line 31
+}
+#line 34
+struct eevee_shadow_VertIn {
+                   float3 pos;
+};
+#line 34
+                                   eevee_shadow_VertIn eevee_shadow_VertIn_ctor_() {eevee_shadow_VertIn r;r.pos=float3(0);return r;}
+#line 38
+struct eevee_shadow_VertOut {
+           uint tilemap_index;
+};
+#line 38
+                                    eevee_shadow_VertOut eevee_shadow_VertOut_ctor_() {eevee_shadow_VertOut r;r.tilemap_index=0u;return r;}
+#line 42
+
+#if defined(CREATE_INFO_eevee_shadow_TagUpdate) && defined(CREATE_INFO_eevee_shadow_TileMaps)
+#line 42
+
+#if defined(ENTRY_POINT_eevee_shadow_tag_update_vert)
+#line 42
+
+void eevee_shadow_tag_update_vert(
+#line 48
+                                                      )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 49
+  eevee_shadow_TagUpdate srt = eevee_shadow_TagUpdate_ctor_(); eevee_shadow_TileMaps tilemaps = eevee_shadow_TileMaps_ctor_();
+  eevee_shadow_VertOut_tilemap_index = uint(gl_InstanceID) % uint(srt_access(eevee_shadow_TagUpdate, tilemap_count));
+  const uint inst_id = uint(gl_InstanceID) / uint(srt_access(eevee_shadow_TagUpdate, tilemap_count));
+  const uint resource_id = srt_access(eevee_shadow_TagUpdate, resource_ids_buf)[inst_id] & 0x7FFFFFFFu;
+
+  ObjectBounds bounds = srt_access(eevee_shadow_TagUpdate, bounds_buf)[resource_id];
+  if (!drw_bounds_are_valid(bounds)) {
+    gl_Position = float4(NAN_FLT);
+    return;
+  }
+
+  ShadowTileMapData tilemap = srt_access(eevee_shadow_TileMaps, tilemaps_buf)[eevee_shadow_VertOut_tilemap_index];
+
+  if (is_local_light(tilemap.light_type)) {
+#line 65
+    float vs_center_z = transform_point(tilemap.viewmat, bounds.bounding_sphere.xyz).z;
+    if (vs_center_z + bounds.bounding_sphere.w < -tilemap.clip_far) {
+      gl_Position = float4(NAN_FLT);
+      return;
+    }
+  }
+
+  const float3 ls_N = pos;
+
+  const float3 ls_P = max(float3(0), pos);
+
+  const float3 P = ls_P.x * bounds.bounding_corners[1].xyz +
+                   ls_P.y * bounds.bounding_corners[2].xyz +
+                   ls_P.z * bounds.bounding_corners[3].xyz + bounds.bounding_corners[0].xyz;
+#line 82
+  const float3 N = ls_N.x * normalize(float3(bounds.bounding_corners[1].xyz)) +
+                   ls_N.y * normalize(float3(bounds.bounding_corners[2].xyz)) +
+                   ls_N.z * normalize(float3(bounds.bounding_corners[3].xyz));
+
+  const float3 vs_P = transform_point(tilemap.viewmat, P);
+  const float3 vs_N = transform_direction(tilemap.viewmat, N);
+#line 91
+  const float2 expand_dir = vs_N.xy;
+
+  gl_Position = tilemap.winmat * float4(vs_P, 1.0f);
+#line 96
+  const float ndc_pixel_size = 2.0f / float(SHADOW_TILEMAP_RES);
+  gl_Position.xy += sign(expand_dir) * (ndc_pixel_size * gl_Position.w);
+#line 101
+  gl_Position.z *= 1e-5f;
+
+#endif
+#line 102
+}
+#endif
+#endif
+#line 104
+
+#if defined(CREATE_INFO_eevee_shadow_Tiles) && defined(CREATE_INFO_eevee_shadow_TileMaps)
+#line 104
+
+#if defined(ENTRY_POINT_eevee_shadow_tag_update_frag)
+#line 104
+
+void eevee_shadow_tag_update_frag(
+#line 108
+                                                             )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 109
+  eevee_shadow_Tiles tiles = eevee_shadow_Tiles_ctor_(); eevee_shadow_TileMaps tilemaps = eevee_shadow_TileMaps_ctor_();
+  ShadowTileMapData tilemap = srt_access(eevee_shadow_TileMaps, tilemaps_buf)[eevee_shadow_VertOut_tilemap_index];
+
+  uint2 texel = uint2(gl_FragCoord.xy);
+
+  int tile_index = shadow_tile_offset(texel, tilemap.tiles_index, 0);
+#line 117
+  atomicOr(srt_access(eevee_shadow_Tiles, tiles_buf)[tile_index], uint(SHADOW_TAG_UPDATE));
+
+#endif
+#line 118
+}
+#endif
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_Tiles) && defined(CREATE_INFO_eevee_shadow_TileMaps)
+#line 121
+
+#if defined(ENTRY_POINT_eevee_shadow_tag_propagate)
+#line 121
+
+void eevee_shadow_tag_propagate(
+
+                                                                 )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 125
+  eevee_shadow_Tiles tiles = eevee_shadow_Tiles_ctor_(); eevee_shadow_TileMaps tilemaps = eevee_shadow_TileMaps_ctor_();
+  ShadowTileMapData tilemap = srt_access(eevee_shadow_TileMaps, tilemaps_buf)[gl_GlobalInvocationID.z];
+
+  uint2 texel = uint2(gl_GlobalInvocationID.xy);
+  const int tile_index_lod0 = shadow_tile_offset(texel, tilemap.tiles_index, 0);
+  uint tile_data = srt_access(eevee_shadow_Tiles, tiles_buf)[tile_index_lod0];
+  bool do_update = (tile_data & uint(SHADOW_TAG_UPDATE)) != 0;
+  if (do_update) {
+
+    tile_data &= ~uint(SHADOW_TAG_UPDATE);
+
+    tile_data |= uint(SHADOW_DO_UPDATE);
+    srt_access(eevee_shadow_Tiles, tiles_buf)[tile_index_lod0] = tile_data;
+  }
+
+  if (do_update) {
+
+    for (int lod = 1; lod <= SHADOW_TILEMAP_LOD; lod++) {
+      int tile_index = shadow_tile_offset(texel >> lod, tilemap.tiles_index, lod);
+      atomicOr(srt_access(eevee_shadow_Tiles, tiles_buf)[tile_index], uint(SHADOW_DO_UPDATE));
+    }
+  }
+
+#endif
+#line 147
+}
+#endif
+#endif
+#line 153

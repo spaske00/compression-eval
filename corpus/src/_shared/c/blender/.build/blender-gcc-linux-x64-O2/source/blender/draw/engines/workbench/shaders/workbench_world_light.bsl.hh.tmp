@@ -1,0 +1,202 @@
+#line 1 "workbench_world_light.bsl.hh"
+ 
+#line 16
+float4 workbench_fast_rcp(float4 v)
+{
+  return intBitsToFloat(0x7eef370b - floatBitsToInt(v));
+}
+
+float3 workbench_brdf_approx(float3 spec_color, float roughness, float NV)
+{
+#line 25
+  float fresnel = exp2(-8.35f * NV) * (1.0f - roughness);
+  return mix(spec_color, float3(1.0f), fresnel);
+}
+#line 30
+float4 workbench_blinn_specular(float4 shininess, float4 spec_angle, float4 NL)
+{
+#line 34
+  float4 normalization_factor = shininess * 0.125f + 1.0f;
+  float4 spec_light = pow(spec_angle, shininess) * NL * normalization_factor;
+
+  return spec_light;
+}
+#line 41
+float4 workbench_wrapped_lighting(float4 NL, float4 w)
+{
+  float4 w_1 = w + 1.0f;
+  float4 denom = workbench_fast_rcp(w_1 * w_1);
+  return clamp((NL + w) * denom, 0.0f, 1.0f);
+}
+#line 49
+#if defined(CREATE_INFO_workbench_World)
+#line 48
+float3 workbench_get_world_lighting(const workbench_World  world,
+                          float3 base_color,
+                          float roughness,
+                          float metallic,
+                          float3 N,
+                          float3 I)
+{
+#line 57
+  float3 specular_color, diffuse_color;
+
+  if (srt_access(workbench_World, world_data).use_specular) {
+    diffuse_color = mix(base_color, float3(0.0f), metallic);
+    specular_color = mix(float3(0.05f), base_color, metallic);
+  }
+  else {
+    diffuse_color = base_color;
+    specular_color = float3(0.0f);
+  }
+
+  float3 specular_light = srt_access(workbench_World, world_data).ambient_color.rgb;
+  float3 diffuse_light = srt_access(workbench_World, world_data).ambient_color.rgb;
+  float4 wrap = float4(srt_access(workbench_World, world_data).lights[0].diffuse_color_wrap.a,
+                       srt_access(workbench_World, world_data).lights[1].diffuse_color_wrap.a,
+                       srt_access(workbench_World, world_data).lights[2].diffuse_color_wrap.a,
+                       srt_access(workbench_World, world_data).lights[3].diffuse_color_wrap.a);
+
+  if (srt_access(workbench_World, world_data).use_specular) {
+
+    float3 R = -reflect(I, N);
+
+    float4 spec_angle, spec_NL, wrapped_NL;
+#line 83
+{
+#line 80
+                                           {
+      float3 L = srt_access(workbench_World, world_data).lights[0].direction.xyz;
+      float3 half_dir = normalize(L + I);
+      wrapped_NL[0] = dot(L, R);
+      spec_angle[0] = saturate(dot(half_dir, N));
+      spec_NL[0] = saturate(dot(L, N));
+    }
+#line 80
+                                           {
+      float3 L = srt_access(workbench_World, world_data).lights[1].direction.xyz;
+      float3 half_dir = normalize(L + I);
+      wrapped_NL[1] = dot(L, R);
+      spec_angle[1] = saturate(dot(half_dir, N));
+      spec_NL[1] = saturate(dot(L, N));
+    }
+#line 80
+                                           {
+      float3 L = srt_access(workbench_World, world_data).lights[2].direction.xyz;
+      float3 half_dir = normalize(L + I);
+      wrapped_NL[2] = dot(L, R);
+      spec_angle[2] = saturate(dot(half_dir, N));
+      spec_NL[2] = saturate(dot(L, N));
+    }
+#line 80
+                                           {
+      float3 L = srt_access(workbench_World, world_data).lights[3].direction.xyz;
+      float3 half_dir = normalize(L + I);
+      wrapped_NL[3] = dot(L, R);
+      spec_angle[3] = saturate(dot(half_dir, N));
+      spec_NL[3] = saturate(dot(L, N));
+    }
+#line 86
+    }
+
+    float4 gloss = float4(1.0f - roughness);
+
+    gloss *= 1.0f - wrap;
+    float4 shininess = exp2(10.0f * gloss + 1.0f);
+
+    float4 spec_light = workbench_blinn_specular(shininess, spec_angle, spec_NL);
+#line 96
+    float4 w = mix(wrap, float4(1.0f), roughness);
+    float4 spec_env = workbench_wrapped_lighting(wrapped_NL, w);
+
+    spec_light = mix(spec_light, spec_env, wrap * wrap);
+#line 105
+{
+#line 102
+                                           {
+      specular_light += spec_light[0] * srt_access(workbench_World, world_data).lights[0].specular_color.rgb;
+    }
+#line 102
+                                           {
+      specular_light += spec_light[1] * srt_access(workbench_World, world_data).lights[1].specular_color.rgb;
+    }
+#line 102
+                                           {
+      specular_light += spec_light[2] * srt_access(workbench_World, world_data).lights[2].specular_color.rgb;
+    }
+#line 102
+                                           {
+      specular_light += spec_light[3] * srt_access(workbench_World, world_data).lights[3].specular_color.rgb;
+    }
+#line 104
+    }
+
+    float NV = saturate(dot(N, I));
+    specular_color = workbench_brdf_approx(specular_color, roughness, NV);
+  }
+  specular_light *= specular_color;
+#line 112
+  float4 diff_NL;
+#line 116
+{
+#line 113
+                                         {
+    diff_NL[0] = dot(srt_access(workbench_World, world_data).lights[0].direction.xyz, N);
+  }
+#line 113
+                                         {
+    diff_NL[1] = dot(srt_access(workbench_World, world_data).lights[1].direction.xyz, N);
+  }
+#line 113
+                                         {
+    diff_NL[2] = dot(srt_access(workbench_World, world_data).lights[2].direction.xyz, N);
+  }
+#line 113
+                                         {
+    diff_NL[3] = dot(srt_access(workbench_World, world_data).lights[3].direction.xyz, N);
+  }
+#line 115
+  }
+
+  float4 diff_light = workbench_wrapped_lighting(diff_NL, wrap);
+#line 125
+{
+#line 120
+                                         {
+    diffuse_light += diff_light[0] * srt_access(workbench_World, world_data).lights[0].diffuse_color_wrap.rgb;
+  }
+#line 120
+                                         {
+    diffuse_light += diff_light[1] * srt_access(workbench_World, world_data).lights[1].diffuse_color_wrap.rgb;
+  }
+#line 120
+                                         {
+    diffuse_light += diff_light[2] * srt_access(workbench_World, world_data).lights[2].diffuse_color_wrap.rgb;
+  }
+#line 120
+                                         {
+    diffuse_light += diff_light[3] * srt_access(workbench_World, world_data).lights[3].diffuse_color_wrap.rgb;
+  }
+#line 122
+  }
+#line 126
+  float spec_energy = dot(specular_color, float3(0.33333f));
+
+  diffuse_light *= diffuse_color * (1.0f - spec_energy);
+
+  return diffuse_light + specular_light;
+}
+#endif
+
+#if defined(CREATE_INFO_workbench_World)
+#line 133
+float workbench_get_shadow(const workbench_World  world, float3 N, bool force_shadow)
+{
+#line 137
+  float light_factor = -dot(N, srt_access(workbench_World, world_data).shadow_direction_vs.xyz);
+  float shadow_mix = smoothstep(srt_access(workbench_World, world_data).shadow_shift, srt_access(workbench_World, world_data).shadow_focus, light_factor);
+  shadow_mix *= force_shadow ? 0.0f : srt_access(workbench_World, world_data).shadow_mul;
+  return shadow_mix + srt_access(workbench_World, world_data).shadow_add;
+}
+#endif
+#line 144

@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_compositor_ocio_processor_lib.glsl"
+ 
+#line 11
+float4 OCIOMain(float4 inPixel)
+{
+  return inPixel;
+}

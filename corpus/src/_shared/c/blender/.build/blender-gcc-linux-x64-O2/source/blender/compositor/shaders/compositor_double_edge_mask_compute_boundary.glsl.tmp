@@ -1,0 +1,47 @@
+#line 1 "compositor_double_edge_mask_compute_boundary.glsl"
+ 
+#line 16
+COMPUTE_SHADER_CREATE_INFO(compositor_double_edge_mask_compute_boundary)
+#line 21
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 26
+  bool has_inner_non_masked_neighbors = false;
+  bool has_outer_non_masked_neighbors = false;
+  for (int j = -1; j <= 1; j++) {
+    for (int i = -1; i <= 1; i++) {
+      int2 offset = int2(i, j);
+#line 33
+      if (all(equal(offset, int2(0)))) {
+        continue;
+      }
+
+      if (texture_load(inner_mask_tx, texel + offset).x == 0.0f) {
+        has_inner_non_masked_neighbors = true;
+      }
+#line 44
+      float4 boundary_fallback = include_edges_of_image ? float4(0.0f) : float4(1.0f);
+      if (texture_load(outer_mask_tx, texel + offset, boundary_fallback).x == 0.0f) {
+        has_outer_non_masked_neighbors = true;
+      }
+#line 50
+      if (has_inner_non_masked_neighbors && has_outer_non_masked_neighbors) {
+        break;
+      }
+    }
+  }
+
+  bool is_inner_masked = texture_load(inner_mask_tx, texel).x > 0.0f;
+  bool is_outer_masked = texture_load(outer_mask_tx, texel).x > 0.0f;
+#line 63
+  bool is_inner_boundary = is_inner_masked && has_inner_non_masked_neighbors &&
+                           (is_outer_masked || include_all_inner_edges);
+  bool is_outer_boundary = is_outer_masked && !is_inner_masked && has_outer_non_masked_neighbors;
+#line 68
+  int2 inner_jump_flooding_value = initialize_jump_flooding_value(texel, is_inner_boundary);
+  int2 outer_jump_flooding_value = initialize_jump_flooding_value(texel, is_outer_boundary);
+
+  imageStore(inner_boundary_img, texel, int4(inner_jump_flooding_value, int2(0)));
+  imageStore(outer_boundary_img, texel, int4(outer_jump_flooding_value, int2(0)));
+}

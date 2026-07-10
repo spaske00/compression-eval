@@ -1,0 +1,88 @@
+{
+    "classes": [
+        {
+            "className": "FileSystemModel",
+            "lineNumber": 18,
+            "object": true,
+            "qualifiedClassName": "Utils::FileSystemModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newPath",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "rootPathChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "directoryLoaded",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "directoryLoadFailed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "fetching",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "fetchingChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractItemModel"
+                }
+            ]
+        },
+        {
+            "className": "FileSystemProxyModel",
+            "lineNumber": 77,
+            "object": true,
+            "qualifiedClassName": "Utils::FileSystemProxyModel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QSortFilterProxyModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filesystemmodel.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,11 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_Sampling)
+.storage_buf(SAMPLING_BUF_SLOT, Qualifier::read, "SamplingData", "sampling_buf", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

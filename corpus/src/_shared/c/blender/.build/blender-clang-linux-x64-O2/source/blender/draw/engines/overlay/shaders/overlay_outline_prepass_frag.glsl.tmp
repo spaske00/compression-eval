@@ -1,0 +1,9 @@
+#line 1 "overlay_outline_prepass_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(overlay_outline_prepass)
+
+void main()
+{
+  out_object_id = interp.ob_id;
+}

@@ -1,0 +1,27 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_sphere_Cull)
+PUSH_CONSTANT(int, lightprobe_sphere_count)
+.storage_buf(0, Qualifier::read_write, "SphereProbeData", "lightprobe_sphere_buf[SPHERE_PROBE_MAX]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_sphere_cull_infos_)
+LOCAL_GROUP_SIZE(SPHERE_PROBE_SELECT_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lightprobe_sphere_Cull)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_LightprobeVolumeRenderData)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_sphere_select)
+COMPUTE_SOURCE("eevee_lightprobe_sphere_culling.bsl.hh")
+COMPUTE_FUNCTION("eevee_lightprobe_sphere_cull")
+ADDITIONAL_INFO(eevee_lightprobe_sphere_cull_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

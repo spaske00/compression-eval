@@ -1,0 +1,48 @@
+{
+    "classes": [
+        {
+            "className": "GroupedView",
+            "lineNumber": 157,
+            "object": true,
+            "qualifiedClassName": "Utils::GroupedView",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "oldRow",
+                            "type": "int"
+                        },
+                        {
+                            "name": "newRow",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "currentRowChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "currentRemoved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "currentCloned",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "groupedmodel.h",
+    "outputRevision": 68
+}

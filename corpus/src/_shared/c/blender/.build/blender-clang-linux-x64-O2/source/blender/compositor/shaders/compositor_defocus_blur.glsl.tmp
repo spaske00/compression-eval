@@ -1,0 +1,41 @@
+#line 1 "compositor_defocus_blur.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_defocus_blur)
+#line 24
+float4 load_weight(int2 texel, float radius)
+{
+#line 31
+  return texture(weights_tx,
+                 1.0f - ((float2(texel) + float2(radius + 0.5f)) / (radius * 2.0f + 1.0f)));
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float center_radius = max(0.0f, texture_load(radius_tx, texel).x);
+#line 45
+  float4 accumulated_color = float4(0.0f);
+  float4 accumulated_weight = float4(0.0f);
+  for (int y = -search_radius; y <= search_radius; y++) {
+    for (int x = -search_radius; x <= search_radius; x++) {
+      float candidate_radius = max(0.0f, texture_load(radius_tx, texel + int2(x, y)).x);
+#line 54
+      float radius = min(center_radius, candidate_radius);
+      if (max(abs(x), abs(y)) > radius) {
+        continue;
+      }
+
+      float4 weight = load_weight(int2(x, y), radius);
+      float4 input_color = texture_load(input_tx, texel + int2(x, y));
+
+      accumulated_color += input_color * weight;
+      accumulated_weight += weight;
+    }
+  }
+
+  accumulated_color = safe_divide(accumulated_color, accumulated_weight);
+
+  imageStore(output_img, texel, accumulated_color);
+}

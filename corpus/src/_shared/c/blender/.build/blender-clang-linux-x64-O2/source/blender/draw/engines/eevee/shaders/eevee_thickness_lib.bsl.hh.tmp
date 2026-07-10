@@ -1,0 +1,88 @@
+#line 1 "eevee_thickness_lib.bsl.hh"
+ 
+#line 9
+constant static constexpr bool ThicknessMode_Slab = false;
+#line 9
+constant static constexpr bool ThicknessMode_Sphere = true;
+
+#define ThicknessMode bool
+#line 9
+
+ThicknessMode ThicknessMode_ctor_() { return ThicknessMode(0); }
+struct ThicknessIsect {
+
+  float3 hit_N;
+
+  float3 hit_P;
+};
+#line 11
+                              ThicknessIsect ThicknessIsect_ctor_() {ThicknessIsect r;r.hit_N=float3(0);r.hit_P=float3(0);return r;}
+#line 20
+struct Thickness {
+  float data;
+#line 86
+};
+
+#ifndef GPU_METAL
+Thickness Thickness_ctor_();
+Thickness Thickness_from(float value, ThicknessMode mode);
+Thickness Thickness_zero();
+float _value(const Thickness this_);
+ThicknessMode _mode(const Thickness this_);
+ThicknessIsect _shape_intersect(_ref(Thickness ,this_), float3 N, float3 L);
+ThicknessIsect _sphere_intersect(_ref(Thickness ,this_), float diameter, float3 N, float3 L);
+ThicknessIsect _plane_intersect(_ref(Thickness ,this_), float plane_distance, float3 N, float3 L);
+#endif
+#line 20
+                         Thickness Thickness_ctor_() {Thickness r;r.data=0.0f;return r;}
+#line 24
+         Thickness Thickness_from(float value, ThicknessMode mode)
+  {
+    Thickness thickness;
+    thickness.data = (mode == ThicknessMode_Sphere) ? value : -value;
+    return thickness;
+  }
+#line 31
+         Thickness Thickness_zero()
+  {
+    Thickness thickness;
+    thickness.data = 0.0f;
+    return thickness;
+  }
+#line 38
+  float _value(const Thickness this_)
+  {
+    return abs(this_.data);
+  }
+#line 43
+  ThicknessMode _mode(const Thickness this_)
+  {
+    return this_.data > 0.0 ? ThicknessMode_Sphere : ThicknessMode_Slab;
+  }
+#line 48
+  ThicknessIsect _shape_intersect(_ref(Thickness ,this_), float3 N, float3 L)
+  {
+    if (_mode(this_) == ThicknessMode_Sphere) {
+      return _sphere_intersect(this_, _value(this_), N, L);
+    }
+    return _plane_intersect(this_, _value(this_), N, L);
+  }
+#line 63
+  ThicknessIsect _sphere_intersect(_ref(Thickness ,this_), float diameter, float3 N, float3 L)
+  {
+    ThicknessIsect isect;
+    float cos_alpha = dot(L, -N);
+    isect.hit_N = normalize(N + L * (cos_alpha * 2.0f));
+    isect.hit_P = L * (cos_alpha * diameter);
+    return isect;
+  }
+#line 78
+  ThicknessIsect _plane_intersect(_ref(Thickness ,this_), float plane_distance, float3 N, float3 L)
+  {
+    ThicknessIsect isect;
+    float distance_from_shading_plane = dot(L, -N);
+    isect.hit_N = -N;
+    isect.hit_P = L * (plane_distance / distance_from_shading_plane);
+    return isect;
+  }
+#line 87

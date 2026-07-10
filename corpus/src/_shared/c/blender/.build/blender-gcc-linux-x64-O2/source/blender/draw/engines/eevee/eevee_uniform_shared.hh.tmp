@@ -1,0 +1,126 @@
+#line 1 "eevee_uniform_shared.hh"
+ 
+#line 27
+constant static constexpr uint32_t LIGHT_DIFFUSE = 0u;
+constant static constexpr uint32_t LIGHT_SPECULAR = 1u;
+constant static constexpr uint32_t LIGHT_TRANSMISSION = 2u;
+constant static constexpr uint32_t LIGHT_VOLUME = 3u;
+#line 33
+constant static constexpr uint32_t LIGHT_TRANSLUCENT_WITH_THICKNESS = 4u;
+
+#define LightingType uint32_t
+#line 26
+
+#define LightingType_host_shared_ LightingType
+#line 26
+
+LightingType LightingType_ctor_() { return LightingType(0); }
+#line 37
+#define ShadowSceneData_host_shared_ ShadowSceneData
+#define ShadowSceneData_host_shared_uniform_ ShadowSceneData
+#line 36
+struct                 ShadowSceneData {
+
+  int ray_count;
+
+  int step_count;
+
+  float film_pixel_radius;
+
+  bool32_t use_jitter;
+
+  bool32_t use_debug_cost;
+  int _pad0;
+  int _pad1;
+  int _pad2;
+};
+#line 36
+                                               ShadowSceneData ShadowSceneData_ctor_() {ShadowSceneData r;r.ray_count=0;r.step_count=0;r.film_pixel_radius=0.0f;r.use_jitter=bool32_t(0);r.use_debug_cost=bool32_t(0);r._pad0=0;r._pad1=0;r._pad2=0;return r;}
+#line 53
+#define SceneData_host_shared_ SceneData
+#define SceneData_host_shared_uniform_ SceneData
+#line 52
+struct                 SceneData {
+  float time;
+  float frame;
+  uint _pad0;
+  uint _pad1;
+};
+#line 52
+                                         SceneData SceneData_ctor_() {SceneData r;r.time=0.0f;r.frame=0.0f;r._pad0=0u;r._pad1=0u;return r;}
+#line 61
+#define ClampData_host_shared_ ClampData
+#define ClampData_host_shared_uniform_ ClampData
+#line 60
+struct                 ClampData {
+  float sun_threshold;
+  float surface_direct;
+  float surface_indirect;
+  float volume_direct;
+  float volume_indirect;
+  float direct_scale;
+  float indirect_scale;
+  int _pad0;
+};
+#line 60
+                                         ClampData ClampData_ctor_() {ClampData r;r.sun_threshold=0.0f;r.surface_direct=0.0f;r.surface_indirect=0.0f;r.volume_direct=0.0f;r.volume_indirect=0.0f;r.direct_scale=0.0f;r.indirect_scale=0.0f;r._pad0=0;return r;}
+#line 73
+constant static constexpr uint32_t RAY_TYPE_CAMERA = 0u;
+constant static constexpr uint32_t RAY_TYPE_SHADOW = RAY_TYPE_CAMERA + 1u;
+constant static constexpr uint32_t RAY_TYPE_DIFFUSE = RAY_TYPE_SHADOW + 1u;
+constant static constexpr uint32_t RAY_TYPE_GLOSSY = RAY_TYPE_DIFFUSE + 1u;
+
+#define RayPipelineType uint32_t
+#line 72
+
+#define RayPipelineType_host_shared_ RayPipelineType
+#line 72
+
+RayPipelineType RayPipelineType_ctor_() { return RayPipelineType(0); }
+#line 80
+#define PipelineInfoData_host_shared_ PipelineInfoData
+#define PipelineInfoData_host_shared_uniform_ PipelineInfoData
+#line 79
+struct                 PipelineInfoData {
+  float alpha_hash_scale;
+       RayPipelineType ray_type;
+#line 84
+  bool32_t is_main_view_inverted;
+#line 89
+  int gbuffer_additional_data_layer_id;
+
+  bool32_t use_monochromatic_transmittance;
+#line 94
+  bool32_t can_raycast;
+  bool32_t _pad1;
+  bool32_t _pad2;
+};
+#line 79
+                                                PipelineInfoData PipelineInfoData_ctor_() {PipelineInfoData r;r.alpha_hash_scale=0.0f;r.ray_type=RayPipelineType_ctor_();r.is_main_view_inverted=bool32_t(0);r.gbuffer_additional_data_layer_id=0;r.use_monochromatic_transmittance=bool32_t(0);r.can_raycast=bool32_t(0);r._pad1=bool32_t(0);r._pad2=bool32_t(0);return r;}
+#line 101
+#define UniformData_host_shared_ UniformData
+#define UniformData_host_shared_uniform_ UniformData
+#line 100
+struct                 UniformData {
+         AOData ao;
+         CameraData camera;
+         ClampData clamp;
+         FilmData film;
+         HiZData hiz;
+         RenderBuffersInfoData render_pass;
+         ShadowSceneData shadow;
+         VolumesInfoData volumes;
+         SceneData scene;
+};
+#line 100
+                                           UniformData UniformData_ctor_() {UniformData r;r.ao=AOData_ctor_();r.camera=CameraData_ctor_();r.clamp=ClampData_ctor_();r.film=FilmData_ctor_();r.hiz=HiZData_ctor_();r.render_pass=RenderBuffersInfoData_ctor_();r.shadow=ShadowSceneData_ctor_();r.volumes=VolumesInfoData_ctor_();r.scene=SceneData_ctor_();return r;}
+#line 116
+#define ClipPlaneData_host_shared_ ClipPlaneData
+#define ClipPlaneData_host_shared_uniform_ ClipPlaneData
+#line 115
+struct                 ClipPlaneData {
+  float4 plane;
+};
+#line 115
+                                             ClipPlaneData ClipPlaneData_ctor_() {ClipPlaneData r;r.plane=float4(0);return r;}
+#line 122

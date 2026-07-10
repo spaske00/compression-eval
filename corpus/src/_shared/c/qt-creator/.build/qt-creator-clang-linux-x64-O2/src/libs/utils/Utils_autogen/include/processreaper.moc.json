@@ -1,0 +1,38 @@
+{
+    "classes": [
+        {
+            "className": "Reaper",
+            "lineNumber": 90,
+            "object": true,
+            "qualifiedClassName": "Utils::ProcessReaper::Reaper",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "finished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "ProcessReaperPrivate",
+            "lineNumber": 157,
+            "object": true,
+            "qualifiedClassName": "Utils::ProcessReaper::ProcessReaperPrivate",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "processreaper.cpp",
+    "outputRevision": 68
+}

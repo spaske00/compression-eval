@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "GlobalFileChangeBlocker",
+            "lineNumber": 14,
+            "object": true,
+            "qualifiedClassName": "Utils::GlobalFileChangeBlocker",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "blocked",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "stateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "globalfilechangeblocker.h",
+    "outputRevision": 68
+}

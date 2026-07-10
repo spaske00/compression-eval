@@ -1,0 +1,12 @@
+#pragma once
+
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(compositor_nodetree)
+UNIFORM_BUF(0                           , NodeTree, node_tree)
+GPU_SHADER_CREATE_END()
+

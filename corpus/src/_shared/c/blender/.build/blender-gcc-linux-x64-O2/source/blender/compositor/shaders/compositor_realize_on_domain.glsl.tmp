@@ -1,0 +1,37 @@
+#line 1 "compositor_realize_on_domain.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_realize_on_domain_bicubic_float)
+#line 13
+void realize_on_domain()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+  const float2 coordinates = transform_point(to_float3x3(transformation), float2(texel));
+  imageStore(domain_img, texel, texture(input_tx, coordinates));
+}
+
+void realize_on_domain_float4x4()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+  const float2 coordinates = transform_point(to_float3x3(transformation), float2(texel));
+
+  for (int i = 0; i < 4; i++) {
+    imageStore(domain_img, int3(texel, i), texture(input_tx, float3(coordinates, float(i))));
+  }
+}
+
+void realize_on_domain_bicubic()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+  const float2 coordinates = transform_point(to_float3x3(transformation), float2(texel));
+  imageStore(domain_img, texel, texture_bicubic(input_tx, coordinates));
+}
+
+void realize_on_domain_anisotropic()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+  const float2 coordinates = transform_point(to_float3x3(transformation), float2(texel));
+  imageStore(domain_img,
+             texel,
+             textureGrad(input_tx, coordinates, transformation[0].xy, transformation[1].xy));
+}

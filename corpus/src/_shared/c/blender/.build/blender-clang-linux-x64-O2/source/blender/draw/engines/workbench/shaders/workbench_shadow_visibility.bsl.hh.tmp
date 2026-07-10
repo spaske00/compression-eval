@@ -1,0 +1,199 @@
+#line 1 "workbench_shadow_visibility.bsl.hh"
+ 
+#line 14
+SHADER_LIBRARY_CREATE_INFO(draw_view)
+SHADER_LIBRARY_CREATE_INFO(draw_view_culling)
+#line 22
+#define access_workbench_shadow_visibility_Resources_dynamic_pass_selection() dynamic_pass_selection
+#define access_workbench_shadow_visibility_Resources_draw_view() draw_view
+#define access_workbench_shadow_visibility_Resources_draw_view_culling() draw_view_culling
+#define access_workbench_shadow_visibility_Resources_resource_len() resource_len
+#define access_workbench_shadow_visibility_Resources_view_len() view_len
+#define access_workbench_shadow_visibility_Resources_force_fail_method() force_fail_method
+#define access_workbench_shadow_visibility_Resources_shadow_direction() shadow_direction
+#define access_workbench_shadow_visibility_Resources_extruded_frustum() extruded_frustum
+#define access_workbench_shadow_visibility_Resources_bounds_buf() bounds_buf
+#define access_workbench_shadow_visibility_Resources_visibility_buf() visibility_buf
+#define access_workbench_shadow_visibility_Resources_pass_visibility_buf() pass_visibility_buf
+#define access_workbench_shadow_visibility_Resources_fail_visibility_buf() fail_visibility_buf
+#ifdef CREATE_INFO_RES_PASS_workbench_shadow_visibility_Resources
+CREATE_INFO_RES_PASS_workbench_shadow_visibility_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_shadow_visibility_Resources
+CREATE_INFO_RES_BATCH_workbench_shadow_visibility_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_shadow_visibility_Resources
+CREATE_INFO_RES_GEOMETRY_workbench_shadow_visibility_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_shadow_visibility_Resources
+CREATE_INFO_RES_SHARED_VARS_workbench_shadow_visibility_Resources
+#endif
+#line 22
+struct workbench_shadow_visibility_Resources {
+#line 114
+int _pad;};
+#line 117
+#ifndef GPU_METAL
+workbench_shadow_visibility_Resources workbench_shadow_visibility_Resources_ctor_();
+bool _is_visible(workbench_shadow_visibility_Resources  this_, IsectBox box);
+bool _intersects_near_plane(workbench_shadow_visibility_Resources  this_, IsectBox box);
+void _set_visibility(workbench_shadow_visibility_Resources  this_, bool pass, bool fail, uint instance_id);
+void _set_visibility(workbench_shadow_visibility_Resources  this_, bool visibility, uint instance_id);
+workbench_shadow_visibility_Resources workbench_shadow_visibility_Resources_new_();
+#endif
+#line 22
+                                                     workbench_shadow_visibility_Resources workbench_shadow_visibility_Resources_ctor_() {workbench_shadow_visibility_Resources r;r._pad=0;return r;}
+#line 42
+
+#if defined(CREATE_INFO_workbench_shadow_visibility_Resources)
+#line 42
+  bool _is_visible(workbench_shadow_visibility_Resources  this_, IsectBox box)
+  {
+    for (int i_plane = 0; i_plane < srt_access(workbench_shadow_visibility_Resources, extruded_frustum).planes_count; i_plane++) {
+      float4 plane = srt_access(workbench_shadow_visibility_Resources, extruded_frustum).planes[i_plane];
+      bool separating_axis = true;
+      for (int i_corner = 0; i_corner < 8; i_corner++) {
+        float signed_distance = dot(box.corners[i_corner], plane.xyz) - plane.w;
+        if (signed_distance <= 0) {
+          separating_axis = false;
+          break;
+        }
+      }
+      if (separating_axis) {
+        return false;
+      }
+    }
+    return true;
+  }
+#endif
+
+#if defined(CREATE_INFO_workbench_shadow_visibility_Resources)
+#line 61
+  bool _intersects_near_plane(workbench_shadow_visibility_Resources  this_, IsectBox box)
+  {
+    float4 near_plane = drw_view_culling().frustum_planes.planes[4];
+    bool on_positive_side = false;
+    bool on_negative_side = false;
+
+    for (int i_corner = 0; i_corner < 8; i_corner++) {
+      for (int i_displace = 0; i_displace < 2; i_displace++) {
+        float3 corner = box.corners[i_corner] + (srt_access(workbench_shadow_visibility_Resources, shadow_direction) * 1e5f * i_displace);
+        float signed_distance = dot(corner, -near_plane.xyz) - near_plane.w;
+        if (signed_distance <= 0) {
+          on_negative_side = true;
+        }
+        else {
+          on_positive_side = true;
+        }
+        if (on_negative_side && on_positive_side) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+#endif
+
+#if defined(CREATE_INFO_workbench_shadow_visibility_Resources)
+#line 86
+  void _set_visibility(workbench_shadow_visibility_Resources  this_, bool pass, bool fail, uint instance_id)
+  {
+
+#if SRT_CONSTANT_dynamic_pass_selection
+#line 88
+                                                                                                     {
+      if (!pass) {
+        atomicAnd(pass_visibility_buf[instance_id / 32u], ~(1u << (instance_id & 31u)));
+      }
+      if (!fail) {
+        atomicAnd(fail_visibility_buf[instance_id / 32u], ~(1u << (instance_id & 31u)));
+      }
+    }
+
+#endif
+#line 96
+  }
+#endif
+
+#if defined(CREATE_INFO_workbench_shadow_visibility_Resources)
+#line 98
+  void _set_visibility(workbench_shadow_visibility_Resources  this_, bool visibility, uint instance_id)
+  {
+
+#if SRT_CONSTANT_dynamic_pass_selection == false
+#line 100
+                                                                                                              {
+      if (!visibility) {
+        atomicAnd(visibility_buf[instance_id / 32u], ~(1u << (instance_id & 31u)));
+      }
+    }
+
+#endif
+#line 105
+  }
+#endif
+       workbench_shadow_visibility_Resources workbench_shadow_visibility_Resources_new_()
+{
+  workbench_shadow_visibility_Resources result;
+  result._pad = 0;
+  return result;
+#line 105
+}
+#line 108
+
+#if defined(CREATE_INFO_workbench_shadow_visibility_Resources)
+#line 108
+
+#if defined(ENTRY_POINT_workbench_shadow_visibility_culling_main)
+#line 108
+
+void workbench_shadow_visibility_culling_main(
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 111
+  workbench_shadow_visibility_Resources srt = workbench_shadow_visibility_Resources_ctor_();
+  if (int(gl_GlobalInvocationID.x) >= srt_access(workbench_shadow_visibility_Resources, resource_len)) {
+    return;
+  }
+
+  ObjectBounds bounds = srt_access(workbench_shadow_visibility_Resources, bounds_buf)[gl_GlobalInvocationID.x];
+  if (!drw_bounds_are_valid(bounds)) {
+
+    return;
+  }
+  IsectBox box = isect_box_setup(bounds.bounding_corners[0].xyz,
+                                 bounds.bounding_corners[1].xyz,
+                                 bounds.bounding_corners[2].xyz,
+                                 bounds.bounding_corners[3].xyz);
+#line 127
+#if SRT_CONSTANT_dynamic_pass_selection
+#line 126
+                                                                                                   {
+    if (_is_visible(srt, box)) {
+      bool use_fail_pass = srt_access(workbench_shadow_visibility_Resources, force_fail_method) || _intersects_near_plane(srt, box);
+      _set_visibility(srt, !use_fail_pass, use_fail_pass, gl_GlobalInvocationID.x);
+    }
+    else {
+      _set_visibility(srt, false, false, gl_GlobalInvocationID.x);
+    }
+  }
+
+#else
+#line 135
+       {
+    _set_visibility(srt, _is_visible(srt, box), gl_GlobalInvocationID.x);
+  }
+#endif
+#endif
+#line 138
+}
+#endif
+#endif
+#line 140
+#ifndef GLSL_CPP_STUBS
+#line 143
+#endif
+
+

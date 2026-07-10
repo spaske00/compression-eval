@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "InfoBar",
+            "lineNumber": 119,
+            "object": true,
+            "qualifiedClassName": "Utils::InfoBar",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "infobar.h",
+    "outputRevision": 68
+}

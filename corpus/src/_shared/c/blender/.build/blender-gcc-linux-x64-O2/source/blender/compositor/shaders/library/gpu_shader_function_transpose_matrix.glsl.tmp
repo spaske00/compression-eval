@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_function_transpose_matrix.glsl"
+ 
+#line 6
+void node_function_transpose_matrix(const float4x4 matrix, _ref(float4x4 ,transposed_matrix))
+{
+  transposed_matrix = transpose(matrix);
+}

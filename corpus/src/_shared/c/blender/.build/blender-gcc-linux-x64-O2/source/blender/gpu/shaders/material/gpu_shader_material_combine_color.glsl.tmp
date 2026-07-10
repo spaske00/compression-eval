@@ -1,0 +1,17 @@
+#line 1 "gpu_shader_material_combine_color.glsl"
+ 
+#line 8
+void combine_color_rgb(float r, float g, float b, _ref(float4 ,col))
+{
+  col = float4(r, g, b, 1.0f);
+}
+#line 14
+void combine_color_hsv(float h, float s, float v, _ref(float4 ,col))
+{
+  hsv_to_rgb(float4(h, s, v, 1.0f), col);
+}
+#line 20
+void combine_color_hsl(float h, float s, float l, _ref(float4 ,col))
+{
+  hsl_to_rgb(float4(h, s, l, 1.0f), col);
+}

@@ -1,0 +1,157 @@
+#line 1 "eevee_bxdf_lut_lib.bsl.hh"
+ 
+#line 27
+struct eevee_lut_GGXBrdfData {
+  float scale;
+  float bias;
+  float metal_bias;
+#line 55
+};
+#line 65
+#ifndef GPU_METAL
+eevee_lut_GGXBrdfData eevee_lut_GGXBrdfData_ctor_();
+float4 _pack(const eevee_lut_GGXBrdfData this_);
+eevee_lut_GGXBrdfData eevee_lut_GGXBrdfData_unpack(float4 data);
+float2 eevee_lut_GGXBrdfData_lut_coords_get(float cos_theta, float roughness);
+eevee_lut_GGXBrdfData eevee_lut_GGXBrdfData_sample_utility_tx(const UtilityTexture  util_tx,
+                                       float cos_theta,
+                                       float roughness);
+#endif
+#line 27
+                                     eevee_lut_GGXBrdfData eevee_lut_GGXBrdfData_ctor_() {eevee_lut_GGXBrdfData r;r.scale=0.0f;r.bias=0.0f;r.metal_bias=0.0f;return r;}
+#line 32
+  float4 _pack(const eevee_lut_GGXBrdfData this_)
+  {
+    return float4(this_.scale, this_.bias, this_.metal_bias, 0.0f);
+  }
+#line 37
+         eevee_lut_GGXBrdfData eevee_lut_GGXBrdfData_unpack(float4 data)
+  {
+    {eevee_lut_GGXBrdfData _tmp ;                        _tmp.scale = data.x;  _tmp.bias = data.y;  _tmp.metal_bias = data.z;   return _tmp;};
+  }
+#line 42
+         float2 eevee_lut_GGXBrdfData_lut_coords_get(float cos_theta, float roughness)
+  {
+    return float2(roughness, sqrt(saturate(1.0f - cos_theta)));
+  }
+#line 47
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 47
+         eevee_lut_GGXBrdfData eevee_lut_GGXBrdfData_sample_utility_tx(const UtilityTexture  util_tx,
+                                       float cos_theta,
+                                       float roughness)
+  {
+    const float2 coords = eevee_lut_GGXBrdfData_lut_coords_get(cos_theta, roughness);
+    const float4 data = _sample_lut(util_tx, coords, UTIL_BRDF_LAYER);
+    return eevee_lut_GGXBrdfData_unpack(data);
+  }
+#endif
+#line 64
+struct eevee_lut_GGXBsdfData {
+  float scale;
+  float bias;
+  float transmission_factor;
+#line 104
+};
+#line 113
+#ifndef GPU_METAL
+eevee_lut_GGXBsdfData eevee_lut_GGXBsdfData_ctor_();
+float4 _pack(const eevee_lut_GGXBsdfData this_);
+eevee_lut_GGXBsdfData eevee_lut_GGXBsdfData_unpack(float4 data);
+float3 eevee_lut_GGXBsdfData_lut_coords_get(float cos_theta, float roughness, float ior);
+eevee_lut_GGXBsdfData eevee_lut_GGXBsdfData_sample_utility_tx(const UtilityTexture  util_tx,
+                                       float cos_theta,
+                                       float roughness,
+                                       float ior);
+#endif
+#line 64
+                                     eevee_lut_GGXBsdfData eevee_lut_GGXBsdfData_ctor_() {eevee_lut_GGXBsdfData r;r.scale=0.0f;r.bias=0.0f;r.transmission_factor=0.0f;return r;}
+#line 69
+  float4 _pack(const eevee_lut_GGXBsdfData this_)
+  {
+    return float4(this_.scale, this_.bias, this_.transmission_factor, 0.0f);
+  }
+#line 74
+         eevee_lut_GGXBsdfData eevee_lut_GGXBsdfData_unpack(float4 data)
+  {
+    {eevee_lut_GGXBsdfData _tmp ;                        _tmp.scale = data.x;  _tmp.bias = data.y;  _tmp.transmission_factor = data.z;   return _tmp;};
+  }
+#line 79
+         float3 eevee_lut_GGXBsdfData_lut_coords_get(float cos_theta, float roughness, float ior)
+  {
+
+    float critical_cos = sqrt(1.0f - ior * ior);
+
+    float3 coords;
+    coords.x = square(ior);
+    coords.y = cos_theta;
+    coords.y -= critical_cos;
+    coords.y /= (coords.y > 0.0f) ? (1.0f - critical_cos) : critical_cos;
+    coords.y = coords.y * 0.5f + 0.5f;
+    coords.z = roughness;
+
+    return saturate(coords);
+  }
+#line 95
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 95
+         eevee_lut_GGXBsdfData eevee_lut_GGXBsdfData_sample_utility_tx(const UtilityTexture  util_tx,
+                                       float cos_theta,
+                                       float roughness,
+                                       float ior)
+  {
+    const float3 coords = eevee_lut_GGXBsdfData_lut_coords_get(cos_theta, roughness, ior);
+    const float4 data = _sample_bsdf_lut(util_tx, coords.xy, coords.z);
+    return eevee_lut_GGXBsdfData_unpack(data);
+  }
+#endif
+#line 112
+struct eevee_lut_GGXBtdfGt1Data {
+  float transmission_factor;
+#line 139
+};
+#line 143
+#ifndef GPU_METAL
+eevee_lut_GGXBtdfGt1Data eevee_lut_GGXBtdfGt1Data_ctor_();
+float4 _pack(const eevee_lut_GGXBtdfGt1Data this_);
+eevee_lut_GGXBtdfGt1Data eevee_lut_GGXBtdfGt1Data_unpack(float4 data);
+float3 eevee_lut_GGXBtdfGt1Data_lut_coords_get(float cos_theta, float roughness, float f0);
+eevee_lut_GGXBtdfGt1Data eevee_lut_GGXBtdfGt1Data_sample_utility_tx(const UtilityTexture  util_tx,
+                                          float cos_theta,
+                                          float roughness,
+                                          float f0);
+#endif
+#line 112
+                                        eevee_lut_GGXBtdfGt1Data eevee_lut_GGXBtdfGt1Data_ctor_() {eevee_lut_GGXBtdfGt1Data r;r.transmission_factor=0.0f;return r;}
+#line 115
+  float4 _pack(const eevee_lut_GGXBtdfGt1Data this_)
+  {
+    return float4(this_.transmission_factor, 0.0f, 0.0f, 0.0f);
+  }
+#line 120
+         eevee_lut_GGXBtdfGt1Data eevee_lut_GGXBtdfGt1Data_unpack(float4 data)
+  {
+    {eevee_lut_GGXBtdfGt1Data _tmp ;                           _tmp.transmission_factor = data.w;   return _tmp;};
+  }
+#line 125
+         float3 eevee_lut_GGXBtdfGt1Data_lut_coords_get(float cos_theta, float roughness, float f0)
+  {
+    return float3(sqrt(f0), sqrt(1.0f - cos_theta), roughness);
+  }
+#line 130
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 130
+         eevee_lut_GGXBtdfGt1Data eevee_lut_GGXBtdfGt1Data_sample_utility_tx(const UtilityTexture  util_tx,
+                                          float cos_theta,
+                                          float roughness,
+                                          float f0)
+  {
+    const float3 coords = eevee_lut_GGXBtdfGt1Data_lut_coords_get(cos_theta, roughness, f0);
+    const float4 data = _sample_bsdf_lut(util_tx, coords.xy, coords.z);
+    return eevee_lut_GGXBtdfGt1Data_unpack(data);
+  }
+#endif
+#line 142

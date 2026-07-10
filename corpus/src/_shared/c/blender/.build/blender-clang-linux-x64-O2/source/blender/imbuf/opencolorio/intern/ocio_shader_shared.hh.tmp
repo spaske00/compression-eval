@@ -1,0 +1,39 @@
+#line 1 "ocio_shader_shared.hh"
+ 
+#line 9
+struct OCIO_GPUCurveMappingParameters {
+#line 15
+  float4 mintable;
+  float4 range;
+  float4 ext_in_x;
+  float4 ext_in_y;
+  float4 ext_out_x;
+  float4 ext_out_y;
+  float4 first_x;
+  float4 first_y;
+  float4 last_x;
+  float4 last_y;
+  float4 black;
+  float4 bwmul;
+  int lut_size;
+  int use_extend_extrapolate;
+  int _pad0;
+  int _pad1;
+};
+#line 9
+                                              OCIO_GPUCurveMappingParameters OCIO_GPUCurveMappingParameters_ctor_() {OCIO_GPUCurveMappingParameters r;r.mintable=float4(0);r.range=float4(0);r.ext_in_x=float4(0);r.ext_in_y=float4(0);r.ext_out_x=float4(0);r.ext_out_y=float4(0);r.first_x=float4(0);r.first_y=float4(0);r.last_x=float4(0);r.last_y=float4(0);r.black=float4(0);r.bwmul=float4(0);r.lut_size=0;r.use_extend_extrapolate=0;r._pad0=0;r._pad1=0;return r;}
+#line 33
+struct OCIO_GPUParameters {
+  float dither;
+  float exponent;
+  float opacity;
+  bool32_t use_predivide;
+  bool32_t do_overlay_merge;
+  bool32_t use_hdr_display;
+  int _pad0;
+  int _pad1;
+  float4x4 scene_linear_matrix;
+};
+#line 33
+                                  OCIO_GPUParameters OCIO_GPUParameters_ctor_() {OCIO_GPUParameters r;r.dither=0.0f;r.exponent=0.0f;r.opacity=0.0f;r.use_predivide=bool32_t(0);r.do_overlay_merge=bool32_t(0);r.use_hdr_display=bool32_t(0);r._pad0=0;r._pad1=0;r.scene_linear_matrix=float4x4(0);return r;}
+#line 44

@@ -1,0 +1,9 @@
+#line 1 "gpu_shader_function_transform_direction.glsl"
+ 
+#line 8
+void node_function_transform_direction(const float3 direction,
+                                       const float4x4 transform,
+                                       _ref(float3 ,transformed_direction))
+{
+  transformed_direction = transform_direction(transform, direction);
+}

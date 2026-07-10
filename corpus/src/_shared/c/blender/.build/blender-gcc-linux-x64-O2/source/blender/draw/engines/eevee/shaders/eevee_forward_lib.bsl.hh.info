@@ -1,0 +1,10 @@
+#pragma once
+
+
+#  define MAT_REFLECTION
+#  define CLOSURE_BIN_COUNT SRT_CONSTANT_light_closure_eval_count
+
+
+
+
+

@@ -1,0 +1,34 @@
+{
+    "classes": [
+        {
+            "className": "AppMainWindow",
+            "lineNumber": 12,
+            "object": true,
+            "qualifiedClassName": "Utils::AppMainWindow",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "deviceChange",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "raiseWindow",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QMainWindow"
+                }
+            ]
+        }
+    ],
+    "inputFile": "appmainwindow.h",
+    "outputRevision": 68
+}

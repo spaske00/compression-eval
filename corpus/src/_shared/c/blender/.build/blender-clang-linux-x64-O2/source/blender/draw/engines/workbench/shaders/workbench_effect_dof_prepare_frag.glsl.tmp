@@ -1,0 +1,40 @@
+#line 1 "workbench_effect_dof_prepare_frag.glsl"
+ 
+#line 19
+FRAGMENT_SHADER_CREATE_INFO(workbench_effect_dof_prepare)
+#line 26
+void main()
+{
+  int4 texel = int4(gl_FragCoord.xyxy) * 2 + int4(0, 0, 1, 1);
+
+  float4 color1 = texelFetch(scene_color_tx, texel.xy, 0);
+  float4 color2 = texelFetch(scene_color_tx, texel.zw, 0);
+  float4 color3 = texelFetch(scene_color_tx, texel.zy, 0);
+  float4 color4 = texelFetch(scene_color_tx, texel.xw, 0);
+
+  float4 depths;
+  depths.x = texelFetch(scene_depth_tx, texel.xy, 0).x;
+  depths.y = texelFetch(scene_depth_tx, texel.zw, 0).x;
+  depths.z = texelFetch(scene_depth_tx, texel.zy, 0).x;
+  depths.w = texelFetch(scene_depth_tx, texel.xw, 0).x;
+
+  float4 zdepths = float4(drw_depth_screen_to_view(depths.x),
+                          drw_depth_screen_to_view(depths.y),
+                          drw_depth_screen_to_view(depths.z),
+                          drw_depth_screen_to_view(depths.w));
+  float4 cocs_near = dof_calculate_coc(zdepths);
+  float4 cocs_far = -cocs_near;
+
+  float coc_near = max(reduce_max(cocs_near), 0.0f);
+  float coc_far = max(reduce_max(cocs_far), 0.0f);
+#line 53
+  float4 near_weights = step(0.0f, cocs_near) *
+                        clamp(1.0f - abs(coc_near - cocs_near), 0.0f, 1.0f);
+  float4 far_weights = step(0.0f, cocs_far) * clamp(1.0f - abs(coc_far - cocs_far), 0.0f, 1.0f);
+#line 59
+  float4 w = any(notEqual(far_weights, float4(0.0f))) ? far_weights : near_weights;
+  halfResColor = weighted_sum(color1, color2, color3, color4, w);
+  halfResColor = clamp(halfResColor, 0.0f, 3.0f);
+
+  normalizedCoc = dof_encode_coc(coc_near, coc_far);
+}

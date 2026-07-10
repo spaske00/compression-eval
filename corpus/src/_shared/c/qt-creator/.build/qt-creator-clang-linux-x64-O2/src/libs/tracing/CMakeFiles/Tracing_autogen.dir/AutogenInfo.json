@@ -1,0 +1,370 @@
+{
+	"BUILD_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/Tracing_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing",
+	"CMAKE_EXECUTABLE" : "/opt/cmake-3.31.10-linux-x86_64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/CMakeLists.txt",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/Tracing_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "Tracing_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/flamegraphwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_flamegraphwidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/rangedetailswidget.h",
+			"MU",
+			"EWIEGA46WW/moc_rangedetailswidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/safecastable.h",
+			"MU",
+			"EWIEGA46WW/moc_safecastable.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/selectionrangedetailswidget.h",
+			"MU",
+			"EWIEGA46WW/moc_selectionrangedetailswidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/selectionrangeoverlay.h",
+			"MU",
+			"EWIEGA46WW/moc_selectionrangeoverlay.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinecontentwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinecontentwidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinecoordinates.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinecoordinates.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelineformattime.h",
+			"MU",
+			"EWIEGA46WW/moc_timelineformattime.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinemodel.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinemodel_p.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinemodel_p.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinemodelaggregator.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinemodelaggregator.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinenotesmodel.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinenotesmodel.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelineoverviewwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_timelineoverviewwidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinescrollsync.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinescrollsync.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinetracefile.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinetracefile.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinetracemanager.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinetracemanager.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinewidget.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinewidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinezoomcontrol.h",
+			"MU",
+			"EWIEGA46WW/moc_timelinezoomcontrol.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timeruler.h",
+			"MU",
+			"EWIEGA46WW/moc_timeruler.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/traceevent.h",
+			"MU",
+			"EWIEGA46WW/moc_traceevent.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/traceeventtype.h",
+			"MU",
+			"EWIEGA46WW/moc_traceeventtype.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/tracestashfile.h",
+			"MU",
+			"EWIEGA46WW/moc_tracestashfile.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/tracing_global.h",
+			"MU",
+			"EWIEGA46WW/moc_tracing_global.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/tracingtr.h",
+			"MU",
+			"EWIEGA46WW/moc_tracingtr.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/tracklabels.h",
+			"MU",
+			"EWIEGA46WW/moc_tracklabels.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/trackpainter.h",
+			"MU",
+			"EWIEGA46WW/moc_trackpainter.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/Tracing_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/Tracing_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_CREATOR",
+		"QT_DISABLE_DEPRECATED_UP_TO=0x050900",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_DEBUG",
+		"QT_NO_FOREACH",
+		"QT_NO_JAVA_STYLE_ITERATORS",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_RESTRICTED_CAST_FROM_ASCII",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WARN_DEPRECATED_UP_TO=0x060400",
+		"QT_WIDGETS_LIB",
+		"RELATIVE_DATA_PATH=\"../share/qtcreator\"",
+		"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"",
+		"RELATIVE_LIBEXEC_PATH=\"../libexec/qtcreator\"",
+		"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"",
+		"TRACING_LIBRARY",
+		"Tracing_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/utils/mimetypes2",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/utils/plaintextedit",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/QtTaskTree",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/QtTaskTree",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtConcurrent",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtCore",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/mkspecs/linux-g++",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtGui",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtNetwork",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtPrintSupport",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtWidgets",
+		"/usr/include",
+		"/usr/include/c++/14",
+		"/usr/include/x86_64-linux-gnu/c++/14",
+		"/usr/include/c++/14/backward",
+		"/usr/lib/llvm-18/lib/clang/18/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-std=c++20",
+		"-w",
+		"-dM",
+		"-E",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/Tracing_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/.qt/rcc/qrc_images.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 16,
+	"PARSE_CACHE_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/CMakeFiles/Tracing_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/CMakeFiles/Tracing_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/flamegraphwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/rangedetailswidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/selectionrangedetailswidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/selectionrangeoverlay.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinecontentwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelineformattime.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinemodel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinemodelaggregator.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinenotesmodel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelineoverviewwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinescrollsync.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinetracefile.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinetracemanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timelinezoomcontrol.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/timeruler.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/tracklabels.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/trackpainter.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/tracing/.qt/rcc/qrc_images.cpp"
+	],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

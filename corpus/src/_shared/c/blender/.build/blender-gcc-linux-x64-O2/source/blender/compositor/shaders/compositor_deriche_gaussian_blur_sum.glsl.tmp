@@ -1,0 +1,14 @@
+#line 1 "compositor_deriche_gaussian_blur_sum.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_deriche_gaussian_blur_sum)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 17
+  float4 filter_output = texture_load(causal_input_tx, texel) +
+                         texture_load(non_causal_input_tx, texel);
+#line 22
+  imageStore(output_img, texel.yx, filter_output);
+}

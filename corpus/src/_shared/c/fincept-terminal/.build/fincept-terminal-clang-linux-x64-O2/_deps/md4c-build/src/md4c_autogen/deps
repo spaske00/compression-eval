@@ -1,0 +1,7 @@
+md4c_autogen/timestamp: \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/CMakeLists.txt \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c-html.pc.in \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c.h \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c.pc.in \
+	/opt/cmake-3.31.10-linux-x86_64/bin/cmake

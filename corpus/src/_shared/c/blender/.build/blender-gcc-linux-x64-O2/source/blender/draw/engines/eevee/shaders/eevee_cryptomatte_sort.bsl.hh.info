@@ -1,0 +1,29 @@
+#pragma once
+
+
+#define CRYPTOMATTE_LEVELS_MAX 16
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_cryptomatte_Resources)
+PUSH_CONSTANT(int, cryptomatte_layer_len)
+PUSH_CONSTANT(int, cryptomatte_samples_per_layer)
+.image(0, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image2DArray, "cryptomatte_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_cryptomatte_sort_samples_infos_)
+LOCAL_GROUP_SIZE(FILM_GROUP_SIZE, FILM_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_cryptomatte_Resources)
+ADDITIONAL_INFO(eevee_Uniform)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_film_cryptomatte_post)
+COMPUTE_SOURCE("eevee_cryptomatte_sort.bsl.hh")
+COMPUTE_FUNCTION("eevee_cryptomatte_sort_samples")
+ADDITIONAL_INFO(eevee_cryptomatte_sort_samples_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

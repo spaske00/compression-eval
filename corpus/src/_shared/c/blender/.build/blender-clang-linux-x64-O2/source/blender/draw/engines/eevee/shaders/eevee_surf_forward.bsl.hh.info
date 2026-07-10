@@ -1,0 +1,38 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceForwardFragOut)
+FRAGMENT_OUT(0, float4, eevee_SurfaceForwardFragOut_combined_r)
+FRAGMENT_OUT(1, float4, eevee_SurfaceForwardFragOut_combined_g)
+FRAGMENT_OUT(2, float4, eevee_SurfaceForwardFragOut_combined_b)
+FRAGMENT_OUT(3, float4, eevee_SurfaceForwardFragOut_combined_a)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceForward)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+ADDITIONAL_INFO(draw_view_culling)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_forward_infos_)
+EARLY_FRAGMENT_TEST(true)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_SurfaceForward)
+ADDITIONAL_INFO(eevee_LightEvalIterator)
+ADDITIONAL_INFO(eevee_LightprobeRenderData)
+ADDITIONAL_INFO(eevee_LightprobePlaneRenderData)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Model)
+ADDITIONAL_INFO(draw_Infos)
+ADDITIONAL_INFO(UnifiedVolumeData)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(eevee_SurfaceForwardFragOut)
+GPU_SHADER_CREATE_END()
+

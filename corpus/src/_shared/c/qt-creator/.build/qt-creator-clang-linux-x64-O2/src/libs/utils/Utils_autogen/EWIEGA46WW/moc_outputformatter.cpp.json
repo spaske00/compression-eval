@@ -1,0 +1,70 @@
+{
+    "classes": [
+        {
+            "className": "OutputLineParser",
+            "lineNumber": 28,
+            "object": true,
+            "qualifiedClassName": "Utils::OutputLineParser",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "dir",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "newSearchDirFound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "dir",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "searchDirExpired",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "OutputFormatter",
+            "lineNumber": 115,
+            "object": true,
+            "qualifiedClassName": "Utils::OutputFormatter",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "link",
+                            "type": "Utils::Link"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "openInEditorRequested",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "outputformatter.h",
+    "outputRevision": 68
+}

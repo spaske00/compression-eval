@@ -1,0 +1,40 @@
+#line 1 "gpu_shader_math_fast_lib.glsl"
+ 
+#line 11
+float sqrt_fast(float v)
+{
+  return intBitsToFloat(0x1fbd1df5 + (floatBitsToInt(v) >> 1));
+}
+float2 sqrt_fast(float2 v)
+{
+  return intBitsToFloat(0x1fbd1df5 + (floatBitsToInt(v) >> 1));
+}
+#line 21
+float acos_fast(float v)
+{
+  float res = -0.156583f * abs(v) + M_PI_2;
+  res *= sqrt_fast(1.0f - abs(v));
+  return (v >= 0) ? res : M_PI - res;
+}
+float2 acos_fast(float2 v)
+{
+  float2 res = -0.156583f * abs(v) + M_PI_2;
+  res *= sqrt_fast(1.0f - abs(v));
+  v.x = (v.x >= 0) ? res.x : M_PI - res.x;
+  v.y = (v.y >= 0) ? res.y : M_PI - res.y;
+  return v;
+}
+
+float atan_fast(float x)
+{
+  float a = abs(x);
+  float k = a > 1.0f ? (1.0f / a) : a;
+  float s = 1.0f - (1.0f - k);
+  float t = s * s;
+#line 48
+  float r = s * fma(0.43157974f, t, 1.0f) / fma(fma(0.05831938f, t, 0.76443945f), t, 1.0f);
+  if (a > 1.0f) {
+    r = 1.57079632679489661923f - r;
+  }
+  return (x < 0.0f) ? -r : r;
+}

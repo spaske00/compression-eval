@@ -1,0 +1,17 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_HiZ)
+.sampler(HIZ_TEX_SLOT, ImageType::sampler2D, "hiz_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_PreviousLayerHiZ)
+.sampler(HIZ_PREVIOUS_LAYER_TEX_SLOT, ImageType::sampler2D, "hiz_prev_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_PreviousLayerRadiance)
+.sampler(RADIANCE_PREVIOUS_LAYER_TEX_SLOT, ImageType::sampler2D, "previous_layer_radiance_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+

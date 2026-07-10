@@ -1,0 +1,10 @@
+#line 1 "gpu_shader_material_rotation_to_quaternion.glsl"
+ 
+#line 6
+void rotation_to_quaternion(float4 rotation, _ref(float ,w), _ref(float ,x), _ref(float ,y), _ref(float ,z))
+{
+  w = rotation.x;
+  x = rotation.y;
+  y = rotation.z;
+  z = rotation.w;
+}

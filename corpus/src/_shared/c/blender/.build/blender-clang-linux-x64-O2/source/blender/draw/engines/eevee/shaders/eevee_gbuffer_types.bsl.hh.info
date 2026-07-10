@@ -1,0 +1,23 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+#define GBUFFER_HAS_REFLECTION
+#define GBUFFER_HAS_REFRACTION
+#define GBUFFER_HAS_SUBSURFACE
+#define GBUFFER_HAS_TRANSLUCENT
+
+                                                                          
+                   
+  
+        
+
+#define GBUFFER_NORMAL_BITS_SHIFT 12u
+#define GBUFFER_GEOMETRIC_NORMAL_BITS_SHIFT 20u
+#define GBUFFER_HEADER_BITS_PER_BIN 4
+
+ 
+
+
+
+

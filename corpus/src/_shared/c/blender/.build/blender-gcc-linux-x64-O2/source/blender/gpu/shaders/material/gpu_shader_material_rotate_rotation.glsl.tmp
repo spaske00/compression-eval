@@ -1,0 +1,14 @@
+#line 1 "gpu_shader_material_rotate_rotation.glsl"
+ 
+#line 8
+void rotate_rotation_global(float4 rotation, float4 rotate_by, _ref(float4 ,result))
+{
+  result = _as_float4(math_quaternion_multiply(_ctor(Quaternion) UNPACK4(rotate_by) _rotc() , _ctor(Quaternion) UNPACK4(rotation) _rotc() )
+               );
+}
+#line 15
+void rotate_rotation_local(float4 rotation, float4 rotate_by, _ref(float4 ,result))
+{
+  result = _as_float4(math_quaternion_multiply(_ctor(Quaternion) UNPACK4(rotation) _rotc() , _ctor(Quaternion) UNPACK4(rotate_by) _rotc() )
+               );
+}

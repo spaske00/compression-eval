@@ -1,0 +1,42 @@
+#line 1 "gpu_shader_compositor_motion_blur_lib.glsl"
+ 
+#line 9
+#define MOTION_BLUR_TILE_SIZE 32
+#define MOTION_BLUR_MAX_TILE 512
+#define MotionPayload uint
+#line 14
+MotionPayload motion_blur_tile_indirection_pack_payload(float2 motion, uint2 payload)
+{
+#line 18
+  uint velocity = min(uint(ceil(length(motion))), 0x3FFFu);
+
+  return (velocity << 18u) | ((payload.x & 0x1FFu) << 9u) | (payload.y & 0x1FFu);
+}
+#line 24
+int2 motion_blur_tile_indirection_pack_payload(uint data)
+{
+  return int2((data >> 9u) & 0x1FFu, data & 0x1FFu);
+}
+
+uint motion_blur_tile_indirection_index(uint motion_step, uint2 tile)
+{
+  uint index = tile.x;
+  index += tile.y * MOTION_BLUR_MAX_TILE;
+  index += motion_step * MOTION_BLUR_MAX_TILE * MOTION_BLUR_MAX_TILE;
+  return index;
+}
+
+#define MOTION_PREV 0u
+#define MOTION_NEXT 1u
+
+#define motion_blur_tile_indirection_store(table_, step_, tile, payload_) \
+  if (true) { \
+    uint index = motion_blur_tile_indirection_index(step_, tile); \
+    atomicMax(table_[index], payload_); \
+  }
+
+#define motion_blur_tile_indirection_load(table_, step_, tile_, result_) \
+  if (true) { \
+    uint index = motion_blur_tile_indirection_index(step_, tile_); \
+    result_ = motion_blur_tile_indirection_pack_payload(table_[index]); \
+  }

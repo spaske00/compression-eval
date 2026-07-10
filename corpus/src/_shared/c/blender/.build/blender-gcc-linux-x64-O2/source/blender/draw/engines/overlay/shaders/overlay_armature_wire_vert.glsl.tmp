@@ -1,0 +1,20 @@
+#line 1 "overlay_armature_wire_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_armature_wire)
+#line 14
+void main()
+{
+  select_id_set(in_select_buf[gl_VertexID / 2]);
+
+  final_color.rgb = data_buf[gl_VertexID].color_.rgb;
+  final_color.a = 1.0f;
+
+  float3 world_pos = data_buf[gl_VertexID].pos_.xyz;
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+
+  edge_start = edge_pos = ((gl_Position.xy / gl_Position.w) * 0.5f + 0.5f) *
+                          uniform_buf.size_viewport;
+
+  view_clipping_distances(world_pos);
+}

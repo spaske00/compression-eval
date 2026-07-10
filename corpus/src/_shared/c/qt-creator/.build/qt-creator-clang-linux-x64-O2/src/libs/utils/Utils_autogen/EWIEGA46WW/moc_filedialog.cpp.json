@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "FileDialog",
+            "lineNumber": 18,
+            "object": true,
+            "qualifiedClassName": "Utils::FileDialog",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "directory",
+                            "type": "FilePath"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "directoryChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QDialog"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filedialog.h",
+    "outputRevision": 68
+}

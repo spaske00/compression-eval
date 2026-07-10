@@ -1,0 +1,143 @@
+#line 1 "overlay_xray_fade.bsl.hh"
+ 
+#line 21
+struct overlay_xray_fade_TexelData {
+  float depth;
+  float xray_depth;
+};
+#line 21
+                                           overlay_xray_fade_TexelData overlay_xray_fade_TexelData_ctor_() {overlay_xray_fade_TexelData r;r.depth=0.0f;r.xray_depth=0.0f;return r;}
+#line 26
+#define access_overlay_xray_fade_Resources_depth_tx() depth_tx
+#define access_overlay_xray_fade_Resources_depth_in_front_tx() depth_in_front_tx
+#define access_overlay_xray_fade_Resources_xray_depth_tx() xray_depth_tx
+#define access_overlay_xray_fade_Resources_xray_depth_in_front_tx() xray_depth_in_front_tx
+#define access_overlay_xray_fade_Resources_opacity() opacity
+#ifdef CREATE_INFO_RES_PASS_overlay_xray_fade_Resources
+CREATE_INFO_RES_PASS_overlay_xray_fade_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_xray_fade_Resources
+CREATE_INFO_RES_BATCH_overlay_xray_fade_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_xray_fade_Resources
+CREATE_INFO_RES_GEOMETRY_overlay_xray_fade_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_xray_fade_Resources
+CREATE_INFO_RES_SHARED_VARS_overlay_xray_fade_Resources
+#endif
+#line 26
+struct overlay_xray_fade_Resources {
+#line 57
+int _pad;};
+#line 60
+#ifndef GPU_METAL
+overlay_xray_fade_Resources overlay_xray_fade_Resources_ctor_();
+overlay_xray_fade_TexelData _sample_texel(overlay_xray_fade_Resources  this_, float2 uv);
+overlay_xray_fade_TexelData _sample_texel_in_front(overlay_xray_fade_Resources  this_, float2 uv);
+overlay_xray_fade_Resources overlay_xray_fade_Resources_new_();
+#endif
+#line 26
+                                           overlay_xray_fade_Resources overlay_xray_fade_Resources_ctor_() {overlay_xray_fade_Resources r;r._pad=0;return r;}
+#line 34
+
+#if defined(CREATE_INFO_overlay_xray_fade_Resources)
+#line 34
+  overlay_xray_fade_TexelData _sample_texel(overlay_xray_fade_Resources  this_, float2 uv)
+  {
+    {overlay_xray_fade_TexelData _tmp ;
+        _tmp.depth = textureLod(srt_access(overlay_xray_fade_Resources, depth_tx), uv, 0.0f).r;
+        _tmp.xray_depth = textureLod(srt_access(overlay_xray_fade_Resources, xray_depth_tx), uv, 0.0f).r
+    ;   return _tmp;};
+  }
+#endif
+
+#if defined(CREATE_INFO_overlay_xray_fade_Resources)
+#line 42
+  overlay_xray_fade_TexelData _sample_texel_in_front(overlay_xray_fade_Resources  this_, float2 uv)
+  {
+    {overlay_xray_fade_TexelData _tmp ;
+        _tmp.depth = textureLod(srt_access(overlay_xray_fade_Resources, depth_in_front_tx), uv, 0.0f).r;
+        _tmp.xray_depth = textureLod(srt_access(overlay_xray_fade_Resources, xray_depth_in_front_tx), uv, 0.0f).r
+    ;   return _tmp;};
+  }
+#endif
+       overlay_xray_fade_Resources overlay_xray_fade_Resources_new_()
+{
+  overlay_xray_fade_Resources result;
+  result._pad = 0;
+  return result;
+#line 48
+}
+#line 51
+struct overlay_xray_fade_VertOut {
+             float2 uv;
+};
+#line 51
+                                         overlay_xray_fade_VertOut overlay_xray_fade_VertOut_ctor_() {overlay_xray_fade_VertOut r;r.uv=float2(0);return r;}
+#line 55
+
+#if defined(ENTRY_POINT_overlay_xray_fade_vert_main)
+#line 55
+           void overlay_xray_fade_vert_main(
+
+                                                       )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 59
+  fullscreen_vertex(gl_VertexID, gl_Position, overlay_xray_fade_VertOut_uv);
+
+#endif
+#line 60
+}
+#endif
+struct overlay_xray_fade_FragOut {
+                    float4 color;
+};
+#line 62
+                                         overlay_xray_fade_FragOut overlay_xray_fade_FragOut_ctor_() {overlay_xray_fade_FragOut r;r.color=float4(0);return r;}
+#line 66
+
+#if defined(CREATE_INFO_overlay_xray_fade_Resources)
+#line 66
+
+#if defined(ENTRY_POINT_overlay_xray_fade_frag_main)
+#line 66
+             void overlay_xray_fade_frag_main(
+
+                                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 69
+  overlay_xray_fade_Resources srt = overlay_xray_fade_Resources_ctor_();
+  overlay_xray_fade_TexelData data_in_front = _sample_texel_in_front(srt, overlay_xray_fade_VertOut_uv);
+
+  if (data_in_front.xray_depth != 1.0f) {
+    if (data_in_front.depth < data_in_front.xray_depth) {
+      overlay_xray_fade_FragOut_color = float4(srt_access(overlay_xray_fade_Resources, opacity));
+      return;
+    }
+
+    gpu_discard_fragment();
+    return;
+  }
+
+  overlay_xray_fade_TexelData data = _sample_texel(srt, overlay_xray_fade_VertOut_uv);
+#line 85
+  if (data_in_front.depth != 1.0f) {
+    data.depth = 0.0f;
+  }
+
+  if (data.depth < data.xray_depth) {
+    overlay_xray_fade_FragOut_color = float4(srt_access(overlay_xray_fade_Resources, opacity));
+    return;
+  }
+
+  gpu_discard_fragment();
+
+#endif
+#line 95
+}
+#endif
+#endif
+#line 100

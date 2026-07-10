@@ -1,0 +1,852 @@
+#line 1 "eevee_nodetree_lib.bsl.hh"
+ 
+#line 28
+uint resource_id_get()
+{
+#line 32
+#if defined(CREATE_INFO_eevee_PipelineConstants)
+#line 31
+
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 34
+  draw_ID id = _ctor(draw_ID) interface_get(eevee_geom_iface_info, interp_flat).resource_id_raw _rotc() ;
+  if (srt_access(eevee_PipelineConstants, is_shadow_pipe)) {
+    return _resource_idT64(id);
+  }
+  return _resource_idT1(id);
+
+#else
+#line 31
+  return uint(0);
+#endif
+#line 39
+
+#else
+#line 31
+  return uint(0);
+#endif
+#line 39
+}
+
+uint view_id_get()
+{
+#line 45
+#if defined(CREATE_INFO_eevee_PipelineConstants)
+#line 44
+
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 47
+  draw_ID id = _ctor(draw_ID) interface_get(eevee_geom_iface_info, interp_flat).resource_id_raw _rotc() ;
+  if (srt_access(eevee_PipelineConstants, is_shadow_pipe)) {
+    return _view_idT64(id);
+  }
+  return _view_idT1(id);
+
+#else
+#line 44
+  return uint(0);
+#endif
+#line 52
+
+#else
+#line 44
+  return uint(0);
+#endif
+#line 52
+}
+
+ObjectMatrices object_matrices_get()
+{
+
+#if defined(CREATE_INFO_draw_Model)
+#line 56
+
+  return _get(resource_table_get(draw_Model), resource_id_get());
+
+#else
+#line 56
+  return ObjectMatrices_ctor_();
+#endif
+}
+
+ObjectInfos object_infos_get()
+{
+
+#if defined(CREATE_INFO_draw_Infos)
+#line 62
+
+  return _get(resource_table_get(draw_Infos), resource_id_get());
+
+#else
+#line 62
+  return ObjectInfos_ctor_();
+#endif
+}
+
+ViewMatrices view_matrices_get()
+{
+
+#if defined(CREATE_INFO_draw_View)
+#line 68
+
+  return _get(resource_table_get(draw_View), view_id_get());
+
+#else
+#line 68
+  return ViewMatrices_ctor_();
+#endif
+}
+
+#define closure_base_copy(cl, in_cl) \
+  cl.weight = in_cl.weight; \
+  cl.color = in_cl.color; \
+  cl.N = in_cl.N; \
+  cl.type = closure_type_get(in_cl);
+#line 79
+Closure closure_eval(ClosureDiffuse diffuse)
+{
+  ClosureUndetermined cl;
+  closure_base_copy(cl, diffuse);
+#if (CLOSURE_BIN_COUNT > 1) && defined(MAT_TRANSLUCENT) && !defined(MAT_CLEARCOAT)
+
+  closure_select(g_closure_bins[1], g_closure_rand[1], cl);
+#else
+
+  closure_select(g_closure_bins[0], g_closure_rand[0], cl);
+#endif
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureSubsurface diffuse)
+{
+  ClosureUndetermined cl;
+  closure_base_copy(cl, diffuse);
+  cl.data.rgb = diffuse.sss_radius;
+
+  closure_select(g_closure_bins[0], g_closure_rand[0], cl);
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureTranslucent translucent)
+{
+  ClosureUndetermined cl;
+  closure_base_copy(cl, translucent);
+
+  closure_select(g_closure_bins[0], g_closure_rand[0], cl);
+  return Closure(0);
+}
+#line 119
+bool g_closure_reflection_bin = true;
+#define CHOOSE_MIN_WEIGHT_CLOSURE_BIN(a, b) \
+  if (g_closure_reflection_bin) { \
+    closure_select(g_closure_bins[b], g_closure_rand[b], cl); \
+  } \
+  else { \
+    closure_select(g_closure_bins[a], g_closure_rand[a], cl); \
+  } \
+  g_closure_reflection_bin = !g_closure_reflection_bin;
+
+Closure closure_eval(ClosureReflection reflection)
+{
+  ClosureUndetermined cl;
+  closure_base_copy(cl, reflection);
+  cl.data.r = reflection.roughness;
+
+#ifdef MAT_CLEARCOAT
+#  if CLOSURE_BIN_COUNT == 2
+
+  CHOOSE_MIN_WEIGHT_CLOSURE_BIN(0, 1);
+#  elif CLOSURE_BIN_COUNT == 3
+
+  CHOOSE_MIN_WEIGHT_CLOSURE_BIN(1, 2);
+#  else
+#    error Clearcoat should always have at least 2 bins
+#  endif
+#else
+#  if CLOSURE_BIN_COUNT == 1
+
+  closure_select(g_closure_bins[0], g_closure_rand[0], cl);
+#  elif CLOSURE_BIN_COUNT == 2
+
+  closure_select(g_closure_bins[1], g_closure_rand[1], cl);
+#  elif CLOSURE_BIN_COUNT == 3
+
+  closure_select(g_closure_bins[2], g_closure_rand[2], cl);
+#  endif
+#endif
+
+#undef CHOOSE_MIN_WEIGHT_CLOSURE_BIN
+
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureRefraction refraction)
+{
+  ClosureUndetermined cl;
+  closure_base_copy(cl, refraction);
+  cl.data.r = refraction.roughness;
+  cl.data.g = refraction.ior;
+
+  closure_select(g_closure_bins[0], g_closure_rand[0], cl);
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureThinRefraction refraction)
+{
+  ClosureUndetermined cl;
+  closure_base_copy(cl, refraction);
+  cl.data.r = refraction.roughness;
+
+  closure_select(g_closure_bins[0], g_closure_rand[0], cl);
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureEmission emission)
+{
+  g_emission += emission.emission * emission.weight;
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureTransparency transparency)
+{
+  g_transmittance += transparency.transmittance * transparency.weight;
+  g_holdout += transparency.holdout * transparency.weight;
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureVolumeScatter volume_scatter)
+{
+  g_volume_scattering += volume_scatter.scattering * volume_scatter.weight;
+  g_volume_anisotropy += volume_scatter.anisotropy * volume_scatter.weight;
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureVolumeAbsorption volume_absorption)
+{
+  g_volume_absorption += volume_absorption.absorption * volume_absorption.weight;
+  return Closure(0);
+}
+
+Closure closure_eval(ClosureHair _0)
+{
+
+  return Closure(0);
+}
+#line 217
+Closure closure_eval(ClosureReflection reflection, ClosureRefraction refraction)
+{
+  closure_eval(reflection);
+  closure_eval(refraction);
+  return Closure(0);
+}
+#line 225
+Closure closure_eval(ClosureDiffuse diffuse, ClosureReflection reflection)
+{
+  closure_eval(diffuse);
+  closure_eval(reflection);
+  return Closure(0);
+}
+#line 233
+Closure closure_eval(ClosureReflection reflection, ClosureReflection coat)
+{
+  closure_eval(reflection);
+  closure_eval(coat);
+  return Closure(0);
+}
+#line 241
+Closure closure_eval(ClosureVolumeScatter volume_scatter,
+                     ClosureVolumeAbsorption volume_absorption,
+                     ClosureEmission emission)
+{
+  closure_eval(volume_scatter);
+  closure_eval(volume_absorption);
+  closure_eval(emission);
+  return Closure(0);
+}
+#line 252
+Closure closure_eval(ClosureDiffuse diffuse, ClosureReflection reflection, ClosureReflection coat)
+{
+  closure_eval(diffuse);
+  closure_eval(reflection);
+  closure_eval(coat);
+  return Closure(0);
+}
+#line 261
+Closure closure_eval(ClosureDiffuse diffuse,
+                     ClosureReflection reflection,
+                     ClosureReflection coat,
+                     ClosureRefraction refraction)
+{
+  closure_eval(diffuse);
+  closure_eval(reflection);
+  closure_eval(coat);
+  closure_eval(refraction);
+  return Closure(0);
+}
+#line 274
+Closure closure_add(Closure _0, Closure _1)
+{
+  return Closure(0);
+}
+Closure closure_mix(Closure _0, Closure _1, float _2)
+{
+  return Closure(0);
+}
+
+float ambient_occlusion_eval(                 float3 normal,
+                                              float max_distance,
+                                              const float inverted,
+                                              const float sample_count)
+{
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 288
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 288
+
+#if defined(CREATE_INFO_eevee_HiZ)
+#line 288
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 288
+
+#if defined(CREATE_INFO_draw_View)
+#line 288
+  FRAGMENT_SHADER_CREATE_INFO(draw_view);
+#line 298
+  {
+#if defined(GPU_FRAGMENT_SHADER) && defined(MAT_AMBIENT_OCCLUSION) && !defined(MAT_DEPTH) && \
+    !defined(MAT_SHADOW)
+
+    const ViewMatrices view = _get(resource_table_get(draw_View), 0);
+
+    float3 vP = _point_world_to_view(view, g_data.P);
+    float3 vN = _normal_world_to_view(view, normal);
+
+    int2 texel = int2(gl_FragCoord.xy);
+    float4 noise = _fetch(resource_table_get(UtilityTexture), float2(texel), UTIL_BLUE_NOISE_LAYER);
+    noise = fract(noise + _rng_3D_get(resource_table_get(eevee_Sampling), SAMPLING_AO_U).xyzx);
+
+    float result = eevee_fast_gi_evalTfloat(resource_table_get(eevee_Uniform),
+                                               view,
+                                               srt_access(eevee_Uniform, raytrace_buf).fast_gi_thickness,
+                                               srt_access(eevee_HiZ, hiz_tx),
+                                               srt_access(eevee_HiZ, hiz_tx)             ,
+                                               srt_access(eevee_HiZ, hiz_tx)             ,
+                                               vP,
+                                               vN,
+                                               noise,
+                                               srt_access(eevee_Uniform, uniform_buf).ao.pixel_size,
+                                               max_distance,
+                                               srt_access(eevee_Uniform, uniform_buf).ao.angle_bias,
+                                               2,
+                                               int(sample_count / 2.0f),
+                                               inverted != 0.0f,
+                                               true);
+
+    return saturate(result);
+#else
+    return 1.0f;
+#endif
+  }
+
+#else
+#line 288
+  return float(0);
+#endif
+#line 333
+
+#else
+#line 288
+  return float(0);
+#endif
+#line 333
+
+#else
+#line 288
+  return float(0);
+#endif
+#line 333
+
+#else
+#line 288
+  return float(0);
+#endif
+#line 333
+
+#else
+#line 288
+  return float(0);
+#endif
+#line 333
+}
+
+void raycast_eval(                 float3 position,
+                  float3 direction,
+                  float max_distance,
+                                   bool self_only,
+                  _ref(bool ,is_hit),
+                  _ref(bool ,self_hit),
+                  _ref(float ,hit_distance),
+                  _ref(float3 ,hit_position),
+                  _ref(float3 ,hit_normal))
+{
+
+#if defined(CREATE_INFO_eevee_Uniform)
+  is_hit = false;
+  self_hit = false;
+  hit_distance = max_distance;
+  hit_position = float3(0.0f);
+  hit_normal = float3(0.0f);
+
+  direction = normalize(direction);
+
+#if defined(MAT_RAYCAST)
+  if (!srt_access(eevee_Uniform, pipeline_buf).can_raycast) {
+#line 359
+    return;
+  }
+
+  float3 ws_start = position;
+  float3 ws_end = position + direction * max_distance;
+  if (!clip_ray(
+          ws_start, ws_end, direction, max_distance, drw_view_culling().frustum_planes.planes))
+  {
+    return;
+  }
+
+  {
+
+#if defined(CREATE_INFO_draw_View)
+#line 371
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 371
+
+#if defined(CREATE_INFO_eevee_raycast)
+#line 371
+
+#if defined(CREATE_INFO_eevee_raycast)
+#line 371
+
+#if defined(CREATE_INFO_eevee_raycast)
+#line 371
+    FRAGMENT_SHADER_CREATE_INFO(draw_view);
+#line 379
+    const ViewMatrices view = _get(resource_table_get(draw_View), 0);
+
+    {
+
+      float3 vs_start = _point_world_to_view(view, ws_start);
+      float start_depth = _depth_view_to_screen(view, vs_start.z);
+      float offset_depth = uintBitsToFloat(floatBitsToUint(start_depth) + 2);
+      float offset_delta = abs(_depth_screen_to_view(view, offset_depth) - vs_start.z);
+      ws_start += direction * offset_delta;
+    }
+
+    float noise_offset = _rng_1D_get(resource_table_get(eevee_Sampling), SAMPLING_RAYTRACE_W);
+    float jitter = interleaved_gradient_noise(gl_FragCoord.xy, 1.0f, noise_offset);
+
+    float2 hit_uv = float2(0.0f);
+    uint self_id = resource_id_get() & uint(0xFFFF);
+
+    float result = raytrace_screen_2(_get(resource_table_get(draw_View), 0),
+                                     _point_world_to_view(view, ws_start),
+                                     _point_world_to_view(view, ws_end),
+                                     _normal_world_to_view(view, direction),
+                                     sampler_get(eevee_raycast, raycast_depth_tx),
+                                     srt_access(eevee_Uniform, raytrace_buf),
+                                     64,
+                                     jitter,
+                                     sampler_get(eevee_raycast, object_id_tx),
+                                     self_only ? self_id : 0,
+                                     hit_uv);
+    if (result >= 0.0f) {
+      is_hit = true;
+      hit_position = ws_start + direction * result;
+      hit_distance = distance(position, hit_position);
+      hit_normal = normalize(texture(sampler_get(eevee_raycast, prepass_normal_tx), hit_uv).xyz * 2.0f - 1.0f);
+      int2 hit_texel = int2(hit_uv * float2(textureSize(sampler_get(eevee_raycast, object_id_tx), 0)));
+      uint hit_id = texelFetch(sampler_get(eevee_raycast, object_id_tx), hit_texel, 0).x;
+      self_hit = self_only || (hit_id == self_id);
+    }
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 416
+  }
+#endif
+
+#endif
+#line 418
+}
+
+#ifndef GPU_METAL
+Closure nodetree_surface(float closure_rand);
+Closure nodetree_volume();
+float3 nodetree_displacement();
+float nodetree_thickness();
+float4 closure_to_rgba(Closure cl);
+#endif
+#line 433
+float f0_from_ior(float eta)
+{
+  return (eta - 1.0f) / (eta + 1.0f);
+}
+#line 443
+float F0_from_ior(float eta)
+{
+  return square(f0_from_ior(eta));
+}
+float F0_from_f0(float f0)
+{
+  return square(f0);
+}
+#line 455
+float3 F_brdf_single_scatter(float3 f0, float3 f90, eevee_lut_GGXBrdfData lut)
+{
+  return f0 * lut.scale + f90 * lut.bias;
+}
+#line 455
+float3 F_brdf_single_scatter(float3 f0, float3 f90, eevee_lut_GGXBsdfData lut)
+{
+  return f0 * lut.scale + f90 * lut.bias;
+}
+#line 469
+float3 F_brdf_multi_scatter(float3 f0, float3 f90, eevee_lut_GGXBrdfData lut)
+{
+  float3 FssEss = F_brdf_single_scatter(f0, f90, lut);
+
+  float Ess = lut.scale + lut.bias;
+  float Ems = 1.0f - Ess;
+  float3 Favg = f0 + (f90 - f0) / 21.0f;
+#line 484
+  return FssEss / (1.0f - Ems * Favg);
+}
+#line 469
+float3 F_brdf_multi_scatter(float3 f0, float3 f90, eevee_lut_GGXBsdfData lut)
+{
+  float3 FssEss = F_brdf_single_scatter(f0, f90, lut);
+
+  float Ess = lut.scale + lut.bias;
+  float Ems = 1.0f - Ess;
+  float3 Favg = f0 + (f90 - f0) / 21.0f;
+#line 484
+  return FssEss / (1.0f - Ems * Favg);
+}
+#line 493
+void brdf_f82_tint_lut(float3 F0,
+                       float3 F82,
+                       float cos_theta,
+                       float roughness,
+                       bool do_multiscatter,
+                       _ref(float3 ,reflectance))
+{
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 500
+  const UtilityTexture util_tx = resource_table_get(UtilityTexture);
+  eevee_lut_GGXBrdfData lut = eevee_lut_GGXBrdfData_sample_utility_tx(
+      util_tx, cos_theta, roughness);
+
+  reflectance = do_multiscatter ? F_brdf_multi_scatter(F0, float3(1.0f), lut) :
+                                  F_brdf_single_scatter(F0, float3(1.0f), lut);
+#line 514
+  constexpr float f = 6.0f / 7.0f;
+  constexpr float f5 = (f * f) * (f * f) * f;
+  constexpr float f6 = (f * f) * (f * f) * (f * f);
+  float3 F_schlick = mix(F0, float3(1.0f), f5);
+  float3 b = F_schlick * (7.0f / f6) * (1.0f - F82);
+  reflectance -= b * lut.metal_bias;
+
+#endif
+#line 520
+}
+#line 524
+void bsdf_lut(float3 F0,
+              float3 F90,
+              float3 transmission_tint,
+              float cos_theta,
+              float roughness,
+              float ior,
+              bool do_multiscatter,
+              _ref(float3 ,reflectance),
+              _ref(float3 ,transmittance))
+{
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 534
+  const UtilityTexture util_tx = resource_table_get(UtilityTexture);
+  if (ior == 1.0f) {
+    reflectance = float3(0.0f);
+    transmittance = transmission_tint;
+    return;
+  }
+#line 542
+  eevee_lut_GGXBsdfData lut;
+
+  const float f0 = f0_from_ior(ior);
+
+  if (ior > 1.0f) {
+#line 549
+    if (all(equal(F90, float3(1.0f)))) {
+      F90 = float3(saturate(2.33f / 0.33f * f0));
+    }
+
+    eevee_lut_GGXBrdfData brdf_lut = eevee_lut_GGXBrdfData_sample_utility_tx(
+        util_tx, cos_theta, roughness);
+    eevee_lut_GGXBtdfGt1Data btdf_lut = eevee_lut_GGXBtdfGt1Data_sample_utility_tx(
+        util_tx, cos_theta, roughness, f0);
+
+    lut.scale = brdf_lut.scale;
+    lut.bias = brdf_lut.bias;
+    lut.transmission_factor = btdf_lut.transmission_factor;
+  }
+  else {
+    lut = eevee_lut_GGXBsdfData_sample_utility_tx(util_tx, cos_theta, roughness, ior);
+  }
+
+  reflectance = F_brdf_single_scatter(F0, F90, lut);
+  transmittance = (float3(1.0f) - F0) * lut.transmission_factor * transmission_tint;
+
+  if (do_multiscatter) {
+    const float real_F0 = F0_from_f0(f0);
+    const float Ess = real_F0 * lut.scale + lut.bias + (1.0f - real_F0) * lut.transmission_factor;
+    const float Ems = 1.0f - Ess;
+
+    const float3 Favg = all(equal(transmission_tint, float3(0.0f))) ? F0 + (F90 - F0) / 21.0f :
+                                                                      transmission_tint;
+
+    float3 scale = 1.0f / (1.0f - Ems * Favg);
+    reflectance *= scale;
+    transmittance *= scale;
+  }
+
+#endif
+#line 581
+}
+#line 584
+float2 bsdf_lut(float cos_theta, float roughness, float ior, bool do_multiscatter)
+{
+  float F0 = F0_from_ior(ior);
+  float3 color = float3(1.0f);
+  float3 reflectance, transmittance;
+  bsdf_lut(float3(F0),
+           color,
+           color,
+           cos_theta,
+           roughness,
+           ior,
+           do_multiscatter,
+           reflectance,
+           transmittance);
+  return float2(reflectance.r, transmittance.r);
+}
+#line 609
+#ifndef GPU_METAL
+
+float derivative_scale_get();
+#endif
+
+#ifdef MAT_DISPLACEMENT_BUMP
+
+float3 displacement_bump()
+{
+#  if !defined(MAT_GEOM_CURVES)
+#line 621
+  constexpr float bump_filter_width = 0.1f;
+
+  float2 dHd;
+  dF_branch(dot(nodetree_displacement(), g_data.N + dF_impl(g_data.N)), bump_filter_width, dHd);
+
+  float3 dPdx = gpu_dfdx(g_data.P) * derivative_scale_get();
+  float3 dPdy = gpu_dfdy(g_data.P) * derivative_scale_get();
+#line 630
+  float3 Rx = cross(dPdy, g_data.N);
+  float3 Ry = cross(g_data.N, dPdx);
+#line 634
+  float det = dot(dPdx, Rx);
+
+  float3 surfgrad = dHd.x * Rx + dHd.y * Ry;
+
+  float facing = FrontFacing ? 1.0f : -1.0f;
+  return normalize(bump_filter_width * abs(det) * g_data.N - facing * sign(det) * surfgrad);
+#  else
+  return g_data.N;
+#  endif
+}
+#endif
+
+void fragment_displacement()
+{
+#ifdef MAT_DISPLACEMENT_BUMP
+  g_data.N = displacement_bump();
+#endif
+}
+#line 662
+float3 coordinate_camera(float3 P)
+{
+  float3 vP;
+  if (false             ) {
+
+    vP = P;
+  }
+  else {
+    const ViewMatrices view = view_matrices_get();
+#ifdef MAT_GEOM_WORLD
+    vP = _normal_world_to_view(view, P);
+#else
+    vP = _point_world_to_view(view, P);
+#endif
+  }
+  vP.z = -vP.z;
+  return vP;
+}
+
+float3 coordinate_screen(float3 P)
+{
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 683
+
+  float3 window = float3(0.0f);
+  if (false             ) {
+
+    window.xy = float2(0.5f);
+  }
+  else {
+    const ViewMatrices view = view_matrices_get();
+#ifdef MAT_GEOM_WORLD
+    window.xy = _point_view_to_screen(view, interp.P).xy;
+#else
+
+    window.xy = _point_world_to_screen(view, P).xy;
+#endif
+    window.xy = window.xy * srt_access(eevee_Uniform, uniform_buf).camera.uv_scale + srt_access(eevee_Uniform, uniform_buf).camera.uv_bias;
+  }
+  return window;
+
+#else
+#line 683
+  return float3(0);
+#endif
+#line 700
+}
+
+float3 coordinate_reflect(float3 P, float3 N)
+{
+#ifdef MAT_GEOM_WORLD
+  return N;
+#else
+  const ViewMatrices view = view_matrices_get();
+  return -reflect(_world_incident_vector(view, P), N);
+#endif
+}
+
+float3 coordinate_incoming(float3 P)
+{
+#ifdef MAT_GEOM_WORLD
+  return -P;
+#else
+  const ViewMatrices view = view_matrices_get();
+  return _world_incident_vector(view, P);
+#endif
+}
+#line 731
+float texture_lod_bias_get()
+{
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 733
+
+  return srt_access(eevee_Uniform, uniform_buf).film.texture_lod_bias;
+
+#else
+#line 733
+  return float(0);
+#endif
+}
+#line 743
+float derivative_scale_get()
+{
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 745
+
+  return 1.0f / float(srt_access(eevee_Uniform, uniform_buf).film.scaling_factor);
+
+#else
+#line 745
+  return float(0);
+#endif
+}
+#line 761
+#if defined(MAT_VOLUME) && !defined(MAT_GEOM_CURVES) && !defined(MAT_GEOM_POINTCLOUD)
+#  if defined(VOLUME_INFO_LIB) && !defined(MAT_GEOM_WORLD)
+
+#    define GRID_ATTRIBUTES_LOAD_POST
+#  endif
+#endif
+
+float attr_load_temperature_post(float attr)
+{
+#ifdef GRID_ATTRIBUTES_LOAD_POST
+
+  attr = (attr > 0.01f) ? (attr * drw_volume.temperature_mul + drw_volume.temperature_bias) : 0.0f;
+#endif
+  return attr;
+}
+float4 attr_load_color_post(float4 attr)
+{
+#ifdef GRID_ATTRIBUTES_LOAD_POST
+
+  attr.rgb *= safe_rcp(attr.a);
+  attr.rgb *= drw_volume.color_mul.rgb;
+  attr.a = 1.0f;
+#endif
+  return attr;
+}
+
+#undef GRID_ATTRIBUTES_LOAD_POST
+#line 799
+float4 attr_load_uniform(float4 _0, const uint attr_hash)
+{
+
+#if defined(CREATE_INFO_draw_object_attributes)
+  ObjectInfos infos = object_infos_get();
+  uint index = infos.object_attrs_offset;
+  for (uint i = 0; i < infos.object_attrs_len; i++, index++) {
+    ObjectAttribute attr = buffer_get(draw_object_attributes, drw_attrs)[index];
+    if (attr.hash_code == attr_hash) {
+      return float4(attr.data_x, attr.data_y, attr.data_z, attr.data_w);
+    }
+  }
+  return float4(0.0f);
+
+#else
+#line 801
+  return float4(0);
+#endif
+#line 812
+}
+
+void scene_time_uniforms(_ref(float ,seconds), _ref(float ,frame))
+{
+
+#if defined(CREATE_INFO_eevee_Uniform)
+  seconds = srt_access(eevee_Uniform, uniform_buf).scene.time;
+  frame = srt_access(eevee_Uniform, uniform_buf).scene.frame;
+
+#endif
+#line 820
+}
+
+

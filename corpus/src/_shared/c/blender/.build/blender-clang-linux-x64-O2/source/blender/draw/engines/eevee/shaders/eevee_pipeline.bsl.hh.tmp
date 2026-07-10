@@ -1,0 +1,41 @@
+#line 1 "eevee_pipeline.bsl.hh"
+ 
+#line 10
+#define access_eevee_PipelineConstants_use_velocity() use_velocity
+#define access_eevee_PipelineConstants_use_transparency() use_transparency
+#define access_eevee_PipelineConstants_use_clip_plane() use_clip_plane
+#define access_eevee_PipelineConstants_use_sss() use_sss
+#define access_eevee_PipelineConstants_is_shadow_pipe() is_shadow_pipe
+#define access_eevee_PipelineConstants_closure_bin_count() closure_bin_count
+#ifdef CREATE_INFO_RES_PASS_eevee_PipelineConstants
+CREATE_INFO_RES_PASS_eevee_PipelineConstants
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_PipelineConstants
+CREATE_INFO_RES_BATCH_eevee_PipelineConstants
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_PipelineConstants
+CREATE_INFO_RES_GEOMETRY_eevee_PipelineConstants
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_PipelineConstants
+CREATE_INFO_RES_SHARED_VARS_eevee_PipelineConstants
+#endif
+#line 10
+struct eevee_PipelineConstants {
+#line 25
+int _pad;};
+#line 29
+#ifndef GPU_METAL
+eevee_PipelineConstants eevee_PipelineConstants_ctor_();
+eevee_PipelineConstants eevee_PipelineConstants_new_();
+#endif
+#line 10
+                                       eevee_PipelineConstants eevee_PipelineConstants_ctor_() {eevee_PipelineConstants r;r._pad=0;return r;}
+#line 18
+       eevee_PipelineConstants eevee_PipelineConstants_new_()
+{
+  eevee_PipelineConstants result;
+  result._pad = 0;
+  return result;
+#line 16
+}
+#line 20

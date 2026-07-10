@@ -1,0 +1,222 @@
+#line 1 "gpu_shader_math_vector_safe_lib.glsl"
+ 
+#line 13
+float2 safe_mod(float2 a, float2 b)
+{
+  return select(float2(0), mod(a, b), notEqual(b, float2(0)));
+}
+#line 13
+float3 safe_mod(float3 a, float3 b)
+{
+  return select(float3(0), mod(a, b), notEqual(b, float3(0)));
+}
+#line 13
+float4 safe_mod(float4 a, float4 b)
+{
+  return select(float4(0), mod(a, b), notEqual(b, float4(0)));
+}
+#line 25
+float2 safe_mod(float2 a, float b)
+{
+  return (b != 0.0f) ? mod(a, float2(b)) : float2(0);
+}
+float3 safe_mod(float3 a, float b)
+{
+  return (b != 0.0f) ? mod(a, float3(b)) : float3(0);
+}
+float4 safe_mod(float4 a, float b)
+{
+  return (b != 0.0f) ? mod(a, float4(b)) : float4(0);
+}
+#line 42
+float2 compatible_mod(float2 a, float b)
+{
+  return float2(compatible_mod(a.x, b), compatible_mod(a.y, b));
+}
+#line 50
+float3 compatible_mod(float3 a, float b)
+{
+  return float3(compatible_mod(a.x, b), compatible_mod(a.y, b), compatible_mod(a.z, b));
+}
+#line 58
+float4 compatible_mod(float4 a, float b)
+{
+  return float4(compatible_mod(a.x, b),
+                compatible_mod(a.y, b),
+                compatible_mod(a.z, b),
+                compatible_mod(a.w, b));
+}
+#line 70
+float2 compatible_mod(float2 a, float2 b)
+{
+  return float2(compatible_mod(a.x, b.x), compatible_mod(a.y, b.y));
+}
+#line 78
+float3 compatible_mod(float3 a, float3 b)
+{
+  return float3(compatible_mod(a.x, b.x), compatible_mod(a.y, b.y), compatible_mod(a.z, b.z));
+}
+#line 86
+float4 compatible_mod(float4 a, float4 b)
+{
+  return float4(compatible_mod(a.x, b.x),
+                compatible_mod(a.y, b.y),
+                compatible_mod(a.z, b.z),
+                compatible_mod(a.w, b.w));
+}
+#line 98
+float2 safe_divide(float2 a, float2 b)
+{
+  return select(float2(0), a / b, notEqual(b, float2(0)));
+}
+#line 98
+float3 safe_divide(float3 a, float3 b)
+{
+  return select(float3(0), a / b, notEqual(b, float3(0)));
+}
+#line 98
+float4 safe_divide(float4 a, float4 b)
+{
+  return select(float4(0), a / b, notEqual(b, float4(0)));
+}
+#line 112
+float2 safe_divide(float2 a, float b)
+{
+  return (b != 0.0f) ? (a / b) : float2(0);
+}
+float3 safe_divide(float3 a, float b)
+{
+  return (b != 0.0f) ? (a / b) : float3(0);
+}
+float4 safe_divide(float4 a, float b)
+{
+  return (b != 0.0f) ? (a / b) : float4(0);
+}
+#line 128
+float2 safe_normalize_and_get_length(float2 vector, _ref(float ,out_length))
+{
+  float length_squared = dot(vector, vector);
+  constexpr float threshold = 1e-35f;
+  if (length_squared > threshold) {
+    out_length = sqrt(length_squared);
+    return vector / out_length;
+  }
+
+  out_length = 0.0f;
+  float2 result = float2(0.0f);
+  result[0] = 1.0f;
+  return result;
+}
+#line 128
+float3 safe_normalize_and_get_length(float3 vector, _ref(float ,out_length))
+{
+  float length_squared = dot(vector, vector);
+  constexpr float threshold = 1e-35f;
+  if (length_squared > threshold) {
+    out_length = sqrt(length_squared);
+    return vector / out_length;
+  }
+
+  out_length = 0.0f;
+  float3 result = float3(0.0f);
+  result[0] = 1.0f;
+  return result;
+}
+#line 128
+float4 safe_normalize_and_get_length(float4 vector, _ref(float ,out_length))
+{
+  float length_squared = dot(vector, vector);
+  constexpr float threshold = 1e-35f;
+  if (length_squared > threshold) {
+    out_length = sqrt(length_squared);
+    return vector / out_length;
+  }
+
+  out_length = 0.0f;
+  float4 result = float4(0.0f);
+  result[0] = 1.0f;
+  return result;
+}
+#line 149
+float2 safe_normalize(float2 vector)
+{
+  float unused_length = 0.0f;
+  return safe_normalize_and_get_length(vector, unused_length);
+}
+#line 149
+float3 safe_normalize(float3 vector)
+{
+  float unused_length = 0.0f;
+  return safe_normalize_and_get_length(vector, unused_length);
+}
+#line 149
+float4 safe_normalize(float4 vector)
+{
+  float unused_length = 0.0f;
+  return safe_normalize_and_get_length(vector, unused_length);
+}
+#line 162
+float2 safe_rcp(float2 a)
+{
+  return select(float2(0.0f), (1.0f / a), notEqual(a, float2(0.0f)));
+}
+#line 162
+float3 safe_rcp(float3 a)
+{
+  return select(float3(0.0f), (1.0f / a), notEqual(a, float3(0.0f)));
+}
+#line 162
+float4 safe_rcp(float4 a)
+{
+  return select(float4(0.0f), (1.0f / a), notEqual(a, float4(0.0f)));
+}
+#line 174
+float2 fallback_pow(float2 a, float b, float2 fallback)
+{
+  return float2(fallback_pow(a.x, b, fallback.x), fallback_pow(a.y, b, fallback.y));
+}
+float3 fallback_pow(float3 a, float b, float3 fallback)
+{
+  return float3(fallback_pow(a.x, b, fallback.x),
+                fallback_pow(a.y, b, fallback.y),
+                fallback_pow(a.z, b, fallback.z));
+}
+float4 fallback_pow(float4 a, float b, float4 fallback)
+{
+  return float4(fallback_pow(a.x, b, fallback.x),
+                fallback_pow(a.y, b, fallback.y),
+                fallback_pow(a.z, b, fallback.z),
+                fallback_pow(a.w, b, fallback.w));
+}
+
+float2 compatible_pow(float2 a, float2 b)
+{
+  return float2(compatible_pow(a.x, b.x), compatible_pow(a.y, b.y));
+}
+float3 compatible_pow(float3 a, float3 b)
+{
+  return float3(compatible_pow(a.x, b.x), compatible_pow(a.y, b.y), compatible_pow(a.z, b.z));
+}
+float4 compatible_pow(float4 a, float4 b)
+{
+  return float4(compatible_pow(a.x, b.x),
+                compatible_pow(a.y, b.y),
+                compatible_pow(a.z, b.z),
+                compatible_pow(a.w, b.w));
+}
+#line 211
+float2 wrap(float2 a, float2 b, float2 c)
+{
+  return float2(wrap(a.x, b.x, c.x), wrap(a.y, b.y, c.y));
+}
+#line 218
+float3 wrap(float3 a, float3 b, float3 c)
+{
+  return float3(wrap(a.x, b.x, c.x), wrap(a.y, b.y, c.y), wrap(a.z, b.z, c.z));
+}
+#line 225
+float4 wrap(float4 a, float4 b, float4 c)
+{
+  return float4(
+      wrap(a.x, b.x, c.x), wrap(a.y, b.y, c.y), wrap(a.z, b.z, c.z), wrap(a.w, b.w, c.w));
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "key": "imhex",
+  "input_url": "https://github.com/WerWolv/ImHex/releases",
+  "canonical_url": "https://github.com/WerWolv/ImHex",
+  "source_directory": "imhex/upstream",
+  "commit": "bf42e47898811de563fd4ee61b12957a0cf6a024",
+  "nested_submodules": [
+    {"path": "lib/external/disassembler", "commit": "2655ad5c4c46bfb209100515b9cb8e7ef55b276f"},
+    {"path": "lib/external/disassembler/external/fmt", "commit": "40626af88bd7df9a5fb80be7b25ac85b122d6c21"},
+    {"path": "lib/external/disassembler/external/libwolv", "commit": "a50a748ce71ea59a7b346f839e538c0bca9b7e8c"},
+    {"path": "lib/external/libromfs", "commit": "fa444f299501f2ec88eb9a11fa2bf8fc40832944"},
+    {"path": "lib/external/libwolv", "commit": "05b2db4c301574af0f7a10c740aaa39a73579946"},
+    {"path": "lib/external/libwolv/libs/utils/lib/jthread/jthread", "commit": "0fa8d394254886c555d6faccd0a3de819b7d47f8"},
+    {"path": "lib/external/pattern_language", "commit": "2e49805fcc715acdc8706f87467a8d0ed7268855"},
+    {"path": "lib/external/pattern_language/external/cli11", "commit": "bfffd37e1f804ca4fae1caae106935791696b6a9"},
+    {"path": "lib/external/pattern_language/external/fmt", "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f"},
+    {"path": "lib/external/pattern_language/external/libwolv", "commit": "05b2db4c301574af0f7a10c740aaa39a73579946"},
+    {"path": "lib/external/pattern_language/external/libwolv/libs/utils/lib/jthread/jthread", "commit": "0fa8d394254886c555d6faccd0a3de819b7d47f8"},
+    {"path": "lib/external/pattern_language/external/throwing_ptr", "commit": "cd28490ebf9be803497a9fff733de62295d8288e"},
+    {"path": "lib/third_party/HashLibPlus", "commit": "1823dd116244b035c540e3079ba7862b406086c0"},
+    {"path": "lib/third_party/capstone", "commit": "9a0a1607c44de2ff32f8b7f4e20788c08c6de098"},
+    {"path": "lib/third_party/edlib", "commit": "0ddc23ea06abd95ab6227442acb4c27bd7607b68"},
+    {"path": "lib/third_party/fmt", "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f"},
+    {"path": "lib/third_party/lunasvg", "commit": "83c58df8103dc7dca423dfd824992af94d49bed6"},
+    {"path": "lib/third_party/md4c", "commit": "481fbfbdf72daab2912380d62bb5f2187d438408"},
+    {"path": "lib/third_party/nativefiledialog", "commit": "86d5f2005fe1c00747348a12070fec493ea2407e"},
+    {"path": "lib/third_party/xdgpp", "commit": "f01f810714443d0f10c333d4d1d9c0383be41375"},
+    {"path": "lib/third_party/yara/yara", "commit": "f44a8958e88daa75d765a52a68876f2286d57a51"}
+  ]
+}

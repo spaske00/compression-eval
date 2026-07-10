@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/texteditor">
+    <file alias="./images/finddocuments.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/plugins/texteditor/./images/finddocuments.png</file>
+    <file alias="./images/settingscategory_texteditor.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/plugins/texteditor/./images/settingscategory_texteditor.png</file>
+    <file alias="./images/settingscategory_texteditor@2x.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/plugins/texteditor/./images/settingscategory_texteditor@2x.png</file>
+    <file alias="./images/snippet.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/plugins/texteditor/./images/snippet.png</file>
+  </qresource>
+</RCC>

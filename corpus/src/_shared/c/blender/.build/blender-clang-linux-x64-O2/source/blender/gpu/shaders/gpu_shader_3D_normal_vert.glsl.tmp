@@ -1,0 +1,10 @@
+#line 1 "gpu_shader_3D_normal_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(gpu_shader_simple_lighting)
+
+void main()
+{
+  normal = normalize(NormalMatrix * nor);
+  gl_Position = ModelViewProjectionMatrix * float4(pos, 1.0f);
+}

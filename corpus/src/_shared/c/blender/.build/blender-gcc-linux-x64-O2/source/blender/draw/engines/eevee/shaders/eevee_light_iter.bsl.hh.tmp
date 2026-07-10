@@ -1,0 +1,120 @@
+#line 1 "eevee_light_iter.bsl.hh"
+ 
+#line 13
+uint eevee_light_bitfield_mask(uint bit_width, uint bit_min)
+{
+
+  uint mask = (bit_width > 31u) ? 0x0u : (0xFFFFFFFFu << bit_width);
+  return ~mask << bit_min;
+}
+
+uint eevee_light_zbin_mask(uint word_index, uint zbin_min, uint zbin_max)
+{
+  uint word_start = word_index * 32u;
+  uint word_end = word_start + 31u;
+  uint local_min = max(zbin_min, word_start);
+  uint local_max = min(zbin_max, word_end);
+  uint mask_width = local_max - local_min + 1;
+  return eevee_light_bitfield_mask(mask_width, local_min);
+}
+
+int eevee_light_culling_z_to_zbin(float scale, float bias, float z)
+{
+  return int(z * scale + bias);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

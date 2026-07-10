@@ -1,0 +1,46 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_lookdev_DisplayFragOut)
+FRAGMENT_OUT(0, float4, eevee_lookdev_DisplayFragOut_color)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(eevee_lookdev_DisplayVertOut_t)
+SMOOTH(float2, eevee_lookdev_DisplayVertOut_uv_coord)
+FLAT(uint, eevee_lookdev_DisplayVertOut_sphere_id)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(eevee_lookdev_Display)
+PUSH_CONSTANT(float2, viewportSize)
+PUSH_CONSTANT(float2, invertedViewportSize)
+PUSH_CONSTANT(int2, anchor)
+.sampler(0, ImageType::sampler2D, "metallic_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2D, "diffuse_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lookdev_display_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+ADDITIONAL_INFO(eevee_lookdev_Display)
+VERTEX_OUT(eevee_lookdev_DisplayVertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lookdev_display_frag_infos_)
+ADDITIONAL_INFO(eevee_lookdev_Display)
+ADDITIONAL_INFO(eevee_lookdev_DisplayFragOut)
+DEPTH_WRITE(DepthWrite::ANY)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lookdev_display)
+GRAPHIC_SOURCE("eevee_lookdev_display.bsl.hh")
+VERTEX_FUNCTION("eevee_lookdev_display_vert")
+FRAGMENT_FUNCTION("eevee_lookdev_display_frag")
+ADDITIONAL_INFO(eevee_lookdev_display_vert_infos_)
+ADDITIONAL_INFO(eevee_lookdev_display_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

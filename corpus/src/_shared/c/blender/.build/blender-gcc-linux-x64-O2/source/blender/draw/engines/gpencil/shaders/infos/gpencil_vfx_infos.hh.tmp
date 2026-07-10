@@ -1,0 +1,127 @@
+#line 1 "gpencil_vfx_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 13
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define COMPOSITE
+#endif
+#line 21
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_common
+CREATE_INFO_RES_PASS_gpencil_fx_common
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_common
+CREATE_INFO_RES_BATCH_gpencil_fx_common
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_common
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_common
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_common
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_common
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_composite
+CREATE_INFO_RES_PASS_gpencil_fx_composite
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_composite
+CREATE_INFO_RES_BATCH_gpencil_fx_composite
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_composite
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_composite
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_composite
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_composite
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_colorize
+CREATE_INFO_RES_PASS_gpencil_fx_colorize
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_colorize
+CREATE_INFO_RES_BATCH_gpencil_fx_colorize
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_colorize
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_colorize
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_colorize
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_colorize
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_blur
+CREATE_INFO_RES_PASS_gpencil_fx_blur
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_blur
+CREATE_INFO_RES_BATCH_gpencil_fx_blur
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_blur
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_blur
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_blur
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_blur
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_transform
+CREATE_INFO_RES_PASS_gpencil_fx_transform
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_transform
+CREATE_INFO_RES_BATCH_gpencil_fx_transform
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_transform
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_transform
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_transform
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_transform
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_glow
+CREATE_INFO_RES_PASS_gpencil_fx_glow
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_glow
+CREATE_INFO_RES_BATCH_gpencil_fx_glow
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_glow
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_glow
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_glow
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_glow
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_rim
+CREATE_INFO_RES_PASS_gpencil_fx_rim
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_rim
+CREATE_INFO_RES_BATCH_gpencil_fx_rim
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_rim
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_rim
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_rim
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_rim
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_shadow
+CREATE_INFO_RES_PASS_gpencil_fx_shadow
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_shadow
+CREATE_INFO_RES_BATCH_gpencil_fx_shadow
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_shadow
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_shadow
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_shadow
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_shadow
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpencil_fx_pixelize
+CREATE_INFO_RES_PASS_gpencil_fx_pixelize
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpencil_fx_pixelize
+CREATE_INFO_RES_BATCH_gpencil_fx_pixelize
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpencil_fx_pixelize
+CREATE_INFO_RES_GEOMETRY_gpencil_fx_pixelize
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpencil_fx_pixelize
+CREATE_INFO_RES_SHARED_VARS_gpencil_fx_pixelize
+#endif

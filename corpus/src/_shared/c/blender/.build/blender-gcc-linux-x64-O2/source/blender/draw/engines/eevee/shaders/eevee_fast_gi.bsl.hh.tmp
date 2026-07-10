@@ -1,0 +1,1508 @@
+#line 1 "eevee_fast_gi.bsl.hh"
+ 
+#line 43
+uint eevee_fast_gi_angles_to_bitmask(float2 theta)
+{
+  constexpr int bitmask_len = 32;
+
+  float2 ratio = saturate(theta * M_1_PI + 0.5f);
+  uint a = uint(floor(float(bitmask_len) * ratio.x));
+
+  uint b = uint(ceil(float(bitmask_len) * (ratio.y - ratio.x)));
+
+  return (((b < 32u) ? 1u << b : 0u) - 1u) << a;
+}
+
+float eevee_fast_gi_bitmask_to_visibility_uniform(uint bitmask)
+{
+  constexpr int bitmask_len = 32;
+
+  return float(bitCount(bitmask)) / float(bitmask_len);
+}
+#line 66
+float eevee_fast_gi_bitmask_to_occlusion_uniform(uint bitmask)
+{
+
+  return 1.0f - eevee_fast_gi_bitmask_to_visibility_uniform(bitmask);
+}
+#line 76
+float eevee_fast_gi_bitmask_to_occlusion_cosine(uint bitmask)
+{
+#line 81
+#if 0
+#line 92
+#else
+#line 96
+  constexpr float4 weights = float4(0.0095061f, 0.0270951f, 0.0405571f, 0.0478421f);
+  constexpr uint4 masks = uint4(0xF000000Fu, 0x0F0000F0u, 0x00F00F00u, 0x000FF000u);
+  return saturate(1.0f - dot(float4(bitCount(uint4(bitmask) & masks)), weights));
+#endif
+}
+#line 107
+void eevee_fast_gi_projected_normal_to_plane_angle_and_length(
+    float3 N, float3 V, float3 T, float3 B, _ref(float ,N_proj_len), _ref(float ,N_angle))
+{
+
+  float3 N_proj = normalize_and_get_length(N - B * dot(N, B), N_proj_len);
+
+  float N_sin = dot(N_proj, T);
+  float N_cos = dot(N_proj, V);
+
+  N_angle = sign(N_sin) * acos_fast(N_cos);
+}
+#line 124
+float3 eevee_fast_gi_sample_radianceTfloat(sampler2D _0, float2 _1, float _2)
+{
+  return float3(0.0f);
+}
+#line 129
+float3 eevee_fast_gi_sample_normalTfloat(sampler2D _0, float2 _1, float _2)
+{
+  return float3(0.0f);
+}
+#line 141
+float eevee_fast_gi_select_resultTfloat(float occlusion, SphericalHarmonicL1Tfloat4 _0)
+{
+  return occlusion;
+}
+#line 148
+float3 eevee_fast_gi_sample_radianceTSphericalHarmonicL1Tfloat4(sampler2D screen_radiance_tx,
+                                                    float2 uv,
+                                                    float lod)
+{
+  return textureLod(screen_radiance_tx, uv, lod).rgb;
+}
+
+float3 eevee_fast_gi_sample_normalTSphericalHarmonicL1Tfloat4(sampler2D screen_normal_tx, float2 uv, float lod)
+{
+  return textureLod(screen_normal_tx, uv, lod).rgb * 2.0f - 1.0f;
+}
+
+SphericalHarmonicL1Tfloat4 eevee_fast_gi_select_resultTSphericalHarmonicL1Tfloat4(
+    float _0, SphericalHarmonicL1Tfloat4 sh)
+{
+  return sh;
+}
+#line 178
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 178
+float eevee_fast_gi_evalTfloat(const eevee_Uniform  uni,
+             const ViewMatrices view,
+             ScreenThicknessParameters thickness_params,
+             sampler2D hiz_tx,
+             sampler2D screen_radiance_tx,
+             sampler2D screen_normal_tx,
+             float3 vP,
+             float3 vN,
+             float4 noise,
+             float2 pixel_size,
+             float search_distance,
+             float angle_bias,
+             const int slice_count,
+             const int sample_count,
+             const bool reversed,
+             const bool ao_only)
+{
+  float3 vV = _view_incident_vector(view, vP);
+
+  float2 v_dir;
+  if (slice_count <= 2) {
+
+    v_dir = sample_circle(noise.x / float(2 * slice_count));
+  }
+
+  float weight_accum = 0.0f;
+  float occlusion_accum = 0.0f;
+  SphericalHarmonicL1Tfloat4 sh_accum = SphericalHarmonicL1Tfloat4_ctor_();
+
+#if defined(GPU_METAL)
+
+#  pragma clang loop unroll(full)
+#endif
+  for (int slice = 0; slice < slice_count; slice++) {
+    if (slice_count > 2) {
+
+      v_dir = sample_circle(((float(slice) + noise.x) / float(2 * slice_count)));
+    }
+#line 218
+    float3 vB = normalize(cross(vV, float3(v_dir, 0.0f)));
+    float3 vT = cross(vB, vV);
+#line 222
+    uint slice_bitmask = 0u;
+#line 225
+    float vN_angle;
+
+    float vN_length;
+
+    eevee_fast_gi_projected_normal_to_plane_angle_and_length(vN, vV, vT, vB, vN_length, vN_angle);
+#line 232
+    vN_angle += (noise.z - 0.5f) * (M_PI / 32.0f) * angle_bias;
+
+    SphericalHarmonicL1Tfloat4 sh_slice = SphericalHarmonicL1Tfloat4_ctor_();
+
+    _encode_signal_sample(sh_slice, vN, float4(0.0f, 0.0f, 0.0f, 1.0f));
+#line 239
+    for (int side = 0; side < 2; side++) {
+      Ray ray;
+      ray.origin = vP;
+      ray.direction = float3((side == 0) ? v_dir : -v_dir, 0.0f);
+      ray.max_time = search_distance;
+#line 247
+      ScreenSpaceRay ssray = ScreenSpaceRay_create(view, ray, pixel_size);
+
+      ScreenThicknessEstimator thickness_estimator = ScreenThicknessEstimator_init(ray.origin.z);
+
+#if defined(GPU_METAL) && defined(GPU_APPLE)
+
+#  pragma clang loop unroll(full)
+#endif
+      for (int j = 0; j < sample_count; j++) {
+
+        float time = 1.0f + square((float(j) + noise.y) / float(sample_count)) * ssray.max_time;
+
+        if (reversed) {
+#line 262
+          time += 1.0f;
+        }
+
+        const float lod = log2(time * srt_access(eevee_Uniform, uniform_buf).ao.lod_factor);
+
+        const float2 sample_uv = ssray.origin.xy + ssray.direction.xy * time;
+        float sample_depth =
+            textureLod(hiz_tx, sample_uv * srt_access(eevee_Uniform, uniform_buf).hiz.uv_scale, floor(noise.w + lod)).r;
+
+        if (sample_depth == 1.0f && !reversed) {
+
+          continue;
+        }
+
+        float sample_view_z = _depth_screen_to_view(view, sample_depth);
+        float sample_ndc_min_thickness = _pixel_depth_thickness_at(thickness_params, sample_view_z);
+
+        float sample_thickness = _thickness(thickness_estimator, sample_depth, time, sample_ndc_min_thickness);
+#line 282
+        constexpr float bias = 2.0f * 2.4e-7f;
+        const float sample_depth_front = sample_depth + (reversed ? -bias : bias);
+        const float sample_depth_back = sample_depth + (reversed ? 0.0 : sample_thickness);
+
+        float3 vP_sample_front = _point_screen_to_view(view, float3(sample_uv, sample_depth_front));
+        float3 vP_sample_back = _point_screen_to_view(view, float3(sample_uv, sample_depth_back));
+#line 293
+        float3 ls_P_front = (vP_sample_front - vP) / search_distance;
+        float3 ls_P_back = (vP_sample_back - vP) / search_distance;
+
+        float max_dist = sqrt_fast(saturate(1.0f - length_squared(ls_P_front.xy)));
+        if (!reversed) {
+          ls_P_front.z = clamp(ls_P_front.z, -max_dist, max_dist);
+          ls_P_back.z = clamp(ls_P_back.z, -max_dist, max_dist);
+          if (ls_P_front.z == ls_P_back.z) {
+            continue;
+          }
+        }
+
+        float3 vL_front = normalize(ls_P_front);
+        float3 vL_back = normalize(ls_P_back);
+
+        float LV_front = dot(vL_front, vV);
+        float LV_back = dot(vL_back, vV);
+        if (reversed) {
+#line 313
+          LV_front = 1.0f;
+
+          if (sample_depth == 1.0f) {
+            LV_back = -1.0f;
+          }
+        }
+#line 321
+        float2 theta = acos_fast(float2(LV_front, LV_back));
+        theta.y = max(theta.x, theta.y);
+        if (reversed) {
+#line 326
+          theta -= M_PI;
+        }
+
+        theta = (side == 0) ? theta.xy : -theta.yx;
+
+        const float2 sample_uv_data = sample_uv * srt_access(eevee_Uniform, raytrace_buf).fast_gi_uv_scale;
+
+        float lod_data = lod - srt_access(eevee_Uniform, raytrace_buf).fast_gi_lod_bias;
+
+        float3 radiance = eevee_fast_gi_sample_radianceTfloat(screen_radiance_tx, sample_uv_data, lod_data);
+
+        float3 normal = eevee_fast_gi_sample_normalTfloat(screen_normal_tx, sample_uv_data, lod_data);
+        if (ao_only) {
+          radiance = float3(0);
+        }
+
+        float facing = dot(normal, -vL_front);
+        if (facing < 0.0f) {
+          radiance *= srt_access(eevee_Uniform, raytrace_buf).backface_hit_scale;
+        }
+        float facing_weight = abs(facing);
+#line 349
+        float2 biased_theta = (theta - vN_angle) * angle_bias;
+        uint sample_bitmask = eevee_fast_gi_angles_to_bitmask(biased_theta);
+        float weight_bitmask = eevee_fast_gi_bitmask_to_visibility_uniform(sample_bitmask & ~slice_bitmask);
+
+        radiance *= facing_weight * weight_bitmask;
+        _encode_signal_sample(sh_slice, vL_front, float4(radiance, -weight_bitmask));
+
+        slice_bitmask |= sample_bitmask;
+      }
+    }
+
+    float occlusion_slice = eevee_fast_gi_bitmask_to_occlusion_cosine(slice_bitmask);
+
+    occlusion_accum += occlusion_slice * vN_length;
+#line 365
+    sh_accum = spherical_harmonics_madd(sh_slice, vN_length, sh_accum);
+
+    weight_accum += vN_length;
+#line 370
+    v_dir = orthogonal(v_dir);
+  }
+
+  float weight_rcp = safe_rcp(weight_accum);
+#line 376
+  float sphere_weight = 2.0f * M_TAU;
+#line 385
+  float gi_weight_factor = 1.0f / ((3.0f / 2.0f) - cos(angle_bias * M_PI_2));
+
+  sphere_weight = weight_rcp * sphere_weight;
+
+  float4 sh_weight = float4(float3(sphere_weight * gi_weight_factor), sphere_weight);
+
+  sh_accum = spherical_harmonics_mul(sh_accum, sh_weight);
+  occlusion_accum *= weight_rcp;
+  return eevee_fast_gi_select_resultTfloat(occlusion_accum, sh_accum);
+}
+#endif
+#line 178
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 178
+SphericalHarmonicL1Tfloat4 eevee_fast_gi_evalTSphericalHarmonicL1Tfloat4(const eevee_Uniform  uni,
+             const ViewMatrices view,
+             ScreenThicknessParameters thickness_params,
+             sampler2D hiz_tx,
+             sampler2D screen_radiance_tx,
+             sampler2D screen_normal_tx,
+             float3 vP,
+             float3 vN,
+             float4 noise,
+             float2 pixel_size,
+             float search_distance,
+             float angle_bias,
+             const int slice_count,
+             const int sample_count,
+             const bool reversed,
+             const bool ao_only)
+{
+  float3 vV = _view_incident_vector(view, vP);
+
+  float2 v_dir;
+  if (slice_count <= 2) {
+
+    v_dir = sample_circle(noise.x / float(2 * slice_count));
+  }
+
+  float weight_accum = 0.0f;
+  float occlusion_accum = 0.0f;
+  SphericalHarmonicL1Tfloat4 sh_accum = SphericalHarmonicL1Tfloat4_ctor_();
+
+#if defined(GPU_METAL)
+
+#  pragma clang loop unroll(full)
+#endif
+  for (int slice = 0; slice < slice_count; slice++) {
+    if (slice_count > 2) {
+
+      v_dir = sample_circle(((float(slice) + noise.x) / float(2 * slice_count)));
+    }
+#line 218
+    float3 vB = normalize(cross(vV, float3(v_dir, 0.0f)));
+    float3 vT = cross(vB, vV);
+#line 222
+    uint slice_bitmask = 0u;
+#line 225
+    float vN_angle;
+
+    float vN_length;
+
+    eevee_fast_gi_projected_normal_to_plane_angle_and_length(vN, vV, vT, vB, vN_length, vN_angle);
+#line 232
+    vN_angle += (noise.z - 0.5f) * (M_PI / 32.0f) * angle_bias;
+
+    SphericalHarmonicL1Tfloat4 sh_slice = SphericalHarmonicL1Tfloat4_ctor_();
+
+    _encode_signal_sample(sh_slice, vN, float4(0.0f, 0.0f, 0.0f, 1.0f));
+#line 239
+    for (int side = 0; side < 2; side++) {
+      Ray ray;
+      ray.origin = vP;
+      ray.direction = float3((side == 0) ? v_dir : -v_dir, 0.0f);
+      ray.max_time = search_distance;
+#line 247
+      ScreenSpaceRay ssray = ScreenSpaceRay_create(view, ray, pixel_size);
+
+      ScreenThicknessEstimator thickness_estimator = ScreenThicknessEstimator_init(ray.origin.z);
+
+#if defined(GPU_METAL) && defined(GPU_APPLE)
+
+#  pragma clang loop unroll(full)
+#endif
+      for (int j = 0; j < sample_count; j++) {
+
+        float time = 1.0f + square((float(j) + noise.y) / float(sample_count)) * ssray.max_time;
+
+        if (reversed) {
+#line 262
+          time += 1.0f;
+        }
+
+        const float lod = log2(time * srt_access(eevee_Uniform, uniform_buf).ao.lod_factor);
+
+        const float2 sample_uv = ssray.origin.xy + ssray.direction.xy * time;
+        float sample_depth =
+            textureLod(hiz_tx, sample_uv * srt_access(eevee_Uniform, uniform_buf).hiz.uv_scale, floor(noise.w + lod)).r;
+
+        if (sample_depth == 1.0f && !reversed) {
+
+          continue;
+        }
+
+        float sample_view_z = _depth_screen_to_view(view, sample_depth);
+        float sample_ndc_min_thickness = _pixel_depth_thickness_at(thickness_params, sample_view_z);
+
+        float sample_thickness = _thickness(thickness_estimator, sample_depth, time, sample_ndc_min_thickness);
+#line 282
+        constexpr float bias = 2.0f * 2.4e-7f;
+        const float sample_depth_front = sample_depth + (reversed ? -bias : bias);
+        const float sample_depth_back = sample_depth + (reversed ? 0.0 : sample_thickness);
+
+        float3 vP_sample_front = _point_screen_to_view(view, float3(sample_uv, sample_depth_front));
+        float3 vP_sample_back = _point_screen_to_view(view, float3(sample_uv, sample_depth_back));
+#line 293
+        float3 ls_P_front = (vP_sample_front - vP) / search_distance;
+        float3 ls_P_back = (vP_sample_back - vP) / search_distance;
+
+        float max_dist = sqrt_fast(saturate(1.0f - length_squared(ls_P_front.xy)));
+        if (!reversed) {
+          ls_P_front.z = clamp(ls_P_front.z, -max_dist, max_dist);
+          ls_P_back.z = clamp(ls_P_back.z, -max_dist, max_dist);
+          if (ls_P_front.z == ls_P_back.z) {
+            continue;
+          }
+        }
+
+        float3 vL_front = normalize(ls_P_front);
+        float3 vL_back = normalize(ls_P_back);
+
+        float LV_front = dot(vL_front, vV);
+        float LV_back = dot(vL_back, vV);
+        if (reversed) {
+#line 313
+          LV_front = 1.0f;
+
+          if (sample_depth == 1.0f) {
+            LV_back = -1.0f;
+          }
+        }
+#line 321
+        float2 theta = acos_fast(float2(LV_front, LV_back));
+        theta.y = max(theta.x, theta.y);
+        if (reversed) {
+#line 326
+          theta -= M_PI;
+        }
+
+        theta = (side == 0) ? theta.xy : -theta.yx;
+
+        const float2 sample_uv_data = sample_uv * srt_access(eevee_Uniform, raytrace_buf).fast_gi_uv_scale;
+
+        float lod_data = lod - srt_access(eevee_Uniform, raytrace_buf).fast_gi_lod_bias;
+
+        float3 radiance = eevee_fast_gi_sample_radianceTSphericalHarmonicL1Tfloat4(screen_radiance_tx, sample_uv_data, lod_data);
+
+        float3 normal = eevee_fast_gi_sample_normalTSphericalHarmonicL1Tfloat4(screen_normal_tx, sample_uv_data, lod_data);
+        if (ao_only) {
+          radiance = float3(0);
+        }
+
+        float facing = dot(normal, -vL_front);
+        if (facing < 0.0f) {
+          radiance *= srt_access(eevee_Uniform, raytrace_buf).backface_hit_scale;
+        }
+        float facing_weight = abs(facing);
+#line 349
+        float2 biased_theta = (theta - vN_angle) * angle_bias;
+        uint sample_bitmask = eevee_fast_gi_angles_to_bitmask(biased_theta);
+        float weight_bitmask = eevee_fast_gi_bitmask_to_visibility_uniform(sample_bitmask & ~slice_bitmask);
+
+        radiance *= facing_weight * weight_bitmask;
+        _encode_signal_sample(sh_slice, vL_front, float4(radiance, -weight_bitmask));
+
+        slice_bitmask |= sample_bitmask;
+      }
+    }
+
+    float occlusion_slice = eevee_fast_gi_bitmask_to_occlusion_cosine(slice_bitmask);
+
+    occlusion_accum += occlusion_slice * vN_length;
+#line 365
+    sh_accum = spherical_harmonics_madd(sh_slice, vN_length, sh_accum);
+
+    weight_accum += vN_length;
+#line 370
+    v_dir = orthogonal(v_dir);
+  }
+
+  float weight_rcp = safe_rcp(weight_accum);
+#line 376
+  float sphere_weight = 2.0f * M_TAU;
+#line 385
+  float gi_weight_factor = 1.0f / ((3.0f / 2.0f) - cos(angle_bias * M_PI_2));
+
+  sphere_weight = weight_rcp * sphere_weight;
+
+  float4 sh_weight = float4(float3(sphere_weight * gi_weight_factor), sphere_weight);
+
+  sh_accum = spherical_harmonics_mul(sh_accum, sh_weight);
+  occlusion_accum *= weight_rcp;
+  return eevee_fast_gi_select_resultTSphericalHarmonicL1Tfloat4(occlusion_accum, sh_accum);
+}
+#endif
+#line 436
+#define access_eevee_fast_gi_SampleInput_depth_tx() depth_tx
+#define access_eevee_fast_gi_SampleInput_fast_gi_radiance_0_tx() fast_gi_radiance_0_tx
+#define access_eevee_fast_gi_SampleInput_fast_gi_radiance_1_tx() fast_gi_radiance_1_tx
+#define access_eevee_fast_gi_SampleInput_fast_gi_radiance_2_tx() fast_gi_radiance_2_tx
+#define access_eevee_fast_gi_SampleInput_fast_gi_radiance_3_tx() fast_gi_radiance_3_tx
+#define access_eevee_fast_gi_SampleInput_screen_normal_tx() screen_normal_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_SampleInput
+CREATE_INFO_RES_PASS_eevee_fast_gi_SampleInput
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_SampleInput
+CREATE_INFO_RES_BATCH_eevee_fast_gi_SampleInput
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_SampleInput
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_SampleInput
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_SampleInput
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_SampleInput
+#endif
+#line 436
+struct eevee_fast_gi_SampleInput {
+#line 551
+int _pad;};
+#line 554
+#ifndef GPU_METAL
+eevee_fast_gi_SampleInput eevee_fast_gi_SampleInput_ctor_();
+float3 _sample_normal_get(eevee_fast_gi_SampleInput  this_, const draw_View  views,
+                           int2 texel,
+                           _ref(bool ,is_processed));
+float _sample_weight_get(eevee_fast_gi_SampleInput  this_, const eevee_Uniform  uni,
+                          const draw_View  views,
+                          sampler2D hiz_tx,
+                          float3 center_N,
+                          float3 center_P,
+                          int2 sample_texel,
+                          float2 sample_uv,
+                          int2 sample_offset);
+float _sample_weight_get(eevee_fast_gi_SampleInput  this_, const eevee_Uniform  uni,
+                          const draw_View  views,
+                          float3 center_N,
+                          float3 center_P,
+                          int2 center_texel,
+                          int2 sample_offset);
+SphericalHarmonicL1Tfloat4 _load_sh(eevee_fast_gi_SampleInput  this_, int2 texel);
+SphericalHarmonicL1Tfloat4 _load_sh(eevee_fast_gi_SampleInput  this_, int2 texel, bool valid);
+eevee_fast_gi_SampleInput eevee_fast_gi_SampleInput_new_();
+#endif
+#line 436
+                                         eevee_fast_gi_SampleInput eevee_fast_gi_SampleInput_ctor_() {eevee_fast_gi_SampleInput r;r._pad=0;return r;}
+#line 447
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleInput) && defined(CREATE_INFO_draw_View)
+#line 447
+  float3 _sample_normal_get(eevee_fast_gi_SampleInput  this_, const draw_View  views,
+                           int2 texel,
+                           _ref(bool ,is_processed))
+  {
+    float4 normal = texelFetch(srt_access(eevee_fast_gi_SampleInput, screen_normal_tx), texel, 0);
+    is_processed = (normal.w != 0.0f);
+    return _normal_view_to_world(_get(views, 0), normal.xyz * 2.0f - 1.0f);
+  }
+#endif
+#line 457
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleInput) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View)
+#line 457
+  float _sample_weight_get(eevee_fast_gi_SampleInput  this_, const eevee_Uniform  uni,
+                          const draw_View  views,
+                          sampler2D hiz_tx,
+                          float3 center_N,
+                          float3 center_P,
+                          int2 sample_texel,
+                          float2 sample_uv,
+                          int2 sample_offset)
+  {
+    int2 sample_texel_fullres = sample_texel * srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale +
+                                srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias;
+    float sample_depth = texelFetch(hiz_tx, sample_texel_fullres, 0).r;
+
+    bool is_valid;
+    float3 sample_N = _sample_normal_get(this_, views, sample_texel, is_valid);
+    float3 sample_P = _point_screen_to_world(_get(views, 0), float3(sample_uv, sample_depth));
+
+    if (!is_valid) {
+      return 0.0f;
+    }
+
+    float gauss = filters_gaussian_factor(1.5f, 1.5f);
+#line 481
+    float depth_weight = filters_planar_weight(center_N, center_P, sample_P, 100.0f);
+    float spatial_weight = filters_gaussian_weight(gauss, length_squared(float2(sample_offset)));
+    float normal_weight = filters_angle_weight(center_N, sample_N);
+
+    return max(1e-6f, depth_weight * spatial_weight * normal_weight);
+  }
+#endif
+#line 489
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleInput) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View)
+#line 489
+  float _sample_weight_get(eevee_fast_gi_SampleInput  this_, const eevee_Uniform  uni,
+                          const draw_View  views,
+                          float3 center_N,
+                          float3 center_P,
+                          int2 center_texel,
+                          int2 sample_offset)
+  {
+    int2 sample_texel = center_texel + sample_offset;
+    int2 sample_texel_fullres = sample_texel * srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale +
+                                srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias;
+    float2 sample_uv = (float2(sample_texel_fullres) + 0.5f) *
+                       srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+
+    float sample_depth = reverse_z_read(texelFetch(srt_access(eevee_fast_gi_SampleInput, depth_tx), sample_texel_fullres, 0).r);
+
+    bool is_valid;
+    float3 sample_N = _sample_normal_get(this_, views, sample_texel, is_valid);
+    float3 sample_P = _point_screen_to_world(_get(views, 0), float3(sample_uv, sample_depth));
+
+    if (!is_valid) {
+      return 0.0f;
+    }
+#line 513
+    float depth_weight = filters_planar_weight(center_N, center_P, sample_P, 10000.0f);
+    float normal_weight = filters_angle_weight(center_N, sample_N);
+#line 518
+    float epsilon_weight = 1e-4f;
+
+    return max(epsilon_weight, depth_weight * normal_weight);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleInput)
+#line 523
+  SphericalHarmonicL1Tfloat4 _load_sh(eevee_fast_gi_SampleInput  this_, int2 texel)
+  {
+    SphericalHarmonicL1Tfloat4 sh;
+    sh.L0.M0 = texelFetch(srt_access(eevee_fast_gi_SampleInput, fast_gi_radiance_0_tx), texel, 0);
+    sh.L1.Mn1 = texelFetch(srt_access(eevee_fast_gi_SampleInput, fast_gi_radiance_1_tx), texel, 0);
+    sh.L1.M0 = texelFetch(srt_access(eevee_fast_gi_SampleInput, fast_gi_radiance_2_tx), texel, 0);
+    sh.L1.Mp1 = texelFetch(srt_access(eevee_fast_gi_SampleInput, fast_gi_radiance_3_tx), texel, 0);
+    sh = spherical_harmonics_decompress(sh);
+    return sh;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleInput)
+#line 534
+  SphericalHarmonicL1Tfloat4 _load_sh(eevee_fast_gi_SampleInput  this_, int2 texel, bool valid)
+  {
+    if (!valid) {
+#line 539
+      return SphericalHarmonicL1Tfloat4_ctor_();
+    }
+    return _load_sh(this_, texel);
+  }
+#endif
+       eevee_fast_gi_SampleInput eevee_fast_gi_SampleInput_new_()
+{
+  eevee_fast_gi_SampleInput result;
+  result._pad = 0;
+  return result;
+#line 542
+}
+#line 545
+#define access_eevee_fast_gi_SampleOutput_sh_0_img() sh_0_img
+#define access_eevee_fast_gi_SampleOutput_sh_1_img() sh_1_img
+#define access_eevee_fast_gi_SampleOutput_sh_2_img() sh_2_img
+#define access_eevee_fast_gi_SampleOutput_sh_3_img() sh_3_img
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_SampleOutput
+CREATE_INFO_RES_PASS_eevee_fast_gi_SampleOutput
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_SampleOutput
+CREATE_INFO_RES_BATCH_eevee_fast_gi_SampleOutput
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_SampleOutput
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_SampleOutput
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_SampleOutput
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_SampleOutput
+#endif
+#line 545
+struct eevee_fast_gi_SampleOutput {
+#line 567
+int _pad;};
+#line 570
+#ifndef GPU_METAL
+eevee_fast_gi_SampleOutput eevee_fast_gi_SampleOutput_ctor_();
+void _write(eevee_fast_gi_SampleOutput  this_, int2 texel, SphericalHarmonicL1Tfloat4 result);
+eevee_fast_gi_SampleOutput eevee_fast_gi_SampleOutput_new_();
+#endif
+#line 545
+                                          eevee_fast_gi_SampleOutput eevee_fast_gi_SampleOutput_ctor_() {eevee_fast_gi_SampleOutput r;r._pad=0;return r;}
+#line 551
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleOutput)
+#line 551
+  void _write(eevee_fast_gi_SampleOutput  this_, int2 texel, SphericalHarmonicL1Tfloat4 result)
+  {
+    result = spherical_harmonics_compress(result);
+    imageStore(srt_access(eevee_fast_gi_SampleOutput, sh_0_img), texel, result.L0.M0);
+    imageStore(srt_access(eevee_fast_gi_SampleOutput, sh_1_img), texel, result.L1.Mn1);
+    imageStore(srt_access(eevee_fast_gi_SampleOutput, sh_2_img), texel, result.L1.M0);
+    imageStore(srt_access(eevee_fast_gi_SampleOutput, sh_3_img), texel, result.L1.Mp1);
+  }
+#endif
+       eevee_fast_gi_SampleOutput eevee_fast_gi_SampleOutput_new_()
+{
+  eevee_fast_gi_SampleOutput result;
+  result._pad = 0;
+  return result;
+#line 558
+}
+#line 561
+#define access_eevee_fast_gi_Tiles_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_Tiles
+CREATE_INFO_RES_PASS_eevee_fast_gi_Tiles
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_Tiles
+CREATE_INFO_RES_BATCH_eevee_fast_gi_Tiles
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Tiles
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Tiles
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Tiles
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Tiles
+#endif
+#line 561
+struct eevee_fast_gi_Tiles {
+#line 571
+int _pad;};
+#line 580
+#ifndef GPU_METAL
+eevee_fast_gi_Tiles eevee_fast_gi_Tiles_ctor_();
+eevee_fast_gi_Tiles eevee_fast_gi_Tiles_new_();
+#endif
+#line 561
+                                   eevee_fast_gi_Tiles eevee_fast_gi_Tiles_ctor_() {eevee_fast_gi_Tiles r;r._pad=0;return r;}
+#line 564
+       eevee_fast_gi_Tiles eevee_fast_gi_Tiles_new_()
+{
+  eevee_fast_gi_Tiles result;
+  result._pad = 0;
+  return result;
+#line 562
+}
+#line 571
+#define access_eevee_fast_gi_Setup_depth_tx() depth_tx
+#define access_eevee_fast_gi_Setup_in_radiance_tx() in_radiance_tx
+#define access_eevee_fast_gi_Setup_out_radiance_mip0() out_radiance_mip0
+#define access_eevee_fast_gi_Setup_out_radiance_mip1() out_radiance_mip1
+#define access_eevee_fast_gi_Setup_out_radiance_mip2() out_radiance_mip2
+#define access_eevee_fast_gi_Setup_out_radiance_mip3() out_radiance_mip3
+#define access_eevee_fast_gi_Setup_out_normal_mip0() out_normal_mip0
+#define access_eevee_fast_gi_Setup_out_normal_mip1() out_normal_mip1
+#define access_eevee_fast_gi_Setup_out_normal_mip2() out_normal_mip2
+#define access_eevee_fast_gi_Setup_out_normal_mip3() out_normal_mip3
+#define access_eevee_fast_gi_Setup_neigbhor_data() neigbhor_data
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_Setup
+CREATE_INFO_RES_PASS_eevee_fast_gi_Setup
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_Setup
+CREATE_INFO_RES_BATCH_eevee_fast_gi_Setup
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Setup
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Setup
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Setup
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Setup
+#endif
+#line 571
+struct eevee_fast_gi_Setup {
+#line 593
+int _pad;};
+#line 596
+#ifndef GPU_METAL
+eevee_fast_gi_Setup eevee_fast_gi_Setup_ctor_();
+eevee_fast_gi_Setup eevee_fast_gi_Setup_new_();
+#endif
+#line 571
+                                   eevee_fast_gi_Setup eevee_fast_gi_Setup_ctor_() {eevee_fast_gi_Setup r;r._pad=0;return r;}
+#line 586
+       eevee_fast_gi_Setup eevee_fast_gi_Setup_new_()
+{
+  eevee_fast_gi_Setup result;
+  result._pad = 0;
+  return result;
+#line 584
+}
+#line 587
+
+#if defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_fast_gi_Setup)
+#line 587
+
+#if defined(ENTRY_POINT_eevee_fast_gi_setup)
+#line 587
+
+void eevee_fast_gi_setup(
+#line 593
+                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 594
+  gbuffer_Reader reader = gbuffer_Reader_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_fast_gi_Setup srt = eevee_fast_gi_Setup_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias;
+#line 600
+  int2 extent = textureSize(srt_access(gbuffer_Reader, gbuf_header_tx), 0).xy;
+  texel_fullres = min(texel_fullres, extent - 1);
+#line 604
+  const gbuffer_Layers gbuf = _read_layers(reader, texel_fullres);
+#line 607
+  bool is_processed = !_is_empty(gbuf.header);
+
+  const ViewMatrices view = _get(views, 0);
+#line 615
+  float3 vN = _normal_world_to_view(view, _surface_N(gbuf));
+
+  if (!is_processed) {
+    vN = float3(0.0f, 0.0f, 1.0f);
+  }
+#line 622
+  float3 vN_unit = vN * 0.5f + 0.5f;
+  imageStoreFast(srt_access(eevee_fast_gi_Setup, out_normal_mip0), texel, float4(vN_unit, float(is_processed)));
+
+  srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] = vN_unit;
+  barrier();
+#line 631
+  {
+    constexpr uint lod = 1;
+    if (all(equal(gl_LocalInvocationID.xy & ((1u << lod) - 1u), uint2(0)))) {
+      uint stride = (1u << (lod - 1u));
+      float3 normal_avg = (srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x + stride] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x + stride]) *
+                          0.25f;
+      imageStoreFast(srt_access(eevee_fast_gi_Setup, out_normal_mip1), texel >> lod, float4(normal_avg, 0.0));
+      srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] = normal_avg;
+    }
+  }
+  barrier();
+  {
+    constexpr uint lod = 2;
+    if (all(equal(gl_LocalInvocationID.xy & ((1u << lod) - 1u), uint2(0)))) {
+      uint stride = (1u << (lod - 1u));
+      float3 normal_avg = (srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x + stride] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x + stride]) *
+                          0.25f;
+      imageStoreFast(srt_access(eevee_fast_gi_Setup, out_normal_mip2), texel >> lod, float4(normal_avg, 0.0));
+      srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] = normal_avg;
+    }
+  }
+  barrier();
+  {
+    constexpr uint lod = 3;
+    if (all(equal(gl_LocalInvocationID.xy & ((1u << lod) - 1u), uint2(0)))) {
+      uint stride = (1u << (lod - 1u));
+      float3 normal_avg = (srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x + stride] +
+                           srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x + stride]) *
+                          0.25f;
+      imageStoreFast(srt_access(eevee_fast_gi_Setup, out_normal_mip3), texel >> lod, float4(normal_avg, 0.0));
+    }
+  }
+  barrier();
+#line 674
+  float2 uv = (float2(texel_fullres) + 0.5f) / float2(textureSize(srt_access(eevee_fast_gi_Setup, depth_tx), 0).xy);
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_fast_gi_Setup, depth_tx), texel_fullres, 0).r);
+  float3 P = _point_screen_to_world(view, float3(uv, depth));
+
+  float3 ssP_prev = _ndc_to_screen(view, project_point(srt_access(eevee_Uniform, raytrace_buf).history_persmat, P));
+
+  float4 radiance = textureLod(srt_access(eevee_fast_gi_Setup, in_radiance_tx), ssP_prev.xy, 0.0f);
+  radiance = colorspace_brightness_clamp_max(radiance, srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect);
+  imageStoreFast(srt_access(eevee_fast_gi_Setup, out_radiance_mip0), texel, radiance);
+
+  srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] = radiance.rgb;
+  barrier();
+#line 688
+  {
+    constexpr uint lod = 1;
+    if (all(equal(gl_LocalInvocationID.xy & ((1u << lod) - 1u), uint2(0)))) {
+      uint stride = (1u << (lod - 1u));
+      float3 radiance_avg = (srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x + stride] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x + stride]) *
+                            0.25f;
+      imageStoreFast(srt_access(eevee_fast_gi_Setup, out_radiance_mip1), texel >> lod, float4(radiance_avg, 0.0));
+      srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] = radiance_avg;
+    }
+  }
+  barrier();
+  {
+    constexpr uint lod = 2;
+    if (all(equal(gl_LocalInvocationID.xy & ((1u << lod) - 1u), uint2(0)))) {
+      uint stride = (1u << (lod - 1u));
+      float3 radiance_avg = (srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x + stride] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x + stride]) *
+                            0.25f;
+      imageStoreFast(srt_access(eevee_fast_gi_Setup, out_radiance_mip2), texel >> lod, float4(radiance_avg, 0.0));
+      srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] = radiance_avg;
+    }
+  }
+  barrier();
+  {
+    constexpr uint lod = 3;
+    if (all(equal(gl_LocalInvocationID.xy & ((1u << lod) - 1u), uint2(0)))) {
+      uint stride = (1u << (lod - 1u));
+      float3 radiance_avg = (srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y][gl_LocalInvocationID.x + stride] +
+                             srt_access(eevee_fast_gi_Setup, neigbhor_data)[gl_LocalInvocationID.y + stride][gl_LocalInvocationID.x + stride]) *
+                            0.25f;
+      imageStoreFast(srt_access(eevee_fast_gi_Setup, out_radiance_mip3), texel >> lod, float4(radiance_avg, 0.0));
+    }
+  }
+
+#endif
+#line 728
+}
+#endif
+#endif
+#line 736
+#define access_eevee_fast_gi_Constants_slice_count() slice_count
+#define access_eevee_fast_gi_Constants_step_count() step_count
+#define access_eevee_fast_gi_Constants_ao_only() ao_only
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_Constants
+CREATE_INFO_RES_PASS_eevee_fast_gi_Constants
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_Constants
+CREATE_INFO_RES_BATCH_eevee_fast_gi_Constants
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Constants
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Constants
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Constants
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Constants
+#endif
+#line 736
+struct eevee_fast_gi_Constants {
+#line 748
+int _pad;};
+#line 751
+#ifndef GPU_METAL
+eevee_fast_gi_Constants eevee_fast_gi_Constants_ctor_();
+eevee_fast_gi_Constants eevee_fast_gi_Constants_new_();
+#endif
+#line 736
+                                       eevee_fast_gi_Constants eevee_fast_gi_Constants_ctor_() {eevee_fast_gi_Constants r;r._pad=0;return r;}
+#line 741
+       eevee_fast_gi_Constants eevee_fast_gi_Constants_new_()
+{
+  eevee_fast_gi_Constants result;
+  result._pad = 0;
+  return result;
+#line 739
+}
+#line 742
+#define access_eevee_fast_gi_Scan_screen_radiance_tx() screen_radiance_tx
+#define access_eevee_fast_gi_Scan_screen_normal_tx() screen_normal_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_Scan
+CREATE_INFO_RES_PASS_eevee_fast_gi_Scan
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_Scan
+CREATE_INFO_RES_BATCH_eevee_fast_gi_Scan
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Scan
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Scan
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Scan
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Scan
+#endif
+#line 742
+struct eevee_fast_gi_Scan {
+#line 753
+int _pad;};
+#line 756
+#ifndef GPU_METAL
+eevee_fast_gi_Scan eevee_fast_gi_Scan_ctor_();
+eevee_fast_gi_Scan eevee_fast_gi_Scan_new_();
+#endif
+#line 742
+                                  eevee_fast_gi_Scan eevee_fast_gi_Scan_ctor_() {eevee_fast_gi_Scan r;r._pad=0;return r;}
+#line 746
+       eevee_fast_gi_Scan eevee_fast_gi_Scan_new_()
+{
+  eevee_fast_gi_Scan result;
+  result._pad = 0;
+  return result;
+#line 744
+}
+#line 747
+
+#if defined(CREATE_INFO_eevee_fast_gi_Scan) && defined(CREATE_INFO_eevee_fast_gi_Tiles) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_fast_gi_SampleOutput) && defined(CREATE_INFO_eevee_fast_gi_Constants)
+#line 747
+
+#if defined(ENTRY_POINT_eevee_fast_gi_scan)
+void eevee_fast_gi_scan(
+#line 760
+                                            )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 761
+  eevee_fast_gi_Scan srt = eevee_fast_gi_Scan_ctor_(); eevee_fast_gi_Tiles tiles = eevee_fast_gi_Tiles_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_fast_gi_SampleOutput sh_out = eevee_fast_gi_SampleOutput_ctor_(); eevee_fast_gi_Constants constants = eevee_fast_gi_Constants_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_fast_gi_Tiles, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias;
+#line 770
+  int2 extent = textureSize(srt_access(gbuffer_Reader, gbuf_header_tx), 0).xy;
+#line 774
+  texel_fullres = min(texel_fullres, extent - 1);
+#line 777
+  if (texelFetch(srt_access(gbuffer_Reader, gbuf_header_tx), int3(texel_fullres, 0), 0).r == 0u) {
+#line 784
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float2 uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+  float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel_fullres, 0).r;
+  float3 vP = _point_screen_to_view(view, float3(uv, depth));
+  float3 vN = texelFetch(srt_access(eevee_fast_gi_Scan, screen_normal_tx), texel, 0).rgb * 2.0f - 1.0f;
+
+  float4 noise = _fetch(util_tx, float2(texel), UTIL_BLUE_NOISE_LAYER);
+  noise = fract(noise + _rng_3D_get(sampling, SAMPLING_AO_U).xyzx);
+
+  SphericalHarmonicL1Tfloat4 result = eevee_fast_gi_evalTSphericalHarmonicL1Tfloat4(
+      uni,
+      view,
+      srt_access(eevee_Uniform, raytrace_buf).fast_gi_thickness,
+      srt_access(eevee_HiZ, hiz_tx),
+      srt_access(eevee_fast_gi_Scan, screen_radiance_tx),
+      srt_access(eevee_fast_gi_Scan, screen_normal_tx),
+      vP,
+      vN,
+      noise,
+      srt_access(eevee_Uniform, uniform_buf).ao.pixel_size,
+      srt_access(eevee_Uniform, uniform_buf).ao.gi_distance,
+      srt_access(eevee_Uniform, uniform_buf).ao.angle_bias,
+      srt_access(eevee_fast_gi_Constants, slice_count),
+      srt_access(eevee_fast_gi_Constants, step_count),
+      false,
+      srt_access(eevee_fast_gi_Constants, ao_only));
+
+  _write(sh_out, texel, result);
+
+#endif
+#line 816
+}
+#endif
+#endif
+#line 824
+
+#if defined(CREATE_INFO_eevee_fast_gi_SampleInput) && defined(CREATE_INFO_eevee_fast_gi_SampleOutput) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_fast_gi_Tiles)
+#line 824
+
+#if defined(ENTRY_POINT_eevee_fast_gi_denoise)
+void eevee_fast_gi_denoise(
+#line 833
+                                       )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 834
+  eevee_fast_gi_SampleInput sh_in = eevee_fast_gi_SampleInput_ctor_(); eevee_fast_gi_SampleOutput sh_out = eevee_fast_gi_SampleOutput_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_fast_gi_Tiles tiles = eevee_fast_gi_Tiles_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_fast_gi_Tiles, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+
+  float2 texel_size = 1.0f / float2(textureSize(srt_access(eevee_fast_gi_SampleInput, fast_gi_radiance_0_tx), 0).xy);
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias;
+
+  bool is_valid;
+  float center_depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel_fullres, 0).r;
+  float2 center_uv = float2(texel) * texel_size;
+  float3 center_P = _point_screen_to_world(_get(views, 0), float3(center_uv, center_depth));
+  float3 center_N = _sample_normal_get(sh_in, views, texel, is_valid);
+
+  if (!is_valid) {
+#line 856
+    return;
+  }
+
+  SphericalHarmonicL1Tfloat4 accum_sh = SphericalHarmonicL1Tfloat4_ctor_();
+  float accum_weight = 0.0f;
+
+  for (int y = -1; y <= 1; y++) {
+    for (int x = -1; x <= 1; x++) {
+      int2 sample_offset = int2(x, y);
+      int2 sample_texel = texel + sample_offset;
+      float2 sample_uv = (float2(sample_texel) + 0.5f) * texel_size;
+      float sample_weight = _sample_weight_get(sh_in, uni, views, srt_access(eevee_HiZ, hiz_tx), center_N, center_P, sample_texel, sample_uv, sample_offset);
+#line 870
+      if (sample_weight > 0.0f) {
+        SphericalHarmonicL1Tfloat4 sample_sh = _load_sh(sh_in, sample_texel);
+        accum_sh = spherical_harmonics_madd(sample_sh, sample_weight, accum_sh);
+        accum_weight += sample_weight;
+      }
+    }
+  }
+  accum_sh = spherical_harmonics_mul(accum_sh, safe_rcp(accum_weight));
+  _write(sh_out, texel, accum_sh);
+
+#endif
+#line 879
+}
+#endif
+#endif
+#line 887
+#define access_eevee_fast_gi_Resolve_closure0_img() closure0_img
+#define access_eevee_fast_gi_Resolve_closure1_img() closure1_img
+#define access_eevee_fast_gi_Resolve_closure2_img() closure2_img
+#ifdef CREATE_INFO_RES_PASS_eevee_fast_gi_Resolve
+CREATE_INFO_RES_PASS_eevee_fast_gi_Resolve
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_fast_gi_Resolve
+CREATE_INFO_RES_BATCH_eevee_fast_gi_Resolve
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Resolve
+CREATE_INFO_RES_GEOMETRY_eevee_fast_gi_Resolve
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Resolve
+CREATE_INFO_RES_SHARED_VARS_eevee_fast_gi_Resolve
+#endif
+#line 888
+struct eevee_fast_gi_Resolve {
+#line 900
+int _pad;};
+#line 903
+#ifndef GPU_METAL
+eevee_fast_gi_Resolve eevee_fast_gi_Resolve_ctor_();
+eevee_fast_gi_Resolve eevee_fast_gi_Resolve_new_();
+#endif
+#line 888
+                                     eevee_fast_gi_Resolve eevee_fast_gi_Resolve_ctor_() {eevee_fast_gi_Resolve r;r._pad=0;return r;}
+#line 893
+       eevee_fast_gi_Resolve eevee_fast_gi_Resolve_new_()
+{
+  eevee_fast_gi_Resolve result;
+  result._pad = 0;
+  return result;
+#line 891
+}
+#line 894
+
+#if defined(CREATE_INFO_eevee_fast_gi_Tiles) && defined(CREATE_INFO_eevee_fast_gi_SampleInput) && defined(CREATE_INFO_eevee_fast_gi_Resolve) && defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightprobeRenderData)
+#line 894
+
+#if defined(ENTRY_POINT_eevee_fast_gi_resolve)
+void eevee_fast_gi_resolve(
+#line 904
+                                                          )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 905
+  eevee_fast_gi_Tiles tiles = eevee_fast_gi_Tiles_ctor_(); eevee_fast_gi_SampleInput sh_in = eevee_fast_gi_SampleInput_ctor_(); eevee_fast_gi_Resolve srt = eevee_fast_gi_Resolve_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_fast_gi_Tiles, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel_fullres = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+
+  int2 texel = max(int2(0), texel_fullres - srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias) /
+               srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale;
+
+  int2 extent = textureSize(srt_access(gbuffer_Reader, gbuf_header_tx), 0).xy;
+  if (any(greaterThanEqual(texel_fullres, extent))) {
+    return;
+  }
+
+  const gbuffer_Layers gbuf = _read_layers(reader, texel_fullres);
+
+  if (_is_empty(gbuf.header)) {
+    return;
+  }
+  const ViewMatrices view = _get(views, 0);
+
+  float2 center_uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+  float center_depth = reverse_z_read(texelFetch(srt_access(eevee_fast_gi_SampleInput, depth_tx), texel_fullres, 0).r);
+  float3 center_P = _point_screen_to_world(view, float3(center_uv, center_depth));
+  float3 center_N = _surface_N(gbuf);
+
+  SphericalHarmonicL1Tfloat4 accum_sh;
+  if (srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale == 1) {
+    accum_sh = _load_sh(sh_in, texel, true);
+  }
+  else {
+    float2 interp = float2(texel_fullres - texel * srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale -
+                           srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_bias) /
+                    float2(srt_access(eevee_Uniform, raytrace_buf).fast_gi_resolution_scale);
+    float4 interp4 = float4(interp, 1.0f - interp);
+    float4 bilinear_weight = interp4.zxzx * interp4.wwyy;
+
+    float4 bilateral_weights;
+    bilateral_weights.x = _sample_weight_get(sh_in, uni, views, center_N, center_P, texel, int2(0, 0));
+    bilateral_weights.y = _sample_weight_get(sh_in, uni, views, center_N, center_P, texel, int2(1, 0));
+    bilateral_weights.z = _sample_weight_get(sh_in, uni, views, center_N, center_P, texel, int2(0, 1));
+    bilateral_weights.w = _sample_weight_get(sh_in, uni, views, center_N, center_P, texel, int2(1, 1));
+
+    float4 weights = bilateral_weights * bilinear_weight;
+
+    SphericalHarmonicL1Tfloat4 sh_00 = _load_sh(sh_in, texel + int2(0, 0), weights.x > 0.0f);
+    SphericalHarmonicL1Tfloat4 sh_10 = _load_sh(sh_in, texel + int2(1, 0), weights.y > 0.0f);
+    SphericalHarmonicL1Tfloat4 sh_01 = _load_sh(sh_in, texel + int2(0, 1), weights.z > 0.0f);
+    SphericalHarmonicL1Tfloat4 sh_11 = _load_sh(sh_in, texel + int2(1, 1), weights.w > 0.0f);
+#line 955
+    weights *= safe_rcp(reduce_add(weights));
+
+    accum_sh = spherical_harmonics_mul(sh_00, weights.x);
+    accum_sh = spherical_harmonics_madd(sh_10, weights.y, accum_sh);
+    accum_sh = spherical_harmonics_madd(sh_01, weights.z, accum_sh);
+    accum_sh = spherical_harmonics_madd(sh_11, weights.w, accum_sh);
+  }
+
+  accum_sh = spherical_harmonics_rotate(to_float3x3(view.viewinv), accum_sh);
+
+  float3 P = center_P;
+  float3 Ng = center_N;
+  float3 V = _world_incident_vector(view, P);
+
+  eevee_LightProbeSample samp = _load(lightprobes, float2(texel_fullres), P, Ng, V);
+
+  float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+  samp.volume_irradiance = spherical_harmonics_clamp_energy(samp.volume_irradiance,
+                                                             clamp_indirect);
+
+  const uchar closure_count = _closure_len(gbuf.header);
+  const uint3 bin_indices = _bin_index_per_layer(gbuf.header);
+  const Thickness thickness = _read_thickness(reader, gbuf.header, texel_fullres);
+#line 983
+{
+#line 980
+                                                                 {
+    if (0 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[0];
+
+      float roughness = closure_apparent_roughness_get(cl);
+
+      float mix_fac = saturate(roughness * srt_access(eevee_Uniform, raytrace_buf).roughness_mask_scale -
+                               srt_access(eevee_Uniform, raytrace_buf).roughness_mask_bias);
+      bool use_raytrace = mix_fac < 1.0f;
+      bool use_fast_gi = mix_fac > 0.0f;
+
+      if (use_fast_gi) {
+        LightProbeRay ray = bxdf_lightprobe_ray(cl, P, V, thickness);
+
+        float3 L = ray.dominant_direction;
+#line 997
+        float4 radiance_with_visibility = _evaluate_lambert(accum_sh, L);
+        float3 radiance = radiance_with_visibility.xyz;
+#line 1006
+        float distant_radiance_visibility = saturate(radiance_with_visibility.w / 3.0f);
+
+        if (closure_has_transmission(cl.type)) {
+#line 1011
+          distant_radiance_visibility = 1.0f;
+          radiance = float3(0.0);
+        }
+#line 1016
+        radiance += distant_radiance_visibility * _evaluate_lambert(samp.volume_irradiance, L).rgb;
+
+        uchar layer_index = bin_indices[0];
+
+        float4 radiance_fast_gi = float4(radiance, 0.0f);
+        float4 radiance_raytrace = float4(0.0f);
+        if (use_raytrace) {
+
+          if (layer_index == 0u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure0_img), texel_fullres);
+          }
+          else if (layer_index == 1u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure1_img), texel_fullres);
+          }
+          else if (layer_index == 2u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure2_img), texel_fullres);
+          }
+        }
+        float4 radiance_mixed = mix(radiance_raytrace, radiance_fast_gi, mix_fac);
+#line 1037
+        if (layer_index == 0u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure0_img), texel_fullres, radiance_mixed);
+        }
+        else if (layer_index == 1u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure1_img), texel_fullres, radiance_mixed);
+        }
+        else if (layer_index == 2u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure2_img), texel_fullres, radiance_mixed);
+        }
+      }
+    }
+  }
+#line 980
+                                                                 {
+    if (1 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[1];
+
+      float roughness = closure_apparent_roughness_get(cl);
+
+      float mix_fac = saturate(roughness * srt_access(eevee_Uniform, raytrace_buf).roughness_mask_scale -
+                               srt_access(eevee_Uniform, raytrace_buf).roughness_mask_bias);
+      bool use_raytrace = mix_fac < 1.0f;
+      bool use_fast_gi = mix_fac > 0.0f;
+
+      if (use_fast_gi) {
+        LightProbeRay ray = bxdf_lightprobe_ray(cl, P, V, thickness);
+
+        float3 L = ray.dominant_direction;
+#line 997
+        float4 radiance_with_visibility = _evaluate_lambert(accum_sh, L);
+        float3 radiance = radiance_with_visibility.xyz;
+#line 1006
+        float distant_radiance_visibility = saturate(radiance_with_visibility.w / 3.0f);
+
+        if (closure_has_transmission(cl.type)) {
+#line 1011
+          distant_radiance_visibility = 1.0f;
+          radiance = float3(0.0);
+        }
+#line 1016
+        radiance += distant_radiance_visibility * _evaluate_lambert(samp.volume_irradiance, L).rgb;
+
+        uchar layer_index = bin_indices[1];
+
+        float4 radiance_fast_gi = float4(radiance, 0.0f);
+        float4 radiance_raytrace = float4(0.0f);
+        if (use_raytrace) {
+
+          if (layer_index == 0u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure0_img), texel_fullres);
+          }
+          else if (layer_index == 1u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure1_img), texel_fullres);
+          }
+          else if (layer_index == 2u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure2_img), texel_fullres);
+          }
+        }
+        float4 radiance_mixed = mix(radiance_raytrace, radiance_fast_gi, mix_fac);
+#line 1037
+        if (layer_index == 0u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure0_img), texel_fullres, radiance_mixed);
+        }
+        else if (layer_index == 1u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure1_img), texel_fullres, radiance_mixed);
+        }
+        else if (layer_index == 2u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure2_img), texel_fullres, radiance_mixed);
+        }
+      }
+    }
+  }
+#line 980
+                                                                 {
+    if (2 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[2];
+
+      float roughness = closure_apparent_roughness_get(cl);
+
+      float mix_fac = saturate(roughness * srt_access(eevee_Uniform, raytrace_buf).roughness_mask_scale -
+                               srt_access(eevee_Uniform, raytrace_buf).roughness_mask_bias);
+      bool use_raytrace = mix_fac < 1.0f;
+      bool use_fast_gi = mix_fac > 0.0f;
+
+      if (use_fast_gi) {
+        LightProbeRay ray = bxdf_lightprobe_ray(cl, P, V, thickness);
+
+        float3 L = ray.dominant_direction;
+#line 997
+        float4 radiance_with_visibility = _evaluate_lambert(accum_sh, L);
+        float3 radiance = radiance_with_visibility.xyz;
+#line 1006
+        float distant_radiance_visibility = saturate(radiance_with_visibility.w / 3.0f);
+
+        if (closure_has_transmission(cl.type)) {
+#line 1011
+          distant_radiance_visibility = 1.0f;
+          radiance = float3(0.0);
+        }
+#line 1016
+        radiance += distant_radiance_visibility * _evaluate_lambert(samp.volume_irradiance, L).rgb;
+
+        uchar layer_index = bin_indices[2];
+
+        float4 radiance_fast_gi = float4(radiance, 0.0f);
+        float4 radiance_raytrace = float4(0.0f);
+        if (use_raytrace) {
+
+          if (layer_index == 0u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure0_img), texel_fullres);
+          }
+          else if (layer_index == 1u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure1_img), texel_fullres);
+          }
+          else if (layer_index == 2u) {
+            radiance_raytrace = imageLoad(srt_access(eevee_fast_gi_Resolve, closure2_img), texel_fullres);
+          }
+        }
+        float4 radiance_mixed = mix(radiance_raytrace, radiance_fast_gi, mix_fac);
+#line 1037
+        if (layer_index == 0u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure0_img), texel_fullres, radiance_mixed);
+        }
+        else if (layer_index == 1u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure1_img), texel_fullres, radiance_mixed);
+        }
+        else if (layer_index == 2u) {
+          imageStore(srt_access(eevee_fast_gi_Resolve, closure2_img), texel_fullres, radiance_mixed);
+        }
+      }
+    }
+  }
+#line 1048
+  }
+
+#endif
+#line 1049
+}
+#endif
+#endif
+#line 1064
+#define access_eevee_AOPass_in_normal_img() in_normal_img
+#define access_eevee_AOPass_out_ao_img() out_ao_img
+#define access_eevee_AOPass_ao_slice_count() ao_slice_count
+#define access_eevee_AOPass_ao_step_count() ao_step_count
+#define access_eevee_AOPass_dummy_tx() dummy_tx
+#define access_eevee_AOPass_in_normal_img_layer_index() in_normal_img_layer_index
+#define access_eevee_AOPass_out_ao_img_layer_index() out_ao_img_layer_index
+#ifdef CREATE_INFO_RES_PASS_eevee_AOPass
+CREATE_INFO_RES_PASS_eevee_AOPass
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_AOPass
+CREATE_INFO_RES_BATCH_eevee_AOPass
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_AOPass
+CREATE_INFO_RES_GEOMETRY_eevee_AOPass
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_AOPass
+CREATE_INFO_RES_SHARED_VARS_eevee_AOPass
+#endif
+#line 1068
+struct eevee_AOPass {
+#line 1087
+int _pad;};
+#line 1090
+#ifndef GPU_METAL
+eevee_AOPass eevee_AOPass_ctor_();
+eevee_AOPass eevee_AOPass_new_();
+#endif
+#line 1068
+                            eevee_AOPass eevee_AOPass_ctor_() {eevee_AOPass r;r._pad=0;return r;}
+#line 1080
+       eevee_AOPass eevee_AOPass_new_()
+{
+  eevee_AOPass result;
+  result._pad = 0;
+  return result;
+#line 1078
+}
+#line 1081
+
+#if defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_eevee_AOPass)
+#line 1081
+
+#if defined(ENTRY_POINT_eevee_occlusion_pass)
+#line 1081
+
+void eevee_occlusion_pass(
+#line 1088
+                                     )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1089
+  eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); eevee_AOPass srt = eevee_AOPass_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int2 extent = imageSize(srt_access(eevee_AOPass, in_normal_img)).xy;
+  if (any(greaterThanEqual(texel, extent))) {
+    return;
+  }
+
+  float2 uv = (float2(texel) + float2(0.5f)) / float2(extent);
+  float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r;
+
+  if (depth == 1.0f) {
+
+    imageStoreFast(srt_access(eevee_AOPass, out_ao_img), int3(texel, srt_access(eevee_AOPass, out_ao_img_layer_index)), float4(0.0f));
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 vP = _point_screen_to_view(view, float3(uv, depth));
+  float3 N = imageLoad(srt_access(eevee_AOPass, in_normal_img), int3(texel, srt_access(eevee_AOPass, in_normal_img_layer_index))).xyz;
+  float3 vN = _normal_world_to_view(view, N);
+
+  float4 noise = _fetch(util_tx, float2(texel), UTIL_BLUE_NOISE_LAYER);
+  noise = fract(noise + _rng_3D_get(sampling, SAMPLING_AO_U).xyzx);
+
+  float result = eevee_fast_gi_evalTfloat(uni,
+                                             view,
+                                             srt_access(eevee_Uniform, raytrace_buf).fast_gi_thickness,
+                                             srt_access(eevee_HiZ, hiz_tx),
+                                             srt_access(eevee_AOPass, dummy_tx),
+                                             srt_access(eevee_AOPass, dummy_tx),
+                                             vP,
+                                             vN,
+                                             noise,
+                                             srt_access(eevee_Uniform, uniform_buf).ao.pixel_size,
+                                             srt_access(eevee_Uniform, uniform_buf).ao.distance,
+                                             srt_access(eevee_Uniform, uniform_buf).ao.angle_bias,
+                                             srt_access(eevee_AOPass, ao_slice_count),
+                                             srt_access(eevee_AOPass, ao_step_count),
+                                             false,
+                                             true);
+
+  imageStoreFast(
+      srt_access(eevee_AOPass, out_ao_img), int3(texel, srt_access(eevee_AOPass, out_ao_img_layer_index)), float4(saturate(result)));
+
+#endif
+#line 1133
+}
+#endif
+#endif
+#line 1140

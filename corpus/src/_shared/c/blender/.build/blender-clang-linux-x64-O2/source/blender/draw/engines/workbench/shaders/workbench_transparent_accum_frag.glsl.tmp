@@ -1,0 +1,71 @@
+#line 1 "workbench_transparent_accum_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(workbench_prepass)
+FRAGMENT_SHADER_CREATE_INFO(workbench_transparent_accum)
+FRAGMENT_SHADER_CREATE_INFO(workbench_lighting_matcap)
+#line 18
+float linear_zdepth(float depth, float4x4 proj_mat)
+{
+  if (proj_mat[3][3] == 0.0f) {
+    float d = 2.0f * depth - 1.0f;
+    return -proj_mat[3][2] / (d + proj_mat[2][2]);
+  }
+  else {
+
+    float z_delta = -2.0f / proj_mat[2][2];
+    return depth * z_delta;
+  }
+}
+#line 35
+float calculate_transparent_weight()
+{
+  float z = linear_zdepth(gl_FragCoord.z, drw_view().winmat);
+#if 0
+#line 43
+#else
+#line 49
+  float a = abs(z) / 5.0f;
+  float b = abs(z) / 200.0f;
+  b *= b;
+  float w = 10.0f / ((1e-5f + a * a) + b * (b * b));
+#endif
+  return clamp(w, 1e-2f, 3e2f);
+}
+
+void main()
+{
+
+  float2 uv_viewport = gl_FragCoord.xy * world_data.viewport_size_inv;
+  float3 vP = drw_point_screen_to_view(float3(uv_viewport, 0.5f));
+  float3 I = drw_view_incident_vector(vP);
+  float3 N = normalize(normal_interp);
+
+  float3 color = color_interp;
+
+#ifdef WORKBENCH_COLOR_TEXTURE
+  color = workbench_image_color(uv_interp);
+#endif
+
+  float3 shaded_color;
+#ifdef WORKBENCH_LIGHTING_MATCAP
+  shaded_color = get_matcap_lighting(matcap_tx, color, N, I);
+#endif
+
+#ifdef WORKBENCH_LIGHTING_STUDIO
+  shaded_color = get_world_lighting(color, _roughness, metallic, N, I);
+#endif
+
+#ifdef WORKBENCH_LIGHTING_FLAT
+  shaded_color = color;
+#endif
+
+  shaded_color *= get_shadow(N, force_shadowing);
+#line 87
+  float alpha = alpha_interp * world_data.xray_alpha;
+  float weight = calculate_transparent_weight() * alpha;
+  out_transparent_accum = float4(shaded_color * weight, alpha);
+  out_revealage_accum = float4(weight);
+
+  out_object_id = uint(object_id);
+}

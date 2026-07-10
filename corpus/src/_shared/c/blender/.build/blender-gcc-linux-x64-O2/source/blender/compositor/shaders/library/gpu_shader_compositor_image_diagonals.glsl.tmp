@@ -1,0 +1,40 @@
+#line 1 "gpu_shader_compositor_image_diagonals.glsl"
+ 
+#line 24
+int compute_number_of_diagonals(int2 size)
+{
+  return size.x + size.y - 1;
+}
+#line 62
+int compute_diagonal_length(int2 size, int diagonal_index)
+{
+  int length_of_longest_diagonal = min(size.x, size.y);
+  int start_sequence = diagonal_index + 1;
+  int end_sequence = compute_number_of_diagonals(size) - diagonal_index;
+  return min(length_of_longest_diagonal, min(start_sequence, end_sequence));
+}
+#line 97
+int2 compute_diagonal_start(int2 size, int index)
+{
+  return int2(max(0, index - (size.y - 1)), max(0, (size.y - 1) - index));
+}
+#line 105
+int2 get_diagonal_direction()
+{
+  return int2(1);
+}
+#line 128
+int compute_anti_diagonal_length(int2 size, int diagonal_index)
+{
+  return compute_diagonal_length(size, diagonal_index);
+}
+#line 160
+int2 compute_anti_diagonal_start(int2 size, int index)
+{
+  return int2(min(size.x - 1, index), max(0, index - (size.x - 1)));
+}
+#line 168
+int2 get_anti_diagonal_direction()
+{
+  return int2(-1, 1);
+}

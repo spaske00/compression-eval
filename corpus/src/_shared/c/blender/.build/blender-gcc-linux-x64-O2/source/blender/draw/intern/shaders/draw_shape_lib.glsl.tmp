@@ -1,0 +1,119 @@
+#line 1 "draw_shape_lib.glsl"
+ 
+#line 19
+struct Circle {
+  float2 center;
+  float radius;
+};
+#line 19
+                      Circle Circle_ctor_() {Circle r;r.center=float2(0);r.radius=0.0f;return r;}
+#line 24
+Circle shape_circle(float2 center, float radius)
+{
+  Circle circle;
+  circle.center = center;
+  circle.radius = radius;
+  return circle;
+}
+#line 38
+struct Sphere {
+  float3 center;
+  float radius;
+};
+#line 38
+                      Sphere Sphere_ctor_() {Sphere r;r.center=float3(0);r.radius=0.0f;return r;}
+#line 43
+Sphere shape_sphere(float3 center, float radius)
+{
+  Sphere sphere;
+  sphere.center = center;
+  sphere.radius = radius;
+  return sphere;
+}
+#line 57
+struct Box {
+  float3 corners[8];
+};
+#line 57
+                   Box Box_ctor_() {Box r;r.corners[0]=float3(0);r.corners[1]=float3(0);r.corners[2]=float3(0);r.corners[3]=float3(0);r.corners[4]=float3(0);r.corners[5]=float3(0);r.corners[6]=float3(0);r.corners[7]=float3(0);return r;}
+#line 62
+Box shape_box(float3 v000, float3 v100, float3 v010, float3 v001)
+{
+  v100 -= v000;
+  v010 -= v000;
+  v001 -= v000;
+  Box box;
+  box.corners[0] = v000;
+  box.corners[1] = v000 + v100;
+  box.corners[2] = v000 + v010 + v100;
+  box.corners[3] = v000 + v010;
+  box.corners[4] = box.corners[0] + v001;
+  box.corners[5] = box.corners[1] + v001;
+  box.corners[6] = box.corners[2] + v001;
+  box.corners[7] = box.corners[3] + v001;
+  return box;
+}
+#line 85
+struct Pyramid {
+
+  float3 corners[5];
+};
+#line 85
+                       Pyramid Pyramid_ctor_() {Pyramid r;r.corners[0]=float3(0);r.corners[1]=float3(0);r.corners[2]=float3(0);r.corners[3]=float3(0);r.corners[4]=float3(0);return r;}
+#line 113
+Pyramid shape_pyramid(float3 apex,
+                      float3 base_corner_00,
+                      float3 base_corner_01,
+                      float3 base_corner_10)
+{
+  Pyramid pyramid;
+  pyramid.corners[0] = apex;
+  pyramid.corners[1] = base_corner_00;
+  pyramid.corners[2] = base_corner_01;
+  pyramid.corners[3] = base_corner_10 + (base_corner_01 - base_corner_00);
+  pyramid.corners[4] = base_corner_10;
+  return pyramid;
+}
+#line 147
+Pyramid shape_pyramid_non_oblique(float3 apex,
+                                  float3 base_center,
+                                  float3 base_center_pos_x,
+                                  float3 base_center_pos_y)
+{
+  Pyramid pyramid;
+  pyramid.corners[0] = apex;
+  pyramid.corners[1] = base_center - base_center_pos_x - base_center_pos_y;
+  pyramid.corners[2] = base_center + base_center_pos_x - base_center_pos_y;
+  pyramid.corners[3] = base_center + base_center_pos_x + base_center_pos_y;
+  pyramid.corners[4] = base_center - base_center_pos_x + base_center_pos_y;
+  return pyramid;
+}
+#line 167
+struct Frustum {
+  float3 corners[8];
+};
+#line 167
+                       Frustum Frustum_ctor_() {Frustum r;r.corners[0]=float3(0);r.corners[1]=float3(0);r.corners[2]=float3(0);r.corners[3]=float3(0);r.corners[4]=float3(0);r.corners[5]=float3(0);r.corners[6]=float3(0);r.corners[7]=float3(0);return r;}
+#line 190
+Frustum shape_frustum(float3 corners[8])
+{
+  Frustum frustum;
+  for (int i = 0; i < 8; i++) {
+    frustum.corners[i] = corners[i];
+  }
+  return frustum;
+}
+#line 206
+struct Cone {
+  float3 direction;
+  float angle_cos;
+};
+#line 206
+                    Cone Cone_ctor_() {Cone r;r.direction=float3(0);r.angle_cos=0.0f;return r;}
+#line 211
+Cone shape_cone(float3 direction, float angle_cosine)
+{
+  return _ctor(Cone) direction, angle_cosine _rotc() ;
+}
+
+

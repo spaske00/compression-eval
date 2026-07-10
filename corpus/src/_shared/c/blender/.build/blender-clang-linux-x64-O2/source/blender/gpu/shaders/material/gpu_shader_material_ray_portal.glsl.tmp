@@ -1,0 +1,13 @@
+#line 1 "gpu_shader_material_ray_portal.glsl"
+ 
+#line 6
+void node_bsdf_ray_portal(
+    float4 color, float3 position, float3 direction, float weight, _ref(Closure ,result))
+{
+  ClosureTransparency transparency_data;
+  transparency_data.weight = weight;
+  transparency_data.transmittance = color.rgb;
+  transparency_data.holdout = 0.0f;
+
+  result = closure_eval(transparency_data);
+}

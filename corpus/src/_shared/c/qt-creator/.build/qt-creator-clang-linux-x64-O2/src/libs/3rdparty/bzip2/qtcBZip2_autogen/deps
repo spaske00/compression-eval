@@ -1,0 +1,11 @@
+qtcBZip2_autogen/timestamp: \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/CMakeLists.txt \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/blocksort.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/bzlib.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/bzlib.h \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/compress.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/crctable.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/decompress.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/huffman.c \
+	/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/bzip2/randtable.c \
+	/opt/cmake-3.31.10-linux-x86_64/bin/cmake

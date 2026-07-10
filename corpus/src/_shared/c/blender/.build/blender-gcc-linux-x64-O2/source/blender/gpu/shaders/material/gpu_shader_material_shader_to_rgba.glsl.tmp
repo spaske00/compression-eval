@@ -1,0 +1,12 @@
+#line 1 "gpu_shader_material_shader_to_rgba.glsl"
+ 
+#line 6
+void node_shader_to_rgba(Closure cl, _ref(float4 ,outcol), _ref(float ,outalpha))
+{
+#ifdef GPU_VERTEX_SHADER
+  outcol = float4(0.0f);
+#else
+  outcol = closure_to_rgba(cl);
+#endif
+  outalpha = outcol.a;
+}

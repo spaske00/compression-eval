@@ -1,0 +1,12 @@
+#line 1 "gpu_shader_material_camera.glsl"
+ 
+#line 8
+void camera(_ref(float3 ,outview), _ref(float ,outdepth), _ref(float ,outdist))
+{
+  float3 vP;
+  point_transform_world_to_view(g_data.P, vP);
+  vP.z = -vP.z;
+  outdepth = abs(vP.z);
+  outdist = length(vP);
+  outview = normalize(vP);
+}

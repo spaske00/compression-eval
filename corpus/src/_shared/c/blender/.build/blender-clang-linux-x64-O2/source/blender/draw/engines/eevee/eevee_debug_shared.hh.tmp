@@ -1,0 +1,100 @@
+#line 1 "eevee_debug_shared.hh"
+ 
+#line 19
+constant static constexpr uint32_t DEBUG_NONE = 0u;
+#line 23
+constant static constexpr uint32_t DEBUG_LIGHT_CULLING = 1u;
+#line 27
+constant static constexpr uint32_t DEBUG_HIZ_VALIDATION = 2u;
+#line 31
+constant static constexpr uint32_t DEBUG_IRRADIANCE_CACHE_SURFELS_NORMAL = 3u;
+constant static constexpr uint32_t DEBUG_IRRADIANCE_CACHE_SURFELS_IRRADIANCE = 4u;
+constant static constexpr uint32_t DEBUG_IRRADIANCE_CACHE_SURFELS_VISIBILITY = 5u;
+constant static constexpr uint32_t DEBUG_IRRADIANCE_CACHE_SURFELS_CLUSTER = 6u;
+#line 38
+constant static constexpr uint32_t DEBUG_IRRADIANCE_CACHE_VIRTUAL_OFFSET = 7u;
+constant static constexpr uint32_t DEBUG_IRRADIANCE_CACHE_VALIDITY = 8u;
+#line 43
+constant static constexpr uint32_t DEBUG_SHADOW_TILEMAPS = 10u;
+#line 47
+constant static constexpr uint32_t DEBUG_SHADOW_VALUES = 11u;
+#line 51
+constant static constexpr uint32_t DEBUG_SHADOW_TILE_RANDOM_COLOR = 12u;
+#line 55
+constant static constexpr uint32_t DEBUG_SHADOW_TILEMAP_RANDOM_COLOR = 13u;
+#line 59
+constant static constexpr uint32_t DEBUG_SHADOW_ATOMIC_COST = 17u;
+#line 63
+constant static constexpr uint32_t DEBUG_GBUFFER_STORAGE = 14u;
+#line 67
+constant static constexpr uint32_t DEBUG_GBUFFER_EVALUATION = 15u;
+#line 71
+constant static constexpr uint32_t DEBUG_DOF_PLANES = 16u;
+
+#define eDebugMode uint32_t
+#line 18
+
+#define eDebugMode_host_shared_ eDebugMode
+#line 18
+
+eDebugMode eDebugMode_ctor_() { return eDebugMode(0); }
+#line 18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

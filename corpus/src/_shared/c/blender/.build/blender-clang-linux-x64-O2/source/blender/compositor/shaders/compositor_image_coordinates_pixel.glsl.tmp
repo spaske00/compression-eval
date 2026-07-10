@@ -1,0 +1,11 @@
+#line 1 "compositor_image_coordinates_pixel.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_image_coordinates_pixel)
+
+void main()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  imageStore(output_img, texel, int4(data_offset + texel, int2(0)));
+}

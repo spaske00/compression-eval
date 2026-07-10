@@ -1,0 +1,57 @@
+#line 1 "gpu_shader_math_matrix_conversion_lib.glsl"
+ 
+#line 20
+float3 to_scale(float3x3 mat)
+{
+  return float3(length(mat[0]), length(mat[1]), length(mat[2]));
+}
+#line 27
+float3 to_scale(float4x4 mat)
+{
+  return to_scale(to_float3x3(mat));
+}
+#line 34
+float3 to_scaleTfloat3x3Ttrue(float3x3 mat)
+{
+  float3 result = to_scale(mat);
+  if (true) {
+    if (is_negative(mat)) {
+      result = -result;
+    }
+  }
+  return result;
+}
+#line 34
+float3 to_scaleTfloat3x3Tfalse(float3x3 mat)
+{
+  float3 result = to_scale(mat);
+  if (false) {
+    if (is_negative(mat)) {
+      result = -result;
+    }
+  }
+  return result;
+}
+#line 34
+float3 to_scaleTfloat4x4Ttrue(float4x4 mat)
+{
+  float3 result = to_scale(mat);
+  if (true) {
+    if (is_negative(mat)) {
+      result = -result;
+    }
+  }
+  return result;
+}
+#line 34
+float3 to_scaleTfloat4x4Tfalse(float4x4 mat)
+{
+  float3 result = to_scale(mat);
+  if (false) {
+    if (is_negative(mat)) {
+      result = -result;
+    }
+  }
+  return result;
+}
+#line 50

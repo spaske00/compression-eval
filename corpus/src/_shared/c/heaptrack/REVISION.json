@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "heaptrack",
+  "input_url": "https://github.com/KDE/heaptrack",
+  "canonical_url": "https://github.com/KDE/heaptrack",
+  "source_directory": "heaptrack/upstream",
+  "commit": "37cce88d84f28fd1311b0328239849895914d06d",
+  "nested_submodules": []
+}

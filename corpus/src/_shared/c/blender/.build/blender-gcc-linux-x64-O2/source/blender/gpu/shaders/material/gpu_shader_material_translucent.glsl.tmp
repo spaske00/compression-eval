@@ -1,0 +1,15 @@
+#line 1 "gpu_shader_material_translucent.glsl"
+ 
+#line 8
+void node_bsdf_translucent(float4 color, float3 N, float weight, _ref(Closure ,result))
+{
+  color = max(color, float4(0.0f));
+  N = safe_normalize(N);
+
+  ClosureTranslucent translucent_data;
+  translucent_data.weight = weight;
+  translucent_data.color = color.rgb;
+  translucent_data.N = N;
+
+  result = closure_eval(translucent_data);
+}

@@ -1,0 +1,82 @@
+#line 1 "workbench_effect_antialiasing_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 8
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define SMAA_GLSL_3
+#  define SMAA_STAGE 1
+#  define SMAA_PRESET_HIGH
+#  define SMAA_NO_DISCARD
+#  define SMAA_RT_METRICS viewport_metrics
+#  define SMAA_LUMA_WEIGHT float4(1.0f, 1.0f, 1.0f, 1.0f)
+#endif
+#line 25
+#ifdef CREATE_INFO_RES_PASS_workbench_taa
+CREATE_INFO_RES_PASS_workbench_taa
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_taa
+CREATE_INFO_RES_BATCH_workbench_taa
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_taa
+CREATE_INFO_RES_GEOMETRY_workbench_taa
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_taa
+CREATE_INFO_RES_SHARED_VARS_workbench_taa
+#endif
+#line 52
+#ifdef CREATE_INFO_RES_PASS_workbench_smaa
+CREATE_INFO_RES_PASS_workbench_smaa
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_smaa
+CREATE_INFO_RES_BATCH_workbench_smaa
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_smaa
+CREATE_INFO_RES_GEOMETRY_workbench_smaa
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_smaa
+CREATE_INFO_RES_SHARED_VARS_workbench_smaa
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_workbench_smaa_stage_0
+CREATE_INFO_RES_PASS_workbench_smaa_stage_0
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_smaa_stage_0
+CREATE_INFO_RES_BATCH_workbench_smaa_stage_0
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_smaa_stage_0
+CREATE_INFO_RES_GEOMETRY_workbench_smaa_stage_0
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_smaa_stage_0
+CREATE_INFO_RES_SHARED_VARS_workbench_smaa_stage_0
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_workbench_smaa_stage_1
+CREATE_INFO_RES_PASS_workbench_smaa_stage_1
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_smaa_stage_1
+CREATE_INFO_RES_BATCH_workbench_smaa_stage_1
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_smaa_stage_1
+CREATE_INFO_RES_GEOMETRY_workbench_smaa_stage_1
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_smaa_stage_1
+CREATE_INFO_RES_SHARED_VARS_workbench_smaa_stage_1
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_workbench_smaa_stage_2
+CREATE_INFO_RES_PASS_workbench_smaa_stage_2
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_smaa_stage_2
+CREATE_INFO_RES_BATCH_workbench_smaa_stage_2
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_smaa_stage_2
+CREATE_INFO_RES_GEOMETRY_workbench_smaa_stage_2
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_smaa_stage_2
+CREATE_INFO_RES_SHARED_VARS_workbench_smaa_stage_2
+#endif
+
+

@@ -1,0 +1,14 @@
+#line 1 "compositor_alpha_crop.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_alpha_crop)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  bool is_inside = all(greaterThanEqual(texel, lower_bound)) && all(lessThan(texel, upper_bound));
+
+  float4 color = is_inside ? texture_load(input_tx, texel) : float4(0.0f);
+  imageStore(output_img, texel, color);
+}

@@ -1,0 +1,272 @@
+#line 1 "eevee_depth_of_field_resolve.bsl.hh"
+ 
+#line 21
+#define access_eevee_dof_resolve_Resources_accumulator() eevee_dof_Accumulator_new_()
+#define access_eevee_dof_resolve_Resources_views() draw_View_new_()
+#define access_eevee_dof_resolve_Resources_do_debug_color() do_debug_color
+#define access_eevee_dof_resolve_Resources_depth_tx() depth_tx
+#define access_eevee_dof_resolve_Resources_color_tx() color_tx
+#define access_eevee_dof_resolve_Resources_color_bg_tx() color_bg_tx
+#define access_eevee_dof_resolve_Resources_color_fg_tx() color_fg_tx
+#define access_eevee_dof_resolve_Resources_color_hole_fill_tx() color_hole_fill_tx
+#define access_eevee_dof_resolve_Resources_weight_bg_tx() weight_bg_tx
+#define access_eevee_dof_resolve_Resources_weight_fg_tx() weight_fg_tx
+#define access_eevee_dof_resolve_Resources_weight_hole_fill_tx() weight_hole_fill_tx
+#define access_eevee_dof_resolve_Resources_stable_color_tx() stable_color_tx
+#define access_eevee_dof_resolve_Resources_out_color_img() out_color_img
+#define access_eevee_dof_resolve_Resources_shared_max_slight_focus_abs_coc() shared_max_slight_focus_abs_coc
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_resolve_Resources
+CREATE_INFO_RES_PASS_eevee_dof_resolve_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_resolve_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_resolve_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_resolve_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_resolve_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_resolve_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_resolve_Resources
+#endif
+#line 21
+struct eevee_dof_resolve_Resources {
+                           eevee_dof_Accumulator  accumulator;
+                           draw_View  views;
+#line 123
+};
+#line 126
+#ifndef GPU_METAL
+eevee_dof_resolve_Resources eevee_dof_resolve_Resources_ctor_();
+float _slight_focus_coc_tile_get(eevee_dof_resolve_Resources  this_, float2 frag_coord, uint local_index);
+float3 _dof_neighborhood_clamp(eevee_dof_resolve_Resources  this_, float2 frag_coord, float3 color, float center_coc, float weight);
+eevee_dof_resolve_Resources eevee_dof_resolve_Resources_new_();
+#endif
+#line 21
+                                           eevee_dof_resolve_Resources eevee_dof_resolve_Resources_ctor_() {eevee_dof_resolve_Resources r;r.accumulator=eevee_dof_Accumulator_ctor_();r.views=draw_View_ctor_();return r;}
+#line 44
+
+#if defined(CREATE_INFO_eevee_dof_resolve_Resources)
+#line 44
+  float _slight_focus_coc_tile_get(eevee_dof_resolve_Resources  this_, float2 frag_coord, uint local_index)
+  {
+#line 48
+    float local_abs_max = 0.0f;
+#line 51
+    for (int i = 0; i < 4; i++) {
+      float2 sample_uv = (frag_coord + quad_offsets[i] * 2.0f * dof_max_slight_focus_radius) /
+                         float2(textureSize(srt_access(eevee_dof_resolve_Resources, color_tx), 0));
+      float depth = reverse_z_read(textureLod(srt_access(eevee_dof_resolve_Resources, depth_tx), sample_uv, 0.0f).r);
+      float coc = dof_coc_from_depth(srt_access(eevee_dof_resolve_Resources, views), srt_access(eevee_dof_Accumulator, dof_buf), sample_uv, depth);
+      coc = clamp(coc, -srt_access(eevee_dof_Accumulator, dof_buf).coc_abs_max, srt_access(eevee_dof_Accumulator, dof_buf).coc_abs_max);
+      if (abs(coc) < dof_max_slight_focus_radius) {
+        local_abs_max = max(local_abs_max, abs(coc));
+      }
+    }
+
+    if (local_index == 0u) {
+      srt_access(eevee_dof_resolve_Resources, shared_max_slight_focus_abs_coc) = floatBitsToUint(0.0f);
+    }
+    barrier();
+
+    atomicMax(srt_access(eevee_dof_resolve_Resources, shared_max_slight_focus_abs_coc), floatBitsToUint(local_abs_max));
+
+    barrier();
+
+    return uintBitsToFloat(srt_access(eevee_dof_resolve_Resources, shared_max_slight_focus_abs_coc));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_resolve_Resources)
+#line 74
+  float3 _dof_neighborhood_clamp(eevee_dof_resolve_Resources  this_, float2 frag_coord, float3 color, float center_coc, float weight)
+  {
+
+    float3 neighbor_min, neighbor_max;
+    constexpr float2 corners[4] = float2_array(
+        float2(-1, -1), float2(1, -1), float2(-1, 1), float2(1, 1));
+    for (int i = 0; i < 4; i++) {
+#line 95
+      float2 uv_sample = ((frag_coord + corners[i]) * 0.5f) /
+                         float2(textureSize(srt_access(eevee_dof_resolve_Resources, stable_color_tx), 0));
+
+      float3 ycocg_sample = textureLod(srt_access(eevee_dof_resolve_Resources, stable_color_tx), uv_sample, 0.0f).rgb;
+      neighbor_min = (i == 0) ? ycocg_sample : min(neighbor_min, ycocg_sample);
+      neighbor_max = (i == 0) ? ycocg_sample : max(neighbor_max, ycocg_sample);
+    }
+
+    float padding = 0.125f * saturate(1.0f - square(center_coc) / square(8.0f));
+    neighbor_max += abs(neighbor_min) * padding;
+    neighbor_min -= abs(neighbor_min) * padding;
+
+    float fac = saturate(square(max(0.0f, abs(center_coc) - 0.5f)) * 4.0f) * weight;
+
+    color = colorspace_YCoCg_from_scene_linear(color);
+    color = mix(color, clamp(color, neighbor_min, neighbor_max), fac);
+    color = colorspace_scene_linear_from_YCoCg(color);
+    return color;
+  }
+#endif
+       eevee_dof_resolve_Resources eevee_dof_resolve_Resources_new_()
+{
+  eevee_dof_resolve_Resources result;
+  result.accumulator = eevee_dof_Accumulator_new_();
+  result.views = draw_View_new_();
+  return result;
+#line 113
+}
+#line 116
+
+#if defined(CREATE_INFO_eevee_dof_resolve_Resources) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_dof_Tiles)
+#line 116
+
+#if defined(ENTRY_POINT_eevee_dof_resolve_comp_main)
+#line 116
+
+void eevee_dof_resolve_comp_main(
+#line 121
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 122
+  eevee_dof_resolve_Resources srt = eevee_dof_resolve_Resources_ctor_(); draw_View views = draw_View_ctor_(); eevee_dof_Tiles tiles = eevee_dof_Tiles_ctor_();
+#line 125
+  float2 frag_coord = float2(gl_GlobalInvocationID.xy) + 0.5f;
+  int2 tile_co = int2(frag_coord / float(DOF_TILES_SIZE * 2));
+
+  CocTile coc_tile = dof_coc_tile_load(srt_access(eevee_dof_Tiles, in_tiles_fg_img), srt_access(eevee_dof_Tiles, in_tiles_bg_img), tile_co);
+  CocTilePrediction prediction = dof_coc_tile_prediction_get(coc_tile, true);
+
+  float2 uv = frag_coord / float2(textureSize(srt_access(eevee_dof_resolve_Resources, color_tx), 0));
+  float2 uv_halfres = (frag_coord * 0.5f) / float2(textureSize(srt_access(eevee_dof_resolve_Resources, color_bg_tx), 0));
+
+  float slight_focus_max_coc = 0.0f;
+  if (prediction.do_slight_focus) {
+    slight_focus_max_coc = _slight_focus_coc_tile_get(srt, frag_coord, gl_LocalInvocationIndex);
+    prediction.do_slight_focus = slight_focus_max_coc >= 0.5f;
+    if (prediction.do_slight_focus) {
+      prediction.do_focus = false;
+    }
+  }
+
+  if (prediction.do_focus) {
+    float depth = reverse_z_read(textureLod(srt_access(eevee_dof_resolve_Resources, depth_tx), uv, 0.0f).r);
+    float center_coc = dof_coc_from_depth(views, srt_access(eevee_dof_Accumulator, dof_buf), uv, depth);
+    prediction.do_focus = abs(center_coc) <= 0.5f;
+  }
+
+  float4 out_color = float4(0.0f);
+  float weight = 0.0f;
+
+  float4 layer_color;
+  float layer_weight;
+
+  constexpr float3 hole_fill_color = float3(0.2f, 0.1f, 1.0f);
+  constexpr float3 background_color = float3(0.1f, 0.2f, 1.0f);
+  constexpr float3 slight_focus_color = float3(1.0f, 0.2f, 0.1f);
+  constexpr float3 focus_color = float3(1.0f, 1.0f, 0.1f);
+  constexpr float3 foreground_color = float3(0.2f, 1.0f, 0.1f);
+
+  if (!no_hole_fill_pass && prediction.do_hole_fill) {
+    layer_color = textureLod(srt_access(eevee_dof_resolve_Resources, color_hole_fill_tx), uv_halfres, 0.0f);
+    layer_weight = textureLod(srt_access(eevee_dof_resolve_Resources, weight_hole_fill_tx), uv_halfres, 0.0f).r;
+    if (srt_access(eevee_dof_resolve_Resources, do_debug_color)) {
+      layer_color.rgb *= hole_fill_color;
+    }
+    out_color = layer_color * safe_rcp(layer_weight);
+    weight = float(layer_weight > 0.0f);
+  }
+
+  if (!no_background_pass && prediction.do_background) {
+    layer_color = textureLod(srt_access(eevee_dof_resolve_Resources, color_bg_tx), uv_halfres, 0.0f);
+    layer_weight = textureLod(srt_access(eevee_dof_resolve_Resources, weight_bg_tx), uv_halfres, 0.0f).r;
+    if (srt_access(eevee_dof_resolve_Resources, do_debug_color)) {
+      layer_color.rgb *= background_color;
+    }
+
+    layer_color *= safe_rcp(layer_weight);
+    layer_weight = float(layer_weight > 0.0f);
+
+    out_color = out_color * (1.0f - layer_weight) + layer_color;
+    weight = weight * (1.0f - layer_weight) + layer_weight;
+
+    out_color *= safe_rcp(weight);
+    weight = float(weight > 0.0f);
+  }
+
+  if (!no_slight_focus_pass && prediction.do_slight_focus) {
+    float center_coc;
+
+#if SRT_CONSTANT_use_lut
+#line 190
+                                                                      {
+      _dof_slight_focus_gather(srt_access(eevee_dof_resolve_Resources, accumulator), float2(gl_GlobalInvocationID.xy) + 0.5f,
+                                    srt_access(eevee_dof_resolve_Resources, depth_tx),
+                                    srt_access(eevee_dof_resolve_Resources, color_tx),
+                                    srt_access(eevee_dof_Accumulator, bokeh_lut_tx),
+                                    slight_focus_max_coc,
+                                    layer_color,
+                                    layer_weight,
+                                    center_coc);
+    }
+
+#else
+#line 200
+         {
+      _dof_slight_focus_gather(srt_access(eevee_dof_resolve_Resources, accumulator), float2(gl_GlobalInvocationID.xy) + 0.5f,
+                                    srt_access(eevee_dof_resolve_Resources, depth_tx),
+                                    srt_access(eevee_dof_resolve_Resources, color_tx),
+                                    srt_access(eevee_dof_resolve_Resources, color_tx),
+                                    slight_focus_max_coc,
+                                    layer_color,
+                                    layer_weight,
+                                    center_coc);
+    }
+#endif
+    if (srt_access(eevee_dof_resolve_Resources, do_debug_color)) {
+      layer_color.rgb *= slight_focus_color;
+    }
+#line 216
+    out_color = out_color * (1.0f - layer_weight) + layer_color;
+    weight = weight * (1.0f - layer_weight) + layer_weight;
+#line 220
+  }
+
+  if (!no_focus_pass && prediction.do_focus) {
+    layer_color = colorspace_safe_color(textureLod(srt_access(eevee_dof_resolve_Resources, color_tx), uv, 0.0f));
+    layer_weight = 1.0f;
+    if (srt_access(eevee_dof_resolve_Resources, do_debug_color)) {
+      layer_color.rgb *= focus_color;
+    }
+
+    out_color = out_color * (1.0f - layer_weight) + layer_color;
+    weight = weight * (1.0f - layer_weight) + layer_weight;
+  }
+
+  if (!no_foreground_pass && prediction.do_foreground) {
+    layer_color = textureLod(srt_access(eevee_dof_resolve_Resources, color_fg_tx), uv_halfres, 0.0f);
+    layer_weight = textureLod(srt_access(eevee_dof_resolve_Resources, weight_fg_tx), uv_halfres, 0.0f).r;
+    if (srt_access(eevee_dof_resolve_Resources, do_debug_color)) {
+      layer_color.rgb *= foreground_color;
+    }
+
+    out_color = out_color * (1.0f - layer_weight) + layer_color;
+  }
+#line 244
+  if (out_color.a > 0.99f) {
+    out_color.a = 1.0f;
+  }
+
+  if (debug_resolve_perf && prediction.do_slight_focus) {
+    out_color.rgb *= float3(1.0f, 0.1f, 0.1f);
+  }
+
+  imageStore(srt_access(eevee_dof_resolve_Resources, out_color_img), int2(gl_GlobalInvocationID.xy), out_color);
+
+#endif
+#line 253
+}
+#endif
+#endif
+#line 257
+#ifndef GLSL_CPP_STUBS
+#line 272
+#endif

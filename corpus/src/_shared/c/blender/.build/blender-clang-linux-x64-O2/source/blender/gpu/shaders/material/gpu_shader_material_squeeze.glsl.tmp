@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_squeeze.glsl"
+ 
+#line 6
+void squeeze(float val, float width, float center, _ref(float ,outval))
+{
+  outval = 1.0f / (1.0f + pow(2.71828183f, -((val - center) * width)));
+}

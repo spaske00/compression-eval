@@ -1,0 +1,113 @@
+#line 1 "eevee_forward_resolve.bsl.hh"
+ 
+#line 18
+#define access_eevee_forward_ForwardResolve_transparency_r_tx() transparency_r_tx
+#define access_eevee_forward_ForwardResolve_transparency_g_tx() transparency_g_tx
+#define access_eevee_forward_ForwardResolve_transparency_b_tx() transparency_b_tx
+#define access_eevee_forward_ForwardResolve_transparency_a_tx() transparency_a_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_forward_ForwardResolve
+CREATE_INFO_RES_PASS_eevee_forward_ForwardResolve
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_forward_ForwardResolve
+CREATE_INFO_RES_BATCH_eevee_forward_ForwardResolve
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_forward_ForwardResolve
+CREATE_INFO_RES_GEOMETRY_eevee_forward_ForwardResolve
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_forward_ForwardResolve
+CREATE_INFO_RES_SHARED_VARS_eevee_forward_ForwardResolve
+#endif
+#line 18
+struct eevee_forward_ForwardResolve {
+#line 32
+int _pad;};
+#line 35
+#ifndef GPU_METAL
+eevee_forward_ForwardResolve eevee_forward_ForwardResolve_ctor_();
+eevee_forward_ForwardResolve eevee_forward_ForwardResolve_new_();
+#endif
+#line 18
+                                            eevee_forward_ForwardResolve eevee_forward_ForwardResolve_ctor_() {eevee_forward_ForwardResolve r;r._pad=0;return r;}
+#line 25
+       eevee_forward_ForwardResolve eevee_forward_ForwardResolve_new_()
+{
+  eevee_forward_ForwardResolve result;
+  result._pad = 0;
+  return result;
+#line 23
+}
+#line 26
+
+#if defined(ENTRY_POINT_eevee_forward_fullscreen_vert)
+#line 26
+
+void eevee_forward_fullscreen_vert(                                                                  )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 29
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 30
+}
+#endif
+struct eevee_forward_ForwardResolveFragOut {
+                              float4 radiance;
+                              float4 transmittance;
+};
+#line 32
+                                                   eevee_forward_ForwardResolveFragOut eevee_forward_ForwardResolveFragOut_ctor_() {eevee_forward_ForwardResolveFragOut r;r.radiance=float4(0);r.transmittance=float4(0);return r;}
+#line 37
+
+#if defined(CREATE_INFO_eevee_forward_ForwardResolve) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_RenderPassOutput)
+#line 37
+
+#if defined(ENTRY_POINT_eevee_forward_resolve_frag)
+#line 37
+
+void eevee_forward_resolve_frag(
+#line 42
+                                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 43
+  eevee_forward_ForwardResolve srt = eevee_forward_ForwardResolve_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  if (srt_access(eevee_Uniform, pipeline_buf).use_monochromatic_transmittance) {
+    float4 data = texelFetch(srt_access(eevee_forward_ForwardResolve, transparency_r_tx), texel, 0);
+    eevee_forward_ForwardResolveFragOut_radiance = float4(data.rgb, 0.0f);
+    eevee_forward_ForwardResolveFragOut_transmittance = data.aaaa;
+  }
+  else {
+
+    float2 channel_r = texelFetch(srt_access(eevee_forward_ForwardResolve, transparency_r_tx), texel, 0).xy;
+    float2 channel_g = texelFetch(srt_access(eevee_forward_ForwardResolve, transparency_g_tx), texel, 0).xy;
+    float2 channel_b = texelFetch(srt_access(eevee_forward_ForwardResolve, transparency_b_tx), texel, 0).xy;
+    float2 channel_a = texelFetch(srt_access(eevee_forward_ForwardResolve, transparency_a_tx), texel, 0).xy;
+#line 59
+    eevee_forward_ForwardResolveFragOut_transmittance.r = channel_r.y;
+    eevee_forward_ForwardResolveFragOut_transmittance.g = channel_g.y;
+    eevee_forward_ForwardResolveFragOut_transmittance.b = channel_b.y;
+    eevee_forward_ForwardResolveFragOut_transmittance.a = channel_a.y;
+#line 66
+    eevee_forward_ForwardResolveFragOut_radiance.r = channel_r.x;
+    eevee_forward_ForwardResolveFragOut_radiance.g = channel_g.x;
+    eevee_forward_ForwardResolveFragOut_radiance.b = channel_b.x;
+    eevee_forward_ForwardResolveFragOut_radiance.a = channel_a.x;
+  }
+#line 74
+  const float half_max = 65504.0f;
+  eevee_forward_ForwardResolveFragOut_radiance = min(eevee_forward_ForwardResolveFragOut_radiance, half_max);
+
+  _store_color(render_passes, texel,
+                            srt_access(eevee_Uniform, uniform_buf).render_pass.transparent_id,
+                            float4(eevee_forward_ForwardResolveFragOut_radiance.rgb, eevee_forward_ForwardResolveFragOut_transmittance.a));
+
+#endif
+#line 80
+}
+#endif
+#endif
+#line 86

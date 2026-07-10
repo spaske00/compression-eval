@@ -1,0 +1,61 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_TilemapFinalize)
+.image(0, blender::gpu::TextureFormat::UINT_32, Qualifier::write, ImageReadWriteType::uimage2D, "tilemaps_img", Frequency::PASS)
+GROUP_SHARED(int, rect_min_x)
+GROUP_SHARED(int, rect_min_y)
+GROUP_SHARED(int, rect_max_x)
+GROUP_SHARED(int, rect_max_y)
+GROUP_SHARED(uint, lod_rendered)
+.storage_buf(2, Qualifier::read_write, "ShadowPagesInfoData", "pages_infos_buf", Frequency::PASS)
+.storage_buf(3, Qualifier::read_write, "ShadowStatistics", "statistics_buf", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "ShadowTileMapData", "tilemaps_buf[]", Frequency::PASS)
+.storage_buf(1, Qualifier::read, "uint", "tiles_buf[]", Frequency::PASS)
+.storage_buf(4, Qualifier::write, "ViewMatrices", "view_infos_buf[SHADOW_VIEW_MAX]", Frequency::PASS)
+.storage_buf(5, Qualifier::write, "ShadowRenderView", "render_view_buf[SHADOW_VIEW_MAX]", Frequency::PASS)
+.storage_buf(6, Qualifier::read, "ShadowTileMapClip", "tilemaps_clip_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_RendermapFinalize)
+.storage_buf(0, Qualifier::read_write, "ShadowStatistics", "statistics_buf", Frequency::PASS)
+.storage_buf(3, Qualifier::read_write, "DispatchCommand", "clear_dispatch_buf", Frequency::PASS)
+.storage_buf(4, Qualifier::read_write, "DrawCommandArray", "tile_draw_buf", Frequency::PASS)
+.storage_buf(1, Qualifier::read, "ShadowRenderView", "render_view_buf[SHADOW_VIEW_MAX]", Frequency::PASS)
+.storage_buf(2, Qualifier::read_write, "uint", "tiles_buf[]", Frequency::PASS)
+.storage_buf(5, Qualifier::write, "uint", "dst_coord_buf[SHADOW_RENDER_MAP_SIZE]", Frequency::PASS)
+.storage_buf(6, Qualifier::write, "uint", "src_coord_buf[SHADOW_RENDER_MAP_SIZE]", Frequency::PASS)
+.storage_buf(7, Qualifier::write, "uint", "render_map_buf[SHADOW_RENDER_MAP_SIZE]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_finalize_main_infos_)
+LOCAL_GROUP_SIZE(SHADOW_TILEMAP_RES, SHADOW_TILEMAP_RES)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_shadow_TilemapFinalize)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_rendermap_finalize_main_infos_)
+LOCAL_GROUP_SIZE(SHADOW_TILEMAP_RES, SHADOW_TILEMAP_RES)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_shadow_RendermapFinalize)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_finalize)
+COMPUTE_SOURCE("eevee_shadow_tilemap_finalize.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_tilemap_finalize_main")
+ADDITIONAL_INFO(eevee_shadow_tilemap_finalize_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_rendermap)
+COMPUTE_SOURCE("eevee_shadow_tilemap_finalize.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_rendermap_finalize_main")
+ADDITIONAL_INFO(eevee_shadow_rendermap_finalize_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

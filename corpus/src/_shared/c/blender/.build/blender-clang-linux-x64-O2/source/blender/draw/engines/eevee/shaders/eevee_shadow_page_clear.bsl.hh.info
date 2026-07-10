@@ -1,0 +1,27 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_PageClear)
+.image(SHADOW_ATLAS_IMG_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read_write, ImageReadWriteType::uimage2DArrayAtomic, "shadow_atlas_img", Frequency::PASS)
+.storage_buf(2, Qualifier::read, "ShadowPagesInfoData", "pages_infos_buf", Frequency::PASS)
+.storage_buf(6, Qualifier::read, "uint", "dst_coord_buf[SHADOW_RENDER_MAP_SIZE]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_page_clear_comp_infos_)
+LOCAL_GROUP_SIZE(SHADOW_PAGE_CLEAR_GROUP_SIZE, SHADOW_PAGE_CLEAR_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_shadow_PageClear)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_page_clear)
+COMPUTE_SOURCE("eevee_shadow_page_clear.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_page_clear_comp")
+ADDITIONAL_INFO(eevee_shadow_page_clear_comp_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

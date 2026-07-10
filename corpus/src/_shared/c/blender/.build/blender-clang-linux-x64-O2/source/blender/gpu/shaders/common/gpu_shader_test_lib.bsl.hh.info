@@ -1,0 +1,65 @@
+#pragma once
+
+
+#define WRITE_MATRIX(v) \
+  TestOutputRawData raw; \
+  for (int c = 0; c < mat_col_len(v); c++) { \
+    for (int r = 0; r < mat_row_len(v); r++) { \
+      raw.data[c * mat_row_len(v) + r] = floatBitsToUint(v[c][r]); \
+    } \
+  } \
+  return raw;
+
+#define WRITE_FLOAT_VECTOR(v) \
+  TestOutputRawData raw; \
+  for (int c = 0; c < mat_col_len(v); c++) { \
+    raw.data[c] = floatBitsToUint(v[c]); \
+  } \
+  return raw;
+
+#define WRITE_INT_VECTOR(v) \
+  TestOutputRawData raw; \
+  for (int c = 0; c < mat_col_len(v); c++) { \
+    raw.data[c] = uint(v[c]); \
+  } \
+  return raw;
+
+#define WRITE_FLOAT_SCALAR(v) \
+  TestOutputRawData raw; \
+  raw.data[0] = floatBitsToUint(v); \
+  return raw;
+
+#define WRITE_INT_SCALAR(v) \
+  TestOutputRawData raw; \
+  raw.data[0] = uint(v); \
+  return raw;
+
+                      
+#  define COLLAPSE_BOOL(OP) bool(all(OP))
+#  undef COLLAPSE_BOOL                                                               
+#  define COLLAPSE_BOOL(OP) (OP)
+#define EXPECT_OP(OP, val1, val2) \
+  test_output(as_raw_data(val1), as_raw_data(val2), COLLAPSE_BOOL(OP), to_type(val1))
+
+#define EXPECT_EQ(result, expect) EXPECT_OP((result) == (expect), result, expect)
+#define EXPECT_NE(result, expect) EXPECT_OP((result) != (expect), result, expect)
+#define EXPECT_LE(result, expect) EXPECT_OP((result) <= (expect), result, expect)
+#define EXPECT_LT(result, expect) EXPECT_OP((result) < (expect), result, expect)
+#define EXPECT_GE(result, expect) EXPECT_OP((result) >= (expect), result, expect)
+#define EXPECT_GT(result, expect) EXPECT_OP((result) > (expect), result, expect)
+
+#define EXPECT_TRUE(result) EXPECT_OP(result, result, true)
+#define EXPECT_FALSE(result) EXPECT_OP(!result, result, false)
+
+#define EXPECT_NEAR(result, expect, threshold) \
+  EXPECT_OP(is_equal(result, expect, threshold), result, expect)
+
+#define TEST(a, b) if (true)
+
+
+
+
+GPU_SHADER_CREATE_INFO(ShaderTestOutput)
+.storage_buf(0, Qualifier::write, "TestOutput", "out_test[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

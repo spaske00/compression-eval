@@ -1,0 +1,27 @@
+#line 1 "gpu_shader_math_angle_lib.glsl"
+ 
+#line 11
+struct AngleRadian {
+
+  float angle;
+#line 24
+};
+
+#ifndef GPU_METAL
+AngleRadian AngleRadian_ctor_();
+AngleRadian AngleRadian_identity();
+AngleRadian AngleRadian_from_degree(float angle_degree);
+#endif
+#line 11
+                           AngleRadian AngleRadian_ctor_() {AngleRadian r;r.angle=0.0f;return r;}
+#line 15
+         AngleRadian AngleRadian_identity()
+  {
+    return _ctor(AngleRadian) 0 _rotc() ;
+  }
+#line 20
+         AngleRadian AngleRadian_from_degree(float angle_degree)
+  {
+    return _ctor(AngleRadian) angle_degree * (M_PI / 180.0f) _rotc() ;
+  }
+#line 25

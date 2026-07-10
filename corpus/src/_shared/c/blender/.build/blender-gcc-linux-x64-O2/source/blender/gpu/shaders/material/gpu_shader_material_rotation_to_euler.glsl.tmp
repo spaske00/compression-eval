@@ -1,0 +1,8 @@
+#line 1 "gpu_shader_material_rotation_to_euler.glsl"
+ 
+#line 9
+void rotation_to_euler(float4 rotation, _ref(float3 ,euler))
+{
+  Quaternion quat = _ctor(Quaternion) UNPACK4(rotation) _rotc() ;
+  euler = _as_float3(to_euler(from_rotation(quat)));
+}

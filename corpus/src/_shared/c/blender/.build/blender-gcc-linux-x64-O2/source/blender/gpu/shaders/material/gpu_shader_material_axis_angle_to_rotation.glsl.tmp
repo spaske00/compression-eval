@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_axis_angle_to_rotation.glsl"
+ 
+#line 8
+void axis_angle_to_rotation(float3 axis, float angle, _ref(float4 ,rotation))
+{
+  rotation = _as_float4(to_quaternion(axis, angle));
+}

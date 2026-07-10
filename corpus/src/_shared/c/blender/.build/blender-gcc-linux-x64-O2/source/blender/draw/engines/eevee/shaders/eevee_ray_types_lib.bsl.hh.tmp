@@ -1,0 +1,144 @@
+#line 1 "eevee_ray_types_lib.bsl.hh"
+ 
+#line 31
+struct ScreenSpaceRay {
+  float4 origin;
+  float4 direction;
+  float max_time;
+#line 95
+};
+#line 99
+#ifndef GPU_METAL
+ScreenSpaceRay ScreenSpaceRay_ctor_();
+ScreenSpaceRay ScreenSpaceRay_from_start_end(float4 hs_start, float4 hs_end, float2 pixel_size);
+ScreenSpaceRay ScreenSpaceRay_create(ViewMatrices view, Ray ray, float2 pixel_size);
+ScreenSpaceRay ScreenSpaceRay_create(Ray ray, float4x4 winmat, float2 pixel_size);
+float3 _screen_position_at(_ref(ScreenSpaceRay ,this_), float t);
+#endif
+#line 31
+                              ScreenSpaceRay ScreenSpaceRay_ctor_() {ScreenSpaceRay r;r.origin=float4(0);r.direction=float4(0);r.max_time=0.0f;return r;}
+#line 36
+         ScreenSpaceRay ScreenSpaceRay_from_start_end(float4 hs_start, float4 hs_end, float2 pixel_size)
+  {
+#line 43
+    constexpr float bias = -2.4e-7f * 7.0f;
+    hs_start.z += bias;
+    hs_end.z += bias;
+
+    hs_start.xyz /= hs_start.w;
+    hs_end.xyz /= hs_end.w;
+
+    ScreenSpaceRay ray;
+    ray.direction = hs_end - hs_start;
+    ray.origin = hs_start;
+#line 55
+    if (length_squared(ray.direction.xy) < 0.00001f) {
+      ray.direction.xy = float2(0.0f, 0.00001f);
+    }
+    float ray_len_sqr = length_squared(ray.direction.xyz);
+
+    bool is_more_vertical = abs(ray.direction.x / pixel_size.x) <
+                            abs(ray.direction.y / pixel_size.y);
+    ray.direction /= (is_more_vertical) ? abs(ray.direction.y) : abs(ray.direction.x);
+    ray.direction *= (is_more_vertical) ? pixel_size.y : pixel_size.x;
+
+    ray.max_time = sqrt(ray_len_sqr * safe_rcp(length_squared(ray.direction.xyz)));
+
+    float clip_dist = line_unit_box_intersect_dist_safe(ray.origin.xyz, ray.direction.xyz);
+    ray.max_time = min(ray.max_time, clip_dist);
+
+    ray.origin.xyz = ray.origin.xyz * 0.5f + 0.5f;
+    ray.direction.xyz *= 0.5f;
+    return ray;
+  }
+#line 75
+         ScreenSpaceRay ScreenSpaceRay_create(ViewMatrices view, Ray ray, float2 pixel_size)
+  {
+    float4 start = _point_view_to_homogenous(view, ray.origin);
+    float4 end = _point_view_to_homogenous(view, ray.origin + ray.direction * ray.max_time);
+
+    return ScreenSpaceRay_from_start_end(start, end, pixel_size);
+  }
+#line 83
+         ScreenSpaceRay ScreenSpaceRay_create(Ray ray, float4x4 winmat, float2 pixel_size)
+  {
+    float4 start = winmat * float4(ray.origin, 1.0f);
+    float4 end = winmat * float4(ray.origin + ray.direction * ray.max_time, 1.0f);
+
+    return ScreenSpaceRay_from_start_end(start, end, pixel_size);
+  }
+#line 91
+  float3 _screen_position_at(_ref(ScreenSpaceRay ,this_), float t)
+  {
+    return this_.origin.xyz + this_.direction.xyz * t;
+  }
+#line 98
+struct ScreenThicknessEstimator {
+
+  float2 prev_ss_z_slope;
+
+  float prev_ss_z;
+
+  float prev_t;
+#line 175
+};
+
+#ifndef GPU_METAL
+ScreenThicknessEstimator ScreenThicknessEstimator_ctor_();
+ScreenThicknessEstimator ScreenThicknessEstimator_init(float start_z);
+float _thickness(_ref(ScreenThicknessEstimator ,this_), float sample_ss_z, float sample_ss_t, float sample_min_thickness);
+bool _intersect(_ref(ScreenThicknessEstimator ,this_), float sample_ss_z,
+                 float sample_ss_t,
+                 float sample_min_thickness,
+                 float ray_ss_z,
+                 float ray_ss_z_prev);
+#endif
+#line 98
+                                        ScreenThicknessEstimator ScreenThicknessEstimator_ctor_() {ScreenThicknessEstimator r;r.prev_ss_z_slope=float2(0);r.prev_ss_z=0.0f;r.prev_t=0.0f;return r;}
+#line 106
+         ScreenThicknessEstimator ScreenThicknessEstimator_init(float start_z)
+  {
+    ScreenThicknessEstimator estimator;
+    estimator.prev_ss_z_slope = float2(0.0f);
+    estimator.prev_ss_z = start_z;
+    estimator.prev_t = 0.0f;
+    return estimator;
+  }
+#line 123
+  float _thickness(_ref(ScreenThicknessEstimator ,this_), float sample_ss_z, float sample_ss_t, float sample_min_thickness)
+  {
+    float delta_t = sample_ss_t - this_.prev_t;
+
+    float delta_z = sample_ss_z - this_.prev_ss_z;
+    float slope = delta_z / delta_t;
+#line 131
+    float thickness = abs(delta_z);
+#line 135
+    if (any(greaterThan(abs(this_.prev_ss_z_slope - slope), float2(abs(this_.prev_ss_z_slope))))) {
+      thickness = 0.0f;
+    }
+#line 140
+    thickness = max(thickness, sample_min_thickness);
+
+    this_.prev_ss_z_slope.y = this_.prev_ss_z_slope.x;
+    this_.prev_ss_z_slope.x = slope;
+    this_.prev_t = sample_ss_t;
+    this_.prev_ss_z = sample_ss_z;
+    return thickness;
+  }
+#line 159
+  bool _intersect(_ref(ScreenThicknessEstimator ,this_), float sample_ss_z,
+                 float sample_ss_t,
+                 float sample_min_thickness,
+                 float ray_ss_z,
+                 float ray_ss_z_prev)
+  {
+    float sample_thickness = _thickness(this_, sample_ss_z, sample_ss_t, sample_min_thickness);
+#line 169
+    sample_thickness += abs(ray_ss_z - ray_ss_z_prev);
+
+    float sample_min = sample_ss_z;
+    float sample_max = sample_ss_z + sample_thickness;
+    return ray_ss_z >= sample_min && ray_ss_z <= sample_max;
+  }
+#line 176

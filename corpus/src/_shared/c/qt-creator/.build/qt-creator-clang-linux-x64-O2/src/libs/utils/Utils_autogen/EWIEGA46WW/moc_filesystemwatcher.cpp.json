@@ -1,0 +1,44 @@
+{
+    "classes": [
+        {
+            "className": "FileSystemWatcher",
+            "lineNumber": 15,
+            "object": true,
+            "qualifiedClassName": "Utils::FileSystemWatcher",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "fileChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "directoryChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filesystemwatcher.h",
+    "outputRevision": 68
+}

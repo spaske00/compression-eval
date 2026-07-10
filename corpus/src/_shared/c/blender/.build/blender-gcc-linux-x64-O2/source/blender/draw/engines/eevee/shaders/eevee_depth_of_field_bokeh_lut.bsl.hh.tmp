@@ -1,0 +1,100 @@
+#line 1 "eevee_depth_of_field_bokeh_lut.bsl.hh"
+ 
+#line 20
+#define access_eevee_dof_bokeh_lut_Resources_out_gather_lut_img() out_gather_lut_img
+#define access_eevee_dof_bokeh_lut_Resources_out_scatter_lut_img() out_scatter_lut_img
+#define access_eevee_dof_bokeh_lut_Resources_out_resolve_lut_img() out_resolve_lut_img
+#define access_eevee_dof_bokeh_lut_Resources_dof_buf() dof_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_bokeh_lut_Resources
+CREATE_INFO_RES_PASS_eevee_dof_bokeh_lut_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_bokeh_lut_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_bokeh_lut_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_bokeh_lut_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_bokeh_lut_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_bokeh_lut_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_bokeh_lut_Resources
+#endif
+#line 20
+struct eevee_dof_bokeh_lut_Resources {
+#line 34
+int _pad;};
+#line 37
+#ifndef GPU_METAL
+eevee_dof_bokeh_lut_Resources eevee_dof_bokeh_lut_Resources_ctor_();
+eevee_dof_bokeh_lut_Resources eevee_dof_bokeh_lut_Resources_new_();
+#endif
+#line 20
+                                             eevee_dof_bokeh_lut_Resources eevee_dof_bokeh_lut_Resources_ctor_() {eevee_dof_bokeh_lut_Resources r;r._pad=0;return r;}
+#line 27
+       eevee_dof_bokeh_lut_Resources eevee_dof_bokeh_lut_Resources_new_()
+{
+  eevee_dof_bokeh_lut_Resources result;
+  result._pad = 0;
+  return result;
+#line 25
+}
+#line 28
+
+#if defined(CREATE_INFO_eevee_dof_bokeh_lut_Resources)
+#line 28
+
+#if defined(ENTRY_POINT_eevee_dof_bokeh_lut_comp_main)
+#line 28
+
+void eevee_dof_bokeh_lut_comp_main(                                                                                  )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 30
+  eevee_dof_bokeh_lut_Resources srt = eevee_dof_bokeh_lut_Resources_ctor_();
+  float2 gather_uv = ((float2(gl_GlobalInvocationID.xy) + 0.5f) / float(DOF_BOKEH_LUT_SIZE));
+
+  gather_uv = gather_uv * 2.0f - 1.0f;
+
+  float2 slight_focus_texel = float2(gl_GlobalInvocationID.xy) - float(dof_max_slight_focus_radius);
+
+  float radius = length(gather_uv);
+
+  if (srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_blades > 0.0f) {
+
+    float theta = atan(gather_uv.y, gather_uv.x) + M_TAU;
+
+    radius /= circle_to_polygon_radius(srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_blades,
+                                       theta - srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_rotation);
+
+    float theta_new = circle_to_polygon_angle(srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_blades, theta);
+    float r_new = circle_to_polygon_radius(srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_blades, theta_new);
+
+    theta_new -= srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_rotation;
+
+    gather_uv = r_new * float2(-cos(theta_new), sin(theta_new));
+
+    {
+
+      slight_focus_texel *= srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_anisotropic_scale_inv;
+
+      float theta = atan(slight_focus_texel.y + 1e-8f, -slight_focus_texel.x + 1e-8f) + M_TAU;
+      slight_focus_texel /= circle_to_polygon_radius(srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_blades,
+                                                     theta + srt_access(eevee_dof_bokeh_lut_Resources, dof_buf).bokeh_rotation);
+    }
+  }
+  else {
+    gather_uv *= safe_rcp(length(gather_uv));
+  }
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  imageStoreFast(srt_access(eevee_dof_bokeh_lut_Resources, out_gather_lut_img), texel, gather_uv.xyxy);
+
+  imageStoreFast(srt_access(eevee_dof_bokeh_lut_Resources, out_scatter_lut_img), texel, float4(radius));
+
+  imageStore(srt_access(eevee_dof_bokeh_lut_Resources, out_resolve_lut_img), texel, float4(length(slight_focus_texel)));
+
+#endif
+#line 73
+}
+#endif
+#endif
+#line 78

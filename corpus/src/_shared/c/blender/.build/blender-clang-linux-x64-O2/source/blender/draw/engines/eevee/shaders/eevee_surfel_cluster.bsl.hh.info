@@ -1,0 +1,26 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_Resources)
+.image(0, blender::gpu::TextureFormat::SINT_32, Qualifier::read_write, ImageReadWriteType::iimage3DAtomic, "cluster_list_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_build_cluster_infos_)
+LOCAL_GROUP_SIZE(SURFEL_GROUP_SIZE)
+BUILTINS(BuiltinBits::TEXTURE_ATOMIC)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_surfel_Resources)
+ADDITIONAL_INFO(SurfelData)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_cluster_build)
+COMPUTE_SOURCE("eevee_surfel_cluster.bsl.hh")
+COMPUTE_FUNCTION("eevee_surfel_build_cluster")
+ADDITIONAL_INFO(eevee_surfel_build_cluster_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

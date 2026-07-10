@@ -1,0 +1,353 @@
+#line 1 "eevee_forward_lib.bsl.hh"
+ 
+#line 25
+#ifdef GLSL_CPP_STUBS
+#  define MAT_REFLECTION
+#endif
+#line 30
+#ifndef CLOSURE_BIN_COUNT
+#  define CLOSURE_BIN_COUNT SRT_CONSTANT_light_closure_eval_count
+#endif
+
+#ifndef GLSL_CPP_STUBS
+#  if CLOSURE_BIN_COUNT != SRT_CONSTANT_light_closure_eval_count && \
+      SRT_CONSTANT_light_closure_eval_count != 0
+#    error Closure data count and eval count must match
+#  endif
+#endif
+#line 43
+void eevee_forward_lighting_eval(const ViewMatrices view,
+                           uint resource_id,
+                           Thickness thickness,
+                           float2 frag_co,
+                           _ref(float3 ,radiance),
+                           _ref(float3 ,transmittance))
+{
+
+#if defined(CREATE_INFO_eevee_LightEvalIterator)
+#line 50
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 50
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 50
+
+#if defined(CREATE_INFO_eevee_LightprobeRenderData)
+#line 50
+
+#if defined(CREATE_INFO_eevee_LightprobePlaneRenderData)
+#line 50
+
+#if defined(CREATE_INFO_draw_Infos)
+#line 60
+  float vPz = dot(_forward(view), g_data.P) - dot(_forward(view), _position(view));
+  float3 V = _world_incident_vector(view, g_data.P);
+
+  eevee_light_EvalCtxTfalse ctx;
+#line 67
+{
+#line 64
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 65
+                                                                                                 {
+      ClosureUndetermined cl = g_closure_get(uchar(0));
+      ctx.stack.cl[0] = closure_light_new(resource_table_get(UtilityTexture), cl, V);
+    }
+
+#endif
+#line 69
+  }
+#line 64
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 65
+                                                                                                 {
+      ClosureUndetermined cl = g_closure_get(uchar(1));
+      ctx.stack.cl[1] = closure_light_new(resource_table_get(UtilityTexture), cl, V);
+    }
+
+#endif
+#line 69
+  }
+#line 64
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 65
+                                                                                                 {
+      ClosureUndetermined cl = g_closure_get(uchar(2));
+      ctx.stack.cl[2] = closure_light_new(resource_table_get(UtilityTexture), cl, V);
+    }
+
+#endif
+#line 69
+  }
+#line 69
+  }
+
+  ctx.P = g_data.P;
+  ctx.Ng = g_data.Ng;
+  ctx.V = V;
+  ctx.texel = frag_co;
+  ctx.thickness = thickness;
+#line 79
+  ObjectInfos object_infos = _get(resource_table_get(draw_Infos), resource_id);
+  ctx.receiver_light_set = receiver_light_set_get(object_infos);
+  ctx.terminator_normal_offset = object_infos.shadow_terminator_normal_offset;
+  ctx.terminator_geometry_offset = object_infos.shadow_terminator_geometry_offset;
+
+  _eval_reflection(resource_table_get(eevee_LightEvalIterator), ctx, vPz);
+#line 87
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 0
+#line 86
+                                                                                                {
+    ClosureUndetermined cl_transmit = g_closure_get(0);
+    if (closure_has_transmission(cl_transmit.type) || cl_transmit.type == CLOSURE_BSSRDF_BURLEY_ID)
+    {
+      eevee_light_EvalCtxTtrue ctx_tr = eevee_light_init_from_reflect_ctx(ctx);
+      ctx_tr.stack.cl[0] = closure_light_new(resource_table_get(UtilityTexture), cl_transmit, V, thickness);
+#line 94
+      _eval_transmission(resource_table_get(eevee_LightEvalIterator), ctx_tr, vPz);
+
+      if (cl_transmit.type == CLOSURE_BSSRDF_BURLEY_ID) {
+#if defined(GLSL_CPP_STUBS) || defined(MAT_SUBSURFACE)
+
+        float3 sss_profile = subsurface_transmission(
+            resource_table_get(UtilityTexture), to_closure_subsurface(cl_transmit).sss_radius, _value(thickness));
+        ctx.stack.cl[0].light_shadowed += ctx_tr.stack.cl[0].light_shadowed * sss_profile;
+        ctx.stack.cl[0].light_unshadowed += ctx_tr.stack.cl[0].light_unshadowed * sss_profile;
+#endif
+      }
+      else {
+        ctx.stack.cl[0].light_shadowed = ctx_tr.stack.cl[0].light_shadowed;
+        ctx.stack.cl[0].light_unshadowed = ctx_tr.stack.cl[0].light_unshadowed;
+      }
+    }
+  }
+#endif
+  eevee_LightProbeSample samp = _load(resource_table_get(eevee_LightprobeRenderData), frag_co, g_data.P, g_data.N, V);
+
+  float clamp_indirect_sh = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+  samp.volume_irradiance = spherical_harmonics_clamp_energy(samp.volume_irradiance,
+                                                             clamp_indirect_sh);
+
+#ifdef MAT_REFLECTION
+
+  float3 planar_probe_radiance = float3(0.0f);
+  float3 average_N = g_data.Ng * 0.001f;
+  {
+#line 126
+{
+#line 124
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 125
+                                                                                                   {
+        ClosureUndetermined cl = g_closure_get(uchar(0));
+        average_N += cl.N * cl.weight;
+      }
+
+#endif
+#line 129
+    }
+#line 124
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 125
+                                                                                                   {
+        ClosureUndetermined cl = g_closure_get(uchar(1));
+        average_N += cl.N * cl.weight;
+      }
+
+#endif
+#line 129
+    }
+#line 124
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 125
+                                                                                                   {
+        ClosureUndetermined cl = g_closure_get(uchar(2));
+        average_N += cl.N * cl.weight;
+      }
+
+#endif
+#line 129
+    }
+#line 129
+    }
+    average_N = safe_normalize(average_N);
+
+    const int planar_id = _select_probe(resource_table_get(eevee_LightprobePlaneRenderData), g_data.P, average_N);
+
+    if (planar_id == -1) {
+      average_N = float3(0.0f);
+    }
+    else {
+      float3 P_reflected = eevee_lightprobe_plane_parallax(
+          srt_access(eevee_LightprobePlaneRenderData, probe_planar_buf)[planar_id], g_data.P, average_N, V);
+
+      float2 ndc_P_reflected = _point_world_to_ndc(view, P_reflected).xy;
+
+      ndc_P_reflected.y = -ndc_P_reflected.y;
+      float2 texel = _ndc_to_screen(view, ndc_P_reflected);
+
+      planar_probe_radiance =
+          textureLod(srt_access(eevee_LightprobePlaneRenderData, planar_radiance_tx), float3(texel, planar_id), 0.0).rgb;
+
+      if (textureLod(srt_access(eevee_LightprobePlaneRenderData, planar_depth_tx), float3(texel, planar_id), 0.0).r ==
+          reverse_z_read(1.0f))
+      {
+        average_N = float3(0.0f);
+      }
+    }
+  }
+#endif
+#line 159
+  float3 radiance_direct = float3(0.0f);
+  float3 radiance_indirect = float3(0.0f);
+#line 165
+{
+#line 162
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 163
+                                                                                                 {
+      ClosureUndetermined cl = g_closure_get_resolved(uchar(0), 1.0f);
+      if (cl.weight > CLOSURE_WEIGHT_CUTOFF) {
+        float3 direct_light = ctx.stack.cl[0].light_shadowed;
+        float3 indirect_light = _eval(resource_table_get(eevee_LightprobeRenderData), samp, cl, g_data.P, V, thickness);
+
+#ifdef MAT_REFLECTION
+        if (cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID) {
+          const float blend = saturate(to_closure_reflection(cl).roughness * -10.0f + 1.0f) *
+                              saturate(dot(average_N, cl.N) * 100.0f - 99.0f);
+          indirect_light = mix(indirect_light, planar_probe_radiance, blend);
+        }
+#endif
+
+        if ((cl.type == CLOSURE_BSDF_TRANSLUCENT_ID ||
+             cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID) &&
+            (_value(thickness) != 0.0f))
+        {
+
+          cl.color *= cl.color;
+        }
+
+        radiance_direct += direct_light * cl.color;
+        radiance_indirect += indirect_light * cl.color;
+      }
+    }
+
+#endif
+#line 189
+  }
+#line 162
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 163
+                                                                                                 {
+      ClosureUndetermined cl = g_closure_get_resolved(uchar(1), 1.0f);
+      if (cl.weight > CLOSURE_WEIGHT_CUTOFF) {
+        float3 direct_light = ctx.stack.cl[1].light_shadowed;
+        float3 indirect_light = _eval(resource_table_get(eevee_LightprobeRenderData), samp, cl, g_data.P, V, thickness);
+
+#ifdef MAT_REFLECTION
+        if (cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID) {
+          const float blend = saturate(to_closure_reflection(cl).roughness * -10.0f + 1.0f) *
+                              saturate(dot(average_N, cl.N) * 100.0f - 99.0f);
+          indirect_light = mix(indirect_light, planar_probe_radiance, blend);
+        }
+#endif
+
+        if ((cl.type == CLOSURE_BSDF_TRANSLUCENT_ID ||
+             cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID) &&
+            (_value(thickness) != 0.0f))
+        {
+
+          cl.color *= cl.color;
+        }
+
+        radiance_direct += direct_light * cl.color;
+        radiance_indirect += indirect_light * cl.color;
+      }
+    }
+
+#endif
+#line 189
+  }
+#line 162
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 163
+                                                                                                 {
+      ClosureUndetermined cl = g_closure_get_resolved(uchar(2), 1.0f);
+      if (cl.weight > CLOSURE_WEIGHT_CUTOFF) {
+        float3 direct_light = ctx.stack.cl[2].light_shadowed;
+        float3 indirect_light = _eval(resource_table_get(eevee_LightprobeRenderData), samp, cl, g_data.P, V, thickness);
+
+#ifdef MAT_REFLECTION
+        if (cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID) {
+          const float blend = saturate(to_closure_reflection(cl).roughness * -10.0f + 1.0f) *
+                              saturate(dot(average_N, cl.N) * 100.0f - 99.0f);
+          indirect_light = mix(indirect_light, planar_probe_radiance, blend);
+        }
+#endif
+
+        if ((cl.type == CLOSURE_BSDF_TRANSLUCENT_ID ||
+             cl.type == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID) &&
+            (_value(thickness) != 0.0f))
+        {
+
+          cl.color *= cl.color;
+        }
+
+        radiance_direct += direct_light * cl.color;
+        radiance_indirect += indirect_light * cl.color;
+      }
+    }
+
+#endif
+#line 189
+  }
+#line 189
+  }
+
+  float clamp_direct = srt_access(eevee_Uniform, uniform_buf).clamp.surface_direct;
+  float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+
+  radiance_direct = colorspace_brightness_clamp_max(radiance_direct, clamp_direct);
+  radiance_indirect = colorspace_brightness_clamp_max(radiance_indirect, clamp_indirect);
+
+  radiance_direct *= srt_access(eevee_Uniform, uniform_buf).clamp.direct_scale;
+  radiance_indirect *= srt_access(eevee_Uniform, uniform_buf).clamp.indirect_scale;
+
+  radiance = radiance_direct + radiance_indirect + g_emission;
+
+  transmittance = g_transmittance;
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 203
+}
+
+

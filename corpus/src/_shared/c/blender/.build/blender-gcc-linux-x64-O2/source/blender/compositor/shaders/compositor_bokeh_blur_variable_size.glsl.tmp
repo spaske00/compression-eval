@@ -1,0 +1,47 @@
+#line 1 "compositor_bokeh_blur_variable_size.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_bokeh_blur_variable_size)
+#line 24
+float4 load_weight(int2 texel, float radius)
+{
+#line 29
+  if (texel.x == 0 && texel.y == 0) {
+    return float4(1.0f);
+  }
+#line 38
+  return texture(weights_tx,
+                 1.0f - ((float2(texel) + float2(radius + 0.5f)) / (radius * 2.0f + 1.0f)));
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 48
+  float mask = texture_load(mask_tx, texel).x;
+  if (mask == 0.0f) {
+    imageStore(output_img, texel, texture_load(input_tx, texel));
+    return;
+  }
+
+  float center_size = max(0.0f, texture_load(size_tx, texel).x);
+#line 60
+  float4 accumulated_color = float4(0.0f);
+  float4 accumulated_weight = float4(0.0f);
+  for (int y = -search_radius; y <= search_radius; y++) {
+    for (int x = -search_radius; x <= search_radius; x++) {
+      float candidate_size = max(0.0f, texture_load(size_tx, texel + int2(x, y)).x);
+#line 69
+      float size = min(center_size, candidate_size);
+      if (max(abs(x), abs(y)) > size) {
+        continue;
+      }
+
+      float4 weight = load_weight(int2(x, y), size);
+      accumulated_color += texture_load(input_tx, texel + int2(x, y)) * weight;
+      accumulated_weight += weight;
+    }
+  }
+
+  imageStore(output_img, texel, safe_divide(accumulated_color, accumulated_weight));
+}

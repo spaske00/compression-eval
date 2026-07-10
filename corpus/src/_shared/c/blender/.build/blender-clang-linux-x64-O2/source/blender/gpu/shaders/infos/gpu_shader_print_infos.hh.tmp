@@ -1,0 +1,18 @@
+#line 1 "gpu_shader_print_infos.hh"
+ 
+#line 9
+#ifdef GPU_SHADER
+#endif
+#line 18
+#ifdef CREATE_INFO_RES_PASS_gpu_print
+CREATE_INFO_RES_PASS_gpu_print
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_print
+CREATE_INFO_RES_BATCH_gpu_print
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_print
+CREATE_INFO_RES_GEOMETRY_gpu_print
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_print
+CREATE_INFO_RES_SHARED_VARS_gpu_print
+#endif

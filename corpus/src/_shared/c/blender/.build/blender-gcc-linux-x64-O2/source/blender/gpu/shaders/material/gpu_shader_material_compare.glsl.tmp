@@ -1,0 +1,240 @@
+#line 1 "gpu_shader_material_compare.glsl"
+ 
+#line 13
+void compare_float_less_than(float a, float b, _ref(float ,result))
+{
+  result = float(a < b);
+}
+#line 19
+void compare_float_less_equal(float a, float b, _ref(float ,result))
+{
+  result = float(a <= b);
+}
+#line 25
+void compare_float_greater_than(float a, float b, _ref(float ,result))
+{
+  result = float(a > b);
+}
+#line 31
+void compare_float_greater_equal(float a, float b, _ref(float ,result))
+{
+  result = float(a >= b);
+}
+#line 37
+void compare_float_equal(float a, float b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(a - b) <= epsilon);
+}
+#line 43
+void compare_float_not_equal(float a, float b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(a - b) > epsilon);
+}
+#line 51
+void compare_int_less_than(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) < int(b));
+}
+#line 57
+void compare_int_less_equal(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) <= int(b));
+}
+#line 63
+void compare_int_greater_than(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) > int(b));
+}
+#line 69
+void compare_int_greater_equal(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) >= int(b));
+}
+#line 75
+void compare_int_equal(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) == int(b));
+}
+#line 81
+void compare_int_not_equal(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) != int(b));
+}
+#line 89
+void compare_vector_average_less_than(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(average(a) < average(b));
+}
+#line 95
+void compare_vector_dot_less_than(float3 a, float3 b, float comp, _ref(float ,result))
+{
+  result = float(dot(a, b) < comp);
+}
+#line 101
+void compare_vector_direction_less_than(float3 a, float3 b, float angle, _ref(float ,result))
+{
+  result = float(angle_normalized(a, b) < angle);
+}
+#line 107
+void compare_vector_element_less_than(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(a.x < b.x && a.y < b.y && a.z < b.z);
+}
+#line 113
+void compare_vector_length_less_than(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(length(a) < length(b));
+}
+#line 121
+void compare_vector_average_less_equal(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(average(a) <= average(b));
+}
+#line 127
+void compare_vector_dot_less_equal(float3 a, float3 b, float comp, _ref(float ,result))
+{
+  result = float(dot(a, b) <= comp);
+}
+#line 133
+void compare_vector_direction_less_equal(float3 a, float3 b, float angle, _ref(float ,result))
+{
+  result = float(angle_normalized(a, b) <= angle);
+}
+#line 139
+void compare_vector_element_less_equal(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(a.x <= b.x && a.y <= b.y && a.z <= b.z);
+}
+#line 145
+void compare_vector_length_less_equal(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(length(a) <= length(b));
+}
+#line 153
+void compare_vector_average_greater_than(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(average(a) > average(b));
+}
+#line 159
+void compare_vector_dot_greater_than(float3 a, float3 b, float comp, _ref(float ,result))
+{
+  result = float(dot(a, b) > comp);
+}
+#line 165
+void compare_vector_direction_greater_than(float3 a, float3 b, float angle, _ref(float ,result))
+{
+  result = float(angle_normalized(a, b) > angle);
+}
+#line 171
+void compare_vector_element_greater_than(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(a.x > b.x && a.y > b.y && a.z > b.z);
+}
+#line 177
+void compare_vector_length_greater_than(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(length(a) > length(b));
+}
+#line 185
+void compare_vector_average_greater_equal(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(average(a) >= average(b));
+}
+#line 191
+void compare_vector_dot_greater_equal(float3 a, float3 b, float comp, _ref(float ,result))
+{
+  result = float(dot(a, b) >= comp);
+}
+#line 197
+void compare_vector_direction_greater_equal(float3 a, float3 b, float angle, _ref(float ,result))
+{
+  result = float(angle_normalized(a, b) >= angle);
+}
+#line 203
+void compare_vector_element_greater_equal(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(a.x >= b.x && a.y >= b.y && a.z >= b.z);
+}
+#line 209
+void compare_vector_length_greater_equal(float3 a, float3 b, _ref(float ,result))
+{
+  result = float(length(a) >= length(b));
+}
+#line 217
+void compare_vector_average_equal(float3 a, float3 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(average(a) - average(b)) <= epsilon);
+}
+#line 223
+void compare_vector_dot_equal(float3 a, float3 b, float comp, float epsilon, _ref(float ,result))
+{
+  result = float(abs(dot(a, b) - comp) <= epsilon);
+}
+#line 229
+void compare_vector_direction_equal(
+    float3 a, float3 b, float angle, float epsilon, _ref(float ,result))
+{
+  result = float(abs(angle_normalized(a, b) - angle) <= epsilon);
+}
+#line 236
+void compare_vector_element_equal(float3 a, float3 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(a.x - b.x) <= epsilon && abs(a.y - b.y) <= epsilon &&
+                 abs(a.z - b.z) <= epsilon);
+}
+#line 243
+void compare_vector_length_equal(float3 a, float3 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(length(a) - length(b)) <= epsilon);
+}
+#line 251
+void compare_vector_average_not_equal(float3 a, float3 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(average(a) - average(b)) > epsilon);
+}
+#line 257
+void compare_vector_dot_not_equal(float3 a, float3 b, float comp, float epsilon, _ref(float ,result))
+{
+  result = float(abs(dot(a, b) - comp) > epsilon);
+}
+#line 263
+void compare_vector_direction_not_equal(
+    float3 a, float3 b, float angle, float epsilon, _ref(float ,result))
+{
+  result = float(abs(angle_normalized(a, b) - angle) > epsilon);
+}
+#line 270
+void compare_vector_element_not_equal(float3 a, float3 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(a.x - b.x) > epsilon || abs(a.y - b.y) > epsilon || abs(a.z - b.z) > epsilon);
+}
+#line 276
+void compare_vector_length_not_equal(float3 a, float3 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(length(a) - length(b)) > epsilon);
+}
+#line 284
+void compare_color_equal(float4 a, float4 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(a.x - b.x) <= epsilon && abs(a.y - b.y) <= epsilon &&
+                 abs(a.z - b.z) <= epsilon);
+}
+#line 291
+void compare_color_not_equal(float4 a, float4 b, float epsilon, _ref(float ,result))
+{
+  result = float(abs(a.x - b.x) > epsilon || abs(a.y - b.y) > epsilon || abs(a.z - b.z) > epsilon);
+}
+#line 297
+void compare_color_brighter(float4 a, float4 b, float3 luminance_coefficients, _ref(float ,result))
+{
+  float luminance_a = get_luminance(a.rgb, luminance_coefficients);
+  float luminance_b = get_luminance(b.rgb, luminance_coefficients);
+  result = float(luminance_a > luminance_b);
+}
+#line 305
+void compare_color_darker(float4 a, float4 b, float3 luminance_coefficients, _ref(float ,result))
+{
+  float luminance_a = get_luminance(a.rgb, luminance_coefficients);
+  float luminance_b = get_luminance(b.rgb, luminance_coefficients);
+  result = float(luminance_a < luminance_b);
+}

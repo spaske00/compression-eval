@@ -1,0 +1,101 @@
+#line 1 "gpencil_shader_shared.hh"
+ 
+#line 10
+constant static constexpr uint32_t GP_FLAG_NONE = 0u;
+constant static constexpr uint32_t GP_STROKE_ALIGNMENT_STROKE = 1u;
+constant static constexpr uint32_t GP_STROKE_ALIGNMENT_OBJECT = 2u;
+constant static constexpr uint32_t GP_STROKE_ALIGNMENT_FIXED = 3u;
+constant static constexpr uint32_t GP_STROKE_ALIGNMENT = 0x3u;
+constant static constexpr uint32_t GP_STROKE_OVERLAP = (1u << 2u);
+constant static constexpr uint32_t GP_STROKE_TEXTURE_USE = (1u << 3u);
+constant static constexpr uint32_t GP_STROKE_TEXTURE_STENCIL = (1u << 4u);
+constant static constexpr uint32_t GP_STROKE_TEXTURE_PREMUL = (1u << 5u);
+constant static constexpr uint32_t GP_STROKE_DOTS = (1u << 6u);
+constant static constexpr uint32_t GP_STROKE_HOLDOUT = (1u << 7u);
+constant static constexpr uint32_t GP_FILL_HOLDOUT = (1u << 8u);
+constant static constexpr uint32_t GP_FILL_TEXTURE_USE = (1u << 10u);
+constant static constexpr uint32_t GP_FILL_TEXTURE_PREMUL = (1u << 11u);
+constant static constexpr uint32_t GP_FILL_TEXTURE_CLIP = (1u << 12u);
+constant static constexpr uint32_t GP_FILL_GRADIENT_USE = (1u << 13u);
+constant static constexpr uint32_t GP_FILL_GRADIENT_RADIAL = (1u << 14u);
+constant static constexpr uint32_t GP_FILL = (1u << 15u);
+constant static constexpr uint32_t GP_FILL_FLAGS = (GP_FILL_TEXTURE_USE | GP_FILL_TEXTURE_PREMUL | GP_FILL_TEXTURE_CLIP |
+                   GP_FILL_GRADIENT_USE | GP_FILL_GRADIENT_RADIAL | GP_FILL_HOLDOUT | GP_FILL);
+constant static constexpr uint32_t GP_DOTS_PLACEMENT_MODE = ((1u << 16u) | (1u << 17u));
+constant static constexpr uint32_t GP_DOTS_PLACEMENT_MODE_COUNT = 0u;
+constant static constexpr uint32_t GP_DOTS_PLACEMENT_MODE_DENSITY = (1u << 16u);
+constant static constexpr uint32_t GP_DOTS_PLACEMENT_MODE_RADIUS = (1u << 17u);
+constant static constexpr uint32_t GP_DOTS_USE_RANDOMIZATION = (1u << 18u);
+
+#define gpMaterialFlag uint32_t
+#line 9
+
+#define gpMaterialFlag_host_shared_ gpMaterialFlag
+#line 9
+
+gpMaterialFlag gpMaterialFlag_ctor_() { return gpMaterialFlag(0); }
+#line 38
+constant static constexpr uint32_t GP_LIGHT_TYPE_POINT = 0u;
+constant static constexpr uint32_t GP_LIGHT_TYPE_SPOT = 1u;
+constant static constexpr uint32_t GP_LIGHT_TYPE_SUN = 2u;
+constant static constexpr uint32_t GP_LIGHT_TYPE_AMBIENT = 3u;
+
+#define gpLightType uint32_t
+#line 37
+
+#define gpLightType_host_shared_ gpLightType
+#line 37
+
+gpLightType gpLightType_ctor_() { return gpLightType(0); }
+#line 44
+#define GP_IS_STROKE_VERTEX_BIT (1 << 30)
+#define GP_VERTEX_ID_SHIFT 2
+#define GP_CORNER_TYPE_ROUND_BITS 0u
+#define GP_CORNER_TYPE_BEVEL_BITS 63u
+#define GP_CORNER_TYPE_MITER_NUMBER 62u
+#line 56
+#define gpMaterial_host_shared_ gpMaterial
+#define gpMaterial_host_shared_uniform_ gpMaterial
+#line 55
+struct                 gpMaterial {
+  float4 stroke_color;
+  float4 fill_color;
+  float4 fill_mix_color;
+  float4 fill_uv_rot_scale;
+#ifndef GPU_SHADER
+#line 67
+#else
+#line 72
+  float4 packed1;
+  float4 packed2;
+#  define _fill_uv_offset packed1.xy
+#  define _alignment_rot packed1.zw
+#  define _stroke_texture_mix packed2.x
+#  define _stroke_u_scale packed2.y
+#  define _fill_texture_mix packed2.z
+
+#  define _flag packed2.w
+#endif
+  uint4 random_packed;
+};
+#line 55
+                                          gpMaterial gpMaterial_ctor_() {gpMaterial r;r.stroke_color=float4(0);r.fill_color=float4(0);r.fill_mix_color=float4(0);r.fill_uv_rot_scale=float4(0);r.packed1=float4(0);r.packed2=float4(0);r.random_packed=uint4(0);return r;}
+#line 86
+#define gpLight_host_shared_ gpLight
+#define gpLight_host_shared_uniform_ gpLight
+#line 85
+struct                 gpLight {
+  packed_float3 light_color;
+       gpLightType type;
+  packed_float3 right;
+  float spot_size;
+  packed_float3 up;
+  float spot_blend;
+  packed_float3 forward;
+  float _pad0;
+  packed_float3 position;
+  float _pad1;
+};
+#line 85
+                                       gpLight gpLight_ctor_() {gpLight r;r.light_color=packed_float3(0);r.type=gpLightType_ctor_();r.right=packed_float3(0);r.spot_size=0.0f;r.up=packed_float3(0);r.spot_blend=0.0f;r.forward=packed_float3(0);r._pad0=0.0f;r.position=packed_float3(0);r._pad1=0.0f;return r;}
+#line 101

@@ -1,0 +1,10 @@
+#line 1 "overlay_armature_dof_solid_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(overlay_armature_dof)
+
+void main()
+{
+  frag_color = float4(final_color.rgb, final_color.a * alpha);
+  line_output = float4(0.0f);
+}

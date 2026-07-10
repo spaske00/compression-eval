@@ -1,0 +1,59 @@
+#line 1 "draw_command_shared.hh"
+ 
+#line 29
+#define DrawGroup_host_shared_ DrawGroup
+#define DrawGroup_host_shared_uniform_ DrawGroup
+#line 28
+struct                 DrawGroup {
+
+  uint next;
+#line 39
+  uint start;
+
+  uint len;
+
+  uint front_facing_len;
+#line 46
+  int vertex_len;
+  int vertex_first;
+
+  int base_index;
+#line 54
+  uint total_counter;
+
+  uint front_facing_counter;
+  uint back_facing_counter;
+#line 61
+#ifndef GPU_SHADER
+#line 75
+#else
+  uint _cpu_reserved_1;
+  uint _cpu_reserved_2;
+
+  uint _cpu_reserved_3;
+  uint _cpu_reserved_4;
+  uint _cpu_reserved_5;
+  uint _cpu_reserved_6;
+#endif
+};
+#line 28
+                                         DrawGroup DrawGroup_ctor_() {DrawGroup r;r.next=0u;r.start=0u;r.len=0u;r.front_facing_len=0u;r.vertex_len=0;r.vertex_first=0;r.base_index=0;r.total_counter=0u;r.front_facing_counter=0u;r.back_facing_counter=0u;r._cpu_reserved_1=0u;r._cpu_reserved_2=0u;r._cpu_reserved_3=0u;r._cpu_reserved_4=0u;r._cpu_reserved_5=0u;r._cpu_reserved_6=0u;return r;}
+#line 85
+BLI_STATIC_ASSERT_ALIGN(DrawGroup, 16)
+#line 93
+#define DrawPrototype_host_shared_ DrawPrototype
+#define DrawPrototype_host_shared_uniform_ DrawPrototype
+#line 92
+struct                 DrawPrototype {
+
+  uint group_id;
+
+  uint res_id;
+
+  uint custom_id;
+
+  uint instance_len;
+};
+#line 92
+                                             DrawPrototype DrawPrototype_ctor_() {DrawPrototype r;r.group_id=0u;r.res_id=0u;r.custom_id=0u;r.instance_len=0u;return r;}
+#line 108

@@ -1,0 +1,17 @@
+#line 1 "compositor_morphological_distance_threshold_seeds.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_morphological_distance_threshold_seeds)
+#line 12
+void main()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  const bool is_masked = texture_load(mask_tx, texel).x > 0.5f;
+
+  const int2 masked_jump_flooding_value = initialize_jump_flooding_value(texel, is_masked);
+  imageStore(masked_pixels_img, texel, int4(masked_jump_flooding_value, int2(0)));
+
+  const int2 unmasked_jump_flooding_value = initialize_jump_flooding_value(texel, !is_masked);
+  imageStore(unmasked_pixels_img, texel, int4(unmasked_jump_flooding_value, int2(0)));
+}

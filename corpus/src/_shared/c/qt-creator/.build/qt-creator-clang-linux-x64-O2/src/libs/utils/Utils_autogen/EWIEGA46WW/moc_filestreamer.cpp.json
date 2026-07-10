@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "FileStreamer",
+            "lineNumber": 22,
+            "object": true,
+            "qualifiedClassName": "Utils::FileStreamer",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "result",
+                            "type": "QtTaskTree::DoneResult"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "done",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filestreamer.h",
+    "outputRevision": 68
+}

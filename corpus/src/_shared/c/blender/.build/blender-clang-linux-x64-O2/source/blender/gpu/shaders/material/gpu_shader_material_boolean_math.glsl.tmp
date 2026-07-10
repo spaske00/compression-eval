@@ -1,0 +1,52 @@
+#line 1 "gpu_shader_material_boolean_math.glsl"
+ 
+#line 5
+bool to_bool(float value)
+{
+  return value > 0.0f;
+}
+#line 11
+void boolean_math_and(float a, float b, _ref(float ,result))
+{
+  result = float(to_bool(a) && to_bool(b));
+}
+#line 17
+void boolean_math_or(float a, float b, _ref(float ,result))
+{
+  result = float(to_bool(a) || to_bool(b));
+}
+#line 23
+void boolean_math_not(float a, _ref(float ,result))
+{
+  result = float(!to_bool(a));
+}
+#line 29
+void boolean_math_nand(float a, float b, _ref(float ,result))
+{
+  result = float(!(to_bool(a) && to_bool(b)));
+}
+#line 35
+void boolean_math_nor(float a, float b, _ref(float ,result))
+{
+  result = float(!(to_bool(a) || to_bool(b)));
+}
+#line 41
+void boolean_math_xnor(float a, float b, _ref(float ,result))
+{
+  result = float(to_bool(a) == to_bool(b));
+}
+#line 47
+void boolean_math_xor(float a, float b, _ref(float ,result))
+{
+  result = float(to_bool(a) != to_bool(b));
+}
+#line 53
+void boolean_math_imply(float a, float b, _ref(float ,result))
+{
+  result = float(!to_bool(a) || to_bool(b));
+}
+#line 59
+void boolean_math_nimply(float a, float b, _ref(float ,result))
+{
+  result = float(to_bool(a) && !to_bool(b));
+}

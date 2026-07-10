@@ -1,0 +1,25 @@
+#line 1 "gpu_shader_display_transform_lib.glsl"
+ 
+#line 15
+#ifdef CREATE_INFO_RES_PASS_OCIO_Display
+CREATE_INFO_RES_PASS_OCIO_Display
+#endif
+#ifdef CREATE_INFO_RES_BATCH_OCIO_Display
+CREATE_INFO_RES_BATCH_OCIO_Display
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_OCIO_Display
+CREATE_INFO_RES_GEOMETRY_OCIO_Display
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_OCIO_Display
+CREATE_INFO_RES_SHARED_VARS_OCIO_Display
+#endif
+#line 29
+float4 OCIO_to_scene_linear(float4 pixel)
+{
+  return pixel;
+}
+#line 35
+float4 OCIO_to_display(float4 pixel)
+{
+  return pixel;
+}

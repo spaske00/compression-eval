@@ -1,0 +1,34 @@
+#line 1 "compositor_kuwahara_anisotropic_compute_structure_tensor.glsl"
+ 
+#line 16
+COMPUTE_SHADER_CREATE_INFO(compositor_kuwahara_anisotropic_compute_structure_tensor)
+#line 20
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 26
+  constexpr float corner_weight = 0.182f;
+  constexpr float center_weight = 1.0f - 2.0f * corner_weight;
+
+  float3 x_partial_derivative = texture_load(input_tx, texel + int2(-1, 1)).rgb * -corner_weight +
+                                texture_load(input_tx, texel + int2(-1, 0)).rgb * -center_weight +
+                                texture_load(input_tx, texel + int2(-1, -1)).rgb * -corner_weight +
+                                texture_load(input_tx, texel + int2(1, 1)).rgb * corner_weight +
+                                texture_load(input_tx, texel + int2(1, 0)).rgb * center_weight +
+                                texture_load(input_tx, texel + int2(1, -1)).rgb * corner_weight;
+
+  float3 y_partial_derivative = texture_load(input_tx, texel + int2(-1, 1)).rgb * corner_weight +
+                                texture_load(input_tx, texel + int2(0, 1)).rgb * center_weight +
+                                texture_load(input_tx, texel + int2(1, 1)).rgb * corner_weight +
+                                texture_load(input_tx, texel + int2(-1, -1)).rgb * -corner_weight +
+                                texture_load(input_tx, texel + int2(0, -1)).rgb * -center_weight +
+                                texture_load(input_tx, texel + int2(1, -1)).rgb * -corner_weight;
+
+  float dxdx = dot(x_partial_derivative, x_partial_derivative);
+  float dxdy = dot(x_partial_derivative, y_partial_derivative);
+  float dydy = dot(y_partial_derivative, y_partial_derivative);
+#line 48
+  float4 structure_tensor = float4(dxdx, dxdy, dxdy, dydy);
+
+  imageStore(structure_tensor_img, texel, structure_tensor);
+}

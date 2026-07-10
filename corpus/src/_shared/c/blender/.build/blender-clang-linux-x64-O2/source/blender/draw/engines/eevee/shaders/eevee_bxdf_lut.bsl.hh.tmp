@@ -1,0 +1,338 @@
+#line 1 "eevee_bxdf_lut.bsl.hh"
+ 
+#line 40
+struct eevee_lut_GGXBrdfClosure {
+  float roughness;
+  float3 V;
+#line 89
+};
+#line 108
+#ifndef GPU_METAL
+eevee_lut_GGXBrdfClosure eevee_lut_GGXBrdfClosure_ctor_();
+eevee_lut_GGXBrdfClosure eevee_lut_GGXBrdfClosure_from_params(float3 params);
+eevee_lut_GGXBrdfData _eval(const eevee_lut_GGXBrdfClosure this_, float3 Xi);
+#endif
+#line 40
+                                        eevee_lut_GGXBrdfClosure eevee_lut_GGXBrdfClosure_ctor_() {eevee_lut_GGXBrdfClosure r;r.roughness=0.0f;r.V=float3(0);return r;}
+#line 44
+         eevee_lut_GGXBrdfClosure eevee_lut_GGXBrdfClosure_from_params(float3 params)
+  {
+#line 50
+    float roughness = square(params.x);
+
+    float NV = clamp(1.0f - square(params.y), 1e-4f, 0.9999f);
+    float3 V = float3(sqrt(1.0f - square(NV)), 0.0f, NV);
+
+    return _ctor(eevee_lut_GGXBrdfClosure) roughness, V _rotc() ;
+  }
+#line 58
+  eevee_lut_GGXBrdfData _eval(const eevee_lut_GGXBrdfClosure this_, float3 Xi)
+  {
+
+    constexpr float3 N = float3(0.0f, 0.0f, 1.0f);
+#line 64
+    eevee_lut_GGXBrdfData brdf = eevee_lut_GGXBrdfData_ctor_();
+#line 67
+    float3 L = bxdf_ggx_sample_reflection(Xi, this_.V, this_.roughness, false).direction;
+    float3 H = normalize(this_.V + L);
+#line 71
+    float NL = L.z;
+    if (NL > 0.0f) {
+      float weight = bxdf_ggx_eval_reflection(N, L, this_.V, this_.roughness, false).weight;
+      float VH = saturate(dot(this_.V, H));
+#line 77
+      float s = saturate(pow5f(1.0f - VH));
+#line 80
+      float b = VH * saturate(pow6f(1.0f - VH));
+
+      brdf.scale = (1.0f - s) * weight;
+      brdf.bias = s * weight;
+      brdf.metal_bias = b * weight;
+    }
+
+    return brdf;
+  }
+#line 107
+struct eevee_lut_GGXBsdfClosure {
+  float roughness;
+  float ior;
+  float3 V;
+#line 179
+};
+#line 196
+#ifndef GPU_METAL
+eevee_lut_GGXBsdfClosure eevee_lut_GGXBsdfClosure_ctor_();
+eevee_lut_GGXBsdfClosure eevee_lut_GGXBsdfClosure_from_params(float3 params);
+eevee_lut_GGXBsdfData _eval(const eevee_lut_GGXBsdfClosure this_, float3 Xi);
+#endif
+#line 107
+                                        eevee_lut_GGXBsdfClosure eevee_lut_GGXBsdfClosure_ctor_() {eevee_lut_GGXBsdfClosure r;r.roughness=0.0f;r.ior=0.0f;r.V=float3(0);return r;}
+#line 112
+         eevee_lut_GGXBsdfClosure eevee_lut_GGXBsdfClosure_from_params(float3 params)
+  {
+#line 118
+    float roughness = square(params.z);
+#line 121
+    float ior = clamp(sqrt(params.x), 1e-4f, 0.9999f);
+    float critical_cos = sqrt(1.0f - saturate(square(ior)));
+#line 125
+    params.y = params.y * 2.0f - 1.0f;
+    params.y *= (params.y > 0.0f) ? (1.0f - critical_cos) : critical_cos;
+#line 129
+    params.y += critical_cos;
+
+    float NV = clamp(params.y, 1e-4f, 0.9999f);
+    float3 V = float3(sqrt(1.0f - square(NV)), 0.0f, NV);
+
+    return _ctor(eevee_lut_GGXBsdfClosure) roughness, ior, V _rotc() ;
+  }
+#line 137
+  eevee_lut_GGXBsdfData _eval(const eevee_lut_GGXBsdfClosure this_, float3 Xi)
+  {
+
+    constexpr float3 N = float3(0.0f, 0.0f, 1.0f);
+
+    eevee_lut_GGXBsdfData bsdf = eevee_lut_GGXBsdfData_ctor_();
+#line 145
+    float3 R = bxdf_ggx_sample_reflection(Xi, this_.V, this_.roughness, false).direction;
+    float NR = R.z;
+    if (NR > 0.0f) {
+
+      float3 H = normalize(this_.V + R);
+      float3 L = refract(-this_.V, H, 1.0f / this_.ior);
+      float HL = abs(dot(H, L));
+#line 154
+      float s = saturate(pow5f(1.0f - saturate(HL)));
+
+      float weight = bxdf_ggx_eval_reflection(N, R, this_.V, this_.roughness, false).weight;
+      bsdf.scale = (1.0f - s) * weight;
+      bsdf.bias = s * weight;
+    }
+#line 162
+    float3 T = bxdf_ggx_sample_refraction(Xi, this_.V, this_.roughness, this_.ior, Thickness_ctor_(), false).direction;
+    float NT = T.z;
+
+    if (NT < 0.0f) {
+
+      float3 H = normalize(this_.ior * T + this_.V);
+      float HL = abs(dot(H, T));
+#line 171
+      float s = saturate(pow5f(1.0f - saturate(HL)));
+
+      float weight = bxdf_ggx_eval_refraction(N, T, this_.V, this_.roughness, this_.ior, Thickness_ctor_(), false).weight;
+      bsdf.transmission_factor = (1.0f - s) * weight;
+    }
+
+    return bsdf;
+  }
+#line 195
+struct eevee_lut_GGXBtdfGt1Closure {
+  float roughness;
+  float ior;
+  float3 V;
+#line 241
+};
+#line 256
+#ifndef GPU_METAL
+eevee_lut_GGXBtdfGt1Closure eevee_lut_GGXBtdfGt1Closure_ctor_();
+eevee_lut_GGXBtdfGt1Closure eevee_lut_GGXBtdfGt1Closure_from_params(float3 params);
+eevee_lut_GGXBtdfGt1Data _eval(const eevee_lut_GGXBtdfGt1Closure this_, float3 Xi);
+#endif
+#line 195
+                                           eevee_lut_GGXBtdfGt1Closure eevee_lut_GGXBtdfGt1Closure_ctor_() {eevee_lut_GGXBtdfGt1Closure r;r.roughness=0.0f;r.ior=0.0f;r.V=float3(0);return r;}
+#line 200
+         eevee_lut_GGXBtdfGt1Closure eevee_lut_GGXBtdfGt1Closure_from_params(float3 params)
+  {
+#line 206
+    float roughness = square(params.z);
+
+    float F0 = clamp(square(params.x), 1e-4f, 0.9999f);
+    float ior = (1.0f + F0) / (1.0f - F0);
+
+    float NV = clamp(1.0f - square(params.y), 1e-4f, 0.9999f);
+    float3 V = float3(sqrt(1.0f - square(NV)), 0.0f, NV);
+
+    return _ctor(eevee_lut_GGXBtdfGt1Closure) roughness, ior, V _rotc() ;
+  }
+#line 217
+  eevee_lut_GGXBtdfGt1Data _eval(const eevee_lut_GGXBtdfGt1Closure this_, float3 Xi)
+  {
+
+    constexpr float3 N = float3(0.0f, 0.0f, 1.0f);
+
+    eevee_lut_GGXBtdfGt1Data btdf = eevee_lut_GGXBtdfGt1Data_ctor_();
+#line 225
+    float3 L = bxdf_ggx_sample_refraction(Xi, this_.V, this_.roughness, this_.ior, Thickness_ctor_(), false).direction;
+    float NL = L.z;
+    if (NL < 0.0f) {
+
+      float3 H = normalize(this_.ior * L + this_.V);
+      float HV = abs(dot(H, this_.V));
+#line 233
+      float s = saturate(pow5f(1.0f - saturate(HV)));
+
+      float weight = bxdf_ggx_eval_refraction(N, L, this_.V, this_.roughness, this_.ior, Thickness_ctor_(), false).weight;
+      btdf.transmission_factor = (1.0f - s) * weight;
+    }
+
+    return btdf;
+  }
+#line 255
+float4 eevee_lut_burley_sss_translucency(float3 params)
+{
+#line 259
+  float3 radii = float3(1.0f, 0.2f, 0.1f);
+  float thickness = params.x * SSS_TRANSMIT_LUT_RADIUS;
+  float3 r = thickness / radii;
+#line 266
+  float3 exponential = exp(-3.6f * pow(r, float3(1.11f)));
+  float3 gaussian = exp(-pow(3.4f * r, float3(1.6f)));
+  float3 fac = square(saturate(0.5f + r / 0.6f));
+  float3 profile = saturate(mix(gaussian, exponential, fac));
+#line 272
+  profile *= saturate(1.0f - pow5f(params.x));
+
+  return float4(profile, 0.0f);
+}
+#line 278
+float4 eevee_lut_random_walk_sss_translucency(float3 params)
+{
+#line 282
+  float3 radii = float3(1.0f, 0.2f, 0.1f);
+  float thickness = params.x * SSS_TRANSMIT_LUT_RADIUS;
+  float3 r = thickness / radii;
+#line 289
+  float3 scale = float3(0.31f, 0.47f, 0.32f);
+  float3 exponent = float3(-22.0f, -5.8f, -0.5f);
+  float3 profile = float3(dot(scale, exp(exponent * r.r)),
+                          dot(scale, exp(exponent * r.g)),
+                          dot(scale, exp(exponent * r.b)));
+  profile = saturate(profile - 0.1f);
+#line 297
+  profile *= saturate(1.0f - pow5f(params.x));
+
+  return float4(profile, 0.0f);
+}
+#line 308
+float4 eevee_lut_integrate(eevee_lut_GGXBrdfClosure func)
+{
+  constexpr uint sample_count = 512u * 512u;
+#line 316
+  float4 measure = float4(0.0f);
+  for (uint i = 1u; i <= sample_count; i++) {
+
+    float2 rand = hammersley_2d(i, sample_count);
+    float3 Xi = sample_cylinder(rand);
+#line 323
+    measure += _pack(_eval(func, Xi));
+  }
+  return measure / float(sample_count);
+}
+#line 308
+float4 eevee_lut_integrate(eevee_lut_GGXBsdfClosure func)
+{
+  constexpr uint sample_count = 512u * 512u;
+#line 316
+  float4 measure = float4(0.0f);
+  for (uint i = 1u; i <= sample_count; i++) {
+
+    float2 rand = hammersley_2d(i, sample_count);
+    float3 Xi = sample_cylinder(rand);
+#line 323
+    measure += _pack(_eval(func, Xi));
+  }
+  return measure / float(sample_count);
+}
+#line 308
+float4 eevee_lut_integrate(eevee_lut_GGXBtdfGt1Closure func)
+{
+  constexpr uint sample_count = 512u * 512u;
+#line 316
+  float4 measure = float4(0.0f);
+  for (uint i = 1u; i <= sample_count; i++) {
+
+    float2 rand = hammersley_2d(i, sample_count);
+    float3 Xi = sample_cylinder(rand);
+#line 323
+    measure += _pack(_eval(func, Xi));
+  }
+  return measure / float(sample_count);
+}
+#line 331
+#define access_eevee_lut_LUT_image() image
+#define access_eevee_lut_LUT_type() type
+#define access_eevee_lut_LUT_extent() extent
+#ifdef CREATE_INFO_RES_PASS_eevee_lut_LUT
+CREATE_INFO_RES_PASS_eevee_lut_LUT
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lut_LUT
+CREATE_INFO_RES_BATCH_eevee_lut_LUT
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lut_LUT
+CREATE_INFO_RES_GEOMETRY_eevee_lut_LUT
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lut_LUT
+CREATE_INFO_RES_SHARED_VARS_eevee_lut_LUT
+#endif
+#line 331
+struct eevee_lut_LUT {
+#line 343
+int _pad;};
+#line 346
+#ifndef GPU_METAL
+eevee_lut_LUT eevee_lut_LUT_ctor_();
+eevee_lut_LUT eevee_lut_LUT_new_();
+#endif
+#line 331
+                             eevee_lut_LUT eevee_lut_LUT_ctor_() {eevee_lut_LUT r;r._pad=0;return r;}
+#line 336
+       eevee_lut_LUT eevee_lut_LUT_new_()
+{
+  eevee_lut_LUT result;
+  result._pad = 0;
+  return result;
+#line 334
+}
+#line 337
+
+#if defined(CREATE_INFO_eevee_lut_LUT)
+#line 337
+
+#if defined(ENTRY_POINT_eevee_lut_comp_main)
+#line 337
+
+void eevee_lut_comp_main(                                                                  )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 339
+  eevee_lut_LUT lut = eevee_lut_LUT_ctor_();
+
+  float3 lut_normalized_coordinate = float3(gl_GlobalInvocationID) / float3(srt_access(eevee_lut_LUT, extent) - 1);
+#line 344
+  float4 result = float4(-1);
+  switch (uint(srt_access(eevee_lut_LUT, type))) {
+    case LUT_GGX_BRDF_SPLIT_SUM:
+      result = eevee_lut_integrate(eevee_lut_GGXBrdfClosure_from_params(lut_normalized_coordinate));
+      break;
+    case LUT_GGX_BSDF_SPLIT_SUM:
+      result = eevee_lut_integrate(eevee_lut_GGXBsdfClosure_from_params(lut_normalized_coordinate));
+      break;
+    case LUT_GGX_BTDF_IOR_GT_ONE:
+      result = eevee_lut_integrate(eevee_lut_GGXBtdfGt1Closure_from_params(lut_normalized_coordinate));
+      break;
+    case LUT_BURLEY_SSS_PROFILE:
+      result = eevee_lut_burley_sss_translucency(lut_normalized_coordinate);
+      break;
+    case LUT_RANDOM_WALK_SSS_PROFILE:
+      result = eevee_lut_random_walk_sss_translucency(lut_normalized_coordinate);
+      break;
+  }
+
+  imageStore(srt_access(eevee_lut_LUT, image), int3(gl_GlobalInvocationID), result);
+
+#endif
+#line 364
+}
+#endif
+#endif
+#line 371

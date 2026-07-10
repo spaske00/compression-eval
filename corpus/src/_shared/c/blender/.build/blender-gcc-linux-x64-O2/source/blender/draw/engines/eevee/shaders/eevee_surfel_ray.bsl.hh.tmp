@@ -1,0 +1,186 @@
+#line 1 "eevee_surfel_ray.bsl.hh"
+ 
+#line 15
+float eevee_surfel_avg_albedo(float3 albedo)
+{
+  return saturate(dot(albedo, float3(1.0f / 3.0f)));
+}
+
+#define access_eevee_surfel_SurfelRay_lightprobe_spheres() eevee_LightprobeSphereRenderData_new_()
+#define access_eevee_surfel_SurfelRay_surfels_data() SurfelData_new_()
+#define access_eevee_surfel_SurfelRay_radiance_src() radiance_src
+#define access_eevee_surfel_SurfelRay_radiance_dst() radiance_dst
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_SurfelRay
+CREATE_INFO_RES_PASS_eevee_surfel_SurfelRay
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_SurfelRay
+CREATE_INFO_RES_BATCH_eevee_surfel_SurfelRay
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_SurfelRay
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_SurfelRay
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_SurfelRay
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_SurfelRay
+#endif
+#line 20
+struct eevee_surfel_SurfelRay {
+                           eevee_LightprobeSphereRenderData  lightprobe_spheres;
+                           SurfelData  surfels_data;
+#line 119
+};
+#line 130
+#ifndef GPU_METAL
+eevee_surfel_SurfelRay eevee_surfel_SurfelRay_ctor_();
+void _radiance_transfer(eevee_surfel_SurfelRay  this_, _ref(Surfel ,surfel), float3 in_radiance, float in_visibility, float3 L);
+void _radiance_transfer_surfel(eevee_surfel_SurfelRay  this_, _ref(Surfel ,receiver), Surfel sender);
+void _radiance_transfer_world(eevee_surfel_SurfelRay  this_, _ref(Surfel ,receiver), float3 L);
+eevee_surfel_SurfelRay eevee_surfel_SurfelRay_new_();
+#endif
+#line 20
+                                      eevee_surfel_SurfelRay eevee_surfel_SurfelRay_ctor_() {eevee_surfel_SurfelRay r;r.lightprobe_spheres=eevee_LightprobeSphereRenderData_ctor_();r.surfels_data=SurfelData_ctor_();return r;}
+#line 27
+
+#if defined(CREATE_INFO_eevee_surfel_SurfelRay)
+#line 27
+  void _radiance_transfer(eevee_surfel_SurfelRay  this_, _ref(Surfel ,surfel), float3 in_radiance, float in_visibility, float3 L)
+  {
+#line 32
+    float luma = max(1e-8f, reduce_max(in_radiance));
+    in_radiance *= 1.0f - max(0.0f, luma - srt_access(SurfelData, capture_info_buf).clamp_indirect) / luma;
+
+    float NL = dot(surfel.normal, L);
+
+    constexpr float bsdf = M_1_PI;
+#line 40
+    float transfert_fn = (M_TAU / srt_access(SurfelData, capture_info_buf).sample_count) * bsdf * abs(NL);
+
+    SurfelRadiance radiance = surfel.radiance_indirect[srt_access(eevee_surfel_SurfelRay, radiance_dst)];
+
+    float sample_weight = 1.0f / srt_access(SurfelData, capture_info_buf).sample_count;
+    bool front_facing = (NL > 0.0f);
+    if (front_facing) {
+
+      radiance.front *= radiance.front_weight;
+      radiance.front += float4(in_radiance, in_visibility) * transfert_fn *
+                        float4(surfel.albedo_front, eevee_surfel_avg_albedo(surfel.albedo_front));
+      radiance.front_weight += sample_weight;
+      radiance.front /= radiance.front_weight;
+    }
+    else {
+
+      radiance.back *= radiance.back_weight;
+      radiance.back += float4(in_radiance, in_visibility) * transfert_fn *
+                       float4(surfel.albedo_back, eevee_surfel_avg_albedo(surfel.albedo_back));
+      radiance.back_weight += sample_weight;
+      radiance.back /= radiance.back_weight;
+    }
+
+    surfel.radiance_indirect[srt_access(eevee_surfel_SurfelRay, radiance_dst)] = radiance;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_surfel_SurfelRay)
+#line 66
+  void _radiance_transfer_surfel(eevee_surfel_SurfelRay  this_, _ref(Surfel ,receiver), Surfel sender)
+  {
+#line 70
+    float3 L = safe_normalize(sender.position - receiver.position);
+    bool front_facing = dot(-L, sender.normal) > 0.0f;
+
+    float4 radiance_vis;
+    SurfelRadiance sender_radiance_indirect = sender.radiance_indirect[srt_access(eevee_surfel_SurfelRay, radiance_src)];
+    if (front_facing) {
+      radiance_vis = sender.radiance_direct.front;
+      radiance_vis += sender_radiance_indirect.front * sender_radiance_indirect.front_weight;
+    }
+    else {
+      radiance_vis = sender.radiance_direct.back;
+      radiance_vis += sender_radiance_indirect.back * sender_radiance_indirect.back_weight;
+    }
+
+    if (!srt_access(SurfelData, capture_info_buf).capture_indirect) {
+      radiance_vis.rgb = float3(0.0f);
+    }
+
+    _radiance_transfer(this_, receiver, radiance_vis.rgb, radiance_vis.a, L);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_surfel_SurfelRay)
+#line 91
+  void _radiance_transfer_world(eevee_surfel_SurfelRay  this_, _ref(Surfel ,receiver), float3 L)
+  {
+#line 96
+    float3 radiance = float3(0.0f);
+    float visibility = 0.0f;
+
+    if (srt_access(SurfelData, capture_info_buf).capture_world_indirect) {
+      SphereProbeUvArea atlas_coord = srt_access(SurfelData, capture_info_buf).world_atlas_coord;
+      radiance = _sample_probe(srt_access(eevee_surfel_SurfelRay, lightprobe_spheres), L, 0.0f, atlas_coord).rgb;
+    }
+
+    if (srt_access(SurfelData, capture_info_buf).capture_visibility_indirect) {
+      visibility = 1.0f;
+    }
+
+    _radiance_transfer(this_, receiver, radiance, visibility, L);
+  }
+#endif
+       eevee_surfel_SurfelRay eevee_surfel_SurfelRay_new_()
+{
+  eevee_surfel_SurfelRay result;
+  result.lightprobe_spheres = eevee_LightprobeSphereRenderData_new_();
+  result.surfels_data = SurfelData_new_();
+  return result;
+#line 109
+}
+#line 120
+
+#if defined(CREATE_INFO_eevee_surfel_SurfelRay) && defined(CREATE_INFO_draw_View)
+#line 120
+
+#if defined(ENTRY_POINT_eevee_surfel_ray_main)
+#line 120
+
+void eevee_surfel_ray_main(
+
+                                                            )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 124
+  eevee_surfel_SurfelRay srt = eevee_surfel_SurfelRay_ctor_(); draw_View views = draw_View_ctor_();
+#line 127
+  int surfel_index = int(gl_GlobalInvocationID.x);
+  if (surfel_index >= int(srt_access(SurfelData, capture_info_buf).surfel_len)) {
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+  Surfel surfel = srt_access(SurfelData, surfel_buf)[surfel_index];
+
+  float3 sky_L = _world_incident_vector(view, surfel.position);
+
+  if (surfel.next > -1) {
+    Surfel surfel_next = srt_access(SurfelData, surfel_buf)[surfel.next];
+    _radiance_transfer_surfel(srt, surfel, surfel_next);
+  }
+  else {
+    _radiance_transfer_world(srt, surfel, -sky_L);
+  }
+
+  if (surfel.prev > -1) {
+    Surfel surfel_prev = srt_access(SurfelData, surfel_buf)[surfel.prev];
+    _radiance_transfer_surfel(srt, surfel, surfel_prev);
+  }
+  else {
+    _radiance_transfer_world(srt, surfel, sky_L);
+  }
+
+  srt_access(SurfelData, surfel_buf)[surfel_index] = surfel;
+
+#endif
+#line 154
+}
+#endif
+#endif
+#line 159

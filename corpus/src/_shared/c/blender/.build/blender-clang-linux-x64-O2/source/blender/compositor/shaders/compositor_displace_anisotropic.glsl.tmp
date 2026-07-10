@@ -1,0 +1,31 @@
+#line 1 "compositor_displace_anisotropic.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_displace_anisotropic)
+#line 16
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int2 input_size = texture_size(input_tx);
+#line 23
+  float2 coordinates = (float2(texel) + float2(0.5f)) / float2(input_size);
+#line 27
+  float2 displacement = texture_load(displacement_tx, texel).xy / float2(input_size);
+  float2 displaced_coordinates = coordinates - displacement;
+#line 32
+  int2 table_index = int2(gl_LocalInvocationID.xy);
+  displaced_coordinates_table[table_index.x][table_index.y] = displaced_coordinates;
+  barrier();
+#line 50
+  int x_step = (table_index.x % 2) * -2 + 1;
+  float2 x_neighbor = displaced_coordinates_table[table_index.x + x_step][table_index.y];
+  float2 x_gradient = (x_neighbor - displaced_coordinates) * x_step / input_size.x;
+#line 56
+  int y_step = (table_index.y % 2) * -2 + 1;
+  float2 y_neighbor = displaced_coordinates_table[table_index.x][table_index.y + y_step];
+  float2 y_gradient = (y_neighbor - displaced_coordinates) * y_step / input_size.y;
+#line 62
+  float4 displaced_color = textureGrad(input_tx, displaced_coordinates, x_gradient, y_gradient);
+
+  imageStore(output_img, texel, displaced_color);
+}

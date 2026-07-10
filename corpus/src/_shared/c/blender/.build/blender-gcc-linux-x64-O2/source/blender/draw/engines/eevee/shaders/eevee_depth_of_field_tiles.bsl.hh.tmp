@@ -1,0 +1,330 @@
+#line 1 "eevee_depth_of_field_tiles.bsl.hh"
+ 
+#line 11
+#define access_eevee_dof_Tiles_in_tiles_fg_img() in_tiles_fg_img
+#define access_eevee_dof_Tiles_in_tiles_bg_img() in_tiles_bg_img
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_Tiles
+CREATE_INFO_RES_PASS_eevee_dof_Tiles
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_Tiles
+CREATE_INFO_RES_BATCH_eevee_dof_Tiles
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_Tiles
+CREATE_INFO_RES_GEOMETRY_eevee_dof_Tiles
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_Tiles
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_Tiles
+#endif
+#line 11
+struct eevee_dof_Tiles {
+#line 22
+int _pad;};
+#line 25
+#ifndef GPU_METAL
+eevee_dof_Tiles eevee_dof_Tiles_ctor_();
+eevee_dof_Tiles eevee_dof_Tiles_new_();
+#endif
+#line 11
+                               eevee_dof_Tiles eevee_dof_Tiles_ctor_() {eevee_dof_Tiles r;r._pad=0;return r;}
+#line 15
+       eevee_dof_Tiles eevee_dof_Tiles_new_()
+{
+  eevee_dof_Tiles result;
+  result._pad = 0;
+  return result;
+#line 13
+}
+#line 16
+#define access_eevee_dof_TilesWrite_out_tiles_fg_img() out_tiles_fg_img
+#define access_eevee_dof_TilesWrite_out_tiles_bg_img() out_tiles_bg_img
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_TilesWrite
+CREATE_INFO_RES_PASS_eevee_dof_TilesWrite
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_TilesWrite
+CREATE_INFO_RES_BATCH_eevee_dof_TilesWrite
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_TilesWrite
+CREATE_INFO_RES_GEOMETRY_eevee_dof_TilesWrite
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_TilesWrite
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_TilesWrite
+#endif
+#line 16
+struct eevee_dof_TilesWrite {
+#line 27
+int _pad;};
+#line 44
+#ifndef GPU_METAL
+eevee_dof_TilesWrite eevee_dof_TilesWrite_ctor_();
+eevee_dof_TilesWrite eevee_dof_TilesWrite_new_();
+#endif
+#line 16
+                                    eevee_dof_TilesWrite eevee_dof_TilesWrite_ctor_() {eevee_dof_TilesWrite r;r._pad=0;return r;}
+#line 20
+       eevee_dof_TilesWrite eevee_dof_TilesWrite_new_()
+{
+  eevee_dof_TilesWrite result;
+  result._pad = 0;
+  return result;
+#line 18
+}
+#line 35
+#define access_eevee_dof_tile_flatten_Resources_coc_tx() coc_tx
+#define access_eevee_dof_tile_flatten_Resources_fg_min_coc() fg_min_coc
+#define access_eevee_dof_tile_flatten_Resources_fg_max_coc() fg_max_coc
+#define access_eevee_dof_tile_flatten_Resources_fg_max_intersectable_coc() fg_max_intersectable_coc
+#define access_eevee_dof_tile_flatten_Resources_bg_min_coc() bg_min_coc
+#define access_eevee_dof_tile_flatten_Resources_bg_max_coc() bg_max_coc
+#define access_eevee_dof_tile_flatten_Resources_bg_min_intersectable_coc() bg_min_intersectable_coc
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_tile_flatten_Resources
+CREATE_INFO_RES_PASS_eevee_dof_tile_flatten_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_tile_flatten_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_tile_flatten_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_tile_flatten_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_tile_flatten_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_tile_flatten_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_tile_flatten_Resources
+#endif
+#line 35
+struct eevee_dof_tile_flatten_Resources {
+#line 57
+int _pad;};
+#line 60
+#ifndef GPU_METAL
+eevee_dof_tile_flatten_Resources eevee_dof_tile_flatten_Resources_ctor_();
+eevee_dof_tile_flatten_Resources eevee_dof_tile_flatten_Resources_new_();
+#endif
+#line 35
+                                                eevee_dof_tile_flatten_Resources eevee_dof_tile_flatten_Resources_ctor_() {eevee_dof_tile_flatten_Resources r;r._pad=0;return r;}
+#line 50
+       eevee_dof_tile_flatten_Resources eevee_dof_tile_flatten_Resources_new_()
+{
+  eevee_dof_tile_flatten_Resources result;
+  result._pad = 0;
+  return result;
+#line 48
+}
+#line 51
+#define dof_tile_large_coc_uint floatBitsToUint(dof_tile_large_coc)
+#line 54
+#if defined(CREATE_INFO_eevee_dof_tile_flatten_Resources) && defined(CREATE_INFO_eevee_dof_TilesWrite)
+#line 53
+
+#if defined(ENTRY_POINT_eevee_dof_tile_flatten_comp_main)
+#line 53
+
+void eevee_dof_tile_flatten_comp_main(
+#line 58
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 59
+  eevee_dof_tile_flatten_Resources srt = eevee_dof_tile_flatten_Resources_ctor_(); eevee_dof_TilesWrite tiles = eevee_dof_TilesWrite_ctor_();
+  if (gl_LocalInvocationIndex == 0u) {
+
+    srt_access(eevee_dof_tile_flatten_Resources, fg_min_coc) = floatBitsToUint(0.0f);
+    srt_access(eevee_dof_tile_flatten_Resources, fg_max_coc) = dof_tile_large_coc_uint;
+    srt_access(eevee_dof_tile_flatten_Resources, fg_max_intersectable_coc) = dof_tile_large_coc_uint;
+    srt_access(eevee_dof_tile_flatten_Resources, bg_min_coc) = dof_tile_large_coc_uint;
+    srt_access(eevee_dof_tile_flatten_Resources, bg_max_coc) = floatBitsToUint(0.0f);
+    srt_access(eevee_dof_tile_flatten_Resources, bg_min_intersectable_coc) = dof_tile_large_coc_uint;
+  }
+  barrier();
+
+  int2 sample_texel = min(int2(gl_GlobalInvocationID.xy), textureSize(srt_access(eevee_dof_tile_flatten_Resources, coc_tx), 0).xy - 1);
+  float2 sample_data = texelFetch(srt_access(eevee_dof_tile_flatten_Resources, coc_tx), sample_texel, 0).rg;
+
+  float sample_coc = sample_data.x;
+  uint fg_coc = floatBitsToUint(max(-sample_coc, 0.0f));
+
+  atomicMax(srt_access(eevee_dof_tile_flatten_Resources, fg_min_coc), fg_coc);
+  atomicMin(srt_access(eevee_dof_tile_flatten_Resources, fg_max_coc), fg_coc);
+  atomicMin(srt_access(eevee_dof_tile_flatten_Resources, fg_max_intersectable_coc), (sample_coc < 0.0f) ? fg_coc : dof_tile_large_coc_uint);
+
+  uint bg_coc = floatBitsToUint(max(sample_coc, 0.0f));
+  atomicMin(srt_access(eevee_dof_tile_flatten_Resources, bg_min_coc), bg_coc);
+  atomicMax(srt_access(eevee_dof_tile_flatten_Resources, bg_max_coc), bg_coc);
+  atomicMin(srt_access(eevee_dof_tile_flatten_Resources, bg_min_intersectable_coc), (sample_coc > 0.0f) ? bg_coc : dof_tile_large_coc_uint);
+
+  barrier();
+
+  if (gl_LocalInvocationIndex == 0u) {
+    if (srt_access(eevee_dof_tile_flatten_Resources, fg_max_intersectable_coc) == dof_tile_large_coc_uint) {
+      srt_access(eevee_dof_tile_flatten_Resources, fg_max_intersectable_coc) = floatBitsToUint(0.0f);
+    }
+
+    CocTile tile;
+
+    tile.fg_min_coc = -uintBitsToFloat(srt_access(eevee_dof_tile_flatten_Resources, fg_min_coc));
+    tile.fg_max_coc = -uintBitsToFloat(srt_access(eevee_dof_tile_flatten_Resources, fg_max_coc));
+    tile.fg_max_intersectable_coc = -uintBitsToFloat(srt_access(eevee_dof_tile_flatten_Resources, fg_max_intersectable_coc));
+    tile.bg_min_coc = uintBitsToFloat(srt_access(eevee_dof_tile_flatten_Resources, bg_min_coc));
+    tile.bg_max_coc = uintBitsToFloat(srt_access(eevee_dof_tile_flatten_Resources, bg_max_coc));
+    tile.bg_min_intersectable_coc = uintBitsToFloat(srt_access(eevee_dof_tile_flatten_Resources, bg_min_intersectable_coc));
+
+    int2 tile_co = int2(gl_WorkGroupID.xy);
+    dof_coc_tile_store(srt_access(eevee_dof_TilesWrite, out_tiles_fg_img), srt_access(eevee_dof_TilesWrite, out_tiles_bg_img), tile_co, tile);
+  }
+
+#endif
+#line 105
+}
+#endif
+#endif
+#line 118
+#define access_eevee_dof_tile_dilate_Resources_dilate_mode_min_max() dilate_mode_min_max
+#define access_eevee_dof_tile_dilate_Resources_ring_count() ring_count
+#define access_eevee_dof_tile_dilate_Resources_ring_width_multiplier() ring_width_multiplier
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_tile_dilate_Resources
+CREATE_INFO_RES_PASS_eevee_dof_tile_dilate_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_tile_dilate_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_tile_dilate_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_tile_dilate_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_tile_dilate_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_tile_dilate_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_tile_dilate_Resources
+#endif
+#line 118
+struct eevee_dof_tile_dilate_Resources {
+#line 131
+int _pad;};
+#line 134
+#ifndef GPU_METAL
+eevee_dof_tile_dilate_Resources eevee_dof_tile_dilate_Resources_ctor_();
+eevee_dof_tile_dilate_Resources eevee_dof_tile_dilate_Resources_new_();
+#endif
+#line 118
+                                               eevee_dof_tile_dilate_Resources eevee_dof_tile_dilate_Resources_ctor_() {eevee_dof_tile_dilate_Resources r;r._pad=0;return r;}
+#line 124
+       eevee_dof_tile_dilate_Resources eevee_dof_tile_dilate_Resources_new_()
+{
+  eevee_dof_tile_dilate_Resources result;
+  result._pad = 0;
+  return result;
+#line 122
+}
+#line 125
+
+#if defined(CREATE_INFO_eevee_dof_tile_dilate_Resources) && defined(CREATE_INFO_eevee_dof_Tiles) && defined(CREATE_INFO_eevee_dof_TilesWrite)
+#line 125
+
+#if defined(ENTRY_POINT_eevee_dof_tile_dilate_comp_main)
+#line 125
+
+void eevee_dof_tile_dilate_comp_main(
+#line 129
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 130
+  eevee_dof_tile_dilate_Resources srt = eevee_dof_tile_dilate_Resources_ctor_(); eevee_dof_Tiles in_tiles = eevee_dof_Tiles_ctor_(); eevee_dof_TilesWrite out_tiles = eevee_dof_TilesWrite_ctor_();
+  int2 center_tile_pos = int2(gl_GlobalInvocationID.xy);
+#line 134
+  constexpr float bluring_radius_error = 1.0f + 1.0f / (float(DOF_GATHER_RING_COUNT) + 0.5f);
+  constexpr float tile_to_fullres_factor = float(DOF_TILES_SIZE * 2);
+
+  CocTile ring_buckets[DOF_DILATE_RING_COUNT];
+
+  for (int ring = 0; ring < srt_access(eevee_dof_tile_dilate_Resources, ring_count) && ring < DOF_DILATE_RING_COUNT; ring++) {
+    ring_buckets[ring] = dof_coc_tile_init();
+
+    int ring_distance = ring + 1;
+    for (int sample_id = 0; sample_id < 4 * ring_distance; sample_id++) {
+      int2 offset = dof_square_ring_sample_offset(ring_distance, sample_id);
+
+      offset *= srt_access(eevee_dof_tile_dilate_Resources, ring_width_multiplier);
+
+      for (int i = 0; i < 2; i++) {
+        int2 adj_tile_pos = center_tile_pos + ((i == 0) ? offset : -offset);
+
+        CocTile adj_tile = dof_coc_tile_load(
+            srt_access(eevee_dof_Tiles, in_tiles_fg_img), srt_access(eevee_dof_Tiles, in_tiles_bg_img), adj_tile_pos);
+#line 155
+#if SRT_CONSTANT_dilate_mode_min_max
+#line 154
+                                                                                                {
+
+          ring_buckets[ring].fg_min_coc = min(ring_buckets[ring].fg_min_coc, adj_tile.fg_min_coc);
+          ring_buckets[ring].bg_max_coc = max(ring_buckets[ring].bg_max_coc, adj_tile.bg_max_coc);
+        }
+
+#else
+#line 159
+             {
+          ring_buckets[ring].fg_max_coc = max(ring_buckets[ring].fg_max_coc, adj_tile.fg_max_coc);
+          ring_buckets[ring].bg_min_coc = min(ring_buckets[ring].bg_min_coc, adj_tile.bg_min_coc);
+#line 164
+          float closest_neighbor_distance = length(max(abs(float2(offset)) - 1.0f, 0.0f)) *
+                                            tile_to_fullres_factor;
+
+          ring_buckets[ring].fg_max_intersectable_coc = max(
+              ring_buckets[ring].fg_max_intersectable_coc,
+              adj_tile.fg_max_intersectable_coc + closest_neighbor_distance);
+          ring_buckets[ring].bg_min_intersectable_coc = min(
+              ring_buckets[ring].bg_min_intersectable_coc,
+              adj_tile.bg_min_intersectable_coc + closest_neighbor_distance);
+        }
+
+#endif
+#line 174
+      }
+    }
+  }
+#line 179
+  CocTile out_tile = dof_coc_tile_load(
+      srt_access(eevee_dof_Tiles, in_tiles_fg_img), srt_access(eevee_dof_Tiles, in_tiles_bg_img), center_tile_pos);
+
+  for (int ring = 0; ring < srt_access(eevee_dof_tile_dilate_Resources, ring_count) && ring < DOF_DILATE_RING_COUNT; ring++) {
+    float ring_distance = float(ring + 1);
+
+    ring_distance = (ring_distance * srt_access(eevee_dof_tile_dilate_Resources, ring_width_multiplier) - 1) * tile_to_fullres_factor;
+#line 188
+#if SRT_CONSTANT_dilate_mode_min_max
+#line 187
+                                                                                            {
+
+      if (-ring_buckets[ring].fg_min_coc * bluring_radius_error > ring_distance) {
+        out_tile.fg_min_coc = min(out_tile.fg_min_coc, ring_buckets[ring].fg_min_coc);
+      }
+
+      if (ring_buckets[ring].bg_max_coc * bluring_radius_error > ring_distance) {
+        out_tile.bg_max_coc = max(out_tile.bg_max_coc, ring_buckets[ring].bg_max_coc);
+      }
+    }
+
+#else
+#line 197
+         {
+#line 200
+      if (-out_tile.fg_min_coc * bluring_radius_error > ring_distance) {
+        out_tile.fg_max_coc = max(out_tile.fg_max_coc, ring_buckets[ring].fg_max_coc);
+        out_tile.fg_max_intersectable_coc = max(out_tile.fg_max_intersectable_coc,
+                                                ring_buckets[ring].fg_max_intersectable_coc);
+      }
+
+      if (out_tile.bg_max_coc * bluring_radius_error > ring_distance) {
+        out_tile.bg_min_coc = min(out_tile.bg_min_coc, ring_buckets[ring].bg_min_coc);
+        out_tile.bg_min_intersectable_coc = min(out_tile.bg_min_intersectable_coc,
+                                                ring_buckets[ring].bg_min_intersectable_coc);
+      }
+    }
+
+#endif
+#line 212
+  }
+
+  int2 texel_out = int2(gl_GlobalInvocationID.xy);
+  dof_coc_tile_store(srt_access(eevee_dof_TilesWrite, out_tiles_fg_img), srt_access(eevee_dof_TilesWrite, out_tiles_bg_img), texel_out, out_tile);
+
+#endif
+#line 216
+}
+#endif
+#endif
+#line 230

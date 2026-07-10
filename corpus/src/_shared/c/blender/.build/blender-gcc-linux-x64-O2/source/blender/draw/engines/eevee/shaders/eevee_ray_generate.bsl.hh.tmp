@@ -1,0 +1,162 @@
+#line 1 "eevee_ray_generate.bsl.hh"
+ 
+#line 18
+BsdfSample eevee_ray_generate_direction(float2 noise,
+                                  ClosureUndetermined cl,
+                                  float3 V,
+                                  Thickness thickness)
+{
+  float3 random_point_on_cylinder = sample_cylinder(noise);
+
+  constexpr float rng_bias = 0.08f;
+#line 28
+  if (cl.type != CLOSURE_BSDF_TRANSLUCENT_ID || _mode(thickness) == ThicknessMode_Slab) {
+    random_point_on_cylinder.x = 1.0f - random_point_on_cylinder.x * (1.0f - rng_bias);
+  }
+
+  switch (cl.type) {
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      bxdf_ggx_context_amend_transmission(cl, V, thickness);
+      break;
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+      break;
+    case CLOSURE_NONE_ID:
+      ;
+      break;
+  }
+
+  float3x3 tangent_to_world = from_up_axis(cl.N);
+
+  BsdfSample samp;
+  samp.pdf = 0.0f;
+  samp.direction = float3(0.0f);
+  switch (cl.type) {
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+      samp = bxdf_translucent_sample(random_point_on_cylinder, thickness);
+      break;
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+      samp = bxdf_diffuse_sample(random_point_on_cylinder);
+      break;
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID: {
+      samp = bxdf_ggx_sample_reflection(random_point_on_cylinder,
+                                        V * tangent_to_world,
+                                        square(to_closure_reflection(cl).roughness),
+                                        true);
+      break;
+    }
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID: {
+      samp = bxdf_ggx_sample_refraction(random_point_on_cylinder,
+                                        V * tangent_to_world,
+                                        square(to_closure_refraction(cl).roughness),
+                                        to_closure_refraction(cl).ior,
+                                        thickness,
+                                        true);
+      break;
+    }
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID: {
+      samp = bxdf_ggx_sample_reflection(random_point_on_cylinder,
+                                        V * tangent_to_world,
+                                        square(to_closure_thin_refraction(cl).roughness),
+                                        true);
+      samp.direction.z = -samp.direction.z;
+      break;
+    }
+    case CLOSURE_NONE_ID:
+      ;
+      break;
+  }
+  samp.direction = tangent_to_world * float3(samp.direction);
+
+  return samp;
+}
+#line 97
+#define access_eevee_raytracing_RayGenerate_closure_index() closure_index
+#define access_eevee_raytracing_RayGenerate_out_ray_data_img() out_ray_data_img
+#define access_eevee_raytracing_RayGenerate_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_raytracing_RayGenerate
+CREATE_INFO_RES_PASS_eevee_raytracing_RayGenerate
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytracing_RayGenerate
+CREATE_INFO_RES_BATCH_eevee_raytracing_RayGenerate
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytracing_RayGenerate
+CREATE_INFO_RES_GEOMETRY_eevee_raytracing_RayGenerate
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_RayGenerate
+CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_RayGenerate
+#endif
+#line 97
+struct eevee_raytracing_RayGenerate {
+#line 110
+int _pad;};
+#line 117
+#ifndef GPU_METAL
+eevee_raytracing_RayGenerate eevee_raytracing_RayGenerate_ctor_();
+eevee_raytracing_RayGenerate eevee_raytracing_RayGenerate_new_();
+#endif
+#line 97
+                                            eevee_raytracing_RayGenerate eevee_raytracing_RayGenerate_ctor_() {eevee_raytracing_RayGenerate r;r._pad=0;return r;}
+#line 103
+       eevee_raytracing_RayGenerate eevee_raytracing_RayGenerate_new_()
+{
+  eevee_raytracing_RayGenerate result;
+  result._pad = 0;
+  return result;
+#line 101
+}
+#line 108
+
+#if defined(CREATE_INFO_eevee_raytracing_RayGenerate) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_gbuffer_Reader)
+#line 108
+
+#if defined(ENTRY_POINT_eevee_raytracing_generate_rays)
+#line 108
+
+void eevee_raytracing_generate_rays(
+#line 116
+                                                               )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 117
+  eevee_raytracing_RayGenerate srt = eevee_raytracing_RayGenerate_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); draw_View views = draw_View_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_raytracing_RayGenerate, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+
+  int2 texel_fullres = texel * srt_access(eevee_Uniform, raytrace_buf).trace_pixel_scale +
+                       srt_access(eevee_Uniform, raytrace_buf).trace_pixel_offset;
+
+  gbuffer_Header gbuf_header = _read_header(reader, texel_fullres);
+  ClosureUndetermined closure = _read_bin(reader, texel_fullres, srt_access(eevee_raytracing_RayGenerate, closure_index));
+
+  if (closure.type == CLOSURE_NONE_ID) {
+    imageStore(srt_access(eevee_raytracing_RayGenerate, out_ray_data_img), texel, float4(0.0f));
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float2 uv = (float2(texel_fullres) + 0.5f) / float2(textureSize(srt_access(gbuffer_Reader, gbuf_header_tx), 0).xy);
+  float3 P = _point_screen_to_world(view, float3(uv, 0.5f));
+  float3 V = _world_incident_vector(view, P);
+  float2 noise = _fetch(util_tx, float2(texel), UTIL_BLUE_NOISE_LAYER).rg;
+  noise = fract(noise + _rng_2D_get(sampling, SAMPLING_RAYTRACE_U));
+
+  Thickness thickness = _read_thickness(reader, gbuf_header, texel_fullres);
+
+  BsdfSample samp = eevee_ray_generate_direction(noise.xy, closure, V, thickness);
+#line 148
+  float inv_pdf = (samp.pdf == 0.0f) ? 0.0f : max(6e-8f, 1.0f / samp.pdf);
+  imageStoreFast(srt_access(eevee_raytracing_RayGenerate, out_ray_data_img), texel, float4(samp.direction, inv_pdf));
+
+#endif
+#line 150
+}
+#endif
+#endif
+#line 155

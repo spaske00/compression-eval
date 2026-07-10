@@ -1,0 +1,55 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_dof_resolve_Resources)
+.additional_info("eevee_dof_Accumulator")
+.additional_info("draw_View")
+SPECIALIZATION_CONSTANT(bool, do_debug_color, false)
+.sampler(0, ImageType::sampler2DDepth, "depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2D, "color_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(2, ImageType::sampler2D, "color_bg_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(3, ImageType::sampler2D, "color_fg_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(4, ImageType::sampler2D, "color_hole_fill_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(7, ImageType::sampler2D, "weight_bg_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(8, ImageType::sampler2D, "weight_fg_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(9, ImageType::sampler2D, "weight_hole_fill_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(10, ImageType::sampler2D, "stable_color_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(2, blender::gpu::TextureFormat::SFLOAT_16_16_16_16, Qualifier::write, ImageReadWriteType::image2D, "out_color_img", Frequency::PASS)
+GROUP_SHARED(uint, shared_max_slight_focus_abs_coc)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_resolve_comp_main_infos_)
+LOCAL_GROUP_SIZE(DOF_RESOLVE_GROUP_SIZE, DOF_RESOLVE_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_dof_resolve_Resources)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_dof_Tiles)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_resolve_lut)
+COMPUTE_SOURCE("eevee_depth_of_field_resolve.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_resolve_comp_main")
+ADDITIONAL_INFO(eevee_dof_resolve_comp_main_infos_)
+COMPILATION_CONSTANT(bool, is_hole_fill, false)
+COMPILATION_CONSTANT(bool, is_resolve, true)
+COMPILATION_CONSTANT(bool, is_foreground, false)
+COMPILATION_CONSTANT(bool, use_lut, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_resolve_no_lut)
+COMPUTE_SOURCE("eevee_depth_of_field_resolve.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_resolve_comp_main")
+ADDITIONAL_INFO(eevee_dof_resolve_comp_main_infos_)
+COMPILATION_CONSTANT(bool, is_hole_fill, false)
+COMPILATION_CONSTANT(bool, is_resolve, true)
+COMPILATION_CONSTANT(bool, is_foreground, false)
+COMPILATION_CONSTANT(bool, use_lut, false)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

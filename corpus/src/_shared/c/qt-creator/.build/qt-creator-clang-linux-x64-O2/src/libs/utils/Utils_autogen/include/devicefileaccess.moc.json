@@ -1,0 +1,19 @@
+{
+    "classes": [
+        {
+            "className": "DesktopFilePathWatcher",
+            "lineNumber": 520,
+            "object": true,
+            "qualifiedClassName": "Utils::DesktopFilePathWatcher",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::FilePathWatcher",
+                    "name": "FilePathWatcher"
+                }
+            ]
+        }
+    ],
+    "inputFile": "devicefileaccess.cpp",
+    "outputRevision": 68
+}

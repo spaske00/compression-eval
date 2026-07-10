@@ -1,0 +1,9 @@
+#line 1 "overlay_sculpt_curves_selection_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(overlay_sculpt_curves_selection)
+
+void main()
+{
+  out_color = float4(float3(0.0f), 1.0f - mask_weight);
+}

@@ -1,0 +1,11 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_GeomShadow)
+.storage_buf(SHADOW_RENDER_VIEW_BUF_SLOT, Qualifier::read, "ShadowRenderView", "render_view_buf[SHADOW_VIEW_MAX]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,60 @@
+#line 1 "compositor_glare_sun_beams.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_glare_sun_beams_shared)
+#line 22
+float get_sample_position(int i,                  float random_offset)
+{
+#if defined(JITTER)
+  return safe_divide(i + random_offset, 1.0f - jitter_factor);
+#else
+  return i;
+#endif
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float2 input_size = float2(texture_size(input_tx));
+#line 39
+  float unbounded_steps = max(1.0f, distance(float2(texel), source * input_size));
+  int steps = min(max_steps, int(unbounded_steps));
+#line 46
+  float2 coordinates = (float2(texel) + float2(0.5f)) / input_size;
+  float2 vector_to_source = source - coordinates;
+  float2 step_vector = vector_to_source / unbounded_steps;
+
+  float accumulated_weight = 0.0f;
+  float4 accumulated_color = float4(0.0f);
+
+#if defined(JITTER)
+  int number_of_steps = int((1.0f - jitter_factor) * steps);
+#else
+  int number_of_steps = steps;
+#endif
+  float random_offset = hash_uint2_to_float(uint(texel.x), uint(texel.y));
+
+  for (int i = 0; i <= number_of_steps; i++) {
+    float position_index = get_sample_position(i, random_offset);
+    float2 position = coordinates + position_index * step_vector;
+#line 66
+    if (any(lessThan(position, float2(0.0f))) || any(greaterThan(position, float2(1.0f)))) {
+      break;
+    }
+
+    float4 sample_color = texture(input_tx, position);
+#line 74
+    float weight = square(1.0f - position_index / float(steps));
+
+    accumulated_weight += weight;
+    accumulated_color += sample_color * weight;
+  }
+
+  if (accumulated_weight != 0.0f) {
+    accumulated_color /= accumulated_weight;
+  }
+  else {
+    accumulated_color = texture(input_tx, coordinates);
+  }
+  imageStore(output_img, texel, accumulated_color);
+}

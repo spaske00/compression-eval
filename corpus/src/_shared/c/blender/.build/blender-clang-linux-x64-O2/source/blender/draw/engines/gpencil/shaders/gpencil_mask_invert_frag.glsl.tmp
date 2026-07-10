@@ -1,0 +1,10 @@
+#line 1 "gpencil_mask_invert_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(gpencil_mask_invert)
+
+void main()
+{
+
+  fragRevealage = frag_color = float4(1.0f);
+}

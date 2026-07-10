@@ -1,0 +1,12 @@
+#line 1 "gpu_shader_material_output_world.glsl"
+ 
+#line 6
+void node_output_world_surface(Closure surface, _ref(Closure ,out_surface))
+{
+  out_surface = surface;
+}
+#line 12
+void node_output_world_volume(Closure volume, _ref(Closure ,out_volume))
+{
+  out_volume = volume;
+}

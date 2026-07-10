@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "WidgetTip",
+            "lineNumber": 75,
+            "object": true,
+            "qualifiedClassName": "Utils::Internal::WidgetTip",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TipLabel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "tips.h",
+    "outputRevision": 68
+}

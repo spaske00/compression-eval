@@ -1,0 +1,212 @@
+{
+	"BUILD_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain",
+	"CMAKE_EXECUTABLE" : "/opt/cmake-3.31.10-linux-x86_64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/CMakeLists.txt",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtInstallPaths.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtFeature.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicGitHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindPkgConfig.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindPackageMessage.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindPkgConfig.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindPackageMessage.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "qtkeychain_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/keychain.h",
+			"MU",
+			"UMOU6GNSV6/moc_keychain.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/keychain_p.h",
+			"MU",
+			"UMOU6GNSV6/moc_keychain_p.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/libsecret_p.h",
+			"MU",
+			"UMOU6GNSV6/moc_libsecret_p.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/plaintextstore_p.h",
+			"MU",
+			"UMOU6GNSV6/moc_plaintextstore_p.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/qkeychain_export.h",
+			"MU",
+			"UMOU6GNSV6/moc_qkeychain_export.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"KEYCHAIN_DBUS=1",
+		"QTKEYCHAIN_LIBRARY",
+		"QT_CORE_LIB",
+		"QT_CREATOR",
+		"QT_DBUS_LIB",
+		"QT_DISABLE_DEPRECATED_UP_TO=0x050900",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_DEBUG",
+		"QT_NO_FOREACH",
+		"QT_NO_JAVA_STYLE_ITERATORS",
+		"QT_RESTRICTED_CAST_FROM_ASCII",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WARN_DEPRECATED_UP_TO=0x060400",
+		"RELATIVE_DATA_PATH=\"../share/qtcreator\"",
+		"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"",
+		"RELATIVE_LIBEXEC_PATH=\"../libexec/qtcreator\"",
+		"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"",
+		"qtkeychain_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtCore",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/mkspecs/linux-g++",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtDBus",
+		"/usr/include/c++/14",
+		"/usr/include/x86_64-linux-gnu/c++/14",
+		"/usr/include/c++/14/backward",
+		"/usr/lib/llvm-18/lib/clang/18/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-std=c++20",
+		"-w",
+		"-dM",
+		"-E",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain/kwallet_interface.cpp",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain/kwallet_interface.h",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain/moc_kwallet_interface.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 16,
+	"PARSE_CACHE_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/CMakeFiles/qtkeychain_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/CMakeFiles/qtkeychain_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/keychain.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/keychain_unix.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/libsecret.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty/qtkeychain/qtkeychain/plaintextstore.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain/kwallet_interface.cpp",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain/kwallet_interface.h",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/3rdparty/qtkeychain/qtkeychain/moc_kwallet_interface.cpp"
+	],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

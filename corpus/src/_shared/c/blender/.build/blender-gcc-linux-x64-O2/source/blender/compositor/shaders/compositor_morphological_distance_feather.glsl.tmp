@@ -1,0 +1,39 @@
+#line 1 "compositor_morphological_distance_feather.glsl"
+ 
+#line 55
+COMPUTE_SHADER_CREATE_INFO(compositor_morphological_distance_feather_dilate)
+#line 59
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 64
+  float accumulated_value = 0.0f;
+#line 67
+  float center_value = FUNCTION(texture_load(input_tx, texel).x);
+  accumulated_value += center_value * texture_load(weights_tx, int2(0)).x;
+#line 73
+  float limit_distance = center_value;
+  float limit_distance_falloff = 1.0f;
+#line 80
+  for (int i = 1; i < texture_size(weights_tx).x; i++) {
+    float weight = texture_load(weights_tx, int2(i, 0)).x;
+    float falloff = texture_load(falloffs_tx, int2(i, 0)).x;
+#line 86
+    for (int s = -1; s < 2; s += 2) {
+
+      float value = FUNCTION(texture_load(input_tx, texel + int2(s * i, 0)).x);
+      accumulated_value += value * weight;
+#line 93
+      float falloff_distance = value * falloff;
+#line 96
+      if (falloff_distance > limit_distance) {
+        limit_distance = falloff_distance;
+        limit_distance_falloff = falloff;
+      }
+    }
+  }
+#line 106
+  float value = mix(accumulated_value, limit_distance, limit_distance_falloff);
+#line 110
+  imageStore(output_img, texel.yx, float4(FUNCTION(value)));
+}

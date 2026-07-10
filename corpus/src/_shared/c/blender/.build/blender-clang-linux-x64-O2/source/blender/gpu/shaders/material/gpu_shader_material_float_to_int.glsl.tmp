@@ -1,0 +1,22 @@
+#line 1 "gpu_shader_material_float_to_int.glsl"
+ 
+#line 6
+void float_to_int_round(float value, _ref(float ,result))
+{
+  result = float(int(round(value)));
+}
+#line 12
+void float_to_int_floor(float value, _ref(float ,result))
+{
+  result = float(int(floor(value)));
+}
+#line 18
+void float_to_int_ceil(float value, _ref(float ,result))
+{
+  result = float(int(ceil(value)));
+}
+#line 24
+void float_to_int_truncate(float value, _ref(float ,result))
+{
+  result = float(int(trunc(value)));
+}

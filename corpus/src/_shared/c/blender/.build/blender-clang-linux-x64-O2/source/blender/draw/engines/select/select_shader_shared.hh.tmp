@@ -1,0 +1,27 @@
+#line 1 "select_shader_shared.hh"
+ 
+#line 16
+constant static constexpr uint32_t SELECT_ALL = 0u;
+constant static constexpr uint32_t SELECT_PICK_ALL = 1u;
+constant static constexpr uint32_t SELECT_PICK_NEAREST = 2u;
+
+#define SelectType uint32_t
+#line 15
+
+#define SelectType_host_shared_ SelectType
+#line 15
+
+SelectType SelectType_ctor_() { return SelectType(0); }
+#line 22
+#define SelectInfoData_host_shared_ SelectInfoData
+#define SelectInfoData_host_shared_uniform_ SelectInfoData
+#line 21
+struct                 SelectInfoData {
+  int2 cursor;
+       SelectType mode;
+
+  int radius;
+};
+#line 21
+                                              SelectInfoData SelectInfoData_ctor_() {SelectInfoData r;r.cursor=int2(0);r.mode=SelectType_ctor_();r.radius=0;return r;}
+#line 31

@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_combine_xyz.glsl"
+ 
+#line 6
+void combine_xyz(float x, float y, float z, _ref(float3 ,vec))
+{
+  vec = float3(x, y, z);
+}

@@ -1,0 +1,124 @@
+[
+    {
+        "classes": [
+            {
+                "className": "IPlugin",
+                "lineNumber": 20,
+                "object": true,
+                "qualifiedClassName": "ExtensionSystem::IPlugin",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "asynchronousShutdownFinished",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "iplugin.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "PluginDetailsView",
+                "lineNumber": 16,
+                "object": true,
+                "qualifiedClassName": "ExtensionSystem::PluginDetailsView",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QWidget"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "plugindetailsview.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "PluginErrorView",
+                "lineNumber": 15,
+                "object": true,
+                "qualifiedClassName": "ExtensionSystem::PluginErrorView",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QWidget"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "pluginerrorview.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "PluginView",
+                "lineNumber": 51,
+                "object": true,
+                "qualifiedClassName": "ExtensionSystem::PluginView",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "spec",
+                                "type": "ExtensionSystem::PluginSpec*"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "currentPluginChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "spec",
+                                "type": "ExtensionSystem::PluginSpec*"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "pluginActivated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "spec",
+                                "type": "QSet<ExtensionSystem::PluginSpec*>"
+                            },
+                            {
+                                "name": "enabled",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "pluginsChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QWidget"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "pluginview.h",
+        "outputRevision": 68
+    }
+]

@@ -1,0 +1,308 @@
+#line 1 "eevee_lightprobe_shared.hh"
+ 
+#line 24
+#define ReflectionProbeLowFreqLight_host_shared_ ReflectionProbeLowFreqLight
+#define ReflectionProbeLowFreqLight_host_shared_uniform_ ReflectionProbeLowFreqLight
+#line 23
+struct                 ReflectionProbeLowFreqLight {
+  packed_float3 direction;
+  float ambient;
+};
+#line 23
+                                                           ReflectionProbeLowFreqLight ReflectionProbeLowFreqLight_ctor_() {ReflectionProbeLowFreqLight r;r.direction=packed_float3(0);r.ambient=0.0f;return r;}
+#line 29
+constant static constexpr uint32_t SHAPE_ELIPSOID = 0u;
+constant static constexpr uint32_t SHAPE_CUBOID = SHAPE_ELIPSOID + 1u;
+
+#define LightProbeShape uint32_t
+#line 28
+
+#define LightProbeShape_host_shared_ LightProbeShape
+#line 28
+
+LightProbeShape LightProbeShape_ctor_() { return LightProbeShape(0); }
+#line 35
+#define SphereProbeUvArea_host_shared_ SphereProbeUvArea
+#define SphereProbeUvArea_host_shared_uniform_ SphereProbeUvArea
+#line 34
+struct                 SphereProbeUvArea {
+
+  float2 offset;
+
+  float scale;
+
+  float layer;
+};
+#line 34
+                                                 SphereProbeUvArea SphereProbeUvArea_ctor_() {SphereProbeUvArea r;r.offset=float2(0);r.scale=0.0f;r.layer=0.0f;return r;}
+#line 45
+#define SphereProbePixelArea_host_shared_ SphereProbePixelArea
+#define SphereProbePixelArea_host_shared_uniform_ SphereProbePixelArea
+#line 44
+struct                 SphereProbePixelArea {
+#line 47
+  int2 offset;
+
+  int extent;
+
+  int layer;
+};
+#line 44
+                                                    SphereProbePixelArea SphereProbePixelArea_ctor_() {SphereProbePixelArea r;r.offset=int2(0);r.extent=0;r.layer=0;return r;}
+#line 56
+#define SphereProbeData_host_shared_ SphereProbeData
+#define SphereProbeData_host_shared_uniform_ SphereProbeData
+#line 55
+struct                 SphereProbeData {
+
+  float3x4 world_to_probe_transposed;
+
+  packed_float3 location;
+
+  float parallax_distance;
+       LightProbeShape parallax_shape;
+       LightProbeShape influence_shape;
+
+  float influence_scale;
+  float influence_bias;
+
+         SphereProbeUvArea atlas_coord;
+#line 74
+         ReflectionProbeLowFreqLight low_freq_light;
+};
+#line 55
+                                               SphereProbeData SphereProbeData_ctor_() {SphereProbeData r;r.world_to_probe_transposed=float3x4(0);r.location=packed_float3(0);r.parallax_distance=0.0f;r.parallax_shape=LightProbeShape_ctor_();r.influence_shape=LightProbeShape_ctor_();r.influence_scale=0.0f;r.influence_bias=0.0f;r.atlas_coord=SphereProbeUvArea_ctor_();r.low_freq_light=ReflectionProbeLowFreqLight_ctor_();return r;}
+#line 79
+#define SphereProbeDisplayData_host_shared_ SphereProbeDisplayData
+#define SphereProbeDisplayData_host_shared_uniform_ SphereProbeDisplayData
+#line 78
+struct                 SphereProbeDisplayData {
+  int probe_index;
+  float display_size;
+  float _pad0;
+  float _pad1;
+};
+#line 78
+                                                      SphereProbeDisplayData SphereProbeDisplayData_ctor_() {SphereProbeDisplayData r;r.probe_index=0;r.display_size=0.0f;r._pad0=0.0f;r._pad1=0.0f;return r;}
+#line 88
+#define SphereProbeHarmonic_host_shared_ SphereProbeHarmonic
+#define SphereProbeHarmonic_host_shared_uniform_ SphereProbeHarmonic
+#line 87
+struct                 SphereProbeHarmonic {
+  float4 L0_M0;
+  float4 L1_Mn1;
+  float4 L1_M0;
+  float4 L1_Mp1;
+};
+#line 87
+                                                   SphereProbeHarmonic SphereProbeHarmonic_ctor_() {SphereProbeHarmonic r;r.L0_M0=float4(0);r.L1_Mn1=float4(0);r.L1_M0=float4(0);r.L1_Mp1=float4(0);return r;}
+#line 95
+#define SphereProbeSunLight_host_shared_ SphereProbeSunLight
+#define SphereProbeSunLight_host_shared_uniform_ SphereProbeSunLight
+#line 94
+struct                 SphereProbeSunLight {
+  float4 direction;
+  packed_float3 radiance;
+  float _pad0;
+};
+#line 94
+                                                   SphereProbeSunLight SphereProbeSunLight_ctor_() {SphereProbeSunLight r;r.direction=float4(0);r.radiance=packed_float3(0);r._pad0=0.0f;return r;}
+#line 107
+#define PlanarProbeData_host_shared_ PlanarProbeData
+#define PlanarProbeData_host_shared_uniform_ PlanarProbeData
+#line 106
+struct                 PlanarProbeData {
+
+  float4x4 viewmat;
+  float4x4 winmat;
+  float4x4 wininv;
+
+  float3x4 world_to_object_transposed;
+
+  packed_float3 normal;
+
+  int layer_id;
+
+  float parallax_distance;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+};
+#line 106
+                                               PlanarProbeData PlanarProbeData_ctor_() {PlanarProbeData r;r.viewmat=float4x4(0);r.winmat=float4x4(0);r.wininv=float4x4(0);r.world_to_object_transposed=float3x4(0);r.normal=packed_float3(0);r.layer_id=0;r.parallax_distance=0.0f;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 126
+#define PlanarProbeDisplayData_host_shared_ PlanarProbeDisplayData
+#define PlanarProbeDisplayData_host_shared_uniform_ PlanarProbeDisplayData
+#line 125
+struct                 PlanarProbeDisplayData {
+  float4x4 plane_to_world;
+  int probe_index;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+};
+#line 125
+                                                      PlanarProbeDisplayData PlanarProbeDisplayData_ctor_() {PlanarProbeDisplayData r;r.plane_to_world=float4x4(0);r.probe_index=0;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 140
+#define VolumeProbeData_host_shared_ VolumeProbeData
+#define VolumeProbeData_host_shared_uniform_ VolumeProbeData
+#line 139
+struct                 VolumeProbeData {
+
+  float3x4 world_to_grid_transposed;
+
+  packed_int3 grid_size_padded;
+
+  int brick_offset;
+
+  float normal_bias;
+  float view_bias;
+  float facing_bias;
+  int _pad1;
+};
+#line 139
+                                               VolumeProbeData VolumeProbeData_ctor_() {VolumeProbeData r;r.world_to_grid_transposed=float3x4(0);r.grid_size_padded=packed_int3(0);r.brick_offset=0;r.normal_bias=0.0f;r.view_bias=0.0f;r.facing_bias=0.0f;r._pad1=0;return r;}
+#line 153
+struct IrradianceBrick {
+
+  uint2 atlas_coord;
+};
+#line 153
+                               IrradianceBrick IrradianceBrick_ctor_() {IrradianceBrick r;r.atlas_coord=uint2(0);return r;}
+#line 158
+#define IrradianceBrickPacked uint
+
+              IrradianceBrickPacked irradiance_brick_pack(IrradianceBrick brick)
+{
+  uint2 data = (uint2(brick.atlas_coord) & 0xFFFFu) << uint2(0u, 16u);
+  IrradianceBrickPacked brick_packed = data.x | data.y;
+  return brick_packed;
+}
+
+              IrradianceBrick irradiance_brick_unpack(IrradianceBrickPacked brick_packed)
+{
+  IrradianceBrick brick;
+  brick.atlas_coord = (uint2(brick_packed) >> uint2(0u, 16u)) & uint2(0xFFFFu);
+  return brick;
+}
+#line 181
+#define SurfelRadiance_host_shared_ SurfelRadiance
+#define SurfelRadiance_host_shared_uniform_ SurfelRadiance
+#line 180
+struct                 SurfelRadiance {
+
+  float4 front;
+  float4 back;
+
+  float front_weight;
+  float back_weight;
+  float _pad0;
+  float _pad1;
+};
+#line 180
+                                              SurfelRadiance SurfelRadiance_ctor_() {SurfelRadiance r;r.front=float4(0);r.back=float4(0);r.front_weight=0.0f;r.back_weight=0.0f;r._pad0=0.0f;r._pad1=0.0f;return r;}
+#line 192
+#define Surfel_host_shared_ Surfel
+#define Surfel_host_shared_uniform_ Surfel
+#line 191
+struct                 Surfel {
+
+  packed_float3 position;
+
+  int prev;
+
+  packed_float3 normal;
+
+  int next;
+
+  packed_float3 albedo_front;
+
+  float ray_distance;
+
+  packed_float3 albedo_back;
+
+  int cluster_id;
+
+  bool32_t double_sided;
+
+  uint receiver_light_set;
+
+  int list_id;
+
+  int index_in_sorted_list;
+
+         SurfelRadiance radiance_direct;
+
+         SurfelRadiance radiance_indirect[2];
+};
+#line 191
+                                      Surfel Surfel_ctor_() {Surfel r;r.position=packed_float3(0);r.prev=0;r.normal=packed_float3(0);r.next=0;r.albedo_front=packed_float3(0);r.ray_distance=0.0f;r.albedo_back=packed_float3(0);r.cluster_id=0;r.double_sided=bool32_t(0);r.receiver_light_set=0u;r.list_id=0;r.index_in_sorted_list=0;r.radiance_direct=SurfelRadiance_ctor_();r.radiance_indirect[0]=SurfelRadiance_ctor_();r.radiance_indirect[1]=SurfelRadiance_ctor_();return r;}
+#line 223
+#define CaptureInfoData_host_shared_ CaptureInfoData
+#define CaptureInfoData_host_shared_uniform_ CaptureInfoData
+#line 222
+struct                 CaptureInfoData {
+
+  packed_int3 irradiance_grid_size;
+
+  bool32_t do_surfel_output;
+
+  bool32_t do_surfel_count;
+
+  uint surfel_len;
+
+  float sample_count;
+
+  float sample_index;
+
+  float4x4 irradiance_grid_local_to_world;
+
+  float4x4 irradiance_grid_world_to_local;
+#line 241
+  float4x4 irradiance_grid_world_to_local_rotation;
+
+  int scene_bound_x_min;
+  int scene_bound_y_min;
+  int scene_bound_z_min;
+  int scene_bound_x_max;
+  int scene_bound_y_max;
+  int scene_bound_z_max;
+
+  float clamp_direct;
+  float clamp_indirect;
+  float _pad1;
+  float _pad2;
+
+  float min_distance_to_surface;
+
+  float max_virtual_offset;
+
+  float surfel_radius;
+
+  bool32_t capture_world_direct;
+  bool32_t capture_world_indirect;
+  bool32_t capture_visibility_direct;
+  bool32_t capture_visibility_indirect;
+  bool32_t capture_indirect;
+  bool32_t capture_emission;
+  int _pad0;
+
+         SphereProbeUvArea world_atlas_coord;
+};
+#line 222
+                                               CaptureInfoData CaptureInfoData_ctor_() {CaptureInfoData r;r.irradiance_grid_size=packed_int3(0);r.do_surfel_output=bool32_t(0);r.do_surfel_count=bool32_t(0);r.surfel_len=0u;r.sample_count=0.0f;r.sample_index=0.0f;r.irradiance_grid_local_to_world=float4x4(0);r.irradiance_grid_world_to_local=float4x4(0);r.irradiance_grid_world_to_local_rotation=float4x4(0);r.scene_bound_x_min=0;r.scene_bound_y_min=0;r.scene_bound_z_min=0;r.scene_bound_x_max=0;r.scene_bound_y_max=0;r.scene_bound_z_max=0;r.clamp_direct=0.0f;r.clamp_indirect=0.0f;r._pad1=0.0f;r._pad2=0.0f;r.min_distance_to_surface=0.0f;r.max_virtual_offset=0.0f;r.surfel_radius=0.0f;r.capture_world_direct=bool32_t(0);r.capture_world_indirect=bool32_t(0);r.capture_visibility_direct=bool32_t(0);r.capture_visibility_indirect=bool32_t(0);r.capture_indirect=bool32_t(0);r.capture_emission=bool32_t(0);r._pad0=0;r.world_atlas_coord=SphereProbeUvArea_ctor_();return r;}
+#line 273
+#define SurfelListInfoData_host_shared_ SurfelListInfoData
+#define SurfelListInfoData_host_shared_uniform_ SurfelListInfoData
+#line 272
+struct                 SurfelListInfoData {
+
+  int2 ray_grid_size;
+
+  int list_max;
+
+  int list_prefix_sum;
+};
+#line 272
+                                                  SurfelListInfoData SurfelListInfoData_ctor_() {SurfelListInfoData r;r.ray_grid_size=int2(0);r.list_max=0;r.list_prefix_sum=0;return r;}
+#line 286

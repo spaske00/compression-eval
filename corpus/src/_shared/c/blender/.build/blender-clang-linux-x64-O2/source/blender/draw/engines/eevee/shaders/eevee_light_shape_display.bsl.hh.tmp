@@ -1,0 +1,201 @@
+#line 1 "eevee_light_shape_display.bsl.hh"
+ 
+#line 16
+struct eevee_light_ShapeDisplayVertOut {
+             float2 lP;
+             float3 P;
+           float3 radiance;
+           int light_index;
+           uint light_type;
+};
+#line 16
+                                               eevee_light_ShapeDisplayVertOut eevee_light_ShapeDisplayVertOut_ctor_() {eevee_light_ShapeDisplayVertOut r;r.lP=float2(0);r.P=float3(0);r.radiance=float3(0);r.light_index=0;r.light_type=0u;return r;}
+#line 24
+struct eevee_light_ShapeDisplayFragOut {
+                    float4 out_color;
+};
+#line 24
+                                               eevee_light_ShapeDisplayFragOut eevee_light_ShapeDisplayFragOut_ctor_() {eevee_light_ShapeDisplayFragOut r;r.out_color=float4(0);return r;}
+#line 28
+float eevee_light_shape_display_light_radiance_get(LightData light)
+{
+  if (is_sun_light(light.type)) {
+    float radius = _sun(light).shape_radius;
+    return M_1_PI * (1.0f + 1.0f / max(radius * radius, 1e-20f));
+  }
+
+  if (is_area_light(light.type)) {
+    float area = _area(light).size.x * _area(light).size.y * 4.0f;
+    if (light.type == LIGHT_ELLIPSE) {
+      area *= M_PI * 0.25f;
+    }
+    return 1.0f / max(M_PI * area, 1e-20f);
+  }
+
+  float radius = _local(light).local.shape_radius;
+  float area = 4.0f * M_PI * radius * radius;
+  return 1.0f / max(M_PI * area, 1e-20f);
+}
+
+float3 eevee_light_shape_display_light_position_get(const ViewMatrices view, LightData light, float2 quad_pos)
+{
+  if (is_area_light(light.type)) {
+    return transform_point(light.object_to_world, float3(quad_pos * _area(light).size, 0.0f));
+  }
+
+  float radius = _local(light).local.shape_radius;
+  float3 center = _position(light);
+  float3 view_right = view.viewinv[0].xyz;
+  float3 view_up = view.viewinv[1].xyz;
+  float3 L = center - _position(view);
+  float dist = length(L);
+  if (dist > 1e-8f) {
+    L /= dist;
+    make_orthonormal_basis(L, view_right, view_up);
+  }
+
+  if (is_sphere_light(light.type)) {
+    if (dist > radius) {
+      radius = light_sphere_disk_radius(radius, dist);
+    }
+    else {
+      radius = _far(view);
+    }
+  }
+
+  return center + (view_right * quad_pos.x + view_up * quad_pos.y) * radius;
+}
+
+float3 eevee_light_shape_display_far_plane_position_get(const ViewMatrices view, float2 ndc_pos)
+{
+  return _point_ndc_to_world(view, float3(ndc_pos, 1.0f));
+}
+
+float2 eevee_light_shape_display_quad_position_get(int vertex_id)
+{
+  int quad_vertex_id = vertex_id % 6;
+  float x = (quad_vertex_id == 0 || quad_vertex_id == 2 || quad_vertex_id == 5) ? -1.0f : 1.0f;
+  float y = (quad_vertex_id == 0 || quad_vertex_id == 1 || quad_vertex_id == 3) ? -1.0f : 1.0f;
+  return float2(x, y);
+}
+#line 91
+#if defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightRenderData)
+#line 90
+
+#if defined(ENTRY_POINT_eevee_light_shape_display_vert)
+#line 90
+
+void eevee_light_shape_display_vert(
+#line 95
+                                                         )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 96
+  draw_View views = draw_View_ctor_(); eevee_LightRenderData lrd = eevee_LightRenderData_ctor_();
+  eevee_light_ShapeDisplayVertOut_lP = eevee_light_shape_display_quad_position_get(gl_VertexID);
+  eevee_light_ShapeDisplayVertOut_P = float3(0.0f);
+  eevee_light_ShapeDisplayVertOut_radiance = float3(0.0f);
+  eevee_light_ShapeDisplayVertOut_light_index = 0;
+  eevee_light_ShapeDisplayVertOut_light_type = uint(LIGHT_RECT);
+  gl_Position = float4(0.0f, 0.0f, 0.0f, 1.0f);
+
+  int draw_index = gl_VertexID / 6;
+  int visible_count = int(srt_access(eevee_LightRenderData, light_cull_buf).visible_count + srt_access(eevee_LightRenderData, light_cull_buf).sun_lights_len);
+
+  if (draw_index >= visible_count) {
+    return;
+  }
+
+  int light_index;
+  if (draw_index < int(srt_access(eevee_LightRenderData, light_cull_buf).visible_count)) {
+    light_index = draw_index;
+  }
+  else {
+    int offset = draw_index - int(srt_access(eevee_LightRenderData, light_cull_buf).visible_count);
+    light_index = int(srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len) + offset;
+  }
+
+  LightData light = srt_access(eevee_LightRenderData, light_buf)[light_index];
+  if (!light.visible_camera) {
+    return;
+  }
+
+  eevee_light_ShapeDisplayVertOut_light_type = uint(light.type);
+  eevee_light_ShapeDisplayVertOut_light_index = light_index;
+  eevee_light_ShapeDisplayVertOut_radiance = light.color * eevee_light_shape_display_light_radiance_get(light);
+
+  const ViewMatrices view = _get(views, 0);
+  if (is_sun_light(light.type)) {
+    eevee_light_ShapeDisplayVertOut_P = eevee_light_shape_display_far_plane_position_get(view, eevee_light_ShapeDisplayVertOut_lP);
+    gl_Position = reverse_z_transform(float4(eevee_light_ShapeDisplayVertOut_lP, 1.0f, 1.0f));
+    return;
+  }
+
+  eevee_light_ShapeDisplayVertOut_P = eevee_light_shape_display_light_position_get(view, light, eevee_light_ShapeDisplayVertOut_lP);
+  gl_Position = reverse_z_transform(_point_world_to_homogenous(view, eevee_light_ShapeDisplayVertOut_P));
+
+#endif
+#line 138
+}
+#endif
+#endif
+#line 140
+
+#if defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_UnifiedVolumeData) && defined(CREATE_INFO_eevee_Uniform)
+#line 140
+
+#if defined(ENTRY_POINT_eevee_light_shape_display_frag)
+#line 140
+
+void eevee_light_shape_display_frag(
+#line 147
+                                                                         )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 148
+  draw_View views = draw_View_ctor_(); eevee_LightRenderData lrd = eevee_LightRenderData_ctor_(); UnifiedVolumeData volumes = UnifiedVolumeData_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  eLightType light_type = eLightType(eevee_light_ShapeDisplayVertOut_light_type);
+  LightData light = srt_access(eevee_LightRenderData, light_buf)[eevee_light_ShapeDisplayVertOut_light_index];
+  float3 P = eevee_light_ShapeDisplayVertOut_P;
+
+  const ViewMatrices view = _get(views, 0);
+  float3 V = _world_incident_vector(view, P);
+
+  if (is_sun_light(light_type)) {
+    float3 sun_direction = _sun(light).direction;
+    float sun_cos = cos_from_tan(_sun(light).shape_radius);
+    if (dot(-V, sun_direction) < sun_cos) {
+      gpu_discard_fragment();
+      return;
+    }
+  }
+  else {
+    if (is_area_light(light_type) && dot(V, _z_axis(light)) > 0.0f) {
+      gpu_discard_fragment();
+      return;
+    }
+
+    bool is_circle = light_type == LIGHT_ELLIPSE || is_point_light(light_type);
+    if (is_circle && dot(eevee_light_ShapeDisplayVertOut_lP, eevee_light_ShapeDisplayVertOut_lP) > 1.0f) {
+      gpu_discard_fragment();
+      return;
+    }
+  }
+
+  float depth = reverse_z_read(gl_FragCoord.z);
+
+  float2 uvs = gl_FragCoord.xy * srt_access(eevee_Uniform, uniform_buf).volumes.main_view_extent_inv;
+  float3 radiance = eevee_light_ShapeDisplayVertOut_radiance;
+  if (is_spot_light(light_type)) {
+    radiance *= light_spot_attenuation(light, -V);
+  }
+
+  VolumeResolveSample vol = _resolve(volumes, float3(uvs, depth));
+  eevee_light_ShapeDisplayFragOut_out_color = float4(radiance * vol.transmittance, 1.0f);
+
+#endif
+#line 187
+}
+#endif
+#endif
+#line 192

@@ -1,0 +1,57 @@
+#line 1 "draw_curves_length_intercept_comp.glsl"
+ 
+#line 12
+COMPUTE_SHADER_CREATE_INFO(draw_curves_evaluate_length_intercept)
+#line 20
+void evaluate_length_and_time(const IndexRange evaluated_points, const int curve_index)
+{
+
+#if defined(CREATE_INFO_draw_curves_evaluate_length_intercept)
+#line 22
+
+#if defined(CREATE_INFO_draw_curves_evaluate_length_intercept)
+#line 22
+
+#if defined(CREATE_INFO_draw_curves_evaluate_length_intercept)
+#line 27
+  float distance_along_curve = 0.0f;
+  buffer_get(draw_curves_evaluate_length_intercept, evaluated_time_buf)[_first(evaluated_points)] = 0.0f;
+  for (int i = 1; i < _size(evaluated_points); i++) {
+    int p = _start(evaluated_points) + i;
+    distance_along_curve += distance(buffer_get(draw_curves_evaluate_length_intercept,
+                                                     evaluated_positions_radii_buf)[p].xyz,
+                                     buffer_get(draw_curves_evaluate_length_intercept,
+                                                     evaluated_positions_radii_buf)[p - 1].xyz);
+    buffer_get(draw_curves_evaluate_length_intercept, evaluated_time_buf)[p] = distance_along_curve;
+  }
+  for (int i = 1; i < _size(evaluated_points); i++) {
+    int p = _start(evaluated_points) + i;
+    buffer_get(draw_curves_evaluate_length_intercept, evaluated_time_buf)[p] /= distance_along_curve;
+  }
+  buffer_get(draw_curves_evaluate_length_intercept, curves_length_buf)[curve_index] = distance_along_curve;
+
+#endif
+
+#endif
+
+#endif
+#line 40
+}
+
+void evaluate_length_intercept()
+{
+  if (gl_GlobalInvocationID.x >= uint(curves_count)) {
+    return;
+  }
+  int curve_index = int(gl_GlobalInvocationID.x) + curves_start;
+
+  IndexRange evaluated_points = offset_indices_load_range_from_buffer(
+      evaluated_points_by_curve_buf, curve_index);
+
+  if (use_cyclic) {
+    evaluated_points = _ctor(IndexRange) _start(evaluated_points) + curve_index,
+                                  _size(evaluated_points) + 1 _rotc() ;
+  }
+
+  evaluate_length_and_time(evaluated_points, curve_index);
+}

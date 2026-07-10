@@ -1,0 +1,25 @@
+#line 1 "gpu_shader_math_matrix_interpolate_lib.glsl"
+ 
+#line 36
+float4x4 interpolate_fast(float4x4 a, float4x4 b, float t)
+{
+  float3 a_loc, b_loc;
+  float3 a_scale, b_scale;
+  Quaternion a_quat, b_quat;
+  to_loc_rot_scale(a, a_loc, a_quat, a_scale);
+  to_loc_rot_scale(b, b_loc, b_quat, b_scale);
+
+  float3 location = interpolate(a_loc, b_loc, t);
+  float3 scale = interpolate(a_scale, b_scale, t);
+  Quaternion rotation = interpolate(a_quat, b_quat, t);
+  return from_loc_rot_scale(location, rotation, scale);
+}
+
+
+
+
+
+
+
+
+

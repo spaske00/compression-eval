@@ -1,0 +1,31 @@
+#pragma once
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_GeomVolumeIn)
+VERTEX_IN(0, float3, pos)
+GPU_SHADER_CREATE_END()
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_GeomVolume)
+ADDITIONAL_INFO(draw_volume_infos)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_geom_volume_infos_)
+BUILTINS(BuiltinBits::CLIP_CONTROL)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_GeomVolume)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Model)
+ADDITIONAL_INFO(draw_Infos)
+ADDITIONAL_INFO(draw_Resource)
+ADDITIONAL_INFO(eevee_GeomVolumeIn)
+GPU_SHADER_CREATE_END()
+

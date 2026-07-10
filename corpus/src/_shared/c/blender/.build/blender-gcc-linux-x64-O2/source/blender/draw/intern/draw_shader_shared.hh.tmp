@@ -1,0 +1,716 @@
+#line 1 "draw_shader_shared.hh"
+ 
+#line 60
+#define DRW_SHADER_SHARED_H
+
+#define DRW_RESOURCE_CHUNK_LEN 512
+#line 65
+#define DRW_GRID_PER_VOLUME_MAX 16
+#line 69
+#define DRW_ATTRIBUTE_PER_CURVES_MAX 15
+#line 75
+#if !defined(DRW_VIEW_LEN) && !defined(GLSL_CPP_STUBS)
+
+#  define drw_view_id 0
+#  define DRW_VIEW_LEN 1
+#  define DRW_VIEW_SHIFT 0
+#  define DRW_VIEW_FROM_RESOURCE_ID
+#else
+#line 87
+uint drw_view_id = 0;
+#line 93
+#  define DRW_VIEW_SHIFT \
+    ((DRW_VIEW_LEN > 32) ? 6 : \
+     (DRW_VIEW_LEN > 16) ? 5 : \
+     (DRW_VIEW_LEN > 8)  ? 4 : \
+     (DRW_VIEW_LEN > 4)  ? 3 : \
+     (DRW_VIEW_LEN > 2)  ? 2 : \
+                           1)
+#  define DRW_VIEW_MASK ~(0xFFFFFFFFu << DRW_VIEW_SHIFT)
+#  define DRW_VIEW_FROM_RESOURCE_ID drw_view_id = (drw_resource_id_raw() & DRW_VIEW_MASK)
+#endif
+#line 105
+#define FrustumCorners_host_shared_ FrustumCorners
+#define FrustumCorners_host_shared_uniform_ FrustumCorners
+#line 104
+struct                 FrustumCorners {
+  float4 corners[8];
+};
+#line 104
+                                              FrustumCorners FrustumCorners_ctor_() {FrustumCorners r;r.corners[0]=float4(0);r.corners[1]=float4(0);r.corners[2]=float4(0);r.corners[3]=float4(0);r.corners[4]=float4(0);r.corners[5]=float4(0);r.corners[6]=float4(0);r.corners[7]=float4(0);return r;}
+#line 109
+#define FrustumPlanes_host_shared_ FrustumPlanes
+#define FrustumPlanes_host_shared_uniform_ FrustumPlanes
+#line 108
+struct                 FrustumPlanes {
+#line 115
+  float4 planes[6];
+};
+#line 108
+                                             FrustumPlanes FrustumPlanes_ctor_() {FrustumPlanes r;r.planes[0]=float4(0);r.planes[1]=float4(0);r.planes[2]=float4(0);r.planes[3]=float4(0);r.planes[4]=float4(0);r.planes[5]=float4(0);return r;}
+#line 119
+#define ViewCullingData_host_shared_ ViewCullingData
+#define ViewCullingData_host_shared_uniform_ ViewCullingData
+#line 118
+struct                 ViewCullingData {
+#line 121
+         FrustumCorners frustum_corners;
+         FrustumPlanes frustum_planes;
+  float4 bound_sphere;
+};
+#line 118
+                                               ViewCullingData ViewCullingData_ctor_() {ViewCullingData r;r.frustum_corners=FrustumCorners_ctor_();r.frustum_planes=FrustumPlanes_ctor_();r.bound_sphere=float4(0);return r;}
+#line 127
+#define ViewMatrices_host_shared_ ViewMatrices
+#define ViewMatrices_host_shared_uniform_ ViewMatrices
+#line 126
+struct                 ViewMatrices {
+  float4x4 viewmat;
+  float4x4 viewinv;
+  float4x4 winmat;
+  float4x4 wininv;
+#line 218
+#ifdef GPU_SHADER
+#endif
+#line 318
+};
+#line 335
+#ifndef GPU_METAL
+ViewMatrices ViewMatrices_ctor_();
+bool _is_perspective(const ViewMatrices this_);
+float3 _forward(const ViewMatrices this_);
+float3 _up(const ViewMatrices this_);
+float3 _position(const ViewMatrices this_);
+float _z_distance(const ViewMatrices this_, float3 P);
+float _far(const ViewMatrices this_);
+float _near(const ViewMatrices this_);
+float3 _world_incident_vector(const ViewMatrices this_, float3 P);
+float3 _view_incident_vector(const ViewMatrices this_, float3 vP);
+float _screen_to_ndc(const ViewMatrices this_, float ss_P);
+float2 _screen_to_ndc(const ViewMatrices this_, float2 ss_P);
+float3 _screen_to_ndc(const ViewMatrices this_, float3 ss_P);
+float _ndc_to_screen(const ViewMatrices this_, float ndc_P);
+float2 _ndc_to_screen(const ViewMatrices this_, float2 ndc_P);
+float3 _ndc_to_screen(const ViewMatrices this_, float3 ndc_P);
+float3 _normal_view_to_world(const ViewMatrices this_, float3 vN);
+float3 _normal_world_to_view(const ViewMatrices this_, float3 N);
+float3 _perspective_divide(const ViewMatrices this_, float4 hs_P);
+float3 _point_view_to_world(const ViewMatrices this_, float3 vP);
+float4 _point_view_to_homogenous(const ViewMatrices this_, float3 vP);
+float3 _point_view_to_ndc(const ViewMatrices this_, float3 vP);
+float3 _point_world_to_view(const ViewMatrices this_, float3 P);
+float4 _point_world_to_homogenous(const ViewMatrices this_, float3 P);
+float3 _point_world_to_ndc(const ViewMatrices this_, float3 P);
+float3 _point_ndc_to_view(const ViewMatrices this_, float3 ssP);
+float3 _point_ndc_to_world(const ViewMatrices this_, float3 ssP);
+float3 _point_view_to_screen(const ViewMatrices this_, float3 vP);
+float3 _point_world_to_screen(const ViewMatrices this_, float3 vP);
+float3 _point_screen_to_view(const ViewMatrices this_, float3 ssP);
+float3 _point_screen_to_world(const ViewMatrices this_, float3 ssP);
+float _depth_view_to_screen(const ViewMatrices this_, float v_depth);
+float _depth_screen_to_view(const ViewMatrices this_, float ss_depth);
+#endif
+#line 126
+                                            ViewMatrices ViewMatrices_ctor_() {ViewMatrices r;r.viewmat=float4x4(0);r.viewinv=float4x4(0);r.winmat=float4x4(0);r.wininv=float4x4(0);return r;}
+#line 133
+  bool _is_perspective(const ViewMatrices this_)
+  {
+    return this_.winmat[3][3] == 0.0f;
+  }
+#line 139
+  float3 _forward(const ViewMatrices this_)
+  {
+    return this_.viewinv[2].xyz  ;
+  }
+#line 145
+  float3 _up(const ViewMatrices this_)
+  {
+    return this_.viewinv[1].xyz  ;
+  }
+#line 151
+  float3 _position(const ViewMatrices this_)
+  {
+    return this_.viewinv[3].xyz  ;
+  }
+#line 157
+  float _z_distance(const ViewMatrices this_, float3 P)
+  {
+    return dot(P - _position(this_), -_forward(this_));
+  }
+#line 163
+  float _far(const ViewMatrices this_)
+  {
+    if (_is_perspective(this_)) {
+      return -this_.winmat[3][2] / (this_.winmat[2][2] + 1.0f);
+    }
+    return -(this_.winmat[3][2] - 1.0f) / this_.winmat[2][2];
+  }
+#line 172
+  float _near(const ViewMatrices this_)
+  {
+    if (_is_perspective(this_)) {
+      return -this_.winmat[3][2] / (this_.winmat[2][2] - 1.0f);
+    }
+    return -(this_.winmat[3][2] + 1.0f) / this_.winmat[2][2];
+  }
+#line 184
+  float3 _world_incident_vector(const ViewMatrices this_, float3 P)
+  {
+    return _is_perspective(this_) ? normalize(_position(this_) - P) : _forward(this_);
+  }
+#line 193
+  float3 _view_incident_vector(const ViewMatrices this_, float3 vP)
+  {
+    return _is_perspective(this_) ? normalize(-vP) : float3(0.0f, 0.0f, 1.0f);
+  }
+#line 201
+float _screen_to_ndc(const ViewMatrices this_, float ss_P)
+  {
+    return ss_P * 2.0f - 1.0f;
+  }
+#line 201
+float2 _screen_to_ndc(const ViewMatrices this_, float2 ss_P)
+  {
+    return ss_P * 2.0f - 1.0f;
+  }
+#line 201
+float3 _screen_to_ndc(const ViewMatrices this_, float3 ss_P)
+  {
+    return ss_P * 2.0f - 1.0f;
+  }
+#line 209
+float _ndc_to_screen(const ViewMatrices this_, float ndc_P)
+  {
+    return ndc_P * 0.5f + 0.5f;
+  }
+#line 209
+float2 _ndc_to_screen(const ViewMatrices this_, float2 ndc_P)
+  {
+    return ndc_P * 0.5f + 0.5f;
+  }
+#line 209
+float3 _ndc_to_screen(const ViewMatrices this_, float3 ndc_P)
+  {
+    return ndc_P * 0.5f + 0.5f;
+  }
+#line 219
+  float3 _normal_view_to_world(const ViewMatrices this_, float3 vN)
+  {
+    return (to_float3x3(this_.viewinv) * vN);
+  }
+#line 224
+  float3 _normal_world_to_view(const ViewMatrices this_, float3 N)
+  {
+    return (to_float3x3(this_.viewmat) * N);
+  }
+#line 236
+  float3 _perspective_divide(const ViewMatrices this_, float4 hs_P)
+  {
+    return hs_P.xyz   / hs_P.w;
+  }
+#line 241
+  float3 _point_view_to_world(const ViewMatrices this_, float3 vP)
+  {
+    return (this_.viewinv * float4(vP, 1.0f)).xyz  ;
+  }
+#line 246
+  float4 _point_view_to_homogenous(const ViewMatrices this_, float3 vP)
+  {
+    return (this_.winmat * float4(vP, 1.0f));
+  }
+#line 251
+  float3 _point_view_to_ndc(const ViewMatrices this_, float3 vP)
+  {
+    return _perspective_divide(this_, _point_view_to_homogenous(this_, vP));
+  }
+#line 256
+  float3 _point_world_to_view(const ViewMatrices this_, float3 P)
+  {
+    return (this_.viewmat * float4(P, 1.0f)).xyz  ;
+  }
+#line 261
+  float4 _point_world_to_homogenous(const ViewMatrices this_, float3 P)
+  {
+    return (this_.winmat * (this_.viewmat * float4(P, 1.0f)));
+  }
+#line 266
+  float3 _point_world_to_ndc(const ViewMatrices this_, float3 P)
+  {
+    return _perspective_divide(this_, _point_world_to_homogenous(this_, P));
+  }
+#line 271
+  float3 _point_ndc_to_view(const ViewMatrices this_, float3 ssP)
+  {
+    return _perspective_divide(this_, this_.wininv * float4(ssP, 1.0f));
+  }
+#line 276
+  float3 _point_ndc_to_world(const ViewMatrices this_, float3 ssP)
+  {
+    return _point_view_to_world(this_, _point_ndc_to_view(this_, ssP));
+  }
+#line 287
+  float3 _point_view_to_screen(const ViewMatrices this_, float3 vP)
+  {
+    return _ndc_to_screen(this_, _point_view_to_ndc(this_, vP));
+  }
+#line 292
+  float3 _point_world_to_screen(const ViewMatrices this_, float3 vP)
+  {
+    return _ndc_to_screen(this_, _point_world_to_ndc(this_, vP));
+  }
+#line 297
+  float3 _point_screen_to_view(const ViewMatrices this_, float3 ssP)
+  {
+    return _point_ndc_to_view(this_, _screen_to_ndc(this_, ssP));
+  }
+#line 302
+  float3 _point_screen_to_world(const ViewMatrices this_, float3 ssP)
+  {
+    return _point_view_to_world(this_, _point_screen_to_view(this_, ssP));
+  }
+#line 307
+  float _depth_view_to_screen(const ViewMatrices this_, float v_depth)
+  {
+    return _point_view_to_screen(this_, float3(0.0f, 0.0f, v_depth)).z;
+  }
+#line 312
+  float _depth_screen_to_view(const ViewMatrices this_, float ss_depth)
+  {
+    return _point_screen_to_view(this_, float3(0.0f, 0.0f, ss_depth)).z;
+  }
+#line 334
+#define ObjectMatrices_host_shared_ ObjectMatrices
+#define ObjectMatrices_host_shared_uniform_ ObjectMatrices
+#line 333
+struct                 ObjectMatrices {
+  float4x4 model;
+  float4x4 model_inverse;
+#line 342
+#ifdef GPU_SHADER
+#endif
+#line 371
+#ifdef GPU_SHADER
+#endif
+#line 432
+};
+#line 436
+#ifndef GPU_METAL
+ObjectMatrices ObjectMatrices_ctor_();
+float3x3 _normal(const ObjectMatrices this_);
+float3x3 _normal_inverse(const ObjectMatrices this_);
+float3 _normal_object_to_world(const ObjectMatrices this_, float3 lN);
+float3 _normal_world_to_object(const ObjectMatrices this_, float3 N);
+float3 _normal_object_to_view(const ObjectMatrices this_, ViewMatrices view, float3 lN);
+float3 _normal_view_to_object(const ObjectMatrices this_, ViewMatrices view, float3 vN);
+float3 _point_object_to_world(const ObjectMatrices this_, float3 lP);
+float3 _point_world_to_object(const ObjectMatrices this_, float3 P);
+float3 _point_object_to_view(const ObjectMatrices this_, ViewMatrices view, float3 lP);
+float3 _point_view_to_object(const ObjectMatrices this_, ViewMatrices view, float3 vP);
+float4 _point_object_to_homogenous(const ObjectMatrices this_, ViewMatrices view, float3 lP);
+float3 _point_object_to_ndc(const ObjectMatrices this_, ViewMatrices view, float3 lP);
+#endif
+#line 333
+                                              ObjectMatrices ObjectMatrices_ctor_() {ObjectMatrices r;r.model=float4x4(0);r.model_inverse=float4x4(0);return r;}
+#line 355
+  float3x3 _normal(const ObjectMatrices this_)
+  {
+    return transpose(to_float3x3(this_.model_inverse));
+  }
+  float3x3 _normal_inverse(const ObjectMatrices this_)
+  {
+    return transpose(to_float3x3(this_.model));
+  }
+#line 372
+  float3 _normal_object_to_world(const ObjectMatrices this_, float3 lN)
+  {
+    return _normal(this_) * lN;
+  }
+#line 377
+  float3 _normal_world_to_object(const ObjectMatrices this_, float3 N)
+  {
+    return _normal_inverse(this_) * N;
+  }
+#line 382
+  float3 _normal_object_to_view(const ObjectMatrices this_, ViewMatrices view, float3 lN)
+  {
+    return to_float3x3(view.viewmat) * (_normal(this_) * lN);
+  }
+#line 387
+  float3 _normal_view_to_object(const ObjectMatrices this_, ViewMatrices view, float3 vN)
+  {
+    return _normal_inverse(this_) * (to_float3x3(view.viewinv) * vN);
+  }
+#line 401
+  float3 _point_object_to_world(const ObjectMatrices this_, float3 lP)
+  {
+    return (this_.model * float4(lP, 1.0f)).xyz  ;
+  }
+#line 406
+  float3 _point_world_to_object(const ObjectMatrices this_, float3 P)
+  {
+    return (this_.model_inverse * float4(P, 1.0f)).xyz  ;
+  }
+#line 411
+  float3 _point_object_to_view(const ObjectMatrices this_, ViewMatrices view, float3 lP)
+  {
+    return (view.viewmat * (this_.model * float4(lP, 1.0f))).xyz  ;
+  }
+#line 416
+  float3 _point_view_to_object(const ObjectMatrices this_, ViewMatrices view, float3 vP)
+  {
+    return (this_.model_inverse * (view.viewinv * float4(vP, 1.0f))).xyz  ;
+  }
+#line 421
+  float4 _point_object_to_homogenous(const ObjectMatrices this_, ViewMatrices view, float3 lP)
+  {
+    return view.winmat * (view.viewmat * (this_.model * float4(lP, 1.0f)));
+  }
+#line 426
+  float3 _point_object_to_ndc(const ObjectMatrices this_, ViewMatrices view, float3 lP)
+  {
+    return _perspective_divide(view, _point_object_to_homogenous(this_, view, lP));
+  }
+#line 435
+constant static constexpr uint32_t OBJECT_SELECTED = (1u << 0u);
+constant static constexpr uint32_t OBJECT_FROM_DUPLI = (1u << 1u);
+constant static constexpr uint32_t OBJECT_FROM_SET = (1u << 2u);
+constant static constexpr uint32_t OBJECT_ACTIVE = (1u << 3u);
+constant static constexpr uint32_t OBJECT_NEGATIVE_SCALE = (1u << 4u);
+constant static constexpr uint32_t OBJECT_HOLDOUT = (1u << 5u);
+#line 443
+constant static constexpr uint32_t OBJECT_ACTIVE_EDIT_MODE = (1u << 6u);
+#line 445
+constant static constexpr uint32_t OBJECT_NO_INFO = ~OBJECT_HOLDOUT;
+
+#define eObjectInfoFlag uint32_t
+#line 434
+
+#define eObjectInfoFlag_host_shared_ eObjectInfoFlag
+#line 434
+
+eObjectInfoFlag eObjectInfoFlag_ctor_() { return eObjectInfoFlag(0); }
+#line 453
+#define ObjectInfos_host_shared_ ObjectInfos
+#define ObjectInfos_host_shared_uniform_ ObjectInfos
+#line 452
+struct                 ObjectInfos {
+
+  packed_float3 orco_add;
+  uint object_attrs_offset;
+  packed_float3 orco_mul;
+  uint object_attrs_len;
+
+  float4 ob_color;
+  uint index;
+
+  uint light_and_shadow_set_membership;
+  float random;
+       eObjectInfoFlag flag;
+  float shadow_terminator_normal_offset;
+  float shadow_terminator_geometry_offset;
+  float _pad1;
+  float _pad2;
+#line 474
+};
+#line 452
+                                           ObjectInfos ObjectInfos_ctor_() {ObjectInfos r;r.orco_add=packed_float3(0);r.object_attrs_offset=0u;r.orco_mul=packed_float3(0);r.object_attrs_len=0u;r.ob_color=float4(0);r.index=0u;r.light_and_shadow_set_membership=0u;r.random=0.0f;r.flag=eObjectInfoFlag_ctor_();r.shadow_terminator_normal_offset=0.0f;r.shadow_terminator_geometry_offset=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 476
+uint receiver_light_set_get(ObjectInfos object_infos)
+{
+  return object_infos.light_and_shadow_set_membership & 0xFFu;
+}
+
+       uint blocker_shadow_set_get(ObjectInfos object_infos)
+{
+  return (object_infos.light_and_shadow_set_membership >> 8u) & 0xFFu;
+}
+#line 487
+#define ObjectBounds_host_shared_ ObjectBounds
+#define ObjectBounds_host_shared_uniform_ ObjectBounds
+#line 486
+struct                 ObjectBounds {
+#line 491
+  float4 bounding_corners[4];
+
+  float4 bounding_sphere;
+
+#define _inner_sphere_radius bounding_corners[3].w
+#line 502
+};
+#line 486
+                                            ObjectBounds ObjectBounds_ctor_() {ObjectBounds r;r.bounding_sphere=float4(0);r.bounding_corners[0]=float4(0);r.bounding_corners[1]=float4(0);r.bounding_corners[2]=float4(0);r.bounding_corners[3]=float4(0);return r;}
+#line 508
+bool drw_bounds_corners_are_valid(ObjectBounds bounds)
+{
+  return bounds.bounding_sphere.w != -1.0f;
+}
+#line 516
+       bool drw_bounds_are_valid(ObjectBounds bounds)
+{
+  return bounds.bounding_sphere.w >= 0.0f;
+}
+#line 528
+#define VolumeInfos_host_shared_ VolumeInfos
+#define VolumeInfos_host_shared_uniform_ VolumeInfos
+#line 527
+struct                 VolumeInfos {
+
+  float4x4 grids_xform[DRW_GRID_PER_VOLUME_MAX];
+
+  float4 color_mul;
+  float density_scale;
+  float temperature_mul;
+  float temperature_bias;
+  float _pad;
+};
+#line 527
+                                           VolumeInfos VolumeInfos_ctor_() {VolumeInfos r;r.color_mul=float4(0);r.density_scale=0.0f;r.temperature_mul=0.0f;r.temperature_bias=0.0f;r._pad=0.0f;for(int i=0;i < DRW_GRID_PER_VOLUME_MAX;i++){r.grids_xform[i]=float4x4(0);}return r;}
+#line 539
+#define CurvesInfos_host_shared_ CurvesInfos
+#define CurvesInfos_host_shared_uniform_ CurvesInfos
+#line 538
+struct                 CurvesInfos {
+#line 543
+  uint4 is_point_attribute[DRW_ATTRIBUTE_PER_CURVES_MAX];
+#line 546
+  uint vertex_per_segment;
+
+  uint half_cylinder_face_count;
+  uint _pad0;
+  uint _pad1;
+};
+#line 538
+                                           CurvesInfos CurvesInfos_ctor_() {CurvesInfos r;r.vertex_per_segment=0u;r.half_cylinder_face_count=0u;r._pad0=0u;r._pad1=0u;for(int i=0;i < DRW_ATTRIBUTE_PER_CURVES_MAX;i++){r.is_point_attribute[i]=uint4(0);}return r;}
+#line 553
+#pragma pack(push, 4)
+
+#define ObjectAttribute_host_shared_ ObjectAttribute
+#line 554
+struct                 ObjectAttribute {
+#line 557
+  float data_x;
+  float data_y;
+  float data_z;
+  float data_w;
+  uint hash_code;
+#line 573
+};
+#line 554
+                                               ObjectAttribute ObjectAttribute_ctor_() {ObjectAttribute r;r.data_x=0.0f;r.data_y=0.0f;r.data_z=0.0f;r.data_w=0.0f;r.hash_code=0u;return r;}
+#line 574
+#pragma pack(pop)
+#line 577
+BLI_STATIC_ASSERT_ALIGN(ObjectAttribute, 20)
+#line 580
+#define LayerAttribute_host_shared_ LayerAttribute
+#define LayerAttribute_host_shared_uniform_ LayerAttribute
+#line 579
+struct                 LayerAttribute {
+  float4 data;
+  uint hash_code;
+  uint buffer_length;
+  uint _pad1;
+  uint _pad2;
+#line 589
+};
+#line 579
+                                              LayerAttribute LayerAttribute_ctor_() {LayerAttribute r;r.data=float4(0);r.hash_code=0u;r.buffer_length=0u;r._pad1=0u;r._pad2=0u;return r;}
+#line 599
+#define DrawCommandArray_host_shared_ DrawCommandArray
+#define DrawCommandArray_host_shared_uniform_ DrawCommandArray
+#line 598
+struct                 DrawCommandArray {
+  uint vertex_len;
+  uint instance_len;
+  uint vertex_first;
+  uint instance_first;
+
+  uint _pad0;
+  uint _pad1;
+  uint _pad2;
+  uint _pad3;
+};
+#line 598
+                                                DrawCommandArray DrawCommandArray_ctor_() {DrawCommandArray r;r.vertex_len=0u;r.instance_len=0u;r.vertex_first=0u;r.instance_first=0u;r._pad0=0u;r._pad1=0u;r._pad2=0u;r._pad3=0u;return r;}
+#line 612
+#define DrawCommandIndexed_host_shared_ DrawCommandIndexed
+#define DrawCommandIndexed_host_shared_uniform_ DrawCommandIndexed
+#line 611
+struct                 DrawCommandIndexed {
+  uint vertex_len;
+  uint instance_len;
+  uint vertex_first;
+  uint base_index;
+
+  uint instance_first;
+  uint _pad0;
+  uint _pad1;
+  uint _pad2;
+};
+#line 611
+                                                  DrawCommandIndexed DrawCommandIndexed_ctor_() {DrawCommandIndexed r;r.vertex_len=0u;r.instance_len=0u;r.vertex_first=0u;r.base_index=0u;r.instance_first=0u;r._pad0=0u;r._pad1=0u;r._pad2=0u;return r;}
+#line 624
+
+#define DrawCommand_union0_host_shared_ DrawCommand_union0
+#define DrawCommand_union0_host_shared_uniform_ DrawCommand_union0
+#line 624
+struct                 DrawCommand_union0 {
+  float4 data0;
+  float4 data1;
+
+};
+#line 624
+                                                  DrawCommand_union0 DrawCommand_union0_ctor_() {DrawCommand_union0 r;r.data0=float4(0);r.data1=float4(0);return r;}
+#line 623
+
+#define DrawCommand_host_shared_ DrawCommand
+#define DrawCommand_host_shared_uniform_ DrawCommand
+#line 623
+struct                 DrawCommand {
+         DrawCommand_union0 union0;
+#line 676
+};
+#line 680
+#ifndef GPU_METAL
+DrawCommand DrawCommand_ctor_();
+DrawCommandArray _array(const DrawCommand this_);
+void _array_set_(_ref(DrawCommand ,this_), DrawCommandArray value);
+DrawCommandIndexed _indexed(const DrawCommand this_);
+void _indexed_set_(_ref(DrawCommand ,this_), DrawCommandIndexed value);
+#endif
+#line 623
+                                           DrawCommand DrawCommand_ctor_() {DrawCommand r;r.union0=DrawCommand_union0_ctor_();return r;}
+#line 629
+DrawCommandArray _array(const DrawCommand this_)       {
+  DrawCommandArray val;
+  val.vertex_len = floatBitsToUint(this_.union0.data0.x);
+  val.instance_len = floatBitsToUint(this_.union0.data0.y);
+  val.vertex_first = floatBitsToUint(this_.union0.data0.z);
+  val.instance_first = floatBitsToUint(this_.union0.data0.w);
+  val._pad0 = floatBitsToUint(this_.union0.data1.x);
+  val._pad1 = floatBitsToUint(this_.union0.data1.y);
+  val._pad2 = floatBitsToUint(this_.union0.data1.z);
+  val._pad3 = floatBitsToUint(this_.union0.data1.w);
+  return val;
+}
+#line 642
+void _array_set_(_ref(DrawCommand ,this_), DrawCommandArray value) {
+  this_.union0.data0.x = uintBitsToFloat(value.vertex_len);
+  this_.union0.data0.y = uintBitsToFloat(value.instance_len);
+  this_.union0.data0.z = uintBitsToFloat(value.vertex_first);
+  this_.union0.data0.w = uintBitsToFloat(value.instance_first);
+  this_.union0.data1.x = uintBitsToFloat(value._pad0);
+  this_.union0.data1.y = uintBitsToFloat(value._pad1);
+  this_.union0.data1.z = uintBitsToFloat(value._pad2);
+  this_.union0.data1.w = uintBitsToFloat(value._pad3);
+}
+#line 653
+DrawCommandIndexed _indexed(const DrawCommand this_)       {
+  DrawCommandIndexed val;
+  val.vertex_len = floatBitsToUint(this_.union0.data0.x);
+  val.instance_len = floatBitsToUint(this_.union0.data0.y);
+  val.vertex_first = floatBitsToUint(this_.union0.data0.z);
+  val.base_index = floatBitsToUint(this_.union0.data0.w);
+  val.instance_first = floatBitsToUint(this_.union0.data1.x);
+  val._pad0 = floatBitsToUint(this_.union0.data1.y);
+  val._pad1 = floatBitsToUint(this_.union0.data1.z);
+  val._pad2 = floatBitsToUint(this_.union0.data1.w);
+  return val;
+}
+#line 666
+void _indexed_set_(_ref(DrawCommand ,this_), DrawCommandIndexed value) {
+  this_.union0.data0.x = uintBitsToFloat(value.vertex_len);
+  this_.union0.data0.y = uintBitsToFloat(value.instance_len);
+  this_.union0.data0.z = uintBitsToFloat(value.vertex_first);
+  this_.union0.data0.w = uintBitsToFloat(value.base_index);
+  this_.union0.data1.x = uintBitsToFloat(value.instance_first);
+  this_.union0.data1.y = uintBitsToFloat(value._pad0);
+  this_.union0.data1.z = uintBitsToFloat(value._pad1);
+  this_.union0.data1.w = uintBitsToFloat(value._pad2);
+}
+#line 679
+#define DispatchCommand_host_shared_ DispatchCommand
+#define DispatchCommand_host_shared_uniform_ DispatchCommand
+#line 678
+struct                 DispatchCommand {
+  uint num_groups_x;
+  uint num_groups_y;
+  uint num_groups_z;
+  uint _pad0;
+};
+#line 678
+                                               DispatchCommand DispatchCommand_ctor_() {DispatchCommand r;r.num_groups_x=0u;r.num_groups_y=0u;r.num_groups_z=0u;r._pad0=0u;return r;}
+#line 692
+#define DRWDebugVertPair_host_shared_ DRWDebugVertPair
+#define DRWDebugVertPair_host_shared_uniform_ DRWDebugVertPair
+#line 691
+struct                 DRWDebugVertPair {
+#line 694
+  uint pos1_x;
+  uint pos1_y;
+  uint pos1_z;
+
+  uint vert_color;
+
+  uint pos2_x;
+  uint pos2_y;
+  uint pos2_z;
+
+  uint lifetime;
+};
+#line 691
+                                                DRWDebugVertPair DRWDebugVertPair_ctor_() {DRWDebugVertPair r;r.pos1_x=0u;r.pos1_y=0u;r.pos1_z=0u;r.vert_color=0u;r.pos2_x=0u;r.pos2_y=0u;r.pos2_z=0u;r.lifetime=0u;return r;}
+#line 707
+DRWDebugVertPair debug_line_make(uint in_pos1_x,
+                                        uint in_pos1_y,
+                                        uint in_pos1_z,
+                                        uint in_pos2_x,
+                                        uint in_pos2_y,
+                                        uint in_pos2_z,
+                                        uint in_vert_color,
+                                        uint in_lifetime)
+{
+  DRWDebugVertPair debug_vert;
+  debug_vert.pos1_x = in_pos1_x;
+  debug_vert.pos1_y = in_pos1_y;
+  debug_vert.pos1_z = in_pos1_z;
+  debug_vert.pos2_x = in_pos2_x;
+  debug_vert.pos2_y = in_pos2_y;
+  debug_vert.pos2_z = in_pos2_z;
+  debug_vert.vert_color = in_vert_color;
+  debug_vert.lifetime = in_lifetime;
+  return debug_vert;
+}
+
+       uint debug_color_pack(float4 v_color)
+{
+  v_color = clamp(v_color, 0.0f, 1.0f);
+  uint result = 0;
+  result |= uint(v_color.x * 255.0) << 0u;
+  result |= uint(v_color.y * 255.0) << 8u;
+  result |= uint(v_color.z * 255.0) << 16u;
+  result |= uint(v_color.w * 255.0) << 24u;
+  return result;
+}
+#line 740
+#define DRW_DEBUG_DRAW_VERT_MAX (2 * 1024) - 1
+#line 745
+#define DRWDebugDrawBuffer_host_shared_ DRWDebugDrawBuffer
+#define DRWDebugDrawBuffer_host_shared_uniform_ DRWDebugDrawBuffer
+#line 744
+struct                 DRWDebugDrawBuffer {
+         DrawCommand command;
+         DRWDebugVertPair verts[DRW_DEBUG_DRAW_VERT_MAX];
+};
+#line 744
+                                                  DRWDebugDrawBuffer DRWDebugDrawBuffer_ctor_() {DRWDebugDrawBuffer r;r.command=DrawCommand_ctor_();for(int i=0;i < DRW_DEBUG_DRAW_VERT_MAX;i++){r.verts[i]=DRWDebugVertPair_ctor_();}return r;}
+#line 750
+#define drw_debug_draw_v_count(buf) buf[0].pos1_x
+#line 755
+#define drw_debug_draw_offset 1
+
+
+
+
+
+

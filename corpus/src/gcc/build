@@ -45,7 +45,7 @@ function move_bins ()
 }
 
 status=0
-loop_dirs make_all gcc g++ || status=$?
+COMPILER_LABEL=gcc loop_dirs make_all gcc-14 g++-14 || status=$?
 loop_dirs move_bins || status=$?
 
 unset arch

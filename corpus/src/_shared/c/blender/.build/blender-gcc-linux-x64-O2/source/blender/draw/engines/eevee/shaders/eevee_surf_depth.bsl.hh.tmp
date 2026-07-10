@@ -1,0 +1,242 @@
+#line 1 "eevee_surf_depth.bsl.hh"
+ 
+#line 13
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+FRAGMENT_SHADER_CREATE_INFO(eevee_clip_plane)
+FRAGMENT_SHADER_CREATE_INFO(eevee_geom_iface_info)
+#line 25
+float4 closure_to_rgba_depth(Closure _0)
+{
+  float4 out_color;
+  out_color.rgb = g_emission;
+  out_color.a = saturate(1.0f - average(g_transmittance));
+#line 32
+  closure_weights_reset(0.0f);
+
+  return out_color;
+}
+#line 39
+#define access_eevee_SurfaceDepth_eevee_geom_iface_info() eevee_geom_iface_info
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfaceDepth
+CREATE_INFO_RES_PASS_eevee_SurfaceDepth
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfaceDepth
+CREATE_INFO_RES_BATCH_eevee_SurfaceDepth
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfaceDepth
+CREATE_INFO_RES_GEOMETRY_eevee_SurfaceDepth
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceDepth
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceDepth
+#endif
+#line 39
+struct eevee_SurfaceDepth {
+#line 49
+int _pad;};
+#line 57
+#ifndef GPU_METAL
+eevee_SurfaceDepth eevee_SurfaceDepth_ctor_();
+eevee_SurfaceDepth eevee_SurfaceDepth_new_();
+#endif
+#line 39
+                                  eevee_SurfaceDepth eevee_SurfaceDepth_ctor_() {eevee_SurfaceDepth r;r._pad=0;return r;}
+#line 42
+       eevee_SurfaceDepth eevee_SurfaceDepth_new_()
+{
+  eevee_SurfaceDepth result;
+  result._pad = 0;
+  return result;
+#line 40
+}
+#line 48
+struct eevee_SurfaceDepthFragOutTfalse {
+                                          float4 normal;
+                                         uint object_id;
+};
+#line 48
+                                                          eevee_SurfaceDepthFragOutTfalse eevee_SurfaceDepthFragOutTfalse_ctor_() {eevee_SurfaceDepthFragOutTfalse r;r.normal=float4(0);r.object_id=0u;return r;}
+#line 53
+struct eevee_SurfaceDepthFragOutTtrue {
+                                          float4 normal;
+                                         uint object_id;
+                                            float4 velocity;
+};
+#line 53
+                                                         eevee_SurfaceDepthFragOutTtrue eevee_SurfaceDepthFragOutTtrue_ctor_() {eevee_SurfaceDepthFragOutTtrue r;r.normal=float4(0);r.object_id=0u;r.velocity=float4(0);return r;}
+#line 60
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_SurfaceDepth) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_draw_View)
+#line 60
+
+#if defined(ENTRY_POINT_eevee_surf_depthTtrue)
+#line 60
+
+void eevee_surf_depthTtrue(
+#line 69
+                                                      )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 70
+  eevee_PipelineConstants pipe = eevee_PipelineConstants_ctor_(); eevee_SurfaceDepth _0 = eevee_SurfaceDepth_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture _1 = UtilityTexture_ctor_(); draw_View views = draw_View_ctor_();
+
+#if SRT_CONSTANT_use_transparency
+#line 71
+                                                                               {
+    const ViewMatrices view = _get(views, 0);
+
+    init_globals(uni, view, gl_FrontFacing);
+
+    nodetree_surface(0.0f);
+
+    float noise_offset = _rng_1D_get(sampling, SAMPLING_TRANSPARENCY);
+    float threshold = eevee_hashed_transparency_alpha_threshold(
+        srt_access(eevee_Uniform, pipeline_buf).alpha_hash_scale, noise_offset, g_data.P);
+
+    float transparency = average(g_transmittance);
+    if (transparency > threshold) {
+      gpu_discard_fragment();
+      return;
+    }
+  }
+#endif
+
+#if SRT_CONSTANT_use_clip_plane
+#line 89
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_clip_plane)
+#line 94
+    if (interface_get(eevee_clip_plane, clip_interp).clip_distance > 0.0f) {
+      gpu_discard_fragment();
+      return;
+    }
+
+#endif
+#line 98
+  }
+#endif
+
+#if 1
+#line 100
+                                       {
+
+#if SRT_CONSTANT_use_velocity
+#line 101
+                                                                             {
+#line 104
+#if defined(CREATE_INFO_eevee_GeometryVelocity)
+#line 103
+
+#if defined(CREATE_INFO_eevee_velocity_iface_info)
+#line 107
+      eevee_SurfaceDepthFragOutTtrue_velocity = _surface_velocity(srt_access(eevee_GeometryVelocity, camera), interp.P + interface_get(eevee_velocity_iface_info, motion).prev, interp.P, interp.P + interface_get(eevee_velocity_iface_info, motion).next);
+      eevee_SurfaceDepthFragOutTtrue_velocity = eevee_velocity_pack(eevee_SurfaceDepthFragOutTtrue_velocity);
+
+#endif
+
+#endif
+#line 110
+    }
+
+#endif
+#line 111
+  }
+#endif
+#line 114
+  eevee_SurfaceDepthFragOutTtrue_normal.rgb = normalize(interp.N) * 0.5f + 0.5f;
+  eevee_SurfaceDepthFragOutTtrue_object_id = interp_flat.resource_id_raw & uint(0xFFFF);
+
+#endif
+#line 116
+}
+#endif
+#endif
+#line 60
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_SurfaceDepth) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_draw_View)
+#line 60
+
+#if defined(ENTRY_POINT_eevee_surf_depthTfalse)
+#line 60
+
+void eevee_surf_depthTfalse(
+#line 69
+                                                      )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 70
+  eevee_PipelineConstants pipe = eevee_PipelineConstants_ctor_(); eevee_SurfaceDepth _0 = eevee_SurfaceDepth_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture _1 = UtilityTexture_ctor_(); draw_View views = draw_View_ctor_();
+
+#if SRT_CONSTANT_use_transparency
+#line 71
+                                                                               {
+    const ViewMatrices view = _get(views, 0);
+
+    init_globals(uni, view, gl_FrontFacing);
+
+    nodetree_surface(0.0f);
+
+    float noise_offset = _rng_1D_get(sampling, SAMPLING_TRANSPARENCY);
+    float threshold = eevee_hashed_transparency_alpha_threshold(
+        srt_access(eevee_Uniform, pipeline_buf).alpha_hash_scale, noise_offset, g_data.P);
+
+    float transparency = average(g_transmittance);
+    if (transparency > threshold) {
+      gpu_discard_fragment();
+      return;
+    }
+  }
+#endif
+
+#if SRT_CONSTANT_use_clip_plane
+#line 89
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_clip_plane)
+#line 94
+    if (interface_get(eevee_clip_plane, clip_interp).clip_distance > 0.0f) {
+      gpu_discard_fragment();
+      return;
+    }
+
+#endif
+#line 98
+  }
+#endif
+
+#if 0
+#line 100
+                                        {
+
+#if SRT_CONSTANT_use_velocity
+#line 101
+                                                                             {
+#line 104
+#if defined(CREATE_INFO_eevee_GeometryVelocity)
+#line 103
+
+#if defined(CREATE_INFO_eevee_velocity_iface_info)
+#line 107
+      eevee_SurfaceDepthFragOutTfalse_velocity = _surface_velocity(srt_access(eevee_GeometryVelocity, camera), interp.P + interface_get(eevee_velocity_iface_info, motion).prev, interp.P, interp.P + interface_get(eevee_velocity_iface_info, motion).next);
+      eevee_SurfaceDepthFragOutTfalse_velocity = eevee_velocity_pack(eevee_SurfaceDepthFragOutTfalse_velocity);
+
+#endif
+
+#endif
+#line 110
+    }
+
+#endif
+#line 111
+  }
+#endif
+#line 114
+  eevee_SurfaceDepthFragOutTfalse_normal.rgb = normalize(interp.N) * 0.5f + 0.5f;
+  eevee_SurfaceDepthFragOutTfalse_object_id = interp_flat.resource_id_raw & uint(0xFFFF);
+
+#endif
+#line 116
+}
+#endif
+#endif
+#line 138

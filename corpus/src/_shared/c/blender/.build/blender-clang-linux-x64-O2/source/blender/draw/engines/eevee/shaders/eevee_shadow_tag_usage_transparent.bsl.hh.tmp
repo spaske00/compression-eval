@@ -1,0 +1,320 @@
+#line 1 "eevee_shadow_tag_usage_transparent.bsl.hh"
+ 
+#line 19
+struct eevee_shadow_usage_VertIn {
+                   float3 pos;
+};
+#line 19
+                                         eevee_shadow_usage_VertIn eevee_shadow_usage_VertIn_ctor_() {eevee_shadow_usage_VertIn r;r.pos=float3(0);return r;}
+#line 23
+struct eevee_shadow_usage_VertOut {
+             float3 P;
+             float3 vP;
+           float3 ls_aabb_min;
+           float3 ls_aabb_max;
+           uint resource_id;
+};
+#line 23
+                                          eevee_shadow_usage_VertOut eevee_shadow_usage_VertOut_ctor_() {eevee_shadow_usage_VertOut r;r.P=float3(0);r.vP=float3(0);r.ls_aabb_min=float3(0);r.ls_aabb_max=float3(0);r.resource_id=0u;return r;}
+#line 31
+#define access_eevee_shadow_usage_TagUsageTransparent_uniforms() eevee_Uniform_new_()
+#define access_eevee_shadow_usage_TagUsageTransparent_fb_resolution() fb_resolution
+#define access_eevee_shadow_usage_TagUsageTransparent_fb_lod() fb_lod
+#define access_eevee_shadow_usage_TagUsageTransparent_bounds_buf() bounds_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_usage_TagUsageTransparent
+CREATE_INFO_RES_PASS_eevee_shadow_usage_TagUsageTransparent
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_usage_TagUsageTransparent
+CREATE_INFO_RES_BATCH_eevee_shadow_usage_TagUsageTransparent
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_usage_TagUsageTransparent
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_usage_TagUsageTransparent
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_usage_TagUsageTransparent
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_usage_TagUsageTransparent
+#endif
+#line 31
+struct eevee_shadow_usage_TagUsageTransparent {
+                           eevee_Uniform  uniforms;
+#line 143
+};
+#line 147
+#ifndef GPU_METAL
+eevee_shadow_usage_TagUsageTransparent eevee_shadow_usage_TagUsageTransparent_ctor_();
+float _ray_aabb(eevee_shadow_usage_TagUsageTransparent  this_, float3 ray_origin, float3 ray_direction, float3 aabb_min, float3 aabb_max);
+float _pixel_size_at(eevee_shadow_usage_TagUsageTransparent  this_, const ViewMatrices view, float linear_depth);
+void _step_bounding_sphere(eevee_shadow_usage_TagUsageTransparent  this_, const ViewMatrices view,
+                            float3 vs_near_plane,
+                            float3 vs_view_direction,
+                            float near_t,
+                            float far_t,
+                            _ref(float3 ,sphere_center),
+                            _ref(float ,sphere_radius));
+void _inflate_bounds(
+      eevee_shadow_usage_TagUsageTransparent  this_, const ViewMatrices view, const ObjectMatrices obj, float3 ls_center, _ref(float3 ,P), _ref(float3 ,lP));
+eevee_shadow_usage_TagUsageTransparent eevee_shadow_usage_TagUsageTransparent_new_();
+#endif
+#line 31
+                                                      eevee_shadow_usage_TagUsageTransparent eevee_shadow_usage_TagUsageTransparent_ctor_() {eevee_shadow_usage_TagUsageTransparent r;r.uniforms=eevee_Uniform_ctor_();return r;}
+#line 39
+
+#if defined(CREATE_INFO_eevee_shadow_usage_TagUsageTransparent)
+#line 39
+  float _ray_aabb(eevee_shadow_usage_TagUsageTransparent  this_, float3 ray_origin, float3 ray_direction, float3 aabb_min, float3 aabb_max)
+  {
+
+    float3 t_mins = (aabb_min - ray_origin) / ray_direction;
+    float3 t_maxs = (aabb_max - ray_origin) / ray_direction;
+
+    float t_min = reduce_max(min(t_mins, t_maxs));
+    float t_max = reduce_min(max(t_mins, t_maxs));
+#line 49
+    if (t_max < 0.0f) {
+      return -1.0f;
+    }
+
+    if (t_min > t_max) {
+      return -1.0f;
+    }
+
+    if (t_min < 0.0f) {
+#line 60
+      return 0.0f;
+    }
+    return t_min;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_usage_TagUsageTransparent)
+#line 65
+  float _pixel_size_at(eevee_shadow_usage_TagUsageTransparent  this_, const ViewMatrices view, float linear_depth)
+  {
+#line 69
+    float pixel_size = srt_access(eevee_Uniform, uniform_buf).shadow.film_pixel_radius;
+    bool is_persp = (view.winmat[3][3] == 0.0f);
+    if (is_persp) {
+      pixel_size *= max(0.01f, linear_depth);
+    }
+    return pixel_size * exp2(float(srt_access(eevee_shadow_usage_TagUsageTransparent, fb_lod)));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_usage_TagUsageTransparent)
+#line 77
+  void _step_bounding_sphere(eevee_shadow_usage_TagUsageTransparent  this_, const ViewMatrices view,
+                            float3 vs_near_plane,
+                            float3 vs_view_direction,
+                            float near_t,
+                            float far_t,
+                            _ref(float3 ,sphere_center),
+                            _ref(float ,sphere_radius))
+  {
+    float near_pixel_size = _pixel_size_at(this_, view, near_t);
+    float3 near_center = vs_near_plane + vs_view_direction * near_t;
+
+    float far_pixel_size = _pixel_size_at(this_, view, far_t);
+    float3 far_center = vs_near_plane + vs_view_direction * far_t;
+
+    sphere_center = mix(near_center, far_center, 0.5f);
+    sphere_radius = 0;
+
+    for (int x = -1; x <= 1; x += 2) {
+      for (int y = -1; y <= 1; y += 2) {
+        float3 near_corner = near_center + (near_pixel_size * 0.5f * float3(x, y, 0));
+        sphere_radius = max(sphere_radius, length_squared(near_corner - sphere_center));
+
+        float3 far_corner = far_center + (far_pixel_size * 0.5f * float3(x, y, 0));
+        sphere_radius = max(sphere_radius, length_squared(far_corner - sphere_center));
+      }
+    }
+
+    sphere_center = _point_view_to_world(view, sphere_center);
+    sphere_radius = sqrt(sphere_radius);
+  }
+#endif
+#line 110
+
+#if defined(CREATE_INFO_eevee_shadow_usage_TagUsageTransparent)
+#line 110
+  void _inflate_bounds(
+      eevee_shadow_usage_TagUsageTransparent  this_, const ViewMatrices view, const ObjectMatrices obj, float3 ls_center, _ref(float3 ,P), _ref(float3 ,lP))
+  {
+#line 115
+    float3 vP = _point_world_to_view(view, P);
+
+    float inflate_scale = srt_access(eevee_Uniform, uniform_buf).shadow.film_pixel_radius * exp2(float(srt_access(eevee_shadow_usage_TagUsageTransparent, fb_lod)));
+    if (_is_perspective(view)) {
+      inflate_scale *= -vP.z;
+    }
+
+    inflate_scale *= 0.5f;
+
+    float3 ws_inflate_vector = _normal_object_to_world(obj, sign(lP - ls_center));
+    float3 vs_inflate_vector = _normal_view_to_world(view, ws_inflate_vector);
+    vs_inflate_vector.z = 0;
+
+    vs_inflate_vector /= reduce_max(abs(vs_inflate_vector.xy));
+    vs_inflate_vector *= inflate_scale;
+
+    vP += vs_inflate_vector;
+    P = _point_view_to_world(view, vP);
+    lP = _point_world_to_object(obj, P);
+  }
+#endif
+       eevee_shadow_usage_TagUsageTransparent eevee_shadow_usage_TagUsageTransparent_new_()
+{
+  eevee_shadow_usage_TagUsageTransparent result;
+  result.uniforms = eevee_Uniform_new_();
+  return result;
+#line 134
+}
+#line 138
+float eevee_shadow_usage_nextafter(float value)
+{
+  return uintBitsToFloat(floatBitsToUint(value) + 1);
+}
+#line 144
+#if defined(CREATE_INFO_eevee_shadow_usage_TagUsageTransparent) && defined(CREATE_INFO_eevee_shadow_usage_TagUsage) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_Resource)
+#line 143
+
+#if defined(ENTRY_POINT_eevee_shadow_usage_tag_usage_vert)
+#line 143
+
+void eevee_shadow_usage_tag_usage_vert(
+#line 153
+                                                     )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 154
+  eevee_shadow_usage_TagUsageTransparent srt = eevee_shadow_usage_TagUsageTransparent_ctor_(); eevee_shadow_usage_TagUsage _0 = eevee_shadow_usage_TagUsage_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_Resource res_id = draw_Resource_ctor_();
+  draw_ID id = _get(res_id, gpu_InstanceIndex);
+  uint resource_id = _resource_idT1(id);
+
+  const ObjectMatrices obj = _get(models, resource_id);
+  const ViewMatrices view = _get(views, 0);
+
+  eevee_shadow_usage_VertOut_P = float3(0.0);
+  eevee_shadow_usage_VertOut_vP = float3(0.0);
+  eevee_shadow_usage_VertOut_ls_aabb_min = float3(0.0);
+  eevee_shadow_usage_VertOut_ls_aabb_max = float3(0.0);
+  eevee_shadow_usage_VertOut_resource_id = resource_id;
+
+  ObjectBounds bounds = srt_access(eevee_shadow_usage_TagUsageTransparent, bounds_buf)[resource_id];
+  if (!drw_bounds_are_valid(bounds)) {
+
+    gl_Position = float4(NAN_FLT);
+    return;
+  }
+
+  Box box = shape_box(bounds.bounding_corners[0].xyz,
+                      bounds.bounding_corners[0].xyz + bounds.bounding_corners[1].xyz,
+                      bounds.bounding_corners[0].xyz + bounds.bounding_corners[2].xyz,
+                      bounds.bounding_corners[0].xyz + bounds.bounding_corners[3].xyz);
+
+  float3 ws_aabb_min = bounds.bounding_corners[0].xyz;
+  float3 ws_aabb_max = bounds.bounding_corners[0].xyz + bounds.bounding_corners[1].xyz +
+                       bounds.bounding_corners[2].xyz + bounds.bounding_corners[3].xyz;
+
+  float3 ls_center = _point_world_to_object(obj, midpoint(ws_aabb_min, ws_aabb_max));
+
+  float3 ls_conservative_min = float3(FLT_MAX);
+  float3 ls_conservative_max = float3(-FLT_MAX);
+
+  for (int i = 0; i < 8; i++) {
+    float3 P = box.corners[i];
+    float3 lP = _point_world_to_object(obj, P);
+    _inflate_bounds(srt, view, obj, ls_center, P, lP);
+
+    ls_conservative_min = min(ls_conservative_min, lP);
+    ls_conservative_max = max(ls_conservative_max, lP);
+  }
+
+  eevee_shadow_usage_VertOut_ls_aabb_min = ls_conservative_min;
+  eevee_shadow_usage_VertOut_ls_aabb_max = ls_conservative_max;
+
+  float3 lP = mix(ls_conservative_min, ls_conservative_max, max(float3(0), pos));
+
+  eevee_shadow_usage_VertOut_P = _point_object_to_world(obj, lP);
+  eevee_shadow_usage_VertOut_vP = _point_world_to_view(view, eevee_shadow_usage_VertOut_P);
+
+  gl_Position = _point_world_to_homogenous(view, eevee_shadow_usage_VertOut_P);
+#endif
+#line 220
+}
+#endif
+#endif
+#line 222
+
+#if defined(CREATE_INFO_eevee_shadow_usage_TagUsageTransparent) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_eevee_shadow_usage_TagUsage) && defined(CREATE_INFO_eevee_HiZ)
+#line 222
+
+#if defined(ENTRY_POINT_eevee_shadow_usage_tag_usage_frag)
+#line 222
+
+void eevee_shadow_usage_tag_usage_frag(
+#line 229
+                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 230
+  eevee_shadow_usage_TagUsageTransparent srt = eevee_shadow_usage_TagUsageTransparent_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); eevee_shadow_usage_TagUsage tag = eevee_shadow_usage_TagUsage_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_();
+  const ViewMatrices view = _get(views, 0);
+  const ObjectMatrices obj = _get(models, eevee_shadow_usage_VertOut_resource_id);
+
+  float2 screen_uv = gl_FragCoord.xy / float2(srt_access(eevee_shadow_usage_TagUsageTransparent, fb_resolution));
+
+  float opaque_depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), int2(gl_FragCoord.xy), srt_access(eevee_shadow_usage_TagUsageTransparent, fb_lod)).r;
+  float3 ws_opaque = _point_screen_to_world(view, float3(screen_uv, opaque_depth));
+
+  float3 ws_near_plane = _point_screen_to_world(view, float3(screen_uv, 0.0f));
+  float3 ws_view_direction = normalize(eevee_shadow_usage_VertOut_P - ws_near_plane);
+  float3 vs_near_plane = _point_screen_to_view(view, float3(screen_uv, 0.0f));
+  float3 vs_view_direction = normalize(eevee_shadow_usage_VertOut_vP - vs_near_plane);
+  float3 ls_near_plane = _point_world_to_object(obj, ws_near_plane);
+  float3 ls_view_direction = normalize(_point_world_to_object(obj, eevee_shadow_usage_VertOut_P) - ls_near_plane);
+#line 249
+  float ls_near_box_t = _ray_aabb(srt, ls_near_plane, ls_view_direction, eevee_shadow_usage_VertOut_ls_aabb_min, eevee_shadow_usage_VertOut_ls_aabb_max);
+
+  if (ls_near_box_t < 0.0f) {
+
+    return;
+  }
+
+  float3 ls_near_box = ls_near_plane + ls_view_direction * ls_near_box_t;
+  float3 ws_near_box = _point_object_to_world(obj, ls_near_box);
+
+  float near_box_t = distance(ws_near_plane, ws_near_box);
+  float far_box_t = distance(ws_near_plane, eevee_shadow_usage_VertOut_P);
+
+  far_box_t = min(far_box_t, distance(ws_near_plane, ws_opaque));
+#line 265
+  float step_size;
+#line 268
+  for (float t = near_box_t; t <= far_box_t; t = max(t + step_size, eevee_shadow_usage_nextafter(t))) {
+
+    t = min(t, far_box_t);
+    step_size = _pixel_size_at(srt, view, t);
+
+    float3 P = ws_near_plane + (ws_view_direction * t);
+    float step_radius;
+    _step_bounding_sphere(srt, _get(views, 0), vs_near_plane, vs_view_direction, t, t + step_size, P, step_radius);
+    float3 vP = _point_world_to_view(view, P);
+
+    float2 pixel = gl_FragCoord.xy * exp2(float(srt_access(eevee_shadow_usage_TagUsageTransparent, fb_lod)));
+#line 282
+    eevee_shadow_usage_TagPixelCtx ctx ;
+        ctx.P = P;
+        ctx.V = _world_incident_vector(view, P);
+        ctx.radius = step_radius;
+        ctx.lod_bias = 0
+    ;
+
+    eevee_light_foreach_visible(srt_access(eevee_shadow_usage_TagUsage, light_data), pixel, vP.z, ctx, tag);
+  }
+
+#endif
+#line 291
+}
+#endif
+#endif
+#line 300

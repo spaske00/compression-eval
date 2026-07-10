@@ -1,0 +1,30 @@
+#line 1 "eevee_filter.bsl.hh"
+ 
+#line 30
+float filters_gaussian_factor(float linear_distance, float standard_deviation)
+{
+
+  constexpr float log_2_inv = 1.442695041f;
+  return log_2_inv * standard_deviation / square(linear_distance);
+}
+#line 41
+float filters_gaussian_weight(float factor, float square_distance)
+{
+
+  return exp2(-factor * square_distance);
+}
+#line 50
+float filters_planar_weight(float3 plane_N, float3 plane_P, float3 P, float scale)
+{
+  float4 plane_eq = float4(plane_N, -dot(plane_N, plane_P));
+  float plane_distance = dot(plane_eq, float4(P, 1.0f));
+  return filters_gaussian_weight(scale, square(plane_distance));
+}
+#line 61
+float filters_angle_weight(float3 center_N, float3 sample_N)
+{
+  float facing_ratio = dot(center_N, sample_N);
+  return saturate(pow8f(facing_ratio));
+}
+
+

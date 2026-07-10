@@ -1,0 +1,40 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_DeferredFragOut)
+FRAGMENT_OUT(0, float4, eevee_DeferredFragOut_radiance)
+FRAGMENT_OUT_ROG(1, uint, eevee_DeferredFragOut_gbuf_header, DEFERRED_GBUFFER_ROG_ID)
+FRAGMENT_OUT(2, float2, eevee_DeferredFragOut_gbuf_normal)
+FRAGMENT_OUT(3, float4, eevee_DeferredFragOut_gbuf_closure1)
+FRAGMENT_OUT(4, float4, eevee_DeferredFragOut_gbuf_closure2)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceDeferred)
+ADDITIONAL_INFO(draw_view_culling)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+.image(GBUF_CLOSURE_SLOT, blender::gpu::TextureFormat::UNORM_10_10_10_2, Qualifier::write, ImageReadWriteType::image2DArray, "gbuf_closure_img", Frequency::PASS)
+.image(GBUF_NORMAL_SLOT, blender::gpu::TextureFormat::UNORM_16_16, Qualifier::write, ImageReadWriteType::image2DArray, "gbuf_normal_img", Frequency::PASS)
+.image(GBUF_HEADER_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::write, ImageReadWriteType::uimage2DArray, "gbuf_header_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_deferred_infos_)
+EARLY_FRAGMENT_TEST(true)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_SurfaceDeferred)
+ADDITIONAL_INFO(gbuffer_PackParameters)
+ADDITIONAL_INFO(eevee_RenderPassOutput)
+ADDITIONAL_INFO(eevee_CryptomatteOutput)
+ADDITIONAL_INFO(draw_Infos)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(eevee_DeferredFragOut)
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,181 @@
+#line 1 "eevee_cryptomatte.bsl.hh"
+ 
+#line 13
+float4 eevee_cryptomatte_false_color(float hash)
+{
+  uint m3hash = floatBitsToUint(hash);
+  return float4(hash,
+                float(m3hash << 8) / float(0xFFFFFFFFu),
+                float(m3hash << 16) / float(0xFFFFFFFFu),
+                1.0f);
+}
+#line 26
+#define access_eevee_CryptomatteOutput_rp_cryptomatte_img() rp_cryptomatte_img
+#define access_eevee_CryptomatteOutput_cryptomatte_object_buf() cryptomatte_object_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_CryptomatteOutput
+CREATE_INFO_RES_PASS_eevee_CryptomatteOutput
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_CryptomatteOutput
+CREATE_INFO_RES_BATCH_eevee_CryptomatteOutput
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_CryptomatteOutput
+CREATE_INFO_RES_GEOMETRY_eevee_CryptomatteOutput
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_CryptomatteOutput
+CREATE_INFO_RES_SHARED_VARS_eevee_CryptomatteOutput
+#endif
+#line 26
+struct eevee_CryptomatteOutput {
+#line 49
+int _pad;};
+#line 52
+#ifndef GPU_METAL
+eevee_CryptomatteOutput eevee_CryptomatteOutput_ctor_();
+void _store(eevee_CryptomatteOutput  this_, int2 texel, float material_hash, uint resource_id);
+eevee_CryptomatteOutput eevee_CryptomatteOutput_new_();
+#endif
+#line 26
+                                       eevee_CryptomatteOutput eevee_CryptomatteOutput_ctor_() {eevee_CryptomatteOutput r;r._pad=0;return r;}
+#line 33
+
+#if defined(CREATE_INFO_eevee_CryptomatteOutput)
+#line 33
+  void _store(eevee_CryptomatteOutput  this_, int2 texel, float material_hash, uint resource_id)
+  {
+    if (imageSize(srt_access(eevee_CryptomatteOutput, rp_cryptomatte_img)).x > 1) {
+      imageStoreFast(srt_access(eevee_CryptomatteOutput, rp_cryptomatte_img),
+                     texel,
+                     float4(cryptomatte_object_buf[resource_id], material_hash, 0.0f));
+    }
+  }
+#endif
+       eevee_CryptomatteOutput eevee_CryptomatteOutput_new_()
+{
+  eevee_CryptomatteOutput result;
+  result._pad = 0;
+  return result;
+#line 40
+}
+#line 43
+#define access_eevee_Cryptomatte_cryptomatte_img() cryptomatte_img
+#ifdef CREATE_INFO_RES_PASS_eevee_Cryptomatte
+CREATE_INFO_RES_PASS_eevee_Cryptomatte
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_Cryptomatte
+CREATE_INFO_RES_BATCH_eevee_Cryptomatte
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_Cryptomatte
+CREATE_INFO_RES_GEOMETRY_eevee_Cryptomatte
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_Cryptomatte
+CREATE_INFO_RES_SHARED_VARS_eevee_Cryptomatte
+#endif
+#line 43
+struct eevee_Cryptomatte {
+#line 125
+int _pad;};
+#line 129
+#ifndef GPU_METAL
+eevee_Cryptomatte eevee_Cryptomatte_ctor_();
+void _clear_samples(eevee_Cryptomatte  this_, FilmSample dst);
+void _store_film_sample(eevee_Cryptomatte  this_, FilmSample dst,
+                         int cryptomatte_layer_id,
+                         int cryptomatte_samples_len,
+                         float2 crypto_sample,
+                         _ref(float4 ,out_color));
+bool _can_merge_sample(eevee_Cryptomatte  this_, float2 dst, float2 src);
+float2 _merge_sample(eevee_Cryptomatte  this_, FilmSample film_sample, float2 dst, float2 src);
+eevee_Cryptomatte eevee_Cryptomatte_new_();
+#endif
+#line 43
+                                 eevee_Cryptomatte eevee_Cryptomatte_ctor_() {eevee_Cryptomatte r;r._pad=0;return r;}
+#line 46
+
+#if defined(CREATE_INFO_eevee_Cryptomatte)
+#line 46
+  void _clear_samples(eevee_Cryptomatte  this_, FilmSample dst)
+  {
+    int layer_len = imageSize(srt_access(eevee_Cryptomatte, cryptomatte_img)).z;
+    for (int i = 0; i < layer_len; i++) {
+      imageStoreFast(srt_access(eevee_Cryptomatte, cryptomatte_img), int3(dst.texel, i), float4(0.0f));
+
+      imageFence(srt_access(eevee_Cryptomatte, cryptomatte_img));
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_Cryptomatte)
+#line 56
+  void _store_film_sample(eevee_Cryptomatte  this_, FilmSample dst,
+                         int cryptomatte_layer_id,
+                         int cryptomatte_samples_len,
+                         float2 crypto_sample,
+                         _ref(float4 ,out_color))
+  {
+    if (crypto_sample.y == 0.0f) {
+      return;
+    }
+
+    for (int i = 0; i < cryptomatte_samples_len / 2; i++) {
+      int3 img_co = int3(dst.texel, cryptomatte_layer_id + i);
+      float4 sample_pair = imageLoad(srt_access(eevee_Cryptomatte, cryptomatte_img), img_co);
+      if (_can_merge_sample(this_, sample_pair.xy, crypto_sample)) {
+        sample_pair.xy = _merge_sample(this_, dst, sample_pair.xy, crypto_sample);
+#line 74
+        if (cryptomatte_layer_id + i == 0) {
+          out_color = eevee_cryptomatte_false_color(sample_pair.x);
+        }
+      }
+      else if (_can_merge_sample(this_, sample_pair.zw, crypto_sample)) {
+        sample_pair.zw = _merge_sample(this_, dst, sample_pair.zw, crypto_sample);
+      }
+      else if (i == ((cryptomatte_samples_len / 2) - 1)) {
+#line 84
+        continue;
+      }
+      else {
+        continue;
+      }
+      imageStoreFast(srt_access(eevee_Cryptomatte, cryptomatte_img), img_co, sample_pair);
+      break;
+    }
+
+    imageFence(srt_access(eevee_Cryptomatte, cryptomatte_img));
+  }
+#endif
+#line 97
+
+#if defined(CREATE_INFO_eevee_Cryptomatte)
+#line 97
+  bool _can_merge_sample(eevee_Cryptomatte  this_, float2 dst, float2 src)
+  {
+    if (all(equal(dst, float2(0.0f, 0.0f)))) {
+      return true;
+    }
+    if (dst.x == src.x) {
+      return true;
+    }
+    return false;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_Cryptomatte)
+#line 108
+  float2 _merge_sample(eevee_Cryptomatte  this_, FilmSample film_sample, float2 dst, float2 src)
+  {
+    float coverage = (dst.y * film_sample.weight + src.y) * film_sample.weight_sum_inv;
+
+    if (coverage > 0.9999f) {
+      coverage = 1.0f;
+    }
+    return float2(src.x, coverage);
+  }
+#endif
+       eevee_Cryptomatte eevee_Cryptomatte_new_()
+{
+  eevee_Cryptomatte result;
+  result._pad = 0;
+  return result;
+#line 116
+}
+#line 120

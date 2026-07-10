@@ -1,0 +1,75 @@
+#line 1 "gpu_shader_index_range_lib.glsl"
+ 
+#line 10
+#ifdef GLSL_CPP_STUBS
+#elif defined(GPU_SHADER)
+#  define static
+#endif
+
+struct IndexRange {
+  int start_;
+  int size_;
+#line 77
+};
+
+#ifndef GPU_METAL
+IndexRange IndexRange_ctor_();
+IndexRange IndexRange_from_begin_end(int begin, int end);
+int _first(const IndexRange this_);
+int _start(const IndexRange this_);
+int _last(const IndexRange this_, int n    );
+int _last(const IndexRange this_);
+int _size(const IndexRange this_);
+IndexRange _slice(const IndexRange this_, int start, int size);
+IndexRange _slice(const IndexRange this_, IndexRange range);
+IndexRange _shift(const IndexRange this_, int n);
+#endif
+#line 15
+                          IndexRange IndexRange_ctor_() {IndexRange r;r.start_=0;r.size_=0;return r;}
+#line 19
+         IndexRange IndexRange_from_begin_end(int begin, int end)
+  {
+    return _ctor(IndexRange) begin, end - begin _rotc() ;
+  }
+#line 27
+  int _first(const IndexRange this_)
+  {
+    return this_.start_;
+  }
+#line 35
+  int _start(const IndexRange this_)
+  {
+    return this_.start_;
+  }
+#line 43
+  int _last(const IndexRange this_, int n    )
+  {
+    return this_.start_ + this_.size_ - 1 - n;
+  }
+#line 43
+int _last(const IndexRange this_)
+{
+#line 43
+  return _last(this_, 0);
+}
+#line 51
+  int _size(const IndexRange this_)
+  {
+    return this_.size_;
+  }
+#line 59
+  IndexRange _slice(const IndexRange this_, int start, int size)
+  {
+    int new_start = this_.start_ + start;
+    return _ctor(IndexRange) new_start, size _rotc() ;
+  }
+  IndexRange _slice(const IndexRange this_, IndexRange range)
+  {
+    return _slice(this_, _start(range), _size(range));
+  }
+#line 73
+  IndexRange _shift(const IndexRange this_, int n)
+  {
+    return _ctor(IndexRange) this_.start_ + n, this_.size_ _rotc() ;
+  }
+#line 78

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "key": "dragonfly",
+  "input_url": "https://github.com/dragonflydb/dragonfly",
+  "canonical_url": "https://github.com/dragonflydb/dragonfly",
+  "source_directory": "dragonfly/upstream",
+  "commit": "09ec52e572f18209be024158055a272c6685de96",
+  "nested_submodules": [
+    {
+      "path": "helio",
+      "commit": "e16b6cfe34cf0f532d1cda02e70aea45f805be40"
+    }
+  ]
+}

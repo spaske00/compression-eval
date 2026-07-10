@@ -1,0 +1,510 @@
+#line 1 "workbench_shadow.bsl.hh"
+ 
+#line 25
+SHADER_LIBRARY_CREATE_INFO(gpu_index_buffer_load)
+SHADER_LIBRARY_CREATE_INFO(draw_view)
+SHADER_LIBRARY_CREATE_INFO(draw_modelmat)
+#line 38
+struct workbench_shadow_VertIn {
+
+  float3 lP;
+};
+#line 38
+                                       workbench_shadow_VertIn workbench_shadow_VertIn_ctor_() {workbench_shadow_VertIn r;r.lP=float3(0);return r;}
+#line 43
+struct workbench_shadow_VertOut {
+
+  float3 lP;
+
+  float4 frontPosition;
+  float4 backPosition;
+};
+#line 43
+                                        workbench_shadow_VertOut workbench_shadow_VertOut_ctor_() {workbench_shadow_VertOut r;r.lP=float3(0);r.frontPosition=float4(0);r.backPosition=float4(0);return r;}
+#line 51
+struct workbench_shadow_GeomOut {
+  float4 gpu_position;
+};
+#line 51
+                                        workbench_shadow_GeomOut workbench_shadow_GeomOut_ctor_() {workbench_shadow_GeomOut r;r.gpu_position=float4(0);return r;}
+#line 55
+#define access_workbench_shadow_Resources_gpu_index_buffer_load() gpu_index_buffer_load
+#define access_workbench_shadow_Resources_draw_view() draw_view
+#define access_workbench_shadow_Resources_draw_modelmat() draw_modelmat
+#define access_workbench_shadow_Resources_gpu_attr_3() gpu_attr_3
+#define access_workbench_shadow_Resources_double_manifold() double_manifold
+#define access_workbench_shadow_Resources_shadow_pass() shadow_pass
+#define access_workbench_shadow_Resources_pass_data() pass_data
+#define access_workbench_shadow_Resources_pos() pos
+#ifdef CREATE_INFO_RES_PASS_workbench_shadow_Resources
+CREATE_INFO_RES_PASS_workbench_shadow_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_shadow_Resources
+CREATE_INFO_RES_BATCH_workbench_shadow_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_shadow_Resources
+CREATE_INFO_RES_GEOMETRY_workbench_shadow_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_shadow_Resources
+CREATE_INFO_RES_SHARED_VARS_workbench_shadow_Resources
+#endif
+#line 55
+struct workbench_shadow_Resources {
+#line 106
+int _pad;};
+#line 109
+#ifndef GPU_METAL
+workbench_shadow_Resources workbench_shadow_Resources_ctor_();
+workbench_shadow_VertIn _input_assembly(workbench_shadow_Resources  this_, uint in_vertex_id);
+workbench_shadow_VertOut _vertex_main(workbench_shadow_Resources  this_, workbench_shadow_VertIn vert_in);
+workbench_shadow_Resources workbench_shadow_Resources_new_();
+#endif
+#line 55
+                                          workbench_shadow_Resources workbench_shadow_Resources_ctor_() {workbench_shadow_Resources r;r._pad=0;return r;}
+#line 69
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 69
+  workbench_shadow_VertIn _input_assembly(workbench_shadow_Resources  this_, uint in_vertex_id)
+  {
+    uint v_i = gpu_index_load(in_vertex_id);
+
+    workbench_shadow_VertIn vert_in;
+    vert_in.lP = gpu_attr_load_float3(srt_access(workbench_shadow_Resources, pos), srt_access(workbench_shadow_Resources, gpu_attr_3), v_i);
+    return vert_in;
+  }
+#endif
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 78
+  workbench_shadow_VertOut _vertex_main(workbench_shadow_Resources  this_, workbench_shadow_VertIn vert_in)
+  {
+    workbench_shadow_VertOut vert_out;
+    vert_out.lP = vert_in.lP;
+    float3 L = srt_access(workbench_shadow_Resources, pass_data).light_direction_ws;
+
+    float3 ws_P = drw_point_object_to_world(vert_in.lP);
+    float extrude_distance = 1e5f;
+    float L_FP = dot(L, srt_access(workbench_shadow_Resources, pass_data).far_plane.xyz);
+    if (L_FP > 0.0f) {
+      float signed_distance = dot(srt_access(workbench_shadow_Resources, pass_data).far_plane.xyz, ws_P) -
+                              srt_access(workbench_shadow_Resources, pass_data).far_plane.w;
+      extrude_distance = -signed_distance / L_FP;
+
+      extrude_distance -= 1e-3f;
+    }
+    vert_out.backPosition = drw_point_world_to_homogenous(ws_P + L * extrude_distance);
+    vert_out.frontPosition = drw_point_world_to_homogenous(drw_point_object_to_world(vert_in.lP));
+    return vert_out;
+  }
+#endif
+       workbench_shadow_Resources workbench_shadow_Resources_new_()
+{
+  workbench_shadow_Resources result;
+  result._pad = 0;
+  return result;
+#line 97
+}
+#line 100
+struct workbench_shadow_GeometryShaderEmulator {
+
+  float4 out_pos;
+#line 278
+};
+#line 281
+#ifndef GPU_METAL
+workbench_shadow_GeometryShaderEmulator workbench_shadow_GeometryShaderEmulator_ctor_();
+void _export_vertex(_ref(workbench_shadow_GeometryShaderEmulator ,this_), workbench_shadow_GeomOut geom_out);
+void _emit_strip_vert(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const uint strip_index,
+                       uint out_vertex_id,
+                       uint out_primitive_id,
+                       workbench_shadow_GeomOut geom_out);
+void _emit_triangle_vert(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const uint tri_index, uint out_vertex_id, workbench_shadow_GeomOut geom_out);
+void _extrude_edge(
+      _ref(workbench_shadow_GeometryShaderEmulator ,this_), bool invert, workbench_shadow_VertOut geom_in_1, workbench_shadow_VertOut geom_in_2, uint out_vertex_id, uint out_primitive_id);
+void _emit_cap(_ref(workbench_shadow_GeometryShaderEmulator ,this_), bool front,
+                bool invert,
+                workbench_shadow_VertOut geom_in_0,
+                workbench_shadow_VertOut geom_in_1,
+                workbench_shadow_VertOut geom_in_2,
+                uint out_vertex_id);
+void _geometry_main(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const workbench_shadow_Resources  srt,
+                     workbench_shadow_VertOut geom_in[4],
+                     uint out_vertex_id,
+                     uint out_primitive_id,
+                     uint out_invocation_id);
+void _geometry_main_caps(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const workbench_shadow_Resources  srt,
+                          workbench_shadow_VertOut geom_in[3],
+                          uint out_vertex_id,
+                          uint out_invocation_id);
+#endif
+#line 100
+                                                       workbench_shadow_GeometryShaderEmulator workbench_shadow_GeometryShaderEmulator_ctor_() {workbench_shadow_GeometryShaderEmulator r;r.out_pos=float4(0);return r;}
+#line 104
+  void _export_vertex(_ref(workbench_shadow_GeometryShaderEmulator ,this_), workbench_shadow_GeomOut geom_out)
+  {
+    this_.out_pos = geom_out.gpu_position;
+#ifdef GPU_METAL
+
+    this_.out_pos.z += 0.00005f;
+#endif
+  }
+#line 113
+  void _emit_strip_vert(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const uint strip_index,
+                       uint out_vertex_id,
+                       uint out_primitive_id,
+                       workbench_shadow_GeomOut geom_out)
+  {
+    bool is_odd_primitive = (out_primitive_id & 1u) != 0u;
+
+    uint out_strip_index = (is_odd_primitive ? (2u - out_vertex_id) : out_vertex_id) +
+                           out_primitive_id;
+
+    if (out_strip_index == strip_index) {
+      _export_vertex(this_, geom_out);
+    }
+  }
+#line 128
+  void _emit_triangle_vert(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const uint tri_index, uint out_vertex_id, workbench_shadow_GeomOut geom_out)
+  {
+    if (out_vertex_id == tri_index) {
+      _export_vertex(this_, geom_out);
+    }
+  }
+#line 135
+  void _extrude_edge(
+      _ref(workbench_shadow_GeometryShaderEmulator ,this_), bool invert, workbench_shadow_VertOut geom_in_1, workbench_shadow_VertOut geom_in_2, uint out_vertex_id, uint out_primitive_id)
+  {
+
+    if (invert) {
+      workbench_shadow_VertOut geom_in_tmp = geom_in_1;
+      geom_in_1 = geom_in_2;
+      geom_in_2 = geom_in_tmp;
+    }
+
+    workbench_shadow_GeomOut geom_out;
+    geom_out.gpu_position = geom_in_2.frontPosition;
+    _emit_strip_vert(this_, 0, out_vertex_id, out_primitive_id, geom_out);
+
+    geom_out.gpu_position = geom_in_1.frontPosition;
+    _emit_strip_vert(this_, 1, out_vertex_id, out_primitive_id, geom_out);
+
+    geom_out.gpu_position = geom_in_2.backPosition;
+    _emit_strip_vert(this_, 2, out_vertex_id, out_primitive_id, geom_out);
+
+    geom_out.gpu_position = geom_in_1.backPosition;
+    _emit_strip_vert(this_, 3, out_vertex_id, out_primitive_id, geom_out);
+  }
+#line 159
+  void _emit_cap(_ref(workbench_shadow_GeometryShaderEmulator ,this_), bool front,
+                bool invert,
+                workbench_shadow_VertOut geom_in_0,
+                workbench_shadow_VertOut geom_in_1,
+                workbench_shadow_VertOut geom_in_2,
+                uint out_vertex_id)
+  {
+    if (invert == front) {
+      workbench_shadow_VertOut geom_in_tmp = geom_in_1;
+      geom_in_1 = geom_in_2;
+      geom_in_2 = geom_in_tmp;
+    }
+
+    workbench_shadow_GeomOut geom_out;
+    geom_out.gpu_position = front ? geom_in_0.frontPosition : geom_in_0.backPosition;
+    _emit_triangle_vert(this_, 0, out_vertex_id, geom_out);
+
+    geom_out.gpu_position = front ? geom_in_1.frontPosition : geom_in_1.backPosition;
+    _emit_triangle_vert(this_, 1, out_vertex_id, geom_out);
+
+    geom_out.gpu_position = front ? geom_in_2.frontPosition : geom_in_2.backPosition;
+    _emit_triangle_vert(this_, 2, out_vertex_id, geom_out);
+  }
+#line 183
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 183
+  void _geometry_main(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const workbench_shadow_Resources  srt,
+                     workbench_shadow_VertOut geom_in[4],
+                     uint out_vertex_id,
+                     uint out_primitive_id,
+                     uint out_invocation_id)
+  {
+    float3 v10 = geom_in[0].lP - geom_in[1].lP;
+    float3 v12 = geom_in[2].lP - geom_in[1].lP;
+    float3 v13 = geom_in[3].lP - geom_in[1].lP;
+
+    float3 n1 = cross(v12, v10);
+    float3 n2 = cross(v13, v12);
+
+#ifdef DEGENERATE_TRIS_WORKAROUND
+
+    float2 faces_area = float2(length_squared(n1), length_squared(n2));
+    bool2 degen_faces = lessThan(abs(faces_area), float2(DEGENERATE_TRIS_AREA_THRESHOLD));
+#line 202
+    if (all(degen_faces)) {
+      return;
+    }
+#endif
+
+    float3 ls_light_direction = drw_normal_world_to_object(
+        float3(srt_access(workbench_shadow_Resources, pass_data).light_direction_ws));
+
+    float2 facing = float2(dot(n1, ls_light_direction), dot(n2, ls_light_direction));
+
+    bool2 backface = greaterThan(facing, float2(0.0f));
+#line 215
+    bool is_manifold = any(notEqual(geom_in[0].lP, geom_in[3].lP));
+
+#ifdef DEGENERATE_TRIS_WORKAROUND
+
+#if SRT_CONSTANT_double_manifold == false
+#line 218
+                                                                                            {
+#line 221
+      if ((degen_faces.x && backface.y) || (degen_faces.y && backface.x)) {
+        return;
+      }
+    }
+#endif
+#line 227
+    backface.x = (degen_faces.x) ? !backface.y : backface.x;
+    backface.y = (degen_faces.y) ? !backface.x : backface.y;
+    is_manifold = (any(degen_faces)) ? false : is_manifold;
+#endif
+#line 233
+    if (backface.x == backface.y) {
+      return;
+    }
+#line 238
+#if SRT_CONSTANT_double_manifold
+#line 237
+                                                                                   {
+      if (out_invocation_id != 0u && !is_manifold) {
+
+        return;
+      }
+    }
+#endif
+    _extrude_edge(this_, backface.x, geom_in[1], geom_in[2], out_vertex_id, out_primitive_id);
+  }
+#endif
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 247
+  void _geometry_main_caps(_ref(workbench_shadow_GeometryShaderEmulator ,this_), const workbench_shadow_Resources  srt,
+                          workbench_shadow_VertOut geom_in[3],
+                          uint out_vertex_id,
+                          uint out_invocation_id)
+  {
+    float3 v10 = geom_in[0].lP - geom_in[1].lP;
+    float3 v12 = geom_in[2].lP - geom_in[1].lP;
+
+    float3 Ng = cross(v12, v10);
+
+    float3 ls_light_direction = drw_normal_world_to_object(
+        float3(srt_access(workbench_shadow_Resources, pass_data).light_direction_ws));
+
+    float facing = dot(Ng, ls_light_direction);
+
+    bool backface = facing > 0.0f;
+
+    bool invert = false;
+    bool is_manifold = true;
+
+#if SRT_CONSTANT_double_manifold
+#line 266
+                                                                                   {
+#line 269
+      invert = backface;
+      is_manifold = false;
+    }
+#endif
+    if (!is_manifold || !backface) {
+      bool do_front = out_invocation_id == 0;
+      _emit_cap(this_, do_front, invert, geom_in[0], geom_in[1], geom_in[2], out_vertex_id);
+    }
+  }
+#endif
+#line 280
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 280
+
+#if defined(ENTRY_POINT_workbench_shadow_vert_main)
+#line 280
+
+void workbench_shadow_vert_main(
+
+                                                )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 284
+  workbench_shadow_Resources srt = workbench_shadow_Resources_ctor_();
+
+  constexpr uint input_primitive_vertex_count = 4u;
+
+  constexpr uint output_primitive_vertex_count = 3u;
+  constexpr uint output_primitive_count = 2u;
+
+  uint output_invocation_count = 1u;
+
+#if SRT_CONSTANT_double_manifold
+#line 292
+                                                                                 {
+    output_invocation_count = 2u;
+  }
+#endif
+  constexpr uint output_vertex_count_per_invocation = output_primitive_count *
+                                                      output_primitive_vertex_count;
+  const uint output_vertex_count_per_input_primitive = output_vertex_count_per_invocation *
+                                                       output_invocation_count;
+
+  uint in_primitive_id = uint(gl_VertexID) / output_vertex_count_per_input_primitive;
+  uint in_primitive_first_vertex = in_primitive_id * input_primitive_vertex_count;
+
+  uint out_vertex_id = uint(gl_VertexID) % output_primitive_vertex_count;
+  uint out_primitive_id = (uint(gl_VertexID) / output_primitive_vertex_count) % output_primitive_count;
+  uint out_invocation_id = (uint(gl_VertexID) / output_vertex_count_per_invocation) %
+                           output_invocation_count;
+
+  workbench_shadow_VertIn vert_in[input_primitive_vertex_count];
+  vert_in[0] = _input_assembly(srt, in_primitive_first_vertex + 0u);
+  vert_in[1] = _input_assembly(srt, in_primitive_first_vertex + 1u);
+  vert_in[2] = _input_assembly(srt, in_primitive_first_vertex + 2u);
+  vert_in[3] = _input_assembly(srt, in_primitive_first_vertex + 3u);
+
+  workbench_shadow_VertOut vert_out[input_primitive_vertex_count];
+  vert_out[0] = _vertex_main(srt, vert_in[0]);
+  vert_out[1] = _vertex_main(srt, vert_in[1]);
+  vert_out[2] = _vertex_main(srt, vert_in[2]);
+  vert_out[3] = _vertex_main(srt, vert_in[3]);
+
+  workbench_shadow_GeometryShaderEmulator gs;
+
+  gs.out_pos = float4(NAN_FLT);
+  _geometry_main(gs, srt, vert_out, out_vertex_id, out_primitive_id, out_invocation_id);
+  gl_Position = gs.out_pos;
+
+#endif
+#line 326
+}
+#endif
+#endif
+#line 328
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 328
+
+#if defined(ENTRY_POINT_workbench_shadow_vert_main_caps)
+#line 328
+
+void workbench_shadow_vert_main_caps(
+
+                                                     )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 332
+  workbench_shadow_Resources srt = workbench_shadow_Resources_ctor_();
+
+  constexpr uint input_primitive_vertex_count = 3u;
+
+  constexpr uint output_primitive_vertex_count = 3u;
+  constexpr uint output_primitive_count = 1u;
+  constexpr uint output_invocation_count = 2u;
+
+  constexpr uint output_vertex_count_per_invocation = output_primitive_count *
+                                                      output_primitive_vertex_count;
+  constexpr uint output_vertex_count_per_input_primitive = output_vertex_count_per_invocation *
+                                                           output_invocation_count;
+
+  uint in_primitive_id = uint(gl_VertexID) / output_vertex_count_per_input_primitive;
+  uint in_primitive_first_vertex = in_primitive_id * input_primitive_vertex_count;
+
+  uint out_vertex_id = uint(gl_VertexID) % output_primitive_vertex_count;
+  uint out_invocation_id = (uint(gl_VertexID) / output_vertex_count_per_invocation) %
+                           output_invocation_count;
+
+  workbench_shadow_VertIn vert_in[input_primitive_vertex_count];
+  vert_in[0] = _input_assembly(srt, in_primitive_first_vertex + 0u);
+  vert_in[1] = _input_assembly(srt, in_primitive_first_vertex + 1u);
+  vert_in[2] = _input_assembly(srt, in_primitive_first_vertex + 2u);
+
+  workbench_shadow_VertOut vert_out[input_primitive_vertex_count];
+  vert_out[0] = _vertex_main(srt, vert_in[0]);
+  vert_out[1] = _vertex_main(srt, vert_in[1]);
+  vert_out[2] = _vertex_main(srt, vert_in[2]);
+
+  workbench_shadow_GeometryShaderEmulator gs;
+
+  gs.out_pos = float4(NAN_FLT);
+  _geometry_main_caps(gs, srt, vert_out, out_vertex_id, out_invocation_id);
+  gl_Position = gs.out_pos;
+
+#endif
+#line 367
+}
+#endif
+#endif
+#line 369
+
+#if defined(ENTRY_POINT_workbench_shadow_frag_main)
+#line 369
+
+void workbench_shadow_frag_main()
+{
+#line 375
+#if defined(GPU_FRAGMENT_SHADER)
+
+#endif
+#line 374
+}
+#endif
+struct workbench_shadow_FragOut {
+                    float4 color;
+};
+#line 376
+                                        workbench_shadow_FragOut workbench_shadow_FragOut_ctor_() {workbench_shadow_FragOut r;r.color=float4(0);return r;}
+#line 380
+
+#if defined(CREATE_INFO_workbench_shadow_Resources)
+#line 380
+
+#if defined(ENTRY_POINT_workbench_shadow_frag_debug)
+#line 380
+
+void workbench_shadow_frag_debug(
+
+                                                          )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 384
+  workbench_shadow_Resources srt = workbench_shadow_Resources_ctor_();
+  constexpr float a = 0.1f;
+#line 388
+#if SRT_CONSTANT_shadow_pass
+#line 387
+                                                                             {
+    workbench_shadow_FragOut_color.rgb = gl_FrontFacing ? float3(a, -a, 0.0f) : float3(-a, a, 0.0f);
+  }
+
+#else
+#line 390
+       {
+    workbench_shadow_FragOut_color.rgb = gl_FrontFacing ? float3(a, a, -a) : float3(-a, -a, a);
+  }
+
+#endif
+#line 393
+  workbench_shadow_FragOut_color.a = a;
+
+#endif
+#line 394
+}
+#endif
+#endif
+#line 396
+#ifndef GLSL_CPP_STUBS
+#line 411
+#endif
+
+

@@ -1,0 +1,16 @@
+#line 1 "gpu_shader_diag_stripes_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(gpu_shader_2D_diag_stripes)
+
+void main()
+{
+  float phase = mod((gl_FragCoord.x + gl_FragCoord.y), float(size1 + size2));
+
+  if (phase < size1) {
+    fragColor = color1;
+  }
+  else {
+    fragColor = color2;
+  }
+}

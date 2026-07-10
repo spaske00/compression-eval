@@ -1,0 +1,14 @@
+#line 1 "compositor_id_mask.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_id_mask)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float input_mask_value = texture_load(input_mask_tx, texel).x;
+  float mask = int(round(input_mask_value)) == index ? 1.0f : 0.0f;
+
+  imageStore(output_mask_img, texel, float4(mask));
+}

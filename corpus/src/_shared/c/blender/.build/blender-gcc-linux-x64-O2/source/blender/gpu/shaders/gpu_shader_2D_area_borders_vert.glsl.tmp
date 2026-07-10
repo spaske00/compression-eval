@@ -1,0 +1,33 @@
+#line 1 "gpu_shader_2D_area_borders_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(gpu_shader_2D_area_borders)
+
+void main()
+{
+  int corner_id = (gl_VertexID / cornerLen) % 4;
+  bool inner = all(lessThan(abs(pos), float2(1.0f)));
+#line 16
+  float2 final_pos = pos * ((inner) ? (1.0f - width) : 1.05f);
+
+  uv = final_pos;
+
+  if (corner_id == 0) {
+
+    final_pos = (final_pos - float2(1.0f, 1.0f)) * scale + rect.yw;
+  }
+  else if (corner_id == 1) {
+
+    final_pos = (final_pos - float2(-1.0f, 1.0f)) * scale + rect.xw;
+  }
+  else if (corner_id == 2) {
+
+    final_pos = (final_pos - float2(-1.0f, -1.0f)) * scale + rect.xz;
+  }
+  else {
+
+    final_pos = (final_pos - float2(1.0f, -1.0f)) * scale + rect.yz;
+  }
+
+  gl_Position = (ModelViewProjectionMatrix * float4(final_pos, 0.0f, 1.0f));
+}

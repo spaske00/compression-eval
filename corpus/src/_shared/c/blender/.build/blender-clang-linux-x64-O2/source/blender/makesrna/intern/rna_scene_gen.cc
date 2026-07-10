@@ -1,0 +1,20969 @@
+
+/* Automatically generated struct definitions for the Data API.
+ * Do not edit manually, changes will be overwritten.           */
+
+#include <float.h>
+#include <stdio.h>
+#include <limits.h>
+#include <limits>
+#include <string.h>
+
+#include <stddef.h>
+
+#include <algorithm>
+
+#include "MEM_guardedalloc.h"
+
+#include "DNA_ID.h"
+#include "DNA_scene_types.h"
+#include "DNA_node_types.h"
+#include "BLI_fileops.hh"
+
+#include "BLI_listbase.hh"
+
+#include "BLI_path_utils.hh"
+
+#include "BLI_rect.hh"
+
+#include "BLI_string.hh"
+
+#include "BLI_string_utf8.hh"
+
+#include "BLI_utildefines.hh"
+
+#include "BKE_context.hh"
+#include "BKE_lib_id.hh"
+#include "BKE_main.hh"
+#include "BKE_report.hh"
+#include "RNA_define.hh"
+#include "RNA_types.hh"
+#include "rna_internal.hh"
+
+#include "RNA_prototypes.hh"
+
+#include "rna_prototypes_gen.hh"
+
+#include "rna_scene.cc"
+#include "rna_scene_api.cc"
+
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
+#pragma GCC diagnostic ignored "-Wmissing-variable-declarations"
+
+/* Auto-generated Functions. */
+
+namespace blender {
+
+
+extern PropertyRNA &rna_ID_rna_properties;
+extern PropertyRNA &rna_ID_rna_type;
+extern PropertyRNA &rna_ID_name;
+extern PropertyRNA &rna_ID_name_full;
+extern PropertyRNA &rna_ID_id_type;
+extern PropertyRNA &rna_ID_session_uid;
+extern PropertyRNA &rna_ID_is_evaluated;
+extern PropertyRNA &rna_ID_original;
+extern PropertyRNA &rna_ID_users;
+extern PropertyRNA &rna_ID_use_fake_user;
+extern PropertyRNA &rna_ID_use_extra_user;
+extern PropertyRNA &rna_ID_is_embedded_data;
+extern PropertyRNA &rna_ID_is_linked_packed;
+extern PropertyRNA &rna_ID_is_missing;
+extern PropertyRNA &rna_ID_is_runtime_data;
+extern PropertyRNA &rna_ID_is_editable;
+extern PropertyRNA &rna_ID_tag;
+extern PropertyRNA &rna_ID_is_library_indirect;
+extern PropertyRNA &rna_ID_library;
+extern PropertyRNA &rna_ID_library_weak_reference;
+extern PropertyRNA &rna_ID_asset_data;
+extern PropertyRNA &rna_ID_override_library;
+extern PropertyRNA &rna_ID_preview;
+
+extern PropertyRNA &rna_Scene_camera;
+extern PropertyRNA &rna_Scene_background_set;
+extern PropertyRNA &rna_Scene_world;
+extern PropertyRNA &rna_Scene_objects;
+extern PropertyRNA &rna_Scene_frame_current;
+extern PropertyRNA &rna_Scene_frame_subframe;
+extern PropertyRNA &rna_Scene_frame_float;
+extern PropertyRNA &rna_Scene_frame_start;
+extern PropertyRNA &rna_Scene_frame_end;
+extern PropertyRNA &rna_Scene_frame_step;
+extern PropertyRNA &rna_Scene_time_jump_unit;
+extern PropertyRNA &rna_Scene_time_jump_delta;
+extern PropertyRNA &rna_Scene_frame_current_final;
+extern PropertyRNA &rna_Scene_lock_frame_selection_to_range;
+extern PropertyRNA &rna_Scene_allow_preroll;
+extern PropertyRNA &rna_Scene_use_preview_range;
+extern PropertyRNA &rna_Scene_frame_preview_start;
+extern PropertyRNA &rna_Scene_frame_preview_end;
+extern PropertyRNA &rna_Scene_show_subframe;
+extern PropertyRNA &rna_Scene_show_keys_from_selected_only;
+extern PropertyRNA &rna_Scene_use_stamp_note;
+extern PropertyRNA &rna_Scene_animation_data;
+extern PropertyRNA &rna_Scene_is_nla_tweakmode;
+extern PropertyRNA &rna_Scene_use_custom_simulation_range;
+extern PropertyRNA &rna_Scene_simulation_frame_start;
+extern PropertyRNA &rna_Scene_simulation_frame_end;
+extern PropertyRNA &rna_Scene_sync_mode;
+extern PropertyRNA &rna_Scene_playback_loop_mode;
+extern PropertyRNA &rna_Scene_compositing_node_group;
+extern PropertyRNA &rna_Scene_use_nodes;
+extern PropertyRNA &rna_Scene_sequence_editor;
+extern PropertyRNA &rna_Scene_keying_sets;
+extern PropertyRNA &rna_Scene_keying_sets_all;
+extern PropertyRNA &rna_Scene_rigidbody_world;
+extern PropertyRNA &rna_Scene_tool_settings;
+extern PropertyRNA &rna_Scene_unit_settings;
+extern PropertyRNA &rna_Scene_gravity;
+extern PropertyRNA &rna_Scene_use_gravity;
+extern PropertyRNA &rna_Scene_render;
+extern PropertyRNA &rna_Scene_safe_areas;
+extern PropertyRNA &rna_Scene_timeline_markers;
+extern PropertyRNA &rna_Scene_transform_orientation_slots;
+extern PropertyRNA &rna_Scene_cursor;
+extern PropertyRNA &rna_Scene_use_audio;
+extern PropertyRNA &rna_Scene_use_audio_scrub;
+extern PropertyRNA &rna_Scene_audio_doppler_speed;
+extern PropertyRNA &rna_Scene_audio_doppler_factor;
+extern PropertyRNA &rna_Scene_audio_distance_model;
+extern PropertyRNA &rna_Scene_audio_volume;
+extern PropertyRNA &rna_Scene_annotation;
+extern PropertyRNA &rna_Scene_active_clip;
+extern PropertyRNA &rna_Scene_view_settings;
+extern PropertyRNA &rna_Scene_display_settings;
+extern PropertyRNA &rna_Scene_sequencer_colorspace_settings;
+extern PropertyRNA &rna_Scene_view_layers;
+extern PropertyRNA &rna_Scene_collection;
+extern PropertyRNA &rna_Scene_display;
+extern PropertyRNA &rna_Scene_eevee;
+extern PropertyRNA &rna_Scene_grease_pencil_settings;
+extern PropertyRNA &rna_Scene_hydra;
+
+extern FunctionRNA *rna_ID_bl_system_properties_get_func;
+extern PropertyRNA &rna_ID_bl_system_properties_get_do_create;
+extern PropertyRNA &rna_ID_bl_system_properties_get_system_properties;
+
+extern FunctionRNA *rna_ID_rename_func;
+extern PropertyRNA &rna_ID_rename_name;
+extern PropertyRNA &rna_ID_rename_mode;
+extern PropertyRNA &rna_ID_rename_id_rename_result;
+
+extern FunctionRNA *rna_ID_evaluated_get_func;
+extern PropertyRNA &rna_ID_evaluated_get_depsgraph;
+extern PropertyRNA &rna_ID_evaluated_get_id;
+
+extern FunctionRNA *rna_ID_copy_func;
+extern PropertyRNA &rna_ID_copy_id;
+
+extern FunctionRNA *rna_ID_asset_mark_func;
+extern FunctionRNA *rna_ID_asset_clear_func;
+extern FunctionRNA *rna_ID_asset_generate_preview_func;
+extern FunctionRNA *rna_ID_override_create_func;
+extern PropertyRNA &rna_ID_override_create_id;
+extern PropertyRNA &rna_ID_override_create_remap_local_usages;
+
+extern FunctionRNA *rna_ID_override_hierarchy_create_func;
+extern PropertyRNA &rna_ID_override_hierarchy_create_id;
+extern PropertyRNA &rna_ID_override_hierarchy_create_scene;
+extern PropertyRNA &rna_ID_override_hierarchy_create_view_layer;
+extern PropertyRNA &rna_ID_override_hierarchy_create_reference;
+extern PropertyRNA &rna_ID_override_hierarchy_create_do_fully_editable;
+
+extern FunctionRNA *rna_ID_user_clear_func;
+extern FunctionRNA *rna_ID_user_remap_func;
+extern PropertyRNA &rna_ID_user_remap_new_id;
+
+extern FunctionRNA *rna_ID_make_local_func;
+extern PropertyRNA &rna_ID_make_local_clear_proxy;
+extern PropertyRNA &rna_ID_make_local_clear_liboverride;
+extern PropertyRNA &rna_ID_make_local_clear_asset_data;
+extern PropertyRNA &rna_ID_make_local_id;
+
+extern FunctionRNA *rna_ID_user_of_id_func;
+extern PropertyRNA &rna_ID_user_of_id_id;
+extern PropertyRNA &rna_ID_user_of_id_count;
+
+extern FunctionRNA *rna_ID_animation_data_create_func;
+extern PropertyRNA &rna_ID_animation_data_create_anim_data;
+
+extern FunctionRNA *rna_ID_animation_data_clear_func;
+extern FunctionRNA *rna_ID_update_tag_func;
+extern PropertyRNA &rna_ID_update_tag_refresh;
+
+extern FunctionRNA *rna_ID_preview_ensure_func;
+extern PropertyRNA &rna_ID_preview_ensure_preview_image;
+
+
+extern FunctionRNA *rna_Scene_update_render_engine_func;
+extern FunctionRNA *rna_Scene_statistics_func;
+extern PropertyRNA &rna_Scene_statistics_view_layer;
+extern PropertyRNA &rna_Scene_statistics_statistics;
+
+extern FunctionRNA *rna_Scene_frame_set_func;
+extern PropertyRNA &rna_Scene_frame_set_frame;
+extern PropertyRNA &rna_Scene_frame_set_subframe;
+
+extern FunctionRNA *rna_Scene_uvedit_aspect_func;
+extern PropertyRNA &rna_Scene_uvedit_aspect_object;
+extern PropertyRNA &rna_Scene_uvedit_aspect_result;
+
+extern FunctionRNA *rna_Scene_ray_cast_func;
+extern PropertyRNA &rna_Scene_ray_cast_depsgraph;
+extern PropertyRNA &rna_Scene_ray_cast_origin;
+extern PropertyRNA &rna_Scene_ray_cast_direction;
+extern PropertyRNA &rna_Scene_ray_cast_distance;
+extern PropertyRNA &rna_Scene_ray_cast_result;
+extern PropertyRNA &rna_Scene_ray_cast_location;
+extern PropertyRNA &rna_Scene_ray_cast_normal;
+extern PropertyRNA &rna_Scene_ray_cast_index;
+extern PropertyRNA &rna_Scene_ray_cast_object;
+extern PropertyRNA &rna_Scene_ray_cast_matrix;
+
+extern FunctionRNA *rna_Scene_sequence_editor_create_func;
+extern PropertyRNA &rna_Scene_sequence_editor_create_sequence_editor;
+
+extern FunctionRNA *rna_Scene_sequence_editor_clear_func;
+
+
+extern PropertyRNA &rna_SceneObjects_rna_properties;
+extern PropertyRNA &rna_SceneObjects_rna_type;
+
+
+extern PropertyRNA &rna_KeyingSets_rna_properties;
+extern PropertyRNA &rna_KeyingSets_rna_type;
+extern PropertyRNA &rna_KeyingSets_active;
+extern PropertyRNA &rna_KeyingSets_active_index;
+
+extern FunctionRNA *rna_KeyingSets_new_func;
+extern PropertyRNA &rna_KeyingSets_new_idname;
+extern PropertyRNA &rna_KeyingSets_new_name;
+extern PropertyRNA &rna_KeyingSets_new_keyingset;
+
+
+
+extern PropertyRNA &rna_KeyingSetsAll_rna_properties;
+extern PropertyRNA &rna_KeyingSetsAll_rna_type;
+extern PropertyRNA &rna_KeyingSetsAll_active;
+extern PropertyRNA &rna_KeyingSetsAll_active_index;
+
+
+extern PropertyRNA &rna_TimelineMarkers_rna_properties;
+extern PropertyRNA &rna_TimelineMarkers_rna_type;
+
+extern FunctionRNA *rna_TimelineMarkers_new_func;
+extern PropertyRNA &rna_TimelineMarkers_new_name;
+extern PropertyRNA &rna_TimelineMarkers_new_frame;
+extern PropertyRNA &rna_TimelineMarkers_new_marker;
+
+extern FunctionRNA *rna_TimelineMarkers_remove_func;
+extern PropertyRNA &rna_TimelineMarkers_remove_marker;
+
+extern FunctionRNA *rna_TimelineMarkers_clear_func;
+
+
+extern PropertyRNA &rna_ViewLayers_rna_properties;
+extern PropertyRNA &rna_ViewLayers_rna_type;
+
+extern FunctionRNA *rna_ViewLayers_new_func;
+extern PropertyRNA &rna_ViewLayers_new_name;
+extern PropertyRNA &rna_ViewLayers_new_result;
+
+extern FunctionRNA *rna_ViewLayers_remove_func;
+extern PropertyRNA &rna_ViewLayers_remove_layer;
+
+extern FunctionRNA *rna_ViewLayers_move_func;
+extern PropertyRNA &rna_ViewLayers_move_from_index;
+extern PropertyRNA &rna_ViewLayers_move_to_index;
+
+
+
+extern PropertyRNA &rna_ToolSettings_rna_properties;
+extern PropertyRNA &rna_ToolSettings_rna_type;
+extern PropertyRNA &rna_ToolSettings_sculpt;
+extern PropertyRNA &rna_ToolSettings_curves_sculpt;
+extern PropertyRNA &rna_ToolSettings_use_auto_normalize;
+extern PropertyRNA &rna_ToolSettings_use_lock_relative;
+extern PropertyRNA &rna_ToolSettings_use_multipaint;
+extern PropertyRNA &rna_ToolSettings_vertex_group_user;
+extern PropertyRNA &rna_ToolSettings_vertex_group_subset;
+extern PropertyRNA &rna_ToolSettings_vertex_paint;
+extern PropertyRNA &rna_ToolSettings_weight_paint;
+extern PropertyRNA &rna_ToolSettings_image_paint;
+extern PropertyRNA &rna_ToolSettings_paint_mode;
+extern PropertyRNA &rna_ToolSettings_uv_sculpt;
+extern PropertyRNA &rna_ToolSettings_gpencil_paint;
+extern PropertyRNA &rna_ToolSettings_gpencil_vertex_paint;
+extern PropertyRNA &rna_ToolSettings_gpencil_sculpt_paint;
+extern PropertyRNA &rna_ToolSettings_gpencil_weight_paint;
+extern PropertyRNA &rna_ToolSettings_particle_edit;
+extern PropertyRNA &rna_ToolSettings_uv_sculpt_lock_borders;
+extern PropertyRNA &rna_ToolSettings_uv_sculpt_all_islands;
+extern PropertyRNA &rna_ToolSettings_lock_object_mode;
+extern PropertyRNA &rna_ToolSettings_workspace_tool_type;
+extern PropertyRNA &rna_ToolSettings_use_proportional_edit;
+extern PropertyRNA &rna_ToolSettings_use_proportional_edit_objects;
+extern PropertyRNA &rna_ToolSettings_use_proportional_projected;
+extern PropertyRNA &rna_ToolSettings_use_proportional_connected;
+extern PropertyRNA &rna_ToolSettings_use_proportional_edit_mask;
+extern PropertyRNA &rna_ToolSettings_use_proportional_action;
+extern PropertyRNA &rna_ToolSettings_use_proportional_fcurve;
+extern PropertyRNA &rna_ToolSettings_lock_markers;
+extern PropertyRNA &rna_ToolSettings_proportional_edit_falloff;
+extern PropertyRNA &rna_ToolSettings_proportional_size;
+extern PropertyRNA &rna_ToolSettings_proportional_distance;
+extern PropertyRNA &rna_ToolSettings_double_threshold;
+extern PropertyRNA &rna_ToolSettings_transform_pivot_point;
+extern PropertyRNA &rna_ToolSettings_use_transform_pivot_point_align;
+extern PropertyRNA &rna_ToolSettings_use_transform_data_origin;
+extern PropertyRNA &rna_ToolSettings_use_transform_skip_children;
+extern PropertyRNA &rna_ToolSettings_use_transform_correct_face_attributes;
+extern PropertyRNA &rna_ToolSettings_use_transform_correct_keep_connected;
+extern PropertyRNA &rna_ToolSettings_use_mesh_automerge;
+extern PropertyRNA &rna_ToolSettings_use_mesh_automerge_and_split;
+extern PropertyRNA &rna_ToolSettings_use_snap;
+extern PropertyRNA &rna_ToolSettings_use_snap_node;
+extern PropertyRNA &rna_ToolSettings_use_snap_sequencer;
+extern PropertyRNA &rna_ToolSettings_use_snap_uv;
+extern PropertyRNA &rna_ToolSettings_use_snap_align_rotation;
+extern PropertyRNA &rna_ToolSettings_use_snap_grid_absolute;
+extern PropertyRNA &rna_ToolSettings_snap_angle_increment_2d;
+extern PropertyRNA &rna_ToolSettings_snap_angle_increment_2d_precision;
+extern PropertyRNA &rna_ToolSettings_snap_angle_increment_3d;
+extern PropertyRNA &rna_ToolSettings_snap_angle_increment_3d_precision;
+extern PropertyRNA &rna_ToolSettings_snap_elements;
+extern PropertyRNA &rna_ToolSettings_snap_elements_base;
+extern PropertyRNA &rna_ToolSettings_snap_elements_individual;
+extern PropertyRNA &rna_ToolSettings_snap_face_nearest_steps;
+extern PropertyRNA &rna_ToolSettings_use_snap_to_same_target;
+extern PropertyRNA &rna_ToolSettings_use_snap_anim;
+extern PropertyRNA &rna_ToolSettings_use_snap_driver;
+extern PropertyRNA &rna_ToolSettings_use_snap_time_absolute;
+extern PropertyRNA &rna_ToolSettings_use_snap_driver_absolute;
+extern PropertyRNA &rna_ToolSettings_snap_anim_element;
+extern PropertyRNA &rna_ToolSettings_use_snap_playhead;
+extern PropertyRNA &rna_ToolSettings_snap_playhead_element;
+extern PropertyRNA &rna_ToolSettings_snap_playhead_frame_step;
+extern PropertyRNA &rna_ToolSettings_snap_playhead_second_step;
+extern PropertyRNA &rna_ToolSettings_playhead_snap_distance;
+extern PropertyRNA &rna_ToolSettings_snap_uv_element;
+extern PropertyRNA &rna_ToolSettings_snap_target;
+extern PropertyRNA &rna_ToolSettings_use_snap_peel_object;
+extern PropertyRNA &rna_ToolSettings_use_snap_backface_culling;
+extern PropertyRNA &rna_ToolSettings_use_snap_self;
+extern PropertyRNA &rna_ToolSettings_use_snap_edit;
+extern PropertyRNA &rna_ToolSettings_use_snap_nonedit;
+extern PropertyRNA &rna_ToolSettings_use_snap_selectable;
+extern PropertyRNA &rna_ToolSettings_use_snap_translate;
+extern PropertyRNA &rna_ToolSettings_use_snap_rotate;
+extern PropertyRNA &rna_ToolSettings_use_snap_scale;
+extern PropertyRNA &rna_ToolSettings_plane_axis;
+extern PropertyRNA &rna_ToolSettings_plane_axis_auto;
+extern PropertyRNA &rna_ToolSettings_plane_depth;
+extern PropertyRNA &rna_ToolSettings_plane_orientation;
+extern PropertyRNA &rna_ToolSettings_snap_elements_tool;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_draw_additive;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_draw_onback;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_thumbnail_list;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_weight_data_add;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_automerge_strokes;
+extern PropertyRNA &rna_ToolSettings_gpencil_sculpt;
+extern PropertyRNA &rna_ToolSettings_gpencil_interpolate;
+extern PropertyRNA &rna_ToolSettings_gpencil_stroke_placement_view3d;
+extern PropertyRNA &rna_ToolSettings_gpencil_stroke_snap_mode;
+extern PropertyRNA &rna_ToolSettings_gpencil_surface_offset;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_project_only_selected;
+extern PropertyRNA &rna_ToolSettings_gpencil_selectmode_edit;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_select_mask_point;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_select_mask_stroke;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_select_mask_segment;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_vertex_select_mask_point;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_vertex_select_mask_stroke;
+extern PropertyRNA &rna_ToolSettings_use_gpencil_vertex_select_mask_segment;
+extern PropertyRNA &rna_ToolSettings_use_grease_pencil_multi_frame_editing;
+extern PropertyRNA &rna_ToolSettings_annotation_stroke_placement_view2d;
+extern PropertyRNA &rna_ToolSettings_annotation_stroke_placement_view3d;
+extern PropertyRNA &rna_ToolSettings_use_annotation_stroke_endpoints;
+extern PropertyRNA &rna_ToolSettings_use_annotation_project_only_selected;
+extern PropertyRNA &rna_ToolSettings_annotation_thickness;
+extern PropertyRNA &rna_ToolSettings_use_keyframe_insert_auto;
+extern PropertyRNA &rna_ToolSettings_auto_keying_mode;
+extern PropertyRNA &rna_ToolSettings_use_record_with_nla;
+extern PropertyRNA &rna_ToolSettings_use_keyframe_insert_keyingset;
+extern PropertyRNA &rna_ToolSettings_use_keyframe_cycle_aware;
+extern PropertyRNA &rna_ToolSettings_keyframe_type;
+extern PropertyRNA &rna_ToolSettings_anim_mirror_object;
+extern PropertyRNA &rna_ToolSettings_anim_mirror_bone;
+extern PropertyRNA &rna_ToolSettings_anim_relative_object;
+extern PropertyRNA &rna_ToolSettings_anim_fix_to_cam_use_loc;
+extern PropertyRNA &rna_ToolSettings_anim_fix_to_cam_use_rot;
+extern PropertyRNA &rna_ToolSettings_anim_fix_to_cam_use_scale;
+extern PropertyRNA &rna_ToolSettings_uv_select_mode;
+extern PropertyRNA &rna_ToolSettings_uv_sticky_select_mode;
+extern PropertyRNA &rna_ToolSettings_use_uv_select_sync;
+extern PropertyRNA &rna_ToolSettings_use_uv_select_island;
+extern PropertyRNA &rna_ToolSettings_show_uv_local_view;
+extern PropertyRNA &rna_ToolSettings_use_uv_custom_region;
+extern PropertyRNA &rna_ToolSettings_mesh_select_mode;
+extern PropertyRNA &rna_ToolSettings_vertex_group_weight;
+extern PropertyRNA &rna_ToolSettings_use_edge_path_live_unwrap;
+extern PropertyRNA &rna_ToolSettings_normal_vector;
+extern PropertyRNA &rna_ToolSettings_curve_paint_settings;
+extern PropertyRNA &rna_ToolSettings_statvis;
+extern PropertyRNA &rna_ToolSettings_custom_bevel_profile_preset;
+extern PropertyRNA &rna_ToolSettings_sequencer_tool_settings;
+
+
+extern PropertyRNA &rna_GPencilInterpolateSettings_rna_properties;
+extern PropertyRNA &rna_GPencilInterpolateSettings_rna_type;
+extern PropertyRNA &rna_GPencilInterpolateSettings_interpolation_curve;
+
+
+extern PropertyRNA &rna_CurvePaintSettings_rna_properties;
+extern PropertyRNA &rna_CurvePaintSettings_rna_type;
+extern PropertyRNA &rna_CurvePaintSettings_curve_type;
+extern PropertyRNA &rna_CurvePaintSettings_use_corners_detect;
+extern PropertyRNA &rna_CurvePaintSettings_use_pressure_radius;
+extern PropertyRNA &rna_CurvePaintSettings_use_stroke_endpoints;
+extern PropertyRNA &rna_CurvePaintSettings_use_offset_absolute;
+extern PropertyRNA &rna_CurvePaintSettings_use_project_only_selected;
+extern PropertyRNA &rna_CurvePaintSettings_error_threshold;
+extern PropertyRNA &rna_CurvePaintSettings_fit_method;
+extern PropertyRNA &rna_CurvePaintSettings_corner_angle;
+extern PropertyRNA &rna_CurvePaintSettings_radius_min;
+extern PropertyRNA &rna_CurvePaintSettings_radius_max;
+extern PropertyRNA &rna_CurvePaintSettings_radius_taper_start;
+extern PropertyRNA &rna_CurvePaintSettings_radius_taper_end;
+extern PropertyRNA &rna_CurvePaintSettings_surface_offset;
+extern PropertyRNA &rna_CurvePaintSettings_depth_mode;
+extern PropertyRNA &rna_CurvePaintSettings_surface_plane;
+
+
+extern PropertyRNA &rna_SequencerToolSettings_rna_properties;
+extern PropertyRNA &rna_SequencerToolSettings_rna_type;
+extern PropertyRNA &rna_SequencerToolSettings_fit_method;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_current_frame;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_hold_offset;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_markers;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_retiming_keys;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_frame_range;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_borders;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_center;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_strips_preview;
+extern PropertyRNA &rna_SequencerToolSettings_snap_ignore_muted;
+extern PropertyRNA &rna_SequencerToolSettings_snap_ignore_sound;
+extern PropertyRNA &rna_SequencerToolSettings_use_snap_current_frame_to_strips;
+extern PropertyRNA &rna_SequencerToolSettings_snap_to_all_channels;
+extern PropertyRNA &rna_SequencerToolSettings_snap_distance;
+extern PropertyRNA &rna_SequencerToolSettings_overlap_mode;
+extern PropertyRNA &rna_SequencerToolSettings_pivot_point;
+
+
+extern PropertyRNA &rna_MeshStatVis_rna_properties;
+extern PropertyRNA &rna_MeshStatVis_rna_type;
+extern PropertyRNA &rna_MeshStatVis_type;
+extern PropertyRNA &rna_MeshStatVis_overhang_min;
+extern PropertyRNA &rna_MeshStatVis_overhang_max;
+extern PropertyRNA &rna_MeshStatVis_overhang_axis;
+extern PropertyRNA &rna_MeshStatVis_thickness_min;
+extern PropertyRNA &rna_MeshStatVis_thickness_max;
+extern PropertyRNA &rna_MeshStatVis_thickness_samples;
+extern PropertyRNA &rna_MeshStatVis_distort_min;
+extern PropertyRNA &rna_MeshStatVis_distort_max;
+extern PropertyRNA &rna_MeshStatVis_sharp_min;
+extern PropertyRNA &rna_MeshStatVis_sharp_max;
+
+
+extern PropertyRNA &rna_UnitSettings_rna_properties;
+extern PropertyRNA &rna_UnitSettings_rna_type;
+extern PropertyRNA &rna_UnitSettings_system;
+extern PropertyRNA &rna_UnitSettings_system_rotation;
+extern PropertyRNA &rna_UnitSettings_scale_length;
+extern PropertyRNA &rna_UnitSettings_use_separate;
+extern PropertyRNA &rna_UnitSettings_length_unit;
+extern PropertyRNA &rna_UnitSettings_mass_unit;
+extern PropertyRNA &rna_UnitSettings_time_unit;
+extern PropertyRNA &rna_UnitSettings_temperature_unit;
+
+
+extern PropertyRNA &rna_Stereo3dFormat_rna_properties;
+extern PropertyRNA &rna_Stereo3dFormat_rna_type;
+extern PropertyRNA &rna_Stereo3dFormat_display_mode;
+extern PropertyRNA &rna_Stereo3dFormat_anaglyph_type;
+extern PropertyRNA &rna_Stereo3dFormat_interlace_type;
+extern PropertyRNA &rna_Stereo3dFormat_use_interlace_swap;
+extern PropertyRNA &rna_Stereo3dFormat_use_sidebyside_crosseyed;
+extern PropertyRNA &rna_Stereo3dFormat_use_squeezed_frame;
+
+
+extern PropertyRNA &rna_ImageFormatSettings_rna_properties;
+extern PropertyRNA &rna_ImageFormatSettings_rna_type;
+extern PropertyRNA &rna_ImageFormatSettings_media_type;
+extern PropertyRNA &rna_ImageFormatSettings_file_format;
+extern PropertyRNA &rna_ImageFormatSettings_color_mode;
+extern PropertyRNA &rna_ImageFormatSettings_color_depth;
+extern PropertyRNA &rna_ImageFormatSettings_quality;
+extern PropertyRNA &rna_ImageFormatSettings_compression;
+extern PropertyRNA &rna_ImageFormatSettings_use_preview;
+extern PropertyRNA &rna_ImageFormatSettings_exr_codec;
+extern PropertyRNA &rna_ImageFormatSettings_use_exr_interleave;
+extern PropertyRNA &rna_ImageFormatSettings_use_jpeg2k_ycc;
+extern PropertyRNA &rna_ImageFormatSettings_use_jpeg2k_cinema_preset;
+extern PropertyRNA &rna_ImageFormatSettings_use_jpeg2k_cinema_48;
+extern PropertyRNA &rna_ImageFormatSettings_jpeg2k_codec;
+extern PropertyRNA &rna_ImageFormatSettings_tiff_codec;
+extern PropertyRNA &rna_ImageFormatSettings_use_cineon_log;
+extern PropertyRNA &rna_ImageFormatSettings_cineon_black;
+extern PropertyRNA &rna_ImageFormatSettings_cineon_white;
+extern PropertyRNA &rna_ImageFormatSettings_cineon_gamma;
+extern PropertyRNA &rna_ImageFormatSettings_views_format;
+extern PropertyRNA &rna_ImageFormatSettings_stereo_3d_format;
+extern PropertyRNA &rna_ImageFormatSettings_color_management;
+extern PropertyRNA &rna_ImageFormatSettings_view_settings;
+extern PropertyRNA &rna_ImageFormatSettings_display_settings;
+extern PropertyRNA &rna_ImageFormatSettings_linear_colorspace_settings;
+extern PropertyRNA &rna_ImageFormatSettings_has_linear_colorspace;
+
+
+extern PropertyRNA &rna_TransformOrientation_rna_properties;
+extern PropertyRNA &rna_TransformOrientation_rna_type;
+extern PropertyRNA &rna_TransformOrientation_matrix;
+extern PropertyRNA &rna_TransformOrientation_name;
+
+
+extern PropertyRNA &rna_TransformOrientationSlot_rna_properties;
+extern PropertyRNA &rna_TransformOrientationSlot_rna_type;
+extern PropertyRNA &rna_TransformOrientationSlot_type;
+extern PropertyRNA &rna_TransformOrientationSlot_custom_orientation;
+extern PropertyRNA &rna_TransformOrientationSlot_use;
+
+
+extern PropertyRNA &rna_View3DCursor_rna_properties;
+extern PropertyRNA &rna_View3DCursor_rna_type;
+extern PropertyRNA &rna_View3DCursor_location;
+extern PropertyRNA &rna_View3DCursor_rotation_quaternion;
+extern PropertyRNA &rna_View3DCursor_rotation_axis_angle;
+extern PropertyRNA &rna_View3DCursor_rotation_euler;
+extern PropertyRNA &rna_View3DCursor_rotation_mode;
+extern PropertyRNA &rna_View3DCursor_matrix;
+
+
+extern PropertyRNA &rna_PropertyGroup_rna_properties;
+extern PropertyRNA &rna_PropertyGroup_rna_type;
+extern PropertyRNA &rna_PropertyGroup_name;
+
+extern PropertyRNA &rna_SelectedUvElement_element_index;
+extern PropertyRNA &rna_SelectedUvElement_face_index;
+
+extern FunctionRNA *rna_PropertyGroup_bl_system_properties_get_func;
+extern PropertyRNA &rna_PropertyGroup_bl_system_properties_get_do_create;
+extern PropertyRNA &rna_PropertyGroup_bl_system_properties_get_system_properties;
+
+
+
+extern PropertyRNA &rna_DisplaySafeAreas_rna_properties;
+extern PropertyRNA &rna_DisplaySafeAreas_rna_type;
+extern PropertyRNA &rna_DisplaySafeAreas_title;
+extern PropertyRNA &rna_DisplaySafeAreas_action;
+extern PropertyRNA &rna_DisplaySafeAreas_title_center;
+extern PropertyRNA &rna_DisplaySafeAreas_action_center;
+
+
+extern PropertyRNA &rna_SceneDisplay_rna_properties;
+extern PropertyRNA &rna_SceneDisplay_rna_type;
+extern PropertyRNA &rna_SceneDisplay_light_direction;
+extern PropertyRNA &rna_SceneDisplay_shadow_shift;
+extern PropertyRNA &rna_SceneDisplay_shadow_focus;
+extern PropertyRNA &rna_SceneDisplay_matcap_ssao_distance;
+extern PropertyRNA &rna_SceneDisplay_matcap_ssao_attenuation;
+extern PropertyRNA &rna_SceneDisplay_matcap_ssao_samples;
+extern PropertyRNA &rna_SceneDisplay_render_aa;
+extern PropertyRNA &rna_SceneDisplay_viewport_aa;
+extern PropertyRNA &rna_SceneDisplay_shading;
+
+
+extern PropertyRNA &rna_RaytraceEEVEE_rna_properties;
+extern PropertyRNA &rna_RaytraceEEVEE_rna_type;
+extern PropertyRNA &rna_RaytraceEEVEE_resolution_scale;
+extern PropertyRNA &rna_RaytraceEEVEE_use_backface_hit;
+extern PropertyRNA &rna_RaytraceEEVEE_backface_radiance_scale;
+extern PropertyRNA &rna_RaytraceEEVEE_use_denoise;
+extern PropertyRNA &rna_RaytraceEEVEE_denoise_spatial;
+extern PropertyRNA &rna_RaytraceEEVEE_denoise_temporal;
+extern PropertyRNA &rna_RaytraceEEVEE_denoise_bilateral;
+extern PropertyRNA &rna_RaytraceEEVEE_screen_trace_thickness;
+extern PropertyRNA &rna_RaytraceEEVEE_trace_max_roughness;
+extern PropertyRNA &rna_RaytraceEEVEE_screen_trace_quality;
+
+
+extern PropertyRNA &rna_SceneEEVEE_rna_properties;
+extern PropertyRNA &rna_SceneEEVEE_rna_type;
+extern PropertyRNA &rna_SceneEEVEE_gi_diffuse_bounces;
+extern PropertyRNA &rna_SceneEEVEE_gi_cubemap_resolution;
+extern PropertyRNA &rna_SceneEEVEE_gi_visibility_resolution;
+extern PropertyRNA &rna_SceneEEVEE_gi_glossy_clamp;
+extern PropertyRNA &rna_SceneEEVEE_gi_irradiance_pool_size;
+extern PropertyRNA &rna_SceneEEVEE_taa_samples;
+extern PropertyRNA &rna_SceneEEVEE_taa_render_samples;
+extern PropertyRNA &rna_SceneEEVEE_use_taa_reprojection;
+extern PropertyRNA &rna_SceneEEVEE_ray_tracing_method;
+extern PropertyRNA &rna_SceneEEVEE_use_shadow_jitter_viewport;
+extern PropertyRNA &rna_SceneEEVEE_clamp_surface_direct;
+extern PropertyRNA &rna_SceneEEVEE_clamp_surface_indirect;
+extern PropertyRNA &rna_SceneEEVEE_clamp_volume_direct;
+extern PropertyRNA &rna_SceneEEVEE_clamp_volume_indirect;
+extern PropertyRNA &rna_SceneEEVEE_direct_light_intensity;
+extern PropertyRNA &rna_SceneEEVEE_indirect_light_intensity;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_start;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_end;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_tile_size;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_samples;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_sample_distribution;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_ray_depth;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_light_clamp;
+extern PropertyRNA &rna_SceneEEVEE_use_volumetric_shadows;
+extern PropertyRNA &rna_SceneEEVEE_volumetric_shadow_samples;
+extern PropertyRNA &rna_SceneEEVEE_use_volume_custom_range;
+extern PropertyRNA &rna_SceneEEVEE_use_fast_gi;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_thickness_near;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_quality;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_step_count;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_ray_count;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_method;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_distance;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_bias;
+extern PropertyRNA &rna_SceneEEVEE_fast_gi_resolution;
+extern PropertyRNA &rna_SceneEEVEE_bokeh_max_size;
+extern PropertyRNA &rna_SceneEEVEE_bokeh_threshold;
+extern PropertyRNA &rna_SceneEEVEE_bokeh_neighbor_max;
+extern PropertyRNA &rna_SceneEEVEE_use_bokeh_jittered;
+extern PropertyRNA &rna_SceneEEVEE_bokeh_overblur;
+extern PropertyRNA &rna_SceneEEVEE_motion_blur_depth_scale;
+extern PropertyRNA &rna_SceneEEVEE_motion_blur_max;
+extern PropertyRNA &rna_SceneEEVEE_motion_blur_steps;
+extern PropertyRNA &rna_SceneEEVEE_use_shadows;
+extern PropertyRNA &rna_SceneEEVEE_shadow_pool_size;
+extern PropertyRNA &rna_SceneEEVEE_shadow_ray_count;
+extern PropertyRNA &rna_SceneEEVEE_shadow_step_count;
+extern PropertyRNA &rna_SceneEEVEE_light_threshold;
+extern PropertyRNA &rna_SceneEEVEE_use_overscan;
+extern PropertyRNA &rna_SceneEEVEE_overscan_size;
+extern PropertyRNA &rna_SceneEEVEE_ray_tracing_options;
+extern PropertyRNA &rna_SceneEEVEE_use_raytracing;
+extern PropertyRNA &rna_SceneEEVEE_shadow_resolution_scale;
+
+
+extern PropertyRNA &rna_SceneHydra_rna_properties;
+extern PropertyRNA &rna_SceneHydra_rna_type;
+extern PropertyRNA &rna_SceneHydra_export_method;
+
+
+extern PropertyRNA &rna_AOV_rna_properties;
+extern PropertyRNA &rna_AOV_rna_type;
+extern PropertyRNA &rna_AOV_name;
+extern PropertyRNA &rna_AOV_is_valid;
+extern PropertyRNA &rna_AOV_type;
+
+
+extern PropertyRNA &rna_Lightgroup_rna_properties;
+extern PropertyRNA &rna_Lightgroup_rna_type;
+extern PropertyRNA &rna_Lightgroup_name;
+
+
+extern PropertyRNA &rna_ViewLayerEEVEE_rna_properties;
+extern PropertyRNA &rna_ViewLayerEEVEE_rna_type;
+extern PropertyRNA &rna_ViewLayerEEVEE_use_pass_volume_direct;
+extern PropertyRNA &rna_ViewLayerEEVEE_use_pass_bloom;
+extern PropertyRNA &rna_ViewLayerEEVEE_use_pass_transparent;
+extern PropertyRNA &rna_ViewLayerEEVEE_ambient_occlusion_distance;
+
+
+extern PropertyRNA &rna_SceneGpencil_rna_properties;
+extern PropertyRNA &rna_SceneGpencil_rna_type;
+extern PropertyRNA &rna_SceneGpencil_antialias_threshold;
+extern PropertyRNA &rna_SceneGpencil_antialias_threshold_render;
+extern PropertyRNA &rna_SceneGpencil_aa_samples;
+extern PropertyRNA &rna_SceneGpencil_motion_blur_steps;
+
+
+extern PropertyRNA &rna_FFmpegSettings_rna_properties;
+extern PropertyRNA &rna_FFmpegSettings_rna_type;
+extern PropertyRNA &rna_FFmpegSettings_format;
+extern PropertyRNA &rna_FFmpegSettings_codec;
+extern PropertyRNA &rna_FFmpegSettings_video_bitrate;
+extern PropertyRNA &rna_FFmpegSettings_minrate;
+extern PropertyRNA &rna_FFmpegSettings_maxrate;
+extern PropertyRNA &rna_FFmpegSettings_muxrate;
+extern PropertyRNA &rna_FFmpegSettings_gopsize;
+extern PropertyRNA &rna_FFmpegSettings_max_b_frames;
+extern PropertyRNA &rna_FFmpegSettings_use_max_b_frames;
+extern PropertyRNA &rna_FFmpegSettings_buffersize;
+extern PropertyRNA &rna_FFmpegSettings_packetsize;
+extern PropertyRNA &rna_FFmpegSettings_constant_rate_factor;
+extern PropertyRNA &rna_FFmpegSettings_custom_constant_rate_factor;
+extern PropertyRNA &rna_FFmpegSettings_ffmpeg_preset;
+extern PropertyRNA &rna_FFmpegSettings_ffmpeg_prores_profile;
+extern PropertyRNA &rna_FFmpegSettings_use_autosplit;
+extern PropertyRNA &rna_FFmpegSettings_use_lossless_output;
+extern PropertyRNA &rna_FFmpegSettings_audio_codec;
+extern PropertyRNA &rna_FFmpegSettings_audio_bitrate;
+extern PropertyRNA &rna_FFmpegSettings_audio_volume;
+extern PropertyRNA &rna_FFmpegSettings_audio_mixrate;
+extern PropertyRNA &rna_FFmpegSettings_audio_channels;
+
+
+extern PropertyRNA &rna_RenderSettings_rna_properties;
+extern PropertyRNA &rna_RenderSettings_rna_type;
+extern PropertyRNA &rna_RenderSettings_image_settings;
+extern PropertyRNA &rna_RenderSettings_resolution_x;
+extern PropertyRNA &rna_RenderSettings_resolution_y;
+extern PropertyRNA &rna_RenderSettings_resolution_percentage;
+extern PropertyRNA &rna_RenderSettings_preview_pixel_size;
+extern PropertyRNA &rna_RenderSettings_pixel_aspect_x;
+extern PropertyRNA &rna_RenderSettings_pixel_aspect_y;
+extern PropertyRNA &rna_RenderSettings_ppm_factor;
+extern PropertyRNA &rna_RenderSettings_ppm_base;
+extern PropertyRNA &rna_RenderSettings_ffmpeg;
+extern PropertyRNA &rna_RenderSettings_fps;
+extern PropertyRNA &rna_RenderSettings_fps_base;
+extern PropertyRNA &rna_RenderSettings_frame_map_old;
+extern PropertyRNA &rna_RenderSettings_frame_map_new;
+extern PropertyRNA &rna_RenderSettings_dither_intensity;
+extern PropertyRNA &rna_RenderSettings_filter_size;
+extern PropertyRNA &rna_RenderSettings_film_transparent;
+extern PropertyRNA &rna_RenderSettings_use_freestyle;
+extern PropertyRNA &rna_RenderSettings_threads;
+extern PropertyRNA &rna_RenderSettings_threads_mode;
+extern PropertyRNA &rna_RenderSettings_use_motion_blur;
+extern PropertyRNA &rna_RenderSettings_motion_blur_shutter;
+extern PropertyRNA &rna_RenderSettings_motion_blur_position;
+extern PropertyRNA &rna_RenderSettings_motion_blur_shutter_curve;
+extern PropertyRNA &rna_RenderSettings_hair_type;
+extern PropertyRNA &rna_RenderSettings_hair_subdiv;
+extern PropertyRNA &rna_RenderSettings_use_high_quality_normals;
+extern PropertyRNA &rna_RenderSettings_anisotropic_filter;
+extern PropertyRNA &rna_RenderSettings_use_border;
+extern PropertyRNA &rna_RenderSettings_border_min_x;
+extern PropertyRNA &rna_RenderSettings_border_min_y;
+extern PropertyRNA &rna_RenderSettings_border_max_x;
+extern PropertyRNA &rna_RenderSettings_border_max_y;
+extern PropertyRNA &rna_RenderSettings_use_crop_to_border;
+extern PropertyRNA &rna_RenderSettings_use_placeholder;
+extern PropertyRNA &rna_RenderSettings_use_overwrite;
+extern PropertyRNA &rna_RenderSettings_save_output;
+extern PropertyRNA &rna_RenderSettings_use_compositing;
+extern PropertyRNA &rna_RenderSettings_use_sequencer;
+extern PropertyRNA &rna_RenderSettings_use_file_extension;
+extern PropertyRNA &rna_RenderSettings_file_extension;
+extern PropertyRNA &rna_RenderSettings_is_movie_format;
+extern PropertyRNA &rna_RenderSettings_use_lock_interface;
+extern PropertyRNA &rna_RenderSettings_filepath;
+extern PropertyRNA &rna_RenderSettings_use_render_cache;
+extern PropertyRNA &rna_RenderSettings_use_stamp_time;
+extern PropertyRNA &rna_RenderSettings_use_stamp_date;
+extern PropertyRNA &rna_RenderSettings_use_stamp_frame;
+extern PropertyRNA &rna_RenderSettings_use_stamp_frame_range;
+extern PropertyRNA &rna_RenderSettings_use_stamp_camera;
+extern PropertyRNA &rna_RenderSettings_use_stamp_lens;
+extern PropertyRNA &rna_RenderSettings_use_stamp_scene;
+extern PropertyRNA &rna_RenderSettings_use_stamp_note;
+extern PropertyRNA &rna_RenderSettings_use_stamp_marker;
+extern PropertyRNA &rna_RenderSettings_use_stamp_filename;
+extern PropertyRNA &rna_RenderSettings_use_stamp_sequencer_strip;
+extern PropertyRNA &rna_RenderSettings_use_stamp_render_time;
+extern PropertyRNA &rna_RenderSettings_stamp_note_text;
+extern PropertyRNA &rna_RenderSettings_use_stamp;
+extern PropertyRNA &rna_RenderSettings_use_stamp_labels;
+extern PropertyRNA &rna_RenderSettings_metadata_input;
+extern PropertyRNA &rna_RenderSettings_use_stamp_memory;
+extern PropertyRNA &rna_RenderSettings_use_stamp_hostname;
+extern PropertyRNA &rna_RenderSettings_stamp_font_size;
+extern PropertyRNA &rna_RenderSettings_stamp_foreground;
+extern PropertyRNA &rna_RenderSettings_stamp_background;
+extern PropertyRNA &rna_RenderSettings_sequencer_gl_preview;
+extern PropertyRNA &rna_RenderSettings_use_sequencer_override_scene_strip;
+extern PropertyRNA &rna_RenderSettings_use_single_layer;
+extern PropertyRNA &rna_RenderSettings_views;
+extern PropertyRNA &rna_RenderSettings_stereo_views;
+extern PropertyRNA &rna_RenderSettings_use_multiview;
+extern PropertyRNA &rna_RenderSettings_views_format;
+extern PropertyRNA &rna_RenderSettings_engine;
+extern PropertyRNA &rna_RenderSettings_has_multiple_engines;
+extern PropertyRNA &rna_RenderSettings_use_spherical_stereo;
+extern PropertyRNA &rna_RenderSettings_use_simplify;
+extern PropertyRNA &rna_RenderSettings_simplify_subdivision;
+extern PropertyRNA &rna_RenderSettings_simplify_child_particles;
+extern PropertyRNA &rna_RenderSettings_simplify_subdivision_render;
+extern PropertyRNA &rna_RenderSettings_simplify_child_particles_render;
+extern PropertyRNA &rna_RenderSettings_simplify_volumes;
+extern PropertyRNA &rna_RenderSettings_use_simplify_normals;
+extern PropertyRNA &rna_RenderSettings_use_texture_cache;
+extern PropertyRNA &rna_RenderSettings_use_auto_generate_texture_cache;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil_onplay;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil_antialiasing;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil_view_fill;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil_modifier;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil_shader_fx;
+extern PropertyRNA &rna_RenderSettings_simplify_gpencil_tint;
+extern PropertyRNA &rna_RenderSettings_use_persistent_data;
+extern PropertyRNA &rna_RenderSettings_line_thickness_mode;
+extern PropertyRNA &rna_RenderSettings_line_thickness;
+extern PropertyRNA &rna_RenderSettings_bake;
+extern PropertyRNA &rna_RenderSettings_compositor_device;
+extern PropertyRNA &rna_RenderSettings_use_compositor_frames_cache;
+extern PropertyRNA &rna_RenderSettings_compositor_precision;
+extern PropertyRNA &rna_RenderSettings_compositor_denoise_device;
+extern PropertyRNA &rna_RenderSettings_compositor_denoise_preview_quality;
+extern PropertyRNA &rna_RenderSettings_compositor_denoise_final_quality;
+
+extern FunctionRNA *rna_RenderSettings_frame_path_func;
+extern PropertyRNA &rna_RenderSettings_frame_path_frame;
+extern PropertyRNA &rna_RenderSettings_frame_path_preview;
+extern PropertyRNA &rna_RenderSettings_frame_path_view;
+extern PropertyRNA &rna_RenderSettings_frame_path_filepath;
+
+
+
+extern PropertyRNA &rna_RenderViews_rna_properties;
+extern PropertyRNA &rna_RenderViews_rna_type;
+extern PropertyRNA &rna_RenderViews_active_index;
+extern PropertyRNA &rna_RenderViews_active;
+
+extern FunctionRNA *rna_RenderViews_new_func;
+extern PropertyRNA &rna_RenderViews_new_name;
+extern PropertyRNA &rna_RenderViews_new_result;
+
+extern FunctionRNA *rna_RenderViews_remove_func;
+extern PropertyRNA &rna_RenderViews_remove_view;
+
+
+
+extern PropertyRNA &rna_BakeSettings_rna_properties;
+extern PropertyRNA &rna_BakeSettings_rna_type;
+extern PropertyRNA &rna_BakeSettings_type;
+extern PropertyRNA &rna_BakeSettings_cage_object;
+extern PropertyRNA &rna_BakeSettings_filepath;
+extern PropertyRNA &rna_BakeSettings_width;
+extern PropertyRNA &rna_BakeSettings_height;
+extern PropertyRNA &rna_BakeSettings_margin;
+extern PropertyRNA &rna_BakeSettings_margin_type;
+extern PropertyRNA &rna_BakeSettings_max_ray_distance;
+extern PropertyRNA &rna_BakeSettings_cage_extrusion;
+extern PropertyRNA &rna_BakeSettings_normal_space;
+extern PropertyRNA &rna_BakeSettings_normal_r;
+extern PropertyRNA &rna_BakeSettings_normal_g;
+extern PropertyRNA &rna_BakeSettings_normal_b;
+extern PropertyRNA &rna_BakeSettings_image_settings;
+extern PropertyRNA &rna_BakeSettings_target;
+extern PropertyRNA &rna_BakeSettings_save_mode;
+extern PropertyRNA &rna_BakeSettings_view_from;
+extern PropertyRNA &rna_BakeSettings_use_selected_to_active;
+extern PropertyRNA &rna_BakeSettings_use_clear;
+extern PropertyRNA &rna_BakeSettings_use_split_materials;
+extern PropertyRNA &rna_BakeSettings_use_automatic_name;
+extern PropertyRNA &rna_BakeSettings_use_cage;
+extern PropertyRNA &rna_BakeSettings_use_pass_emit;
+extern PropertyRNA &rna_BakeSettings_use_pass_direct;
+extern PropertyRNA &rna_BakeSettings_use_pass_indirect;
+extern PropertyRNA &rna_BakeSettings_use_pass_color;
+extern PropertyRNA &rna_BakeSettings_use_pass_diffuse;
+extern PropertyRNA &rna_BakeSettings_use_pass_glossy;
+extern PropertyRNA &rna_BakeSettings_use_pass_transmission;
+extern PropertyRNA &rna_BakeSettings_pass_filter;
+extern PropertyRNA &rna_BakeSettings_use_multires;
+extern PropertyRNA &rna_BakeSettings_use_lores_mesh;
+extern PropertyRNA &rna_BakeSettings_displacement_space;
+
+
+extern PropertyRNA &rna_SceneRenderView_rna_properties;
+extern PropertyRNA &rna_SceneRenderView_rna_type;
+extern PropertyRNA &rna_SceneRenderView_name;
+extern PropertyRNA &rna_SceneRenderView_file_suffix;
+extern PropertyRNA &rna_SceneRenderView_camera_suffix;
+extern PropertyRNA &rna_SceneRenderView_use;
+
+PointerRNA Scene_camera_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->camera);
+}
+
+void Scene_camera_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->camera = value.data;
+}
+
+PointerRNA Scene_background_set_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Scene, data->set);
+}
+
+void Scene_background_set_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    PropPointerSetFunc fn = rna_Scene_set_set;
+    fn(ptr, value, reports);
+}
+
+PointerRNA Scene_world_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_World, data->world);
+}
+
+void Scene_world_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+
+    if (data->world) {
+        id_us_min((ID *)data->world);
+    }
+    if (value.data) {
+        id_us_plus((ID *)value.data);
+    }
+    *(void **)&data->world = value.data;
+}
+
+static PointerRNA Scene_objects_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_Scene_objects_get;
+    return fn(iter);
+}
+
+void Scene_objects_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Scene_objects;
+
+    PropCollectionBeginFunc fn = rna_Scene_objects_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Scene_objects_get(iter);
+    }
+}
+
+void Scene_objects_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_Scene_objects_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Scene_objects_get(iter);
+    }
+}
+
+void Scene_objects_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_Scene_objects_end;
+    fn(iter);
+}
+
+int Scene_frame_current_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->r.cfra);
+}
+
+void Scene_frame_current_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_frame_current_set;
+    fn(ptr, value);
+}
+
+float Scene_frame_subframe_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (float)(data->r.subframe);
+}
+
+void Scene_frame_subframe_set(PointerRNA *ptr, float value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->r.subframe = (std::remove_reference_t<decltype(data->r.subframe)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float Scene_frame_float_get(PointerRNA *ptr)
+{
+    PropFloatGetFunc fn = rna_Scene_frame_float_get;
+    return fn(ptr);
+}
+
+void Scene_frame_float_set(PointerRNA *ptr, float value)
+{
+    PropFloatSetFunc fn = rna_Scene_frame_float_set;
+    fn(ptr, value);
+}
+
+int Scene_frame_start_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->r.sfra);
+}
+
+void Scene_frame_start_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_start_frame_set;
+    fn(ptr, value);
+}
+
+int Scene_frame_end_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->r.efra);
+}
+
+void Scene_frame_end_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_end_frame_set;
+    fn(ptr, value);
+}
+
+int Scene_frame_step_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->r.frame_step);
+}
+
+void Scene_frame_step_set(PointerRNA *ptr, int value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->r.frame_step = (std::remove_reference_t<decltype(data->r.frame_step)>)std::clamp(value, 0, 1048574);
+}
+
+int Scene_time_jump_unit_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (uint64_t(data->r.time_jump_unit) & 1);
+}
+
+void Scene_time_jump_unit_set(PointerRNA *ptr, int value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->r.time_jump_unit = std::remove_reference_t<decltype(data->r.time_jump_unit)>(uint64_t(data->r.time_jump_unit) & ~uint64_t(1));
+    data->r.time_jump_unit = std::remove_reference_t<decltype(data->r.time_jump_unit)>(uint64_t(data->r.time_jump_unit) | uint64_t(value));
+}
+
+float Scene_time_jump_delta_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (float)(data->r.time_jump_delta);
+}
+
+void Scene_time_jump_delta_set(PointerRNA *ptr, float value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->r.time_jump_delta = (std::remove_reference_t<decltype(data->r.time_jump_delta)>)std::clamp(value, 0.1000000015f, FLT_MAX);
+}
+
+float Scene_frame_current_final_get(PointerRNA *ptr)
+{
+    PropFloatGetFunc fn = rna_Scene_frame_current_final_get;
+    return fn(ptr);
+}
+
+bool Scene_lock_frame_selection_to_range_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->r.flag) & 2) != 0);
+}
+
+void Scene_lock_frame_selection_to_range_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value) { data->r.flag = std::remove_reference_t<decltype(data->r.flag)>(uint64_t(data->r.flag) | 2); }
+    else { data->r.flag = std::remove_reference_t<decltype(data->r.flag)>(uint64_t(data->r.flag) & ~uint64_t(2)); }
+}
+
+bool Scene_allow_preroll_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->r.flag) & 4) != 0);
+}
+
+void Scene_allow_preroll_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value) { data->r.flag = std::remove_reference_t<decltype(data->r.flag)>(uint64_t(data->r.flag) | 4); }
+    else { data->r.flag = std::remove_reference_t<decltype(data->r.flag)>(uint64_t(data->r.flag) & ~uint64_t(4)); }
+}
+
+bool Scene_use_preview_range_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->r.flag) & 1) != 0);
+}
+
+void Scene_use_preview_range_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_Scene_use_preview_range_set;
+    fn(ptr, value);
+}
+
+int Scene_frame_preview_start_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->r.psfra);
+}
+
+void Scene_frame_preview_start_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_preview_range_start_frame_set;
+    fn(ptr, value);
+}
+
+int Scene_frame_preview_end_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->r.pefra);
+}
+
+void Scene_frame_preview_end_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_preview_range_end_frame_set;
+    fn(ptr, value);
+}
+
+bool Scene_show_subframe_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->r.flag) & 8) != 0);
+}
+
+void Scene_show_subframe_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value) { data->r.flag = std::remove_reference_t<decltype(data->r.flag)>(uint64_t(data->r.flag) | 8); }
+    else { data->r.flag = std::remove_reference_t<decltype(data->r.flag)>(uint64_t(data->r.flag) & ~uint64_t(8)); }
+}
+
+bool Scene_show_keys_from_selected_only_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return !((uint64_t(data->flag) & 16) != 0);
+}
+
+void Scene_show_keys_from_selected_only_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (!value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16)); }
+}
+
+void Scene_use_stamp_note_get(PointerRNA *ptr, char *value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    BLI_assert(strlen(data->r.stamp_udata) < 768);
+    strcpy(value, data->r.stamp_udata);
+}
+
+int Scene_use_stamp_note_length(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return strlen(data->r.stamp_udata);
+}
+
+void Scene_use_stamp_note_set(PointerRNA *ptr, const char *value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    BLI_strncpy_utf8(data->r.stamp_udata, value, 768);
+}
+
+PointerRNA Scene_animation_data_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_AnimData, data->adt);
+}
+
+bool Scene_is_nla_tweakmode_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->flag) & 4) != 0);
+}
+
+bool Scene_use_custom_simulation_range_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->flag) & 64) != 0);
+}
+
+void Scene_use_custom_simulation_range_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 64); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(64)); }
+}
+
+int Scene_simulation_frame_start_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->simulation_frame_start);
+}
+
+void Scene_simulation_frame_start_set(PointerRNA *ptr, int value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->simulation_frame_start = (std::remove_reference_t<decltype(data->simulation_frame_start)>)value;
+}
+
+int Scene_simulation_frame_end_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->simulation_frame_end);
+}
+
+void Scene_simulation_frame_end_set(PointerRNA *ptr, int value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->simulation_frame_end = (std::remove_reference_t<decltype(data->simulation_frame_end)>)value;
+}
+
+int Scene_sync_mode_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_Scene_sync_mode_get;
+    return fn(ptr);
+}
+
+void Scene_sync_mode_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_Scene_sync_mode_set;
+    fn(ptr, value);
+}
+
+int Scene_playback_loop_mode_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (int)(data->playback_loop_mode);
+}
+
+void Scene_playback_loop_mode_set(PointerRNA *ptr, int value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->playback_loop_mode = (std::remove_reference_t<decltype(data->playback_loop_mode)>)value;
+}
+
+PointerRNA Scene_compositing_node_group_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_NodeTree, data->compositing_node_group);
+}
+
+void Scene_compositing_node_group_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    PropPointerSetFunc fn = rna_Scene_compositing_node_group_set;
+    fn(ptr, value, reports);
+}
+
+bool Scene_use_nodes_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_Scene_use_nodes_get;
+    return fn(ptr);
+}
+
+void Scene_use_nodes_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_Scene_use_nodes_set;
+    fn(ptr, value);
+}
+
+PointerRNA Scene_sequence_editor_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_SequenceEditor, data->ed);
+}
+
+static PointerRNA Scene_keying_sets_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_KeyingSet, rna_iterator_listbase_get(iter));
+}
+
+void Scene_keying_sets_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Scene_keying_sets;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->keyingsets, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = Scene_keying_sets_get(iter);
+    }
+}
+
+void Scene_keying_sets_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Scene_keying_sets_get(iter);
+    }
+}
+
+void Scene_keying_sets_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Scene_keying_sets_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    Scene_keying_sets_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = Scene_keying_sets_get(&iter); }
+    }
+
+    Scene_keying_sets_end(&iter);
+
+    return found;
+}
+
+int KeyingSet_bl_label_length(PointerRNA *);
+void KeyingSet_bl_label_get(PointerRNA *, char *);
+
+bool Scene_keying_sets_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    Scene_keying_sets_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = KeyingSet_bl_label_length(&iter.ptr);
+            if (namelen < 1024) {
+                KeyingSet_bl_label_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                KeyingSet_bl_label_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        Scene_keying_sets_next(&iter);
+    }
+    Scene_keying_sets_end(&iter);
+
+    return found;
+}
+
+static PointerRNA Scene_keying_sets_all_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_KeyingSet, rna_iterator_listbase_get(iter));
+}
+
+void Scene_keying_sets_all_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Scene_keying_sets_all;
+
+    PropCollectionBeginFunc fn = rna_Scene_all_keyingsets_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Scene_keying_sets_all_get(iter);
+    }
+}
+
+void Scene_keying_sets_all_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_Scene_all_keyingsets_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Scene_keying_sets_all_get(iter);
+    }
+}
+
+void Scene_keying_sets_all_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+PointerRNA Scene_rigidbody_world_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_RigidBodyWorld, data->rigidbody_world);
+}
+
+PointerRNA Scene_tool_settings_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ToolSettings, data->toolsettings);
+}
+
+PointerRNA Scene_unit_settings_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_UnitSettings, &data->unit);
+}
+
+void Scene_gravity_get(PointerRNA *ptr, float values[3])
+{
+    Scene *data = (Scene *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = (float)(((float *)data->physics_settings.gravity)[i]);
+    }
+}
+
+void Scene_gravity_set(PointerRNA *ptr, const float values[3])
+{
+    Scene *data = (Scene *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        ((float *)data->physics_settings.gravity)[i] = values[i];
+    }
+}
+
+bool Scene_use_gravity_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->physics_settings.flag) & 1) != 0);
+}
+
+void Scene_use_gravity_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value) { data->physics_settings.flag = std::remove_reference_t<decltype(data->physics_settings.flag)>(uint64_t(data->physics_settings.flag) | 1); }
+    else { data->physics_settings.flag = std::remove_reference_t<decltype(data->physics_settings.flag)>(uint64_t(data->physics_settings.flag) & ~uint64_t(1)); }
+}
+
+PointerRNA Scene_render_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_RenderSettings, &data->r);
+}
+
+PointerRNA Scene_safe_areas_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_DisplaySafeAreas, &data->safe_areas);
+}
+
+static PointerRNA Scene_timeline_markers_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_TimelineMarker, rna_iterator_listbase_get(iter));
+}
+
+void Scene_timeline_markers_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Scene_timeline_markers;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->markers, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = Scene_timeline_markers_get(iter);
+    }
+}
+
+void Scene_timeline_markers_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Scene_timeline_markers_get(iter);
+    }
+}
+
+void Scene_timeline_markers_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Scene_timeline_markers_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    Scene_timeline_markers_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = Scene_timeline_markers_get(&iter); }
+    }
+
+    Scene_timeline_markers_end(&iter);
+
+    return found;
+}
+
+int TimelineMarker_name_length(PointerRNA *);
+void TimelineMarker_name_get(PointerRNA *, char *);
+
+bool Scene_timeline_markers_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    Scene_timeline_markers_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = TimelineMarker_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                TimelineMarker_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                TimelineMarker_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        Scene_timeline_markers_next(&iter);
+    }
+    Scene_timeline_markers_end(&iter);
+
+    return found;
+}
+
+int Scene_transform_orientation_slots_length(PointerRNA *ptr)
+{
+    PropCollectionLengthFunc fn = rna_Scene_transform_orientation_slots_length;
+    return fn(ptr);
+}
+
+static PointerRNA Scene_transform_orientation_slots_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_TransformOrientationSlot, rna_iterator_array_get(iter));
+}
+
+void Scene_transform_orientation_slots_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Scene_transform_orientation_slots;
+
+    PropCollectionBeginFunc fn = rna_Scene_transform_orientation_slots_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Scene_transform_orientation_slots_get(iter);
+    }
+}
+
+void Scene_transform_orientation_slots_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_array_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Scene_transform_orientation_slots_get(iter);
+    }
+}
+
+void Scene_transform_orientation_slots_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_array_end;
+    fn(iter);
+}
+
+bool Scene_transform_orientation_slots_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    Scene_transform_orientation_slots_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ArrayIterator *internal = &iter.internal.array;
+        if (index < 0 || index >= internal->length) {
+#ifdef __GNUC__
+            printf("Array iterator out of range: %s (index %d)\n", __func__, index);
+#else
+            printf("Array iterator out of range: (index %d)\n", index);
+#endif
+        }
+        else if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_array_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            internal->ptr += internal->itemsize * index;
+            found = 1;
+        }
+        if (found) { *r_ptr = Scene_transform_orientation_slots_get(&iter); }
+    }
+
+    Scene_transform_orientation_slots_end(&iter);
+
+    return found;
+}
+
+PointerRNA Scene_cursor_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_View3DCursor, &data->cursor);
+}
+
+bool Scene_use_audio_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_Scene_use_audio_get;
+    return fn(ptr);
+}
+
+void Scene_use_audio_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_Scene_use_audio_set;
+    fn(ptr, value);
+}
+
+bool Scene_use_audio_scrub_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return ((uint64_t(data->audio.flag) & 4) != 0);
+}
+
+void Scene_use_audio_scrub_set(PointerRNA *ptr, bool value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value) { data->audio.flag = std::remove_reference_t<decltype(data->audio.flag)>(uint64_t(data->audio.flag) | 4); }
+    else { data->audio.flag = std::remove_reference_t<decltype(data->audio.flag)>(uint64_t(data->audio.flag) & ~uint64_t(4)); }
+}
+
+float Scene_audio_doppler_speed_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (float)(data->audio.speed_of_sound);
+}
+
+void Scene_audio_doppler_speed_set(PointerRNA *ptr, float value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->audio.speed_of_sound = (std::remove_reference_t<decltype(data->audio.speed_of_sound)>)std::clamp(value, 0.0099999998f, FLT_MAX);
+}
+
+float Scene_audio_doppler_factor_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (float)(data->audio.doppler_factor);
+}
+
+void Scene_audio_doppler_factor_set(PointerRNA *ptr, float value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->audio.doppler_factor = (std::remove_reference_t<decltype(data->audio.doppler_factor)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+int Scene_audio_distance_model_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (uint64_t(data->audio.distance_model) & 7);
+}
+
+void Scene_audio_distance_model_set(PointerRNA *ptr, int value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->audio.distance_model = std::remove_reference_t<decltype(data->audio.distance_model)>(uint64_t(data->audio.distance_model) & ~uint64_t(7));
+    data->audio.distance_model = std::remove_reference_t<decltype(data->audio.distance_model)>(uint64_t(data->audio.distance_model) | uint64_t(value));
+}
+
+float Scene_audio_volume_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return (float)(data->audio.volume);
+}
+
+void Scene_audio_volume_set(PointerRNA *ptr, float value)
+{
+    Scene *data = (Scene *)(ptr->data);
+    data->audio.volume = (std::remove_reference_t<decltype(data->audio.volume)>)std::clamp(value, 0.0f, 100.0f);
+}
+
+PointerRNA Scene_annotation_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Annotation, data->gpd);
+}
+
+void Scene_annotation_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+
+    if (data->gpd) {
+        id_us_min((ID *)data->gpd);
+    }
+    if (value.data) {
+        id_us_plus((ID *)value.data);
+    }
+    *(void **)&data->gpd = value.data;
+}
+
+PointerRNA Scene_active_clip_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_MovieClip, data->clip);
+}
+
+void Scene_active_clip_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    Scene *data = (Scene *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+
+    if (data->clip) {
+        id_us_min((ID *)data->clip);
+    }
+    if (value.data) {
+        id_us_plus((ID *)value.data);
+    }
+    *(void **)&data->clip = value.data;
+}
+
+PointerRNA Scene_view_settings_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorManagedViewSettings, &data->view_settings);
+}
+
+PointerRNA Scene_display_settings_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorManagedDisplaySettings, &data->display_settings);
+}
+
+PointerRNA Scene_sequencer_colorspace_settings_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorManagedSequencerColorspaceSettings, &data->sequencer_colorspace_settings);
+}
+
+static PointerRNA Scene_view_layers_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_ViewLayer, rna_iterator_listbase_get(iter));
+}
+
+void Scene_view_layers_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Scene_view_layers;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->view_layers, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = Scene_view_layers_get(iter);
+    }
+}
+
+void Scene_view_layers_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Scene_view_layers_get(iter);
+    }
+}
+
+void Scene_view_layers_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Scene_view_layers_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    Scene_view_layers_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = Scene_view_layers_get(&iter); }
+    }
+
+    Scene_view_layers_end(&iter);
+
+    return found;
+}
+
+int ViewLayer_name_length(PointerRNA *);
+void ViewLayer_name_get(PointerRNA *, char *);
+
+bool Scene_view_layers_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    Scene_view_layers_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = ViewLayer_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                ViewLayer_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                ViewLayer_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        Scene_view_layers_next(&iter);
+    }
+    Scene_view_layers_end(&iter);
+
+    return found;
+}
+
+PointerRNA Scene_collection_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Collection, data->master_collection);
+}
+
+PointerRNA Scene_display_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_SceneDisplay, &data->display);
+}
+
+PointerRNA Scene_eevee_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_SceneEEVEE, &data->eevee);
+}
+
+PointerRNA Scene_grease_pencil_settings_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_SceneGpencil, &data->grease_pencil_settings);
+}
+
+PointerRNA Scene_hydra_get(PointerRNA *ptr)
+{
+    Scene *data = (Scene *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_SceneHydra, &data->hydra);
+}
+
+static PointerRNA SceneObjects_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SceneObjects_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SceneObjects_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SceneObjects_rna_properties_get(iter);
+    }
+}
+
+void SceneObjects_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SceneObjects_rna_properties_get(iter);
+    }
+}
+
+void SceneObjects_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SceneObjects_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SceneObjects_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA KeyingSets_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void KeyingSets_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_KeyingSets_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = KeyingSets_rna_properties_get(iter);
+    }
+}
+
+void KeyingSets_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = KeyingSets_rna_properties_get(iter);
+    }
+}
+
+void KeyingSets_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool KeyingSets_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA KeyingSets_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA KeyingSets_active_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_Scene_active_keying_set_get;
+    return fn(ptr);
+}
+
+void KeyingSets_active_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    PropPointerSetFunc fn = rna_Scene_active_keying_set_set;
+    fn(ptr, value, reports);
+}
+
+int KeyingSets_active_index_get(PointerRNA *ptr)
+{
+    PropIntGetFunc fn = rna_Scene_active_keying_set_index_get;
+    return fn(ptr);
+}
+
+void KeyingSets_active_index_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_active_keying_set_index_set;
+    fn(ptr, value);
+}
+
+static PointerRNA KeyingSetsAll_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void KeyingSetsAll_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_KeyingSetsAll_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = KeyingSetsAll_rna_properties_get(iter);
+    }
+}
+
+void KeyingSetsAll_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = KeyingSetsAll_rna_properties_get(iter);
+    }
+}
+
+void KeyingSetsAll_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool KeyingSetsAll_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA KeyingSetsAll_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA KeyingSetsAll_active_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_Scene_active_keying_set_get;
+    return fn(ptr);
+}
+
+void KeyingSetsAll_active_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    PropPointerSetFunc fn = rna_Scene_active_keying_set_set;
+    fn(ptr, value, reports);
+}
+
+int KeyingSetsAll_active_index_get(PointerRNA *ptr)
+{
+    PropIntGetFunc fn = rna_Scene_active_keying_set_index_get;
+    return fn(ptr);
+}
+
+void KeyingSetsAll_active_index_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_Scene_active_keying_set_index_set;
+    fn(ptr, value);
+}
+
+static PointerRNA TimelineMarkers_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void TimelineMarkers_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_TimelineMarkers_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = TimelineMarkers_rna_properties_get(iter);
+    }
+}
+
+void TimelineMarkers_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = TimelineMarkers_rna_properties_get(iter);
+    }
+}
+
+void TimelineMarkers_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool TimelineMarkers_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA TimelineMarkers_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA ViewLayers_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void ViewLayers_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_ViewLayers_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = ViewLayers_rna_properties_get(iter);
+    }
+}
+
+void ViewLayers_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = ViewLayers_rna_properties_get(iter);
+    }
+}
+
+void ViewLayers_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool ViewLayers_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA ViewLayers_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA ToolSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void ToolSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_ToolSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = ToolSettings_rna_properties_get(iter);
+    }
+}
+
+void ToolSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = ToolSettings_rna_properties_get(iter);
+    }
+}
+
+void ToolSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool ToolSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA ToolSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA ToolSettings_sculpt_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Sculpt, data->sculpt);
+}
+
+PointerRNA ToolSettings_curves_sculpt_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurvesSculpt, data->curves_sculpt);
+}
+
+bool ToolSettings_use_auto_normalize_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->auto_normalize) & 1) != 0);
+}
+
+void ToolSettings_use_auto_normalize_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->auto_normalize = std::remove_reference_t<decltype(data->auto_normalize)>(uint64_t(data->auto_normalize) | 1); }
+    else { data->auto_normalize = std::remove_reference_t<decltype(data->auto_normalize)>(uint64_t(data->auto_normalize) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_lock_relative_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->wpaint_lock_relative) & 1) != 0);
+}
+
+void ToolSettings_use_lock_relative_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->wpaint_lock_relative = std::remove_reference_t<decltype(data->wpaint_lock_relative)>(uint64_t(data->wpaint_lock_relative) | 1); }
+    else { data->wpaint_lock_relative = std::remove_reference_t<decltype(data->wpaint_lock_relative)>(uint64_t(data->wpaint_lock_relative) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_multipaint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->multipaint) & 1) != 0);
+}
+
+void ToolSettings_use_multipaint_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->multipaint = std::remove_reference_t<decltype(data->multipaint)>(uint64_t(data->multipaint) | 1); }
+    else { data->multipaint = std::remove_reference_t<decltype(data->multipaint)>(uint64_t(data->multipaint) & ~uint64_t(1)); }
+}
+
+int ToolSettings_vertex_group_user_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->weightuser);
+}
+
+void ToolSettings_vertex_group_user_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->weightuser = (std::remove_reference_t<decltype(data->weightuser)>)value;
+}
+
+int ToolSettings_vertex_group_subset_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->vgroupsubset);
+}
+
+void ToolSettings_vertex_group_subset_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->vgroupsubset = (std::remove_reference_t<decltype(data->vgroupsubset)>)value;
+}
+
+PointerRNA ToolSettings_vertex_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_VertexPaint, data->vpaint);
+}
+
+PointerRNA ToolSettings_weight_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_VertexPaint, data->wpaint);
+}
+
+PointerRNA ToolSettings_image_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ImagePaint, &data->imapaint);
+}
+
+PointerRNA ToolSettings_paint_mode_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_PaintModeSettings, &data->paint_mode);
+}
+
+PointerRNA ToolSettings_uv_sculpt_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_UvSculpt, &data->uvsculpt);
+}
+
+PointerRNA ToolSettings_gpencil_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_GpPaint, data->gp_paint);
+}
+
+PointerRNA ToolSettings_gpencil_vertex_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_GpVertexPaint, data->gp_vertexpaint);
+}
+
+PointerRNA ToolSettings_gpencil_sculpt_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_GpSculptPaint, data->gp_sculptpaint);
+}
+
+PointerRNA ToolSettings_gpencil_weight_paint_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_GpWeightPaint, data->gp_weightpaint);
+}
+
+PointerRNA ToolSettings_particle_edit_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ParticleEdit, &data->particle);
+}
+
+bool ToolSettings_uv_sculpt_lock_borders_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uv_sculpt_settings) & 1) != 0);
+}
+
+void ToolSettings_uv_sculpt_lock_borders_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uv_sculpt_settings = std::remove_reference_t<decltype(data->uv_sculpt_settings)>(uint64_t(data->uv_sculpt_settings) | 1); }
+    else { data->uv_sculpt_settings = std::remove_reference_t<decltype(data->uv_sculpt_settings)>(uint64_t(data->uv_sculpt_settings) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_uv_sculpt_all_islands_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uv_sculpt_settings) & 2) != 0);
+}
+
+void ToolSettings_uv_sculpt_all_islands_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uv_sculpt_settings = std::remove_reference_t<decltype(data->uv_sculpt_settings)>(uint64_t(data->uv_sculpt_settings) | 2); }
+    else { data->uv_sculpt_settings = std::remove_reference_t<decltype(data->uv_sculpt_settings)>(uint64_t(data->uv_sculpt_settings) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_lock_object_mode_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->object_flag) & 1) != 0);
+}
+
+void ToolSettings_lock_object_mode_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->object_flag = std::remove_reference_t<decltype(data->object_flag)>(uint64_t(data->object_flag) | 1); }
+    else { data->object_flag = std::remove_reference_t<decltype(data->object_flag)>(uint64_t(data->object_flag) & ~uint64_t(1)); }
+}
+
+int ToolSettings_workspace_tool_type_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->workspace_tool_type);
+}
+
+void ToolSettings_workspace_tool_type_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->workspace_tool_type = (std::remove_reference_t<decltype(data->workspace_tool_type)>)value;
+}
+
+bool ToolSettings_use_proportional_edit_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->proportional_edit) & 1) != 0);
+}
+
+void ToolSettings_use_proportional_edit_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->proportional_edit = std::remove_reference_t<decltype(data->proportional_edit)>(uint64_t(data->proportional_edit) | 1); }
+    else { data->proportional_edit = std::remove_reference_t<decltype(data->proportional_edit)>(uint64_t(data->proportional_edit) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_proportional_edit_objects_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (bool)(data->proportional_objects);
+}
+
+void ToolSettings_use_proportional_edit_objects_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->proportional_objects = (std::remove_reference_t<decltype(data->proportional_objects)>)value;
+}
+
+bool ToolSettings_use_proportional_projected_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->proportional_edit) & 4) != 0);
+}
+
+void ToolSettings_use_proportional_projected_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->proportional_edit = std::remove_reference_t<decltype(data->proportional_edit)>(uint64_t(data->proportional_edit) | 4); }
+    else { data->proportional_edit = std::remove_reference_t<decltype(data->proportional_edit)>(uint64_t(data->proportional_edit) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_use_proportional_connected_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->proportional_edit) & 2) != 0);
+}
+
+void ToolSettings_use_proportional_connected_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->proportional_edit = std::remove_reference_t<decltype(data->proportional_edit)>(uint64_t(data->proportional_edit) | 2); }
+    else { data->proportional_edit = std::remove_reference_t<decltype(data->proportional_edit)>(uint64_t(data->proportional_edit) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_proportional_edit_mask_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (bool)(data->proportional_mask);
+}
+
+void ToolSettings_use_proportional_edit_mask_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->proportional_mask = (std::remove_reference_t<decltype(data->proportional_mask)>)value;
+}
+
+bool ToolSettings_use_proportional_action_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (bool)(data->proportional_action);
+}
+
+void ToolSettings_use_proportional_action_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->proportional_action = (std::remove_reference_t<decltype(data->proportional_action)>)value;
+}
+
+bool ToolSettings_use_proportional_fcurve_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (bool)(data->proportional_fcurve);
+}
+
+void ToolSettings_use_proportional_fcurve_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->proportional_fcurve = (std::remove_reference_t<decltype(data->proportional_fcurve)>)value;
+}
+
+bool ToolSettings_lock_markers_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (bool)(data->lock_markers);
+}
+
+void ToolSettings_lock_markers_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->lock_markers = (std::remove_reference_t<decltype(data->lock_markers)>)value;
+}
+
+int ToolSettings_proportional_edit_falloff_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->prop_mode);
+}
+
+void ToolSettings_proportional_edit_falloff_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->prop_mode = (std::remove_reference_t<decltype(data->prop_mode)>)value;
+}
+
+float ToolSettings_proportional_size_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->proportional_size);
+}
+
+void ToolSettings_proportional_size_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->proportional_size = (std::remove_reference_t<decltype(data->proportional_size)>)std::clamp(value, 0.0000100000f, 5000.0f);
+}
+
+float ToolSettings_proportional_distance_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->proportional_size);
+}
+
+void ToolSettings_proportional_distance_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->proportional_size = (std::remove_reference_t<decltype(data->proportional_size)>)std::clamp(value, 0.0000100000f, 5000.0f);
+}
+
+float ToolSettings_double_threshold_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->doublimit);
+}
+
+void ToolSettings_double_threshold_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->doublimit = (std::remove_reference_t<decltype(data->doublimit)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+int ToolSettings_transform_pivot_point_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->transform_pivot_point);
+}
+
+void ToolSettings_transform_pivot_point_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->transform_pivot_point = (std::remove_reference_t<decltype(data->transform_pivot_point)>)value;
+}
+
+bool ToolSettings_use_transform_pivot_point_align_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->transform_flag) & 1) != 0);
+}
+
+void ToolSettings_use_transform_pivot_point_align_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->transform_flag = std::remove_reference_t<decltype(data->transform_flag)>(uint64_t(data->transform_flag) | 1); }
+    else { data->transform_flag = std::remove_reference_t<decltype(data->transform_flag)>(uint64_t(data->transform_flag) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_transform_data_origin_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->transform_flag) & 2) != 0);
+}
+
+void ToolSettings_use_transform_data_origin_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->transform_flag = std::remove_reference_t<decltype(data->transform_flag)>(uint64_t(data->transform_flag) | 2); }
+    else { data->transform_flag = std::remove_reference_t<decltype(data->transform_flag)>(uint64_t(data->transform_flag) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_transform_skip_children_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->transform_flag) & 4) != 0);
+}
+
+void ToolSettings_use_transform_skip_children_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->transform_flag = std::remove_reference_t<decltype(data->transform_flag)>(uint64_t(data->transform_flag) | 4); }
+    else { data->transform_flag = std::remove_reference_t<decltype(data->transform_flag)>(uint64_t(data->transform_flag) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_use_transform_correct_face_attributes_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uvcalc_flag) & 16) != 0);
+}
+
+void ToolSettings_use_transform_correct_face_attributes_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uvcalc_flag = std::remove_reference_t<decltype(data->uvcalc_flag)>(uint64_t(data->uvcalc_flag) | 16); }
+    else { data->uvcalc_flag = std::remove_reference_t<decltype(data->uvcalc_flag)>(uint64_t(data->uvcalc_flag) & ~uint64_t(16)); }
+}
+
+bool ToolSettings_use_transform_correct_keep_connected_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uvcalc_flag) & 32) != 0);
+}
+
+void ToolSettings_use_transform_correct_keep_connected_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uvcalc_flag = std::remove_reference_t<decltype(data->uvcalc_flag)>(uint64_t(data->uvcalc_flag) | 32); }
+    else { data->uvcalc_flag = std::remove_reference_t<decltype(data->uvcalc_flag)>(uint64_t(data->uvcalc_flag) & ~uint64_t(32)); }
+}
+
+bool ToolSettings_use_mesh_automerge_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->automerge) & 1) != 0);
+}
+
+void ToolSettings_use_mesh_automerge_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->automerge = std::remove_reference_t<decltype(data->automerge)>(uint64_t(data->automerge) | 1); }
+    else { data->automerge = std::remove_reference_t<decltype(data->automerge)>(uint64_t(data->automerge) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_mesh_automerge_and_split_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->automerge) & 2) != 0);
+}
+
+void ToolSettings_use_mesh_automerge_and_split_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->automerge = std::remove_reference_t<decltype(data->automerge)>(uint64_t(data->automerge) | 2); }
+    else { data->automerge = std::remove_reference_t<decltype(data->automerge)>(uint64_t(data->automerge) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_snap_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 1) != 0);
+}
+
+void ToolSettings_use_snap_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 1); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_node_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_node) & 1) != 0);
+}
+
+void ToolSettings_use_snap_node_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_node = std::remove_reference_t<decltype(data->snap_flag_node)>(uint64_t(data->snap_flag_node) | 1); }
+    else { data->snap_flag_node = std::remove_reference_t<decltype(data->snap_flag_node)>(uint64_t(data->snap_flag_node) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_sequencer_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_seq) & 1) != 0);
+}
+
+void ToolSettings_use_snap_sequencer_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_seq = std::remove_reference_t<decltype(data->snap_flag_seq)>(uint64_t(data->snap_flag_seq) | 1); }
+    else { data->snap_flag_seq = std::remove_reference_t<decltype(data->snap_flag_seq)>(uint64_t(data->snap_flag_seq) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_uv_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_uv_flag) & 1) != 0);
+}
+
+void ToolSettings_use_snap_uv_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_uv_flag = std::remove_reference_t<decltype(data->snap_uv_flag)>(uint64_t(data->snap_uv_flag) | 1); }
+    else { data->snap_uv_flag = std::remove_reference_t<decltype(data->snap_uv_flag)>(uint64_t(data->snap_uv_flag) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_align_rotation_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 2) != 0);
+}
+
+void ToolSettings_use_snap_align_rotation_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 2); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_snap_grid_absolute_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 32) != 0);
+}
+
+void ToolSettings_use_snap_grid_absolute_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 32); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(32)); }
+}
+
+float ToolSettings_snap_angle_increment_2d_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->snap_angle_increment_2d);
+}
+
+void ToolSettings_snap_angle_increment_2d_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_angle_increment_2d = (std::remove_reference_t<decltype(data->snap_angle_increment_2d)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float ToolSettings_snap_angle_increment_2d_precision_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->snap_angle_increment_2d_precision);
+}
+
+void ToolSettings_snap_angle_increment_2d_precision_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_angle_increment_2d_precision = (std::remove_reference_t<decltype(data->snap_angle_increment_2d_precision)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float ToolSettings_snap_angle_increment_3d_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->snap_angle_increment_3d);
+}
+
+void ToolSettings_snap_angle_increment_3d_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_angle_increment_3d = (std::remove_reference_t<decltype(data->snap_angle_increment_3d)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float ToolSettings_snap_angle_increment_3d_precision_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->snap_angle_increment_3d_precision);
+}
+
+void ToolSettings_snap_angle_increment_3d_precision_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_angle_increment_3d_precision = (std::remove_reference_t<decltype(data->snap_angle_increment_3d_precision)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+int ToolSettings_snap_elements_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_ToolSettings_snap_mode_get;
+    return fn(ptr);
+}
+
+void ToolSettings_snap_elements_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ToolSettings_snap_mode_set;
+    fn(ptr, value);
+}
+
+int ToolSettings_snap_elements_base_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_ToolSettings_snap_mode_get;
+    return fn(ptr);
+}
+
+void ToolSettings_snap_elements_base_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ToolSettings_snap_mode_set;
+    fn(ptr, value);
+}
+
+int ToolSettings_snap_elements_individual_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_ToolSettings_snap_mode_get;
+    return fn(ptr);
+}
+
+void ToolSettings_snap_elements_individual_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ToolSettings_snap_mode_set;
+    fn(ptr, value);
+}
+
+int ToolSettings_snap_face_nearest_steps_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->snap_face_nearest_steps);
+}
+
+void ToolSettings_snap_face_nearest_steps_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_face_nearest_steps = (std::remove_reference_t<decltype(data->snap_face_nearest_steps)>)std::clamp(value, 1, 100);
+}
+
+bool ToolSettings_use_snap_to_same_target_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 128) != 0);
+}
+
+void ToolSettings_use_snap_to_same_target_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 128); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(128)); }
+}
+
+bool ToolSettings_use_snap_anim_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_anim) & 1) != 0);
+}
+
+void ToolSettings_use_snap_anim_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_anim = std::remove_reference_t<decltype(data->snap_flag_anim)>(uint64_t(data->snap_flag_anim) | 1); }
+    else { data->snap_flag_anim = std::remove_reference_t<decltype(data->snap_flag_anim)>(uint64_t(data->snap_flag_anim) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_driver_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_driver) & 1) != 0);
+}
+
+void ToolSettings_use_snap_driver_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_driver = std::remove_reference_t<decltype(data->snap_flag_driver)>(uint64_t(data->snap_flag_driver) | 1); }
+    else { data->snap_flag_driver = std::remove_reference_t<decltype(data->snap_flag_driver)>(uint64_t(data->snap_flag_driver) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_time_absolute_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_anim) & 32) != 0);
+}
+
+void ToolSettings_use_snap_time_absolute_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_anim = std::remove_reference_t<decltype(data->snap_flag_anim)>(uint64_t(data->snap_flag_anim) | 32); }
+    else { data->snap_flag_anim = std::remove_reference_t<decltype(data->snap_flag_anim)>(uint64_t(data->snap_flag_anim) & ~uint64_t(32)); }
+}
+
+bool ToolSettings_use_snap_driver_absolute_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_driver) & 32) != 0);
+}
+
+void ToolSettings_use_snap_driver_absolute_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_driver = std::remove_reference_t<decltype(data->snap_flag_driver)>(uint64_t(data->snap_flag_driver) | 32); }
+    else { data->snap_flag_driver = std::remove_reference_t<decltype(data->snap_flag_driver)>(uint64_t(data->snap_flag_driver) & ~uint64_t(32)); }
+}
+
+int ToolSettings_snap_anim_element_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->snap_anim_mode) & 7);
+}
+
+void ToolSettings_snap_anim_element_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_anim_mode = std::remove_reference_t<decltype(data->snap_anim_mode)>(uint64_t(data->snap_anim_mode) & ~uint64_t(7));
+    data->snap_anim_mode = std::remove_reference_t<decltype(data->snap_anim_mode)>(uint64_t(data->snap_anim_mode) | uint64_t(value));
+}
+
+bool ToolSettings_use_snap_playhead_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag_playhead) & 1) != 0);
+}
+
+void ToolSettings_use_snap_playhead_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag_playhead = std::remove_reference_t<decltype(data->snap_flag_playhead)>(uint64_t(data->snap_flag_playhead) | 1); }
+    else { data->snap_flag_playhead = std::remove_reference_t<decltype(data->snap_flag_playhead)>(uint64_t(data->snap_flag_playhead) & ~uint64_t(1)); }
+}
+
+int ToolSettings_snap_playhead_element_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->snap_playhead_mode) & 31);
+}
+
+void ToolSettings_snap_playhead_element_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_playhead_mode = std::remove_reference_t<decltype(data->snap_playhead_mode)>(uint64_t(data->snap_playhead_mode) & ~uint64_t(31));
+    data->snap_playhead_mode = std::remove_reference_t<decltype(data->snap_playhead_mode)>(uint64_t(data->snap_playhead_mode) | uint64_t(value));
+}
+
+int ToolSettings_snap_playhead_frame_step_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->snap_step_frames);
+}
+
+void ToolSettings_snap_playhead_frame_step_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_step_frames = (std::remove_reference_t<decltype(data->snap_step_frames)>)std::clamp(value, 1, 32768);
+}
+
+int ToolSettings_snap_playhead_second_step_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->snap_step_seconds);
+}
+
+void ToolSettings_snap_playhead_second_step_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_step_seconds = (std::remove_reference_t<decltype(data->snap_step_seconds)>)std::clamp(value, 1, 32768);
+}
+
+int ToolSettings_playhead_snap_distance_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->playhead_snap_distance);
+}
+
+void ToolSettings_playhead_snap_distance_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->playhead_snap_distance = (std::remove_reference_t<decltype(data->playhead_snap_distance)>)value;
+}
+
+int ToolSettings_snap_uv_element_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->snap_uv_mode) & 389);
+}
+
+void ToolSettings_snap_uv_element_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ToolSettings_snap_uv_mode_set;
+    fn(ptr, value);
+}
+
+int ToolSettings_snap_target_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->snap_target);
+}
+
+void ToolSettings_snap_target_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_target = (std::remove_reference_t<decltype(data->snap_target)>)value;
+}
+
+bool ToolSettings_use_snap_peel_object_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 4) != 0);
+}
+
+void ToolSettings_use_snap_peel_object_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 4); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_use_snap_backface_culling_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 64) != 0);
+}
+
+void ToolSettings_use_snap_backface_culling_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 64); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(64)); }
+}
+
+bool ToolSettings_use_snap_self_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return !((uint64_t(data->snap_flag) & 16) != 0);
+}
+
+void ToolSettings_use_snap_self_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (!value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 16); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(16)); }
+}
+
+bool ToolSettings_use_snap_edit_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 256) != 0);
+}
+
+void ToolSettings_use_snap_edit_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 256); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(256)); }
+}
+
+bool ToolSettings_use_snap_nonedit_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 512) != 0);
+}
+
+void ToolSettings_use_snap_nonedit_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 512); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(512)); }
+}
+
+bool ToolSettings_use_snap_selectable_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 1024) != 0);
+}
+
+void ToolSettings_use_snap_selectable_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 1024); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(1024)); }
+}
+
+bool ToolSettings_use_snap_translate_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_transform_mode_flag) & 1) != 0);
+}
+
+void ToolSettings_use_snap_translate_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_transform_mode_flag = std::remove_reference_t<decltype(data->snap_transform_mode_flag)>(uint64_t(data->snap_transform_mode_flag) | 1); }
+    else { data->snap_transform_mode_flag = std::remove_reference_t<decltype(data->snap_transform_mode_flag)>(uint64_t(data->snap_transform_mode_flag) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_snap_rotate_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_transform_mode_flag) & 2) != 0);
+}
+
+void ToolSettings_use_snap_rotate_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_transform_mode_flag = std::remove_reference_t<decltype(data->snap_transform_mode_flag)>(uint64_t(data->snap_transform_mode_flag) | 2); }
+    else { data->snap_transform_mode_flag = std::remove_reference_t<decltype(data->snap_transform_mode_flag)>(uint64_t(data->snap_transform_mode_flag) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_snap_scale_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_transform_mode_flag) & 4) != 0);
+}
+
+void ToolSettings_use_snap_scale_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->snap_transform_mode_flag = std::remove_reference_t<decltype(data->snap_transform_mode_flag)>(uint64_t(data->snap_transform_mode_flag) | 4); }
+    else { data->snap_transform_mode_flag = std::remove_reference_t<decltype(data->snap_transform_mode_flag)>(uint64_t(data->snap_transform_mode_flag) & ~uint64_t(4)); }
+}
+
+int ToolSettings_plane_axis_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->plane_axis);
+}
+
+void ToolSettings_plane_axis_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->plane_axis = (std::remove_reference_t<decltype(data->plane_axis)>)value;
+}
+
+bool ToolSettings_plane_axis_auto_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->use_plane_axis_auto) & 1) != 0);
+}
+
+void ToolSettings_plane_axis_auto_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->use_plane_axis_auto = std::remove_reference_t<decltype(data->use_plane_axis_auto)>(uint64_t(data->use_plane_axis_auto) | 1); }
+    else { data->use_plane_axis_auto = std::remove_reference_t<decltype(data->use_plane_axis_auto)>(uint64_t(data->use_plane_axis_auto) & ~uint64_t(1)); }
+}
+
+int ToolSettings_plane_depth_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->plane_depth);
+}
+
+void ToolSettings_plane_depth_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->plane_depth = (std::remove_reference_t<decltype(data->plane_depth)>)value;
+}
+
+int ToolSettings_plane_orientation_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->plane_orient);
+}
+
+void ToolSettings_plane_orientation_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->plane_orient = (std::remove_reference_t<decltype(data->plane_orient)>)value;
+}
+
+int ToolSettings_snap_elements_tool_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->snap_mode_tools);
+}
+
+void ToolSettings_snap_elements_tool_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->snap_mode_tools = (std::remove_reference_t<decltype(data->snap_mode_tools)>)value;
+}
+
+bool ToolSettings_use_gpencil_draw_additive_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_flags) & 2) != 0);
+}
+
+void ToolSettings_use_gpencil_draw_additive_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) | 2); }
+    else { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_gpencil_draw_onback_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_flags) & 4) != 0);
+}
+
+void ToolSettings_use_gpencil_draw_onback_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) | 4); }
+    else { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_use_gpencil_thumbnail_list_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return !((uint64_t(data->gpencil_flags) & 8) != 0);
+}
+
+void ToolSettings_use_gpencil_thumbnail_list_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (!value) { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) | 8); }
+    else { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) & ~uint64_t(8)); }
+}
+
+bool ToolSettings_use_gpencil_weight_data_add_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_flags) & 16) != 0);
+}
+
+void ToolSettings_use_gpencil_weight_data_add_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) | 16); }
+    else { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) & ~uint64_t(16)); }
+}
+
+bool ToolSettings_use_gpencil_automerge_strokes_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_flags) & 32) != 0);
+}
+
+void ToolSettings_use_gpencil_automerge_strokes_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) | 32); }
+    else { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) & ~uint64_t(32)); }
+}
+
+PointerRNA ToolSettings_gpencil_sculpt_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_GPencilSculptSettings, &data->gp_sculpt);
+}
+
+PointerRNA ToolSettings_gpencil_interpolate_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_GPencilInterpolateSettings, &data->gp_interpolate);
+}
+
+int ToolSettings_gpencil_stroke_placement_view3d_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->gpencil_v3d_align) & 45);
+}
+
+void ToolSettings_gpencil_stroke_placement_view3d_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->gpencil_v3d_align = std::remove_reference_t<decltype(data->gpencil_v3d_align)>(uint64_t(data->gpencil_v3d_align) & ~uint64_t(45));
+    data->gpencil_v3d_align = std::remove_reference_t<decltype(data->gpencil_v3d_align)>(uint64_t(data->gpencil_v3d_align) | uint64_t(value));
+}
+
+int ToolSettings_gpencil_stroke_snap_mode_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->gpencil_v3d_align) & 80);
+}
+
+void ToolSettings_gpencil_stroke_snap_mode_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->gpencil_v3d_align = std::remove_reference_t<decltype(data->gpencil_v3d_align)>(uint64_t(data->gpencil_v3d_align) & ~uint64_t(80));
+    data->gpencil_v3d_align = std::remove_reference_t<decltype(data->gpencil_v3d_align)>(uint64_t(data->gpencil_v3d_align) | uint64_t(value));
+}
+
+float ToolSettings_gpencil_surface_offset_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->gpencil_surface_offset);
+}
+
+void ToolSettings_gpencil_surface_offset_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->gpencil_surface_offset = (std::remove_reference_t<decltype(data->gpencil_surface_offset)>)value;
+}
+
+bool ToolSettings_use_gpencil_project_only_selected_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_v3d_align) & 128) != 0);
+}
+
+void ToolSettings_use_gpencil_project_only_selected_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_v3d_align = std::remove_reference_t<decltype(data->gpencil_v3d_align)>(uint64_t(data->gpencil_v3d_align) | 128); }
+    else { data->gpencil_v3d_align = std::remove_reference_t<decltype(data->gpencil_v3d_align)>(uint64_t(data->gpencil_v3d_align) & ~uint64_t(128)); }
+}
+
+int ToolSettings_gpencil_selectmode_edit_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->gpencil_selectmode_edit);
+}
+
+void ToolSettings_gpencil_selectmode_edit_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->gpencil_selectmode_edit = (std::remove_reference_t<decltype(data->gpencil_selectmode_edit)>)value;
+}
+
+bool ToolSettings_use_gpencil_select_mask_point_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_selectmode_sculpt) & 1) != 0);
+}
+
+void ToolSettings_use_gpencil_select_mask_point_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_selectmode_sculpt = std::remove_reference_t<decltype(data->gpencil_selectmode_sculpt)>(uint64_t(data->gpencil_selectmode_sculpt) | 1); }
+    else { data->gpencil_selectmode_sculpt = std::remove_reference_t<decltype(data->gpencil_selectmode_sculpt)>(uint64_t(data->gpencil_selectmode_sculpt) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_gpencil_select_mask_stroke_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_selectmode_sculpt) & 2) != 0);
+}
+
+void ToolSettings_use_gpencil_select_mask_stroke_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_selectmode_sculpt = std::remove_reference_t<decltype(data->gpencil_selectmode_sculpt)>(uint64_t(data->gpencil_selectmode_sculpt) | 2); }
+    else { data->gpencil_selectmode_sculpt = std::remove_reference_t<decltype(data->gpencil_selectmode_sculpt)>(uint64_t(data->gpencil_selectmode_sculpt) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_gpencil_select_mask_segment_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_selectmode_sculpt) & 4) != 0);
+}
+
+void ToolSettings_use_gpencil_select_mask_segment_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_selectmode_sculpt = std::remove_reference_t<decltype(data->gpencil_selectmode_sculpt)>(uint64_t(data->gpencil_selectmode_sculpt) | 4); }
+    else { data->gpencil_selectmode_sculpt = std::remove_reference_t<decltype(data->gpencil_selectmode_sculpt)>(uint64_t(data->gpencil_selectmode_sculpt) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_use_gpencil_vertex_select_mask_point_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_selectmode_vertex) & 1) != 0);
+}
+
+void ToolSettings_use_gpencil_vertex_select_mask_point_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_selectmode_vertex = std::remove_reference_t<decltype(data->gpencil_selectmode_vertex)>(uint64_t(data->gpencil_selectmode_vertex) | 1); }
+    else { data->gpencil_selectmode_vertex = std::remove_reference_t<decltype(data->gpencil_selectmode_vertex)>(uint64_t(data->gpencil_selectmode_vertex) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_gpencil_vertex_select_mask_stroke_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_selectmode_vertex) & 2) != 0);
+}
+
+void ToolSettings_use_gpencil_vertex_select_mask_stroke_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_selectmode_vertex = std::remove_reference_t<decltype(data->gpencil_selectmode_vertex)>(uint64_t(data->gpencil_selectmode_vertex) | 2); }
+    else { data->gpencil_selectmode_vertex = std::remove_reference_t<decltype(data->gpencil_selectmode_vertex)>(uint64_t(data->gpencil_selectmode_vertex) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_gpencil_vertex_select_mask_segment_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_selectmode_vertex) & 4) != 0);
+}
+
+void ToolSettings_use_gpencil_vertex_select_mask_segment_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_selectmode_vertex = std::remove_reference_t<decltype(data->gpencil_selectmode_vertex)>(uint64_t(data->gpencil_selectmode_vertex) | 4); }
+    else { data->gpencil_selectmode_vertex = std::remove_reference_t<decltype(data->gpencil_selectmode_vertex)>(uint64_t(data->gpencil_selectmode_vertex) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_use_grease_pencil_multi_frame_editing_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->gpencil_flags) & 1) != 0);
+}
+
+void ToolSettings_use_grease_pencil_multi_frame_editing_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) | 1); }
+    else { data->gpencil_flags = std::remove_reference_t<decltype(data->gpencil_flags)>(uint64_t(data->gpencil_flags) & ~uint64_t(1)); }
+}
+
+int ToolSettings_annotation_stroke_placement_view2d_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->gpencil_v2d_align) & 33);
+}
+
+void ToolSettings_annotation_stroke_placement_view2d_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->gpencil_v2d_align = std::remove_reference_t<decltype(data->gpencil_v2d_align)>(uint64_t(data->gpencil_v2d_align) & ~uint64_t(33));
+    data->gpencil_v2d_align = std::remove_reference_t<decltype(data->gpencil_v2d_align)>(uint64_t(data->gpencil_v2d_align) | uint64_t(value));
+}
+
+int ToolSettings_annotation_stroke_placement_view3d_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->annotate_v3d_align) & 37);
+}
+
+void ToolSettings_annotation_stroke_placement_view3d_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->annotate_v3d_align = std::remove_reference_t<decltype(data->annotate_v3d_align)>(uint64_t(data->annotate_v3d_align) & ~uint64_t(37));
+    data->annotate_v3d_align = std::remove_reference_t<decltype(data->annotate_v3d_align)>(uint64_t(data->annotate_v3d_align) | uint64_t(value));
+}
+
+bool ToolSettings_use_annotation_stroke_endpoints_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->annotate_v3d_align) & 16) != 0);
+}
+
+void ToolSettings_use_annotation_stroke_endpoints_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->annotate_v3d_align = std::remove_reference_t<decltype(data->annotate_v3d_align)>(uint64_t(data->annotate_v3d_align) | 16); }
+    else { data->annotate_v3d_align = std::remove_reference_t<decltype(data->annotate_v3d_align)>(uint64_t(data->annotate_v3d_align) & ~uint64_t(16)); }
+}
+
+bool ToolSettings_use_annotation_project_only_selected_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->annotate_v3d_align) & 128) != 0);
+}
+
+void ToolSettings_use_annotation_project_only_selected_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->annotate_v3d_align = std::remove_reference_t<decltype(data->annotate_v3d_align)>(uint64_t(data->annotate_v3d_align) | 128); }
+    else { data->annotate_v3d_align = std::remove_reference_t<decltype(data->annotate_v3d_align)>(uint64_t(data->annotate_v3d_align) & ~uint64_t(128)); }
+}
+
+int ToolSettings_annotation_thickness_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->annotate_thickness);
+}
+
+void ToolSettings_annotation_thickness_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->annotate_thickness = (std::remove_reference_t<decltype(data->annotate_thickness)>)std::clamp(value, 1, 10);
+}
+
+bool ToolSettings_use_keyframe_insert_auto_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->autokey_mode) & 1) != 0);
+}
+
+void ToolSettings_use_keyframe_insert_auto_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->autokey_mode = std::remove_reference_t<decltype(data->autokey_mode)>(uint64_t(data->autokey_mode) | 1); }
+    else { data->autokey_mode = std::remove_reference_t<decltype(data->autokey_mode)>(uint64_t(data->autokey_mode) & ~uint64_t(1)); }
+}
+
+int ToolSettings_auto_keying_mode_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (uint64_t(data->autokey_mode) & 6);
+}
+
+void ToolSettings_auto_keying_mode_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->autokey_mode = std::remove_reference_t<decltype(data->autokey_mode)>(uint64_t(data->autokey_mode) & ~uint64_t(6));
+    data->autokey_mode = std::remove_reference_t<decltype(data->autokey_mode)>(uint64_t(data->autokey_mode) | uint64_t(value));
+}
+
+bool ToolSettings_use_record_with_nla_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->keying_flag) & 1024) != 0);
+}
+
+void ToolSettings_use_record_with_nla_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->keying_flag = std::remove_reference_t<decltype(data->keying_flag)>(uint64_t(data->keying_flag) | 1024); }
+    else { data->keying_flag = std::remove_reference_t<decltype(data->keying_flag)>(uint64_t(data->keying_flag) & ~uint64_t(1024)); }
+}
+
+bool ToolSettings_use_keyframe_insert_keyingset_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->keying_flag) & 64) != 0);
+}
+
+void ToolSettings_use_keyframe_insert_keyingset_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->keying_flag = std::remove_reference_t<decltype(data->keying_flag)>(uint64_t(data->keying_flag) | 64); }
+    else { data->keying_flag = std::remove_reference_t<decltype(data->keying_flag)>(uint64_t(data->keying_flag) & ~uint64_t(64)); }
+}
+
+bool ToolSettings_use_keyframe_cycle_aware_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->keying_flag) & 256) != 0);
+}
+
+void ToolSettings_use_keyframe_cycle_aware_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->keying_flag = std::remove_reference_t<decltype(data->keying_flag)>(uint64_t(data->keying_flag) | 256); }
+    else { data->keying_flag = std::remove_reference_t<decltype(data->keying_flag)>(uint64_t(data->keying_flag) & ~uint64_t(256)); }
+}
+
+int ToolSettings_keyframe_type_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->keyframe_type);
+}
+
+void ToolSettings_keyframe_type_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->keyframe_type = (std::remove_reference_t<decltype(data->keyframe_type)>)value;
+}
+
+PointerRNA ToolSettings_anim_mirror_object_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->anim_mirror_object);
+}
+
+void ToolSettings_anim_mirror_object_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->anim_mirror_object = value.data;
+}
+
+void ToolSettings_anim_mirror_bone_get(PointerRNA *ptr, char *value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    BLI_assert(strlen(data->anim_mirror_bone) < 64);
+    strcpy(value, data->anim_mirror_bone);
+}
+
+int ToolSettings_anim_mirror_bone_length(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return strlen(data->anim_mirror_bone);
+}
+
+void ToolSettings_anim_mirror_bone_set(PointerRNA *ptr, const char *value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    BLI_strncpy_utf8(data->anim_mirror_bone, value, 64);
+}
+
+PointerRNA ToolSettings_anim_relative_object_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->anim_relative_object);
+}
+
+void ToolSettings_anim_relative_object_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->anim_relative_object = value.data;
+}
+
+bool ToolSettings_anim_fix_to_cam_use_loc_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->fix_to_cam_flag) & 1) != 0);
+}
+
+void ToolSettings_anim_fix_to_cam_use_loc_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->fix_to_cam_flag = std::remove_reference_t<decltype(data->fix_to_cam_flag)>(uint64_t(data->fix_to_cam_flag) | 1); }
+    else { data->fix_to_cam_flag = std::remove_reference_t<decltype(data->fix_to_cam_flag)>(uint64_t(data->fix_to_cam_flag) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_anim_fix_to_cam_use_rot_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->fix_to_cam_flag) & 2) != 0);
+}
+
+void ToolSettings_anim_fix_to_cam_use_rot_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->fix_to_cam_flag = std::remove_reference_t<decltype(data->fix_to_cam_flag)>(uint64_t(data->fix_to_cam_flag) | 2); }
+    else { data->fix_to_cam_flag = std::remove_reference_t<decltype(data->fix_to_cam_flag)>(uint64_t(data->fix_to_cam_flag) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_anim_fix_to_cam_use_scale_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->fix_to_cam_flag) & 4) != 0);
+}
+
+void ToolSettings_anim_fix_to_cam_use_scale_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->fix_to_cam_flag = std::remove_reference_t<decltype(data->fix_to_cam_flag)>(uint64_t(data->fix_to_cam_flag) | 4); }
+    else { data->fix_to_cam_flag = std::remove_reference_t<decltype(data->fix_to_cam_flag)>(uint64_t(data->fix_to_cam_flag) & ~uint64_t(4)); }
+}
+
+int ToolSettings_uv_select_mode_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->uv_selectmode);
+}
+
+void ToolSettings_uv_select_mode_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->uv_selectmode = (std::remove_reference_t<decltype(data->uv_selectmode)>)value;
+}
+
+int ToolSettings_uv_sticky_select_mode_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (int)(data->uv_sticky);
+}
+
+void ToolSettings_uv_sticky_select_mode_set(PointerRNA *ptr, int value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->uv_sticky = (std::remove_reference_t<decltype(data->uv_sticky)>)value;
+}
+
+bool ToolSettings_use_uv_select_sync_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uv_flag) & 1) != 0);
+}
+
+void ToolSettings_use_uv_select_sync_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) | 1); }
+    else { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) & ~uint64_t(1)); }
+}
+
+bool ToolSettings_use_uv_select_island_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uv_flag) & 4) != 0);
+}
+
+void ToolSettings_use_uv_select_island_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) | 4); }
+    else { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) & ~uint64_t(4)); }
+}
+
+bool ToolSettings_show_uv_local_view_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uv_flag) & 2) != 0);
+}
+
+void ToolSettings_show_uv_local_view_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) | 2); }
+    else { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) & ~uint64_t(2)); }
+}
+
+bool ToolSettings_use_uv_custom_region_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->uv_flag) & 8) != 0);
+}
+
+void ToolSettings_use_uv_custom_region_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) | 8); }
+    else { data->uv_flag = std::remove_reference_t<decltype(data->uv_flag)>(uint64_t(data->uv_flag) & ~uint64_t(8)); }
+}
+
+void ToolSettings_mesh_select_mode_get(PointerRNA *ptr, bool values[3])
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = ((uint64_t(data->selectmode) & (uint64_t(1) << i)) != 0);
+    }
+}
+
+void ToolSettings_mesh_select_mode_set(PointerRNA *ptr, const bool values[3])
+{
+    PropBooleanArraySetFunc fn = rna_Scene_editmesh_select_mode_set;
+    fn(ptr, values);
+}
+
+float ToolSettings_vertex_group_weight_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return (float)(data->vgroup_weight);
+}
+
+void ToolSettings_vertex_group_weight_set(PointerRNA *ptr, float value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    data->vgroup_weight = (std::remove_reference_t<decltype(data->vgroup_weight)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool ToolSettings_use_edge_path_live_unwrap_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return ((uint64_t(data->edge_mode_live_unwrap) & 1) != 0);
+}
+
+void ToolSettings_use_edge_path_live_unwrap_set(PointerRNA *ptr, bool value)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    if (value) { data->edge_mode_live_unwrap = std::remove_reference_t<decltype(data->edge_mode_live_unwrap)>(uint64_t(data->edge_mode_live_unwrap) | 1); }
+    else { data->edge_mode_live_unwrap = std::remove_reference_t<decltype(data->edge_mode_live_unwrap)>(uint64_t(data->edge_mode_live_unwrap) & ~uint64_t(1)); }
+}
+
+void ToolSettings_normal_vector_get(PointerRNA *ptr, float values[3])
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = (float)(((float *)data->normal_vector)[i]);
+    }
+}
+
+void ToolSettings_normal_vector_set(PointerRNA *ptr, const float values[3])
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        ((float *)data->normal_vector)[i] = values[i];
+    }
+}
+
+PointerRNA ToolSettings_curve_paint_settings_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurvePaintSettings, &data->curve_paint_settings);
+}
+
+PointerRNA ToolSettings_statvis_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_MeshStatVis, &data->statvis);
+}
+
+PointerRNA ToolSettings_custom_bevel_profile_preset_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveProfile, data->custom_bevel_profile_preset);
+}
+
+PointerRNA ToolSettings_sequencer_tool_settings_get(PointerRNA *ptr)
+{
+    ToolSettings *data = (ToolSettings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_SequencerToolSettings, data->sequencer_tool_settings);
+}
+
+static PointerRNA GPencilInterpolateSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void GPencilInterpolateSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_GPencilInterpolateSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = GPencilInterpolateSettings_rna_properties_get(iter);
+    }
+}
+
+void GPencilInterpolateSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = GPencilInterpolateSettings_rna_properties_get(iter);
+    }
+}
+
+void GPencilInterpolateSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool GPencilInterpolateSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA GPencilInterpolateSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA GPencilInterpolateSettings_interpolation_curve_get(PointerRNA *ptr)
+{
+    GP_Interpolate_Settings *data = (GP_Interpolate_Settings *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->custom_ipo);
+}
+
+static PointerRNA CurvePaintSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void CurvePaintSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_CurvePaintSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = CurvePaintSettings_rna_properties_get(iter);
+    }
+}
+
+void CurvePaintSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = CurvePaintSettings_rna_properties_get(iter);
+    }
+}
+
+void CurvePaintSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool CurvePaintSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA CurvePaintSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int CurvePaintSettings_curve_type_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (int)(data->curve_type);
+}
+
+void CurvePaintSettings_curve_type_set(PointerRNA *ptr, int value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->curve_type = (std::remove_reference_t<decltype(data->curve_type)>)value;
+}
+
+bool CurvePaintSettings_use_corners_detect_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void CurvePaintSettings_use_corners_detect_set(PointerRNA *ptr, bool value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+bool CurvePaintSettings_use_pressure_radius_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return ((uint64_t(data->flag) & 2) != 0);
+}
+
+void CurvePaintSettings_use_pressure_radius_set(PointerRNA *ptr, bool value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2)); }
+}
+
+bool CurvePaintSettings_use_stroke_endpoints_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return ((uint64_t(data->flag) & 4) != 0);
+}
+
+void CurvePaintSettings_use_stroke_endpoints_set(PointerRNA *ptr, bool value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 4); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(4)); }
+}
+
+bool CurvePaintSettings_use_offset_absolute_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return ((uint64_t(data->flag) & 8) != 0);
+}
+
+void CurvePaintSettings_use_offset_absolute_set(PointerRNA *ptr, bool value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 8); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(8)); }
+}
+
+bool CurvePaintSettings_use_project_only_selected_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return ((uint64_t(data->flag) & 16) != 0);
+}
+
+void CurvePaintSettings_use_project_only_selected_set(PointerRNA *ptr, bool value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16)); }
+}
+
+int CurvePaintSettings_error_threshold_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (int)(data->error_threshold);
+}
+
+void CurvePaintSettings_error_threshold_set(PointerRNA *ptr, int value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->error_threshold = (std::remove_reference_t<decltype(data->error_threshold)>)std::clamp(value, 1, 100);
+}
+
+int CurvePaintSettings_fit_method_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (int)(data->fit_method);
+}
+
+void CurvePaintSettings_fit_method_set(PointerRNA *ptr, int value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->fit_method = (std::remove_reference_t<decltype(data->fit_method)>)value;
+}
+
+float CurvePaintSettings_corner_angle_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (float)(data->corner_angle);
+}
+
+void CurvePaintSettings_corner_angle_set(PointerRNA *ptr, float value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->corner_angle = (std::remove_reference_t<decltype(data->corner_angle)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float CurvePaintSettings_radius_min_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (float)(data->radius_min);
+}
+
+void CurvePaintSettings_radius_min_set(PointerRNA *ptr, float value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->radius_min = (std::remove_reference_t<decltype(data->radius_min)>)std::clamp(value, 0.0f, 100.0f);
+}
+
+float CurvePaintSettings_radius_max_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (float)(data->radius_max);
+}
+
+void CurvePaintSettings_radius_max_set(PointerRNA *ptr, float value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->radius_max = (std::remove_reference_t<decltype(data->radius_max)>)std::clamp(value, 0.0f, 100.0f);
+}
+
+float CurvePaintSettings_radius_taper_start_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (float)(data->radius_taper_start);
+}
+
+void CurvePaintSettings_radius_taper_start_set(PointerRNA *ptr, float value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->radius_taper_start = (std::remove_reference_t<decltype(data->radius_taper_start)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float CurvePaintSettings_radius_taper_end_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (float)(data->radius_taper_end);
+}
+
+void CurvePaintSettings_radius_taper_end_set(PointerRNA *ptr, float value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->radius_taper_end = (std::remove_reference_t<decltype(data->radius_taper_end)>)std::clamp(value, 0.0f, 10.0f);
+}
+
+float CurvePaintSettings_surface_offset_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (float)(data->surface_offset);
+}
+
+void CurvePaintSettings_surface_offset_set(PointerRNA *ptr, float value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->surface_offset = (std::remove_reference_t<decltype(data->surface_offset)>)std::clamp(value, -10.0f, 10.0f);
+}
+
+int CurvePaintSettings_depth_mode_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (int)(data->depth_mode);
+}
+
+void CurvePaintSettings_depth_mode_set(PointerRNA *ptr, int value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->depth_mode = (std::remove_reference_t<decltype(data->depth_mode)>)value;
+}
+
+int CurvePaintSettings_surface_plane_get(PointerRNA *ptr)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    return (int)(data->surface_plane);
+}
+
+void CurvePaintSettings_surface_plane_set(PointerRNA *ptr, int value)
+{
+    CurvePaintSettings *data = (CurvePaintSettings *)(ptr->data);
+    data->surface_plane = (std::remove_reference_t<decltype(data->surface_plane)>)value;
+}
+
+static PointerRNA SequencerToolSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SequencerToolSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SequencerToolSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SequencerToolSettings_rna_properties_get(iter);
+    }
+}
+
+void SequencerToolSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SequencerToolSettings_rna_properties_get(iter);
+    }
+}
+
+void SequencerToolSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SequencerToolSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SequencerToolSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int SequencerToolSettings_fit_method_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return (int)(data->fit_method);
+}
+
+void SequencerToolSettings_fit_method_set(PointerRNA *ptr, int value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    data->fit_method = (std::remove_reference_t<decltype(data->fit_method)>)value;
+}
+
+bool SequencerToolSettings_snap_to_current_frame_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 2) != 0);
+}
+
+void SequencerToolSettings_snap_to_current_frame_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 2); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(2)); }
+}
+
+bool SequencerToolSettings_snap_to_hold_offset_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 4) != 0);
+}
+
+void SequencerToolSettings_snap_to_hold_offset_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 4); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(4)); }
+}
+
+bool SequencerToolSettings_snap_to_markers_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 8) != 0);
+}
+
+void SequencerToolSettings_snap_to_markers_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 8); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(8)); }
+}
+
+bool SequencerToolSettings_snap_to_retiming_keys_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 128) != 0);
+}
+
+void SequencerToolSettings_snap_to_retiming_keys_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 128); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(128)); }
+}
+
+bool SequencerToolSettings_snap_to_frame_range_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 512) != 0);
+}
+
+void SequencerToolSettings_snap_to_frame_range_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 512); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(512)); }
+}
+
+bool SequencerToolSettings_snap_to_borders_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 16) != 0);
+}
+
+void SequencerToolSettings_snap_to_borders_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 16); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(16)); }
+}
+
+bool SequencerToolSettings_snap_to_center_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 32) != 0);
+}
+
+void SequencerToolSettings_snap_to_center_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 32); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(32)); }
+}
+
+bool SequencerToolSettings_snap_to_strips_preview_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_mode) & 64) != 0);
+}
+
+void SequencerToolSettings_snap_to_strips_preview_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) | 64); }
+    else { data->snap_mode = std::remove_reference_t<decltype(data->snap_mode)>(uint64_t(data->snap_mode) & ~uint64_t(64)); }
+}
+
+bool SequencerToolSettings_snap_ignore_muted_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 1) != 0);
+}
+
+void SequencerToolSettings_snap_ignore_muted_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 1); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(1)); }
+}
+
+bool SequencerToolSettings_snap_ignore_sound_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 2) != 0);
+}
+
+void SequencerToolSettings_snap_ignore_sound_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 2); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(2)); }
+}
+
+bool SequencerToolSettings_use_snap_current_frame_to_strips_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 4) != 0);
+}
+
+void SequencerToolSettings_use_snap_current_frame_to_strips_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 4); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(4)); }
+}
+
+bool SequencerToolSettings_snap_to_all_channels_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return ((uint64_t(data->snap_flag) & 8) != 0);
+}
+
+void SequencerToolSettings_snap_to_all_channels_set(PointerRNA *ptr, bool value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    if (value) { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) | 8); }
+    else { data->snap_flag = std::remove_reference_t<decltype(data->snap_flag)>(uint64_t(data->snap_flag) & ~uint64_t(8)); }
+}
+
+int SequencerToolSettings_snap_distance_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return (int)(data->snap_distance);
+}
+
+void SequencerToolSettings_snap_distance_set(PointerRNA *ptr, int value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    data->snap_distance = (std::remove_reference_t<decltype(data->snap_distance)>)value;
+}
+
+int SequencerToolSettings_overlap_mode_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return (int)(data->overlap_mode);
+}
+
+void SequencerToolSettings_overlap_mode_set(PointerRNA *ptr, int value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    data->overlap_mode = (std::remove_reference_t<decltype(data->overlap_mode)>)value;
+}
+
+int SequencerToolSettings_pivot_point_get(PointerRNA *ptr)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    return (int)(data->pivot_point);
+}
+
+void SequencerToolSettings_pivot_point_set(PointerRNA *ptr, int value)
+{
+    SequencerToolSettings *data = (SequencerToolSettings *)(ptr->data);
+    data->pivot_point = (std::remove_reference_t<decltype(data->pivot_point)>)value;
+}
+
+static PointerRNA MeshStatVis_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void MeshStatVis_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_MeshStatVis_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = MeshStatVis_rna_properties_get(iter);
+    }
+}
+
+void MeshStatVis_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = MeshStatVis_rna_properties_get(iter);
+    }
+}
+
+void MeshStatVis_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool MeshStatVis_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA MeshStatVis_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int MeshStatVis_type_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (int)(data->type);
+}
+
+void MeshStatVis_type_set(PointerRNA *ptr, int value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->type = (std::remove_reference_t<decltype(data->type)>)value;
+}
+
+float MeshStatVis_overhang_min_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->overhang_min);
+}
+
+void MeshStatVis_overhang_min_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->overhang_min = (std::remove_reference_t<decltype(data->overhang_min)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float MeshStatVis_overhang_max_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->overhang_max);
+}
+
+void MeshStatVis_overhang_max_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->overhang_max = (std::remove_reference_t<decltype(data->overhang_max)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+int MeshStatVis_overhang_axis_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (int)(data->overhang_axis);
+}
+
+void MeshStatVis_overhang_axis_set(PointerRNA *ptr, int value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->overhang_axis = (std::remove_reference_t<decltype(data->overhang_axis)>)value;
+}
+
+float MeshStatVis_thickness_min_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->thickness_min);
+}
+
+void MeshStatVis_thickness_min_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->thickness_min = (std::remove_reference_t<decltype(data->thickness_min)>)std::clamp(value, 0.0f, 1000.0f);
+}
+
+float MeshStatVis_thickness_max_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->thickness_max);
+}
+
+void MeshStatVis_thickness_max_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->thickness_max = (std::remove_reference_t<decltype(data->thickness_max)>)std::clamp(value, 0.0f, 1000.0f);
+}
+
+int MeshStatVis_thickness_samples_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (int)(data->thickness_samples);
+}
+
+void MeshStatVis_thickness_samples_set(PointerRNA *ptr, int value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->thickness_samples = (std::remove_reference_t<decltype(data->thickness_samples)>)std::clamp(value, 1, 32);
+}
+
+float MeshStatVis_distort_min_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->distort_min);
+}
+
+void MeshStatVis_distort_min_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->distort_min = (std::remove_reference_t<decltype(data->distort_min)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float MeshStatVis_distort_max_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->distort_max);
+}
+
+void MeshStatVis_distort_max_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->distort_max = (std::remove_reference_t<decltype(data->distort_max)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+float MeshStatVis_sharp_min_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->sharp_min);
+}
+
+void MeshStatVis_sharp_min_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->sharp_min = (std::remove_reference_t<decltype(data->sharp_min)>)std::clamp(value, -3.1415927410f, 3.1415927410f);
+}
+
+float MeshStatVis_sharp_max_get(PointerRNA *ptr)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    return (float)(data->sharp_max);
+}
+
+void MeshStatVis_sharp_max_set(PointerRNA *ptr, float value)
+{
+    MeshStatVis *data = (MeshStatVis *)(ptr->data);
+    data->sharp_max = (std::remove_reference_t<decltype(data->sharp_max)>)std::clamp(value, -3.1415927410f, 3.1415927410f);
+}
+
+static PointerRNA UnitSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void UnitSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_UnitSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = UnitSettings_rna_properties_get(iter);
+    }
+}
+
+void UnitSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = UnitSettings_rna_properties_get(iter);
+    }
+}
+
+void UnitSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool UnitSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA UnitSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int UnitSettings_system_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (int)(data->system);
+}
+
+void UnitSettings_system_set(PointerRNA *ptr, int value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->system = (std::remove_reference_t<decltype(data->system)>)value;
+}
+
+int UnitSettings_system_rotation_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (int)(data->system_rotation);
+}
+
+void UnitSettings_system_rotation_set(PointerRNA *ptr, int value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->system_rotation = (std::remove_reference_t<decltype(data->system_rotation)>)value;
+}
+
+float UnitSettings_scale_length_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (float)(data->scale_length);
+}
+
+void UnitSettings_scale_length_set(PointerRNA *ptr, float value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->scale_length = (std::remove_reference_t<decltype(data->scale_length)>)std::clamp(value, 0.0000000010f, 1000000000.0f);
+}
+
+bool UnitSettings_use_separate_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void UnitSettings_use_separate_set(PointerRNA *ptr, bool value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+int UnitSettings_length_unit_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (int)(data->length_unit);
+}
+
+void UnitSettings_length_unit_set(PointerRNA *ptr, int value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->length_unit = (std::remove_reference_t<decltype(data->length_unit)>)value;
+}
+
+int UnitSettings_mass_unit_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (int)(data->mass_unit);
+}
+
+void UnitSettings_mass_unit_set(PointerRNA *ptr, int value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->mass_unit = (std::remove_reference_t<decltype(data->mass_unit)>)value;
+}
+
+int UnitSettings_time_unit_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (int)(data->time_unit);
+}
+
+void UnitSettings_time_unit_set(PointerRNA *ptr, int value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->time_unit = (std::remove_reference_t<decltype(data->time_unit)>)value;
+}
+
+int UnitSettings_temperature_unit_get(PointerRNA *ptr)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    return (int)(data->temperature_unit);
+}
+
+void UnitSettings_temperature_unit_set(PointerRNA *ptr, int value)
+{
+    UnitSettings *data = (UnitSettings *)(ptr->data);
+    data->temperature_unit = (std::remove_reference_t<decltype(data->temperature_unit)>)value;
+}
+
+static PointerRNA Stereo3dFormat_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void Stereo3dFormat_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Stereo3dFormat_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Stereo3dFormat_rna_properties_get(iter);
+    }
+}
+
+void Stereo3dFormat_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Stereo3dFormat_rna_properties_get(iter);
+    }
+}
+
+void Stereo3dFormat_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Stereo3dFormat_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA Stereo3dFormat_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int Stereo3dFormat_display_mode_get(PointerRNA *ptr)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    return (int)(data->display_mode);
+}
+
+void Stereo3dFormat_display_mode_set(PointerRNA *ptr, int value)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    data->display_mode = (std::remove_reference_t<decltype(data->display_mode)>)value;
+}
+
+int Stereo3dFormat_anaglyph_type_get(PointerRNA *ptr)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    return (int)(data->anaglyph_type);
+}
+
+void Stereo3dFormat_anaglyph_type_set(PointerRNA *ptr, int value)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    data->anaglyph_type = (std::remove_reference_t<decltype(data->anaglyph_type)>)value;
+}
+
+int Stereo3dFormat_interlace_type_get(PointerRNA *ptr)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    return (int)(data->interlace_type);
+}
+
+void Stereo3dFormat_interlace_type_set(PointerRNA *ptr, int value)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    data->interlace_type = (std::remove_reference_t<decltype(data->interlace_type)>)value;
+}
+
+bool Stereo3dFormat_use_interlace_swap_get(PointerRNA *ptr)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void Stereo3dFormat_use_interlace_swap_set(PointerRNA *ptr, bool value)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+bool Stereo3dFormat_use_sidebyside_crosseyed_get(PointerRNA *ptr)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    return ((uint64_t(data->flag) & 2) != 0);
+}
+
+void Stereo3dFormat_use_sidebyside_crosseyed_set(PointerRNA *ptr, bool value)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2)); }
+}
+
+bool Stereo3dFormat_use_squeezed_frame_get(PointerRNA *ptr)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    return ((uint64_t(data->flag) & 4) != 0);
+}
+
+void Stereo3dFormat_use_squeezed_frame_set(PointerRNA *ptr, bool value)
+{
+    Stereo3dFormat *data = (Stereo3dFormat *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 4); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(4)); }
+}
+
+static PointerRNA ImageFormatSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void ImageFormatSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_ImageFormatSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = ImageFormatSettings_rna_properties_get(iter);
+    }
+}
+
+void ImageFormatSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = ImageFormatSettings_rna_properties_get(iter);
+    }
+}
+
+void ImageFormatSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool ImageFormatSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA ImageFormatSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int ImageFormatSettings_media_type_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->media_type);
+}
+
+void ImageFormatSettings_media_type_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ImageFormatSettings_media_type_set;
+    fn(ptr, value);
+}
+
+int ImageFormatSettings_file_format_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->imtype);
+}
+
+void ImageFormatSettings_file_format_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ImageFormatSettings_file_format_set;
+    fn(ptr, value);
+}
+
+int ImageFormatSettings_color_mode_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->color_mode);
+}
+
+void ImageFormatSettings_color_mode_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->color_mode = (std::remove_reference_t<decltype(data->color_mode)>)value;
+}
+
+int ImageFormatSettings_color_depth_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->depth);
+}
+
+void ImageFormatSettings_color_depth_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->depth = (std::remove_reference_t<decltype(data->depth)>)value;
+}
+
+int ImageFormatSettings_quality_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->quality);
+}
+
+void ImageFormatSettings_quality_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->quality = (std::remove_reference_t<decltype(data->quality)>)std::clamp(value, 0, 100);
+}
+
+int ImageFormatSettings_compression_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->compress);
+}
+
+void ImageFormatSettings_compression_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->compress = (std::remove_reference_t<decltype(data->compress)>)std::clamp(value, 0, 100);
+}
+
+bool ImageFormatSettings_use_preview_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return ((uint64_t(data->flag) & 2) != 0);
+}
+
+void ImageFormatSettings_use_preview_set(PointerRNA *ptr, bool value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2)); }
+}
+
+int ImageFormatSettings_exr_codec_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->exr_codec);
+}
+
+void ImageFormatSettings_exr_codec_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->exr_codec = (std::remove_reference_t<decltype(data->exr_codec)>)value;
+}
+
+bool ImageFormatSettings_use_exr_interleave_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return !((uint64_t(data->exr_flag) & 1) != 0);
+}
+
+void ImageFormatSettings_use_exr_interleave_set(PointerRNA *ptr, bool value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    if (!value) { data->exr_flag = std::remove_reference_t<decltype(data->exr_flag)>(uint64_t(data->exr_flag) | 1); }
+    else { data->exr_flag = std::remove_reference_t<decltype(data->exr_flag)>(uint64_t(data->exr_flag) & ~uint64_t(1)); }
+}
+
+bool ImageFormatSettings_use_jpeg2k_ycc_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return ((uint64_t(data->jp2_flag) & 1) != 0);
+}
+
+void ImageFormatSettings_use_jpeg2k_ycc_set(PointerRNA *ptr, bool value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    if (value) { data->jp2_flag = std::remove_reference_t<decltype(data->jp2_flag)>(uint64_t(data->jp2_flag) | 1); }
+    else { data->jp2_flag = std::remove_reference_t<decltype(data->jp2_flag)>(uint64_t(data->jp2_flag) & ~uint64_t(1)); }
+}
+
+bool ImageFormatSettings_use_jpeg2k_cinema_preset_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return ((uint64_t(data->jp2_flag) & 2) != 0);
+}
+
+void ImageFormatSettings_use_jpeg2k_cinema_preset_set(PointerRNA *ptr, bool value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    if (value) { data->jp2_flag = std::remove_reference_t<decltype(data->jp2_flag)>(uint64_t(data->jp2_flag) | 2); }
+    else { data->jp2_flag = std::remove_reference_t<decltype(data->jp2_flag)>(uint64_t(data->jp2_flag) & ~uint64_t(2)); }
+}
+
+bool ImageFormatSettings_use_jpeg2k_cinema_48_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return ((uint64_t(data->jp2_flag) & 4) != 0);
+}
+
+void ImageFormatSettings_use_jpeg2k_cinema_48_set(PointerRNA *ptr, bool value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    if (value) { data->jp2_flag = std::remove_reference_t<decltype(data->jp2_flag)>(uint64_t(data->jp2_flag) | 4); }
+    else { data->jp2_flag = std::remove_reference_t<decltype(data->jp2_flag)>(uint64_t(data->jp2_flag) & ~uint64_t(4)); }
+}
+
+int ImageFormatSettings_jpeg2k_codec_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->jp2_codec);
+}
+
+void ImageFormatSettings_jpeg2k_codec_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->jp2_codec = (std::remove_reference_t<decltype(data->jp2_codec)>)value;
+}
+
+int ImageFormatSettings_tiff_codec_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->tiff_codec);
+}
+
+void ImageFormatSettings_tiff_codec_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->tiff_codec = (std::remove_reference_t<decltype(data->tiff_codec)>)value;
+}
+
+bool ImageFormatSettings_use_cineon_log_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return ((uint64_t(data->cineon_flag) & 1) != 0);
+}
+
+void ImageFormatSettings_use_cineon_log_set(PointerRNA *ptr, bool value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    if (value) { data->cineon_flag = std::remove_reference_t<decltype(data->cineon_flag)>(uint64_t(data->cineon_flag) | 1); }
+    else { data->cineon_flag = std::remove_reference_t<decltype(data->cineon_flag)>(uint64_t(data->cineon_flag) & ~uint64_t(1)); }
+}
+
+int ImageFormatSettings_cineon_black_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->cineon_black);
+}
+
+void ImageFormatSettings_cineon_black_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->cineon_black = (std::remove_reference_t<decltype(data->cineon_black)>)std::clamp(value, 0, 1024);
+}
+
+int ImageFormatSettings_cineon_white_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->cineon_white);
+}
+
+void ImageFormatSettings_cineon_white_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->cineon_white = (std::remove_reference_t<decltype(data->cineon_white)>)std::clamp(value, 0, 1024);
+}
+
+float ImageFormatSettings_cineon_gamma_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (float)(data->cineon_gamma);
+}
+
+void ImageFormatSettings_cineon_gamma_set(PointerRNA *ptr, float value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->cineon_gamma = (std::remove_reference_t<decltype(data->cineon_gamma)>)std::clamp(value, 0.0f, 10.0f);
+}
+
+int ImageFormatSettings_views_format_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->views_format);
+}
+
+void ImageFormatSettings_views_format_set(PointerRNA *ptr, int value)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    data->views_format = (std::remove_reference_t<decltype(data->views_format)>)value;
+}
+
+PointerRNA ImageFormatSettings_stereo_3d_format_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Stereo3dFormat, &data->stereo3d_format);
+}
+
+int ImageFormatSettings_color_management_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return (int)(data->color_management);
+}
+
+void ImageFormatSettings_color_management_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_ImageFormatSettings_color_management_set;
+    fn(ptr, value);
+}
+
+PointerRNA ImageFormatSettings_view_settings_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorManagedViewSettings, &data->view_settings);
+}
+
+PointerRNA ImageFormatSettings_display_settings_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorManagedDisplaySettings, &data->display_settings);
+}
+
+PointerRNA ImageFormatSettings_linear_colorspace_settings_get(PointerRNA *ptr)
+{
+    ImageFormatData *data = (ImageFormatData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorManagedInputColorspaceSettings, &data->linear_colorspace_settings);
+}
+
+bool ImageFormatSettings_has_linear_colorspace_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_ImageFormatSettings_has_linear_colorspace_get;
+    return fn(ptr);
+}
+
+static PointerRNA TransformOrientation_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void TransformOrientation_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_TransformOrientation_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = TransformOrientation_rna_properties_get(iter);
+    }
+}
+
+void TransformOrientation_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = TransformOrientation_rna_properties_get(iter);
+    }
+}
+
+void TransformOrientation_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool TransformOrientation_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA TransformOrientation_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void TransformOrientation_matrix_get(PointerRNA *ptr, float values[9])
+{
+    TransformOrientation *data = (TransformOrientation *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 9; i++) {
+        values[i] = (float)(((float *)data->mat)[i]);
+    }
+}
+
+void TransformOrientation_matrix_set(PointerRNA *ptr, const float values[9])
+{
+    TransformOrientation *data = (TransformOrientation *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 9; i++) {
+        ((float *)data->mat)[i] = values[i];
+    }
+}
+
+void TransformOrientation_name_get(PointerRNA *ptr, char *value)
+{
+    TransformOrientation *data = (TransformOrientation *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int TransformOrientation_name_length(PointerRNA *ptr)
+{
+    TransformOrientation *data = (TransformOrientation *)(ptr->data);
+    return strlen(data->name);
+}
+
+void TransformOrientation_name_set(PointerRNA *ptr, const char *value)
+{
+    TransformOrientation *data = (TransformOrientation *)(ptr->data);
+    BLI_strncpy_utf8(data->name, value, 64);
+}
+
+static PointerRNA TransformOrientationSlot_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void TransformOrientationSlot_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_TransformOrientationSlot_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = TransformOrientationSlot_rna_properties_get(iter);
+    }
+}
+
+void TransformOrientationSlot_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = TransformOrientationSlot_rna_properties_get(iter);
+    }
+}
+
+void TransformOrientationSlot_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool TransformOrientationSlot_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA TransformOrientationSlot_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int TransformOrientationSlot_type_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_TransformOrientationSlot_type_get;
+    return fn(ptr);
+}
+
+void TransformOrientationSlot_type_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_TransformOrientationSlot_type_set;
+    fn(ptr, value);
+}
+
+PointerRNA TransformOrientationSlot_custom_orientation_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_TransformOrientationSlot_get;
+    return fn(ptr);
+}
+
+bool TransformOrientationSlot_use_get(PointerRNA *ptr)
+{
+    TransformOrientationSlot *data = (TransformOrientationSlot *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void TransformOrientationSlot_use_set(PointerRNA *ptr, bool value)
+{
+    TransformOrientationSlot *data = (TransformOrientationSlot *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+static PointerRNA View3DCursor_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void View3DCursor_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_View3DCursor_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = View3DCursor_rna_properties_get(iter);
+    }
+}
+
+void View3DCursor_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = View3DCursor_rna_properties_get(iter);
+    }
+}
+
+void View3DCursor_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool View3DCursor_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA View3DCursor_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void View3DCursor_location_get(PointerRNA *ptr, float values[3])
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = (float)(((float *)data->location)[i]);
+    }
+}
+
+void View3DCursor_location_set(PointerRNA *ptr, const float values[3])
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        ((float *)data->location)[i] = values[i];
+    }
+}
+
+void View3DCursor_rotation_quaternion_get(PointerRNA *ptr, float values[4])
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 4; i++) {
+        values[i] = (float)(((float *)data->rotation_quaternion)[i]);
+    }
+}
+
+void View3DCursor_rotation_quaternion_set(PointerRNA *ptr, const float values[4])
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 4; i++) {
+        ((float *)data->rotation_quaternion)[i] = values[i];
+    }
+}
+
+void View3DCursor_rotation_axis_angle_get(PointerRNA *ptr, float values[4])
+{
+    PropFloatArrayGetFunc fn = rna_View3DCursor_rotation_axis_angle_get;
+    fn(ptr, values);
+}
+
+void View3DCursor_rotation_axis_angle_set(PointerRNA *ptr, const float values[4])
+{
+    PropFloatArraySetFunc fn = rna_View3DCursor_rotation_axis_angle_set;
+    fn(ptr, values);
+}
+
+void View3DCursor_rotation_euler_get(PointerRNA *ptr, float values[3])
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = (float)(((float *)data->rotation_euler)[i]);
+    }
+}
+
+void View3DCursor_rotation_euler_set(PointerRNA *ptr, const float values[3])
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        ((float *)data->rotation_euler)[i] = values[i];
+    }
+}
+
+int View3DCursor_rotation_mode_get(PointerRNA *ptr)
+{
+    View3DCursor *data = (View3DCursor *)(ptr->data);
+    return (int)(data->rotation_mode);
+}
+
+void View3DCursor_rotation_mode_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_View3DCursor_rotation_mode_set;
+    fn(ptr, value);
+}
+
+void View3DCursor_matrix_get(PointerRNA *ptr, float values[16])
+{
+    PropFloatArrayGetFunc fn = rna_View3DCursor_matrix_get;
+    fn(ptr, values);
+}
+
+void View3DCursor_matrix_set(PointerRNA *ptr, const float values[16])
+{
+    PropFloatArraySetFunc fn = rna_View3DCursor_matrix_set;
+    fn(ptr, values);
+}
+
+static PointerRNA DisplaySafeAreas_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void DisplaySafeAreas_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_DisplaySafeAreas_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = DisplaySafeAreas_rna_properties_get(iter);
+    }
+}
+
+void DisplaySafeAreas_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = DisplaySafeAreas_rna_properties_get(iter);
+    }
+}
+
+void DisplaySafeAreas_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool DisplaySafeAreas_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA DisplaySafeAreas_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void DisplaySafeAreas_title_get(PointerRNA *ptr, float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        values[i] = (float)(((float *)data->title)[i]);
+    }
+}
+
+void DisplaySafeAreas_title_set(PointerRNA *ptr, const float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        ((float *)data->title)[i] = std::clamp(values[i], 0.0f, 1.0f);
+    }
+}
+
+void DisplaySafeAreas_action_get(PointerRNA *ptr, float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        values[i] = (float)(((float *)data->action)[i]);
+    }
+}
+
+void DisplaySafeAreas_action_set(PointerRNA *ptr, const float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        ((float *)data->action)[i] = std::clamp(values[i], 0.0f, 1.0f);
+    }
+}
+
+void DisplaySafeAreas_title_center_get(PointerRNA *ptr, float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        values[i] = (float)(((float *)data->title_center)[i]);
+    }
+}
+
+void DisplaySafeAreas_title_center_set(PointerRNA *ptr, const float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        ((float *)data->title_center)[i] = std::clamp(values[i], 0.0f, 1.0f);
+    }
+}
+
+void DisplaySafeAreas_action_center_get(PointerRNA *ptr, float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        values[i] = (float)(((float *)data->action_center)[i]);
+    }
+}
+
+void DisplaySafeAreas_action_center_set(PointerRNA *ptr, const float values[2])
+{
+    DisplaySafeAreas *data = (DisplaySafeAreas *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 2; i++) {
+        ((float *)data->action_center)[i] = std::clamp(values[i], 0.0f, 1.0f);
+    }
+}
+
+static PointerRNA SceneDisplay_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SceneDisplay_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SceneDisplay_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SceneDisplay_rna_properties_get(iter);
+    }
+}
+
+void SceneDisplay_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SceneDisplay_rna_properties_get(iter);
+    }
+}
+
+void SceneDisplay_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SceneDisplay_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SceneDisplay_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void SceneDisplay_light_direction_get(PointerRNA *ptr, float values[3])
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = (float)(((float *)data->light_direction)[i]);
+    }
+}
+
+void SceneDisplay_light_direction_set(PointerRNA *ptr, const float values[3])
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        ((float *)data->light_direction)[i] = values[i];
+    }
+}
+
+float SceneDisplay_shadow_shift_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (float)(data->shadow_shift);
+}
+
+void SceneDisplay_shadow_shift_set(PointerRNA *ptr, float value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->shadow_shift = (std::remove_reference_t<decltype(data->shadow_shift)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float SceneDisplay_shadow_focus_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (float)(data->shadow_focus);
+}
+
+void SceneDisplay_shadow_focus_set(PointerRNA *ptr, float value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->shadow_focus = (std::remove_reference_t<decltype(data->shadow_focus)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float SceneDisplay_matcap_ssao_distance_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (float)(data->matcap_ssao_distance);
+}
+
+void SceneDisplay_matcap_ssao_distance_set(PointerRNA *ptr, float value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->matcap_ssao_distance = (std::remove_reference_t<decltype(data->matcap_ssao_distance)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+float SceneDisplay_matcap_ssao_attenuation_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (float)(data->matcap_ssao_attenuation);
+}
+
+void SceneDisplay_matcap_ssao_attenuation_set(PointerRNA *ptr, float value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->matcap_ssao_attenuation = (std::remove_reference_t<decltype(data->matcap_ssao_attenuation)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+int SceneDisplay_matcap_ssao_samples_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (int)(data->matcap_ssao_samples);
+}
+
+void SceneDisplay_matcap_ssao_samples_set(PointerRNA *ptr, int value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->matcap_ssao_samples = (std::remove_reference_t<decltype(data->matcap_ssao_samples)>)std::clamp(value, 1, 500);
+}
+
+int SceneDisplay_render_aa_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (int)(data->render_aa);
+}
+
+void SceneDisplay_render_aa_set(PointerRNA *ptr, int value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->render_aa = (std::remove_reference_t<decltype(data->render_aa)>)value;
+}
+
+int SceneDisplay_viewport_aa_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return (int)(data->viewport_aa);
+}
+
+void SceneDisplay_viewport_aa_set(PointerRNA *ptr, int value)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    data->viewport_aa = (std::remove_reference_t<decltype(data->viewport_aa)>)value;
+}
+
+PointerRNA SceneDisplay_shading_get(PointerRNA *ptr)
+{
+    SceneDisplay *data = (SceneDisplay *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_View3DShading, &data->shading);
+}
+
+static PointerRNA RaytraceEEVEE_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void RaytraceEEVEE_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_RaytraceEEVEE_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = RaytraceEEVEE_rna_properties_get(iter);
+    }
+}
+
+void RaytraceEEVEE_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = RaytraceEEVEE_rna_properties_get(iter);
+    }
+}
+
+void RaytraceEEVEE_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool RaytraceEEVEE_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA RaytraceEEVEE_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int RaytraceEEVEE_resolution_scale_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return (int)(data->resolution_scale);
+}
+
+void RaytraceEEVEE_resolution_scale_set(PointerRNA *ptr, int value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    data->resolution_scale = (std::remove_reference_t<decltype(data->resolution_scale)>)value;
+}
+
+bool RaytraceEEVEE_use_backface_hit_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 2) != 0);
+}
+
+void RaytraceEEVEE_use_backface_hit_set(PointerRNA *ptr, bool value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2)); }
+}
+
+float RaytraceEEVEE_backface_radiance_scale_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return (float)(data->backface_radiance_scale);
+}
+
+void RaytraceEEVEE_backface_radiance_scale_set(PointerRNA *ptr, float value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    data->backface_radiance_scale = (std::remove_reference_t<decltype(data->backface_radiance_scale)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool RaytraceEEVEE_use_denoise_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void RaytraceEEVEE_use_denoise_set(PointerRNA *ptr, bool value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+bool RaytraceEEVEE_denoise_spatial_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return ((uint64_t(data->denoise_stages) & 1) != 0);
+}
+
+void RaytraceEEVEE_denoise_spatial_set(PointerRNA *ptr, bool value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    if (value) { data->denoise_stages = std::remove_reference_t<decltype(data->denoise_stages)>(uint64_t(data->denoise_stages) | 1); }
+    else { data->denoise_stages = std::remove_reference_t<decltype(data->denoise_stages)>(uint64_t(data->denoise_stages) & ~uint64_t(1)); }
+}
+
+bool RaytraceEEVEE_denoise_temporal_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return ((uint64_t(data->denoise_stages) & 2) != 0);
+}
+
+void RaytraceEEVEE_denoise_temporal_set(PointerRNA *ptr, bool value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    if (value) { data->denoise_stages = std::remove_reference_t<decltype(data->denoise_stages)>(uint64_t(data->denoise_stages) | 2); }
+    else { data->denoise_stages = std::remove_reference_t<decltype(data->denoise_stages)>(uint64_t(data->denoise_stages) & ~uint64_t(2)); }
+}
+
+bool RaytraceEEVEE_denoise_bilateral_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return ((uint64_t(data->denoise_stages) & 4) != 0);
+}
+
+void RaytraceEEVEE_denoise_bilateral_set(PointerRNA *ptr, bool value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    if (value) { data->denoise_stages = std::remove_reference_t<decltype(data->denoise_stages)>(uint64_t(data->denoise_stages) | 4); }
+    else { data->denoise_stages = std::remove_reference_t<decltype(data->denoise_stages)>(uint64_t(data->denoise_stages) & ~uint64_t(4)); }
+}
+
+float RaytraceEEVEE_screen_trace_thickness_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return (float)(data->screen_trace_thickness);
+}
+
+void RaytraceEEVEE_screen_trace_thickness_set(PointerRNA *ptr, float value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    data->screen_trace_thickness = (std::remove_reference_t<decltype(data->screen_trace_thickness)>)std::clamp(value, 0.0000010000f, FLT_MAX);
+}
+
+float RaytraceEEVEE_trace_max_roughness_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return (float)(data->trace_max_roughness);
+}
+
+void RaytraceEEVEE_trace_max_roughness_set(PointerRNA *ptr, float value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    data->trace_max_roughness = (std::remove_reference_t<decltype(data->trace_max_roughness)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float RaytraceEEVEE_screen_trace_quality_get(PointerRNA *ptr)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    return (float)(data->screen_trace_quality);
+}
+
+void RaytraceEEVEE_screen_trace_quality_set(PointerRNA *ptr, float value)
+{
+    RaytraceEEVEE *data = (RaytraceEEVEE *)(ptr->data);
+    data->screen_trace_quality = (std::remove_reference_t<decltype(data->screen_trace_quality)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+static PointerRNA SceneEEVEE_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SceneEEVEE_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SceneEEVEE_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SceneEEVEE_rna_properties_get(iter);
+    }
+}
+
+void SceneEEVEE_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SceneEEVEE_rna_properties_get(iter);
+    }
+}
+
+void SceneEEVEE_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SceneEEVEE_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SceneEEVEE_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int SceneEEVEE_gi_diffuse_bounces_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->gi_diffuse_bounces);
+}
+
+void SceneEEVEE_gi_diffuse_bounces_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->gi_diffuse_bounces = (std::remove_reference_t<decltype(data->gi_diffuse_bounces)>)std::clamp(value, 0, INT_MAX);
+}
+
+int SceneEEVEE_gi_cubemap_resolution_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->gi_cubemap_resolution);
+}
+
+void SceneEEVEE_gi_cubemap_resolution_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->gi_cubemap_resolution = (std::remove_reference_t<decltype(data->gi_cubemap_resolution)>)value;
+}
+
+int SceneEEVEE_gi_visibility_resolution_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->gi_visibility_resolution);
+}
+
+void SceneEEVEE_gi_visibility_resolution_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->gi_visibility_resolution = (std::remove_reference_t<decltype(data->gi_visibility_resolution)>)value;
+}
+
+float SceneEEVEE_gi_glossy_clamp_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->gi_glossy_clamp);
+}
+
+void SceneEEVEE_gi_glossy_clamp_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->gi_glossy_clamp = (std::remove_reference_t<decltype(data->gi_glossy_clamp)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+int SceneEEVEE_gi_irradiance_pool_size_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->gi_irradiance_pool_size);
+}
+
+void SceneEEVEE_gi_irradiance_pool_size_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->gi_irradiance_pool_size = (std::remove_reference_t<decltype(data->gi_irradiance_pool_size)>)value;
+}
+
+int SceneEEVEE_taa_samples_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->taa_samples);
+}
+
+void SceneEEVEE_taa_samples_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->taa_samples = (std::remove_reference_t<decltype(data->taa_samples)>)std::clamp(value, 0, INT_MAX);
+}
+
+int SceneEEVEE_taa_render_samples_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->taa_render_samples);
+}
+
+void SceneEEVEE_taa_render_samples_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->taa_render_samples = (std::remove_reference_t<decltype(data->taa_render_samples)>)std::clamp(value, 1, INT_MAX);
+}
+
+bool SceneEEVEE_use_taa_reprojection_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 2048) != 0);
+}
+
+void SceneEEVEE_use_taa_reprojection_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2048); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2048)); }
+}
+
+int SceneEEVEE_ray_tracing_method_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->ray_tracing_method);
+}
+
+void SceneEEVEE_ray_tracing_method_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->ray_tracing_method = (std::remove_reference_t<decltype(data->ray_tracing_method)>)value;
+}
+
+bool SceneEEVEE_use_shadow_jitter_viewport_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 67108864) != 0);
+}
+
+void SceneEEVEE_use_shadow_jitter_viewport_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 67108864); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(67108864)); }
+}
+
+float SceneEEVEE_clamp_surface_direct_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->clamp_surface_direct);
+}
+
+void SceneEEVEE_clamp_surface_direct_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->clamp_surface_direct = (std::remove_reference_t<decltype(data->clamp_surface_direct)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneEEVEE_clamp_surface_indirect_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->clamp_surface_indirect);
+}
+
+void SceneEEVEE_clamp_surface_indirect_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->clamp_surface_indirect = (std::remove_reference_t<decltype(data->clamp_surface_indirect)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneEEVEE_clamp_volume_direct_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->clamp_volume_direct);
+}
+
+void SceneEEVEE_clamp_volume_direct_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->clamp_volume_direct = (std::remove_reference_t<decltype(data->clamp_volume_direct)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneEEVEE_clamp_volume_indirect_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->clamp_volume_indirect);
+}
+
+void SceneEEVEE_clamp_volume_indirect_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->clamp_volume_indirect = (std::remove_reference_t<decltype(data->clamp_volume_indirect)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneEEVEE_direct_light_intensity_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->direct_light_intensity);
+}
+
+void SceneEEVEE_direct_light_intensity_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->direct_light_intensity = (std::remove_reference_t<decltype(data->direct_light_intensity)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneEEVEE_indirect_light_intensity_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->indirect_light_intensity);
+}
+
+void SceneEEVEE_indirect_light_intensity_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->indirect_light_intensity = (std::remove_reference_t<decltype(data->indirect_light_intensity)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneEEVEE_volumetric_start_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->volumetric_start);
+}
+
+void SceneEEVEE_volumetric_start_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_start = (std::remove_reference_t<decltype(data->volumetric_start)>)std::clamp(value, 0.0000010000f, FLT_MAX);
+}
+
+float SceneEEVEE_volumetric_end_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->volumetric_end);
+}
+
+void SceneEEVEE_volumetric_end_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_end = (std::remove_reference_t<decltype(data->volumetric_end)>)std::clamp(value, 0.0000010000f, FLT_MAX);
+}
+
+int SceneEEVEE_volumetric_tile_size_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->volumetric_tile_size);
+}
+
+void SceneEEVEE_volumetric_tile_size_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_tile_size = (std::remove_reference_t<decltype(data->volumetric_tile_size)>)value;
+}
+
+int SceneEEVEE_volumetric_samples_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->volumetric_samples);
+}
+
+void SceneEEVEE_volumetric_samples_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_samples = (std::remove_reference_t<decltype(data->volumetric_samples)>)std::clamp(value, 1, 256);
+}
+
+float SceneEEVEE_volumetric_sample_distribution_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->volumetric_sample_distribution);
+}
+
+void SceneEEVEE_volumetric_sample_distribution_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_sample_distribution = (std::remove_reference_t<decltype(data->volumetric_sample_distribution)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+int SceneEEVEE_volumetric_ray_depth_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->volumetric_ray_depth);
+}
+
+void SceneEEVEE_volumetric_ray_depth_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_ray_depth = (std::remove_reference_t<decltype(data->volumetric_ray_depth)>)std::clamp(value, 1, 16);
+}
+
+float SceneEEVEE_volumetric_light_clamp_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->volumetric_light_clamp);
+}
+
+void SceneEEVEE_volumetric_light_clamp_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_light_clamp = (std::remove_reference_t<decltype(data->volumetric_light_clamp)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+bool SceneEEVEE_use_volumetric_shadows_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 4) != 0);
+}
+
+void SceneEEVEE_use_volumetric_shadows_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 4); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(4)); }
+}
+
+int SceneEEVEE_volumetric_shadow_samples_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->volumetric_shadow_samples);
+}
+
+void SceneEEVEE_volumetric_shadow_samples_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->volumetric_shadow_samples = (std::remove_reference_t<decltype(data->volumetric_shadow_samples)>)std::clamp(value, 1, 128);
+}
+
+bool SceneEEVEE_use_volume_custom_range_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 134217728) != 0);
+}
+
+void SceneEEVEE_use_volume_custom_range_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 134217728); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(134217728)); }
+}
+
+bool SceneEEVEE_use_fast_gi_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 268435456) != 0);
+}
+
+void SceneEEVEE_use_fast_gi_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 268435456); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(268435456)); }
+}
+
+float SceneEEVEE_fast_gi_thickness_near_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->fast_gi_thickness_near);
+}
+
+void SceneEEVEE_fast_gi_thickness_near_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_thickness_near = (std::remove_reference_t<decltype(data->fast_gi_thickness_near)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+float SceneEEVEE_fast_gi_quality_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->fast_gi_quality);
+}
+
+void SceneEEVEE_fast_gi_quality_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_quality = (std::remove_reference_t<decltype(data->fast_gi_quality)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+int SceneEEVEE_fast_gi_step_count_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->fast_gi_step_count);
+}
+
+void SceneEEVEE_fast_gi_step_count_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_step_count = (std::remove_reference_t<decltype(data->fast_gi_step_count)>)std::clamp(value, 1, 64);
+}
+
+int SceneEEVEE_fast_gi_ray_count_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->fast_gi_ray_count);
+}
+
+void SceneEEVEE_fast_gi_ray_count_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_ray_count = (std::remove_reference_t<decltype(data->fast_gi_ray_count)>)std::clamp(value, 1, 16);
+}
+
+int SceneEEVEE_fast_gi_method_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->fast_gi_method);
+}
+
+void SceneEEVEE_fast_gi_method_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_method = (std::remove_reference_t<decltype(data->fast_gi_method)>)value;
+}
+
+float SceneEEVEE_fast_gi_distance_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->fast_gi_distance);
+}
+
+void SceneEEVEE_fast_gi_distance_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_distance = (std::remove_reference_t<decltype(data->fast_gi_distance)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+float SceneEEVEE_fast_gi_bias_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->fast_gi_bias);
+}
+
+void SceneEEVEE_fast_gi_bias_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_bias = (std::remove_reference_t<decltype(data->fast_gi_bias)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+int SceneEEVEE_fast_gi_resolution_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->fast_gi_resolution);
+}
+
+void SceneEEVEE_fast_gi_resolution_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->fast_gi_resolution = (std::remove_reference_t<decltype(data->fast_gi_resolution)>)value;
+}
+
+float SceneEEVEE_bokeh_max_size_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->bokeh_max_size);
+}
+
+void SceneEEVEE_bokeh_max_size_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->bokeh_max_size = (std::remove_reference_t<decltype(data->bokeh_max_size)>)std::clamp(value, 0.0f, 2000.0f);
+}
+
+float SceneEEVEE_bokeh_threshold_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->bokeh_threshold);
+}
+
+void SceneEEVEE_bokeh_threshold_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->bokeh_threshold = (std::remove_reference_t<decltype(data->bokeh_threshold)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+float SceneEEVEE_bokeh_neighbor_max_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->bokeh_neighbor_max);
+}
+
+void SceneEEVEE_bokeh_neighbor_max_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->bokeh_neighbor_max = (std::remove_reference_t<decltype(data->bokeh_neighbor_max)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+bool SceneEEVEE_use_bokeh_jittered_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 8388608) != 0);
+}
+
+void SceneEEVEE_use_bokeh_jittered_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 8388608); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(8388608)); }
+}
+
+float SceneEEVEE_bokeh_overblur_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->bokeh_overblur);
+}
+
+void SceneEEVEE_bokeh_overblur_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->bokeh_overblur = (std::remove_reference_t<decltype(data->bokeh_overblur)>)std::clamp(value, 0.0f, 100.0f);
+}
+
+float SceneEEVEE_motion_blur_depth_scale_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->motion_blur_depth_scale);
+}
+
+void SceneEEVEE_motion_blur_depth_scale_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->motion_blur_depth_scale = (std::remove_reference_t<decltype(data->motion_blur_depth_scale)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+int SceneEEVEE_motion_blur_max_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->motion_blur_max);
+}
+
+void SceneEEVEE_motion_blur_max_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->motion_blur_max = (std::remove_reference_t<decltype(data->motion_blur_max)>)std::clamp(value, 0, 2048);
+}
+
+int SceneEEVEE_motion_blur_steps_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->motion_blur_steps);
+}
+
+void SceneEEVEE_motion_blur_steps_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->motion_blur_steps = (std::remove_reference_t<decltype(data->motion_blur_steps)>)std::clamp(value, 1, INT_MAX);
+}
+
+bool SceneEEVEE_use_shadows_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 16777216) != 0);
+}
+
+void SceneEEVEE_use_shadows_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16777216); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16777216)); }
+}
+
+int SceneEEVEE_shadow_pool_size_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->shadow_pool_size);
+}
+
+void SceneEEVEE_shadow_pool_size_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->shadow_pool_size = (std::remove_reference_t<decltype(data->shadow_pool_size)>)value;
+}
+
+int SceneEEVEE_shadow_ray_count_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->shadow_ray_count);
+}
+
+void SceneEEVEE_shadow_ray_count_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->shadow_ray_count = (std::remove_reference_t<decltype(data->shadow_ray_count)>)std::clamp(value, 1, 4);
+}
+
+int SceneEEVEE_shadow_step_count_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (int)(data->shadow_step_count);
+}
+
+void SceneEEVEE_shadow_step_count_set(PointerRNA *ptr, int value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->shadow_step_count = (std::remove_reference_t<decltype(data->shadow_step_count)>)std::clamp(value, 1, 16);
+}
+
+float SceneEEVEE_light_threshold_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->light_threshold);
+}
+
+void SceneEEVEE_light_threshold_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->light_threshold = (std::remove_reference_t<decltype(data->light_threshold)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+bool SceneEEVEE_use_overscan_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 2097152) != 0);
+}
+
+void SceneEEVEE_use_overscan_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2097152); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2097152)); }
+}
+
+float SceneEEVEE_overscan_size_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->overscan);
+}
+
+void SceneEEVEE_overscan_size_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->overscan = (std::remove_reference_t<decltype(data->overscan)>)std::clamp(value, 0.0f, 50.0f);
+}
+
+PointerRNA SceneEEVEE_ray_tracing_options_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_RaytraceEEVEE, &data->ray_tracing_options);
+}
+
+bool SceneEEVEE_use_raytracing_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return ((uint64_t(data->flag) & 16384) != 0);
+}
+
+void SceneEEVEE_use_raytracing_set(PointerRNA *ptr, bool value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16384); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16384)); }
+}
+
+float SceneEEVEE_shadow_resolution_scale_get(PointerRNA *ptr)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    return (float)(data->shadow_resolution_scale);
+}
+
+void SceneEEVEE_shadow_resolution_scale_set(PointerRNA *ptr, float value)
+{
+    SceneEEVEE *data = (SceneEEVEE *)(ptr->data);
+    data->shadow_resolution_scale = (std::remove_reference_t<decltype(data->shadow_resolution_scale)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+static PointerRNA SceneHydra_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SceneHydra_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SceneHydra_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SceneHydra_rna_properties_get(iter);
+    }
+}
+
+void SceneHydra_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SceneHydra_rna_properties_get(iter);
+    }
+}
+
+void SceneHydra_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SceneHydra_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SceneHydra_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int SceneHydra_export_method_get(PointerRNA *ptr)
+{
+    SceneHydra *data = (SceneHydra *)(ptr->data);
+    return (int)(data->export_method);
+}
+
+void SceneHydra_export_method_set(PointerRNA *ptr, int value)
+{
+    SceneHydra *data = (SceneHydra *)(ptr->data);
+    data->export_method = (std::remove_reference_t<decltype(data->export_method)>)value;
+}
+
+static PointerRNA AOV_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void AOV_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_AOV_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = AOV_rna_properties_get(iter);
+    }
+}
+
+void AOV_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = AOV_rna_properties_get(iter);
+    }
+}
+
+void AOV_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool AOV_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA AOV_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void AOV_name_get(PointerRNA *ptr, char *value)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int AOV_name_length(PointerRNA *ptr)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    return strlen(data->name);
+}
+
+void AOV_name_set(PointerRNA *ptr, const char *value)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    BLI_strncpy_utf8(data->name, value, 64);
+}
+
+bool AOV_is_valid_get(PointerRNA *ptr)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    return !((uint64_t(data->flag) & 1) != 0);
+}
+
+void AOV_is_valid_set(PointerRNA *ptr, bool value)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    if (!value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+int AOV_type_get(PointerRNA *ptr)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    return (int)(data->type);
+}
+
+void AOV_type_set(PointerRNA *ptr, int value)
+{
+    ViewLayerAOV *data = (ViewLayerAOV *)(ptr->data);
+    data->type = (std::remove_reference_t<decltype(data->type)>)value;
+}
+
+static PointerRNA Lightgroup_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void Lightgroup_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_Lightgroup_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = Lightgroup_rna_properties_get(iter);
+    }
+}
+
+void Lightgroup_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = Lightgroup_rna_properties_get(iter);
+    }
+}
+
+void Lightgroup_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool Lightgroup_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA Lightgroup_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void Lightgroup_name_get(PointerRNA *ptr, char *value)
+{
+    PropStringGetFunc fn = rna_ViewLayerLightgroup_name_get;
+    fn(ptr, value);
+}
+
+int Lightgroup_name_length(PointerRNA *ptr)
+{
+    PropStringLengthFunc fn = rna_ViewLayerLightgroup_name_length;
+    return fn(ptr);
+}
+
+void Lightgroup_name_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_ViewLayerLightgroup_name_set;
+    fn(ptr, value);
+}
+
+static PointerRNA ViewLayerEEVEE_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void ViewLayerEEVEE_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_ViewLayerEEVEE_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = ViewLayerEEVEE_rna_properties_get(iter);
+    }
+}
+
+void ViewLayerEEVEE_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = ViewLayerEEVEE_rna_properties_get(iter);
+    }
+}
+
+void ViewLayerEEVEE_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool ViewLayerEEVEE_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA ViewLayerEEVEE_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+bool ViewLayerEEVEE_use_pass_volume_direct_get(PointerRNA *ptr)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    return ((uint64_t(data->render_passes) & 512) != 0);
+}
+
+void ViewLayerEEVEE_use_pass_volume_direct_set(PointerRNA *ptr, bool value)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    if (value) { data->render_passes = std::remove_reference_t<decltype(data->render_passes)>(uint64_t(data->render_passes) | 512); }
+    else { data->render_passes = std::remove_reference_t<decltype(data->render_passes)>(uint64_t(data->render_passes) & ~uint64_t(512)); }
+}
+
+bool ViewLayerEEVEE_use_pass_bloom_get(PointerRNA *ptr)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    return (bool)(data->render_passes);
+}
+
+void ViewLayerEEVEE_use_pass_bloom_set(PointerRNA *ptr, bool value)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    data->render_passes = (std::remove_reference_t<decltype(data->render_passes)>)value;
+}
+
+bool ViewLayerEEVEE_use_pass_transparent_get(PointerRNA *ptr)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    return ((uint64_t(data->render_passes) & 1048576) != 0);
+}
+
+void ViewLayerEEVEE_use_pass_transparent_set(PointerRNA *ptr, bool value)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    if (value) { data->render_passes = std::remove_reference_t<decltype(data->render_passes)>(uint64_t(data->render_passes) | 1048576); }
+    else { data->render_passes = std::remove_reference_t<decltype(data->render_passes)>(uint64_t(data->render_passes) & ~uint64_t(1048576)); }
+}
+
+float ViewLayerEEVEE_ambient_occlusion_distance_get(PointerRNA *ptr)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    return (float)(data->ambient_occlusion_distance);
+}
+
+void ViewLayerEEVEE_ambient_occlusion_distance_set(PointerRNA *ptr, float value)
+{
+    ViewLayerEEVEE *data = (ViewLayerEEVEE *)(ptr->data);
+    data->ambient_occlusion_distance = (std::remove_reference_t<decltype(data->ambient_occlusion_distance)>)std::clamp(value, 0.0f, 100000.0f);
+}
+
+static PointerRNA SceneGpencil_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SceneGpencil_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SceneGpencil_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SceneGpencil_rna_properties_get(iter);
+    }
+}
+
+void SceneGpencil_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SceneGpencil_rna_properties_get(iter);
+    }
+}
+
+void SceneGpencil_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SceneGpencil_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SceneGpencil_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+float SceneGpencil_antialias_threshold_get(PointerRNA *ptr)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    return (float)(data->smaa_threshold);
+}
+
+void SceneGpencil_antialias_threshold_set(PointerRNA *ptr, float value)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    data->smaa_threshold = (std::remove_reference_t<decltype(data->smaa_threshold)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float SceneGpencil_antialias_threshold_render_get(PointerRNA *ptr)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    return (float)(data->smaa_threshold_render);
+}
+
+void SceneGpencil_antialias_threshold_render_set(PointerRNA *ptr, float value)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    data->smaa_threshold_render = (std::remove_reference_t<decltype(data->smaa_threshold_render)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+int SceneGpencil_aa_samples_get(PointerRNA *ptr)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    return (int)(data->aa_samples);
+}
+
+void SceneGpencil_aa_samples_set(PointerRNA *ptr, int value)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    data->aa_samples = (std::remove_reference_t<decltype(data->aa_samples)>)std::clamp(value, 1, INT_MAX);
+}
+
+int SceneGpencil_motion_blur_steps_get(PointerRNA *ptr)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    return (int)(data->motion_blur_steps);
+}
+
+void SceneGpencil_motion_blur_steps_set(PointerRNA *ptr, int value)
+{
+    SceneGpencil *data = (SceneGpencil *)(ptr->data);
+    data->motion_blur_steps = (std::remove_reference_t<decltype(data->motion_blur_steps)>)std::clamp(value, 0, INT_MAX);
+}
+
+static PointerRNA FFmpegSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void FFmpegSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FFmpegSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = FFmpegSettings_rna_properties_get(iter);
+    }
+}
+
+void FFmpegSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FFmpegSettings_rna_properties_get(iter);
+    }
+}
+
+void FFmpegSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool FFmpegSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA FFmpegSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int FFmpegSettings_format_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (uint64_t(data->type) & 15);
+}
+
+void FFmpegSettings_format_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->type = std::remove_reference_t<decltype(data->type)>(uint64_t(data->type) & ~uint64_t(15));
+    data->type = std::remove_reference_t<decltype(data->type)>(uint64_t(data->type) | uint64_t(value));
+}
+
+int FFmpegSettings_codec_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (uint64_t(data->codec) & 255);
+}
+
+void FFmpegSettings_codec_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->codec = std::remove_reference_t<decltype(data->codec)>(uint64_t(data->codec) & ~uint64_t(255));
+    data->codec = std::remove_reference_t<decltype(data->codec)>(uint64_t(data->codec) | uint64_t(value));
+}
+
+int FFmpegSettings_video_bitrate_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->video_bitrate);
+}
+
+void FFmpegSettings_video_bitrate_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->video_bitrate = (std::remove_reference_t<decltype(data->video_bitrate)>)value;
+}
+
+int FFmpegSettings_minrate_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->rc_min_rate);
+}
+
+void FFmpegSettings_minrate_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->rc_min_rate = (std::remove_reference_t<decltype(data->rc_min_rate)>)value;
+}
+
+int FFmpegSettings_maxrate_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->rc_max_rate);
+}
+
+void FFmpegSettings_maxrate_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->rc_max_rate = (std::remove_reference_t<decltype(data->rc_max_rate)>)value;
+}
+
+int FFmpegSettings_muxrate_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->mux_rate);
+}
+
+void FFmpegSettings_muxrate_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->mux_rate = (std::remove_reference_t<decltype(data->mux_rate)>)std::clamp(value, 0, 100000000);
+}
+
+int FFmpegSettings_gopsize_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->gop_size);
+}
+
+void FFmpegSettings_gopsize_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->gop_size = (std::remove_reference_t<decltype(data->gop_size)>)std::clamp(value, 0, 500);
+}
+
+int FFmpegSettings_max_b_frames_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->max_b_frames);
+}
+
+void FFmpegSettings_max_b_frames_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->max_b_frames = (std::remove_reference_t<decltype(data->max_b_frames)>)std::clamp(value, 0, 16);
+}
+
+bool FFmpegSettings_use_max_b_frames_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return ((uint64_t(data->flags) & 8) != 0);
+}
+
+void FFmpegSettings_use_max_b_frames_set(PointerRNA *ptr, bool value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 8); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(8)); }
+}
+
+int FFmpegSettings_buffersize_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->rc_buffer_size);
+}
+
+void FFmpegSettings_buffersize_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->rc_buffer_size = (std::remove_reference_t<decltype(data->rc_buffer_size)>)std::clamp(value, 0, 2000);
+}
+
+int FFmpegSettings_packetsize_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->mux_packet_size);
+}
+
+void FFmpegSettings_packetsize_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->mux_packet_size = (std::remove_reference_t<decltype(data->mux_packet_size)>)std::clamp(value, 0, 16384);
+}
+
+int FFmpegSettings_constant_rate_factor_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->constant_rate_factor);
+}
+
+void FFmpegSettings_constant_rate_factor_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->constant_rate_factor = (std::remove_reference_t<decltype(data->constant_rate_factor)>)value;
+}
+
+int FFmpegSettings_custom_constant_rate_factor_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->custom_constant_rate_factor);
+}
+
+void FFmpegSettings_custom_constant_rate_factor_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->custom_constant_rate_factor = (std::remove_reference_t<decltype(data->custom_constant_rate_factor)>)std::clamp(value, 0, 63);
+}
+
+int FFmpegSettings_ffmpeg_preset_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (uint64_t(data->ffmpeg_preset) & 15);
+}
+
+void FFmpegSettings_ffmpeg_preset_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->ffmpeg_preset = std::remove_reference_t<decltype(data->ffmpeg_preset)>(uint64_t(data->ffmpeg_preset) & ~uint64_t(15));
+    data->ffmpeg_preset = std::remove_reference_t<decltype(data->ffmpeg_preset)>(uint64_t(data->ffmpeg_preset) | uint64_t(value));
+}
+
+int FFmpegSettings_ffmpeg_prores_profile_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (uint64_t(data->ffmpeg_prores_profile) & 7);
+}
+
+void FFmpegSettings_ffmpeg_prores_profile_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->ffmpeg_prores_profile = std::remove_reference_t<decltype(data->ffmpeg_prores_profile)>(uint64_t(data->ffmpeg_prores_profile) & ~uint64_t(7));
+    data->ffmpeg_prores_profile = std::remove_reference_t<decltype(data->ffmpeg_prores_profile)>(uint64_t(data->ffmpeg_prores_profile) | uint64_t(value));
+}
+
+bool FFmpegSettings_use_autosplit_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void FFmpegSettings_use_autosplit_set(PointerRNA *ptr, bool value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+bool FFmpegSettings_use_lossless_output_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return ((uint64_t(data->flags) & 4) != 0);
+}
+
+void FFmpegSettings_use_lossless_output_set(PointerRNA *ptr, bool value)
+{
+    PropBooleanSetFunc fn = rna_FFmpegSettings_lossless_output_set;
+    fn(ptr, value);
+}
+
+int FFmpegSettings_audio_codec_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (uint64_t(data->audio_codec) & 86079);
+}
+
+void FFmpegSettings_audio_codec_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->audio_codec = std::remove_reference_t<decltype(data->audio_codec)>(uint64_t(data->audio_codec) & ~uint64_t(86079));
+    data->audio_codec = std::remove_reference_t<decltype(data->audio_codec)>(uint64_t(data->audio_codec) | uint64_t(value));
+}
+
+int FFmpegSettings_audio_bitrate_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->audio_bitrate);
+}
+
+void FFmpegSettings_audio_bitrate_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->audio_bitrate = (std::remove_reference_t<decltype(data->audio_bitrate)>)std::clamp(value, 32, 2048);
+}
+
+float FFmpegSettings_audio_volume_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (float)(data->audio_volume);
+}
+
+void FFmpegSettings_audio_volume_set(PointerRNA *ptr, float value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->audio_volume = (std::remove_reference_t<decltype(data->audio_volume)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+int FFmpegSettings_audio_mixrate_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->audio_mixrate);
+}
+
+void FFmpegSettings_audio_mixrate_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->audio_mixrate = (std::remove_reference_t<decltype(data->audio_mixrate)>)std::clamp(value, 8000, 192000);
+}
+
+int FFmpegSettings_audio_channels_get(PointerRNA *ptr)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    return (int)(data->audio_channels);
+}
+
+void FFmpegSettings_audio_channels_set(PointerRNA *ptr, int value)
+{
+    FFMpegCodecData *data = (FFMpegCodecData *)(ptr->data);
+    data->audio_channels = (std::remove_reference_t<decltype(data->audio_channels)>)value;
+}
+
+static PointerRNA RenderSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void RenderSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_RenderSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = RenderSettings_rna_properties_get(iter);
+    }
+}
+
+void RenderSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = RenderSettings_rna_properties_get(iter);
+    }
+}
+
+void RenderSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool RenderSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA RenderSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+PointerRNA RenderSettings_image_settings_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ImageFormatSettings, &data->im_format);
+}
+
+int RenderSettings_resolution_x_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->xsch);
+}
+
+void RenderSettings_resolution_x_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->xsch = (std::remove_reference_t<decltype(data->xsch)>)std::clamp(value, 4, 65536);
+}
+
+int RenderSettings_resolution_y_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->ysch);
+}
+
+void RenderSettings_resolution_y_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->ysch = (std::remove_reference_t<decltype(data->ysch)>)std::clamp(value, 4, 65536);
+}
+
+int RenderSettings_resolution_percentage_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->size);
+}
+
+void RenderSettings_resolution_percentage_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->size = (std::remove_reference_t<decltype(data->size)>)std::clamp(value, 1, 32767);
+}
+
+int RenderSettings_preview_pixel_size_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->preview_pixel_size);
+}
+
+void RenderSettings_preview_pixel_size_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->preview_pixel_size = (std::remove_reference_t<decltype(data->preview_pixel_size)>)value;
+}
+
+float RenderSettings_pixel_aspect_x_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->xasp);
+}
+
+void RenderSettings_pixel_aspect_x_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->xasp = (std::remove_reference_t<decltype(data->xasp)>)std::clamp(value, 1.0f, 200.0f);
+}
+
+float RenderSettings_pixel_aspect_y_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->yasp);
+}
+
+void RenderSettings_pixel_aspect_y_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->yasp = (std::remove_reference_t<decltype(data->yasp)>)std::clamp(value, 1.0f, 200.0f);
+}
+
+float RenderSettings_ppm_factor_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->ppm_factor);
+}
+
+void RenderSettings_ppm_factor_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->ppm_factor = (std::remove_reference_t<decltype(data->ppm_factor)>)std::clamp(value, 0.0000100000f, 1000000.0f);
+}
+
+float RenderSettings_ppm_base_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->ppm_base);
+}
+
+void RenderSettings_ppm_base_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->ppm_base = (std::remove_reference_t<decltype(data->ppm_base)>)std::clamp(value, 0.0000100000f, 1000000.0f);
+}
+
+PointerRNA RenderSettings_ffmpeg_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_FFmpegSettings, &data->ffcodecdata);
+}
+
+int RenderSettings_fps_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->frs_sec);
+}
+
+void RenderSettings_fps_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->frs_sec = (std::remove_reference_t<decltype(data->frs_sec)>)std::clamp(value, 1, 32767);
+}
+
+float RenderSettings_fps_base_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->frs_sec_base);
+}
+
+void RenderSettings_fps_base_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->frs_sec_base = (std::remove_reference_t<decltype(data->frs_sec_base)>)std::clamp(value, 0.0000100000f, 1000000.0f);
+}
+
+int RenderSettings_frame_map_old_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->framapto);
+}
+
+void RenderSettings_frame_map_old_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->framapto = (std::remove_reference_t<decltype(data->framapto)>)std::clamp(value, 1, 900);
+}
+
+int RenderSettings_frame_map_new_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->images);
+}
+
+void RenderSettings_frame_map_new_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->images = (std::remove_reference_t<decltype(data->images)>)std::clamp(value, 1, 900);
+}
+
+float RenderSettings_dither_intensity_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->dither_intensity);
+}
+
+void RenderSettings_dither_intensity_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->dither_intensity = (std::remove_reference_t<decltype(data->dither_intensity)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float RenderSettings_filter_size_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->gauss);
+}
+
+void RenderSettings_filter_size_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->gauss = (std::remove_reference_t<decltype(data->gauss)>)std::clamp(value, 0.0f, 500.0f);
+}
+
+bool RenderSettings_film_transparent_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->alphamode) & 1) != 0);
+}
+
+void RenderSettings_film_transparent_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->alphamode = std::remove_reference_t<decltype(data->alphamode)>(uint64_t(data->alphamode) | 1); }
+    else { data->alphamode = std::remove_reference_t<decltype(data->alphamode)>(uint64_t(data->alphamode) & ~uint64_t(1)); }
+}
+
+bool RenderSettings_use_freestyle_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 33554432) != 0);
+}
+
+void RenderSettings_use_freestyle_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 33554432); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(33554432)); }
+}
+
+int RenderSettings_threads_get(PointerRNA *ptr)
+{
+    PropIntGetFunc fn = rna_RenderSettings_threads_get;
+    return fn(ptr);
+}
+
+void RenderSettings_threads_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->threads = (std::remove_reference_t<decltype(data->threads)>)std::clamp(value, 1, 1024);
+}
+
+int RenderSettings_threads_mode_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_RenderSettings_threads_mode_get;
+    return fn(ptr);
+}
+
+void RenderSettings_threads_mode_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(524288));
+    data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | uint64_t(value));
+}
+
+bool RenderSettings_use_motion_blur_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 16384) != 0);
+}
+
+void RenderSettings_use_motion_blur_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 16384); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(16384)); }
+}
+
+float RenderSettings_motion_blur_shutter_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->motion_blur_shutter);
+}
+
+void RenderSettings_motion_blur_shutter_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->motion_blur_shutter = (std::remove_reference_t<decltype(data->motion_blur_shutter)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+int RenderSettings_motion_blur_position_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->motion_blur_position);
+}
+
+void RenderSettings_motion_blur_position_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->motion_blur_position = (std::remove_reference_t<decltype(data->motion_blur_position)>)value;
+}
+
+PointerRNA RenderSettings_motion_blur_shutter_curve_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, &data->mblur_shutter_curve);
+}
+
+int RenderSettings_hair_type_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->hair_type);
+}
+
+void RenderSettings_hair_type_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->hair_type = (std::remove_reference_t<decltype(data->hair_type)>)value;
+}
+
+int RenderSettings_hair_subdiv_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->hair_subdiv);
+}
+
+void RenderSettings_hair_subdiv_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->hair_subdiv = (std::remove_reference_t<decltype(data->hair_subdiv)>)std::clamp(value, 0, 3);
+}
+
+bool RenderSettings_use_high_quality_normals_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->perf_flag) & 1) != 0);
+}
+
+void RenderSettings_use_high_quality_normals_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->perf_flag = std::remove_reference_t<decltype(data->perf_flag)>(uint64_t(data->perf_flag) | 1); }
+    else { data->perf_flag = std::remove_reference_t<decltype(data->perf_flag)>(uint64_t(data->perf_flag) & ~uint64_t(1)); }
+}
+
+int RenderSettings_anisotropic_filter_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->anisotropic_filter);
+}
+
+void RenderSettings_anisotropic_filter_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->anisotropic_filter = (std::remove_reference_t<decltype(data->anisotropic_filter)>)value;
+}
+
+bool RenderSettings_use_border_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 512) != 0);
+}
+
+void RenderSettings_use_border_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 512); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(512)); }
+}
+
+float RenderSettings_border_min_x_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->border.xmin);
+}
+
+void RenderSettings_border_min_x_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->border.xmin = (std::remove_reference_t<decltype(data->border.xmin)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float RenderSettings_border_min_y_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->border.ymin);
+}
+
+void RenderSettings_border_min_y_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->border.ymin = (std::remove_reference_t<decltype(data->border.ymin)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float RenderSettings_border_max_x_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->border.xmax);
+}
+
+void RenderSettings_border_max_x_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->border.xmax = (std::remove_reference_t<decltype(data->border.xmax)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float RenderSettings_border_max_y_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->border.ymax);
+}
+
+void RenderSettings_border_max_y_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->border.ymax = (std::remove_reference_t<decltype(data->border.ymax)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool RenderSettings_use_crop_to_border_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 2048) != 0);
+}
+
+void RenderSettings_use_crop_to_border_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 2048); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(2048)); }
+}
+
+bool RenderSettings_use_placeholder_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 8388608) != 0);
+}
+
+void RenderSettings_use_placeholder_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 8388608); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(8388608)); }
+}
+
+bool RenderSettings_use_overwrite_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->mode) & 4194304) != 0);
+}
+
+void RenderSettings_use_overwrite_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 4194304); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(4194304)); }
+}
+
+bool RenderSettings_save_output_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 268435456) != 0);
+}
+
+void RenderSettings_save_output_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 268435456); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(268435456)); }
+}
+
+bool RenderSettings_use_compositing_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 64) != 0);
+}
+
+void RenderSettings_use_compositing_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 64); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(64)); }
+}
+
+bool RenderSettings_use_sequencer_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 1) != 0);
+}
+
+void RenderSettings_use_sequencer_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 1); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(1)); }
+}
+
+bool RenderSettings_use_file_extension_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 16) != 0);
+}
+
+void RenderSettings_use_file_extension_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 16); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(16)); }
+}
+
+void RenderSettings_file_extension_get(PointerRNA *ptr, char *value)
+{
+    PropStringGetFunc fn = rna_SceneRender_file_ext_get;
+    fn(ptr, value);
+}
+
+int RenderSettings_file_extension_length(PointerRNA *ptr)
+{
+    PropStringLengthFunc fn = rna_SceneRender_file_ext_length;
+    return fn(ptr);
+}
+
+bool RenderSettings_is_movie_format_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_RenderSettings_is_movie_format_get;
+    return fn(ptr);
+}
+
+bool RenderSettings_use_lock_interface_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->use_lock_interface) & 1) != 0);
+}
+
+void RenderSettings_use_lock_interface_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->use_lock_interface = std::remove_reference_t<decltype(data->use_lock_interface)>(uint64_t(data->use_lock_interface) | 1); }
+    else { data->use_lock_interface = std::remove_reference_t<decltype(data->use_lock_interface)>(uint64_t(data->use_lock_interface) & ~uint64_t(1)); }
+}
+
+void RenderSettings_filepath_get(PointerRNA *ptr, char *value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    BLI_assert(strlen(data->pic) < 1024);
+    strcpy(value, data->pic);
+}
+
+int RenderSettings_filepath_length(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return strlen(data->pic);
+}
+
+void RenderSettings_filepath_set(PointerRNA *ptr, const char *value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    BLI_strncpy(data->pic, value, 1024);
+}
+
+bool RenderSettings_use_render_cache_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 1048576) != 0);
+}
+
+void RenderSettings_use_render_cache_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 1048576); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(1048576)); }
+}
+
+bool RenderSettings_use_stamp_time_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 1) != 0);
+}
+
+void RenderSettings_use_stamp_time_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 1); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(1)); }
+}
+
+bool RenderSettings_use_stamp_date_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 4) != 0);
+}
+
+void RenderSettings_use_stamp_date_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 4); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(4)); }
+}
+
+bool RenderSettings_use_stamp_frame_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 2) != 0);
+}
+
+void RenderSettings_use_stamp_frame_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 2); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(2)); }
+}
+
+bool RenderSettings_use_stamp_frame_range_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 32768) != 0);
+}
+
+void RenderSettings_use_stamp_frame_range_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 32768); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(32768)); }
+}
+
+bool RenderSettings_use_stamp_camera_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 8) != 0);
+}
+
+void RenderSettings_use_stamp_camera_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 8); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(8)); }
+}
+
+bool RenderSettings_use_stamp_lens_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 2048) != 0);
+}
+
+void RenderSettings_use_stamp_lens_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 2048); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(2048)); }
+}
+
+bool RenderSettings_use_stamp_scene_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 16) != 0);
+}
+
+void RenderSettings_use_stamp_scene_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 16); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(16)); }
+}
+
+bool RenderSettings_use_stamp_note_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 32) != 0);
+}
+
+void RenderSettings_use_stamp_note_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 32); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(32)); }
+}
+
+bool RenderSettings_use_stamp_marker_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 128) != 0);
+}
+
+void RenderSettings_use_stamp_marker_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 128); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(128)); }
+}
+
+bool RenderSettings_use_stamp_filename_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 256) != 0);
+}
+
+void RenderSettings_use_stamp_filename_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 256); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(256)); }
+}
+
+bool RenderSettings_use_stamp_sequencer_strip_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 512) != 0);
+}
+
+void RenderSettings_use_stamp_sequencer_strip_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 512); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(512)); }
+}
+
+bool RenderSettings_use_stamp_render_time_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 1024) != 0);
+}
+
+void RenderSettings_use_stamp_render_time_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 1024); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(1024)); }
+}
+
+void RenderSettings_stamp_note_text_get(PointerRNA *ptr, char *value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    BLI_assert(strlen(data->stamp_udata) < 768);
+    strcpy(value, data->stamp_udata);
+}
+
+int RenderSettings_stamp_note_text_length(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return strlen(data->stamp_udata);
+}
+
+void RenderSettings_stamp_note_text_set(PointerRNA *ptr, const char *value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    BLI_strncpy_utf8(data->stamp_udata, value, 768);
+}
+
+bool RenderSettings_use_stamp_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 64) != 0);
+}
+
+void RenderSettings_use_stamp_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 64); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(64)); }
+}
+
+bool RenderSettings_use_stamp_labels_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->stamp) & 16384) != 0);
+}
+
+void RenderSettings_use_stamp_labels_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 16384); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(16384)); }
+}
+
+int RenderSettings_metadata_input_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (uint64_t(data->stamp) & 4096);
+}
+
+void RenderSettings_metadata_input_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(4096));
+    data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | uint64_t(value));
+}
+
+bool RenderSettings_use_stamp_memory_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 8192) != 0);
+}
+
+void RenderSettings_use_stamp_memory_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 8192); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(8192)); }
+}
+
+bool RenderSettings_use_stamp_hostname_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->stamp) & 65536) != 0);
+}
+
+void RenderSettings_use_stamp_hostname_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) | 65536); }
+    else { data->stamp = std::remove_reference_t<decltype(data->stamp)>(uint64_t(data->stamp) & ~uint64_t(65536)); }
+}
+
+int RenderSettings_stamp_font_size_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->stamp_font_id);
+}
+
+void RenderSettings_stamp_font_size_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->stamp_font_id = (std::remove_reference_t<decltype(data->stamp_font_id)>)std::clamp(value, 8, 64);
+}
+
+void RenderSettings_stamp_foreground_get(PointerRNA *ptr, float values[4])
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 4; i++) {
+        values[i] = (float)(((float *)data->fg_stamp)[i]);
+    }
+}
+
+void RenderSettings_stamp_foreground_set(PointerRNA *ptr, const float values[4])
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 4; i++) {
+        ((float *)data->fg_stamp)[i] = std::clamp(values[i], 0.0f, 1.0f);
+    }
+}
+
+void RenderSettings_stamp_background_get(PointerRNA *ptr, float values[4])
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 4; i++) {
+        values[i] = (float)(((float *)data->bg_stamp)[i]);
+    }
+}
+
+void RenderSettings_stamp_background_set(PointerRNA *ptr, const float values[4])
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 4; i++) {
+        ((float *)data->bg_stamp)[i] = std::clamp(values[i], 0.0f, 1.0f);
+    }
+}
+
+int RenderSettings_sequencer_gl_preview_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->seq_prev_type);
+}
+
+void RenderSettings_sequencer_gl_preview_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->seq_prev_type = (std::remove_reference_t<decltype(data->seq_prev_type)>)value;
+}
+
+bool RenderSettings_use_sequencer_override_scene_strip_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->seq_flag) & 32) != 0);
+}
+
+void RenderSettings_use_sequencer_override_scene_strip_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->seq_flag = std::remove_reference_t<decltype(data->seq_flag)>(uint64_t(data->seq_flag) | 32); }
+    else { data->seq_flag = std::remove_reference_t<decltype(data->seq_flag)>(uint64_t(data->seq_flag) & ~uint64_t(32)); }
+}
+
+bool RenderSettings_use_single_layer_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 512) != 0);
+}
+
+void RenderSettings_use_single_layer_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 512); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(512)); }
+}
+
+static PointerRNA RenderSettings_views_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_SceneRenderView, rna_iterator_listbase_get(iter));
+}
+
+void RenderSettings_views_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_RenderSettings_views;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->views, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = RenderSettings_views_get(iter);
+    }
+}
+
+void RenderSettings_views_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = RenderSettings_views_get(iter);
+    }
+}
+
+void RenderSettings_views_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool RenderSettings_views_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    RenderSettings_views_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = RenderSettings_views_get(&iter); }
+    }
+
+    RenderSettings_views_end(&iter);
+
+    return found;
+}
+
+int SceneRenderView_name_length(PointerRNA *);
+void SceneRenderView_name_get(PointerRNA *, char *);
+
+bool RenderSettings_views_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    RenderSettings_views_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = SceneRenderView_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                SceneRenderView_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                SceneRenderView_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        RenderSettings_views_next(&iter);
+    }
+    RenderSettings_views_end(&iter);
+
+    return found;
+}
+
+static PointerRNA RenderSettings_stereo_views_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_SceneRenderView, rna_iterator_listbase_get(iter));
+}
+
+void RenderSettings_stereo_views_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_RenderSettings_stereo_views;
+
+    PropCollectionBeginFunc fn = rna_RenderSettings_stereoViews_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = RenderSettings_stereo_views_get(iter);
+    }
+}
+
+void RenderSettings_stereo_views_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = RenderSettings_stereo_views_get(iter);
+    }
+}
+
+void RenderSettings_stereo_views_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool RenderSettings_stereo_views_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    RenderSettings_stereo_views_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = RenderSettings_stereo_views_get(&iter); }
+    }
+
+    RenderSettings_stereo_views_end(&iter);
+
+    return found;
+}
+
+int SceneRenderView_name_length(PointerRNA *);
+void SceneRenderView_name_get(PointerRNA *, char *);
+
+bool RenderSettings_stereo_views_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    RenderSettings_stereo_views_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = SceneRenderView_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                SceneRenderView_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                SceneRenderView_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        RenderSettings_stereo_views_next(&iter);
+    }
+    RenderSettings_stereo_views_end(&iter);
+
+    return found;
+}
+
+bool RenderSettings_use_multiview_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 2097152) != 0);
+}
+
+void RenderSettings_use_multiview_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 2097152); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(2097152)); }
+}
+
+int RenderSettings_views_format_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->views_format);
+}
+
+void RenderSettings_views_format_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_RenderSettings_views_format_set;
+    fn(ptr, value);
+}
+
+int RenderSettings_engine_get(PointerRNA *ptr)
+{
+    PropEnumGetFunc fn = rna_RenderSettings_engine_get;
+    return fn(ptr);
+}
+
+void RenderSettings_engine_set(PointerRNA *ptr, int value)
+{
+    PropEnumSetFunc fn = rna_RenderSettings_engine_set;
+    fn(ptr, value);
+}
+
+bool RenderSettings_has_multiple_engines_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_RenderSettings_multiple_engines_get;
+    return fn(ptr);
+}
+
+bool RenderSettings_use_spherical_stereo_get(PointerRNA *ptr)
+{
+    PropBooleanGetFunc fn = rna_RenderSettings_use_spherical_stereo_get;
+    return fn(ptr);
+}
+
+bool RenderSettings_use_simplify_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 16777216) != 0);
+}
+
+void RenderSettings_use_simplify_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 16777216); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(16777216)); }
+}
+
+int RenderSettings_simplify_subdivision_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->simplify_subsurf);
+}
+
+void RenderSettings_simplify_subdivision_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->simplify_subsurf = (std::remove_reference_t<decltype(data->simplify_subsurf)>)std::clamp(value, 0, 32767);
+}
+
+float RenderSettings_simplify_child_particles_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->simplify_particles);
+}
+
+void RenderSettings_simplify_child_particles_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->simplify_particles = (std::remove_reference_t<decltype(data->simplify_particles)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+int RenderSettings_simplify_subdivision_render_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->simplify_subsurf_render);
+}
+
+void RenderSettings_simplify_subdivision_render_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->simplify_subsurf_render = (std::remove_reference_t<decltype(data->simplify_subsurf_render)>)std::clamp(value, 0, 32767);
+}
+
+float RenderSettings_simplify_child_particles_render_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->simplify_particles_render);
+}
+
+void RenderSettings_simplify_child_particles_render_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->simplify_particles_render = (std::remove_reference_t<decltype(data->simplify_particles_render)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float RenderSettings_simplify_volumes_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->simplify_volumes);
+}
+
+void RenderSettings_simplify_volumes_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->simplify_volumes = (std::remove_reference_t<decltype(data->simplify_volumes)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool RenderSettings_use_simplify_normals_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 2) != 0);
+}
+
+void RenderSettings_use_simplify_normals_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 2); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(2)); }
+}
+
+bool RenderSettings_use_texture_cache_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 4194304) != 0);
+}
+
+void RenderSettings_use_texture_cache_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 4194304); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(4194304)); }
+}
+
+bool RenderSettings_use_auto_generate_texture_cache_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->scemode) & 8388608) != 0);
+}
+
+void RenderSettings_use_auto_generate_texture_cache_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) | 8388608); }
+    else { data->scemode = std::remove_reference_t<decltype(data->scemode)>(uint64_t(data->scemode) & ~uint64_t(8388608)); }
+}
+
+bool RenderSettings_simplify_gpencil_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->simplify_gpencil) & 1) != 0);
+}
+
+void RenderSettings_simplify_gpencil_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 1); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(1)); }
+}
+
+bool RenderSettings_simplify_gpencil_onplay_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->simplify_gpencil) & 2) != 0);
+}
+
+void RenderSettings_simplify_gpencil_onplay_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 2); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(2)); }
+}
+
+bool RenderSettings_simplify_gpencil_antialiasing_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->simplify_gpencil) & 256) != 0);
+}
+
+void RenderSettings_simplify_gpencil_antialiasing_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 256); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(256)); }
+}
+
+bool RenderSettings_simplify_gpencil_view_fill_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->simplify_gpencil) & 4) != 0);
+}
+
+void RenderSettings_simplify_gpencil_view_fill_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 4); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(4)); }
+}
+
+bool RenderSettings_simplify_gpencil_modifier_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->simplify_gpencil) & 8) != 0);
+}
+
+void RenderSettings_simplify_gpencil_modifier_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 8); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(8)); }
+}
+
+bool RenderSettings_simplify_gpencil_shader_fx_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->simplify_gpencil) & 32) != 0);
+}
+
+void RenderSettings_simplify_gpencil_shader_fx_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 32); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(32)); }
+}
+
+bool RenderSettings_simplify_gpencil_tint_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return !((uint64_t(data->simplify_gpencil) & 128) != 0);
+}
+
+void RenderSettings_simplify_gpencil_tint_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (!value) { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) | 128); }
+    else { data->simplify_gpencil = std::remove_reference_t<decltype(data->simplify_gpencil)>(uint64_t(data->simplify_gpencil) & ~uint64_t(128)); }
+}
+
+bool RenderSettings_use_persistent_data_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->mode) & 67108864) != 0);
+}
+
+void RenderSettings_use_persistent_data_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) | 67108864); }
+    else { data->mode = std::remove_reference_t<decltype(data->mode)>(uint64_t(data->mode) & ~uint64_t(67108864)); }
+}
+
+int RenderSettings_line_thickness_mode_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->line_thickness_mode);
+}
+
+void RenderSettings_line_thickness_mode_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->line_thickness_mode = (std::remove_reference_t<decltype(data->line_thickness_mode)>)value;
+}
+
+float RenderSettings_line_thickness_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (float)(data->unit_line_thickness);
+}
+
+void RenderSettings_line_thickness_set(PointerRNA *ptr, float value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->unit_line_thickness = (std::remove_reference_t<decltype(data->unit_line_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+PointerRNA RenderSettings_bake_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_BakeSettings, &data->bake);
+}
+
+int RenderSettings_compositor_device_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->compositor_device);
+}
+
+void RenderSettings_compositor_device_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->compositor_device = (std::remove_reference_t<decltype(data->compositor_device)>)value;
+}
+
+bool RenderSettings_use_compositor_frames_cache_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return ((uint64_t(data->compositor_cache_flags) & 1) != 0);
+}
+
+void RenderSettings_use_compositor_frames_cache_set(PointerRNA *ptr, bool value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    if (value) { data->compositor_cache_flags = std::remove_reference_t<decltype(data->compositor_cache_flags)>(uint64_t(data->compositor_cache_flags) | 1); }
+    else { data->compositor_cache_flags = std::remove_reference_t<decltype(data->compositor_cache_flags)>(uint64_t(data->compositor_cache_flags) & ~uint64_t(1)); }
+}
+
+int RenderSettings_compositor_precision_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->compositor_precision);
+}
+
+void RenderSettings_compositor_precision_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->compositor_precision = (std::remove_reference_t<decltype(data->compositor_precision)>)value;
+}
+
+int RenderSettings_compositor_denoise_device_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->compositor_denoise_device);
+}
+
+void RenderSettings_compositor_denoise_device_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->compositor_denoise_device = (std::remove_reference_t<decltype(data->compositor_denoise_device)>)value;
+}
+
+int RenderSettings_compositor_denoise_preview_quality_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->compositor_denoise_preview_quality);
+}
+
+void RenderSettings_compositor_denoise_preview_quality_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->compositor_denoise_preview_quality = (std::remove_reference_t<decltype(data->compositor_denoise_preview_quality)>)value;
+}
+
+int RenderSettings_compositor_denoise_final_quality_get(PointerRNA *ptr)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    return (int)(data->compositor_denoise_final_quality);
+}
+
+void RenderSettings_compositor_denoise_final_quality_set(PointerRNA *ptr, int value)
+{
+    RenderData *data = (RenderData *)(ptr->data);
+    data->compositor_denoise_final_quality = (std::remove_reference_t<decltype(data->compositor_denoise_final_quality)>)value;
+}
+
+static PointerRNA RenderViews_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void RenderViews_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_RenderViews_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = RenderViews_rna_properties_get(iter);
+    }
+}
+
+void RenderViews_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = RenderViews_rna_properties_get(iter);
+    }
+}
+
+void RenderViews_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool RenderViews_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA RenderViews_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int RenderViews_active_index_get(PointerRNA *ptr)
+{
+    PropIntGetFunc fn = rna_RenderSettings_active_view_index_get;
+    return fn(ptr);
+}
+
+void RenderViews_active_index_set(PointerRNA *ptr, int value)
+{
+    PropIntSetFunc fn = rna_RenderSettings_active_view_index_set;
+    fn(ptr, value);
+}
+
+PointerRNA RenderViews_active_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_RenderSettings_active_view_get;
+    return fn(ptr);
+}
+
+void RenderViews_active_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    PropPointerSetFunc fn = rna_RenderSettings_active_view_set;
+    fn(ptr, value, reports);
+}
+
+static PointerRNA BakeSettings_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void BakeSettings_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_BakeSettings_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = BakeSettings_rna_properties_get(iter);
+    }
+}
+
+void BakeSettings_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = BakeSettings_rna_properties_get(iter);
+    }
+}
+
+void BakeSettings_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool BakeSettings_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA BakeSettings_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int BakeSettings_type_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->type);
+}
+
+void BakeSettings_type_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->type = (std::remove_reference_t<decltype(data->type)>)value;
+}
+
+PointerRNA BakeSettings_cage_object_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->cage_object);
+}
+
+void BakeSettings_cage_object_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->cage_object = value.data;
+}
+
+void BakeSettings_filepath_get(PointerRNA *ptr, char *value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    BLI_assert(strlen(data->filepath) < 1024);
+    strcpy(value, data->filepath);
+}
+
+int BakeSettings_filepath_length(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return strlen(data->filepath);
+}
+
+void BakeSettings_filepath_set(PointerRNA *ptr, const char *value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    BLI_strncpy(data->filepath, value, 1024);
+}
+
+int BakeSettings_width_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->width);
+}
+
+void BakeSettings_width_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->width = (std::remove_reference_t<decltype(data->width)>)std::clamp(value, 4, 10000);
+}
+
+int BakeSettings_height_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->height);
+}
+
+void BakeSettings_height_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->height = (std::remove_reference_t<decltype(data->height)>)std::clamp(value, 4, 10000);
+}
+
+int BakeSettings_margin_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->margin);
+}
+
+void BakeSettings_margin_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->margin = (std::remove_reference_t<decltype(data->margin)>)std::clamp(value, 0, 32767);
+}
+
+int BakeSettings_margin_type_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->margin_type);
+}
+
+void BakeSettings_margin_type_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->margin_type = (std::remove_reference_t<decltype(data->margin_type)>)value;
+}
+
+float BakeSettings_max_ray_distance_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (float)(data->max_ray_distance);
+}
+
+void BakeSettings_max_ray_distance_set(PointerRNA *ptr, float value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->max_ray_distance = (std::remove_reference_t<decltype(data->max_ray_distance)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+float BakeSettings_cage_extrusion_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (float)(data->cage_extrusion);
+}
+
+void BakeSettings_cage_extrusion_set(PointerRNA *ptr, float value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->cage_extrusion = (std::remove_reference_t<decltype(data->cage_extrusion)>)std::clamp(value, 0.0f, FLT_MAX);
+}
+
+int BakeSettings_normal_space_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (uint64_t(data->normal_space) & 3);
+}
+
+void BakeSettings_normal_space_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->normal_space = std::remove_reference_t<decltype(data->normal_space)>(uint64_t(data->normal_space) & ~uint64_t(3));
+    data->normal_space = std::remove_reference_t<decltype(data->normal_space)>(uint64_t(data->normal_space) | uint64_t(value));
+}
+
+int BakeSettings_normal_r_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (uint64_t(data->normal_swizzle[0]) & 7);
+}
+
+void BakeSettings_normal_r_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->normal_swizzle[0] = std::remove_reference_t<decltype(data->normal_swizzle[0])>(uint64_t(data->normal_swizzle[0]) & ~uint64_t(7));
+    data->normal_swizzle[0] = std::remove_reference_t<decltype(data->normal_swizzle[0])>(uint64_t(data->normal_swizzle[0]) | uint64_t(value));
+}
+
+int BakeSettings_normal_g_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (uint64_t(data->normal_swizzle[1]) & 7);
+}
+
+void BakeSettings_normal_g_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->normal_swizzle[1] = std::remove_reference_t<decltype(data->normal_swizzle[1])>(uint64_t(data->normal_swizzle[1]) & ~uint64_t(7));
+    data->normal_swizzle[1] = std::remove_reference_t<decltype(data->normal_swizzle[1])>(uint64_t(data->normal_swizzle[1]) | uint64_t(value));
+}
+
+int BakeSettings_normal_b_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (uint64_t(data->normal_swizzle[2]) & 7);
+}
+
+void BakeSettings_normal_b_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->normal_swizzle[2] = std::remove_reference_t<decltype(data->normal_swizzle[2])>(uint64_t(data->normal_swizzle[2]) & ~uint64_t(7));
+    data->normal_swizzle[2] = std::remove_reference_t<decltype(data->normal_swizzle[2])>(uint64_t(data->normal_swizzle[2]) | uint64_t(value));
+}
+
+PointerRNA BakeSettings_image_settings_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ImageFormatSettings, &data->im_format);
+}
+
+int BakeSettings_target_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->target);
+}
+
+void BakeSettings_target_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->target = (std::remove_reference_t<decltype(data->target)>)value;
+}
+
+int BakeSettings_save_mode_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (uint64_t(data->save_mode) & 1);
+}
+
+void BakeSettings_save_mode_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->save_mode = std::remove_reference_t<decltype(data->save_mode)>(uint64_t(data->save_mode) & ~uint64_t(1));
+    data->save_mode = std::remove_reference_t<decltype(data->save_mode)>(uint64_t(data->save_mode) | uint64_t(value));
+}
+
+int BakeSettings_view_from_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->view_from);
+}
+
+void BakeSettings_view_from_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->view_from = (std::remove_reference_t<decltype(data->view_from)>)value;
+}
+
+bool BakeSettings_use_selected_to_active_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 4) != 0);
+}
+
+void BakeSettings_use_selected_to_active_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 4); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(4)); }
+}
+
+bool BakeSettings_use_clear_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 1) != 0);
+}
+
+void BakeSettings_use_clear_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1)); }
+}
+
+bool BakeSettings_use_split_materials_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 512) != 0);
+}
+
+void BakeSettings_use_split_materials_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 512); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(512)); }
+}
+
+bool BakeSettings_use_automatic_name_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 1024) != 0);
+}
+
+void BakeSettings_use_automatic_name_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1024); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1024)); }
+}
+
+bool BakeSettings_use_cage_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 256) != 0);
+}
+
+void BakeSettings_use_cage_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 256); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(256)); }
+}
+
+bool BakeSettings_use_pass_emit_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 2) != 0);
+}
+
+void BakeSettings_use_pass_emit_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 2); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(2)); }
+}
+
+bool BakeSettings_use_pass_direct_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 64) != 0);
+}
+
+void BakeSettings_use_pass_direct_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 64); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(64)); }
+}
+
+bool BakeSettings_use_pass_indirect_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 128) != 0);
+}
+
+void BakeSettings_use_pass_indirect_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 128); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(128)); }
+}
+
+bool BakeSettings_use_pass_color_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 256) != 0);
+}
+
+void BakeSettings_use_pass_color_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 256); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(256)); }
+}
+
+bool BakeSettings_use_pass_diffuse_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 4) != 0);
+}
+
+void BakeSettings_use_pass_diffuse_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 4); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(4)); }
+}
+
+bool BakeSettings_use_pass_glossy_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 8) != 0);
+}
+
+void BakeSettings_use_pass_glossy_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 8); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(8)); }
+}
+
+bool BakeSettings_use_pass_transmission_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->pass_filter) & 16) != 0);
+}
+
+void BakeSettings_use_pass_transmission_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) | 16); }
+    else { data->pass_filter = std::remove_reference_t<decltype(data->pass_filter)>(uint64_t(data->pass_filter) & ~uint64_t(16)); }
+}
+
+int BakeSettings_pass_filter_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->pass_filter);
+}
+
+bool BakeSettings_use_multires_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 16) != 0);
+}
+
+void BakeSettings_use_multires_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16)); }
+}
+
+bool BakeSettings_use_lores_mesh_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return ((uint64_t(data->flag) & 32) != 0);
+}
+
+void BakeSettings_use_lores_mesh_set(PointerRNA *ptr, bool value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 32); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(32)); }
+}
+
+int BakeSettings_displacement_space_get(PointerRNA *ptr)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    return (int)(data->displacement_space);
+}
+
+void BakeSettings_displacement_space_set(PointerRNA *ptr, int value)
+{
+    BakeData *data = (BakeData *)(ptr->data);
+    data->displacement_space = (std::remove_reference_t<decltype(data->displacement_space)>)value;
+}
+
+static PointerRNA SceneRenderView_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void SceneRenderView_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_SceneRenderView_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = SceneRenderView_rna_properties_get(iter);
+    }
+}
+
+void SceneRenderView_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = SceneRenderView_rna_properties_get(iter);
+    }
+}
+
+void SceneRenderView_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool SceneRenderView_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA SceneRenderView_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void SceneRenderView_name_get(PointerRNA *ptr, char *value)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int SceneRenderView_name_length(PointerRNA *ptr)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    return strlen(data->name);
+}
+
+void SceneRenderView_name_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_SceneRenderView_name_set;
+    fn(ptr, value);
+}
+
+void SceneRenderView_file_suffix_get(PointerRNA *ptr, char *value)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    BLI_assert(strlen(data->suffix) < 64);
+    strcpy(value, data->suffix);
+}
+
+int SceneRenderView_file_suffix_length(PointerRNA *ptr)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    return strlen(data->suffix);
+}
+
+void SceneRenderView_file_suffix_set(PointerRNA *ptr, const char *value)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    BLI_strncpy_utf8(data->suffix, value, 64);
+}
+
+void SceneRenderView_camera_suffix_get(PointerRNA *ptr, char *value)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    BLI_assert(strlen(data->suffix) < 64);
+    strcpy(value, data->suffix);
+}
+
+int SceneRenderView_camera_suffix_length(PointerRNA *ptr)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    return strlen(data->suffix);
+}
+
+void SceneRenderView_camera_suffix_set(PointerRNA *ptr, const char *value)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    BLI_strncpy_utf8(data->suffix, value, 64);
+}
+
+bool SceneRenderView_use_get(PointerRNA *ptr)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    return !((uint64_t(data->viewflag) & 1) != 0);
+}
+
+void SceneRenderView_use_set(PointerRNA *ptr, bool value)
+{
+    SceneRenderView *data = (SceneRenderView *)(ptr->data);
+    if (!value) { data->viewflag = std::remove_reference_t<decltype(data->viewflag)>(uint64_t(data->viewflag) | 1); }
+    else { data->viewflag = std::remove_reference_t<decltype(data->viewflag)>(uint64_t(data->viewflag) & ~uint64_t(1)); }
+}
+
+void Scene_update_render_engine_func(Main *bmain)
+{
+	rna_Scene_update_render_engine(bmain);
+}
+
+static void Scene_update_render_engine_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	
+	rna_Scene_update_render_engine(CTX_data_main(C));
+}
+
+const char * Scene_statistics_func(Scene *_self, Main *bmain, ReportList *reports, ViewLayer *view_layer)
+{
+	return rna_Scene_statistics_string_get(_self, bmain, reports, view_layer);
+}
+
+static void Scene_statistics_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	ViewLayer *view_layer;
+	const char * statistics;
+	char *_data, *_retdata;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	view_layer = *((ViewLayer **)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	statistics = rna_Scene_statistics_string_get(_self, CTX_data_main(C), reports, view_layer);
+	*((const char * *)_retdata) = statistics;
+}
+
+void Scene_frame_set_func(Scene *_self, Main *bmain, int frame, float subframe)
+{
+	rna_Scene_frame_set(_self, bmain, frame, subframe);
+}
+
+static void Scene_frame_set_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	int frame;
+	float subframe;
+	char *_data;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	frame = *((int *)_data);
+	_data += 8;
+	subframe = *((float *)_data);
+	
+	rna_Scene_frame_set(_self, CTX_data_main(C), frame, subframe);
+}
+
+void Scene_uvedit_aspect_func(Scene *_self, Object *object, float result[2])
+{
+	rna_Scene_uvedit_aspect(_self, object, result);
+}
+
+static void Scene_uvedit_aspect_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	Object *object;
+	float *result;
+	char *_data;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	object = *((Object **)_data);
+	_data += 8;
+	result = ((float *)_data);
+	
+	rna_Scene_uvedit_aspect(_self, object, result);
+}
+
+void Scene_ray_cast_func(Scene *_self, Depsgraph *depsgraph, float origin[3], float direction[3], float distance, bool *result, float location[3], float normal[3], int *index, Object **object, float matrix[16])
+{
+	rna_Scene_ray_cast(_self, depsgraph, origin, direction, distance, result, location, normal, index, object, matrix);
+}
+
+static void Scene_ray_cast_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	Depsgraph *depsgraph;
+	const float *origin;
+	const float *direction;
+	float distance;
+	bool *result;
+	float *location;
+	float *normal;
+	int *index;
+	Object **object;
+	float *matrix;
+	char *_data;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	depsgraph = *((Depsgraph **)_data);
+	_data += 8;
+	origin = ((const float *)_data);
+	_data += 16;
+	direction = ((const float *)_data);
+	_data += 16;
+	distance = *((float *)_data);
+	_data += 8;
+	result = ((bool *)_data);
+	_data += 8;
+	location = ((float *)_data);
+	_data += 16;
+	normal = ((float *)_data);
+	_data += 16;
+	index = ((int *)_data);
+	_data += 8;
+	object = ((Object **)_data);
+	_data += 8;
+	matrix = ((float *)_data);
+	
+	rna_Scene_ray_cast(_self, depsgraph, origin, direction, distance, result, location, normal, index, object, matrix);
+}
+
+Editing *Scene_sequence_editor_create_func(Scene *_self)
+{
+	return seq::editing_ensure(_self);
+}
+
+static void Scene_sequence_editor_create_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	Editing *sequence_editor;
+	char *_data, *_retdata;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	
+	sequence_editor = seq::editing_ensure(_self);
+	*((Editing **)_retdata) = sequence_editor;
+}
+
+void Scene_sequence_editor_clear_func(Scene *_self)
+{
+	rna_Scene_sequencer_editing_free(_self);
+}
+
+static void Scene_sequence_editor_clear_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	_self = (Scene *)_ptr->data;
+	
+	rna_Scene_sequencer_editing_free(_self);
+}
+
+/* Repeated prototypes to detect errors */
+
+void rna_Scene_update_render_engine(Main *bmain);
+const char * rna_Scene_statistics_string_get(Scene *_self, Main *bmain, ReportList *reports, ViewLayer *view_layer);
+void rna_Scene_frame_set(Scene *_self, Main *bmain, int frame, float subframe);
+void rna_Scene_uvedit_aspect(Scene *_self, Object *object, float result[2]);
+void rna_Scene_ray_cast(Scene *_self, Depsgraph *depsgraph, float origin[3], float direction[3], float distance, bool *result, float location[3], float normal[3], int *index, Object **object, float matrix[16]);
+Editing *seq::editing_ensure(Scene *_self);
+void rna_Scene_sequencer_editing_free(Scene *_self);
+
+
+KeyingSet *KeyingSets_new_func(Scene *_self, ReportList *reports, const char * idname, const char * name)
+{
+	return rna_Scene_keying_set_new(_self, reports, idname, name);
+}
+
+static void KeyingSets_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	const char * idname;
+	const char * name;
+	KeyingSet *keyingset;
+	char *_data, *_retdata;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	idname = *((const char * *)_data);
+	_data += 8;
+	name = *((const char * *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	keyingset = rna_Scene_keying_set_new(_self, reports, idname, name);
+	*((KeyingSet **)_retdata) = keyingset;
+}
+
+/* Repeated prototypes to detect errors */
+
+KeyingSet *rna_Scene_keying_set_new(Scene *_self, ReportList *reports, const char * idname, const char * name);
+
+
+TimeMarker *TimelineMarkers_new_func(Scene *_self, const char * name, int frame)
+{
+	return rna_TimeLine_add(_self, name, frame);
+}
+
+static void TimelineMarkers_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	const char * name;
+	int frame;
+	TimeMarker *marker;
+	char *_data, *_retdata;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	frame = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	marker = rna_TimeLine_add(_self, name, frame);
+	*((TimeMarker **)_retdata) = marker;
+}
+
+void TimelineMarkers_remove_func(Scene *_self, ReportList *reports, PointerRNA *marker)
+{
+	rna_TimeLine_remove(_self, reports, marker);
+}
+
+static void TimelineMarkers_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	PointerRNA *marker;
+	char *_data;
+	
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	marker = *((PointerRNA **)_data);
+	
+	rna_TimeLine_remove(_self, reports, marker);
+}
+
+void TimelineMarkers_clear_func(Scene *_self)
+{
+	rna_TimeLine_clear(_self);
+}
+
+static void TimelineMarkers_clear_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	Scene *_self;
+	_self = (Scene *)_ptr->data;
+	
+	rna_TimeLine_clear(_self);
+}
+
+/* Repeated prototypes to detect errors */
+
+TimeMarker *rna_TimeLine_add(Scene *_self, const char * name, int frame);
+void rna_TimeLine_remove(Scene *_self, ReportList *reports, PointerRNA *marker);
+void rna_TimeLine_clear(Scene *_self);
+
+ViewLayer *ViewLayers_new_func(ID *_selfid, Scene *_self, Main *bmain, const char * name)
+{
+	return rna_ViewLayer_new(_selfid, _self, bmain, name);
+}
+
+static void ViewLayers_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	Scene *_self;
+	const char * name;
+	ViewLayer *result;
+	char *_data, *_retdata;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	result = rna_ViewLayer_new(_selfid, _self, CTX_data_main(C), name);
+	*((ViewLayer **)_retdata) = result;
+}
+
+void ViewLayers_remove_func(ID *_selfid, Scene *_self, Main *bmain, ReportList *reports, PointerRNA *layer)
+{
+	rna_ViewLayer_remove(_selfid, _self, bmain, reports, layer);
+}
+
+static void ViewLayers_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	Scene *_self;
+	PointerRNA *layer;
+	char *_data;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	layer = *((PointerRNA **)_data);
+	
+	rna_ViewLayer_remove(_selfid, _self, CTX_data_main(C), reports, layer);
+}
+
+void ViewLayers_move_func(ID *_selfid, Scene *_self, Main *bmain, ReportList *reports, int from_index, int to_index)
+{
+	rna_ViewLayer_move(_selfid, _self, bmain, reports, from_index, to_index);
+}
+
+static void ViewLayers_move_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	Scene *_self;
+	int from_index;
+	int to_index;
+	char *_data;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_self = (Scene *)_ptr->data;
+	_data = (char *)_parms->data;
+	from_index = *((int *)_data);
+	_data += 8;
+	to_index = *((int *)_data);
+	
+	rna_ViewLayer_move(_selfid, _self, CTX_data_main(C), reports, from_index, to_index);
+}
+
+/* Repeated prototypes to detect errors */
+
+ViewLayer *rna_ViewLayer_new(ID *_selfid, Scene *_self, Main *bmain, const char * name);
+void rna_ViewLayer_remove(ID *_selfid, Scene *_self, Main *bmain, ReportList *reports, PointerRNA *layer);
+void rna_ViewLayer_move(ID *_selfid, Scene *_self, Main *bmain, ReportList *reports, int from_index, int to_index);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void RenderSettings_frame_path_func(ID *_selfid, RenderData *_self, Main *bmain, ReportList *reports, int frame, bool preview, const char * view, char * filepath)
+{
+	rna_SceneRender_get_frame_path(_selfid, _self, bmain, reports, frame, preview, view, filepath);
+}
+
+static void RenderSettings_frame_path_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	RenderData *_self;
+	int frame;
+	bool preview;
+	const char * view;
+	char * filepath;
+	char *_data;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_self = (RenderData *)_ptr->data;
+	_data = (char *)_parms->data;
+	frame = *((int *)_data);
+	_data += 8;
+	preview = *((bool *)_data);
+	_data += 8;
+	view = *((const char * *)_data);
+	_data += 8;
+	filepath = ((char * )_data);
+	
+	rna_SceneRender_get_frame_path(_selfid, _self, CTX_data_main(C), reports, frame, preview, view, filepath);
+}
+
+/* Repeated prototypes to detect errors */
+
+void rna_SceneRender_get_frame_path(ID *_selfid, RenderData *_self, Main *bmain, ReportList *reports, int frame, bool preview, const char * view, char * filepath);
+
+SceneRenderView *RenderViews_new_func(ID *_selfid, RenderData *_self, const char * name)
+{
+	return rna_RenderView_new(_selfid, _self, name);
+}
+
+static void RenderViews_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	RenderData *_self;
+	const char * name;
+	SceneRenderView *result;
+	char *_data, *_retdata;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_self = (RenderData *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	result = rna_RenderView_new(_selfid, _self, name);
+	*((SceneRenderView **)_retdata) = result;
+}
+
+void RenderViews_remove_func(ID *_selfid, RenderData *_self, Main *bmain, ReportList *reports, PointerRNA *view)
+{
+	rna_RenderView_remove(_selfid, _self, bmain, reports, view);
+}
+
+static void RenderViews_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	RenderData *_self;
+	PointerRNA *view;
+	char *_data;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_self = (RenderData *)_ptr->data;
+	_data = (char *)_parms->data;
+	view = *((PointerRNA **)_data);
+	
+	rna_RenderView_remove(_selfid, _self, CTX_data_main(C), reports, view);
+}
+
+/* Repeated prototypes to detect errors */
+
+SceneRenderView *rna_RenderView_new(ID *_selfid, RenderData *_self, const char * name);
+void rna_RenderView_remove(ID *_selfid, RenderData *_self, Main *bmain, ReportList *reports, PointerRNA *view);
+
+
+
+/* Scene */
+static PointerPropertyRNA rna_Scene_camera_;
+PropertyRNA &rna_Scene_camera = reinterpret_cast<PropertyRNA &>(rna_Scene_camera_);
+
+static PointerPropertyRNA rna_Scene_background_set_;
+PropertyRNA &rna_Scene_background_set = reinterpret_cast<PropertyRNA &>(rna_Scene_background_set_);
+
+static PointerPropertyRNA rna_Scene_world_;
+PropertyRNA &rna_Scene_world = reinterpret_cast<PropertyRNA &>(rna_Scene_world_);
+
+static CollectionPropertyRNA rna_Scene_objects_;
+PropertyRNA &rna_Scene_objects = reinterpret_cast<PropertyRNA &>(rna_Scene_objects_);
+
+static IntPropertyRNA rna_Scene_frame_current_;
+PropertyRNA &rna_Scene_frame_current = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_current_);
+
+static FloatPropertyRNA rna_Scene_frame_subframe_;
+PropertyRNA &rna_Scene_frame_subframe = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_subframe_);
+
+static FloatPropertyRNA rna_Scene_frame_float_;
+PropertyRNA &rna_Scene_frame_float = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_float_);
+
+static IntPropertyRNA rna_Scene_frame_start_;
+PropertyRNA &rna_Scene_frame_start = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_start_);
+
+static IntPropertyRNA rna_Scene_frame_end_;
+PropertyRNA &rna_Scene_frame_end = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_end_);
+
+static IntPropertyRNA rna_Scene_frame_step_;
+PropertyRNA &rna_Scene_frame_step = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_step_);
+
+static EnumPropertyRNA rna_Scene_time_jump_unit_;
+PropertyRNA &rna_Scene_time_jump_unit = reinterpret_cast<PropertyRNA &>(rna_Scene_time_jump_unit_);
+
+static FloatPropertyRNA rna_Scene_time_jump_delta_;
+PropertyRNA &rna_Scene_time_jump_delta = reinterpret_cast<PropertyRNA &>(rna_Scene_time_jump_delta_);
+
+static FloatPropertyRNA rna_Scene_frame_current_final_;
+PropertyRNA &rna_Scene_frame_current_final = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_current_final_);
+
+static BoolPropertyRNA rna_Scene_lock_frame_selection_to_range_;
+PropertyRNA &rna_Scene_lock_frame_selection_to_range = reinterpret_cast<PropertyRNA &>(rna_Scene_lock_frame_selection_to_range_);
+
+static BoolPropertyRNA rna_Scene_allow_preroll_;
+PropertyRNA &rna_Scene_allow_preroll = reinterpret_cast<PropertyRNA &>(rna_Scene_allow_preroll_);
+
+static BoolPropertyRNA rna_Scene_use_preview_range_;
+PropertyRNA &rna_Scene_use_preview_range = reinterpret_cast<PropertyRNA &>(rna_Scene_use_preview_range_);
+
+static IntPropertyRNA rna_Scene_frame_preview_start_;
+PropertyRNA &rna_Scene_frame_preview_start = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_preview_start_);
+
+static IntPropertyRNA rna_Scene_frame_preview_end_;
+PropertyRNA &rna_Scene_frame_preview_end = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_preview_end_);
+
+static BoolPropertyRNA rna_Scene_show_subframe_;
+PropertyRNA &rna_Scene_show_subframe = reinterpret_cast<PropertyRNA &>(rna_Scene_show_subframe_);
+
+static BoolPropertyRNA rna_Scene_show_keys_from_selected_only_;
+PropertyRNA &rna_Scene_show_keys_from_selected_only = reinterpret_cast<PropertyRNA &>(rna_Scene_show_keys_from_selected_only_);
+
+static StringPropertyRNA rna_Scene_use_stamp_note_;
+PropertyRNA &rna_Scene_use_stamp_note = reinterpret_cast<PropertyRNA &>(rna_Scene_use_stamp_note_);
+
+static PointerPropertyRNA rna_Scene_animation_data_;
+PropertyRNA &rna_Scene_animation_data = reinterpret_cast<PropertyRNA &>(rna_Scene_animation_data_);
+
+static BoolPropertyRNA rna_Scene_is_nla_tweakmode_;
+PropertyRNA &rna_Scene_is_nla_tweakmode = reinterpret_cast<PropertyRNA &>(rna_Scene_is_nla_tweakmode_);
+
+static BoolPropertyRNA rna_Scene_use_custom_simulation_range_;
+PropertyRNA &rna_Scene_use_custom_simulation_range = reinterpret_cast<PropertyRNA &>(rna_Scene_use_custom_simulation_range_);
+
+static IntPropertyRNA rna_Scene_simulation_frame_start_;
+PropertyRNA &rna_Scene_simulation_frame_start = reinterpret_cast<PropertyRNA &>(rna_Scene_simulation_frame_start_);
+
+static IntPropertyRNA rna_Scene_simulation_frame_end_;
+PropertyRNA &rna_Scene_simulation_frame_end = reinterpret_cast<PropertyRNA &>(rna_Scene_simulation_frame_end_);
+
+static EnumPropertyRNA rna_Scene_sync_mode_;
+PropertyRNA &rna_Scene_sync_mode = reinterpret_cast<PropertyRNA &>(rna_Scene_sync_mode_);
+
+static EnumPropertyRNA rna_Scene_playback_loop_mode_;
+PropertyRNA &rna_Scene_playback_loop_mode = reinterpret_cast<PropertyRNA &>(rna_Scene_playback_loop_mode_);
+
+static PointerPropertyRNA rna_Scene_compositing_node_group_;
+PropertyRNA &rna_Scene_compositing_node_group = reinterpret_cast<PropertyRNA &>(rna_Scene_compositing_node_group_);
+
+static BoolPropertyRNA rna_Scene_use_nodes_;
+PropertyRNA &rna_Scene_use_nodes = reinterpret_cast<PropertyRNA &>(rna_Scene_use_nodes_);
+
+static PointerPropertyRNA rna_Scene_sequence_editor_;
+PropertyRNA &rna_Scene_sequence_editor = reinterpret_cast<PropertyRNA &>(rna_Scene_sequence_editor_);
+
+static CollectionPropertyRNA rna_Scene_keying_sets_;
+PropertyRNA &rna_Scene_keying_sets = reinterpret_cast<PropertyRNA &>(rna_Scene_keying_sets_);
+
+static CollectionPropertyRNA rna_Scene_keying_sets_all_;
+PropertyRNA &rna_Scene_keying_sets_all = reinterpret_cast<PropertyRNA &>(rna_Scene_keying_sets_all_);
+
+static PointerPropertyRNA rna_Scene_rigidbody_world_;
+PropertyRNA &rna_Scene_rigidbody_world = reinterpret_cast<PropertyRNA &>(rna_Scene_rigidbody_world_);
+
+static PointerPropertyRNA rna_Scene_tool_settings_;
+PropertyRNA &rna_Scene_tool_settings = reinterpret_cast<PropertyRNA &>(rna_Scene_tool_settings_);
+
+static PointerPropertyRNA rna_Scene_unit_settings_;
+PropertyRNA &rna_Scene_unit_settings = reinterpret_cast<PropertyRNA &>(rna_Scene_unit_settings_);
+
+static FloatPropertyRNA rna_Scene_gravity_;
+PropertyRNA &rna_Scene_gravity = reinterpret_cast<PropertyRNA &>(rna_Scene_gravity_);
+
+static BoolPropertyRNA rna_Scene_use_gravity_;
+PropertyRNA &rna_Scene_use_gravity = reinterpret_cast<PropertyRNA &>(rna_Scene_use_gravity_);
+
+static PointerPropertyRNA rna_Scene_render_;
+PropertyRNA &rna_Scene_render = reinterpret_cast<PropertyRNA &>(rna_Scene_render_);
+
+static PointerPropertyRNA rna_Scene_safe_areas_;
+PropertyRNA &rna_Scene_safe_areas = reinterpret_cast<PropertyRNA &>(rna_Scene_safe_areas_);
+
+static CollectionPropertyRNA rna_Scene_timeline_markers_;
+PropertyRNA &rna_Scene_timeline_markers = reinterpret_cast<PropertyRNA &>(rna_Scene_timeline_markers_);
+
+static CollectionPropertyRNA rna_Scene_transform_orientation_slots_;
+PropertyRNA &rna_Scene_transform_orientation_slots = reinterpret_cast<PropertyRNA &>(rna_Scene_transform_orientation_slots_);
+
+static PointerPropertyRNA rna_Scene_cursor_;
+PropertyRNA &rna_Scene_cursor = reinterpret_cast<PropertyRNA &>(rna_Scene_cursor_);
+
+static BoolPropertyRNA rna_Scene_use_audio_;
+PropertyRNA &rna_Scene_use_audio = reinterpret_cast<PropertyRNA &>(rna_Scene_use_audio_);
+
+static BoolPropertyRNA rna_Scene_use_audio_scrub_;
+PropertyRNA &rna_Scene_use_audio_scrub = reinterpret_cast<PropertyRNA &>(rna_Scene_use_audio_scrub_);
+
+static FloatPropertyRNA rna_Scene_audio_doppler_speed_;
+PropertyRNA &rna_Scene_audio_doppler_speed = reinterpret_cast<PropertyRNA &>(rna_Scene_audio_doppler_speed_);
+
+static FloatPropertyRNA rna_Scene_audio_doppler_factor_;
+PropertyRNA &rna_Scene_audio_doppler_factor = reinterpret_cast<PropertyRNA &>(rna_Scene_audio_doppler_factor_);
+
+static EnumPropertyRNA rna_Scene_audio_distance_model_;
+PropertyRNA &rna_Scene_audio_distance_model = reinterpret_cast<PropertyRNA &>(rna_Scene_audio_distance_model_);
+
+static FloatPropertyRNA rna_Scene_audio_volume_;
+PropertyRNA &rna_Scene_audio_volume = reinterpret_cast<PropertyRNA &>(rna_Scene_audio_volume_);
+
+static PointerPropertyRNA rna_Scene_annotation_;
+PropertyRNA &rna_Scene_annotation = reinterpret_cast<PropertyRNA &>(rna_Scene_annotation_);
+
+static PointerPropertyRNA rna_Scene_active_clip_;
+PropertyRNA &rna_Scene_active_clip = reinterpret_cast<PropertyRNA &>(rna_Scene_active_clip_);
+
+static PointerPropertyRNA rna_Scene_view_settings_;
+PropertyRNA &rna_Scene_view_settings = reinterpret_cast<PropertyRNA &>(rna_Scene_view_settings_);
+
+static PointerPropertyRNA rna_Scene_display_settings_;
+PropertyRNA &rna_Scene_display_settings = reinterpret_cast<PropertyRNA &>(rna_Scene_display_settings_);
+
+static PointerPropertyRNA rna_Scene_sequencer_colorspace_settings_;
+PropertyRNA &rna_Scene_sequencer_colorspace_settings = reinterpret_cast<PropertyRNA &>(rna_Scene_sequencer_colorspace_settings_);
+
+static CollectionPropertyRNA rna_Scene_view_layers_;
+PropertyRNA &rna_Scene_view_layers = reinterpret_cast<PropertyRNA &>(rna_Scene_view_layers_);
+
+static PointerPropertyRNA rna_Scene_collection_;
+PropertyRNA &rna_Scene_collection = reinterpret_cast<PropertyRNA &>(rna_Scene_collection_);
+
+static PointerPropertyRNA rna_Scene_display_;
+PropertyRNA &rna_Scene_display = reinterpret_cast<PropertyRNA &>(rna_Scene_display_);
+
+static PointerPropertyRNA rna_Scene_eevee_;
+PropertyRNA &rna_Scene_eevee = reinterpret_cast<PropertyRNA &>(rna_Scene_eevee_);
+
+static PointerPropertyRNA rna_Scene_grease_pencil_settings_;
+PropertyRNA &rna_Scene_grease_pencil_settings = reinterpret_cast<PropertyRNA &>(rna_Scene_grease_pencil_settings_);
+
+static PointerPropertyRNA rna_Scene_hydra_;
+PropertyRNA &rna_Scene_hydra = reinterpret_cast<PropertyRNA &>(rna_Scene_hydra_);
+
+FunctionRNA *rna_Scene_update_render_engine_func;
+static PointerPropertyRNA rna_Scene_statistics_view_layer_;
+PropertyRNA &rna_Scene_statistics_view_layer = reinterpret_cast<PropertyRNA &>(rna_Scene_statistics_view_layer_);
+
+static StringPropertyRNA rna_Scene_statistics_statistics_;
+PropertyRNA &rna_Scene_statistics_statistics = reinterpret_cast<PropertyRNA &>(rna_Scene_statistics_statistics_);
+
+FunctionRNA *rna_Scene_statistics_func;
+static IntPropertyRNA rna_Scene_frame_set_frame_;
+PropertyRNA &rna_Scene_frame_set_frame = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_set_frame_);
+
+static FloatPropertyRNA rna_Scene_frame_set_subframe_;
+PropertyRNA &rna_Scene_frame_set_subframe = reinterpret_cast<PropertyRNA &>(rna_Scene_frame_set_subframe_);
+
+FunctionRNA *rna_Scene_frame_set_func;
+static PointerPropertyRNA rna_Scene_uvedit_aspect_object_;
+PropertyRNA &rna_Scene_uvedit_aspect_object = reinterpret_cast<PropertyRNA &>(rna_Scene_uvedit_aspect_object_);
+
+static FloatPropertyRNA rna_Scene_uvedit_aspect_result_;
+PropertyRNA &rna_Scene_uvedit_aspect_result = reinterpret_cast<PropertyRNA &>(rna_Scene_uvedit_aspect_result_);
+
+FunctionRNA *rna_Scene_uvedit_aspect_func;
+static PointerPropertyRNA rna_Scene_ray_cast_depsgraph_;
+PropertyRNA &rna_Scene_ray_cast_depsgraph = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_depsgraph_);
+
+static FloatPropertyRNA rna_Scene_ray_cast_origin_;
+PropertyRNA &rna_Scene_ray_cast_origin = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_origin_);
+
+static FloatPropertyRNA rna_Scene_ray_cast_direction_;
+PropertyRNA &rna_Scene_ray_cast_direction = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_direction_);
+
+static FloatPropertyRNA rna_Scene_ray_cast_distance_;
+PropertyRNA &rna_Scene_ray_cast_distance = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_distance_);
+
+static BoolPropertyRNA rna_Scene_ray_cast_result_;
+PropertyRNA &rna_Scene_ray_cast_result = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_result_);
+
+static FloatPropertyRNA rna_Scene_ray_cast_location_;
+PropertyRNA &rna_Scene_ray_cast_location = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_location_);
+
+static FloatPropertyRNA rna_Scene_ray_cast_normal_;
+PropertyRNA &rna_Scene_ray_cast_normal = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_normal_);
+
+static IntPropertyRNA rna_Scene_ray_cast_index_;
+PropertyRNA &rna_Scene_ray_cast_index = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_index_);
+
+static PointerPropertyRNA rna_Scene_ray_cast_object_;
+PropertyRNA &rna_Scene_ray_cast_object = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_object_);
+
+static FloatPropertyRNA rna_Scene_ray_cast_matrix_;
+PropertyRNA &rna_Scene_ray_cast_matrix = reinterpret_cast<PropertyRNA &>(rna_Scene_ray_cast_matrix_);
+
+FunctionRNA *rna_Scene_ray_cast_func;
+static PointerPropertyRNA rna_Scene_sequence_editor_create_sequence_editor_;
+PropertyRNA &rna_Scene_sequence_editor_create_sequence_editor = reinterpret_cast<PropertyRNA &>(rna_Scene_sequence_editor_create_sequence_editor_);
+
+FunctionRNA *rna_Scene_sequence_editor_create_func;
+FunctionRNA *rna_Scene_sequence_editor_clear_func;
+StructRNA *RNA_Scene;
+void register_struct_Scene(BlenderRNA &brna)
+{
+	rna_Scene_camera_ = {
+		{&rna_Scene_background_set, 	nullptr,
+		-1, "camera", 8388737, 1, 0, 0, 0, PropertyPathTemplateType(0), "Camera",
+		"Active camera, used for rendering the scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_camera_update, 83886081, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_camera_get, Scene_camera_set, nullptr, rna_Camera_object_poll,RNA_Object
+	};
+
+	rna_Scene_background_set_ = {
+		{&rna_Scene_world, 	&rna_Scene_camera,
+		-1, "background_set", 9437313, 1, 0, 0, 0, PropertyPathTemplateType(0), "Background Scene",
+		"Background set scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_set_update, 83886081, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_background_set_get, Scene_background_set_set, nullptr, nullptr,RNA_Scene
+	};
+
+	rna_Scene_world_ = {
+		{&rna_Scene_objects, 	&rna_Scene_background_set,
+		-1, "world", 8388801, 1, 0, 0, 0, PropertyPathTemplateType(0), "World",
+		"World used for rendering the scene",
+		0, "World",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_world_update, 89915392, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_world_get, Scene_world_set, nullptr, nullptr,RNA_World
+	};
+
+	rna_Scene_objects_ = {
+		{&rna_Scene_frame_current, 	&rna_Scene_world,
+		-1, "objects", 128, 0, 0, 0, 0, PropertyPathTemplateType(0), "Objects",
+		"",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_SceneObjects},
+		Scene_objects_begin, Scene_objects_next, Scene_objects_end, Scene_objects_get, nullptr, nullptr, nullptr, nullptr, RNA_Object
+	};
+
+	rna_Scene_frame_current_ = {
+		{&rna_Scene_frame_subframe, 	&rna_Scene_objects,
+		-1, "frame_current", 4194305, 0, 0, 0, 0, PropertyPathTemplateType(0), "Current Frame",
+		"Current frame, to update animation data from Python frame_set() instead",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_frame_update_context, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_current_get, Scene_frame_current_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -1048574, 1048574, -1048574, 1048574, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_Scene_frame_subframe_ = {
+		{&rna_Scene_frame_float, 	&rna_Scene_frame_current,
+		-1, "frame_subframe", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Current Subframe",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_frame_update, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, r.subframe), RawPropertyType(5), nullptr},
+		Scene_frame_subframe_get, Scene_frame_subframe_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 0.0099999998f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_Scene_frame_float_ = {
+		{&rna_Scene_frame_start, 	&rna_Scene_frame_subframe,
+		-1, "frame_float", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Current Subframe",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_frame_update, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_float_get, Scene_frame_float_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -1048574.0f, 1048574.0f, -1048574.0f, 1048574.0f, 0.1000000015f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_Scene_frame_start_ = {
+		{&rna_Scene_frame_end, 	&rna_Scene_frame_float,
+		-1, "frame_start", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Start Frame",
+		"First frame of the playback/rendering range",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85000192, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_start_get, Scene_frame_start_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 1048574, 0, 1048574, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_Scene_frame_end_ = {
+		{&rna_Scene_frame_step, 	&rna_Scene_frame_start,
+		-1, "frame_end", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "End Frame",
+		"Final frame of the playback/rendering range",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85000192, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_end_get, Scene_frame_end_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 1048574, 0, 1048574, 1, nullptr, nullptr, 250, nullptr
+	};
+
+	rna_Scene_frame_step_ = {
+		{&rna_Scene_time_jump_unit, 	&rna_Scene_frame_end,
+		-1, "frame_step", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Frame Step",
+		"Number of frames to skip forward while rendering/playing back each frame",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, r.frame_step), RawPropertyType(0), nullptr},
+		Scene_frame_step_get, Scene_frame_step_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 100, 0, 1048574, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_Scene_time_jump_unit_items[3] = {
+		{0, "FRAME", 0, "Frame", "Jump by frames"	},
+		{1, "SECOND", 0, "Second", "Jump by seconds"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Scene_time_jump_unit_ = {
+		{&rna_Scene_time_jump_delta, 	&rna_Scene_frame_step,
+		-1, "time_jump_unit", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Time Jump Unit",
+		"Which unit to use for time jumps in the timeline",
+		0, "Unit",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85000192, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, r.time_jump_unit), RawPropertyType(0), nullptr},
+		Scene_time_jump_unit_get, Scene_time_jump_unit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Scene_time_jump_unit_items, 2, 1
+	};
+
+	rna_Scene_time_jump_delta_ = {
+		{&rna_Scene_frame_current_final, 	&rna_Scene_time_jump_unit,
+		-1, "time_jump_delta", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Time Jump Delta",
+		"Number of frames or seconds to jump forward or backward",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85000192, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, r.time_jump_delta), RawPropertyType(5), nullptr},
+		Scene_time_jump_delta_get, Scene_time_jump_delta_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.1000000015f, FLT_MAX, 0.1000000015f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_Scene_frame_current_final_ = {
+		{&rna_Scene_lock_frame_selection_to_range, 	&rna_Scene_time_jump_delta,
+		-1, "frame_current_final", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Current Frame Final",
+		"Current frame with subframe and time remapping applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_current_final_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -1048574.0f, 1048574.0f, -1048574.0f, 1048574.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_Scene_lock_frame_selection_to_range_ = {
+		{&rna_Scene_allow_preroll, 	&rna_Scene_frame_current_final,
+		-1, "lock_frame_selection_to_range", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lock Frame Selection",
+		"Don\'t allow frame to be selected with mouse outside of frame range",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_lock_frame_selection_to_range_get, Scene_lock_frame_selection_to_range_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_allow_preroll_ = {
+		{&rna_Scene_use_preview_range, 	&rna_Scene_lock_frame_selection_to_range,
+		-1, "allow_preroll", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Allow Preroll",
+		"Allows playing back frames before the playback start frame",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_allow_preroll_get, Scene_allow_preroll_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_use_preview_range_ = {
+		{&rna_Scene_frame_preview_start, 	&rna_Scene_allow_preroll,
+		-1, "use_preview_range", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Preview Range",
+		"Use an alternative start/end frame range for animation playback and view renders",
+		552, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_preview_range_get, Scene_use_preview_range_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_frame_preview_start_ = {
+		{&rna_Scene_frame_preview_end, 	&rna_Scene_use_preview_range,
+		-1, "frame_preview_start", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Preview Range Start Frame",
+		"Alternative start frame for UI playback",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_preview_start_get, Scene_frame_preview_start_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_frame_preview_end_ = {
+		{&rna_Scene_show_subframe, 	&rna_Scene_frame_preview_start,
+		-1, "frame_preview_end", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Preview Range End Frame",
+		"Alternative end frame for UI playback",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_TIME) | int(PROP_UNIT_TIME)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_frame_preview_end_get, Scene_frame_preview_end_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_show_subframe_ = {
+		{&rna_Scene_show_keys_from_selected_only, 	&rna_Scene_frame_preview_end,
+		-1, "show_subframe", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Show Subframe",
+		"Display and allow setting fractional frame values for the current frame",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_show_subframe_update, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_show_subframe_get, Scene_show_subframe_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_show_keys_from_selected_only_ = {
+		{&rna_Scene_use_stamp_note, 	&rna_Scene_show_subframe,
+		-1, "show_keys_from_selected_only", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Only Show Selected",
+		"Only include channels relating to selected objects and data",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_show_keys_from_selected_only_get, Scene_show_keys_from_selected_only_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_Scene_use_stamp_note_ = {
+		{&rna_Scene_animation_data, 	&rna_Scene_show_keys_from_selected_only,
+		-1, "use_stamp_note", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Note",
+		"User defined note for the render stamping",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {768, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_stamp_note_get, Scene_use_stamp_note_length, Scene_use_stamp_note_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 768, ""
+	};
+
+	rna_Scene_animation_data_ = {
+		{&rna_Scene_is_nla_tweakmode, 	&rna_Scene_use_stamp_note,
+		-1, "animation_data", 8388608, 1, 0, 0, 0, PropertyPathTemplateType(0), "Animation Data",
+		"Animation data for this data-block",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_AnimaData_override_apply,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_animation_data_get, nullptr, nullptr, nullptr,RNA_AnimData
+	};
+
+	rna_Scene_is_nla_tweakmode_ = {
+		{&rna_Scene_use_custom_simulation_range, 	&rna_Scene_animation_data,
+		-1, "is_nla_tweakmode", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "NLA Tweak Mode",
+		"Whether there is any action referenced by NLA being edited (strictly read-only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 269352960, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_is_nla_tweakmode_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_use_custom_simulation_range_ = {
+		{&rna_Scene_simulation_frame_start, 	&rna_Scene_is_nla_tweakmode,
+		-1, "use_custom_simulation_range", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Custom Simulation Range",
+		"Use a simulation range that is different from the scene range for simulation nodes that don\'t override the frame range themselves",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_set_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_custom_simulation_range_get, Scene_use_custom_simulation_range_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_simulation_frame_start_ = {
+		{&rna_Scene_simulation_frame_end, 	&rna_Scene_use_custom_simulation_range,
+		-1, "simulation_frame_start", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simulation Frame Start",
+		"Frame at which simulations start",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_set_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, simulation_frame_start), RawPropertyType(0), nullptr},
+		Scene_simulation_frame_start_get, Scene_simulation_frame_start_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_Scene_simulation_frame_end_ = {
+		{&rna_Scene_sync_mode, 	&rna_Scene_simulation_frame_start,
+		-1, "simulation_frame_end", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simulation Frame End",
+		"Frame at which simulations end",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_set_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, simulation_frame_end), RawPropertyType(0), nullptr},
+		Scene_simulation_frame_end_get, Scene_simulation_frame_end_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 250, nullptr
+	};
+
+	static const EnumPropertyItem rna_Scene_sync_mode_items[4] = {
+		{0, "NONE", 0, "Play Every Frame", "Do not sync, play every frame"	},
+		{8, "FRAME_DROP", 0, "Frame Dropping", "Drop frames if playback is too slow"	},
+		{2, "AUDIO_SYNC", 0, "Sync to Audio", "Sync to audio playback, dropping frames"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Scene_sync_mode_ = {
+		{&rna_Scene_playback_loop_mode, 	&rna_Scene_simulation_frame_end,
+		-1, "sync_mode", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sync Mode",
+		"How to sync playback",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_sync_mode_get, Scene_sync_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Scene_sync_mode_items, 3, 2
+	};
+
+	static const EnumPropertyItem rna_Scene_playback_loop_mode_items[6] = {
+		{0, "INFINITE", 0, "Infinite", "After the last frame, jump back to the first and keep playing, infinitely"	},
+		{1, "STOP_END_FRAME", 0, "Stop at End Frame", "Stop playback at the last frame, without looping"	},
+		{2, "STOP_START_FRAME", 0, "Stop at Start Frame", "After the last frame, jump back to the first and stop playback"	},
+		{3, "RESTORE", 0, "Restore Frame", "After the last frame, stop at the frame the playback started from"	},
+		{4, "BOUNCE", 0, "Bounce", "At the last frame, reverse playback"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Scene_playback_loop_mode_ = {
+		{&rna_Scene_compositing_node_group, 	&rna_Scene_sync_mode,
+		-1, "playback_loop_mode", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Loop Mode",
+		"What to do when playback reaches the last frame",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, playback_loop_mode), RawPropertyType(6), nullptr},
+		Scene_playback_loop_mode_get, Scene_playback_loop_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Scene_playback_loop_mode_items, 5, 0
+	};
+
+	rna_Scene_compositing_node_group_ = {
+		{&rna_Scene_use_nodes, 	&rna_Scene_playback_loop_mode,
+		-1, "compositing_node_group", 8388801, 1, 0, 64, 0, PropertyPathTemplateType(0), "Node Tree",
+		"Compositor Nodes",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_compositing_node_group_get, Scene_compositing_node_group_set, nullptr, rna_Scene_compositing_node_group_poll,RNA_NodeTree
+	};
+
+	static const DeprecatedRNA rna_Scene_use_nodes_deprecated = {
+	"Unused but kept for compatibility reasons. Setting the property has no effect, and getting it always returns True. Use #scene.render.use_compositing to turn compositing to enable or disable compositing.",
+		500, 600,
+};
+
+	rna_Scene_use_nodes_ = {
+		{&rna_Scene_sequence_editor, 	&rna_Scene_compositing_node_group,
+		-1, "use_nodes", 4194307, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Nodes",
+		"Enable the compositing node group.",
+		0, "*",
+		&rna_Scene_use_nodes_deprecated,		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_nodes_get, Scene_use_nodes_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_sequence_editor_ = {
+		{&rna_Scene_keying_sets, 	&rna_Scene_use_nodes,
+		-1, "sequence_editor", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sequence Editor",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_sequence_editor_get, nullptr, nullptr, nullptr,RNA_SequenceEditor
+	};
+
+	rna_Scene_keying_sets_ = {
+		{&rna_Scene_keying_sets_all, 	&rna_Scene_sequence_editor,
+		-1, "keying_sets", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Absolute Keying Sets",
+		"Absolute Keying Sets for this Scene",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84803584, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_KeyingSets},
+		Scene_keying_sets_begin, Scene_keying_sets_next, Scene_keying_sets_end, Scene_keying_sets_get, nullptr, Scene_keying_sets_lookup_int, Scene_keying_sets_lookup_string, nullptr, RNA_KeyingSet
+	};
+
+	rna_Scene_keying_sets_all_ = {
+		{&rna_Scene_rigidbody_world, 	&rna_Scene_keying_sets,
+		-1, "keying_sets_all", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "All Keying Sets",
+		"All Keying Sets available for use (Builtins and Absolute Keying Sets for this Scene)",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84803584, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_KeyingSetsAll},
+		Scene_keying_sets_all_begin, Scene_keying_sets_all_next, Scene_keying_sets_all_end, Scene_keying_sets_all_get, nullptr, nullptr, nullptr, nullptr, RNA_KeyingSet
+	};
+
+	rna_Scene_rigidbody_world_ = {
+		{&rna_Scene_tool_settings, 	&rna_Scene_keying_sets_all,
+		-1, "rigidbody_world", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Rigid Body World",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Physics_relations_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_rigidbody_world_get, nullptr, nullptr, nullptr,RNA_RigidBodyWorld
+	};
+
+	rna_Scene_tool_settings_ = {
+		{&rna_Scene_unit_settings, 	&rna_Scene_rigidbody_world,
+		-1, "tool_settings", 8650752, 2, 0, 0, 0, PropertyPathTemplateType(0), "Tool Settings",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_tool_settings_get, nullptr, nullptr, nullptr,RNA_ToolSettings
+	};
+
+	rna_Scene_unit_settings_ = {
+		{&rna_Scene_gravity, 	&rna_Scene_tool_settings,
+		-1, "unit_settings", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Unit Settings",
+		"Unit editing settings",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_unit_settings_get, nullptr, nullptr, nullptr,RNA_UnitSettings
+	};
+
+	static float rna_Scene_gravity_default[3] = {
+		0.0f,
+		0.0f,
+		-9.8100004196f
+	};
+	rna_Scene_gravity_ = {
+		{&rna_Scene_use_gravity, 	&rna_Scene_unit_settings,
+		-1, "gravity", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Gravity",
+		"Constant acceleration in a given direction",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ACCELERATION) | int(PROP_UNIT_ACCELERATION)), nullptr, 1, {3, 0, 0}, 3,
+		rna_Physics_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, physics_settings.gravity), RawPropertyType(5), nullptr},
+		nullptr, nullptr, Scene_gravity_get, Scene_gravity_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -200.0f, 200.0f, -FLT_MAX, FLT_MAX, 1.0f, 2, nullptr, nullptr, 0.0f, rna_Scene_gravity_default
+	};
+
+	rna_Scene_use_gravity_ = {
+		{&rna_Scene_render, 	&rna_Scene_gravity,
+		-1, "use_gravity", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Global Gravity",
+		"Use global gravity for all dynamics",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Physics_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_gravity_get, Scene_use_gravity_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_Scene_render_ = {
+		{&rna_Scene_safe_areas, 	&rna_Scene_use_gravity,
+		-1, "render", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Render Data",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_render_get, nullptr, nullptr, nullptr,RNA_RenderSettings
+	};
+
+	rna_Scene_safe_areas_ = {
+		{&rna_Scene_timeline_markers, 	&rna_Scene_render,
+		-1, "safe_areas", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Safe Areas",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_safe_areas_get, nullptr, nullptr, nullptr,RNA_DisplaySafeAreas
+	};
+
+	rna_Scene_timeline_markers_ = {
+		{&rna_Scene_transform_orientation_slots, 	&rna_Scene_safe_areas,
+		-1, "timeline_markers", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Timeline Markers",
+		"Markers used in all timelines for the current scene",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_TimelineMarkers},
+		Scene_timeline_markers_begin, Scene_timeline_markers_next, Scene_timeline_markers_end, Scene_timeline_markers_get, nullptr, Scene_timeline_markers_lookup_int, Scene_timeline_markers_lookup_string, nullptr, RNA_TimelineMarker
+	};
+
+	rna_Scene_transform_orientation_slots_ = {
+		{&rna_Scene_cursor, 	&rna_Scene_timeline_markers,
+		-1, "transform_orientation_slots", 0, 0, 0, 8, 0, PropertyPathTemplateType(0), "Transform Orientation Slots",
+		"",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_transform_orientation_slots_begin, Scene_transform_orientation_slots_next, Scene_transform_orientation_slots_end, Scene_transform_orientation_slots_get, Scene_transform_orientation_slots_length, Scene_transform_orientation_slots_lookup_int, nullptr, nullptr, RNA_TransformOrientationSlot
+	};
+
+	rna_Scene_cursor_ = {
+		{&rna_Scene_use_audio, 	&rna_Scene_transform_orientation_slots,
+		-1, "cursor", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "3D Cursor",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_cursor_get, nullptr, nullptr, nullptr,RNA_View3DCursor
+	};
+
+	rna_Scene_use_audio_ = {
+		{&rna_Scene_use_audio_scrub, 	&rna_Scene_cursor,
+		-1, "use_audio", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Play Audio",
+		"Play back of audio from Sequence Editor, otherwise mute audio",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_use_audio_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_audio_get, Scene_use_audio_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_use_audio_scrub_ = {
+		{&rna_Scene_audio_doppler_speed, 	&rna_Scene_use_audio,
+		-1, "use_audio_scrub", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Audio Scrubbing",
+		"Play audio from Sequence Editor while scrubbing",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_use_audio_scrub_get, Scene_use_audio_scrub_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Scene_audio_doppler_speed_ = {
+		{&rna_Scene_audio_doppler_factor, 	&rna_Scene_use_audio_scrub,
+		-1, "audio_doppler_speed", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Speed of Sound",
+		"Speed of sound for Doppler effect calculation",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_listener_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, audio.speed_of_sound), RawPropertyType(5), nullptr},
+		Scene_audio_doppler_speed_get, Scene_audio_doppler_speed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0099999998f, FLT_MAX, 0.0099999998f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 343.2999877930f, nullptr
+	};
+
+	rna_Scene_audio_doppler_factor_ = {
+		{&rna_Scene_audio_distance_model, 	&rna_Scene_audio_doppler_speed,
+		-1, "audio_doppler_factor", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Doppler Factor",
+		"Pitch factor for Doppler effect calculation",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_listener_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, audio.doppler_factor), RawPropertyType(5), nullptr},
+		Scene_audio_doppler_factor_get, Scene_audio_doppler_factor_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	static const EnumPropertyItem rna_Scene_audio_distance_model_items[8] = {
+		{0, "NONE", 0, "None", "No distance attenuation"	},
+		{1, "INVERSE", 0, "Inverse", "Inverse distance model"	},
+		{2, "INVERSE_CLAMPED", 0, "Inverse Clamped", "Inverse distance model with clamping"	},
+		{3, "LINEAR", 0, "Linear", "Linear distance model"	},
+		{4, "LINEAR_CLAMPED", 0, "Linear Clamped", "Linear distance model with clamping"	},
+		{5, "EXPONENT", 0, "Exponential", "Exponential distance model"	},
+		{6, "EXPONENT_CLAMPED", 0, "Exponential Clamped", "Exponential distance model with clamping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Scene_audio_distance_model_ = {
+		{&rna_Scene_audio_volume, 	&rna_Scene_audio_doppler_factor,
+		-1, "audio_distance_model", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Distance Model",
+		"Distance model for distance attenuation calculation",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_listener_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, audio.distance_model), RawPropertyType(0), nullptr},
+		Scene_audio_distance_model_get, Scene_audio_distance_model_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Scene_audio_distance_model_items, 7, 2
+	};
+
+	rna_Scene_audio_volume_ = {
+		{&rna_Scene_annotation, 	&rna_Scene_audio_distance_model,
+		-1, "audio_volume", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Volume",
+		"Audio volume",
+		0, "Sound",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_volume_update, 83886080, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Scene, audio.volume), RawPropertyType(5), nullptr},
+		Scene_audio_volume_get, Scene_audio_volume_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 100.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_Scene_annotation_ = {
+		{&rna_Scene_active_clip, 	&rna_Scene_audio_volume,
+		-1, "annotation", 8388801, 1, 0, 64, 0, PropertyPathTemplateType(0), "Annotations",
+		"Data-block used for annotations in the 3D view",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839745, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_annotation_get, Scene_annotation_set, nullptr, rna_GPencil_datablocks_annotations_poll,RNA_Annotation
+	};
+
+	rna_Scene_active_clip_ = {
+		{&rna_Scene_view_settings, 	&rna_Scene_annotation,
+		-1, "active_clip", 8388801, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Movie Clip",
+		"Active Movie Clip that can be used by motion tracking constraints or as a camera\'s background image",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85917696, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_active_clip_get, Scene_active_clip_set, nullptr, nullptr,RNA_MovieClip
+	};
+
+	rna_Scene_view_settings_ = {
+		{&rna_Scene_display_settings, 	&rna_Scene_active_clip,
+		-1, "view_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "View Settings",
+		"Color management settings applied on image before saving",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_view_settings_get, nullptr, nullptr, nullptr,RNA_ColorManagedViewSettings
+	};
+
+	rna_Scene_display_settings_ = {
+		{&rna_Scene_sequencer_colorspace_settings, 	&rna_Scene_view_settings,
+		-1, "display_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Display Settings",
+		"Settings of device saved image would be displayed on",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_display_settings_get, nullptr, nullptr, nullptr,RNA_ColorManagedDisplaySettings
+	};
+
+	rna_Scene_sequencer_colorspace_settings_ = {
+		{&rna_Scene_view_layers, 	&rna_Scene_display_settings,
+		-1, "sequencer_colorspace_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sequencer Color Space Settings",
+		"Settings of color space sequencer is working in",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_sequencer_colorspace_settings_get, nullptr, nullptr, nullptr,RNA_ColorManagedSequencerColorspaceSettings
+	};
+
+	rna_Scene_view_layers_ = {
+		{&rna_Scene_collection, 	&rna_Scene_sequencer_colorspace_settings,
+		-1, "view_layers", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "View Layers",
+		"",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_ViewLayers},
+		Scene_view_layers_begin, Scene_view_layers_next, Scene_view_layers_end, Scene_view_layers_get, nullptr, Scene_view_layers_lookup_int, Scene_view_layers_lookup_string, nullptr, RNA_ViewLayer
+	};
+
+	rna_Scene_collection_ = {
+		{&rna_Scene_display, 	&rna_Scene_view_layers,
+		-1, "collection", 8650752, 1, 0, 32, 0, PropertyPathTemplateType(0), "Collection",
+		"Scene root collection that owns all the objects and other collections instantiated in the scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_collection_get, nullptr, nullptr, nullptr,RNA_Collection
+	};
+
+	rna_Scene_display_ = {
+		{&rna_Scene_eevee, 	&rna_Scene_collection,
+		-1, "display", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Scene Display",
+		"Scene display settings for 3D viewport",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_display_get, nullptr, nullptr, nullptr,RNA_SceneDisplay
+	};
+
+	rna_Scene_eevee_ = {
+		{&rna_Scene_grease_pencil_settings, 	&rna_Scene_display,
+		-1, "eevee", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "EEVEE",
+		"EEVEE settings for the scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_eevee_get, nullptr, nullptr, nullptr,RNA_SceneEEVEE
+	};
+
+	rna_Scene_grease_pencil_settings_ = {
+		{&rna_Scene_hydra, 	&rna_Scene_eevee,
+		-1, "grease_pencil_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil",
+		"Grease Pencil settings for the scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_grease_pencil_settings_get, nullptr, nullptr, nullptr,RNA_SceneGpencil
+	};
+
+	rna_Scene_hydra_ = {
+		{nullptr, 	&rna_Scene_grease_pencil_settings,
+		-1, "hydra", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Hydra",
+		"Hydra settings for the scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Scene_hydra_get, nullptr, nullptr, nullptr,RNA_SceneHydra
+	};
+
+	StructRNA *srna = RNA_Scene;
+	srna->cont.properties = {&rna_Scene_camera, &rna_Scene_hydra};
+	srna->identifier = "Scene";
+	srna->flag = 517;
+	srna->name = "Scene";
+	srna->description = "Scene data-block, consisting in objects and defining time and render related settings";
+	srna->translation_context = "*";
+	srna->icon = 195;
+	srna->nameproperty = &rna_ID_name;
+	srna->iteratorproperty = &rna_ID_rna_properties;
+	srna->base = RNA_ID;
+	srna->refine = rna_ID_refine;
+	srna->instance = rna_ID_instance;
+	srna->idproperties = rna_ID_idprops;
+	srna->system_idproperties = rna_ID_system_idprops;
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "update_render_engine";
+		func->flag = 5;
+		func->description = "Trigger a render engine update";
+		func->call = Scene_update_render_engine_call;
+		rna_Scene_update_render_engine_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Scene_statistics_view_layer_ = {
+		{&rna_Scene_statistics_statistics, 	nullptr,
+		-1, "view_layer", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "View Layer",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ViewLayer
+	};
+	rna_Scene_statistics_statistics_ = {
+		{nullptr, 	&rna_Scene_statistics_view_layer,
+		-1, "statistics", 262145, 0, 2, 0, 0, PropertyPathTemplateType(0), "Statistics",
+		"",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Scene_statistics_view_layer, &rna_Scene_statistics_statistics};
+		func->identifier = "statistics";
+		func->flag = 20;
+		func->description = "statistics";
+		func->call = Scene_statistics_call;
+		func->c_ret = &rna_Scene_statistics_statistics;
+		rna_Scene_statistics_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Scene_frame_set_frame_ = {
+		{&rna_Scene_frame_set_subframe, 	nullptr,
+		-1, "frame", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Frame number to set",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -1048574, 1048574, -1048574, 1048574, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_Scene_frame_set_subframe_ = {
+		{nullptr, 	&rna_Scene_frame_set_frame,
+		-1, "subframe", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Subframe time, between 0.0 and 1.0",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Scene_frame_set_frame, &rna_Scene_frame_set_subframe};
+		func->identifier = "frame_set";
+		func->flag = 4;
+		func->description = "Set scene frame updating all objects and view layers immediately";
+		func->call = Scene_frame_set_call;
+		rna_Scene_frame_set_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Scene_uvedit_aspect_object_ = {
+		{&rna_Scene_uvedit_aspect_result, 	nullptr,
+		-1, "object", 8650880, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Object",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Object
+	};
+	static float rna_Scene_uvedit_aspect_result_default[2] = {
+		0.0f,
+		0.0f
+	};
+	rna_Scene_uvedit_aspect_result_ = {
+		{nullptr, 	&rna_Scene_uvedit_aspect_object,
+		-1, "result", 8388611, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"aspect",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {2, 0, 0}, 2,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_Scene_uvedit_aspect_result_default
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Scene_uvedit_aspect_object, &rna_Scene_uvedit_aspect_result};
+		func->identifier = "uvedit_aspect";
+		func->description = "Get uv aspect for current object";
+		func->call = Scene_uvedit_aspect_call;
+		rna_Scene_uvedit_aspect_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Scene_ray_cast_depsgraph_ = {
+		{&rna_Scene_ray_cast_origin, 	nullptr,
+		-1, "depsgraph", 8650752, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"The current dependency graph",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Depsgraph
+	};
+	static float rna_Scene_ray_cast_origin_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_Scene_ray_cast_origin_ = {
+		{&rna_Scene_ray_cast_direction, 	&rna_Scene_ray_cast_depsgraph,
+		-1, "origin", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_Scene_ray_cast_origin_default
+	};
+	static float rna_Scene_ray_cast_direction_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_Scene_ray_cast_direction_ = {
+		{&rna_Scene_ray_cast_distance, 	&rna_Scene_ray_cast_origin,
+		-1, "direction", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_Scene_ray_cast_direction_default
+	};
+	rna_Scene_ray_cast_distance_ = {
+		{&rna_Scene_ray_cast_result, 	&rna_Scene_ray_cast_direction,
+		-1, "distance", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Maximum distance",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 170141173319264429905852091742258462720.0000000000f, 0.0f, 170141173319264429905852091742258462720.0000000000f, 1.0f, 3, nullptr, nullptr, 170141173319264429905852091742258462720.0000000000f, nullptr
+	};
+	rna_Scene_ray_cast_result_ = {
+		{&rna_Scene_ray_cast_location, 	&rna_Scene_ray_cast_distance,
+		-1, "result", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	static float rna_Scene_ray_cast_location_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_Scene_ray_cast_location_ = {
+		{&rna_Scene_ray_cast_normal, 	&rna_Scene_ray_cast_result,
+		-1, "location", 8388611, 0, 2, 0, 0, PropertyPathTemplateType(0), "Location",
+		"The hit location of this ray cast",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_Scene_ray_cast_location_default
+	};
+	static float rna_Scene_ray_cast_normal_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_Scene_ray_cast_normal_ = {
+		{&rna_Scene_ray_cast_index, 	&rna_Scene_ray_cast_location,
+		-1, "normal", 8388611, 0, 2, 0, 0, PropertyPathTemplateType(0), "Normal",
+		"The face normal at the ray cast hit location",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_Scene_ray_cast_normal_default
+	};
+	rna_Scene_ray_cast_index_ = {
+		{&rna_Scene_ray_cast_object, 	&rna_Scene_ray_cast_normal,
+		-1, "index", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"The face index, -1 when original data isn\'t available",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 0, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_Scene_ray_cast_object_ = {
+		{&rna_Scene_ray_cast_matrix, 	&rna_Scene_ray_cast_index,
+		-1, "object", 8388736, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"The original (un-evaluated) object that was hit. Note that ``location``, ``normal``, and ``index`` correspond to the evaluated object\'s mesh.",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_Object
+	};
+	static float rna_Scene_ray_cast_matrix_default[16] = {
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_Scene_ray_cast_matrix_ = {
+		{nullptr, 	&rna_Scene_ray_cast_object,
+		-1, "matrix", 3, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Matrix",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_MATRIX) | int(PROP_UNIT_NONE)), nullptr, 2, {4, 4, 0}, 16,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 0.0f, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_Scene_ray_cast_matrix_default
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Scene_ray_cast_depsgraph, &rna_Scene_ray_cast_matrix};
+		func->identifier = "ray_cast";
+		func->description = "Cast a ray onto evaluated geometry in world-space";
+		func->call = Scene_ray_cast_call;
+		rna_Scene_ray_cast_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_Scene_sequence_editor_create_sequence_editor_ = {
+		{nullptr, 	nullptr,
+		-1, "sequence_editor", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"New sequence editor data or None",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_SequenceEditor
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_Scene_sequence_editor_create_sequence_editor, &rna_Scene_sequence_editor_create_sequence_editor};
+		func->identifier = "sequence_editor_create";
+		func->description = "Ensure sequence editor is valid in this scene";
+		func->call = Scene_sequence_editor_create_call;
+		func->c_ret = &rna_Scene_sequence_editor_create_sequence_editor;
+		rna_Scene_sequence_editor_create_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "sequence_editor_clear";
+		func->description = "Clear sequence editor in this scene";
+		func->call = Scene_sequence_editor_clear_call;
+		rna_Scene_sequence_editor_clear_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Scene Objects */
+static CollectionPropertyRNA rna_SceneObjects_rna_properties_;
+PropertyRNA &rna_SceneObjects_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SceneObjects_rna_properties_);
+
+static PointerPropertyRNA rna_SceneObjects_rna_type_;
+PropertyRNA &rna_SceneObjects_rna_type = reinterpret_cast<PropertyRNA &>(rna_SceneObjects_rna_type_);
+
+StructRNA *RNA_SceneObjects;
+void register_struct_SceneObjects(BlenderRNA &brna)
+{
+	rna_SceneObjects_rna_properties_ = {
+		{&rna_SceneObjects_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneObjects_rna_properties_begin, SceneObjects_rna_properties_next, SceneObjects_rna_properties_end, SceneObjects_rna_properties_get, nullptr, nullptr, SceneObjects_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SceneObjects_rna_type_ = {
+		{nullptr, 	&rna_SceneObjects_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneObjects_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_SceneObjects;
+	srna->cont.properties = {&rna_SceneObjects_rna_properties, &rna_SceneObjects_rna_type};
+	srna->identifier = "SceneObjects";
+	srna->flag = 516;
+	srna->name = "Scene Objects";
+	srna->description = "All of the scene objects";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_SceneObjects_rna_properties;
+};
+
+/* Keying Sets */
+static CollectionPropertyRNA rna_KeyingSets_rna_properties_;
+PropertyRNA &rna_KeyingSets_rna_properties = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_rna_properties_);
+
+static PointerPropertyRNA rna_KeyingSets_rna_type_;
+PropertyRNA &rna_KeyingSets_rna_type = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_rna_type_);
+
+static PointerPropertyRNA rna_KeyingSets_active_;
+PropertyRNA &rna_KeyingSets_active = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_active_);
+
+static IntPropertyRNA rna_KeyingSets_active_index_;
+PropertyRNA &rna_KeyingSets_active_index = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_active_index_);
+
+static StringPropertyRNA rna_KeyingSets_new_idname_;
+PropertyRNA &rna_KeyingSets_new_idname = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_new_idname_);
+
+static StringPropertyRNA rna_KeyingSets_new_name_;
+PropertyRNA &rna_KeyingSets_new_name = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_new_name_);
+
+static PointerPropertyRNA rna_KeyingSets_new_keyingset_;
+PropertyRNA &rna_KeyingSets_new_keyingset = reinterpret_cast<PropertyRNA &>(rna_KeyingSets_new_keyingset_);
+
+FunctionRNA *rna_KeyingSets_new_func;
+StructRNA *RNA_KeyingSets;
+void register_struct_KeyingSets(BlenderRNA &brna)
+{
+	rna_KeyingSets_rna_properties_ = {
+		{&rna_KeyingSets_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSets_rna_properties_begin, KeyingSets_rna_properties_next, KeyingSets_rna_properties_end, KeyingSets_rna_properties_get, nullptr, nullptr, KeyingSets_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_KeyingSets_rna_type_ = {
+		{&rna_KeyingSets_active, 	&rna_KeyingSets_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSets_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_KeyingSets_active_ = {
+		{&rna_KeyingSets_active_index, 	&rna_KeyingSets_rna_type,
+		-1, "active", 8388609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Keying Set",
+		"Active Keying Set used to insert/delete keyframes",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84803584, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSets_active_get, KeyingSets_active_set, nullptr, nullptr,RNA_KeyingSet
+	};
+
+	rna_KeyingSets_active_index_ = {
+		{nullptr, 	&rna_KeyingSets_active,
+		-1, "active_index", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Keying Set Index",
+		"Current Keying Set index (negative for \'builtin\' and positive for \'absolute\')",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84803584, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSets_active_index_get, KeyingSets_active_index_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_KeyingSets;
+	srna->cont.properties = {&rna_KeyingSets_rna_properties, &rna_KeyingSets_active_index};
+	srna->identifier = "KeyingSets";
+	srna->flag = 516;
+	srna->name = "Keying Sets";
+	srna->description = "Scene keying sets";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_KeyingSets_rna_properties;
+	{
+	rna_KeyingSets_new_idname_ = {
+		{&rna_KeyingSets_new_name, 	nullptr,
+		-1, "idname", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "IDName",
+		"Internal identifier of Keying Set",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, "KeyingSet"
+	};
+	rna_KeyingSets_new_name_ = {
+		{&rna_KeyingSets_new_keyingset, 	&rna_KeyingSets_new_idname,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Name",
+		"User visible name of Keying Set",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, "KeyingSet"
+	};
+	rna_KeyingSets_new_keyingset_ = {
+		{nullptr, 	&rna_KeyingSets_new_name,
+		-1, "keyingset", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly created Keying Set",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_KeyingSet
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_KeyingSets_new_idname, &rna_KeyingSets_new_keyingset};
+		func->identifier = "new";
+		func->flag = 16;
+		func->description = "Add a new Keying Set to Scene";
+		func->call = KeyingSets_new_call;
+		func->c_ret = &rna_KeyingSets_new_keyingset;
+		rna_KeyingSets_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Keying Sets All */
+static CollectionPropertyRNA rna_KeyingSetsAll_rna_properties_;
+PropertyRNA &rna_KeyingSetsAll_rna_properties = reinterpret_cast<PropertyRNA &>(rna_KeyingSetsAll_rna_properties_);
+
+static PointerPropertyRNA rna_KeyingSetsAll_rna_type_;
+PropertyRNA &rna_KeyingSetsAll_rna_type = reinterpret_cast<PropertyRNA &>(rna_KeyingSetsAll_rna_type_);
+
+static PointerPropertyRNA rna_KeyingSetsAll_active_;
+PropertyRNA &rna_KeyingSetsAll_active = reinterpret_cast<PropertyRNA &>(rna_KeyingSetsAll_active_);
+
+static IntPropertyRNA rna_KeyingSetsAll_active_index_;
+PropertyRNA &rna_KeyingSetsAll_active_index = reinterpret_cast<PropertyRNA &>(rna_KeyingSetsAll_active_index_);
+
+StructRNA *RNA_KeyingSetsAll;
+void register_struct_KeyingSetsAll(BlenderRNA &brna)
+{
+	rna_KeyingSetsAll_rna_properties_ = {
+		{&rna_KeyingSetsAll_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSetsAll_rna_properties_begin, KeyingSetsAll_rna_properties_next, KeyingSetsAll_rna_properties_end, KeyingSetsAll_rna_properties_get, nullptr, nullptr, KeyingSetsAll_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_KeyingSetsAll_rna_type_ = {
+		{&rna_KeyingSetsAll_active, 	&rna_KeyingSetsAll_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSetsAll_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_KeyingSetsAll_active_ = {
+		{&rna_KeyingSetsAll_active_index, 	&rna_KeyingSetsAll_rna_type,
+		-1, "active", 8388609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Keying Set",
+		"Active Keying Set used to insert/delete keyframes",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84803584, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSetsAll_active_get, KeyingSetsAll_active_set, nullptr, nullptr,RNA_KeyingSet
+	};
+
+	rna_KeyingSetsAll_active_index_ = {
+		{nullptr, 	&rna_KeyingSetsAll_active,
+		-1, "active_index", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Keying Set Index",
+		"Current Keying Set index (negative for \'builtin\' and positive for \'absolute\')",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84803584, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		KeyingSetsAll_active_index_get, KeyingSetsAll_active_index_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_KeyingSetsAll;
+	srna->cont.properties = {&rna_KeyingSetsAll_rna_properties, &rna_KeyingSetsAll_active_index};
+	srna->identifier = "KeyingSetsAll";
+	srna->flag = 516;
+	srna->name = "Keying Sets All";
+	srna->description = "All available keying sets";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_KeyingSetsAll_rna_properties;
+	srna->path = rna_Scene_KeyingsSetsAll_path;
+};
+
+/* Timeline Markers */
+static CollectionPropertyRNA rna_TimelineMarkers_rna_properties_;
+PropertyRNA &rna_TimelineMarkers_rna_properties = reinterpret_cast<PropertyRNA &>(rna_TimelineMarkers_rna_properties_);
+
+static PointerPropertyRNA rna_TimelineMarkers_rna_type_;
+PropertyRNA &rna_TimelineMarkers_rna_type = reinterpret_cast<PropertyRNA &>(rna_TimelineMarkers_rna_type_);
+
+static StringPropertyRNA rna_TimelineMarkers_new_name_;
+PropertyRNA &rna_TimelineMarkers_new_name = reinterpret_cast<PropertyRNA &>(rna_TimelineMarkers_new_name_);
+
+static IntPropertyRNA rna_TimelineMarkers_new_frame_;
+PropertyRNA &rna_TimelineMarkers_new_frame = reinterpret_cast<PropertyRNA &>(rna_TimelineMarkers_new_frame_);
+
+static PointerPropertyRNA rna_TimelineMarkers_new_marker_;
+PropertyRNA &rna_TimelineMarkers_new_marker = reinterpret_cast<PropertyRNA &>(rna_TimelineMarkers_new_marker_);
+
+FunctionRNA *rna_TimelineMarkers_new_func;
+static PointerPropertyRNA rna_TimelineMarkers_remove_marker_;
+PropertyRNA &rna_TimelineMarkers_remove_marker = reinterpret_cast<PropertyRNA &>(rna_TimelineMarkers_remove_marker_);
+
+FunctionRNA *rna_TimelineMarkers_remove_func;
+FunctionRNA *rna_TimelineMarkers_clear_func;
+StructRNA *RNA_TimelineMarkers;
+void register_struct_TimelineMarkers(BlenderRNA &brna)
+{
+	rna_TimelineMarkers_rna_properties_ = {
+		{&rna_TimelineMarkers_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TimelineMarkers_rna_properties_begin, TimelineMarkers_rna_properties_next, TimelineMarkers_rna_properties_end, TimelineMarkers_rna_properties_get, nullptr, nullptr, TimelineMarkers_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_TimelineMarkers_rna_type_ = {
+		{nullptr, 	&rna_TimelineMarkers_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TimelineMarkers_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_TimelineMarkers;
+	srna->cont.properties = {&rna_TimelineMarkers_rna_properties, &rna_TimelineMarkers_rna_type};
+	srna->identifier = "TimelineMarkers";
+	srna->flag = 516;
+	srna->name = "Timeline Markers";
+	srna->description = "Collection of timeline markers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_TimelineMarkers_rna_properties;
+	{
+	rna_TimelineMarkers_new_name_ = {
+		{&rna_TimelineMarkers_new_frame, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the marker (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "Marker"
+	};
+	rna_TimelineMarkers_new_frame_ = {
+		{&rna_TimelineMarkers_new_marker, 	&rna_TimelineMarkers_new_name,
+		-1, "frame", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"The frame for the new marker",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -1048574, 1048574, -1048574, 1048574, 1, nullptr, nullptr, 1, nullptr
+	};
+	rna_TimelineMarkers_new_marker_ = {
+		{nullptr, 	&rna_TimelineMarkers_new_frame,
+		-1, "marker", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly created timeline marker",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_TimelineMarker
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_TimelineMarkers_new_name, &rna_TimelineMarkers_new_marker};
+		func->identifier = "new";
+		func->description = "Add a timeline marker";
+		func->call = TimelineMarkers_new_call;
+		func->c_ret = &rna_TimelineMarkers_new_marker;
+		rna_TimelineMarkers_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_TimelineMarkers_remove_marker_ = {
+		{nullptr, 	nullptr,
+		-1, "marker", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Timeline marker to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_TimelineMarker
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_TimelineMarkers_remove_marker, &rna_TimelineMarkers_remove_marker};
+		func->identifier = "remove";
+		func->flag = 16;
+		func->description = "Remove a timeline marker";
+		func->call = TimelineMarkers_remove_call;
+		rna_TimelineMarkers_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+		auto func = std::make_unique<FunctionRNA>();
+		func->identifier = "clear";
+		func->description = "Remove all timeline markers";
+		func->call = TimelineMarkers_clear_call;
+		rna_TimelineMarkers_clear_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Render Layers */
+static CollectionPropertyRNA rna_ViewLayers_rna_properties_;
+PropertyRNA &rna_ViewLayers_rna_properties = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_rna_properties_);
+
+static PointerPropertyRNA rna_ViewLayers_rna_type_;
+PropertyRNA &rna_ViewLayers_rna_type = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_rna_type_);
+
+static StringPropertyRNA rna_ViewLayers_new_name_;
+PropertyRNA &rna_ViewLayers_new_name = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_new_name_);
+
+static PointerPropertyRNA rna_ViewLayers_new_result_;
+PropertyRNA &rna_ViewLayers_new_result = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_new_result_);
+
+FunctionRNA *rna_ViewLayers_new_func;
+static PointerPropertyRNA rna_ViewLayers_remove_layer_;
+PropertyRNA &rna_ViewLayers_remove_layer = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_remove_layer_);
+
+FunctionRNA *rna_ViewLayers_remove_func;
+static IntPropertyRNA rna_ViewLayers_move_from_index_;
+PropertyRNA &rna_ViewLayers_move_from_index = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_move_from_index_);
+
+static IntPropertyRNA rna_ViewLayers_move_to_index_;
+PropertyRNA &rna_ViewLayers_move_to_index = reinterpret_cast<PropertyRNA &>(rna_ViewLayers_move_to_index_);
+
+FunctionRNA *rna_ViewLayers_move_func;
+StructRNA *RNA_ViewLayers;
+void register_struct_ViewLayers(BlenderRNA &brna)
+{
+	rna_ViewLayers_rna_properties_ = {
+		{&rna_ViewLayers_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ViewLayers_rna_properties_begin, ViewLayers_rna_properties_next, ViewLayers_rna_properties_end, ViewLayers_rna_properties_get, nullptr, nullptr, ViewLayers_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_ViewLayers_rna_type_ = {
+		{nullptr, 	&rna_ViewLayers_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ViewLayers_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_ViewLayers;
+	srna->cont.properties = {&rna_ViewLayers_rna_properties, &rna_ViewLayers_rna_type};
+	srna->identifier = "ViewLayers";
+	srna->flag = 516;
+	srna->name = "Render Layers";
+	srna->description = "Collection of render layers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_ViewLayers_rna_properties;
+	{
+	rna_ViewLayers_new_name_ = {
+		{&rna_ViewLayers_new_result, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the view layer (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "ViewLayer"
+	};
+	rna_ViewLayers_new_result_ = {
+		{nullptr, 	&rna_ViewLayers_new_name,
+		-1, "result", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly created view layer",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ViewLayer
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_ViewLayers_new_name, &rna_ViewLayers_new_result};
+		func->identifier = "new";
+		func->flag = 2052;
+		func->description = "Add a view layer to scene";
+		func->call = ViewLayers_new_call;
+		func->c_ret = &rna_ViewLayers_new_result;
+		rna_ViewLayers_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_ViewLayers_remove_layer_ = {
+		{nullptr, 	nullptr,
+		-1, "layer", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"View layer to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_ViewLayer
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_ViewLayers_remove_layer, &rna_ViewLayers_remove_layer};
+		func->identifier = "remove";
+		func->flag = 2068;
+		func->description = "Remove a view layer";
+		func->call = ViewLayers_remove_call;
+		rna_ViewLayers_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_ViewLayers_move_from_index_ = {
+		{&rna_ViewLayers_move_to_index, 	nullptr,
+		-1, "from_index", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "From Index",
+		"Index to move",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, -1, nullptr
+	};
+	rna_ViewLayers_move_to_index_ = {
+		{nullptr, 	&rna_ViewLayers_move_from_index,
+		-1, "to_index", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "To Index",
+		"Target index",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, -1, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_ViewLayers_move_from_index, &rna_ViewLayers_move_to_index};
+		func->identifier = "move";
+		func->flag = 2068;
+		func->description = "Move a view layer";
+		func->call = ViewLayers_move_call;
+		rna_ViewLayers_move_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Tool Settings */
+static CollectionPropertyRNA rna_ToolSettings_rna_properties_;
+PropertyRNA &rna_ToolSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_rna_properties_);
+
+static PointerPropertyRNA rna_ToolSettings_rna_type_;
+PropertyRNA &rna_ToolSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_rna_type_);
+
+static PointerPropertyRNA rna_ToolSettings_sculpt_;
+PropertyRNA &rna_ToolSettings_sculpt = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_sculpt_);
+
+static PointerPropertyRNA rna_ToolSettings_curves_sculpt_;
+PropertyRNA &rna_ToolSettings_curves_sculpt = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_curves_sculpt_);
+
+static BoolPropertyRNA rna_ToolSettings_use_auto_normalize_;
+PropertyRNA &rna_ToolSettings_use_auto_normalize = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_auto_normalize_);
+
+static BoolPropertyRNA rna_ToolSettings_use_lock_relative_;
+PropertyRNA &rna_ToolSettings_use_lock_relative = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_lock_relative_);
+
+static BoolPropertyRNA rna_ToolSettings_use_multipaint_;
+PropertyRNA &rna_ToolSettings_use_multipaint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_multipaint_);
+
+static EnumPropertyRNA rna_ToolSettings_vertex_group_user_;
+PropertyRNA &rna_ToolSettings_vertex_group_user = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_vertex_group_user_);
+
+static EnumPropertyRNA rna_ToolSettings_vertex_group_subset_;
+PropertyRNA &rna_ToolSettings_vertex_group_subset = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_vertex_group_subset_);
+
+static PointerPropertyRNA rna_ToolSettings_vertex_paint_;
+PropertyRNA &rna_ToolSettings_vertex_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_vertex_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_weight_paint_;
+PropertyRNA &rna_ToolSettings_weight_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_weight_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_image_paint_;
+PropertyRNA &rna_ToolSettings_image_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_image_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_paint_mode_;
+PropertyRNA &rna_ToolSettings_paint_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_paint_mode_);
+
+static PointerPropertyRNA rna_ToolSettings_uv_sculpt_;
+PropertyRNA &rna_ToolSettings_uv_sculpt = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_uv_sculpt_);
+
+static PointerPropertyRNA rna_ToolSettings_gpencil_paint_;
+PropertyRNA &rna_ToolSettings_gpencil_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_gpencil_vertex_paint_;
+PropertyRNA &rna_ToolSettings_gpencil_vertex_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_vertex_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_gpencil_sculpt_paint_;
+PropertyRNA &rna_ToolSettings_gpencil_sculpt_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_sculpt_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_gpencil_weight_paint_;
+PropertyRNA &rna_ToolSettings_gpencil_weight_paint = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_weight_paint_);
+
+static PointerPropertyRNA rna_ToolSettings_particle_edit_;
+PropertyRNA &rna_ToolSettings_particle_edit = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_particle_edit_);
+
+static BoolPropertyRNA rna_ToolSettings_uv_sculpt_lock_borders_;
+PropertyRNA &rna_ToolSettings_uv_sculpt_lock_borders = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_uv_sculpt_lock_borders_);
+
+static BoolPropertyRNA rna_ToolSettings_uv_sculpt_all_islands_;
+PropertyRNA &rna_ToolSettings_uv_sculpt_all_islands = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_uv_sculpt_all_islands_);
+
+static BoolPropertyRNA rna_ToolSettings_lock_object_mode_;
+PropertyRNA &rna_ToolSettings_lock_object_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_lock_object_mode_);
+
+static EnumPropertyRNA rna_ToolSettings_workspace_tool_type_;
+PropertyRNA &rna_ToolSettings_workspace_tool_type = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_workspace_tool_type_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_edit_;
+PropertyRNA &rna_ToolSettings_use_proportional_edit = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_edit_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_edit_objects_;
+PropertyRNA &rna_ToolSettings_use_proportional_edit_objects = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_edit_objects_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_projected_;
+PropertyRNA &rna_ToolSettings_use_proportional_projected = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_projected_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_connected_;
+PropertyRNA &rna_ToolSettings_use_proportional_connected = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_connected_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_edit_mask_;
+PropertyRNA &rna_ToolSettings_use_proportional_edit_mask = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_edit_mask_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_action_;
+PropertyRNA &rna_ToolSettings_use_proportional_action = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_action_);
+
+static BoolPropertyRNA rna_ToolSettings_use_proportional_fcurve_;
+PropertyRNA &rna_ToolSettings_use_proportional_fcurve = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_proportional_fcurve_);
+
+static BoolPropertyRNA rna_ToolSettings_lock_markers_;
+PropertyRNA &rna_ToolSettings_lock_markers = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_lock_markers_);
+
+static EnumPropertyRNA rna_ToolSettings_proportional_edit_falloff_;
+PropertyRNA &rna_ToolSettings_proportional_edit_falloff = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_proportional_edit_falloff_);
+
+static FloatPropertyRNA rna_ToolSettings_proportional_size_;
+PropertyRNA &rna_ToolSettings_proportional_size = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_proportional_size_);
+
+static FloatPropertyRNA rna_ToolSettings_proportional_distance_;
+PropertyRNA &rna_ToolSettings_proportional_distance = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_proportional_distance_);
+
+static FloatPropertyRNA rna_ToolSettings_double_threshold_;
+PropertyRNA &rna_ToolSettings_double_threshold = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_double_threshold_);
+
+static EnumPropertyRNA rna_ToolSettings_transform_pivot_point_;
+PropertyRNA &rna_ToolSettings_transform_pivot_point = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_transform_pivot_point_);
+
+static BoolPropertyRNA rna_ToolSettings_use_transform_pivot_point_align_;
+PropertyRNA &rna_ToolSettings_use_transform_pivot_point_align = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_transform_pivot_point_align_);
+
+static BoolPropertyRNA rna_ToolSettings_use_transform_data_origin_;
+PropertyRNA &rna_ToolSettings_use_transform_data_origin = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_transform_data_origin_);
+
+static BoolPropertyRNA rna_ToolSettings_use_transform_skip_children_;
+PropertyRNA &rna_ToolSettings_use_transform_skip_children = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_transform_skip_children_);
+
+static BoolPropertyRNA rna_ToolSettings_use_transform_correct_face_attributes_;
+PropertyRNA &rna_ToolSettings_use_transform_correct_face_attributes = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_transform_correct_face_attributes_);
+
+static BoolPropertyRNA rna_ToolSettings_use_transform_correct_keep_connected_;
+PropertyRNA &rna_ToolSettings_use_transform_correct_keep_connected = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_transform_correct_keep_connected_);
+
+static BoolPropertyRNA rna_ToolSettings_use_mesh_automerge_;
+PropertyRNA &rna_ToolSettings_use_mesh_automerge = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_mesh_automerge_);
+
+static BoolPropertyRNA rna_ToolSettings_use_mesh_automerge_and_split_;
+PropertyRNA &rna_ToolSettings_use_mesh_automerge_and_split = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_mesh_automerge_and_split_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_;
+PropertyRNA &rna_ToolSettings_use_snap = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_node_;
+PropertyRNA &rna_ToolSettings_use_snap_node = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_node_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_sequencer_;
+PropertyRNA &rna_ToolSettings_use_snap_sequencer = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_sequencer_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_uv_;
+PropertyRNA &rna_ToolSettings_use_snap_uv = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_uv_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_align_rotation_;
+PropertyRNA &rna_ToolSettings_use_snap_align_rotation = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_align_rotation_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_grid_absolute_;
+PropertyRNA &rna_ToolSettings_use_snap_grid_absolute = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_grid_absolute_);
+
+static FloatPropertyRNA rna_ToolSettings_snap_angle_increment_2d_;
+PropertyRNA &rna_ToolSettings_snap_angle_increment_2d = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_angle_increment_2d_);
+
+static FloatPropertyRNA rna_ToolSettings_snap_angle_increment_2d_precision_;
+PropertyRNA &rna_ToolSettings_snap_angle_increment_2d_precision = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_angle_increment_2d_precision_);
+
+static FloatPropertyRNA rna_ToolSettings_snap_angle_increment_3d_;
+PropertyRNA &rna_ToolSettings_snap_angle_increment_3d = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_angle_increment_3d_);
+
+static FloatPropertyRNA rna_ToolSettings_snap_angle_increment_3d_precision_;
+PropertyRNA &rna_ToolSettings_snap_angle_increment_3d_precision = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_angle_increment_3d_precision_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_elements_;
+PropertyRNA &rna_ToolSettings_snap_elements = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_elements_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_elements_base_;
+PropertyRNA &rna_ToolSettings_snap_elements_base = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_elements_base_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_elements_individual_;
+PropertyRNA &rna_ToolSettings_snap_elements_individual = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_elements_individual_);
+
+static IntPropertyRNA rna_ToolSettings_snap_face_nearest_steps_;
+PropertyRNA &rna_ToolSettings_snap_face_nearest_steps = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_face_nearest_steps_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_to_same_target_;
+PropertyRNA &rna_ToolSettings_use_snap_to_same_target = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_to_same_target_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_anim_;
+PropertyRNA &rna_ToolSettings_use_snap_anim = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_anim_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_driver_;
+PropertyRNA &rna_ToolSettings_use_snap_driver = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_driver_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_time_absolute_;
+PropertyRNA &rna_ToolSettings_use_snap_time_absolute = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_time_absolute_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_driver_absolute_;
+PropertyRNA &rna_ToolSettings_use_snap_driver_absolute = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_driver_absolute_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_anim_element_;
+PropertyRNA &rna_ToolSettings_snap_anim_element = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_anim_element_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_playhead_;
+PropertyRNA &rna_ToolSettings_use_snap_playhead = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_playhead_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_playhead_element_;
+PropertyRNA &rna_ToolSettings_snap_playhead_element = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_playhead_element_);
+
+static IntPropertyRNA rna_ToolSettings_snap_playhead_frame_step_;
+PropertyRNA &rna_ToolSettings_snap_playhead_frame_step = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_playhead_frame_step_);
+
+static IntPropertyRNA rna_ToolSettings_snap_playhead_second_step_;
+PropertyRNA &rna_ToolSettings_snap_playhead_second_step = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_playhead_second_step_);
+
+static IntPropertyRNA rna_ToolSettings_playhead_snap_distance_;
+PropertyRNA &rna_ToolSettings_playhead_snap_distance = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_playhead_snap_distance_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_uv_element_;
+PropertyRNA &rna_ToolSettings_snap_uv_element = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_uv_element_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_target_;
+PropertyRNA &rna_ToolSettings_snap_target = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_target_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_peel_object_;
+PropertyRNA &rna_ToolSettings_use_snap_peel_object = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_peel_object_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_backface_culling_;
+PropertyRNA &rna_ToolSettings_use_snap_backface_culling = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_backface_culling_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_self_;
+PropertyRNA &rna_ToolSettings_use_snap_self = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_self_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_edit_;
+PropertyRNA &rna_ToolSettings_use_snap_edit = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_edit_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_nonedit_;
+PropertyRNA &rna_ToolSettings_use_snap_nonedit = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_nonedit_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_selectable_;
+PropertyRNA &rna_ToolSettings_use_snap_selectable = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_selectable_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_translate_;
+PropertyRNA &rna_ToolSettings_use_snap_translate = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_translate_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_rotate_;
+PropertyRNA &rna_ToolSettings_use_snap_rotate = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_rotate_);
+
+static BoolPropertyRNA rna_ToolSettings_use_snap_scale_;
+PropertyRNA &rna_ToolSettings_use_snap_scale = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_snap_scale_);
+
+static EnumPropertyRNA rna_ToolSettings_plane_axis_;
+PropertyRNA &rna_ToolSettings_plane_axis = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_plane_axis_);
+
+static BoolPropertyRNA rna_ToolSettings_plane_axis_auto_;
+PropertyRNA &rna_ToolSettings_plane_axis_auto = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_plane_axis_auto_);
+
+static EnumPropertyRNA rna_ToolSettings_plane_depth_;
+PropertyRNA &rna_ToolSettings_plane_depth = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_plane_depth_);
+
+static EnumPropertyRNA rna_ToolSettings_plane_orientation_;
+PropertyRNA &rna_ToolSettings_plane_orientation = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_plane_orientation_);
+
+static EnumPropertyRNA rna_ToolSettings_snap_elements_tool_;
+PropertyRNA &rna_ToolSettings_snap_elements_tool = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_snap_elements_tool_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_draw_additive_;
+PropertyRNA &rna_ToolSettings_use_gpencil_draw_additive = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_draw_additive_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_draw_onback_;
+PropertyRNA &rna_ToolSettings_use_gpencil_draw_onback = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_draw_onback_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_thumbnail_list_;
+PropertyRNA &rna_ToolSettings_use_gpencil_thumbnail_list = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_thumbnail_list_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_weight_data_add_;
+PropertyRNA &rna_ToolSettings_use_gpencil_weight_data_add = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_weight_data_add_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_automerge_strokes_;
+PropertyRNA &rna_ToolSettings_use_gpencil_automerge_strokes = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_automerge_strokes_);
+
+static PointerPropertyRNA rna_ToolSettings_gpencil_sculpt_;
+PropertyRNA &rna_ToolSettings_gpencil_sculpt = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_sculpt_);
+
+static PointerPropertyRNA rna_ToolSettings_gpencil_interpolate_;
+PropertyRNA &rna_ToolSettings_gpencil_interpolate = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_interpolate_);
+
+static EnumPropertyRNA rna_ToolSettings_gpencil_stroke_placement_view3d_;
+PropertyRNA &rna_ToolSettings_gpencil_stroke_placement_view3d = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_stroke_placement_view3d_);
+
+static EnumPropertyRNA rna_ToolSettings_gpencil_stroke_snap_mode_;
+PropertyRNA &rna_ToolSettings_gpencil_stroke_snap_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_stroke_snap_mode_);
+
+static FloatPropertyRNA rna_ToolSettings_gpencil_surface_offset_;
+PropertyRNA &rna_ToolSettings_gpencil_surface_offset = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_surface_offset_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_project_only_selected_;
+PropertyRNA &rna_ToolSettings_use_gpencil_project_only_selected = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_project_only_selected_);
+
+static EnumPropertyRNA rna_ToolSettings_gpencil_selectmode_edit_;
+PropertyRNA &rna_ToolSettings_gpencil_selectmode_edit = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_gpencil_selectmode_edit_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_select_mask_point_;
+PropertyRNA &rna_ToolSettings_use_gpencil_select_mask_point = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_select_mask_point_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_select_mask_stroke_;
+PropertyRNA &rna_ToolSettings_use_gpencil_select_mask_stroke = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_select_mask_stroke_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_select_mask_segment_;
+PropertyRNA &rna_ToolSettings_use_gpencil_select_mask_segment = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_select_mask_segment_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_vertex_select_mask_point_;
+PropertyRNA &rna_ToolSettings_use_gpencil_vertex_select_mask_point = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_vertex_select_mask_point_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_vertex_select_mask_stroke_;
+PropertyRNA &rna_ToolSettings_use_gpencil_vertex_select_mask_stroke = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_vertex_select_mask_stroke_);
+
+static BoolPropertyRNA rna_ToolSettings_use_gpencil_vertex_select_mask_segment_;
+PropertyRNA &rna_ToolSettings_use_gpencil_vertex_select_mask_segment = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_gpencil_vertex_select_mask_segment_);
+
+static BoolPropertyRNA rna_ToolSettings_use_grease_pencil_multi_frame_editing_;
+PropertyRNA &rna_ToolSettings_use_grease_pencil_multi_frame_editing = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_grease_pencil_multi_frame_editing_);
+
+static EnumPropertyRNA rna_ToolSettings_annotation_stroke_placement_view2d_;
+PropertyRNA &rna_ToolSettings_annotation_stroke_placement_view2d = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_annotation_stroke_placement_view2d_);
+
+static EnumPropertyRNA rna_ToolSettings_annotation_stroke_placement_view3d_;
+PropertyRNA &rna_ToolSettings_annotation_stroke_placement_view3d = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_annotation_stroke_placement_view3d_);
+
+static BoolPropertyRNA rna_ToolSettings_use_annotation_stroke_endpoints_;
+PropertyRNA &rna_ToolSettings_use_annotation_stroke_endpoints = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_annotation_stroke_endpoints_);
+
+static BoolPropertyRNA rna_ToolSettings_use_annotation_project_only_selected_;
+PropertyRNA &rna_ToolSettings_use_annotation_project_only_selected = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_annotation_project_only_selected_);
+
+static IntPropertyRNA rna_ToolSettings_annotation_thickness_;
+PropertyRNA &rna_ToolSettings_annotation_thickness = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_annotation_thickness_);
+
+static BoolPropertyRNA rna_ToolSettings_use_keyframe_insert_auto_;
+PropertyRNA &rna_ToolSettings_use_keyframe_insert_auto = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_keyframe_insert_auto_);
+
+static EnumPropertyRNA rna_ToolSettings_auto_keying_mode_;
+PropertyRNA &rna_ToolSettings_auto_keying_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_auto_keying_mode_);
+
+static BoolPropertyRNA rna_ToolSettings_use_record_with_nla_;
+PropertyRNA &rna_ToolSettings_use_record_with_nla = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_record_with_nla_);
+
+static BoolPropertyRNA rna_ToolSettings_use_keyframe_insert_keyingset_;
+PropertyRNA &rna_ToolSettings_use_keyframe_insert_keyingset = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_keyframe_insert_keyingset_);
+
+static BoolPropertyRNA rna_ToolSettings_use_keyframe_cycle_aware_;
+PropertyRNA &rna_ToolSettings_use_keyframe_cycle_aware = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_keyframe_cycle_aware_);
+
+static EnumPropertyRNA rna_ToolSettings_keyframe_type_;
+PropertyRNA &rna_ToolSettings_keyframe_type = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_keyframe_type_);
+
+static PointerPropertyRNA rna_ToolSettings_anim_mirror_object_;
+PropertyRNA &rna_ToolSettings_anim_mirror_object = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_anim_mirror_object_);
+
+static StringPropertyRNA rna_ToolSettings_anim_mirror_bone_;
+PropertyRNA &rna_ToolSettings_anim_mirror_bone = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_anim_mirror_bone_);
+
+static PointerPropertyRNA rna_ToolSettings_anim_relative_object_;
+PropertyRNA &rna_ToolSettings_anim_relative_object = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_anim_relative_object_);
+
+static BoolPropertyRNA rna_ToolSettings_anim_fix_to_cam_use_loc_;
+PropertyRNA &rna_ToolSettings_anim_fix_to_cam_use_loc = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_anim_fix_to_cam_use_loc_);
+
+static BoolPropertyRNA rna_ToolSettings_anim_fix_to_cam_use_rot_;
+PropertyRNA &rna_ToolSettings_anim_fix_to_cam_use_rot = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_anim_fix_to_cam_use_rot_);
+
+static BoolPropertyRNA rna_ToolSettings_anim_fix_to_cam_use_scale_;
+PropertyRNA &rna_ToolSettings_anim_fix_to_cam_use_scale = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_anim_fix_to_cam_use_scale_);
+
+static EnumPropertyRNA rna_ToolSettings_uv_select_mode_;
+PropertyRNA &rna_ToolSettings_uv_select_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_uv_select_mode_);
+
+static EnumPropertyRNA rna_ToolSettings_uv_sticky_select_mode_;
+PropertyRNA &rna_ToolSettings_uv_sticky_select_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_uv_sticky_select_mode_);
+
+static BoolPropertyRNA rna_ToolSettings_use_uv_select_sync_;
+PropertyRNA &rna_ToolSettings_use_uv_select_sync = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_uv_select_sync_);
+
+static BoolPropertyRNA rna_ToolSettings_use_uv_select_island_;
+PropertyRNA &rna_ToolSettings_use_uv_select_island = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_uv_select_island_);
+
+static BoolPropertyRNA rna_ToolSettings_show_uv_local_view_;
+PropertyRNA &rna_ToolSettings_show_uv_local_view = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_show_uv_local_view_);
+
+static BoolPropertyRNA rna_ToolSettings_use_uv_custom_region_;
+PropertyRNA &rna_ToolSettings_use_uv_custom_region = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_uv_custom_region_);
+
+static BoolPropertyRNA rna_ToolSettings_mesh_select_mode_;
+PropertyRNA &rna_ToolSettings_mesh_select_mode = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_mesh_select_mode_);
+
+static FloatPropertyRNA rna_ToolSettings_vertex_group_weight_;
+PropertyRNA &rna_ToolSettings_vertex_group_weight = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_vertex_group_weight_);
+
+static BoolPropertyRNA rna_ToolSettings_use_edge_path_live_unwrap_;
+PropertyRNA &rna_ToolSettings_use_edge_path_live_unwrap = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_use_edge_path_live_unwrap_);
+
+static FloatPropertyRNA rna_ToolSettings_normal_vector_;
+PropertyRNA &rna_ToolSettings_normal_vector = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_normal_vector_);
+
+static PointerPropertyRNA rna_ToolSettings_curve_paint_settings_;
+PropertyRNA &rna_ToolSettings_curve_paint_settings = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_curve_paint_settings_);
+
+static PointerPropertyRNA rna_ToolSettings_statvis_;
+PropertyRNA &rna_ToolSettings_statvis = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_statvis_);
+
+static PointerPropertyRNA rna_ToolSettings_custom_bevel_profile_preset_;
+PropertyRNA &rna_ToolSettings_custom_bevel_profile_preset = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_custom_bevel_profile_preset_);
+
+static PointerPropertyRNA rna_ToolSettings_sequencer_tool_settings_;
+PropertyRNA &rna_ToolSettings_sequencer_tool_settings = reinterpret_cast<PropertyRNA &>(rna_ToolSettings_sequencer_tool_settings_);
+
+StructRNA *RNA_ToolSettings;
+void register_struct_ToolSettings(BlenderRNA &brna)
+{
+	rna_ToolSettings_rna_properties_ = {
+		{&rna_ToolSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_rna_properties_begin, ToolSettings_rna_properties_next, ToolSettings_rna_properties_end, ToolSettings_rna_properties_get, nullptr, nullptr, ToolSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_ToolSettings_rna_type_ = {
+		{&rna_ToolSettings_sculpt, 	&rna_ToolSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_ToolSettings_sculpt_ = {
+		{&rna_ToolSettings_curves_sculpt, 	&rna_ToolSettings_rna_type,
+		-1, "sculpt", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sculpt",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_sculpt_get, nullptr, nullptr, nullptr,RNA_Sculpt
+	};
+
+	rna_ToolSettings_curves_sculpt_ = {
+		{&rna_ToolSettings_use_auto_normalize, 	&rna_ToolSettings_sculpt,
+		-1, "curves_sculpt", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curves Sculpt",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_curves_sculpt_get, nullptr, nullptr, nullptr,RNA_CurvesSculpt
+	};
+
+	rna_ToolSettings_use_auto_normalize_ = {
+		{&rna_ToolSettings_use_lock_relative, 	&rna_ToolSettings_curves_sculpt,
+		-1, "use_auto_normalize", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Weight Paint Auto-Normalize",
+		"Ensure all bone-deforming vertex groups add up to 1.0 while weight painting or assigning to vertices",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_update_active_object_data, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_auto_normalize_get, ToolSettings_use_auto_normalize_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_lock_relative_ = {
+		{&rna_ToolSettings_use_multipaint, 	&rna_ToolSettings_use_auto_normalize,
+		-1, "use_lock_relative", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Weight Paint Lock-Relative",
+		"Display bone-deforming groups as if all locked deform groups were deleted, and the remaining ones were re-normalized",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_update_active_object_data, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_lock_relative_get, ToolSettings_use_lock_relative_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_multipaint_ = {
+		{&rna_ToolSettings_vertex_group_user, 	&rna_ToolSettings_use_lock_relative,
+		-1, "use_multipaint", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Weight Paint Multi-Paint",
+		"Paint across the weights of all selected bones, maintaining their relative influence",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_update_active_object_data, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_multipaint_get, ToolSettings_use_multipaint_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_vertex_group_user_items[4] = {
+		{0, "NONE", 0, "None", ""	},
+		{1, "ACTIVE", 0, "Active", "Show vertices with no weights in the active group"	},
+		{2, "ALL", 0, "All", "Show vertices with no weights in any group"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_vertex_group_user_ = {
+		{&rna_ToolSettings_vertex_group_subset, 	&rna_ToolSettings_use_multipaint,
+		-1, "vertex_group_user", 4194817, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mask Non-Group Vertices",
+		"Display unweighted vertices",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_update_active_object_data, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, weightuser), RawPropertyType(2), nullptr},
+		ToolSettings_vertex_group_user_get, ToolSettings_vertex_group_user_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_vertex_group_user_items, 3, 1
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_vertex_group_subset_items[4] = {
+		{0, "ALL", 0, "All", "All Vertex Groups"	},
+		{3, "BONE_DEFORM", 0, "Deform", "Vertex Groups assigned to Deform Bones"	},
+		{4, "OTHER_DEFORM", 0, "Other", "Vertex Groups assigned to non Deform Bones"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_vertex_group_subset_ = {
+		{&rna_ToolSettings_vertex_paint, 	&rna_ToolSettings_vertex_group_user,
+		-1, "vertex_group_subset", 4194817, 0, 0, 4, 0, PropertyPathTemplateType(0), "Subset",
+		"Filter Vertex groups for Display",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_update_active_object_data, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, vgroupsubset), RawPropertyType(2), nullptr},
+		ToolSettings_vertex_group_subset_get, ToolSettings_vertex_group_subset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_vertex_group_subset_items, 3, 0
+	};
+
+	rna_ToolSettings_vertex_paint_ = {
+		{&rna_ToolSettings_weight_paint, 	&rna_ToolSettings_vertex_group_subset,
+		-1, "vertex_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Vertex Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_vertex_paint_get, nullptr, nullptr, nullptr,RNA_VertexPaint
+	};
+
+	rna_ToolSettings_weight_paint_ = {
+		{&rna_ToolSettings_image_paint, 	&rna_ToolSettings_vertex_paint,
+		-1, "weight_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Weight Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_weight_paint_get, nullptr, nullptr, nullptr,RNA_VertexPaint
+	};
+
+	rna_ToolSettings_image_paint_ = {
+		{&rna_ToolSettings_paint_mode, 	&rna_ToolSettings_weight_paint,
+		-1, "image_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Image Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_image_paint_get, nullptr, nullptr, nullptr,RNA_ImagePaint
+	};
+
+	rna_ToolSettings_paint_mode_ = {
+		{&rna_ToolSettings_uv_sculpt, 	&rna_ToolSettings_image_paint,
+		-1, "paint_mode", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Paint Mode",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_paint_mode_get, nullptr, nullptr, nullptr,RNA_PaintModeSettings
+	};
+
+	rna_ToolSettings_uv_sculpt_ = {
+		{&rna_ToolSettings_gpencil_paint, 	&rna_ToolSettings_paint_mode,
+		-1, "uv_sculpt", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "UV Sculpt",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_uv_sculpt_get, nullptr, nullptr, nullptr,RNA_UvSculpt
+	};
+
+	rna_ToolSettings_gpencil_paint_ = {
+		{&rna_ToolSettings_gpencil_vertex_paint, 	&rna_ToolSettings_uv_sculpt,
+		-1, "gpencil_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_gpencil_paint_get, nullptr, nullptr, nullptr,RNA_GpPaint
+	};
+
+	rna_ToolSettings_gpencil_vertex_paint_ = {
+		{&rna_ToolSettings_gpencil_sculpt_paint, 	&rna_ToolSettings_gpencil_paint,
+		-1, "gpencil_vertex_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil Vertex Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_gpencil_vertex_paint_get, nullptr, nullptr, nullptr,RNA_GpVertexPaint
+	};
+
+	rna_ToolSettings_gpencil_sculpt_paint_ = {
+		{&rna_ToolSettings_gpencil_weight_paint, 	&rna_ToolSettings_gpencil_vertex_paint,
+		-1, "gpencil_sculpt_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil Sculpt Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_gpencil_sculpt_paint_get, nullptr, nullptr, nullptr,RNA_GpSculptPaint
+	};
+
+	rna_ToolSettings_gpencil_weight_paint_ = {
+		{&rna_ToolSettings_particle_edit, 	&rna_ToolSettings_gpencil_sculpt_paint,
+		-1, "gpencil_weight_paint", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil Weight Paint",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_gpencil_weight_paint_get, nullptr, nullptr, nullptr,RNA_GpWeightPaint
+	};
+
+	rna_ToolSettings_particle_edit_ = {
+		{&rna_ToolSettings_uv_sculpt_lock_borders, 	&rna_ToolSettings_gpencil_weight_paint,
+		-1, "particle_edit", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Particle Edit",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_particle_edit_get, nullptr, nullptr, nullptr,RNA_ParticleEdit
+	};
+
+	rna_ToolSettings_uv_sculpt_lock_borders_ = {
+		{&rna_ToolSettings_uv_sculpt_all_islands, 	&rna_ToolSettings_particle_edit,
+		-1, "uv_sculpt_lock_borders", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lock Borders",
+		"Disable editing of boundary edges",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_uv_sculpt_lock_borders_get, ToolSettings_uv_sculpt_lock_borders_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_uv_sculpt_all_islands_ = {
+		{&rna_ToolSettings_lock_object_mode, 	&rna_ToolSettings_uv_sculpt_lock_borders,
+		-1, "uv_sculpt_all_islands", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sculpt All Islands",
+		"Brush operates on all islands",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_uv_sculpt_all_islands_get, ToolSettings_uv_sculpt_all_islands_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_lock_object_mode_ = {
+		{&rna_ToolSettings_workspace_tool_type, 	&rna_ToolSettings_uv_sculpt_all_islands,
+		-1, "lock_object_mode", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lock Object Modes",
+		"Restrict selection to objects using the same mode as the active object, to prevent accidental mode switch when selecting",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_lock_object_mode_get, ToolSettings_lock_object_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_workspace_tool_type_items[3] = {
+		{1, "DEFAULT", 0, "Active Tool", ""	},
+		{0, "FALLBACK", 0, "Select", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_workspace_tool_type_ = {
+		{&rna_ToolSettings_use_proportional_edit, 	&rna_ToolSettings_lock_object_mode,
+		-1, "workspace_tool_type", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Drag",
+		"Action when dragging in the viewport",
+		0, "View3D",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, workspace_tool_type), RawPropertyType(2), nullptr},
+		ToolSettings_workspace_tool_type_get, ToolSettings_workspace_tool_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_workspace_tool_type_items, 2, 0
+	};
+
+	rna_ToolSettings_use_proportional_edit_ = {
+		{&rna_ToolSettings_use_proportional_edit_objects, 	&rna_ToolSettings_workspace_tool_type,
+		-1, "use_proportional_edit", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Proportional Editing",
+		"Proportional edit mode",
+		579, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_proportional_edit_get, ToolSettings_use_proportional_edit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_proportional_edit_objects_ = {
+		{&rna_ToolSettings_use_proportional_projected, 	&rna_ToolSettings_use_proportional_edit,
+		-1, "use_proportional_edit_objects", 4609, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Editing Objects",
+		"Proportional editing object mode",
+		578, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, proportional_objects), RawPropertyType(3), nullptr},
+		ToolSettings_use_proportional_edit_objects_get, ToolSettings_use_proportional_edit_objects_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_proportional_projected_ = {
+		{&rna_ToolSettings_use_proportional_connected, 	&rna_ToolSettings_use_proportional_edit_objects,
+		-1, "use_proportional_projected", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Projected from View",
+		"Proportional Editing using screen space locations",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_proportional_projected_get, ToolSettings_use_proportional_projected_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_proportional_connected_ = {
+		{&rna_ToolSettings_use_proportional_edit_mask, 	&rna_ToolSettings_use_proportional_projected,
+		-1, "use_proportional_connected", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Connected Only",
+		"Proportional Editing using connected geometry only",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_proportional_connected_get, ToolSettings_use_proportional_connected_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_proportional_edit_mask_ = {
+		{&rna_ToolSettings_use_proportional_action, 	&rna_ToolSettings_use_proportional_connected,
+		-1, "use_proportional_edit_mask", 4609, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Editing Objects",
+		"Proportional editing mask mode",
+		578, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, proportional_mask), RawPropertyType(3), nullptr},
+		ToolSettings_use_proportional_edit_mask_get, ToolSettings_use_proportional_edit_mask_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_proportional_action_ = {
+		{&rna_ToolSettings_use_proportional_fcurve, 	&rna_ToolSettings_use_proportional_edit_mask,
+		-1, "use_proportional_action", 4609, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Editing Actions",
+		"Proportional editing in action editor",
+		578, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, proportional_action), RawPropertyType(3), nullptr},
+		ToolSettings_use_proportional_action_get, ToolSettings_use_proportional_action_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_proportional_fcurve_ = {
+		{&rna_ToolSettings_lock_markers, 	&rna_ToolSettings_use_proportional_action,
+		-1, "use_proportional_fcurve", 4609, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Editing F-Curves",
+		"Proportional editing in F-Curve editor",
+		578, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, proportional_fcurve), RawPropertyType(3), nullptr},
+		ToolSettings_use_proportional_fcurve_get, ToolSettings_use_proportional_fcurve_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_lock_markers_ = {
+		{&rna_ToolSettings_proportional_edit_falloff, 	&rna_ToolSettings_use_proportional_fcurve,
+		-1, "lock_markers", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Lock Markers",
+		"Prevent marker editing",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, lock_markers), RawPropertyType(3), nullptr},
+		ToolSettings_lock_markers_get, ToolSettings_lock_markers_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_proportional_edit_falloff_ = {
+		{&rna_ToolSettings_proportional_size, 	&rna_ToolSettings_lock_markers,
+		-1, "proportional_edit_falloff", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Editing Falloff",
+		"Falloff type for proportional editing mode",
+		0, "Curve",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, prop_mode), RawPropertyType(2), nullptr},
+		ToolSettings_proportional_edit_falloff_get, ToolSettings_proportional_edit_falloff_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_proportional_falloff_items, 8, 0
+	};
+
+	rna_ToolSettings_proportional_size_ = {
+		{&rna_ToolSettings_proportional_distance, 	&rna_ToolSettings_proportional_edit_falloff,
+		-1, "proportional_size", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Size",
+		"Display size for proportional editing circle",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, proportional_size), RawPropertyType(5), nullptr},
+		ToolSettings_proportional_size_get, ToolSettings_proportional_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0000100000f, 5000.0f, 0.0000100000f, 5000.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_ToolSettings_proportional_distance_ = {
+		{&rna_ToolSettings_double_threshold, 	&rna_ToolSettings_proportional_size,
+		-1, "proportional_distance", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Proportional Size",
+		"Display size for proportional editing circle",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, proportional_size), RawPropertyType(5), nullptr},
+		ToolSettings_proportional_distance_get, ToolSettings_proportional_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0000100000f, 5000.0f, 0.0000100000f, 5000.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_ToolSettings_double_threshold_ = {
+		{&rna_ToolSettings_transform_pivot_point, 	&rna_ToolSettings_proportional_distance,
+		-1, "double_threshold", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Merge Threshold",
+		"Threshold distance for Auto Merge",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, doublimit), RawPropertyType(5), nullptr},
+		ToolSettings_double_threshold_get, ToolSettings_double_threshold_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 0.1000000015f, 0.0f, 1.0f, 0.0099999998f, 6, nullptr, nullptr, 0.0010000000f, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_transform_pivot_point_items[6] = {
+		{0, "BOUNDING_BOX_CENTER", 573, "Bounding Box Center", "Pivot around bounding box center of selected object(s)"	},
+		{1, "CURSOR", 574, "3D Cursor", "Pivot around the 3D cursor"	},
+		{2, "INDIVIDUAL_ORIGINS", 575, "Individual Origins", "Pivot around each object\'s own origin"	},
+		{3, "MEDIAN_POINT", 576, "Median Point", "Pivot around the median point of selected objects"	},
+		{4, "ACTIVE_ELEMENT", 572, "Active Element", "Pivot around active object"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_transform_pivot_point_ = {
+		{&rna_ToolSettings_use_transform_pivot_point_align, 	&rna_ToolSettings_double_threshold,
+		-1, "transform_pivot_point", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Transform Pivot Point",
+		"Pivot center for rotation/scaling",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, transform_pivot_point), RawPropertyType(2), nullptr},
+		ToolSettings_transform_pivot_point_get, ToolSettings_transform_pivot_point_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_transform_pivot_point_items, 5, 3
+	};
+
+	rna_ToolSettings_use_transform_pivot_point_align_ = {
+		{&rna_ToolSettings_use_transform_data_origin, 	&rna_ToolSettings_transform_pivot_point,
+		-1, "use_transform_pivot_point_align", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Only Locations",
+		"Only transform object locations, without affecting rotation or scaling",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85065728, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_transform_pivot_point_align_get, ToolSettings_use_transform_pivot_point_align_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_transform_data_origin_ = {
+		{&rna_ToolSettings_use_transform_skip_children, 	&rna_ToolSettings_use_transform_pivot_point_align,
+		-1, "use_transform_data_origin", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Transform Origins",
+		"Transform object origins, while leaving the shape in place",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85065728, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_transform_data_origin_get, ToolSettings_use_transform_data_origin_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_transform_skip_children_ = {
+		{&rna_ToolSettings_use_transform_correct_face_attributes, 	&rna_ToolSettings_use_transform_data_origin,
+		-1, "use_transform_skip_children", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Transform Parents",
+		"Transform the parents, leaving the children in place",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85065728, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_transform_skip_children_get, ToolSettings_use_transform_skip_children_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_transform_correct_face_attributes_ = {
+		{&rna_ToolSettings_use_transform_correct_keep_connected, 	&rna_ToolSettings_use_transform_skip_children,
+		-1, "use_transform_correct_face_attributes", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Correct Face Attributes",
+		"Correct data such as UVs and color attributes when transforming",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_transform_correct_face_attributes_get, ToolSettings_use_transform_correct_face_attributes_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_transform_correct_keep_connected_ = {
+		{&rna_ToolSettings_use_mesh_automerge, 	&rna_ToolSettings_use_transform_correct_face_attributes,
+		-1, "use_transform_correct_keep_connected", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Keep Connected",
+		"During the Face Attributes correction, merge attributes connected to the same vertex",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_transform_correct_keep_connected_get, ToolSettings_use_transform_correct_keep_connected_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_mesh_automerge_ = {
+		{&rna_ToolSettings_use_mesh_automerge_and_split, 	&rna_ToolSettings_use_transform_correct_keep_connected,
+		-1, "use_mesh_automerge", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Auto Merge Vertices",
+		"Automatically merge vertices moved to the same location",
+		5, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_mesh_automerge_get, ToolSettings_use_mesh_automerge_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_mesh_automerge_and_split_ = {
+		{&rna_ToolSettings_use_snap, 	&rna_ToolSettings_use_mesh_automerge,
+		-1, "use_mesh_automerge_and_split", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Split Edges & Faces",
+		"Automatically split edges and faces",
+		5, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_mesh_automerge_and_split_get, ToolSettings_use_mesh_automerge_and_split_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_ = {
+		{&rna_ToolSettings_use_snap_node, 	&rna_ToolSettings_use_mesh_automerge_and_split,
+		-1, "use_snap", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap",
+		"Snap during transform",
+		37, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_get, ToolSettings_use_snap_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_node_ = {
+		{&rna_ToolSettings_use_snap_sequencer, 	&rna_ToolSettings_use_snap,
+		-1, "use_snap_node", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap",
+		"Snap Node during transform",
+		37, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_node_get, ToolSettings_use_snap_node_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_sequencer_ = {
+		{&rna_ToolSettings_use_snap_uv, 	&rna_ToolSettings_use_snap_node,
+		-1, "use_snap_sequencer", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Snapping",
+		"Snap strips during transform",
+		37, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_sequencer_get, ToolSettings_use_snap_sequencer_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_uv_ = {
+		{&rna_ToolSettings_use_snap_align_rotation, 	&rna_ToolSettings_use_snap_sequencer,
+		-1, "use_snap_uv", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap",
+		"Snap UV during transform",
+		37, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_uv_get, ToolSettings_use_snap_uv_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_align_rotation_ = {
+		{&rna_ToolSettings_use_snap_grid_absolute, 	&rna_ToolSettings_use_snap_uv,
+		-1, "use_snap_align_rotation", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Align Rotation to Target",
+		"Align rotation with the snapping target",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_align_rotation_get, ToolSettings_use_snap_align_rotation_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_grid_absolute_ = {
+		{&rna_ToolSettings_snap_angle_increment_2d, 	&rna_ToolSettings_use_snap_align_rotation,
+		-1, "use_snap_grid_absolute", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Absolute Increment Snap",
+		"Absolute grid alignment while translating (based on the pivot center)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_grid_absolute_get, ToolSettings_use_snap_grid_absolute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_snap_angle_increment_2d_ = {
+		{&rna_ToolSettings_snap_angle_increment_2d_precision, 	&rna_ToolSettings_use_snap_grid_absolute,
+		-1, "snap_angle_increment_2d", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rotation Increment",
+		"Angle used for rotation increments in 2D editors",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_angle_increment_2d), RawPropertyType(5), nullptr},
+		ToolSettings_snap_angle_increment_2d_get, ToolSettings_snap_angle_increment_2d_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0174532924f, 3.1415927410f, 0.0f, 3.1415927410f, 100.0f, 2, nullptr, nullptr, 0.0872664601f, nullptr
+	};
+
+	rna_ToolSettings_snap_angle_increment_2d_precision_ = {
+		{&rna_ToolSettings_snap_angle_increment_3d, 	&rna_ToolSettings_snap_angle_increment_2d,
+		-1, "snap_angle_increment_2d_precision", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rotation Precision Increment",
+		"Precision angle used for rotation increments in 2D editors",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_angle_increment_2d_precision), RawPropertyType(5), nullptr},
+		ToolSettings_snap_angle_increment_2d_precision_get, ToolSettings_snap_angle_increment_2d_precision_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0017453292f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.0174532924f, nullptr
+	};
+
+	rna_ToolSettings_snap_angle_increment_3d_ = {
+		{&rna_ToolSettings_snap_angle_increment_3d_precision, 	&rna_ToolSettings_snap_angle_increment_2d_precision,
+		-1, "snap_angle_increment_3d", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rotation Increment",
+		"Angle used for rotation increments in 3D editors",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_angle_increment_3d), RawPropertyType(5), nullptr},
+		ToolSettings_snap_angle_increment_3d_get, ToolSettings_snap_angle_increment_3d_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0174532924f, 3.1415927410f, 0.0f, 3.1415927410f, 100.0f, 2, nullptr, nullptr, 0.0872664601f, nullptr
+	};
+
+	rna_ToolSettings_snap_angle_increment_3d_precision_ = {
+		{&rna_ToolSettings_snap_elements, 	&rna_ToolSettings_snap_angle_increment_3d,
+		-1, "snap_angle_increment_3d_precision", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rotation Precision Increment",
+		"Precision angle used for rotation increments in 3D editors",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_angle_increment_3d_precision), RawPropertyType(5), nullptr},
+		ToolSettings_snap_angle_increment_3d_precision_get, ToolSettings_snap_angle_increment_3d_precision_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0017453292f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.0174532924f, nullptr
+	};
+
+	rna_ToolSettings_snap_elements_ = {
+		{&rna_ToolSettings_snap_elements_base, 	&rna_ToolSettings_snap_angle_increment_3d_precision,
+		-1, "snap_elements", 2097665, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap Element",
+		"Type of element to snap to",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_snap_elements_get, ToolSettings_snap_elements_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_snap_element_items, 11, 256
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_snap_elements_base_items[10] = {
+		{256, "INCREMENT", 593, "Increment", "Snap to increments"	},
+		{128, "GRID", 592, "Grid", "Snap to grid"	},
+		{5, "VERTEX", 598, "Vertex", "Snap to vertices"	},
+		{16, "EDGE", 588, "Edge", "Snap to edges"	},
+		{32, "FACE", 591, "Face", "Snap by projecting onto faces"	},
+		{64, "VOLUME", 599, "Volume", "Snap to volume"	},
+		{2, "EDGE_MIDPOINT", 594, "Edge Center", "Snap to the middle of edges"	},
+		{8, "EDGE_PERPENDICULAR", 597, "Edge Perpendicular", "Snap to the nearest point on an edge"	},
+		{2048, "FACE_MIDPOINT", 589, "Face Center", "Snap to the middle of faces"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_snap_elements_base_ = {
+		{&rna_ToolSettings_snap_elements_individual, 	&rna_ToolSettings_snap_elements,
+		-1, "snap_elements_base", 2097665, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap Element",
+		"Type of element for the \"Snap Base\" to snap to",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_snap_elements_base_get, ToolSettings_snap_elements_base_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_snap_elements_base_items, 9, 256
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_snap_elements_individual_items[3] = {
+		{1024, "FACE_PROJECT", 591, "Face Project", "Snap by projecting onto faces"	},
+		{512, "FACE_NEAREST", 590, "Face Nearest", "Snap to nearest point on faces"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_snap_elements_individual_ = {
+		{&rna_ToolSettings_snap_face_nearest_steps, 	&rna_ToolSettings_snap_elements_base,
+		-1, "snap_elements_individual", 2097665, 0, 0, 0, 0, PropertyPathTemplateType(0), "Project Mode",
+		"Type of element for individual transformed elements to snap to",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_snap_elements_individual_get, ToolSettings_snap_elements_individual_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_snap_elements_individual_items, 2, 0
+	};
+
+	rna_ToolSettings_snap_face_nearest_steps_ = {
+		{&rna_ToolSettings_use_snap_to_same_target, 	&rna_ToolSettings_snap_elements_individual,
+		-1, "snap_face_nearest_steps", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Face Nearest Steps",
+		"Number of steps to break transformation into for face nearest snapping",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_face_nearest_steps), RawPropertyType(1), nullptr},
+		ToolSettings_snap_face_nearest_steps_get, ToolSettings_snap_face_nearest_steps_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 100, 1, 100, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_to_same_target_ = {
+		{&rna_ToolSettings_use_snap_anim, 	&rna_ToolSettings_snap_face_nearest_steps,
+		-1, "use_snap_to_same_target", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap to Same Target",
+		"Snap only to target that source was initially near (\"Face Nearest\" only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_to_same_target_get, ToolSettings_use_snap_to_same_target_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_anim_ = {
+		{&rna_ToolSettings_use_snap_driver, 	&rna_ToolSettings_use_snap_to_same_target,
+		-1, "use_snap_anim", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap",
+		"Enable snapping when transforming keyframes",
+		37, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_anim_get, ToolSettings_use_snap_anim_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_driver_ = {
+		{&rna_ToolSettings_use_snap_time_absolute, 	&rna_ToolSettings_use_snap_anim,
+		-1, "use_snap_driver", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap",
+		"Enable snapping when transforming keys in the Driver Editor",
+		37, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_driver_get, ToolSettings_use_snap_driver_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_time_absolute_ = {
+		{&rna_ToolSettings_use_snap_driver_absolute, 	&rna_ToolSettings_use_snap_driver,
+		-1, "use_snap_time_absolute", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Absolute Time Snap",
+		"Absolute time alignment when transforming keyframes",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_time_absolute_get, ToolSettings_use_snap_time_absolute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_driver_absolute_ = {
+		{&rna_ToolSettings_snap_anim_element, 	&rna_ToolSettings_use_snap_time_absolute,
+		-1, "use_snap_driver_absolute", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Absolute Snap",
+		"Snap to full values",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_driver_absolute_get, ToolSettings_use_snap_driver_absolute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_snap_anim_element_ = {
+		{&rna_ToolSettings_use_snap_playhead, 	&rna_ToolSettings_use_snap_driver_absolute,
+		-1, "snap_anim_element", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Snap Animation Element",
+		"Type of element to snap to",
+		0, "Unit",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_anim_mode), RawPropertyType(1), nullptr},
+		ToolSettings_snap_anim_element_get, ToolSettings_snap_anim_element_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_snap_animation_element_items, 3, 1
+	};
+
+	rna_ToolSettings_use_snap_playhead_ = {
+		{&rna_ToolSettings_snap_playhead_element, 	&rna_ToolSettings_snap_anim_element,
+		-1, "use_snap_playhead", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Snapping",
+		"Snap playhead when scrubbing",
+		39, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_playhead_get, ToolSettings_use_snap_playhead_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_snap_playhead_element_items[6] = {
+		{1, "FRAME", 0, "Frames", "Snap to frame increments"	},
+		{2, "SECOND", 0, "Seconds", "Snap to second increments"	},
+		{4, "MARKER", 0, "Markers", "Snap to markers"	},
+		{8, "KEY", 0, "Keyframes", "Snap to keyframes"	},
+		{16, "Strip", 0, "Strips", "Snap to Strips"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_snap_playhead_element_ = {
+		{&rna_ToolSettings_snap_playhead_frame_step, 	&rna_ToolSettings_use_snap_playhead,
+		-1, "snap_playhead_element", 2097665, 0, 0, 4, 0, PropertyPathTemplateType(0), "Snap Playhead Element",
+		"Type of element to snap to",
+		0, "Unit",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_playhead_mode), RawPropertyType(1), nullptr},
+		ToolSettings_snap_playhead_element_get, ToolSettings_snap_playhead_element_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_snap_playhead_element_items, 5, 24
+	};
+
+	rna_ToolSettings_snap_playhead_frame_step_ = {
+		{&rna_ToolSettings_snap_playhead_second_step, 	&rna_ToolSettings_snap_playhead_element,
+		-1, "snap_playhead_frame_step", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Frame Step",
+		"At which interval to snap to frames",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_step_frames), RawPropertyType(1), nullptr},
+		ToolSettings_snap_playhead_frame_step_get, ToolSettings_snap_playhead_frame_step_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 32768, 1, 32768, 1, nullptr, nullptr, 2, nullptr
+	};
+
+	rna_ToolSettings_snap_playhead_second_step_ = {
+		{&rna_ToolSettings_playhead_snap_distance, 	&rna_ToolSettings_snap_playhead_frame_step,
+		-1, "snap_playhead_second_step", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Second Step",
+		"At which interval to snap to seconds",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_step_seconds), RawPropertyType(1), nullptr},
+		ToolSettings_snap_playhead_second_step_get, ToolSettings_snap_playhead_second_step_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 32768, 1, 32768, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_playhead_snap_distance_ = {
+		{&rna_ToolSettings_snap_uv_element, 	&rna_ToolSettings_snap_playhead_second_step,
+		-1, "playhead_snap_distance", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Snap Distance",
+		"Maximum distance for snapping in pixels",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, playhead_snap_distance), RawPropertyType(0), nullptr},
+		ToolSettings_playhead_snap_distance_get, ToolSettings_playhead_snap_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 100, INT_MIN, INT_MAX, 1, nullptr, nullptr, 20, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_snap_uv_element_items[4] = {
+		{256, "INCREMENT", 593, "Increment", "Snap to increments of grid"	},
+		{128, "GRID", 592, "Grid", "Snap to grid"	},
+		{5, "VERTEX", 598, "Vertex", "Snap to vertices"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_snap_uv_element_ = {
+		{&rna_ToolSettings_snap_target, 	&rna_ToolSettings_playhead_snap_distance,
+		-1, "snap_uv_element", 2097665, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap UV Element",
+		"Type of element to snap to",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_snap_uv_element_get, ToolSettings_snap_uv_element_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_snap_uv_element_items, 3, 256
+	};
+
+	rna_ToolSettings_snap_target_ = {
+		{&rna_ToolSettings_use_snap_peel_object, 	&rna_ToolSettings_snap_uv_element,
+		-1, "snap_target", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Snap Target",
+		"Which part to snap onto the target",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_target), RawPropertyType(2), nullptr},
+		ToolSettings_snap_target_get, ToolSettings_snap_target_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_snap_source_items, 4, 0
+	};
+
+	rna_ToolSettings_use_snap_peel_object_ = {
+		{&rna_ToolSettings_use_snap_backface_culling, 	&rna_ToolSettings_snap_target,
+		-1, "use_snap_peel_object", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap Peel Object",
+		"Consider objects as whole when finding volume center",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_peel_object_get, ToolSettings_use_snap_peel_object_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_backface_culling_ = {
+		{&rna_ToolSettings_use_snap_self, 	&rna_ToolSettings_use_snap_peel_object,
+		-1, "use_snap_backface_culling", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Backface Culling",
+		"Exclude back facing geometry from snapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_backface_culling_get, ToolSettings_use_snap_backface_culling_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_self_ = {
+		{&rna_ToolSettings_use_snap_edit, 	&rna_ToolSettings_use_snap_backface_culling,
+		-1, "use_snap_self", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap onto Active",
+		"Snap onto itself only if enabled (edit mode only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_self_get, ToolSettings_use_snap_self_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_edit_ = {
+		{&rna_ToolSettings_use_snap_nonedit, 	&rna_ToolSettings_use_snap_self,
+		-1, "use_snap_edit", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap onto Edited",
+		"Snap onto non-active objects in edit mode (edit mode only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_edit_get, ToolSettings_use_snap_edit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_nonedit_ = {
+		{&rna_ToolSettings_use_snap_selectable, 	&rna_ToolSettings_use_snap_edit,
+		-1, "use_snap_nonedit", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap onto Non-edited",
+		"Snap onto objects not in edit mode (edit mode only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_nonedit_get, ToolSettings_use_snap_nonedit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_selectable_ = {
+		{&rna_ToolSettings_use_snap_translate, 	&rna_ToolSettings_use_snap_nonedit,
+		-1, "use_snap_selectable", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap onto Selectable Only",
+		"Snap only onto objects that are selectable",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_selectable_get, ToolSettings_use_snap_selectable_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_translate_ = {
+		{&rna_ToolSettings_use_snap_rotate, 	&rna_ToolSettings_use_snap_selectable,
+		-1, "use_snap_translate", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Snap for Translation",
+		"Move is affected by snapping settings",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_translate_get, ToolSettings_use_snap_translate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_snap_rotate_ = {
+		{&rna_ToolSettings_use_snap_scale, 	&rna_ToolSettings_use_snap_translate,
+		-1, "use_snap_rotate", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Snap for Rotation",
+		"Rotate is affected by the snapping settings",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_rotate_get, ToolSettings_use_snap_rotate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_snap_scale_ = {
+		{&rna_ToolSettings_plane_axis, 	&rna_ToolSettings_use_snap_rotate,
+		-1, "use_snap_scale", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Snap for Scale",
+		"Scale is affected by snapping settings",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_snap_scale_get, ToolSettings_use_snap_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_plane_axis_ = {
+		{&rna_ToolSettings_plane_axis_auto, 	&rna_ToolSettings_use_snap_scale,
+		-1, "plane_axis", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Plane Axis",
+		"The axis used for placing the base region",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, plane_axis), RawPropertyType(2), nullptr},
+		ToolSettings_plane_axis_get, ToolSettings_plane_axis_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_axis_xyz_items, 3, 2
+	};
+
+	rna_ToolSettings_plane_axis_auto_ = {
+		{&rna_ToolSettings_plane_depth, 	&rna_ToolSettings_plane_axis,
+		-1, "plane_axis_auto", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Auto Axis",
+		"Select the closest axis when placing objects (surface overrides)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_plane_axis_auto_get, ToolSettings_plane_axis_auto_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_plane_depth_items[4] = {
+		{0, "SURFACE", 0, "Surface", "Start placing on the surface, using the 3D cursor position as a fallback"	},
+		{1, "CURSOR_PLANE", 0, "Cursor Plane", "Start placement using a point projected onto the orientation axis at the 3D cursor position"	},
+		{2, "CURSOR_VIEW", 0, "Cursor View", "Start placement using a point projected onto the view plane at the 3D cursor position"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_plane_depth_ = {
+		{&rna_ToolSettings_plane_orientation, 	&rna_ToolSettings_plane_axis_auto,
+		-1, "plane_depth", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Position",
+		"The initial depth used when placing the cursor",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, plane_depth), RawPropertyType(2), nullptr},
+		ToolSettings_plane_depth_get, ToolSettings_plane_depth_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_plane_depth_items, 3, 0
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_plane_orientation_items[3] = {
+		{0, "SURFACE", 595, "Surface", "Use the surface normal (using the transform orientation as a fallback)"	},
+		{1, "DEFAULT", 604, "Default", "Use the current transform orientation"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_plane_orientation_ = {
+		{&rna_ToolSettings_snap_elements_tool, 	&rna_ToolSettings_plane_depth,
+		-1, "plane_orientation", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Orientation",
+		"The initial depth used when placing the cursor",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, plane_orient), RawPropertyType(2), nullptr},
+		ToolSettings_plane_orientation_get, ToolSettings_plane_orientation_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_plane_orientation_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_snap_elements_tool_items[3] = {
+		{2111, "GEOMETRY", 0, "Geometry", "Snap to all geometry"	},
+		{0, "DEFAULT", 0, "Default", "Use the current snap settings"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_snap_elements_tool_ = {
+		{&rna_ToolSettings_use_gpencil_draw_additive, 	&rna_ToolSettings_plane_orientation,
+		-1, "snap_elements_tool", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Snap to",
+		"The target to use while snapping",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, snap_mode_tools), RawPropertyType(1), nullptr},
+		ToolSettings_snap_elements_tool_get, ToolSettings_snap_elements_tool_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_snap_elements_tool_items, 2, 2111
+	};
+
+	rna_ToolSettings_use_gpencil_draw_additive_ = {
+		{&rna_ToolSettings_use_gpencil_draw_onback, 	&rna_ToolSettings_snap_elements_tool,
+		-1, "use_gpencil_draw_additive", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Additive Drawing",
+		"When creating new frames, the strokes from the previous/active frame are included as the basis for the new one",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_draw_additive_get, ToolSettings_use_gpencil_draw_additive_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_draw_onback_ = {
+		{&rna_ToolSettings_use_gpencil_thumbnail_list, 	&rna_ToolSettings_use_gpencil_draw_additive,
+		-1, "use_gpencil_draw_onback", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Draw Strokes on Back",
+		"New strokes are drawn below of all strokes in the layer",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_draw_onback_get, ToolSettings_use_gpencil_draw_onback_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_thumbnail_list_ = {
+		{&rna_ToolSettings_use_gpencil_weight_data_add, 	&rna_ToolSettings_use_gpencil_draw_onback,
+		-1, "use_gpencil_thumbnail_list", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Compact List",
+		"Show compact list of colors instead of thumbnails",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_thumbnail_list_get, ToolSettings_use_gpencil_thumbnail_list_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_weight_data_add_ = {
+		{&rna_ToolSettings_use_gpencil_automerge_strokes, 	&rna_ToolSettings_use_gpencil_thumbnail_list,
+		-1, "use_gpencil_weight_data_add", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Add weight data for new strokes",
+		"Weight data for new strokes is added according to the current vertex group and weight. If no vertex group selected, weight is not added.",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_weight_data_add_get, ToolSettings_use_gpencil_weight_data_add_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_automerge_strokes_ = {
+		{&rna_ToolSettings_gpencil_sculpt, 	&rna_ToolSettings_use_gpencil_weight_data_add,
+		-1, "use_gpencil_automerge_strokes", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Automerge",
+		"Join the last drawn stroke with previous strokes in the active layer by distance",
+		5, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_automerge_strokes_get, ToolSettings_use_gpencil_automerge_strokes_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_gpencil_sculpt_ = {
+		{&rna_ToolSettings_gpencil_interpolate, 	&rna_ToolSettings_use_gpencil_automerge_strokes,
+		-1, "gpencil_sculpt", 8389120, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil Sculpt",
+		"Settings for stroke sculpting tools and brushes",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_gpencil_sculpt_get, nullptr, nullptr, nullptr,RNA_GPencilSculptSettings
+	};
+
+	rna_ToolSettings_gpencil_interpolate_ = {
+		{&rna_ToolSettings_gpencil_stroke_placement_view3d, 	&rna_ToolSettings_gpencil_sculpt,
+		-1, "gpencil_interpolate", 8389120, 0, 0, 0, 0, PropertyPathTemplateType(0), "Grease Pencil Interpolate",
+		"Settings for Grease Pencil interpolation tools",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_gpencil_interpolate_get, nullptr, nullptr, nullptr,RNA_GPencilInterpolateSettings
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_gpencil_stroke_placement_view3d_items[5] = {
+		{1, "ORIGIN", 616, "Origin", "Draw stroke at Object origin"	},
+		{33, "CURSOR", 574, "3D Cursor", "Draw stroke at 3D cursor location"	},
+		{5, "SURFACE", 591, "Surface", "Stick stroke to surfaces"	},
+		{9, "STROKE", 347, "Stroke", "Stick stroke to other strokes"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_gpencil_stroke_placement_view3d_ = {
+		{&rna_ToolSettings_gpencil_stroke_snap_mode, 	&rna_ToolSettings_gpencil_interpolate,
+		-1, "gpencil_stroke_placement_view3d", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Stroke Placement (3D View)",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, gpencil_v3d_align), RawPropertyType(2), nullptr},
+		ToolSettings_gpencil_stroke_placement_view3d_get, ToolSettings_gpencil_stroke_placement_view3d_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_gpencil_stroke_placement_view3d_items, 4, 1
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_gpencil_stroke_snap_mode_items[4] = {
+		{0, "NONE", 0, "All Points", "Snap to all points"	},
+		{16, "ENDS", 0, "End Points", "Snap to first and last points and interpolate"	},
+		{64, "FIRST", 0, "First Point", "Snap to first point"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_gpencil_stroke_snap_mode_ = {
+		{&rna_ToolSettings_gpencil_surface_offset, 	&rna_ToolSettings_gpencil_stroke_placement_view3d,
+		-1, "gpencil_stroke_snap_mode", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Stroke Snap",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, gpencil_v3d_align), RawPropertyType(2), nullptr},
+		ToolSettings_gpencil_stroke_snap_mode_get, ToolSettings_gpencil_stroke_snap_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_gpencil_stroke_snap_mode_items, 3, 0
+	};
+
+	rna_ToolSettings_gpencil_surface_offset_ = {
+		{&rna_ToolSettings_use_gpencil_project_only_selected, 	&rna_ToolSettings_gpencil_stroke_snap_mode,
+		-1, "gpencil_surface_offset", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Surface Offset",
+		"Offset along the normal when drawing on surfaces",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, gpencil_surface_offset), RawPropertyType(5), nullptr},
+		ToolSettings_gpencil_surface_offset_get, ToolSettings_gpencil_surface_offset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, -FLT_MAX, FLT_MAX, 0.1000000015f, 3, nullptr, nullptr, 0.1500000060f, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_project_only_selected_ = {
+		{&rna_ToolSettings_gpencil_selectmode_edit, 	&rna_ToolSettings_gpencil_surface_offset,
+		-1, "use_gpencil_project_only_selected", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Project Onto Selected",
+		"Project the strokes only onto selected objects",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_project_only_selected_get, ToolSettings_use_gpencil_project_only_selected_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_gpencil_selectmode_edit_ = {
+		{&rna_ToolSettings_use_gpencil_select_mask_point, 	&rna_ToolSettings_use_gpencil_project_only_selected,
+		-1, "gpencil_selectmode_edit", 4194817, 0, 0, 4, 0, PropertyPathTemplateType(0), "Select Mode",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)nullptr, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, gpencil_selectmode_edit), RawPropertyType(2), nullptr},
+		ToolSettings_gpencil_selectmode_edit_get, ToolSettings_gpencil_selectmode_edit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_grease_pencil_selectmode_items, 3, 0
+	};
+
+	rna_ToolSettings_use_gpencil_select_mask_point_ = {
+		{&rna_ToolSettings_use_gpencil_select_mask_stroke, 	&rna_ToolSettings_gpencil_selectmode_edit,
+		-1, "use_gpencil_select_mask_point", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selection Mask",
+		"Only sculpt selected stroke points",
+		297, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Gpencil_mask_point_update, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_select_mask_point_get, ToolSettings_use_gpencil_select_mask_point_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_select_mask_stroke_ = {
+		{&rna_ToolSettings_use_gpencil_select_mask_segment, 	&rna_ToolSettings_use_gpencil_select_mask_point,
+		-1, "use_gpencil_select_mask_stroke", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selection Mask",
+		"Only sculpt selected strokes",
+		298, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Gpencil_mask_stroke_update, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_select_mask_stroke_get, ToolSettings_use_gpencil_select_mask_stroke_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_select_mask_segment_ = {
+		{&rna_ToolSettings_use_gpencil_vertex_select_mask_point, 	&rna_ToolSettings_use_gpencil_select_mask_stroke,
+		-1, "use_gpencil_select_mask_segment", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selection Mask",
+		"Only sculpt selected stroke points between other strokes",
+		296, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Gpencil_mask_segment_update, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_select_mask_segment_get, ToolSettings_use_gpencil_select_mask_segment_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_vertex_select_mask_point_ = {
+		{&rna_ToolSettings_use_gpencil_vertex_select_mask_stroke, 	&rna_ToolSettings_use_gpencil_select_mask_segment,
+		-1, "use_gpencil_vertex_select_mask_point", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selection Mask",
+		"Only paint selected stroke points",
+		297, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Gpencil_vertex_mask_point_update, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_vertex_select_mask_point_get, ToolSettings_use_gpencil_vertex_select_mask_point_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_vertex_select_mask_stroke_ = {
+		{&rna_ToolSettings_use_gpencil_vertex_select_mask_segment, 	&rna_ToolSettings_use_gpencil_vertex_select_mask_point,
+		-1, "use_gpencil_vertex_select_mask_stroke", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selection Mask",
+		"Only paint selected strokes",
+		298, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Gpencil_vertex_mask_stroke_update, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_vertex_select_mask_stroke_get, ToolSettings_use_gpencil_vertex_select_mask_stroke_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_gpencil_vertex_select_mask_segment_ = {
+		{&rna_ToolSettings_use_grease_pencil_multi_frame_editing, 	&rna_ToolSettings_use_gpencil_vertex_select_mask_stroke,
+		-1, "use_gpencil_vertex_select_mask_segment", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selection Mask",
+		"Only paint selected stroke points between other strokes",
+		296, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Gpencil_vertex_mask_segment_update, 269090816, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_gpencil_vertex_select_mask_segment_get, ToolSettings_use_gpencil_vertex_select_mask_segment_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_grease_pencil_multi_frame_editing_ = {
+		{&rna_ToolSettings_annotation_stroke_placement_view2d, 	&rna_ToolSettings_use_gpencil_vertex_select_mask_segment,
+		-1, "use_grease_pencil_multi_frame_editing", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Multi-frame Editing",
+		"Enable multi-frame editing",
+		294, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_all_grease_pencil_update, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_grease_pencil_multi_frame_editing_get, ToolSettings_use_grease_pencil_multi_frame_editing_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_annotation_stroke_placement_view2d_items[3] = {
+		{33, "IMAGE", 197, "Image", "Stick stroke to the image"	},
+		{0, "VIEW", 31, "View", "Stick stroke to the view"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_annotation_stroke_placement_view2d_ = {
+		{&rna_ToolSettings_annotation_stroke_placement_view3d, 	&rna_ToolSettings_use_grease_pencil_multi_frame_editing,
+		-1, "annotation_stroke_placement_view2d", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Stroke Placement (2D View)",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, gpencil_v2d_align), RawPropertyType(2), nullptr},
+		ToolSettings_annotation_stroke_placement_view2d_get, ToolSettings_annotation_stroke_placement_view2d_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_annotation_stroke_placement_view2d_items, 2, 33
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_annotation_stroke_placement_view3d_items[4] = {
+		{33, "CURSOR", 574, "3D Cursor", "Draw stroke at 3D cursor location"	},
+		{0, "VIEW", 31, "View", "Stick stroke to the view"	},
+		{5, "SURFACE", 565, "Surface", "Stick stroke to surfaces"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_annotation_stroke_placement_view3d_ = {
+		{&rna_ToolSettings_use_annotation_stroke_endpoints, 	&rna_ToolSettings_annotation_stroke_placement_view2d,
+		-1, "annotation_stroke_placement_view3d", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Annotation Stroke Placement (3D View)",
+		"How annotation strokes are orientated in 3D space",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, annotate_v3d_align), RawPropertyType(2), nullptr},
+		ToolSettings_annotation_stroke_placement_view3d_get, ToolSettings_annotation_stroke_placement_view3d_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_annotation_stroke_placement_view3d_items, 3, 33
+	};
+
+	rna_ToolSettings_use_annotation_stroke_endpoints_ = {
+		{&rna_ToolSettings_use_annotation_project_only_selected, 	&rna_ToolSettings_annotation_stroke_placement_view3d,
+		-1, "use_annotation_stroke_endpoints", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Only Endpoints",
+		"Only use the first and last parts of the stroke for snapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_annotation_stroke_endpoints_get, ToolSettings_use_annotation_stroke_endpoints_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_annotation_project_only_selected_ = {
+		{&rna_ToolSettings_annotation_thickness, 	&rna_ToolSettings_use_annotation_stroke_endpoints,
+		-1, "use_annotation_project_only_selected", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Project Onto Selected",
+		"Project the strokes only onto selected objects",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_annotation_project_only_selected_get, ToolSettings_use_annotation_project_only_selected_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_annotation_thickness_ = {
+		{&rna_ToolSettings_use_keyframe_insert_auto, 	&rna_ToolSettings_use_annotation_project_only_selected,
+		-1, "annotation_thickness", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Annotation Stroke Thickness",
+		"Thickness of annotation strokes",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, annotate_thickness), RawPropertyType(1), nullptr},
+		ToolSettings_annotation_thickness_get, ToolSettings_annotation_thickness_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 10, 1, 10, 1, nullptr, nullptr, 3, nullptr
+	};
+
+	rna_ToolSettings_use_keyframe_insert_auto_ = {
+		{&rna_ToolSettings_auto_keying_mode, 	&rna_ToolSettings_annotation_thickness,
+		-1, "use_keyframe_insert_auto", 4609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Auto Keying",
+		"Automatically insert keyframes on modified properties",
+		25, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 256704512, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_keyframe_insert_auto_get, ToolSettings_use_keyframe_insert_auto_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_auto_keying_mode_items[3] = {
+		{2, "ADD_REPLACE_KEYS", 0, "Add & Replace", ""	},
+		{4, "REPLACE_KEYS", 0, "Replace", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_auto_keying_mode_ = {
+		{&rna_ToolSettings_use_record_with_nla, 	&rna_ToolSettings_use_keyframe_insert_auto,
+		-1, "auto_keying_mode", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Auto-Keying Mode",
+		"Can add additional constraints on when auto keying can insert keyframes",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, autokey_mode), RawPropertyType(1), nullptr},
+		ToolSettings_auto_keying_mode_get, ToolSettings_auto_keying_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_auto_keying_mode_items, 2, 2
+	};
+
+	rna_ToolSettings_use_record_with_nla_ = {
+		{&rna_ToolSettings_use_keyframe_insert_keyingset, 	&rna_ToolSettings_auto_keying_mode,
+		-1, "use_record_with_nla", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Layered",
+		"Add a new NLA Track + Strip for every loop/pass made over the animation to allow non-destructive tweaking",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_record_with_nla_get, ToolSettings_use_record_with_nla_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_keyframe_insert_keyingset_ = {
+		{&rna_ToolSettings_use_keyframe_cycle_aware, 	&rna_ToolSettings_use_record_with_nla,
+		-1, "use_keyframe_insert_keyingset", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Auto Keyframe Insert Keying Set",
+		"Automatic keyframe insertion using active Keying Set only",
+		535, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_keyframe_insert_keyingset_get, ToolSettings_use_keyframe_insert_keyingset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_keyframe_cycle_aware_ = {
+		{&rna_ToolSettings_keyframe_type, 	&rna_ToolSettings_use_keyframe_insert_keyingset,
+		-1, "use_keyframe_cycle_aware", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cycle-Aware Keying",
+		"For channels with cyclic extrapolation, keyframe insertion is automatically remapped inside the cycle time range, and keeps ends in sync. Curves newly added to actions with a Manual Frame Range and Cyclic Animation are automatically made cyclic.",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_keyframe_cycle_aware_get, ToolSettings_use_keyframe_cycle_aware_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_keyframe_type_ = {
+		{&rna_ToolSettings_anim_mirror_object, 	&rna_ToolSettings_use_keyframe_cycle_aware,
+		-1, "keyframe_type", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "New Keyframe Type",
+		"Type of keyframes to create when inserting keyframes",
+		0, "Action",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, keyframe_type), RawPropertyType(2), nullptr},
+		ToolSettings_keyframe_type_get, ToolSettings_keyframe_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_beztriple_keyframe_type_items, 6, 0
+	};
+
+	rna_ToolSettings_anim_mirror_object_ = {
+		{&rna_ToolSettings_anim_mirror_bone, 	&rna_ToolSettings_keyframe_type,
+		-1, "anim_mirror_object", 8388737, 0, 0, 0, 0, PropertyPathTemplateType(0), "Mirror Object",
+		"Object to mirror over. Leave empty and name a bone to always mirror over that bone of the active armature",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_anim_mirror_object_get, ToolSettings_anim_mirror_object_set, nullptr, nullptr,RNA_Object
+	};
+
+	rna_ToolSettings_anim_mirror_bone_ = {
+		{&rna_ToolSettings_anim_relative_object, 	&rna_ToolSettings_anim_mirror_object,
+		-1, "anim_mirror_bone", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Mirror Bone",
+		"Bone to use for the mirroring",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_anim_mirror_bone_get, ToolSettings_anim_mirror_bone_length, ToolSettings_anim_mirror_bone_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	rna_ToolSettings_anim_relative_object_ = {
+		{&rna_ToolSettings_anim_fix_to_cam_use_loc, 	&rna_ToolSettings_anim_mirror_bone,
+		-1, "anim_relative_object", 8388737, 0, 0, 0, 0, PropertyPathTemplateType(0), "Relative Object",
+		"Object to which matrices are made relative",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_anim_relative_object_get, ToolSettings_anim_relative_object_set, nullptr, nullptr,RNA_Object
+	};
+
+	rna_ToolSettings_anim_fix_to_cam_use_loc_ = {
+		{&rna_ToolSettings_anim_fix_to_cam_use_rot, 	&rna_ToolSettings_anim_relative_object,
+		-1, "anim_fix_to_cam_use_loc", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Location for Camera Fix",
+		"Create location keys when fixing to the scene camera",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_anim_fix_to_cam_use_loc_get, ToolSettings_anim_fix_to_cam_use_loc_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_anim_fix_to_cam_use_rot_ = {
+		{&rna_ToolSettings_anim_fix_to_cam_use_scale, 	&rna_ToolSettings_anim_fix_to_cam_use_loc,
+		-1, "anim_fix_to_cam_use_rot", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Rotation for Camera Fix",
+		"Create rotation keys when fixing to the scene camera",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_anim_fix_to_cam_use_rot_get, ToolSettings_anim_fix_to_cam_use_rot_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_anim_fix_to_cam_use_scale_ = {
+		{&rna_ToolSettings_uv_select_mode, 	&rna_ToolSettings_anim_fix_to_cam_use_rot,
+		-1, "anim_fix_to_cam_use_scale", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Scale for Camera Fix",
+		"Create scale keys when fixing to the scene camera",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_anim_fix_to_cam_use_scale_get, ToolSettings_anim_fix_to_cam_use_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_uv_select_mode_ = {
+		{&rna_ToolSettings_uv_sticky_select_mode, 	&rna_ToolSettings_anim_fix_to_cam_use_scale,
+		-1, "uv_select_mode", 4194817, 0, 0, 4, 0, PropertyPathTemplateType(0), "UV Selection Mode",
+		"UV selection and display mode",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_uv_select_mode_update, 268697600, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, uv_selectmode), RawPropertyType(2), nullptr},
+		ToolSettings_uv_select_mode_get, ToolSettings_uv_select_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_mesh_select_mode_uv_items, 3, 1
+	};
+
+	static const EnumPropertyItem rna_ToolSettings_uv_sticky_select_mode_items[4] = {
+		{1, "DISABLED", 600, "Disabled", "Sticky vertex selection disabled"	},
+		{0, "SHARED_LOCATION", 601, "Shared Location", "Select UVs that are at the same location and share a mesh vertex"	},
+		{2, "SHARED_VERTEX", 602, "Shared Vertex", "Select UVs that share a mesh vertex, whether or not they are at the same location"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ToolSettings_uv_sticky_select_mode_ = {
+		{&rna_ToolSettings_use_uv_select_sync, 	&rna_ToolSettings_uv_select_mode,
+		-1, "uv_sticky_select_mode", 4194817, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sticky Selection Mode",
+		"Method for extending UV vertex selection",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_uv_sticky_select_mode_update, 268697600, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, uv_sticky), RawPropertyType(2), nullptr},
+		ToolSettings_uv_sticky_select_mode_get, ToolSettings_uv_sticky_select_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ToolSettings_uv_sticky_select_mode_items, 3, 0
+	};
+
+	rna_ToolSettings_use_uv_select_sync_ = {
+		{&rna_ToolSettings_use_uv_select_island, 	&rna_ToolSettings_uv_sticky_select_mode,
+		-1, "use_uv_select_sync", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "UV Sync Selection",
+		"Keep UV and edit mode mesh selection in sync",
+		625, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_uv_select_sync_update, 268697600, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_uv_select_sync_get, ToolSettings_use_uv_select_sync_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_ToolSettings_use_uv_select_island_ = {
+		{&rna_ToolSettings_show_uv_local_view, 	&rna_ToolSettings_use_uv_select_sync,
+		-1, "use_uv_select_island", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "UV Island Selection",
+		"Island selection",
+		624, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 268697600, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_uv_select_island_get, ToolSettings_use_uv_select_island_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_show_uv_local_view_ = {
+		{&rna_ToolSettings_use_uv_custom_region, 	&rna_ToolSettings_use_uv_select_island,
+		-1, "show_uv_local_view", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "UV Local View",
+		"Display only faces with the currently displayed image assigned",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 268697600, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_show_uv_local_view_get, ToolSettings_show_uv_local_view_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ToolSettings_use_uv_custom_region_ = {
+		{&rna_ToolSettings_mesh_select_mode, 	&rna_ToolSettings_show_uv_local_view,
+		-1, "use_uv_custom_region", 268435457, 0, 0, 0, 0, PropertyPathTemplateType(0), "UV Custom Region",
+		"Custom defined region",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 268697600, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_uv_custom_region_get, ToolSettings_use_uv_custom_region_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static bool rna_ToolSettings_mesh_select_mode_default[3] = {
+		0,
+		0,
+		0
+	};
+	rna_ToolSettings_mesh_select_mode_ = {
+		{&rna_ToolSettings_vertex_group_weight, 	&rna_ToolSettings_use_uv_custom_region,
+		-1, "mesh_select_mode", 4194817, 0, 0, 0, 0, PropertyPathTemplateType(0), "Mesh Selection Mode",
+		"Which mesh elements selection works on",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		(UpdateFunc)(void *)rna_Scene_editmesh_select_mode_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, ToolSettings_mesh_select_mode_get, ToolSettings_mesh_select_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, rna_ToolSettings_mesh_select_mode_default
+	};
+
+	rna_ToolSettings_vertex_group_weight_ = {
+		{&rna_ToolSettings_use_edge_path_live_unwrap, 	&rna_ToolSettings_mesh_select_mode,
+		-1, "vertex_group_weight", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Vertex Group Weight",
+		"Weight to assign in vertex groups",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, vgroup_weight), RawPropertyType(5), nullptr},
+		ToolSettings_vertex_group_weight_get, ToolSettings_vertex_group_weight_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_ToolSettings_use_edge_path_live_unwrap_ = {
+		{&rna_ToolSettings_normal_vector, 	&rna_ToolSettings_vertex_group_weight,
+		-1, "use_edge_path_live_unwrap", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Live Unwrap",
+		"Changing edge seams recalculates UV unwrap",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_use_edge_path_live_unwrap_get, ToolSettings_use_edge_path_live_unwrap_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static float rna_ToolSettings_normal_vector_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_ToolSettings_normal_vector_ = {
+		{&rna_ToolSettings_curve_paint_settings, 	&rna_ToolSettings_use_edge_path_live_unwrap,
+		-1, "normal_vector", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Normal Vector",
+		"Normal vector used to copy, add or multiply",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ToolSettings, normal_vector), RawPropertyType(5), nullptr},
+		nullptr, nullptr, ToolSettings_normal_vector_get, ToolSettings_normal_vector_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, rna_ToolSettings_normal_vector_default
+	};
+
+	rna_ToolSettings_curve_paint_settings_ = {
+		{&rna_ToolSettings_statvis, 	&rna_ToolSettings_normal_vector,
+		-1, "curve_paint_settings", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve Paint Settings",
+		nullptr,
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_curve_paint_settings_get, nullptr, nullptr, nullptr,RNA_CurvePaintSettings
+	};
+
+	rna_ToolSettings_statvis_ = {
+		{&rna_ToolSettings_custom_bevel_profile_preset, 	&rna_ToolSettings_curve_paint_settings,
+		-1, "statvis", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Mesh Statistics Visualization",
+		nullptr,
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_statvis_get, nullptr, nullptr, nullptr,RNA_MeshStatVis
+	};
+
+	rna_ToolSettings_custom_bevel_profile_preset_ = {
+		{&rna_ToolSettings_sequencer_tool_settings, 	&rna_ToolSettings_statvis,
+		-1, "custom_bevel_profile_preset", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve Profile Widget",
+		"Used for defining a profile\'s path",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_custom_bevel_profile_preset_get, nullptr, nullptr, nullptr,RNA_CurveProfile
+	};
+
+	rna_ToolSettings_sequencer_tool_settings_ = {
+		{nullptr, 	&rna_ToolSettings_custom_bevel_profile_preset,
+		-1, "sequencer_tool_settings", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sequencer Tool Settings",
+		nullptr,
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ToolSettings_sequencer_tool_settings_get, nullptr, nullptr, nullptr,RNA_SequencerToolSettings
+	};
+
+	StructRNA *srna = RNA_ToolSettings;
+	srna->cont.properties = {&rna_ToolSettings_rna_properties, &rna_ToolSettings_sequencer_tool_settings};
+	srna->identifier = "ToolSettings";
+	srna->flag = 512;
+	srna->name = "Tool Settings";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_ToolSettings_anim_mirror_bone;
+	srna->iteratorproperty = &rna_ToolSettings_rna_properties;
+	srna->path = rna_ToolSettings_path;
+};
+
+/* Grease Pencil Interpolate Settings */
+static CollectionPropertyRNA rna_GPencilInterpolateSettings_rna_properties_;
+PropertyRNA &rna_GPencilInterpolateSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_GPencilInterpolateSettings_rna_properties_);
+
+static PointerPropertyRNA rna_GPencilInterpolateSettings_rna_type_;
+PropertyRNA &rna_GPencilInterpolateSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_GPencilInterpolateSettings_rna_type_);
+
+static PointerPropertyRNA rna_GPencilInterpolateSettings_interpolation_curve_;
+PropertyRNA &rna_GPencilInterpolateSettings_interpolation_curve = reinterpret_cast<PropertyRNA &>(rna_GPencilInterpolateSettings_interpolation_curve_);
+
+StructRNA *RNA_GPencilInterpolateSettings;
+void register_struct_GPencilInterpolateSettings(BlenderRNA &brna)
+{
+	rna_GPencilInterpolateSettings_rna_properties_ = {
+		{&rna_GPencilInterpolateSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		GPencilInterpolateSettings_rna_properties_begin, GPencilInterpolateSettings_rna_properties_next, GPencilInterpolateSettings_rna_properties_end, GPencilInterpolateSettings_rna_properties_get, nullptr, nullptr, GPencilInterpolateSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_GPencilInterpolateSettings_rna_type_ = {
+		{&rna_GPencilInterpolateSettings_interpolation_curve, 	&rna_GPencilInterpolateSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		GPencilInterpolateSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_GPencilInterpolateSettings_interpolation_curve_ = {
+		{nullptr, 	&rna_GPencilInterpolateSettings_rna_type,
+		-1, "interpolation_curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Interpolation Curve",
+		"Custom curve to control \'sequence\' interpolation between Grease Pencil frames",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		GPencilInterpolateSettings_interpolation_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	StructRNA *srna = RNA_GPencilInterpolateSettings;
+	srna->cont.properties = {&rna_GPencilInterpolateSettings_rna_properties, &rna_GPencilInterpolateSettings_interpolation_curve};
+	srna->identifier = "GPencilInterpolateSettings";
+	srna->flag = 512;
+	srna->name = "Grease Pencil Interpolate Settings";
+	srna->description = "Settings for Grease Pencil interpolation tools";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_GPencilInterpolateSettings_rna_properties;
+};
+
+/* Curve Paint Settings */
+static CollectionPropertyRNA rna_CurvePaintSettings_rna_properties_;
+PropertyRNA &rna_CurvePaintSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_rna_properties_);
+
+static PointerPropertyRNA rna_CurvePaintSettings_rna_type_;
+PropertyRNA &rna_CurvePaintSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_rna_type_);
+
+static EnumPropertyRNA rna_CurvePaintSettings_curve_type_;
+PropertyRNA &rna_CurvePaintSettings_curve_type = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_curve_type_);
+
+static BoolPropertyRNA rna_CurvePaintSettings_use_corners_detect_;
+PropertyRNA &rna_CurvePaintSettings_use_corners_detect = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_use_corners_detect_);
+
+static BoolPropertyRNA rna_CurvePaintSettings_use_pressure_radius_;
+PropertyRNA &rna_CurvePaintSettings_use_pressure_radius = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_use_pressure_radius_);
+
+static BoolPropertyRNA rna_CurvePaintSettings_use_stroke_endpoints_;
+PropertyRNA &rna_CurvePaintSettings_use_stroke_endpoints = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_use_stroke_endpoints_);
+
+static BoolPropertyRNA rna_CurvePaintSettings_use_offset_absolute_;
+PropertyRNA &rna_CurvePaintSettings_use_offset_absolute = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_use_offset_absolute_);
+
+static BoolPropertyRNA rna_CurvePaintSettings_use_project_only_selected_;
+PropertyRNA &rna_CurvePaintSettings_use_project_only_selected = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_use_project_only_selected_);
+
+static IntPropertyRNA rna_CurvePaintSettings_error_threshold_;
+PropertyRNA &rna_CurvePaintSettings_error_threshold = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_error_threshold_);
+
+static EnumPropertyRNA rna_CurvePaintSettings_fit_method_;
+PropertyRNA &rna_CurvePaintSettings_fit_method = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_fit_method_);
+
+static FloatPropertyRNA rna_CurvePaintSettings_corner_angle_;
+PropertyRNA &rna_CurvePaintSettings_corner_angle = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_corner_angle_);
+
+static FloatPropertyRNA rna_CurvePaintSettings_radius_min_;
+PropertyRNA &rna_CurvePaintSettings_radius_min = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_radius_min_);
+
+static FloatPropertyRNA rna_CurvePaintSettings_radius_max_;
+PropertyRNA &rna_CurvePaintSettings_radius_max = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_radius_max_);
+
+static FloatPropertyRNA rna_CurvePaintSettings_radius_taper_start_;
+PropertyRNA &rna_CurvePaintSettings_radius_taper_start = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_radius_taper_start_);
+
+static FloatPropertyRNA rna_CurvePaintSettings_radius_taper_end_;
+PropertyRNA &rna_CurvePaintSettings_radius_taper_end = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_radius_taper_end_);
+
+static FloatPropertyRNA rna_CurvePaintSettings_surface_offset_;
+PropertyRNA &rna_CurvePaintSettings_surface_offset = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_surface_offset_);
+
+static EnumPropertyRNA rna_CurvePaintSettings_depth_mode_;
+PropertyRNA &rna_CurvePaintSettings_depth_mode = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_depth_mode_);
+
+static EnumPropertyRNA rna_CurvePaintSettings_surface_plane_;
+PropertyRNA &rna_CurvePaintSettings_surface_plane = reinterpret_cast<PropertyRNA &>(rna_CurvePaintSettings_surface_plane_);
+
+StructRNA *RNA_CurvePaintSettings;
+void register_struct_CurvePaintSettings(BlenderRNA &brna)
+{
+	rna_CurvePaintSettings_rna_properties_ = {
+		{&rna_CurvePaintSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_rna_properties_begin, CurvePaintSettings_rna_properties_next, CurvePaintSettings_rna_properties_end, CurvePaintSettings_rna_properties_get, nullptr, nullptr, CurvePaintSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_CurvePaintSettings_rna_type_ = {
+		{&rna_CurvePaintSettings_curve_type, 	&rna_CurvePaintSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_CurvePaintSettings_curve_type_items[3] = {
+		{0, "POLY", 0, "Poly", ""	},
+		{1, "BEZIER", 0, "Bézier", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_CurvePaintSettings_curve_type_ = {
+		{&rna_CurvePaintSettings_use_corners_detect, 	&rna_CurvePaintSettings_rna_type,
+		-1, "curve_type", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Type",
+		"Type of curve to use for new strokes",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, curve_type), RawPropertyType(2), nullptr},
+		CurvePaintSettings_curve_type_get, CurvePaintSettings_curve_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_CurvePaintSettings_curve_type_items, 2, 1
+	};
+
+	rna_CurvePaintSettings_use_corners_detect_ = {
+		{&rna_CurvePaintSettings_use_pressure_radius, 	&rna_CurvePaintSettings_curve_type,
+		-1, "use_corners_detect", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Detect Corners",
+		"Detect corners and use non-aligned handles",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_use_corners_detect_get, CurvePaintSettings_use_corners_detect_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_CurvePaintSettings_use_pressure_radius_ = {
+		{&rna_CurvePaintSettings_use_stroke_endpoints, 	&rna_CurvePaintSettings_use_corners_detect,
+		-1, "use_pressure_radius", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Pressure",
+		"Map tablet pressure to curve radius",
+		99, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_use_pressure_radius_get, CurvePaintSettings_use_pressure_radius_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_CurvePaintSettings_use_stroke_endpoints_ = {
+		{&rna_CurvePaintSettings_use_offset_absolute, 	&rna_CurvePaintSettings_use_pressure_radius,
+		-1, "use_stroke_endpoints", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Only First",
+		"Use the start of the stroke for the depth",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_use_stroke_endpoints_get, CurvePaintSettings_use_stroke_endpoints_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_CurvePaintSettings_use_offset_absolute_ = {
+		{&rna_CurvePaintSettings_use_project_only_selected, 	&rna_CurvePaintSettings_use_stroke_endpoints,
+		-1, "use_offset_absolute", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Absolute Offset",
+		"Apply a fixed offset (don\'t scale by the radius)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_use_offset_absolute_get, CurvePaintSettings_use_offset_absolute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_CurvePaintSettings_use_project_only_selected_ = {
+		{&rna_CurvePaintSettings_error_threshold, 	&rna_CurvePaintSettings_use_offset_absolute,
+		-1, "use_project_only_selected", 513, 0, 0, 0, 0, PropertyPathTemplateType(0), "Project Onto Selected",
+		"Project the strokes only onto selected objects",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		CurvePaintSettings_use_project_only_selected_get, CurvePaintSettings_use_project_only_selected_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_CurvePaintSettings_error_threshold_ = {
+		{&rna_CurvePaintSettings_fit_method, 	&rna_CurvePaintSettings_use_project_only_selected,
+		-1, "error_threshold", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Tolerance",
+		"Allow deviation for a smoother, less precise line",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, error_threshold), RawPropertyType(1), nullptr},
+		CurvePaintSettings_error_threshold_get, CurvePaintSettings_error_threshold_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 100, 1, 100, 1, nullptr, nullptr, 8, nullptr
+	};
+
+	rna_CurvePaintSettings_fit_method_ = {
+		{&rna_CurvePaintSettings_corner_angle, 	&rna_CurvePaintSettings_error_threshold,
+		-1, "fit_method", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Method",
+		"Curve fitting method",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, fit_method), RawPropertyType(2), nullptr},
+		CurvePaintSettings_fit_method_get, CurvePaintSettings_fit_method_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_curve_fit_method_items, 2, 0
+	};
+
+	rna_CurvePaintSettings_corner_angle_ = {
+		{&rna_CurvePaintSettings_radius_min, 	&rna_CurvePaintSettings_fit_method,
+		-1, "corner_angle", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Corner Angle",
+		"Angles above this are considered corners",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, corner_angle), RawPropertyType(5), nullptr},
+		CurvePaintSettings_corner_angle_get, CurvePaintSettings_corner_angle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 1.2217304707f, nullptr
+	};
+
+	rna_CurvePaintSettings_radius_min_ = {
+		{&rna_CurvePaintSettings_radius_max, 	&rna_CurvePaintSettings_corner_angle,
+		-1, "radius_min", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Radius Min",
+		"Minimum radius when the minimum pressure is applied (also the minimum when tapering)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, radius_min), RawPropertyType(5), nullptr},
+		CurvePaintSettings_radius_min_get, CurvePaintSettings_radius_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10.0f, 0.0f, 100.0f, 10.0f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_CurvePaintSettings_radius_max_ = {
+		{&rna_CurvePaintSettings_radius_taper_start, 	&rna_CurvePaintSettings_radius_min,
+		-1, "radius_max", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Radius Max",
+		"Radius to use when the maximum pressure is applied (or when a tablet isn\'t used)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, radius_max), RawPropertyType(5), nullptr},
+		CurvePaintSettings_radius_max_get, CurvePaintSettings_radius_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10.0f, 0.0f, 100.0f, 10.0f, 2, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_CurvePaintSettings_radius_taper_start_ = {
+		{&rna_CurvePaintSettings_radius_taper_end, 	&rna_CurvePaintSettings_radius_max,
+		-1, "radius_taper_start", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Radius Min",
+		"Taper factor for the radius of each point along the curve",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, radius_taper_start), RawPropertyType(5), nullptr},
+		CurvePaintSettings_radius_taper_start_get, CurvePaintSettings_radius_taper_start_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_CurvePaintSettings_radius_taper_end_ = {
+		{&rna_CurvePaintSettings_surface_offset, 	&rna_CurvePaintSettings_radius_taper_start,
+		-1, "radius_taper_end", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Radius Max",
+		"Taper factor for the radius of each point along the curve",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, radius_taper_end), RawPropertyType(5), nullptr},
+		CurvePaintSettings_radius_taper_end_get, CurvePaintSettings_radius_taper_end_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 10.0f, 1.0f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_CurvePaintSettings_surface_offset_ = {
+		{&rna_CurvePaintSettings_depth_mode, 	&rna_CurvePaintSettings_radius_taper_end,
+		-1, "surface_offset", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Offset",
+		"Offset the stroke from the surface",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, surface_offset), RawPropertyType(5), nullptr},
+		CurvePaintSettings_surface_offset_get, CurvePaintSettings_surface_offset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -1.0f, 1.0f, -10.0f, 10.0f, 1.0f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	static const EnumPropertyItem rna_CurvePaintSettings_depth_mode_items[3] = {
+		{0, "CURSOR", 0, "Cursor", ""	},
+		{1, "SURFACE", 0, "Surface", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_CurvePaintSettings_depth_mode_ = {
+		{&rna_CurvePaintSettings_surface_plane, 	&rna_CurvePaintSettings_surface_offset,
+		-1, "depth_mode", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Depth",
+		"Method of projecting depth",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, depth_mode), RawPropertyType(2), nullptr},
+		CurvePaintSettings_depth_mode_get, CurvePaintSettings_depth_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_CurvePaintSettings_depth_mode_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_CurvePaintSettings_surface_plane_items[4] = {
+		{0, "NORMAL_VIEW", 0, "Normal to Surface", "Draw in a plane perpendicular to the surface"	},
+		{1, "NORMAL_SURFACE", 0, "Tangent to Surface", "Draw in the surface plane"	},
+		{2, "VIEW", 0, "View", "Draw in a plane aligned to the viewport"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_CurvePaintSettings_surface_plane_ = {
+		{nullptr, 	&rna_CurvePaintSettings_depth_mode,
+		-1, "surface_plane", 513, 0, 0, 4, 0, PropertyPathTemplateType(0), "Plane",
+		"Plane for projected stroke",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(CurvePaintSettings, surface_plane), RawPropertyType(2), nullptr},
+		CurvePaintSettings_surface_plane_get, CurvePaintSettings_surface_plane_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_CurvePaintSettings_surface_plane_items, 3, 0
+	};
+
+	StructRNA *srna = RNA_CurvePaintSettings;
+	srna->cont.properties = {&rna_CurvePaintSettings_rna_properties, &rna_CurvePaintSettings_surface_plane};
+	srna->identifier = "CurvePaintSettings";
+	srna->flag = 512;
+	srna->name = "Curve Paint Settings";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_CurvePaintSettings_rna_properties;
+	srna->path = rna_CurvePaintSettings_path;
+};
+
+/* Sequencer Tool Settings */
+static CollectionPropertyRNA rna_SequencerToolSettings_rna_properties_;
+PropertyRNA &rna_SequencerToolSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_rna_properties_);
+
+static PointerPropertyRNA rna_SequencerToolSettings_rna_type_;
+PropertyRNA &rna_SequencerToolSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_rna_type_);
+
+static EnumPropertyRNA rna_SequencerToolSettings_fit_method_;
+PropertyRNA &rna_SequencerToolSettings_fit_method = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_fit_method_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_current_frame_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_current_frame = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_current_frame_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_hold_offset_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_hold_offset = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_hold_offset_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_markers_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_markers = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_markers_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_retiming_keys_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_retiming_keys = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_retiming_keys_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_frame_range_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_frame_range = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_frame_range_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_borders_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_borders = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_borders_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_center_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_center = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_center_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_strips_preview_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_strips_preview = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_strips_preview_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_ignore_muted_;
+PropertyRNA &rna_SequencerToolSettings_snap_ignore_muted = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_ignore_muted_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_ignore_sound_;
+PropertyRNA &rna_SequencerToolSettings_snap_ignore_sound = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_ignore_sound_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_use_snap_current_frame_to_strips_;
+PropertyRNA &rna_SequencerToolSettings_use_snap_current_frame_to_strips = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_use_snap_current_frame_to_strips_);
+
+static BoolPropertyRNA rna_SequencerToolSettings_snap_to_all_channels_;
+PropertyRNA &rna_SequencerToolSettings_snap_to_all_channels = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_to_all_channels_);
+
+static IntPropertyRNA rna_SequencerToolSettings_snap_distance_;
+PropertyRNA &rna_SequencerToolSettings_snap_distance = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_snap_distance_);
+
+static EnumPropertyRNA rna_SequencerToolSettings_overlap_mode_;
+PropertyRNA &rna_SequencerToolSettings_overlap_mode = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_overlap_mode_);
+
+static EnumPropertyRNA rna_SequencerToolSettings_pivot_point_;
+PropertyRNA &rna_SequencerToolSettings_pivot_point = reinterpret_cast<PropertyRNA &>(rna_SequencerToolSettings_pivot_point_);
+
+StructRNA *RNA_SequencerToolSettings;
+void register_struct_SequencerToolSettings(BlenderRNA &brna)
+{
+	rna_SequencerToolSettings_rna_properties_ = {
+		{&rna_SequencerToolSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_rna_properties_begin, SequencerToolSettings_rna_properties_next, SequencerToolSettings_rna_properties_end, SequencerToolSettings_rna_properties_get, nullptr, nullptr, SequencerToolSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SequencerToolSettings_rna_type_ = {
+		{&rna_SequencerToolSettings_fit_method, 	&rna_SequencerToolSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_SequencerToolSettings_fit_method_ = {
+		{&rna_SequencerToolSettings_snap_to_current_frame, 	&rna_SequencerToolSettings_rna_type,
+		-1, "fit_method", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Fit Method",
+		"Scale fit method",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SequencerToolSettings, fit_method), RawPropertyType(0), nullptr},
+		SequencerToolSettings_fit_method_get, SequencerToolSettings_fit_method_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_strip_scale_method_items, 4, 0
+	};
+
+	rna_SequencerToolSettings_snap_to_current_frame_ = {
+		{&rna_SequencerToolSettings_snap_to_hold_offset, 	&rna_SequencerToolSettings_fit_method,
+		-1, "snap_to_current_frame", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Current Frame",
+		"Snap to current frame",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_current_frame_get, SequencerToolSettings_snap_to_current_frame_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_hold_offset_ = {
+		{&rna_SequencerToolSettings_snap_to_markers, 	&rna_SequencerToolSettings_snap_to_current_frame,
+		-1, "snap_to_hold_offset", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Holds",
+		"Snap to underlying strip content start and end in cases where the strip length extends beyond this range, producing holds",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_hold_offset_get, SequencerToolSettings_snap_to_hold_offset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_markers_ = {
+		{&rna_SequencerToolSettings_snap_to_retiming_keys, 	&rna_SequencerToolSettings_snap_to_hold_offset,
+		-1, "snap_to_markers", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Markers",
+		"Snap to markers",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_markers_get, SequencerToolSettings_snap_to_markers_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_retiming_keys_ = {
+		{&rna_SequencerToolSettings_snap_to_frame_range, 	&rna_SequencerToolSettings_snap_to_markers,
+		-1, "snap_to_retiming_keys", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Retiming Keys",
+		"Snap to retiming keys",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_retiming_keys_get, SequencerToolSettings_snap_to_retiming_keys_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_frame_range_ = {
+		{&rna_SequencerToolSettings_snap_to_borders, 	&rna_SequencerToolSettings_snap_to_retiming_keys,
+		-1, "snap_to_frame_range", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Frame Range",
+		"Snap to preview or scene start and end frame",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_frame_range_get, SequencerToolSettings_snap_to_frame_range_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_borders_ = {
+		{&rna_SequencerToolSettings_snap_to_center, 	&rna_SequencerToolSettings_snap_to_frame_range,
+		-1, "snap_to_borders", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Borders",
+		"Snap to preview borders",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_borders_get, SequencerToolSettings_snap_to_borders_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_center_ = {
+		{&rna_SequencerToolSettings_snap_to_strips_preview, 	&rna_SequencerToolSettings_snap_to_borders,
+		-1, "snap_to_center", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Center",
+		"Snap to preview center",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_center_get, SequencerToolSettings_snap_to_center_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_strips_preview_ = {
+		{&rna_SequencerToolSettings_snap_ignore_muted, 	&rna_SequencerToolSettings_snap_to_center,
+		-1, "snap_to_strips_preview", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Other Strips",
+		"Snap to borders and origins of deselected, visible strips",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_strips_preview_get, SequencerToolSettings_snap_to_strips_preview_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_ignore_muted_ = {
+		{&rna_SequencerToolSettings_snap_ignore_sound, 	&rna_SequencerToolSettings_snap_to_strips_preview,
+		-1, "snap_ignore_muted", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Ignore Muted Strips",
+		"Don\'t snap to hidden strips",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_ignore_muted_get, SequencerToolSettings_snap_ignore_muted_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_ignore_sound_ = {
+		{&rna_SequencerToolSettings_use_snap_current_frame_to_strips, 	&rna_SequencerToolSettings_snap_ignore_muted,
+		-1, "snap_ignore_sound", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Ignore Sound Strips",
+		"Don\'t snap to sound strips",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_ignore_sound_get, SequencerToolSettings_snap_ignore_sound_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_use_snap_current_frame_to_strips_ = {
+		{&rna_SequencerToolSettings_snap_to_all_channels, 	&rna_SequencerToolSettings_snap_ignore_sound,
+		-1, "use_snap_current_frame_to_strips", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Snap Current Frame to Strips",
+		"Snap current frame to strip start or end",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_use_snap_current_frame_to_strips_get, SequencerToolSettings_use_snap_current_frame_to_strips_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_to_all_channels_ = {
+		{&rna_SequencerToolSettings_snap_distance, 	&rna_SequencerToolSettings_use_snap_current_frame_to_strips,
+		-1, "snap_to_all_channels", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "All Channels",
+		"Allow snapping to any channel. If disabled, only snap to strips currently on the same channel as transformed strips",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SequencerToolSettings_snap_to_all_channels_get, SequencerToolSettings_snap_to_all_channels_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SequencerToolSettings_snap_distance_ = {
+		{&rna_SequencerToolSettings_overlap_mode, 	&rna_SequencerToolSettings_snap_to_all_channels,
+		-1, "snap_distance", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Snapping Distance",
+		"Maximum distance for snapping in pixels",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SequencerToolSettings, snap_distance), RawPropertyType(0), nullptr},
+		SequencerToolSettings_snap_distance_get, SequencerToolSettings_snap_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 50, INT_MIN, INT_MAX, 1, nullptr, nullptr, 15, nullptr
+	};
+
+	static const EnumPropertyItem rna_SequencerToolSettings_overlap_mode_items[4] = {
+		{0, "EXPAND", 0, "Expand", "Move strips so transformed strips fit"	},
+		{1, "OVERWRITE", 0, "Overwrite", "Trim or split strips to resolve overlap"	},
+		{2, "SHUFFLE", 0, "Shuffle", "Move transformed strips to nearest free space to resolve overlap"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SequencerToolSettings_overlap_mode_ = {
+		{&rna_SequencerToolSettings_pivot_point, 	&rna_SequencerToolSettings_snap_distance,
+		-1, "overlap_mode", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Overlap Mode",
+		"How to resolve overlap after transformation",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SequencerToolSettings, overlap_mode), RawPropertyType(0), nullptr},
+		SequencerToolSettings_overlap_mode_get, SequencerToolSettings_overlap_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SequencerToolSettings_overlap_mode_items, 3, 0
+	};
+
+	static const EnumPropertyItem rna_SequencerToolSettings_pivot_point_items[5] = {
+		{0, "CENTER", 573, "Bounding Box Center", ""	},
+		{3, "MEDIAN", 576, "Median Point", ""	},
+		{1, "CURSOR", 574, "2D Cursor", "Pivot around the 2D cursor"	},
+		{2, "INDIVIDUAL_ORIGINS", 575, "Individual Origins", "Pivot around each selected island\'s own median point"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SequencerToolSettings_pivot_point_ = {
+		{nullptr, 	&rna_SequencerToolSettings_overlap_mode,
+		-1, "pivot_point", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pivot Point",
+		"Rotation or scaling pivot point",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 269549568, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SequencerToolSettings, pivot_point), RawPropertyType(0), nullptr},
+		SequencerToolSettings_pivot_point_get, SequencerToolSettings_pivot_point_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SequencerToolSettings_pivot_point_items, 4, 0
+	};
+
+	StructRNA *srna = RNA_SequencerToolSettings;
+	srna->cont.properties = {&rna_SequencerToolSettings_rna_properties, &rna_SequencerToolSettings_pivot_point};
+	srna->identifier = "SequencerToolSettings";
+	srna->flag = 512;
+	srna->name = "Sequencer Tool Settings";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_SequencerToolSettings_rna_properties;
+	srna->path = rna_SequencerToolSettings_path;
+};
+
+/* Mesh Visualize Statistics */
+static CollectionPropertyRNA rna_MeshStatVis_rna_properties_;
+PropertyRNA &rna_MeshStatVis_rna_properties = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_rna_properties_);
+
+static PointerPropertyRNA rna_MeshStatVis_rna_type_;
+PropertyRNA &rna_MeshStatVis_rna_type = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_rna_type_);
+
+static EnumPropertyRNA rna_MeshStatVis_type_;
+PropertyRNA &rna_MeshStatVis_type = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_type_);
+
+static FloatPropertyRNA rna_MeshStatVis_overhang_min_;
+PropertyRNA &rna_MeshStatVis_overhang_min = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_overhang_min_);
+
+static FloatPropertyRNA rna_MeshStatVis_overhang_max_;
+PropertyRNA &rna_MeshStatVis_overhang_max = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_overhang_max_);
+
+static EnumPropertyRNA rna_MeshStatVis_overhang_axis_;
+PropertyRNA &rna_MeshStatVis_overhang_axis = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_overhang_axis_);
+
+static FloatPropertyRNA rna_MeshStatVis_thickness_min_;
+PropertyRNA &rna_MeshStatVis_thickness_min = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_thickness_min_);
+
+static FloatPropertyRNA rna_MeshStatVis_thickness_max_;
+PropertyRNA &rna_MeshStatVis_thickness_max = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_thickness_max_);
+
+static IntPropertyRNA rna_MeshStatVis_thickness_samples_;
+PropertyRNA &rna_MeshStatVis_thickness_samples = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_thickness_samples_);
+
+static FloatPropertyRNA rna_MeshStatVis_distort_min_;
+PropertyRNA &rna_MeshStatVis_distort_min = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_distort_min_);
+
+static FloatPropertyRNA rna_MeshStatVis_distort_max_;
+PropertyRNA &rna_MeshStatVis_distort_max = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_distort_max_);
+
+static FloatPropertyRNA rna_MeshStatVis_sharp_min_;
+PropertyRNA &rna_MeshStatVis_sharp_min = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_sharp_min_);
+
+static FloatPropertyRNA rna_MeshStatVis_sharp_max_;
+PropertyRNA &rna_MeshStatVis_sharp_max = reinterpret_cast<PropertyRNA &>(rna_MeshStatVis_sharp_max_);
+
+StructRNA *RNA_MeshStatVis;
+void register_struct_MeshStatVis(BlenderRNA &brna)
+{
+	rna_MeshStatVis_rna_properties_ = {
+		{&rna_MeshStatVis_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		MeshStatVis_rna_properties_begin, MeshStatVis_rna_properties_next, MeshStatVis_rna_properties_end, MeshStatVis_rna_properties_get, nullptr, nullptr, MeshStatVis_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_MeshStatVis_rna_type_ = {
+		{&rna_MeshStatVis_type, 	&rna_MeshStatVis_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		MeshStatVis_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_MeshStatVis_type_items[6] = {
+		{0, "OVERHANG", 0, "Overhang", ""	},
+		{1, "THICKNESS", 0, "Thickness", ""	},
+		{2, "INTERSECT", 0, "Intersect", ""	},
+		{3, "DISTORT", 0, "Distortion", ""	},
+		{4, "SHARP", 0, "Sharp", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_MeshStatVis_type_ = {
+		{&rna_MeshStatVis_overhang_min, 	&rna_MeshStatVis_rna_type,
+		-1, "type", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Type",
+		"Type of data to visualize/check",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, type), RawPropertyType(2), nullptr},
+		MeshStatVis_type_get, MeshStatVis_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_MeshStatVis_type_items, 5, 0
+	};
+
+	rna_MeshStatVis_overhang_min_ = {
+		{&rna_MeshStatVis_overhang_max, 	&rna_MeshStatVis_type,
+		-1, "overhang_min", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Overhang Min",
+		"Minimum angle to display",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, overhang_min), RawPropertyType(5), nullptr},
+		MeshStatVis_overhang_min_get, MeshStatVis_overhang_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_MeshStatVis_overhang_max_ = {
+		{&rna_MeshStatVis_overhang_axis, 	&rna_MeshStatVis_overhang_min,
+		-1, "overhang_max", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Overhang Max",
+		"Maximum angle to display",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, overhang_max), RawPropertyType(5), nullptr},
+		MeshStatVis_overhang_max_get, MeshStatVis_overhang_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.7853981853f, nullptr
+	};
+
+	rna_MeshStatVis_overhang_axis_ = {
+		{&rna_MeshStatVis_thickness_min, 	&rna_MeshStatVis_overhang_max,
+		-1, "overhang_axis", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Axis",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, overhang_axis), RawPropertyType(2), nullptr},
+		MeshStatVis_overhang_axis_get, MeshStatVis_overhang_axis_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_object_axis_items, 6, 5
+	};
+
+	rna_MeshStatVis_thickness_min_ = {
+		{&rna_MeshStatVis_thickness_max, 	&rna_MeshStatVis_overhang_axis,
+		-1, "thickness_min", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Thickness Min",
+		"Minimum for measuring thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, thickness_min), RawPropertyType(5), nullptr},
+		MeshStatVis_thickness_min_get, MeshStatVis_thickness_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 1000.0f, 0.0010000000f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_MeshStatVis_thickness_max_ = {
+		{&rna_MeshStatVis_thickness_samples, 	&rna_MeshStatVis_thickness_min,
+		-1, "thickness_max", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Thickness Max",
+		"Maximum for measuring thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, thickness_max), RawPropertyType(5), nullptr},
+		MeshStatVis_thickness_max_get, MeshStatVis_thickness_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 1000.0f, 0.0010000000f, 3, nullptr, nullptr, 0.1000000015f, nullptr
+	};
+
+	rna_MeshStatVis_thickness_samples_ = {
+		{&rna_MeshStatVis_distort_min, 	&rna_MeshStatVis_thickness_max,
+		-1, "thickness_samples", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Samples",
+		"Number of samples to test per face",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, thickness_samples), RawPropertyType(2), nullptr},
+		MeshStatVis_thickness_samples_get, MeshStatVis_thickness_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 32, 1, 32, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_MeshStatVis_distort_min_ = {
+		{&rna_MeshStatVis_distort_max, 	&rna_MeshStatVis_thickness_samples,
+		-1, "distort_min", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Distort Min",
+		"Minimum angle to display",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, distort_min), RawPropertyType(5), nullptr},
+		MeshStatVis_distort_min_get, MeshStatVis_distort_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.0872664601f, nullptr
+	};
+
+	rna_MeshStatVis_distort_max_ = {
+		{&rna_MeshStatVis_sharp_min, 	&rna_MeshStatVis_distort_min,
+		-1, "distort_max", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Distort Max",
+		"Maximum angle to display",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, distort_max), RawPropertyType(5), nullptr},
+		MeshStatVis_distort_max_get, MeshStatVis_distort_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.7853981853f, nullptr
+	};
+
+	rna_MeshStatVis_sharp_min_ = {
+		{&rna_MeshStatVis_sharp_max, 	&rna_MeshStatVis_distort_max,
+		-1, "sharp_min", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sharpness Min",
+		"Minimum angle to display",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, sharp_min), RawPropertyType(5), nullptr},
+		MeshStatVis_sharp_min_get, MeshStatVis_sharp_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -3.1415927410f, 3.1415927410f, -3.1415927410f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 1.5707963705f, nullptr
+	};
+
+	rna_MeshStatVis_sharp_max_ = {
+		{nullptr, 	&rna_MeshStatVis_sharp_min,
+		-1, "sharp_max", 4194305, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sharpness Max",
+		"Maximum angle to display",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_EditMesh_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MeshStatVis, sharp_max), RawPropertyType(5), nullptr},
+		MeshStatVis_sharp_max_get, MeshStatVis_sharp_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -3.1415927410f, 3.1415927410f, -3.1415927410f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 3.1415927410f, nullptr
+	};
+
+	StructRNA *srna = RNA_MeshStatVis;
+	srna->cont.properties = {&rna_MeshStatVis_rna_properties, &rna_MeshStatVis_sharp_max};
+	srna->identifier = "MeshStatVis";
+	srna->flag = 512;
+	srna->name = "Mesh Visualize Statistics";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_MeshStatVis_rna_properties;
+	srna->path = rna_MeshStatVis_path;
+};
+
+/* Unit Settings */
+static CollectionPropertyRNA rna_UnitSettings_rna_properties_;
+PropertyRNA &rna_UnitSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_rna_properties_);
+
+static PointerPropertyRNA rna_UnitSettings_rna_type_;
+PropertyRNA &rna_UnitSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_rna_type_);
+
+static EnumPropertyRNA rna_UnitSettings_system_;
+PropertyRNA &rna_UnitSettings_system = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_system_);
+
+static EnumPropertyRNA rna_UnitSettings_system_rotation_;
+PropertyRNA &rna_UnitSettings_system_rotation = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_system_rotation_);
+
+static FloatPropertyRNA rna_UnitSettings_scale_length_;
+PropertyRNA &rna_UnitSettings_scale_length = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_scale_length_);
+
+static BoolPropertyRNA rna_UnitSettings_use_separate_;
+PropertyRNA &rna_UnitSettings_use_separate = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_use_separate_);
+
+static EnumPropertyRNA rna_UnitSettings_length_unit_;
+PropertyRNA &rna_UnitSettings_length_unit = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_length_unit_);
+
+static EnumPropertyRNA rna_UnitSettings_mass_unit_;
+PropertyRNA &rna_UnitSettings_mass_unit = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_mass_unit_);
+
+static EnumPropertyRNA rna_UnitSettings_time_unit_;
+PropertyRNA &rna_UnitSettings_time_unit = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_time_unit_);
+
+static EnumPropertyRNA rna_UnitSettings_temperature_unit_;
+PropertyRNA &rna_UnitSettings_temperature_unit = reinterpret_cast<PropertyRNA &>(rna_UnitSettings_temperature_unit_);
+
+StructRNA *RNA_UnitSettings;
+void register_struct_UnitSettings(BlenderRNA &brna)
+{
+	rna_UnitSettings_rna_properties_ = {
+		{&rna_UnitSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UnitSettings_rna_properties_begin, UnitSettings_rna_properties_next, UnitSettings_rna_properties_end, UnitSettings_rna_properties_get, nullptr, nullptr, UnitSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_UnitSettings_rna_type_ = {
+		{&rna_UnitSettings_system, 	&rna_UnitSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UnitSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_UnitSettings_system_items[4] = {
+		{0, "NONE", 0, "None", ""	},
+		{1, "METRIC", 0, "Metric", ""	},
+		{2, "IMPERIAL", 0, "Imperial", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UnitSettings_system_ = {
+		{&rna_UnitSettings_system_rotation, 	&rna_UnitSettings_rna_type,
+		-1, "system", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Unit System",
+		"The unit system to use for user interface controls",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_UnitSettings_system_update, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, system), RawPropertyType(2), nullptr},
+		UnitSettings_system_get, UnitSettings_system_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UnitSettings_system_items, 3, 0
+	};
+
+	static const EnumPropertyItem rna_UnitSettings_system_rotation_items[3] = {
+		{0, "DEGREES", 0, "Degrees", "Use degrees for measuring angles and rotations"	},
+		{2, "RADIANS", 0, "Radians", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_UnitSettings_system_rotation_ = {
+		{&rna_UnitSettings_scale_length, 	&rna_UnitSettings_system,
+		-1, "system_rotation", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rotation Units",
+		"Unit to use for displaying/editing rotation values",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, system_rotation), RawPropertyType(2), nullptr},
+		UnitSettings_system_rotation_get, UnitSettings_system_rotation_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_UnitSettings_system_rotation_items, 2, 0
+	};
+
+	rna_UnitSettings_scale_length_ = {
+		{&rna_UnitSettings_use_separate, 	&rna_UnitSettings_system_rotation,
+		-1, "scale_length", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Unit Scale",
+		"Scale to use when converting between Blender units and dimensions. When working at microscopic or astronomical scale, a small or large unit scale respectively can be used to avoid numerical precision problems",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, scale_length), RawPropertyType(5), nullptr},
+		UnitSettings_scale_length_get, UnitSettings_scale_length_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0010000000f, 100.0f, 0.0000000010f, 1000000000.0f, 0.1000000015f, 6, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_UnitSettings_use_separate_ = {
+		{&rna_UnitSettings_length_unit, 	&rna_UnitSettings_scale_length,
+		-1, "use_separate", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Separate Units",
+		"Display units in pairs (e.g. 1m 0cm)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		UnitSettings_use_separate_get, UnitSettings_use_separate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_UnitSettings_length_unit_ = {
+		{&rna_UnitSettings_mass_unit, 	&rna_UnitSettings_use_separate,
+		-1, "length_unit", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Length Unit",
+		"Unit that will be used to display length values",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, length_unit), RawPropertyType(2), nullptr},
+		UnitSettings_length_unit_get, UnitSettings_length_unit_set, rna_UnitSettings_length_unit_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_dummy_DEFAULT_items, 1, 0
+	};
+
+	rna_UnitSettings_mass_unit_ = {
+		{&rna_UnitSettings_time_unit, 	&rna_UnitSettings_length_unit,
+		-1, "mass_unit", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mass Unit",
+		"Unit that will be used to display mass values",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, mass_unit), RawPropertyType(2), nullptr},
+		UnitSettings_mass_unit_get, UnitSettings_mass_unit_set, rna_UnitSettings_mass_unit_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_dummy_DEFAULT_items, 1, 0
+	};
+
+	rna_UnitSettings_time_unit_ = {
+		{&rna_UnitSettings_temperature_unit, 	&rna_UnitSettings_mass_unit,
+		-1, "time_unit", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Time Unit",
+		"Unit that will be used to display time values",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, time_unit), RawPropertyType(2), nullptr},
+		UnitSettings_time_unit_get, UnitSettings_time_unit_set, rna_UnitSettings_time_unit_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_dummy_DEFAULT_items, 1, 0
+	};
+
+	rna_UnitSettings_temperature_unit_ = {
+		{nullptr, 	&rna_UnitSettings_time_unit,
+		-1, "temperature_unit", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Temperature Unit",
+		"Unit that will be used to display temperature values",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(UnitSettings, temperature_unit), RawPropertyType(2), nullptr},
+		UnitSettings_temperature_unit_get, UnitSettings_temperature_unit_set, rna_UnitSettings_temperature_unit_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_dummy_DEFAULT_items, 1, 0
+	};
+
+	StructRNA *srna = RNA_UnitSettings;
+	srna->cont.properties = {&rna_UnitSettings_rna_properties, &rna_UnitSettings_temperature_unit};
+	srna->identifier = "UnitSettings";
+	srna->flag = 516;
+	srna->name = "Unit Settings";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_UnitSettings_rna_properties;
+	srna->nested = RNA_Scene;
+	srna->path = rna_UnitSettings_path;
+};
+
+/* Stereo Output */
+static CollectionPropertyRNA rna_Stereo3dFormat_rna_properties_;
+PropertyRNA &rna_Stereo3dFormat_rna_properties = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_rna_properties_);
+
+static PointerPropertyRNA rna_Stereo3dFormat_rna_type_;
+PropertyRNA &rna_Stereo3dFormat_rna_type = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_rna_type_);
+
+static EnumPropertyRNA rna_Stereo3dFormat_display_mode_;
+PropertyRNA &rna_Stereo3dFormat_display_mode = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_display_mode_);
+
+static EnumPropertyRNA rna_Stereo3dFormat_anaglyph_type_;
+PropertyRNA &rna_Stereo3dFormat_anaglyph_type = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_anaglyph_type_);
+
+static EnumPropertyRNA rna_Stereo3dFormat_interlace_type_;
+PropertyRNA &rna_Stereo3dFormat_interlace_type = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_interlace_type_);
+
+static BoolPropertyRNA rna_Stereo3dFormat_use_interlace_swap_;
+PropertyRNA &rna_Stereo3dFormat_use_interlace_swap = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_use_interlace_swap_);
+
+static BoolPropertyRNA rna_Stereo3dFormat_use_sidebyside_crosseyed_;
+PropertyRNA &rna_Stereo3dFormat_use_sidebyside_crosseyed = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_use_sidebyside_crosseyed_);
+
+static BoolPropertyRNA rna_Stereo3dFormat_use_squeezed_frame_;
+PropertyRNA &rna_Stereo3dFormat_use_squeezed_frame = reinterpret_cast<PropertyRNA &>(rna_Stereo3dFormat_use_squeezed_frame_);
+
+StructRNA *RNA_Stereo3dFormat;
+void register_struct_Stereo3dFormat(BlenderRNA &brna)
+{
+	rna_Stereo3dFormat_rna_properties_ = {
+		{&rna_Stereo3dFormat_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Stereo3dFormat_rna_properties_begin, Stereo3dFormat_rna_properties_next, Stereo3dFormat_rna_properties_end, Stereo3dFormat_rna_properties_get, nullptr, nullptr, Stereo3dFormat_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_Stereo3dFormat_rna_type_ = {
+		{&rna_Stereo3dFormat_display_mode, 	&rna_Stereo3dFormat_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Stereo3dFormat_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_Stereo3dFormat_display_mode_items[5] = {
+		{0, "ANAGLYPH", 0, "Anaglyph", "Render views for left and right eyes as two differently filtered colors in a single image (anaglyph glasses are required)"	},
+		{1, "INTERLACE", 0, "Interlace", "Render views for left and right eyes interlaced in a single image (3D-ready monitor is required)"	},
+		{3, "SIDEBYSIDE", 0, "Side-by-Side", "Render views for left and right eyes side-by-side"	},
+		{4, "TOPBOTTOM", 0, "Top-Bottom", "Render views for left and right eyes one above another"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_Stereo3dFormat_display_mode_ = {
+		{&rna_Stereo3dFormat_anaglyph_type, 	&rna_Stereo3dFormat_rna_type,
+		-1, "display_mode", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Stereo Mode",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Stereo3dFormat_update, 187891712, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Stereo3dFormat, display_mode), RawPropertyType(2), nullptr},
+		Stereo3dFormat_display_mode_get, Stereo3dFormat_display_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_Stereo3dFormat_display_mode_items, 4, 0
+	};
+
+	rna_Stereo3dFormat_anaglyph_type_ = {
+		{&rna_Stereo3dFormat_interlace_type, 	&rna_Stereo3dFormat_display_mode,
+		-1, "anaglyph_type", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Anaglyph Type",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Stereo3dFormat_update, 187891712, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Stereo3dFormat, anaglyph_type), RawPropertyType(2), nullptr},
+		Stereo3dFormat_anaglyph_type_get, Stereo3dFormat_anaglyph_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_stereo3d_anaglyph_type_items, 3, 0
+	};
+
+	rna_Stereo3dFormat_interlace_type_ = {
+		{&rna_Stereo3dFormat_use_interlace_swap, 	&rna_Stereo3dFormat_anaglyph_type,
+		-1, "interlace_type", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Interlace Type",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Stereo3dFormat_update, 187891712, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(Stereo3dFormat, interlace_type), RawPropertyType(2), nullptr},
+		Stereo3dFormat_interlace_type_get, Stereo3dFormat_interlace_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_stereo3d_interlace_type_items, 3, 0
+	};
+
+	rna_Stereo3dFormat_use_interlace_swap_ = {
+		{&rna_Stereo3dFormat_use_sidebyside_crosseyed, 	&rna_Stereo3dFormat_interlace_type,
+		-1, "use_interlace_swap", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Swap Left/Right",
+		"Swap left and right stereo channels",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Stereo3dFormat_update, 187891712, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Stereo3dFormat_use_interlace_swap_get, Stereo3dFormat_use_interlace_swap_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Stereo3dFormat_use_sidebyside_crosseyed_ = {
+		{&rna_Stereo3dFormat_use_squeezed_frame, 	&rna_Stereo3dFormat_use_interlace_swap,
+		-1, "use_sidebyside_crosseyed", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cross-Eyed",
+		"Right eye should see left image and vice versa",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Stereo3dFormat_update, 187891712, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Stereo3dFormat_use_sidebyside_crosseyed_get, Stereo3dFormat_use_sidebyside_crosseyed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_Stereo3dFormat_use_squeezed_frame_ = {
+		{nullptr, 	&rna_Stereo3dFormat_use_sidebyside_crosseyed,
+		-1, "use_squeezed_frame", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Squeezed Frame",
+		"Combine both views in a squeezed image",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Stereo3dFormat_update, 187891712, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Stereo3dFormat_use_squeezed_frame_get, Stereo3dFormat_use_squeezed_frame_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_Stereo3dFormat;
+	srna->cont.properties = {&rna_Stereo3dFormat_rna_properties, &rna_Stereo3dFormat_use_squeezed_frame};
+	srna->identifier = "Stereo3dFormat";
+	srna->flag = 516;
+	srna->name = "Stereo Output";
+	srna->description = "Settings for stereo output";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_Stereo3dFormat_rna_properties;
+};
+
+/* Image Format */
+static CollectionPropertyRNA rna_ImageFormatSettings_rna_properties_;
+PropertyRNA &rna_ImageFormatSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_rna_properties_);
+
+static PointerPropertyRNA rna_ImageFormatSettings_rna_type_;
+PropertyRNA &rna_ImageFormatSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_rna_type_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_media_type_;
+PropertyRNA &rna_ImageFormatSettings_media_type = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_media_type_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_file_format_;
+PropertyRNA &rna_ImageFormatSettings_file_format = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_file_format_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_color_mode_;
+PropertyRNA &rna_ImageFormatSettings_color_mode = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_color_mode_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_color_depth_;
+PropertyRNA &rna_ImageFormatSettings_color_depth = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_color_depth_);
+
+static IntPropertyRNA rna_ImageFormatSettings_quality_;
+PropertyRNA &rna_ImageFormatSettings_quality = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_quality_);
+
+static IntPropertyRNA rna_ImageFormatSettings_compression_;
+PropertyRNA &rna_ImageFormatSettings_compression = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_compression_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_use_preview_;
+PropertyRNA &rna_ImageFormatSettings_use_preview = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_use_preview_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_exr_codec_;
+PropertyRNA &rna_ImageFormatSettings_exr_codec = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_exr_codec_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_use_exr_interleave_;
+PropertyRNA &rna_ImageFormatSettings_use_exr_interleave = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_use_exr_interleave_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_use_jpeg2k_ycc_;
+PropertyRNA &rna_ImageFormatSettings_use_jpeg2k_ycc = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_use_jpeg2k_ycc_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_use_jpeg2k_cinema_preset_;
+PropertyRNA &rna_ImageFormatSettings_use_jpeg2k_cinema_preset = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_use_jpeg2k_cinema_preset_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_use_jpeg2k_cinema_48_;
+PropertyRNA &rna_ImageFormatSettings_use_jpeg2k_cinema_48 = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_use_jpeg2k_cinema_48_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_jpeg2k_codec_;
+PropertyRNA &rna_ImageFormatSettings_jpeg2k_codec = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_jpeg2k_codec_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_tiff_codec_;
+PropertyRNA &rna_ImageFormatSettings_tiff_codec = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_tiff_codec_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_use_cineon_log_;
+PropertyRNA &rna_ImageFormatSettings_use_cineon_log = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_use_cineon_log_);
+
+static IntPropertyRNA rna_ImageFormatSettings_cineon_black_;
+PropertyRNA &rna_ImageFormatSettings_cineon_black = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_cineon_black_);
+
+static IntPropertyRNA rna_ImageFormatSettings_cineon_white_;
+PropertyRNA &rna_ImageFormatSettings_cineon_white = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_cineon_white_);
+
+static FloatPropertyRNA rna_ImageFormatSettings_cineon_gamma_;
+PropertyRNA &rna_ImageFormatSettings_cineon_gamma = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_cineon_gamma_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_views_format_;
+PropertyRNA &rna_ImageFormatSettings_views_format = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_views_format_);
+
+static PointerPropertyRNA rna_ImageFormatSettings_stereo_3d_format_;
+PropertyRNA &rna_ImageFormatSettings_stereo_3d_format = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_stereo_3d_format_);
+
+static EnumPropertyRNA rna_ImageFormatSettings_color_management_;
+PropertyRNA &rna_ImageFormatSettings_color_management = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_color_management_);
+
+static PointerPropertyRNA rna_ImageFormatSettings_view_settings_;
+PropertyRNA &rna_ImageFormatSettings_view_settings = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_view_settings_);
+
+static PointerPropertyRNA rna_ImageFormatSettings_display_settings_;
+PropertyRNA &rna_ImageFormatSettings_display_settings = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_display_settings_);
+
+static PointerPropertyRNA rna_ImageFormatSettings_linear_colorspace_settings_;
+PropertyRNA &rna_ImageFormatSettings_linear_colorspace_settings = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_linear_colorspace_settings_);
+
+static BoolPropertyRNA rna_ImageFormatSettings_has_linear_colorspace_;
+PropertyRNA &rna_ImageFormatSettings_has_linear_colorspace = reinterpret_cast<PropertyRNA &>(rna_ImageFormatSettings_has_linear_colorspace_);
+
+StructRNA *RNA_ImageFormatSettings;
+void register_struct_ImageFormatSettings(BlenderRNA &brna)
+{
+	rna_ImageFormatSettings_rna_properties_ = {
+		{&rna_ImageFormatSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_rna_properties_begin, ImageFormatSettings_rna_properties_next, ImageFormatSettings_rna_properties_end, ImageFormatSettings_rna_properties_get, nullptr, nullptr, ImageFormatSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_ImageFormatSettings_rna_type_ = {
+		{&rna_ImageFormatSettings_media_type, 	&rna_ImageFormatSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_ImageFormatSettings_media_type_items[4] = {
+		{0, "IMAGE", 0, "Image", ""	},
+		{1, "MULTI_LAYER_IMAGE", 0, "Multi-Layer EXR", ""	},
+		{2, "VIDEO", 0, "Video", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ImageFormatSettings_media_type_ = {
+		{&rna_ImageFormatSettings_file_format, 	&rna_ImageFormatSettings_rna_type,
+		-1, "media_type", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Media Type",
+		"The type of media to save",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_media_type_get, ImageFormatSettings_media_type_set, rna_ImageFormatSettings_media_type_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ImageFormatSettings_media_type_items, 3, 0
+	};
+
+	rna_ImageFormatSettings_file_format_ = {
+		{&rna_ImageFormatSettings_color_mode, 	&rna_ImageFormatSettings_media_type,
+		-1, "file_format", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "File Format",
+		"File format to save the rendered images as",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_file_format_get, ImageFormatSettings_file_format_set, rna_ImageFormatSettings_file_format_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_image_type_all_items, 17, 17
+	};
+
+	rna_ImageFormatSettings_color_mode_ = {
+		{&rna_ImageFormatSettings_color_depth, 	&rna_ImageFormatSettings_file_format,
+		-1, "color_mode", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Color Mode",
+		"Choose BW for saving grayscale images, RGB for saving red, green and blue channels, and RGBA for saving red, green, blue and alpha channels",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, color_mode), RawPropertyType(2), nullptr},
+		ImageFormatSettings_color_mode_get, ImageFormatSettings_color_mode_set, rna_ImageFormatSettings_color_mode_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_image_color_mode_items, 3, 32
+	};
+
+	rna_ImageFormatSettings_color_depth_ = {
+		{&rna_ImageFormatSettings_quality, 	&rna_ImageFormatSettings_color_mode,
+		-1, "color_depth", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Color Depth",
+		"Bit depth per channel",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, depth), RawPropertyType(2), nullptr},
+		ImageFormatSettings_color_depth_get, ImageFormatSettings_color_depth_set, rna_ImageFormatSettings_color_depth_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_image_color_depth_items, 5, 2
+	};
+
+	rna_ImageFormatSettings_quality_ = {
+		{&rna_ImageFormatSettings_compression, 	&rna_ImageFormatSettings_color_depth,
+		-1, "quality", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Quality",
+		"Quality for image formats that support lossy compression",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PERCENTAGE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, quality), RawPropertyType(2), nullptr},
+		ImageFormatSettings_quality_get, ImageFormatSettings_quality_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 100, 0, 100, 1, nullptr, nullptr, 90, nullptr
+	};
+
+	rna_ImageFormatSettings_compression_ = {
+		{&rna_ImageFormatSettings_use_preview, 	&rna_ImageFormatSettings_quality,
+		-1, "compression", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compression",
+		"Amount of time to determine best compression: 0 = no compression with fast file output, 100 = maximum lossless compression with slow file output",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PERCENTAGE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, compress), RawPropertyType(2), nullptr},
+		ImageFormatSettings_compression_get, ImageFormatSettings_compression_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 100, 0, 100, 1, nullptr, nullptr, 15, nullptr
+	};
+
+	rna_ImageFormatSettings_use_preview_ = {
+		{&rna_ImageFormatSettings_exr_codec, 	&rna_ImageFormatSettings_compression,
+		-1, "use_preview", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Preview",
+		"When rendering animations, save JPG preview images in same directory",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_use_preview_get, ImageFormatSettings_use_preview_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_exr_codec_ = {
+		{&rna_ImageFormatSettings_use_exr_interleave, 	&rna_ImageFormatSettings_use_preview,
+		-1, "exr_codec", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Codec",
+		"Compression codec settings for OpenEXR",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, exr_codec), RawPropertyType(2), nullptr},
+		ImageFormatSettings_exr_codec_get, ImageFormatSettings_exr_codec_set, rna_ImageFormatSettings_exr_codec_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_exr_codec_items, 11, 0
+	};
+
+	rna_ImageFormatSettings_use_exr_interleave_ = {
+		{&rna_ImageFormatSettings_use_jpeg2k_ycc, 	&rna_ImageFormatSettings_exr_codec,
+		-1, "use_exr_interleave", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Interleave",
+		"Use legacy interleaved storage of views, layers and passes for compatibility with applications that do not support more efficient multi-part OpenEXR files.",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_use_exr_interleave_get, ImageFormatSettings_use_exr_interleave_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_use_jpeg2k_ycc_ = {
+		{&rna_ImageFormatSettings_use_jpeg2k_cinema_preset, 	&rna_ImageFormatSettings_use_exr_interleave,
+		-1, "use_jpeg2k_ycc", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "YCC",
+		"Save luminance-chrominance-chrominance channels instead of RGB colors",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_use_jpeg2k_ycc_get, ImageFormatSettings_use_jpeg2k_ycc_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_use_jpeg2k_cinema_preset_ = {
+		{&rna_ImageFormatSettings_use_jpeg2k_cinema_48, 	&rna_ImageFormatSettings_use_jpeg2k_ycc,
+		-1, "use_jpeg2k_cinema_preset", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cinema",
+		"Use OpenJPEG Cinema Preset",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_use_jpeg2k_cinema_preset_get, ImageFormatSettings_use_jpeg2k_cinema_preset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_use_jpeg2k_cinema_48_ = {
+		{&rna_ImageFormatSettings_jpeg2k_codec, 	&rna_ImageFormatSettings_use_jpeg2k_cinema_preset,
+		-1, "use_jpeg2k_cinema_48", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cinema (48)",
+		"Use OpenJPEG Cinema Preset (48fps)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_use_jpeg2k_cinema_48_get, ImageFormatSettings_use_jpeg2k_cinema_48_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_ImageFormatSettings_jpeg2k_codec_items[3] = {
+		{0, "JP2", 0, "JP2", ""	},
+		{1, "J2K", 0, "J2K", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ImageFormatSettings_jpeg2k_codec_ = {
+		{&rna_ImageFormatSettings_tiff_codec, 	&rna_ImageFormatSettings_use_jpeg2k_cinema_48,
+		-1, "jpeg2k_codec", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Codec",
+		"Codec settings for JPEG 2000",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, jp2_codec), RawPropertyType(2), nullptr},
+		ImageFormatSettings_jpeg2k_codec_get, ImageFormatSettings_jpeg2k_codec_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ImageFormatSettings_jpeg2k_codec_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_ImageFormatSettings_tiff_codec_items[5] = {
+		{3, "NONE", 0, "None", ""	},
+		{0, "DEFLATE", 0, "Deflate", ""	},
+		{1, "LZW", 0, "LZW", ""	},
+		{2, "PACKBITS", 0, "Pack Bits", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ImageFormatSettings_tiff_codec_ = {
+		{&rna_ImageFormatSettings_use_cineon_log, 	&rna_ImageFormatSettings_jpeg2k_codec,
+		-1, "tiff_codec", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compression",
+		"Compression mode for TIFF",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, tiff_codec), RawPropertyType(2), nullptr},
+		ImageFormatSettings_tiff_codec_get, ImageFormatSettings_tiff_codec_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ImageFormatSettings_tiff_codec_items, 4, 0
+	};
+
+	rna_ImageFormatSettings_use_cineon_log_ = {
+		{&rna_ImageFormatSettings_cineon_black, 	&rna_ImageFormatSettings_tiff_codec,
+		-1, "use_cineon_log", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Log",
+		"Convert to logarithmic color space",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_use_cineon_log_get, ImageFormatSettings_use_cineon_log_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_cineon_black_ = {
+		{&rna_ImageFormatSettings_cineon_white, 	&rna_ImageFormatSettings_use_cineon_log,
+		-1, "cineon_black", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Black",
+		"Log conversion reference blackpoint",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, cineon_black), RawPropertyType(1), nullptr},
+		ImageFormatSettings_cineon_black_get, ImageFormatSettings_cineon_black_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 1024, 0, 1024, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_cineon_white_ = {
+		{&rna_ImageFormatSettings_cineon_gamma, 	&rna_ImageFormatSettings_cineon_black,
+		-1, "cineon_white", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "White",
+		"Log conversion reference whitepoint",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, cineon_white), RawPropertyType(1), nullptr},
+		ImageFormatSettings_cineon_white_get, ImageFormatSettings_cineon_white_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 1024, 0, 1024, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ImageFormatSettings_cineon_gamma_ = {
+		{&rna_ImageFormatSettings_views_format, 	&rna_ImageFormatSettings_cineon_white,
+		-1, "cineon_gamma", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Gamma",
+		"Log conversion gamma",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, cineon_gamma), RawPropertyType(5), nullptr},
+		ImageFormatSettings_cineon_gamma_get, ImageFormatSettings_cineon_gamma_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10.0f, 0.0f, 10.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_ImageFormatSettings_views_format_ = {
+		{&rna_ImageFormatSettings_stereo_3d_format, 	&rna_ImageFormatSettings_cineon_gamma,
+		-1, "views_format", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Views Format",
+		"Format of multiview media",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ImageFormatData, views_format), RawPropertyType(2), nullptr},
+		ImageFormatSettings_views_format_get, ImageFormatSettings_views_format_set, rna_ImageFormatSettings_views_format_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_views_format_multiview_items, 3, 0
+	};
+
+	rna_ImageFormatSettings_stereo_3d_format_ = {
+		{&rna_ImageFormatSettings_color_management, 	&rna_ImageFormatSettings_views_format,
+		-1, "stereo_3d_format", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stereo 3D Format",
+		"Settings for stereo 3D",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_stereo_3d_format_get, nullptr, nullptr, nullptr,RNA_Stereo3dFormat
+	};
+
+	static const EnumPropertyItem rna_ImageFormatSettings_color_management_items[3] = {
+		{0, "FOLLOW_SCENE", 0, "Follow Scene", ""	},
+		{1, "OVERRIDE", 0, "Override", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_ImageFormatSettings_color_management_ = {
+		{&rna_ImageFormatSettings_view_settings, 	&rna_ImageFormatSettings_stereo_3d_format,
+		-1, "color_management", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Management",
+		"Which color management settings to use for file saving",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_color_management_get, ImageFormatSettings_color_management_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_ImageFormatSettings_color_management_items, 2, 0
+	};
+
+	rna_ImageFormatSettings_view_settings_ = {
+		{&rna_ImageFormatSettings_display_settings, 	&rna_ImageFormatSettings_color_management,
+		-1, "view_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "View Settings",
+		"Color management settings applied on image before saving",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_view_settings_get, nullptr, nullptr, nullptr,RNA_ColorManagedViewSettings
+	};
+
+	rna_ImageFormatSettings_display_settings_ = {
+		{&rna_ImageFormatSettings_linear_colorspace_settings, 	&rna_ImageFormatSettings_view_settings,
+		-1, "display_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Display Settings",
+		"Settings of device saved image would be displayed on",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_display_settings_get, nullptr, nullptr, nullptr,RNA_ColorManagedDisplaySettings
+	};
+
+	rna_ImageFormatSettings_linear_colorspace_settings_ = {
+		{&rna_ImageFormatSettings_has_linear_colorspace, 	&rna_ImageFormatSettings_display_settings,
+		-1, "linear_colorspace_settings", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Space Settings",
+		"Output color space settings",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_linear_colorspace_settings_get, nullptr, nullptr, nullptr,RNA_ColorManagedInputColorspaceSettings
+	};
+
+	rna_ImageFormatSettings_has_linear_colorspace_ = {
+		{nullptr, 	&rna_ImageFormatSettings_linear_colorspace_settings,
+		-1, "has_linear_colorspace", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Has Linear Color Space",
+		"File format expects linear color space",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ImageFormatSettings_has_linear_colorspace_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_ImageFormatSettings;
+	srna->cont.properties = {&rna_ImageFormatSettings_rna_properties, &rna_ImageFormatSettings_has_linear_colorspace};
+	srna->identifier = "ImageFormatSettings";
+	srna->flag = 516;
+	srna->name = "Image Format";
+	srna->description = "Settings for image formats";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_ImageFormatSettings_rna_properties;
+	srna->nested = RNA_Scene;
+	srna->path = rna_ImageFormatSettings_path;
+};
+
+/* TransformOrientation */
+static CollectionPropertyRNA rna_TransformOrientation_rna_properties_;
+PropertyRNA &rna_TransformOrientation_rna_properties = reinterpret_cast<PropertyRNA &>(rna_TransformOrientation_rna_properties_);
+
+static PointerPropertyRNA rna_TransformOrientation_rna_type_;
+PropertyRNA &rna_TransformOrientation_rna_type = reinterpret_cast<PropertyRNA &>(rna_TransformOrientation_rna_type_);
+
+static FloatPropertyRNA rna_TransformOrientation_matrix_;
+PropertyRNA &rna_TransformOrientation_matrix = reinterpret_cast<PropertyRNA &>(rna_TransformOrientation_matrix_);
+
+static StringPropertyRNA rna_TransformOrientation_name_;
+PropertyRNA &rna_TransformOrientation_name = reinterpret_cast<PropertyRNA &>(rna_TransformOrientation_name_);
+
+StructRNA *RNA_TransformOrientation;
+void register_struct_TransformOrientation(BlenderRNA &brna)
+{
+	rna_TransformOrientation_rna_properties_ = {
+		{&rna_TransformOrientation_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientation_rna_properties_begin, TransformOrientation_rna_properties_next, TransformOrientation_rna_properties_end, TransformOrientation_rna_properties_get, nullptr, nullptr, TransformOrientation_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_TransformOrientation_rna_type_ = {
+		{&rna_TransformOrientation_matrix, 	&rna_TransformOrientation_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientation_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static float rna_TransformOrientation_matrix_default[9] = {
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_TransformOrientation_matrix_ = {
+		{&rna_TransformOrientation_name, 	&rna_TransformOrientation_rna_type,
+		-1, "matrix", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "matrix",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_MATRIX) | int(PROP_UNIT_NONE)), nullptr, 2, {3, 3, 0}, 9,
+		nullptr, 85065728, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(TransformOrientation, mat), RawPropertyType(5), nullptr},
+		nullptr, nullptr, TransformOrientation_matrix_get, TransformOrientation_matrix_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, rna_TransformOrientation_matrix_default
+	};
+
+	rna_TransformOrientation_name_ = {
+		{nullptr, 	&rna_TransformOrientation_matrix,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Name",
+		"Name of the custom transform orientation",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 85065728, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientation_name_get, TransformOrientation_name_length, TransformOrientation_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_TransformOrientation;
+	srna->cont.properties = {&rna_TransformOrientation_rna_properties, &rna_TransformOrientation_name};
+	srna->identifier = "TransformOrientation";
+	srna->flag = 516;
+	srna->name = "TransformOrientation";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_TransformOrientation_name;
+	srna->iteratorproperty = &rna_TransformOrientation_rna_properties;
+};
+
+/* Orientation Slot */
+static CollectionPropertyRNA rna_TransformOrientationSlot_rna_properties_;
+PropertyRNA &rna_TransformOrientationSlot_rna_properties = reinterpret_cast<PropertyRNA &>(rna_TransformOrientationSlot_rna_properties_);
+
+static PointerPropertyRNA rna_TransformOrientationSlot_rna_type_;
+PropertyRNA &rna_TransformOrientationSlot_rna_type = reinterpret_cast<PropertyRNA &>(rna_TransformOrientationSlot_rna_type_);
+
+static EnumPropertyRNA rna_TransformOrientationSlot_type_;
+PropertyRNA &rna_TransformOrientationSlot_type = reinterpret_cast<PropertyRNA &>(rna_TransformOrientationSlot_type_);
+
+static PointerPropertyRNA rna_TransformOrientationSlot_custom_orientation_;
+PropertyRNA &rna_TransformOrientationSlot_custom_orientation = reinterpret_cast<PropertyRNA &>(rna_TransformOrientationSlot_custom_orientation_);
+
+static BoolPropertyRNA rna_TransformOrientationSlot_use_;
+PropertyRNA &rna_TransformOrientationSlot_use = reinterpret_cast<PropertyRNA &>(rna_TransformOrientationSlot_use_);
+
+StructRNA *RNA_TransformOrientationSlot;
+void register_struct_TransformOrientationSlot(BlenderRNA &brna)
+{
+	rna_TransformOrientationSlot_rna_properties_ = {
+		{&rna_TransformOrientationSlot_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientationSlot_rna_properties_begin, TransformOrientationSlot_rna_properties_next, TransformOrientationSlot_rna_properties_end, TransformOrientationSlot_rna_properties_get, nullptr, nullptr, TransformOrientationSlot_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_TransformOrientationSlot_rna_type_ = {
+		{&rna_TransformOrientationSlot_type, 	&rna_TransformOrientationSlot_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientationSlot_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_TransformOrientationSlot_type_ = {
+		{&rna_TransformOrientationSlot_custom_orientation, 	&rna_TransformOrientationSlot_rna_type,
+		-1, "type", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Orientation",
+		"Transformation orientation",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 85065728, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientationSlot_type_get, TransformOrientationSlot_type_set, rna_TransformOrientation_with_scene_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_transform_orientation_items, 7, 0
+	};
+
+	rna_TransformOrientationSlot_custom_orientation_ = {
+		{&rna_TransformOrientationSlot_use, 	&rna_TransformOrientationSlot_type,
+		-1, "custom_orientation", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Current Transform Orientation",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientationSlot_custom_orientation_get, nullptr, nullptr, nullptr,RNA_TransformOrientation
+	};
+
+	rna_TransformOrientationSlot_use_ = {
+		{nullptr, 	&rna_TransformOrientationSlot_custom_orientation,
+		-1, "use", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Use scene orientation instead of a custom setting",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84869120, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		TransformOrientationSlot_use_get, TransformOrientationSlot_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_TransformOrientationSlot;
+	srna->cont.properties = {&rna_TransformOrientationSlot_rna_properties, &rna_TransformOrientationSlot_use};
+	srna->identifier = "TransformOrientationSlot";
+	srna->flag = 516;
+	srna->name = "Orientation Slot";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_TransformOrientationSlot_rna_properties;
+	srna->path = rna_TransformOrientationSlot_path;
+};
+
+/* 3D Cursor */
+static CollectionPropertyRNA rna_View3DCursor_rna_properties_;
+PropertyRNA &rna_View3DCursor_rna_properties = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_rna_properties_);
+
+static PointerPropertyRNA rna_View3DCursor_rna_type_;
+PropertyRNA &rna_View3DCursor_rna_type = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_rna_type_);
+
+static FloatPropertyRNA rna_View3DCursor_location_;
+PropertyRNA &rna_View3DCursor_location = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_location_);
+
+static FloatPropertyRNA rna_View3DCursor_rotation_quaternion_;
+PropertyRNA &rna_View3DCursor_rotation_quaternion = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_rotation_quaternion_);
+
+static FloatPropertyRNA rna_View3DCursor_rotation_axis_angle_;
+PropertyRNA &rna_View3DCursor_rotation_axis_angle = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_rotation_axis_angle_);
+
+static FloatPropertyRNA rna_View3DCursor_rotation_euler_;
+PropertyRNA &rna_View3DCursor_rotation_euler = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_rotation_euler_);
+
+static EnumPropertyRNA rna_View3DCursor_rotation_mode_;
+PropertyRNA &rna_View3DCursor_rotation_mode = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_rotation_mode_);
+
+static FloatPropertyRNA rna_View3DCursor_matrix_;
+PropertyRNA &rna_View3DCursor_matrix = reinterpret_cast<PropertyRNA &>(rna_View3DCursor_matrix_);
+
+StructRNA *RNA_View3DCursor;
+void register_struct_View3DCursor(BlenderRNA &brna)
+{
+	rna_View3DCursor_rna_properties_ = {
+		{&rna_View3DCursor_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		View3DCursor_rna_properties_begin, View3DCursor_rna_properties_next, View3DCursor_rna_properties_end, View3DCursor_rna_properties_get, nullptr, nullptr, View3DCursor_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_View3DCursor_rna_type_ = {
+		{&rna_View3DCursor_location, 	&rna_View3DCursor_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		View3DCursor_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static float rna_View3DCursor_location_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_View3DCursor_location_ = {
+		{&rna_View3DCursor_rotation_quaternion, 	&rna_View3DCursor_rna_type,
+		-1, "location", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Location",
+		"",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_LENGTH)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(View3DCursor, location), RawPropertyType(5), nullptr},
+		nullptr, nullptr, View3DCursor_location_get, View3DCursor_location_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 4, nullptr, nullptr, 0.0f, rna_View3DCursor_location_default
+	};
+
+	static float rna_View3DCursor_rotation_quaternion_default[4] = {
+		1.0f,
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_View3DCursor_rotation_quaternion_ = {
+		{&rna_View3DCursor_rotation_axis_angle, 	&rna_View3DCursor_location,
+		-1, "rotation_quaternion", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Quaternion Rotation",
+		"Rotation in quaternions (keep normalized)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_QUATERNION) | int(PROP_UNIT_NONE)), nullptr, 1, {4, 0, 0}, 4,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(View3DCursor, rotation_quaternion), RawPropertyType(5), nullptr},
+		nullptr, nullptr, View3DCursor_rotation_quaternion_get, View3DCursor_rotation_quaternion_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, rna_View3DCursor_rotation_quaternion_default
+	};
+
+	static float rna_View3DCursor_rotation_axis_angle_default[4] = {
+		0.0f,
+		0.0f,
+		1.0f,
+		0.0f
+	};
+	rna_View3DCursor_rotation_axis_angle_ = {
+		{&rna_View3DCursor_rotation_euler, 	&rna_View3DCursor_rotation_quaternion,
+		-1, "rotation_axis_angle", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Axis-Angle Rotation",
+		"Angle of Rotation for Axis-Angle rotation representation",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_AXISANGLE) | int(PROP_UNIT_NONE)), nullptr, 1, {4, 0, 0}, 4,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, View3DCursor_rotation_axis_angle_get, View3DCursor_rotation_axis_angle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, rna_View3DCursor_rotation_axis_angle_default
+	};
+
+	static float rna_View3DCursor_rotation_euler_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_View3DCursor_rotation_euler_ = {
+		{&rna_View3DCursor_rotation_mode, 	&rna_View3DCursor_rotation_axis_angle,
+		-1, "rotation_euler", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Euler Rotation",
+		"3D rotation",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_EULER) | int(PROP_UNIT_ROTATION)), nullptr, 1, {3, 0, 0}, 3,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(View3DCursor, rotation_euler), RawPropertyType(5), nullptr},
+		nullptr, nullptr, View3DCursor_rotation_euler_get, View3DCursor_rotation_euler_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -FLT_MAX, FLT_MAX, -FLT_MAX, FLT_MAX, 100.0f, 5, nullptr, nullptr, 0.0f, rna_View3DCursor_rotation_euler_default
+	};
+
+	rna_View3DCursor_rotation_mode_ = {
+		{&rna_View3DCursor_matrix, 	&rna_View3DCursor_rotation_euler,
+		-1, "rotation_mode", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Rotation Mode",
+		"The kind of rotation to apply, values from other rotation modes are not used",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		View3DCursor_rotation_mode_get, View3DCursor_rotation_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_object_rotation_mode_items, 8, 1
+	};
+
+	static float rna_View3DCursor_matrix_default[16] = {
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_View3DCursor_matrix_ = {
+		{nullptr, 	&rna_View3DCursor_rotation_mode,
+		-1, "matrix", 8388609, 0, 0, 0, 0, PropertyPathTemplateType(0), "Transform Matrix",
+		"Matrix combining location and rotation of the cursor",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_MATRIX) | int(PROP_UNIT_NONE)), nullptr, 2, {4, 4, 0}, 16,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, View3DCursor_matrix_get, View3DCursor_matrix_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, rna_View3DCursor_matrix_default
+	};
+
+	StructRNA *srna = RNA_View3DCursor;
+	srna->cont.properties = {&rna_View3DCursor_rna_properties, &rna_View3DCursor_matrix};
+	srna->identifier = "View3DCursor";
+	srna->flag = 512;
+	srna->name = "3D Cursor";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 558;
+	srna->iteratorproperty = &rna_View3DCursor_rna_properties;
+	srna->path = rna_View3DCursor_path;
+};
+
+/* Selected UV Element */
+static IntPropertyRNA rna_SelectedUvElement_element_index_;
+PropertyRNA &rna_SelectedUvElement_element_index = reinterpret_cast<PropertyRNA &>(rna_SelectedUvElement_element_index_);
+
+static IntPropertyRNA rna_SelectedUvElement_face_index_;
+PropertyRNA &rna_SelectedUvElement_face_index = reinterpret_cast<PropertyRNA &>(rna_SelectedUvElement_face_index_);
+
+StructRNA *RNA_SelectedUvElement;
+void register_struct_SelectedUvElement(BlenderRNA &brna)
+{
+	rna_SelectedUvElement_element_index_ = {
+		{&rna_SelectedUvElement_face_index, 	nullptr,
+		-1, "element_index", 1025, 0, 0, 0, 0, PropertyPathTemplateType(0), "Element Index",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SelectedUvElement_face_index_ = {
+		{nullptr, 	&rna_SelectedUvElement_element_index,
+		-1, "face_index", 1025, 0, 0, 0, 0, PropertyPathTemplateType(0), "Face Index",
+		"",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_SelectedUvElement;
+	srna->cont.properties = {&rna_SelectedUvElement_element_index, &rna_SelectedUvElement_face_index};
+	srna->identifier = "SelectedUvElement";
+	srna->flag = 516;
+	srna->name = "Selected UV Element";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_PropertyGroup_name;
+	srna->iteratorproperty = &rna_PropertyGroup_rna_properties;
+	srna->base = RNA_PropertyGroup;
+	srna->refine = rna_PropertyGroup_refine;
+	srna->reg = rna_PropertyGroup_register;
+	srna->unreg = rna_PropertyGroup_unregister;
+	srna->idproperties = rna_PropertyGroup_idprops;
+	srna->system_idproperties = rna_PropertyGroup_idprops;
+};
+
+/* Safe Areas */
+static CollectionPropertyRNA rna_DisplaySafeAreas_rna_properties_;
+PropertyRNA &rna_DisplaySafeAreas_rna_properties = reinterpret_cast<PropertyRNA &>(rna_DisplaySafeAreas_rna_properties_);
+
+static PointerPropertyRNA rna_DisplaySafeAreas_rna_type_;
+PropertyRNA &rna_DisplaySafeAreas_rna_type = reinterpret_cast<PropertyRNA &>(rna_DisplaySafeAreas_rna_type_);
+
+static FloatPropertyRNA rna_DisplaySafeAreas_title_;
+PropertyRNA &rna_DisplaySafeAreas_title = reinterpret_cast<PropertyRNA &>(rna_DisplaySafeAreas_title_);
+
+static FloatPropertyRNA rna_DisplaySafeAreas_action_;
+PropertyRNA &rna_DisplaySafeAreas_action = reinterpret_cast<PropertyRNA &>(rna_DisplaySafeAreas_action_);
+
+static FloatPropertyRNA rna_DisplaySafeAreas_title_center_;
+PropertyRNA &rna_DisplaySafeAreas_title_center = reinterpret_cast<PropertyRNA &>(rna_DisplaySafeAreas_title_center_);
+
+static FloatPropertyRNA rna_DisplaySafeAreas_action_center_;
+PropertyRNA &rna_DisplaySafeAreas_action_center = reinterpret_cast<PropertyRNA &>(rna_DisplaySafeAreas_action_center_);
+
+StructRNA *RNA_DisplaySafeAreas;
+void register_struct_DisplaySafeAreas(BlenderRNA &brna)
+{
+	rna_DisplaySafeAreas_rna_properties_ = {
+		{&rna_DisplaySafeAreas_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		DisplaySafeAreas_rna_properties_begin, DisplaySafeAreas_rna_properties_next, DisplaySafeAreas_rna_properties_end, DisplaySafeAreas_rna_properties_get, nullptr, nullptr, DisplaySafeAreas_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_DisplaySafeAreas_rna_type_ = {
+		{&rna_DisplaySafeAreas_title, 	&rna_DisplaySafeAreas_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		DisplaySafeAreas_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static float rna_DisplaySafeAreas_title_default[2] = {
+		0.1000000015f,
+		0.0500000007f
+	};
+	rna_DisplaySafeAreas_title_ = {
+		{&rna_DisplaySafeAreas_action, 	&rna_DisplaySafeAreas_rna_type,
+		-1, "title", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Title Safe Margins",
+		"Safe area for text and graphics",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {2, 0, 0}, 2,
+		nullptr, 85917696, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(DisplaySafeAreas, title), RawPropertyType(5), nullptr},
+		nullptr, nullptr, DisplaySafeAreas_title_get, DisplaySafeAreas_title_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, rna_DisplaySafeAreas_title_default
+	};
+
+	static float rna_DisplaySafeAreas_action_default[2] = {
+		0.0350000001f,
+		0.0350000001f
+	};
+	rna_DisplaySafeAreas_action_ = {
+		{&rna_DisplaySafeAreas_title_center, 	&rna_DisplaySafeAreas_title,
+		-1, "action", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Action Safe Margins",
+		"Safe area for general elements",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {2, 0, 0}, 2,
+		nullptr, 85917696, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(DisplaySafeAreas, action), RawPropertyType(5), nullptr},
+		nullptr, nullptr, DisplaySafeAreas_action_get, DisplaySafeAreas_action_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, rna_DisplaySafeAreas_action_default
+	};
+
+	static float rna_DisplaySafeAreas_title_center_default[2] = {
+		0.1749999970f,
+		0.0500000007f
+	};
+	rna_DisplaySafeAreas_title_center_ = {
+		{&rna_DisplaySafeAreas_action_center, 	&rna_DisplaySafeAreas_action,
+		-1, "title_center", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Center Title Safe Margins",
+		"Safe area for text and graphics in a different aspect ratio",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {2, 0, 0}, 2,
+		nullptr, 85917696, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(DisplaySafeAreas, title_center), RawPropertyType(5), nullptr},
+		nullptr, nullptr, DisplaySafeAreas_title_center_get, DisplaySafeAreas_title_center_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, rna_DisplaySafeAreas_title_center_default
+	};
+
+	static float rna_DisplaySafeAreas_action_center_default[2] = {
+		0.1500000060f,
+		0.0500000007f
+	};
+	rna_DisplaySafeAreas_action_center_ = {
+		{nullptr, 	&rna_DisplaySafeAreas_title_center,
+		-1, "action_center", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Center Action Safe Margins",
+		"Safe area for general elements in a different aspect ratio",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_XYZ) | int(PROP_UNIT_NONE)), nullptr, 1, {2, 0, 0}, 2,
+		nullptr, 85917696, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(DisplaySafeAreas, action_center), RawPropertyType(5), nullptr},
+		nullptr, nullptr, DisplaySafeAreas_action_center_get, DisplaySafeAreas_action_center_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, rna_DisplaySafeAreas_action_center_default
+	};
+
+	StructRNA *srna = RNA_DisplaySafeAreas;
+	srna->cont.properties = {&rna_DisplaySafeAreas_rna_properties, &rna_DisplaySafeAreas_action_center};
+	srna->identifier = "DisplaySafeAreas";
+	srna->flag = 516;
+	srna->name = "Safe Areas";
+	srna->description = "Safe areas used in 3D view and the sequencer";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_DisplaySafeAreas_rna_properties;
+};
+
+/* Scene Display */
+static CollectionPropertyRNA rna_SceneDisplay_rna_properties_;
+PropertyRNA &rna_SceneDisplay_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_rna_properties_);
+
+static PointerPropertyRNA rna_SceneDisplay_rna_type_;
+PropertyRNA &rna_SceneDisplay_rna_type = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_rna_type_);
+
+static FloatPropertyRNA rna_SceneDisplay_light_direction_;
+PropertyRNA &rna_SceneDisplay_light_direction = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_light_direction_);
+
+static FloatPropertyRNA rna_SceneDisplay_shadow_shift_;
+PropertyRNA &rna_SceneDisplay_shadow_shift = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_shadow_shift_);
+
+static FloatPropertyRNA rna_SceneDisplay_shadow_focus_;
+PropertyRNA &rna_SceneDisplay_shadow_focus = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_shadow_focus_);
+
+static FloatPropertyRNA rna_SceneDisplay_matcap_ssao_distance_;
+PropertyRNA &rna_SceneDisplay_matcap_ssao_distance = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_matcap_ssao_distance_);
+
+static FloatPropertyRNA rna_SceneDisplay_matcap_ssao_attenuation_;
+PropertyRNA &rna_SceneDisplay_matcap_ssao_attenuation = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_matcap_ssao_attenuation_);
+
+static IntPropertyRNA rna_SceneDisplay_matcap_ssao_samples_;
+PropertyRNA &rna_SceneDisplay_matcap_ssao_samples = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_matcap_ssao_samples_);
+
+static EnumPropertyRNA rna_SceneDisplay_render_aa_;
+PropertyRNA &rna_SceneDisplay_render_aa = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_render_aa_);
+
+static EnumPropertyRNA rna_SceneDisplay_viewport_aa_;
+PropertyRNA &rna_SceneDisplay_viewport_aa = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_viewport_aa_);
+
+static PointerPropertyRNA rna_SceneDisplay_shading_;
+PropertyRNA &rna_SceneDisplay_shading = reinterpret_cast<PropertyRNA &>(rna_SceneDisplay_shading_);
+
+StructRNA *RNA_SceneDisplay;
+void register_struct_SceneDisplay(BlenderRNA &brna)
+{
+	rna_SceneDisplay_rna_properties_ = {
+		{&rna_SceneDisplay_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneDisplay_rna_properties_begin, SceneDisplay_rna_properties_next, SceneDisplay_rna_properties_end, SceneDisplay_rna_properties_get, nullptr, nullptr, SceneDisplay_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SceneDisplay_rna_type_ = {
+		{&rna_SceneDisplay_light_direction, 	&rna_SceneDisplay_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneDisplay_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static float rna_SceneDisplay_light_direction_default[3] = {
+		0.5773502588f,
+		0.5773502588f,
+		0.5773502588f
+	};
+	rna_SceneDisplay_light_direction_ = {
+		{&rna_SceneDisplay_shadow_shift, 	&rna_SceneDisplay_rna_type,
+		-1, "light_direction", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Light Direction",
+		"Direction of the light for shadows and highlights",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DIRECTION) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		rna_Scene_set_update, 83886081, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, light_direction), RawPropertyType(5), nullptr},
+		nullptr, nullptr, SceneDisplay_light_direction_get, SceneDisplay_light_direction_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, rna_SceneDisplay_light_direction_default
+	};
+
+	rna_SceneDisplay_shadow_shift_ = {
+		{&rna_SceneDisplay_shadow_focus, 	&rna_SceneDisplay_light_direction,
+		-1, "shadow_shift", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Shadow Shift",
+		"Shadow termination angle",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_set_update, 83886081, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, shadow_shift), RawPropertyType(5), nullptr},
+		SceneDisplay_shadow_shift_get, SceneDisplay_shadow_shift_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 2, nullptr, nullptr, 0.1000000015f, nullptr
+	};
+
+	rna_SceneDisplay_shadow_focus_ = {
+		{&rna_SceneDisplay_matcap_ssao_distance, 	&rna_SceneDisplay_shadow_shift,
+		-1, "shadow_focus", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Shadow Focus",
+		"Shadow factor hardness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_set_update, 83886081, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, shadow_focus), RawPropertyType(5), nullptr},
+		SceneDisplay_shadow_focus_get, SceneDisplay_shadow_focus_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 2, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_SceneDisplay_matcap_ssao_distance_ = {
+		{&rna_SceneDisplay_matcap_ssao_attenuation, 	&rna_SceneDisplay_shadow_focus,
+		-1, "matcap_ssao_distance", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Distance",
+		"Distance of object that contribute to the cavity/edge effect",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, matcap_ssao_distance), RawPropertyType(5), nullptr},
+		SceneDisplay_matcap_ssao_distance_get, SceneDisplay_matcap_ssao_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 100000.0f, 1.0f, 3, nullptr, nullptr, 0.2000000030f, nullptr
+	};
+
+	rna_SceneDisplay_matcap_ssao_attenuation_ = {
+		{&rna_SceneDisplay_matcap_ssao_samples, 	&rna_SceneDisplay_matcap_ssao_distance,
+		-1, "matcap_ssao_attenuation", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Attenuation",
+		"Attenuation constant",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, matcap_ssao_attenuation), RawPropertyType(5), nullptr},
+		SceneDisplay_matcap_ssao_attenuation_get, SceneDisplay_matcap_ssao_attenuation_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 100000.0f, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_SceneDisplay_matcap_ssao_samples_ = {
+		{&rna_SceneDisplay_render_aa, 	&rna_SceneDisplay_matcap_ssao_attenuation,
+		-1, "matcap_ssao_samples", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Samples",
+		"Number of samples",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, matcap_ssao_samples), RawPropertyType(0), nullptr},
+		SceneDisplay_matcap_ssao_samples_get, SceneDisplay_matcap_ssao_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 500, 1, 500, 1, nullptr, nullptr, 16, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneDisplay_render_aa_items[8] = {
+		{0, "OFF", 0, "No Anti-Aliasing", "Scene will be rendering without any anti-aliasing"	},
+		{1, "FXAA", 0, "Single Pass Anti-Aliasing", "Scene will be rendered using a single pass anti-aliasing method (FXAA)"	},
+		{5, "5", 0, "5 Samples", "Scene will be rendered using 5 anti-aliasing samples"	},
+		{8, "8", 0, "8 Samples", "Scene will be rendered using 8 anti-aliasing samples"	},
+		{11, "11", 0, "11 Samples", "Scene will be rendered using 11 anti-aliasing samples"	},
+		{16, "16", 0, "16 Samples", "Scene will be rendered using 16 anti-aliasing samples"	},
+		{32, "32", 0, "32 Samples", "Scene will be rendered using 32 anti-aliasing samples"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneDisplay_render_aa_ = {
+		{&rna_SceneDisplay_viewport_aa, 	&rna_SceneDisplay_matcap_ssao_samples,
+		-1, "render_aa", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Render Anti-Aliasing",
+		"Method of anti-aliasing when rendering final image",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, render_aa), RawPropertyType(2), nullptr},
+		SceneDisplay_render_aa_get, SceneDisplay_render_aa_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneDisplay_render_aa_items, 7, 8
+	};
+
+	static const EnumPropertyItem rna_SceneDisplay_viewport_aa_items[8] = {
+		{0, "OFF", 0, "No Anti-Aliasing", "Scene will be rendering without any anti-aliasing"	},
+		{1, "FXAA", 0, "Single Pass Anti-Aliasing", "Scene will be rendered using a single pass anti-aliasing method (FXAA)"	},
+		{5, "5", 0, "5 Samples", "Scene will be rendered using 5 anti-aliasing samples"	},
+		{8, "8", 0, "8 Samples", "Scene will be rendered using 8 anti-aliasing samples"	},
+		{11, "11", 0, "11 Samples", "Scene will be rendered using 11 anti-aliasing samples"	},
+		{16, "16", 0, "16 Samples", "Scene will be rendered using 16 anti-aliasing samples"	},
+		{32, "32", 0, "32 Samples", "Scene will be rendered using 32 anti-aliasing samples"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneDisplay_viewport_aa_ = {
+		{&rna_SceneDisplay_shading, 	&rna_SceneDisplay_render_aa,
+		-1, "viewport_aa", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Viewport Anti-Aliasing",
+		"Method of anti-aliasing when rendering 3d viewport",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneDisplay, viewport_aa), RawPropertyType(2), nullptr},
+		SceneDisplay_viewport_aa_get, SceneDisplay_viewport_aa_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneDisplay_viewport_aa_items, 7, 1
+	};
+
+	rna_SceneDisplay_shading_ = {
+		{nullptr, 	&rna_SceneDisplay_viewport_aa,
+		-1, "shading", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Shading Settings",
+		"Shading settings for OpenGL render engine",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneDisplay_shading_get, nullptr, nullptr, nullptr,RNA_View3DShading
+	};
+
+	StructRNA *srna = RNA_SceneDisplay;
+	srna->cont.properties = {&rna_SceneDisplay_rna_properties, &rna_SceneDisplay_shading};
+	srna->identifier = "SceneDisplay";
+	srna->flag = 516;
+	srna->name = "Scene Display";
+	srna->description = "Scene display settings for 3D viewport";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_SceneDisplay_rna_properties;
+};
+
+/* EEVEE Raytrace Options */
+static CollectionPropertyRNA rna_RaytraceEEVEE_rna_properties_;
+PropertyRNA &rna_RaytraceEEVEE_rna_properties = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_rna_properties_);
+
+static PointerPropertyRNA rna_RaytraceEEVEE_rna_type_;
+PropertyRNA &rna_RaytraceEEVEE_rna_type = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_rna_type_);
+
+static EnumPropertyRNA rna_RaytraceEEVEE_resolution_scale_;
+PropertyRNA &rna_RaytraceEEVEE_resolution_scale = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_resolution_scale_);
+
+static BoolPropertyRNA rna_RaytraceEEVEE_use_backface_hit_;
+PropertyRNA &rna_RaytraceEEVEE_use_backface_hit = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_use_backface_hit_);
+
+static FloatPropertyRNA rna_RaytraceEEVEE_backface_radiance_scale_;
+PropertyRNA &rna_RaytraceEEVEE_backface_radiance_scale = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_backface_radiance_scale_);
+
+static BoolPropertyRNA rna_RaytraceEEVEE_use_denoise_;
+PropertyRNA &rna_RaytraceEEVEE_use_denoise = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_use_denoise_);
+
+static BoolPropertyRNA rna_RaytraceEEVEE_denoise_spatial_;
+PropertyRNA &rna_RaytraceEEVEE_denoise_spatial = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_denoise_spatial_);
+
+static BoolPropertyRNA rna_RaytraceEEVEE_denoise_temporal_;
+PropertyRNA &rna_RaytraceEEVEE_denoise_temporal = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_denoise_temporal_);
+
+static BoolPropertyRNA rna_RaytraceEEVEE_denoise_bilateral_;
+PropertyRNA &rna_RaytraceEEVEE_denoise_bilateral = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_denoise_bilateral_);
+
+static FloatPropertyRNA rna_RaytraceEEVEE_screen_trace_thickness_;
+PropertyRNA &rna_RaytraceEEVEE_screen_trace_thickness = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_screen_trace_thickness_);
+
+static FloatPropertyRNA rna_RaytraceEEVEE_trace_max_roughness_;
+PropertyRNA &rna_RaytraceEEVEE_trace_max_roughness = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_trace_max_roughness_);
+
+static FloatPropertyRNA rna_RaytraceEEVEE_screen_trace_quality_;
+PropertyRNA &rna_RaytraceEEVEE_screen_trace_quality = reinterpret_cast<PropertyRNA &>(rna_RaytraceEEVEE_screen_trace_quality_);
+
+StructRNA *RNA_RaytraceEEVEE;
+void register_struct_RaytraceEEVEE(BlenderRNA &brna)
+{
+	rna_RaytraceEEVEE_rna_properties_ = {
+		{&rna_RaytraceEEVEE_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_rna_properties_begin, RaytraceEEVEE_rna_properties_next, RaytraceEEVEE_rna_properties_end, RaytraceEEVEE_rna_properties_get, nullptr, nullptr, RaytraceEEVEE_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_RaytraceEEVEE_rna_type_ = {
+		{&rna_RaytraceEEVEE_resolution_scale, 	&rna_RaytraceEEVEE_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_RaytraceEEVEE_resolution_scale_items[6] = {
+		{1, "1", 0, "1:1", "Full resolution"	},
+		{2, "2", 0, "1:2", "Render this effect at 50% render resolution"	},
+		{4, "4", 0, "1:4", "Render this effect at 25% render resolution"	},
+		{8, "8", 0, "1:8", "Render this effect at 12.5% render resolution"	},
+		{16, "16", 0, "1:16", "Render this effect at 6.25% render resolution"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RaytraceEEVEE_resolution_scale_ = {
+		{&rna_RaytraceEEVEE_use_backface_hit, 	&rna_RaytraceEEVEE_rna_type,
+		-1, "resolution_scale", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Resolution",
+		"Determines the number of rays per pixel. Higher resolution uses more memory.",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RaytraceEEVEE, resolution_scale), RawPropertyType(0), nullptr},
+		RaytraceEEVEE_resolution_scale_get, RaytraceEEVEE_resolution_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RaytraceEEVEE_resolution_scale_items, 5, 2
+	};
+
+	rna_RaytraceEEVEE_use_backface_hit_ = {
+		{&rna_RaytraceEEVEE_backface_radiance_scale, 	&rna_RaytraceEEVEE_resolution_scale,
+		-1, "use_backface_hit", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Hit Backfaces",
+		"Consider rays hitting backfaces as valid",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_use_backface_hit_get, RaytraceEEVEE_use_backface_hit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RaytraceEEVEE_backface_radiance_scale_ = {
+		{&rna_RaytraceEEVEE_use_denoise, 	&rna_RaytraceEEVEE_use_backface_hit,
+		-1, "backface_radiance_scale", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Backface Radiance Scale",
+		"Amount of the front face lighting to reuse for backface lighting approximation",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RaytraceEEVEE, backface_radiance_scale), RawPropertyType(5), nullptr},
+		RaytraceEEVEE_backface_radiance_scale_get, RaytraceEEVEE_backface_radiance_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.2500000000f, nullptr
+	};
+
+	rna_RaytraceEEVEE_use_denoise_ = {
+		{&rna_RaytraceEEVEE_denoise_spatial, 	&rna_RaytraceEEVEE_backface_radiance_scale,
+		-1, "use_denoise", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Denoise",
+		"Enable noise reduction techniques for raytraced effects",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_use_denoise_get, RaytraceEEVEE_use_denoise_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RaytraceEEVEE_denoise_spatial_ = {
+		{&rna_RaytraceEEVEE_denoise_temporal, 	&rna_RaytraceEEVEE_use_denoise,
+		-1, "denoise_spatial", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Spatial Reuse",
+		"Reuse neighbor pixels\' rays",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_denoise_spatial_get, RaytraceEEVEE_denoise_spatial_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RaytraceEEVEE_denoise_temporal_ = {
+		{&rna_RaytraceEEVEE_denoise_bilateral, 	&rna_RaytraceEEVEE_denoise_spatial,
+		-1, "denoise_temporal", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Temporal Accumulation",
+		"Accumulate samples by reprojecting last tracing results",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_denoise_temporal_get, RaytraceEEVEE_denoise_temporal_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RaytraceEEVEE_denoise_bilateral_ = {
+		{&rna_RaytraceEEVEE_screen_trace_thickness, 	&rna_RaytraceEEVEE_denoise_temporal,
+		-1, "denoise_bilateral", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Bilateral Filter",
+		"Blur the resolved radiance using a bilateral filter",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RaytraceEEVEE_denoise_bilateral_get, RaytraceEEVEE_denoise_bilateral_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RaytraceEEVEE_screen_trace_thickness_ = {
+		{&rna_RaytraceEEVEE_trace_max_roughness, 	&rna_RaytraceEEVEE_denoise_bilateral,
+		-1, "screen_trace_thickness", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Screen-Trace Thickness",
+		"Surface thickness used to detect intersection when using screen-tracing",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RaytraceEEVEE, screen_trace_thickness), RawPropertyType(5), nullptr},
+		RaytraceEEVEE_screen_trace_thickness_get, RaytraceEEVEE_screen_trace_thickness_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0010000000f, FLT_MAX, 0.0000010000f, FLT_MAX, 5.0f, 3, nullptr, nullptr, 0.1000000015f, nullptr
+	};
+
+	rna_RaytraceEEVEE_trace_max_roughness_ = {
+		{&rna_RaytraceEEVEE_screen_trace_quality, 	&rna_RaytraceEEVEE_screen_trace_thickness,
+		-1, "trace_max_roughness", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Raytrace Max Roughness",
+		"Maximum roughness to use the tracing pipeline for. Higher roughness surfaces will use fast GI approximation. A value of 1 will disable fast GI approximation.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RaytraceEEVEE, trace_max_roughness), RawPropertyType(5), nullptr},
+		RaytraceEEVEE_trace_max_roughness_get, RaytraceEEVEE_trace_max_roughness_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.5000000000f, nullptr
+	};
+
+	rna_RaytraceEEVEE_screen_trace_quality_ = {
+		{nullptr, 	&rna_RaytraceEEVEE_trace_max_roughness,
+		-1, "screen_trace_quality", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Screen-Trace Precision",
+		"Precision of the screen space ray-tracing",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RaytraceEEVEE, screen_trace_quality), RawPropertyType(5), nullptr},
+		RaytraceEEVEE_screen_trace_quality_get, RaytraceEEVEE_screen_trace_quality_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.2500000000f, nullptr
+	};
+
+	StructRNA *srna = RNA_RaytraceEEVEE;
+	srna->cont.properties = {&rna_RaytraceEEVEE_rna_properties, &rna_RaytraceEEVEE_screen_trace_quality};
+	srna->identifier = "RaytraceEEVEE";
+	srna->flag = 516;
+	srna->name = "EEVEE Raytrace Options";
+	srna->description = "Quality options for the raytracing pipeline";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_RaytraceEEVEE_rna_properties;
+	srna->path = rna_RaytraceEEVEE_path;
+};
+
+/* Scene Display */
+static CollectionPropertyRNA rna_SceneEEVEE_rna_properties_;
+PropertyRNA &rna_SceneEEVEE_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_rna_properties_);
+
+static PointerPropertyRNA rna_SceneEEVEE_rna_type_;
+PropertyRNA &rna_SceneEEVEE_rna_type = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_rna_type_);
+
+static IntPropertyRNA rna_SceneEEVEE_gi_diffuse_bounces_;
+PropertyRNA &rna_SceneEEVEE_gi_diffuse_bounces = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_gi_diffuse_bounces_);
+
+static EnumPropertyRNA rna_SceneEEVEE_gi_cubemap_resolution_;
+PropertyRNA &rna_SceneEEVEE_gi_cubemap_resolution = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_gi_cubemap_resolution_);
+
+static EnumPropertyRNA rna_SceneEEVEE_gi_visibility_resolution_;
+PropertyRNA &rna_SceneEEVEE_gi_visibility_resolution = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_gi_visibility_resolution_);
+
+static FloatPropertyRNA rna_SceneEEVEE_gi_glossy_clamp_;
+PropertyRNA &rna_SceneEEVEE_gi_glossy_clamp = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_gi_glossy_clamp_);
+
+static EnumPropertyRNA rna_SceneEEVEE_gi_irradiance_pool_size_;
+PropertyRNA &rna_SceneEEVEE_gi_irradiance_pool_size = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_gi_irradiance_pool_size_);
+
+static IntPropertyRNA rna_SceneEEVEE_taa_samples_;
+PropertyRNA &rna_SceneEEVEE_taa_samples = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_taa_samples_);
+
+static IntPropertyRNA rna_SceneEEVEE_taa_render_samples_;
+PropertyRNA &rna_SceneEEVEE_taa_render_samples = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_taa_render_samples_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_taa_reprojection_;
+PropertyRNA &rna_SceneEEVEE_use_taa_reprojection = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_taa_reprojection_);
+
+static EnumPropertyRNA rna_SceneEEVEE_ray_tracing_method_;
+PropertyRNA &rna_SceneEEVEE_ray_tracing_method = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_ray_tracing_method_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_shadow_jitter_viewport_;
+PropertyRNA &rna_SceneEEVEE_use_shadow_jitter_viewport = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_shadow_jitter_viewport_);
+
+static FloatPropertyRNA rna_SceneEEVEE_clamp_surface_direct_;
+PropertyRNA &rna_SceneEEVEE_clamp_surface_direct = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_clamp_surface_direct_);
+
+static FloatPropertyRNA rna_SceneEEVEE_clamp_surface_indirect_;
+PropertyRNA &rna_SceneEEVEE_clamp_surface_indirect = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_clamp_surface_indirect_);
+
+static FloatPropertyRNA rna_SceneEEVEE_clamp_volume_direct_;
+PropertyRNA &rna_SceneEEVEE_clamp_volume_direct = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_clamp_volume_direct_);
+
+static FloatPropertyRNA rna_SceneEEVEE_clamp_volume_indirect_;
+PropertyRNA &rna_SceneEEVEE_clamp_volume_indirect = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_clamp_volume_indirect_);
+
+static FloatPropertyRNA rna_SceneEEVEE_direct_light_intensity_;
+PropertyRNA &rna_SceneEEVEE_direct_light_intensity = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_direct_light_intensity_);
+
+static FloatPropertyRNA rna_SceneEEVEE_indirect_light_intensity_;
+PropertyRNA &rna_SceneEEVEE_indirect_light_intensity = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_indirect_light_intensity_);
+
+static FloatPropertyRNA rna_SceneEEVEE_volumetric_start_;
+PropertyRNA &rna_SceneEEVEE_volumetric_start = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_start_);
+
+static FloatPropertyRNA rna_SceneEEVEE_volumetric_end_;
+PropertyRNA &rna_SceneEEVEE_volumetric_end = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_end_);
+
+static EnumPropertyRNA rna_SceneEEVEE_volumetric_tile_size_;
+PropertyRNA &rna_SceneEEVEE_volumetric_tile_size = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_tile_size_);
+
+static IntPropertyRNA rna_SceneEEVEE_volumetric_samples_;
+PropertyRNA &rna_SceneEEVEE_volumetric_samples = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_samples_);
+
+static FloatPropertyRNA rna_SceneEEVEE_volumetric_sample_distribution_;
+PropertyRNA &rna_SceneEEVEE_volumetric_sample_distribution = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_sample_distribution_);
+
+static IntPropertyRNA rna_SceneEEVEE_volumetric_ray_depth_;
+PropertyRNA &rna_SceneEEVEE_volumetric_ray_depth = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_ray_depth_);
+
+static FloatPropertyRNA rna_SceneEEVEE_volumetric_light_clamp_;
+PropertyRNA &rna_SceneEEVEE_volumetric_light_clamp = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_light_clamp_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_volumetric_shadows_;
+PropertyRNA &rna_SceneEEVEE_use_volumetric_shadows = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_volumetric_shadows_);
+
+static IntPropertyRNA rna_SceneEEVEE_volumetric_shadow_samples_;
+PropertyRNA &rna_SceneEEVEE_volumetric_shadow_samples = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_volumetric_shadow_samples_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_volume_custom_range_;
+PropertyRNA &rna_SceneEEVEE_use_volume_custom_range = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_volume_custom_range_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_fast_gi_;
+PropertyRNA &rna_SceneEEVEE_use_fast_gi = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_fast_gi_);
+
+static FloatPropertyRNA rna_SceneEEVEE_fast_gi_thickness_near_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_thickness_near = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_thickness_near_);
+
+static FloatPropertyRNA rna_SceneEEVEE_fast_gi_quality_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_quality = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_quality_);
+
+static IntPropertyRNA rna_SceneEEVEE_fast_gi_step_count_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_step_count = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_step_count_);
+
+static IntPropertyRNA rna_SceneEEVEE_fast_gi_ray_count_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_ray_count = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_ray_count_);
+
+static EnumPropertyRNA rna_SceneEEVEE_fast_gi_method_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_method = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_method_);
+
+static FloatPropertyRNA rna_SceneEEVEE_fast_gi_distance_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_distance = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_distance_);
+
+static FloatPropertyRNA rna_SceneEEVEE_fast_gi_bias_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_bias = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_bias_);
+
+static EnumPropertyRNA rna_SceneEEVEE_fast_gi_resolution_;
+PropertyRNA &rna_SceneEEVEE_fast_gi_resolution = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_fast_gi_resolution_);
+
+static FloatPropertyRNA rna_SceneEEVEE_bokeh_max_size_;
+PropertyRNA &rna_SceneEEVEE_bokeh_max_size = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_bokeh_max_size_);
+
+static FloatPropertyRNA rna_SceneEEVEE_bokeh_threshold_;
+PropertyRNA &rna_SceneEEVEE_bokeh_threshold = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_bokeh_threshold_);
+
+static FloatPropertyRNA rna_SceneEEVEE_bokeh_neighbor_max_;
+PropertyRNA &rna_SceneEEVEE_bokeh_neighbor_max = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_bokeh_neighbor_max_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_bokeh_jittered_;
+PropertyRNA &rna_SceneEEVEE_use_bokeh_jittered = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_bokeh_jittered_);
+
+static FloatPropertyRNA rna_SceneEEVEE_bokeh_overblur_;
+PropertyRNA &rna_SceneEEVEE_bokeh_overblur = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_bokeh_overblur_);
+
+static FloatPropertyRNA rna_SceneEEVEE_motion_blur_depth_scale_;
+PropertyRNA &rna_SceneEEVEE_motion_blur_depth_scale = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_motion_blur_depth_scale_);
+
+static IntPropertyRNA rna_SceneEEVEE_motion_blur_max_;
+PropertyRNA &rna_SceneEEVEE_motion_blur_max = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_motion_blur_max_);
+
+static IntPropertyRNA rna_SceneEEVEE_motion_blur_steps_;
+PropertyRNA &rna_SceneEEVEE_motion_blur_steps = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_motion_blur_steps_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_shadows_;
+PropertyRNA &rna_SceneEEVEE_use_shadows = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_shadows_);
+
+static EnumPropertyRNA rna_SceneEEVEE_shadow_pool_size_;
+PropertyRNA &rna_SceneEEVEE_shadow_pool_size = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_shadow_pool_size_);
+
+static IntPropertyRNA rna_SceneEEVEE_shadow_ray_count_;
+PropertyRNA &rna_SceneEEVEE_shadow_ray_count = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_shadow_ray_count_);
+
+static IntPropertyRNA rna_SceneEEVEE_shadow_step_count_;
+PropertyRNA &rna_SceneEEVEE_shadow_step_count = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_shadow_step_count_);
+
+static FloatPropertyRNA rna_SceneEEVEE_light_threshold_;
+PropertyRNA &rna_SceneEEVEE_light_threshold = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_light_threshold_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_overscan_;
+PropertyRNA &rna_SceneEEVEE_use_overscan = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_overscan_);
+
+static FloatPropertyRNA rna_SceneEEVEE_overscan_size_;
+PropertyRNA &rna_SceneEEVEE_overscan_size = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_overscan_size_);
+
+static PointerPropertyRNA rna_SceneEEVEE_ray_tracing_options_;
+PropertyRNA &rna_SceneEEVEE_ray_tracing_options = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_ray_tracing_options_);
+
+static BoolPropertyRNA rna_SceneEEVEE_use_raytracing_;
+PropertyRNA &rna_SceneEEVEE_use_raytracing = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_use_raytracing_);
+
+static FloatPropertyRNA rna_SceneEEVEE_shadow_resolution_scale_;
+PropertyRNA &rna_SceneEEVEE_shadow_resolution_scale = reinterpret_cast<PropertyRNA &>(rna_SceneEEVEE_shadow_resolution_scale_);
+
+StructRNA *RNA_SceneEEVEE;
+void register_struct_SceneEEVEE(BlenderRNA &brna)
+{
+	rna_SceneEEVEE_rna_properties_ = {
+		{&rna_SceneEEVEE_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_rna_properties_begin, SceneEEVEE_rna_properties_next, SceneEEVEE_rna_properties_end, SceneEEVEE_rna_properties_get, nullptr, nullptr, SceneEEVEE_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SceneEEVEE_rna_type_ = {
+		{&rna_SceneEEVEE_gi_diffuse_bounces, 	&rna_SceneEEVEE_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_SceneEEVEE_gi_diffuse_bounces_ = {
+		{&rna_SceneEEVEE_gi_cubemap_resolution, 	&rna_SceneEEVEE_rna_type,
+		-1, "gi_diffuse_bounces", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Diffuse Bounces",
+		"Number of times the light is reinjected inside light grids, 0 disable indirect diffuse light",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, gi_diffuse_bounces), RawPropertyType(0), nullptr},
+		SceneEEVEE_gi_diffuse_bounces_get, SceneEEVEE_gi_diffuse_bounces_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 3, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_gi_cubemap_resolution_items[7] = {
+		{128, "128", 0, "128 px", ""	},
+		{256, "256", 0, "256 px", ""	},
+		{512, "512", 0, "512 px", ""	},
+		{1024, "1024", 0, "1024 px", ""	},
+		{2048, "2048", 0, "2048 px", ""	},
+		{4096, "4096", 0, "4096 px", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_gi_cubemap_resolution_ = {
+		{&rna_SceneEEVEE_gi_visibility_resolution, 	&rna_SceneEEVEE_gi_diffuse_bounces,
+		-1, "gi_cubemap_resolution", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Cubemap Size",
+		"Size of every cubemaps",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneEEVEE_gi_cubemap_resolution_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, gi_cubemap_resolution), RawPropertyType(0), nullptr},
+		SceneEEVEE_gi_cubemap_resolution_get, SceneEEVEE_gi_cubemap_resolution_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_gi_cubemap_resolution_items, 6, 512
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_gi_visibility_resolution_items[5] = {
+		{8, "8", 0, "8 px", ""	},
+		{16, "16", 0, "16 px", ""	},
+		{32, "32", 0, "32 px", ""	},
+		{64, "64", 0, "64 px", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_gi_visibility_resolution_ = {
+		{&rna_SceneEEVEE_gi_glossy_clamp, 	&rna_SceneEEVEE_gi_cubemap_resolution,
+		-1, "gi_visibility_resolution", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Irradiance Visibility Size",
+		"Size of the shadow map applied to each irradiance sample",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, gi_visibility_resolution), RawPropertyType(0), nullptr},
+		SceneEEVEE_gi_visibility_resolution_get, SceneEEVEE_gi_visibility_resolution_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_gi_visibility_resolution_items, 4, 32
+	};
+
+	rna_SceneEEVEE_gi_glossy_clamp_ = {
+		{&rna_SceneEEVEE_gi_irradiance_pool_size, 	&rna_SceneEEVEE_gi_visibility_resolution,
+		-1, "gi_glossy_clamp", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Clamp Glossy",
+		"Clamp pixel intensity to reduce noise inside glossy reflections from reflection cubemaps (0 to disable)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, gi_glossy_clamp), RawPropertyType(5), nullptr},
+		SceneEEVEE_gi_glossy_clamp_get, SceneEEVEE_gi_glossy_clamp_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_gi_irradiance_pool_size_items[8] = {
+		{16, "16", 0, "16 MB", ""	},
+		{32, "32", 0, "32 MB", ""	},
+		{64, "64", 0, "64 MB", ""	},
+		{128, "128", 0, "128 MB", ""	},
+		{256, "256", 0, "256 MB", ""	},
+		{512, "512", 0, "512 MB", ""	},
+		{1024, "1024", 0, "1 GB", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_gi_irradiance_pool_size_ = {
+		{&rna_SceneEEVEE_taa_samples, 	&rna_SceneEEVEE_gi_glossy_clamp,
+		-1, "gi_irradiance_pool_size", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Irradiance Pool Size",
+		"Size of the irradiance pool, a bigger pool size allows for more irradiance grid in the scene but might not fit into GPU memory and decrease performance",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, gi_irradiance_pool_size), RawPropertyType(0), nullptr},
+		SceneEEVEE_gi_irradiance_pool_size_get, SceneEEVEE_gi_irradiance_pool_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_gi_irradiance_pool_size_items, 7, 16
+	};
+
+	rna_SceneEEVEE_taa_samples_ = {
+		{&rna_SceneEEVEE_taa_render_samples, 	&rna_SceneEEVEE_gi_irradiance_pool_size,
+		-1, "taa_samples", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Viewport Samples",
+		"Number of samples, unlimited if 0",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, taa_samples), RawPropertyType(0), nullptr},
+		SceneEEVEE_taa_samples_get, SceneEEVEE_taa_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 16, nullptr
+	};
+
+	rna_SceneEEVEE_taa_render_samples_ = {
+		{&rna_SceneEEVEE_use_taa_reprojection, 	&rna_SceneEEVEE_taa_samples,
+		-1, "taa_render_samples", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Render Samples",
+		"Number of samples per pixel for rendering",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, taa_render_samples), RawPropertyType(0), nullptr},
+		SceneEEVEE_taa_render_samples_get, SceneEEVEE_taa_render_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, INT_MAX, 1, INT_MAX, 1, nullptr, nullptr, 64, nullptr
+	};
+
+	rna_SceneEEVEE_use_taa_reprojection_ = {
+		{&rna_SceneEEVEE_ray_tracing_method, 	&rna_SceneEEVEE_taa_render_samples,
+		-1, "use_taa_reprojection", 3, 1, 0, 0, 0, PropertyPathTemplateType(0), "Viewport Denoising",
+		"Denoise image using temporal reprojection (can leave some ghosting)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_taa_reprojection_get, SceneEEVEE_use_taa_reprojection_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_ray_tracing_method_items[3] = {
+		{0, "PROBE", 0, "Light Probe", "Use light probes to find scene intersection"	},
+		{1, "SCREEN", 0, "Screen-Trace", "Raytrace against the depth buffer. Fallback to light probes for invalid rays."	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_ray_tracing_method_ = {
+		{&rna_SceneEEVEE_use_shadow_jitter_viewport, 	&rna_SceneEEVEE_use_taa_reprojection,
+		-1, "ray_tracing_method", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Tracing Method",
+		"Select the tracing method used to find scene-ray intersections",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, ray_tracing_method), RawPropertyType(0), nullptr},
+		SceneEEVEE_ray_tracing_method_get, SceneEEVEE_ray_tracing_method_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_ray_tracing_method_items, 2, 1
+	};
+
+	rna_SceneEEVEE_use_shadow_jitter_viewport_ = {
+		{&rna_SceneEEVEE_clamp_surface_direct, 	&rna_SceneEEVEE_ray_tracing_method,
+		-1, "use_shadow_jitter_viewport", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Jittered Shadows (Viewport)",
+		"Enable jittered shadows on the viewport. (Jittered shadows are always enabled for final renders).",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_shadow_jitter_viewport_get, SceneEEVEE_use_shadow_jitter_viewport_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_clamp_surface_direct_ = {
+		{&rna_SceneEEVEE_clamp_surface_indirect, 	&rna_SceneEEVEE_use_shadow_jitter_viewport,
+		-1, "clamp_surface_direct", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Clamp Surface Direct",
+		"If non-zero, the maximum value for lights contribution on a surface. Higher values will be scaled down to avoid too much noise and slow convergence at the cost of accuracy. Used by light objects.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, clamp_surface_direct), RawPropertyType(5), nullptr},
+		SceneEEVEE_clamp_surface_direct_get, SceneEEVEE_clamp_surface_direct_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_SceneEEVEE_clamp_surface_indirect_ = {
+		{&rna_SceneEEVEE_clamp_volume_direct, 	&rna_SceneEEVEE_clamp_surface_direct,
+		-1, "clamp_surface_indirect", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Clamp Surface Indirect",
+		"If non-zero, the maximum value for indirect lighting on surface. Higher values will be scaled down to avoid too much noise and slow convergence at the cost of accuracy. Used by ray-tracing and light-probes.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneEEVEE_clamp_surface_indirect_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, clamp_surface_indirect), RawPropertyType(5), nullptr},
+		SceneEEVEE_clamp_surface_indirect_get, SceneEEVEE_clamp_surface_indirect_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 10.0f, nullptr
+	};
+
+	rna_SceneEEVEE_clamp_volume_direct_ = {
+		{&rna_SceneEEVEE_clamp_volume_indirect, 	&rna_SceneEEVEE_clamp_surface_indirect,
+		-1, "clamp_volume_direct", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Clamp Volume Direct",
+		"If non-zero, the maximum value for lights contribution in volumes. Higher values will be scaled down to avoid too much noise and slow convergence at the cost of accuracy. Used by light objects.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, clamp_volume_direct), RawPropertyType(5), nullptr},
+		SceneEEVEE_clamp_volume_direct_get, SceneEEVEE_clamp_volume_direct_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_SceneEEVEE_clamp_volume_indirect_ = {
+		{&rna_SceneEEVEE_direct_light_intensity, 	&rna_SceneEEVEE_clamp_volume_direct,
+		-1, "clamp_volume_indirect", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Clamp Volume Indirect",
+		"If non-zero, the maximum value for indirect lighting in volumes. Higher values will be scaled down to avoid too much noise and slow convergence at the cost of accuracy. Used by light-probes.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, clamp_volume_indirect), RawPropertyType(5), nullptr},
+		SceneEEVEE_clamp_volume_indirect_get, SceneEEVEE_clamp_volume_indirect_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_SceneEEVEE_direct_light_intensity_ = {
+		{&rna_SceneEEVEE_indirect_light_intensity, 	&rna_SceneEEVEE_clamp_volume_indirect,
+		-1, "direct_light_intensity", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Direct Light Strength",
+		"Scale the contribution of direct lighting",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, direct_light_intensity), RawPropertyType(5), nullptr},
+		SceneEEVEE_direct_light_intensity_get, SceneEEVEE_direct_light_intensity_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.0f, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_SceneEEVEE_indirect_light_intensity_ = {
+		{&rna_SceneEEVEE_volumetric_start, 	&rna_SceneEEVEE_direct_light_intensity,
+		-1, "indirect_light_intensity", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Indirect Light Strength",
+		"Scale the contribution of indirect lighting",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, indirect_light_intensity), RawPropertyType(5), nullptr},
+		SceneEEVEE_indirect_light_intensity_get, SceneEEVEE_indirect_light_intensity_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.0f, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_SceneEEVEE_volumetric_start_ = {
+		{&rna_SceneEEVEE_volumetric_end, 	&rna_SceneEEVEE_indirect_light_intensity,
+		-1, "volumetric_start", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Start",
+		"Start distance of the volumetric effect",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_start), RawPropertyType(5), nullptr},
+		SceneEEVEE_volumetric_start_get, SceneEEVEE_volumetric_start_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0010000000f, FLT_MAX, 0.0000010000f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.1000000015f, nullptr
+	};
+
+	rna_SceneEEVEE_volumetric_end_ = {
+		{&rna_SceneEEVEE_volumetric_tile_size, 	&rna_SceneEEVEE_volumetric_start,
+		-1, "volumetric_end", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "End",
+		"End distance of the volumetric effect",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_end), RawPropertyType(5), nullptr},
+		SceneEEVEE_volumetric_end_get, SceneEEVEE_volumetric_end_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0010000000f, FLT_MAX, 0.0000010000f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 100.0f, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_volumetric_tile_size_items[6] = {
+		{1, "1", 0, "1:1", "Full resolution"	},
+		{2, "2", 0, "1:2", "Render this effect at 50% render resolution"	},
+		{4, "4", 0, "1:4", "Render this effect at 25% render resolution"	},
+		{8, "8", 0, "1:8", "Render this effect at 12.5% render resolution"	},
+		{16, "16", 0, "1:16", "Render this effect at 6.25% render resolution"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_volumetric_tile_size_ = {
+		{&rna_SceneEEVEE_volumetric_samples, 	&rna_SceneEEVEE_volumetric_end,
+		-1, "volumetric_tile_size", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Resolution",
+		"Control the quality of the volumetric effects. Higher resolution uses more memory.",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_tile_size), RawPropertyType(0), nullptr},
+		SceneEEVEE_volumetric_tile_size_get, SceneEEVEE_volumetric_tile_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_volumetric_tile_size_items, 5, 8
+	};
+
+	rna_SceneEEVEE_volumetric_samples_ = {
+		{&rna_SceneEEVEE_volumetric_sample_distribution, 	&rna_SceneEEVEE_volumetric_tile_size,
+		-1, "volumetric_samples", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Steps",
+		"Number of steps to compute volumetric effects. Higher step count increase VRAM usage and quality.",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_samples), RawPropertyType(0), nullptr},
+		SceneEEVEE_volumetric_samples_get, SceneEEVEE_volumetric_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 256, 1, 256, 1, nullptr, nullptr, 64, nullptr
+	};
+
+	rna_SceneEEVEE_volumetric_sample_distribution_ = {
+		{&rna_SceneEEVEE_volumetric_ray_depth, 	&rna_SceneEEVEE_volumetric_samples,
+		-1, "volumetric_sample_distribution", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Exponential Sampling",
+		"Distribute more samples closer to the camera",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_sample_distribution), RawPropertyType(5), nullptr},
+		SceneEEVEE_volumetric_sample_distribution_get, SceneEEVEE_volumetric_sample_distribution_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.8000000119f, nullptr
+	};
+
+	rna_SceneEEVEE_volumetric_ray_depth_ = {
+		{&rna_SceneEEVEE_volumetric_light_clamp, 	&rna_SceneEEVEE_volumetric_sample_distribution,
+		-1, "volumetric_ray_depth", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Volume Max Ray Depth",
+		"Maximum surface intersection count used by the accurate volume intersection method. Will create artifact if it is exceeded. Higher count increases VRAM usage.",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_ray_depth), RawPropertyType(0), nullptr},
+		SceneEEVEE_volumetric_ray_depth_get, SceneEEVEE_volumetric_ray_depth_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 16, 1, 16, 1, nullptr, nullptr, 16, nullptr
+	};
+
+	rna_SceneEEVEE_volumetric_light_clamp_ = {
+		{&rna_SceneEEVEE_use_volumetric_shadows, 	&rna_SceneEEVEE_volumetric_ray_depth,
+		-1, "volumetric_light_clamp", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Clamp",
+		"Maximum light contribution, reducing noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_light_clamp), RawPropertyType(5), nullptr},
+		SceneEEVEE_volumetric_light_clamp_get, SceneEEVEE_volumetric_light_clamp_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_SceneEEVEE_use_volumetric_shadows_ = {
+		{&rna_SceneEEVEE_volumetric_shadow_samples, 	&rna_SceneEEVEE_volumetric_light_clamp,
+		-1, "use_volumetric_shadows", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Volumetric Shadows",
+		"Cast shadows from volumetric materials onto volumetric materials (Very expensive)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_volumetric_shadows_get, SceneEEVEE_use_volumetric_shadows_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_volumetric_shadow_samples_ = {
+		{&rna_SceneEEVEE_use_volume_custom_range, 	&rna_SceneEEVEE_use_volumetric_shadows,
+		-1, "volumetric_shadow_samples", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Volumetric Shadow Samples",
+		"Number of samples to compute volumetric shadowing",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, volumetric_shadow_samples), RawPropertyType(0), nullptr},
+		SceneEEVEE_volumetric_shadow_samples_get, SceneEEVEE_volumetric_shadow_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 128, 1, 128, 1, nullptr, nullptr, 16, nullptr
+	};
+
+	rna_SceneEEVEE_use_volume_custom_range_ = {
+		{&rna_SceneEEVEE_use_fast_gi, 	&rna_SceneEEVEE_volumetric_shadow_samples,
+		-1, "use_volume_custom_range", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Volume Custom Range",
+		"Enable custom start and end clip distances for volume computation",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_volume_custom_range_get, SceneEEVEE_use_volume_custom_range_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_use_fast_gi_ = {
+		{&rna_SceneEEVEE_fast_gi_thickness_near, 	&rna_SceneEEVEE_use_volume_custom_range,
+		-1, "use_fast_gi", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Fast GI Approximation",
+		"Use faster global illumination technique for high roughness surfaces",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_fast_gi_get, SceneEEVEE_use_fast_gi_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_fast_gi_thickness_near_ = {
+		{&rna_SceneEEVEE_fast_gi_quality, 	&rna_SceneEEVEE_use_fast_gi,
+		-1, "fast_gi_thickness_near", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Thickness",
+		"Geometric thickness of the surfaces when computing fast GI and ambient occlusion. Reduces light leaking and missing contact occlusion.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_thickness_near), RawPropertyType(5), nullptr},
+		SceneEEVEE_fast_gi_thickness_near_get, SceneEEVEE_fast_gi_thickness_near_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 100000.0f, 1.0f, 3, nullptr, nullptr, 0.1000000015f, nullptr
+	};
+
+	rna_SceneEEVEE_fast_gi_quality_ = {
+		{&rna_SceneEEVEE_fast_gi_step_count, 	&rna_SceneEEVEE_fast_gi_thickness_near,
+		-1, "fast_gi_quality", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Trace Precision",
+		"Precision of the fast GI ray marching",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_quality), RawPropertyType(5), nullptr},
+		SceneEEVEE_fast_gi_quality_get, SceneEEVEE_fast_gi_quality_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.2500000000f, nullptr
+	};
+
+	rna_SceneEEVEE_fast_gi_step_count_ = {
+		{&rna_SceneEEVEE_fast_gi_ray_count, 	&rna_SceneEEVEE_fast_gi_quality,
+		-1, "fast_gi_step_count", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Step Count",
+		"Amount of screen sample per GI ray",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_step_count), RawPropertyType(0), nullptr},
+		SceneEEVEE_fast_gi_step_count_get, SceneEEVEE_fast_gi_step_count_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 64, 1, 64, 1, nullptr, nullptr, 8, nullptr
+	};
+
+	rna_SceneEEVEE_fast_gi_ray_count_ = {
+		{&rna_SceneEEVEE_fast_gi_method, 	&rna_SceneEEVEE_fast_gi_step_count,
+		-1, "fast_gi_ray_count", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Ray Count",
+		"Amount of GI ray to trace for each pixel",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_ray_count), RawPropertyType(0), nullptr},
+		SceneEEVEE_fast_gi_ray_count_get, SceneEEVEE_fast_gi_ray_count_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 16, 1, 16, 1, nullptr, nullptr, 2, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_fast_gi_method_items[3] = {
+		{1, "AMBIENT_OCCLUSION_ONLY", 0, "Ambient Occlusion", "Use ambient occlusion instead of full global illumination"	},
+		{0, "GLOBAL_ILLUMINATION", 0, "Global Illumination", "Compute global illumination taking into account light bouncing off surrounding objects"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_fast_gi_method_ = {
+		{&rna_SceneEEVEE_fast_gi_distance, 	&rna_SceneEEVEE_fast_gi_ray_count,
+		-1, "fast_gi_method", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Method",
+		"Fast GI approximation method",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_method), RawPropertyType(2), nullptr},
+		SceneEEVEE_fast_gi_method_get, SceneEEVEE_fast_gi_method_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_fast_gi_method_items, 2, 0
+	};
+
+	rna_SceneEEVEE_fast_gi_distance_ = {
+		{&rna_SceneEEVEE_fast_gi_bias, 	&rna_SceneEEVEE_fast_gi_method,
+		-1, "fast_gi_distance", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Distance",
+		"If non-zero, the maximum distance at which other surfaces will contribute to the fast GI approximation",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_distance), RawPropertyType(5), nullptr},
+		SceneEEVEE_fast_gi_distance_get, SceneEEVEE_fast_gi_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 100000.0f, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_SceneEEVEE_fast_gi_bias_ = {
+		{&rna_SceneEEVEE_fast_gi_resolution, 	&rna_SceneEEVEE_fast_gi_distance,
+		-1, "fast_gi_bias", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Bias",
+		"Bias the shading normal to reduce self intersection artifacts",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_bias), RawPropertyType(5), nullptr},
+		SceneEEVEE_fast_gi_bias_get, SceneEEVEE_fast_gi_bias_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 0.5000000000f, 0.0f, 1.0f, 1.0f, 2, nullptr, nullptr, 0.0500000007f, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_fast_gi_resolution_items[6] = {
+		{1, "1", 0, "1:1", "Full resolution"	},
+		{2, "2", 0, "1:2", "Render this effect at 50% render resolution"	},
+		{4, "4", 0, "1:4", "Render this effect at 25% render resolution"	},
+		{8, "8", 0, "1:8", "Render this effect at 12.5% render resolution"	},
+		{16, "16", 0, "1:16", "Render this effect at 6.25% render resolution"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_fast_gi_resolution_ = {
+		{&rna_SceneEEVEE_bokeh_max_size, 	&rna_SceneEEVEE_fast_gi_bias,
+		-1, "fast_gi_resolution", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Resolution",
+		"Control the quality of the fast GI lighting. Higher resolution uses more memory.",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, fast_gi_resolution), RawPropertyType(0), nullptr},
+		SceneEEVEE_fast_gi_resolution_get, SceneEEVEE_fast_gi_resolution_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_fast_gi_resolution_items, 5, 2
+	};
+
+	rna_SceneEEVEE_bokeh_max_size_ = {
+		{&rna_SceneEEVEE_bokeh_threshold, 	&rna_SceneEEVEE_fast_gi_resolution,
+		-1, "bokeh_max_size", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Max Size",
+		"Max size of the bokeh shape for the depth of field (lower is faster)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, bokeh_max_size), RawPropertyType(5), nullptr},
+		SceneEEVEE_bokeh_max_size_get, SceneEEVEE_bokeh_max_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 200.0f, 0.0f, 2000.0f, 100.0f, 1, nullptr, nullptr, 100.0f, nullptr
+	};
+
+	rna_SceneEEVEE_bokeh_threshold_ = {
+		{&rna_SceneEEVEE_bokeh_neighbor_max, 	&rna_SceneEEVEE_bokeh_max_size,
+		-1, "bokeh_threshold", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Sprite Threshold",
+		"Brightness threshold for using sprite base depth of field",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, bokeh_threshold), RawPropertyType(5), nullptr},
+		SceneEEVEE_bokeh_threshold_get, SceneEEVEE_bokeh_threshold_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10.0f, 0.0f, 100000.0f, 10.0f, 2, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_SceneEEVEE_bokeh_neighbor_max_ = {
+		{&rna_SceneEEVEE_use_bokeh_jittered, 	&rna_SceneEEVEE_bokeh_threshold,
+		-1, "bokeh_neighbor_max", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Neighbor Rejection",
+		"Maximum brightness to consider when rejecting bokeh sprites based on neighborhood (lower is faster)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, bokeh_neighbor_max), RawPropertyType(5), nullptr},
+		SceneEEVEE_bokeh_neighbor_max_get, SceneEEVEE_bokeh_neighbor_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 40.0f, 0.0f, 100000.0f, 10.0f, 2, nullptr, nullptr, 10.0f, nullptr
+	};
+
+	rna_SceneEEVEE_use_bokeh_jittered_ = {
+		{&rna_SceneEEVEE_bokeh_overblur, 	&rna_SceneEEVEE_bokeh_neighbor_max,
+		-1, "use_bokeh_jittered", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Jitter Camera",
+		"Jitter camera position to create accurate blurring using render samples (only for final render)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_bokeh_jittered_get, SceneEEVEE_use_bokeh_jittered_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_bokeh_overblur_ = {
+		{&rna_SceneEEVEE_motion_blur_depth_scale, 	&rna_SceneEEVEE_use_bokeh_jittered,
+		-1, "bokeh_overblur", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Over-blur",
+		"Apply blur to each jittered sample to reduce under-sampling artifacts",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_PERCENTAGE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, bokeh_overblur), RawPropertyType(5), nullptr},
+		SceneEEVEE_bokeh_overblur_get, SceneEEVEE_bokeh_overblur_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 20.0f, 0.0f, 100.0f, 1.0f, 1, nullptr, nullptr, 5.0f, nullptr
+	};
+
+	rna_SceneEEVEE_motion_blur_depth_scale_ = {
+		{&rna_SceneEEVEE_motion_blur_max, 	&rna_SceneEEVEE_bokeh_overblur,
+		-1, "motion_blur_depth_scale", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Bleeding Bias",
+		"Lower values will reduce background bleeding onto foreground elements",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, motion_blur_depth_scale), RawPropertyType(5), nullptr},
+		SceneEEVEE_motion_blur_depth_scale_get, SceneEEVEE_motion_blur_depth_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0099999998f, 1000.0f, 0.0f, FLT_MAX, 1.0f, 2, nullptr, nullptr, 100.0f, nullptr
+	};
+
+	rna_SceneEEVEE_motion_blur_max_ = {
+		{&rna_SceneEEVEE_motion_blur_steps, 	&rna_SceneEEVEE_motion_blur_depth_scale,
+		-1, "motion_blur_max", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Max Blur",
+		"Maximum blur distance a pixel can spread over",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, motion_blur_max), RawPropertyType(0), nullptr},
+		SceneEEVEE_motion_blur_max_get, SceneEEVEE_motion_blur_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 512, 0, 2048, 1, nullptr, nullptr, 32, nullptr
+	};
+
+	rna_SceneEEVEE_motion_blur_steps_ = {
+		{&rna_SceneEEVEE_use_shadows, 	&rna_SceneEEVEE_motion_blur_max,
+		-1, "motion_blur_steps", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Motion steps",
+		"Controls accuracy of motion blur, more steps means longer render time",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, motion_blur_steps), RawPropertyType(0), nullptr},
+		SceneEEVEE_motion_blur_steps_get, SceneEEVEE_motion_blur_steps_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 64, 1, INT_MAX, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_SceneEEVEE_use_shadows_ = {
+		{&rna_SceneEEVEE_shadow_pool_size, 	&rna_SceneEEVEE_motion_blur_steps,
+		-1, "use_shadows", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Shadows",
+		"Enable shadow casting from lights",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_shadows_get, SceneEEVEE_use_shadows_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_SceneEEVEE_shadow_pool_size_items[10] = {
+		{16, "16", 0, "16 MB", ""	},
+		{32, "32", 0, "32 MB", ""	},
+		{64, "64", 0, "64 MB", ""	},
+		{128, "128", 0, "128 MB", ""	},
+		{256, "256", 0, "256 MB", ""	},
+		{512, "512", 0, "512 MB", ""	},
+		{1024, "1024", 0, "1 GB", ""	},
+		{1536, "1536", 0, "1.5 GB", ""	},
+		{2048, "2048", 0, "2 GB", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneEEVEE_shadow_pool_size_ = {
+		{&rna_SceneEEVEE_shadow_ray_count, 	&rna_SceneEEVEE_use_shadows,
+		-1, "shadow_pool_size", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Shadow Pool Size",
+		"Size of the shadow pool, a bigger pool size allows for more shadows in the scene but might not fit into GPU memory",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, shadow_pool_size), RawPropertyType(0), nullptr},
+		SceneEEVEE_shadow_pool_size_get, SceneEEVEE_shadow_pool_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneEEVEE_shadow_pool_size_items, 9, 512
+	};
+
+	rna_SceneEEVEE_shadow_ray_count_ = {
+		{&rna_SceneEEVEE_shadow_step_count, 	&rna_SceneEEVEE_shadow_pool_size,
+		-1, "shadow_ray_count", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Shadow Ray Count",
+		"Amount of shadow ray to trace for each light",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, shadow_ray_count), RawPropertyType(0), nullptr},
+		SceneEEVEE_shadow_ray_count_get, SceneEEVEE_shadow_ray_count_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 4, 1, 4, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_SceneEEVEE_shadow_step_count_ = {
+		{&rna_SceneEEVEE_light_threshold, 	&rna_SceneEEVEE_shadow_ray_count,
+		-1, "shadow_step_count", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Shadow Step Count",
+		"Amount of shadow map sample per shadow ray",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, shadow_step_count), RawPropertyType(0), nullptr},
+		SceneEEVEE_shadow_step_count_get, SceneEEVEE_shadow_step_count_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 16, 1, 16, 1, nullptr, nullptr, 6, nullptr
+	};
+
+	rna_SceneEEVEE_light_threshold_ = {
+		{&rna_SceneEEVEE_use_overscan, 	&rna_SceneEEVEE_shadow_step_count,
+		-1, "light_threshold", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Light Threshold",
+		"Minimum light intensity for a light to contribute to the lighting",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, light_threshold), RawPropertyType(5), nullptr},
+		SceneEEVEE_light_threshold_get, SceneEEVEE_light_threshold_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, FLT_MAX, 0.1000000015f, 3, nullptr, nullptr, 0.0099999998f, nullptr
+	};
+
+	rna_SceneEEVEE_use_overscan_ = {
+		{&rna_SceneEEVEE_overscan_size, 	&rna_SceneEEVEE_light_threshold,
+		-1, "use_overscan", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Overscan",
+		"Internally render past the image border to avoid screen-space effects disappearing",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_overscan_get, SceneEEVEE_use_overscan_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_overscan_size_ = {
+		{&rna_SceneEEVEE_ray_tracing_options, 	&rna_SceneEEVEE_use_overscan,
+		-1, "overscan_size", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Overscan Size",
+		"Percentage of render size to add as overscan to the internal render buffers",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_PERCENTAGE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, overscan), RawPropertyType(5), nullptr},
+		SceneEEVEE_overscan_size_get, SceneEEVEE_overscan_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10.0f, 0.0f, 50.0f, 1.0f, 2, nullptr, nullptr, 3.0f, nullptr
+	};
+
+	rna_SceneEEVEE_ray_tracing_options_ = {
+		{&rna_SceneEEVEE_use_raytracing, 	&rna_SceneEEVEE_overscan_size,
+		-1, "ray_tracing_options", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Reflection Trace Options",
+		"EEVEE settings for tracing reflections",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_ray_tracing_options_get, nullptr, nullptr, nullptr,RNA_RaytraceEEVEE
+	};
+
+	rna_SceneEEVEE_use_raytracing_ = {
+		{&rna_SceneEEVEE_shadow_resolution_scale, 	&rna_SceneEEVEE_ray_tracing_options,
+		-1, "use_raytracing", 1, 1, 0, 0, 0, PropertyPathTemplateType(0), "Use Ray-Tracing",
+		"Enable the ray-tracing module",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneEEVEE_use_raytracing_get, SceneEEVEE_use_raytracing_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_SceneEEVEE_shadow_resolution_scale_ = {
+		{nullptr, 	&rna_SceneEEVEE_use_raytracing,
+		-1, "shadow_resolution_scale", 1, 1, 0, 4, 0, PropertyPathTemplateType(0), "Shadows Resolution Scale",
+		"Resolution percentage of shadow maps",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneEEVEE_shadow_resolution_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneEEVEE, shadow_resolution_scale), RawPropertyType(5), nullptr},
+		SceneEEVEE_shadow_resolution_scale_get, SceneEEVEE_shadow_resolution_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_SceneEEVEE;
+	srna->cont.properties = {&rna_SceneEEVEE_rna_properties, &rna_SceneEEVEE_shadow_resolution_scale};
+	srna->identifier = "SceneEEVEE";
+	srna->flag = 516;
+	srna->name = "Scene Display";
+	srna->description = "Scene display settings for 3D viewport";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_SceneEEVEE_rna_properties;
+	srna->path = rna_SceneEEVEE_path;
+};
+
+/* Scene Hydra */
+static CollectionPropertyRNA rna_SceneHydra_rna_properties_;
+PropertyRNA &rna_SceneHydra_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SceneHydra_rna_properties_);
+
+static PointerPropertyRNA rna_SceneHydra_rna_type_;
+PropertyRNA &rna_SceneHydra_rna_type = reinterpret_cast<PropertyRNA &>(rna_SceneHydra_rna_type_);
+
+static EnumPropertyRNA rna_SceneHydra_export_method_;
+PropertyRNA &rna_SceneHydra_export_method = reinterpret_cast<PropertyRNA &>(rna_SceneHydra_export_method_);
+
+StructRNA *RNA_SceneHydra;
+void register_struct_SceneHydra(BlenderRNA &brna)
+{
+	rna_SceneHydra_rna_properties_ = {
+		{&rna_SceneHydra_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneHydra_rna_properties_begin, SceneHydra_rna_properties_next, SceneHydra_rna_properties_end, SceneHydra_rna_properties_get, nullptr, nullptr, SceneHydra_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SceneHydra_rna_type_ = {
+		{&rna_SceneHydra_export_method, 	&rna_SceneHydra_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneHydra_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_SceneHydra_export_method_items[3] = {
+		{0, "HYDRA", 0, "Hydra", "Fast interactive editing through native Hydra integration"	},
+		{1, "USD", 0, "USD", "Export scene through USD file, for accurate comparison with USD file export"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_SceneHydra_export_method_ = {
+		{nullptr, 	&rna_SceneHydra_rna_type,
+		-1, "export_method", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Export Method",
+		"How to export the Blender scene to the Hydra render engine",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneHydra, export_method), RawPropertyType(0), nullptr},
+		SceneHydra_export_method_get, SceneHydra_export_method_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_SceneHydra_export_method_items, 2, 0
+	};
+
+	StructRNA *srna = RNA_SceneHydra;
+	srna->cont.properties = {&rna_SceneHydra_rna_properties, &rna_SceneHydra_export_method};
+	srna->identifier = "SceneHydra";
+	srna->flag = 516;
+	srna->name = "Scene Hydra";
+	srna->description = "Scene Hydra render engine settings";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_SceneHydra_rna_properties;
+	srna->path = rna_SceneHydra_path;
+};
+
+/* Shader AOV */
+static CollectionPropertyRNA rna_AOV_rna_properties_;
+PropertyRNA &rna_AOV_rna_properties = reinterpret_cast<PropertyRNA &>(rna_AOV_rna_properties_);
+
+static PointerPropertyRNA rna_AOV_rna_type_;
+PropertyRNA &rna_AOV_rna_type = reinterpret_cast<PropertyRNA &>(rna_AOV_rna_type_);
+
+static StringPropertyRNA rna_AOV_name_;
+PropertyRNA &rna_AOV_name = reinterpret_cast<PropertyRNA &>(rna_AOV_name_);
+
+static BoolPropertyRNA rna_AOV_is_valid_;
+PropertyRNA &rna_AOV_is_valid = reinterpret_cast<PropertyRNA &>(rna_AOV_is_valid_);
+
+static EnumPropertyRNA rna_AOV_type_;
+PropertyRNA &rna_AOV_type = reinterpret_cast<PropertyRNA &>(rna_AOV_type_);
+
+StructRNA *RNA_AOV;
+void register_struct_AOV(BlenderRNA &brna)
+{
+	rna_AOV_rna_properties_ = {
+		{&rna_AOV_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AOV_rna_properties_begin, AOV_rna_properties_next, AOV_rna_properties_end, AOV_rna_properties_get, nullptr, nullptr, AOV_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_AOV_rna_type_ = {
+		{&rna_AOV_name, 	&rna_AOV_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AOV_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_AOV_name_ = {
+		{&rna_AOV_is_valid, 	&rna_AOV_rna_type,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Name",
+		"Name of the AOV",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		rna_ViewLayer_pass_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AOV_name_get, AOV_name_length, AOV_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	rna_AOV_is_valid_ = {
+		{&rna_AOV_type, 	&rna_AOV_name,
+		-1, "is_valid", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Valid",
+		"Is the name of the AOV conflicting",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		AOV_is_valid_get, AOV_is_valid_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_AOV_type_items[3] = {
+		{1, "COLOR", 0, "Color", ""	},
+		{0, "VALUE", 0, "Value", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_AOV_type_ = {
+		{nullptr, 	&rna_AOV_is_valid,
+		-1, "type", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Type",
+		"Data type of the AOV",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_ViewLayer_pass_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ViewLayerAOV, type), RawPropertyType(0), nullptr},
+		AOV_type_get, AOV_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_AOV_type_items, 2, 1
+	};
+
+	StructRNA *srna = RNA_AOV;
+	srna->cont.properties = {&rna_AOV_rna_properties, &rna_AOV_type};
+	srna->identifier = "AOV";
+	srna->flag = 516;
+	srna->name = "Shader AOV";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_AOV_name;
+	srna->iteratorproperty = &rna_AOV_rna_properties;
+};
+
+/* Light Group */
+static CollectionPropertyRNA rna_Lightgroup_rna_properties_;
+PropertyRNA &rna_Lightgroup_rna_properties = reinterpret_cast<PropertyRNA &>(rna_Lightgroup_rna_properties_);
+
+static PointerPropertyRNA rna_Lightgroup_rna_type_;
+PropertyRNA &rna_Lightgroup_rna_type = reinterpret_cast<PropertyRNA &>(rna_Lightgroup_rna_type_);
+
+static StringPropertyRNA rna_Lightgroup_name_;
+PropertyRNA &rna_Lightgroup_name = reinterpret_cast<PropertyRNA &>(rna_Lightgroup_name_);
+
+StructRNA *RNA_Lightgroup;
+void register_struct_Lightgroup(BlenderRNA &brna)
+{
+	rna_Lightgroup_rna_properties_ = {
+		{&rna_Lightgroup_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Lightgroup_rna_properties_begin, Lightgroup_rna_properties_next, Lightgroup_rna_properties_end, Lightgroup_rna_properties_get, nullptr, nullptr, Lightgroup_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_Lightgroup_rna_type_ = {
+		{&rna_Lightgroup_name, 	&rna_Lightgroup_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Lightgroup_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_Lightgroup_name_ = {
+		{nullptr, 	&rna_Lightgroup_rna_type,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Name",
+		"Name of the Lightgroup",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		rna_ViewLayer_pass_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		Lightgroup_name_get, Lightgroup_name_length, Lightgroup_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_Lightgroup;
+	srna->cont.properties = {&rna_Lightgroup_rna_properties, &rna_Lightgroup_name};
+	srna->identifier = "Lightgroup";
+	srna->flag = 516;
+	srna->name = "Light Group";
+	srna->description = "";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_Lightgroup_name;
+	srna->iteratorproperty = &rna_Lightgroup_rna_properties;
+};
+
+/* EEVEE Settings */
+static CollectionPropertyRNA rna_ViewLayerEEVEE_rna_properties_;
+PropertyRNA &rna_ViewLayerEEVEE_rna_properties = reinterpret_cast<PropertyRNA &>(rna_ViewLayerEEVEE_rna_properties_);
+
+static PointerPropertyRNA rna_ViewLayerEEVEE_rna_type_;
+PropertyRNA &rna_ViewLayerEEVEE_rna_type = reinterpret_cast<PropertyRNA &>(rna_ViewLayerEEVEE_rna_type_);
+
+static BoolPropertyRNA rna_ViewLayerEEVEE_use_pass_volume_direct_;
+PropertyRNA &rna_ViewLayerEEVEE_use_pass_volume_direct = reinterpret_cast<PropertyRNA &>(rna_ViewLayerEEVEE_use_pass_volume_direct_);
+
+static BoolPropertyRNA rna_ViewLayerEEVEE_use_pass_bloom_;
+PropertyRNA &rna_ViewLayerEEVEE_use_pass_bloom = reinterpret_cast<PropertyRNA &>(rna_ViewLayerEEVEE_use_pass_bloom_);
+
+static BoolPropertyRNA rna_ViewLayerEEVEE_use_pass_transparent_;
+PropertyRNA &rna_ViewLayerEEVEE_use_pass_transparent = reinterpret_cast<PropertyRNA &>(rna_ViewLayerEEVEE_use_pass_transparent_);
+
+static FloatPropertyRNA rna_ViewLayerEEVEE_ambient_occlusion_distance_;
+PropertyRNA &rna_ViewLayerEEVEE_ambient_occlusion_distance = reinterpret_cast<PropertyRNA &>(rna_ViewLayerEEVEE_ambient_occlusion_distance_);
+
+StructRNA *RNA_ViewLayerEEVEE;
+void register_struct_ViewLayerEEVEE(BlenderRNA &brna)
+{
+	rna_ViewLayerEEVEE_rna_properties_ = {
+		{&rna_ViewLayerEEVEE_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ViewLayerEEVEE_rna_properties_begin, ViewLayerEEVEE_rna_properties_next, ViewLayerEEVEE_rna_properties_end, ViewLayerEEVEE_rna_properties_get, nullptr, nullptr, ViewLayerEEVEE_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_ViewLayerEEVEE_rna_type_ = {
+		{&rna_ViewLayerEEVEE_use_pass_volume_direct, 	&rna_ViewLayerEEVEE_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ViewLayerEEVEE_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_ViewLayerEEVEE_use_pass_volume_direct_ = {
+		{&rna_ViewLayerEEVEE_use_pass_bloom, 	&rna_ViewLayerEEVEE_rna_type,
+		-1, "use_pass_volume_direct", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Volume Light",
+		"Deliver volume direct light pass",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_ViewLayer_pass_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ViewLayerEEVEE_use_pass_volume_direct_get, ViewLayerEEVEE_use_pass_volume_direct_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ViewLayerEEVEE_use_pass_bloom_ = {
+		{&rna_ViewLayerEEVEE_use_pass_transparent, 	&rna_ViewLayerEEVEE_use_pass_volume_direct,
+		-1, "use_pass_bloom", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Bloom",
+		"Deliver bloom pass (deprecated)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_ViewLayer_pass_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ViewLayerEEVEE, render_passes), RawPropertyType(0), nullptr},
+		ViewLayerEEVEE_use_pass_bloom_get, ViewLayerEEVEE_use_pass_bloom_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ViewLayerEEVEE_use_pass_transparent_ = {
+		{&rna_ViewLayerEEVEE_ambient_occlusion_distance, 	&rna_ViewLayerEEVEE_use_pass_bloom,
+		-1, "use_pass_transparent", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Transparent",
+		"Deliver alpha blended surfaces in a separate pass",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_ViewLayer_pass_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		ViewLayerEEVEE_use_pass_transparent_get, ViewLayerEEVEE_use_pass_transparent_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_ViewLayerEEVEE_ambient_occlusion_distance_ = {
+		{nullptr, 	&rna_ViewLayerEEVEE_use_pass_transparent,
+		-1, "ambient_occlusion_distance", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Distance",
+		"Distance of object that contribute to the ambient occlusion effect",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(ViewLayerEEVEE, ambient_occlusion_distance), RawPropertyType(5), nullptr},
+		ViewLayerEEVEE_ambient_occlusion_distance_get, ViewLayerEEVEE_ambient_occlusion_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 100.0f, 0.0f, 100000.0f, 1.0f, 3, nullptr, nullptr, 10.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_ViewLayerEEVEE;
+	srna->cont.properties = {&rna_ViewLayerEEVEE_rna_properties, &rna_ViewLayerEEVEE_ambient_occlusion_distance};
+	srna->identifier = "ViewLayerEEVEE";
+	srna->flag = 516;
+	srna->name = "EEVEE Settings";
+	srna->description = "View Layer settings for EEVEE";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_ViewLayerEEVEE_rna_properties;
+	srna->path = rna_ViewLayerEEVEE_path;
+};
+
+/* Grease Pencil Render */
+static CollectionPropertyRNA rna_SceneGpencil_rna_properties_;
+PropertyRNA &rna_SceneGpencil_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SceneGpencil_rna_properties_);
+
+static PointerPropertyRNA rna_SceneGpencil_rna_type_;
+PropertyRNA &rna_SceneGpencil_rna_type = reinterpret_cast<PropertyRNA &>(rna_SceneGpencil_rna_type_);
+
+static FloatPropertyRNA rna_SceneGpencil_antialias_threshold_;
+PropertyRNA &rna_SceneGpencil_antialias_threshold = reinterpret_cast<PropertyRNA &>(rna_SceneGpencil_antialias_threshold_);
+
+static FloatPropertyRNA rna_SceneGpencil_antialias_threshold_render_;
+PropertyRNA &rna_SceneGpencil_antialias_threshold_render = reinterpret_cast<PropertyRNA &>(rna_SceneGpencil_antialias_threshold_render_);
+
+static IntPropertyRNA rna_SceneGpencil_aa_samples_;
+PropertyRNA &rna_SceneGpencil_aa_samples = reinterpret_cast<PropertyRNA &>(rna_SceneGpencil_aa_samples_);
+
+static IntPropertyRNA rna_SceneGpencil_motion_blur_steps_;
+PropertyRNA &rna_SceneGpencil_motion_blur_steps = reinterpret_cast<PropertyRNA &>(rna_SceneGpencil_motion_blur_steps_);
+
+StructRNA *RNA_SceneGpencil;
+void register_struct_SceneGpencil(BlenderRNA &brna)
+{
+	rna_SceneGpencil_rna_properties_ = {
+		{&rna_SceneGpencil_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneGpencil_rna_properties_begin, SceneGpencil_rna_properties_next, SceneGpencil_rna_properties_end, SceneGpencil_rna_properties_get, nullptr, nullptr, SceneGpencil_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SceneGpencil_rna_type_ = {
+		{&rna_SceneGpencil_antialias_threshold, 	&rna_SceneGpencil_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneGpencil_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_SceneGpencil_antialias_threshold_ = {
+		{&rna_SceneGpencil_antialias_threshold_render, 	&rna_SceneGpencil_rna_type,
+		-1, "antialias_threshold", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "SMAA Threshold Viewport",
+		"Threshold for edge detection algorithm (higher values might over-blur some part of the image)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneGpencil, smaa_threshold), RawPropertyType(5), nullptr},
+		SceneGpencil_antialias_threshold_get, SceneGpencil_antialias_threshold_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 2.0f, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_SceneGpencil_antialias_threshold_render_ = {
+		{&rna_SceneGpencil_aa_samples, 	&rna_SceneGpencil_antialias_threshold,
+		-1, "antialias_threshold_render", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "SMAA Threshold Render",
+		"Threshold for edge detection algorithm (higher values might over-blur some part of the image). Only applies to final render",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneGpencil, smaa_threshold_render), RawPropertyType(5), nullptr},
+		SceneGpencil_antialias_threshold_render_get, SceneGpencil_antialias_threshold_render_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 2.0f, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.2500000000f, nullptr
+	};
+
+	rna_SceneGpencil_aa_samples_ = {
+		{&rna_SceneGpencil_motion_blur_steps, 	&rna_SceneGpencil_antialias_threshold_render,
+		-1, "aa_samples", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Anti-Aliasing Samples",
+		"Number of supersampling anti-aliasing samples per pixel for final render",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneGpencil, aa_samples), RawPropertyType(0), nullptr},
+		SceneGpencil_aa_samples_get, SceneGpencil_aa_samples_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 256, 1, INT_MAX, 1, nullptr, nullptr, 8, nullptr
+	};
+
+	rna_SceneGpencil_motion_blur_steps_ = {
+		{nullptr, 	&rna_SceneGpencil_aa_samples,
+		-1, "motion_blur_steps", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Motion Blur Steps",
+		"Controls accuracy of motion blur, more steps result in longer render time. Only used when Motion Blur is enabled. Set to 0 to disable motion blur for Grease Pencil",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(SceneGpencil, motion_blur_steps), RawPropertyType(0), nullptr},
+		SceneGpencil_motion_blur_steps_get, SceneGpencil_motion_blur_steps_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 64, 0, INT_MAX, 1, nullptr, nullptr, 8, nullptr
+	};
+
+	StructRNA *srna = RNA_SceneGpencil;
+	srna->cont.properties = {&rna_SceneGpencil_rna_properties, &rna_SceneGpencil_motion_blur_steps};
+	srna->identifier = "SceneGpencil";
+	srna->flag = 516;
+	srna->name = "Grease Pencil Render";
+	srna->description = "Render settings";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_SceneGpencil_rna_properties;
+	srna->path = rna_SceneGpencil_path;
+};
+
+/* FFmpeg Settings */
+static CollectionPropertyRNA rna_FFmpegSettings_rna_properties_;
+PropertyRNA &rna_FFmpegSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_rna_properties_);
+
+static PointerPropertyRNA rna_FFmpegSettings_rna_type_;
+PropertyRNA &rna_FFmpegSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_rna_type_);
+
+static EnumPropertyRNA rna_FFmpegSettings_format_;
+PropertyRNA &rna_FFmpegSettings_format = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_format_);
+
+static EnumPropertyRNA rna_FFmpegSettings_codec_;
+PropertyRNA &rna_FFmpegSettings_codec = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_codec_);
+
+static IntPropertyRNA rna_FFmpegSettings_video_bitrate_;
+PropertyRNA &rna_FFmpegSettings_video_bitrate = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_video_bitrate_);
+
+static IntPropertyRNA rna_FFmpegSettings_minrate_;
+PropertyRNA &rna_FFmpegSettings_minrate = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_minrate_);
+
+static IntPropertyRNA rna_FFmpegSettings_maxrate_;
+PropertyRNA &rna_FFmpegSettings_maxrate = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_maxrate_);
+
+static IntPropertyRNA rna_FFmpegSettings_muxrate_;
+PropertyRNA &rna_FFmpegSettings_muxrate = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_muxrate_);
+
+static IntPropertyRNA rna_FFmpegSettings_gopsize_;
+PropertyRNA &rna_FFmpegSettings_gopsize = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_gopsize_);
+
+static IntPropertyRNA rna_FFmpegSettings_max_b_frames_;
+PropertyRNA &rna_FFmpegSettings_max_b_frames = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_max_b_frames_);
+
+static BoolPropertyRNA rna_FFmpegSettings_use_max_b_frames_;
+PropertyRNA &rna_FFmpegSettings_use_max_b_frames = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_use_max_b_frames_);
+
+static IntPropertyRNA rna_FFmpegSettings_buffersize_;
+PropertyRNA &rna_FFmpegSettings_buffersize = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_buffersize_);
+
+static IntPropertyRNA rna_FFmpegSettings_packetsize_;
+PropertyRNA &rna_FFmpegSettings_packetsize = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_packetsize_);
+
+static EnumPropertyRNA rna_FFmpegSettings_constant_rate_factor_;
+PropertyRNA &rna_FFmpegSettings_constant_rate_factor = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_constant_rate_factor_);
+
+static IntPropertyRNA rna_FFmpegSettings_custom_constant_rate_factor_;
+PropertyRNA &rna_FFmpegSettings_custom_constant_rate_factor = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_custom_constant_rate_factor_);
+
+static EnumPropertyRNA rna_FFmpegSettings_ffmpeg_preset_;
+PropertyRNA &rna_FFmpegSettings_ffmpeg_preset = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_ffmpeg_preset_);
+
+static EnumPropertyRNA rna_FFmpegSettings_ffmpeg_prores_profile_;
+PropertyRNA &rna_FFmpegSettings_ffmpeg_prores_profile = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_ffmpeg_prores_profile_);
+
+static BoolPropertyRNA rna_FFmpegSettings_use_autosplit_;
+PropertyRNA &rna_FFmpegSettings_use_autosplit = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_use_autosplit_);
+
+static BoolPropertyRNA rna_FFmpegSettings_use_lossless_output_;
+PropertyRNA &rna_FFmpegSettings_use_lossless_output = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_use_lossless_output_);
+
+static EnumPropertyRNA rna_FFmpegSettings_audio_codec_;
+PropertyRNA &rna_FFmpegSettings_audio_codec = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_audio_codec_);
+
+static IntPropertyRNA rna_FFmpegSettings_audio_bitrate_;
+PropertyRNA &rna_FFmpegSettings_audio_bitrate = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_audio_bitrate_);
+
+static FloatPropertyRNA rna_FFmpegSettings_audio_volume_;
+PropertyRNA &rna_FFmpegSettings_audio_volume = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_audio_volume_);
+
+static IntPropertyRNA rna_FFmpegSettings_audio_mixrate_;
+PropertyRNA &rna_FFmpegSettings_audio_mixrate = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_audio_mixrate_);
+
+static EnumPropertyRNA rna_FFmpegSettings_audio_channels_;
+PropertyRNA &rna_FFmpegSettings_audio_channels = reinterpret_cast<PropertyRNA &>(rna_FFmpegSettings_audio_channels_);
+
+StructRNA *RNA_FFmpegSettings;
+void register_struct_FFmpegSettings(BlenderRNA &brna)
+{
+	rna_FFmpegSettings_rna_properties_ = {
+		{&rna_FFmpegSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FFmpegSettings_rna_properties_begin, FFmpegSettings_rna_properties_next, FFmpegSettings_rna_properties_end, FFmpegSettings_rna_properties_get, nullptr, nullptr, FFmpegSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_FFmpegSettings_rna_type_ = {
+		{&rna_FFmpegSettings_format, 	&rna_FFmpegSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FFmpegSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_format_items[12] = {
+		{2, "MPEG4", 0, "MPEG-4", ""	},
+		{9, "MKV", 0, "Matroska", ""	},
+		{12, "WEBM", 0, "WebM", ""	},
+		{0, "", 0, nullptr, nullptr	},
+		{3, "AVI", 0, "AVI", ""	},
+		{5, "DV", 0, "DV", ""	},
+		{8, "FLASH", 0, "Flash", ""	},
+		{0, "MPEG1", 0, "MPEG-1", ""	},
+		{1, "MPEG2", 0, "MPEG-2", ""	},
+		{10, "OGG", 0, "Ogg", ""	},
+		{4, "QUICKTIME", 0, "QuickTime", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_format_ = {
+		{&rna_FFmpegSettings_codec, 	&rna_FFmpegSettings_rna_type,
+		-1, "format", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Container",
+		"Output file container",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, type), RawPropertyType(0), nullptr},
+		FFmpegSettings_format_get, FFmpegSettings_format_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_format_items, 11, 9
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_codec_items[19] = {
+		{0, "NONE", 0, "No Video", "Disables video output, for audio-only renders"	},
+		{226, "AV1", 0, "AV1", ""	},
+		{27, "H264", 0, "H.264", ""	},
+		{173, "H265", 0, "H.265 / HEVC", ""	},
+		{167, "WEBM", 0, "WebM / VP9", ""	},
+		{0, "", 0, nullptr, nullptr	},
+		{99, "DNXHD", 0, "DNxHD", ""	},
+		{24, "DV", 0, "DV", ""	},
+		{33, "FFV1", 0, "FFmpeg video codec #1", ""	},
+		{21, "FLASH", 0, "Flash Video", ""	},
+		{25, "HUFFYUV", 0, "HuffYUV", ""	},
+		{1, "MPEG1", 0, "MPEG-1", ""	},
+		{2, "MPEG2", 0, "MPEG-2", ""	},
+		{12, "MPEG4", 0, "MPEG-4 (divx)", ""	},
+		{61, "PNG", 0, "PNG", ""	},
+		{147, "PRORES", 0, "ProRes", ""	},
+		{55, "QTRLE", 0, "QuickTime Animation", ""	},
+		{30, "THEORA", 0, "Theora", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_codec_ = {
+		{&rna_FFmpegSettings_video_bitrate, 	&rna_FFmpegSettings_format,
+		-1, "codec", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Video Codec",
+		"FFmpeg codec to use for video output",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_FFmpegSettings_codec_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, codec), RawPropertyType(0), nullptr},
+		FFmpegSettings_codec_get, FFmpegSettings_codec_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_codec_items, 18, 27
+	};
+
+	rna_FFmpegSettings_video_bitrate_ = {
+		{&rna_FFmpegSettings_minrate, 	&rna_FFmpegSettings_codec,
+		-1, "video_bitrate", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Bitrate",
+		"Video bitrate (kbit/s)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, video_bitrate), RawPropertyType(0), nullptr},
+		FFmpegSettings_video_bitrate_get, FFmpegSettings_video_bitrate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_minrate_ = {
+		{&rna_FFmpegSettings_maxrate, 	&rna_FFmpegSettings_video_bitrate,
+		-1, "minrate", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Rate",
+		"Rate control: min rate (kbit/s)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, rc_min_rate), RawPropertyType(0), nullptr},
+		FFmpegSettings_minrate_get, FFmpegSettings_minrate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_maxrate_ = {
+		{&rna_FFmpegSettings_muxrate, 	&rna_FFmpegSettings_minrate,
+		-1, "maxrate", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Rate",
+		"Rate control: max rate (kbit/s)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, rc_max_rate), RawPropertyType(0), nullptr},
+		FFmpegSettings_maxrate_get, FFmpegSettings_maxrate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_muxrate_ = {
+		{&rna_FFmpegSettings_gopsize, 	&rna_FFmpegSettings_maxrate,
+		-1, "muxrate", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mux Rate",
+		"Mux rate (bits/second)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, mux_rate), RawPropertyType(0), nullptr},
+		FFmpegSettings_muxrate_get, FFmpegSettings_muxrate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 100000000, 0, 100000000, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_gopsize_ = {
+		{&rna_FFmpegSettings_max_b_frames, 	&rna_FFmpegSettings_muxrate,
+		-1, "gopsize", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Keyframe Interval",
+		"Distance between key frames, also known as GOP size; influences file size and seekability",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, gop_size), RawPropertyType(0), nullptr},
+		FFmpegSettings_gopsize_get, FFmpegSettings_gopsize_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 500, 0, 500, 1, nullptr, nullptr, 25, nullptr
+	};
+
+	rna_FFmpegSettings_max_b_frames_ = {
+		{&rna_FFmpegSettings_use_max_b_frames, 	&rna_FFmpegSettings_gopsize,
+		-1, "max_b_frames", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max B-Frames",
+		"Maximum number of B-frames between non-B-frames; influences file size and seekability",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, max_b_frames), RawPropertyType(0), nullptr},
+		FFmpegSettings_max_b_frames_get, FFmpegSettings_max_b_frames_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 16, 0, 16, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_use_max_b_frames_ = {
+		{&rna_FFmpegSettings_buffersize, 	&rna_FFmpegSettings_max_b_frames,
+		-1, "use_max_b_frames", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Max B-Frames",
+		"Set a maximum number of B-frames",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FFmpegSettings_use_max_b_frames_get, FFmpegSettings_use_max_b_frames_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_buffersize_ = {
+		{&rna_FFmpegSettings_packetsize, 	&rna_FFmpegSettings_use_max_b_frames,
+		-1, "buffersize", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Buffersize",
+		"Rate control: buffer size (kb)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, rc_buffer_size), RawPropertyType(0), nullptr},
+		FFmpegSettings_buffersize_get, FFmpegSettings_buffersize_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 2000, 0, 2000, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_packetsize_ = {
+		{&rna_FFmpegSettings_constant_rate_factor, 	&rna_FFmpegSettings_buffersize,
+		-1, "packetsize", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mux Packet Size",
+		"Mux packet size (byte)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, mux_packet_size), RawPropertyType(0), nullptr},
+		FFmpegSettings_packetsize_get, FFmpegSettings_packetsize_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 16384, 0, 16384, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_constant_rate_factor_items[10] = {
+		{-1, "NONE", 0, "Constant Bitrate", "Configure constant bit rate, rather than constant output quality"	},
+		{0, "LOSSLESS", 0, "Lossless", ""	},
+		{17, "PERC_LOSSLESS", 0, "Perceptually Lossless", ""	},
+		{20, "HIGH", 0, "High Quality", ""	},
+		{23, "MEDIUM", 0, "Medium Quality", ""	},
+		{26, "LOW", 0, "Low Quality", ""	},
+		{29, "VERYLOW", 0, "Very Low Quality", ""	},
+		{32, "LOWEST", 0, "Lowest Quality", ""	},
+		{128, "CUSTOM", 0, "Custom Quality", "Set a custom Constant Rate Factor (CRF)."	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_constant_rate_factor_ = {
+		{&rna_FFmpegSettings_custom_constant_rate_factor, 	&rna_FFmpegSettings_packetsize,
+		-1, "constant_rate_factor", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Output Quality",
+		"Constant Rate Factor (CRF); tradeoff between video quality and file size",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, constant_rate_factor), RawPropertyType(0), nullptr},
+		FFmpegSettings_constant_rate_factor_get, FFmpegSettings_constant_rate_factor_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_constant_rate_factor_items, 9, 23
+	};
+
+	rna_FFmpegSettings_custom_constant_rate_factor_ = {
+		{&rna_FFmpegSettings_ffmpeg_preset, 	&rna_FFmpegSettings_constant_rate_factor,
+		-1, "custom_constant_rate_factor", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "CRF",
+		"A smaller Constant Rate Factor (CRF) results in better video quality but larger file size. The range of allowed CRF values is dependent on the codec.",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, custom_constant_rate_factor), RawPropertyType(0), nullptr},
+		FFmpegSettings_custom_constant_rate_factor_get, FFmpegSettings_custom_constant_rate_factor_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 63, 0, 63, 1, nullptr, nullptr, 23, nullptr
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_ffmpeg_preset_items[4] = {
+		{11, "BEST", 0, "Slowest", "Recommended if you have lots of time and want the best compression efficiency"	},
+		{10, "GOOD", 0, "Good", "The default and recommended for most applications"	},
+		{12, "REALTIME", 0, "Realtime", "Recommended for fast encoding"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_ffmpeg_preset_ = {
+		{&rna_FFmpegSettings_ffmpeg_prores_profile, 	&rna_FFmpegSettings_custom_constant_rate_factor,
+		-1, "ffmpeg_preset", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Encoding Speed",
+		"Tradeoff between encoding speed and compression ratio",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, ffmpeg_preset), RawPropertyType(0), nullptr},
+		FFmpegSettings_ffmpeg_preset_get, FFmpegSettings_ffmpeg_preset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_ffmpeg_preset_items, 3, 10
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_ffmpeg_prores_profile_items[7] = {
+		{0, "422_PROXY", 0, "ProRes 422 Proxy", ""	},
+		{1, "422_LT", 0, "ProRes 422 LT", ""	},
+		{2, "422_STD", 0, "ProRes 422", ""	},
+		{3, "422_HQ", 0, "ProRes 422 HQ", ""	},
+		{4, "4444", 0, "ProRes 4444", ""	},
+		{5, "4444_XQ", 0, "ProRes 4444 XQ", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_ffmpeg_prores_profile_ = {
+		{&rna_FFmpegSettings_use_autosplit, 	&rna_FFmpegSettings_ffmpeg_preset,
+		-1, "ffmpeg_prores_profile", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Profile",
+		"ProRes Profile",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, ffmpeg_prores_profile), RawPropertyType(0), nullptr},
+		FFmpegSettings_ffmpeg_prores_profile_get, FFmpegSettings_ffmpeg_prores_profile_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_ffmpeg_prores_profile_items, 6, 2
+	};
+
+	rna_FFmpegSettings_use_autosplit_ = {
+		{&rna_FFmpegSettings_use_lossless_output, 	&rna_FFmpegSettings_ffmpeg_prores_profile,
+		-1, "use_autosplit", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Autosplit Output",
+		"Autosplit output at 2GB boundary",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FFmpegSettings_use_autosplit_get, FFmpegSettings_use_autosplit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FFmpegSettings_use_lossless_output_ = {
+		{&rna_FFmpegSettings_audio_codec, 	&rna_FFmpegSettings_use_autosplit,
+		-1, "use_lossless_output", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lossless Output",
+		"Use lossless output for video streams",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FFmpegSettings_use_lossless_output_get, FFmpegSettings_use_lossless_output_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_audio_codec_items[10] = {
+		{0, "NONE", 0, "No Audio", "Disables audio output, for video-only renders"	},
+		{86018, "AAC", 0, "AAC", ""	},
+		{86019, "AC3", 0, "AC3", ""	},
+		{86028, "FLAC", 0, "FLAC", ""	},
+		{86016, "MP2", 0, "MP2", ""	},
+		{86017, "MP3", 0, "MP3", ""	},
+		{86076, "OPUS", 0, "Opus", ""	},
+		{65536, "PCM", 0, "PCM", ""	},
+		{86021, "VORBIS", 0, "Vorbis", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_audio_codec_ = {
+		{&rna_FFmpegSettings_audio_bitrate, 	&rna_FFmpegSettings_use_lossless_output,
+		-1, "audio_codec", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Audio Codec",
+		"FFmpeg audio codec to use",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, audio_codec), RawPropertyType(0), nullptr},
+		FFmpegSettings_audio_codec_get, FFmpegSettings_audio_codec_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_audio_codec_items, 9, 0
+	};
+
+	rna_FFmpegSettings_audio_bitrate_ = {
+		{&rna_FFmpegSettings_audio_volume, 	&rna_FFmpegSettings_audio_codec,
+		-1, "audio_bitrate", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Bitrate",
+		"Audio bitrate (kb/s)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, audio_bitrate), RawPropertyType(0), nullptr},
+		FFmpegSettings_audio_bitrate_get, FFmpegSettings_audio_bitrate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 32, 2048, 32, 2048, 1, nullptr, nullptr, 192, nullptr
+	};
+
+	rna_FFmpegSettings_audio_volume_ = {
+		{&rna_FFmpegSettings_audio_mixrate, 	&rna_FFmpegSettings_audio_bitrate,
+		-1, "audio_volume", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Volume",
+		"Audio volume",
+		0, "Sound",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, audio_volume), RawPropertyType(5), nullptr},
+		FFmpegSettings_audio_volume_get, FFmpegSettings_audio_volume_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_FFmpegSettings_audio_mixrate_ = {
+		{&rna_FFmpegSettings_audio_channels, 	&rna_FFmpegSettings_audio_volume,
+		-1, "audio_mixrate", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sample Rate",
+		"Audio sample rate (samples/s)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, audio_mixrate), RawPropertyType(0), nullptr},
+		FFmpegSettings_audio_mixrate_get, FFmpegSettings_audio_mixrate_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 8000, 192000, 8000, 192000, 1, nullptr, nullptr, 48000, nullptr
+	};
+
+	static const EnumPropertyItem rna_FFmpegSettings_audio_channels_items[6] = {
+		{1, "MONO", 0, "Mono", "Set audio channels to mono"	},
+		{2, "STEREO", 0, "Stereo", "Set audio channels to stereo"	},
+		{4, "SURROUND4", 0, "4 Channels", "Set audio channels to 4 channels"	},
+		{6, "SURROUND51", 0, "5.1 Surround", "Set audio channels to 5.1 surround sound"	},
+		{8, "SURROUND71", 0, "7.1 Surround", "Set audio channels to 7.1 surround sound"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FFmpegSettings_audio_channels_ = {
+		{nullptr, 	&rna_FFmpegSettings_audio_mixrate,
+		-1, "audio_channels", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Audio Channels",
+		"Audio channel count",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FFMpegCodecData, audio_channels), RawPropertyType(0), nullptr},
+		FFmpegSettings_audio_channels_get, FFmpegSettings_audio_channels_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FFmpegSettings_audio_channels_items, 5, 2
+	};
+
+	StructRNA *srna = RNA_FFmpegSettings;
+	srna->cont.properties = {&rna_FFmpegSettings_rna_properties, &rna_FFmpegSettings_audio_channels};
+	srna->identifier = "FFmpegSettings";
+	srna->flag = 516;
+	srna->name = "FFmpeg Settings";
+	srna->description = "FFmpeg related settings for the scene";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_FFmpegSettings_rna_properties;
+	srna->path = rna_FFmpegSettings_path;
+};
+
+/* Render Data */
+static CollectionPropertyRNA rna_RenderSettings_rna_properties_;
+PropertyRNA &rna_RenderSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_rna_properties_);
+
+static PointerPropertyRNA rna_RenderSettings_rna_type_;
+PropertyRNA &rna_RenderSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_rna_type_);
+
+static PointerPropertyRNA rna_RenderSettings_image_settings_;
+PropertyRNA &rna_RenderSettings_image_settings = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_image_settings_);
+
+static IntPropertyRNA rna_RenderSettings_resolution_x_;
+PropertyRNA &rna_RenderSettings_resolution_x = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_resolution_x_);
+
+static IntPropertyRNA rna_RenderSettings_resolution_y_;
+PropertyRNA &rna_RenderSettings_resolution_y = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_resolution_y_);
+
+static IntPropertyRNA rna_RenderSettings_resolution_percentage_;
+PropertyRNA &rna_RenderSettings_resolution_percentage = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_resolution_percentage_);
+
+static EnumPropertyRNA rna_RenderSettings_preview_pixel_size_;
+PropertyRNA &rna_RenderSettings_preview_pixel_size = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_preview_pixel_size_);
+
+static FloatPropertyRNA rna_RenderSettings_pixel_aspect_x_;
+PropertyRNA &rna_RenderSettings_pixel_aspect_x = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_pixel_aspect_x_);
+
+static FloatPropertyRNA rna_RenderSettings_pixel_aspect_y_;
+PropertyRNA &rna_RenderSettings_pixel_aspect_y = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_pixel_aspect_y_);
+
+static FloatPropertyRNA rna_RenderSettings_ppm_factor_;
+PropertyRNA &rna_RenderSettings_ppm_factor = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_ppm_factor_);
+
+static FloatPropertyRNA rna_RenderSettings_ppm_base_;
+PropertyRNA &rna_RenderSettings_ppm_base = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_ppm_base_);
+
+static PointerPropertyRNA rna_RenderSettings_ffmpeg_;
+PropertyRNA &rna_RenderSettings_ffmpeg = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_ffmpeg_);
+
+static IntPropertyRNA rna_RenderSettings_fps_;
+PropertyRNA &rna_RenderSettings_fps = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_fps_);
+
+static FloatPropertyRNA rna_RenderSettings_fps_base_;
+PropertyRNA &rna_RenderSettings_fps_base = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_fps_base_);
+
+static IntPropertyRNA rna_RenderSettings_frame_map_old_;
+PropertyRNA &rna_RenderSettings_frame_map_old = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_frame_map_old_);
+
+static IntPropertyRNA rna_RenderSettings_frame_map_new_;
+PropertyRNA &rna_RenderSettings_frame_map_new = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_frame_map_new_);
+
+static FloatPropertyRNA rna_RenderSettings_dither_intensity_;
+PropertyRNA &rna_RenderSettings_dither_intensity = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_dither_intensity_);
+
+static FloatPropertyRNA rna_RenderSettings_filter_size_;
+PropertyRNA &rna_RenderSettings_filter_size = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_filter_size_);
+
+static BoolPropertyRNA rna_RenderSettings_film_transparent_;
+PropertyRNA &rna_RenderSettings_film_transparent = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_film_transparent_);
+
+static BoolPropertyRNA rna_RenderSettings_use_freestyle_;
+PropertyRNA &rna_RenderSettings_use_freestyle = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_freestyle_);
+
+static IntPropertyRNA rna_RenderSettings_threads_;
+PropertyRNA &rna_RenderSettings_threads = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_threads_);
+
+static EnumPropertyRNA rna_RenderSettings_threads_mode_;
+PropertyRNA &rna_RenderSettings_threads_mode = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_threads_mode_);
+
+static BoolPropertyRNA rna_RenderSettings_use_motion_blur_;
+PropertyRNA &rna_RenderSettings_use_motion_blur = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_motion_blur_);
+
+static FloatPropertyRNA rna_RenderSettings_motion_blur_shutter_;
+PropertyRNA &rna_RenderSettings_motion_blur_shutter = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_motion_blur_shutter_);
+
+static EnumPropertyRNA rna_RenderSettings_motion_blur_position_;
+PropertyRNA &rna_RenderSettings_motion_blur_position = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_motion_blur_position_);
+
+static PointerPropertyRNA rna_RenderSettings_motion_blur_shutter_curve_;
+PropertyRNA &rna_RenderSettings_motion_blur_shutter_curve = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_motion_blur_shutter_curve_);
+
+static EnumPropertyRNA rna_RenderSettings_hair_type_;
+PropertyRNA &rna_RenderSettings_hair_type = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_hair_type_);
+
+static IntPropertyRNA rna_RenderSettings_hair_subdiv_;
+PropertyRNA &rna_RenderSettings_hair_subdiv = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_hair_subdiv_);
+
+static BoolPropertyRNA rna_RenderSettings_use_high_quality_normals_;
+PropertyRNA &rna_RenderSettings_use_high_quality_normals = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_high_quality_normals_);
+
+static EnumPropertyRNA rna_RenderSettings_anisotropic_filter_;
+PropertyRNA &rna_RenderSettings_anisotropic_filter = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_anisotropic_filter_);
+
+static BoolPropertyRNA rna_RenderSettings_use_border_;
+PropertyRNA &rna_RenderSettings_use_border = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_border_);
+
+static FloatPropertyRNA rna_RenderSettings_border_min_x_;
+PropertyRNA &rna_RenderSettings_border_min_x = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_border_min_x_);
+
+static FloatPropertyRNA rna_RenderSettings_border_min_y_;
+PropertyRNA &rna_RenderSettings_border_min_y = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_border_min_y_);
+
+static FloatPropertyRNA rna_RenderSettings_border_max_x_;
+PropertyRNA &rna_RenderSettings_border_max_x = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_border_max_x_);
+
+static FloatPropertyRNA rna_RenderSettings_border_max_y_;
+PropertyRNA &rna_RenderSettings_border_max_y = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_border_max_y_);
+
+static BoolPropertyRNA rna_RenderSettings_use_crop_to_border_;
+PropertyRNA &rna_RenderSettings_use_crop_to_border = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_crop_to_border_);
+
+static BoolPropertyRNA rna_RenderSettings_use_placeholder_;
+PropertyRNA &rna_RenderSettings_use_placeholder = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_placeholder_);
+
+static BoolPropertyRNA rna_RenderSettings_use_overwrite_;
+PropertyRNA &rna_RenderSettings_use_overwrite = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_overwrite_);
+
+static BoolPropertyRNA rna_RenderSettings_save_output_;
+PropertyRNA &rna_RenderSettings_save_output = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_save_output_);
+
+static BoolPropertyRNA rna_RenderSettings_use_compositing_;
+PropertyRNA &rna_RenderSettings_use_compositing = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_compositing_);
+
+static BoolPropertyRNA rna_RenderSettings_use_sequencer_;
+PropertyRNA &rna_RenderSettings_use_sequencer = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_sequencer_);
+
+static BoolPropertyRNA rna_RenderSettings_use_file_extension_;
+PropertyRNA &rna_RenderSettings_use_file_extension = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_file_extension_);
+
+static StringPropertyRNA rna_RenderSettings_file_extension_;
+PropertyRNA &rna_RenderSettings_file_extension = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_file_extension_);
+
+static BoolPropertyRNA rna_RenderSettings_is_movie_format_;
+PropertyRNA &rna_RenderSettings_is_movie_format = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_is_movie_format_);
+
+static BoolPropertyRNA rna_RenderSettings_use_lock_interface_;
+PropertyRNA &rna_RenderSettings_use_lock_interface = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_lock_interface_);
+
+static StringPropertyRNA rna_RenderSettings_filepath_;
+PropertyRNA &rna_RenderSettings_filepath = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_filepath_);
+
+static BoolPropertyRNA rna_RenderSettings_use_render_cache_;
+PropertyRNA &rna_RenderSettings_use_render_cache = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_render_cache_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_time_;
+PropertyRNA &rna_RenderSettings_use_stamp_time = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_time_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_date_;
+PropertyRNA &rna_RenderSettings_use_stamp_date = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_date_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_frame_;
+PropertyRNA &rna_RenderSettings_use_stamp_frame = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_frame_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_frame_range_;
+PropertyRNA &rna_RenderSettings_use_stamp_frame_range = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_frame_range_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_camera_;
+PropertyRNA &rna_RenderSettings_use_stamp_camera = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_camera_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_lens_;
+PropertyRNA &rna_RenderSettings_use_stamp_lens = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_lens_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_scene_;
+PropertyRNA &rna_RenderSettings_use_stamp_scene = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_scene_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_note_;
+PropertyRNA &rna_RenderSettings_use_stamp_note = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_note_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_marker_;
+PropertyRNA &rna_RenderSettings_use_stamp_marker = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_marker_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_filename_;
+PropertyRNA &rna_RenderSettings_use_stamp_filename = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_filename_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_sequencer_strip_;
+PropertyRNA &rna_RenderSettings_use_stamp_sequencer_strip = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_sequencer_strip_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_render_time_;
+PropertyRNA &rna_RenderSettings_use_stamp_render_time = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_render_time_);
+
+static StringPropertyRNA rna_RenderSettings_stamp_note_text_;
+PropertyRNA &rna_RenderSettings_stamp_note_text = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_stamp_note_text_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_;
+PropertyRNA &rna_RenderSettings_use_stamp = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_labels_;
+PropertyRNA &rna_RenderSettings_use_stamp_labels = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_labels_);
+
+static EnumPropertyRNA rna_RenderSettings_metadata_input_;
+PropertyRNA &rna_RenderSettings_metadata_input = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_metadata_input_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_memory_;
+PropertyRNA &rna_RenderSettings_use_stamp_memory = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_memory_);
+
+static BoolPropertyRNA rna_RenderSettings_use_stamp_hostname_;
+PropertyRNA &rna_RenderSettings_use_stamp_hostname = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_stamp_hostname_);
+
+static IntPropertyRNA rna_RenderSettings_stamp_font_size_;
+PropertyRNA &rna_RenderSettings_stamp_font_size = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_stamp_font_size_);
+
+static FloatPropertyRNA rna_RenderSettings_stamp_foreground_;
+PropertyRNA &rna_RenderSettings_stamp_foreground = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_stamp_foreground_);
+
+static FloatPropertyRNA rna_RenderSettings_stamp_background_;
+PropertyRNA &rna_RenderSettings_stamp_background = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_stamp_background_);
+
+static EnumPropertyRNA rna_RenderSettings_sequencer_gl_preview_;
+PropertyRNA &rna_RenderSettings_sequencer_gl_preview = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_sequencer_gl_preview_);
+
+static BoolPropertyRNA rna_RenderSettings_use_sequencer_override_scene_strip_;
+PropertyRNA &rna_RenderSettings_use_sequencer_override_scene_strip = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_sequencer_override_scene_strip_);
+
+static BoolPropertyRNA rna_RenderSettings_use_single_layer_;
+PropertyRNA &rna_RenderSettings_use_single_layer = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_single_layer_);
+
+static CollectionPropertyRNA rna_RenderSettings_views_;
+PropertyRNA &rna_RenderSettings_views = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_views_);
+
+static CollectionPropertyRNA rna_RenderSettings_stereo_views_;
+PropertyRNA &rna_RenderSettings_stereo_views = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_stereo_views_);
+
+static BoolPropertyRNA rna_RenderSettings_use_multiview_;
+PropertyRNA &rna_RenderSettings_use_multiview = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_multiview_);
+
+static EnumPropertyRNA rna_RenderSettings_views_format_;
+PropertyRNA &rna_RenderSettings_views_format = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_views_format_);
+
+static EnumPropertyRNA rna_RenderSettings_engine_;
+PropertyRNA &rna_RenderSettings_engine = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_engine_);
+
+static BoolPropertyRNA rna_RenderSettings_has_multiple_engines_;
+PropertyRNA &rna_RenderSettings_has_multiple_engines = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_has_multiple_engines_);
+
+static BoolPropertyRNA rna_RenderSettings_use_spherical_stereo_;
+PropertyRNA &rna_RenderSettings_use_spherical_stereo = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_spherical_stereo_);
+
+static BoolPropertyRNA rna_RenderSettings_use_simplify_;
+PropertyRNA &rna_RenderSettings_use_simplify = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_simplify_);
+
+static IntPropertyRNA rna_RenderSettings_simplify_subdivision_;
+PropertyRNA &rna_RenderSettings_simplify_subdivision = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_subdivision_);
+
+static FloatPropertyRNA rna_RenderSettings_simplify_child_particles_;
+PropertyRNA &rna_RenderSettings_simplify_child_particles = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_child_particles_);
+
+static IntPropertyRNA rna_RenderSettings_simplify_subdivision_render_;
+PropertyRNA &rna_RenderSettings_simplify_subdivision_render = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_subdivision_render_);
+
+static FloatPropertyRNA rna_RenderSettings_simplify_child_particles_render_;
+PropertyRNA &rna_RenderSettings_simplify_child_particles_render = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_child_particles_render_);
+
+static FloatPropertyRNA rna_RenderSettings_simplify_volumes_;
+PropertyRNA &rna_RenderSettings_simplify_volumes = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_volumes_);
+
+static BoolPropertyRNA rna_RenderSettings_use_simplify_normals_;
+PropertyRNA &rna_RenderSettings_use_simplify_normals = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_simplify_normals_);
+
+static BoolPropertyRNA rna_RenderSettings_use_texture_cache_;
+PropertyRNA &rna_RenderSettings_use_texture_cache = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_texture_cache_);
+
+static BoolPropertyRNA rna_RenderSettings_use_auto_generate_texture_cache_;
+PropertyRNA &rna_RenderSettings_use_auto_generate_texture_cache = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_auto_generate_texture_cache_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_onplay_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil_onplay = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_onplay_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_antialiasing_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil_antialiasing = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_antialiasing_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_view_fill_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil_view_fill = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_view_fill_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_modifier_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil_modifier = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_modifier_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_shader_fx_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil_shader_fx = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_shader_fx_);
+
+static BoolPropertyRNA rna_RenderSettings_simplify_gpencil_tint_;
+PropertyRNA &rna_RenderSettings_simplify_gpencil_tint = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_simplify_gpencil_tint_);
+
+static BoolPropertyRNA rna_RenderSettings_use_persistent_data_;
+PropertyRNA &rna_RenderSettings_use_persistent_data = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_persistent_data_);
+
+static EnumPropertyRNA rna_RenderSettings_line_thickness_mode_;
+PropertyRNA &rna_RenderSettings_line_thickness_mode = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_line_thickness_mode_);
+
+static FloatPropertyRNA rna_RenderSettings_line_thickness_;
+PropertyRNA &rna_RenderSettings_line_thickness = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_line_thickness_);
+
+static PointerPropertyRNA rna_RenderSettings_bake_;
+PropertyRNA &rna_RenderSettings_bake = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_bake_);
+
+static EnumPropertyRNA rna_RenderSettings_compositor_device_;
+PropertyRNA &rna_RenderSettings_compositor_device = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_compositor_device_);
+
+static BoolPropertyRNA rna_RenderSettings_use_compositor_frames_cache_;
+PropertyRNA &rna_RenderSettings_use_compositor_frames_cache = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_use_compositor_frames_cache_);
+
+static EnumPropertyRNA rna_RenderSettings_compositor_precision_;
+PropertyRNA &rna_RenderSettings_compositor_precision = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_compositor_precision_);
+
+static EnumPropertyRNA rna_RenderSettings_compositor_denoise_device_;
+PropertyRNA &rna_RenderSettings_compositor_denoise_device = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_compositor_denoise_device_);
+
+static EnumPropertyRNA rna_RenderSettings_compositor_denoise_preview_quality_;
+PropertyRNA &rna_RenderSettings_compositor_denoise_preview_quality = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_compositor_denoise_preview_quality_);
+
+static EnumPropertyRNA rna_RenderSettings_compositor_denoise_final_quality_;
+PropertyRNA &rna_RenderSettings_compositor_denoise_final_quality = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_compositor_denoise_final_quality_);
+
+static IntPropertyRNA rna_RenderSettings_frame_path_frame_;
+PropertyRNA &rna_RenderSettings_frame_path_frame = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_frame_path_frame_);
+
+static BoolPropertyRNA rna_RenderSettings_frame_path_preview_;
+PropertyRNA &rna_RenderSettings_frame_path_preview = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_frame_path_preview_);
+
+static StringPropertyRNA rna_RenderSettings_frame_path_view_;
+PropertyRNA &rna_RenderSettings_frame_path_view = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_frame_path_view_);
+
+static StringPropertyRNA rna_RenderSettings_frame_path_filepath_;
+PropertyRNA &rna_RenderSettings_frame_path_filepath = reinterpret_cast<PropertyRNA &>(rna_RenderSettings_frame_path_filepath_);
+
+FunctionRNA *rna_RenderSettings_frame_path_func;
+StructRNA *RNA_RenderSettings;
+void register_struct_RenderSettings(BlenderRNA &brna)
+{
+	rna_RenderSettings_rna_properties_ = {
+		{&rna_RenderSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_rna_properties_begin, RenderSettings_rna_properties_next, RenderSettings_rna_properties_end, RenderSettings_rna_properties_get, nullptr, nullptr, RenderSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_RenderSettings_rna_type_ = {
+		{&rna_RenderSettings_image_settings, 	&rna_RenderSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_RenderSettings_image_settings_ = {
+		{&rna_RenderSettings_resolution_x, 	&rna_RenderSettings_rna_type,
+		-1, "image_settings", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Image Format",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_image_settings_get, nullptr, nullptr, nullptr,RNA_ImageFormatSettings
+	};
+
+	rna_RenderSettings_resolution_x_ = {
+		{&rna_RenderSettings_resolution_y, 	&rna_RenderSettings_image_settings,
+		-1, "resolution_x", 67108865, 0, 0, 4, 0, PropertyPathTemplateType(0), "Resolution X",
+		"Number of horizontal pixels in the rendered image",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneCamera_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, xsch), RawPropertyType(0), nullptr},
+		RenderSettings_resolution_x_get, RenderSettings_resolution_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 4, 65536, 4, 65536, 1, nullptr, nullptr, 1920, nullptr
+	};
+
+	rna_RenderSettings_resolution_y_ = {
+		{&rna_RenderSettings_resolution_percentage, 	&rna_RenderSettings_resolution_x,
+		-1, "resolution_y", 67108865, 0, 0, 4, 0, PropertyPathTemplateType(0), "Resolution Y",
+		"Number of vertical pixels in the rendered image",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneCamera_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, ysch), RawPropertyType(0), nullptr},
+		RenderSettings_resolution_y_get, RenderSettings_resolution_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 4, 65536, 4, 65536, 1, nullptr, nullptr, 1080, nullptr
+	};
+
+	rna_RenderSettings_resolution_percentage_ = {
+		{&rna_RenderSettings_preview_pixel_size, 	&rna_RenderSettings_resolution_y,
+		-1, "resolution_percentage", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Resolution Scale",
+		"Percentage scale for render resolution",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PERCENTAGE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneSequencer_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, size), RawPropertyType(1), nullptr},
+		RenderSettings_resolution_percentage_get, RenderSettings_resolution_percentage_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 100, 1, 32767, 10, nullptr, nullptr, 100, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_preview_pixel_size_items[6] = {
+		{0, "AUTO", 0, "Automatic", "Automatic pixel size, depends on the user interface scale"	},
+		{1, "1", 0, "1×", "Render at full resolution"	},
+		{2, "2", 0, "2×", "Render at 50% resolution"	},
+		{4, "4", 0, "4×", "Render at 25% resolution"	},
+		{8, "8", 0, "8×", "Render at 12.5% resolution"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_preview_pixel_size_ = {
+		{&rna_RenderSettings_pixel_aspect_x, 	&rna_RenderSettings_resolution_percentage,
+		-1, "preview_pixel_size", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pixel Size",
+		"Pixel size for viewport rendering",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, preview_pixel_size), RawPropertyType(1), nullptr},
+		RenderSettings_preview_pixel_size_get, RenderSettings_preview_pixel_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_preview_pixel_size_items, 5, 0
+	};
+
+	rna_RenderSettings_pixel_aspect_x_ = {
+		{&rna_RenderSettings_pixel_aspect_y, 	&rna_RenderSettings_preview_pixel_size,
+		-1, "pixel_aspect_x", 67108865, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pixel Aspect X",
+		"Horizontal aspect ratio - for anamorphic or non-square pixel output",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneCamera_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, xasp), RawPropertyType(5), nullptr},
+		RenderSettings_pixel_aspect_x_get, RenderSettings_pixel_aspect_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 1.0f, 200.0f, 1.0f, 200.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_pixel_aspect_y_ = {
+		{&rna_RenderSettings_ppm_factor, 	&rna_RenderSettings_pixel_aspect_x,
+		-1, "pixel_aspect_y", 67108865, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pixel Aspect Y",
+		"Vertical aspect ratio - for anamorphic or non-square pixel output",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneCamera_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, yasp), RawPropertyType(5), nullptr},
+		RenderSettings_pixel_aspect_y_get, RenderSettings_pixel_aspect_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 1.0f, 200.0f, 1.0f, 200.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_ppm_factor_ = {
+		{&rna_RenderSettings_ppm_base, 	&rna_RenderSettings_pixel_aspect_y,
+		-1, "ppm_factor", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "PPM Factor",
+		"The pixel density meta-data written to supported image formats. This value is multiplied by the PPM-base which defines the unit (typically inches or meters)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, ppm_factor), RawPropertyType(5), nullptr},
+		RenderSettings_ppm_factor_get, RenderSettings_ppm_factor_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0001000000f, 10000.0f, 0.0000100000f, 1000000.0f, 2.0f, 2, nullptr, nullptr, 72.0f, nullptr
+	};
+
+	rna_RenderSettings_ppm_base_ = {
+		{&rna_RenderSettings_ffmpeg, 	&rna_RenderSettings_ppm_factor,
+		-1, "ppm_base", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "PPM Base",
+		"The base unit for pixels per meter.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, ppm_base), RawPropertyType(5), nullptr},
+		RenderSettings_ppm_base_get, RenderSettings_ppm_base_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0001000000f, 10000.0f, 0.0000100000f, 1000000.0f, 2.0f, 4, nullptr, nullptr, 0.0253999997f, nullptr
+	};
+
+	rna_RenderSettings_ffmpeg_ = {
+		{&rna_RenderSettings_fps, 	&rna_RenderSettings_ppm_base,
+		-1, "ffmpeg", 41943040, 0, 0, 0, 0, PropertyPathTemplateType(0), "FFmpeg Settings",
+		"FFmpeg related settings for the scene",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_ffmpeg_get, nullptr, nullptr, nullptr,RNA_FFmpegSettings
+	};
+
+	rna_RenderSettings_fps_ = {
+		{&rna_RenderSettings_fps_base, 	&rna_RenderSettings_ffmpeg,
+		-1, "fps", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "FPS",
+		"Framerate, expressed in frames per second",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_fps_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, frs_sec), RawPropertyType(1), nullptr},
+		RenderSettings_fps_get, RenderSettings_fps_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 240, 1, 32767, 1, nullptr, nullptr, 24, nullptr
+	};
+
+	rna_RenderSettings_fps_base_ = {
+		{&rna_RenderSettings_frame_map_old, 	&rna_RenderSettings_fps,
+		-1, "fps_base", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "FPS Base",
+		"Framerate base",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_fps_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, frs_sec_base), RawPropertyType(5), nullptr},
+		RenderSettings_fps_base_get, RenderSettings_fps_base_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.1000000015f, 120.0f, 0.0000100000f, 1000000.0f, 2.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_frame_map_old_ = {
+		{&rna_RenderSettings_frame_map_new, 	&rna_RenderSettings_fps_base,
+		-1, "frame_map_old", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Frame Map Old",
+		"Old mapping value in frames",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_framelen_update, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, framapto), RawPropertyType(0), nullptr},
+		RenderSettings_frame_map_old_get, RenderSettings_frame_map_old_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 900, 1, 900, 1, nullptr, nullptr, 100, nullptr
+	};
+
+	rna_RenderSettings_frame_map_new_ = {
+		{&rna_RenderSettings_dither_intensity, 	&rna_RenderSettings_frame_map_old,
+		-1, "frame_map_new", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Frame Map New",
+		"How many frames the Map Old will last",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_framelen_update, 84082688, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, images), RawPropertyType(0), nullptr},
+		RenderSettings_frame_map_new_get, RenderSettings_frame_map_new_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 900, 1, 900, 1, nullptr, nullptr, 100, nullptr
+	};
+
+	rna_RenderSettings_dither_intensity_ = {
+		{&rna_RenderSettings_filter_size, 	&rna_RenderSettings_frame_map_new,
+		-1, "dither_intensity", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Dither Intensity",
+		"Amount of dithering noise added to the rendered image to break up banding",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, dither_intensity), RawPropertyType(5), nullptr},
+		RenderSettings_dither_intensity_get, RenderSettings_dither_intensity_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 2.0f, 0.0f, FLT_MAX, 0.1000000015f, 2, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_filter_size_ = {
+		{&rna_RenderSettings_film_transparent, 	&rna_RenderSettings_dither_intensity,
+		-1, "filter_size", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Filter Size",
+		"Width over which the reconstruction filter combines samples",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, gauss), RawPropertyType(5), nullptr},
+		RenderSettings_filter_size_get, RenderSettings_filter_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0099999998f, 10.0f, 0.0f, 500.0f, 1.0f, 2, nullptr, nullptr, 1.5000000000f, nullptr
+	};
+
+	rna_RenderSettings_film_transparent_ = {
+		{&rna_RenderSettings_use_freestyle, 	&rna_RenderSettings_filter_size,
+		-1, "film_transparent", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Transparent",
+		"World background is transparent, for compositing the render over another background",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_render_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_film_transparent_get, RenderSettings_film_transparent_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_freestyle_ = {
+		{&rna_RenderSettings_threads, 	&rna_RenderSettings_film_transparent,
+		-1, "use_freestyle", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Freestyle",
+		"Draw stylized strokes using Freestyle",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_use_freestyle_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_freestyle_get, RenderSettings_use_freestyle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_threads_ = {
+		{&rna_RenderSettings_threads_mode, 	&rna_RenderSettings_use_freestyle,
+		-1, "threads", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Threads",
+		"Maximum number of CPU cores to use simultaneously while rendering (for multi-core/CPU systems)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_threads_get, RenderSettings_threads_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 1024, 1, 1024, 1, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_threads_mode_items[3] = {
+		{0, "AUTO", 0, "Auto-Detect", "Automatically determine the number of threads, based on CPUs"	},
+		{524288, "FIXED", 0, "Fixed", "Manually determine the number of threads"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_threads_mode_ = {
+		{&rna_RenderSettings_use_motion_blur, 	&rna_RenderSettings_threads,
+		-1, "threads_mode", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Threads Mode",
+		"Determine the amount of render threads used",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_threads_mode_get, RenderSettings_threads_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_threads_mode_items, 2, 0
+	};
+
+	rna_RenderSettings_use_motion_blur_ = {
+		{&rna_RenderSettings_motion_blur_shutter, 	&rna_RenderSettings_threads_mode,
+		-1, "use_motion_blur", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Motion Blur",
+		"Use multi-sampled 3D scene motion blur",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_render_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_motion_blur_get, RenderSettings_use_motion_blur_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_motion_blur_shutter_ = {
+		{&rna_RenderSettings_motion_blur_position, 	&rna_RenderSettings_use_motion_blur,
+		-1, "motion_blur_shutter", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Shutter",
+		"Time taken in frames between shutter open and close",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_render_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, motion_blur_shutter), RawPropertyType(5), nullptr},
+		RenderSettings_motion_blur_shutter_get, RenderSettings_motion_blur_shutter_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0099999998f, 1.0f, 0.0f, FLT_MAX, 1.0f, 2, nullptr, nullptr, 0.5000000000f, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_motion_blur_position_items[4] = {
+		{1, "START", 0, "Start on Frame", "The shutter opens at the current frame"	},
+		{0, "CENTER", 0, "Center on Frame", "The shutter is open during the current frame"	},
+		{2, "END", 0, "End on Frame", "The shutter closes at the current frame"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_motion_blur_position_ = {
+		{&rna_RenderSettings_motion_blur_shutter_curve, 	&rna_RenderSettings_motion_blur_shutter,
+		-1, "motion_blur_position", 3, 1, 0, 4, 0, PropertyPathTemplateType(0), "Motion Blur Position",
+		"Offset for the shutter\'s time interval, allows to change the motion blur trails",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, motion_blur_position), RawPropertyType(0), nullptr},
+		RenderSettings_motion_blur_position_get, RenderSettings_motion_blur_position_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_motion_blur_position_items, 3, 0
+	};
+
+	rna_RenderSettings_motion_blur_shutter_curve_ = {
+		{&rna_RenderSettings_hair_type, 	&rna_RenderSettings_motion_blur_position,
+		-1, "motion_blur_shutter_curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Shutter Curve",
+		"Curve defining the shutter\'s openness over time",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_motion_blur_shutter_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_hair_type_items[4] = {
+		{0, "STRAND", 0, "Strand", ""	},
+		{1, "STRIP", 0, "Strip", ""	},
+		{2, "CYLINDER", 0, "Cylinder", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_hair_type_ = {
+		{&rna_RenderSettings_hair_subdiv, 	&rna_RenderSettings_motion_blur_shutter_curve,
+		-1, "hair_type", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Curves Shape Type",
+		"Curves shape type",
+		0, "Curves",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_render_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, hair_type), RawPropertyType(1), nullptr},
+		RenderSettings_hair_type_get, RenderSettings_hair_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_hair_type_items, 3, 0
+	};
+
+	rna_RenderSettings_hair_subdiv_ = {
+		{&rna_RenderSettings_use_high_quality_normals, 	&rna_RenderSettings_hair_type,
+		-1, "hair_subdiv", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Additional Subdivision",
+		"Additional subdivision along the curves",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_render_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, hair_subdiv), RawPropertyType(1), nullptr},
+		RenderSettings_hair_subdiv_get, RenderSettings_hair_subdiv_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 3, 0, 3, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_high_quality_normals_ = {
+		{&rna_RenderSettings_anisotropic_filter, 	&rna_RenderSettings_hair_subdiv,
+		-1, "use_high_quality_normals", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "High Quality Normals",
+		"Use high quality tangent space at the cost of lower performance",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_mesh_quality_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_high_quality_normals_get, RenderSettings_use_high_quality_normals_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_anisotropic_filter_items[6] = {
+		{1, "FILTER_0", 0, "Off", "Turn off anisotropic filtering"	},
+		{2, "FILTER_2", 0, "2×", "Use 2 samples for anisotropic filtering"	},
+		{4, "FILTER_4", 0, "4×", "Use 4 samples for anisotropic filtering"	},
+		{8, "FILTER_8", 0, "8×", "Use 8 samples for anisotropic filtering"	},
+		{16, "FILTER_16", 0, "16×", "Use 16 samples for anisotropic filtering"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_anisotropic_filter_ = {
+		{&rna_RenderSettings_use_border, 	&rna_RenderSettings_use_high_quality_normals,
+		-1, "anisotropic_filter", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Anisotropic Filtering",
+		"Quality of anisotropic filtering in materials",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_render_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, anisotropic_filter), RawPropertyType(1), nullptr},
+		RenderSettings_anisotropic_filter_get, RenderSettings_anisotropic_filter_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_anisotropic_filter_items, 5, 2
+	};
+
+	rna_RenderSettings_use_border_ = {
+		{&rna_RenderSettings_border_min_x, 	&rna_RenderSettings_anisotropic_filter,
+		-1, "use_border", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Render Region",
+		"Render a user-defined render region, within the frame size",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_border_get, RenderSettings_use_border_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_border_min_x_ = {
+		{&rna_RenderSettings_border_min_y, 	&rna_RenderSettings_use_border,
+		-1, "border_min_x", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Region Minimum X",
+		"Minimum X value for the render region",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, border.xmin), RawPropertyType(5), nullptr},
+		RenderSettings_border_min_x_get, RenderSettings_border_min_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_RenderSettings_border_min_y_ = {
+		{&rna_RenderSettings_border_max_x, 	&rna_RenderSettings_border_min_x,
+		-1, "border_min_y", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Region Minimum Y",
+		"Minimum Y value for the render region",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, border.ymin), RawPropertyType(5), nullptr},
+		RenderSettings_border_min_y_get, RenderSettings_border_min_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_RenderSettings_border_max_x_ = {
+		{&rna_RenderSettings_border_max_y, 	&rna_RenderSettings_border_min_y,
+		-1, "border_max_x", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Region Maximum X",
+		"Maximum X value for the render region",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, border.xmax), RawPropertyType(5), nullptr},
+		RenderSettings_border_max_x_get, RenderSettings_border_max_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_border_max_y_ = {
+		{&rna_RenderSettings_use_crop_to_border, 	&rna_RenderSettings_border_max_x,
+		-1, "border_max_y", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Region Maximum Y",
+		"Maximum Y value for the render region",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, border.ymax), RawPropertyType(5), nullptr},
+		RenderSettings_border_max_y_get, RenderSettings_border_max_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_use_crop_to_border_ = {
+		{&rna_RenderSettings_use_placeholder, 	&rna_RenderSettings_border_max_y,
+		-1, "use_crop_to_border", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Crop to Render Region",
+		"Crop the rendered frame to the defined render region size",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_crop_to_border_get, RenderSettings_use_crop_to_border_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_placeholder_ = {
+		{&rna_RenderSettings_use_overwrite, 	&rna_RenderSettings_use_crop_to_border,
+		-1, "use_placeholder", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Placeholders",
+		"Create empty placeholder files while rendering frames (similar to Unix \'touch\')",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_placeholder_get, RenderSettings_use_placeholder_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_overwrite_ = {
+		{&rna_RenderSettings_save_output, 	&rna_RenderSettings_use_placeholder,
+		-1, "use_overwrite", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Overwrite",
+		"Overwrite existing files while rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_overwrite_get, RenderSettings_use_overwrite_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_save_output_ = {
+		{&rna_RenderSettings_use_compositing, 	&rna_RenderSettings_use_overwrite,
+		-1, "save_output", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Save Output",
+		"Write frames to disk for animation renders",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_save_output_get, RenderSettings_save_output_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_compositing_ = {
+		{&rna_RenderSettings_use_sequencer, 	&rna_RenderSettings_save_output,
+		-1, "use_compositing", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Compositing",
+		"Process the render result through the compositing pipeline, if a compositing node group is assigned to the scene",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_compositing_get, RenderSettings_use_compositing_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_sequencer_ = {
+		{&rna_RenderSettings_use_file_extension, 	&rna_RenderSettings_use_compositing,
+		-1, "use_sequencer", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sequencer",
+		"Process the render (and composited) result through the video sequence editor pipeline, if sequencer strips exist",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_sequencer_get, RenderSettings_use_sequencer_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_file_extension_ = {
+		{&rna_RenderSettings_file_extension, 	&rna_RenderSettings_use_sequencer,
+		-1, "use_file_extension", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "File Extensions",
+		"Add the file format extensions to the rendered file name (eg: filename + .jpg)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_file_extension_get, RenderSettings_use_file_extension_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_file_extension_ = {
+		{&rna_RenderSettings_is_movie_format, 	&rna_RenderSettings_use_file_extension,
+		-1, "file_extension", 262144, 0, 0, 0, 0, PropertyPathTemplateType(0), "Extension",
+		"The file extension used for saving renders",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_file_extension_get, RenderSettings_file_extension_length, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, ""
+	};
+
+	rna_RenderSettings_is_movie_format_ = {
+		{&rna_RenderSettings_use_lock_interface, 	&rna_RenderSettings_file_extension,
+		-1, "is_movie_format", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "Movie Format",
+		"When true the format is a movie",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_is_movie_format_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_lock_interface_ = {
+		{&rna_RenderSettings_filepath, 	&rna_RenderSettings_is_movie_format,
+		-1, "use_lock_interface", 4097, 0, 0, 0, 0, PropertyPathTemplateType(0), "Lock Interface",
+		"Lock interface during rendering in favor of giving more memory to the renderer",
+		41, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_lock_interface_get, RenderSettings_use_lock_interface_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_filepath_ = {
+		{&rna_RenderSettings_use_render_cache, 	&rna_RenderSettings_use_lock_interface,
+		-1, "filepath", 311301, 0, 0, 0, 0, PropertyPathTemplateType(1), "Output Path",
+		"Directory/name to save animations, # characters define the position and padding of frame numbers",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_FILEPATH) | int(PROP_UNIT_NONE)), nullptr, 0, {1024, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_filepath_get, RenderSettings_filepath_length, RenderSettings_filepath_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 1024, "//"
+	};
+
+	rna_RenderSettings_use_render_cache_ = {
+		{&rna_RenderSettings_use_stamp_time, 	&rna_RenderSettings_filepath,
+		-1, "use_render_cache", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cache Result",
+		"Save render cache to EXR files (useful for heavy compositing, Note: affects indirectly rendered scenes)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_render_cache_get, RenderSettings_use_render_cache_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_time_ = {
+		{&rna_RenderSettings_use_stamp_date, 	&rna_RenderSettings_use_render_cache,
+		-1, "use_stamp_time", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Time",
+		"Include the rendered frame timecode as HH:MM:SS.FF in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_time_get, RenderSettings_use_stamp_time_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_date_ = {
+		{&rna_RenderSettings_use_stamp_frame, 	&rna_RenderSettings_use_stamp_time,
+		-1, "use_stamp_date", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Date",
+		"Include the current date in image/video metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_date_get, RenderSettings_use_stamp_date_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_frame_ = {
+		{&rna_RenderSettings_use_stamp_frame_range, 	&rna_RenderSettings_use_stamp_date,
+		-1, "use_stamp_frame", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Frame",
+		"Include the frame number in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_frame_get, RenderSettings_use_stamp_frame_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_frame_range_ = {
+		{&rna_RenderSettings_use_stamp_camera, 	&rna_RenderSettings_use_stamp_frame,
+		-1, "use_stamp_frame_range", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Frame",
+		"Include the rendered frame range in image/video metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_frame_range_get, RenderSettings_use_stamp_frame_range_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_camera_ = {
+		{&rna_RenderSettings_use_stamp_lens, 	&rna_RenderSettings_use_stamp_frame_range,
+		-1, "use_stamp_camera", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Camera",
+		"Include the name of the active camera in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_camera_get, RenderSettings_use_stamp_camera_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_lens_ = {
+		{&rna_RenderSettings_use_stamp_scene, 	&rna_RenderSettings_use_stamp_camera,
+		-1, "use_stamp_lens", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Lens",
+		"Include the active camera\'s lens in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_lens_get, RenderSettings_use_stamp_lens_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_scene_ = {
+		{&rna_RenderSettings_use_stamp_note, 	&rna_RenderSettings_use_stamp_lens,
+		-1, "use_stamp_scene", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Scene",
+		"Include the name of the active scene in image/video metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_scene_get, RenderSettings_use_stamp_scene_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_note_ = {
+		{&rna_RenderSettings_use_stamp_marker, 	&rna_RenderSettings_use_stamp_scene,
+		-1, "use_stamp_note", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Note",
+		"Include a custom note in image/video metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_note_get, RenderSettings_use_stamp_note_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_marker_ = {
+		{&rna_RenderSettings_use_stamp_filename, 	&rna_RenderSettings_use_stamp_note,
+		-1, "use_stamp_marker", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Marker",
+		"Include the name of the last marker in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_marker_get, RenderSettings_use_stamp_marker_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_filename_ = {
+		{&rna_RenderSettings_use_stamp_sequencer_strip, 	&rna_RenderSettings_use_stamp_marker,
+		-1, "use_stamp_filename", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Filename",
+		"Include the .blend filename in image/video metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_filename_get, RenderSettings_use_stamp_filename_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_sequencer_strip_ = {
+		{&rna_RenderSettings_use_stamp_render_time, 	&rna_RenderSettings_use_stamp_filename,
+		-1, "use_stamp_sequencer_strip", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Sequence Strip",
+		"Include the name of the foreground sequence strip in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_sequencer_strip_get, RenderSettings_use_stamp_sequencer_strip_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_render_time_ = {
+		{&rna_RenderSettings_stamp_note_text, 	&rna_RenderSettings_use_stamp_sequencer_strip,
+		-1, "use_stamp_render_time", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Render Time",
+		"Include the render time in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_render_time_get, RenderSettings_use_stamp_render_time_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_stamp_note_text_ = {
+		{&rna_RenderSettings_use_stamp, 	&rna_RenderSettings_use_stamp_render_time,
+		-1, "stamp_note_text", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Note Text",
+		"Custom text to appear in the stamp note",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {768, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_stamp_note_text_get, RenderSettings_stamp_note_text_length, RenderSettings_stamp_note_text_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 768, ""
+	};
+
+	rna_RenderSettings_use_stamp_ = {
+		{&rna_RenderSettings_use_stamp_labels, 	&rna_RenderSettings_stamp_note_text,
+		-1, "use_stamp", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Output",
+		"Render the stamp info text in the rendered image",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_get, RenderSettings_use_stamp_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_labels_ = {
+		{&rna_RenderSettings_metadata_input, 	&rna_RenderSettings_use_stamp,
+		-1, "use_stamp_labels", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Labels",
+		"Display stamp labels (\"Camera\" in front of camera name, etc.)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_labels_get, RenderSettings_use_stamp_labels_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_metadata_input_items[3] = {
+		{0, "SCENE", 0, "Scene", "Use metadata from the current scene"	},
+		{4096, "STRIPS", 0, "Sequencer Strips", "Use metadata from the strips in the sequencer"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_metadata_input_ = {
+		{&rna_RenderSettings_use_stamp_memory, 	&rna_RenderSettings_use_stamp_labels,
+		-1, "metadata_input", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Metadata Input",
+		"Where to take the metadata from",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, stamp), RawPropertyType(0), nullptr},
+		RenderSettings_metadata_input_get, RenderSettings_metadata_input_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_metadata_input_items, 2, 0
+	};
+
+	rna_RenderSettings_use_stamp_memory_ = {
+		{&rna_RenderSettings_use_stamp_hostname, 	&rna_RenderSettings_metadata_input,
+		-1, "use_stamp_memory", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Peak Memory",
+		"Include the peak memory usage in image metadata",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_memory_get, RenderSettings_use_stamp_memory_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_stamp_hostname_ = {
+		{&rna_RenderSettings_stamp_font_size, 	&rna_RenderSettings_use_stamp_memory,
+		-1, "use_stamp_hostname", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Stamp Hostname",
+		"Include the hostname of the machine that rendered the frame",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_stamp_hostname_get, RenderSettings_use_stamp_hostname_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_stamp_font_size_ = {
+		{&rna_RenderSettings_stamp_foreground, 	&rna_RenderSettings_use_stamp_hostname,
+		-1, "stamp_font_size", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Font Size",
+		"Size of the font used when rendering stamp text",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, stamp_font_id), RawPropertyType(1), nullptr},
+		RenderSettings_stamp_font_size_get, RenderSettings_stamp_font_size_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 8, 64, 8, 64, 1, nullptr, nullptr, 12, nullptr
+	};
+
+	static float rna_RenderSettings_stamp_foreground_default[4] = {
+		0.8000000119f,
+		0.8000000119f,
+		0.8000000119f,
+		1.0f
+	};
+	rna_RenderSettings_stamp_foreground_ = {
+		{&rna_RenderSettings_stamp_background, 	&rna_RenderSettings_stamp_font_size,
+		-1, "stamp_foreground", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Text Color",
+		"Color to use for stamp text",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_COLOR_GAMMA) | int(PROP_UNIT_NONE)), nullptr, 1, {4, 0, 0}, 4,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, fg_stamp), RawPropertyType(5), nullptr},
+		nullptr, nullptr, RenderSettings_stamp_foreground_get, RenderSettings_stamp_foreground_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, rna_RenderSettings_stamp_foreground_default
+	};
+
+	static float rna_RenderSettings_stamp_background_default[4] = {
+		0.0f,
+		0.0f,
+		0.0f,
+		0.2500000000f
+	};
+	rna_RenderSettings_stamp_background_ = {
+		{&rna_RenderSettings_sequencer_gl_preview, 	&rna_RenderSettings_stamp_foreground,
+		-1, "stamp_background", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Background",
+		"Color to use behind stamp text",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_COLOR_GAMMA) | int(PROP_UNIT_NONE)), nullptr, 1, {4, 0, 0}, 4,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, bg_stamp), RawPropertyType(5), nullptr},
+		nullptr, nullptr, RenderSettings_stamp_background_get, RenderSettings_stamp_background_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, rna_RenderSettings_stamp_background_default
+	};
+
+	rna_RenderSettings_sequencer_gl_preview_ = {
+		{&rna_RenderSettings_use_sequencer_override_scene_strip, 	&rna_RenderSettings_stamp_background,
+		-1, "sequencer_gl_preview", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sequencer Preview Shading",
+		"Display method used in the sequencer view",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneSequencer_update, 84279296, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, seq_prev_type), RawPropertyType(2), nullptr},
+		RenderSettings_sequencer_gl_preview_get, RenderSettings_sequencer_gl_preview_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_shading_type_items, 4, 3
+	};
+
+	rna_RenderSettings_use_sequencer_override_scene_strip_ = {
+		{&rna_RenderSettings_use_single_layer, 	&rna_RenderSettings_sequencer_gl_preview,
+		-1, "use_sequencer_override_scene_strip", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Override Scene Settings",
+		"Use Workbench render and world settings from the sequencer scene, instead of each strip\'s scene",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_SceneSequencer_update, 84279296, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_sequencer_override_scene_strip_get, RenderSettings_use_sequencer_override_scene_strip_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_single_layer_ = {
+		{&rna_RenderSettings_views, 	&rna_RenderSettings_use_sequencer_override_scene_strip,
+		-1, "use_single_layer", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Render Single Layer",
+		"Only render the active layer. Only affects rendering from the interface, ignored for rendering from command line.",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_single_layer_get, RenderSettings_use_single_layer_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_views_ = {
+		{&rna_RenderSettings_stereo_views, 	&rna_RenderSettings_use_single_layer,
+		-1, "views", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Render Views",
+		"",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_RenderViews},
+		RenderSettings_views_begin, RenderSettings_views_next, RenderSettings_views_end, RenderSettings_views_get, nullptr, RenderSettings_views_lookup_int, RenderSettings_views_lookup_string, nullptr, RNA_SceneRenderView
+	};
+
+	rna_RenderSettings_stereo_views_ = {
+		{&rna_RenderSettings_use_multiview, 	&rna_RenderSettings_views,
+		-1, "stereo_views", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Render Views",
+		"",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_stereo_views_begin, RenderSettings_stereo_views_next, RenderSettings_stereo_views_end, RenderSettings_stereo_views_get, nullptr, RenderSettings_stereo_views_lookup_int, RenderSettings_stereo_views_lookup_string, nullptr, RNA_SceneRenderView
+	};
+
+	rna_RenderSettings_use_multiview_ = {
+		{&rna_RenderSettings_views_format, 	&rna_RenderSettings_stereo_views,
+		-1, "use_multiview", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Multiple Views",
+		"Use multiple views in the scene",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_multiview_get, RenderSettings_use_multiview_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_views_format_items[3] = {
+		{0, "STEREO_3D", 0, "Stereo 3D", "Single stereo camera system, adjust the stereo settings in the camera panel"	},
+		{1, "MULTIVIEW", 0, "Multi-View", "Multi camera system, adjust the cameras individually"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_views_format_ = {
+		{&rna_RenderSettings_engine, 	&rna_RenderSettings_use_multiview,
+		-1, "views_format", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Setup Stereo Mode",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_views_format_get, RenderSettings_views_format_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_views_format_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_engine_items[2] = {
+		{0, "BLENDER_EEVEE", 0, "EEVEE", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_engine_ = {
+		{&rna_RenderSettings_has_multiple_engines, 	&rna_RenderSettings_views_format,
+		-1, "engine", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Engine",
+		"Engine to use for rendering",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {32, 0, 0}, 0,
+		rna_RenderSettings_engine_update, 33554432, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_engine_get, RenderSettings_engine_set, rna_RenderSettings_engine_itemf, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_engine_items, 1, 0
+	};
+
+	rna_RenderSettings_has_multiple_engines_ = {
+		{&rna_RenderSettings_use_spherical_stereo, 	&rna_RenderSettings_engine,
+		-1, "has_multiple_engines", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "Multiple Engines",
+		"More than one rendering engine is available",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_has_multiple_engines_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_spherical_stereo_ = {
+		{&rna_RenderSettings_use_simplify, 	&rna_RenderSettings_has_multiple_engines,
+		-1, "use_spherical_stereo", 2, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Spherical Stereo",
+		"Active render engine supports spherical stereo rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_spherical_stereo_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_simplify_ = {
+		{&rna_RenderSettings_simplify_subdivision, 	&rna_RenderSettings_use_spherical_stereo,
+		-1, "use_simplify", 4194307, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Simplify",
+		"Enable simplification of scene for quicker preview renders",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_use_simplify_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_simplify_get, RenderSettings_use_simplify_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_simplify_subdivision_ = {
+		{&rna_RenderSettings_simplify_child_particles, 	&rna_RenderSettings_use_simplify,
+		-1, "simplify_subdivision", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simplify Subdivision",
+		"Global maximum subdivision level",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_simplify_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, simplify_subsurf), RawPropertyType(1), nullptr},
+		RenderSettings_simplify_subdivision_get, RenderSettings_simplify_subdivision_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 6, 0, 32767, 1, nullptr, nullptr, 6, nullptr
+	};
+
+	rna_RenderSettings_simplify_child_particles_ = {
+		{&rna_RenderSettings_simplify_subdivision_render, 	&rna_RenderSettings_simplify_subdivision,
+		-1, "simplify_child_particles", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simplify Child Particles",
+		"Global child particles percentage",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_simplify_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, simplify_particles), RawPropertyType(5), nullptr},
+		RenderSettings_simplify_child_particles_get, RenderSettings_simplify_child_particles_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_simplify_subdivision_render_ = {
+		{&rna_RenderSettings_simplify_child_particles_render, 	&rna_RenderSettings_simplify_child_particles,
+		-1, "simplify_subdivision_render", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simplify Subdivision",
+		"Global maximum subdivision level during rendering",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_simplify_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, simplify_subsurf_render), RawPropertyType(1), nullptr},
+		RenderSettings_simplify_subdivision_render_get, RenderSettings_simplify_subdivision_render_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 6, 0, 32767, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_simplify_child_particles_render_ = {
+		{&rna_RenderSettings_simplify_volumes, 	&rna_RenderSettings_simplify_subdivision_render,
+		-1, "simplify_child_particles_render", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simplify Child Particles",
+		"Global child particles percentage during rendering",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_simplify_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, simplify_particles_render), RawPropertyType(5), nullptr},
+		RenderSettings_simplify_child_particles_render_get, RenderSettings_simplify_child_particles_render_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_RenderSettings_simplify_volumes_ = {
+		{&rna_RenderSettings_use_simplify_normals, 	&rna_RenderSettings_simplify_child_particles_render,
+		-1, "simplify_volumes", 4194307, 0, 0, 4, 0, PropertyPathTemplateType(0), "Simplify Volumes",
+		"Resolution percentage of volume objects in viewport",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_Scene_simplify_volume_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, simplify_volumes), RawPropertyType(5), nullptr},
+		RenderSettings_simplify_volumes_get, RenderSettings_simplify_volumes_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_use_simplify_normals_ = {
+		{&rna_RenderSettings_use_texture_cache, 	&rna_RenderSettings_simplify_volumes,
+		-1, "use_simplify_normals", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Mesh Normals",
+		"Skip computing custom normals and face corner normals for displaying meshes in the viewport",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_use_simplify_normals_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_simplify_normals_get, RenderSettings_use_simplify_normals_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_use_texture_cache_ = {
+		{&rna_RenderSettings_use_auto_generate_texture_cache, 	&rna_RenderSettings_use_simplify_normals,
+		-1, "use_texture_cache", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Texture Cache",
+		"Load texture tiles at appropriate resolution on demand to reduce memory usage. This avoids loading all textures into memory, at the cost of extra disk space and some performance",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_texture_cache_get, RenderSettings_use_texture_cache_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_auto_generate_texture_cache_ = {
+		{&rna_RenderSettings_simplify_gpencil, 	&rna_RenderSettings_use_texture_cache,
+		-1, "use_auto_generate_texture_cache", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Auto Generate Texture Cache",
+		"Automatically create tx files from image files when rendering, if the files do not exist or are outdated. The path to store the texture cache files is configured in the preferences",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_auto_generate_texture_cache_get, RenderSettings_use_auto_generate_texture_cache_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_ = {
+		{&rna_RenderSettings_simplify_gpencil_onplay, 	&rna_RenderSettings_use_auto_generate_texture_cache,
+		-1, "simplify_gpencil", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Simplify",
+		"Simplify Grease Pencil drawing",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_get, RenderSettings_simplify_gpencil_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_onplay_ = {
+		{&rna_RenderSettings_simplify_gpencil_antialiasing, 	&rna_RenderSettings_simplify_gpencil,
+		-1, "simplify_gpencil_onplay", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Playback Only",
+		"Simplify Grease Pencil only during animation playback",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_onplay_get, RenderSettings_simplify_gpencil_onplay_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_antialiasing_ = {
+		{&rna_RenderSettings_simplify_gpencil_view_fill, 	&rna_RenderSettings_simplify_gpencil_onplay,
+		-1, "simplify_gpencil_antialiasing", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Antialiasing",
+		"Use Antialiasing to smooth stroke edges",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_antialiasing_get, RenderSettings_simplify_gpencil_antialiasing_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_view_fill_ = {
+		{&rna_RenderSettings_simplify_gpencil_modifier, 	&rna_RenderSettings_simplify_gpencil_antialiasing,
+		-1, "simplify_gpencil_view_fill", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Fill",
+		"Display fill strokes in the viewport",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_view_fill_get, RenderSettings_simplify_gpencil_view_fill_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_modifier_ = {
+		{&rna_RenderSettings_simplify_gpencil_shader_fx, 	&rna_RenderSettings_simplify_gpencil_view_fill,
+		-1, "simplify_gpencil_modifier", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Modifiers",
+		"Display modifiers",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_modifier_get, RenderSettings_simplify_gpencil_modifier_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_shader_fx_ = {
+		{&rna_RenderSettings_simplify_gpencil_tint, 	&rna_RenderSettings_simplify_gpencil_modifier,
+		-1, "simplify_gpencil_shader_fx", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Shader Effects",
+		"Display Shader Effects",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_shader_fx_get, RenderSettings_simplify_gpencil_shader_fx_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_simplify_gpencil_tint_ = {
+		{&rna_RenderSettings_use_persistent_data, 	&rna_RenderSettings_simplify_gpencil_shader_fx,
+		-1, "simplify_gpencil_tint", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Layers Tinting",
+		"Display layer tint",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 391839744, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_simplify_gpencil_tint_get, RenderSettings_simplify_gpencil_tint_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_RenderSettings_use_persistent_data_ = {
+		{&rna_RenderSettings_line_thickness_mode, 	&rna_RenderSettings_simplify_gpencil_tint,
+		-1, "use_persistent_data", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Persistent Data",
+		"Keep render data around for faster re-renders and animation renders, at the cost of increased memory usage",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_use_persistent_data_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_persistent_data_get, RenderSettings_use_persistent_data_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_line_thickness_mode_items[3] = {
+		{1, "ABSOLUTE", 0, "Absolute", "Specify unit line thickness in pixels"	},
+		{2, "RELATIVE", 0, "Relative", "Unit line thickness is scaled by the proportion of the present vertical image resolution to 480 pixels"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_line_thickness_mode_ = {
+		{&rna_RenderSettings_line_thickness, 	&rna_RenderSettings_use_persistent_data,
+		-1, "line_thickness_mode", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Line Thickness Mode",
+		"Line thickness mode for Freestyle line drawing",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_freestyle_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, line_thickness_mode), RawPropertyType(0), nullptr},
+		RenderSettings_line_thickness_mode_get, RenderSettings_line_thickness_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_line_thickness_mode_items, 2, 1
+	};
+
+	rna_RenderSettings_line_thickness_ = {
+		{&rna_RenderSettings_bake, 	&rna_RenderSettings_line_thickness_mode,
+		-1, "line_thickness", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Line Thickness",
+		"Line thickness in pixels",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_freestyle_update, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, unit_line_thickness), RawPropertyType(5), nullptr},
+		RenderSettings_line_thickness_get, RenderSettings_line_thickness_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_RenderSettings_bake_ = {
+		{&rna_RenderSettings_compositor_device, 	&rna_RenderSettings_line_thickness,
+		-1, "bake", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Bake Data",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_bake_get, nullptr, nullptr, nullptr,RNA_BakeSettings
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_compositor_device_items[3] = {
+		{0, "CPU", 0, "CPU", ""	},
+		{1, "GPU", 0, "GPU", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_compositor_device_ = {
+		{&rna_RenderSettings_use_compositor_frames_cache, 	&rna_RenderSettings_bake,
+		-1, "compositor_device", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compositor Device",
+		"Set how compositing is executed",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 305332224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, compositor_device), RawPropertyType(0), nullptr},
+		RenderSettings_compositor_device_get, RenderSettings_compositor_device_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_compositor_device_items, 2, 1
+	};
+
+	rna_RenderSettings_use_compositor_frames_cache_ = {
+		{&rna_RenderSettings_compositor_precision, 	&rna_RenderSettings_compositor_device,
+		-1, "use_compositor_frames_cache", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Compositor Frames Cache",
+		"Cache the result of the interactive compositor across frames",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 305332224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderSettings_use_compositor_frames_cache_get, RenderSettings_use_compositor_frames_cache_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_compositor_precision_items[3] = {
+		{0, "AUTO", 0, "Auto", "Full precision for final renders, half precision otherwise"	},
+		{1, "FULL", 0, "Full", "Full precision"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_compositor_precision_ = {
+		{&rna_RenderSettings_compositor_denoise_device, 	&rna_RenderSettings_use_compositor_frames_cache,
+		-1, "compositor_precision", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compositor Precision",
+		"The precision of compositor intermediate result",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 305332224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, compositor_precision), RawPropertyType(0), nullptr},
+		RenderSettings_compositor_precision_get, RenderSettings_compositor_precision_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_compositor_precision_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_compositor_denoise_device_items[4] = {
+		{0, "AUTO", 0, "Auto", "Use the same device used by the compositor to process the denoise node"	},
+		{1, "CPU", 0, "CPU", "Use the CPU to process the denoise node"	},
+		{2, "GPU", 0, "GPU", "Use the GPU to process the denoise node if available, otherwise fallback to CPU"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_compositor_denoise_device_ = {
+		{&rna_RenderSettings_compositor_denoise_preview_quality, 	&rna_RenderSettings_compositor_precision,
+		-1, "compositor_denoise_device", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compositor Denoise Node Device",
+		"The device to use to process the denoise nodes in the compositor",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 305332224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, compositor_denoise_device), RawPropertyType(0), nullptr},
+		RenderSettings_compositor_denoise_device_get, RenderSettings_compositor_denoise_device_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_compositor_denoise_device_items, 3, 0
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_compositor_denoise_preview_quality_items[4] = {
+		{0, "HIGH", 0, "High", "High quality"	},
+		{1, "BALANCED", 0, "Balanced", "Balanced between performance and quality"	},
+		{2, "FAST", 0, "Fast", "High performance"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_compositor_denoise_preview_quality_ = {
+		{&rna_RenderSettings_compositor_denoise_final_quality, 	&rna_RenderSettings_compositor_denoise_device,
+		-1, "compositor_denoise_preview_quality", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compositor Preview Denoise Quality",
+		"The quality used by denoise nodes during viewport and interactive compositing if the nodes\' quality option is set to Follow Scene",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 305332224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, compositor_denoise_preview_quality), RawPropertyType(0), nullptr},
+		RenderSettings_compositor_denoise_preview_quality_get, RenderSettings_compositor_denoise_preview_quality_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_compositor_denoise_preview_quality_items, 3, 1
+	};
+
+	static const EnumPropertyItem rna_RenderSettings_compositor_denoise_final_quality_items[4] = {
+		{0, "HIGH", 0, "High", "High quality"	},
+		{1, "BALANCED", 0, "Balanced", "Balanced between performance and quality"	},
+		{2, "FAST", 0, "Fast", "High performance"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_RenderSettings_compositor_denoise_final_quality_ = {
+		{nullptr, 	&rna_RenderSettings_compositor_denoise_preview_quality,
+		-1, "compositor_denoise_final_quality", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Compositor Final Denoise Quality",
+		"The quality used by denoise nodes during the compositing of final renders if the nodes\' quality option is set to Follow Scene",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 305332224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(RenderData, compositor_denoise_final_quality), RawPropertyType(0), nullptr},
+		RenderSettings_compositor_denoise_final_quality_get, RenderSettings_compositor_denoise_final_quality_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_RenderSettings_compositor_denoise_final_quality_items, 3, 0
+	};
+
+	StructRNA *srna = RNA_RenderSettings;
+	srna->cont.properties = {&rna_RenderSettings_rna_properties, &rna_RenderSettings_compositor_denoise_final_quality};
+	srna->identifier = "RenderSettings";
+	srna->flag = 516;
+	srna->name = "Render Data";
+	srna->description = "Rendering settings for a Scene data-block";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_RenderSettings_rna_properties;
+	srna->nested = RNA_Scene;
+	srna->path = rna_RenderSettings_path;
+	{
+	rna_RenderSettings_frame_path_frame_ = {
+		{&rna_RenderSettings_frame_path_preview, 	nullptr,
+		-1, "frame", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "",
+		"Frame number to use, if unset the current frame will be used",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -1048574, 1048574, INT_MIN, INT_MAX, 1, nullptr, nullptr, INT_MIN, nullptr
+	};
+	rna_RenderSettings_frame_path_preview_ = {
+		{&rna_RenderSettings_frame_path_view, 	&rna_RenderSettings_frame_path_frame,
+		-1, "preview", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Preview",
+		"Use preview range",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+	rna_RenderSettings_frame_path_view_ = {
+		{&rna_RenderSettings_frame_path_filepath, 	&rna_RenderSettings_frame_path_preview,
+		-1, "view", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "View",
+		"The name of the view to use to replace the \"%\" chars",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_FILEPATH) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 1024, ""
+	};
+	rna_RenderSettings_frame_path_filepath_ = {
+		{nullptr, 	&rna_RenderSettings_frame_path_view,
+		-1, "filepath", 8650753, 0, 2, 0, 0, PropertyPathTemplateType(0), "File Path",
+		"The resulting filepath from the scenes render settings",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_FILEPATH) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 1024, ""
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_RenderSettings_frame_path_frame, &rna_RenderSettings_frame_path_filepath};
+		func->identifier = "frame_path";
+		func->flag = 2068;
+		func->description = "Return the absolute path to the filename to be written for a given frame";
+		func->call = RenderSettings_frame_path_call;
+		rna_RenderSettings_frame_path_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Render Views */
+static CollectionPropertyRNA rna_RenderViews_rna_properties_;
+PropertyRNA &rna_RenderViews_rna_properties = reinterpret_cast<PropertyRNA &>(rna_RenderViews_rna_properties_);
+
+static PointerPropertyRNA rna_RenderViews_rna_type_;
+PropertyRNA &rna_RenderViews_rna_type = reinterpret_cast<PropertyRNA &>(rna_RenderViews_rna_type_);
+
+static IntPropertyRNA rna_RenderViews_active_index_;
+PropertyRNA &rna_RenderViews_active_index = reinterpret_cast<PropertyRNA &>(rna_RenderViews_active_index_);
+
+static PointerPropertyRNA rna_RenderViews_active_;
+PropertyRNA &rna_RenderViews_active = reinterpret_cast<PropertyRNA &>(rna_RenderViews_active_);
+
+static StringPropertyRNA rna_RenderViews_new_name_;
+PropertyRNA &rna_RenderViews_new_name = reinterpret_cast<PropertyRNA &>(rna_RenderViews_new_name_);
+
+static PointerPropertyRNA rna_RenderViews_new_result_;
+PropertyRNA &rna_RenderViews_new_result = reinterpret_cast<PropertyRNA &>(rna_RenderViews_new_result_);
+
+FunctionRNA *rna_RenderViews_new_func;
+static PointerPropertyRNA rna_RenderViews_remove_view_;
+PropertyRNA &rna_RenderViews_remove_view = reinterpret_cast<PropertyRNA &>(rna_RenderViews_remove_view_);
+
+FunctionRNA *rna_RenderViews_remove_func;
+StructRNA *RNA_RenderViews;
+void register_struct_RenderViews(BlenderRNA &brna)
+{
+	rna_RenderViews_rna_properties_ = {
+		{&rna_RenderViews_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderViews_rna_properties_begin, RenderViews_rna_properties_next, RenderViews_rna_properties_end, RenderViews_rna_properties_get, nullptr, nullptr, RenderViews_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_RenderViews_rna_type_ = {
+		{&rna_RenderViews_active_index, 	&rna_RenderViews_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderViews_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_RenderViews_active_index_ = {
+		{&rna_RenderViews_active, 	&rna_RenderViews_rna_type,
+		-1, "active_index", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active View Index",
+		"Active index in render view array",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderViews_active_index_get, RenderViews_active_index_set, nullptr, nullptr, rna_RenderSettings_active_view_index_range, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 32767, 0, 32767, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_RenderViews_active_ = {
+		{nullptr, 	&rna_RenderViews_active_index,
+		-1, "active", 8650753, 0, 0, 0, 0, PropertyPathTemplateType(0), "Active Render View",
+		"Active Render View",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		RenderViews_active_get, RenderViews_active_set, nullptr, nullptr,RNA_SceneRenderView
+	};
+
+	StructRNA *srna = RNA_RenderViews;
+	srna->cont.properties = {&rna_RenderViews_rna_properties, &rna_RenderViews_active};
+	srna->identifier = "RenderViews";
+	srna->flag = 516;
+	srna->name = "Render Views";
+	srna->description = "Collection of render views";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_RenderViews_rna_properties;
+	{
+	rna_RenderViews_new_name_ = {
+		{&rna_RenderViews_new_result, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the marker (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "RenderView"
+	};
+	rna_RenderViews_new_result_ = {
+		{nullptr, 	&rna_RenderViews_new_name,
+		-1, "result", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly created render view",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_SceneRenderView
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_RenderViews_new_name, &rna_RenderViews_new_result};
+		func->identifier = "new";
+		func->flag = 2048;
+		func->description = "Add a render view to scene";
+		func->call = RenderViews_new_call;
+		func->c_ret = &rna_RenderViews_new_result;
+		rna_RenderViews_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_RenderViews_remove_view_ = {
+		{nullptr, 	nullptr,
+		-1, "view", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Render view to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_SceneRenderView
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_RenderViews_remove_view, &rna_RenderViews_remove_view};
+		func->identifier = "remove";
+		func->flag = 2068;
+		func->description = "Remove a render view";
+		func->call = RenderViews_remove_call;
+		rna_RenderViews_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Bake Data */
+static CollectionPropertyRNA rna_BakeSettings_rna_properties_;
+PropertyRNA &rna_BakeSettings_rna_properties = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_rna_properties_);
+
+static PointerPropertyRNA rna_BakeSettings_rna_type_;
+PropertyRNA &rna_BakeSettings_rna_type = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_rna_type_);
+
+static EnumPropertyRNA rna_BakeSettings_type_;
+PropertyRNA &rna_BakeSettings_type = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_type_);
+
+static PointerPropertyRNA rna_BakeSettings_cage_object_;
+PropertyRNA &rna_BakeSettings_cage_object = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_cage_object_);
+
+static StringPropertyRNA rna_BakeSettings_filepath_;
+PropertyRNA &rna_BakeSettings_filepath = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_filepath_);
+
+static IntPropertyRNA rna_BakeSettings_width_;
+PropertyRNA &rna_BakeSettings_width = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_width_);
+
+static IntPropertyRNA rna_BakeSettings_height_;
+PropertyRNA &rna_BakeSettings_height = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_height_);
+
+static IntPropertyRNA rna_BakeSettings_margin_;
+PropertyRNA &rna_BakeSettings_margin = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_margin_);
+
+static EnumPropertyRNA rna_BakeSettings_margin_type_;
+PropertyRNA &rna_BakeSettings_margin_type = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_margin_type_);
+
+static FloatPropertyRNA rna_BakeSettings_max_ray_distance_;
+PropertyRNA &rna_BakeSettings_max_ray_distance = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_max_ray_distance_);
+
+static FloatPropertyRNA rna_BakeSettings_cage_extrusion_;
+PropertyRNA &rna_BakeSettings_cage_extrusion = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_cage_extrusion_);
+
+static EnumPropertyRNA rna_BakeSettings_normal_space_;
+PropertyRNA &rna_BakeSettings_normal_space = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_normal_space_);
+
+static EnumPropertyRNA rna_BakeSettings_normal_r_;
+PropertyRNA &rna_BakeSettings_normal_r = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_normal_r_);
+
+static EnumPropertyRNA rna_BakeSettings_normal_g_;
+PropertyRNA &rna_BakeSettings_normal_g = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_normal_g_);
+
+static EnumPropertyRNA rna_BakeSettings_normal_b_;
+PropertyRNA &rna_BakeSettings_normal_b = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_normal_b_);
+
+static PointerPropertyRNA rna_BakeSettings_image_settings_;
+PropertyRNA &rna_BakeSettings_image_settings = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_image_settings_);
+
+static EnumPropertyRNA rna_BakeSettings_target_;
+PropertyRNA &rna_BakeSettings_target = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_target_);
+
+static EnumPropertyRNA rna_BakeSettings_save_mode_;
+PropertyRNA &rna_BakeSettings_save_mode = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_save_mode_);
+
+static EnumPropertyRNA rna_BakeSettings_view_from_;
+PropertyRNA &rna_BakeSettings_view_from = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_view_from_);
+
+static BoolPropertyRNA rna_BakeSettings_use_selected_to_active_;
+PropertyRNA &rna_BakeSettings_use_selected_to_active = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_selected_to_active_);
+
+static BoolPropertyRNA rna_BakeSettings_use_clear_;
+PropertyRNA &rna_BakeSettings_use_clear = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_clear_);
+
+static BoolPropertyRNA rna_BakeSettings_use_split_materials_;
+PropertyRNA &rna_BakeSettings_use_split_materials = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_split_materials_);
+
+static BoolPropertyRNA rna_BakeSettings_use_automatic_name_;
+PropertyRNA &rna_BakeSettings_use_automatic_name = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_automatic_name_);
+
+static BoolPropertyRNA rna_BakeSettings_use_cage_;
+PropertyRNA &rna_BakeSettings_use_cage = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_cage_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_emit_;
+PropertyRNA &rna_BakeSettings_use_pass_emit = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_emit_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_direct_;
+PropertyRNA &rna_BakeSettings_use_pass_direct = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_direct_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_indirect_;
+PropertyRNA &rna_BakeSettings_use_pass_indirect = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_indirect_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_color_;
+PropertyRNA &rna_BakeSettings_use_pass_color = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_color_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_diffuse_;
+PropertyRNA &rna_BakeSettings_use_pass_diffuse = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_diffuse_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_glossy_;
+PropertyRNA &rna_BakeSettings_use_pass_glossy = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_glossy_);
+
+static BoolPropertyRNA rna_BakeSettings_use_pass_transmission_;
+PropertyRNA &rna_BakeSettings_use_pass_transmission = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_pass_transmission_);
+
+static EnumPropertyRNA rna_BakeSettings_pass_filter_;
+PropertyRNA &rna_BakeSettings_pass_filter = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_pass_filter_);
+
+static BoolPropertyRNA rna_BakeSettings_use_multires_;
+PropertyRNA &rna_BakeSettings_use_multires = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_multires_);
+
+static BoolPropertyRNA rna_BakeSettings_use_lores_mesh_;
+PropertyRNA &rna_BakeSettings_use_lores_mesh = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_use_lores_mesh_);
+
+static EnumPropertyRNA rna_BakeSettings_displacement_space_;
+PropertyRNA &rna_BakeSettings_displacement_space = reinterpret_cast<PropertyRNA &>(rna_BakeSettings_displacement_space_);
+
+StructRNA *RNA_BakeSettings;
+void register_struct_BakeSettings(BlenderRNA &brna)
+{
+	rna_BakeSettings_rna_properties_ = {
+		{&rna_BakeSettings_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_rna_properties_begin, BakeSettings_rna_properties_next, BakeSettings_rna_properties_end, BakeSettings_rna_properties_get, nullptr, nullptr, BakeSettings_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_BakeSettings_rna_type_ = {
+		{&rna_BakeSettings_type, 	&rna_BakeSettings_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	static const EnumPropertyItem rna_BakeSettings_type_items[4] = {
+		{0, "NORMALS", 0, "Normals", "Bake normals"	},
+		{1, "DISPLACEMENT", 0, "Displacement", "Bake displacement"	},
+		{3, "VECTOR_DISPLACEMENT", 0, "Vector Displacement", "Bake vector displacement"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_BakeSettings_type_ = {
+		{&rna_BakeSettings_cage_object, 	&rna_BakeSettings_rna_type,
+		-1, "type", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Bake Type",
+		"Choose shading information to bake into the image",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, type), RawPropertyType(0), nullptr},
+		BakeSettings_type_get, BakeSettings_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_BakeSettings_type_items, 3, 0
+	};
+
+	rna_BakeSettings_cage_object_ = {
+		{&rna_BakeSettings_filepath, 	&rna_BakeSettings_type,
+		-1, "cage_object", 8388737, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cage Object",
+		"Object to use as cage instead of calculating the cage from the active object with cage extrusion",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_cage_object_get, BakeSettings_cage_object_set, nullptr, nullptr,RNA_Object
+	};
+
+	rna_BakeSettings_filepath_ = {
+		{&rna_BakeSettings_width, 	&rna_BakeSettings_cage_object,
+		-1, "filepath", 294913, 0, 0, 0, 0, PropertyPathTemplateType(0), "File Path",
+		"Image filepath to use when saving externally",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_FILEPATH) | int(PROP_UNIT_NONE)), nullptr, 0, {1024, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_filepath_get, BakeSettings_filepath_length, BakeSettings_filepath_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 1024, "//"
+	};
+
+	rna_BakeSettings_width_ = {
+		{&rna_BakeSettings_height, 	&rna_BakeSettings_filepath,
+		-1, "width", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Width",
+		"Horizontal dimension of the baking map",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, width), RawPropertyType(1), nullptr},
+		BakeSettings_width_get, BakeSettings_width_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 4, 10000, 4, 10000, 1, nullptr, nullptr, 512, nullptr
+	};
+
+	rna_BakeSettings_height_ = {
+		{&rna_BakeSettings_margin, 	&rna_BakeSettings_width,
+		-1, "height", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Height",
+		"Vertical dimension of the baking map",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, height), RawPropertyType(1), nullptr},
+		BakeSettings_height_get, BakeSettings_height_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 4, 10000, 4, 10000, 1, nullptr, nullptr, 512, nullptr
+	};
+
+	rna_BakeSettings_margin_ = {
+		{&rna_BakeSettings_margin_type, 	&rna_BakeSettings_height,
+		-1, "margin", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Margin",
+		"Extends the baked result as a post process filter",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_PIXEL) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, margin), RawPropertyType(1), nullptr},
+		BakeSettings_margin_get, BakeSettings_margin_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 64, 0, 32767, 1, nullptr, nullptr, 16, nullptr
+	};
+
+	rna_BakeSettings_margin_type_ = {
+		{&rna_BakeSettings_max_ray_distance, 	&rna_BakeSettings_margin,
+		-1, "margin_type", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Margin Type",
+		"Algorithm to extend the baked result",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, margin_type), RawPropertyType(2), nullptr},
+		BakeSettings_margin_type_get, BakeSettings_margin_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_bake_margin_type_items, 2, 0
+	};
+
+	rna_BakeSettings_max_ray_distance_ = {
+		{&rna_BakeSettings_cage_extrusion, 	&rna_BakeSettings_margin_type,
+		-1, "max_ray_distance", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Ray Distance",
+		"The maximum ray distance for matching points between the active and selected objects. If zero, there is no limit.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, max_ray_distance), RawPropertyType(5), nullptr},
+		BakeSettings_max_ray_distance_get, BakeSettings_max_ray_distance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_BakeSettings_cage_extrusion_ = {
+		{&rna_BakeSettings_normal_space, 	&rna_BakeSettings_max_ray_distance,
+		-1, "cage_extrusion", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Cage Extrusion",
+		"Inflate the active object by the specified distance for baking. This helps matching to points nearer to the outside of the selected object meshes.",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, cage_extrusion), RawPropertyType(5), nullptr},
+		BakeSettings_cage_extrusion_get, BakeSettings_cage_extrusion_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, FLT_MAX, 1.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_BakeSettings_normal_space_ = {
+		{&rna_BakeSettings_normal_r, 	&rna_BakeSettings_cage_extrusion,
+		-1, "normal_space", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Normal Space",
+		"Choose normal space for baking",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, normal_space), RawPropertyType(2), nullptr},
+		BakeSettings_normal_space_get, BakeSettings_normal_space_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_normal_space_items, 2, 3
+	};
+
+	rna_BakeSettings_normal_r_ = {
+		{&rna_BakeSettings_normal_g, 	&rna_BakeSettings_normal_space,
+		-1, "normal_r", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Normal Space",
+		"Axis to bake in red channel",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, normal_swizzle[0]), RawPropertyType(2), nullptr},
+		BakeSettings_normal_r_get, BakeSettings_normal_r_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_normal_swizzle_items, 6, 0
+	};
+
+	rna_BakeSettings_normal_g_ = {
+		{&rna_BakeSettings_normal_b, 	&rna_BakeSettings_normal_r,
+		-1, "normal_g", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Normal Space",
+		"Axis to bake in green channel",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, normal_swizzle[1]), RawPropertyType(2), nullptr},
+		BakeSettings_normal_g_get, BakeSettings_normal_g_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_normal_swizzle_items, 6, 0
+	};
+
+	rna_BakeSettings_normal_b_ = {
+		{&rna_BakeSettings_image_settings, 	&rna_BakeSettings_normal_g,
+		-1, "normal_b", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Normal Space",
+		"Axis to bake in blue channel",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, normal_swizzle[2]), RawPropertyType(2), nullptr},
+		BakeSettings_normal_b_get, BakeSettings_normal_b_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_normal_swizzle_items, 6, 0
+	};
+
+	rna_BakeSettings_image_settings_ = {
+		{&rna_BakeSettings_target, 	&rna_BakeSettings_normal_b,
+		-1, "image_settings", 8650752, 0, 0, 0, 0, PropertyPathTemplateType(0), "Image Format",
+		"",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_image_settings_get, nullptr, nullptr, nullptr,RNA_ImageFormatSettings
+	};
+
+	rna_BakeSettings_target_ = {
+		{&rna_BakeSettings_save_mode, 	&rna_BakeSettings_image_settings,
+		-1, "target", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Target",
+		"Where to output the baked map",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, target), RawPropertyType(2), nullptr},
+		BakeSettings_target_get, BakeSettings_target_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_bake_target_items, 2, 0
+	};
+
+	rna_BakeSettings_save_mode_ = {
+		{&rna_BakeSettings_view_from, 	&rna_BakeSettings_target,
+		-1, "save_mode", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Save Mode",
+		"Where to save baked image textures",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, save_mode), RawPropertyType(2), nullptr},
+		BakeSettings_save_mode_get, BakeSettings_save_mode_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_bake_save_mode_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_BakeSettings_view_from_items[3] = {
+		{0, "ABOVE_SURFACE", 0, "Above Surface", "Cast rays from above the surface"	},
+		{1, "ACTIVE_CAMERA", 0, "Active Camera", "Use the active camera\'s position to cast rays"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_BakeSettings_view_from_ = {
+		{&rna_BakeSettings_use_selected_to_active, 	&rna_BakeSettings_save_mode,
+		-1, "view_from", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "View From",
+		"Source of reflection ray directions",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, view_from), RawPropertyType(2), nullptr},
+		BakeSettings_view_from_get, BakeSettings_view_from_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_BakeSettings_view_from_items, 2, 0
+	};
+
+	rna_BakeSettings_use_selected_to_active_ = {
+		{&rna_BakeSettings_use_clear, 	&rna_BakeSettings_view_from,
+		-1, "use_selected_to_active", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Selected to Active",
+		"Bake shading on the surface of selected objects to the active object",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_selected_to_active_get, BakeSettings_use_selected_to_active_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_BakeSettings_use_clear_ = {
+		{&rna_BakeSettings_use_split_materials, 	&rna_BakeSettings_use_selected_to_active,
+		-1, "use_clear", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Clear",
+		"Clear Images before baking (internal only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_clear_get, BakeSettings_use_clear_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_split_materials_ = {
+		{&rna_BakeSettings_use_automatic_name, 	&rna_BakeSettings_use_clear,
+		-1, "use_split_materials", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Split Materials",
+		"Split external images per material (external only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_split_materials_get, BakeSettings_use_split_materials_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_BakeSettings_use_automatic_name_ = {
+		{&rna_BakeSettings_use_cage, 	&rna_BakeSettings_use_split_materials,
+		-1, "use_automatic_name", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Automatic Name",
+		"Automatically name the output file with the pass type (external only)",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_automatic_name_get, BakeSettings_use_automatic_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_BakeSettings_use_cage_ = {
+		{&rna_BakeSettings_use_pass_emit, 	&rna_BakeSettings_use_automatic_name,
+		-1, "use_cage", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Cage",
+		"Cast rays to active object from a cage",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_cage_get, BakeSettings_use_cage_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_BakeSettings_use_pass_emit_ = {
+		{&rna_BakeSettings_use_pass_direct, 	&rna_BakeSettings_use_cage,
+		-1, "use_pass_emit", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Emission",
+		"Add emission contribution",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_emit_get, BakeSettings_use_pass_emit_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_pass_direct_ = {
+		{&rna_BakeSettings_use_pass_indirect, 	&rna_BakeSettings_use_pass_emit,
+		-1, "use_pass_direct", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Direct",
+		"Add direct lighting contribution",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_direct_get, BakeSettings_use_pass_direct_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_pass_indirect_ = {
+		{&rna_BakeSettings_use_pass_color, 	&rna_BakeSettings_use_pass_direct,
+		-1, "use_pass_indirect", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Indirect",
+		"Add indirect lighting contribution",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_indirect_get, BakeSettings_use_pass_indirect_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_pass_color_ = {
+		{&rna_BakeSettings_use_pass_diffuse, 	&rna_BakeSettings_use_pass_indirect,
+		-1, "use_pass_color", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color",
+		"Color the pass",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_color_get, BakeSettings_use_pass_color_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_pass_diffuse_ = {
+		{&rna_BakeSettings_use_pass_glossy, 	&rna_BakeSettings_use_pass_color,
+		-1, "use_pass_diffuse", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Diffuse",
+		"Add diffuse contribution",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_diffuse_get, BakeSettings_use_pass_diffuse_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_pass_glossy_ = {
+		{&rna_BakeSettings_use_pass_transmission, 	&rna_BakeSettings_use_pass_diffuse,
+		-1, "use_pass_glossy", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Glossy",
+		"Add glossy contribution",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_glossy_get, BakeSettings_use_pass_glossy_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_use_pass_transmission_ = {
+		{&rna_BakeSettings_pass_filter, 	&rna_BakeSettings_use_pass_glossy,
+		-1, "use_pass_transmission", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Transmission",
+		"Add transmission contribution",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_pass_transmission_get, BakeSettings_use_pass_transmission_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_BakeSettings_pass_filter_ = {
+		{&rna_BakeSettings_use_multires, 	&rna_BakeSettings_use_pass_transmission,
+		-1, "pass_filter", 2097152, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pass Filter",
+		"Passes to include in the active baking pass",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, pass_filter), RawPropertyType(0), nullptr},
+		BakeSettings_pass_filter_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_bake_pass_filter_type_items, 8, 478
+	};
+
+	rna_BakeSettings_use_multires_ = {
+		{&rna_BakeSettings_use_lores_mesh, 	&rna_BakeSettings_pass_filter,
+		-1, "use_multires", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Bake from Multires",
+		"Bake directly from multires object",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_multires_get, BakeSettings_use_multires_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_BakeSettings_use_lores_mesh_ = {
+		{&rna_BakeSettings_displacement_space, 	&rna_BakeSettings_use_multires,
+		-1, "use_lores_mesh", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Low Resolution Mesh",
+		"Calculate heights against unsubdivided low resolution mesh",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		BakeSettings_use_lores_mesh_get, BakeSettings_use_lores_mesh_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_BakeSettings_displacement_space_items[3] = {
+		{2, "OBJECT", 0, "Object", "Bake the displacement in object space"	},
+		{3, "TANGENT", 0, "Tangent", "Bake the displacement in tangent space"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_BakeSettings_displacement_space_ = {
+		{nullptr, 	&rna_BakeSettings_use_lores_mesh,
+		-1, "displacement_space", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Displacement Space",
+		"Choose displacement space for baking",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(BakeData, displacement_space), RawPropertyType(2), nullptr},
+		BakeSettings_displacement_space_get, BakeSettings_displacement_space_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_BakeSettings_displacement_space_items, 2, 2
+	};
+
+	StructRNA *srna = RNA_BakeSettings;
+	srna->cont.properties = {&rna_BakeSettings_rna_properties, &rna_BakeSettings_displacement_space};
+	srna->identifier = "BakeSettings";
+	srna->flag = 516;
+	srna->name = "Bake Data";
+	srna->description = "Bake data for a Scene data-block";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_BakeSettings_rna_properties;
+	srna->nested = RNA_RenderSettings;
+	srna->path = rna_BakeSettings_path;
+};
+
+/* Scene Render View */
+static CollectionPropertyRNA rna_SceneRenderView_rna_properties_;
+PropertyRNA &rna_SceneRenderView_rna_properties = reinterpret_cast<PropertyRNA &>(rna_SceneRenderView_rna_properties_);
+
+static PointerPropertyRNA rna_SceneRenderView_rna_type_;
+PropertyRNA &rna_SceneRenderView_rna_type = reinterpret_cast<PropertyRNA &>(rna_SceneRenderView_rna_type_);
+
+static StringPropertyRNA rna_SceneRenderView_name_;
+PropertyRNA &rna_SceneRenderView_name = reinterpret_cast<PropertyRNA &>(rna_SceneRenderView_name_);
+
+static StringPropertyRNA rna_SceneRenderView_file_suffix_;
+PropertyRNA &rna_SceneRenderView_file_suffix = reinterpret_cast<PropertyRNA &>(rna_SceneRenderView_file_suffix_);
+
+static StringPropertyRNA rna_SceneRenderView_camera_suffix_;
+PropertyRNA &rna_SceneRenderView_camera_suffix = reinterpret_cast<PropertyRNA &>(rna_SceneRenderView_camera_suffix_);
+
+static BoolPropertyRNA rna_SceneRenderView_use_;
+PropertyRNA &rna_SceneRenderView_use = reinterpret_cast<PropertyRNA &>(rna_SceneRenderView_use_);
+
+StructRNA *RNA_SceneRenderView;
+void register_struct_SceneRenderView(BlenderRNA &brna)
+{
+	rna_SceneRenderView_rna_properties_ = {
+		{&rna_SceneRenderView_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneRenderView_rna_properties_begin, SceneRenderView_rna_properties_next, SceneRenderView_rna_properties_end, SceneRenderView_rna_properties_get, nullptr, nullptr, SceneRenderView_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_SceneRenderView_rna_type_ = {
+		{&rna_SceneRenderView_name, 	&rna_SceneRenderView_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneRenderView_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	rna_SceneRenderView_name_ = {
+		{&rna_SceneRenderView_file_suffix, 	&rna_SceneRenderView_rna_type,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Name",
+		"Render view name",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneRenderView_name_get, SceneRenderView_name_length, SceneRenderView_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	rna_SceneRenderView_file_suffix_ = {
+		{&rna_SceneRenderView_camera_suffix, 	&rna_SceneRenderView_name,
+		-1, "file_suffix", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "File Suffix",
+		"Suffix added to the render images for this view",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneRenderView_file_suffix_get, SceneRenderView_file_suffix_length, SceneRenderView_file_suffix_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	rna_SceneRenderView_camera_suffix_ = {
+		{&rna_SceneRenderView_use, 	&rna_SceneRenderView_file_suffix,
+		-1, "camera_suffix", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Camera Suffix",
+		"Suffix to identify the cameras to use, and added to the render images for this view",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 84148224, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneRenderView_camera_suffix_get, SceneRenderView_camera_suffix_length, SceneRenderView_camera_suffix_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	rna_SceneRenderView_use_ = {
+		{nullptr, 	&rna_SceneRenderView_camera_suffix,
+		-1, "use", 1, 0, 0, 0, 0, PropertyPathTemplateType(0), "Enabled",
+		"Disable or enable the render view",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_Scene_compositor_update, 389480448, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		SceneRenderView_use_get, SceneRenderView_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	StructRNA *srna = RNA_SceneRenderView;
+	srna->cont.properties = {&rna_SceneRenderView_rna_properties, &rna_SceneRenderView_use};
+	srna->identifier = "SceneRenderView";
+	srna->flag = 516;
+	srna->name = "Scene Render View";
+	srna->description = "Render viewpoint for 3D stereo and multiview rendering";
+	srna->translation_context = "*";
+	srna->icon = 28;
+	srna->nameproperty = &rna_SceneRenderView_name;
+	srna->iteratorproperty = &rna_SceneRenderView_rna_properties;
+	srna->path = rna_SceneRenderView_path;
+};
+
+
+}  // namespace blender

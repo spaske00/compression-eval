@@ -1,0 +1,13 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_LightprobeSphereRenderData)
+.sampler(SPHERE_PROBE_TEX_SLOT, ImageType::sampler2DArray, "lightprobe_spheres_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.uniform_buf(SPHERE_PROBE_BUF_SLOT, "SphereProbeData", "lightprobe_sphere_buf[SPHERE_PROBE_MAX]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

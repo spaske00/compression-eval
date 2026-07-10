@@ -1,0 +1,70 @@
+#line 1 "select_id_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 22
+#ifdef CREATE_INFO_RES_PASS_select_id_flat
+CREATE_INFO_RES_PASS_select_id_flat
+#endif
+#ifdef CREATE_INFO_RES_BATCH_select_id_flat
+CREATE_INFO_RES_BATCH_select_id_flat
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_select_id_flat
+CREATE_INFO_RES_GEOMETRY_select_id_flat
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_select_id_flat
+CREATE_INFO_RES_SHARED_VARS_select_id_flat
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_select_id_uniform
+CREATE_INFO_RES_PASS_select_id_uniform
+#endif
+#ifdef CREATE_INFO_RES_BATCH_select_id_uniform
+CREATE_INFO_RES_BATCH_select_id_uniform
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_select_id_uniform
+CREATE_INFO_RES_GEOMETRY_select_id_uniform
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_select_id_uniform
+CREATE_INFO_RES_SHARED_VARS_select_id_uniform
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_select_id_flat_clipped
+CREATE_INFO_RES_PASS_select_id_flat_clipped
+#endif
+#ifdef CREATE_INFO_RES_BATCH_select_id_flat_clipped
+CREATE_INFO_RES_BATCH_select_id_flat_clipped
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_select_id_flat_clipped
+CREATE_INFO_RES_GEOMETRY_select_id_flat_clipped
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_select_id_flat_clipped
+CREATE_INFO_RES_SHARED_VARS_select_id_flat_clipped
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_select_id_uniform_clipped
+CREATE_INFO_RES_PASS_select_id_uniform_clipped
+#endif
+#ifdef CREATE_INFO_RES_BATCH_select_id_uniform_clipped
+CREATE_INFO_RES_BATCH_select_id_uniform_clipped
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_select_id_uniform_clipped
+CREATE_INFO_RES_GEOMETRY_select_id_uniform_clipped
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_select_id_uniform_clipped
+CREATE_INFO_RES_SHARED_VARS_select_id_uniform_clipped
+#endif
+#line 76
+#ifdef CREATE_INFO_RES_PASS_select_debug_fullscreen
+CREATE_INFO_RES_PASS_select_debug_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_BATCH_select_debug_fullscreen
+CREATE_INFO_RES_BATCH_select_debug_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_select_debug_fullscreen
+CREATE_INFO_RES_GEOMETRY_select_debug_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_select_debug_fullscreen
+CREATE_INFO_RES_SHARED_VARS_select_debug_fullscreen
+#endif

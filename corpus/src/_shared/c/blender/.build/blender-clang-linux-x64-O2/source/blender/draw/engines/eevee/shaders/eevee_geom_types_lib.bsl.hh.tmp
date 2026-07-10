@@ -1,0 +1,46 @@
+#line 1 "eevee_geom_types_lib.bsl.hh"
+ 
+#line 9
+struct MeshVertex {
+  float3 lP;
+
+  float3x3 world_to_object;
+#line 16
+  float3 orco_default;
+};
+#line 9
+                          MeshVertex MeshVertex_ctor_() {MeshVertex r;r.lP=float3(0);r.world_to_object=float3x3(0);r.orco_default=float3(0);return r;}
+#line 19
+struct PointCloudPoint {
+  float3 lP;
+  int point_id;
+
+  float3 orco_default;
+};
+#line 19
+                               PointCloudPoint PointCloudPoint_ctor_() {PointCloudPoint r;r.lP=float3(0);r.point_id=0;r.orco_default=float3(0);return r;}
+#line 26
+struct CurvesPoint {
+  int curve_id;
+  int point_id;
+  int curve_segment;
+
+  float3 orco_default;
+};
+#line 26
+                           CurvesPoint CurvesPoint_ctor_() {CurvesPoint r;r.curve_id=0;r.point_id=0;r.curve_segment=0;r.orco_default=float3(0);return r;}
+#line 34
+struct WorldPoint {
+  float3 lP;
+};
+#line 34
+                          WorldPoint WorldPoint_ctor_() {WorldPoint r;r.lP=float3(0);return r;}
+#line 38
+struct VolumePoint {
+  float3 lP;
+
+  float3 orco_default;
+};
+#line 38
+                           VolumePoint VolumePoint_ctor_() {VolumePoint r;r.lP=float3(0);r.orco_default=float3(0);return r;}
+#line 43

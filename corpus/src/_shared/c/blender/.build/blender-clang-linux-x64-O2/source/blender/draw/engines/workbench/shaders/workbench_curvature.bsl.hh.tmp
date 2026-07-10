@@ -1,0 +1,51 @@
+#line 1 "workbench_curvature.bsl.hh"
+ 
+#line 11
+float workbench_curvature_soft_clamp(float curvature, float control)
+{
+  if (curvature < 0.5f / control) {
+    return curvature * (1.0f - curvature * control);
+  }
+  return 0.25f / control;
+}
+#line 20
+#if defined(CREATE_INFO_workbench_World)
+#line 19
+void workbench_curvature_compute(const workbench_World  world,
+                       usampler2D object_id_tx,
+                       sampler2D normal_tx,
+                       float2 uv,
+                       _ref(float ,curvature))
+{
+  curvature = 0.0f;
+#line 29
+  float3 offset = float3(srt_access(workbench_World, world_data).viewport_size_inv, 0.0f) * srt_access(workbench_World, world_data).ui_scale;
+  uint object_up = texture(object_id_tx, uv + offset.zy).r;
+  uint object_down = texture(object_id_tx, uv - offset.zy).r;
+  uint object_right = texture(object_id_tx, uv + offset.xz).r;
+  uint object_left = texture(object_id_tx, uv - offset.xz).r;
+#line 36
+  if ((object_up != object_down) || (object_right != object_left)) {
+    return;
+  }
+
+  if ((object_up == object_right) && (object_right == 0u)) {
+    return;
+  }
+
+  float normal_up = workbench_normal_decode(texture(normal_tx, uv + offset.zy)).g;
+  float normal_down = workbench_normal_decode(texture(normal_tx, uv - offset.zy)).g;
+  float normal_right = workbench_normal_decode(texture(normal_tx, uv + offset.xz)).r;
+  float normal_left = workbench_normal_decode(texture(normal_tx, uv - offset.xz)).r;
+
+  float normal_diff = (normal_up - normal_down) + (normal_right - normal_left);
+
+  if (normal_diff < 0) {
+    curvature = -2.0f * workbench_curvature_soft_clamp(-normal_diff, srt_access(workbench_World, world_data).curvature_valley);
+  }
+  else {
+    curvature = 2.0f * workbench_curvature_soft_clamp(normal_diff, srt_access(workbench_World, world_data).curvature_ridge);
+  }
+}
+#endif
+#line 60

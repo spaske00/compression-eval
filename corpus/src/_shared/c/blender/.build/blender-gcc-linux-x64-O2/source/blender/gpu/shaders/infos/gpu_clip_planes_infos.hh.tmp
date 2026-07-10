@@ -1,0 +1,23 @@
+#line 1 "gpu_clip_planes_infos.hh"
+ 
+#line 9
+#ifdef GPU_SHADER
+#line 14
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define USE_WORLD_CLIP_PLANES
+#endif
+#line 22
+#ifdef CREATE_INFO_RES_PASS_gpu_clip_planes
+CREATE_INFO_RES_PASS_gpu_clip_planes
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_clip_planes
+CREATE_INFO_RES_BATCH_gpu_clip_planes
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_clip_planes
+CREATE_INFO_RES_GEOMETRY_gpu_clip_planes
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_clip_planes
+CREATE_INFO_RES_SHARED_VARS_gpu_clip_planes
+#endif

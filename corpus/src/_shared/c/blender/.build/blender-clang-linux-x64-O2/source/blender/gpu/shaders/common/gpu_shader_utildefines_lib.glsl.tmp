@@ -1,0 +1,105 @@
+#line 1 "gpu_shader_utildefines_lib.glsl"
+ 
+#line 9
+#ifndef FLT_MAX
+#  define FLT_MAX uintBitsToFloat(0x7F7FFFFFu)
+#  define FLT_MIN uintBitsToFloat(0x00800000u)
+#  define FLT_EPSILON 1.192092896e-07F
+#endif
+#ifndef SHRT_MAX
+#  define SHRT_MAX 0x00007FFF
+#  define INT_MAX 0x7FFFFFFF
+#  define USHRT_MAX 0x0000FFFFu
+#  define UINT_MAX 0xFFFFFFFFu
+#endif
+#define NAN_FLT uintBitsToFloat(0x7FC00000u)
+#define FLT_11_MAX uintBitsToFloat(0x477E0000)
+#define FLT_10_MAX uintBitsToFloat(0x477C0000)
+#define FLT_11_11_10_MAX float3(FLT_11_MAX, FLT_11_MAX, FLT_10_MAX)
+
+#define UNPACK2(a) (a)[0], (a)[1]
+#define UNPACK3(a) (a)[0], (a)[1], (a)[2]
+#define UNPACK4(a) (a)[0], (a)[1], (a)[2], (a)[3]
+#line 32
+#define saturate(a) clamp(a, 0.0f, 1.0f)
+
+#define isfinite(a) (!isinf(a) && !isnan(a))
+#line 37
+#define in_range_inclusive(val, min_v, max_v) (all(greaterThanEqual(val, min_v)) && all(lessThanEqual(val, max_v)))
+#define in_range_exclusive(val, min_v, max_v) (all(greaterThan(val, min_v)) && all(lessThan(val, max_v)))
+#define in_texture_range(texel, tex) (all(greaterThanEqual(texel, int2(0))) && all(lessThan(texel, textureSize(tex, 0).xy)))
+#define in_image_range(texel, tex) (all(greaterThanEqual(texel, int2(0))) && all(lessThan(texel, imageSize(tex).xy)))
+
+#define weighted_sum(val0, val1, val2, val3, weights) ((val0 * weights[0] + val1 * weights[1] + val2 * weights[2] + val3 * weights[3]) * safe_rcp(weights[0] + weights[1] + weights[2] + weights[3]))
+#define weighted_sum_array(val, weights) ((val[0] * weights[0] + val[1] * weights[1] + val[2] * weights[2] + val[3] * weights[3]) * safe_rcp(weights[0] + weights[1] + weights[2] + weights[3]))
+#line 46
+bool flag_test(uint flag, uint val)
+{
+  return (flag & val) != 0u;
+}
+bool flag_test(int flag, uint val)
+{
+  return flag_test(uint(flag), val);
+}
+bool flag_test(int flag, int val)
+{
+  return (flag & val) != 0;
+}
+
+void set_flag_from_test(_ref(uint ,value), bool test, uint flag)
+{
+  if (test) {
+    value |= flag;
+  }
+  else {
+    value &= ~flag;
+  }
+}
+void set_flag_from_test(_ref(int ,value), bool test, int flag)
+{
+  if (test) {
+    value |= flag;
+  }
+  else {
+    value &= ~flag;
+  }
+}
+#line 79
+#define SET_FLAG_FROM_TEST(value, test, flag) set_flag_from_test(value, test, flag)
+#line 85
+bool bitmask64_test(uint2 bitmask, uint bit_index)
+{
+  uint bitmask32 = (bit_index >= 32u) ? bitmask.y : bitmask.x;
+  return flag_test(bitmask32, 1u << (bit_index & 0x1Fu));
+}
+#line 94
+uint packUvec2x16(uint2 a)
+{
+  a = (a & 0xFFFFu) << uint2(0u, 16u);
+  return a.x | a.y;
+}
+uint2 unpackUvec2x16(uint a)
+{
+  return (uint2(a) >> uint2(0u, 16u)) & uint2(0xFFFFu);
+}
+#line 107
+uint packUvec4x8(uint4 a)
+{
+  a = (a & 0xFFu) << uint4(0u, 8u, 16u, 24u);
+  return a.x | a.y | a.z | a.w;
+}
+uint4 unpackUvec4x8(uint a)
+{
+  return (uint4(a) >> uint4(0u, 8u, 16u, 24u)) & uint4(0xFFu);
+}
+#line 121
+int floatBitsToOrderedInt(float value)
+{
+#line 128
+  int int_value = floatBitsToInt(value);
+  return (int_value < 0) ? (int_value ^ 0x7FFFFFFF) : int_value;
+}
+float orderedIntBitsToFloat(int int_value)
+{
+  return intBitsToFloat((int_value < 0) ? (int_value ^ 0x7FFFFFFF) : int_value);
+}

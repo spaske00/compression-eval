@@ -1,0 +1,50 @@
+{
+    "classes": [
+        {
+            "className": "Unarchiver",
+            "lineNumber": 15,
+            "object": true,
+            "qualifiedClassName": "Utils::Unarchiver",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "started",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "result",
+                            "type": "QtTaskTree::DoneResult"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "done",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "FilePath"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "progress",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "unarchiver.h",
+    "outputRevision": 68
+}

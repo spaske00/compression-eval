@@ -1,0 +1,42 @@
+#line 1 "gpu_shader_compositor_set_value.glsl"
+ 
+#line 8
+void set_float(float input_value, _ref(float ,output_value))
+{
+  output_value = input_value;
+}
+#line 14
+void set_float2(float2 input_value, _ref(float2 ,output_value))
+{
+  output_value = input_value;
+}
+#line 20
+void set_float3(float3 input_value, _ref(float3 ,output_value))
+{
+  output_value = input_value;
+}
+#line 26
+void set_float4(float4 input_value, _ref(float4 ,output_value))
+{
+  output_value = input_value;
+}
+#line 32
+void set_quaternion(float4 input_value, _ref(float4 ,output_value))
+{
+  output_value = input_value;
+}
+#line 38
+void set_color(float4 input_value, _ref(float4 ,output_value))
+{
+  output_value = input_value;
+}
+#line 44
+void set_float4x4(float4x4 input_value, _ref(float4x4 ,output_value))
+{
+  output_value = input_value;
+}
+#line 50
+void set_float4x4_default(_ref(float4x4 ,output_value))
+{
+  output_value = mat4x4_identity();
+}

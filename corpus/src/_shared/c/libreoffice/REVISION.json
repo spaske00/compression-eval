@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "key": "libreoffice",
+  "input_url": "https://github.com/LibreOffice/core",
+  "canonical_url": "https://github.com/LibreOffice/core",
+  "source_directory": "libreoffice/upstream",
+  "commit": "a9033ae59bcd2bb8596287e17d6d5a8cf27a13a8",
+  "nested_submodules": [
+    {"path": "dictionaries", "commit": "93d537dc6afb0130de3da75d42c070ac267db957"},
+    {"path": "helpcontent2", "commit": "19bd09da0885b802eac86a8ed162f59ea65302c2"},
+    {"path": "translations", "commit": "408d5ccae94d1499c5a7754b0758c7ec95156a3a"}
+  ]
+}

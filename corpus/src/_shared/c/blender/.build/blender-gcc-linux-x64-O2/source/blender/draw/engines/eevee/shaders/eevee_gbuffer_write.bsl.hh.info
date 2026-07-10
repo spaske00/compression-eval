@@ -1,0 +1,26 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(gbuffer_PackParameters)
+.noop()
+
+.noop()
+
+.noop()
+
+.noop()
+
+.noop()
+
+.noop()
+
+.noop()
+
+.noop()
+
+GPU_SHADER_CREATE_END()
+

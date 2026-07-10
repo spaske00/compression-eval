@@ -1,0 +1,9 @@
+#line 1 "gpu_shader_material_separate_xyz.glsl"
+ 
+#line 6
+void separate_xyz(float3 vec, _ref(float ,x), _ref(float ,y), _ref(float ,z))
+{
+  x = vec.r;
+  y = vec.g;
+  z = vec.b;
+}

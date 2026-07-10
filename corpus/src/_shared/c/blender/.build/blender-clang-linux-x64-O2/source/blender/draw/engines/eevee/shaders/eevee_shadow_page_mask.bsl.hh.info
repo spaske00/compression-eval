@@ -1,0 +1,34 @@
+#pragma once
+
+
+#define SHADOW_TILE_AMENDED SHADOW_IS_RENDERED
+                                     
+#define SHADOW_TILE_MASKED SHADOW_IS_ALLOCATED
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_PageMask)
+GROUP_SHARED(uint, levels_rendered)
+GROUP_SHARED(uint, force_base_page)
+PUSH_CONSTANT(int, max_view_per_tilemap)
+GROUP_SHARED(uint, tiles_local[SHADOW_TILEDATA_PER_TILEMAP])
+.storage_buf(1, Qualifier::read_write, "uint", "tiles_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_mask_infos_)
+LOCAL_GROUP_SIZE(SHADOW_TILEMAP_RES, SHADOW_TILEMAP_RES)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_shadow_PageMask)
+ADDITIONAL_INFO(eevee_shadow_TileMaps)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_page_mask)
+COMPUTE_SOURCE("eevee_shadow_page_mask.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_mask")
+ADDITIONAL_INFO(eevee_shadow_mask_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,140 @@
+#line 1 "draw_subdiv_shader_shared.hh"
+ 
+#line 16
+#define DRWSubdivUboStorage_host_shared_ DRWSubdivUboStorage
+#define DRWSubdivUboStorage_host_shared_uniform_ DRWSubdivUboStorage
+#line 15
+struct                 DRWSubdivUboStorage {
+
+  int src_offset;
+  int dst_offset;
+#line 21
+  int min_patch_face;
+  int max_patch_face;
+  int max_depth;
+  bool32_t patches_are_triangular;
+#line 27
+  int coarse_face_count;
+  uint edge_loose_offset;
+#line 31
+  uint num_subdiv_loops;
+#line 34
+  bool32_t has_sculpt_mask;
+#line 37
+  uint coarse_face_select_mask;
+  uint coarse_face_smooth_mask;
+  uint coarse_face_active_mask;
+  uint coarse_face_hidden_mask;
+  uint coarse_face_loopstart_mask;
+#line 46
+  uint total_dispatch_size;
+
+  bool32_t is_edit_mode;
+  bool32_t use_hide;
+  int _pad3;
+  int _pad4;
+};
+#line 15
+                                                   DRWSubdivUboStorage DRWSubdivUboStorage_ctor_() {DRWSubdivUboStorage r;r.src_offset=0;r.dst_offset=0;r.min_patch_face=0;r.max_patch_face=0;r.max_depth=0;r.patches_are_triangular=bool32_t(0);r.coarse_face_count=0;r.edge_loose_offset=0u;r.num_subdiv_loops=0u;r.has_sculpt_mask=bool32_t(0);r.coarse_face_select_mask=0u;r.coarse_face_smooth_mask=0u;r.coarse_face_active_mask=0u;r.coarse_face_hidden_mask=0u;r.coarse_face_loopstart_mask=0u;r.total_dispatch_size=0u;r.is_edit_mode=bool32_t(0);r.use_hide=bool32_t(0);r._pad3=0;r._pad4=0;return r;}
+#line 55
+#define SculptData_host_shared_ SculptData
+#line 54
+struct                 SculptData {
+  uint face_set_color;
+  float mask;
+};
+#line 54
+                                          SculptData SculptData_ctor_() {SculptData r;r.face_set_color=0u;r.mask=0.0f;return r;}
+#line 62
+#define UVStretchAngle_host_shared_ UVStretchAngle
+#line 61
+struct                 UVStretchAngle {
+  float angle;
+  float uv_angle0;
+  float uv_angle1;
+};
+#line 61
+                                              UVStretchAngle UVStretchAngle_ctor_() {UVStretchAngle r;r.angle=0.0f;r.uv_angle0=0.0f;r.uv_angle1=0.0f;return r;}
+#line 68
+#define Position_host_shared_ Position
+#line 67
+struct                 Position {
+  float x;
+  float y;
+  float z;
+};
+#line 67
+                                        Position Position_ctor_() {Position r;r.x=0.0f;r.y=0.0f;r.z=0.0f;return r;}
+#line 74
+#define Normal_host_shared_ Normal
+#line 73
+struct                 Normal {
+  float x;
+  float y;
+  float z;
+};
+#line 73
+                                      Normal Normal_ctor_() {Normal r;r.x=0.0f;r.y=0.0f;r.z=0.0f;return r;}
+#line 81
+#define BlenderPatchCoord_host_shared_ BlenderPatchCoord
+#line 80
+struct                 BlenderPatchCoord {
+  int patch_index;
+  uint encoded_uv;
+};
+#line 80
+                                                 BlenderPatchCoord BlenderPatchCoord_ctor_() {BlenderPatchCoord r;r.patch_index=0;r.encoded_uv=0u;return r;}
+#line 88
+#define FDotVert_host_shared_ FDotVert
+#line 87
+struct                 FDotVert {
+  float x;
+  float y;
+  float z;
+};
+#line 87
+                                        FDotVert FDotVert_ctor_() {FDotVert r;r.x=0.0f;r.y=0.0f;r.z=0.0f;return r;}
+#line 95
+#define FDotNor_host_shared_ FDotNor
+#define FDotNor_host_shared_uniform_ FDotNor
+#line 94
+struct                 FDotNor {
+  float x;
+  float y;
+  float z;
+  float flag;
+};
+#line 94
+                                       FDotNor FDotNor_ctor_() {FDotNor r;r.x=0.0f;r.y=0.0f;r.z=0.0f;r.flag=0.0f;return r;}
+#line 103
+#define PatchHandle_host_shared_ PatchHandle
+#line 102
+struct                 PatchHandle {
+  int array_index;
+  int patch_index;
+  int vertex_index;
+};
+#line 102
+                                           PatchHandle PatchHandle_ctor_() {PatchHandle r;r.array_index=0;r.patch_index=0;r.vertex_index=0;return r;}
+#line 110
+#define PatchCoord_host_shared_ PatchCoord
+#line 109
+struct                 PatchCoord {
+  int array_index;
+  int patch_index;
+  int vertex_index;
+  float u;
+  float v;
+};
+#line 109
+                                          PatchCoord PatchCoord_ctor_() {PatchCoord r;r.array_index=0;r.patch_index=0;r.vertex_index=0;r.u=0.0f;r.v=0.0f;return r;}
+#line 120
+#define QuadNode_host_shared_ QuadNode
+#define QuadNode_host_shared_uniform_ QuadNode
+#line 119
+struct                 QuadNode {
+  uint4 child;
+};
+#line 119
+                                        QuadNode QuadNode_ctor_() {QuadNode r;r.child=uint4(0);return r;}
+#line 122

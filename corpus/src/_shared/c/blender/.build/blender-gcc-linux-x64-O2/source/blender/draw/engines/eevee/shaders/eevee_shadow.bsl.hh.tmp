@@ -1,0 +1,128 @@
+#line 1 "eevee_shadow.bsl.hh"
+ 
+#line 17
+#define access_eevee_ShadowRenderData_shadow_atlas_tx() shadow_atlas_tx
+#define access_eevee_ShadowRenderData_shadow_tilemaps_tx() shadow_tilemaps_tx
+#define access_eevee_ShadowRenderData_shadow_random() shadow_random
+#define access_eevee_ShadowRenderData_uniforms() eevee_Uniform_new_()
+#define access_eevee_ShadowRenderData_views() draw_View_new_()
+#define access_eevee_ShadowRenderData_sampling() eevee_Sampling_new_()
+#define access_eevee_ShadowRenderData_util_tx() UtilityTexture_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_ShadowRenderData
+CREATE_INFO_RES_PASS_eevee_ShadowRenderData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_ShadowRenderData
+CREATE_INFO_RES_BATCH_eevee_ShadowRenderData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_ShadowRenderData
+CREATE_INFO_RES_GEOMETRY_eevee_ShadowRenderData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_ShadowRenderData
+CREATE_INFO_RES_SHARED_VARS_eevee_ShadowRenderData
+#endif
+#line 17
+struct eevee_ShadowRenderData {
+#line 23
+                           eevee_Uniform  uniforms;
+                           draw_View  views;
+                                                     eevee_Sampling  sampling;
+                                                     UtilityTexture  util_tx;
+#line 100
+};
+#line 104
+#ifndef GPU_METAL
+eevee_ShadowRenderData eevee_ShadowRenderData_ctor_();
+float _read_depth(eevee_ShadowRenderData  this_, ShadowCoordinates coord);
+float _punctual_sample_get(eevee_ShadowRenderData  this_, LightData light, float3 P);
+float _directional_sample_get(eevee_ShadowRenderData  this_, LightData light, float3 P);
+float _shadow_sample(eevee_ShadowRenderData  this_, const bool is_directional, LightData light, float3 P);
+eevee_ShadowRenderData eevee_ShadowRenderData_new_();
+#endif
+#line 17
+                                      eevee_ShadowRenderData eevee_ShadowRenderData_ctor_() {eevee_ShadowRenderData r;r.uniforms=eevee_Uniform_ctor_();r.views=draw_View_ctor_();r.sampling=eevee_Sampling_ctor_();r.util_tx=UtilityTexture_ctor_();return r;}
+#line 28
+
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 28
+  float _read_depth(eevee_ShadowRenderData  this_, ShadowCoordinates coord)
+  {
+    ShadowSamplingTile tile = shadow_tile_load(
+        srt_access(eevee_ShadowRenderData, shadow_tilemaps_tx), coord.tilemap_tile, coord.tilemap_index);
+    if (!tile.is_valid) {
+      return -1.0f;
+    }
+
+    constexpr uint page_shift = uint(SHADOW_PAGE_LOD);
+    constexpr uint page_mask = ~(0xFFFFFFFFu << uint(SHADOW_PAGE_LOD));
+
+    uint2 texel = coord.tilemap_texel;
+
+    texel += uint2(tile.lod_offset << SHADOW_PAGE_LOD);
+
+    uint2 texel_page = (texel >> tile.lod) & page_mask;
+    texel = (uint2(tile.page.xy) << page_shift) | texel_page;
+
+    return uintBitsToFloat(texelFetch(srt_access(eevee_ShadowRenderData, shadow_atlas_tx), int3(int2(texel), int(tile.page.z)), 0).r);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 49
+  float _punctual_sample_get(eevee_ShadowRenderData  this_, LightData light, float3 P)
+  {
+    float3 shadow_position = _local(light).local.shadow_position;
+    float3 lP = transform_point_inversed(light.object_to_world, P);
+    lP -= shadow_position;
+    int face_id = shadow_punctual_face_index_get(lP);
+    lP = shadow_punctual_local_position_to_face_local(face_id, lP);
+    ShadowCoordinates coord = shadow_punctual_coordinates(light, lP, face_id);
+
+    float radial_dist = _read_depth(this_, coord);
+    if (radial_dist == -1.0f) {
+      return 1e10f;
+    }
+    float receiver_dist = length(lP);
+    float occluder_dist = radial_dist;
+    return receiver_dist - occluder_dist;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 67
+  float _directional_sample_get(eevee_ShadowRenderData  this_, LightData light, float3 P)
+  {
+    float3 lP = transform_direction_transposed(light.object_to_world, P);
+    ShadowCoordinates coord = shadow_directional_coordinates(light, lP);
+
+    float depth = _read_depth(this_, coord);
+    if (depth == -1.0f) {
+      return 1e10f;
+    }
+
+    float receiver_dist = -lP.z - orderedIntBitsToFloat(light.clip_near);
+    float occluder_dist = depth;
+    return receiver_dist - occluder_dist;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 82
+  float _shadow_sample(eevee_ShadowRenderData  this_, const bool is_directional, LightData light, float3 P)
+  {
+    if (is_directional) {
+      return _directional_sample_get(this_, light, P);
+    }
+    return _punctual_sample_get(this_, light, P);
+  }
+#endif
+       eevee_ShadowRenderData eevee_ShadowRenderData_new_()
+{
+  eevee_ShadowRenderData result;
+  result.uniforms = eevee_Uniform_new_();
+  result.views = draw_View_new_();
+  result.sampling = eevee_Sampling_new_();
+  result.util_tx = UtilityTexture_new_();
+  return result;
+#line 88
+}
+#line 92

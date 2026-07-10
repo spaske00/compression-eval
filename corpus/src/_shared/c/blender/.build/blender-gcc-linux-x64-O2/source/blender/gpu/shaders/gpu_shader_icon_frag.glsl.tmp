@@ -1,0 +1,39 @@
+#line 1 "gpu_shader_icon_frag.glsl"
+ 
+#line 15
+FRAGMENT_SHADER_CREATE_INFO(gpu_shader_icon)
+
+void main()
+{
+
+  fragColor = texture(image, texCoord_interp, -0.5f) * final_color;
+
+  if (do_corner_masking) {
+
+    constexpr float circle_radius_outer = 0.1f;
+    constexpr float circle_radius_inner = 0.075f;
+#line 30
+    constexpr float mask_transparency = 0.25f;
+
+    float2 circle_center = float2(circle_radius_outer - text_width, 0.5f);
+#line 35
+    float radius = length(mask_coord_interp - circle_center);
+    float mask = smoothstep(circle_radius_inner, circle_radius_outer, radius);
+
+    bool lower_half = mask_coord_interp.y < circle_center.y;
+    bool right_half = mask_coord_interp.x > circle_center.x;
+
+    if (right_half && mask_coord_interp.y < circle_center.y + circle_radius_outer) {
+      mask = smoothstep(circle_center.y + circle_radius_inner,
+                        circle_center.y + circle_radius_outer,
+                        mask_coord_interp.y);
+    }
+    if (lower_half && mask_coord_interp.x > circle_center.x - circle_radius_outer) {
+      mask = smoothstep(circle_center.x - circle_radius_inner,
+                        circle_center.x - circle_radius_outer,
+                        mask_coord_interp.x);
+    }
+
+    fragColor = mix(float4(0.0f), fragColor, max(mask_transparency, mask));
+  }
+}

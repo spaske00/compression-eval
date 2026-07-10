@@ -1,0 +1,70 @@
+#line 1 "draw_view_reconstruction_lib.glsl"
+ 
+#line 15
+float3 view_position_derivative_from_depth(sampler2D scene_depth_tx,
+                                           int2 extent,
+                                           float2 uv,
+                                           int2 texel,
+                                           int2 offset,
+                                           float3 vP,
+                                           float depth_center)
+{
+  float4 H;
+  H.x = texelFetch(scene_depth_tx, texel - offset * 2, 0).r;
+  H.y = texelFetch(scene_depth_tx, texel - offset, 0).r;
+  H.z = texelFetch(scene_depth_tx, texel + offset, 0).r;
+  H.w = texelFetch(scene_depth_tx, texel + offset * 2, 0).r;
+
+  float2 uv_offset = float2(offset) / float2(extent);
+  float2 uv1 = uv - uv_offset * 2.0f;
+  float2 uv2 = uv - uv_offset;
+  float2 uv3 = uv + uv_offset;
+  float2 uv4 = uv + uv_offset * 2.0f;
+#line 36
+  float4 diff = abs(float4(depth_center, H.yzw) - H.x);
+  if (reduce_max(diff) < 2.4e-7f && all(lessThan(diff.xyz, diff.www))) {
+    float3 P1 = drw_point_screen_to_view(float3(uv1, H.x));
+    float3 P3 = drw_point_screen_to_view(float3(uv3, H.w));
+    return 0.25f * (P3 - P1);
+  }
+
+  float2 deltas = abs((2.0f * H.yz - H.xw) - depth_center);
+  if (deltas.x < deltas.y) {
+    return vP - drw_point_screen_to_view(float3(uv2, H.y));
+  }
+  return drw_point_screen_to_view(float3(uv3, H.z)) - vP;
+}
+
+struct SurfaceReconstructResult {
+
+  float3 vP;
+
+  float3 vNg;
+
+  float depth;
+
+  bool is_background;
+};
+#line 50
+                                        SurfaceReconstructResult SurfaceReconstructResult_ctor_() {SurfaceReconstructResult r;r.vP=float3(0);r.vNg=float3(0);r.depth=0.0f;r.is_background=false;return r;}
+#line 68
+SurfaceReconstructResult view_reconstruct_from_depth(sampler2D scene_depth_tx,
+                                                     int2 extent,
+                                                     int2 texel)
+{
+  SurfaceReconstructResult result;
+  result.depth = texelFetch(scene_depth_tx, texel, 0).r;
+  result.is_background = (result.depth == 1.0f);
+  float2 uv = (float2(texel) + float2(0.5f)) / float2(extent);
+  result.vP = drw_point_screen_to_view(float3(uv, result.depth));
+  if (result.is_background) {
+    result.vNg = drw_view_incident_vector(result.vP);
+    return result;
+  }
+  float3 dPdx = view_position_derivative_from_depth(
+      scene_depth_tx, extent, uv, texel, int2(1, 0), result.vP, result.depth);
+  float3 dPdy = view_position_derivative_from_depth(
+      scene_depth_tx, extent, uv, texel, int2(0, 1), result.vP, result.depth);
+  result.vNg = safe_normalize(cross(dPdx, dPdy));
+  return result;
+}

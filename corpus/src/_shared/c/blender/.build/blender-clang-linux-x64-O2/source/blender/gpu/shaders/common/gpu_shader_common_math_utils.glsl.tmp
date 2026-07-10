@@ -1,0 +1,20 @@
+#line 1 "gpu_shader_common_math_utils.glsl"
+ 
+#line 10
+void invert_z(float3 v, _ref(float3 ,outv))
+{
+  v.z = -v.z;
+  outv = v;
+}
+#line 17
+void vector_normalize(float3 normal, _ref(float3 ,outnormal))
+{
+
+  float length_sqr = dot(normal, normal);
+  outnormal = (length_sqr > 1e-35f) ? normal * inversesqrt(length_sqr) : float3(0.0f);
+}
+#line 25
+void vector_copy(float3 normal, _ref(float3 ,outnormal))
+{
+  outnormal = normal;
+}

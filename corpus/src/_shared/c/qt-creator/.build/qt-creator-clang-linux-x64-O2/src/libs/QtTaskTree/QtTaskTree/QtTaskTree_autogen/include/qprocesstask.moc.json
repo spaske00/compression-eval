@@ -1,0 +1,38 @@
+{
+    "classes": [
+        {
+            "className": "Reaper",
+            "lineNumber": 55,
+            "object": true,
+            "qualifiedClassName": "QtTaskTree::Reaper",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "finished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "ProcessReaperPrivate",
+            "lineNumber": 122,
+            "object": true,
+            "qualifiedClassName": "QtTaskTree::ProcessReaperPrivate",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qprocesstask.cpp",
+    "outputRevision": 68
+}

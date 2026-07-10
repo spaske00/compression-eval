@@ -1,0 +1,40 @@
+#line 1 "compositor_directional_blur.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_directional_blur)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float2 input_size = float2(texture_size(input_tx));
+
+  float2 coordinates = float2(texel) + float2(0.5f);
+
+  float current_sin = 0.0f;
+  float current_cos = 1.0f;
+  float current_scale = 1.0f;
+  float2 current_translation = float2(0.0f);
+#line 25
+  float4 accumulated_color = float4(0.0f);
+  for (int i = 0; i < iterations; i++) {
+#line 30
+    float2 transformed_coordinates = coordinates;
+    transformed_coordinates -= origin;
+    transformed_coordinates /= current_scale;
+    transformed_coordinates -= current_translation;
+    transformed_coordinates = transformed_coordinates *
+                              float2x2(current_cos, current_sin, -current_sin, current_cos);
+    transformed_coordinates += origin;
+
+    accumulated_color += texture(input_tx, transformed_coordinates / input_size);
+
+    current_scale += delta_scale;
+    current_translation += delta_translation;
+#line 45
+    float new_sin = current_sin * delta_rotation_cos + current_cos * delta_rotation_sin;
+    current_cos = current_cos * delta_rotation_cos - current_sin * delta_rotation_sin;
+    current_sin = new_sin;
+  }
+
+  imageStore(output_img, texel, accumulated_color / iterations);
+}

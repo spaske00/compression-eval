@@ -1,0 +1,21 @@
+#line 1 "overlay_edit_pointcloud_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_edit_pointcloud)
+#line 13
+void main()
+{
+  final_color = theme.colors.vert_select;
+
+  float radius = pos_rad.w;
+  float3 world_pos = drw_point_object_to_world(pos_rad.xyz);
+  float3 V = drw_world_incident_vector(world_pos);
+#line 23
+  world_pos += V * radius;
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+#line 27
+  gl_Position.z -= 3e-4f;
+
+  gl_PointSize = theme.sizes.vert * 2.0f;
+  view_clipping_distances(world_pos);
+}

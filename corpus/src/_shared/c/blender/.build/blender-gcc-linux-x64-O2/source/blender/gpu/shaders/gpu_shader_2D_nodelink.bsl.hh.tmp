@@ -1,0 +1,247 @@
+#line 1 "gpu_shader_2D_nodelink.bsl.hh"
+ 
+#line 26
+struct builtin_nodelink_NodeLinkVertIn {
+                   float2 uv;
+                   float2 pos;
+                   float2 expand;
+};
+#line 26
+                                               builtin_nodelink_NodeLinkVertIn builtin_nodelink_NodeLinkVertIn_ctor_() {builtin_nodelink_NodeLinkVertIn r;r.uv=float2(0);r.pos=float2(0);r.expand=float2(0);return r;}
+#line 32
+struct builtin_nodelink_NodeLinkVertOut {
+             float4 final_color;
+             float2 line_uv;
+           float line_length;
+           float line_thickness;
+           float dash_length;
+           float dash_factor;
+           float dash_alpha;
+           float aspect;
+           int has_back_link;
+           int is_main_line;
+};
+#line 32
+                                                builtin_nodelink_NodeLinkVertOut builtin_nodelink_NodeLinkVertOut_ctor_() {builtin_nodelink_NodeLinkVertOut r;r.final_color=float4(0);r.line_uv=float2(0);r.line_length=0.0f;r.line_thickness=0.0f;r.dash_length=0.0f;r.dash_factor=0.0f;r.dash_alpha=0.0f;r.aspect=0.0f;r.has_back_link=0;r.is_main_line=0;return r;}
+#line 45
+struct builtin_nodelink_NodeLinkFragOut {
+                    float4 color;
+};
+#line 45
+                                                builtin_nodelink_NodeLinkFragOut builtin_nodelink_NodeLinkFragOut_ctor_() {builtin_nodelink_NodeLinkFragOut r;r.color=float4(0);return r;}
+#line 49
+#define access_builtin_nodelink_NodeLinkSRT_ModelViewProjectionMatrix() ModelViewProjectionMatrix
+#define access_builtin_nodelink_NodeLinkSRT_link_uniforms() link_uniforms
+#define access_builtin_nodelink_NodeLinkSRT_link_data_buf() link_data_buf
+#ifdef CREATE_INFO_RES_PASS_builtin_nodelink_NodeLinkSRT
+CREATE_INFO_RES_PASS_builtin_nodelink_NodeLinkSRT
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_nodelink_NodeLinkSRT
+CREATE_INFO_RES_BATCH_builtin_nodelink_NodeLinkSRT
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_nodelink_NodeLinkSRT
+CREATE_INFO_RES_GEOMETRY_builtin_nodelink_NodeLinkSRT
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_nodelink_NodeLinkSRT
+CREATE_INFO_RES_SHARED_VARS_builtin_nodelink_NodeLinkSRT
+#endif
+#line 49
+struct builtin_nodelink_NodeLinkSRT {
+#line 61
+int _pad;};
+#line 64
+#ifndef GPU_METAL
+builtin_nodelink_NodeLinkSRT builtin_nodelink_NodeLinkSRT_ctor_();
+builtin_nodelink_NodeLinkSRT builtin_nodelink_NodeLinkSRT_new_();
+#endif
+#line 49
+                                            builtin_nodelink_NodeLinkSRT builtin_nodelink_NodeLinkSRT_ctor_() {builtin_nodelink_NodeLinkSRT r;r._pad=0;return r;}
+#line 54
+       builtin_nodelink_NodeLinkSRT builtin_nodelink_NodeLinkSRT_new_()
+{
+  builtin_nodelink_NodeLinkSRT result;
+  result._pad = 0;
+  return result;
+#line 52
+}
+#line 55
+
+#if defined(CREATE_INFO_builtin_nodelink_NodeLinkSRT)
+#line 55
+
+#if defined(ENTRY_POINT_builtin_nodelink_vert)
+#line 55
+           void builtin_nodelink_vert(
+#line 60
+                                                                     )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 61
+  builtin_nodelink_NodeLinkSRT srt = builtin_nodelink_NodeLinkSRT_ctor_();
+  constexpr float start_gradient_threshold = 0.35f;
+  constexpr float end_gradient_threshold = 0.65f;
+
+  const NodeLinkData link = srt_access(builtin_nodelink_NodeLinkSRT, link_data_buf)[gl_InstanceID];
+
+  const float2 P0 = link.bezier_P0;
+  const float2 P1 = link.bezier_P1;
+  const float2 P2 = link.bezier_P2;
+  const float2 P3 = link.bezier_P3;
+
+  const uint3 color_ids = gpu_attr_decode_uchar4_to_uint4(link.color_ids).xyz;
+
+  const float4 color_start = (color_ids[0] < 3u) ? link.start_color :
+                                                   srt_access(builtin_nodelink_NodeLinkSRT, link_uniforms).colors[color_ids[0]];
+  const float4 color_end = (color_ids[1] < 3u) ? link.end_color :
+                                                 srt_access(builtin_nodelink_NodeLinkSRT, link_uniforms).colors[color_ids[1]];
+  const float4 color_shadow = srt_access(builtin_nodelink_NodeLinkSRT, link_uniforms).colors[color_ids[2]];
+  float line_thickness = link.thickness;
+#line 82
+  constexpr int mid_vertex = 65;
+  bool is_outline_pass = gl_VertexID < mid_vertex;
+
+  builtin_nodelink_NodeLinkVertOut_line_thickness = line_thickness;
+  builtin_nodelink_NodeLinkVertOut_is_main_line = (expand.y == 1.0f && !is_outline_pass) ? 1 : 0;
+  builtin_nodelink_NodeLinkVertOut_has_back_link = int(link.has_back_link);
+  builtin_nodelink_NodeLinkVertOut_aspect = srt_access(builtin_nodelink_NodeLinkSRT, link_uniforms).aspect;
+
+  builtin_nodelink_NodeLinkVertOut_dash_length = link.dash_length;
+  builtin_nodelink_NodeLinkVertOut_dash_factor = link.dash_factor;
+  builtin_nodelink_NodeLinkVertOut_dash_alpha = link.dash_alpha;
+
+  builtin_nodelink_NodeLinkVertOut_line_length = distance(P0, P3);
+
+  builtin_nodelink_NodeLinkVertOut_line_uv = uv;
+
+  if ((expand.y == 1.0f) && link.has_back_link) {
+
+    line_thickness *= 1.7f;
+  }
+
+  if (is_outline_pass) {
+
+    builtin_nodelink_NodeLinkVertOut_final_color = color_shadow;
+  }
+  else {
+
+    if (uv.x < start_gradient_threshold) {
+      builtin_nodelink_NodeLinkVertOut_final_color = color_start;
+    }
+    else if (uv.x > end_gradient_threshold) {
+      builtin_nodelink_NodeLinkVertOut_final_color = color_end;
+    }
+    else {
+      float mixFactor = (uv.x - start_gradient_threshold) /
+                        (end_gradient_threshold - start_gradient_threshold);
+      builtin_nodelink_NodeLinkVertOut_final_color = mix(color_start, color_end, mixFactor);
+    }
+    line_thickness *= 0.65f;
+    if (link.do_muted) {
+      builtin_nodelink_NodeLinkVertOut_final_color[3] = 0.65f;
+    }
+  }
+  builtin_nodelink_NodeLinkVertOut_final_color.a *= link.dim_factor;
+
+  float t = uv.x;
+  float t2 = t * t;
+  float t2_3 = 3.0f * t2;
+  float one_minus_t = 1.0f - t;
+  float one_minus_t2 = one_minus_t * one_minus_t;
+  float one_minus_t2_3 = 3.0f * one_minus_t2;
+
+  float2 point = (P0 * one_minus_t2 * one_minus_t + P1 * one_minus_t2_3 * t +
+                  P2 * t2_3 * one_minus_t + P3 * t2 * t);
+
+  float2 tangent = ((P1 - P0) * one_minus_t2_3 + (P2 - P1) * 6.0f * (t - t2) + (P3 - P2) * t2_3);
+#line 141
+  tangent = is_zero(tangent) ? normalize(P3 - P0) : normalize(tangent);
+  float2 normal = tangent.yx * float2(-1.0f, 1.0f);
+#line 145
+  point += (pos.x * tangent + pos.y * normal) * srt_access(builtin_nodelink_NodeLinkSRT, link_uniforms).arrow_size;
+
+  gl_Position = srt_access(builtin_nodelink_NodeLinkSRT, ModelViewProjectionMatrix) * float4(point, 0.0f, 1.0f);
+
+  float2 exp_axis = expand.x * tangent + expand.y * normal;
+#line 152
+  exp_axis = srt_access(builtin_nodelink_NodeLinkSRT, ModelViewProjectionMatrix)[0].xy * exp_axis.xx +
+             srt_access(builtin_nodelink_NodeLinkSRT, ModelViewProjectionMatrix)[1].xy * exp_axis.yy;
+
+  float expand_dist = line_thickness * (uv.y * 2.0f - 1.0f);
+#line 158
+  gl_Position.xy += exp_axis * srt_access(builtin_nodelink_NodeLinkSRT, link_uniforms).aspect * expand_dist;
+#line 162
+  if ((expand.x == 1.0f && !link.do_muted) ||
+      (expand.y != 1.0f && (pos.x < 0.70f || pos.x > 0.71f) && !link.do_arrow))
+  {
+    gl_Position.xy *= 0.0f;
+  }
+
+#endif
+#line 167
+}
+#endif
+#endif
+#line 169
+#define ANTIALIAS 0.75f
+
+float builtin_nodelink_get_line_alpha(float2 line_uv, float line_thickness, float center, float relative_radius)
+{
+  float radius = relative_radius * line_thickness;
+  float sdf = abs(line_thickness * (line_uv.y - center));
+  return smoothstep(radius, radius - ANTIALIAS, sdf);
+}
+#line 179
+#if defined(ENTRY_POINT_builtin_nodelink_frag)
+#line 178
+             void builtin_nodelink_frag(                                                                                                         )
+{
+
+#if defined(GPU_FRAGMENT_SHADER)
+#line 180
+  float dash_frag_alpha = 1.0f;
+  if (builtin_nodelink_NodeLinkVertOut_dash_factor < 1.0f) {
+    float distance_along_line = builtin_nodelink_NodeLinkVertOut_line_length * builtin_nodelink_NodeLinkVertOut_line_uv.x;
+#line 187
+    float dash_center = builtin_nodelink_NodeLinkVertOut_dash_length * builtin_nodelink_NodeLinkVertOut_dash_factor * 0.5f;
+    float normalized_distance_triangle =
+        1.0f -
+        abs((fract((distance_along_line - dash_center) / builtin_nodelink_NodeLinkVertOut_dash_length)) * 2.0f - 1.0f);
+    float t = builtin_nodelink_NodeLinkVertOut_aspect * ANTIALIAS / builtin_nodelink_NodeLinkVertOut_dash_length;
+    float slope = 1.0f / (2.0f * t);
+
+    float unclamped_alpha = 1.0f - slope * (normalized_distance_triangle - builtin_nodelink_NodeLinkVertOut_dash_factor + t);
+    float alpha = max(builtin_nodelink_NodeLinkVertOut_dash_alpha, min(unclamped_alpha, 1.0f));
+
+    dash_frag_alpha = alpha;
+  }
+
+  if (builtin_nodelink_NodeLinkVertOut_is_main_line == 0) {
+    builtin_nodelink_NodeLinkFragOut_color = builtin_nodelink_NodeLinkVertOut_final_color;
+    builtin_nodelink_NodeLinkFragOut_color.a *= builtin_nodelink_get_line_alpha(builtin_nodelink_NodeLinkVertOut_line_uv, builtin_nodelink_NodeLinkVertOut_line_thickness, 0.5f, 0.5f) *
+                        dash_frag_alpha;
+    return;
+  }
+
+  if (builtin_nodelink_NodeLinkVertOut_has_back_link == 0) {
+    builtin_nodelink_NodeLinkFragOut_color = builtin_nodelink_NodeLinkVertOut_final_color;
+    builtin_nodelink_NodeLinkFragOut_color.a *= builtin_nodelink_get_line_alpha(builtin_nodelink_NodeLinkVertOut_line_uv, builtin_nodelink_NodeLinkVertOut_line_thickness, 0.5f, 0.5f) *
+                        dash_frag_alpha;
+  }
+  else {
+
+    float4 main_link_color = builtin_nodelink_NodeLinkVertOut_final_color;
+    main_link_color.a *= builtin_nodelink_get_line_alpha(builtin_nodelink_NodeLinkVertOut_line_uv, builtin_nodelink_NodeLinkVertOut_line_thickness, 0.75f, 0.3f);
+
+    float4 back_link_color = float4(float3(0.8f), 1.0f);
+    back_link_color.a *= builtin_nodelink_get_line_alpha(builtin_nodelink_NodeLinkVertOut_line_uv, builtin_nodelink_NodeLinkVertOut_line_thickness, 0.2f, 0.25f);
+#line 221
+    builtin_nodelink_NodeLinkFragOut_color.rgb = main_link_color.rgb * main_link_color.a +
+                         back_link_color.rgb * back_link_color.a;
+    builtin_nodelink_NodeLinkFragOut_color.a = main_link_color.a * dash_frag_alpha + back_link_color.a;
+  }
+
+#endif
+#line 225
+}
+#endif
+#line 230

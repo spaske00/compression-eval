@@ -1,0 +1,8 @@
+#line 1 "gpu_shader_material_normal.glsl"
+ 
+#line 6
+void normal_new_shading(float3 nor, float3 dir, _ref(float3 ,outnor), _ref(float ,outdot))
+{
+  outnor = dir;
+  outdot = dot(normalize(nor), dir);
+}

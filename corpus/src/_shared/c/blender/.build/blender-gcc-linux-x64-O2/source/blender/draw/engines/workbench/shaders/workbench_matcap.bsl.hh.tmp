@@ -1,0 +1,56 @@
+#line 1 "workbench_matcap.bsl.hh"
+ 
+#line 13
+float2 workbench_matcap_uv_compute(float3 I, float3 N, bool flipped)
+{
+
+  float a = 1.0f / (1.0f + I.z);
+  float b = -I.x * I.y * a;
+  float3 b1 = float3(1.0f - I.x * I.x * a, b, -I.x);
+  float3 b2 = float3(b, 1.0f - I.y * I.y * a, -I.y);
+  float2 matcap_uv = float2(dot(b1, N), dot(b2, N));
+  if (flipped) {
+    matcap_uv.x = -matcap_uv.x;
+  }
+  return matcap_uv * 0.496f + 0.5f;
+}
+#line 28
+#if defined(CREATE_INFO_workbench_World)
+#line 27
+float3 workbench_get_matcap_lighting(const workbench_World  world,
+                           sampler2D diffuse_matcap,
+                           sampler2D specular_matcap,
+                           float3 base_color,
+                           float3 N,
+                           float3 I)
+{
+#line 36
+  bool flipped = srt_access(workbench_World, world_data).matcap_orientation != 0;
+  float2 uv = workbench_matcap_uv_compute(I, N, flipped);
+
+  float3 diffuse = textureLod(diffuse_matcap, uv, 0.0f).rgb;
+  float3 specular = textureLod(specular_matcap, uv, 0.0f).rgb;
+
+  return diffuse * base_color + specular * float(srt_access(workbench_World, world_data).use_specular);
+}
+#endif
+
+#if defined(CREATE_INFO_workbench_World)
+#line 45
+float3 workbench_get_matcap_lighting(const workbench_World  world,
+                           sampler2DArray matcap,
+                           float3 base_color,
+                           float3 N,
+                           float3 I)
+{
+#line 53
+  bool flipped = srt_access(workbench_World, world_data).matcap_orientation != 0;
+  float2 uv = workbench_matcap_uv_compute(I, N, flipped);
+
+  float3 diffuse = textureLod(matcap, float3(uv, 0.0f), 0.0f).rgb;
+  float3 specular = textureLod(matcap, float3(uv, 1.0f), 0.0f).rgb;
+
+  return diffuse * base_color + specular * float(srt_access(workbench_World, world_data).use_specular);
+}
+#endif
+#line 63

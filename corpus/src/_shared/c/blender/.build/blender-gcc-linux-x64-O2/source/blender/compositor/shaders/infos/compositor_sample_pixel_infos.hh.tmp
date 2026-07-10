@@ -1,0 +1,49 @@
+#line 1 "compositor_sample_pixel_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 8
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define SAMPLER_FUNCTION texture
+#endif
+#line 16
+#ifdef CREATE_INFO_RES_PASS_compositor_sample_pixel_shared
+CREATE_INFO_RES_PASS_compositor_sample_pixel_shared
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_sample_pixel_shared
+CREATE_INFO_RES_BATCH_compositor_sample_pixel_shared
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_sample_pixel_shared
+CREATE_INFO_RES_GEOMETRY_compositor_sample_pixel_shared
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_sample_pixel_shared
+CREATE_INFO_RES_SHARED_VARS_compositor_sample_pixel_shared
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_compositor_sample_pixel
+CREATE_INFO_RES_PASS_compositor_sample_pixel
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_sample_pixel
+CREATE_INFO_RES_BATCH_compositor_sample_pixel
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_sample_pixel
+CREATE_INFO_RES_GEOMETRY_compositor_sample_pixel
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_sample_pixel
+CREATE_INFO_RES_SHARED_VARS_compositor_sample_pixel
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_compositor_sample_pixel_bicubic
+CREATE_INFO_RES_PASS_compositor_sample_pixel_bicubic
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_sample_pixel_bicubic
+CREATE_INFO_RES_BATCH_compositor_sample_pixel_bicubic
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_sample_pixel_bicubic
+CREATE_INFO_RES_GEOMETRY_compositor_sample_pixel_bicubic
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_sample_pixel_bicubic
+CREATE_INFO_RES_SHARED_VARS_compositor_sample_pixel_bicubic
+#endif

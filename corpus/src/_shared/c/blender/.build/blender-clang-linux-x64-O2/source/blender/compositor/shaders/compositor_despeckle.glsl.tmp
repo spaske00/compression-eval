@@ -1,0 +1,51 @@
+#line 1 "compositor_despeckle.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_despeckle)
+#line 12
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 19
+  float corner_weight = 1.0f / sqrt(2.0f);
+  float sum_of_weights = 4.0f + corner_weight * 4.0f;
+  float3x3 weights = float3x3(float3(corner_weight, 1.0f, corner_weight),
+                              float3(1.0f, 0.0f, 1.0f),
+                              float3(corner_weight, 1.0f, corner_weight));
+
+  float4 center_color = texture_load(input_tx, texel);
+#line 30
+  float4 sum_of_colors = float4(0);
+  float accumulated_weight = 0.0f;
+  float4 accumulated_color = float4(0);
+  for (int j = 0; j < 3; j++) {
+    for (int i = 0; i < 3; i++) {
+      float weight = weights[j][i];
+      float4 color = texture_load(input_tx, texel + int2(i - 1, j - 1)) * weight;
+      sum_of_colors += color;
+      if (!is_equal(center_color.rgb, color.rgb, color_threshold)) {
+        accumulated_color += color;
+        accumulated_weight += weight;
+      }
+    }
+  }
+#line 47
+  if (accumulated_weight == 0.0f) {
+    imageStore(output_img, texel, center_color);
+    return;
+  }
+#line 56
+  if (accumulated_weight / sum_of_weights < neighbor_threshold) {
+    imageStore(output_img, texel, center_color);
+    return;
+  }
+#line 63
+  if (is_equal(center_color.rgb, (sum_of_colors / sum_of_weights).rgb, color_threshold)) {
+    imageStore(output_img, texel, center_color);
+    return;
+  }
+#line 69
+  float factor = texture_load(factor_tx, texel).x;
+  float4 mean_color = accumulated_color / accumulated_weight;
+  imageStore(output_img, texel, mix(center_color, mean_color, factor));
+}

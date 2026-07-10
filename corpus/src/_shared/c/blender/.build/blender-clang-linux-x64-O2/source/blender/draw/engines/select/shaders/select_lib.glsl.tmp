@@ -1,0 +1,57 @@
+#line 1 "select_lib.glsl"
+ 
+#line 7
+#ifndef SELECT_ENABLE
+
+#  define select_id_set(select_id)
+#  define select_id_output(select_id)
+
+#elif defined(GPU_VERTEX_SHADER)
+
+void select_id_set(uint id)
+{
+
+  select_id = id;
+}
+
+#elif defined(GPU_FRAGMENT_SHADER)
+
+void select_id_output(uint id)
+{
+  if (id == uint(-1)) {
+
+    return;
+  }
+
+  if (select_info_buf.mode == SELECT_ALL) {
+    if (select_info_buf.radius > 0) {
+
+      int2 coord = int2(gl_FragCoord.xy) - select_info_buf.cursor;
+      uint dist_sq = uint(coord.x * coord.x + coord.y * coord.y);
+      uint rad_sq = select_info_buf.radius * select_info_buf.radius;
+      if (dist_sq > rad_sq) {
+        return;
+      }
+    }
+
+    atomicOr(out_select_buf[id / 32u], 1u << (id % 32u));
+  }
+  else if (select_info_buf.mode == SELECT_PICK_ALL) {
+
+    atomicMin(out_select_buf[id], floatBitsToUint(gl_FragCoord.z));
+  }
+  else if (select_info_buf.mode == SELECT_PICK_NEAREST) {
+#line 50
+    int2 coord = abs(int2(gl_FragCoord.xy) - select_info_buf.cursor);
+    uint dist = uint(max(coord.x, coord.y));
+
+    uint depth = uint(gl_FragCoord.z * float(0x00FFFFFFu));
+#line 56
+    if (dist < 0xFFu) {
+
+      atomicMin(out_select_buf[id], (depth << 8u) | dist);
+    }
+  }
+}
+
+#endif

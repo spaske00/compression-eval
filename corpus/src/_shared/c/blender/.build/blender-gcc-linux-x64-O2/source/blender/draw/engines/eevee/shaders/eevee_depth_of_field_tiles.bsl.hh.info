@@ -1,0 +1,73 @@
+#pragma once
+
+
+#define dof_tile_large_coc_uint floatBitsToUint(dof_tile_large_coc)
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_dof_Tiles)
+.image(0, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read, ImageReadWriteType::image2D, "in_tiles_fg_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read, ImageReadWriteType::image2D, "in_tiles_bg_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_dof_TilesWrite)
+.image(2, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::write, ImageReadWriteType::image2D, "out_tiles_fg_img", Frequency::PASS)
+.image(3, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::write, ImageReadWriteType::image2D, "out_tiles_bg_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_dof_tile_flatten_Resources)
+.sampler(0, ImageType::sampler2D, "coc_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GROUP_SHARED(uint, fg_min_coc)
+GROUP_SHARED(uint, fg_max_coc)
+GROUP_SHARED(uint, fg_max_intersectable_coc)
+GROUP_SHARED(uint, bg_min_coc)
+GROUP_SHARED(uint, bg_max_coc)
+GROUP_SHARED(uint, bg_min_intersectable_coc)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_dof_tile_dilate_Resources)
+.noop()
+
+PUSH_CONSTANT(int, ring_count)
+PUSH_CONSTANT(int, ring_width_multiplier)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_tile_flatten_comp_main_infos_)
+LOCAL_GROUP_SIZE(DOF_TILES_FLATTEN_GROUP_SIZE, DOF_TILES_FLATTEN_GROUP_SIZE)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_dof_tile_flatten_Resources)
+ADDITIONAL_INFO(eevee_dof_TilesWrite)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_tile_dilate_comp_main_infos_)
+LOCAL_GROUP_SIZE(DOF_TILES_DILATE_GROUP_SIZE, DOF_TILES_DILATE_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_dof_tile_dilate_Resources)
+ADDITIONAL_INFO(eevee_dof_Tiles)
+ADDITIONAL_INFO(eevee_dof_TilesWrite)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_tiles_flatten)
+COMPUTE_SOURCE("eevee_depth_of_field_tiles.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_tile_flatten_comp_main")
+ADDITIONAL_INFO(eevee_dof_tile_flatten_comp_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_tiles_dilate_minabs)
+COMPUTE_SOURCE("eevee_depth_of_field_tiles.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_tile_dilate_comp_main")
+ADDITIONAL_INFO(eevee_dof_tile_dilate_comp_main_infos_)
+COMPILATION_CONSTANT(bool, dilate_mode_min_max, false)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_tiles_dilate_minmax)
+COMPUTE_SOURCE("eevee_depth_of_field_tiles.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_tile_dilate_comp_main")
+ADDITIONAL_INFO(eevee_dof_tile_dilate_comp_main_infos_)
+COMPILATION_CONSTANT(bool, dilate_mode_min_max, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

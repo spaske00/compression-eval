@@ -1,0 +1,14 @@
+#line 1 "gpu_shader_compositor_difference_matte.glsl"
+ 
+#line 9
+void node_composite_difference_matte(
+    float4 color, float4 key, float tolerance, float falloff, _ref(float4 ,result), _ref(float ,matte))
+{
+  float difference = dot(abs(color - key).rgb, float3(1.0f)) / 3.0f;
+
+  bool is_opaque = difference > tolerance + falloff;
+  float alpha = is_opaque ? color.a : safe_divide(max(0.0f, difference - tolerance), falloff);
+
+  matte = min(alpha, color.a);
+  result = color * matte;
+}

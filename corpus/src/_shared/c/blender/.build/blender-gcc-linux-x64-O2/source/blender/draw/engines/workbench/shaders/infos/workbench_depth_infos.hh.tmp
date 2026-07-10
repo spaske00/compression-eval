@@ -1,0 +1,31 @@
+#line 1 "workbench_depth_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 12
+#ifdef CREATE_INFO_RES_PASS_workbench_merge_depth
+CREATE_INFO_RES_PASS_workbench_merge_depth
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_merge_depth
+CREATE_INFO_RES_BATCH_workbench_merge_depth
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_merge_depth
+CREATE_INFO_RES_GEOMETRY_workbench_merge_depth
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_merge_depth
+CREATE_INFO_RES_SHARED_VARS_workbench_merge_depth
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_workbench_overlay_depth
+CREATE_INFO_RES_PASS_workbench_overlay_depth
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_overlay_depth
+CREATE_INFO_RES_BATCH_workbench_overlay_depth
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_overlay_depth
+CREATE_INFO_RES_GEOMETRY_workbench_overlay_depth
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_overlay_depth
+CREATE_INFO_RES_SHARED_VARS_workbench_overlay_depth
+#endif

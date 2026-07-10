@@ -1,0 +1,15 @@
+#line 1 "eevee_nodetree_type_lib.glsl"
+ 
+#line 16
+#define NodeTree_host_shared_ NodeTree
+#define NodeTree_host_shared_uniform_ NodeTree
+#line 15
+struct                 NodeTree {
+  float crypto_hash;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+};
+#line 15
+                                        NodeTree NodeTree_ctor_() {NodeTree r;r.crypto_hash=0.0f;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 21

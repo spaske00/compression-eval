@@ -1,0 +1,29 @@
+#line 1 "eevee_ltc_lut_lib.bsl.hh"
+ 
+#line 13
+float2 eevee_lut_ltc_lut_coords_get(float cos_theta, float roughness)
+{
+  return float2(roughness, sqrt(saturate(1.0f - cos_theta)));
+}
+#line 22
+#if defined(CREATE_INFO_UtilityTexture)
+#line 21
+packed_float4 eevee_lut_ltc_sample_utility_tx(const UtilityTexture  util_tx,
+                                float cos_theta,
+                                float roughness)
+{
+  const float2 coords = eevee_lut_ltc_lut_coords_get(cos_theta, roughness);
+  return _sample_lut(util_tx, coords, UTIL_LTC_MAT_LAYER);
+}
+#endif
+#line 32
+packed_float4 eevee_lut_ltc_identity()
+{
+  return float4(1.0f, 0.0f, 0.0f, 1.0f);
+}
+#line 40
+float3x3 eevee_lut_ltc_unpack(packed_float4 v)
+{
+  return float3x3(float3(v.x, 0, v.y), float3(0, 1, 0), float3(v.z, 0, v.w));
+}
+

@@ -1,0 +1,50 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_TilemapBoundsInit)
+PUSH_CONSTANT(int, tilemaps_clip_buf_len)
+.storage_buf(0, Qualifier::write, "ShadowTileMapClip", "tilemaps_clip_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_TilemapBounds)
+.additional_info("eevee_LightRenderData")
+PUSH_CONSTANT(int, resource_len)
+GROUP_SHARED(int, global_min)
+GROUP_SHARED(int, global_max)
+.storage_buf(4, Qualifier::read, "uint", "casters_id_buf[]", Frequency::PASS)
+.storage_buf(5, Qualifier::read_write, "ShadowTileMapData", "tilemaps_buf[]", Frequency::PASS)
+.storage_buf(6, Qualifier::read, "ObjectBounds", "bounds_buf[]", Frequency::PASS)
+.storage_buf(7, Qualifier::read_write, "ShadowTileMapClip", "tilemaps_clip_buf[]", Frequency::PASS)
+.storage_buf(8, Qualifier::read_write, "LightData", "light_buf_write[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_bounds_clear_infos_)
+LOCAL_GROUP_SIZE(SHADOW_CLIPMAP_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_shadow_TilemapBoundsInit)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_bounds_min_max_infos_)
+LOCAL_GROUP_SIZE(SHADOW_BOUNDS_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_shadow_TilemapBounds)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_bounds_init)
+COMPUTE_SOURCE("eevee_shadow_tilemap_bounds.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_tilemap_bounds_clear")
+ADDITIONAL_INFO(eevee_shadow_tilemap_bounds_clear_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tilemap_bounds)
+COMPUTE_SOURCE("eevee_shadow_tilemap_bounds.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_tilemap_bounds_min_max")
+ADDITIONAL_INFO(eevee_shadow_tilemap_bounds_min_max_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

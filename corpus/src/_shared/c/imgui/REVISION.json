@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "imgui",
+  "input_url": "https://github.com/ocornut/imgui",
+  "canonical_url": "https://github.com/ocornut/imgui",
+  "source_directory": "imgui/upstream",
+  "commit": "279d04f7a3e17c4349715a0e7fde455e65facf4a",
+  "nested_submodules": []
+}

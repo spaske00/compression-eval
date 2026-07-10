@@ -1,0 +1,362 @@
+#line 1 "eevee_lightprobe_volume_load.bsl.hh"
+ 
+#line 16
+#define access_eevee_lightprobe_volume_AtlasStore_irradiance_atlas_img() irradiance_atlas_img
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_volume_AtlasStore
+CREATE_INFO_RES_PASS_eevee_lightprobe_volume_AtlasStore
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_AtlasStore
+CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_AtlasStore
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_AtlasStore
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_AtlasStore
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_AtlasStore
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_AtlasStore
+#endif
+#line 16
+struct eevee_lightprobe_volume_AtlasStore {
+#line 33
+int _pad;};
+#line 36
+#ifndef GPU_METAL
+eevee_lightprobe_volume_AtlasStore eevee_lightprobe_volume_AtlasStore_ctor_();
+void _store(eevee_lightprobe_volume_AtlasStore  this_, float4 sh_coefficient, int2 atlas_coord, int layer, uint3 local_id);
+eevee_lightprobe_volume_AtlasStore eevee_lightprobe_volume_AtlasStore_new_();
+#endif
+#line 16
+                                                  eevee_lightprobe_volume_AtlasStore eevee_lightprobe_volume_AtlasStore_ctor_() {eevee_lightprobe_volume_AtlasStore r;r._pad=0;return r;}
+#line 19
+
+#if defined(CREATE_INFO_eevee_lightprobe_volume_AtlasStore)
+#line 19
+  void _store(eevee_lightprobe_volume_AtlasStore  this_, float4 sh_coefficient, int2 atlas_coord, int layer, uint3 local_id)
+  {
+    imageStore(srt_access(eevee_lightprobe_volume_AtlasStore, irradiance_atlas_img),
+               int3(atlas_coord, layer * IRRADIANCE_GRID_BRICK_SIZE) + int3(local_id),
+               sh_coefficient);
+  }
+#endif
+       eevee_lightprobe_volume_AtlasStore eevee_lightprobe_volume_AtlasStore_new_()
+{
+  eevee_lightprobe_volume_AtlasStore result;
+  result._pad = 0;
+  return result;
+#line 24
+}
+#line 27
+#define access_eevee_lightprobe_volume_LoadGrid_grid_local_to_world() grid_local_to_world
+#define access_eevee_lightprobe_volume_LoadGrid_grid_index() grid_index
+#define access_eevee_lightprobe_volume_LoadGrid_grid_start_index() grid_start_index
+#define access_eevee_lightprobe_volume_LoadGrid_validity_threshold() validity_threshold
+#define access_eevee_lightprobe_volume_LoadGrid_dilation_threshold() dilation_threshold
+#define access_eevee_lightprobe_volume_LoadGrid_dilation_radius() dilation_radius
+#define access_eevee_lightprobe_volume_LoadGrid_grid_intensity_factor() grid_intensity_factor
+#define access_eevee_lightprobe_volume_LoadGrid_irradiance_a_tx() irradiance_a_tx
+#define access_eevee_lightprobe_volume_LoadGrid_irradiance_b_tx() irradiance_b_tx
+#define access_eevee_lightprobe_volume_LoadGrid_irradiance_c_tx() irradiance_c_tx
+#define access_eevee_lightprobe_volume_LoadGrid_irradiance_d_tx() irradiance_d_tx
+#define access_eevee_lightprobe_volume_LoadGrid_visibility_a_tx() visibility_a_tx
+#define access_eevee_lightprobe_volume_LoadGrid_visibility_b_tx() visibility_b_tx
+#define access_eevee_lightprobe_volume_LoadGrid_visibility_c_tx() visibility_c_tx
+#define access_eevee_lightprobe_volume_LoadGrid_visibility_d_tx() visibility_d_tx
+#define access_eevee_lightprobe_volume_LoadGrid_validity_tx() validity_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_volume_LoadGrid
+CREATE_INFO_RES_PASS_eevee_lightprobe_volume_LoadGrid
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_LoadGrid
+CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_LoadGrid
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_LoadGrid
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_LoadGrid
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_LoadGrid
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_LoadGrid
+#endif
+#line 27
+struct eevee_lightprobe_volume_LoadGrid {
+#line 72
+int _pad;};
+#line 81
+#ifndef GPU_METAL
+eevee_lightprobe_volume_LoadGrid eevee_lightprobe_volume_LoadGrid_ctor_();
+SphericalHarmonicL1Tfloat4 _irradiance_load(eevee_lightprobe_volume_LoadGrid  this_, int3 input_coord);
+eevee_lightprobe_volume_LoadGrid eevee_lightprobe_volume_LoadGrid_new_();
+#endif
+#line 27
+                                                eevee_lightprobe_volume_LoadGrid eevee_lightprobe_volume_LoadGrid_ctor_() {eevee_lightprobe_volume_LoadGrid r;r._pad=0;return r;}
+#line 47
+
+#if defined(CREATE_INFO_eevee_lightprobe_volume_LoadGrid)
+#line 47
+  SphericalHarmonicL1Tfloat4 _irradiance_load(eevee_lightprobe_volume_LoadGrid  this_, int3 input_coord)
+  {
+    input_coord = clamp(input_coord, int3(0), textureSize(srt_access(eevee_lightprobe_volume_LoadGrid, irradiance_a_tx), 0) - 1);
+
+    SphericalHarmonicL1Tfloat4 sh;
+    sh.L0.M0 = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, irradiance_a_tx), input_coord, 0);
+    sh.L1.Mn1 = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, irradiance_b_tx), input_coord, 0);
+    sh.L1.M0 = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, irradiance_c_tx), input_coord, 0);
+    sh.L1.Mp1 = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, irradiance_d_tx), input_coord, 0);
+#line 58
+    sh.L0.M0.a = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, visibility_a_tx), input_coord, 0).a;
+    sh.L1.Mn1.a = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, visibility_b_tx), input_coord, 0).a;
+    sh.L1.M0.a = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, visibility_c_tx), input_coord, 0).a;
+    sh.L1.Mp1.a = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, visibility_d_tx), input_coord, 0).a;
+    return sh;
+  }
+#endif
+       eevee_lightprobe_volume_LoadGrid eevee_lightprobe_volume_LoadGrid_new_()
+{
+  eevee_lightprobe_volume_LoadGrid result;
+  result._pad = 0;
+  return result;
+#line 63
+}
+#line 72
+
+#if defined(CREATE_INFO_eevee_lightprobe_volume_LoadGrid) && defined(CREATE_INFO_eevee_LightprobeVolumeRenderData) && defined(CREATE_INFO_eevee_lightprobe_volume_AtlasStore)
+#line 72
+
+#if defined(ENTRY_POINT_eevee_lightprobe_volume_load_grid)
+#line 75
+void eevee_lightprobe_volume_load_grid(
+#line 79
+                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 80
+  eevee_lightprobe_volume_LoadGrid srt = eevee_lightprobe_volume_LoadGrid_ctor_(); eevee_LightprobeVolumeRenderData lvd = eevee_LightprobeVolumeRenderData_ctor_(); eevee_lightprobe_volume_AtlasStore atlas = eevee_lightprobe_volume_AtlasStore_ctor_();
+  int brick_index = eevee_lightprobe_volume_grid_brick_index_get(srt_access(eevee_LightprobeVolumeRenderData, grids_infos_buf)[srt_access(eevee_lightprobe_volume_LoadGrid, grid_index)],
+                                                             int3(gl_WorkGroupID));
+
+  int3 grid_size = textureSize(srt_access(eevee_lightprobe_volume_LoadGrid, irradiance_a_tx), 0);
+
+  int3 brick_coord = int3(gl_WorkGroupID);
+
+  int3 texel_coord = brick_coord * (IRRADIANCE_GRID_BRICK_SIZE - 1) + int3(gl_LocalInvocationID);
+
+  texel_coord -= 1;
+
+  int3 input_coord = clamp(texel_coord, int3(0), grid_size - 1);
+
+  bool is_padding_voxel = !all(equal(texel_coord, input_coord));
+#line 97
+  IrradianceBrick brick = irradiance_brick_unpack(srt_access(eevee_LightprobeVolumeRenderData, bricks_infos_buf)[brick_index]);
+  int2 output_coord = int2(brick.atlas_coord);
+
+  SphericalHarmonicL1Tfloat4 sh_local;
+
+  float validity = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, validity_tx), input_coord, 0).r;
+  if (validity > srt_access(eevee_lightprobe_volume_LoadGrid, dilation_threshold)) {
+
+    sh_local = _irradiance_load(srt, input_coord);
+  }
+  else {
+#line 111
+    float weight_accum = 1e-8f;
+    sh_local = spherical_harmonics_mul(_irradiance_load(srt, input_coord), weight_accum);
+    int radius = int(srt_access(eevee_lightprobe_volume_LoadGrid, dilation_radius));
+    for (int x = -radius; x <= radius; x++) {
+      for (int y = -radius; y <= radius; y++) {
+        for (int z = -radius; z <= radius; z++) {
+          if (x == 0 && y == 0 && z == 0) {
+            continue;
+          }
+          int3 offset = int3(x, y, z);
+          int3 neighbor_coord = input_coord + offset;
+          float neighbor_validity = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, validity_tx), neighbor_coord, 0).r;
+
+          if (neighbor_validity < srt_access(eevee_lightprobe_volume_LoadGrid, dilation_threshold)) {
+            continue;
+          }
+          float dist_sqr = length_squared(float3(offset));
+          if (dist_sqr > square(srt_access(eevee_lightprobe_volume_LoadGrid, dilation_radius))) {
+            continue;
+          }
+          float weight = 1.0f / dist_sqr;
+          sh_local = spherical_harmonics_madd(
+              _irradiance_load(srt, neighbor_coord), weight, sh_local);
+          weight_accum += weight;
+        }
+      }
+    }
+    float inv_weight_accum = safe_rcp(weight_accum);
+    sh_local = spherical_harmonics_mul(sh_local, inv_weight_accum);
+  }
+#line 143
+  float3x3 grid_to_world_rot = normalize(
+      to_float3x3(srt_access(eevee_LightprobeVolumeRenderData, grids_infos_buf)[srt_access(eevee_lightprobe_volume_LoadGrid, grid_index)].world_to_grid_transposed));
+  sh_local = spherical_harmonics_rotate(grid_to_world_rot, sh_local);
+
+  SphericalHarmonicL1Tfloat4 sh_visibility;
+  sh_visibility.L0.M0 = sh_local.L0.M0.aaaa;
+  sh_visibility.L1.Mn1 = sh_local.L1.Mn1.aaaa;
+  sh_visibility.L1.M0 = sh_local.L1.M0.aaaa;
+  sh_visibility.L1.Mp1 = sh_local.L1.Mp1.aaaa;
+
+  float3 P = eevee_lightprobe_volume_grid_sample_position(
+      srt_access(eevee_lightprobe_volume_LoadGrid, grid_local_to_world), grid_size, input_coord);
+
+  SphericalHarmonicL1Tfloat4 sh_distant = _sample_probe_no_dithered_no_biases(lvd, P, srt_access(eevee_lightprobe_volume_LoadGrid, grid_start_index));
+
+  if (is_padding_voxel) {
+
+    sh_local = sh_distant;
+  }
+  else {
+
+    sh_distant = spherical_harmonics_triple_product(sh_visibility, sh_distant);
+
+    sh_local = spherical_harmonics_mul(sh_local, srt_access(eevee_lightprobe_volume_LoadGrid, grid_intensity_factor));
+
+    sh_local = spherical_harmonics_add(sh_local, sh_distant);
+  }
+
+  sh_local = spherical_harmonics_dering(sh_local);
+
+  _store(atlas, sh_local.L0.M0, output_coord, 0, gl_LocalInvocationID);
+  _store(atlas, sh_local.L1.Mn1, output_coord, 1, gl_LocalInvocationID);
+  _store(atlas, sh_local.L1.M0, output_coord, 2, gl_LocalInvocationID);
+  _store(atlas, sh_local.L1.Mp1, output_coord, 3, gl_LocalInvocationID);
+
+  if ((gl_LocalInvocationID.z % 4u) == 0u) {
+
+    int4 cell_validity_bits = int4(0);
+#line 186
+{
+#line 182
+                                                    {
+      for (int i = 0; i < 8; i++) {
+        int3 sample_position = eevee_lightprobe_volume_grid_cell_corner(i);
+        int3 coord_texel = texel_coord + int3(0, 0, 0) + sample_position;
+        int3 coord_input = clamp(coord_texel, int3(0), grid_size - 1);
+        float validity = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, validity_tx), coord_input, 0).r;
+        bool is_padding_voxel = !all(equal(coord_texel, coord_input));
+        if ((validity > srt_access(eevee_lightprobe_volume_LoadGrid, validity_threshold)) || is_padding_voxel) {
+          cell_validity_bits[0] |= (1 << i);
+        }
+      }
+    }
+#line 182
+                                                    {
+      for (int i = 0; i < 8; i++) {
+        int3 sample_position = eevee_lightprobe_volume_grid_cell_corner(i);
+        int3 coord_texel = texel_coord + int3(0, 0, 1) + sample_position;
+        int3 coord_input = clamp(coord_texel, int3(0), grid_size - 1);
+        float validity = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, validity_tx), coord_input, 0).r;
+        bool is_padding_voxel = !all(equal(coord_texel, coord_input));
+        if ((validity > srt_access(eevee_lightprobe_volume_LoadGrid, validity_threshold)) || is_padding_voxel) {
+          cell_validity_bits[1] |= (1 << i);
+        }
+      }
+    }
+#line 182
+                                                    {
+      for (int i = 0; i < 8; i++) {
+        int3 sample_position = eevee_lightprobe_volume_grid_cell_corner(i);
+        int3 coord_texel = texel_coord + int3(0, 0, 2) + sample_position;
+        int3 coord_input = clamp(coord_texel, int3(0), grid_size - 1);
+        float validity = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, validity_tx), coord_input, 0).r;
+        bool is_padding_voxel = !all(equal(coord_texel, coord_input));
+        if ((validity > srt_access(eevee_lightprobe_volume_LoadGrid, validity_threshold)) || is_padding_voxel) {
+          cell_validity_bits[2] |= (1 << i);
+        }
+      }
+    }
+#line 182
+                                                    {
+      for (int i = 0; i < 8; i++) {
+        int3 sample_position = eevee_lightprobe_volume_grid_cell_corner(i);
+        int3 coord_texel = texel_coord + int3(0, 0, 3) + sample_position;
+        int3 coord_input = clamp(coord_texel, int3(0), grid_size - 1);
+        float validity = texelFetch(srt_access(eevee_lightprobe_volume_LoadGrid, validity_tx), coord_input, 0).r;
+        bool is_padding_voxel = !all(equal(coord_texel, coord_input));
+        if ((validity > srt_access(eevee_lightprobe_volume_LoadGrid, validity_threshold)) || is_padding_voxel) {
+          cell_validity_bits[3] |= (1 << i);
+        }
+      }
+    }
+#line 193
+    }
+#line 196
+    _store(atlas, float4(cell_validity_bits), output_coord, 4, gl_LocalInvocationID);
+  }
+
+#endif
+#line 198
+}
+#endif
+#endif
+#line 200
+#define access_eevee_lightprobe_volume_LoadWorld_grid_index() grid_index
+#define access_eevee_lightprobe_volume_LoadWorld_harmonic_buf() harmonic_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_volume_LoadWorld
+CREATE_INFO_RES_PASS_eevee_lightprobe_volume_LoadWorld
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_LoadWorld
+CREATE_INFO_RES_BATCH_eevee_lightprobe_volume_LoadWorld
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_LoadWorld
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_volume_LoadWorld
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_LoadWorld
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_volume_LoadWorld
+#endif
+#line 201
+struct eevee_lightprobe_volume_LoadWorld {
+#line 213
+int _pad;};
+#line 221
+#ifndef GPU_METAL
+eevee_lightprobe_volume_LoadWorld eevee_lightprobe_volume_LoadWorld_ctor_();
+eevee_lightprobe_volume_LoadWorld eevee_lightprobe_volume_LoadWorld_new_();
+#endif
+#line 201
+                                                 eevee_lightprobe_volume_LoadWorld eevee_lightprobe_volume_LoadWorld_ctor_() {eevee_lightprobe_volume_LoadWorld r;r._pad=0;return r;}
+#line 206
+       eevee_lightprobe_volume_LoadWorld eevee_lightprobe_volume_LoadWorld_new_()
+{
+  eevee_lightprobe_volume_LoadWorld result;
+  result._pad = 0;
+  return result;
+#line 204
+}
+#line 212
+
+#if defined(CREATE_INFO_eevee_lightprobe_volume_LoadWorld) && defined(CREATE_INFO_eevee_LightprobeVolumeRenderData) && defined(CREATE_INFO_eevee_lightprobe_volume_AtlasStore)
+#line 212
+
+#if defined(ENTRY_POINT_eevee_lightprobe_volume_load_world)
+#line 215
+void eevee_lightprobe_volume_load_world(
+#line 218
+                                                            )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 219
+  eevee_lightprobe_volume_LoadWorld srt = eevee_lightprobe_volume_LoadWorld_ctor_(); eevee_LightprobeVolumeRenderData lvd = eevee_LightprobeVolumeRenderData_ctor_(); eevee_lightprobe_volume_AtlasStore atlas = eevee_lightprobe_volume_AtlasStore_ctor_();
+  int brick_index = srt_access(eevee_LightprobeVolumeRenderData, grids_infos_buf)[srt_access(eevee_lightprobe_volume_LoadWorld, grid_index)].brick_offset;
+#line 223
+  IrradianceBrick brick = irradiance_brick_unpack(srt_access(eevee_LightprobeVolumeRenderData, bricks_infos_buf)[brick_index]);
+  int2 output_coord = int2(brick.atlas_coord);
+
+  SphericalHarmonicL1Tfloat4 sh;
+  sh.L0.M0 = srt_access(eevee_lightprobe_volume_LoadWorld, harmonic_buf).L0_M0;
+  sh.L1.Mn1 = srt_access(eevee_lightprobe_volume_LoadWorld, harmonic_buf).L1_Mn1;
+  sh.L1.M0 = srt_access(eevee_lightprobe_volume_LoadWorld, harmonic_buf).L1_M0;
+  sh.L1.Mp1 = srt_access(eevee_lightprobe_volume_LoadWorld, harmonic_buf).L1_Mp1;
+
+  sh = spherical_harmonics_dering(sh);
+
+  _store(atlas, sh.L0.M0, output_coord, 0, gl_LocalInvocationID);
+  _store(atlas, sh.L1.Mn1, output_coord, 1, gl_LocalInvocationID);
+  _store(atlas, sh.L1.M0, output_coord, 2, gl_LocalInvocationID);
+  _store(atlas, sh.L1.Mp1, output_coord, 3, gl_LocalInvocationID);
+
+#endif
+#line 238
+}
+#endif
+#endif
+#line 244

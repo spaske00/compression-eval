@@ -1,0 +1,99 @@
+{
+	"BUILD_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/md4c_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src",
+	"CMAKE_EXECUTABLE" : "/opt/cmake-3.31.10-linux-x86_64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/CMakeLists.txt",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c.pc.in",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c-html.pc.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/upstream/fincept-qt",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/md4c_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "md4c_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c.h",
+			"MU",
+			"EWIEGA46WW/moc_md4c.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/md4c_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/md4c_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MD_VERSION_MAJOR=0",
+		"MD_VERSION_MINOR=5",
+		"MD_VERSION_RELEASE=2",
+		"NOMINMAX",
+		"WIN32_LEAN_AND_MEAN"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/usr/include/c++/13",
+		"/usr/include/x86_64-linux-gnu/c++/13",
+		"/usr/include/c++/13/backward",
+		"/usr/lib/llvm-18/lib/clang/18/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-std=c++20",
+		"-w",
+		"-dM",
+		"-E",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/md4c_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 16,
+	"PARSE_CACHE_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/CMakeFiles/md4c_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/_deps/md4c-build/src/CMakeFiles/md4c_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/sources/md4c/src/md4c.c",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

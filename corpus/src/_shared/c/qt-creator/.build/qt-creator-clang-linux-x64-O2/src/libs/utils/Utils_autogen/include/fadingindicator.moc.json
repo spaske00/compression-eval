@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "FadingIndicatorPrivate",
+            "lineNumber": 20,
+            "object": true,
+            "qualifiedClassName": "Utils::Internal::FadingIndicatorPrivate",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "fadingindicator.cpp",
+    "outputRevision": 68
+}

@@ -1,0 +1,189 @@
+#line 1 "eevee_geom_pointcloud.bsl.hh"
+ 
+#line 10
+VERTEX_SHADER_CREATE_INFO(eevee_nodetree)
+VERTEX_SHADER_CREATE_INFO(eevee_clip_plane)
+#line 26
+#define access_eevee_GeomPointCloud_draw_pointcloud() draw_pointcloud
+#define access_eevee_GeomPointCloud_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_GeomPointCloud_eevee_geom_pointcloud_iface_info() eevee_geom_pointcloud_iface_info
+#define access_eevee_GeomPointCloud_ptcloud_backface() ptcloud_backface
+#ifdef CREATE_INFO_RES_PASS_eevee_GeomPointCloud
+CREATE_INFO_RES_PASS_eevee_GeomPointCloud
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_GeomPointCloud
+CREATE_INFO_RES_BATCH_eevee_GeomPointCloud
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_GeomPointCloud
+CREATE_INFO_RES_GEOMETRY_eevee_GeomPointCloud
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_GeomPointCloud
+CREATE_INFO_RES_SHARED_VARS_eevee_GeomPointCloud
+#endif
+#line 26
+struct eevee_GeomPointCloud {
+#line 42
+int _pad;};
+#line 45
+#ifndef GPU_METAL
+eevee_GeomPointCloud eevee_GeomPointCloud_ctor_();
+eevee_GeomPointCloud eevee_GeomPointCloud_new_();
+#endif
+#line 26
+                                    eevee_GeomPointCloud eevee_GeomPointCloud_ctor_() {eevee_GeomPointCloud r;r._pad=0;return r;}
+#line 35
+       eevee_GeomPointCloud eevee_GeomPointCloud_new_()
+{
+  eevee_GeomPointCloud result;
+  result._pad = 0;
+  return result;
+#line 33
+}
+#line 36
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_GeomPointCloud) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_draw_Resource) && (!(SRT_CONSTANT_is_shadow_pipe) ||defined(CREATE_INFO_eevee_GeomShadow))
+#line 36
+
+#if defined(ENTRY_POINT_eevee_geom_pointcloud)
+#line 36
+                             void eevee_geom_pointcloud(
+#line 51
+                                        )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 53
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 52
+
+#if defined(CREATE_INFO_eevee_geom_pointcloud_iface_info)
+#line 52
+
+#if defined(CREATE_INFO_eevee_geom_pointcloud_iface_info)
+#line 52
+  eevee_PipelineConstants pipe = eevee_PipelineConstants_ctor_(); eevee_GeomPointCloud _0 = eevee_GeomPointCloud_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_Infos infos = draw_Infos_ctor_(); draw_Resource res_id = draw_Resource_ctor_(); eevee_GeomShadow shadow = eevee_GeomShadow_ctor_();
+  draw_ID id = _get(res_id, gpu_InstanceIndex);
+  uint view_id = 0;
+  uint resource_id = _resource_idT1(id);
+
+#if SRT_CONSTANT_is_shadow_pipe
+#line 56
+                                                                             {
+    view_id = _view_idT64(id);
+    resource_id = _resource_idT64(id);
+  }
+#endif
+  const ViewMatrices view = _get(views, view_id);
+  const ObjectMatrices obj = _get(models, resource_id);
+  const ObjectInfos ob_infos = _get(infos, resource_id);
+#line 73
+#if SRT_CONSTANT_is_shadow_pipe
+#line 72
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_shadow_iface_info)
+    interface_get(eevee_shadow_iface_info, shadow_iface).shadow_view_id = int(view_id);
+    gpu_ViewportIndex = int(srt_access(eevee_GeomShadow, render_view_buf)[view_id].viewport_index);
+
+#endif
+#line 77
+  }
+#endif
+  init_interface(id.raw_id);
+
+  const eObjectInfoFlag ob_flag = ob_infos.flag;
+
+  const pointcloud_Point ls_pt = pointcloud_point_get(uint(gl_VertexID));
+  const pointcloud_Point ws_pt = pointcloud_object_to_world(ls_pt, obj.model);
+  const pointcloud_ShapePoint pt = pointcloud_shape_point_get(
+      ws_pt, _world_incident_vector(view, ws_pt.P), _up(view), ob_flag);
+
+  interface_get(eevee_geom_pointcloud_iface_info, pointcloud_interp_flat).id = ws_pt.point_id;
+  interface_get(eevee_geom_pointcloud_iface_info, pointcloud_interp).position = ws_pt.P;
+  interface_get(eevee_geom_pointcloud_iface_info, pointcloud_interp).radius = ws_pt.radius;
+
+  interface_get(eevee_geom_iface_info, interp).P = pt.P;
+  interface_get(eevee_geom_iface_info, interp).N = pt.N;
+#line 96
+#if SRT_CONSTANT_is_shadow_pipe
+#line 95
+                                                                             {
+#line 98
+    interface_get(eevee_geom_iface_info, interp).P -= _world_incident_vector(view, interface_get(eevee_geom_iface_info, interp).P) * interface_get(eevee_geom_pointcloud_iface_info, pointcloud_interp).radius;
+  }
+#endif
+
+#if SRT_CONSTANT_use_velocity
+#line 101
+                                                                           {
+#line 104
+#if defined(CREATE_INFO_eevee_GeometryVelocity)
+#line 103
+
+#if defined(CREATE_INFO_eevee_velocity_iface_info)
+#line 106
+    float3 lP = _point_world_to_object(obj, interface_get(eevee_geom_pointcloud_iface_info, pointcloud_interp).position);
+    float3 prv, nxt;
+    _local_position_deltas(resource_table_get(eevee_GeometryVelocity), lP, interface_get(eevee_geom_pointcloud_iface_info, pointcloud_interp_flat).id, prv, nxt, resource_id);
+#line 114
+    _vertex_velocity(resource_table_get(eevee_GeometryVelocity), prv, lP, nxt, interface_get(eevee_velocity_iface_info, motion).prev, interface_get(eevee_velocity_iface_info, motion).next, resource_id, obj.model);
+
+#endif
+
+#endif
+#line 115
+  }
+#endif
+#line 118
+  float3 lP_orco = ls_pt.P * ob_infos.orco_mul + ob_infos.orco_add;
+
+  init_globals(uni, view, true);
+  attrib_load(_ctor(PointCloudPoint) ls_pt.P, ws_pt.point_id, lP_orco _rotc() );
+
+  interface_get(eevee_geom_iface_info, interp).P += nodetree_displacement();
+#line 126
+#if SRT_CONSTANT_use_clip_plane
+#line 125
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_clip_plane)
+#line 126
+
+#if defined(CREATE_INFO_eevee_clip_plane)
+    interface_get(eevee_clip_plane, clip_interp).clip_distance = dot(buffer_get(eevee_clip_plane, clip_plane).plane, float4(interface_get(eevee_geom_iface_info, interp).P, 1.0f));
+
+#endif
+
+#endif
+#line 129
+  }
+#endif
+  float3 vs_P = _point_world_to_view(view, interface_get(eevee_geom_iface_info, interp).P);
+#line 134
+#if SRT_CONSTANT_is_shadow_pipe
+#line 133
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_shadow_iface_info)
+    float3 vs_P = _point_world_to_view(view, interface_get(eevee_geom_iface_info, interp).P);
+    ShadowRenderView view = srt_access(eevee_GeomShadow, render_view_buf)[view_id];
+    interface_get(eevee_shadow_iface_info, shadow_clip).position = shadow_position_vector_get(vs_P, view);
+    interface_get(eevee_shadow_iface_info, shadow_clip).vector = shadow_clip_vector_get(vs_P, view.clip_distance_inv);
+
+#endif
+#line 140
+  }
+#endif
+  gl_Position = reverse_z_transform(_point_view_to_homogenous(view, vs_P));
+
+#endif
+
+#endif
+
+#endif
+
+#endif
+#line 143
+}
+#endif
+#endif

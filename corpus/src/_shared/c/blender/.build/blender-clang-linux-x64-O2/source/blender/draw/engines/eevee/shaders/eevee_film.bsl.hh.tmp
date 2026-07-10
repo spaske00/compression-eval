@@ -1,0 +1,1667 @@
+#line 1 "eevee_film.bsl.hh"
+ 
+#line 25
+float eevee_film_depth_convert_to_scene(const ViewMatrices view, float depth)
+{
+  if (false                 ) {
+
+    return 1.0f;
+  }
+  return -_depth_screen_to_view(view, depth);
+}
+
+float eevee_film_display_depth_amend(float depth)
+{
+#line 40
+  depth += gpu_fwidth(depth);
+
+  depth += 2.4e-7f * 4.0f;
+  return saturate(depth);
+}
+#line 47
+float4 eevee_film_texelfetch_as_YCoCg_opacity(sampler2D tx, int2 texel)
+{
+  float4 color = texelFetch(tx, texel, 0);
+
+  color.a = saturate(1.0f - color.a);
+
+  color.rgb = colorspace_YCoCg_from_scene_linear(color.rgb);
+  return color;
+}
+#line 59
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 58
+float eevee_film_luma_weight(const eevee_Uniform  uni, float luma)
+{
+#line 62
+  return 1.0f / (4.0f + luma * srt_access(eevee_Uniform, uniform_buf).film.exposure_scale);
+}
+#endif
+#line 72
+float4 eevee_film_patch_float_for_16f_storage(float4 color)
+{
+  return uintBitsToFloat(floatBitsToUint(color) + 0x1000);
+}
+float eevee_film_patch_float_for_16f_storage(float value)
+{
+  return uintBitsToFloat(floatBitsToUint(value) + 0x1000);
+}
+
+float4 eevee_film_safe_divide_even_color(float4 a, float4 b)
+{
+  a *= safe_rcp(b);
+
+  if (b.x == 0.0f) {
+    if (b.y == 0.0f) {
+      a.x = a.z;
+      a.y = a.z;
+    }
+    else if (b.z == 0.0f) {
+      a.x = a.y;
+      a.z = a.y;
+    }
+    else {
+      a.x = 0.5f * (a.y + a.z);
+    }
+  }
+  else if (b.y == 0.0f) {
+    if (b.z == 0.0f) {
+      a.y = a.x;
+      a.z = a.x;
+    }
+    else {
+      a.y = 0.5f * (a.x + a.z);
+    }
+  }
+  else if (b.z == 0.0f) {
+    a.z = 0.5f * (a.x + a.y);
+  }
+  return a;
+}
+
+#define access_eevee_film_Film_camera() eevee_CameraVelocity_new_()
+#define access_eevee_film_Film_views_() draw_View_new_()
+#define access_eevee_film_Film_enabled_categories() enabled_categories
+#define access_eevee_film_Film_samples_len() samples_len
+#define access_eevee_film_Film_use_reprojection() use_reprojection
+#define access_eevee_film_Film_scaling_factor() scaling_factor
+#define access_eevee_film_Film_combined_id() combined_id
+#define access_eevee_film_Film_display_id() display_id
+#define access_eevee_film_Film_normal_id() normal_id
+#define access_eevee_film_Film_depth_tx() depth_tx
+#define access_eevee_film_Film_combined_tx() combined_tx
+#define access_eevee_film_Film_vector_tx() vector_tx
+#define access_eevee_film_Film_rp_color_tx() rp_color_tx
+#define access_eevee_film_Film_rp_value_tx() rp_value_tx
+#define access_eevee_film_Film_cryptomatte_tx() cryptomatte_tx
+#define access_eevee_film_Film_in_combined_tx() in_combined_tx
+#define access_eevee_film_Film_in_weight_img() in_weight_img
+#define access_eevee_film_Film_out_weight_img() out_weight_img
+#define access_eevee_film_Film_out_combined_img() out_combined_img
+#define access_eevee_film_Film_depth_img() depth_img
+#define access_eevee_film_Film_color_accum_img() color_accum_img
+#define access_eevee_film_Film_value_accum_img() value_accum_img
+#define access_eevee_film_Film_cryptomatte() eevee_Cryptomatte_new_()
+#define access_eevee_film_Film_uniforms() eevee_Uniform_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_film_Film
+CREATE_INFO_RES_PASS_eevee_film_Film
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_Film
+CREATE_INFO_RES_BATCH_eevee_film_Film
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_Film
+CREATE_INFO_RES_GEOMETRY_eevee_film_Film
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_Film
+CREATE_INFO_RES_SHARED_VARS_eevee_film_Film
+#endif
+#line 113
+struct eevee_film_Film {
+                           eevee_CameraVelocity  camera;
+                           draw_View  views_;
+#line 145
+                           eevee_Cryptomatte  cryptomatte;
+                           eevee_Uniform  uniforms;
+#line 1044
+};
+#line 1047
+#ifndef GPU_METAL
+eevee_film_Film eevee_film_Film_ctor_();
+FilmSample _sample_get(eevee_film_Film  this_, int sample_n, int2 texel_film);
+float _weight_accumulation(eevee_film_Film  this_, int2 texel_film);
+void _sample_accum(eevee_film_Film  this_, FilmSample samp, int pass_id, int layer, sampler2DArray tex, _ref(float4 ,accum));
+void _sample_accum(eevee_film_Film  this_, FilmSample samp, int pass_id, int layer, sampler2DArray tex, _ref(float ,accum));
+void _sample_accum_mist(eevee_film_Film  this_, FilmSample samp, _ref(float ,accum));
+void _sample_accum_combined(eevee_film_Film  this_, FilmSample samp, _ref(float4 ,accum), _ref(float ,weight_accum));
+void _sample_cryptomatte_accum(eevee_film_Film  this_, FilmSample samp,
+                                int layer,
+                                sampler2D tex,
+                                _ref(float2 ,crypto_samples)[4]);
+void _cryptomatte_layer_accum_and_store(
+      eevee_film_Film  this_, FilmSample dst, int2 texel_film, int pass_id, int layer_component, _ref(float4 ,out_color));
+float _distance_load(eevee_film_Film  this_, int2 texel);
+float _weight_load(eevee_film_Film  this_, int2 texel);
+float2 _pixel_history_motion_vector(eevee_film_Film  this_, int2 texel_sample);
+void _get_catmull_rom_weights(eevee_film_Film  this_, float2 t, _ref(float2 ,weights)[4]);
+float4 _sample_catmull_rom(eevee_film_Film  this_, sampler2D color_tx, float2 input_texel);
+void _combined_neighbor_boundbox(eevee_film_Film  this_, int2 texel, _ref(float4 ,min_c), _ref(float4 ,max_c));
+float _aabb_clipping_dist_alpha(eevee_film_Film  this_, float origin, float direction, float aabb_min, float aabb_max);
+float4 _amend_combined_history(eevee_film_Film  this_, float4 min_color,
+                                float4 max_color,
+                                float4 color_history,
+                                float4 src_color);
+float _history_blend_factor(
+      eevee_film_Film  this_, float velocity, float2 texel, float luma_min, float luma_max, float luma_history);
+float4 _clamp_negative_values(eevee_film_Film  this_, float4 color);
+void _store_combined(
+      eevee_film_Film  this_, FilmSample dst, int2 src_texel, float4 color, float color_weight, _ref(float4 ,display));
+void _store_color_ex(
+      eevee_film_Film  this_, FilmSample dst, int pass_id, float4 color, _ref(float4 ,display), bool do_clamp_negative_values);
+void _store_color(eevee_film_Film  this_, FilmSample dst,
+                   int pass_id,
+                   float4 color,
+                   _ref(float4 ,display),
+                   bool do_clamp_negative_values       );
+void _store_color(eevee_film_Film  this_, FilmSample dst, int pass_id, float4 color, _ref(float4 ,display));
+void _store_color_and_light(eevee_film_Film  this_, FilmSample dst,
+                             int color_pass_id,
+                             int light_pass_id,
+                             float4 color,
+                             float4 light,
+                             _ref(float4 ,display));
+void _store_value(eevee_film_Film  this_, FilmSample dst, int pass_id, float value, _ref(float4 ,display));
+void _store_data(eevee_film_Film  this_, int2 texel_film, int pass_id, float4 data_sample, _ref(float4 ,display));
+void _store_depth(eevee_film_Film  this_, int2 texel_film, float value, _ref(float ,out_depth));
+void _store_distance(eevee_film_Film  this_, int2 texel, float value);
+void _store_weight(eevee_film_Film  this_, int2 texel, float value);
+void _process_render_sample(eevee_film_Film  this_, int2 texel_film, _ref(float4 ,out_color), _ref(float ,out_depth));
+eevee_film_Film eevee_film_Film_new_();
+#endif
+#line 113
+                               eevee_film_Film eevee_film_Film_ctor_() {eevee_film_Film r;r.camera=eevee_CameraVelocity_ctor_();r.views_=draw_View_ctor_();r.cryptomatte=eevee_Cryptomatte_ctor_();r.uniforms=eevee_Uniform_ctor_();return r;}
+#line 152
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 152
+  FilmSample _sample_get(eevee_film_Film  this_, int sample_n, int2 texel_film)
+  {
+#line 156
+#ifdef PANORAMIC
+#line 160
+#else
+
+    FilmSample film_sample = srt_access(eevee_Uniform, uniform_buf).film.samples[sample_n];
+
+    if (srt_access(eevee_film_Film, scaling_factor) > 1) {
+#line 167
+      float2 film_coord = 0.5f + float2(texel_film % srt_access(eevee_film_Film, scaling_factor));
+
+      float2 jittered_sample_coord = (0.5f - srt_access(eevee_Uniform, uniform_buf).film.subpixel_offset) *
+                                     float(srt_access(eevee_film_Film, scaling_factor));
+#line 173
+      int2 quad_offset = -int2(lessThan(film_coord, jittered_sample_coord));
+
+      film_sample.texel += quad_offset;
+      jittered_sample_coord += float2(film_sample.texel * srt_access(eevee_film_Film, scaling_factor));
+
+      float sample_dist_sqr = length_squared(jittered_sample_coord - film_coord);
+      film_sample.weight = film_filter_weight(srt_access(eevee_Uniform, uniform_buf).film.filter_radius, sample_dist_sqr);
+
+      film_sample.weight = max(film_sample.weight, 1e-8f);
+    }
+
+    film_sample.texel += (texel_film / srt_access(eevee_film_Film, scaling_factor)) + srt_access(eevee_Uniform, uniform_buf).film.overscan;
+
+#endif
+#line 189
+    film_sample.texel = clamp(
+        film_sample.texel, int2(0, 0), srt_access(eevee_Uniform, uniform_buf).film.render_extent - 1);
+
+    return film_sample;
+  }
+#endif
+#line 196
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 196
+  float _weight_accumulation(eevee_film_Film  this_, int2 texel_film)
+  {
+#line 200
+    if (srt_access(eevee_film_Film, scaling_factor) > 1) {
+      float weight = 0.0f;
+      for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+        weight += _sample_get(this_, i, texel_film).weight;
+      }
+      return weight;
+    }
+    return srt_access(eevee_Uniform, uniform_buf).film.samples_weight_total;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 210
+  void _sample_accum(eevee_film_Film  this_, FilmSample samp, int pass_id, int layer, sampler2DArray tex, _ref(float4 ,accum))
+  {
+    if (pass_id < 0 || layer < 0) {
+      return;
+    }
+    accum += texelFetch(tex, int3(samp.texel, layer), 0) * samp.weight;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 218
+  void _sample_accum(eevee_film_Film  this_, FilmSample samp, int pass_id, int layer, sampler2DArray tex, _ref(float ,accum))
+  {
+    if (pass_id < 0 || layer < 0) {
+      return;
+    }
+    accum += texelFetch(tex, int3(samp.texel, layer), 0).x * samp.weight;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 226
+  void _sample_accum_mist(eevee_film_Film  this_, FilmSample samp, _ref(float ,accum))
+  {
+#line 231
+    if (srt_access(eevee_Uniform, uniform_buf).film.mist_id == -1) {
+      return;
+    }
+    const ViewMatrices view = _get(srt_access(eevee_film_Film, views_), 0);
+    float depth = reverse_z_read(texelFetch(srt_access(eevee_film_Film, depth_tx), samp.texel, 0).x);
+    float2 uv = (float2(samp.texel) + 0.5f) / float2(textureSize(srt_access(eevee_film_Film, depth_tx), 0).xy);
+    float3 vP = _point_screen_to_view(view, float3(uv, depth));
+    bool is_persp = view.winmat[3][3] == 0.0f;
+    float mist = (is_persp) ? length(vP) : abs(vP.z);
+
+    mist = saturate(mist * srt_access(eevee_Uniform, uniform_buf).film.mist_scale + srt_access(eevee_Uniform, uniform_buf).film.mist_bias);
+
+    mist = pow(mist, srt_access(eevee_Uniform, uniform_buf).film.mist_exponent);
+    accum += mist * samp.weight;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 247
+  void _sample_accum_combined(eevee_film_Film  this_, FilmSample samp, _ref(float4 ,accum), _ref(float ,weight_accum))
+  {
+
+    if (srt_access(eevee_film_Film, combined_id) == -1) {
+      return;
+    }
+    float4 color = eevee_film_texelfetch_as_YCoCg_opacity(srt_access(eevee_film_Film, combined_tx), samp.texel);
+#line 256
+    float weight = eevee_film_luma_weight(srt_access(eevee_film_Film, uniforms), color.x) * samp.weight;
+
+    accum += color * weight;
+    weight_accum += weight;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 262
+  void _sample_cryptomatte_accum(eevee_film_Film  this_, FilmSample samp,
+                                int layer,
+                                sampler2D tex,
+                                _ref(float2 ,crypto_samples)[4])
+  {
+    float hash = texelFetch(tex, samp.texel, 0)[layer];
+
+    for (int i = 0; i < 4; i++) {
+      if (crypto_samples[i].x == hash) {
+        crypto_samples[i].y += samp.weight;
+        return;
+      }
+    }
+
+    for (int i = 0; i < 4; i++) {
+      if (crypto_samples[i].y < samp.weight) {
+        crypto_samples[i] = float2(hash, samp.weight);
+        return;
+      }
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 284
+  void _cryptomatte_layer_accum_and_store(
+      eevee_film_Film  this_, FilmSample dst, int2 texel_film, int pass_id, int layer_component, _ref(float4 ,out_color))
+  {
+    if (pass_id == -1) {
+      return;
+    }
+#line 295
+    float2 crypto_samples[4] = float2_array(
+        float2(0.0f), float2(0.0f), float2(0.0f), float2(0.0f));
+    for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+      FilmSample src = _sample_get(this_, i, texel_film);
+      _sample_cryptomatte_accum(this_, src, layer_component, srt_access(eevee_film_Film, cryptomatte_tx), crypto_samples);
+    }
+    float4 display_color = float4(0.0f);
+    for (int i = 0; i < 4; i++) {
+      _store_film_sample(srt_access(eevee_film_Film, cryptomatte), dst,
+                               pass_id,
+                               srt_access(eevee_Uniform, uniform_buf).film.cryptomatte_samples_len,
+                               crypto_samples[i],
+                               display_color);
+    }
+
+    if (srt_access(eevee_Uniform, uniform_buf).film.display_storage_type == PASS_STORAGE_CRYPTOMATTE) {
+      out_color = display_color;
+    }
+  }
+#endif
+#line 322
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 322
+  float _distance_load(eevee_film_Film  this_, int2 texel)
+  {
+#line 326
+    texel = texel % imageSize(srt_access(eevee_film_Film, in_weight_img)).xy;
+
+    if (!srt_access(eevee_Uniform, uniform_buf).film.use_history || srt_access(eevee_film_Film, use_reprojection)) {
+      return 0.0f;
+    }
+    return imageLoadFast(srt_access(eevee_film_Film, in_weight_img), int3(texel, FILM_WEIGHT_LAYER_DISTANCE)).x;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 334
+  float _weight_load(eevee_film_Film  this_, int2 texel)
+  {
+#line 338
+    texel = texel % imageSize(srt_access(eevee_film_Film, in_weight_img)).xy;
+
+    if (!srt_access(eevee_Uniform, uniform_buf).film.use_history || srt_access(eevee_film_Film, use_reprojection)) {
+      return 0.0f;
+    }
+    return imageLoadFast(srt_access(eevee_film_Film, in_weight_img), int3(texel, FILM_WEIGHT_LAYER_ACCUMULATION)).x;
+  }
+#endif
+#line 347
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 347
+  float2 _pixel_history_motion_vector(eevee_film_Film  this_, int2 texel_sample)
+  {
+#line 356
+    constexpr int2 corners[4] = int2_array(int2(-2, -2), int2(2, -2), int2(-2, 2), int2(2, 2));
+    float min_depth = reverse_z_read(texelFetch(srt_access(eevee_film_Film, depth_tx), texel_sample, 0).x);
+    int2 nearest_texel = texel_sample;
+    for (int i = 0; i < 4; i++) {
+      int2 texel = clamp(texel_sample + corners[i], int2(0), textureSize(srt_access(eevee_film_Film, depth_tx), 0).xy - 1);
+      float depth = reverse_z_read(texelFetch(srt_access(eevee_film_Film, depth_tx), texel, 0).x);
+      if (min_depth > depth) {
+        min_depth = depth;
+        nearest_texel = texel;
+      }
+    }
+
+    float4 vector = _resolve(srt_access(eevee_film_Film, camera), srt_access(eevee_film_Film, views_), srt_access(eevee_film_Film, vector_tx), nearest_texel, min_depth);
+#line 371
+    vector.xy *= float2(srt_access(eevee_Uniform, uniform_buf).film.extent);
+
+    return vector.xy;
+  }
+#endif
+#line 379
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 379
+  void _get_catmull_rom_weights(eevee_film_Film  this_, float2 t, _ref(float2 ,weights)[4])
+  {
+    float2 t2 = t * t;
+    float2 t3 = t2 * t;
+    float fc = 0.5f;
+
+    float2 fct = t * fc;
+    float2 fct2 = t2 * fc;
+    float2 fct3 = t3 * fc;
+    weights[0] = (fct2 * 2.0f - fct3) - fct;
+    weights[1] = (t3 * 2.0f - fct3) + (-t2 * 3.0f + fct2) + 1.0f;
+    weights[2] = (-t3 * 2.0f + fct3) + (t2 * 3.0f - (2.0f * fct2)) + fct;
+    weights[3] = fct3 - fct2;
+  }
+#endif
+#line 396
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 396
+  float4 _sample_catmull_rom(eevee_film_Film  this_, sampler2D color_tx, float2 input_texel)
+  {
+#line 400
+    float2 center_texel;
+    float2 inter_texel = modf(input_texel, center_texel);
+    float2 weights[4];
+    _get_catmull_rom_weights(this_, inter_texel, weights);
+
+#if 0
+#elif 1
+#line 423
+    center_texel += 0.5f;
+#line 426
+    float2 weight_12 = weights[1] + weights[2];
+    float2 uv_12 = (center_texel + weights[2] / weight_12) * srt_access(eevee_Uniform, uniform_buf).film.extent_inv;
+    float2 uv_0 = (center_texel - 1.0f) * srt_access(eevee_Uniform, uniform_buf).film.extent_inv;
+    float2 uv_3 = (center_texel + 2.0f) * srt_access(eevee_Uniform, uniform_buf).film.extent_inv;
+
+    float4 color;
+    float4 weight_cross = weight_12.xyyx * float4(weights[0].yx, weights[3].xy);
+    float weight_center = weight_12.x * weight_12.y;
+
+    color = textureLod(color_tx, uv_12, 0.0f) * weight_center;
+    color += textureLod(color_tx, float2(uv_12.x, uv_0.y), 0.0f) * weight_cross.x;
+    color += textureLod(color_tx, float2(uv_0.x, uv_12.y), 0.0f) * weight_cross.y;
+    color += textureLod(color_tx, float2(uv_3.x, uv_12.y), 0.0f) * weight_cross.z;
+    color += textureLod(color_tx, float2(uv_12.x, uv_3.y), 0.0f) * weight_cross.w;
+
+    return color / (weight_center + reduce_add(weight_cross));
+
+#else
+    int2 texel = int2(center_texel) + int2(greaterThan(inter_texel, float2(0.5f)));
+    texel = clamp(texel, int2(0), textureSize(color_tx, 0).xy - 1);
+    return texelFetch(color_tx, texel, 0);
+#endif
+  }
+#endif
+#line 451
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 451
+  void _combined_neighbor_boundbox(eevee_film_Film  this_, int2 texel, _ref(float4 ,min_c), _ref(float4 ,max_c))
+  {
+
+    constexpr int2 plus_offsets[5] = int2_array(int2(0, 0),
+                                                int2(-1, 0),
+                                                int2(0, -1),
+                                                int2(1, 0),
+                                                int2(0, 1));
+#if 0
+#line 485
+#else
+#line 490
+    min_c = float4(1e16f);
+    max_c = float4(-1e16f);
+    for (int i = 0; i < 5; i++) {
+      float4 color = eevee_film_texelfetch_as_YCoCg_opacity(srt_access(eevee_film_Film, combined_tx), texel + plus_offsets[i]);
+      min_c = min(min_c, color);
+      max_c = max(max_c, color);
+    }
+#line 499
+    float4 min_c_3x3 = min_c;
+    float4 max_c_3x3 = max_c;
+    constexpr int2 corners[4] = int2_array(int2(-1, -1), int2(1, -1), int2(-1, 1), int2(1, 1));
+    for (int i = 0; i < 4; i++) {
+      float4 color = eevee_film_texelfetch_as_YCoCg_opacity(srt_access(eevee_film_Film, combined_tx), texel + corners[i]);
+      min_c_3x3 = min(min_c_3x3, color);
+      max_c_3x3 = max(max_c_3x3, color);
+    }
+    min_c = (min_c + min_c_3x3) * 0.5f;
+    max_c = (max_c + max_c_3x3) * 0.5f;
+#endif
+  }
+#endif
+#line 513
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 513
+  float _aabb_clipping_dist_alpha(eevee_film_Film  this_, float origin, float direction, float aabb_min, float aabb_max)
+  {
+    if (abs(direction) < 1e-5f) {
+      return 0.0f;
+    }
+    float nearest_plane = (direction > 0.0f) ? aabb_min : aabb_max;
+    return (nearest_plane - origin) / direction;
+  }
+#endif
+#line 523
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 523
+  float4 _amend_combined_history(eevee_film_Film  this_, float4 min_color,
+                                float4 max_color,
+                                float4 color_history,
+                                float4 src_color)
+  {
+
+    float4 clip_dir = src_color - color_history;
+
+    float t = line_aabb_clipping_dist(
+        color_history.rgb, clip_dir.rgb, min_color.rgb, max_color.rgb);
+    color_history.rgb += clip_dir.rgb * saturate(t);
+#line 536
+    float t_a = _aabb_clipping_dist_alpha(this_, color_history.a, clip_dir.a, min_color.a, max_color.a);
+    color_history.a += clip_dir.a * saturate(t_a);
+
+    return color_history;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 542
+  float _history_blend_factor(
+      eevee_film_Film  this_, float velocity, float2 texel, float luma_min, float luma_max, float luma_history)
+  {
+#line 547
+    float blend = 0.05f;
+
+    blend = mix(blend, 0.20f, saturate(velocity * 0.02f));
+#line 554
+    float distance_to_luma_clip = reduce_min(
+        float2(luma_history - luma_min, luma_max - luma_history));
+
+    distance_to_luma_clip *= 2.0f * safe_rcp(luma_max - luma_min);
+
+    blend *= saturate(distance_to_luma_clip * 4.0f + 0.1f);
+
+    if (any(lessThan(texel, float2(0))) ||
+        any(greaterThanEqual(texel, float2(srt_access(eevee_Uniform, uniform_buf).film.extent))))
+    {
+      blend = 1.0f;
+    }
+
+    if (srt_access(eevee_Uniform, uniform_buf).film.use_history == false) {
+      blend = 1.0f;
+    }
+    return blend;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 573
+  float4 _clamp_negative_values(eevee_film_Film  this_, float4 color)
+  {
+#line 584
+{
+#line 582
+                                           {
+      color[0] = (color[0] > 0.0f) ? color[0] : 0.0f;
+    }
+#line 582
+                                           {
+      color[1] = (color[1] > 0.0f) ? color[1] : 0.0f;
+    }
+#line 582
+                                           {
+      color[2] = (color[2] > 0.0f) ? color[2] : 0.0f;
+    }
+#line 582
+                                           {
+      color[3] = (color[3] > 0.0f) ? color[3] : 0.0f;
+    }
+#line 584
+    }
+    return color;
+  }
+#endif
+#line 589
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 589
+  void _store_combined(
+      eevee_film_Film  this_, FilmSample dst, int2 src_texel, float4 color, float color_weight, _ref(float4 ,display))
+  {
+    if (srt_access(eevee_film_Film, combined_id) == -1) {
+      return;
+    }
+#line 598
+    float4 color_src, color_dst;
+    float weight_src, weight_dst;
+#line 602
+    color_src = color / color_weight;
+
+    if (srt_access(eevee_film_Film, use_reprojection)) {
+#line 608
+      float2 motion = _pixel_history_motion_vector(this_, src_texel);
+      float2 history_texel = float2(dst.texel) + motion;
+
+      float velocity = length(motion);
+#line 616
+      color_dst = _sample_catmull_rom(this_, srt_access(eevee_film_Film, in_combined_tx), history_texel);
+      color_dst.rgb = colorspace_YCoCg_from_scene_linear(color_dst.rgb);
+#line 620
+      float4 min_color, max_color;
+      _combined_neighbor_boundbox(this_, src_texel, min_color, max_color);
+
+      float blend = _history_blend_factor(this_, velocity, history_texel, min_color.x, max_color.x, color_dst.x);
+
+      color_dst = _amend_combined_history(this_, min_color, max_color, color_dst, color_src);
+#line 628
+      weight_dst = eevee_film_luma_weight(srt_access(eevee_film_Film, uniforms), color_dst.x) * (1.0f - blend);
+      weight_src = eevee_film_luma_weight(srt_access(eevee_film_Film, uniforms), color_src.x) * (blend);
+    }
+    else {
+
+      color_dst = texelFetch(srt_access(eevee_film_Film, in_combined_tx), dst.texel, 0);
+      color_dst.rgb = colorspace_YCoCg_from_scene_linear(color_dst.rgb);
+#line 637
+      weight_dst = eevee_film_luma_weight(srt_access(eevee_film_Film, uniforms), color_dst.x) * dst.weight;
+      weight_src = color_weight;
+    }
+
+    color = color_dst * weight_dst + color_src * weight_src;
+    color /= weight_src + weight_dst;
+
+    color.rgb = colorspace_scene_linear_from_YCoCg(color.rgb);
+#line 647
+    if (color.a > 0.995f) {
+      color.a = 1.0f;
+    }
+#line 652
+    if (any(isnan(color))) {
+      color = float4(0.0f, 0.0f, 0.0f, 1.0f);
+    }
+
+    color = _clamp_negative_values(this_, color);
+
+    if (srt_access(eevee_film_Film, display_id) == -1) {
+      display = color;
+    }
+    color = eevee_film_patch_float_for_16f_storage(color);
+    imageStoreFast(srt_access(eevee_film_Film, out_combined_img), dst.texel, color);
+  }
+#endif
+#line 666
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 666
+  void _store_color_ex(
+      eevee_film_Film  this_, FilmSample dst, int pass_id, float4 color, _ref(float4 ,display), bool do_clamp_negative_values)
+  {
+
+    if (any(isnan(color))) {
+      color = float4(0.0f, 0.0f, 0.0f, 1.0f);
+    }
+
+    if (do_clamp_negative_values) {
+      color = _clamp_negative_values(this_, color);
+    }
+#line 680
+    if (color.a > 0.9999f && color.a < 1.0f) {
+      color.a = 1.0f;
+    }
+
+    if (srt_access(eevee_film_Film, display_id) == pass_id) {
+      display = color;
+    }
+    color = eevee_film_patch_float_for_16f_storage(color);
+    imageStoreFast(srt_access(eevee_film_Film, color_accum_img), int3(dst.texel, pass_id), color);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 691
+  void _store_color(eevee_film_Film  this_, FilmSample dst,
+                   int pass_id,
+                   float4 color,
+                   _ref(float4 ,display),
+                   bool do_clamp_negative_values       )
+  {
+    if (pass_id == -1) {
+      return;
+    }
+
+    float4 data_film = imageLoadFast(srt_access(eevee_film_Film, color_accum_img), int3(dst.texel, pass_id));
+
+    color = (data_film * dst.weight + color) * dst.weight_sum_inv;
+
+    _store_color_ex(this_, dst, pass_id, color, display, do_clamp_negative_values);
+  }
+#endif
+#line 691
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 691
+void _store_color(eevee_film_Film  this_, FilmSample dst, int pass_id, float4 color, _ref(float4 ,display))
+{
+#line 691
+  _store_color(this_, dst, pass_id, color, display, true);
+}
+#endif
+#line 708
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 708
+  void _store_color_and_light(eevee_film_Film  this_, FilmSample dst,
+                             int color_pass_id,
+                             int light_pass_id,
+                             float4 color,
+                             float4 light,
+                             _ref(float4 ,display))
+  {
+    if (color_pass_id == -1) {
+      return;
+    }
+
+    float4 color_film = imageLoadFast(srt_access(eevee_film_Film, color_accum_img), int3(dst.texel, color_pass_id));
+    color = (color_film * dst.weight + color) * dst.weight_sum_inv;
+    _store_color_ex(this_, dst, color_pass_id, color, display, true);
+
+    if (light_pass_id == -1) {
+      return;
+    }
+
+    float4 light_film = imageLoadFast(srt_access(eevee_film_Film, color_accum_img), int3(dst.texel, light_pass_id));
+
+    light_film *= color_film;
+    light = (light_film * dst.weight + light) * dst.weight_sum_inv;
+    light = eevee_film_safe_divide_even_color(light, color);
+    _store_color_ex(this_, dst, light_pass_id, light, display, true);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 735
+  void _store_value(eevee_film_Film  this_, FilmSample dst, int pass_id, float value, _ref(float4 ,display))
+  {
+    if (pass_id == -1) {
+      return;
+    }
+
+    float data_film = imageLoadFast(srt_access(eevee_film_Film, value_accum_img), int3(dst.texel, pass_id)).x;
+
+    value = (data_film * dst.weight + value) * dst.weight_sum_inv;
+#line 746
+    if (isnan(value)) {
+      value = 0.0f;
+    }
+
+    if (srt_access(eevee_film_Film, display_id) == pass_id) {
+      display = float4(value, value, value, 1.0f);
+    }
+    value = eevee_film_patch_float_for_16f_storage(value);
+    imageStoreFast(srt_access(eevee_film_Film, value_accum_img), int3(dst.texel, pass_id), float4(value));
+  }
+#endif
+#line 758
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 758
+  void _store_data(eevee_film_Film  this_, int2 texel_film, int pass_id, float4 data_sample, _ref(float4 ,display))
+  {
+    if (pass_id == -1) {
+      return;
+    }
+
+    if (srt_access(eevee_film_Film, display_id) == pass_id) {
+      display = data_sample;
+    }
+    imageStoreFast(srt_access(eevee_film_Film, color_accum_img), int3(texel_film, pass_id), data_sample);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 770
+  void _store_depth(eevee_film_Film  this_, int2 texel_film, float value, _ref(float ,out_depth))
+  {
+#line 775
+    if (srt_access(eevee_Uniform, uniform_buf).film.depth_id == -1) {
+      return;
+    }
+
+    float depth_value = eevee_film_depth_convert_to_scene(_get(srt_access(eevee_film_Film, views_), 0), value);
+    out_depth = depth_value;
+
+    if (value == 1.0f) {
+
+      depth_value = 1e10f;
+    }
+
+    imageStoreFast(srt_access(eevee_film_Film, depth_img), texel_film, float4(depth_value));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 790
+  void _store_distance(eevee_film_Film  this_, int2 texel, float value)
+  {
+    imageStoreFast(srt_access(eevee_film_Film, out_weight_img), int3(texel, FILM_WEIGHT_LAYER_DISTANCE), float4(value));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 795
+  void _store_weight(eevee_film_Film  this_, int2 texel, float value)
+  {
+    imageStoreFast(srt_access(eevee_film_Film, out_weight_img), int3(texel, FILM_WEIGHT_LAYER_ACCUMULATION), float4(value));
+  }
+#endif
+#line 803
+
+#if defined(CREATE_INFO_eevee_film_Film)
+#line 803
+  void _process_render_sample(eevee_film_Film  this_, int2 texel_film, _ref(float4 ,out_color), _ref(float ,out_depth))
+  {
+
+    out_color = float4(0.0f);
+    out_depth = 0.0f;
+
+    float weight_accum = _weight_accumulation(this_, texel_film);
+    float film_weight = _weight_load(this_, texel_film);
+    float weight_sum = film_weight + weight_accum;
+    _store_weight(this_, texel_film, weight_sum);
+
+    FilmSample dst;
+    dst.texel = texel_film;
+    dst.weight = film_weight;
+    dst.weight_sum_inv = 1.0f / weight_sum;
+#line 822
+    if (srt_access(eevee_film_Film, combined_id) != -1) {
+
+      float weight_accum = 0.0f;
+      float4 combined_accum = float4(0.0f);
+
+      FilmSample src;
+      for (int i = srt_access(eevee_film_Film, samples_len) - 1; i >= 0; i--) {
+        src = _sample_get(this_, i, texel_film);
+        _sample_accum_combined(this_, src, combined_accum, weight_accum);
+      }
+
+      _store_combined(this_, dst, src.texel, combined_accum, weight_accum, out_color);
+    }
+
+    if (flag_test(srt_access(eevee_film_Film, enabled_categories), PASS_CATEGORY_DATA)) {
+      float film_distance = _distance_load(this_, texel_film);
+#line 840
+      FilmSample film_sample = _sample_get(this_, 0, texel_film);
+#line 843
+      if (film_sample.weight > film_distance) {
+#line 846
+        float depth = reverse_z_read(texelFetch(srt_access(eevee_film_Film, depth_tx), film_sample.texel, 0).x);
+        float4 vector = _resolve(srt_access(eevee_film_Film, camera), srt_access(eevee_film_Film, views_), srt_access(eevee_film_Film, vector_tx), film_sample.texel, depth);
+
+        vector *= float4(float2(srt_access(eevee_Uniform, uniform_buf).film.render_extent),
+                         float2(srt_access(eevee_Uniform, uniform_buf).film.render_extent));
+
+        _store_depth(this_, texel_film, depth, out_depth);
+        if (srt_access(eevee_film_Film, normal_id) != -1) {
+          float4 normal = texelFetch(
+              srt_access(eevee_film_Film, rp_color_tx), int3(film_sample.texel, srt_access(eevee_Uniform, uniform_buf).render_pass.normal_id), 0);
+          _store_data(this_, texel_film, srt_access(eevee_film_Film, normal_id), normal, out_color);
+        }
+        if (srt_access(eevee_Uniform, uniform_buf).film.position_id != -1) {
+          float4 position = texelFetch(
+              srt_access(eevee_film_Film, rp_color_tx), int3(film_sample.texel, srt_access(eevee_Uniform, uniform_buf).render_pass.position_id), 0);
+          _store_data(this_, texel_film, srt_access(eevee_Uniform, uniform_buf).film.position_id, position, out_color);
+        }
+        _store_data(this_, texel_film, srt_access(eevee_Uniform, uniform_buf).film.vector_id, vector, out_color);
+        _store_distance(this_, texel_film, film_sample.weight);
+      }
+      else {
+        out_depth = imageLoadFast(srt_access(eevee_film_Film, depth_img), texel_film).r;
+        if (srt_access(eevee_film_Film, display_id) == -1) {
+
+        }
+        else if (srt_access(eevee_film_Film, display_id) == srt_access(eevee_film_Film, normal_id)) {
+          out_color = imageLoadFast(srt_access(eevee_film_Film, color_accum_img), int3(texel_film, srt_access(eevee_film_Film, display_id)));
+        }
+        else if (srt_access(eevee_film_Film, display_id) == srt_access(eevee_Uniform, uniform_buf).film.position_id) {
+          out_color = imageLoadFast(srt_access(eevee_film_Film, color_accum_img),
+                                    int3(texel_film, srt_access(eevee_Uniform, uniform_buf).film.position_id));
+        }
+      }
+    }
+
+    if (flag_test(srt_access(eevee_film_Film, enabled_categories), PASS_CATEGORY_COLOR_1)) {
+      float4 diffuse_color_accum = float4(0.0f);
+      float4 specular_color_accum = float4(0.0f);
+      float4 diffuse_light_accum = float4(0.0f);
+      float4 specular_light_accum = float4(0.0f);
+
+      for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+        FilmSample src = _sample_get(this_, i, texel_film);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.diffuse_color_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.diffuse_color_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     diffuse_color_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.specular_color_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.specular_color_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     specular_color_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.diffuse_light_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.diffuse_light_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     diffuse_light_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.specular_light_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.specular_light_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     specular_light_accum);
+      }
+
+      _store_color_and_light(this_, dst,
+                            srt_access(eevee_Uniform, uniform_buf).film.diffuse_color_id,
+                            srt_access(eevee_Uniform, uniform_buf).film.diffuse_light_id,
+                            diffuse_color_accum,
+                            diffuse_light_accum,
+                            out_color);
+      _store_color_and_light(this_, dst,
+                            srt_access(eevee_Uniform, uniform_buf).film.specular_color_id,
+                            srt_access(eevee_Uniform, uniform_buf).film.specular_light_id,
+                            specular_color_accum,
+                            specular_light_accum,
+                            out_color);
+    }
+
+    if (flag_test(srt_access(eevee_film_Film, enabled_categories), PASS_CATEGORY_COLOR_2)) {
+      float4 environment_accum = float4(0.0f);
+      float4 volume_light_accum = float4(0.0f);
+      float4 emission_accum = float4(0.0f);
+      float mist_accum = 0.0f;
+      float shadow_accum = 0.0f;
+      float ao_accum = 0.0f;
+
+      for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+        FilmSample src = _sample_get(this_, i, texel_film);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.volume_light_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.volume_light_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     volume_light_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.emission_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.emission_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     emission_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.environment_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.environment_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     environment_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.shadow_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.shadow_id,
+                     srt_access(eevee_film_Film, rp_value_tx),
+                     shadow_accum);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.ambient_occlusion_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.ambient_occlusion_id,
+                     srt_access(eevee_film_Film, rp_value_tx),
+                     ao_accum);
+        _sample_accum_mist(this_, src, mist_accum);
+      }
+
+      float4 shadow_accum_color = float4(float3(shadow_accum), weight_accum);
+      float4 ao_accum_color = float4(float3(ao_accum), weight_accum);
+
+      _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.volume_light_id, volume_light_accum, out_color);
+      _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.emission_id, emission_accum, out_color);
+      _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.environment_id, environment_accum, out_color);
+      _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.shadow_id, shadow_accum_color, out_color);
+      _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.ambient_occlusion_id, ao_accum_color, out_color);
+      _store_value(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.mist_id, mist_accum, out_color);
+    }
+
+    if (flag_test(srt_access(eevee_film_Film, enabled_categories), PASS_CATEGORY_COLOR_3)) {
+      float4 transparent_accum = float4(0.0f);
+
+      for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+        FilmSample src = _sample_get(this_, i, texel_film);
+        _sample_accum(this_, src,
+                     srt_access(eevee_Uniform, uniform_buf).film.transparent_id,
+                     srt_access(eevee_Uniform, uniform_buf).render_pass.transparent_id,
+                     srt_access(eevee_film_Film, rp_color_tx),
+                     transparent_accum);
+      }
+
+      transparent_accum.a = weight_accum - transparent_accum.a;
+
+      _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.transparent_id, transparent_accum, out_color);
+    }
+
+    if (flag_test(srt_access(eevee_film_Film, enabled_categories), PASS_CATEGORY_AOV)) {
+      for (int aov = 0; aov < srt_access(eevee_Uniform, uniform_buf).film.aov_color_len; aov++) {
+        float4 aov_accum = float4(0.0f);
+
+        for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+          FilmSample src = _sample_get(this_, i, texel_film);
+          _sample_accum(this_, src, 0, srt_access(eevee_Uniform, uniform_buf).render_pass.color_len + aov, srt_access(eevee_film_Film, rp_color_tx), aov_accum);
+        }
+        _store_color(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.aov_color_id + aov, aov_accum, out_color, false);
+      }
+
+      for (int aov = 0; aov < srt_access(eevee_Uniform, uniform_buf).film.aov_value_len; aov++) {
+        float aov_accum = 0.0f;
+
+        for (int i = 0; i < srt_access(eevee_film_Film, samples_len); i++) {
+          FilmSample src = _sample_get(this_, i, texel_film);
+          _sample_accum(this_, src, 0, srt_access(eevee_Uniform, uniform_buf).render_pass.value_len + aov, srt_access(eevee_film_Film, rp_value_tx), aov_accum);
+        }
+        _store_value(this_, dst, srt_access(eevee_Uniform, uniform_buf).film.aov_value_id + aov, aov_accum, out_color);
+      }
+    }
+
+    if (flag_test(srt_access(eevee_film_Film, enabled_categories), PASS_CATEGORY_CRYPTOMATTE)) {
+      if (srt_access(eevee_Uniform, uniform_buf).film.cryptomatte_samples_len != 0) {
+#line 1018
+        if (!srt_access(eevee_Uniform, uniform_buf).film.use_history || srt_access(eevee_film_Film, use_reprojection)) {
+          _clear_samples(srt_access(eevee_film_Film, cryptomatte), dst);
+        }
+
+        _cryptomatte_layer_accum_and_store(this_, dst, texel_film, srt_access(eevee_Uniform, uniform_buf).film.cryptomatte_object_id, 0, out_color);
+        _cryptomatte_layer_accum_and_store(this_, dst, texel_film, srt_access(eevee_Uniform, uniform_buf).film.cryptomatte_asset_id, 1, out_color);
+        _cryptomatte_layer_accum_and_store(this_, dst, texel_film, srt_access(eevee_Uniform, uniform_buf).film.cryptomatte_material_id, 2, out_color);
+      }
+    }
+  }
+#endif
+#line 1034
+       eevee_film_Film eevee_film_Film_new_()
+{
+  eevee_film_Film result;
+  result.camera = eevee_CameraVelocity_new_();
+  result.views_ = draw_View_new_();
+  result.cryptomatte = eevee_Cryptomatte_new_();
+  result.uniforms = eevee_Uniform_new_();
+  return result;
+#line 1032
+}
+#line 1035
+
+#if defined(ENTRY_POINT_eevee_film_fullscreen_vert)
+#line 1035
+           void eevee_film_fullscreen_vert(                                                                  )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 1037
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 1038
+}
+#endif
+struct eevee_film_FilmFragOut {
+                    float4 color;
+};
+#line 1040
+                                      eevee_film_FilmFragOut eevee_film_FilmFragOut_ctor_() {eevee_film_FilmFragOut r;r.color=float4(0);return r;}
+#line 1044
+#define access_eevee_film_FilmDisplay_display_only() display_only
+#ifdef CREATE_INFO_RES_PASS_eevee_film_FilmDisplay
+CREATE_INFO_RES_PASS_eevee_film_FilmDisplay
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_FilmDisplay
+CREATE_INFO_RES_BATCH_eevee_film_FilmDisplay
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_FilmDisplay
+CREATE_INFO_RES_GEOMETRY_eevee_film_FilmDisplay
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_FilmDisplay
+CREATE_INFO_RES_SHARED_VARS_eevee_film_FilmDisplay
+#endif
+#line 1044
+struct eevee_film_FilmDisplay {
+#line 1055
+int _pad;};
+#line 1060
+#ifndef GPU_METAL
+eevee_film_FilmDisplay eevee_film_FilmDisplay_ctor_();
+eevee_film_FilmDisplay eevee_film_FilmDisplay_new_();
+#endif
+#line 1044
+                                      eevee_film_FilmDisplay eevee_film_FilmDisplay_ctor_() {eevee_film_FilmDisplay r;r._pad=0;return r;}
+#line 1048
+       eevee_film_FilmDisplay eevee_film_FilmDisplay_new_()
+{
+  eevee_film_FilmDisplay result;
+  result._pad = 0;
+  return result;
+#line 1046
+}
+#line 1051
+
+#if defined(CREATE_INFO_eevee_film_FilmDisplay) && defined(CREATE_INFO_eevee_film_Film) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View)
+#line 1051
+
+#if defined(ENTRY_POINT_eevee_film_accumulate_or_display_frag)
+#line 1051
+
+void eevee_film_accumulate_or_display_frag(
+#line 1058
+                                                                   )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 1059
+  eevee_film_FilmDisplay srt = eevee_film_FilmDisplay_ctor_(); eevee_film_Film film = eevee_film_Film_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_();
+#line 1062
+  int2 texel_film = int2(gl_FragCoord.xy) - srt_access(eevee_Uniform, uniform_buf).film.offset;
+
+  if (srt_access(eevee_film_FilmDisplay, display_only)) {
+    gl_FragDepth = imageLoadFast(srt_access(eevee_film_Film, depth_img), texel_film).r;
+
+    if (srt_access(eevee_film_Film, display_id) == -1) {
+      eevee_film_FilmFragOut_color = texelFetch(srt_access(eevee_film_Film, in_combined_tx), texel_film, 0);
+    }
+    else if (srt_access(eevee_Uniform, uniform_buf).film.display_storage_type == PASS_STORAGE_VALUE) {
+      eevee_film_FilmFragOut_color.rgb =
+          imageLoadFast(srt_access(eevee_film_Film, value_accum_img), int3(texel_film, srt_access(eevee_film_Film, display_id))).rrr;
+      eevee_film_FilmFragOut_color.a = 1.0f;
+    }
+    else if (srt_access(eevee_Uniform, uniform_buf).film.display_storage_type == PASS_STORAGE_COLOR) {
+      eevee_film_FilmFragOut_color = imageLoadFast(srt_access(eevee_film_Film, color_accum_img), int3(texel_film, srt_access(eevee_film_Film, display_id)));
+    }
+    else                                {
+      eevee_film_FilmFragOut_color = eevee_cryptomatte_false_color(
+          imageLoadFast(srt_access(eevee_Cryptomatte, cryptomatte_img), int3(texel_film, srt_access(eevee_film_Film, display_id))).r);
+    }
+  }
+  else {
+    _process_render_sample(film, texel_film, eevee_film_FilmFragOut_color, gl_FragDepth);
+  }
+
+  gl_FragDepth = _depth_view_to_screen(_get(views, 0), -gl_FragDepth);
+
+  gl_FragDepth = eevee_film_display_depth_amend(gl_FragDepth);
+
+#endif
+#line 1090
+}
+#endif
+#endif
+#line 1099
+
+#if defined(CREATE_INFO_eevee_film_Film) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View)
+#line 1099
+
+#if defined(ENTRY_POINT_eevee_film_display_frag)
+#line 1099
+
+void eevee_film_display_frag(
+#line 1105
+                                                     )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 1106
+  eevee_film_Film film = eevee_film_Film_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_();
+#line 1109
+  int2 texel = int2(gl_FragCoord.xy);
+
+  if (srt_access(eevee_film_Film, display_id) == -1) {
+    eevee_film_FilmFragOut_color = texelFetch(srt_access(eevee_film_Film, in_combined_tx), texel, 0);
+  }
+  else if (srt_access(eevee_Uniform, uniform_buf).film.display_storage_type == PASS_STORAGE_VALUE) {
+    eevee_film_FilmFragOut_color.rgb = imageLoadFast(srt_access(eevee_film_Film, value_accum_img), int3(texel, srt_access(eevee_film_Film, display_id))).rrr;
+    eevee_film_FilmFragOut_color.a = 1.0f;
+  }
+  else if (srt_access(eevee_Uniform, uniform_buf).film.display_storage_type == PASS_STORAGE_COLOR) {
+    eevee_film_FilmFragOut_color = imageLoadFast(srt_access(eevee_film_Film, color_accum_img), int3(texel, srt_access(eevee_film_Film, display_id)));
+  }
+  else                                {
+    eevee_film_FilmFragOut_color = eevee_cryptomatte_false_color(
+        imageLoadFast(srt_access(eevee_Cryptomatte, cryptomatte_img), int3(texel, srt_access(eevee_film_Film, display_id))).r);
+  }
+
+  gl_FragDepth = imageLoadFast(srt_access(eevee_film_Film, depth_img), texel).r;
+  gl_FragDepth = _depth_view_to_screen(_get(views, 0), -gl_FragDepth);
+  gl_FragDepth += 2.4e-7f * 4.0f + gpu_fwidth(gl_FragDepth);
+  gl_FragDepth = saturate(gl_FragDepth);
+
+#endif
+#line 1130
+}
+#endif
+#endif
+
+#if defined(CREATE_INFO_eevee_film_Film) && defined(CREATE_INFO_eevee_Uniform)
+#line 1133
+
+#if defined(ENTRY_POINT_eevee_film_accumulate_comp)
+#line 1133
+
+void eevee_film_accumulate_comp(
+
+                                                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1137
+  eevee_film_Film film = eevee_film_Film_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  int2 texel_film = int2(gl_GlobalInvocationID.xy);
+
+  float4 out_color;
+  float out_depth;
+
+  if (any(greaterThanEqual(texel_film, srt_access(eevee_Uniform, uniform_buf).film.extent))) {
+    return;
+  }
+
+  _process_render_sample(film, texel_film, out_color, out_depth);
+
+#endif
+#line 1148
+}
+#endif
+#endif
+#line 1152
+#define access_eevee_film_ConvertCombined_offset() offset
+#define access_eevee_film_ConvertCombined_input_tx() input_tx
+#define access_eevee_film_ConvertCombined_output_img() output_img
+#ifdef CREATE_INFO_RES_PASS_eevee_film_ConvertCombined
+CREATE_INFO_RES_PASS_eevee_film_ConvertCombined
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_ConvertCombined
+CREATE_INFO_RES_BATCH_eevee_film_ConvertCombined
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertCombined
+CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertCombined
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertCombined
+CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertCombined
+#endif
+#line 1152
+struct eevee_film_ConvertCombined {
+#line 1164
+int _pad;};
+#line 1168
+#ifndef GPU_METAL
+eevee_film_ConvertCombined eevee_film_ConvertCombined_ctor_();
+eevee_film_ConvertCombined eevee_film_ConvertCombined_new_();
+#endif
+#line 1152
+                                          eevee_film_ConvertCombined eevee_film_ConvertCombined_ctor_() {eevee_film_ConvertCombined r;r._pad=0;return r;}
+#line 1157
+       eevee_film_ConvertCombined eevee_film_ConvertCombined_new_()
+{
+  eevee_film_ConvertCombined result;
+  result._pad = 0;
+  return result;
+#line 1155
+}
+#line 1159
+#define access_eevee_film_ConvertDepth_offset() offset
+#define access_eevee_film_ConvertDepth_input_tx() input_tx
+#define access_eevee_film_ConvertDepth_output_img() output_img
+#ifdef CREATE_INFO_RES_PASS_eevee_film_ConvertDepth
+CREATE_INFO_RES_PASS_eevee_film_ConvertDepth
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_ConvertDepth
+CREATE_INFO_RES_BATCH_eevee_film_ConvertDepth
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertDepth
+CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertDepth
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertDepth
+CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertDepth
+#endif
+#line 1159
+struct eevee_film_ConvertDepth {
+#line 1171
+int _pad;};
+#line 1176
+#ifndef GPU_METAL
+eevee_film_ConvertDepth eevee_film_ConvertDepth_ctor_();
+eevee_film_ConvertDepth eevee_film_ConvertDepth_new_();
+#endif
+#line 1159
+                                       eevee_film_ConvertDepth eevee_film_ConvertDepth_ctor_() {eevee_film_ConvertDepth r;r._pad=0;return r;}
+#line 1164
+       eevee_film_ConvertDepth eevee_film_ConvertDepth_new_()
+{
+  eevee_film_ConvertDepth result;
+  result._pad = 0;
+  return result;
+#line 1162
+}
+#line 1167
+#define access_eevee_film_ConvertValue_offset() offset
+#define access_eevee_film_ConvertValue_input_tx() input_tx
+#define access_eevee_film_ConvertValue_output_img() output_img
+#ifdef CREATE_INFO_RES_PASS_eevee_film_ConvertValue
+CREATE_INFO_RES_PASS_eevee_film_ConvertValue
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_ConvertValue
+CREATE_INFO_RES_BATCH_eevee_film_ConvertValue
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertValue
+CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertValue
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertValue
+CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertValue
+#endif
+#line 1167
+struct eevee_film_ConvertValue {
+#line 1179
+int _pad;};
+#line 1184
+#ifndef GPU_METAL
+eevee_film_ConvertValue eevee_film_ConvertValue_ctor_();
+eevee_film_ConvertValue eevee_film_ConvertValue_new_();
+#endif
+#line 1167
+                                       eevee_film_ConvertValue eevee_film_ConvertValue_ctor_() {eevee_film_ConvertValue r;r._pad=0;return r;}
+#line 1172
+       eevee_film_ConvertValue eevee_film_ConvertValue_new_()
+{
+  eevee_film_ConvertValue result;
+  result._pad = 0;
+  return result;
+#line 1170
+}
+#line 1175
+#define access_eevee_film_ConvertColor_offset() offset
+#define access_eevee_film_ConvertColor_input_tx() input_tx
+#define access_eevee_film_ConvertColor_output_img() output_img
+#ifdef CREATE_INFO_RES_PASS_eevee_film_ConvertColor
+CREATE_INFO_RES_PASS_eevee_film_ConvertColor
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_ConvertColor
+CREATE_INFO_RES_BATCH_eevee_film_ConvertColor
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertColor
+CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertColor
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertColor
+CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertColor
+#endif
+#line 1175
+struct eevee_film_ConvertColor {
+#line 1187
+int _pad;};
+#line 1192
+#ifndef GPU_METAL
+eevee_film_ConvertColor eevee_film_ConvertColor_ctor_();
+eevee_film_ConvertColor eevee_film_ConvertColor_new_();
+#endif
+#line 1175
+                                       eevee_film_ConvertColor eevee_film_ConvertColor_ctor_() {eevee_film_ConvertColor r;r._pad=0;return r;}
+#line 1180
+       eevee_film_ConvertColor eevee_film_ConvertColor_new_()
+{
+  eevee_film_ConvertColor result;
+  result._pad = 0;
+  return result;
+#line 1178
+}
+#line 1183
+#define access_eevee_film_ConvertCryptomatte_offset() offset
+#define access_eevee_film_ConvertCryptomatte_input_tx() input_tx
+#define access_eevee_film_ConvertCryptomatte_output_img() output_img
+#ifdef CREATE_INFO_RES_PASS_eevee_film_ConvertCryptomatte
+CREATE_INFO_RES_PASS_eevee_film_ConvertCryptomatte
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_film_ConvertCryptomatte
+CREATE_INFO_RES_BATCH_eevee_film_ConvertCryptomatte
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertCryptomatte
+CREATE_INFO_RES_GEOMETRY_eevee_film_ConvertCryptomatte
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertCryptomatte
+CREATE_INFO_RES_SHARED_VARS_eevee_film_ConvertCryptomatte
+#endif
+#line 1183
+struct eevee_film_ConvertCryptomatte {
+#line 1195
+int _pad;};
+#line 1229
+#ifndef GPU_METAL
+eevee_film_ConvertCryptomatte eevee_film_ConvertCryptomatte_ctor_();
+eevee_film_ConvertCryptomatte eevee_film_ConvertCryptomatte_new_();
+#endif
+#line 1183
+                                             eevee_film_ConvertCryptomatte eevee_film_ConvertCryptomatte_ctor_() {eevee_film_ConvertCryptomatte r;r._pad=0;return r;}
+#line 1188
+       eevee_film_ConvertCryptomatte eevee_film_ConvertCryptomatte_new_()
+{
+  eevee_film_ConvertCryptomatte result;
+  result._pad = 0;
+  return result;
+#line 1186
+}
+#line 1193
+
+#if defined(CREATE_INFO_eevee_film_ConvertCombined)
+#line 1193
+
+#if defined(ENTRY_POINT_eevee_film_pass_convertTeevee_film_ConvertCombinedTfalse)
+#line 1193
+
+void eevee_film_pass_convertTeevee_film_ConvertCombinedTfalse(
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1196
+  eevee_film_ConvertCombined srt = eevee_film_ConvertCombined_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  if (any(greaterThan(texel, imageSize(srt_access(eevee_film_ConvertCombined, output_img)) - int2(1)))) {
+    return;
+  }
+#line 1203
+  int2 input_bounds = textureSize(srt_access(eevee_film_ConvertCombined, input_tx), 0).xy - int2(1);
+  if (any(lessThan(texel, srt_access(eevee_film_ConvertCombined, offset))) || any(greaterThan(texel, srt_access(eevee_film_ConvertCombined, offset) + input_bounds))) {
+    imageStoreFast(srt_access(eevee_film_ConvertCombined, output_img), texel, float4(0.0f));
+  }
+  else {
+
+#if 0
+#line 1208
+                                          {
+      imageStoreFast(
+          srt_access(eevee_film_ConvertCombined, output_img), texel, texelFetch(srt_access(eevee_film_ConvertCombined, input_tx), int3(texel - srt_access(eevee_film_ConvertCombined, offset), 0), 0));
+    }
+
+#else
+#line 1212
+         {
+      imageStoreFast(srt_access(eevee_film_ConvertCombined, output_img), texel, texelFetch(srt_access(eevee_film_ConvertCombined, input_tx), texel - srt_access(eevee_film_ConvertCombined, offset), 0));
+    }
+
+#endif
+#line 1215
+  }
+
+#endif
+#line 1216
+}
+#endif
+#endif
+#line 1193
+
+#if defined(CREATE_INFO_eevee_film_ConvertDepth)
+#line 1193
+
+#if defined(ENTRY_POINT_eevee_film_pass_convertTeevee_film_ConvertDepthTfalse)
+#line 1193
+
+void eevee_film_pass_convertTeevee_film_ConvertDepthTfalse(
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1196
+  eevee_film_ConvertDepth srt = eevee_film_ConvertDepth_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  if (any(greaterThan(texel, imageSize(srt_access(eevee_film_ConvertDepth, output_img)) - int2(1)))) {
+    return;
+  }
+#line 1203
+  int2 input_bounds = textureSize(srt_access(eevee_film_ConvertDepth, input_tx), 0).xy - int2(1);
+  if (any(lessThan(texel, srt_access(eevee_film_ConvertDepth, offset))) || any(greaterThan(texel, srt_access(eevee_film_ConvertDepth, offset) + input_bounds))) {
+    imageStoreFast(srt_access(eevee_film_ConvertDepth, output_img), texel, float4(0.0f));
+  }
+  else {
+
+#if 0
+#line 1208
+                                          {
+      imageStoreFast(
+          srt_access(eevee_film_ConvertDepth, output_img), texel, texelFetch(srt_access(eevee_film_ConvertDepth, input_tx), int3(texel - srt_access(eevee_film_ConvertDepth, offset), 0), 0));
+    }
+
+#else
+#line 1212
+         {
+      imageStoreFast(srt_access(eevee_film_ConvertDepth, output_img), texel, texelFetch(srt_access(eevee_film_ConvertDepth, input_tx), texel - srt_access(eevee_film_ConvertDepth, offset), 0));
+    }
+
+#endif
+#line 1215
+  }
+
+#endif
+#line 1216
+}
+#endif
+#endif
+#line 1193
+
+#if defined(CREATE_INFO_eevee_film_ConvertValue)
+#line 1193
+
+#if defined(ENTRY_POINT_eevee_film_pass_convertTeevee_film_ConvertValueTtrue)
+#line 1193
+
+void eevee_film_pass_convertTeevee_film_ConvertValueTtrue(
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1196
+  eevee_film_ConvertValue srt = eevee_film_ConvertValue_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  if (any(greaterThan(texel, imageSize(srt_access(eevee_film_ConvertValue, output_img)) - int2(1)))) {
+    return;
+  }
+#line 1203
+  int2 input_bounds = textureSize(srt_access(eevee_film_ConvertValue, input_tx), 0).xy - int2(1);
+  if (any(lessThan(texel, srt_access(eevee_film_ConvertValue, offset))) || any(greaterThan(texel, srt_access(eevee_film_ConvertValue, offset) + input_bounds))) {
+    imageStoreFast(srt_access(eevee_film_ConvertValue, output_img), texel, float4(0.0f));
+  }
+  else {
+
+#if 1
+#line 1208
+                                         {
+      imageStoreFast(
+          srt_access(eevee_film_ConvertValue, output_img), texel, texelFetch(srt_access(eevee_film_ConvertValue, input_tx), int3(texel - srt_access(eevee_film_ConvertValue, offset), 0), 0));
+    }
+
+#else
+#line 1212
+         {
+      imageStoreFast(srt_access(eevee_film_ConvertValue, output_img), texel, texelFetch(srt_access(eevee_film_ConvertValue, input_tx), texel - srt_access(eevee_film_ConvertValue, offset), 0));
+    }
+
+#endif
+#line 1215
+  }
+
+#endif
+#line 1216
+}
+#endif
+#endif
+#line 1193
+
+#if defined(CREATE_INFO_eevee_film_ConvertColor)
+#line 1193
+
+#if defined(ENTRY_POINT_eevee_film_pass_convertTeevee_film_ConvertColorTtrue)
+#line 1193
+
+void eevee_film_pass_convertTeevee_film_ConvertColorTtrue(
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1196
+  eevee_film_ConvertColor srt = eevee_film_ConvertColor_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  if (any(greaterThan(texel, imageSize(srt_access(eevee_film_ConvertColor, output_img)) - int2(1)))) {
+    return;
+  }
+#line 1203
+  int2 input_bounds = textureSize(srt_access(eevee_film_ConvertColor, input_tx), 0).xy - int2(1);
+  if (any(lessThan(texel, srt_access(eevee_film_ConvertColor, offset))) || any(greaterThan(texel, srt_access(eevee_film_ConvertColor, offset) + input_bounds))) {
+    imageStoreFast(srt_access(eevee_film_ConvertColor, output_img), texel, float4(0.0f));
+  }
+  else {
+
+#if 1
+#line 1208
+                                         {
+      imageStoreFast(
+          srt_access(eevee_film_ConvertColor, output_img), texel, texelFetch(srt_access(eevee_film_ConvertColor, input_tx), int3(texel - srt_access(eevee_film_ConvertColor, offset), 0), 0));
+    }
+
+#else
+#line 1212
+         {
+      imageStoreFast(srt_access(eevee_film_ConvertColor, output_img), texel, texelFetch(srt_access(eevee_film_ConvertColor, input_tx), texel - srt_access(eevee_film_ConvertColor, offset), 0));
+    }
+
+#endif
+#line 1215
+  }
+
+#endif
+#line 1216
+}
+#endif
+#endif
+#line 1193
+
+#if defined(CREATE_INFO_eevee_film_ConvertCryptomatte)
+#line 1193
+
+#if defined(ENTRY_POINT_eevee_film_pass_convertTeevee_film_ConvertCryptomatteTtrue)
+#line 1193
+
+void eevee_film_pass_convertTeevee_film_ConvertCryptomatteTtrue(
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 1196
+  eevee_film_ConvertCryptomatte srt = eevee_film_ConvertCryptomatte_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  if (any(greaterThan(texel, imageSize(srt_access(eevee_film_ConvertCryptomatte, output_img)) - int2(1)))) {
+    return;
+  }
+#line 1203
+  int2 input_bounds = textureSize(srt_access(eevee_film_ConvertCryptomatte, input_tx), 0).xy - int2(1);
+  if (any(lessThan(texel, srt_access(eevee_film_ConvertCryptomatte, offset))) || any(greaterThan(texel, srt_access(eevee_film_ConvertCryptomatte, offset) + input_bounds))) {
+    imageStoreFast(srt_access(eevee_film_ConvertCryptomatte, output_img), texel, float4(0.0f));
+  }
+  else {
+
+#if 1
+#line 1208
+                                         {
+      imageStoreFast(
+          srt_access(eevee_film_ConvertCryptomatte, output_img), texel, texelFetch(srt_access(eevee_film_ConvertCryptomatte, input_tx), int3(texel - srt_access(eevee_film_ConvertCryptomatte, offset), 0), 0));
+    }
+
+#else
+#line 1212
+         {
+      imageStoreFast(srt_access(eevee_film_ConvertCryptomatte, output_img), texel, texelFetch(srt_access(eevee_film_ConvertCryptomatte, input_tx), texel - srt_access(eevee_film_ConvertCryptomatte, offset), 0));
+    }
+
+#endif
+#line 1215
+  }
+
+#endif
+#line 1216
+}
+#endif
+#endif
+#line 1226
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

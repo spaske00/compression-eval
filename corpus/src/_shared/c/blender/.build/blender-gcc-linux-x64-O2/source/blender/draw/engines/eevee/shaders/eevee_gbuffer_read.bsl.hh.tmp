@@ -1,0 +1,289 @@
+#line 1 "eevee_gbuffer_read.bsl.hh"
+ 
+#line 26
+#ifndef GBUFFER_LAYER_MAX
+#  define GBUFFER_LAYER_MAX 3
+#endif
+#line 31
+#define GBUFFER_HAS_REFLECTION
+#define GBUFFER_HAS_REFRACTION
+#define GBUFFER_HAS_SUBSURFACE
+#define GBUFFER_HAS_TRANSLUCENT
+#line 42
+ClosureUndetermined gbuffer_detail_unpack_closure(gbuffer_ClosurePacking cl_in)
+{
+  ClosureUndetermined cl;
+  cl.type = gbuffer_mode_to_closure_type(cl_in.mode);
+
+  cl.color = gbuffer_closure_color_unpack(cl_in.data0);
+  cl.N = cl_in.N;
+
+  switch (cl_in.mode) {
+#ifdef GBUFFER_HAS_REFLECTION
+    case GBUF_REFLECTION:
+      gbuffer_Reflection_unpack_additional(cl, cl_in.data1);
+      break;
+    case GBUF_REFLECTION_COLORLESS:
+      gbuffer_ReflectionColorless_unpack_additional(cl, cl_in.data0);
+      break;
+#endif
+#ifdef GBUFFER_HAS_REFRACTION
+    case GBUF_REFRACTION:
+      gbuffer_Refraction_unpack_additional(cl, cl_in.data1);
+      break;
+    case GBUF_REFRACTION_COLORLESS:
+      gbuffer_RefractionColorless_unpack_additional(cl, cl_in.data0);
+      break;
+    case GBUF_THIN_REFRACTION:
+      gbuffer_ThinRefraction_unpack_additional(cl, cl_in.data1);
+      break;
+    case GBUF_THIN_REFRACTION_COLORLESS:
+      gbuffer_ThinRefractionColorless_unpack_additional(cl, cl_in.data0);
+      break;
+#endif
+#ifdef GBUFFER_HAS_SUBSURFACE
+    case GBUF_SUBSURFACE:
+      gbuffer_Subsurface_unpack_additional(cl, cl_in.data1);
+      break;
+#endif
+    default:
+      break;
+  }
+  return cl;
+}
+#line 93
+struct gbuffer_Layers {
+  ClosureUndetermined layer[GBUFFER_LAYER_MAX];
+  gbuffer_Header header;
+#line 110
+};
+#line 113
+#ifndef GPU_METAL
+gbuffer_Layers gbuffer_Layers_ctor_();
+float3 _surface_N(const gbuffer_Layers this_);
+bool _has_any_closure(const gbuffer_Layers this_);
+bool _has_no_closure(const gbuffer_Layers this_);
+#endif
+#line 93
+                              gbuffer_Layers gbuffer_Layers_ctor_() {gbuffer_Layers r;r.header=gbuffer_Header_ctor_();for(int i=0;i < GBUFFER_LAYER_MAX;i++){r.layer[i]=ClosureUndetermined_ctor_();}return r;}
+#line 97
+  float3 _surface_N(const gbuffer_Layers this_)
+  {
+    return this_.layer[0].N;
+  }
+#line 102
+  bool _has_any_closure(const gbuffer_Layers this_)
+  {
+    return this_.layer[0].type != CLOSURE_NONE_ID;
+  }
+  bool _has_no_closure(const gbuffer_Layers this_)
+  {
+    return this_.layer[0].type == CLOSURE_NONE_ID;
+  }
+#line 112
+#define access_gbuffer_Reader_gbuf_header_tx() gbuf_header_tx
+#define access_gbuffer_Reader_gbuf_closure_tx() gbuf_closure_tx
+#define access_gbuffer_Reader_gbuf_normal_tx() gbuf_normal_tx
+#ifdef CREATE_INFO_RES_PASS_gbuffer_Reader
+CREATE_INFO_RES_PASS_gbuffer_Reader
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gbuffer_Reader
+CREATE_INFO_RES_BATCH_gbuffer_Reader
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gbuffer_Reader
+CREATE_INFO_RES_GEOMETRY_gbuffer_Reader
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gbuffer_Reader
+CREATE_INFO_RES_SHARED_VARS_gbuffer_Reader
+#endif
+#line 112
+struct gbuffer_Reader {
+#line 236
+int _pad;};
+#line 242
+#ifndef GPU_METAL
+gbuffer_Reader gbuffer_Reader_ctor_();
+uint _fetch_object_id(gbuffer_Reader  this_, int2 texel);
+float4 _fetch_data(gbuffer_Reader  this_, int2 texel, uchar layer);
+float4 _fetch_normal(gbuffer_Reader  this_, int2 texel, uchar layer);
+float4 _fetch_additional_data(gbuffer_Reader  this_, int2 texel);
+ClosureUndetermined _read_layer(
+      gbuffer_Reader  this_, uchar normal_id, uchar closure_len, GBufferMode bin_mode, int2 texel, uchar layer_id);
+gbuffer_Header _read_header(gbuffer_Reader  this_, int2 texel);
+gbuffer_Layers _read_layers(gbuffer_Reader  this_, int2 texel);
+ClosureUndetermined _read_bin(gbuffer_Reader  this_, gbuffer_Header header, int2 texel, uchar bin_index);
+ClosureUndetermined _read_bin(gbuffer_Reader  this_, int2 texel, uchar bin_index);
+Thickness _read_thickness(gbuffer_Reader  this_, gbuffer_Header header, int2 texel);
+float3 _read_normal(gbuffer_Reader  this_, int2 texel);
+uint _read_object_id(gbuffer_Reader  this_, int2 texel);
+gbuffer_Reader gbuffer_Reader_new_();
+#endif
+#line 112
+                              gbuffer_Reader gbuffer_Reader_ctor_() {gbuffer_Reader r;r._pad=0;return r;}
+#line 117
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 117
+  uint _fetch_object_id(gbuffer_Reader  this_, int2 texel)
+  {
+    return texelFetch(srt_access(gbuffer_Reader, gbuf_header_tx), int3(texel, 1), 0).r;
+  }
+#endif
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 122
+  float4 _fetch_data(gbuffer_Reader  this_, int2 texel, uchar layer)
+  {
+#if defined(GPU_NVIDIA) && defined(GPU_OPENGL)
+#line 127
+    layer = min(layer, 9999);
+#endif
+    return texelFetch(srt_access(gbuffer_Reader, gbuf_closure_tx), int3(texel, int(layer)), 0);
+  }
+#endif
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 132
+  float4 _fetch_normal(gbuffer_Reader  this_, int2 texel, uchar layer)
+  {
+#if defined(GPU_NVIDIA) && defined(GPU_OPENGL)
+#line 137
+    layer = min(layer, 9999);
+#endif
+    return texelFetch(srt_access(gbuffer_Reader, gbuf_normal_tx), int3(texel, int(layer)), 0);
+  }
+#endif
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 142
+  float4 _fetch_additional_data(gbuffer_Reader  this_, int2 texel)
+  {
+
+    return texelFetch(srt_access(gbuffer_Reader, gbuf_normal_tx), int3(texel, textureSize(srt_access(gbuffer_Reader, gbuf_normal_tx), 0).z - 1), 0);
+  }
+#endif
+#line 149
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 149
+  ClosureUndetermined _read_layer(
+      gbuffer_Reader  this_, uchar normal_id, uchar closure_len, GBufferMode bin_mode, int2 texel, uchar layer_id)
+  {
+    if (bin_mode == GBUF_NONE) {
+      return closure_new(ClosureType(CLOSURE_NONE_ID));
+    }
+
+    gbuffer_ClosurePacking cl_in;
+    cl_in.mode = bin_mode;
+
+    float2 packed_N = _fetch_normal(this_, texel, normal_id).xy;
+    cl_in.N = gbuffer_normal_unpack(packed_N);
+
+    cl_in.data0 = _fetch_data(this_, texel, layer_id);
+    if (_use_data1(cl_in)) {
+      cl_in.data1 = _fetch_data(this_, texel, layer_id + closure_len);
+    }
+    return gbuffer_detail_unpack_closure(cl_in);
+  }
+#endif
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 169
+  gbuffer_Header _read_header(gbuffer_Reader  this_, int2 texel)
+  {
+    return gbuffer_Header_from_data(texelFetch(srt_access(gbuffer_Reader, gbuf_header_tx), int3(texel, 0), 0).r);
+  }
+#endif
+#line 175
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 175
+  gbuffer_Layers _read_layers(gbuffer_Reader  this_, int2 texel)
+  {
+    gbuffer_Layers layers;
+
+    layers.header = _read_header(this_, texel);
+    uint3 layer_types = _bin_types_per_layer(layers.header);
+    uchar closure_count = _closure_len(layers.header);
+#line 185
+{
+#line 183
+                                                                   {
+      layers.layer[0] = _read_layer(this_, _tangent_space_id(layers.header, 0), closure_count, GBufferMode(layer_types[0]), texel, 0);
+    }
+#line 183
+                                                                   {
+      layers.layer[1] = _read_layer(this_, _tangent_space_id(layers.header, 1), closure_count, GBufferMode(layer_types[1]), texel, 1);
+    }
+#line 183
+                                                                   {
+      layers.layer[2] = _read_layer(this_, _tangent_space_id(layers.header, 2), closure_count, GBufferMode(layer_types[2]), texel, 2);
+    }
+#line 185
+    }
+    return layers;
+  }
+#endif
+#line 191
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 191
+  ClosureUndetermined _read_bin(gbuffer_Reader  this_, gbuffer_Header header, int2 texel, uchar bin_index)
+  {
+    GBufferMode bin_mode = _bin_type(header, bin_index);
+
+    uchar layer_id = _bin_to_layer(header, bin_index);
+    uchar normal_id = _tangent_space_id(header, layer_id);
+    uchar closure_count = _closure_len(header);
+
+    return _read_layer(this_, normal_id, closure_count, bin_mode, texel, layer_id);
+  }
+#endif
+#line 201
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 201
+  ClosureUndetermined _read_bin(gbuffer_Reader  this_, int2 texel, uchar bin_index)
+  {
+    return _read_bin(this_, _read_header(this_, texel), texel, bin_index);
+  }
+#endif
+#line 207
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 207
+  Thickness _read_thickness(gbuffer_Reader  this_, gbuffer_Header header, int2 texel)
+  {
+    if (!_has_additional_data(header)) {
+      return Thickness_zero();
+    }
+    float2 data_packed = _fetch_additional_data(this_, texel).rg;
+    return gbuffer_AdditionalInfo_unpack(data_packed).thickness;
+  }
+#endif
+#line 217
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 217
+  float3 _read_normal(gbuffer_Reader  this_, int2 texel)
+  {
+    return gbuffer_normal_unpack(_fetch_normal(this_, texel, 0).rg);
+  }
+#endif
+#line 224
+
+#if defined(CREATE_INFO_gbuffer_Reader)
+#line 224
+  uint _read_object_id(gbuffer_Reader  this_, int2 texel)
+  {
+    return _fetch_object_id(this_, texel);
+  }
+#endif
+       gbuffer_Reader gbuffer_Reader_new_()
+{
+  gbuffer_Reader result;
+  result._pad = 0;
+  return result;
+#line 227
+}
+#line 233

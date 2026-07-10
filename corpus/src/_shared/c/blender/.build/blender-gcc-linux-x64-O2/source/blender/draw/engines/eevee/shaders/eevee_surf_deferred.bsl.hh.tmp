@@ -1,0 +1,315 @@
+#line 1 "eevee_surf_deferred.bsl.hh"
+ 
+#line 16
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+#line 27
+float4 closure_to_rgba(Closure _0)
+{
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 29
+
+#if defined(CREATE_INFO_UtilityTexture)
+  float4 out_color;
+  out_color.rgb = g_emission;
+  out_color.a = saturate(1.0f - average(g_transmittance));
+#line 36
+  float noise = _fetch(resource_table_get(UtilityTexture), gl_FragCoord.xy, UTIL_BLUE_NOISE_LAYER).r;
+  float closure_rand = fract(noise + _rng_1D_get(resource_table_get(eevee_Sampling), SAMPLING_CLOSURE));
+  closure_weights_reset(closure_rand);
+
+  return out_color;
+
+#else
+#line 29
+  return float4(0);
+#endif
+#line 41
+
+#else
+#line 29
+  return float4(0);
+#endif
+#line 41
+}
+#line 45
+#define access_eevee_SurfaceDeferred_draw_view_culling() draw_view_culling
+#define access_eevee_SurfaceDeferred_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_SurfaceDeferred_gbuf_closure_img() gbuf_closure_img
+#define access_eevee_SurfaceDeferred_gbuf_normal_img() gbuf_normal_img
+#define access_eevee_SurfaceDeferred_gbuf_header_img() gbuf_header_img
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfaceDeferred
+CREATE_INFO_RES_PASS_eevee_SurfaceDeferred
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfaceDeferred
+CREATE_INFO_RES_BATCH_eevee_SurfaceDeferred
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfaceDeferred
+CREATE_INFO_RES_GEOMETRY_eevee_SurfaceDeferred
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceDeferred
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceDeferred
+#endif
+#line 45
+struct eevee_SurfaceDeferred {
+#line 84
+int _pad;};
+#line 87
+#ifndef GPU_METAL
+eevee_SurfaceDeferred eevee_SurfaceDeferred_ctor_();
+void _write_closure_data(eevee_SurfaceDeferred  this_, int2 texel, int layer, float4 data);
+void _write_normal_data(eevee_SurfaceDeferred  this_, int2 texel, int layer, float2 data);
+void _write_header_data(eevee_SurfaceDeferred  this_, int2 texel, int layer, uint data);
+eevee_SurfaceDeferred eevee_SurfaceDeferred_new_();
+#endif
+#line 45
+                                     eevee_SurfaceDeferred eevee_SurfaceDeferred_ctor_() {eevee_SurfaceDeferred r;r._pad=0;return r;}
+#line 56
+
+#if defined(CREATE_INFO_eevee_SurfaceDeferred)
+#line 56
+  void _write_closure_data(eevee_SurfaceDeferred  this_, int2 texel, int layer, float4 data)
+  {
+#line 60
+    imageStoreFast(srt_access(eevee_SurfaceDeferred, gbuf_closure_img), int3(texel, layer - GBUF_CLOSURE_FB_LAYER_COUNT), data);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_SurfaceDeferred)
+#line 63
+  void _write_normal_data(eevee_SurfaceDeferred  this_, int2 texel, int layer, float2 data)
+  {
+#line 67
+    imageStoreFast(srt_access(eevee_SurfaceDeferred, gbuf_normal_img), int3(texel, layer - GBUF_NORMAL_FB_LAYER_COUNT), data.xyyy);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_SurfaceDeferred)
+#line 70
+  void _write_header_data(eevee_SurfaceDeferred  this_, int2 texel, int layer, uint data)
+  {
+#line 74
+    imageStoreFast(srt_access(eevee_SurfaceDeferred, gbuf_header_img), int3(texel, layer - GBUF_HEADER_FB_LAYER_COUNT), uint4(data));
+  }
+#endif
+       eevee_SurfaceDeferred eevee_SurfaceDeferred_new_()
+{
+  eevee_SurfaceDeferred result;
+  result._pad = 0;
+  return result;
+#line 75
+}
+#line 78
+struct eevee_DeferredFragOut {
+
+                    float4 radiance;
+
+                                                                 uint gbuf_header;
+                    float2 gbuf_normal;
+                    float4 gbuf_closure1;
+                    float4 gbuf_closure2;
+};
+#line 78
+                                     eevee_DeferredFragOut eevee_DeferredFragOut_ctor_() {eevee_DeferredFragOut r;r.radiance=float4(0);r.gbuf_header=0u;r.gbuf_normal=float2(0);r.gbuf_closure1=float4(0);r.gbuf_closure2=float4(0);return r;}
+#line 89
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_SurfaceDeferred) && defined(CREATE_INFO_gbuffer_PackParameters) && defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_eevee_CryptomatteOutput) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture)
+#line 89
+
+#if defined(ENTRY_POINT_eevee_surf_deferred)
+#line 89
+
+void eevee_surf_deferred(
+#line 102
+                                                         )
+{
+
+#if defined(GPU_FRAGMENT_SHADER)
+#line 104
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 103
+  eevee_PipelineConstants pipe = eevee_PipelineConstants_ctor_(); eevee_SurfaceDeferred srt = eevee_SurfaceDeferred_ctor_(); gbuffer_PackParameters gbuf_params = gbuffer_PackParameters_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_(); eevee_CryptomatteOutput cryptomatte = eevee_CryptomatteOutput_ctor_(); draw_Infos infos = draw_Infos_ctor_(); draw_View views = draw_View_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_();
+
+  draw_ID id = _ctor(draw_ID) interface_get(eevee_geom_iface_info, interp_flat).resource_id_raw _rotc() ;
+  const uint resource_id = _resource_idT1(id);
+
+  const ViewMatrices view = _get(views, 0);
+
+  init_globals(uni, view, gl_FrontFacing);
+
+  float noise = _fetch(util_tx, gl_FragCoord.xy, UTIL_BLUE_NOISE_LAYER).r;
+  float closure_rand = fract(noise + _rng_1D_get(sampling, SAMPLING_CLOSURE));
+
+  fragment_displacement();
+
+  nodetree_surface(closure_rand);
+
+  g_holdout = saturate(g_holdout);
+
+  Thickness thickness = Thickness_from(nodetree_thickness(), thickness_mode);
+#line 124
+  float alpha = 1.0f - average(g_transmittance);
+  float alpha_rcp = safe_rcp(alpha);
+#line 128
+  eObjectInfoFlag ob_flag = object_infos_get().flag;
+  if (flag_test(ob_flag, OBJECT_HOLDOUT)) {
+
+    g_holdout = 1.0f;
+#line 134
+    alpha_rcp = 0.0f;
+  }
+
+  g_emission *= alpha_rcp;
+
+  int2 out_texel = int2(gl_FragCoord.xy);
+
+  ObjectInfos object_infos = _get(infos, resource_id);
+  bool use_light_linking = receiver_light_set_get(object_infos) != 0;
+  bool use_terminator_offset = object_infos.shadow_terminator_normal_offset > 0.0;
+#line 148
+  {
+
+#if defined(CREATE_INFO_eevee_nodetree)
+#line 149
+
+    _store(cryptomatte, out_texel, buffer_get(eevee_nodetree, node_tree).crypto_hash, resource_id);
+    _store_color(render_passes, out_texel, srt_access(eevee_Uniform, uniform_buf).render_pass.emission_id, float4(g_emission, 1.0f));
+
+#endif
+#line 153
+  }
+#line 157
+  gbuffer_InputClosures gbuf_data;
+#line 160
+#if SRT_CONSTANT_closure_bin_count == 0
+#line 159
+                                                                                     {
+    gbuf_data.closure[0] = ClosureUndetermined_ctor_();
+  }
+
+#endif
+{
+#line 162
+                                         {
+
+#if SRT_CONSTANT_closure_bin_count > 0
+#line 163
+                                                                                      {
+      gbuf_data.closure[0] = g_closure_get_resolved(0, alpha_rcp);
+    }
+
+#endif
+#line 166
+  }
+#line 162
+                                         {
+
+#if SRT_CONSTANT_closure_bin_count > 1
+#line 163
+                                                                                      {
+      gbuf_data.closure[1] = g_closure_get_resolved(1, alpha_rcp);
+    }
+
+#endif
+#line 166
+  }
+#line 162
+                                         {
+
+#if SRT_CONSTANT_closure_bin_count > 2
+#line 163
+                                                                                      {
+      gbuf_data.closure[2] = g_closure_get_resolved(2, alpha_rcp);
+    }
+
+#endif
+#line 166
+  }
+#line 166
+  }
+  const bool use_object_id = srt_access(eevee_PipelineConstants, use_sss) || use_light_linking || use_terminator_offset;
+
+  float3 gbuffer_dither = _rng_3D_get(sampling, SAMPLING_GBUFFER_U);
+  gbuffer_Packed gbuf = gbuffer_pack(
+      gbuf_params, gbuf_data, g_data.Ng, g_data.N, thickness, use_object_id);
+#line 174
+  eevee_DeferredFragOut_gbuf_header = gbuf.header;
+  eevee_DeferredFragOut_gbuf_closure1 = gbuffer_closure_data_layer_dither_round_to_nearest(
+      gbuf.closure[0], gl_FragCoord.xy, 0u, gbuffer_dither);
+  eevee_DeferredFragOut_gbuf_closure2 = gbuffer_closure_data_layer_dither_round_to_nearest(
+      gbuf.closure[1], gl_FragCoord.xy, 1u, gbuffer_dither);
+  eevee_DeferredFragOut_gbuf_normal = gbuf.normal[0];
+#line 183
+#if SRT_CONSTANT_gbuffer_layer_max >= 2
+#line 182
+                                                                                    {
+
+#if !SRT_CONSTANT_gbuffer_simple_layout
+#line 183
+                                                                                      {
+      if (flag_test(gbuf.used_layers, CLOSURE_DATA_2)) {
+        _write_closure_data(srt, out_texel,
+                               2,
+                               gbuffer_closure_data_layer_dither_flush_to_zero(
+                                   gbuf.closure[2], gl_FragCoord.xy, 2u, gbuffer_dither));
+      }
+      if (flag_test(gbuf.used_layers, CLOSURE_DATA_3)) {
+        _write_closure_data(srt, out_texel,
+                               3,
+                               gbuffer_closure_data_layer_dither_flush_to_zero(
+                                   gbuf.closure[3], gl_FragCoord.xy, 3u, gbuffer_dither));
+      }
+    }
+
+#endif
+#line 197
+    if (flag_test(gbuf.used_layers, NORMAL_DATA_1)) {
+      _write_normal_data(srt, out_texel, 1, gbuf.normal[1]);
+    }
+  }
+
+#endif
+#line 201
+
+#if SRT_CONSTANT_gbuffer_layer_max >= 3
+#line 201
+                                                                                    {
+    if (flag_test(gbuf.used_layers, CLOSURE_DATA_4)) {
+      _write_closure_data(srt, out_texel,
+                             4,
+                             gbuffer_closure_data_layer_dither_flush_to_zero(
+                                 gbuf.closure[4], gl_FragCoord.xy, 4u, gbuffer_dither));
+    }
+    if (flag_test(gbuf.used_layers, CLOSURE_DATA_5)) {
+      _write_closure_data(srt, out_texel,
+                             5,
+                             gbuffer_closure_data_layer_dither_flush_to_zero(
+                                 gbuf.closure[5], gl_FragCoord.xy, 5u, gbuffer_dither));
+    }
+    if (flag_test(gbuf.used_layers, NORMAL_DATA_2)) {
+      _write_normal_data(srt, out_texel, 2, gbuf.normal[2]);
+    }
+  }
+#endif
+#if defined(GBUFFER_HAS_REFRACTION) || defined(GBUFFER_HAS_SUBSURFACE) || \
+    defined(GBUFFER_HAS_TRANSLUCENT)
+  if (flag_test(gbuf.used_layers, ADDITIONAL_DATA)) {
+    _write_normal_data(srt, out_texel, srt_access(eevee_Uniform, pipeline_buf).gbuffer_additional_data_layer_id, gbuf.additional_info);
+  }
+#endif
+
+  if (flag_test(gbuf.used_layers, OBJECT_ID)) {
+    _write_header_data(srt, out_texel, 1, resource_id);
+  }
+#line 233
+  eevee_DeferredFragOut_radiance = float4(g_emission, 0.0f);
+  eevee_DeferredFragOut_radiance.rgb *= 1.0f - g_holdout;
+  eevee_DeferredFragOut_radiance.a = g_holdout;
+
+#endif
+
+#endif
+#line 237
+}
+#endif
+#endif

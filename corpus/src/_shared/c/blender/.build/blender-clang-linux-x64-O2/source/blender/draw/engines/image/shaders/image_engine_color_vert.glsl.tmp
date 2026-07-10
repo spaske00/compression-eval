@@ -1,0 +1,12 @@
+#line 1 "image_engine_color_vert.glsl"
+ 
+#line 8
+void main()
+{
+  float3 image_pos = float3(pos.x, pos.y, 0.0f);
+  uv_screen = image_pos.xy;
+
+  float4 position = drw_point_world_to_homogenous(image_pos);
+  position.z = 0.0f;
+  gl_Position = position;
+}

@@ -1,0 +1,31 @@
+#line 1 "overlay_background_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 18
+#ifdef CREATE_INFO_RES_PASS_overlay_background
+CREATE_INFO_RES_PASS_overlay_background
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_background
+CREATE_INFO_RES_BATCH_overlay_background
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_background
+CREATE_INFO_RES_GEOMETRY_overlay_background
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_background
+CREATE_INFO_RES_SHARED_VARS_overlay_background
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_overlay_clipbound
+CREATE_INFO_RES_PASS_overlay_clipbound
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_clipbound
+CREATE_INFO_RES_BATCH_overlay_clipbound
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_clipbound
+CREATE_INFO_RES_GEOMETRY_overlay_clipbound
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_clipbound
+CREATE_INFO_RES_SHARED_VARS_overlay_clipbound
+#endif

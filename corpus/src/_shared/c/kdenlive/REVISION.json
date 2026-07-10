@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "kdenlive",
+  "input_url": "https://github.com/KDE/kdenlive",
+  "canonical_url": "https://github.com/KDE/kdenlive",
+  "source_directory": "kdenlive/upstream",
+  "commit": "6821e5f3e2cf0b26d5fe0c65114d4a7bf1399a72",
+  "nested_submodules": []
+}

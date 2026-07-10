@@ -1,0 +1,13 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_LightprobeRenderData)
+.additional_info("eevee_LightprobeSphereRenderData")
+.additional_info("eevee_LightprobeVolumeRenderData")
+.additional_info("eevee_Sampling")
+GPU_SHADER_CREATE_END()
+

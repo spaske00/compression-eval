@@ -1,0 +1,82 @@
+#line 1 "gpu_shader_math_safe_lib.glsl"
+ 
+#line 19
+float safe_mod(float a, float b)
+{
+  return (b != 0.0f) ? mod(a, b) : 0.0f;
+}
+#line 28
+float safe_divide(float a, float b)
+{
+  return (b != 0.0f) ? (a / b) : 0.0f;
+}
+#line 37
+float safe_rcp(float a)
+{
+  return (a != 0.0f) ? (1.0f / a) : 0.0f;
+}
+#line 46
+float safe_sqrt(float a)
+{
+  return sqrt(max(0.0f, a));
+}
+#line 56
+float safe_acos(float a)
+{
+  if (a <= -1.0f) {
+    return M_PI;
+  }
+  else if (a >= 1.0f) {
+    return 0.0f;
+  }
+  return acos(a);
+}
+#line 71
+float fallback_pow(float x, float y, float fallback)
+{
+  if (x < 0.0f || (x == 0.0f && y <= 0.0f)) {
+    return fallback;
+  }
+
+  return pow(x, y);
+}
+#line 83
+float compatible_pow(float x, float y)
+{
+  if (y == 0.0f) {
+    return 1.0f;
+  }
+#line 90
+  if (x < 0.0f) {
+    if (mod(-y, 2.0f) == 0.0f) {
+      return pow(-x, y);
+    }
+    else {
+      return -pow(-x, y);
+    }
+  }
+  else if (x == 0.0f) {
+    return 0.0f;
+  }
+
+  return pow(x, y);
+}
+#line 109
+float compatible_mod(float a, float b)
+{
+  if (b != 0.0f) {
+    int N = int(a / b);
+    return a - N * b;
+  }
+  return 0.0f;
+}
+#line 121
+float wrap(float a, float b, float c)
+{
+  float range = b - c;
+
+  float s = (a != b) ? floor((a - c) / range) : 1.0f;
+  return (range != 0.0f) ? a - range * s : c;
+}
+
+

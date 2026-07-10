@@ -1,0 +1,32 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_raytracing_RayGenerate)
+SPECIALIZATION_CONSTANT(int, closure_index, 0)
+.image(0, blender::gpu::TextureFormat::SFLOAT_16_16_16_16, Qualifier::write, ImageReadWriteType::image2D, "out_ray_data_img", Frequency::PASS)
+.storage_buf(4, Qualifier::read, "uint", "tiles_coord_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_raytracing_generate_rays_infos_)
+LOCAL_GROUP_SIZE(RAYTRACE_GROUP_SIZE, RAYTRACE_GROUP_SIZE)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_raytracing_RayGenerate)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(gbuffer_Reader)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_ray_generate)
+COMPUTE_SOURCE("eevee_ray_generate.bsl.hh")
+COMPUTE_FUNCTION("eevee_raytracing_generate_rays")
+ADDITIONAL_INFO(eevee_raytracing_generate_rays_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

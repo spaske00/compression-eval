@@ -1,0 +1,18 @@
+#line 1 "compositor_node_tree_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 14
+#ifdef CREATE_INFO_RES_PASS_compositor_nodetree
+CREATE_INFO_RES_PASS_compositor_nodetree
+#endif
+#ifdef CREATE_INFO_RES_BATCH_compositor_nodetree
+CREATE_INFO_RES_BATCH_compositor_nodetree
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_compositor_nodetree
+CREATE_INFO_RES_GEOMETRY_compositor_nodetree
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_compositor_nodetree
+CREATE_INFO_RES_SHARED_VARS_compositor_nodetree
+#endif

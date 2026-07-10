@@ -1,0 +1,46 @@
+#line 1 "overlay_outline_prepass_pointcloud_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_outline_prepass_pointcloud)
+#line 16
+uint outline_colorid_get()
+{
+  eObjectInfoFlag ob_flag = drw_object_infos().flag;
+  bool is_active = flag_test(ob_flag, OBJECT_ACTIVE);
+
+  if (is_transform) {
+    return 0u;
+  }
+  if (is_active) {
+    return 3u;
+  }
+  return 1u;
+}
+
+void main()
+{
+
+#if defined(CREATE_INFO_draw_object_infos)
+#line 32
+  const eObjectInfoFlag ob_flag = buffer_get(draw_object_infos, drw_infos)[drw_resource_id()].flag;
+
+  const pointcloud_Point ls_pt = pointcloud_point_get(uint(gl_VertexID));
+  const pointcloud_Point ws_pt = pointcloud_object_to_world(ls_pt, drw_modelmat());
+  const pointcloud_ShapePoint pt = pointcloud_shape_point_get(
+      ws_pt, drw_world_incident_vector(ws_pt.P), drw_view_up(), ob_flag);
+
+  gl_Position = drw_point_world_to_homogenous(pt.P);
+#line 42
+  gl_Position.z -= 1e-3f;
+#line 45
+  interp.ob_id = uint(drw_resource_id() + 1);
+#line 48
+  uint outline_id = outline_colorid_get();
+#line 51
+  interp.ob_id = outline_id_pack(outline_id, interp.ob_id);
+
+  view_clipping_distances(pt.P);
+
+#endif
+#line 54
+}

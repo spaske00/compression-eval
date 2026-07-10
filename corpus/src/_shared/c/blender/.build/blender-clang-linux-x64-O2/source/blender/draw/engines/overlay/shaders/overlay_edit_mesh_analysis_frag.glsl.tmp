@@ -1,0 +1,10 @@
+#line 1 "overlay_edit_mesh_analysis_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(overlay_edit_mesh_analysis)
+
+void main()
+{
+  frag_color = weight_color;
+  line_output = float4(0.0f);
+}

@@ -1,0 +1,26 @@
+#line 1 "overlay_viewer_attribute_curves_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_viewer_attribute_curves)
+#line 14
+#if defined(GPU_NVIDIA) && defined(GPU_OPENGL)
+
+#  define const
+#endif
+
+void main()
+{
+  const curves_Point ls_pt = curves_point_get(uint(gl_VertexID));
+  const curves_Point ws_pt = curves_object_to_world(ls_pt, drw_modelmat());
+
+  float3 world_pos = curves_shape_point_get(ws_pt, drw_world_incident_vector(ws_pt.P)).P;
+
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+
+  if (is_point_domain) {
+    final_color = texelFetch(color_tx, int(ws_pt.point_id));
+  }
+  else {
+    final_color = texelFetch(color_tx, int(ws_pt.curve_id));
+  }
+}

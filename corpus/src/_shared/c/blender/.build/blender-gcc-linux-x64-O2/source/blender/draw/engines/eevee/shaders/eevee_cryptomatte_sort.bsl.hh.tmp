@@ -1,0 +1,136 @@
+#line 1 "eevee_cryptomatte_sort.bsl.hh"
+ 
+#line 12
+#define CRYPTOMATTE_LEVELS_MAX 16
+
+#define access_eevee_cryptomatte_Resources_cryptomatte_layer_len() cryptomatte_layer_len
+#define access_eevee_cryptomatte_Resources_cryptomatte_samples_per_layer() cryptomatte_samples_per_layer
+#define access_eevee_cryptomatte_Resources_cryptomatte_img() cryptomatte_img
+#ifdef CREATE_INFO_RES_PASS_eevee_cryptomatte_Resources
+CREATE_INFO_RES_PASS_eevee_cryptomatte_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_cryptomatte_Resources
+CREATE_INFO_RES_BATCH_eevee_cryptomatte_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_cryptomatte_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_cryptomatte_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_cryptomatte_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_cryptomatte_Resources
+#endif
+#line 14
+struct eevee_cryptomatte_Resources {
+#line 80
+int _pad;};
+#line 83
+#ifndef GPU_METAL
+eevee_cryptomatte_Resources eevee_cryptomatte_Resources_ctor_();
+void _load_samples(eevee_cryptomatte_Resources  this_, int2 texel, int layer, _ref(float2 ,samples)[CRYPTOMATTE_LEVELS_MAX]);
+void _sort_samples(eevee_cryptomatte_Resources  this_, _ref(float2 ,samples)[CRYPTOMATTE_LEVELS_MAX]);
+void _store_samples(eevee_cryptomatte_Resources  this_, int2 texel, int layer, float2 samples[CRYPTOMATTE_LEVELS_MAX]);
+eevee_cryptomatte_Resources eevee_cryptomatte_Resources_new_();
+#endif
+#line 14
+                                           eevee_cryptomatte_Resources eevee_cryptomatte_Resources_ctor_() {eevee_cryptomatte_Resources r;r._pad=0;return r;}
+#line 20
+
+#if defined(CREATE_INFO_eevee_cryptomatte_Resources)
+#line 20
+  void _load_samples(eevee_cryptomatte_Resources  this_, int2 texel, int layer, _ref(float2 ,samples)[CRYPTOMATTE_LEVELS_MAX])
+  {
+    int pass_len = divide_ceil(srt_access(eevee_cryptomatte_Resources, cryptomatte_samples_per_layer), 2);
+    int layer_id = layer * pass_len;
+#line 26
+    for (int p = 0; p < pass_len; p++) {
+      float4 pass_sample = imageLoadFast(srt_access(eevee_cryptomatte_Resources, cryptomatte_img), int3(texel, p + layer_id));
+      samples[p * 2] = pass_sample.xy;
+      samples[p * 2 + 1] = pass_sample.zw;
+    }
+    for (int i = pass_len * 2; i < CRYPTOMATTE_LEVELS_MAX; i++) {
+      samples[i] = float2(0.0f);
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_cryptomatte_Resources)
+#line 36
+  void _sort_samples(eevee_cryptomatte_Resources  this_, _ref(float2 ,samples)[CRYPTOMATTE_LEVELS_MAX])
+  {
+
+    for (int i = 0; i < srt_access(eevee_cryptomatte_Resources, cryptomatte_samples_per_layer) - 1 && samples[i].y != 0.0f; i++) {
+      int highest_index = i;
+      float highest_weight = samples[i].y;
+      for (int j = i + 1; j < srt_access(eevee_cryptomatte_Resources, cryptomatte_samples_per_layer) && samples[j].y != 0.0f; j++) {
+        if (samples[j].y > highest_weight) {
+          highest_index = j;
+          highest_weight = samples[j].y;
+        }
+      };
+
+      if (highest_index != i) {
+        float2 tmp = samples[i];
+        samples[i] = samples[highest_index];
+        samples[highest_index] = tmp;
+      }
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_cryptomatte_Resources)
+#line 57
+  void _store_samples(eevee_cryptomatte_Resources  this_, int2 texel, int layer, float2 samples[CRYPTOMATTE_LEVELS_MAX])
+  {
+    int pass_len = divide_ceil(srt_access(eevee_cryptomatte_Resources, cryptomatte_samples_per_layer), 2);
+    int layer_id = layer * pass_len;
+#line 63
+    for (int p = 0; p < pass_len; p++) {
+      float4 pass_sample;
+      pass_sample.xy = samples[p * 2];
+      pass_sample.zw = samples[p * 2 + 1];
+      imageStoreFast(srt_access(eevee_cryptomatte_Resources, cryptomatte_img), int3(texel, p + layer_id), pass_sample);
+    }
+
+    imageFence(srt_access(eevee_cryptomatte_Resources, cryptomatte_img));
+  }
+#endif
+       eevee_cryptomatte_Resources eevee_cryptomatte_Resources_new_()
+{
+  eevee_cryptomatte_Resources result;
+  result._pad = 0;
+  return result;
+#line 71
+}
+#line 74
+
+#if defined(CREATE_INFO_eevee_cryptomatte_Resources) && defined(CREATE_INFO_eevee_Uniform)
+#line 74
+
+#if defined(ENTRY_POINT_eevee_cryptomatte_sort_samples)
+#line 74
+
+void eevee_cryptomatte_sort_samples(
+
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 78
+  eevee_cryptomatte_Resources srt = eevee_cryptomatte_Resources_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  if (any(greaterThanEqual(texel, srt_access(eevee_Uniform, uniform_buf).film.extent))) {
+    return;
+  }
+
+  for (int layer = 0; layer < srt_access(eevee_cryptomatte_Resources, cryptomatte_layer_len); layer++) {
+    float2 samples[CRYPTOMATTE_LEVELS_MAX];
+    _load_samples(srt, texel, layer, samples);
+    _sort_samples(srt, samples);
+    _store_samples(srt, texel, layer, samples);
+  }
+
+#endif
+#line 91
+}
+#endif
+#endif
+#line 96

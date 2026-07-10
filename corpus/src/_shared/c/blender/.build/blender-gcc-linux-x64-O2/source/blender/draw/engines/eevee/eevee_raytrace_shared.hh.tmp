@@ -1,0 +1,130 @@
+#line 1 "eevee_raytrace_shared.hh"
+ 
+#line 18
+#define ScreenThicknessParameters_host_shared_ ScreenThicknessParameters
+#define ScreenThicknessParameters_host_shared_uniform_ ScreenThicknessParameters
+#line 17
+struct                 ScreenThicknessParameters {
+  float thickness_ndc_scale;
+  float thickness_ndc_bias;
+  float thickness_vs_scale;
+  float thickness_vs_bias;
+#line 61
+};
+#line 65
+#ifndef GPU_METAL
+ScreenThicknessParameters ScreenThicknessParameters_ctor_();
+ScreenThicknessParameters ScreenThicknessParameters_build(float4x4 winmat,
+                                         float avg_pixel_radius_unit,
+                                         float min_pixel_thickness,
+                                         float min_constant_thickness);
+float _pixel_depth_thickness_at(const ScreenThicknessParameters this_, float vs_z);
+#endif
+#line 17
+                                                         ScreenThicknessParameters ScreenThicknessParameters_ctor_() {ScreenThicknessParameters r;r.thickness_ndc_scale=0.0f;r.thickness_ndc_bias=0.0f;r.thickness_vs_scale=0.0f;r.thickness_vs_bias=0.0f;return r;}
+#line 24
+         ScreenThicknessParameters ScreenThicknessParameters_build(float4x4 winmat,
+                                         float avg_pixel_radius_unit,
+                                         float min_pixel_thickness,
+                                         float min_constant_thickness)
+  {
+    ScreenThicknessParameters params;
+    avg_pixel_radius_unit *= min_pixel_thickness;
+    if (winmat[3][3] == 0.0f) {
+
+      params.thickness_vs_scale = avg_pixel_radius_unit;
+      params.thickness_vs_bias = -min_constant_thickness;
+      params.thickness_ndc_scale = winmat[3][2];
+      params.thickness_ndc_bias = 0.0f;
+
+      params.thickness_ndc_scale *= 0.5f;
+    }
+    else {
+
+      params.thickness_vs_scale = 0.0f;
+      params.thickness_vs_bias = 1.0f;
+      params.thickness_ndc_scale = 0.0f;
+      params.thickness_ndc_bias = -(avg_pixel_radius_unit + min_constant_thickness) * winmat[2][2];
+
+      params.thickness_ndc_bias *= 0.5f;
+    }
+    return params;
+  }
+#line 53
+  float _pixel_depth_thickness_at(const ScreenThicknessParameters this_, float vs_z)
+  {
+    float vs_thickness = vs_z * this_.thickness_vs_scale + this_.thickness_vs_bias;
+#line 58
+    float ndc_thickness = vs_thickness / (vs_z * (vs_z + vs_thickness));
+    return ndc_thickness * this_.thickness_ndc_scale + this_.thickness_ndc_bias;
+  }
+#line 64
+#define RayTraceData_host_shared_ RayTraceData
+#define RayTraceData_host_shared_uniform_ RayTraceData
+#line 63
+struct                 RayTraceData {
+
+  float4x4 history_persmat;
+
+  float4x4 denoise_history_persmat;
+
+  int2 full_resolution;
+
+  float2 full_resolution_inv;
+
+  int2 trace_pixel_offset;
+  int trace_pixel_scale;
+
+  float thickness;
+
+  int2 fast_gi_resolution_bias;
+  int fast_gi_resolution_scale;
+
+  float fast_gi_lod_bias;
+
+  float2 fast_gi_uv_scale;
+
+  float quality;
+
+  float roughness_mask_scale;
+  float roughness_mask_bias;
+
+  bool32_t skip_denoise;
+
+  bool32_t trace_refraction;
+
+  int closure_index;
+
+  bool32_t use_backface_hit;
+
+  float backface_hit_scale;
+  uint _pad0;
+  uint _pad1;
+
+         ScreenThicknessParameters fast_gi_thickness;
+         ScreenThicknessParameters ray_thickness;
+};
+#line 63
+                                            RayTraceData RayTraceData_ctor_() {RayTraceData r;r.history_persmat=float4x4(0);r.denoise_history_persmat=float4x4(0);r.full_resolution=int2(0);r.full_resolution_inv=float2(0);r.trace_pixel_offset=int2(0);r.trace_pixel_scale=0;r.thickness=0.0f;r.fast_gi_resolution_bias=int2(0);r.fast_gi_resolution_scale=0;r.fast_gi_lod_bias=0.0f;r.fast_gi_uv_scale=float2(0);r.quality=0.0f;r.roughness_mask_scale=0.0f;r.roughness_mask_bias=0.0f;r.skip_denoise=bool32_t(0);r.trace_refraction=bool32_t(0);r.closure_index=0;r.use_backface_hit=bool32_t(0);r.backface_hit_scale=0.0f;r._pad0=0u;r._pad1=0u;r.fast_gi_thickness=ScreenThicknessParameters_ctor_();r.ray_thickness=ScreenThicknessParameters_ctor_();return r;}
+#line 107
+#define AOData_host_shared_ AOData
+#define AOData_host_shared_uniform_ AOData
+#line 106
+struct                 AOData {
+  float2 pixel_size;
+  float distance;
+  float lod_factor;
+
+  float thickness_near;
+  float thickness_far;
+  float angle_bias;
+  float gi_distance;
+
+  float lod_factor_ao;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+};
+#line 106
+                                      AOData AOData_ctor_() {AOData r;r.pixel_size=float2(0);r.distance=0.0f;r.lod_factor=0.0f;r.thickness_near=0.0f;r.thickness_far=0.0f;r.angle_bias=0.0f;r.gi_distance=0.0f;r.lod_factor_ao=0.0f;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 125

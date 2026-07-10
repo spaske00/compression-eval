@@ -1,0 +1,30 @@
+{
+    "classes": [
+        {
+            "className": "AnimatedImageHandler",
+            "interfaces": [
+                [
+                    {
+                        "className": "QTextObjectInterface",
+                        "id": "\"org.qt-project.Qt.QTextObjectInterface\""
+                    }
+                ]
+            ],
+            "lineNumber": 106,
+            "object": true,
+            "qualifiedClassName": "Utils::AnimatedImageHandler",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                },
+                {
+                    "access": "public",
+                    "name": "QTextObjectInterface"
+                }
+            ]
+        }
+    ],
+    "inputFile": "markdownbrowser.cpp",
+    "outputRevision": 68
+}

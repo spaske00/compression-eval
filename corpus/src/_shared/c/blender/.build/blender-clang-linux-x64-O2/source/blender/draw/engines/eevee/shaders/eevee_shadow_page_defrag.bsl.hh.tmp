@@ -1,0 +1,74 @@
+#line 1 "eevee_shadow_page_defrag.bsl.hh"
+ 
+#line 32
+#define access_eevee_shadow_Commands_clear_dispatch_buf() clear_dispatch_buf
+#define access_eevee_shadow_Commands_tile_draw_buf() tile_draw_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_Commands
+CREATE_INFO_RES_PASS_eevee_shadow_Commands
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_Commands
+CREATE_INFO_RES_BATCH_eevee_shadow_Commands
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_Commands
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_Commands
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_Commands
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_Commands
+#endif
+#line 32
+struct eevee_shadow_Commands {
+#line 43
+int _pad;};
+#line 46
+#ifndef GPU_METAL
+eevee_shadow_Commands eevee_shadow_Commands_ctor_();
+eevee_shadow_Commands eevee_shadow_Commands_new_();
+#endif
+#line 32
+                                     eevee_shadow_Commands eevee_shadow_Commands_ctor_() {eevee_shadow_Commands r;r._pad=0;return r;}
+#line 36
+       eevee_shadow_Commands eevee_shadow_Commands_new_()
+{
+  eevee_shadow_Commands result;
+  result._pad = 0;
+  return result;
+#line 34
+}
+#line 37
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator) && defined(CREATE_INFO_eevee_shadow_Commands) && defined(CREATE_INFO_eevee_shadow_Statistics)
+#line 37
+
+#if defined(ENTRY_POINT_eevee_shadow_defrag)
+#line 37
+
+void eevee_shadow_defrag(
+
+                                          )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 41
+  eevee_shadow_PageAllocator allocator = eevee_shadow_PageAllocator_ctor_(); eevee_shadow_Commands cmds = eevee_shadow_Commands_ctor_(); eevee_shadow_Statistics stats = eevee_shadow_Statistics_ctor_();
+  _defrag(allocator);
+#line 45
+  srt_access(eevee_shadow_Statistics, statistics_buf).page_used_count = 0;
+  srt_access(eevee_shadow_Statistics, statistics_buf).page_update_count = 0;
+  srt_access(eevee_shadow_Statistics, statistics_buf).page_allocated_count = 0;
+  srt_access(eevee_shadow_Statistics, statistics_buf).page_rendered_count = 0;
+  srt_access(eevee_shadow_Statistics, statistics_buf).view_needed_count = 0;
+#line 52
+  srt_access(eevee_shadow_Commands, clear_dispatch_buf).num_groups_x = SHADOW_PAGE_RES / SHADOW_PAGE_CLEAR_GROUP_SIZE;
+  srt_access(eevee_shadow_Commands, clear_dispatch_buf).num_groups_y = SHADOW_PAGE_RES / SHADOW_PAGE_CLEAR_GROUP_SIZE;
+  srt_access(eevee_shadow_Commands, clear_dispatch_buf).num_groups_z = 0;
+#line 57
+  srt_access(eevee_shadow_Commands, tile_draw_buf).vertex_len = 0u;
+  srt_access(eevee_shadow_Commands, tile_draw_buf).instance_len = 1u;
+  srt_access(eevee_shadow_Commands, tile_draw_buf).vertex_first = 0u;
+  srt_access(eevee_shadow_Commands, tile_draw_buf).instance_first = 0u;
+
+#endif
+#line 61
+}
+#endif
+#endif
+#line 66

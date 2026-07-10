@@ -1,0 +1,100 @@
+{
+    "classes": [
+        {
+            "className": "AsyncBase",
+            "lineNumber": 86,
+            "object": true,
+            "qualifiedClassName": "Utils::AsyncBase",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "started",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "done",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "resultReadyAt",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "beginIndex",
+                            "type": "int"
+                        },
+                        {
+                            "name": "endIndex",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "resultsReadyAt",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "min",
+                            "type": "int"
+                        },
+                        {
+                            "name": "max",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "progressRangeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "progressValueChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "text",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "progressTextChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "async.h",
+    "outputRevision": 68
+}

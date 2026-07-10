@@ -1,0 +1,18 @@
+#line 1 "gpu_shader_material_repeat_zone.glsl"
+ 
+#line 5
+#ifdef GPU_SHADER
+
+#  define REPEAT_BEGIN(count, var) \
+    for (int var##_i = 0; var##_i < count; var##_i++) { \
+      var = float(var##_i);
+
+#  define REPEAT_END() }
+
+#else
+#line 20
+void REPEAT_BEGIN(float dummy) {};
+
+void REPEAT_END(float dummy) {};
+
+#endif

@@ -1,0 +1,39 @@
+#line 1 "compositor_jump_flooding.glsl"
+ 
+#line 20
+COMPUTE_SHADER_CREATE_INFO(compositor_jump_flooding)
+#line 27
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 34
+  int2 closest_seed_texel = int2(0.0f);
+  float minimum_squared_distance = FLT_MAX;
+  for (int j = -1; j <= 1; j++) {
+    for (int i = -1; i <= 1; i++) {
+      int2 offset = int2(i, j) * step_size;
+#line 42
+      int4 fallback = int4(JUMP_FLOODING_NON_FLOODED_VALUE, int2(0));
+      int2 jump_flooding_value = texture_load(input_tx, texel + offset, fallback).xy;
+#line 46
+      if (all(equal(jump_flooding_value, JUMP_FLOODING_NON_FLOODED_VALUE))) {
+        continue;
+      }
+#line 52
+      int2 closest_seed_texel_to_neighbor = jump_flooding_value;
+#line 55
+      float squared_distance = distance_squared(float2(closest_seed_texel_to_neighbor),
+                                                float2(texel));
+
+      if (squared_distance < minimum_squared_distance) {
+        minimum_squared_distance = squared_distance;
+        closest_seed_texel = closest_seed_texel_to_neighbor;
+      }
+    }
+  }
+#line 68
+  bool flooding_happened = minimum_squared_distance != FLT_MAX;
+  int2 jump_flooding_value = encode_jump_flooding_value(closest_seed_texel, flooding_happened);
+
+  imageStore(output_img, texel, int4(jump_flooding_value, int2(0)));
+}

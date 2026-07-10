@@ -1,0 +1,29 @@
+#line 1 "gpu_shader_material_separate_color.glsl"
+ 
+#line 8
+void separate_color_rgb(float4 col, _ref(float ,r), _ref(float ,g), _ref(float ,b))
+{
+  r = col.r;
+  g = col.g;
+  b = col.b;
+}
+#line 16
+void separate_color_hsv(float4 col, _ref(float ,r), _ref(float ,g), _ref(float ,b))
+{
+  float4 hsv;
+
+  rgb_to_hsv(col, hsv);
+  r = hsv[0];
+  g = hsv[1];
+  b = hsv[2];
+}
+#line 27
+void separate_color_hsl(float4 col, _ref(float ,r), _ref(float ,g), _ref(float ,b))
+{
+  float4 hsl;
+
+  rgb_to_hsl(col, hsl);
+  r = hsl[0];
+  g = hsl[1];
+  b = hsl[2];
+}

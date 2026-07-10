@@ -1,0 +1,22 @@
+#line 1 "compositor_tone_map_simple.glsl"
+ 
+#line 11
+COMPUTE_SHADER_CREATE_INFO(compositor_tone_map_simple)
+#line 16
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 input_color = texture_load(input_tx, texel);
+#line 23
+  float4 scaled_color = input_color * luminance_scale;
+#line 27
+  float4 denominator = luminance_scale_blend_factor + scaled_color;
+  float4 tone_mapped_color = safe_divide(scaled_color, denominator);
+
+  if (inverse_gamma != 0.0f) {
+    tone_mapped_color = pow(max(tone_mapped_color, float4(0.0f)), float4(inverse_gamma));
+  }
+
+  imageStore(output_img, texel, float4(tone_mapped_color.rgb, input_color.a));
+}

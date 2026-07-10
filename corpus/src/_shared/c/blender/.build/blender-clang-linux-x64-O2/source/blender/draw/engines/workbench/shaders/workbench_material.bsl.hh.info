@@ -1,0 +1,11 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(workbench_color_Materials)
+.storage_buf(WB_MATERIAL_SLOT, Qualifier::read, "float4", "materials_data[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

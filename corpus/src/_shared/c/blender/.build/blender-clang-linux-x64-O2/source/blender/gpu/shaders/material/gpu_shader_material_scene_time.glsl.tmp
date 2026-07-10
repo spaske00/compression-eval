@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_scene_time.glsl"
+ 
+#line 6
+void node_scene_time(_ref(float ,seconds), _ref(float ,frame))
+{
+  scene_time_uniforms(seconds, frame);
+}

@@ -1,0 +1,441 @@
+#line 1 "overlay_shader_shared.hh"
+ 
+#line 15
+constant static constexpr uint32_t BG_SOLID = 0u;
+constant static constexpr uint32_t BG_GRADIENT = 1u;
+constant static constexpr uint32_t BG_CHECKER = 2u;
+constant static constexpr uint32_t BG_RADIAL = 3u;
+constant static constexpr uint32_t BG_SOLID_CHECKER = 4u;
+constant static constexpr uint32_t BG_MASK = 5u;
+
+#define OVERLAY_BackgroundType uint32_t
+#line 14
+
+#define OVERLAY_BackgroundType_host_shared_ OVERLAY_BackgroundType
+#line 14
+
+OVERLAY_BackgroundType OVERLAY_BackgroundType_ctor_() { return OVERLAY_BackgroundType(0); }
+#line 24
+constant static constexpr uint32_t OVERLAY_UV_LINE_STYLE_OUTLINE = 0u;
+constant static constexpr uint32_t OVERLAY_UV_LINE_STYLE_DASH = OVERLAY_UV_LINE_STYLE_OUTLINE + 1u;
+constant static constexpr uint32_t OVERLAY_UV_LINE_STYLE_BLACK = OVERLAY_UV_LINE_STYLE_DASH + 1u;
+constant static constexpr uint32_t OVERLAY_UV_LINE_STYLE_WHITE = OVERLAY_UV_LINE_STYLE_BLACK + 1u;
+constant static constexpr uint32_t OVERLAY_UV_LINE_STYLE_SHADOW = OVERLAY_UV_LINE_STYLE_WHITE + 1u;
+
+#define OVERLAY_UVLineStyle uint32_t
+#line 23
+
+#define OVERLAY_UVLineStyle_host_shared_ OVERLAY_UVLineStyle
+#line 23
+
+OVERLAY_UVLineStyle OVERLAY_UVLineStyle_ctor_() { return OVERLAY_UVLineStyle(0); }
+#line 32
+constant static constexpr uint32_t SHOW_GRID = (1u << 0u);
+constant static constexpr uint32_t SHOW_AXES = (1u << 1u);
+#line 36
+constant static constexpr uint32_t AXIS_X = (1u << 2u);
+constant static constexpr uint32_t AXIS_Y = (1u << 3u);
+constant static constexpr uint32_t AXIS_Z = (1u << 4u);
+#line 41
+constant static constexpr uint32_t PLANE_XY = (1u << 5u);
+constant static constexpr uint32_t PLANE_XZ = (1u << 6u);
+constant static constexpr uint32_t PLANE_YZ = (1u << 7u);
+#line 45
+constant static constexpr uint32_t GRID_ALIGNED = (1u << 8u);
+constant static constexpr uint32_t GRID_SIMA = (1u << 9u);
+constant static constexpr uint32_t GRID_CAMERA = (1u << 10u);
+constant static constexpr uint32_t GRID_OVER_IMAGE = (1u << 11u);
+constant static constexpr uint32_t GRID_BEHIND_GEOMETRY = (1u << 12u);
+
+#define OVERLAY_GridBits uint32_t
+#line 31
+
+#define OVERLAY_GridBits_host_shared_ OVERLAY_GridBits
+#line 31
+
+OVERLAY_GridBits OVERLAY_GridBits_ctor_() { return OVERLAY_GridBits(0); }
+#line 56
+constant static constexpr uint32_t VCLASS_NONE = 0;
+#line 58
+constant static constexpr uint32_t VCLASS_LIGHT_AREA_SHAPE = 1 << 0;
+constant static constexpr uint32_t VCLASS_LIGHT_SPOT_SHAPE = 1 << 1;
+constant static constexpr uint32_t VCLASS_LIGHT_SPOT_BLEND = 1 << 2;
+constant static constexpr uint32_t VCLASS_LIGHT_SPOT_CONE = 1 << 3;
+constant static constexpr uint32_t VCLASS_LIGHT_DIST = 1 << 4;
+#line 64
+constant static constexpr uint32_t VCLASS_CAMERA_FRAME = 1 << 5;
+constant static constexpr uint32_t VCLASS_CAMERA_DIST = 1 << 6;
+constant static constexpr uint32_t VCLASS_CAMERA_VOLUME = 1 << 7;
+#line 68
+constant static constexpr uint32_t VCLASS_SCREENSPACE = 1 << 8;
+constant static constexpr uint32_t VCLASS_SCREENALIGNED = 1 << 9;
+#line 71
+constant static constexpr uint32_t VCLASS_EMPTY_SCALED = 1 << 10;
+constant static constexpr uint32_t VCLASS_EMPTY_AXES = 1 << 11;
+constant static constexpr uint32_t VCLASS_EMPTY_AXES_NAME = 1 << 12;
+constant static constexpr uint32_t VCLASS_EMPTY_AXES_SHADOW = 1 << 13;
+constant static constexpr uint32_t VCLASS_EMPTY_SIZE = 1 << 14;
+
+#define VertexClass uint32_t
+#line 55
+
+#define VertexClass_host_shared_ VertexClass
+#line 55
+
+VertexClass VertexClass_ctor_() { return VertexClass(0); }
+#line 82
+constant static constexpr uint32_t COL_WIRE = (1u << 0u);
+constant static constexpr uint32_t COL_HEAD = (1u << 1u);
+constant static constexpr uint32_t COL_TAIL = (1u << 2u);
+constant static constexpr uint32_t COL_BONE = (1u << 3u);
+constant static constexpr uint32_t POS_HEAD = (1u << 4u);
+constant static constexpr uint32_t POS_TAIL = (1u << 5u);
+constant static constexpr uint32_t POS_BONE = (1u << 6u);
+
+#define StickBoneFlag uint32_t
+#line 81
+
+#define StickBoneFlag_host_shared_ StickBoneFlag
+#line 81
+
+StickBoneFlag StickBoneFlag_ctor_() { return StickBoneFlag(0); }
+#line 96
+#define VERT_GPENCIL_BEZT_HANDLE (1u << 30)
+
+#define FACE_ACTIVE (1u << 0)
+#define FACE_SELECTED (1u << 1)
+#define FACE_FREESTYLE (1u << 2)
+#define VERT_UV_SELECT (1u << 3)
+#define VERT_UV_PINNED (1u << 4)
+#define EDGE_UV_SELECT (1u << 5)
+#define FACE_UV_ACTIVE (1u << 6)
+#define FACE_UV_SELECT (1u << 7)
+
+#define VERT_ACTIVE (1u << 0)
+#define VERT_SELECTED (1u << 1)
+#define VERT_SELECTED_BEZT_HANDLE (1u << 2)
+#define EDGE_ACTIVE (1u << 3)
+#define EDGE_SELECTED (1u << 4)
+#define EDGE_SEAM (1u << 5)
+#define EDGE_SHARP (1u << 6)
+#define EDGE_FREESTYLE (1u << 7)
+
+              uint outline_id_pack(uint outline_id, uint object_id)
+{
+#line 121
+  return (outline_id << 14u) | ((object_id << 18u) >> 18u);
+}
+#line 125
+#define OVERLAY_GRID_STEPS_LEN 8
+
+#define OVERLAY_GRID_STEPS_DRAW 3
+
+#define OVERLAY_GRID_ITER_LEN 4
+#line 132
+#define WIRE_WIDTH_COMPRESSION 16.0f
+#line 135
+#define OVERLAY_GridData_host_shared_ OVERLAY_GridData
+#define OVERLAY_GridData_host_shared_uniform_ OVERLAY_GridData
+#line 134
+struct                 OVERLAY_GridData {
+
+  float4 steps[OVERLAY_GRID_STEPS_LEN];
+
+  float2 offset;
+
+  float2 clip_rect;
+
+  float level;
+
+  uint num_lines;
+  uint _pad0;
+  uint _pad1;
+};
+#line 134
+                                                OVERLAY_GridData OVERLAY_GridData_ctor_() {OVERLAY_GridData r;r.offset=float2(0);r.clip_rect=float2(0);r.level=0.0f;r.num_lines=0u;r._pad0=0u;r._pad1=0u;for(int i=0;i < OVERLAY_GRID_STEPS_LEN;i++){r.steps[i]=float4(0);}return r;}
+#line 149
+#ifdef GPU_SHADER
+
+#  define EDIT_CURVES_NURBS_CONTROL_POINT (1u)
+#  define EDIT_CURVES_BEZIER_HANDLE (1u << 1)
+#  define EDIT_CURVES_ACTIVE_HANDLE (1u << 2)
+#  define EDIT_CURVES_BEZIER_KNOT (1u << 3)
+#  define EDIT_CURVES_HANDLE_TYPES_SHIFT (4u)
+
+#  define ACTIVE_NURB (1u << 2)
+#  define BEZIER_HANDLE (1u << 3)
+#  define EVEN_U_BIT (1u << 4)
+#  define COLOR_SHIFT 5u
+#line 163
+#  define CURVE_HANDLE_SELECTED 0u
+#  define CURVE_HANDLE_ALL 1u
+#  define CURVE_HANDLE_NONE 2u
+
+#  define GP_EDIT_POINT_SELECTED 1u
+#  define GP_EDIT_STROKE_SELECTED 2u
+#  define GP_EDIT_MULTIFRAME 4u
+#  define GP_EDIT_STROKE_START 8u
+#  define GP_EDIT_STROKE_END 16u
+#  define GP_EDIT_POINT_DIMMED 32u
+
+#  define MOTIONPATH_VERT_SEL (1u << 0)
+#  define MOTIONPATH_VERT_KEY (1u << 1)
+
+#else
+#  define CURVE_HANDLE_SELECTED blender_CURVE_HANDLE_SELECTED
+#  define CURVE_HANDLE_ALL blender_CURVE_HANDLE_ALL
+#  define MOTIONPATH_VERT_SEL blender_MOTIONPATH_VERT_SEL
+#  define MOTIONPATH_VERT_KEY blender_MOTIONPATH_VERT_KEY
+
+BLI_STATIC_ASSERT(CURVE_HANDLE_SELECTED == 0u, string_t(3022480497u) _0);
+BLI_STATIC_ASSERT(CURVE_HANDLE_ALL == 1u, string_t(3022480497u));
+BLI_STATIC_ASSERT(MOTIONPATH_VERT_SEL == (1u << 0), string_t(3022480497u));
+BLI_STATIC_ASSERT(MOTIONPATH_VERT_KEY == (1u << 1), string_t(3022480497u));
+#endif
+#line 191
+#define ThemeColors_host_shared_ ThemeColors
+#define ThemeColors_host_shared_uniform_ ThemeColors
+#line 190
+struct                 ThemeColors {
+
+  float4 wire;
+  float4 wire_edit;
+  float4 active_object;
+  float4 object_select;
+  float4 library_select;
+  float4 library;
+  float4 transform;
+  float4 light;
+  float4 speaker;
+  float4 camera;
+  float4 camera_path;
+  float4 empty;
+  float4 vert;
+  float4 vert_select;
+  float4 vert_unreferenced;
+  float4 vert_missing_data;
+  float4 edit_mesh_active;
+  float4 edge_select;
+  float4 edge_mode_select;
+  float4 edge_seam;
+  float4 edge_sharp;
+  float4 edge_crease;
+  float4 edge_bweight;
+  float4 edge_face_select;
+  float4 edge_freestyle;
+  float4 face;
+  float4 face_select;
+  float4 face_mode_select;
+  float4 face_retopology;
+  float4 face_freestyle;
+  float4 gpencil_wire_edit;
+  float4 gpencil_vertex;
+  float4 gpencil_vertex_select;
+  float4 normal;
+  float4 vnormal;
+  float4 lnormal;
+  float4 facedot;
+  float4 skinroot;
+
+  float4 deselect;
+  float4 outline;
+  float4 light_no_alpha;
+
+  float4 background;
+  float4 background_gradient;
+  float4 checker_primary;
+  float4 checker_secondary;
+  float4 clipping_border;
+  float4 edit_mesh_middle;
+
+  float4 handle_free;
+  float4 handle_auto;
+  float4 handle_vect;
+  float4 handle_align;
+  float4 handle_autoclamp;
+  float4 handle_sel_free;
+  float4 handle_sel_auto;
+  float4 handle_sel_vect;
+  float4 handle_sel_align;
+  float4 handle_sel_autoclamp;
+  float4 nurb_uline;
+  float4 nurb_vline;
+  float4 nurb_sel_uline;
+  float4 nurb_sel_vline;
+
+  float4 bone_pose;
+  float4 bone_pose_active;
+  float4 bone_pose_active_unsel;
+  float4 bone_pose_constraint;
+  float4 bone_pose_ik;
+  float4 bone_pose_spline_ik;
+  float4 bone_pose_no_target;
+  float4 bone_solid;
+  float4 bone_locked;
+  float4 bone_active;
+  float4 bone_active_unsel;
+  float4 bone_select;
+  float4 bone_ik_line;
+  float4 bone_ik_line_no_target;
+  float4 bone_ik_line_spline;
+
+  float4 text;
+  float4 text_hi;
+
+  float4 bundle_solid;
+
+  float4 mball_radius;
+  float4 mball_radius_select;
+  float4 mball_stiffness;
+  float4 mball_stiffness_select;
+
+  float4 current_frame;
+  float4 before_frame;
+  float4 after_frame;
+
+  float4 grid;
+  float4 grid_emphasis;
+  float4 grid_axis_x;
+  float4 grid_axis_y;
+  float4 grid_axis_z;
+
+  float4 face_back;
+  float4 face_front;
+
+  float4 uv_shadow;
+};
+#line 190
+                                           ThemeColors ThemeColors_ctor_() {ThemeColors r;r.wire=float4(0);r.wire_edit=float4(0);r.active_object=float4(0);r.object_select=float4(0);r.library_select=float4(0);r.library=float4(0);r.transform=float4(0);r.light=float4(0);r.speaker=float4(0);r.camera=float4(0);r.camera_path=float4(0);r.empty=float4(0);r.vert=float4(0);r.vert_select=float4(0);r.vert_unreferenced=float4(0);r.vert_missing_data=float4(0);r.edit_mesh_active=float4(0);r.edge_select=float4(0);r.edge_mode_select=float4(0);r.edge_seam=float4(0);r.edge_sharp=float4(0);r.edge_crease=float4(0);r.edge_bweight=float4(0);r.edge_face_select=float4(0);r.edge_freestyle=float4(0);r.face=float4(0);r.face_select=float4(0);r.face_mode_select=float4(0);r.face_retopology=float4(0);r.face_freestyle=float4(0);r.gpencil_wire_edit=float4(0);r.gpencil_vertex=float4(0);r.gpencil_vertex_select=float4(0);r.normal=float4(0);r.vnormal=float4(0);r.lnormal=float4(0);r.facedot=float4(0);r.skinroot=float4(0);r.deselect=float4(0);r.outline=float4(0);r.light_no_alpha=float4(0);r.background=float4(0);r.background_gradient=float4(0);r.checker_primary=float4(0);r.checker_secondary=float4(0);r.clipping_border=float4(0);r.edit_mesh_middle=float4(0);r.handle_free=float4(0);r.handle_auto=float4(0);r.handle_vect=float4(0);r.handle_align=float4(0);r.handle_autoclamp=float4(0);r.handle_sel_free=float4(0);r.handle_sel_auto=float4(0);r.handle_sel_vect=float4(0);r.handle_sel_align=float4(0);r.handle_sel_autoclamp=float4(0);r.nurb_uline=float4(0);r.nurb_vline=float4(0);r.nurb_sel_uline=float4(0);r.nurb_sel_vline=float4(0);r.bone_pose=float4(0);r.bone_pose_active=float4(0);r.bone_pose_active_unsel=float4(0);r.bone_pose_constraint=float4(0);r.bone_pose_ik=float4(0);r.bone_pose_spline_ik=float4(0);r.bone_pose_no_target=float4(0);r.bone_solid=float4(0);r.bone_locked=float4(0);r.bone_active=float4(0);r.bone_active_unsel=float4(0);r.bone_select=float4(0);r.bone_ik_line=float4(0);r.bone_ik_line_no_target=float4(0);r.bone_ik_line_spline=float4(0);r.text=float4(0);r.text_hi=float4(0);r.bundle_solid=float4(0);r.mball_radius=float4(0);r.mball_radius_select=float4(0);r.mball_stiffness=float4(0);r.mball_stiffness_select=float4(0);r.current_frame=float4(0);r.before_frame=float4(0);r.after_frame=float4(0);r.grid=float4(0);r.grid_emphasis=float4(0);r.grid_axis_x=float4(0);r.grid_axis_y=float4(0);r.grid_axis_z=float4(0);r.face_back=float4(0);r.face_front=float4(0);r.uv_shadow=float4(0);return r;}
+#line 301
+#define ThemeSizes_host_shared_ ThemeSizes
+#define ThemeSizes_host_shared_uniform_ ThemeSizes
+#line 300
+struct                 ThemeSizes {
+  float pixel;
+
+  float object_center;
+
+  float light_center;
+  float light_circle;
+  float light_circle_shadow;
+
+  float vert;
+  float edge;
+  float face_dot;
+
+  float checker;
+  float vertex_gpencil;
+  float _pad1;
+  float _pad2;
+};
+#line 300
+                                          ThemeSizes ThemeSizes_ctor_() {ThemeSizes r;r.pixel=0.0f;r.object_center=0.0f;r.light_center=0.0f;r.light_circle=0.0f;r.light_circle_shadow=0.0f;r.vert=0.0f;r.edge=0.0f;r.face_dot=0.0f;r.checker=0.0f;r.vertex_gpencil=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 320
+#define UniformData_host_shared_ UniformData
+#define UniformData_host_shared_uniform_ UniformData
+#line 319
+struct                 UniformData {
+         ThemeColors colors;
+         ThemeSizes sizes;
+#line 325
+  float2 size_viewport;
+  float2 size_viewport_inv;
+
+  float fresnel_mix_edit;
+  float pixel_fac;
+  bool32_t backface_culling;
+  float _pad1;
+};
+#line 319
+                                           UniformData UniformData_ctor_() {UniformData r;r.colors=ThemeColors_ctor_();r.sizes=ThemeSizes_ctor_();r.size_viewport=float2(0);r.size_viewport_inv=float2(0);r.fresnel_mix_edit=0.0f;r.pixel_fac=0.0f;r.backface_culling=bool32_t(0);r._pad1=0.0f;return r;}
+#line 334
+#ifdef GPU_SHADER
+#line 337
+#  define theme uniform_buf
+#endif
+#line 341
+#define ExtraInstanceData_host_shared_ ExtraInstanceData
+#define ExtraInstanceData_host_shared_uniform_ ExtraInstanceData
+#line 340
+struct                 ExtraInstanceData {
+  float4 color_;
+  float4x4 object_to_world;
+#line 375
+};
+#line 340
+                                                 ExtraInstanceData ExtraInstanceData_ctor_() {ExtraInstanceData r;r.color_=float4(0);r.object_to_world=float4x4(0);return r;}
+#line 378
+#define VertexData_host_shared_ VertexData
+#define VertexData_host_shared_uniform_ VertexData
+#line 377
+struct                 VertexData {
+  float4 pos_;
+
+  float4 color_;
+};
+#line 377
+                                          VertexData VertexData_ctor_() {VertexData r;r.pos_=float4(0);r.color_=float4(0);return r;}
+#line 384
+#define PARTICLE_SHAPE_CIRCLE_RESOLUTION 7
+#line 387
+constant static constexpr uint32_t PART_SHAPE_AXIS = 1;
+constant static constexpr uint32_t PART_SHAPE_CIRCLE = 2;
+constant static constexpr uint32_t PART_SHAPE_CROSS = 3;
+
+#define OVERLAY_ParticleShape uint32_t
+#line 386
+
+#define OVERLAY_ParticleShape_host_shared_ OVERLAY_ParticleShape
+#line 386
+
+OVERLAY_ParticleShape OVERLAY_ParticleShape_ctor_() { return OVERLAY_ParticleShape(0); }
+#line 393
+#define ParticlePointData_host_shared_ ParticlePointData
+#define ParticlePointData_host_shared_uniform_ ParticlePointData
+#line 392
+struct                 ParticlePointData {
+  packed_float3 position;
+
+  float value;
+
+  float4 rotation;
+};
+#line 392
+                                                 ParticlePointData ParticlePointData_ctor_() {ParticlePointData r;r.position=packed_float3(0);r.value=0.0f;r.rotation=float4(0);return r;}
+#line 401
+#define BoneEnvelopeData_host_shared_ BoneEnvelopeData
+#define BoneEnvelopeData_host_shared_uniform_ BoneEnvelopeData
+#line 400
+struct                 BoneEnvelopeData {
+  float4 head_sphere;
+  float4 tail_sphere;
+
+  float4 bone_color_and_wire_width;
+  float4 state_color;
+  float4 x_axis;
+#line 437
+};
+#line 400
+                                                BoneEnvelopeData BoneEnvelopeData_ctor_() {BoneEnvelopeData r;r.head_sphere=float4(0);r.tail_sphere=float4(0);r.bone_color_and_wire_width=float4(0);r.state_color=float4(0);r.x_axis=float4(0);return r;}
+#line 440
+#define BoneStickData_host_shared_ BoneStickData
+#define BoneStickData_host_shared_uniform_ BoneStickData
+#line 439
+struct                 BoneStickData {
+  float4 bone_start;
+  float4 bone_end;
+  float4 wire_color;
+  float4 bone_color;
+  float4 head_color;
+  float4 tail_color;
+#line 464
+};
+#line 439
+                                             BoneStickData BoneStickData_ctor_() {BoneStickData r;r.bone_start=float4(0);r.bone_end=float4(0);r.wire_color=float4(0);r.bone_color=float4(0);r.head_color=float4(0);r.tail_color=float4(0);return r;}
+#line 477
+#define M_1_SQRTPI 0.5641895835477563f
+#define DISC_RADIUS (M_1_SQRTPI * 1.05f)
+#define LINE_SMOOTH_START (0.5f - DISC_RADIUS)
+#define LINE_SMOOTH_END (0.5f + DISC_RADIUS)
+
+#define LINE_STEP(dist) smoothstep(LINE_SMOOTH_START, LINE_SMOOTH_END, dist)

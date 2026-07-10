@@ -1,0 +1,38 @@
+{
+    "classes": [
+        {
+            "className": "EnvironmentModel",
+            "lineNumber": 18,
+            "object": true,
+            "qualifiedClassName": "Utils::EnvironmentModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "userChangesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "QModelIndex"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "focusIndex",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractTableModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "environmentmodel.h",
+    "outputRevision": 68
+}

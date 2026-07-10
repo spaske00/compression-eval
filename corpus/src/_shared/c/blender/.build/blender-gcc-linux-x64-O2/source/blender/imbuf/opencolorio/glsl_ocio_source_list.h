@@ -1,0 +1,5 @@
+SHADER_SOURCE(gpu_shader_display_transform_vert_glsl_tmp, "gpu_shader_display_transform_vert.glsl", "shaders/gpu_shader_display_transform_vert.glsl")
+SHADER_SOURCE(gpu_shader_display_transform_frag_glsl_tmp, "gpu_shader_display_transform_frag.glsl", "shaders/gpu_shader_display_transform_frag.glsl")
+SHADER_SOURCE(gpu_shader_display_transform_lib_glsl_tmp, "gpu_shader_display_transform_lib.glsl", "shaders/gpu_shader_display_transform_lib.glsl")
+SHADER_SOURCE(gpu_shader_display_transform_fallback_lib_glsl_tmp, "gpu_shader_display_transform_fallback_lib.glsl", "shaders/gpu_shader_display_transform_fallback_lib.glsl")
+SHADER_SOURCE(ocio_shader_shared_hh_tmp, "ocio_shader_shared.hh", "intern/ocio_shader_shared.hh")

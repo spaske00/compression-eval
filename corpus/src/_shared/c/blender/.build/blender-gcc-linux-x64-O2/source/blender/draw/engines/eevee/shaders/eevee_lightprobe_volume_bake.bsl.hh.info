@@ -1,0 +1,77 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_SceneBound)
+PUSH_CONSTANT(int, resource_len)
+.storage_buf(0, Qualifier::read_write, "CaptureInfoData", "capture_info_buf", Frequency::PASS)
+.storage_buf(1, Qualifier::read, "ObjectBounds", "bounds_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_VolumeOffset)
+.additional_info("SurfelData")
+.image(0, blender::gpu::TextureFormat::SINT_32, Qualifier::read, ImageReadWriteType::iimage3DAtomic, "cluster_list_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::SFLOAT_16_16_16_16, Qualifier::read_write, ImageReadWriteType::image3D, "virtual_offset_img", Frequency::PASS)
+.storage_buf(6, Qualifier::read, "SurfelListInfoData", "list_info_buf", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "int", "list_start_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_RayCapture)
+.additional_info("eevee_LightprobeSphereRenderData")
+.additional_info("SurfelData")
+PUSH_CONSTANT(int, radiance_src)
+.image(0, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image3D, "irradiance_L0_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image3D, "irradiance_L1_a_img", Frequency::PASS)
+.image(2, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image3D, "irradiance_L1_b_img", Frequency::PASS)
+.image(3, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image3D, "irradiance_L1_c_img", Frequency::PASS)
+.image(4, blender::gpu::TextureFormat::SFLOAT_16_16_16_16, Qualifier::read, ImageReadWriteType::image3D, "virtual_offset_img", Frequency::PASS)
+.image(5, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::read_write, ImageReadWriteType::image3D, "validity_img", Frequency::PASS)
+.storage_buf(6, Qualifier::read, "SurfelListInfoData", "list_info_buf", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "int", "list_start_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_scene_bounds_infos_)
+LOCAL_GROUP_SIZE(IRRADIANCE_BOUNDS_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lightprobe_volume_SceneBound)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_volume_offset_infos_)
+LOCAL_GROUP_SIZE(IRRADIANCE_GRID_BRICK_SIZE,
+                         IRRADIANCE_GRID_BRICK_SIZE,
+                         IRRADIANCE_GRID_BRICK_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lightprobe_volume_VolumeOffset)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_ray_capture_infos_)
+LOCAL_GROUP_SIZE(IRRADIANCE_GRID_GROUP_SIZE,
+                         IRRADIANCE_GRID_GROUP_SIZE,
+                         IRRADIANCE_GRID_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lightprobe_volume_RayCapture)
+ADDITIONAL_INFO(draw_View)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_offset)
+COMPUTE_SOURCE("eevee_lightprobe_volume_bake.bsl.hh")
+COMPUTE_FUNCTION("eevee_lightprobe_volume_volume_offset")
+ADDITIONAL_INFO(eevee_lightprobe_volume_volume_offset_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_bounds)
+COMPUTE_SOURCE("eevee_lightprobe_volume_bake.bsl.hh")
+COMPUTE_FUNCTION("eevee_lightprobe_volume_scene_bounds")
+ADDITIONAL_INFO(eevee_lightprobe_volume_scene_bounds_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lightprobe_volume_ray)
+COMPUTE_SOURCE("eevee_lightprobe_volume_bake.bsl.hh")
+COMPUTE_FUNCTION("eevee_lightprobe_volume_ray_capture")
+ADDITIONAL_INFO(eevee_lightprobe_volume_ray_capture_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

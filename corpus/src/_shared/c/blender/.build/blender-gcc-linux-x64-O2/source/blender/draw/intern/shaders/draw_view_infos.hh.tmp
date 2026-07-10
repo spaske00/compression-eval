@@ -1,0 +1,189 @@
+#line 1 "draw_view_infos.hh"
+ 
+#line 7
+#ifdef GPU_SHADER
+#line 13
+#endif
+
+#ifdef GLSL_CPP_STUBS
+
+#  define DRAW_VIEW_CREATE_INFO
+#  define DRW_VIEW_CULLING_INFO
+#  define USE_WORLD_CLIP_PLANES
+
+#  define DRW_VIEW_LEN DRW_VIEW_MAX
+#endif
+#line 39
+#ifdef CREATE_INFO_RES_PASS_draw_resource_id_varying
+CREATE_INFO_RES_PASS_draw_resource_id_varying
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_resource_id_varying
+CREATE_INFO_RES_BATCH_draw_resource_id_varying
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_resource_id_varying
+CREATE_INFO_RES_GEOMETRY_draw_resource_id_varying
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_resource_id_varying
+CREATE_INFO_RES_SHARED_VARS_draw_resource_id_varying
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_resource_id
+CREATE_INFO_RES_PASS_draw_resource_id
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_resource_id
+CREATE_INFO_RES_BATCH_draw_resource_id
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_resource_id
+CREATE_INFO_RES_GEOMETRY_draw_resource_id
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_resource_id
+CREATE_INFO_RES_SHARED_VARS_draw_resource_id
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_resource_with_custom_id
+CREATE_INFO_RES_PASS_draw_resource_with_custom_id
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_resource_with_custom_id
+CREATE_INFO_RES_BATCH_draw_resource_with_custom_id
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_resource_with_custom_id
+CREATE_INFO_RES_GEOMETRY_draw_resource_with_custom_id
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_resource_with_custom_id
+CREATE_INFO_RES_SHARED_VARS_draw_resource_with_custom_id
+#endif
+#line 84
+#ifdef CREATE_INFO_RES_PASS_draw_modelmat_common
+CREATE_INFO_RES_PASS_draw_modelmat_common
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_modelmat_common
+CREATE_INFO_RES_BATCH_draw_modelmat_common
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_modelmat_common
+CREATE_INFO_RES_GEOMETRY_draw_modelmat_common
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_modelmat_common
+CREATE_INFO_RES_SHARED_VARS_draw_modelmat_common
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_modelmat
+CREATE_INFO_RES_PASS_draw_modelmat
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_modelmat
+CREATE_INFO_RES_BATCH_draw_modelmat
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_modelmat
+CREATE_INFO_RES_GEOMETRY_draw_modelmat
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_modelmat
+CREATE_INFO_RES_SHARED_VARS_draw_modelmat
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_modelmat_with_custom_id
+CREATE_INFO_RES_PASS_draw_modelmat_with_custom_id
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_modelmat_with_custom_id
+CREATE_INFO_RES_BATCH_draw_modelmat_with_custom_id
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_modelmat_with_custom_id
+CREATE_INFO_RES_GEOMETRY_draw_modelmat_with_custom_id
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_modelmat_with_custom_id
+CREATE_INFO_RES_SHARED_VARS_draw_modelmat_with_custom_id
+#endif
+#line 129
+#ifdef CREATE_INFO_RES_PASS_draw_view
+CREATE_INFO_RES_PASS_draw_view
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_view
+CREATE_INFO_RES_BATCH_draw_view
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_view
+CREATE_INFO_RES_GEOMETRY_draw_view
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_view
+CREATE_INFO_RES_SHARED_VARS_draw_view
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_view_culling
+CREATE_INFO_RES_PASS_draw_view_culling
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_view_culling
+CREATE_INFO_RES_BATCH_draw_view_culling
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_view_culling
+CREATE_INFO_RES_GEOMETRY_draw_view_culling
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_view_culling
+CREATE_INFO_RES_SHARED_VARS_draw_view_culling
+#endif
+#line 161
+#ifdef CREATE_INFO_RES_PASS_drw_clipped
+CREATE_INFO_RES_PASS_drw_clipped
+#endif
+#ifdef CREATE_INFO_RES_BATCH_drw_clipped
+CREATE_INFO_RES_BATCH_drw_clipped
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_drw_clipped
+CREATE_INFO_RES_GEOMETRY_drw_clipped
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_drw_clipped
+CREATE_INFO_RES_SHARED_VARS_drw_clipped
+#endif
+#line 180
+#ifdef CREATE_INFO_RES_PASS_draw_resource_finalize
+CREATE_INFO_RES_PASS_draw_resource_finalize
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_resource_finalize
+CREATE_INFO_RES_BATCH_draw_resource_finalize
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_resource_finalize
+CREATE_INFO_RES_GEOMETRY_draw_resource_finalize
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_resource_finalize
+CREATE_INFO_RES_SHARED_VARS_draw_resource_finalize
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_view_finalize
+CREATE_INFO_RES_PASS_draw_view_finalize
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_view_finalize
+CREATE_INFO_RES_BATCH_draw_view_finalize
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_view_finalize
+CREATE_INFO_RES_GEOMETRY_draw_view_finalize
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_view_finalize
+CREATE_INFO_RES_SHARED_VARS_draw_view_finalize
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_visibility_compute
+CREATE_INFO_RES_PASS_draw_visibility_compute
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_visibility_compute
+CREATE_INFO_RES_BATCH_draw_visibility_compute
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_visibility_compute
+CREATE_INFO_RES_GEOMETRY_draw_visibility_compute
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_visibility_compute
+CREATE_INFO_RES_SHARED_VARS_draw_visibility_compute
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_command_generate
+CREATE_INFO_RES_PASS_draw_command_generate
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_command_generate
+CREATE_INFO_RES_BATCH_draw_command_generate
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_command_generate
+CREATE_INFO_RES_GEOMETRY_draw_command_generate
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_command_generate
+CREATE_INFO_RES_SHARED_VARS_draw_command_generate
+#endif
+#line 235
+#ifdef GLSL_CPP_STUBS
+
+#  define resource_id_buf uint2(0)
+#endif

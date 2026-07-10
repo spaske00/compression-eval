@@ -1,0 +1,33 @@
+#line 1 "eevee_subsurface_lib.bsl.hh"
+ 
+#line 16
+#if defined(CREATE_INFO_UtilityTexture)
+#line 15
+float subsurface_transmittance_profile(const UtilityTexture  util_tx, float u)
+{
+  return _sample_extend(util_tx, float2(u, 0.0f), UTIL_SSS_TRANSMITTANCE_PROFILE_LAYER).r;
+}
+#endif
+#line 23
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 23
+float3 subsurface_transmission(const UtilityTexture  util,
+                               float3 sss_radii,
+                               float thickness)
+{
+  sss_radii *= SSS_TRANSMIT_LUT_RADIUS;
+  float3 channels_co = saturate(thickness / sss_radii) * SSS_TRANSMIT_LUT_SCALE +
+                       SSS_TRANSMIT_LUT_BIAS;
+  float3 translucency;
+  translucency.x = (sss_radii.x > 0.0f) ? subsurface_transmittance_profile(util, channels_co.x) :
+                                          0.0f;
+  translucency.y = (sss_radii.y > 0.0f) ? subsurface_transmittance_profile(util, channels_co.y) :
+                                          0.0f;
+  translucency.z = (sss_radii.z > 0.0f) ? subsurface_transmittance_profile(util, channels_co.z) :
+                                          0.0f;
+  return translucency;
+}
+
+#endif
+#line 39

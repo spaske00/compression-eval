@@ -1,0 +1,20 @@
+#line 1 "compositor_tone_map_photoreceptor.glsl"
+ 
+#line 11
+COMPUTE_SHADER_CREATE_INFO(compositor_tone_map_photoreceptor)
+#line 17
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 input_color = texture_load(input_tx, texel);
+  float input_luminance = dot(input_color.rgb, luminance_coefficients);
+#line 25
+  float4 local_adaptation_level = mix(float4(input_luminance), input_color, chromatic_adaptation);
+  float4 adaptation_level = mix(global_adaptation_level, local_adaptation_level, light_adaptation);
+#line 29
+  float4 semi_saturation = pow(intensity * adaptation_level, float4(contrast));
+  float4 tone_mapped_color = safe_divide(input_color, input_color + semi_saturation);
+
+  imageStore(output_img, texel, float4(tone_mapped_color.rgb, input_color.a));
+}

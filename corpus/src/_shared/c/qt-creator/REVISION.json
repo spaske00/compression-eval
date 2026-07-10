@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "key": "qt-creator",
+  "input_url": "https://github.com/qt-creator/qt-creator",
+  "canonical_url": "https://github.com/qt-creator/qt-creator",
+  "source_directory": "qt-creator/upstream",
+  "commit": "f43209dcc802fd9ebceceed91e8085e390a8b5ea",
+  "nested_submodules": [
+    {"path": "src/libs/3rdparty/googletest", "commit": "52eb8108c5bdec04579160ae17225d66034bd723"},
+    {"path": "src/libs/qlitehtml", "commit": "8381e7487668b3e531472d13c8b9025d6547d14f"},
+    {"path": "src/libs/qlitehtml/src/3rdparty/litehtml", "commit": "9bc84b8b8d15a4e50f18b327aa30955048b441c2"},
+    {"path": "src/shared/qbs", "commit": "986ebc8df121bb75b05f7ee904e892ff25272105"},
+    {"path": "src/tools/perfparser", "commit": "40126d0e9bfbfbdfe0d76ca6e6d314a8395a198d"}
+  ]
+}

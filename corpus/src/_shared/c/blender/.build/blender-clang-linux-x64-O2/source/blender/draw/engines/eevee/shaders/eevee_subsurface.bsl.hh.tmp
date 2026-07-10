@@ -1,0 +1,321 @@
+#line 1 "eevee_subsurface.bsl.hh"
+ 
+#line 28
+#define access_eevee_subsurface_Setup_use_split_radiance() use_split_radiance
+#define access_eevee_subsurface_Setup_depth_tx() depth_tx
+#define access_eevee_subsurface_Setup_direct_light_img() direct_light_img
+#define access_eevee_subsurface_Setup_indirect_light_img() indirect_light_img
+#define access_eevee_subsurface_Setup_object_id_img() object_id_img
+#define access_eevee_subsurface_Setup_radiance_img() radiance_img
+#define access_eevee_subsurface_Setup_has_visible_sss() has_visible_sss
+#define access_eevee_subsurface_Setup_convolve_dispatch_buf() convolve_dispatch_buf
+#define access_eevee_subsurface_Setup_convolve_tile_buf() convolve_tile_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_subsurface_Setup
+CREATE_INFO_RES_PASS_eevee_subsurface_Setup
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_subsurface_Setup
+CREATE_INFO_RES_BATCH_eevee_subsurface_Setup
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_subsurface_Setup
+CREATE_INFO_RES_GEOMETRY_eevee_subsurface_Setup
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_subsurface_Setup
+CREATE_INFO_RES_SHARED_VARS_eevee_subsurface_Setup
+#endif
+#line 28
+struct eevee_subsurface_Setup {
+#line 50
+int _pad;};
+#line 53
+#ifndef GPU_METAL
+eevee_subsurface_Setup eevee_subsurface_Setup_ctor_();
+eevee_subsurface_Setup eevee_subsurface_Setup_new_();
+#endif
+#line 28
+                                      eevee_subsurface_Setup eevee_subsurface_Setup_ctor_() {eevee_subsurface_Setup r;r._pad=0;return r;}
+#line 43
+       eevee_subsurface_Setup eevee_subsurface_Setup_new_()
+{
+  eevee_subsurface_Setup result;
+  result._pad = 0;
+  return result;
+#line 41
+}
+#line 44
+
+#if defined(CREATE_INFO_eevee_subsurface_Setup) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_gbuffer_Reader)
+#line 44
+
+#if defined(ENTRY_POINT_eevee_subsurface_setup_main)
+#line 44
+
+void eevee_subsurface_setup_main(
+#line 50
+                                                                        )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 51
+  eevee_subsurface_Setup srt = eevee_subsurface_Setup_ctor_(); draw_View views = draw_View_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  if (gl_LocalInvocationIndex == 0u) {
+    srt_access(eevee_subsurface_Setup, has_visible_sss) = 0u;
+  }
+
+  barrier();
+
+  const ViewMatrices view = _get(views, 0);
+  const gbuffer_Layers gbuf = _read_layers(reader, texel);
+
+  ClosureUndetermined cl = gbuf.layer[0];
+
+  if (cl.type == CLOSURE_BSSRDF_BURLEY_ID) {
+    float3 direct = rgb9e5_decode(imageLoadFast(srt_access(eevee_subsurface_Setup, direct_light_img), texel).r);
+    float3 indirect = imageLoadFast(srt_access(eevee_subsurface_Setup, indirect_light_img), texel).rgb;
+
+    ClosureSubsurface closure = to_closure_subsurface(cl);
+    float max_radius = reduce_max(closure.sss_radius);
+
+    uint object_id = _read_object_id(reader, texel);
+
+    if (srt_access(eevee_subsurface_Setup, use_split_radiance)) {
+      imageStoreFast(srt_access(eevee_subsurface_Setup, radiance_img), int3(texel, 0), float4(direct, 0.0f));
+      imageStoreFast(srt_access(eevee_subsurface_Setup, radiance_img), int3(texel, 1), float4(indirect, 0.0f));
+    }
+    else {
+      imageStoreFast(srt_access(eevee_subsurface_Setup, radiance_img), int3(texel, 0), float4(direct + indirect, 0.0f));
+    }
+    imageStoreFast(srt_access(eevee_subsurface_Setup, object_id_img), texel, uint4(object_id));
+
+    float depth = reverse_z_read(texelFetch(srt_access(eevee_subsurface_Setup, depth_tx), texel, 0).r);
+
+    float vPz = _depth_screen_to_view(view, depth);
+    float homogenous_coord = view.winmat[2][3] * vPz + view.winmat[3][3];
+    float sample_scale = view.winmat[0][0] * (0.5f * max_radius / homogenous_coord);
+    float pixel_footprint = sample_scale * float(textureSize(srt_access(gbuffer_Reader, gbuf_header_tx), 0).x);
+    if (pixel_footprint > 1.0f) {
+
+      srt_access(eevee_subsurface_Setup, has_visible_sss) = 1u;
+    }
+  }
+  else {
+
+    imageStore(srt_access(eevee_subsurface_Setup, object_id_img), texel, uint4(0));
+  }
+
+  barrier();
+
+  if (gl_LocalInvocationIndex == 0u) {
+    if (srt_access(eevee_subsurface_Setup, has_visible_sss) > 0u) {
+      uint tile_id = atomicAdd(srt_access(eevee_subsurface_Setup, convolve_dispatch_buf).num_groups_x, 1u);
+      srt_access(eevee_subsurface_Setup, convolve_tile_buf)[tile_id] = packUvec2x16(gl_WorkGroupID.xy);
+
+      srt_access(eevee_subsurface_Setup, convolve_dispatch_buf).num_groups_y = 1;
+      srt_access(eevee_subsurface_Setup, convolve_dispatch_buf).num_groups_z = 1;
+    }
+  }
+
+#endif
+#line 110
+}
+#endif
+#endif
+#line 127
+struct eevee_subsurface_SubSurfaceSample {
+  float3 radiance;
+  float depth;
+  uint sss_id;
+};
+#line 127
+                                                 eevee_subsurface_SubSurfaceSample eevee_subsurface_SubSurfaceSample_ctor_() {eevee_subsurface_SubSurfaceSample r;r.radiance=float3(0);r.depth=0.0f;r.sss_id=0u;return r;}
+#line 133
+#define access_eevee_subsurface_Convolve_use_split_radiance() use_split_radiance
+#define access_eevee_subsurface_Convolve_radiance_tx() radiance_tx
+#define access_eevee_subsurface_Convolve_depth_tx() depth_tx
+#define access_eevee_subsurface_Convolve_object_id_tx() object_id_tx
+#define access_eevee_subsurface_Convolve_out_direct_light_img() out_direct_light_img
+#define access_eevee_subsurface_Convolve_out_indirect_light_img() out_indirect_light_img
+#define access_eevee_subsurface_Convolve_cached_radiance() cached_radiance
+#define access_eevee_subsurface_Convolve_cached_sss_id() cached_sss_id
+#define access_eevee_subsurface_Convolve_cached_depth() cached_depth
+#define access_eevee_subsurface_Convolve_subsurface_buf() subsurface_buf
+#define access_eevee_subsurface_Convolve_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_subsurface_Convolve
+CREATE_INFO_RES_PASS_eevee_subsurface_Convolve
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_subsurface_Convolve
+CREATE_INFO_RES_BATCH_eevee_subsurface_Convolve
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_subsurface_Convolve
+CREATE_INFO_RES_GEOMETRY_eevee_subsurface_Convolve
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_subsurface_Convolve
+CREATE_INFO_RES_SHARED_VARS_eevee_subsurface_Convolve
+#endif
+#line 133
+struct eevee_subsurface_Convolve {
+#line 192
+int _pad;};
+#line 195
+#ifndef GPU_METAL
+eevee_subsurface_Convolve eevee_subsurface_Convolve_ctor_();
+void _cache_populate(eevee_subsurface_Convolve  this_, float2 local_uv, uint2 texel);
+bool _cache_sample(eevee_subsurface_Convolve  this_, uint2 texel, uint3 group_id, _ref(eevee_subsurface_SubSurfaceSample ,samp));
+eevee_subsurface_SubSurfaceSample _sample_neighborhood(eevee_subsurface_Convolve  this_, float2 sample_uv, uint3 group_id);
+eevee_subsurface_Convolve eevee_subsurface_Convolve_new_();
+#endif
+#line 133
+                                         eevee_subsurface_Convolve eevee_subsurface_Convolve_ctor_() {eevee_subsurface_Convolve r;r._pad=0;return r;}
+#line 151
+
+#if defined(CREATE_INFO_eevee_subsurface_Convolve)
+#line 151
+  void _cache_populate(eevee_subsurface_Convolve  this_, float2 local_uv, uint2 texel)
+  {
+    srt_access(eevee_subsurface_Convolve, cached_radiance)[texel.y][texel.x] = textureLod(srt_access(eevee_subsurface_Convolve, radiance_tx), float3(local_uv, 0.0f), 0.0f).rgb;
+    srt_access(eevee_subsurface_Convolve, cached_sss_id)[texel.y][texel.x] = texture(srt_access(eevee_subsurface_Convolve, object_id_tx), local_uv).r;
+    srt_access(eevee_subsurface_Convolve, cached_depth)[texel.y][texel.x] = reverse_z_read(texture(srt_access(eevee_subsurface_Convolve, depth_tx), local_uv).r);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_subsurface_Convolve)
+#line 158
+  bool _cache_sample(eevee_subsurface_Convolve  this_, uint2 texel, uint3 group_id, _ref(eevee_subsurface_SubSurfaceSample ,samp))
+  {
+    uint2 tile_coord = unpackUvec2x16(tiles_coord_buf[group_id.x]);
+
+    texel -= tile_coord * SUBSURFACE_GROUP_SIZE;
+    if (any(greaterThanEqual(texel, uint2(SUBSURFACE_GROUP_SIZE)))) {
+      return false;
+    }
+    samp.radiance = srt_access(eevee_subsurface_Convolve, cached_radiance)[texel.y][texel.x];
+    samp.sss_id = srt_access(eevee_subsurface_Convolve, cached_sss_id)[texel.y][texel.x];
+    samp.depth = srt_access(eevee_subsurface_Convolve, cached_depth)[texel.y][texel.x];
+    return true;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_subsurface_Convolve)
+#line 172
+  eevee_subsurface_SubSurfaceSample _sample_neighborhood(eevee_subsurface_Convolve  this_, float2 sample_uv, uint3 group_id)
+  {
+    eevee_subsurface_SubSurfaceSample samp;
+    uint2 sample_texel = uint2(sample_uv * float2(textureSize(srt_access(eevee_subsurface_Convolve, depth_tx), 0)));
+    if (_cache_sample(this_, sample_texel, group_id, samp)) {
+      return samp;
+    }
+    samp.depth = reverse_z_read(texture(srt_access(eevee_subsurface_Convolve, depth_tx), sample_uv).r);
+    samp.sss_id = texture(srt_access(eevee_subsurface_Convolve, object_id_tx), sample_uv).r;
+    samp.radiance = textureLod(srt_access(eevee_subsurface_Convolve, radiance_tx), float3(sample_uv, 0.0f), 0.0f).rgb;
+    return samp;
+  }
+#endif
+       eevee_subsurface_Convolve eevee_subsurface_Convolve_new_()
+{
+  eevee_subsurface_Convolve result;
+  result._pad = 0;
+  return result;
+#line 183
+}
+#line 186
+
+#if defined(CREATE_INFO_eevee_subsurface_Convolve) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_gbuffer_Reader)
+#line 186
+
+#if defined(ENTRY_POINT_eevee_subsurface_convolve_main)
+#line 186
+
+void eevee_subsurface_convolve_main(
+#line 191
+                                                                      )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 192
+  eevee_subsurface_Convolve srt = eevee_subsurface_Convolve_ctor_(); draw_View views = draw_View_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  constexpr uint tile_size = SUBSURFACE_GROUP_SIZE;
+  uint2 tile_coord = unpackUvec2x16(srt_access(eevee_subsurface_Convolve, tiles_coord_buf)[gl_WorkGroupID.x]);
+  int2 texel = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+
+  float2 center_uv = (float2(texel) + 0.5f) / float2(textureSize(srt_access(gbuffer_Reader, gbuf_header_tx), 0).xy);
+
+  _cache_populate(srt, center_uv, gl_LocalInvocationID.xy);
+  barrier();
+
+  const ViewMatrices view = _get(views, 0);
+
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_subsurface_Convolve, depth_tx), texel, 0).r);
+  float3 vP = _point_screen_to_view(view, float3(center_uv, depth));
+
+  const gbuffer_Layers gbuf = _read_layers(reader, texel);
+  if (gbuf.layer[0].type != CLOSURE_BSSRDF_BURLEY_ID) {
+    return;
+  }
+
+  const uint object_id = _read_object_id(reader, texel);
+
+  const ClosureSubsurface closure = to_closure_subsurface(gbuf.layer[0]);
+  float max_radius = reduce_max(closure.sss_radius);
+
+  float homogenous_coord = view.winmat[2][3] * vP.z + view.winmat[3][3];
+  float2 sample_scale = float2(view.winmat[0][0], view.winmat[1][1]) *
+                        (0.5f * max_radius / homogenous_coord);
+
+  float pixel_footprint = sample_scale.x * textureSize(srt_access(eevee_subsurface_Convolve, depth_tx), 0).x;
+  if (pixel_footprint <= 1.0f) {
+
+    return;
+  }
+#line 228
+  float3 clamped_sss_radius = max(float3(srt_access(eevee_subsurface_Convolve, subsurface_buf).min_radius),
+                                  closure.sss_radius / max_radius) *
+                              max_radius;
+
+  float3 albedo = closure.color / max(1e-6f, reduce_max(closure.color));
+  float3 d = burley_setup(clamped_sss_radius, albedo);
+#line 236
+  float golden_angle = M_PI * (3.0f - sqrt(5.0f));
+  float theta = interleaved_gradient_noise(float2(texel), 0, 0.0f) * golden_angle;
+
+  float2x2 sample_space = from_scale(sample_scale) * from_rotation(_ctor(AngleRadian) theta _rotc() );
+
+  float3 accum_weight = float3(0.0f);
+  float3 accum_radiance = float3(0.0f);
+  float3 accum_radiance_indirect = float3(0.0f);
+
+  for (int i = 0; i < srt_access(eevee_subsurface_Convolve, subsurface_buf).sample_len; i++) {
+    float2 sample_uv = center_uv + sample_space * srt_access(eevee_subsurface_Convolve, subsurface_buf).samples[i].xy;
+    float pdf_inv = srt_access(eevee_subsurface_Convolve, subsurface_buf).samples[i].z;
+
+    eevee_subsurface_SubSurfaceSample samp = _sample_neighborhood(srt, sample_uv, gl_WorkGroupID);
+
+    if (samp.sss_id != object_id) {
+      continue;
+    }
+
+    float3 sample_vP = _point_screen_to_view(view, float3(sample_uv, samp.depth));
+    float r = distance(sample_vP, vP);
+    float3 weight = burley_eval(d, r) * pdf_inv;
+
+    accum_radiance += samp.radiance * weight;
+    accum_weight += weight;
+
+    if (srt_access(eevee_subsurface_Convolve, use_split_radiance)) {
+      accum_radiance_indirect += textureLod(srt_access(eevee_subsurface_Convolve, radiance_tx), float3(sample_uv, 1.0f), 0.0f).rgb *
+                                 weight;
+    }
+  }
+
+  float3 accum_weight_inv = safe_rcp(accum_weight);
+  accum_radiance *= accum_weight_inv;
+  accum_radiance_indirect *= accum_weight_inv;
+#line 273
+  imageStoreFast(srt_access(eevee_subsurface_Convolve, out_direct_light_img), texel, uint4(rgb9e5_encode(accum_radiance)));
+#line 276
+  imageStoreFast(srt_access(eevee_subsurface_Convolve, out_indirect_light_img), texel, float4(accum_radiance_indirect, 0.0f));
+
+#endif
+#line 277
+}
+#endif
+#endif
+#line 285

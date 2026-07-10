@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "stockfish",
+  "input_url": "https://github.com/official-stockfish/Stockfish",
+  "canonical_url": "https://github.com/official-stockfish/Stockfish",
+  "source_directory": "stockfish/upstream",
+  "commit": "6088838797d6333711c17fe2c0962fa0858517ec",
+  "nested_submodules": []
+}

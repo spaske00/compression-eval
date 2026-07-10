@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_rotate_vector.glsl"
+ 
+#line 8
+void rotate_vector(float3 vector, float4 rotation, _ref(float3 ,result))
+{
+  result = transform_point_by_quaternion(_ctor(Quaternion) UNPACK4(rotation) _rotc() , vector);
+}

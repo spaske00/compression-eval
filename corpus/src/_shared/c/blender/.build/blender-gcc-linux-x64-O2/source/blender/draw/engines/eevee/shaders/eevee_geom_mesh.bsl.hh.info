@@ -1,0 +1,34 @@
+#pragma once
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_GeomMeshVertIn)
+VERTEX_IN(0, float3, pos)
+VERTEX_IN(1, float3, nor)
+GPU_SHADER_CREATE_END()
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_GeomMesh)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_geom_mesh_infos_)
+BUILTINS(BuiltinBits::CLIP_CONTROL)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::VERTEX_ID)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_GeomMesh)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Model)
+ADDITIONAL_INFO(draw_Infos)
+ADDITIONAL_INFO(draw_Resource)
+.additional_info_with_condition("eevee_GeomShadow", [](blender::Span<CompilationConstant> constants) { int is_shadow_pipe = ShaderCreateInfo::find_constant(constants, "is_shadow_pipe"); return is_shadow_pipe;})
+ADDITIONAL_INFO(eevee_GeomMeshVertIn)
+BUILTINS(BuiltinBits::VIEWPORT_INDEX)
+GPU_SHADER_CREATE_END()
+

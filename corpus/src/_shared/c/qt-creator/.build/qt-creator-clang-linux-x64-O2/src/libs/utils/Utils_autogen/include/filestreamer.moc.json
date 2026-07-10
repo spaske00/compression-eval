@@ -1,0 +1,112 @@
+{
+    "classes": [
+        {
+            "className": "FileStreamBase",
+            "lineNumber": 29,
+            "object": true,
+            "qualifiedClassName": "Utils::FileStreamBase",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "result",
+                            "type": "DoneResult"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "done",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "FileStreamReader",
+            "lineNumber": 78,
+            "object": true,
+            "qualifiedClassName": "Utils::FileStreamReader",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newData",
+                            "type": "QByteArray"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "readyRead",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::FileStreamBase",
+                    "name": "FileStreamBase"
+                }
+            ]
+        },
+        {
+            "className": "WriteBuffer",
+            "lineNumber": 129,
+            "object": true,
+            "qualifiedClassName": "Utils::WriteBuffer",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newData",
+                            "type": "QByteArray"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "writeRequested",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "closeWriteChannelRequested",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "FileStreamWriter",
+            "lineNumber": 236,
+            "object": true,
+            "qualifiedClassName": "Utils::FileStreamWriter",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "started",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "Utils::FileStreamBase",
+                    "name": "FileStreamBase"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filestreamer.cpp",
+    "outputRevision": 68
+}

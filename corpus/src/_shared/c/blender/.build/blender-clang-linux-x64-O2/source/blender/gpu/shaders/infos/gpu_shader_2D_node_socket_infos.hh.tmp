@@ -1,0 +1,52 @@
+#line 1 "gpu_shader_2D_node_socket_infos.hh"
+ 
+#line 9
+#ifdef GPU_SHADER
+#line 12
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define widgetID 0
+#endif
+#line 32
+#define MAX_SOCKET_PARAMETERS 4
+#define MAX_SOCKET_INSTANCE 32
+
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_2D_node_socket_shared
+CREATE_INFO_RES_PASS_gpu_shader_2D_node_socket_shared
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_2D_node_socket_shared
+CREATE_INFO_RES_BATCH_gpu_shader_2D_node_socket_shared
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_node_socket_shared
+CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_node_socket_shared
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_node_socket_shared
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_node_socket_shared
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_2D_node_socket
+CREATE_INFO_RES_PASS_gpu_shader_2D_node_socket
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_2D_node_socket
+CREATE_INFO_RES_BATCH_gpu_shader_2D_node_socket
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_node_socket
+CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_node_socket
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_node_socket
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_node_socket
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_2D_node_socket_inst
+CREATE_INFO_RES_PASS_gpu_shader_2D_node_socket_inst
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_2D_node_socket_inst
+CREATE_INFO_RES_BATCH_gpu_shader_2D_node_socket_inst
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_node_socket_inst
+CREATE_INFO_RES_GEOMETRY_gpu_shader_2D_node_socket_inst
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_node_socket_inst
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_2D_node_socket_inst
+#endif

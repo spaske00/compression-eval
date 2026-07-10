@@ -1,0 +1,38 @@
+#line 1 "osd_patch_basis.glsl"
+ 
+#line 16
+#define OsdPatchParam_host_shared_ OsdPatchParam
+#line 15
+struct                 OsdPatchParam {
+  int field0;
+  int field1;
+  float sharpness;
+};
+#line 15
+                                             OsdPatchParam OsdPatchParam_ctor_() {OsdPatchParam r;r.field0=0;r.field1=0;r.sharpness=0.0f;return r;}
+#line 22
+#define OsdPatchArray_host_shared_ OsdPatchArray
+#line 21
+struct                 OsdPatchArray {
+  int regDesc;
+  int desc;
+  int numPatches;
+  int indexBase;
+  int stride;
+  int primitiveIdBase;
+};
+#line 21
+                                             OsdPatchArray OsdPatchArray_ctor_() {OsdPatchArray r;r.regDesc=0;r.desc=0;r.numPatches=0;r.indexBase=0;r.stride=0;r.primitiveIdBase=0;return r;}
+#line 31
+#define OsdPatchCoord_host_shared_ OsdPatchCoord
+#line 30
+struct                 OsdPatchCoord {
+  int arrayIndex;
+  int patchIndex;
+  int vertIndex;
+  float s;
+  float t;
+};
+#line 30
+                                             OsdPatchCoord OsdPatchCoord_ctor_() {OsdPatchCoord r;r.arrayIndex=0;r.patchIndex=0;r.vertIndex=0;r.s=0.0f;r.t=0.0f;return r;}
+#line 37

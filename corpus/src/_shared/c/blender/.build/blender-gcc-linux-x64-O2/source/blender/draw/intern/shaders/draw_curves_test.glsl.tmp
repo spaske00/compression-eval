@@ -1,0 +1,19 @@
+#line 1 "draw_curves_test.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(draw_curves_test)
+#line 11
+void main()
+{
+#ifdef GPU_VERTEX_SHADER
+  curves_Point pt = curves_point_get(uint(gl_VertexID));
+
+  result_pos_buf[gl_VertexID] = pt.P.x;
+  result_indices_buf[gl_VertexID].x = pt.point_id;
+  result_indices_buf[gl_VertexID].y = pt.curve_id;
+  result_indices_buf[gl_VertexID].z = pt.curve_segment;
+  result_indices_buf[gl_VertexID].w = int(pt.azimuthal_offset);
+
+  gl_Position = float4(0);
+#endif
+}

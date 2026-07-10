@@ -1,0 +1,225 @@
+#line 1 "eevee_shadow_page_mask.bsl.hh"
+ 
+#line 23
+#define SHADOW_TILE_AMENDED SHADOW_IS_RENDERED
+
+#define SHADOW_TILE_MASKED SHADOW_IS_ALLOCATED
+
+int eevee_shadow_shadow_tile_offset_lds(int2 tile, int lod)
+{
+  return shadow_tile_offset(uint2(tile), 0, lod);
+}
+#line 34
+bool eevee_shadow_thread_mask(int2 tile_co, int lod)
+{
+  constexpr uint lod_size = uint(SHADOW_TILEMAP_RES);
+  return all(lessThan(tile_co, int2(lod_size >> lod)));
+}
+
+#define access_eevee_shadow_PageMask_levels_rendered() levels_rendered
+#define access_eevee_shadow_PageMask_force_base_page() force_base_page
+#define access_eevee_shadow_PageMask_max_view_per_tilemap() max_view_per_tilemap
+#define access_eevee_shadow_PageMask_tiles_local() tiles_local
+#define access_eevee_shadow_PageMask_tiles_buf() tiles_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_PageMask
+CREATE_INFO_RES_PASS_eevee_shadow_PageMask
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_PageMask
+CREATE_INFO_RES_BATCH_eevee_shadow_PageMask
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_PageMask
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_PageMask
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_PageMask
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_PageMask
+#endif
+#line 40
+struct eevee_shadow_PageMask {
+#line 54
+int _pad;};
+#line 57
+#ifndef GPU_METAL
+eevee_shadow_PageMask eevee_shadow_PageMask_ctor_();
+eevee_shadow_PageMask eevee_shadow_PageMask_new_();
+#endif
+#line 40
+                                     eevee_shadow_PageMask eevee_shadow_PageMask_ctor_() {eevee_shadow_PageMask r;r._pad=0;return r;}
+#line 47
+       eevee_shadow_PageMask eevee_shadow_PageMask_new_()
+{
+  eevee_shadow_PageMask result;
+  result._pad = 0;
+  return result;
+#line 45
+}
+#line 48
+
+#if defined(CREATE_INFO_eevee_shadow_PageMask) && defined(CREATE_INFO_eevee_shadow_TileMaps)
+#line 48
+
+#if defined(ENTRY_POINT_eevee_shadow_mask)
+#line 48
+
+void eevee_shadow_mask(
+#line 52
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 53
+  eevee_shadow_PageMask srt = eevee_shadow_PageMask_ctor_(); eevee_shadow_TileMaps tilemaps = eevee_shadow_TileMaps_ctor_();
+  int2 tile_co = int2(gl_GlobalInvocationID.xy);
+  uint tilemap_index = gl_GlobalInvocationID.z;
+  ShadowTileMapData tilemap = srt_access(eevee_shadow_TileMaps, tilemaps_buf)[tilemap_index];
+#line 59
+  if (tilemap.projection_type == SHADOW_PROJECTION_CUBEFACE) {
+#line 62
+    if (gl_LocalInvocationIndex == 0u) {
+      srt_access(eevee_shadow_PageMask, force_base_page) = 0u;
+    }
+    barrier();
+#line 69
+    for (int lod = 0; lod <= SHADOW_TILEMAP_LOD; lod++) {
+      if (eevee_shadow_thread_mask(tile_co, lod)) {
+        int tile_offset = shadow_tile_offset(uint2(tile_co), tilemap.tiles_index, lod);
+        ShadowTileDataPacked tile_data = srt_access(eevee_shadow_PageMask, tiles_buf)[tile_offset];
+
+        if ((tile_data & SHADOW_IS_USED) == 0) {
+#line 77
+          tile_data &= ~SHADOW_DO_UPDATE;
+        }
+        else {
+
+          srt_access(eevee_shadow_PageMask, force_base_page) = 1u;
+        }
+
+        tile_data &= ~(SHADOW_TILE_AMENDED | SHADOW_TILE_MASKED);
+
+        int tile_lds = eevee_shadow_shadow_tile_offset_lds(tile_co, lod);
+        srt_access(eevee_shadow_PageMask, tiles_local)[tile_lds] = tile_data;
+      }
+    }
+
+#if 1
+#line 98
+    for (int lod = 1; lod <= SHADOW_TILEMAP_LOD; lod++) {
+      barrier();
+      if (eevee_shadow_thread_mask(tile_co, lod)) {
+        int2 tile_co_prev_lod = tile_co * 2;
+        int prev_lod = lod - 1;
+
+        int tile_0 = eevee_shadow_shadow_tile_offset_lds(tile_co_prev_lod + int2(0, 0), prev_lod);
+        int tile_1 = eevee_shadow_shadow_tile_offset_lds(tile_co_prev_lod + int2(1, 0), prev_lod);
+        int tile_2 = eevee_shadow_shadow_tile_offset_lds(tile_co_prev_lod + int2(0, 1), prev_lod);
+        int tile_3 = eevee_shadow_shadow_tile_offset_lds(tile_co_prev_lod + int2(1, 1), prev_lod);
+
+        bool is_masked = ((srt_access(eevee_shadow_PageMask, tiles_local)[tile_0] & srt_access(eevee_shadow_PageMask, tiles_local)[tile_1] &
+                           srt_access(eevee_shadow_PageMask, tiles_local)[tile_2] & srt_access(eevee_shadow_PageMask, tiles_local)[tile_3]) &
+                          SHADOW_IS_USED) != 0;
+
+        int tile_offset = eevee_shadow_shadow_tile_offset_lds(tile_co, lod);
+        if (is_masked) {
+
+          srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] |= SHADOW_IS_USED;
+
+          srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] &= ~SHADOW_DO_UPDATE;
+
+          srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] |= SHADOW_TILE_AMENDED;
+
+          srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] |= SHADOW_TILE_MASKED;
+        }
+      }
+    }
+#endif
+
+#if 1
+#line 136
+    if (gl_LocalInvocationIndex == 0u) {
+      srt_access(eevee_shadow_PageMask, levels_rendered) = 0u;
+    }
+    barrier();
+    for (int lod = 0; lod <= SHADOW_TILEMAP_LOD; lod++) {
+
+      if (eevee_shadow_thread_mask(tile_co, lod)) {
+        int tile_offset = eevee_shadow_shadow_tile_offset_lds(tile_co, lod);
+        if ((srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] & SHADOW_DO_UPDATE) != 0) {
+          atomicOr(srt_access(eevee_shadow_PageMask, levels_rendered), 1u << lod);
+        }
+      }
+    }
+    barrier();
+#line 152
+    if (bitCount(srt_access(eevee_shadow_PageMask, levels_rendered)) > srt_access(eevee_shadow_PageMask, max_view_per_tilemap)) {
+
+      int max_lod = findMSB(srt_access(eevee_shadow_PageMask, levels_rendered));
+
+      for (int i = 1; i < srt_access(eevee_shadow_PageMask, max_view_per_tilemap); i++) {
+        max_lod = findMSB(srt_access(eevee_shadow_PageMask, levels_rendered) & ~(~0u << max_lod));
+      }
+
+      srt_access(eevee_shadow_TileMaps, tilemaps_buf)[tilemap_index].effective_lod_min = max_lod;
+
+      for (int lod = 0; lod < max_lod; lod++) {
+        if (eevee_shadow_thread_mask(tile_co, lod)) {
+          int tile_offset = eevee_shadow_shadow_tile_offset_lds(tile_co, lod);
+          if ((srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] & SHADOW_DO_UPDATE) != 0) {
+
+            srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] |= SHADOW_TILE_MASKED | SHADOW_TILE_AMENDED;
+
+            int tile_bottom_offset = eevee_shadow_shadow_tile_offset_lds(tile_co >> (max_lod - lod), max_lod);
+#line 172
+            atomicOr(srt_access(eevee_shadow_PageMask, tiles_local)[tile_bottom_offset], uint(SHADOW_TILE_AMENDED));
+#line 175
+            atomicAnd(srt_access(eevee_shadow_PageMask, tiles_local)[tile_bottom_offset], ~uint(SHADOW_TILE_MASKED));
+          }
+        }
+      }
+    }
+    else {
+
+      srt_access(eevee_shadow_TileMaps, tilemaps_buf)[tilemap_index].effective_lod_min = 0;
+    }
+#else
+
+    srt_access(eevee_shadow_TileMaps, tilemaps_buf)[tilemap_index].effective_lod_min = 0;
+#endif
+
+    barrier();
+
+#if 1
+    if (gl_LocalInvocationIndex == 0u) {
+
+      bool is_render = srt_access(eevee_shadow_PageMask, max_view_per_tilemap) == SHADOW_TILEMAP_LOD;
+#line 200
+      if ((srt_access(eevee_shadow_PageMask, force_base_page) != 0u) && ((srt_access(eevee_shadow_PageMask, levels_rendered) == 0u) || is_render)) {
+        int tile_offset = eevee_shadow_shadow_tile_offset_lds(int2(0), SHADOW_TILEMAP_LOD);
+
+        srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] |= SHADOW_TILE_AMENDED;
+
+        srt_access(eevee_shadow_PageMask, tiles_local)[tile_offset] &= ~SHADOW_TILE_MASKED;
+      }
+    }
+#endif
+#line 211
+    for (int lod = 0; lod <= SHADOW_TILEMAP_LOD; lod++) {
+      if (eevee_shadow_thread_mask(tile_co, lod)) {
+        int tile_lds = eevee_shadow_shadow_tile_offset_lds(tile_co, lod);
+        if ((srt_access(eevee_shadow_PageMask, tiles_local)[tile_lds] & SHADOW_TILE_AMENDED) != 0) {
+          int tile_offset = shadow_tile_offset(uint2(tile_co), tilemap.tiles_index, lod);
+
+          if ((srt_access(eevee_shadow_PageMask, tiles_local)[tile_lds] & SHADOW_TILE_MASKED) != 0) {
+            srt_access(eevee_shadow_PageMask, tiles_buf)[tile_offset] &= ~SHADOW_IS_USED;
+          }
+          else {
+            srt_access(eevee_shadow_PageMask, tiles_buf)[tile_offset] |= SHADOW_IS_USED;
+          }
+        }
+      }
+    }
+  }
+
+#endif
+#line 227
+}
+#endif
+#endif
+#line 232

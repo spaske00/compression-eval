@@ -1,0 +1,102 @@
+#line 1 "gpu_shader_math_vector_compare_lib.glsl"
+ 
+#line 16
+bool is_zero(float2 vec)
+{
+  return all(equal(vec, float2(0.0f)));
+}
+#line 16
+bool is_zero(float3 vec)
+{
+  return all(equal(vec, float3(0.0f)));
+}
+#line 16
+bool is_zero(float4 vec)
+{
+  return all(equal(vec, float4(0.0f)));
+}
+#line 27
+bool is_any_zero(float2 vec)
+{
+  return any(equal(vec, float2(0.0f)));
+}
+#line 27
+bool is_any_zero(float3 vec)
+{
+  return any(equal(vec, float3(0.0f)));
+}
+#line 27
+bool is_any_zero(float4 vec)
+{
+  return any(equal(vec, float4(0.0f)));
+}
+#line 38
+bool is_equal(float2 a, float2 b, float epsilon)
+{
+  return all(lessThanEqual(abs(a - b), float2(epsilon)));
+}
+#line 38
+bool is_equal(float3 a, float3 b, float epsilon)
+{
+  return all(lessThanEqual(abs(a - b), float3(epsilon)));
+}
+#line 38
+bool is_equal(float4 a, float4 b, float epsilon)
+{
+  return all(lessThanEqual(abs(a - b), float4(epsilon)));
+}
+#line 51
+bool almost_equal_relativeTfloat2T2(float2 a, float2 b, const float epsilon_factor)
+{
+  for (int i = 0; i < 2; i++) {
+    if (abs(a[i] - b[i]) > epsilon_factor * abs(a[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+#line 51
+bool almost_equal_relativeTfloat3T3(float3 a, float3 b, const float epsilon_factor)
+{
+  for (int i = 0; i < 3; i++) {
+    if (abs(a[i] - b[i]) > epsilon_factor * abs(a[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+#line 51
+bool almost_equal_relativeTfloat4T4(float4 a, float4 b, const float epsilon_factor)
+{
+  for (int i = 0; i < 4; i++) {
+    if (abs(a[i] - b[i]) > epsilon_factor * abs(a[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+#line 67
+bool is_unit_scale(float2 v)
+{
+  constexpr float assert_unit_epsilon = 0.0002f;
+  float test_unit = dot(v, v);
+  return (!(abs(test_unit - 1.0f) >= assert_unit_epsilon) ||
+          !(abs(test_unit) >= assert_unit_epsilon));
+}
+#line 67
+bool is_unit_scale(float3 v)
+{
+  constexpr float assert_unit_epsilon = 0.0002f;
+  float test_unit = dot(v, v);
+  return (!(abs(test_unit - 1.0f) >= assert_unit_epsilon) ||
+          !(abs(test_unit) >= assert_unit_epsilon));
+}
+#line 67
+bool is_unit_scale(float4 v)
+{
+  constexpr float assert_unit_epsilon = 0.0002f;
+  float test_unit = dot(v, v);
+  return (!(abs(test_unit - 1.0f) >= assert_unit_epsilon) ||
+          !(abs(test_unit) >= assert_unit_epsilon));
+}
+#line 79

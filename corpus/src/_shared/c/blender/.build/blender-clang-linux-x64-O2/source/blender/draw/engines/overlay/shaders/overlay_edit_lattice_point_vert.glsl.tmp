@@ -1,0 +1,26 @@
+#line 1 "overlay_edit_lattice_point_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_edit_lattice_point)
+#line 13
+void main()
+{
+  if ((data & VERT_SELECTED) != 0u) {
+    final_color = theme.colors.vert_select;
+  }
+  else if ((data & VERT_ACTIVE) != 0u) {
+    final_color = theme.colors.edit_mesh_active;
+  }
+  else {
+    final_color = theme.colors.vert;
+  }
+
+  float3 world_pos = drw_point_object_to_world(pos);
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+#line 29
+  gl_Position.z -= 3e-4f;
+
+  gl_PointSize = theme.sizes.vert * 2.0f;
+
+  view_clipping_distances(world_pos);
+}

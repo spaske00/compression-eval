@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "IPlugin",
+            "lineNumber": 20,
+            "object": true,
+            "qualifiedClassName": "ExtensionSystem::IPlugin",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "asynchronousShutdownFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "iplugin.h",
+    "outputRevision": 68
+}

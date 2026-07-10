@@ -1,0 +1,50 @@
+#line 1 "gpu_shader_math_quaternion_lib.glsl"
+ 
+#line 9
+struct Quaternion {
+  float x;float y;float z;float w;
+#line 21
+};
+#line 28
+#ifndef GPU_METAL
+Quaternion Quaternion_ctor_();
+Quaternion Quaternion_identity();
+float4 _as_float4(const Quaternion this_);
+#endif
+#line 9
+                          Quaternion Quaternion_ctor_() {Quaternion r;r.x=0.0f;r.y=0.0f;r.z=0.0f;r.w=0.0f;return r;}
+#line 12
+         Quaternion Quaternion_identity()
+  {
+    return _ctor(Quaternion) 1, 0, 0, 0 _rotc() ;
+  }
+#line 17
+  float4 _as_float4(const Quaternion this_)
+  {
+    return float4(this_.x, this_.y, this_.z, this_.w);
+  }
+#line 27
+Quaternion math_quaternion_multiply(Quaternion a, Quaternion b)
+{
+  Quaternion result;
+  result.x = a.x * b.x - a.y * b.y - a.z * b.z - a.w * b.w;
+  result.y = a.x * b.y + a.y * b.x + a.z * b.w - a.w * b.z;
+  result.z = a.x * b.z - a.y * b.w + a.z * b.x + a.w * b.y;
+  result.w = a.x * b.w + a.y * b.z - a.z * b.y + a.w * b.x;
+  return result;
+}
+
+Quaternion quaternion_conjugate(Quaternion q)
+{
+  return _ctor(Quaternion) q.x, -q.y, -q.z, -q.w _rotc() ;
+}
+
+float3 transform_point_by_quaternion(Quaternion q, float3 v)
+{
+  const Quaternion v_quat = _ctor(Quaternion) 0.0f, v.x, v.y, v.z _rotc() ;
+  const Quaternion result = math_quaternion_multiply(math_quaternion_multiply(q, v_quat),
+                                                     quaternion_conjugate(q));
+  return float3(result.y, result.z, result.w);
+}
+
+

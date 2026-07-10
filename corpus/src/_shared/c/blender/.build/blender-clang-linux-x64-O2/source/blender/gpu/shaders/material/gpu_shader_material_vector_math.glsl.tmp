@@ -1,0 +1,193 @@
+#line 1 "gpu_shader_material_vector_math.glsl"
+ 
+#line 7
+float3 vector_math_safe_normalize(float3 a)
+{
+
+  float length_sqr = dot(a, a);
+  return (length_sqr > 1e-35f) ? a * inversesqrt(length_sqr) : float3(0.0f);
+}
+#line 15
+void vector_math_add(float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = a + b;
+}
+#line 21
+void vector_math_subtract(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = a - b;
+}
+#line 28
+void vector_math_multiply(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = a * b;
+}
+#line 35
+void vector_math_divide(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = safe_divide(a, b);
+}
+#line 42
+void vector_math_cross(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = cross(a, b);
+}
+#line 49
+void vector_math_project(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  float lenSquared = dot(b, b);
+  outVector = (lenSquared != 0.0f) ? (dot(a, b) / lenSquared) * b : float3(0.0f);
+}
+#line 57
+void vector_math_reflect(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = reflect(a, vector_math_safe_normalize(b));
+}
+#line 64
+void vector_math_dot(float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outValue = dot(a, b);
+}
+#line 70
+void vector_math_distance(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outValue = distance(a, b);
+}
+#line 77
+void vector_math_length(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outValue = length(a);
+}
+#line 84
+void vector_math_scale(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = a * scale;
+}
+#line 91
+void vector_math_normalize(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = a;
+
+  float lenSquared = dot(a, a);
+  if (lenSquared > 0.0f) {
+    outVector *= inversesqrt(lenSquared);
+  }
+}
+#line 103
+void vector_math_snap(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = floor(safe_divide(a, b)) * b;
+}
+#line 110
+void vector_math_floor(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = floor(a);
+}
+#line 117
+void vector_math_ceil(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = ceil(a);
+}
+#line 124
+void vector_math_modulo(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = compatible_mod(a, b);
+}
+#line 131
+void vector_math_wrap(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = wrap(a, b, c);
+}
+#line 138
+void vector_math_fraction(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = fract(a);
+}
+#line 145
+void vector_math_absolute(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = abs(a);
+}
+#line 152
+void vector_math_power(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = compatible_pow(a, b);
+}
+#line 159
+void vector_math_sign(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = sign(a);
+}
+#line 166
+void vector_math_round(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = floor(a + 0.5f);
+}
+#line 173
+void vector_math_minimum(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = min(a, b);
+}
+#line 180
+void vector_math_maximum(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = max(a, b);
+}
+#line 187
+void vector_math_sine(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = sin(a);
+}
+#line 194
+void vector_math_cosine(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = cos(a);
+}
+#line 201
+void vector_math_tangent(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = tan(a);
+}
+#line 208
+void vector_math_refract(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = refract(a, vector_math_safe_normalize(b), scale);
+}
+#line 215
+void vector_math_faceforward(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = faceforward(a, b, c);
+}
+#line 222
+void vector_math_multiply_add(
+    float3 a, float3 b, float3 c, float scale, _ref(float3 ,outVector), _ref(float ,outValue))
+{
+  outVector = a * b + c;
+}

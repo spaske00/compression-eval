@@ -1,0 +1,1483 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      The system is: Linux - 6.17.0-35-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: -O2
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/3.31.10/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: -O2;-Wno-error=unknown-warning-option
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/3.31.10/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_3f27b
+        [1/2] /usr/bin/clang   -O2  -fPIE   -v -MD -MT CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -x c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang -O2 -O2 -v -Wl,-v CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -o cmTC_3f27b   && :
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3f27b /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_3f27b]
+        ignore line: [[1/2] /usr/bin/clang   -O2  -fPIE   -v -MD -MT CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-tPZQzk -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -x c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang -O2 -O2 -v -Wl -v CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -o cmTC_3f27b   && :]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3f27b /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_3f27b] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_3f27b.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_70158
+        [1/2] /usr/bin/clang++   -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -v -MD -MT CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -Wno-error=unknown-warning-option -std=gnu++23 -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fno-implicit-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14
+         /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward
+         /usr/lib/llvm-18/lib/clang/18/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 -v -Wl,-v CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_70158   && :
+        Ubuntu clang version 18.1.3 (1ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_70158 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14]
+          add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14]
+          add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward]
+          add: [/usr/lib/llvm-18/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14] ==> [/usr/include/x86_64-linux-gnu/c++/14]
+        collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/llvm-18/lib/clang/18/include] ==> [/usr/lib/llvm-18/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/x86_64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/llvm-18/lib/clang/18/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_70158]
+        ignore line: [[1/2] /usr/bin/clang++   -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -v -MD -MT CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -c /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ -v -fcoverage-compilation-dir=/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YNPkxQ -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -Wno-error=unknown-warning-option -std=gnu++23 -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fno-implicit-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14]
+        ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/x86_64-linux-gnu/c++/14]
+        ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/backward]
+        ignore line: [ /usr/lib/llvm-18/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 -v -Wl -v CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_70158   && :]
+        ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_70158 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_70158] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_70158.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+        collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:56 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckTypeSize.cmake:262 (check_include_file)"
+      - "lib/external/libwolv/libs/types/CMakeLists.txt:11 (check_type_size)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h2ZfXw"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h2ZfXw"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h2ZfXw'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_dd03c
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_dd03c.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_dd03c.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_dd03c.dir/CheckIncludeFile.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h2ZfXw/CheckIncludeFile.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_dd03c.dir/CheckIncludeFile.c.o -o cmTC_dd03c   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckTypeSize.cmake:263 (check_include_file)"
+      - "lib/external/libwolv/libs/types/CMakeLists.txt:11 (check_type_size)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-4dud27"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-4dud27"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-4dud27'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_2b2db
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_2b2db.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_2b2db.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_2b2db.dir/CheckIncludeFile.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-4dud27/CheckIncludeFile.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_2b2db.dir/CheckIncludeFile.c.o -o cmTC_2b2db   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckTypeSize.cmake:264 (check_include_file)"
+      - "lib/external/libwolv/libs/types/CMakeLists.txt:11 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h9rnzk"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h9rnzk"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h9rnzk'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_90974
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_90974.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_90974.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_90974.dir/CheckIncludeFile.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-h9rnzk/CheckIncludeFile.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_90974.dir/CheckIncludeFile.c.o -o cmTC_90974   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "lib/external/libwolv/libs/types/CMakeLists.txt:11 (check_type_size)"
+    checks:
+      - "Check size of __uint128_t"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-R6DzDP"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-R6DzDP"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_UINT128_T_SIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-R6DzDP'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_b50c6
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_b50c6.dir/UINT128_T_SIZE.c.o -MF CMakeFiles/cmTC_b50c6.dir/UINT128_T_SIZE.c.o.d -o CMakeFiles/cmTC_b50c6.dir/UINT128_T_SIZE.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-R6DzDP/UINT128_T_SIZE.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_b50c6.dir/UINT128_T_SIZE.c.o -o cmTC_b50c6   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "lib/third_party/fmt/CMakeLists.txt:260 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAS_NULLPTR_WARNING"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ZoWKQ4"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ZoWKQ4"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules;/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/lib/third_party/fmt/support/cmake"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAS_NULLPTR_WARNING"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ZoWKQ4'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_b533c
+        [1/2] /usr/bin/clang++ -DHAS_NULLPTR_WARNING  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -Wzero-as-null-pointer-constant -MD -MT CMakeFiles/cmTC_b533c.dir/src.cxx.o -MF CMakeFiles/cmTC_b533c.dir/src.cxx.o.d -o CMakeFiles/cmTC_b533c.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ZoWKQ4/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_b533c.dir/src.cxx.o -o cmTC_b533c   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "lib/third_party/lunasvg/plutovg/CMakeLists.txt:65 (check_include_file)"
+    checks:
+      - "Looking for threads.h"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-orIgpJ"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-orIgpJ"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_THREADS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-orIgpJ'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_23eef
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_23eef.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_23eef.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_23eef.dir/CheckIncludeFile.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-orIgpJ/CheckIncludeFile.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_23eef.dir/CheckIncludeFile.c.o -o cmTC_23eef   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "lib/third_party/lunasvg/plutovg/CMakeLists.txt:69 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RYoqZb"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RYoqZb"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RYoqZb'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_112f7
+        [1/2] /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -O2  -fPIE -MD -MT CMakeFiles/cmTC_112f7.dir/src.c.o -MF CMakeFiles/cmTC_112f7.dir/src.c.o.d -o CMakeFiles/cmTC_112f7.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RYoqZb/src.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_112f7.dir/src.c.o -o cmTC_112f7   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindX11.cmake:693 (check_library_exists)"
+      - "lib/third_party/imgui/backend/CMakeLists.txt:23 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LS0wdo"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LS0wdo"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LS0wdo'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_33ac7
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=XOpenDisplay -fPIE -MD -MT CMakeFiles/cmTC_33ac7.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_33ac7.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_33ac7.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LS0wdo/CheckFunctionExists.c
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=XOpenDisplay -O2 CMakeFiles/cmTC_33ac7.dir/CheckFunctionExists.c.o -o cmTC_33ac7  /usr/lib/x86_64-linux-gnu/libX11.so  /usr/lib/x86_64-linux-gnu/libXext.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindX11.cmake:708 (check_function_exists)"
+      - "lib/third_party/imgui/backend/CMakeLists.txt:23 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hUpnXu"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hUpnXu"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hUpnXu'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_bd7cb
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=gethostbyname -fPIE -MD -MT CMakeFiles/cmTC_bd7cb.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_bd7cb.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_bd7cb.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-hUpnXu/CheckFunctionExists.c
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=gethostbyname -O2 CMakeFiles/cmTC_bd7cb.dir/CheckFunctionExists.c.o -o cmTC_bd7cb   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindX11.cmake:722 (check_function_exists)"
+      - "lib/third_party/imgui/backend/CMakeLists.txt:23 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-5Cvn8R"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-5Cvn8R"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-5Cvn8R'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_9dbfa
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=connect -fPIE -MD -MT CMakeFiles/cmTC_9dbfa.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_9dbfa.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_9dbfa.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-5Cvn8R/CheckFunctionExists.c
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=connect -O2 CMakeFiles/cmTC_9dbfa.dir/CheckFunctionExists.c.o -o cmTC_9dbfa   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindX11.cmake:731 (check_function_exists)"
+      - "lib/third_party/imgui/backend/CMakeLists.txt:23 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-eVhaTg"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-eVhaTg"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-eVhaTg'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_b5799
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=remove -fPIE -MD -MT CMakeFiles/cmTC_b5799.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_b5799.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_b5799.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-eVhaTg/CheckFunctionExists.c
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=remove -O2 CMakeFiles/cmTC_b5799.dir/CheckFunctionExists.c.o -o cmTC_b5799   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindX11.cmake:740 (check_function_exists)"
+      - "lib/third_party/imgui/backend/CMakeLists.txt:23 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zQX1uO"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zQX1uO"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zQX1uO'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_ede7b
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=shmat -fPIE -MD -MT CMakeFiles/cmTC_ede7b.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_ede7b.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_ede7b.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-zQX1uO/CheckFunctionExists.c
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=shmat -O2 CMakeFiles/cmTC_ede7b.dir/CheckFunctionExists.c.o -o cmTC_ede7b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindX11.cmake:750 (check_library_exists)"
+      - "lib/third_party/imgui/backend/CMakeLists.txt:23 (find_package)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-woBS80"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-woBS80"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-woBS80'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_6dabb
+        [1/2] /usr/bin/clang   -O2 -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -fPIE -MD -MT CMakeFiles/cmTC_6dabb.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_6dabb.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_6dabb.dir/CheckFunctionExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-woBS80/CheckFunctionExists.c
+        [2/2] : && /usr/bin/clang -O2 -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -O2 CMakeFiles/cmTC_6dabb.dir/CheckFunctionExists.c.o -o cmTC_6dabb  -lICE && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "cmake/build_helpers.cmake:709 (check_cxx_compiler_flag)"
+      - "cmake/build_helpers.cmake:826 (setupDebugCompressionFlag)"
+      - "lib/libimhex/CMakeLists.txt:136 (setupCompilerFlags)"
+    checks:
+      - "Performing Test ZSTD_AVAILABLE_COMPILER"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YzDNAD"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YzDNAD"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "ZSTD_AVAILABLE_COMPILER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YzDNAD'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_5fbf5
+        [1/2] /usr/bin/clang++ -DZSTD_AVAILABLE_COMPILER  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -gz=zstd -MD -MT CMakeFiles/cmTC_5fbf5.dir/src.cxx.o -MF CMakeFiles/cmTC_5fbf5.dir/src.cxx.o.d -o CMakeFiles/cmTC_5fbf5.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-YzDNAD/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_5fbf5.dir/src.cxx.o -o cmTC_5fbf5   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "cmake/build_helpers.cmake:710 (check_linker_flag)"
+      - "cmake/build_helpers.cmake:826 (setupDebugCompressionFlag)"
+      - "lib/libimhex/CMakeLists.txt:136 (setupCompilerFlags)"
+    checks:
+      - "Performing Test ZSTD_AVAILABLE_LINKER"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LJZodr"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LJZodr"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "ZSTD_AVAILABLE_LINKER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LJZodr'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_db27b
+        [1/2] /usr/bin/clang++ -DZSTD_AVAILABLE_LINKER  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE -MD -MT CMakeFiles/cmTC_db27b.dir/src.cxx.o -MF CMakeFiles/cmTC_db27b.dir/src.cxx.o.d -o CMakeFiles/cmTC_db27b.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-LJZodr/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2    -gz=zstd CMakeFiles/cmTC_db27b.dir/src.cxx.o -o cmTC_db27b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "cmake/build_helpers.cmake:711 (check_cxx_compiler_flag)"
+      - "cmake/build_helpers.cmake:826 (setupDebugCompressionFlag)"
+      - "lib/libimhex/CMakeLists.txt:136 (setupCompilerFlags)"
+    checks:
+      - "Performing Test COMPRESS_AVAILABLE_COMPILER"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-X3JlK5"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-X3JlK5"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "COMPRESS_AVAILABLE_COMPILER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-X3JlK5'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_f31ae
+        [1/2] /usr/bin/clang++ -DCOMPRESS_AVAILABLE_COMPILER  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -gz -MD -MT CMakeFiles/cmTC_f31ae.dir/src.cxx.o -MF CMakeFiles/cmTC_f31ae.dir/src.cxx.o.d -o CMakeFiles/cmTC_f31ae.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-X3JlK5/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_f31ae.dir/src.cxx.o -o cmTC_f31ae   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "cmake/build_helpers.cmake:712 (check_linker_flag)"
+      - "cmake/build_helpers.cmake:826 (setupDebugCompressionFlag)"
+      - "lib/libimhex/CMakeLists.txt:136 (setupCompilerFlags)"
+    checks:
+      - "Performing Test COMPRESS_AVAILABLE_LINKER"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-TLLrLR"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-TLLrLR"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "COMPRESS_AVAILABLE_LINKER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-TLLrLR'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_d3112
+        [1/2] /usr/bin/clang++ -DCOMPRESS_AVAILABLE_LINKER  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE -MD -MT CMakeFiles/cmTC_d3112.dir/src.cxx.o -MF CMakeFiles/cmTC_d3112.dir/src.cxx.o.d -o CMakeFiles/cmTC_d3112.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-TLLrLR/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2    -gz CMakeFiles/cmTC_d3112.dir/src.cxx.o -o cmTC_d3112   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:238 (check_compiler_flag)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:419 (_test_compiler_hidden_visibility)"
+      - "lib/libimhex/CMakeLists.txt:139 (generate_export_header)"
+    checks:
+      - "Performing Test COMPILER_HAS_HIDDEN_VISIBILITY"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UsFUSj"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UsFUSj"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "COMPILER_HAS_HIDDEN_VISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UsFUSj'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_932b5
+        [1/2] /usr/bin/clang++ -DCOMPILER_HAS_HIDDEN_VISIBILITY  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -fvisibility=hidden -MD -MT CMakeFiles/cmTC_932b5.dir/src.cxx.o -MF CMakeFiles/cmTC_932b5.dir/src.cxx.o.d -o CMakeFiles/cmTC_932b5.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-UsFUSj/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_932b5.dir/src.cxx.o -o cmTC_932b5   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:239 (check_compiler_flag)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:419 (_test_compiler_hidden_visibility)"
+      - "lib/libimhex/CMakeLists.txt:139 (generate_export_header)"
+    checks:
+      - "Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Vi7lSf"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Vi7lSf"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "COMPILER_HAS_HIDDEN_INLINE_VISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Vi7lSf'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_da50e
+        [1/2] /usr/bin/clang++ -DCOMPILER_HAS_HIDDEN_INLINE_VISIBILITY  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE   -fvisibility-inlines-hidden -MD -MT CMakeFiles/cmTC_da50e.dir/src.cxx.o -MF CMakeFiles/cmTC_da50e.dir/src.cxx.o.d -o CMakeFiles/cmTC_da50e.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Vi7lSf/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_da50e.dir/src.cxx.o -o cmTC_da50e   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSourceCompiles.cmake:89 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:206 (check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:263 (_check_cxx_compiler_attribute)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/GenerateExportHeader.cmake:420 (_test_compiler_has_deprecated)"
+      - "lib/libimhex/CMakeLists.txt:139 (generate_export_header)"
+    checks:
+      - "Performing Test COMPILER_HAS_DEPRECATED_ATTR"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-IctmvM"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-IctmvM"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "COMPILER_HAS_DEPRECATED_ATTR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-IctmvM'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_96cfb
+        [1/2] /usr/bin/clang++ -DCOMPILER_HAS_DEPRECATED_ATTR  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE -MD -MT CMakeFiles/cmTC_96cfb.dir/src.cxx.o -MF CMakeFiles/cmTC_96cfb.dir/src.cxx.o.d -o CMakeFiles/cmTC_96cfb.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-IctmvM/src.cxx
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-IctmvM/src.cxx:2:25: warning: 'somefunc' is deprecated [-Wdeprecated-declarations]
+            2 |     int main() { return somefunc();}
+              |                         ^
+        /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-IctmvM/src.cxx:1:16: note: 'somefunc' has been explicitly marked deprecated here
+            1 | __attribute__((__deprecated__)) int somefunc() { return 0; }
+              |                ^
+        1 warning generated.
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_96cfb.dir/src.cxx.o -o cmTC_96cfb   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/FindBZip2.cmake:100 (CHECK_SYMBOL_EXISTS)"
+      - "plugins/decompress/CMakeLists.txt:6 (find_package)"
+      - "plugins/decompress/CMakeLists.txt:41 (addOptionalLibrary)"
+    checks:
+      - "Looking for BZ2_bzCompressInit"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-6S5hMs"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-6S5hMs"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "BZIP2_NEED_PREFIX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-6S5hMs'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_3f7d3
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_3f7d3.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_3f7d3.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_3f7d3.dir/CheckSymbolExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-6S5hMs/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_3f7d3.dir/CheckSymbolExists.c.o -o cmTC_3f7d3  /usr/lib/x86_64-linux-gnu/libbz2.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/modules/FindLZ4.cmake:29 (check_include_file)"
+      - "plugins/decompress/CMakeLists.txt:6 (find_package)"
+      - "plugins/decompress/CMakeLists.txt:44 (addOptionalLibrary)"
+    checks:
+      - "Looking for lz4frame.h"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ajOjqy"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ajOjqy"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_LZ4FRAME_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ajOjqy'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_9fee3
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_9fee3.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_9fee3.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_9fee3.dir/CheckIncludeFile.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-ajOjqy/CheckIncludeFile.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_9fee3.dir/CheckIncludeFile.c.o -o cmTC_9fee3   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "lib/third_party/edlib/CMakeLists.txt:35 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test WOLD_STYLE_CAST"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Npt8Nb"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Npt8Nb"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "WOLD_STYLE_CAST"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Npt8Nb'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_c5004
+        [1/2] /usr/bin/clang++ -DWOLD_STYLE_CAST  -O2 -Wno-error=unknown-warning-option  -std=c++14 -fPIE   -Wold-style-cast -MD -MT CMakeFiles/cmTC_c5004.dir/src.cxx.o -MF CMakeFiles/cmTC_c5004.dir/src.cxx.o.d -o CMakeFiles/cmTC_c5004.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-Npt8Nb/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2 CMakeFiles/cmTC_c5004.dir/src.cxx.o -o cmTC_c5004   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "lib/third_party/edlib/CMakeLists.txt:39 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test WSHADOW"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-sEnHD0"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-sEnHD0"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option -Wold-style-cast"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-sEnHD0'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_ef5da
+        [1/2] /usr/bin/clang++ -DWSHADOW  -O2 -Wno-error=unknown-warning-option -Wold-style-cast  -std=c++14 -fPIE   -Wshadow -MD -MT CMakeFiles/cmTC_ef5da.dir/src.cxx.o -MF CMakeFiles/cmTC_ef5da.dir/src.cxx.o.d -o CMakeFiles/cmTC_ef5da.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-sEnHD0/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -Wold-style-cast -O2 CMakeFiles/cmTC_ef5da.dir/src.cxx.o -o cmTC_ef5da   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "lib/third_party/capstone/CMakeLists.txt:45 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_MU"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-StwhiR"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-StwhiR"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "SUPPORTS_MU"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-StwhiR'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_8b874
+        [1/2] /usr/bin/clang -DSUPPORTS_MU  -O2  -fPIE   -Wno-maybe-uninitialized -MD -MT CMakeFiles/cmTC_8b874.dir/src.c.o -MF CMakeFiles/cmTC_8b874.dir/src.c.o.d -o CMakeFiles/cmTC_8b874.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-StwhiR/src.c
+        warning: unknown warning option '-Wno-maybe-uninitialized'; did you mean '-Wno-uninitialized'? [-Wunknown-warning-option]
+        1 warning generated.
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_8b874.dir/src.c.o -o cmTC_8b874   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "lib/third_party/capstone/CMakeLists.txt:46 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_SHADOWING"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-VnFCHl"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-VnFCHl"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "SUPPORTS_SHADOWING"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-VnFCHl'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_dbf74
+        [1/2] /usr/bin/clang -DSUPPORTS_SHADOWING  -O2  -fPIE   -Wshadow=local -MD -MT CMakeFiles/cmTC_dbf74.dir/src.c.o -MF CMakeFiles/cmTC_dbf74.dir/src.c.o.d -o CMakeFiles/cmTC_dbf74.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-VnFCHl/src.c
+        warning: unknown warning option '-Wshadow=local' [-Wunknown-warning-option]
+        1 warning generated.
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_dbf74.dir/src.c.o -o cmTC_dbf74   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "lib/third_party/capstone/CMakeLists.txt:47 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_SUNINIT"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-7aWfIx"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-7aWfIx"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "SUPPORTS_SUNINIT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-7aWfIx'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_d2ce0
+        [1/2] /usr/bin/clang -DSUPPORTS_SUNINIT  -O2  -fPIE   -Wsometimes-uninitialized -MD -MT CMakeFiles/cmTC_d2ce0.dir/src.c.o -MF CMakeFiles/cmTC_d2ce0.dir/src.c.o.d -o CMakeFiles/cmTC_d2ce0.dir/src.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-7aWfIx/src.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_d2ce0.dir/src.c.o -o cmTC_d2ce0   && :
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceRuns.cmake:99 (try_run)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSourceRuns.cmake:75 (cmake_check_source_runs)"
+      - "lib/trace/CMakeLists.txt:33 (check_source_runs)"
+    checks:
+      - "Performing Test HAVE_STDCPPEXP"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RFg9n3"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RFg9n3"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_STDCPPEXP_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RFg9n3'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_5ea12
+        [1/2] /usr/bin/clang++ -DHAVE_STDCPPEXP  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE -MD -MT CMakeFiles/cmTC_5ea12.dir/src.cxx.o -MF CMakeFiles/cmTC_5ea12.dir/src.cxx.o.d -o CMakeFiles/cmTC_5ea12.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-RFg9n3/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2    -lstdc++exp CMakeFiles/cmTC_5ea12.dir/src.cxx.o -o cmTC_5ea12   && :
+        FAILED: [code=1] cmTC_5ea12 
+        : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2    -lstdc++exp CMakeFiles/cmTC_5ea12.dir/src.cxx.o -o cmTC_5ea12   && :
+        /usr/bin/ld: CMakeFiles/cmTC_5ea12.dir/src.cxx.o: in function `std::basic_stacktrace<std::allocator<std::stacktrace_entry> >::current(std::allocator<std::stacktrace_entry> const&)':
+        src.cxx:(.text._ZNSt16basic_stacktraceISaISt16stacktrace_entryEE7currentERKS1_[_ZNSt16basic_stacktraceISaISt16stacktrace_entryEE7currentERKS1_]+0x40): undefined reference to `std::__stacktrace_impl::_S_current(int (*)(void*, unsigned long), void*, int)'
+        clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+    runResult:
+      variable: "HAVE_STDCPPEXP_EXITCODE"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/Internal/CheckSourceRuns.cmake:99 (try_run)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSourceRuns.cmake:75 (cmake_check_source_runs)"
+      - "lib/trace/CMakeLists.txt:40 (check_source_runs)"
+    checks:
+      - "Performing Test HAVE_STDCPP_LIBBACKTRACE"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-KOTdRR"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-KOTdRR"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_FLAGS: "-O2 -Wno-error=unknown-warning-option"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "HAVE_STDCPP_LIBBACKTRACE_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-KOTdRR'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_45e18
+        [1/2] /usr/bin/clang++ -DHAVE_STDCPP_LIBBACKTRACE  -O2 -Wno-error=unknown-warning-option  -std=gnu++23 -fPIE -MD -MT CMakeFiles/cmTC_45e18.dir/src.cxx.o -MF CMakeFiles/cmTC_45e18.dir/src.cxx.o.d -o CMakeFiles/cmTC_45e18.dir/src.cxx.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-KOTdRR/src.cxx
+        [2/2] : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2    -lstdc++_libbacktrace CMakeFiles/cmTC_45e18.dir/src.cxx.o -o cmTC_45e18   && :
+        FAILED: [code=1] cmTC_45e18 
+        : && /usr/bin/clang++ -O2 -Wno-error=unknown-warning-option -O2    -lstdc++_libbacktrace CMakeFiles/cmTC_45e18.dir/src.cxx.o -o cmTC_45e18   && :
+        /usr/bin/ld: cannot find -lstdc++_libbacktrace: No such file or directory
+        clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+    runResult:
+      variable: "HAVE_STDCPP_LIBBACKTRACE_EXITCODE"
+      cached: true
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "cmake/modules/FindBacktrace.cmake:62 (check_symbol_exists)"
+      - "lib/trace/CMakeLists.txt:61 (find_package)"
+    checks:
+      - "Looking for backtrace"
+    directories:
+      source: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-WCSogB"
+      binary: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-WCSogB"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "-O2"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-O2"
+      CMAKE_MODULE_PATH: "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/upstream/cmake/modules"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "OFF"
+    buildResult:
+      variable: "_Backtrace_SYM_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-WCSogB'
+        
+        Run Build Command(s): /home/ms/.py-venv/bin/ninja -v cmTC_06a18
+        [1/2] /usr/bin/clang   -O2  -fPIE -MD -MT CMakeFiles/cmTC_06a18.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_06a18.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_06a18.dir/CheckSymbolExists.c.o -c /home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/imhex/.build/imhex-clang-linux-x64-O2/CMakeFiles/CMakeScratch/TryCompile-WCSogB/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -O2 -O2 CMakeFiles/cmTC_06a18.dir/CheckSymbolExists.c.o -o cmTC_06a18   && :
+        
+      exitCode: 0
+...

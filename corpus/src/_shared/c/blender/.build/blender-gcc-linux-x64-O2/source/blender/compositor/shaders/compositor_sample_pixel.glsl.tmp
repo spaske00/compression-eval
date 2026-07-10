@@ -1,0 +1,13 @@
+#line 1 "compositor_sample_pixel.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_sample_pixel)
+#line 12
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 sampled_color = SAMPLER_FUNCTION(input_tx, coordinates_u);
+
+  imageStore(output_img, texel, sampled_color);
+}

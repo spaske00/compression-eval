@@ -1,0 +1,26 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_Commands)
+.storage_buf(5, Qualifier::write, "DispatchCommand", "clear_dispatch_buf", Frequency::PASS)
+.storage_buf(6, Qualifier::write, "DrawCommandArray", "tile_draw_buf", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_defrag_infos_)
+LOCAL_GROUP_SIZE(1)
+ADDITIONAL_INFO(eevee_shadow_PageAllocator)
+ADDITIONAL_INFO(eevee_shadow_Commands)
+ADDITIONAL_INFO(eevee_shadow_Statistics)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_page_defrag)
+COMPUTE_SOURCE("eevee_shadow_page_defrag.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_defrag")
+ADDITIONAL_INFO(eevee_shadow_defrag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

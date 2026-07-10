@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "CrumblePathButton",
+            "lineNumber": 24,
+            "object": true,
+            "qualifiedClassName": "Utils::CrumblePathButton",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QPushButton"
+                }
+            ]
+        }
+    ],
+    "inputFile": "crumblepath.cpp",
+    "outputRevision": 68
+}

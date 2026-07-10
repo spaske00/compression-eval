@@ -1,0 +1,122 @@
+#line 1 "eevee_lightprobe.bsl.hh"
+ 
+#line 18
+#define access_eevee_LightprobeRenderData_spheres() eevee_LightprobeSphereRenderData_new_()
+#define access_eevee_LightprobeRenderData_volumes() eevee_LightprobeVolumeRenderData_new_()
+#define access_eevee_LightprobeRenderData_sampling() eevee_Sampling_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_LightprobeRenderData
+CREATE_INFO_RES_PASS_eevee_LightprobeRenderData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_LightprobeRenderData
+CREATE_INFO_RES_BATCH_eevee_LightprobeRenderData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_LightprobeRenderData
+CREATE_INFO_RES_GEOMETRY_eevee_LightprobeRenderData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_LightprobeRenderData
+CREATE_INFO_RES_SHARED_VARS_eevee_LightprobeRenderData
+#endif
+#line 18
+struct eevee_LightprobeRenderData {
+                           eevee_LightprobeSphereRenderData  spheres;
+                           eevee_LightprobeVolumeRenderData  volumes;
+                           eevee_Sampling  sampling;
+#line 95
+};
+#line 99
+#ifndef GPU_METAL
+eevee_LightprobeRenderData eevee_LightprobeRenderData_ctor_();
+eevee_LightProbeSample _load(eevee_LightprobeRenderData  this_, float2 screen_texel, float3 P, float3 Ng, float3 V);
+float3 _eval_direction(eevee_LightprobeRenderData  this_, eevee_LightProbeSample samp,
+                        float3 P,
+                        float3 L,
+                        float perceptual_roughness);
+float3 _eval(eevee_LightprobeRenderData  this_, const UtilityTexture  util_tx,
+              eevee_LightProbeSample samp,
+              ClosureSubsurface cl,
+              float3 _0,
+              float3 _1,
+              Thickness thickness);
+float3 _eval(
+      eevee_LightprobeRenderData  this_, eevee_LightProbeSample samp, ClosureUndetermined cl, float3 P, float3 V, Thickness thickness);
+eevee_LightprobeRenderData eevee_LightprobeRenderData_new_();
+#endif
+#line 18
+                                          eevee_LightprobeRenderData eevee_LightprobeRenderData_ctor_() {eevee_LightprobeRenderData r;r.spheres=eevee_LightprobeSphereRenderData_ctor_();r.volumes=eevee_LightprobeVolumeRenderData_ctor_();r.sampling=eevee_Sampling_ctor_();return r;}
+#line 27
+
+#if defined(CREATE_INFO_eevee_LightprobeRenderData)
+#line 27
+  eevee_LightProbeSample _load(eevee_LightprobeRenderData  this_, float2 screen_texel, float3 P, float3 Ng, float3 V)
+  {
+    const eevee_Sampling samp = srt_access(eevee_LightprobeRenderData, sampling);
+#line 33
+    float noise = interleaved_gradient_noise(screen_texel, 0.0f, 0.0f);
+    noise = fract(noise + _rng_1D_get(samp, SAMPLING_LIGHTPROBE));
+
+    eevee_LightProbeSample result;
+    result.volume_irradiance = _sample_probe(srt_access(eevee_LightprobeRenderData, volumes), samp, P, V, Ng);
+    result.spherical_id = _select_probe(srt_access(eevee_LightprobeRenderData, spheres), P, noise);
+    return result;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightprobeRenderData)
+#line 42
+  float3 _eval_direction(eevee_LightprobeRenderData  this_, eevee_LightProbeSample samp,
+                        float3 P,
+                        float3 L,
+                        float perceptual_roughness)
+  {
+#line 50
+    perceptual_roughness = min(0.6f, perceptual_roughness);
+    float lod = eevee_lightprobe_sphere_roughness_to_lod(perceptual_roughness);
+    float3 radiance_sh = _spherical_sample_normalized_with_parallax(srt_access(eevee_LightprobeRenderData, spheres), samp, P, L, lod);
+    return radiance_sh;
+  }
+#endif
+#line 57
+
+#if defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_UtilityTexture)
+#line 57
+  float3 _eval(eevee_LightprobeRenderData  this_, const UtilityTexture  util_tx,
+              eevee_LightProbeSample samp,
+              ClosureSubsurface cl,
+              float3 _0,
+              float3 _1,
+              Thickness thickness)
+  {
+    float3 sss_profile = subsurface_transmission(util_tx, cl.sss_radius, _value(thickness));
+    float3 radiance_sh = _evaluate_lambert(samp.volume_irradiance, cl.N).rgb;
+    radiance_sh += _evaluate_lambert(samp.volume_irradiance, -cl.N).rgb * sss_profile;
+    return radiance_sh;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightprobeRenderData)
+#line 70
+  float3 _eval(
+      eevee_LightprobeRenderData  this_, eevee_LightProbeSample samp, ClosureUndetermined cl, float3 P, float3 V, Thickness thickness)
+  {
+#line 75
+    LightProbeRay ray = bxdf_lightprobe_ray(cl, P, V, thickness);
+
+    float lod = eevee_lightprobe_sphere_roughness_to_lod(ray.perceptual_roughness);
+    float fac = eevee_lightprobe_sphere_roughness_to_mix_fac(ray.perceptual_roughness);
+
+    float3 radiance_cube = _spherical_sample_normalized_with_parallax(srt_access(eevee_LightprobeRenderData, spheres), samp, P, ray.dominant_direction, lod);
+    float3 radiance_sh = _evaluate_lambert(samp.volume_irradiance, ray.dominant_direction).rgb;
+    return mix(radiance_cube, radiance_sh, fac);
+  }
+#endif
+#line 86
+       eevee_LightprobeRenderData eevee_LightprobeRenderData_new_()
+{
+  eevee_LightprobeRenderData result;
+  result.spheres = eevee_LightprobeSphereRenderData_new_();
+  result.volumes = eevee_LightprobeVolumeRenderData_new_();
+  result.sampling = eevee_Sampling_new_();
+  return result;
+#line 84
+}
+#line 88

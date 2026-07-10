@@ -1,0 +1,665 @@
+#line 1 "gpu_shader_2D_widget_base.bsl.hh"
+ 
+#line 15
+#define MAX_PARAM 12
+#define MAX_INSTANCE 6
+#line 20
+struct builtin_widget_VertOut {
+           float discard_fac;
+           float line_width;
+           float2 out_rect_size;
+           float4 border_color;
+           float4 emboss_color;
+           float4 out_round_corners;
+                     float but_co;
+                     float2 uv_interp;
+                     float4 inner_color;
+};
+#line 20
+                                      builtin_widget_VertOut builtin_widget_VertOut_ctor_() {builtin_widget_VertOut r;r.discard_fac=0.0f;r.line_width=0.0f;r.out_rect_size=float2(0);r.border_color=float4(0);r.emboss_color=float4(0);r.out_round_corners=float4(0);r.but_co=0.0f;r.uv_interp=float2(0);r.inner_color=float4(0);return r;}
+#line 33
+#define builtin_widget_WidgetRaw_host_shared_ builtin_widget_WidgetRaw
+#define builtin_widget_WidgetRaw_host_shared_uniform_ builtin_widget_WidgetRaw
+#line 32
+struct                 builtin_widget_WidgetRaw {
+  float4 data[12];
+};
+#line 32
+                                                        builtin_widget_WidgetRaw builtin_widget_WidgetRaw_ctor_() {builtin_widget_WidgetRaw r;r.data[0]=float4(0);r.data[1]=float4(0);r.data[2]=float4(0);r.data[3]=float4(0);r.data[4]=float4(0);r.data[5]=float4(0);r.data[6]=float4(0);r.data[7]=float4(0);r.data[8]=float4(0);r.data[9]=float4(0);r.data[10]=float4(0);r.data[11]=float4(0);return r;}
+#line 37
+#define builtin_widget_Widget_host_shared_ builtin_widget_Widget
+#define builtin_widget_Widget_host_shared_uniform_ builtin_widget_Widget
+#line 36
+struct                 builtin_widget_Widget {
+  float4 recti;
+  float4 rect;
+
+  float radsi;
+  float rads;
+  float2 faci;
+
+  float4 round_corners;
+  float4 color_inner1;
+  float4 color_inner2;
+  float4 color_edge;
+  float4 color_emboss;
+  float4 color_tria;
+
+  float2 tria1_center;
+  float2 tria2_center;
+
+  float tria1_size;
+  float tria2_size;
+  float shade_dir;
+  float alpha_discard;
+
+  float tria_type;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+#line 235
+};
+#line 241
+#ifndef GPU_METAL
+builtin_widget_Widget builtin_widget_Widget_ctor_();
+bool _do_alpha_check(const builtin_widget_Widget this_);
+float _discard_factor(const builtin_widget_Widget this_);
+builtin_widget_VertOut _do_widget(_ref(builtin_widget_Widget ,this_), int vert_id, _ref(float2 ,pos));
+builtin_widget_VertOut _do_tria(_ref(builtin_widget_Widget ,this_), int vert_id, _ref(float2 ,pos));
+#endif
+#line 36
+                                                     builtin_widget_Widget builtin_widget_Widget_ctor_() {builtin_widget_Widget r;r.recti=float4(0);r.rect=float4(0);r.radsi=0.0f;r.rads=0.0f;r.faci=float2(0);r.round_corners=float4(0);r.color_inner1=float4(0);r.color_inner2=float4(0);r.color_edge=float4(0);r.color_emboss=float4(0);r.color_tria=float4(0);r.tria1_center=float2(0);r.tria2_center=float2(0);r.tria1_size=0.0f;r.tria2_size=0.0f;r.shade_dir=0.0f;r.alpha_discard=0.0f;r.tria_type=0.0f;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;return r;}
+#line 65
+  bool _do_alpha_check(const builtin_widget_Widget this_)
+  {
+    return this_.alpha_discard < 0.0f;
+  }
+  float _discard_factor(const builtin_widget_Widget this_)
+  {
+    return abs(this_.alpha_discard);
+  }
+#line 74
+  builtin_widget_VertOut _do_widget(_ref(builtin_widget_Widget ,this_), int vert_id, _ref(float2 ,pos))
+  {
+    builtin_widget_VertOut v_out;
+
+    constexpr float2 ofs = float2(0.5f, -0.5f);
+    v_out.line_width = abs(this_.rect.x - this_.recti.x);
+    float2 emboss_ofs = float2(0.0f, -v_out.line_width);
+
+    switch (vert_id) {
+      default:
+      case 0: {
+        pos = this_.rect.xz + emboss_ofs + ofs.yy;
+        break;
+      }
+      case 1: {
+        pos = this_.rect.xw + ofs.yx;
+        break;
+      }
+      case 2: {
+        pos = this_.rect.yz + emboss_ofs + ofs.xy;
+        break;
+      }
+      case 3: {
+        pos = this_.rect.yw + ofs.xx;
+        break;
+      }
+    }
+
+    v_out.uv_interp = pos - this_.rect.xz;
+    v_out.out_rect_size = this_.rect.yw - this_.rect.xz;
+    v_out.out_round_corners = this_.rads * this_.round_corners;
+
+    float2 uv = v_out.uv_interp / v_out.out_rect_size;
+    float fac = clamp((this_.shade_dir > 0.0f) ? uv.y : uv.x, 0.0f, 1.0f);
+
+    if (_do_alpha_check(this_)) {
+      v_out.inner_color = this_.color_inner1;
+      v_out.but_co = uv.x;
+    }
+    else {
+      v_out.inner_color = mix(this_.color_inner2, this_.color_inner1, fac);
+      v_out.but_co = -abs(uv.x);
+    }
+#line 119
+    v_out.border_color = this_.color_edge * float4(this_.color_edge.aaa, 1.0f);
+    v_out.emboss_color = this_.color_emboss * float4(this_.color_emboss.aaa, 1.0f);
+
+    return v_out;
+  }
+#line 125
+  builtin_widget_VertOut _do_tria(_ref(builtin_widget_Widget ,this_), int vert_id, _ref(float2 ,pos))
+  {
+    builtin_widget_VertOut v_out;
+    int vidx = vert_id % 4;
+    bool tria2 = vert_id > 7;
+
+    pos = float2(0.0f);
+    float size = (tria2) ? -this_.tria2_size : this_.tria1_size;
+    float2 center = (tria2) ? this_.tria2_center : this_.tria1_center;
+
+    float2 arrow_pos[4] = ARRAY_T(float2) ARRAY_V(
+        float2(0.0f, 0.6f), float2(0.6f, 0.0f), float2(-0.6f, 0.0f), float2(0.0f, -0.6f) );
+
+    float2 arrow_uvs[4] = ARRAY_T(float2) ARRAY_V(
+        float2(0.0f, 0.85f), float2(0.85f, 0.85f), float2(0.0f, 0.0f), float2(0.0f, 0.85f) );
+
+    float2 point_pos[4] = ARRAY_T(float2) ARRAY_V(
+        float2(-1.0f, -1.0f), float2(-1.0f, 1.0f), float2(1.0f, -1.0f), float2(1.0f, 1.0f) );
+    float2 point_uvs[4] = ARRAY_T(float2) ARRAY_V(
+        float2(0.0f, 0.0f), float2(0.0f, 1.0f), float2(1.0f, 0.0f), float2(1.0f, 1.0f) );
+#line 149
+    if (this_.tria_type == 0.0f) {
+
+      v_out.out_rect_size = v_out.uv_interp = pos = float2(0);
+      v_out.out_round_corners = float4(0.01f);
+    }
+    else if (this_.tria_type == 1.0f) {
+
+      pos = arrow_pos[vidx];
+      v_out.uv_interp = arrow_uvs[vidx];
+      v_out.uv_interp -= float2(0.05f, 0.63f);
+      v_out.out_rect_size = float2(0.74f, 0.17f);
+      v_out.out_round_corners = float4(0.08f);
+    }
+    else if (this_.tria_type == 2.0f) {
+
+      pos = point_pos[vidx];
+      v_out.uv_interp = point_uvs[vidx];
+      v_out.out_rect_size = float2(1.0f);
+      v_out.out_round_corners = float4(0.5f);
+    }
+    else if (this_.tria_type == 3.0f) {
+
+      pos = tria2 ? float2(0.0f) : arrow_pos[vidx];
+      pos = float2(pos.y, -pos.x);
+      pos += float2(-0.05f, 0.0f);
+      size *= 0.8f;
+      v_out.uv_interp = arrow_uvs[vidx];
+      v_out.uv_interp -= float2(0.05f, 0.63f);
+      v_out.out_rect_size = float2(0.74f, 0.17f);
+      v_out.out_round_corners = float4(0.01f);
+    }
+    else if (this_.tria_type == 4.0f) {
+#line 184
+      pos = arrow_pos[min(vidx, 2)];
+      pos.y = tria2 ? -pos.y : pos.y;
+      pos = pos.x * float2(0.0872f, -0.996f) +
+            pos.y * float2(0.996f, 0.0872f);
+      pos += float2(-0.1f, 0.2f);
+      center = this_.tria1_center;
+      size = this_.tria1_size * 1.7f;
+      v_out.uv_interp = arrow_uvs[vidx];
+      v_out.uv_interp -= tria2 ? float2(0.4f, 0.65f) : float2(0.08f, 0.65f);
+      v_out.out_rect_size = float2(0.74f, 0.14f);
+      v_out.out_round_corners = float4(0.01f);
+    }
+    else if (this_.tria_type == 5.0f) {
+#line 200
+      pos = tria2 ? float2(0.0f) : arrow_pos[min(vidx, 2)];
+      pos = pos.x * float2(0.707f, 0.707f) + pos.y * float2(-0.707f, 0.707f);
+
+      pos += float2(-1.7f, 2.4f);
+      size *= 0.4f;
+      v_out.uv_interp = arrow_uvs[vidx];
+      v_out.uv_interp -= float2(0.05f, 0.05f);
+      v_out.out_rect_size = float2(0.75f);
+      v_out.out_round_corners = float4(0.01f);
+    }
+    else if (this_.tria_type == 6.0f) {
+
+      pos = point_pos[vidx];
+      v_out.uv_interp = point_uvs[vidx];
+      v_out.uv_interp -= float2(0.2f, 0.45f);
+      v_out.out_rect_size = float2(0.6f, 0.1f);
+      v_out.out_round_corners = float4(0.01f);
+    }
+
+    v_out.uv_interp *= abs(size);
+    v_out.out_rect_size *= abs(size);
+    v_out.out_round_corners *= abs(size);
+
+    pos = pos * size + center;
+
+    v_out.inner_color = this_.color_tria * float4(this_.color_tria.aaa, 1.0f);
+
+    v_out.line_width = 0.0f;
+    v_out.border_color = float4(0.0f);
+    v_out.emboss_color = float4(0.0f);
+
+    v_out.but_co = -2.0f;
+
+    return v_out;
+  }
+#line 240
+
+#define builtin_widget_WidgetUnion_union0_host_shared_ builtin_widget_WidgetUnion_union0
+#define builtin_widget_WidgetUnion_union0_host_shared_uniform_ builtin_widget_WidgetUnion_union0
+#line 240
+struct                 builtin_widget_WidgetUnion_union0 {
+  float4 data0;
+  float4 data1;
+  float4 data2;
+  float4 data3;
+  float4 data4;
+  float4 data5;
+  float4 data6;
+  float4 data7;
+  float4 data8;
+  float4 data9;
+  float4 data10;
+  float4 data11;
+
+};
+#line 240
+                                                                 builtin_widget_WidgetUnion_union0 builtin_widget_WidgetUnion_union0_ctor_() {builtin_widget_WidgetUnion_union0 r;r.data0=float4(0);r.data1=float4(0);r.data2=float4(0);r.data3=float4(0);r.data4=float4(0);r.data5=float4(0);r.data6=float4(0);r.data7=float4(0);r.data8=float4(0);r.data9=float4(0);r.data10=float4(0);r.data11=float4(0);return r;}
+#line 239
+struct builtin_widget_WidgetUnion {
+  builtin_widget_WidgetUnion_union0 union0;
+#line 326
+};
+#line 329
+#ifndef GPU_METAL
+builtin_widget_WidgetUnion builtin_widget_WidgetUnion_ctor_();
+builtin_widget_WidgetRaw _raw(const builtin_widget_WidgetUnion this_);
+void _raw_set_(_ref(builtin_widget_WidgetUnion ,this_), builtin_widget_WidgetRaw value);
+builtin_widget_Widget _data(const builtin_widget_WidgetUnion this_);
+void _data_set_(_ref(builtin_widget_WidgetUnion ,this_), builtin_widget_Widget value);
+#endif
+#line 239
+                                          builtin_widget_WidgetUnion builtin_widget_WidgetUnion_ctor_() {builtin_widget_WidgetUnion r;r.union0=builtin_widget_WidgetUnion_union0_ctor_();return r;}
+#line 245
+builtin_widget_WidgetRaw _raw(const builtin_widget_WidgetUnion this_)       {
+  builtin_widget_WidgetRaw val;
+  val.data[0] = this_.union0.data0;
+  val.data[1] = this_.union0.data1;
+  val.data[2] = this_.union0.data2;
+  val.data[3] = this_.union0.data3;
+  val.data[4] = this_.union0.data4;
+  val.data[5] = this_.union0.data5;
+  val.data[6] = this_.union0.data6;
+  val.data[7] = this_.union0.data7;
+  val.data[8] = this_.union0.data8;
+  val.data[9] = this_.union0.data9;
+  val.data[10] = this_.union0.data10;
+  val.data[11] = this_.union0.data11;
+  return val;
+}
+#line 262
+void _raw_set_(_ref(builtin_widget_WidgetUnion ,this_), builtin_widget_WidgetRaw value) {
+  this_.union0.data0 = value.data[0];
+  this_.union0.data1 = value.data[1];
+  this_.union0.data2 = value.data[2];
+  this_.union0.data3 = value.data[3];
+  this_.union0.data4 = value.data[4];
+  this_.union0.data5 = value.data[5];
+  this_.union0.data6 = value.data[6];
+  this_.union0.data7 = value.data[7];
+  this_.union0.data8 = value.data[8];
+  this_.union0.data9 = value.data[9];
+  this_.union0.data10 = value.data[10];
+  this_.union0.data11 = value.data[11];
+}
+#line 277
+builtin_widget_Widget _data(const builtin_widget_WidgetUnion this_)       {
+  builtin_widget_Widget val;
+  val.recti = this_.union0.data0;
+  val.rect = this_.union0.data1;
+  val.radsi = this_.union0.data2.x;
+  val.rads = this_.union0.data2.y;
+  val.faci = this_.union0.data2.zw;
+  val.round_corners = this_.union0.data3;
+  val.color_inner1 = this_.union0.data4;
+  val.color_inner2 = this_.union0.data5;
+  val.color_edge = this_.union0.data6;
+  val.color_emboss = this_.union0.data7;
+  val.color_tria = this_.union0.data8;
+  val.tria1_center = this_.union0.data9.xy;
+  val.tria2_center = this_.union0.data9.zw;
+  val.tria1_size = this_.union0.data10.x;
+  val.tria2_size = this_.union0.data10.y;
+  val.shade_dir = this_.union0.data10.z;
+  val.alpha_discard = this_.union0.data10.w;
+  val.tria_type = this_.union0.data11.x;
+  val._pad0 = this_.union0.data11.y;
+  val._pad1 = this_.union0.data11.z;
+  val._pad2 = this_.union0.data11.w;
+  return val;
+}
+#line 303
+void _data_set_(_ref(builtin_widget_WidgetUnion ,this_), builtin_widget_Widget value) {
+  this_.union0.data0 = value.recti;
+  this_.union0.data1 = value.rect;
+  this_.union0.data2.x = value.radsi;
+  this_.union0.data2.y = value.rads;
+  this_.union0.data2.zw = value.faci;
+  this_.union0.data3 = value.round_corners;
+  this_.union0.data4 = value.color_inner1;
+  this_.union0.data5 = value.color_inner2;
+  this_.union0.data6 = value.color_edge;
+  this_.union0.data7 = value.color_emboss;
+  this_.union0.data8 = value.color_tria;
+  this_.union0.data9.xy = value.tria1_center;
+  this_.union0.data9.zw = value.tria2_center;
+  this_.union0.data10.x = value.tria1_size;
+  this_.union0.data10.y = value.tria2_size;
+  this_.union0.data10.z = value.shade_dir;
+  this_.union0.data10.w = value.alpha_discard;
+  this_.union0.data11.x = value.tria_type;
+  this_.union0.data11.y = value._pad0;
+  this_.union0.data11.z = value._pad1;
+  this_.union0.data11.w = value._pad2;
+}
+#line 328
+#define access_builtin_widget_Resources_gpu_srgb_to_framebuffer_space() gpu_srgb_to_framebuffer_space
+#define access_builtin_widget_Resources_ModelViewProjectionMatrix() ModelViewProjectionMatrix
+#define access_builtin_widget_Resources_checkerColorAndSize() checkerColorAndSize
+#define access_builtin_widget_Resources_instanced() instanced
+#define access_builtin_widget_Resources_parameters_inst() parameters_inst
+#define access_builtin_widget_Resources_parameters() parameters
+#ifdef CREATE_INFO_RES_PASS_builtin_widget_Resources
+CREATE_INFO_RES_PASS_builtin_widget_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_widget_Resources
+CREATE_INFO_RES_BATCH_builtin_widget_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_widget_Resources
+CREATE_INFO_RES_GEOMETRY_builtin_widget_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_widget_Resources
+CREATE_INFO_RES_SHARED_VARS_builtin_widget_Resources
+#endif
+#line 328
+struct builtin_widget_Resources {
+#line 377
+int _pad;};
+#line 380
+#ifndef GPU_METAL
+builtin_widget_Resources builtin_widget_Resources_ctor_();
+builtin_widget_Widget _get_widget(builtin_widget_Resources  this_, int index);
+float4 _do_checkerboard(builtin_widget_Resources  this_, float2 frag_co);
+builtin_widget_Resources builtin_widget_Resources_new_();
+#endif
+#line 328
+                                        builtin_widget_Resources builtin_widget_Resources_ctor_() {builtin_widget_Resources r;r._pad=0;return r;}
+#line 339
+
+#if defined(CREATE_INFO_builtin_widget_Resources)
+#line 339
+  builtin_widget_Widget _get_widget(builtin_widget_Resources  this_, int index)
+  {
+
+    builtin_widget_WidgetRaw raw;
+
+#if SRT_CONSTANT_instanced
+#line 343
+                                                                           {
+#line 346
+{
+#line 344
+                                              {
+        raw.data[0] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 0];
+      }
+#line 344
+                                              {
+        raw.data[1] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 1];
+      }
+#line 344
+                                              {
+        raw.data[2] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 2];
+      }
+#line 344
+                                              {
+        raw.data[3] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 3];
+      }
+#line 344
+                                              {
+        raw.data[4] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 4];
+      }
+#line 344
+                                              {
+        raw.data[5] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 5];
+      }
+#line 344
+                                              {
+        raw.data[6] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 6];
+      }
+#line 344
+                                              {
+        raw.data[7] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 7];
+      }
+#line 344
+                                              {
+        raw.data[8] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 8];
+      }
+#line 344
+                                              {
+        raw.data[9] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 9];
+      }
+#line 344
+                                              {
+        raw.data[10] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 10];
+      }
+#line 344
+                                              {
+        raw.data[11] = srt_access(builtin_widget_Resources, parameters_inst)[index * MAX_PARAM + 11];
+      }
+#line 346
+      }
+    }
+
+#else
+#line 348
+         {
+#line 351
+{
+#line 349
+                                              {
+        raw.data[0] = srt_access(builtin_widget_Resources, parameters)[0];
+      }
+#line 349
+                                              {
+        raw.data[1] = srt_access(builtin_widget_Resources, parameters)[1];
+      }
+#line 349
+                                              {
+        raw.data[2] = srt_access(builtin_widget_Resources, parameters)[2];
+      }
+#line 349
+                                              {
+        raw.data[3] = srt_access(builtin_widget_Resources, parameters)[3];
+      }
+#line 349
+                                              {
+        raw.data[4] = srt_access(builtin_widget_Resources, parameters)[4];
+      }
+#line 349
+                                              {
+        raw.data[5] = srt_access(builtin_widget_Resources, parameters)[5];
+      }
+#line 349
+                                              {
+        raw.data[6] = srt_access(builtin_widget_Resources, parameters)[6];
+      }
+#line 349
+                                              {
+        raw.data[7] = srt_access(builtin_widget_Resources, parameters)[7];
+      }
+#line 349
+                                              {
+        raw.data[8] = srt_access(builtin_widget_Resources, parameters)[8];
+      }
+#line 349
+                                              {
+        raw.data[9] = srt_access(builtin_widget_Resources, parameters)[9];
+      }
+#line 349
+                                              {
+        raw.data[10] = srt_access(builtin_widget_Resources, parameters)[10];
+      }
+#line 349
+                                              {
+        raw.data[11] = srt_access(builtin_widget_Resources, parameters)[11];
+      }
+#line 351
+      }
+    }
+#endif
+    builtin_widget_WidgetUnion widget;
+    _raw_set_(widget, raw);
+    return _data(widget);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_widget_Resources)
+#line 359
+  float4 _do_checkerboard(builtin_widget_Resources  this_, float2 frag_co)
+  {
+    float size = srt_access(builtin_widget_Resources, checkerColorAndSize).z;
+    float2 phase = mod(frag_co.xy, size * 2.0f);
+
+    if ((phase.x > size && phase.y < size) || (phase.x < size && phase.y > size)) {
+      return float4(srt_access(builtin_widget_Resources, checkerColorAndSize).xxx, 1.0f);
+    }
+    return float4(srt_access(builtin_widget_Resources, checkerColorAndSize).yyy, 1.0f);
+  }
+#endif
+       builtin_widget_Resources builtin_widget_Resources_new_()
+{
+  builtin_widget_Resources result;
+  result._pad = 0;
+  return result;
+#line 368
+}
+#line 371
+
+#if defined(CREATE_INFO_builtin_widget_Resources)
+#line 371
+
+#if defined(ENTRY_POINT_builtin_widget_vert)
+#line 371
+           void builtin_widget_vert(
+#line 375
+                                                  )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 376
+  builtin_widget_Resources srt = builtin_widget_Resources_ctor_();
+  builtin_widget_Widget widget = _get_widget(srt, gl_InstanceID);
+
+  bool is_tria = (gl_VertexID > 3);
+  float2 pos;
+  builtin_widget_VertOut vert_out = (is_tria) ? _do_tria(widget, gl_VertexID, pos) : _do_widget(widget, gl_VertexID, pos);
+#line 385
+  builtin_widget_VertOut_discard_fac = _discard_factor(widget);
+  builtin_widget_VertOut_line_width = vert_out.line_width;
+  builtin_widget_VertOut_out_rect_size = vert_out.out_rect_size;
+  builtin_widget_VertOut_border_color = vert_out.border_color;
+  builtin_widget_VertOut_emboss_color = vert_out.emboss_color;
+  builtin_widget_VertOut_out_round_corners = vert_out.out_round_corners;
+  builtin_widget_VertOut_but_co = vert_out.but_co;
+  builtin_widget_VertOut_uv_interp = vert_out.uv_interp;
+  builtin_widget_VertOut_inner_color = vert_out.inner_color;
+
+  gl_Position = srt_access(builtin_widget_Resources, ModelViewProjectionMatrix) * float4(pos, 0.0f, 1.0f);
+
+#endif
+#line 396
+}
+#endif
+#endif
+#line 398
+struct builtin_widget_FragOut {
+                    float4 color;
+};
+#line 398
+                                      builtin_widget_FragOut builtin_widget_FragOut_ctor_() {builtin_widget_FragOut r;r.color=float4(0);return r;}
+#line 402
+
+#if defined(CREATE_INFO_builtin_widget_Resources)
+#line 402
+
+#if defined(ENTRY_POINT_builtin_widget_frag)
+#line 402
+             void builtin_widget_frag(
+#line 405
+                                                    )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 406
+  builtin_widget_Resources srt = builtin_widget_Resources_ctor_();
+  if (min(1.0f, -builtin_widget_VertOut_but_co) > builtin_widget_VertOut_discard_fac) {
+    gpu_discard_fragment();
+  }
+
+  float2 uv = builtin_widget_VertOut_uv_interp;
+
+  bool upper_half = uv.y > builtin_widget_VertOut_out_rect_size.y * 0.5f;
+  bool right_half = uv.x > builtin_widget_VertOut_out_rect_size.x * 0.5f;
+  float corner_rad;
+#line 419
+  float ratio = (builtin_widget_VertOut_but_co != -2.0f) ? abs(gpu_dfdy(uv.y) / gpu_dfdx(uv.x)) : 1.0f;
+  float2 uv_sdf = uv;
+  uv_sdf.x *= ratio;
+
+  if (right_half) {
+    uv_sdf.x = builtin_widget_VertOut_out_rect_size.x * ratio - uv_sdf.x;
+  }
+  if (upper_half) {
+    uv_sdf.y = builtin_widget_VertOut_out_rect_size.y - uv_sdf.y;
+    corner_rad = right_half ? builtin_widget_VertOut_out_round_corners.z : builtin_widget_VertOut_out_round_corners.w;
+  }
+  else {
+    corner_rad = right_half ? builtin_widget_VertOut_out_round_corners.y : builtin_widget_VertOut_out_round_corners.x;
+  }
+#line 435
+  float emboss_size = upper_half ? 0.0f : min(1.0f, uv_sdf.x / (corner_rad * ratio));
+#line 439
+  uv_sdf -= corner_rad;
+  float inner_sdf = max(0.0f, min(uv_sdf.x, uv_sdf.y));
+  float outer_sdf = -length(min(uv_sdf, 0.0f));
+  float sdf = inner_sdf + outer_sdf + corner_rad;
+#line 446
+  float line_width = (builtin_widget_VertOut_line_width > 0.0f) ? max(gpu_fwidth(uv.y), builtin_widget_VertOut_line_width) : 0.0f;
+
+  constexpr float aa_radius = 0.5f;
+  float3 masks;
+  masks.x = smoothstep(-aa_radius, aa_radius, sdf);
+  masks.y = smoothstep(-aa_radius, aa_radius, sdf - line_width);
+  masks.z = smoothstep(-aa_radius, aa_radius, sdf + line_width * emboss_size);
+#line 455
+  masks.zx = max(float2(0.0f), masks.zx - masks.xy);
+
+  if (builtin_widget_VertOut_but_co > 0.0f) {
+
+    if (builtin_widget_VertOut_but_co > 0.5f) {
+      float4 checker = _do_checkerboard(srt, gl_FragCoord.xy);
+      builtin_widget_FragOut_color = mix(checker, builtin_widget_VertOut_inner_color, builtin_widget_VertOut_inner_color.a);
+    }
+    else {
+
+      builtin_widget_FragOut_color = builtin_widget_VertOut_inner_color;
+    }
+    builtin_widget_FragOut_color.a = 1.0f;
+  }
+  else {
+
+    builtin_widget_FragOut_color = builtin_widget_VertOut_inner_color * float4(builtin_widget_VertOut_inner_color.aaa, 1.0f);
+  }
+  builtin_widget_FragOut_color *= masks.y;
+  builtin_widget_FragOut_color += masks.x * builtin_widget_VertOut_border_color;
+  builtin_widget_FragOut_color += masks.z * builtin_widget_VertOut_emboss_color;
+#line 478
+  if (builtin_widget_FragOut_color.a > 0.0f) {
+    builtin_widget_FragOut_color.rgb /= builtin_widget_FragOut_color.a;
+  }
+
+  builtin_widget_FragOut_color = blender_srgb_to_framebuffer_space(builtin_widget_FragOut_color);
+
+#endif
+#line 483
+}
+#endif
+#endif
+#line 493

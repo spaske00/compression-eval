@@ -1,0 +1,10 @@
+#line 1 "compositor_movie_distortion.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_movie_distortion)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  imageStore(output_img, texel, texture(input_tx, texture_load(distortion_grid_tx, texel).xy));
+}

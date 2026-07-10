@@ -1,0 +1,382 @@
+#line 1 "eevee_light_shadow_setup.bsl.hh"
+ 
+#line 18
+int eevee_light_shadow_directional_coverage_get(int level)
+{
+  return 1 << level;
+}
+
+#define access_eevee_light_Resources_uniforms() eevee_Uniform_new_()
+#define access_eevee_light_Resources_light_cull_buf() light_cull_buf
+#define access_eevee_light_Resources_light_buf() light_buf
+#define access_eevee_light_Resources_tilemaps_buf() tilemaps_buf
+#define access_eevee_light_Resources_tilemaps_clip_buf() tilemaps_clip_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_light_Resources
+CREATE_INFO_RES_PASS_eevee_light_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_light_Resources
+CREATE_INFO_RES_BATCH_eevee_light_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_light_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_light_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_light_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_light_Resources
+#endif
+#line 23
+struct eevee_light_Resources {
+#line 29
+                           eevee_Uniform  uniforms;
+#line 273
+};
+#line 276
+#ifndef GPU_METAL
+eevee_light_Resources eevee_light_Resources_ctor_();
+void _orthographic_sync(eevee_light_Resources  this_, int tilemap_id,
+                         Transform object_to_world,
+                         int2 origin_offset,
+                         int clipmap_level,
+                         eShadowProjectionType projection_type);
+void _cascade_sync(eevee_light_Resources  this_, _ref(LightData ,light));
+void _clipmap_sync(eevee_light_Resources  this_, _ref(LightData ,light));
+void _cubeface_sync(eevee_light_Resources  this_, int tilemap_id,
+                     Transform object_to_world,
+                     eCubeFace cubeface,
+                     float3 jitter_offset);
+eevee_light_Resources eevee_light_Resources_new_();
+#endif
+#line 23
+                                     eevee_light_Resources eevee_light_Resources_ctor_() {eevee_light_Resources r;r.uniforms=eevee_Uniform_ctor_();return r;}
+#line 31
+
+#if defined(CREATE_INFO_eevee_light_Resources)
+#line 31
+  void _orthographic_sync(eevee_light_Resources  this_, int tilemap_id,
+                         Transform object_to_world,
+                         int2 origin_offset,
+                         int clipmap_level,
+                         eShadowProjectionType projection_type)
+  {
+
+    object_to_world.x.w = 0.0f;
+    object_to_world.y.w = 0.0f;
+    object_to_world.z.w = 0.0f;
+
+    int clip_index = tilemaps_buf[tilemap_id].clip_data_index;
+
+    Transform object_to_world_history = tilemaps_clip_buf[clip_index].object_to_world;
+
+    if (tilemaps_buf[tilemap_id].is_dirty ||
+        !transform_equal(object_to_world_history, object_to_world))
+    {
+
+      tilemaps_buf[tilemap_id].grid_shift = int2(SHADOW_TILEMAP_RES);
+      tilemaps_clip_buf[clip_index].object_to_world = object_to_world;
+    }
+    else {
+
+      tilemaps_buf[tilemap_id].grid_shift = origin_offset -
+                                            tilemaps_clip_buf[clip_index].grid_offset;
+    }
+    tilemaps_clip_buf[clip_index].grid_offset = origin_offset;
+
+    tilemaps_buf[tilemap_id].grid_offset = origin_offset;
+
+    float level_size = eevee_light_shadow_directional_coverage_get(clipmap_level);
+    float half_size = level_size / 2.0f;
+    float tile_size = level_size / float(SHADOW_TILEMAP_RES);
+    float2 center_offset = float2(origin_offset) * tile_size;
+#line 69
+    tilemaps_buf[tilemap_id].viewmat[0] = float4(object_to_world.x.xyz, 0.0f);
+    tilemaps_buf[tilemap_id].viewmat[1] = float4(object_to_world.y.xyz, 0.0f);
+    tilemaps_buf[tilemap_id].viewmat[2] = float4(object_to_world.z.xyz, 0.0f);
+    tilemaps_buf[tilemap_id].viewmat[3] = float4(0.0f, 0.0f, 0.0f, 1.0f);
+
+    tilemaps_buf[tilemap_id].projection_type = projection_type;
+    tilemaps_buf[tilemap_id].half_size = half_size;
+    tilemaps_buf[tilemap_id].center_offset = center_offset;
+    tilemaps_buf[tilemap_id].winmat = projection_orthographic(
+        -half_size + center_offset.x,
+        half_size + center_offset.x,
+        -half_size + center_offset.y,
+        half_size + center_offset.y,
+
+        -1.0f,
+        1.0f);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_light_Resources)
+#line 87
+  void _cascade_sync(eevee_light_Resources  this_, _ref(LightData ,light))
+  {
+#line 91
+    int level_min = _sun(light).clipmap_lod_min;
+    int level_max = _sun(light).clipmap_lod_max;
+    int level_range = level_max - level_min;
+    int level_len = level_range + 1;
+
+    float3 ws_camera_position = srt_access(eevee_Uniform, uniform_buf).camera.viewinv[3].xyz;
+    float3 ws_camera_forward = srt_access(eevee_Uniform, uniform_buf).camera.viewinv[2].xyz;
+    float camera_clip_near = srt_access(eevee_Uniform, uniform_buf).camera.clip_near;
+    float camera_clip_far = srt_access(eevee_Uniform, uniform_buf).camera.clip_far;
+#line 102
+    float level_size = eevee_light_shadow_directional_coverage_get(level_min);
+    float half_size = level_size / 2.0f;
+    float tile_size = level_size / float(SHADOW_TILEMAP_RES);
+#line 107
+    float3 ws_far_point = ws_camera_position - ws_camera_forward * camera_clip_far;
+    float3 ws_near_point = ws_camera_position - ws_camera_forward * camera_clip_near;
+
+    float3 ls_far_point = transform_direction_transposed(light.object_to_world, ws_far_point);
+    float3 ls_near_point = transform_direction_transposed(light.object_to_world, ws_near_point);
+
+    float2 local_view_direction = normalize(ls_far_point.xy - ls_near_point.xy);
+    float2 farthest_tilemap_center = local_view_direction * half_size * level_range;
+#line 117
+    light.object_to_world.x.w = ls_near_point.x;
+    light.object_to_world.y.w = ls_near_point.y;
+    light.object_to_world.z.w = ls_near_point.z;
+#line 122
+    int2 origin_offset = int2(round(ls_near_point.xy / tile_size));
+
+    int2 offset_vector = int2(round(farthest_tilemap_center / tile_size));
+
+    int2 base_offset_pos = (offset_vector * (1 << 16)) / max(level_range, 1);
+#line 129
+    for (int i = 0; i < level_len; i++) {
+
+      int2 level_offset = origin_offset + shadow_cascade_grid_offset(base_offset_pos, i);
+
+      _orthographic_sync(this_, light.tilemap_index + i,
+                        light.object_to_world,
+                        level_offset,
+                        level_min,
+                        SHADOW_PROJECTION_CASCADE);
+    }
+
+    float2 clipmap_origin = float2(origin_offset) * tile_size;
+
+    LightSunData sun_data = _sun(light);
+
+    sun_data.clipmap_origin = clipmap_origin;
+
+    sun_data.clipmap_base_offset_pos = base_offset_pos;
+    sun_data.clipmap_base_offset_neg = int2(0);
+
+    _sun_set_(light, sun_data);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_light_Resources)
+#line 152
+  void _clipmap_sync(eevee_light_Resources  this_, _ref(LightData ,light))
+  {
+#line 156
+    float3 ws_camera_position = srt_access(eevee_Uniform, uniform_buf).camera.viewinv[3].xyz;
+    float3 ls_camera_position = transform_direction_transposed(light.object_to_world,
+                                                               ws_camera_position);
+
+    int level_min = _sun(light).clipmap_lod_min;
+    int level_max = _sun(light).clipmap_lod_max;
+    int level_len = level_max - level_min + 1;
+
+    float2 clipmap_origin;
+    for (int lod = 0; lod < level_len; lod++) {
+      int level = level_min + lod;
+#line 169
+      float tile_size = float(1 << level) / float(SHADOW_TILEMAP_RES);
+      int2 level_offset = int2(round(ls_camera_position.xy / tile_size));
+
+      _orthographic_sync(this_, light.tilemap_index + lod,
+                        light.object_to_world,
+                        level_offset,
+                        level,
+                        SHADOW_PROJECTION_CLIPMAP);
+
+      clipmap_origin = float2(level_offset) * tile_size;
+    }
+
+    int2 pos_offset = int2(0);
+    int2 neg_offset = int2(0);
+    for (int lod = 0; lod < level_len - 1; lod++) {
+#line 189
+      int2 lvl_offset_next = tilemaps_buf[light.tilemap_index + lod + 1].grid_offset;
+      int2 lvl_offset = tilemaps_buf[light.tilemap_index + lod].grid_offset;
+      int2 lvl_delta = lvl_offset - (lvl_offset_next * 2);
+      pos_offset |= max(lvl_delta, int2(0)) << lod;
+      neg_offset |= max(-lvl_delta, int2(0)) << lod;
+    }
+#line 197
+    light.object_to_world.x.w = ls_camera_position.x;
+    light.object_to_world.y.w = ls_camera_position.y;
+    light.object_to_world.z.w = ls_camera_position.z;
+
+    LightSunData sun_data = _sun(light);
+
+    sun_data.clipmap_origin = clipmap_origin;
+
+    sun_data.clipmap_base_offset_pos = pos_offset;
+    sun_data.clipmap_base_offset_neg = neg_offset;
+
+    _sun_set_(light, sun_data);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_light_Resources)
+#line 211
+  void _cubeface_sync(eevee_light_Resources  this_, int tilemap_id,
+                     Transform object_to_world,
+                     eCubeFace cubeface,
+                     float3 jitter_offset)
+  {
+    float3 world_jitter_offset = transform_point(object_to_world, jitter_offset);
+    object_to_world.x.w = world_jitter_offset.x;
+    object_to_world.y.w = world_jitter_offset.y;
+    object_to_world.z.w = world_jitter_offset.z;
+
+    int clip_index = tilemaps_buf[tilemap_id].clip_data_index;
+
+    Transform object_to_world_history = tilemaps_clip_buf[clip_index].object_to_world;
+    if (tilemaps_buf[tilemap_id].is_dirty ||
+        !transform_equal(object_to_world_history, object_to_world))
+    {
+
+      tilemaps_buf[tilemap_id].grid_shift = int2(SHADOW_TILEMAP_RES);
+      tilemaps_clip_buf[clip_index].object_to_world = object_to_world;
+    }
+#line 234
+    float4x4 viewmat = invert(transform_to_matrix(object_to_world));
+#line 237
+    switch (cubeface) {
+      case Z_NEG:
+        viewmat = to_float4x4(float3x3(+1, +0, +0, +0, +1, +0, +0, +0, +1)) * viewmat;
+        break;
+      case X_POS:
+        viewmat = to_float4x4(float3x3(+0, +0, -1, -1, +0, +0, +0, +1, +0)) * viewmat;
+        break;
+      case X_NEG:
+        viewmat = to_float4x4(float3x3(+0, +0, +1, +1, +0, +0, +0, +1, +0)) * viewmat;
+        break;
+      case Y_POS:
+        viewmat = to_float4x4(float3x3(+1, +0, +0, +0, +0, -1, +0, +1, +0)) * viewmat;
+        break;
+      case Y_NEG:
+        viewmat = to_float4x4(float3x3(-1, +0, +0, +0, +0, +1, +0, +1, +0)) * viewmat;
+        break;
+      case Z_POS:
+        viewmat = to_float4x4(float3x3(+1, +0, +0, +0, -1, +0, +0, +0, -1)) * viewmat;
+        break;
+    }
+
+    tilemaps_buf[tilemap_id].viewmat = viewmat;
+#line 261
+    tilemaps_buf[tilemap_id].corners[0].xyz += jitter_offset;
+    tilemaps_buf[tilemap_id].corners[1].xyz += jitter_offset;
+
+  }
+#endif
+       eevee_light_Resources eevee_light_Resources_new_()
+{
+  eevee_light_Resources result;
+  result.uniforms = eevee_Uniform_new_();
+  return result;
+#line 264
+}
+#line 267
+
+#if defined(CREATE_INFO_eevee_light_Resources) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling)
+#line 267
+
+#if defined(ENTRY_POINT_eevee_light_shadow_setup_main)
+#line 267
+
+void eevee_light_shadow_setup_main(
+#line 271
+                                                                     )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 272
+  eevee_light_Resources srt = eevee_light_Resources_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_();
+
+  uint l_idx = gl_GlobalInvocationID.x;
+#line 279
+  bool valid_local = (l_idx < srt_access(eevee_light_Resources, light_cull_buf).visible_count);
+  bool valid_directional = (l_idx >= srt_access(eevee_light_Resources, light_cull_buf).local_lights_len) &&
+                           (l_idx < srt_access(eevee_light_Resources, light_cull_buf).items_count);
+  if (!valid_local && !valid_directional) {
+    return;
+  }
+
+  LightData light = srt_access(eevee_light_Resources, light_buf)[l_idx];
+
+  if (light.tilemap_index == LIGHT_NO_SHADOW) {
+    return;
+  }
+
+  if (is_sun_light(light.type)) {
+#line 295
+    if (light.shadow_jitter && srt_access(eevee_Uniform, uniform_buf).shadow.use_jitter) {
+
+      float shape_angle = atan_fast(_sun(light).shape_radius);
+#line 300
+      float2 rand = 1.0f - _rng_2D_get(sampling, SAMPLING_SHADOW_I);
+      float3 shadow_direction = sample_uniform_cone(rand, cos(shape_angle));
+
+      shadow_direction = transform_direction(light.object_to_world, shadow_direction);
+
+      if (_sun(light).shadow_angle == 0.0f) {
+#line 309
+      }
+      else {
+        light.object_to_world = transform_from_matrix(to_float4x4(from_up_axis(shadow_direction)));
+      }
+    }
+
+    if (light.type == LIGHT_SUN_ORTHO) {
+      _cascade_sync(srt, light);
+    }
+    else {
+      _clipmap_sync(srt, light);
+    }
+  }
+  else {
+
+    float3 position_on_light = float3(0.0f);
+
+    if (light.shadow_jitter && srt_access(eevee_Uniform, uniform_buf).shadow.use_jitter) {
+      float3 rand = _rng_3D_get(sampling, SAMPLING_SHADOW_I);
+
+      if (is_area_light(light.type)) {
+        float2 point_on_unit_shape = (light.type == LIGHT_RECT) ? rand.xy * 2.0f - 1.0f :
+                                                                  sample_disk(rand.xy);
+        position_on_light = float3(point_on_unit_shape * _area(light).size, 0.0f);
+      }
+      else {
+        if (_local(light).local.shadow_radius == 0.0f) {
+#line 339
+        }
+        else {
+          position_on_light = sample_ball(rand) * _local(light).local.shape_radius;
+        }
+      }
+    }
+
+    int tilemap_count = _local_tilemap_count(light);
+    for (int i = 0; i < tilemap_count; i++) {
+      _cubeface_sync(srt, light.tilemap_index + i, light.object_to_world, eCubeFace(i), position_on_light);
+    }
+
+    LightLocalData local_data = _local(light);
+    local_data.local.shadow_position = position_on_light;
+    _local_set_(light, local_data);
+  }
+
+  srt_access(eevee_light_Resources, light_buf)[l_idx] = light;
+
+#endif
+#line 357
+}
+#endif
+#endif
+#line 362

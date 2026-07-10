@@ -1,0 +1,49 @@
+#line 1 "eevee_shadow_page_allocate.bsl.hh"
+ 
+#line 23
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator) && defined(CREATE_INFO_eevee_shadow_TileMaps) && defined(CREATE_INFO_eevee_shadow_Statistics)
+#line 22
+
+#if defined(ENTRY_POINT_eevee_shadow_allocate)
+#line 22
+
+void eevee_shadow_allocate(
+#line 27
+                                                              )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 28
+  eevee_shadow_PageAllocator allocator = eevee_shadow_PageAllocator_ctor_(); eevee_shadow_TileMaps tilemaps = eevee_shadow_TileMaps_ctor_(); eevee_shadow_Statistics stats = eevee_shadow_Statistics_ctor_();
+  ShadowTileMapData tilemap_data = srt_access(eevee_shadow_TileMaps, tilemaps_buf)[gl_GlobalInvocationID.z];
+
+  uint tile_start = uint(tilemap_data.tiles_index);
+  for (int lod = 0; lod <= SHADOW_TILEMAP_LOD; lod++) {
+    uint lod_len = uint(SHADOW_TILEMAP_LOD0_LEN >> (lod * 2));
+    if (gl_LocalInvocationIndex < lod_len) {
+      uint tile_index = tile_start + gl_LocalInvocationIndex;
+
+      ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_shadow_PageAllocator, tiles_buf)[tile_index]);
+      if (tile.is_used && !tile.is_allocated) {
+        _page_alloc(allocator, tile);
+        srt_access(eevee_shadow_PageAllocator, tiles_buf)[tile_index] = shadow_tile_pack(tile);
+      }
+
+      if (tile.is_used) {
+        atomicAdd(srt_access(eevee_shadow_Statistics, statistics_buf).page_used_count, 1);
+      }
+      if (tile.is_used && tile.do_update) {
+        atomicAdd(srt_access(eevee_shadow_Statistics, statistics_buf).page_update_count, 1);
+      }
+      if (tile.is_allocated) {
+        atomicAdd(srt_access(eevee_shadow_Statistics, statistics_buf).page_allocated_count, 1);
+      }
+    }
+    tile_start += lod_len;
+  }
+
+#endif
+#line 55
+}
+#endif
+#endif
+#line 60

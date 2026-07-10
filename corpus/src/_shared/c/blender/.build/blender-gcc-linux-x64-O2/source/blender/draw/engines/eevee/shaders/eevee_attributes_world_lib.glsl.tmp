@@ -1,0 +1,37 @@
+#line 1 "eevee_attributes_world_lib.glsl"
+ 
+#line 16
+float3 attr_load_orco(WorldPoint point, float4 _0, int _1)
+{
+  return point.lP;
+}
+float4 attr_load_tangent(WorldPoint _0, float4 _1, int _2)
+{
+  return float4(0);
+}
+float4 attr_load_float4(WorldPoint _0, float4 _1, int _2)
+{
+  return float4(0);
+}
+float3 attr_load_float3(WorldPoint _0, float3 _1, int _2)
+{
+  return float3(0);
+}
+float2 attr_load_float2(WorldPoint _0, float2 _1, int _2)
+{
+  return float2(0);
+}
+float attr_load_float(WorldPoint _0, float _1, int _2)
+{
+  return 0.0f;
+}
+float4 attr_load_color(WorldPoint _0, float4 _1, int _2)
+{
+  return float4(0);
+}
+float3 attr_load_uv(WorldPoint _0, float3 _1, int _2)
+{
+  return float3(0);
+}
+
+

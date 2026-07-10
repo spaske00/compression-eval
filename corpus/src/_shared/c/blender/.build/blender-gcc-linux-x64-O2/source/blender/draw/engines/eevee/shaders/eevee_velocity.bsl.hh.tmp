@@ -1,0 +1,305 @@
+#line 1 "eevee_velocity.bsl.hh"
+ 
+#line 16
+float4 eevee_velocity_pack(float4 data)
+{
+  return data * 0.01f;
+}
+
+float4 eevee_velocity_unpack(float4 data)
+{
+  return data * 100.0f;
+}
+
+#define access_eevee_velocity_VertexCopy_start_offset() start_offset
+#define access_eevee_velocity_VertexCopy_vertex_stride() vertex_stride
+#define access_eevee_velocity_VertexCopy_vertex_count() vertex_count
+#define access_eevee_velocity_VertexCopy_in_buf() in_buf
+#define access_eevee_velocity_VertexCopy_out_buf() out_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_velocity_VertexCopy
+CREATE_INFO_RES_PASS_eevee_velocity_VertexCopy
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_velocity_VertexCopy
+CREATE_INFO_RES_BATCH_eevee_velocity_VertexCopy
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_velocity_VertexCopy
+CREATE_INFO_RES_GEOMETRY_eevee_velocity_VertexCopy
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_velocity_VertexCopy
+CREATE_INFO_RES_SHARED_VARS_eevee_velocity_VertexCopy
+#endif
+#line 26
+struct eevee_velocity_VertexCopy {
+#line 40
+int _pad;};
+#line 45
+#ifndef GPU_METAL
+eevee_velocity_VertexCopy eevee_velocity_VertexCopy_ctor_();
+eevee_velocity_VertexCopy eevee_velocity_VertexCopy_new_();
+#endif
+#line 26
+                                         eevee_velocity_VertexCopy eevee_velocity_VertexCopy_ctor_() {eevee_velocity_VertexCopy r;r._pad=0;return r;}
+#line 33
+       eevee_velocity_VertexCopy eevee_velocity_VertexCopy_new_()
+{
+  eevee_velocity_VertexCopy result;
+  result._pad = 0;
+  return result;
+#line 31
+}
+#line 36
+
+#if defined(CREATE_INFO_eevee_velocity_VertexCopy)
+#line 36
+
+#if defined(ENTRY_POINT_eevee_velocity_vertex_copy)
+#line 36
+
+void eevee_velocity_vertex_copy(
+
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 40
+  eevee_velocity_VertexCopy srt = eevee_velocity_VertexCopy_ctor_();
+  uint vert_start = uint(srt_access(eevee_velocity_VertexCopy, start_offset));
+  uint vert_count = uint(srt_access(eevee_velocity_VertexCopy, vertex_count));
+  uint vert_stride = uint(srt_access(eevee_velocity_VertexCopy, vertex_stride));
+
+  uint vertices_per_thread = divide_ceil(vert_count, uint(VERTEX_COPY_GROUP_SIZE)) /
+                             gl_NumWorkGroups.x;
+  uint vertex_start = min(gl_GlobalInvocationID.x * vertices_per_thread, vert_count);
+  uint vertex_end = min(vertex_start + vertices_per_thread, vert_count);
+
+  for (uint vertex_id = vertex_start; vertex_id < vertex_end; vertex_id++) {
+    srt_access(eevee_velocity_VertexCopy, out_buf)[vert_start + vertex_id] = float4(
+        srt_access(eevee_velocity_VertexCopy, in_buf)[vertex_id * vert_stride + 0],
+        srt_access(eevee_velocity_VertexCopy, in_buf)[vertex_id * vert_stride + 1],
+        srt_access(eevee_velocity_VertexCopy, in_buf)[vertex_id * vert_stride + 2],
+        1.0f                                                                           );
+  }
+
+#endif
+#line 57
+}
+#endif
+#endif
+#line 63
+#define access_eevee_CameraVelocity_camera_prev() camera_prev
+#define access_eevee_CameraVelocity_camera_curr() camera_curr
+#define access_eevee_CameraVelocity_camera_next() camera_next
+#ifdef CREATE_INFO_RES_PASS_eevee_CameraVelocity
+CREATE_INFO_RES_PASS_eevee_CameraVelocity
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_CameraVelocity
+CREATE_INFO_RES_BATCH_eevee_CameraVelocity
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_CameraVelocity
+CREATE_INFO_RES_GEOMETRY_eevee_CameraVelocity
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_CameraVelocity
+CREATE_INFO_RES_SHARED_VARS_eevee_CameraVelocity
+#endif
+#line 63
+struct eevee_CameraVelocity {
+#line 161
+int _pad;};
+#line 164
+#ifndef GPU_METAL
+eevee_CameraVelocity eevee_CameraVelocity_ctor_();
+float4 _surface_velocity(eevee_CameraVelocity  this_, float3 P_prv, float3 P, float3 P_nxt);
+float4 _background_velocity(eevee_CameraVelocity  this_, float3 vV);
+float4 _resolve(eevee_CameraVelocity  this_, const draw_View  views,
+                 float4 vector,
+                 float2 uv,
+                 float depth);
+float4 _resolve(eevee_CameraVelocity  this_, const draw_View  views,
+                 sampler2D vector_tx,
+                 int2 texel,
+                 float depth);
+eevee_CameraVelocity eevee_CameraVelocity_new_();
+#endif
+#line 63
+                                    eevee_CameraVelocity eevee_CameraVelocity_ctor_() {eevee_CameraVelocity r;r._pad=0;return r;}
+#line 71
+
+#if defined(CREATE_INFO_eevee_CameraVelocity)
+#line 71
+  float4 _surface_velocity(eevee_CameraVelocity  this_, float3 P_prv, float3 P, float3 P_nxt)
+  {
+#line 75
+    float2 prev_uv = project_point(srt_access(eevee_CameraVelocity, camera_prev).persmat, P_prv).xy;
+    float2 curr_uv = project_point(srt_access(eevee_CameraVelocity, camera_curr).persmat, P).xy;
+    float2 next_uv = project_point(srt_access(eevee_CameraVelocity, camera_next).persmat, P_nxt).xy;
+
+    if (any(isnan(prev_uv))) {
+      prev_uv = curr_uv;
+    }
+    if (any(isnan(next_uv))) {
+      next_uv = curr_uv;
+    }
+#line 87
+    float4 motion = float4(prev_uv - curr_uv, curr_uv - next_uv);
+
+    motion *= 0.5f;
+
+    return motion;
+  }
+#endif
+#line 99
+
+#if defined(CREATE_INFO_eevee_CameraVelocity)
+#line 99
+  float4 _background_velocity(eevee_CameraVelocity  this_, float3 vV)
+  {
+    float3 V = transform_direction(srt_access(eevee_CameraVelocity, camera_curr).viewinv, vV);
+#line 104
+    float2 prev_uv =
+        project_point(srt_access(eevee_CameraVelocity, camera_prev).winmat, transform_direction(srt_access(eevee_CameraVelocity, camera_prev).viewmat, V)).xy;
+    float2 curr_uv =
+        project_point(srt_access(eevee_CameraVelocity, camera_curr).winmat, transform_direction(srt_access(eevee_CameraVelocity, camera_curr).viewmat, V)).xy;
+    float2 next_uv =
+        project_point(srt_access(eevee_CameraVelocity, camera_next).winmat, transform_direction(srt_access(eevee_CameraVelocity, camera_next).viewmat, V)).xy;
+#line 112
+    float4 motion = float4(prev_uv - curr_uv, curr_uv - next_uv);
+
+    motion *= 0.5f;
+
+    return motion;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_CameraVelocity) && defined(CREATE_INFO_draw_View)
+#line 119
+  float4 _resolve(eevee_CameraVelocity  this_, const draw_View  views,
+                 float4 vector,
+                 float2 uv,
+                 float depth)
+  {
+    const ViewMatrices view = _get(views, 0);
+    if (vector.x == VELOCITY_INVALID) {
+      bool is_background = (depth == 1.0f);
+      if (is_background) {
+
+        float3 vV = -_view_incident_vector(view, _point_screen_to_view(view, float3(uv, 1.0f)));
+        return _background_velocity(this_, vV);
+      }
+
+      float3 P = _point_screen_to_world(view, float3(uv, depth));
+      return _surface_velocity(this_, P, P, P);
+    }
+    return eevee_velocity_unpack(vector);
+  }
+#endif
+#line 144
+
+#if defined(CREATE_INFO_eevee_CameraVelocity) && defined(CREATE_INFO_draw_View)
+#line 144
+  float4 _resolve(eevee_CameraVelocity  this_, const draw_View  views,
+                 sampler2D vector_tx,
+                 int2 texel,
+                 float depth)
+  {
+    float2 uv = (float2(texel) + 0.5f) / float2(textureSize(vector_tx, 0).xy);
+    float4 vector = texelFetch(vector_tx, texel, 0);
+    return _resolve(this_, views, vector, uv, depth);
+  }
+#endif
+       eevee_CameraVelocity eevee_CameraVelocity_new_()
+{
+  eevee_CameraVelocity result;
+  result._pad = 0;
+  return result;
+#line 152
+}
+#line 155
+#define access_eevee_GeometryVelocity_eevee_velocity_iface_info() eevee_velocity_iface_info
+#define access_eevee_GeometryVelocity_camera() eevee_CameraVelocity_new_()
+#define access_eevee_GeometryVelocity_velocity_obj_prev_buf() velocity_obj_prev_buf
+#define access_eevee_GeometryVelocity_velocity_obj_next_buf() velocity_obj_next_buf
+#define access_eevee_GeometryVelocity_velocity_geo_prev_buf() velocity_geo_prev_buf
+#define access_eevee_GeometryVelocity_velocity_geo_next_buf() velocity_geo_next_buf
+#define access_eevee_GeometryVelocity_velocity_indirection_buf() velocity_indirection_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_GeometryVelocity
+CREATE_INFO_RES_PASS_eevee_GeometryVelocity
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_GeometryVelocity
+CREATE_INFO_RES_BATCH_eevee_GeometryVelocity
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_GeometryVelocity
+CREATE_INFO_RES_GEOMETRY_eevee_GeometryVelocity
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_GeometryVelocity
+CREATE_INFO_RES_SHARED_VARS_eevee_GeometryVelocity
+#endif
+#line 155
+struct eevee_GeometryVelocity {
+#line 158
+                           eevee_CameraVelocity  camera;
+#line 216
+};
+#line 222
+#ifndef GPU_METAL
+eevee_GeometryVelocity eevee_GeometryVelocity_ctor_();
+void _local_position_deltas(
+      eevee_GeometryVelocity  this_, float3 lP, int vert_id, _ref(float3 ,lP_prev), _ref(float3 ,lP_next), uint resource_id);
+void _vertex_velocity(eevee_GeometryVelocity  this_, float3 lP_prev,
+                       float3 lP,
+                       float3 lP_next,
+                       _ref(float3 ,motion_prev),
+                       _ref(float3 ,motion_next),
+                       uint resource_id,
+                       float4x4 model_mat);
+eevee_GeometryVelocity eevee_GeometryVelocity_new_();
+#endif
+#line 155
+                                      eevee_GeometryVelocity eevee_GeometryVelocity_ctor_() {eevee_GeometryVelocity r;r.camera=eevee_CameraVelocity_ctor_();return r;}
+#line 171
+
+#if defined(CREATE_INFO_eevee_GeometryVelocity)
+#line 171
+  void _local_position_deltas(
+      eevee_GeometryVelocity  this_, float3 lP, int vert_id, _ref(float3 ,lP_prev), _ref(float3 ,lP_next), uint resource_id)
+  {
+    VelocityIndex vel = velocity_indirection_buf[resource_id];
+    lP_next = lP_prev = lP;
+    if (vel.geo.do_deform) {
+      if (vel.geo.ofs[STEP_PREVIOUS] != -1) {
+        lP_prev = velocity_geo_prev_buf[vel.geo.ofs[STEP_PREVIOUS] + vert_id].xyz;
+      }
+      if (vel.geo.ofs[STEP_NEXT] != -1) {
+        lP_next = velocity_geo_next_buf[vel.geo.ofs[STEP_NEXT] + vert_id].xyz;
+      }
+    }
+  }
+#endif
+#line 191
+
+#if defined(CREATE_INFO_eevee_GeometryVelocity)
+#line 191
+  void _vertex_velocity(eevee_GeometryVelocity  this_, float3 lP_prev,
+                       float3 lP,
+                       float3 lP_next,
+                       _ref(float3 ,motion_prev),
+                       _ref(float3 ,motion_next),
+                       uint resource_id,
+                       float4x4 model_mat)
+  {
+    VelocityIndex vel = velocity_indirection_buf[resource_id];
+    float4x4 obmat_prev = velocity_obj_prev_buf[vel.obj.ofs[STEP_PREVIOUS]];
+    float4x4 obmat_next = velocity_obj_next_buf[vel.obj.ofs[STEP_NEXT]];
+    float3 P_prev = transform_point(obmat_prev, lP_prev);
+    float3 P_next = transform_point(obmat_next, lP_next);
+    float3 P = transform_point(model_mat, lP);
+    motion_prev = P_prev - P;
+    motion_next = P_next - P;
+  }
+#endif
+       eevee_GeometryVelocity eevee_GeometryVelocity_new_()
+{
+  eevee_GeometryVelocity result;
+  result.camera = eevee_CameraVelocity_new_();
+  return result;
+#line 207
+}
+#line 213

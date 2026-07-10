@@ -1,0 +1,52 @@
+#line 1 "overlay_outline_prepass_gpencil_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_outline_prepass_gpencil)
+#line 15
+uint outline_colorid_get()
+{
+  eObjectInfoFlag ob_flag = drw_object_infos().flag;
+  bool is_active = flag_test(ob_flag, OBJECT_ACTIVE);
+
+  if (is_transform) {
+    return 0u;
+  }
+  if (is_active) {
+    return 3u;
+  }
+  return 1u;
+}
+
+void main()
+{
+  float3 world_pos;
+  float3 unused_N;
+  float4 unused_color;
+  float unused_strength;
+  float2 unused_uv;
+
+  gl_Position = gpencil_vertex(float4(uniform_buf.size_viewport, uniform_buf.size_viewport_inv),
+                               world_pos,
+                               unused_N,
+                               unused_color,
+                               unused_strength,
+                               unused_uv,
+                               gp_interp_flat.sspos_0,
+                               gp_interp_flat.sspos_1,
+                               gp_interp_flat.sspos_2,
+                               gp_interp_flat.sspos_3,
+                               gp_interp_flat.point_length,
+                               gp_interp_flat.aspect,
+                               gp_interp_noperspective.thickness,
+                               gp_interp_noperspective.hardness);
+#line 53
+  gl_Position.z -= 1e-3f;
+#line 56
+  interp.ob_id = uint(drw_resource_id() + 1);
+#line 59
+  uint outline_id = outline_colorid_get();
+#line 62
+  interp.ob_id = outline_id_pack(outline_id, interp.ob_id);
+
+  view_clipping_distances(world_pos);
+}

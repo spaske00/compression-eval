@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_depth_only_frag.glsl"
+ 
+#line 7
+void main()
+{
+#line 11
+}

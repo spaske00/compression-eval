@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "qt": {
+    "version": "6.8.3",
+    "architecture": "linux_gcc_64",
+    "modules": ["qtcharts", "qtmultimedia", "qtwebsockets"]
+  },
+  "assets": [
+    {
+      "name": "yt-dlp_linux",
+      "version": "2026.03.17",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.03.17/yt-dlp_linux",
+      "sha256": "c2b0189f581fe4a2ddd41954f1bcb7d327db04b07ed0dea97e4f1b3e09b5dd8e",
+      "directory": "deps/assets/yt-dlp_linux"
+    }
+  ],
+  "sources": [
+    {
+      "name": "QXlsx",
+      "url": "https://github.com/QtExcel/QXlsx.git",
+      "commit": "3192b808a283f8eb18c97b9a087bf085054e9bb0",
+      "directory": "deps/sources/qxlsx"
+    },
+    {
+      "name": "md4c",
+      "url": "https://github.com/mity/md4c.git",
+      "commit": "729e6b8b320caa96328968ab27d7db2235e4fb47",
+      "directory": "deps/sources/md4c"
+    },
+    {
+      "name": "QGeoView",
+      "url": "https://github.com/AmonRaNet/QGeoView.git",
+      "commit": "4b2c52c80940e1073c259ded1a57df83036ba1c9",
+      "directory": "deps/sources/qgeoview"
+    },
+    {
+      "name": "QtADS",
+      "url": "https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System.git",
+      "commit": "87cffe5d40307c61141c88b88c10c5e7d181d880",
+      "directory": "deps/sources/qtads"
+    },
+    {
+      "name": "ed25519",
+      "url": "https://github.com/orlp/ed25519.git",
+      "commit": "b1f19fab4aebe607805620d25a5e42566ce46a0e",
+      "directory": "deps/sources/ed25519"
+    }
+  ]
+}

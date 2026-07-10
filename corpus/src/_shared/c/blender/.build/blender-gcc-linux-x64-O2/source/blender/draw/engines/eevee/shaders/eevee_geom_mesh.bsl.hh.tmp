@@ -1,0 +1,164 @@
+#line 1 "eevee_geom_mesh.bsl.hh"
+ 
+#line 10
+VERTEX_SHADER_CREATE_INFO(eevee_nodetree)
+VERTEX_SHADER_CREATE_INFO(eevee_clip_plane)
+#line 23
+#define access_eevee_GeomMesh_eevee_geom_iface_info() eevee_geom_iface_info
+#ifdef CREATE_INFO_RES_PASS_eevee_GeomMesh
+CREATE_INFO_RES_PASS_eevee_GeomMesh
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_GeomMesh
+CREATE_INFO_RES_BATCH_eevee_GeomMesh
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_GeomMesh
+CREATE_INFO_RES_GEOMETRY_eevee_GeomMesh
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_GeomMesh
+CREATE_INFO_RES_SHARED_VARS_eevee_GeomMesh
+#endif
+#line 23
+struct eevee_GeomMesh {
+#line 33
+int _pad;};
+#line 36
+#ifndef GPU_METAL
+eevee_GeomMesh eevee_GeomMesh_ctor_();
+eevee_GeomMesh eevee_GeomMesh_new_();
+#endif
+#line 23
+                              eevee_GeomMesh eevee_GeomMesh_ctor_() {eevee_GeomMesh r;r._pad=0;return r;}
+#line 26
+       eevee_GeomMesh eevee_GeomMesh_new_()
+{
+  eevee_GeomMesh result;
+  result._pad = 0;
+  return result;
+#line 24
+}
+#line 27
+struct eevee_GeomMeshVertIn {
+                   float3 pos;
+                   float3 nor;
+};
+#line 27
+                                    eevee_GeomMeshVertIn eevee_GeomMeshVertIn_ctor_() {eevee_GeomMeshVertIn r;r.pos=float3(0);r.nor=float3(0);return r;}
+#line 32
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_GeomMesh) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_draw_Resource) && (!(SRT_CONSTANT_is_shadow_pipe) ||defined(CREATE_INFO_eevee_GeomShadow))
+#line 32
+
+#if defined(ENTRY_POINT_eevee_geom_mesh)
+#line 32
+                             void eevee_geom_mesh(
+#line 48
+                                        )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 50
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 49
+  eevee_PipelineConstants pipe = eevee_PipelineConstants_ctor_(); eevee_GeomMesh _0 = eevee_GeomMesh_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_Infos infos = draw_Infos_ctor_(); draw_Resource res_id = draw_Resource_ctor_(); eevee_GeomShadow shadow = eevee_GeomShadow_ctor_();
+  draw_ID id = _get(res_id, gpu_InstanceIndex);
+  uint view_id = 0;
+  uint resource_id = _resource_idT1(id);
+
+#if SRT_CONSTANT_is_shadow_pipe
+#line 53
+                                                                             {
+    view_id = _view_idT64(id);
+    resource_id = _resource_idT64(id);
+  }
+#endif
+  const ViewMatrices view = _get(views, view_id);
+  const ObjectMatrices obj = _get(models, resource_id);
+#line 64
+#if SRT_CONSTANT_is_shadow_pipe
+#line 63
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_shadow_iface_info)
+    interface_get(eevee_shadow_iface_info, shadow_iface).shadow_view_id = int(view_id);
+    gpu_ViewportIndex = int(srt_access(eevee_GeomShadow, render_view_buf)[view_id].viewport_index);
+
+#endif
+#line 68
+  }
+#endif
+  init_interface(id.raw_id);
+
+  interface_get(eevee_geom_iface_info, interp).P = _point_object_to_world(obj, pos);
+  interface_get(eevee_geom_iface_info, interp).N = normalize(_normal_object_to_world(obj, nor));
+
+#if SRT_CONSTANT_use_velocity
+#line 74
+                                                                           {
+#line 77
+#if defined(CREATE_INFO_eevee_GeometryVelocity)
+#line 76
+
+#if defined(CREATE_INFO_eevee_velocity_iface_info)
+#line 79
+    float3 prv, nxt;
+    _local_position_deltas(resource_table_get(eevee_GeometryVelocity), pos, gl_VertexID, prv, nxt, resource_id);
+#line 86
+    _vertex_velocity(resource_table_get(eevee_GeometryVelocity), prv, pos, nxt, interface_get(eevee_velocity_iface_info, motion).prev, interface_get(eevee_velocity_iface_info, motion).next, resource_id, obj.model);
+
+#endif
+
+#endif
+#line 88
+  }
+#endif
+  ObjectInfos ob_infos = _get(infos, resource_id);
+
+  float3 lP_orco = pos * ob_infos.orco_mul + ob_infos.orco_add;
+
+  init_globals(uni, view, true);
+  attrib_load(_ctor(MeshVertex) pos, to_float3x3(obj.model_inverse), lP_orco _rotc() );
+
+  interface_get(eevee_geom_iface_info, interp).P += nodetree_displacement();
+#line 100
+#if SRT_CONSTANT_use_clip_plane
+#line 99
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_clip_plane)
+#line 100
+
+#if defined(CREATE_INFO_eevee_clip_plane)
+    interface_get(eevee_clip_plane, clip_interp).clip_distance = dot(buffer_get(eevee_clip_plane, clip_plane).plane, float4(interface_get(eevee_geom_iface_info, interp).P, 1.0f));
+
+#endif
+
+#endif
+#line 103
+  }
+#endif
+  float3 vs_P = _point_world_to_view(view, interface_get(eevee_geom_iface_info, interp).P);
+#line 108
+#if SRT_CONSTANT_is_shadow_pipe
+#line 107
+                                                                             {
+
+#if defined(CREATE_INFO_eevee_shadow_iface_info)
+#line 108
+
+    ShadowRenderView view = srt_access(eevee_GeomShadow, render_view_buf)[view_id];
+    interface_get(eevee_shadow_iface_info, shadow_clip).position = shadow_position_vector_get(vs_P, view);
+    interface_get(eevee_shadow_iface_info, shadow_clip).vector = shadow_clip_vector_get(vs_P, view.clip_distance_inv);
+
+#endif
+#line 112
+  }
+#endif
+  gl_Position = reverse_z_transform(_point_view_to_homogenous(view, vs_P));
+
+#endif
+
+#endif
+#line 115
+}
+#endif
+#endif

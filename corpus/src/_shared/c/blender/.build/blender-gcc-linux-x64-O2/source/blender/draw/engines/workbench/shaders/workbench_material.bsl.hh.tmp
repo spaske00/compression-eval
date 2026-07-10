@@ -1,0 +1,61 @@
+#line 1 "workbench_material.bsl.hh"
+ 
+#line 11
+#define access_workbench_color_Materials_materials_data() materials_data
+#ifdef CREATE_INFO_RES_PASS_workbench_color_Materials
+CREATE_INFO_RES_PASS_workbench_color_Materials
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_color_Materials
+CREATE_INFO_RES_BATCH_workbench_color_Materials
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_color_Materials
+CREATE_INFO_RES_GEOMETRY_workbench_color_Materials
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_color_Materials
+CREATE_INFO_RES_SHARED_VARS_workbench_color_Materials
+#endif
+#line 11
+struct workbench_color_Materials {
+#line 37
+int _pad;};
+#line 41
+#ifndef GPU_METAL
+workbench_color_Materials workbench_color_Materials_ctor_();
+void _material_data_get(workbench_color_Materials  this_, int handle,
+                         float3 vertex_color,
+                         _ref(float3 ,color),
+                         _ref(float ,alpha),
+                         _ref(float ,roughness),
+                         _ref(float ,metallic));
+workbench_color_Materials workbench_color_Materials_new_();
+#endif
+#line 11
+                                         workbench_color_Materials workbench_color_Materials_ctor_() {workbench_color_Materials r;r._pad=0;return r;}
+#line 14
+
+#if defined(CREATE_INFO_workbench_color_Materials)
+#line 14
+  void _material_data_get(workbench_color_Materials  this_, int handle,
+                         float3 vertex_color,
+                         _ref(float3 ,color),
+                         _ref(float ,alpha),
+                         _ref(float ,roughness),
+                         _ref(float ,metallic))
+  {
+    float4 data = materials_data[handle];
+    color = (data.r == -1) ? vertex_color : data.rgb;
+
+    uint encoded_data = floatBitsToUint(data.w);
+    alpha = float((encoded_data >> 16u) & 0xFFu) * (1.0f / 255.0f);
+    roughness = float((encoded_data >> 8u) & 0xFFu) * (1.0f / 255.0f);
+    metallic = float(encoded_data & 0xFFu) * (1.0f / 255.0f);
+  }
+#endif
+       workbench_color_Materials workbench_color_Materials_new_()
+{
+  workbench_color_Materials result;
+  result._pad = 0;
+  return result;
+#line 28
+}
+#line 32

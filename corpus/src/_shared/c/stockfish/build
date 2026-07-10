@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then
+    echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2
+    exit 2
+fi
+
+cc=$1
+cxx=$2
+raw_target=$3
+shift 3
+flags=("$@")
+target=${raw_target%.out}
+case "$target" in
+    ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;;
+esac
+
+case "$(basename -- "$cc"):$(basename -- "$cxx")" in
+    gcc*:g++*) compiler=gcc ;;
+    clang*:clang++*) compiler=clang ;;
+    *) echo "Stockfish requires a matching GCC/G++ or Clang/Clang++ toolchain: $cc, $cxx" >&2; exit 2 ;;
+esac
+command -v "$cc" >/dev/null || { echo "compiler not found: $cc" >&2; exit 2; }
+command -v "$cxx" >/dev/null || { echo "compiler not found: $cxx" >&2; exit 2; }
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+build_dir="$root/.build/$target"
+source_dir="$build_dir/source"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$source_dir/src/stockfish"
+network=$(sed -n 's/^#define EvalFileDefaultName "\([^"]*\.nnue\)"/\1/p' \
+    "$root/upstream/src/evaluate.h")
+if [[ -z "$network" || ! -s "$root/upstream/src/$network" ]]; then
+    echo "Stockfish acquisition is incomplete: missing upstream/src/${network:-<default-network>.nnue}" >&2
+    echo "refusing the upstream Makefile's automatic network download during compilation" >&2
+    exit 1
+fi
+
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$build_dir" "$temporary"
+cp -a -- "$root/upstream/." "$source_dir"
+
+make -C "$source_dir/src" -j"${JOBS:-8}" build \
+    ARCH=x86-64 COMP="$compiler" COMPCXX="$cxx" optimize=no \
+    CXXFLAGS="${flags[*]}" LDFLAGS="${flags[*]}"
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

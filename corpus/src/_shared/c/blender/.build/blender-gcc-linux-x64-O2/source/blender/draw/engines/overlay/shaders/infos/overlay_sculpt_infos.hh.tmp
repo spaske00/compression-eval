@@ -1,0 +1,31 @@
+#line 1 "overlay_sculpt_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 21
+#ifdef CREATE_INFO_RES_PASS_overlay_sculpt_mask
+CREATE_INFO_RES_PASS_overlay_sculpt_mask
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_sculpt_mask
+CREATE_INFO_RES_BATCH_overlay_sculpt_mask
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_sculpt_mask
+CREATE_INFO_RES_GEOMETRY_overlay_sculpt_mask
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_sculpt_mask
+CREATE_INFO_RES_SHARED_VARS_overlay_sculpt_mask
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_overlay_sculpt_mask_clipped
+CREATE_INFO_RES_PASS_overlay_sculpt_mask_clipped
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_sculpt_mask_clipped
+CREATE_INFO_RES_BATCH_overlay_sculpt_mask_clipped
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_sculpt_mask_clipped
+CREATE_INFO_RES_GEOMETRY_overlay_sculpt_mask_clipped
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_sculpt_mask_clipped
+CREATE_INFO_RES_SHARED_VARS_overlay_sculpt_mask_clipped
+#endif

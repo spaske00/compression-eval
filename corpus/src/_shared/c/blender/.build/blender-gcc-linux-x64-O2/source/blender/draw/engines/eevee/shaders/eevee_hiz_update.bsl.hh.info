@@ -1,0 +1,49 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_hiz_Update)
+SPECIALIZATION_CONSTANT(bool, update_mip_0, true)
+.noop()
+
+.sampler(0, ImageType::sampler2DDepth, "depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler(), [](blender::Span<CompilationConstant> constants) { int use_layer = ShaderCreateInfo::find_constant(constants, "use_layer"); return (!use_layer);})
+.sampler(0, ImageType::sampler2DArrayDepth, "depth_layered_tx", Frequency::PASS, GPUSamplerState::internal_sampler(), [](blender::Span<CompilationConstant> constants) { int use_layer = ShaderCreateInfo::find_constant(constants, "use_layer"); return (use_layer);})
+PUSH_CONSTANT(int, layer_id)
+.image(0, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image2D, "out_mip_0", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image2D, "out_mip_1", Frequency::PASS)
+.image(2, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image2D, "out_mip_2", Frequency::PASS)
+.image(3, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image2D, "out_mip_3", Frequency::PASS)
+.image(4, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image2D, "out_mip_4", Frequency::PASS)
+.image(5, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::read_write, ImageReadWriteType::image2D, "out_mip_5", Frequency::PASS)
+.image(6, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image2D, "out_mip_6", Frequency::PASS)
+GROUP_SHARED(float, local_depths[HIZ_GROUP_SIZE][HIZ_GROUP_SIZE])
+.storage_buf(0, Qualifier::read_write, "uint", "finished_tile_counter", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_hiz_update_main_infos_)
+LOCAL_GROUP_SIZE(HIZ_GROUP_SIZE, HIZ_GROUP_SIZE)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+ADDITIONAL_INFO(eevee_hiz_Update)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_hiz_update)
+COMPUTE_SOURCE("eevee_hiz_update.bsl.hh")
+COMPUTE_FUNCTION("eevee_hiz_update_main")
+ADDITIONAL_INFO(eevee_hiz_update_main_infos_)
+COMPILATION_CONSTANT(bool, use_layer, false)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_hiz_update_layer)
+COMPUTE_SOURCE("eevee_hiz_update.bsl.hh")
+COMPUTE_FUNCTION("eevee_hiz_update_main")
+ADDITIONAL_INFO(eevee_hiz_update_main_infos_)
+COMPILATION_CONSTANT(bool, use_layer, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

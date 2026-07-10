@@ -1,0 +1,4031 @@
+#line 1 "gpu_shader_2D_update_mipmaps.bsl.hh"
+ 
+#line 20
+           void builtin_mipmaps_convertTfloat4Tfloat(_ref(float4 ,dst_value), const float src_value)
+{
+  dst_value.x = src_value;
+  dst_value.y = 0.0;
+  dst_value.z = 0.0;
+  dst_value.w = 0.0;
+}
+           void builtin_mipmaps_convertTfloatTfloat4(_ref(float ,dst_value), const float4 src_value)
+{
+  dst_value = src_value.x;
+}
+           void builtin_mipmaps_convertTfloat4Tfloat4(_ref(float4 ,dst_value), const float4 src_value)
+{
+  dst_value = src_value;
+}
+#line 38
+float builtin_mipmaps_srgb_to_linearrgb(float c)
+{
+  if (c < 0.04045f) {
+    return (c < 0.0f) ? 0.0f : c * (1.0f / 12.92f);
+  }
+
+  return pow((c + 0.055f) * (1.0f / 1.055f), 2.4f);
+}
+
+float builtin_mipmaps_linearrgb_to_srgb(float c)
+{
+  if (c < 0.0031308f) {
+    return (c < 0.0f) ? 0.0f : c * 12.92f;
+  }
+
+  return 1.055f * pow(c, 1.0f / 2.4f) - 0.055f;
+}
+#line 65
+#define LOCAL_SIZE_X 128
+#define TILE_SIZE 8
+#define MAX_SHARED_SAMPLES (TILE_SIZE + TILE_SIZE + 1)
+#define INPUT_LEVEL 0
+#line 90
+#define access_builtin_mipmaps_SharedUnorm_intermediate_level() intermediate_level
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_SharedUnorm
+CREATE_INFO_RES_PASS_builtin_mipmaps_SharedUnorm
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedUnorm
+CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedUnorm
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedUnorm
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedUnorm
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedUnorm
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedUnorm
+#endif
+#line 90
+struct builtin_mipmaps_SharedUnorm {
+#line 116
+int _pad;};
+#line 120
+#ifndef GPU_METAL
+builtin_mipmaps_SharedUnorm builtin_mipmaps_SharedUnorm_ctor_();
+void _store_sample(builtin_mipmaps_SharedUnorm  this_, int2 dst_coord, float color);
+float _load_sample(builtin_mipmaps_SharedUnorm  this_, int2 src_coord);
+builtin_mipmaps_SharedUnorm builtin_mipmaps_SharedUnorm_new_();
+#endif
+#line 90
+                                           builtin_mipmaps_SharedUnorm builtin_mipmaps_SharedUnorm_ctor_() {builtin_mipmaps_SharedUnorm r;r._pad=0;return r;}
+#line 97
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedUnorm)
+#line 97
+  void _store_sample(builtin_mipmaps_SharedUnorm  this_, int2 dst_coord, float color)
+  {
+    uint encoded = uint(clamp(color, 0.0f, 1.0f) * UINT_MAX);
+    srt_access(builtin_mipmaps_SharedUnorm, intermediate_level)[dst_coord.y][dst_coord.x] = encoded;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedUnorm)
+#line 103
+  float _load_sample(builtin_mipmaps_SharedUnorm  this_, int2 src_coord)
+  {
+    uint encoded = srt_access(builtin_mipmaps_SharedUnorm, intermediate_level)[src_coord.y][src_coord.x];
+    return float(encoded) / UINT_MAX;
+  }
+#endif
+       builtin_mipmaps_SharedUnorm builtin_mipmaps_SharedUnorm_new_()
+{
+  builtin_mipmaps_SharedUnorm result;
+  result._pad = 0;
+  return result;
+#line 107
+}
+#line 111
+#define access_builtin_mipmaps_SharedSRGB_intermediate_level() intermediate_level
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_SharedSRGB
+CREATE_INFO_RES_PASS_builtin_mipmaps_SharedSRGB
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedSRGB
+CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedSRGB
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedSRGB
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedSRGB
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedSRGB
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedSRGB
+#endif
+#line 111
+struct builtin_mipmaps_SharedSRGB {
+#line 148
+int _pad;};
+#line 151
+#ifndef GPU_METAL
+builtin_mipmaps_SharedSRGB builtin_mipmaps_SharedSRGB_ctor_();
+void _store_sample(builtin_mipmaps_SharedSRGB  this_, int2 dst_coord, float4 color);
+float4 _load_sample(builtin_mipmaps_SharedSRGB  this_, int2 src_coord);
+builtin_mipmaps_SharedSRGB builtin_mipmaps_SharedSRGB_new_();
+#endif
+#line 111
+                                          builtin_mipmaps_SharedSRGB builtin_mipmaps_SharedSRGB_ctor_() {builtin_mipmaps_SharedSRGB r;r._pad=0;return r;}
+#line 118
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedSRGB)
+#line 118
+  void _store_sample(builtin_mipmaps_SharedSRGB  this_, int2 dst_coord, float4 color)
+  {
+    float4 srgba;
+    srgba.r = builtin_mipmaps_linearrgb_to_srgb(color.r);
+    srgba.g = builtin_mipmaps_linearrgb_to_srgb(color.g);
+    srgba.b = builtin_mipmaps_linearrgb_to_srgb(color.b);
+    srgba.a = color.a;
+    uint srgb_packed = packUnorm4x8(srgba);
+    srt_access(builtin_mipmaps_SharedSRGB, intermediate_level)[dst_coord.y][dst_coord.x] = srgb_packed;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedSRGB)
+#line 129
+  float4 _load_sample(builtin_mipmaps_SharedSRGB  this_, int2 src_coord)
+  {
+    uint srgb_packed = srt_access(builtin_mipmaps_SharedSRGB, intermediate_level)[src_coord.y][src_coord.x];
+    float4 srgba = unpackUnorm4x8(srgb_packed);
+    float4 linear_color;
+    linear_color.r = builtin_mipmaps_srgb_to_linearrgb(srgba.r);
+    linear_color.g = builtin_mipmaps_srgb_to_linearrgb(srgba.g);
+    linear_color.b = builtin_mipmaps_srgb_to_linearrgb(srgba.b);
+    linear_color.a = srgba.a;
+    return linear_color;
+  }
+#endif
+       builtin_mipmaps_SharedSRGB builtin_mipmaps_SharedSRGB_new_()
+{
+  builtin_mipmaps_SharedSRGB result;
+  result._pad = 0;
+  return result;
+#line 139
+}
+#line 142
+int2 builtin_mipmaps_kernel_size_from_input_size(int2 input_size)
+{
+  return int2(input_size.x == 1 ? 1 : (2 | (input_size.x & 1)),
+              input_size.y == 1 ? 1 : (2 | (input_size.y & 1)));
+}
+#line 71
+#define access_builtin_mipmaps_SharedTfloat_intermediate_level() intermediate_level
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_SharedTfloat
+CREATE_INFO_RES_PASS_builtin_mipmaps_SharedTfloat
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedTfloat
+CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedTfloat
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedTfloat
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedTfloat
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedTfloat
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedTfloat
+#endif
+#line 71
+struct builtin_mipmaps_SharedTfloat {
+#line 95
+int _pad;};
+#line 99
+#ifndef GPU_METAL
+builtin_mipmaps_SharedTfloat builtin_mipmaps_SharedTfloat_ctor_();
+void _store_sample(builtin_mipmaps_SharedTfloat  this_, int2 dst_coord, float color);
+float _load_sample(builtin_mipmaps_SharedTfloat  this_, int2 src_coord);
+builtin_mipmaps_SharedTfloat builtin_mipmaps_SharedTfloat_new_();
+#endif
+#line 71
+                                            builtin_mipmaps_SharedTfloat builtin_mipmaps_SharedTfloat_ctor_() {builtin_mipmaps_SharedTfloat r;r._pad=0;return r;}
+#line 78
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedTfloat)
+#line 78
+  void _store_sample(builtin_mipmaps_SharedTfloat  this_, int2 dst_coord, float color)
+  {
+    srt_access(builtin_mipmaps_SharedTfloat, intermediate_level)[dst_coord.y][dst_coord.x] = color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedTfloat)
+#line 83
+  float _load_sample(builtin_mipmaps_SharedTfloat  this_, int2 src_coord)
+  {
+    return srt_access(builtin_mipmaps_SharedTfloat, intermediate_level)[src_coord.y][src_coord.x];
+  }
+#endif
+       builtin_mipmaps_SharedTfloat builtin_mipmaps_SharedTfloat_new_()
+{
+  builtin_mipmaps_SharedTfloat result;
+  result._pad = 0;
+  return result;
+#line 86
+}
+#line 71
+#define access_builtin_mipmaps_SharedTfloat4_intermediate_level() intermediate_level
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_SharedTfloat4
+CREATE_INFO_RES_PASS_builtin_mipmaps_SharedTfloat4
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedTfloat4
+CREATE_INFO_RES_BATCH_builtin_mipmaps_SharedTfloat4
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedTfloat4
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_SharedTfloat4
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedTfloat4
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_SharedTfloat4
+#endif
+#line 71
+struct builtin_mipmaps_SharedTfloat4 {
+#line 95
+int _pad;};
+#line 99
+#ifndef GPU_METAL
+builtin_mipmaps_SharedTfloat4 builtin_mipmaps_SharedTfloat4_ctor_();
+void _store_sample(builtin_mipmaps_SharedTfloat4  this_, int2 dst_coord, float4 color);
+float4 _load_sample(builtin_mipmaps_SharedTfloat4  this_, int2 src_coord);
+builtin_mipmaps_SharedTfloat4 builtin_mipmaps_SharedTfloat4_new_();
+#endif
+#line 71
+                                             builtin_mipmaps_SharedTfloat4 builtin_mipmaps_SharedTfloat4_ctor_() {builtin_mipmaps_SharedTfloat4 r;r._pad=0;return r;}
+#line 78
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedTfloat4)
+#line 78
+  void _store_sample(builtin_mipmaps_SharedTfloat4  this_, int2 dst_coord, float4 color)
+  {
+    srt_access(builtin_mipmaps_SharedTfloat4, intermediate_level)[dst_coord.y][dst_coord.x] = color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_SharedTfloat4)
+#line 83
+  float4 _load_sample(builtin_mipmaps_SharedTfloat4  this_, int2 src_coord)
+  {
+    return srt_access(builtin_mipmaps_SharedTfloat4, intermediate_level)[src_coord.y][src_coord.x];
+  }
+#endif
+       builtin_mipmaps_SharedTfloat4 builtin_mipmaps_SharedTfloat4_new_()
+{
+  builtin_mipmaps_SharedTfloat4 result;
+  result._pad = 0;
+  return result;
+#line 86
+}
+#line 164
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_is_srgb_texture() is_srgb_texture
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_is_layered() is_layered
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_num_levels() num_levels
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_mip_in() mip_in
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_mip_out1() mip_out1
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_mip_out2() mip_out2
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_mip_array_in() mip_array_in
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_mip_array_out1() mip_array_out1
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_mip_array_out2() mip_array_out2
+#define access_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_shared_storage() builtin_mipmaps_SharedUnorm_new_()
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat
+#endif
+#line 164
+struct builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat {
+#line 174
+                           builtin_mipmaps_SharedUnorm  shared_storage;
+#line 529
+};
+#line 533
+#ifndef GPU_METAL
+builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_ctor_();
+void _store_sample(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 dst_coord, int dst_level, float color);
+void _store_shared_sample(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 dst_coord, float color);
+float _load_sample(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 src_coord, bool load_from_shared);
+int2 _level_size(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int level);
+float _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, float a0, float v0, float a1, float v1, float a2, float v2);
+float _pyramid_reduce_2(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, float v0, float v1);
+float _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+float _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check);
+void _fill_intermediate_tile(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+void _fill_last_tile(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_new_();
+#endif
+#line 164
+                                                                                   builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_ctor_() {builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat r;r.shared_storage=builtin_mipmaps_SharedUnorm_ctor_();return r;}
+#line 177
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 177
+  void _store_sample(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 dst_coord, int dst_level, float color)
+  {
+    float4 color_out;
+    builtin_mipmaps_convertTfloat4Tfloat(color_out, color);
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 181
+                                                                                                                            {
+      color_out.r = builtin_mipmaps_linearrgb_to_srgb(color_out.r);
+      color_out.g = builtin_mipmaps_linearrgb_to_srgb(color_out.g);
+      color_out.b = builtin_mipmaps_linearrgb_to_srgb(color_out.b);
+    }
+
+#endif
+#line 186
+
+#if SRT_CONSTANT_is_layered == false
+#line 186
+                                                                                                                                {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_out1), dst_coord, color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_out2), dst_coord, color_out);
+      }
+    }
+
+#endif
+#line 194
+
+#if SRT_CONSTANT_is_layered
+#line 194
+                                                                                                                       {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_array_out1), int3(dst_coord, 0), color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_array_out2), int3(dst_coord, 0), color_out);
+      }
+    }
+
+#endif
+#line 202
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 204
+  void _store_shared_sample(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 dst_coord, float color)
+  {
+
+    _store_sample(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, shared_storage), dst_coord, color);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 210
+  float _load_sample(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 src_coord, bool load_from_shared)
+  {
+    float color;
+    if (load_from_shared) {
+
+      color = _load_sample(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, shared_storage), src_coord);
+    }
+    else {
+      float4 loaded_color;
+
+#if SRT_CONSTANT_is_layered == false
+#line 219
+                                                                                                                                  {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_in), src_coord);
+      }
+
+#endif
+#line 222
+
+#if SRT_CONSTANT_is_layered
+#line 222
+                                                                                                                         {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_array_in), int3(src_coord, 0));
+      }
+
+#endif
+#line 225
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 225
+                                                                                                                              {
+        loaded_color.r = builtin_mipmaps_srgb_to_linearrgb(loaded_color.r);
+        loaded_color.g = builtin_mipmaps_srgb_to_linearrgb(loaded_color.g);
+        loaded_color.b = builtin_mipmaps_srgb_to_linearrgb(loaded_color.b);
+      }
+
+#endif
+#line 230
+      builtin_mipmaps_convertTfloatTfloat4(color, loaded_color);
+    }
+    return color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 235
+  int2 _level_size(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int level)
+  {
+    int2 mip_in_size;
+
+#if SRT_CONSTANT_is_layered == false
+#line 238
+                                                                                                                                {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_in));
+    }
+
+#endif
+#line 241
+
+#if SRT_CONSTANT_is_layered
+#line 241
+                                                                                                                       {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, mip_array_in)).xy;
+    }
+
+#endif
+#line 244
+    int2 mip_size = max((mip_in_size >> level), int2(1));
+    return mip_size;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 248
+  float _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, float a0, float v0, float a1, float v1, float a2, float v2)
+  {
+    return a0 * v0 + a1 * v1 + a2 * v2;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 254
+  float _pyramid_reduce_2(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, float v0, float v1)
+  {
+    return 0.5 * (v0 + v1);
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 271
+float _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 271
+float _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 395
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 395
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check)
+  {
+    int2 dst_coord = init_dst_coord;
+    int2 shared_coord = init_shared_coord;
+    int src_level = INPUT_LEVEL;
+    int dst_level = src_level + 1;
+    int2 src_image_size = _level_size(this_, src_level);
+    int2 dst_image_size = _level_size(this_, dst_level);
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+
+    for (int i_ = 0; i_ < iterations; ++i_) {
+      int2 src_coord = dst_coord * 2;
+
+      if (use_bounds_check) {
+        if (uint(dst_coord.x) >= uint(dst_image_size.x)) {
+          continue;
+        }
+        if (uint(dst_coord.y) >= uint(dst_image_size.y)) {
+          continue;
+        }
+      }
+
+      float result = _reduce_store_sampleTfalse(this_, src_coord, src_level, kernel_size, dst_image_size, dst_coord, dst_level);
+#line 425
+      _store_shared_sample(this_, shared_coord, result);
+      dst_coord += step;
+      shared_coord += step;
+    }
+  }
+#endif
+#line 442
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 442
+  void _fill_intermediate_tile(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+    int2 init_thread_offset;
+    int2 step;
+    int iterations;
+
+    int2 dst_image_size = _level_size(this_, INPUT_LEVEL + 1);
+    int2 future_kernel_size = builtin_mipmaps_kernel_size_from_input_size(dst_image_size);
+
+    if (future_kernel_size.x == 3) {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 17u, local_index / 17u);
+        step = int2(0, 7);
+        iterations = local_index >= 7 * 17 ? 0 : local_index < 3 * 17 ? 3 : 2;
+      }
+      else {
+#line 461
+        init_thread_offset = int2(local_index / 16u, local_index % 16u);
+        step = int2(8, 0);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+    }
+    else {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+      else {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = 2;
+      }
+    }
+
+    _intermediate_level_loop(this_, dst_tile_coord + init_thread_offset,
+                            init_thread_offset,
+                            step,
+                            iterations,
+                            use_bounds_check);
+  }
+#endif
+#line 496
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 496
+  void _fill_last_tile(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+
+    if (local_index < 8 * 8) {
+      int2 thread_offset = int2(local_index % 8u, local_index / 8u);
+      int src_level = INPUT_LEVEL + 1;
+      int dst_level = INPUT_LEVEL + 2;
+      int2 src_image_size = _level_size(this_, src_level);
+      int2 dst_image_size = _level_size(this_, dst_level);
+
+      int2 src_shared_coord = thread_offset * 2;
+      int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+      int2 dst_coord = thread_offset + dst_tile_coord;
+
+      bool within_bounds = true;
+      if (use_bounds_check) {
+        within_bounds = (uint(dst_coord.x) < uint(dst_image_size.x)) &&
+                        (uint(dst_coord.y) < uint(dst_image_size.y));
+      }
+      if (within_bounds) {
+        _reduce_store_sampleTtrue(this_, src_shared_coord, 0, kernel_size, dst_image_size, dst_coord, dst_level);
+      }
+    }
+  }
+#endif
+#line 522
+       builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_new_()
+{
+  builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat result;
+  result.shared_storage = builtin_mipmaps_SharedUnorm_new_();
+  return result;
+#line 520
+}
+#line 164
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_is_srgb_texture() is_srgb_texture
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_is_layered() is_layered
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_num_levels() num_levels
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_mip_in() mip_in
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_mip_out1() mip_out1
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_mip_out2() mip_out2
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_mip_array_in() mip_array_in
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_mip_array_out1() mip_array_out1
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_mip_array_out2() mip_array_out2
+#define access_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_shared_storage() builtin_mipmaps_SharedSRGB_new_()
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4
+#endif
+#line 164
+struct builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 {
+#line 174
+                           builtin_mipmaps_SharedSRGB  shared_storage;
+#line 529
+};
+#line 533
+#ifndef GPU_METAL
+builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_ctor_();
+void _store_sample(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 dst_coord, int dst_level, float4 color);
+void _store_shared_sample(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 dst_coord, float4 color);
+float4 _load_sample(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 src_coord, bool load_from_shared);
+int2 _level_size(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int level);
+float4 _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, float a0, float4 v0, float a1, float4 v1, float a2, float4 v2);
+float4 _pyramid_reduce_2(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, float4 v0, float4 v1);
+float4 _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+float4 _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check);
+void _fill_intermediate_tile(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+void _fill_last_tile(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_new_();
+#endif
+#line 164
+                                                                                         builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_ctor_() {builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 r;r.shared_storage=builtin_mipmaps_SharedSRGB_ctor_();return r;}
+#line 177
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 177
+  void _store_sample(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 dst_coord, int dst_level, float4 color)
+  {
+    float4 color_out;
+    builtin_mipmaps_convertTfloat4Tfloat4(color_out, color);
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 181
+                                                                                                                                  {
+      color_out.r = builtin_mipmaps_linearrgb_to_srgb(color_out.r);
+      color_out.g = builtin_mipmaps_linearrgb_to_srgb(color_out.g);
+      color_out.b = builtin_mipmaps_linearrgb_to_srgb(color_out.b);
+    }
+
+#endif
+#line 186
+
+#if SRT_CONSTANT_is_layered == false
+#line 186
+                                                                                                                                      {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_out1), dst_coord, color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_out2), dst_coord, color_out);
+      }
+    }
+
+#endif
+#line 194
+
+#if SRT_CONSTANT_is_layered
+#line 194
+                                                                                                                             {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_array_out1), int3(dst_coord, 0), color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_array_out2), int3(dst_coord, 0), color_out);
+      }
+    }
+
+#endif
+#line 202
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 204
+  void _store_shared_sample(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 dst_coord, float4 color)
+  {
+
+    _store_sample(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, shared_storage), dst_coord, color);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 210
+  float4 _load_sample(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 src_coord, bool load_from_shared)
+  {
+    float4 color;
+    if (load_from_shared) {
+
+      color = _load_sample(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, shared_storage), src_coord);
+    }
+    else {
+      float4 loaded_color;
+
+#if SRT_CONSTANT_is_layered == false
+#line 219
+                                                                                                                                        {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_in), src_coord);
+      }
+
+#endif
+#line 222
+
+#if SRT_CONSTANT_is_layered
+#line 222
+                                                                                                                               {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_array_in), int3(src_coord, 0));
+      }
+
+#endif
+#line 225
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 225
+                                                                                                                                    {
+        loaded_color.r = builtin_mipmaps_srgb_to_linearrgb(loaded_color.r);
+        loaded_color.g = builtin_mipmaps_srgb_to_linearrgb(loaded_color.g);
+        loaded_color.b = builtin_mipmaps_srgb_to_linearrgb(loaded_color.b);
+      }
+
+#endif
+#line 230
+      builtin_mipmaps_convertTfloat4Tfloat4(color, loaded_color);
+    }
+    return color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 235
+  int2 _level_size(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int level)
+  {
+    int2 mip_in_size;
+
+#if SRT_CONSTANT_is_layered == false
+#line 238
+                                                                                                                                      {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_in));
+    }
+
+#endif
+#line 241
+
+#if SRT_CONSTANT_is_layered
+#line 241
+                                                                                                                             {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, mip_array_in)).xy;
+    }
+
+#endif
+#line 244
+    int2 mip_size = max((mip_in_size >> level), int2(1));
+    return mip_size;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 248
+  float4 _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, float a0, float4 v0, float a1, float4 v1, float a2, float4 v2)
+  {
+    return a0 * v0 + a1 * v1 + a2 * v2;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 254
+  float4 _pyramid_reduce_2(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, float4 v0, float4 v1)
+  {
+    return 0.5 * (v0 + v1);
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 271
+float4 _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float4 v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 271
+float4 _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float4 v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 395
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 395
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check)
+  {
+    int2 dst_coord = init_dst_coord;
+    int2 shared_coord = init_shared_coord;
+    int src_level = INPUT_LEVEL;
+    int dst_level = src_level + 1;
+    int2 src_image_size = _level_size(this_, src_level);
+    int2 dst_image_size = _level_size(this_, dst_level);
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+
+    for (int i_ = 0; i_ < iterations; ++i_) {
+      int2 src_coord = dst_coord * 2;
+
+      if (use_bounds_check) {
+        if (uint(dst_coord.x) >= uint(dst_image_size.x)) {
+          continue;
+        }
+        if (uint(dst_coord.y) >= uint(dst_image_size.y)) {
+          continue;
+        }
+      }
+
+      float4 result = _reduce_store_sampleTfalse(this_, src_coord, src_level, kernel_size, dst_image_size, dst_coord, dst_level);
+#line 425
+      _store_shared_sample(this_, shared_coord, result);
+      dst_coord += step;
+      shared_coord += step;
+    }
+  }
+#endif
+#line 442
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 442
+  void _fill_intermediate_tile(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+    int2 init_thread_offset;
+    int2 step;
+    int iterations;
+
+    int2 dst_image_size = _level_size(this_, INPUT_LEVEL + 1);
+    int2 future_kernel_size = builtin_mipmaps_kernel_size_from_input_size(dst_image_size);
+
+    if (future_kernel_size.x == 3) {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 17u, local_index / 17u);
+        step = int2(0, 7);
+        iterations = local_index >= 7 * 17 ? 0 : local_index < 3 * 17 ? 3 : 2;
+      }
+      else {
+#line 461
+        init_thread_offset = int2(local_index / 16u, local_index % 16u);
+        step = int2(8, 0);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+    }
+    else {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+      else {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = 2;
+      }
+    }
+
+    _intermediate_level_loop(this_, dst_tile_coord + init_thread_offset,
+                            init_thread_offset,
+                            step,
+                            iterations,
+                            use_bounds_check);
+  }
+#endif
+#line 496
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 496
+  void _fill_last_tile(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+
+    if (local_index < 8 * 8) {
+      int2 thread_offset = int2(local_index % 8u, local_index / 8u);
+      int src_level = INPUT_LEVEL + 1;
+      int dst_level = INPUT_LEVEL + 2;
+      int2 src_image_size = _level_size(this_, src_level);
+      int2 dst_image_size = _level_size(this_, dst_level);
+
+      int2 src_shared_coord = thread_offset * 2;
+      int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+      int2 dst_coord = thread_offset + dst_tile_coord;
+
+      bool within_bounds = true;
+      if (use_bounds_check) {
+        within_bounds = (uint(dst_coord.x) < uint(dst_image_size.x)) &&
+                        (uint(dst_coord.y) < uint(dst_image_size.y));
+      }
+      if (within_bounds) {
+        _reduce_store_sampleTtrue(this_, src_shared_coord, 0, kernel_size, dst_image_size, dst_coord, dst_level);
+      }
+    }
+  }
+#endif
+#line 522
+       builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_new_()
+{
+  builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 result;
+  result.shared_storage = builtin_mipmaps_SharedSRGB_new_();
+  return result;
+#line 520
+}
+#line 164
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_is_srgb_texture() is_srgb_texture
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_is_layered() is_layered
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_num_levels() num_levels
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_mip_in() mip_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_mip_out1() mip_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_mip_out2() mip_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_mip_array_in() mip_array_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_mip_array_out1() mip_array_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_mip_array_out2() mip_array_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_shared_storage() builtin_mipmaps_SharedTfloat_new_()
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#line 164
+struct builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat {
+#line 174
+                           builtin_mipmaps_SharedTfloat  shared_storage;
+#line 529
+};
+#line 533
+#ifndef GPU_METAL
+builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_ctor_();
+void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, int dst_level, float color);
+void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, float color);
+float _load_sample(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord, bool load_from_shared);
+int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int level);
+float _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float a0, float v0, float a1, float v1, float a2, float v2);
+float _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float v0, float v1);
+float _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+float _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check);
+void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_new_();
+#endif
+#line 164
+                                                                                      builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_ctor_() {builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat r;r.shared_storage=builtin_mipmaps_SharedTfloat_ctor_();return r;}
+#line 177
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 177
+  void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, int dst_level, float color)
+  {
+    float4 color_out;
+    builtin_mipmaps_convertTfloat4Tfloat(color_out, color);
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 181
+                                                                                                                               {
+      color_out.r = builtin_mipmaps_linearrgb_to_srgb(color_out.r);
+      color_out.g = builtin_mipmaps_linearrgb_to_srgb(color_out.g);
+      color_out.b = builtin_mipmaps_linearrgb_to_srgb(color_out.b);
+    }
+
+#endif
+#line 186
+
+#if SRT_CONSTANT_is_layered == false
+#line 186
+                                                                                                                                   {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_out1), dst_coord, color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_out2), dst_coord, color_out);
+      }
+    }
+
+#endif
+#line 194
+
+#if SRT_CONSTANT_is_layered
+#line 194
+                                                                                                                          {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_out1), int3(dst_coord, 0), color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_out2), int3(dst_coord, 0), color_out);
+      }
+    }
+
+#endif
+#line 202
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 204
+  void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, float color)
+  {
+
+    _store_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, shared_storage), dst_coord, color);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 210
+  float _load_sample(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord, bool load_from_shared)
+  {
+    float color;
+    if (load_from_shared) {
+
+      color = _load_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, shared_storage), src_coord);
+    }
+    else {
+      float4 loaded_color;
+
+#if SRT_CONSTANT_is_layered == false
+#line 219
+                                                                                                                                     {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_in), src_coord);
+      }
+
+#endif
+#line 222
+
+#if SRT_CONSTANT_is_layered
+#line 222
+                                                                                                                            {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_in), int3(src_coord, 0));
+      }
+
+#endif
+#line 225
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 225
+                                                                                                                                 {
+        loaded_color.r = builtin_mipmaps_srgb_to_linearrgb(loaded_color.r);
+        loaded_color.g = builtin_mipmaps_srgb_to_linearrgb(loaded_color.g);
+        loaded_color.b = builtin_mipmaps_srgb_to_linearrgb(loaded_color.b);
+      }
+
+#endif
+#line 230
+      builtin_mipmaps_convertTfloatTfloat4(color, loaded_color);
+    }
+    return color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 235
+  int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int level)
+  {
+    int2 mip_in_size;
+
+#if SRT_CONSTANT_is_layered == false
+#line 238
+                                                                                                                                   {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_in));
+    }
+
+#endif
+#line 241
+
+#if SRT_CONSTANT_is_layered
+#line 241
+                                                                                                                          {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_in)).xy;
+    }
+
+#endif
+#line 244
+    int2 mip_size = max((mip_in_size >> level), int2(1));
+    return mip_size;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 248
+  float _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float a0, float v0, float a1, float v1, float a2, float v2)
+  {
+    return a0 * v0 + a1 * v1 + a2 * v2;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 254
+  float _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float v0, float v1)
+  {
+    return 0.5 * (v0 + v1);
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 271
+float _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 271
+float _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 395
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 395
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check)
+  {
+    int2 dst_coord = init_dst_coord;
+    int2 shared_coord = init_shared_coord;
+    int src_level = INPUT_LEVEL;
+    int dst_level = src_level + 1;
+    int2 src_image_size = _level_size(this_, src_level);
+    int2 dst_image_size = _level_size(this_, dst_level);
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+
+    for (int i_ = 0; i_ < iterations; ++i_) {
+      int2 src_coord = dst_coord * 2;
+
+      if (use_bounds_check) {
+        if (uint(dst_coord.x) >= uint(dst_image_size.x)) {
+          continue;
+        }
+        if (uint(dst_coord.y) >= uint(dst_image_size.y)) {
+          continue;
+        }
+      }
+
+      float result = _reduce_store_sampleTfalse(this_, src_coord, src_level, kernel_size, dst_image_size, dst_coord, dst_level);
+#line 425
+      _store_shared_sample(this_, shared_coord, result);
+      dst_coord += step;
+      shared_coord += step;
+    }
+  }
+#endif
+#line 442
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 442
+  void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+    int2 init_thread_offset;
+    int2 step;
+    int iterations;
+
+    int2 dst_image_size = _level_size(this_, INPUT_LEVEL + 1);
+    int2 future_kernel_size = builtin_mipmaps_kernel_size_from_input_size(dst_image_size);
+
+    if (future_kernel_size.x == 3) {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 17u, local_index / 17u);
+        step = int2(0, 7);
+        iterations = local_index >= 7 * 17 ? 0 : local_index < 3 * 17 ? 3 : 2;
+      }
+      else {
+#line 461
+        init_thread_offset = int2(local_index / 16u, local_index % 16u);
+        step = int2(8, 0);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+    }
+    else {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+      else {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = 2;
+      }
+    }
+
+    _intermediate_level_loop(this_, dst_tile_coord + init_thread_offset,
+                            init_thread_offset,
+                            step,
+                            iterations,
+                            use_bounds_check);
+  }
+#endif
+#line 496
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 496
+  void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+
+    if (local_index < 8 * 8) {
+      int2 thread_offset = int2(local_index % 8u, local_index / 8u);
+      int src_level = INPUT_LEVEL + 1;
+      int dst_level = INPUT_LEVEL + 2;
+      int2 src_image_size = _level_size(this_, src_level);
+      int2 dst_image_size = _level_size(this_, dst_level);
+
+      int2 src_shared_coord = thread_offset * 2;
+      int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+      int2 dst_coord = thread_offset + dst_tile_coord;
+
+      bool within_bounds = true;
+      if (use_bounds_check) {
+        within_bounds = (uint(dst_coord.x) < uint(dst_image_size.x)) &&
+                        (uint(dst_coord.y) < uint(dst_image_size.y));
+      }
+      if (within_bounds) {
+        _reduce_store_sampleTtrue(this_, src_shared_coord, 0, kernel_size, dst_image_size, dst_coord, dst_level);
+      }
+    }
+  }
+#endif
+#line 522
+       builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_new_()
+{
+  builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat result;
+  result.shared_storage = builtin_mipmaps_SharedTfloat_new_();
+  return result;
+#line 520
+}
+#line 164
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_is_srgb_texture() is_srgb_texture
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_is_layered() is_layered
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_num_levels() num_levels
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_in() mip_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_out1() mip_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_out2() mip_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_array_in() mip_array_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_array_out1() mip_array_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_array_out2() mip_array_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_shared_storage() builtin_mipmaps_SharedTfloat4_new_()
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#line 164
+struct builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 {
+#line 174
+                           builtin_mipmaps_SharedTfloat4  shared_storage;
+#line 529
+};
+#line 533
+#ifndef GPU_METAL
+builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_ctor_();
+void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, int dst_level, float4 color);
+void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, float4 color);
+float4 _load_sample(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord, bool load_from_shared);
+int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int level);
+float4 _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float a0, float4 v0, float a1, float4 v1, float a2, float4 v2);
+float4 _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float4 v0, float4 v1);
+float4 _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+float4 _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check);
+void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_new_();
+#endif
+#line 164
+                                                                                                 builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_ctor_() {builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 r;r.shared_storage=builtin_mipmaps_SharedTfloat4_ctor_();return r;}
+#line 177
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 177
+  void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, int dst_level, float4 color)
+  {
+    float4 color_out;
+    builtin_mipmaps_convertTfloat4Tfloat4(color_out, color);
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 181
+                                                                                                                                          {
+      color_out.r = builtin_mipmaps_linearrgb_to_srgb(color_out.r);
+      color_out.g = builtin_mipmaps_linearrgb_to_srgb(color_out.g);
+      color_out.b = builtin_mipmaps_linearrgb_to_srgb(color_out.b);
+    }
+
+#endif
+#line 186
+
+#if SRT_CONSTANT_is_layered == false
+#line 186
+                                                                                                                                              {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_out1), dst_coord, color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_out2), dst_coord, color_out);
+      }
+    }
+
+#endif
+#line 194
+
+#if SRT_CONSTANT_is_layered
+#line 194
+                                                                                                                                     {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_out1), int3(dst_coord, 0), color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_out2), int3(dst_coord, 0), color_out);
+      }
+    }
+
+#endif
+#line 202
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 204
+  void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, float4 color)
+  {
+
+    _store_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, shared_storage), dst_coord, color);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 210
+  float4 _load_sample(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord, bool load_from_shared)
+  {
+    float4 color;
+    if (load_from_shared) {
+
+      color = _load_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, shared_storage), src_coord);
+    }
+    else {
+      float4 loaded_color;
+
+#if SRT_CONSTANT_is_layered == false
+#line 219
+                                                                                                                                                {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_in), src_coord);
+      }
+
+#endif
+#line 222
+
+#if SRT_CONSTANT_is_layered
+#line 222
+                                                                                                                                       {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_in), int3(src_coord, 0));
+      }
+
+#endif
+#line 225
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 225
+                                                                                                                                            {
+        loaded_color.r = builtin_mipmaps_srgb_to_linearrgb(loaded_color.r);
+        loaded_color.g = builtin_mipmaps_srgb_to_linearrgb(loaded_color.g);
+        loaded_color.b = builtin_mipmaps_srgb_to_linearrgb(loaded_color.b);
+      }
+
+#endif
+#line 230
+      builtin_mipmaps_convertTfloat4Tfloat4(color, loaded_color);
+    }
+    return color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 235
+  int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int level)
+  {
+    int2 mip_in_size;
+
+#if SRT_CONSTANT_is_layered == false
+#line 238
+                                                                                                                                              {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_in));
+    }
+
+#endif
+#line 241
+
+#if SRT_CONSTANT_is_layered
+#line 241
+                                                                                                                                     {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_in)).xy;
+    }
+
+#endif
+#line 244
+    int2 mip_size = max((mip_in_size >> level), int2(1));
+    return mip_size;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 248
+  float4 _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float a0, float4 v0, float a1, float4 v1, float a2, float4 v2)
+  {
+    return a0 * v0 + a1 * v1 + a2 * v2;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 254
+  float4 _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float4 v0, float4 v1)
+  {
+    return 0.5 * (v0 + v1);
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 271
+float4 _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float4 v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 271
+float4 _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float4 v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 395
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 395
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check)
+  {
+    int2 dst_coord = init_dst_coord;
+    int2 shared_coord = init_shared_coord;
+    int src_level = INPUT_LEVEL;
+    int dst_level = src_level + 1;
+    int2 src_image_size = _level_size(this_, src_level);
+    int2 dst_image_size = _level_size(this_, dst_level);
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+
+    for (int i_ = 0; i_ < iterations; ++i_) {
+      int2 src_coord = dst_coord * 2;
+
+      if (use_bounds_check) {
+        if (uint(dst_coord.x) >= uint(dst_image_size.x)) {
+          continue;
+        }
+        if (uint(dst_coord.y) >= uint(dst_image_size.y)) {
+          continue;
+        }
+      }
+
+      float4 result = _reduce_store_sampleTfalse(this_, src_coord, src_level, kernel_size, dst_image_size, dst_coord, dst_level);
+#line 425
+      _store_shared_sample(this_, shared_coord, result);
+      dst_coord += step;
+      shared_coord += step;
+    }
+  }
+#endif
+#line 442
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 442
+  void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+    int2 init_thread_offset;
+    int2 step;
+    int iterations;
+
+    int2 dst_image_size = _level_size(this_, INPUT_LEVEL + 1);
+    int2 future_kernel_size = builtin_mipmaps_kernel_size_from_input_size(dst_image_size);
+
+    if (future_kernel_size.x == 3) {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 17u, local_index / 17u);
+        step = int2(0, 7);
+        iterations = local_index >= 7 * 17 ? 0 : local_index < 3 * 17 ? 3 : 2;
+      }
+      else {
+#line 461
+        init_thread_offset = int2(local_index / 16u, local_index % 16u);
+        step = int2(8, 0);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+    }
+    else {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+      else {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = 2;
+      }
+    }
+
+    _intermediate_level_loop(this_, dst_tile_coord + init_thread_offset,
+                            init_thread_offset,
+                            step,
+                            iterations,
+                            use_bounds_check);
+  }
+#endif
+#line 496
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 496
+  void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+
+    if (local_index < 8 * 8) {
+      int2 thread_offset = int2(local_index % 8u, local_index / 8u);
+      int src_level = INPUT_LEVEL + 1;
+      int dst_level = INPUT_LEVEL + 2;
+      int2 src_image_size = _level_size(this_, src_level);
+      int2 dst_image_size = _level_size(this_, dst_level);
+
+      int2 src_shared_coord = thread_offset * 2;
+      int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+      int2 dst_coord = thread_offset + dst_tile_coord;
+
+      bool within_bounds = true;
+      if (use_bounds_check) {
+        within_bounds = (uint(dst_coord.x) < uint(dst_image_size.x)) &&
+                        (uint(dst_coord.y) < uint(dst_image_size.y));
+      }
+      if (within_bounds) {
+        _reduce_store_sampleTtrue(this_, src_shared_coord, 0, kernel_size, dst_image_size, dst_coord, dst_level);
+      }
+    }
+  }
+#endif
+#line 522
+       builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_new_()
+{
+  builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 result;
+  result.shared_storage = builtin_mipmaps_SharedTfloat4_new_();
+  return result;
+#line 520
+}
+#line 164
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_is_srgb_texture() is_srgb_texture
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_is_layered() is_layered
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_num_levels() num_levels
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_mip_in() mip_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_mip_out1() mip_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_mip_out2() mip_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_mip_array_in() mip_array_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_mip_array_out1() mip_array_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_mip_array_out2() mip_array_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_shared_storage() builtin_mipmaps_SharedTfloat_new_()
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat
+#endif
+#line 164
+struct builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat {
+#line 174
+                           builtin_mipmaps_SharedTfloat  shared_storage;
+#line 529
+};
+#line 533
+#ifndef GPU_METAL
+builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_ctor_();
+void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, int dst_level, float color);
+void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, float color);
+float _load_sample(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord, bool load_from_shared);
+int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int level);
+float _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float a0, float v0, float a1, float v1, float a2, float v2);
+float _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float v0, float v1);
+float _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+float _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check);
+void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_new_();
+#endif
+#line 164
+                                                                                      builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_ctor_() {builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat r;r.shared_storage=builtin_mipmaps_SharedTfloat_ctor_();return r;}
+#line 177
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 177
+  void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, int dst_level, float color)
+  {
+    float4 color_out;
+    builtin_mipmaps_convertTfloat4Tfloat(color_out, color);
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 181
+                                                                                                                               {
+      color_out.r = builtin_mipmaps_linearrgb_to_srgb(color_out.r);
+      color_out.g = builtin_mipmaps_linearrgb_to_srgb(color_out.g);
+      color_out.b = builtin_mipmaps_linearrgb_to_srgb(color_out.b);
+    }
+
+#endif
+#line 186
+
+#if SRT_CONSTANT_is_layered == false
+#line 186
+                                                                                                                                   {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_out1), dst_coord, color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_out2), dst_coord, color_out);
+      }
+    }
+
+#endif
+#line 194
+
+#if SRT_CONSTANT_is_layered
+#line 194
+                                                                                                                          {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_out1), int3(dst_coord, 0), color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_out2), int3(dst_coord, 0), color_out);
+      }
+    }
+
+#endif
+#line 202
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 204
+  void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 dst_coord, float color)
+  {
+
+    _store_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, shared_storage), dst_coord, color);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 210
+  float _load_sample(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord, bool load_from_shared)
+  {
+    float color;
+    if (load_from_shared) {
+
+      color = _load_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, shared_storage), src_coord);
+    }
+    else {
+      float4 loaded_color;
+
+#if SRT_CONSTANT_is_layered == false
+#line 219
+                                                                                                                                     {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_in), src_coord);
+      }
+
+#endif
+#line 222
+
+#if SRT_CONSTANT_is_layered
+#line 222
+                                                                                                                            {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_in), int3(src_coord, 0));
+      }
+
+#endif
+#line 225
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 225
+                                                                                                                                 {
+        loaded_color.r = builtin_mipmaps_srgb_to_linearrgb(loaded_color.r);
+        loaded_color.g = builtin_mipmaps_srgb_to_linearrgb(loaded_color.g);
+        loaded_color.b = builtin_mipmaps_srgb_to_linearrgb(loaded_color.b);
+      }
+
+#endif
+#line 230
+      builtin_mipmaps_convertTfloatTfloat4(color, loaded_color);
+    }
+    return color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 235
+  int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int level)
+  {
+    int2 mip_in_size;
+
+#if SRT_CONSTANT_is_layered == false
+#line 238
+                                                                                                                                   {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_in));
+    }
+
+#endif
+#line 241
+
+#if SRT_CONSTANT_is_layered
+#line 241
+                                                                                                                          {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, mip_array_in)).xy;
+    }
+
+#endif
+#line 244
+    int2 mip_size = max((mip_in_size >> level), int2(1));
+    return mip_size;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 248
+  float _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float a0, float v0, float a1, float v1, float a2, float v2)
+  {
+    return a0 * v0 + a1 * v1 + a2 * v2;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 254
+  float _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, float v0, float v1)
+  {
+    return 0.5 * (v0 + v1);
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 271
+float _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 271
+float _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 395
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 395
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check)
+  {
+    int2 dst_coord = init_dst_coord;
+    int2 shared_coord = init_shared_coord;
+    int src_level = INPUT_LEVEL;
+    int dst_level = src_level + 1;
+    int2 src_image_size = _level_size(this_, src_level);
+    int2 dst_image_size = _level_size(this_, dst_level);
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+
+    for (int i_ = 0; i_ < iterations; ++i_) {
+      int2 src_coord = dst_coord * 2;
+
+      if (use_bounds_check) {
+        if (uint(dst_coord.x) >= uint(dst_image_size.x)) {
+          continue;
+        }
+        if (uint(dst_coord.y) >= uint(dst_image_size.y)) {
+          continue;
+        }
+      }
+
+      float result = _reduce_store_sampleTfalse(this_, src_coord, src_level, kernel_size, dst_image_size, dst_coord, dst_level);
+#line 425
+      _store_shared_sample(this_, shared_coord, result);
+      dst_coord += step;
+      shared_coord += step;
+    }
+  }
+#endif
+#line 442
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 442
+  void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+    int2 init_thread_offset;
+    int2 step;
+    int iterations;
+
+    int2 dst_image_size = _level_size(this_, INPUT_LEVEL + 1);
+    int2 future_kernel_size = builtin_mipmaps_kernel_size_from_input_size(dst_image_size);
+
+    if (future_kernel_size.x == 3) {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 17u, local_index / 17u);
+        step = int2(0, 7);
+        iterations = local_index >= 7 * 17 ? 0 : local_index < 3 * 17 ? 3 : 2;
+      }
+      else {
+#line 461
+        init_thread_offset = int2(local_index / 16u, local_index % 16u);
+        step = int2(8, 0);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+    }
+    else {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+      else {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = 2;
+      }
+    }
+
+    _intermediate_level_loop(this_, dst_tile_coord + init_thread_offset,
+                            init_thread_offset,
+                            step,
+                            iterations,
+                            use_bounds_check);
+  }
+#endif
+#line 496
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 496
+  void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+
+    if (local_index < 8 * 8) {
+      int2 thread_offset = int2(local_index % 8u, local_index / 8u);
+      int src_level = INPUT_LEVEL + 1;
+      int dst_level = INPUT_LEVEL + 2;
+      int2 src_image_size = _level_size(this_, src_level);
+      int2 dst_image_size = _level_size(this_, dst_level);
+
+      int2 src_shared_coord = thread_offset * 2;
+      int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+      int2 dst_coord = thread_offset + dst_tile_coord;
+
+      bool within_bounds = true;
+      if (use_bounds_check) {
+        within_bounds = (uint(dst_coord.x) < uint(dst_image_size.x)) &&
+                        (uint(dst_coord.y) < uint(dst_image_size.y));
+      }
+      if (within_bounds) {
+        _reduce_store_sampleTtrue(this_, src_shared_coord, 0, kernel_size, dst_image_size, dst_coord, dst_level);
+      }
+    }
+  }
+#endif
+#line 522
+       builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_new_()
+{
+  builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat result;
+  result.shared_storage = builtin_mipmaps_SharedTfloat_new_();
+  return result;
+#line 520
+}
+#line 164
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_is_srgb_texture() is_srgb_texture
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_is_layered() is_layered
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_num_levels() num_levels
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_in() mip_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_out1() mip_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_out2() mip_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_array_in() mip_array_in
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_array_out1() mip_array_out1
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_mip_array_out2() mip_array_out2
+#define access_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_shared_storage() builtin_mipmaps_SharedTfloat4_new_()
+#ifdef CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_PASS_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#ifdef CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_BATCH_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_GEOMETRY_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+CREATE_INFO_RES_SHARED_VARS_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4
+#endif
+#line 164
+struct builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 {
+#line 174
+                           builtin_mipmaps_SharedTfloat4  shared_storage;
+#line 529
+};
+#line 533
+#ifndef GPU_METAL
+builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_ctor_();
+void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, int dst_level, float4 color);
+void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, float4 color);
+float4 _load_sample(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord, bool load_from_shared);
+int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int level);
+float4 _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float a0, float4 v0, float a1, float4 v1, float a2, float4 v2);
+float4 _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float4 v0, float4 v1);
+float4 _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+float4 _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level);
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check);
+void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check);
+builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_new_();
+#endif
+#line 164
+                                                                                                 builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_ctor_() {builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 r;r.shared_storage=builtin_mipmaps_SharedTfloat4_ctor_();return r;}
+#line 177
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 177
+  void _store_sample(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, int dst_level, float4 color)
+  {
+    float4 color_out;
+    builtin_mipmaps_convertTfloat4Tfloat4(color_out, color);
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 181
+                                                                                                                                          {
+      color_out.r = builtin_mipmaps_linearrgb_to_srgb(color_out.r);
+      color_out.g = builtin_mipmaps_linearrgb_to_srgb(color_out.g);
+      color_out.b = builtin_mipmaps_linearrgb_to_srgb(color_out.b);
+    }
+
+#endif
+#line 186
+
+#if SRT_CONSTANT_is_layered == false
+#line 186
+                                                                                                                                              {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_out1), dst_coord, color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_out2), dst_coord, color_out);
+      }
+    }
+
+#endif
+#line 194
+
+#if SRT_CONSTANT_is_layered
+#line 194
+                                                                                                                                     {
+      if (dst_level == 1) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_out1), int3(dst_coord, 0), color_out);
+      }
+      else if (dst_level == 2) {
+        imageStore(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_out2), int3(dst_coord, 0), color_out);
+      }
+    }
+
+#endif
+#line 202
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 204
+  void _store_shared_sample(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 dst_coord, float4 color)
+  {
+
+    _store_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, shared_storage), dst_coord, color);
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 210
+  float4 _load_sample(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord, bool load_from_shared)
+  {
+    float4 color;
+    if (load_from_shared) {
+
+      color = _load_sample(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, shared_storage), src_coord);
+    }
+    else {
+      float4 loaded_color;
+
+#if SRT_CONSTANT_is_layered == false
+#line 219
+                                                                                                                                                {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_in), src_coord);
+      }
+
+#endif
+#line 222
+
+#if SRT_CONSTANT_is_layered
+#line 222
+                                                                                                                                       {
+        loaded_color = imageLoad(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_in), int3(src_coord, 0));
+      }
+
+#endif
+#line 225
+
+#if SRT_CONSTANT_is_srgb_texture
+#line 225
+                                                                                                                                            {
+        loaded_color.r = builtin_mipmaps_srgb_to_linearrgb(loaded_color.r);
+        loaded_color.g = builtin_mipmaps_srgb_to_linearrgb(loaded_color.g);
+        loaded_color.b = builtin_mipmaps_srgb_to_linearrgb(loaded_color.b);
+      }
+
+#endif
+#line 230
+      builtin_mipmaps_convertTfloat4Tfloat4(color, loaded_color);
+    }
+    return color;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 235
+  int2 _level_size(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int level)
+  {
+    int2 mip_in_size;
+
+#if SRT_CONSTANT_is_layered == false
+#line 238
+                                                                                                                                              {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_in));
+    }
+
+#endif
+#line 241
+
+#if SRT_CONSTANT_is_layered
+#line 241
+                                                                                                                                     {
+      mip_in_size = imageSize(srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, mip_array_in)).xy;
+    }
+
+#endif
+#line 244
+    int2 mip_size = max((mip_in_size >> level), int2(1));
+    return mip_size;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 248
+  float4 _pyramid_reduce_3(
+      builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float a0, float4 v0, float a1, float4 v1, float a2, float4 v2)
+  {
+    return a0 * v0 + a1 * v1 + a2 * v2;
+  }
+#endif
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 254
+  float4 _pyramid_reduce_2(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, float4 v0, float4 v1)
+  {
+    return 0.5 * (v0 + v1);
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 271
+float4 _reduce_store_sampleTtrue(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float4 v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), true);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), true);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), true);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 271
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 271
+float4 _reduce_store_sampleTfalse(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 src_coord,
+                                int _0,
+                                int2 kernel_size,
+                                int2 dst_image_size,
+                                int2 dst_coord,
+                                int dst_level)
+  {
+    float num_dst_pixels = dst_image_size.y;
+    float rcp = 1.0f / (2 * num_dst_pixels + 1);
+    float w0 = rcp * (num_dst_pixels - dst_coord.y);
+    float w1 = rcp * num_dst_pixels;
+    float w2 = 1.0f - w0 - w1;
+
+    float4 v0, v1, v2, h0, h1, h2, out_pixel;
+#line 287
+    switch (kernel_size.x) {
+      case 3:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(2, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(2, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(2, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h2 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h2 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h2 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 2:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(1, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(1, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(1, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h1 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h1 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h1 = v0;
+            break;
+        }
+        ATTR_FALLTHROUGH;
+      case 1:
+        switch (kernel_size.y) {
+          case 3:
+            v2 = _load_sample(this_, src_coord + int2(0, 2), false);
+            ATTR_FALLTHROUGH;
+          case 2:
+            v1 = _load_sample(this_, src_coord + int2(0, 1), false);
+            ATTR_FALLTHROUGH;
+          case 1:
+            v0 = _load_sample(this_, src_coord + int2(0, 0), false);
+            break;
+        }
+        switch (kernel_size.y) {
+          case 3:
+            h0 = _pyramid_reduce_3(this_, w0, v0, w1, v1, w2, v2);
+            break;
+          case 2:
+            h0 = _pyramid_reduce_2(this_, v0, v1);
+            break;
+          case 1:
+            h0 = v0;
+            break;
+        }
+    }
+#line 362
+    switch (kernel_size.x) {
+      case 3:
+        num_dst_pixels = dst_image_size.x;
+        rcp = 1.0f / (2 * num_dst_pixels + 1);
+        w0 = rcp * (num_dst_pixels - dst_coord.x);
+        w1 = rcp * num_dst_pixels;
+        w2 = 1.0f - w0 - w1;
+        out_pixel = _pyramid_reduce_3(this_, w0, h0, w1, h1, w2, h2);
+        break;
+      case 2:
+        out_pixel = _pyramid_reduce_2(this_, h0, h1);
+        break;
+      case 1:
+        out_pixel = h0;
+    }
+#line 379
+    _store_sample(this_, dst_coord, dst_level, out_pixel);
+    return out_pixel;
+  }
+#endif
+#line 395
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 395
+void _intermediate_level_loop(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, int2 init_dst_coord,
+                               int2 init_shared_coord,
+                               int2 step,
+                               int iterations,
+                               bool use_bounds_check)
+  {
+    int2 dst_coord = init_dst_coord;
+    int2 shared_coord = init_shared_coord;
+    int src_level = INPUT_LEVEL;
+    int dst_level = src_level + 1;
+    int2 src_image_size = _level_size(this_, src_level);
+    int2 dst_image_size = _level_size(this_, dst_level);
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+
+    for (int i_ = 0; i_ < iterations; ++i_) {
+      int2 src_coord = dst_coord * 2;
+
+      if (use_bounds_check) {
+        if (uint(dst_coord.x) >= uint(dst_image_size.x)) {
+          continue;
+        }
+        if (uint(dst_coord.y) >= uint(dst_image_size.y)) {
+          continue;
+        }
+      }
+
+      float4 result = _reduce_store_sampleTfalse(this_, src_coord, src_level, kernel_size, dst_image_size, dst_coord, dst_level);
+#line 425
+      _store_shared_sample(this_, shared_coord, result);
+      dst_coord += step;
+      shared_coord += step;
+    }
+  }
+#endif
+#line 442
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 442
+  void _fill_intermediate_tile(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+    int2 init_thread_offset;
+    int2 step;
+    int iterations;
+
+    int2 dst_image_size = _level_size(this_, INPUT_LEVEL + 1);
+    int2 future_kernel_size = builtin_mipmaps_kernel_size_from_input_size(dst_image_size);
+
+    if (future_kernel_size.x == 3) {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 17u, local_index / 17u);
+        step = int2(0, 7);
+        iterations = local_index >= 7 * 17 ? 0 : local_index < 3 * 17 ? 3 : 2;
+      }
+      else {
+#line 461
+        init_thread_offset = int2(local_index / 16u, local_index % 16u);
+        step = int2(8, 0);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+    }
+    else {
+      if (future_kernel_size.y == 3) {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = local_index < 1 * 16 ? 3 : 2;
+      }
+      else {
+
+        init_thread_offset = int2(local_index % 16u, local_index / 16u);
+        step = int2(0, 8);
+        iterations = 2;
+      }
+    }
+
+    _intermediate_level_loop(this_, dst_tile_coord + init_thread_offset,
+                            init_thread_offset,
+                            step,
+                            iterations,
+                            use_bounds_check);
+  }
+#endif
+#line 496
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 496
+  void _fill_last_tile(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4  this_, uint local_index, int2 dst_tile_coord, bool use_bounds_check)
+  {
+
+    if (local_index < 8 * 8) {
+      int2 thread_offset = int2(local_index % 8u, local_index / 8u);
+      int src_level = INPUT_LEVEL + 1;
+      int dst_level = INPUT_LEVEL + 2;
+      int2 src_image_size = _level_size(this_, src_level);
+      int2 dst_image_size = _level_size(this_, dst_level);
+
+      int2 src_shared_coord = thread_offset * 2;
+      int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(src_image_size);
+      int2 dst_coord = thread_offset + dst_tile_coord;
+
+      bool within_bounds = true;
+      if (use_bounds_check) {
+        within_bounds = (uint(dst_coord.x) < uint(dst_image_size.x)) &&
+                        (uint(dst_coord.y) < uint(dst_image_size.y));
+      }
+      if (within_bounds) {
+        _reduce_store_sampleTtrue(this_, src_shared_coord, 0, kernel_size, dst_image_size, dst_coord, dst_level);
+      }
+    }
+  }
+#endif
+#line 522
+       builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_new_()
+{
+  builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 result;
+  result.shared_storage = builtin_mipmaps_SharedTfloat4_new_();
+  return result;
+#line 520
+}
+#line 524
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 524
+
+#if defined(ENTRY_POINT_builtin_mipmaps_update_mipmapsTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat)
+#line 524
+
+void builtin_mipmaps_update_mipmapsTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat(
+#line 528
+                                                                                            )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 529
+  builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat srt = builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat_ctor_();
+  if (srt_access(builtin_mipmaps_ResourcesTUNORM_8Tbuiltin_mipmaps_SharedUnormTfloat, num_levels) == 1u) {
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(_level_size(srt, INPUT_LEVEL));
+    int2 dst_image_size = _level_size(srt, INPUT_LEVEL + 1);
+    int2 dst_coord = int2(int(gl_GlobalInvocationID.x) % dst_image_size.x,
+                          int(gl_GlobalInvocationID.x) / dst_image_size.x);
+    int2 src_coord = dst_coord * 2;
+
+    if (dst_coord.y < dst_image_size.y) {
+      _reduce_store_sampleTfalse(srt, src_coord, INPUT_LEVEL, kernel_size, dst_image_size, dst_coord, INPUT_LEVEL + 1);
+    }
+  }
+  else {
+#line 544
+    int level2 = INPUT_LEVEL + 2;
+    int2 level2_size = _level_size(srt, level2);
+    int2 tile_count;
+    tile_count.x = int(uint(level2_size.x + 7) / 8u);
+    tile_count.y = int(uint(level2_size.y + 7) / 8u);
+    int2 tile_index = int2(gl_WorkGroupID.x % uint(tile_count.x), gl_WorkGroupID.x / uint(tile_count.x));
+#line 556
+    bool use_bounds_check = tile_index.x >= tile_count.x - 1 || tile_index.y >= tile_count.y - 1;
+
+    if (use_bounds_check) {
+#line 561
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), true);
+      barrier();
+#line 566
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), true);
+    }
+    else {
+
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), false);
+      barrier();
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), false);
+    }
+  }
+
+#endif
+#line 575
+}
+#endif
+#endif
+#line 524
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 524
+
+#if defined(ENTRY_POINT_builtin_mipmaps_update_mipmapsTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4)
+#line 524
+
+void builtin_mipmaps_update_mipmapsTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4(
+#line 528
+                                                                                                  )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 529
+  builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4 srt = builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4_ctor_();
+  if (srt_access(builtin_mipmaps_ResourcesTUNORM_8_8_8_8Tbuiltin_mipmaps_SharedSRGBTfloat4, num_levels) == 1u) {
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(_level_size(srt, INPUT_LEVEL));
+    int2 dst_image_size = _level_size(srt, INPUT_LEVEL + 1);
+    int2 dst_coord = int2(int(gl_GlobalInvocationID.x) % dst_image_size.x,
+                          int(gl_GlobalInvocationID.x) / dst_image_size.x);
+    int2 src_coord = dst_coord * 2;
+
+    if (dst_coord.y < dst_image_size.y) {
+      _reduce_store_sampleTfalse(srt, src_coord, INPUT_LEVEL, kernel_size, dst_image_size, dst_coord, INPUT_LEVEL + 1);
+    }
+  }
+  else {
+#line 544
+    int level2 = INPUT_LEVEL + 2;
+    int2 level2_size = _level_size(srt, level2);
+    int2 tile_count;
+    tile_count.x = int(uint(level2_size.x + 7) / 8u);
+    tile_count.y = int(uint(level2_size.y + 7) / 8u);
+    int2 tile_index = int2(gl_WorkGroupID.x % uint(tile_count.x), gl_WorkGroupID.x / uint(tile_count.x));
+#line 556
+    bool use_bounds_check = tile_index.x >= tile_count.x - 1 || tile_index.y >= tile_count.y - 1;
+
+    if (use_bounds_check) {
+#line 561
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), true);
+      barrier();
+#line 566
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), true);
+    }
+    else {
+
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), false);
+      barrier();
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), false);
+    }
+  }
+
+#endif
+#line 575
+}
+#endif
+#endif
+#line 524
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 524
+
+#if defined(ENTRY_POINT_builtin_mipmaps_update_mipmapsTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 524
+
+void builtin_mipmaps_update_mipmapsTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat(
+#line 528
+                                                                                               )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 529
+  builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat srt = builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat_ctor_();
+  if (srt_access(builtin_mipmaps_ResourcesTSFLOAT_16Tbuiltin_mipmaps_SharedTfloatTfloat, num_levels) == 1u) {
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(_level_size(srt, INPUT_LEVEL));
+    int2 dst_image_size = _level_size(srt, INPUT_LEVEL + 1);
+    int2 dst_coord = int2(int(gl_GlobalInvocationID.x) % dst_image_size.x,
+                          int(gl_GlobalInvocationID.x) / dst_image_size.x);
+    int2 src_coord = dst_coord * 2;
+
+    if (dst_coord.y < dst_image_size.y) {
+      _reduce_store_sampleTfalse(srt, src_coord, INPUT_LEVEL, kernel_size, dst_image_size, dst_coord, INPUT_LEVEL + 1);
+    }
+  }
+  else {
+#line 544
+    int level2 = INPUT_LEVEL + 2;
+    int2 level2_size = _level_size(srt, level2);
+    int2 tile_count;
+    tile_count.x = int(uint(level2_size.x + 7) / 8u);
+    tile_count.y = int(uint(level2_size.y + 7) / 8u);
+    int2 tile_index = int2(gl_WorkGroupID.x % uint(tile_count.x), gl_WorkGroupID.x / uint(tile_count.x));
+#line 556
+    bool use_bounds_check = tile_index.x >= tile_count.x - 1 || tile_index.y >= tile_count.y - 1;
+
+    if (use_bounds_check) {
+#line 561
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), true);
+      barrier();
+#line 566
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), true);
+    }
+    else {
+
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), false);
+      barrier();
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), false);
+    }
+  }
+
+#endif
+#line 575
+}
+#endif
+#endif
+#line 524
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 524
+
+#if defined(ENTRY_POINT_builtin_mipmaps_update_mipmapsTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 524
+
+void builtin_mipmaps_update_mipmapsTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4(
+#line 528
+                                                                                                          )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 529
+  builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4 srt = builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4_ctor_();
+  if (srt_access(builtin_mipmaps_ResourcesTSFLOAT_16_16_16_16Tbuiltin_mipmaps_SharedTfloat4Tfloat4, num_levels) == 1u) {
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(_level_size(srt, INPUT_LEVEL));
+    int2 dst_image_size = _level_size(srt, INPUT_LEVEL + 1);
+    int2 dst_coord = int2(int(gl_GlobalInvocationID.x) % dst_image_size.x,
+                          int(gl_GlobalInvocationID.x) / dst_image_size.x);
+    int2 src_coord = dst_coord * 2;
+
+    if (dst_coord.y < dst_image_size.y) {
+      _reduce_store_sampleTfalse(srt, src_coord, INPUT_LEVEL, kernel_size, dst_image_size, dst_coord, INPUT_LEVEL + 1);
+    }
+  }
+  else {
+#line 544
+    int level2 = INPUT_LEVEL + 2;
+    int2 level2_size = _level_size(srt, level2);
+    int2 tile_count;
+    tile_count.x = int(uint(level2_size.x + 7) / 8u);
+    tile_count.y = int(uint(level2_size.y + 7) / 8u);
+    int2 tile_index = int2(gl_WorkGroupID.x % uint(tile_count.x), gl_WorkGroupID.x / uint(tile_count.x));
+#line 556
+    bool use_bounds_check = tile_index.x >= tile_count.x - 1 || tile_index.y >= tile_count.y - 1;
+
+    if (use_bounds_check) {
+#line 561
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), true);
+      barrier();
+#line 566
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), true);
+    }
+    else {
+
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), false);
+      barrier();
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), false);
+    }
+  }
+
+#endif
+#line 575
+}
+#endif
+#endif
+#line 524
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 524
+
+#if defined(ENTRY_POINT_builtin_mipmaps_update_mipmapsTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat)
+#line 524
+
+void builtin_mipmaps_update_mipmapsTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat(
+#line 528
+                                                                                               )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 529
+  builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat srt = builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat_ctor_();
+  if (srt_access(builtin_mipmaps_ResourcesTSFLOAT_32Tbuiltin_mipmaps_SharedTfloatTfloat, num_levels) == 1u) {
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(_level_size(srt, INPUT_LEVEL));
+    int2 dst_image_size = _level_size(srt, INPUT_LEVEL + 1);
+    int2 dst_coord = int2(int(gl_GlobalInvocationID.x) % dst_image_size.x,
+                          int(gl_GlobalInvocationID.x) / dst_image_size.x);
+    int2 src_coord = dst_coord * 2;
+
+    if (dst_coord.y < dst_image_size.y) {
+      _reduce_store_sampleTfalse(srt, src_coord, INPUT_LEVEL, kernel_size, dst_image_size, dst_coord, INPUT_LEVEL + 1);
+    }
+  }
+  else {
+#line 544
+    int level2 = INPUT_LEVEL + 2;
+    int2 level2_size = _level_size(srt, level2);
+    int2 tile_count;
+    tile_count.x = int(uint(level2_size.x + 7) / 8u);
+    tile_count.y = int(uint(level2_size.y + 7) / 8u);
+    int2 tile_index = int2(gl_WorkGroupID.x % uint(tile_count.x), gl_WorkGroupID.x / uint(tile_count.x));
+#line 556
+    bool use_bounds_check = tile_index.x >= tile_count.x - 1 || tile_index.y >= tile_count.y - 1;
+
+    if (use_bounds_check) {
+#line 561
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), true);
+      barrier();
+#line 566
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), true);
+    }
+    else {
+
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), false);
+      barrier();
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), false);
+    }
+  }
+
+#endif
+#line 575
+}
+#endif
+#endif
+#line 524
+
+#if defined(CREATE_INFO_builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 524
+
+#if defined(ENTRY_POINT_builtin_mipmaps_update_mipmapsTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4)
+#line 524
+
+void builtin_mipmaps_update_mipmapsTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4(
+#line 528
+                                                                                                          )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 529
+  builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4 srt = builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4_ctor_();
+  if (srt_access(builtin_mipmaps_ResourcesTSFLOAT_32_32_32_32Tbuiltin_mipmaps_SharedTfloat4Tfloat4, num_levels) == 1u) {
+    int2 kernel_size = builtin_mipmaps_kernel_size_from_input_size(_level_size(srt, INPUT_LEVEL));
+    int2 dst_image_size = _level_size(srt, INPUT_LEVEL + 1);
+    int2 dst_coord = int2(int(gl_GlobalInvocationID.x) % dst_image_size.x,
+                          int(gl_GlobalInvocationID.x) / dst_image_size.x);
+    int2 src_coord = dst_coord * 2;
+
+    if (dst_coord.y < dst_image_size.y) {
+      _reduce_store_sampleTfalse(srt, src_coord, INPUT_LEVEL, kernel_size, dst_image_size, dst_coord, INPUT_LEVEL + 1);
+    }
+  }
+  else {
+#line 544
+    int level2 = INPUT_LEVEL + 2;
+    int2 level2_size = _level_size(srt, level2);
+    int2 tile_count;
+    tile_count.x = int(uint(level2_size.x + 7) / 8u);
+    tile_count.y = int(uint(level2_size.y + 7) / 8u);
+    int2 tile_index = int2(gl_WorkGroupID.x % uint(tile_count.x), gl_WorkGroupID.x / uint(tile_count.x));
+#line 556
+    bool use_bounds_check = tile_index.x >= tile_count.x - 1 || tile_index.y >= tile_count.y - 1;
+
+    if (use_bounds_check) {
+#line 561
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), true);
+      barrier();
+#line 566
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), true);
+    }
+    else {
+
+      _fill_intermediate_tile(srt, gl_LocalInvocationID.x, tile_index * 2 * int2(8, 8), false);
+      barrier();
+      _fill_last_tile(srt, gl_LocalInvocationID.x, tile_index * int2(8, 8), false);
+    }
+  }
+
+#endif
+#line 575
+}
+#endif
+#endif
+#line 706
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

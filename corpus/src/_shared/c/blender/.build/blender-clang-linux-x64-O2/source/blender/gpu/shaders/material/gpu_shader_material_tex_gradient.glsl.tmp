@@ -1,0 +1,48 @@
+#line 1 "gpu_shader_material_tex_gradient.glsl"
+ 
+#line 5
+float calc_gradient(float3 p, int gradient_type)
+{
+  float x, y, z;
+  x = p.x;
+  y = p.y;
+  z = p.z;
+  if (gradient_type == 0) {
+    return x;
+  }
+  else if (gradient_type == 1) {
+    float r = max(x, 0.0f);
+    return r * r;
+  }
+  else if (gradient_type == 2) {
+    float r = min(max(x, 0.0f), 1.0f);
+    float t = r * r;
+    return (3.0f * t - 2.0f * t * r);
+  }
+  else if (gradient_type == 3) {
+    return (x + y) * 0.5f;
+  }
+  else if (gradient_type == 4) {
+    return atan(y, x) / (M_PI * 2) + 0.5f;
+  }
+  else {
+#line 33
+    float r = max(0.999999f - sqrt(x * x + y * y + z * z), 0.0f);
+    if (gradient_type == 5) {
+      return r * r;
+    }
+    else if (gradient_type == 6) {
+      return r;
+    }
+  }
+  return 0.0f;
+}
+#line 45
+void node_tex_gradient(float3 co, float gradient_type, _ref(float4 ,color), _ref(float ,fac))
+{
+  float f = calc_gradient(co, int(gradient_type));
+  f = clamp(f, 0.0f, 1.0f);
+
+  color = float4(f, f, f, 1.0f);
+  fac = f;
+}

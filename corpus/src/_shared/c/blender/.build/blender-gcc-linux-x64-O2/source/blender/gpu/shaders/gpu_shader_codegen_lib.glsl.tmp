@@ -1,0 +1,335 @@
+#line 1 "gpu_shader_codegen_lib.glsl"
+ 
+#line 9
+float3 calc_barycentric_distances(float3 pos0, float3 pos1, float3 pos2)
+{
+  float3 edge21 = pos2 - pos1;
+  float3 edge10 = pos1 - pos0;
+  float3 edge02 = pos0 - pos2;
+  float3 d21 = normalize(edge21);
+  float3 d10 = normalize(edge10);
+  float3 d02 = normalize(edge02);
+
+  float3 dists;
+  float d = dot(d21, edge02);
+  dists.x = sqrt(dot(edge02, edge02) - d * d);
+  d = dot(d02, edge10);
+  dists.y = sqrt(dot(edge10, edge10) - d * d);
+  d = dot(d10, edge21);
+  dists.z = sqrt(dot(edge21, edge21) - d * d);
+  return dists;
+}
+
+float2 calc_barycentric_co(int vertid)
+{
+  float2 bary;
+  bary.x = float((vertid % 3) == 0);
+  bary.y = float((vertid % 3) == 1);
+  return bary;
+}
+#line 37
+#define float_from_float4(v, luminance_coefficients) dot(v.rgb, luminance_coefficients)
+#define float_from_float3(v) ((v.r + v.g + v.b) * (1.0f / 3.0f))
+#define float_from_float2(v) ((v.x + v.y) * (1.0f / 2.0f))
+
+#define float2_from_float4(v) v.xy
+#define float2_from_float3(v) v.xy
+#define float2_from_float(v) float2(v)
+
+#define float3_from_float4(v) v.rgb
+#define float3_from_float2(v) float3(v.xy, 0.0f)
+#define float3_from_float(v) float3(v)
+
+#define float4_from_float3(v) float4(v, 1.0f)
+#define float4_from_float2(v) float4(v.xy, 0.0f, 1.0f)
+#define float4_from_float(v) float4(float3(v), 1.0f)
+
+#ifdef GPU_FRAGMENT_SHADER
+#  define FrontFacing gl_FrontFacing
+#else
+#  define FrontFacing true
+#endif
+#line 60
+constant static constexpr uchar CLOSURE_NONE_ID = 0u;
+#line 62
+constant static constexpr uchar CLOSURE_BSDF_DIFFUSE_ID = 1u;
+#line 66
+constant static constexpr uchar CLOSURE_BSDF_TRANSLUCENT_ID = 6u;
+#line 69
+constant static constexpr uchar CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID = 7u;
+#line 76
+constant static constexpr uchar CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID = 12u;
+constant static constexpr uchar CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID = 13u;
+#line 83
+constant static constexpr uchar CLOSURE_BSSRDF_BURLEY_ID = 15u;
+
+#define ClosureType uchar
+#line 59
+
+ClosureType ClosureType_ctor_() { return ClosureType(0); }
+#line 86
+struct ClosureUndetermined {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+  ClosureType type;
+
+  packed_float4 data;
+};
+#line 86
+                                   ClosureUndetermined ClosureUndetermined_ctor_() {ClosureUndetermined r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);r.type=ClosureType_ctor_();r.data=packed_float4(0);return r;}
+#line 95
+bool closure_has_transmission(const ClosureType closure)
+{
+  return closure == CLOSURE_BSDF_TRANSLUCENT_ID ||
+         closure == CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID ||
+         closure == CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID;
+}
+
+ClosureUndetermined closure_new(ClosureType type)
+{
+  ClosureUndetermined cl;
+  cl.type = type;
+  return cl;
+}
+
+struct ClosureOcclusion {
+  packed_float3 N;
+};
+#line 109
+                                ClosureOcclusion ClosureOcclusion_ctor_() {ClosureOcclusion r;r.N=packed_float3(0);return r;}
+#line 113
+struct ClosureDiffuse {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+};
+#line 113
+                              ClosureDiffuse ClosureDiffuse_ctor_() {ClosureDiffuse r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);return r;}
+#line 119
+struct ClosureSubsurface {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+  packed_float3 sss_radius;
+};
+#line 119
+                                 ClosureSubsurface ClosureSubsurface_ctor_() {ClosureSubsurface r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);r.sss_radius=packed_float3(0);return r;}
+#line 126
+struct ClosureTranslucent {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+};
+#line 126
+                                  ClosureTranslucent ClosureTranslucent_ctor_() {ClosureTranslucent r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);return r;}
+#line 132
+struct ClosureReflection {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+  float roughness;
+};
+#line 132
+                                 ClosureReflection ClosureReflection_ctor_() {ClosureReflection r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);r.roughness=0.0f;return r;}
+#line 139
+struct ClosureRefraction {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+  float roughness;
+  float ior;
+};
+#line 139
+                                 ClosureRefraction ClosureRefraction_ctor_() {ClosureRefraction r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);r.roughness=0.0f;r.ior=0.0f;return r;}
+#line 147
+struct ClosureHair {
+  packed_float3 color;
+  float weight;
+  packed_float3 T;
+  float offset;
+  packed_float2 roughness;
+};
+#line 147
+                           ClosureHair ClosureHair_ctor_() {ClosureHair r;r.color=packed_float3(0);r.weight=0.0f;r.T=packed_float3(0);r.offset=0.0f;r.roughness=packed_float2(0);return r;}
+#line 155
+struct ClosureVolumeScatter {
+  packed_float3 scattering;
+  float weight;
+  float anisotropy;
+};
+#line 155
+                                    ClosureVolumeScatter ClosureVolumeScatter_ctor_() {ClosureVolumeScatter r;r.scattering=packed_float3(0);r.weight=0.0f;r.anisotropy=0.0f;return r;}
+#line 161
+struct ClosureVolumeAbsorption {
+  packed_float3 absorption;
+  float weight;
+};
+#line 161
+                                       ClosureVolumeAbsorption ClosureVolumeAbsorption_ctor_() {ClosureVolumeAbsorption r;r.absorption=packed_float3(0);r.weight=0.0f;return r;}
+#line 166
+struct ClosureEmission {
+  packed_float3 emission;
+  float weight;
+};
+#line 166
+                               ClosureEmission ClosureEmission_ctor_() {ClosureEmission r;r.emission=packed_float3(0);r.weight=0.0f;return r;}
+#line 171
+struct ClosureTransparency {
+  packed_float3 transmittance;
+  float weight;
+  float holdout;
+};
+#line 171
+                                   ClosureTransparency ClosureTransparency_ctor_() {ClosureTransparency r;r.transmittance=packed_float3(0);r.weight=0.0f;r.holdout=0.0f;return r;}
+#line 177
+struct ClosureThinRefraction {
+  packed_float3 color;
+  float weight;
+  packed_float3 N;
+  float roughness;
+};
+#line 177
+                                     ClosureThinRefraction ClosureThinRefraction_ctor_() {ClosureThinRefraction r;r.color=packed_float3(0);r.weight=0.0f;r.N=packed_float3(0);r.roughness=0.0f;return r;}
+#line 184
+ClosureDiffuse to_closure_diffuse(ClosureUndetermined cl)
+{
+  ClosureDiffuse closure;
+  closure.N = cl.N;
+  closure.color = cl.color;
+  return closure;
+}
+
+ClosureSubsurface to_closure_subsurface(ClosureUndetermined cl)
+{
+  ClosureSubsurface closure;
+  closure.N = cl.N;
+  closure.color = cl.color;
+  closure.sss_radius = cl.data.xyz;
+  return closure;
+}
+
+ClosureTranslucent to_closure_translucent(ClosureUndetermined cl)
+{
+  ClosureTranslucent closure;
+  closure.N = cl.N;
+  closure.color = cl.color;
+  return closure;
+}
+
+ClosureReflection to_closure_reflection(ClosureUndetermined cl)
+{
+  ClosureReflection closure;
+  closure.N = cl.N;
+  closure.color = cl.color;
+  closure.roughness = cl.data.x;
+  return closure;
+}
+
+ClosureRefraction to_closure_refraction(ClosureUndetermined cl)
+{
+  ClosureRefraction closure;
+  closure.N = cl.N;
+  closure.color = cl.color;
+  closure.roughness = cl.data.x;
+  closure.ior = cl.data.y;
+  return closure;
+}
+
+ClosureThinRefraction to_closure_thin_refraction(ClosureUndetermined cl)
+{
+  ClosureThinRefraction closure;
+  closure.N = cl.N;
+  closure.color = cl.color;
+  closure.roughness = cl.data.x;
+  return closure;
+}
+
+struct GlobalData {
+
+  packed_float3 P;
+
+  packed_float3 N;
+
+  packed_float3 Ni;
+
+  packed_float3 Ng;
+
+  packed_float3 curve_T;packed_float3 curve_B;packed_float3 curve_N;
+
+  packed_float2 barycentric_coords;
+  packed_float3 barycentric_dists;
+
+  float hair_diameter;
+
+  int hair_strand_id;
+
+  float ray_depth;
+  float ray_length;
+  uchar ray_type;
+
+  bool is_strand;
+};
+#line 237
+                          GlobalData GlobalData_ctor_() {GlobalData r;r.P=packed_float3(0);r.N=packed_float3(0);r.Ni=packed_float3(0);r.Ng=packed_float3(0);r.curve_T=packed_float3(0);r.curve_B=packed_float3(0);r.curve_N=packed_float3(0);r.barycentric_coords=packed_float2(0);r.barycentric_dists=packed_float3(0);r.hair_diameter=0.0f;r.hair_strand_id=0;r.ray_depth=0.0f;r.ray_length=0.0f;r.ray_type=0u;r.is_strand=false;return r;}
+#line 263
+GlobalData g_data;
+
+#ifndef GPU_FRAGMENT_SHADER
+#line 268
+#  define dF_impl(a) (float3(0.0f))
+#  define dF_branch(a, b, c) (c = float2(0.0f))
+#  define dF_branch_incomplete(a, b, c) (c = float2(0.0f))
+
+#elif defined(GPU_FAST_DERIVATIVE)
+
+float3 dF_impl(float3 v)
+{
+  return float3(0.0f);
+}
+
+void dF_branch(float fn, _ref(float2 ,result))
+{
+#line 283
+  result.x = gpu_dfdx(fn) * derivative_scale_get();
+  result.y = gpu_dfdy(fn) * derivative_scale_get();
+}
+
+#else
+#line 290
+float g_derivative_filter_width = 0.0f;
+
+int g_derivative_flag = 0;
+
+float3 dF_impl(float3 v)
+{
+  if (g_derivative_flag > 0) {
+    return gpu_dfdx(v) * g_derivative_filter_width;
+  }
+  else if (g_derivative_flag < 0) {
+    return gpu_dfdy(v) * g_derivative_filter_width;
+  }
+  return float3(0.0f);
+}
+
+#  define dF_branch(fn, filter_width, result) \
+    if (true) { \
+      g_derivative_filter_width = filter_width * derivative_scale_get(); \
+      g_derivative_flag = 1; \
+      result.x = (fn); \
+      g_derivative_flag = -1; \
+      result.y = (fn); \
+      g_derivative_flag = 0; \
+      result -= float2((fn)); \
+    }
+#line 317
+#  define dF_branch_incomplete(fn, filter_width, result) \
+    if (true) { \
+      g_derivative_filter_width = filter_width * derivative_scale_get(); \
+      g_derivative_flag = 1; \
+      result.x = (fn); \
+      g_derivative_flag = -1; \
+      result.y = (fn); \
+      g_derivative_flag = 0; \
+    }
+#endif

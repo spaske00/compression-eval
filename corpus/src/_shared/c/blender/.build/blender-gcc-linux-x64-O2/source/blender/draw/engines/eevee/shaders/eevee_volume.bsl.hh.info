@@ -1,0 +1,98 @@
+#pragma once
+
+
+#define VOLUMETRIC_SHADOW_MAX_STEP 128.0f
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_volume_FragOut)
+FRAGMENT_OUT_DUAL(0, float4, eevee_volume_FragOut_radiance, SRC_0)
+FRAGMENT_OUT_DUAL(0, float4, eevee_volume_FragOut_transmittance, SRC_1)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_volume_Scatter)
+.noop()
+
+.additional_info("eevee_Uniform")
+.additional_info("draw_View")
+.additional_info("eevee_LightRenderData")
+.additional_info("eevee_ShadowRenderData")
+.additional_info("eevee_LightprobeVolumeRenderData")
+.sampler(0, ImageType::sampler3D, "scattering_history_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler3D, "extinction_history_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(9, ImageType::sampler3D, "extinction_tx", Frequency::PASS, GPUSamplerState::internal_sampler(), [](blender::Span<CompilationConstant> constants) { int use_volume_light = ShaderCreateInfo::find_constant(constants, "use_volume_light"); return (use_volume_light);})
+.image(5, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::write, ImageReadWriteType::image3D, "out_scattering_img", Frequency::PASS)
+.image(6, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::write, ImageReadWriteType::image3D, "out_extinction_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_volume_Integrate)
+.sampler(0, ImageType::sampler3D, "in_scattering_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler3D, "in_extinction_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(0, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::write, ImageReadWriteType::image3D, "out_scattering_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::write, ImageReadWriteType::image3D, "out_transmittance_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_scatter_main_infos_)
+LOCAL_GROUP_SIZE(VOLUME_GROUP_SIZE, VOLUME_GROUP_SIZE, VOLUME_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_volume_Scatter)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UnifiedVolumeProperties)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_integration_main_infos_)
+LOCAL_GROUP_SIZE(VOLUME_INTEGRATION_GROUP_SIZE, VOLUME_INTEGRATION_GROUP_SIZE, 1)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_volume_Integrate)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Uniform)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_resolve_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_resolve_frag_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(UnifiedVolumeData)
+ADDITIONAL_INFO(eevee_RenderPassOutput)
+ADDITIONAL_INFO(eevee_HiZ)
+ADDITIONAL_INFO(eevee_volume_FragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_scatter)
+COMPUTE_SOURCE("eevee_volume.bsl.hh")
+COMPUTE_FUNCTION("eevee_volume_scatter_main")
+ADDITIONAL_INFO(eevee_volume_scatter_main_infos_)
+COMPILATION_CONSTANT(bool, use_volume_light, false)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_scatter_with_lights)
+COMPUTE_SOURCE("eevee_volume.bsl.hh")
+COMPUTE_FUNCTION("eevee_volume_scatter_main")
+ADDITIONAL_INFO(eevee_volume_scatter_main_infos_)
+COMPILATION_CONSTANT(bool, use_volume_light, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_integration)
+COMPUTE_SOURCE("eevee_volume.bsl.hh")
+COMPUTE_FUNCTION("eevee_volume_integration_main")
+ADDITIONAL_INFO(eevee_volume_integration_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_resolve)
+GRAPHIC_SOURCE("eevee_volume.bsl.hh")
+VERTEX_FUNCTION("eevee_volume_resolve_vert")
+FRAGMENT_FUNCTION("eevee_volume_resolve_frag")
+ADDITIONAL_INFO(eevee_volume_resolve_vert_infos_)
+ADDITIONAL_INFO(eevee_volume_resolve_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,45 @@
+{
+    "classes": [
+        {
+            "className": "QBarrier",
+            "lineNumber": 26,
+            "object": true,
+            "qualifiedClassName": "QtTaskTree::QBarrier",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "success",
+                            "type": "QtTaskTree::DoneResult"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "done",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "QStartedBarrier",
+            "lineNumber": 56,
+            "object": true,
+            "qualifiedClassName": "QtTaskTree::QStartedBarrier",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "fullyQualifiedName": "QtTaskTree::QBarrier",
+                    "name": "QBarrier"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qbarriertask.h",
+    "outputRevision": 68
+}

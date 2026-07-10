@@ -1,0 +1,40 @@
+#line 1 "compositor_symmetric_blur.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_symmetric_blur)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 accumulated_color = float4(0.0f);
+#line 18
+  float4 center_color = texture_load(input_tx, texel);
+  accumulated_color += center_color * texture_load(weights_tx, int2(0)).x;
+
+  int2 weights_size = texture_size(weights_tx);
+#line 27
+  for (int x = 1; x < weights_size.x; x++) {
+    float weight = texture_load(weights_tx, int2(x, 0)).x;
+    accumulated_color += texture_load(input_tx, texel + int2(x, 0)) * weight;
+    accumulated_color += texture_load(input_tx, texel + int2(-x, 0)) * weight;
+  }
+#line 37
+  for (int y = 1; y < weights_size.y; y++) {
+    float weight = texture_load(weights_tx, int2(0, y)).x;
+    accumulated_color += texture_load(input_tx, texel + int2(0, y)) * weight;
+    accumulated_color += texture_load(input_tx, texel + int2(0, -y)) * weight;
+  }
+#line 47
+  for (int y = 1; y < weights_size.y; y++) {
+    for (int x = 1; x < weights_size.x; x++) {
+      float weight = texture_load(weights_tx, int2(x, y)).x;
+      accumulated_color += texture_load(input_tx, texel + int2(x, y)) * weight;
+      accumulated_color += texture_load(input_tx, texel + int2(-x, y)) * weight;
+      accumulated_color += texture_load(input_tx, texel + int2(x, -y)) * weight;
+      accumulated_color += texture_load(input_tx, texel + int2(-x, -y)) * weight;
+    }
+  }
+
+  imageStore(output_img, texel, accumulated_color);
+}

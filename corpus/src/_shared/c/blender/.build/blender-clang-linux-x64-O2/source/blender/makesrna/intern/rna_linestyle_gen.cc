@@ -1,0 +1,14182 @@
+
+/* Automatically generated struct definitions for the Data API.
+ * Do not edit manually, changes will be overwritten.           */
+
+#include <float.h>
+#include <stdio.h>
+#include <limits.h>
+#include <limits>
+#include <string.h>
+
+#include <stddef.h>
+
+#include <algorithm>
+
+#include "MEM_guardedalloc.h"
+
+#include "DNA_ID.h"
+#include "DNA_scene_types.h"
+#include "DNA_node_types.h"
+#include "BLI_fileops.hh"
+
+#include "BLI_listbase.hh"
+
+#include "BLI_path_utils.hh"
+
+#include "BLI_rect.hh"
+
+#include "BLI_string.hh"
+
+#include "BLI_string_utf8.hh"
+
+#include "BLI_utildefines.hh"
+
+#include "BKE_context.hh"
+#include "BKE_lib_id.hh"
+#include "BKE_main.hh"
+#include "BKE_report.hh"
+#include "RNA_define.hh"
+#include "RNA_types.hh"
+#include "rna_internal.hh"
+
+#include "RNA_prototypes.hh"
+
+#include "rna_prototypes_gen.hh"
+
+#include "rna_linestyle.cc"
+
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
+#pragma GCC diagnostic ignored "-Wmissing-variable-declarations"
+
+/* Auto-generated Functions. */
+
+namespace blender {
+
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_AlongStroke_type;
+extern PropertyRNA &rna_LineStyleColorModifier_AlongStroke_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_AlongStroke_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_AlongStroke_use;
+extern PropertyRNA &rna_LineStyleColorModifier_AlongStroke_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_AlongStroke_color_ramp;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_type;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_use;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_color_ramp;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_range_min;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_range_max;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_type;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_use;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_color_ramp;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_range_min;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_range_max;
+extern PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_target;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_Material_type;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_use;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_material_attribute;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_color_ramp;
+extern PropertyRNA &rna_LineStyleColorModifier_Material_use_ramp;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_Tangent_type;
+extern PropertyRNA &rna_LineStyleColorModifier_Tangent_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_Tangent_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_Tangent_use;
+extern PropertyRNA &rna_LineStyleColorModifier_Tangent_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_Tangent_color_ramp;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_type;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_use;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_color_ramp;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_amplitude;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_period;
+extern PropertyRNA &rna_LineStyleColorModifier_Noise_seed;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_type;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_use;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_color_ramp;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_angle_min;
+extern PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_angle_max;
+
+
+extern PropertyRNA &rna_LineStyleColorModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_type;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_blend;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_influence;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_use;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_expanded;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_color_ramp;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_curvature_min;
+extern PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_curvature_max;
+
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_curve;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_curve;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_range_min;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_range_max;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_curve;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_range_min;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_range_max;
+extern PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_target;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_material_attribute;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Material_curve;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Tangent_curve;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_curve;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_amplitude;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_period;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Noise_seed;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_curve;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_angle_min;
+extern PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_angle_max;
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_type;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_blend;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_influence;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_use;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_expanded;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_mapping;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_invert;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_curve;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_curvature_min;
+extern PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_curvature_max;
+
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_thickness_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Tangent_thickness_max;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_value_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_value_max;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_range_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_range_max;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_value_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_value_max;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_range_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_range_max;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_value_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_value_max;
+extern PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_target;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_material_attribute;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_value_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Material_value_max;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_orientation;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_thickness_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_thickness_max;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_amplitude;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_period;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_seed;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Noise_use_asymmetric;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_thickness_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_thickness_max;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_curvature_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_curvature_max;
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_type;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_blend;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_influence;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_use;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_expanded;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_mapping;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_invert;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_curve;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_angle_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_angle_max;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_thickness_min;
+extern PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_thickness_max;
+
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_Sampling_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Sampling_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Sampling_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Sampling_sampling;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_error;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_wavelength;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_amplitude;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_phase;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_amplitude;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_scale;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_octaves;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_smooth;
+extern PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_frequency;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_octaves;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_angle;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_seed;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_frequency;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_octaves;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_angle;
+extern PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_seed;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_tip_length;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_error;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_offset;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_shape;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_rounds;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_backbone_length;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_random_radius;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_random_center;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_random_backbone;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_start;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_end;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_x;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_y;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_scale_x;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_scale_y;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_angle;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot_u;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot_x;
+extern PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot_y;
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_name;
+
+extern PropertyRNA &rna_LineStyleModifier_rna_properties;
+extern PropertyRNA &rna_LineStyleModifier_rna_type;
+
+extern PropertyRNA &rna_LineStyleGeometryModifier_Simplification_type;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Simplification_use;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Simplification_expanded;
+extern PropertyRNA &rna_LineStyleGeometryModifier_Simplification_tolerance;
+
+
+extern PropertyRNA &rna_ID_rna_properties;
+extern PropertyRNA &rna_ID_rna_type;
+extern PropertyRNA &rna_ID_name;
+extern PropertyRNA &rna_ID_name_full;
+extern PropertyRNA &rna_ID_id_type;
+extern PropertyRNA &rna_ID_session_uid;
+extern PropertyRNA &rna_ID_is_evaluated;
+extern PropertyRNA &rna_ID_original;
+extern PropertyRNA &rna_ID_users;
+extern PropertyRNA &rna_ID_use_fake_user;
+extern PropertyRNA &rna_ID_use_extra_user;
+extern PropertyRNA &rna_ID_is_embedded_data;
+extern PropertyRNA &rna_ID_is_linked_packed;
+extern PropertyRNA &rna_ID_is_missing;
+extern PropertyRNA &rna_ID_is_runtime_data;
+extern PropertyRNA &rna_ID_is_editable;
+extern PropertyRNA &rna_ID_tag;
+extern PropertyRNA &rna_ID_is_library_indirect;
+extern PropertyRNA &rna_ID_library;
+extern PropertyRNA &rna_ID_library_weak_reference;
+extern PropertyRNA &rna_ID_asset_data;
+extern PropertyRNA &rna_ID_override_library;
+extern PropertyRNA &rna_ID_preview;
+
+extern PropertyRNA &rna_FreestyleLineStyle_texture_slots;
+extern PropertyRNA &rna_FreestyleLineStyle_active_texture;
+extern PropertyRNA &rna_FreestyleLineStyle_active_texture_index;
+extern PropertyRNA &rna_FreestyleLineStyle_panel;
+extern PropertyRNA &rna_FreestyleLineStyle_color;
+extern PropertyRNA &rna_FreestyleLineStyle_alpha;
+extern PropertyRNA &rna_FreestyleLineStyle_thickness;
+extern PropertyRNA &rna_FreestyleLineStyle_thickness_position;
+extern PropertyRNA &rna_FreestyleLineStyle_thickness_ratio;
+extern PropertyRNA &rna_FreestyleLineStyle_color_modifiers;
+extern PropertyRNA &rna_FreestyleLineStyle_alpha_modifiers;
+extern PropertyRNA &rna_FreestyleLineStyle_thickness_modifiers;
+extern PropertyRNA &rna_FreestyleLineStyle_geometry_modifiers;
+extern PropertyRNA &rna_FreestyleLineStyle_use_chaining;
+extern PropertyRNA &rna_FreestyleLineStyle_chaining;
+extern PropertyRNA &rna_FreestyleLineStyle_rounds;
+extern PropertyRNA &rna_FreestyleLineStyle_use_same_object;
+extern PropertyRNA &rna_FreestyleLineStyle_use_split_length;
+extern PropertyRNA &rna_FreestyleLineStyle_split_length;
+extern PropertyRNA &rna_FreestyleLineStyle_use_angle_min;
+extern PropertyRNA &rna_FreestyleLineStyle_angle_min;
+extern PropertyRNA &rna_FreestyleLineStyle_use_angle_max;
+extern PropertyRNA &rna_FreestyleLineStyle_angle_max;
+extern PropertyRNA &rna_FreestyleLineStyle_use_length_min;
+extern PropertyRNA &rna_FreestyleLineStyle_length_min;
+extern PropertyRNA &rna_FreestyleLineStyle_use_length_max;
+extern PropertyRNA &rna_FreestyleLineStyle_length_max;
+extern PropertyRNA &rna_FreestyleLineStyle_use_chain_count;
+extern PropertyRNA &rna_FreestyleLineStyle_chain_count;
+extern PropertyRNA &rna_FreestyleLineStyle_use_split_pattern;
+extern PropertyRNA &rna_FreestyleLineStyle_split_dash1;
+extern PropertyRNA &rna_FreestyleLineStyle_split_gap1;
+extern PropertyRNA &rna_FreestyleLineStyle_split_dash2;
+extern PropertyRNA &rna_FreestyleLineStyle_split_gap2;
+extern PropertyRNA &rna_FreestyleLineStyle_split_dash3;
+extern PropertyRNA &rna_FreestyleLineStyle_split_gap3;
+extern PropertyRNA &rna_FreestyleLineStyle_material_boundary;
+extern PropertyRNA &rna_FreestyleLineStyle_use_sorting;
+extern PropertyRNA &rna_FreestyleLineStyle_sort_key;
+extern PropertyRNA &rna_FreestyleLineStyle_sort_order;
+extern PropertyRNA &rna_FreestyleLineStyle_integration_type;
+extern PropertyRNA &rna_FreestyleLineStyle_use_dashed_line;
+extern PropertyRNA &rna_FreestyleLineStyle_caps;
+extern PropertyRNA &rna_FreestyleLineStyle_dash1;
+extern PropertyRNA &rna_FreestyleLineStyle_gap1;
+extern PropertyRNA &rna_FreestyleLineStyle_dash2;
+extern PropertyRNA &rna_FreestyleLineStyle_gap2;
+extern PropertyRNA &rna_FreestyleLineStyle_dash3;
+extern PropertyRNA &rna_FreestyleLineStyle_gap3;
+extern PropertyRNA &rna_FreestyleLineStyle_use_texture;
+extern PropertyRNA &rna_FreestyleLineStyle_texture_spacing;
+extern PropertyRNA &rna_FreestyleLineStyle_animation_data;
+extern PropertyRNA &rna_FreestyleLineStyle_node_tree;
+extern PropertyRNA &rna_FreestyleLineStyle_use_nodes;
+
+extern FunctionRNA *rna_ID_bl_system_properties_get_func;
+extern PropertyRNA &rna_ID_bl_system_properties_get_do_create;
+extern PropertyRNA &rna_ID_bl_system_properties_get_system_properties;
+
+extern FunctionRNA *rna_ID_rename_func;
+extern PropertyRNA &rna_ID_rename_name;
+extern PropertyRNA &rna_ID_rename_mode;
+extern PropertyRNA &rna_ID_rename_id_rename_result;
+
+extern FunctionRNA *rna_ID_evaluated_get_func;
+extern PropertyRNA &rna_ID_evaluated_get_depsgraph;
+extern PropertyRNA &rna_ID_evaluated_get_id;
+
+extern FunctionRNA *rna_ID_copy_func;
+extern PropertyRNA &rna_ID_copy_id;
+
+extern FunctionRNA *rna_ID_asset_mark_func;
+extern FunctionRNA *rna_ID_asset_clear_func;
+extern FunctionRNA *rna_ID_asset_generate_preview_func;
+extern FunctionRNA *rna_ID_override_create_func;
+extern PropertyRNA &rna_ID_override_create_id;
+extern PropertyRNA &rna_ID_override_create_remap_local_usages;
+
+extern FunctionRNA *rna_ID_override_hierarchy_create_func;
+extern PropertyRNA &rna_ID_override_hierarchy_create_id;
+extern PropertyRNA &rna_ID_override_hierarchy_create_scene;
+extern PropertyRNA &rna_ID_override_hierarchy_create_view_layer;
+extern PropertyRNA &rna_ID_override_hierarchy_create_reference;
+extern PropertyRNA &rna_ID_override_hierarchy_create_do_fully_editable;
+
+extern FunctionRNA *rna_ID_user_clear_func;
+extern FunctionRNA *rna_ID_user_remap_func;
+extern PropertyRNA &rna_ID_user_remap_new_id;
+
+extern FunctionRNA *rna_ID_make_local_func;
+extern PropertyRNA &rna_ID_make_local_clear_proxy;
+extern PropertyRNA &rna_ID_make_local_clear_liboverride;
+extern PropertyRNA &rna_ID_make_local_clear_asset_data;
+extern PropertyRNA &rna_ID_make_local_id;
+
+extern FunctionRNA *rna_ID_user_of_id_func;
+extern PropertyRNA &rna_ID_user_of_id_id;
+extern PropertyRNA &rna_ID_user_of_id_count;
+
+extern FunctionRNA *rna_ID_animation_data_create_func;
+extern PropertyRNA &rna_ID_animation_data_create_anim_data;
+
+extern FunctionRNA *rna_ID_animation_data_clear_func;
+extern FunctionRNA *rna_ID_update_tag_func;
+extern PropertyRNA &rna_ID_update_tag_refresh;
+
+extern FunctionRNA *rna_ID_preview_ensure_func;
+extern PropertyRNA &rna_ID_preview_ensure_preview_image;
+
+
+
+extern PropertyRNA &rna_LineStyleTextureSlots_rna_properties;
+extern PropertyRNA &rna_LineStyleTextureSlots_rna_type;
+
+extern FunctionRNA *rna_LineStyleTextureSlots_add_func;
+extern PropertyRNA &rna_LineStyleTextureSlots_add_mtex;
+
+extern FunctionRNA *rna_LineStyleTextureSlots_create_func;
+extern PropertyRNA &rna_LineStyleTextureSlots_create_index;
+extern PropertyRNA &rna_LineStyleTextureSlots_create_mtex;
+
+extern FunctionRNA *rna_LineStyleTextureSlots_clear_func;
+extern PropertyRNA &rna_LineStyleTextureSlots_clear_index;
+
+
+
+extern PropertyRNA &rna_LineStyleColorModifiers_rna_properties;
+extern PropertyRNA &rna_LineStyleColorModifiers_rna_type;
+
+extern FunctionRNA *rna_LineStyleColorModifiers_new_func;
+extern PropertyRNA &rna_LineStyleColorModifiers_new_name;
+extern PropertyRNA &rna_LineStyleColorModifiers_new_type;
+extern PropertyRNA &rna_LineStyleColorModifiers_new_modifier;
+
+extern FunctionRNA *rna_LineStyleColorModifiers_remove_func;
+extern PropertyRNA &rna_LineStyleColorModifiers_remove_modifier;
+
+
+
+extern PropertyRNA &rna_LineStyleAlphaModifiers_rna_properties;
+extern PropertyRNA &rna_LineStyleAlphaModifiers_rna_type;
+
+extern FunctionRNA *rna_LineStyleAlphaModifiers_new_func;
+extern PropertyRNA &rna_LineStyleAlphaModifiers_new_name;
+extern PropertyRNA &rna_LineStyleAlphaModifiers_new_type;
+extern PropertyRNA &rna_LineStyleAlphaModifiers_new_modifier;
+
+extern FunctionRNA *rna_LineStyleAlphaModifiers_remove_func;
+extern PropertyRNA &rna_LineStyleAlphaModifiers_remove_modifier;
+
+
+
+extern PropertyRNA &rna_LineStyleThicknessModifiers_rna_properties;
+extern PropertyRNA &rna_LineStyleThicknessModifiers_rna_type;
+
+extern FunctionRNA *rna_LineStyleThicknessModifiers_new_func;
+extern PropertyRNA &rna_LineStyleThicknessModifiers_new_name;
+extern PropertyRNA &rna_LineStyleThicknessModifiers_new_type;
+extern PropertyRNA &rna_LineStyleThicknessModifiers_new_modifier;
+
+extern FunctionRNA *rna_LineStyleThicknessModifiers_remove_func;
+extern PropertyRNA &rna_LineStyleThicknessModifiers_remove_modifier;
+
+
+
+extern PropertyRNA &rna_LineStyleGeometryModifiers_rna_properties;
+extern PropertyRNA &rna_LineStyleGeometryModifiers_rna_type;
+
+extern FunctionRNA *rna_LineStyleGeometryModifiers_new_func;
+extern PropertyRNA &rna_LineStyleGeometryModifiers_new_name;
+extern PropertyRNA &rna_LineStyleGeometryModifiers_new_type;
+extern PropertyRNA &rna_LineStyleGeometryModifiers_new_modifier;
+
+extern FunctionRNA *rna_LineStyleGeometryModifiers_remove_func;
+extern PropertyRNA &rna_LineStyleGeometryModifiers_remove_modifier;
+
+
+
+extern PropertyRNA &rna_TextureSlot_rna_properties;
+extern PropertyRNA &rna_TextureSlot_rna_type;
+extern PropertyRNA &rna_TextureSlot_texture;
+extern PropertyRNA &rna_TextureSlot_name;
+extern PropertyRNA &rna_TextureSlot_offset;
+extern PropertyRNA &rna_TextureSlot_scale;
+extern PropertyRNA &rna_TextureSlot_color;
+extern PropertyRNA &rna_TextureSlot_blend_type;
+extern PropertyRNA &rna_TextureSlot_default_value;
+extern PropertyRNA &rna_TextureSlot_output_node;
+
+extern PropertyRNA &rna_LineStyleTextureSlot_mapping_x;
+extern PropertyRNA &rna_LineStyleTextureSlot_mapping_y;
+extern PropertyRNA &rna_LineStyleTextureSlot_mapping_z;
+extern PropertyRNA &rna_LineStyleTextureSlot_mapping;
+extern PropertyRNA &rna_LineStyleTextureSlot_use_map_color_diffuse;
+extern PropertyRNA &rna_LineStyleTextureSlot_use_map_alpha;
+extern PropertyRNA &rna_LineStyleTextureSlot_texture_coords;
+extern PropertyRNA &rna_LineStyleTextureSlot_alpha_factor;
+extern PropertyRNA &rna_LineStyleTextureSlot_diffuse_color_factor;
+
+static PointerRNA LineStyleModifier_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LineStyleModifier_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LineStyleModifier_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleModifier_rna_properties_get(iter);
+    }
+}
+
+void LineStyleModifier_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleModifier_rna_properties_get(iter);
+    }
+}
+
+void LineStyleModifier_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LineStyleModifier_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LineStyleModifier_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+void LineStyleColorModifier_name_get(PointerRNA *ptr, char *value)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int LineStyleColorModifier_name_length(PointerRNA *ptr)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    return strlen(data->name);
+}
+
+void LineStyleColorModifier_name_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_LineStyleColorModifier_name_set;
+    fn(ptr, value);
+}
+
+int LineStyleColorModifier_AlongStroke_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_AlongStroke_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_AlongStroke_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_AlongStroke_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_AlongStroke_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_AlongStroke_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_AlongStroke_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_AlongStroke_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_AlongStroke_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_AlongStroke_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_AlongStroke *data = (LineStyleColorModifier_AlongStroke *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+int LineStyleColorModifier_DistanceFromCamera_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_DistanceFromCamera_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_DistanceFromCamera_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_DistanceFromCamera_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_DistanceFromCamera_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_DistanceFromCamera_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_DistanceFromCamera_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_DistanceFromCamera_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_DistanceFromCamera_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_DistanceFromCamera_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+float LineStyleColorModifier_DistanceFromCamera_range_min_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->range_min);
+}
+
+void LineStyleColorModifier_DistanceFromCamera_range_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    data->range_min = (std::remove_reference_t<decltype(data->range_min)>)value;
+}
+
+float LineStyleColorModifier_DistanceFromCamera_range_max_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->range_max);
+}
+
+void LineStyleColorModifier_DistanceFromCamera_range_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_DistanceFromCamera *data = (LineStyleColorModifier_DistanceFromCamera *)(ptr->data);
+    data->range_max = (std::remove_reference_t<decltype(data->range_max)>)value;
+}
+
+int LineStyleColorModifier_DistanceFromObject_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_DistanceFromObject_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_DistanceFromObject_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_DistanceFromObject_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_DistanceFromObject_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_DistanceFromObject_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_DistanceFromObject_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_DistanceFromObject_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_DistanceFromObject_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_DistanceFromObject_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+float LineStyleColorModifier_DistanceFromObject_range_min_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->range_min);
+}
+
+void LineStyleColorModifier_DistanceFromObject_range_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    data->range_min = (std::remove_reference_t<decltype(data->range_min)>)value;
+}
+
+float LineStyleColorModifier_DistanceFromObject_range_max_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->range_max);
+}
+
+void LineStyleColorModifier_DistanceFromObject_range_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    data->range_max = (std::remove_reference_t<decltype(data->range_max)>)value;
+}
+
+PointerRNA LineStyleColorModifier_DistanceFromObject_target_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->target);
+}
+
+void LineStyleColorModifier_DistanceFromObject_target_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    LineStyleColorModifier_DistanceFromObject *data = (LineStyleColorModifier_DistanceFromObject *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->target = value.data;
+}
+
+int LineStyleColorModifier_Material_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_Material_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_Material_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_Material_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_Material_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_Material_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_Material_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_Material_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_Material_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleColorModifier_Material_material_attribute_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return (int)(data->mat_attr);
+}
+
+void LineStyleColorModifier_Material_material_attribute_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    data->mat_attr = (std::remove_reference_t<decltype(data->mat_attr)>)value;
+}
+
+PointerRNA LineStyleColorModifier_Material_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+bool LineStyleColorModifier_Material_use_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    return ((uint64_t(data->flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_Material_use_ramp_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Material *data = (LineStyleColorModifier_Material *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 1); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1)); }
+}
+
+int LineStyleColorModifier_Tangent_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_Tangent_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_Tangent_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_Tangent_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_Tangent_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_Tangent_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_Tangent_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_Tangent_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_Tangent_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_Tangent_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Tangent *data = (LineStyleColorModifier_Tangent *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+int LineStyleColorModifier_Noise_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_Noise_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_Noise_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_Noise_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_Noise_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_Noise_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_Noise_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_Noise_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_Noise_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_Noise_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+float LineStyleColorModifier_Noise_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleColorModifier_Noise_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+float LineStyleColorModifier_Noise_period_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return (float)(data->period);
+}
+
+void LineStyleColorModifier_Noise_period_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    data->period = (std::remove_reference_t<decltype(data->period)>)value;
+}
+
+int LineStyleColorModifier_Noise_seed_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    return (int)(data->seed);
+}
+
+void LineStyleColorModifier_Noise_seed_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_Noise *data = (LineStyleColorModifier_Noise *)(ptr->data);
+    data->seed = (std::remove_reference_t<decltype(data->seed)>)std::clamp(value, 1, 32767);
+}
+
+int LineStyleColorModifier_CreaseAngle_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_CreaseAngle_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_CreaseAngle_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_CreaseAngle_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_CreaseAngle_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_CreaseAngle_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_CreaseAngle_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_CreaseAngle_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_CreaseAngle_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_CreaseAngle_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+float LineStyleColorModifier_CreaseAngle_angle_min_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->min_angle);
+}
+
+void LineStyleColorModifier_CreaseAngle_angle_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    data->min_angle = (std::remove_reference_t<decltype(data->min_angle)>)value;
+}
+
+float LineStyleColorModifier_CreaseAngle_angle_max_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->max_angle);
+}
+
+void LineStyleColorModifier_CreaseAngle_angle_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_CreaseAngle *data = (LineStyleColorModifier_CreaseAngle *)(ptr->data);
+    data->max_angle = (std::remove_reference_t<decltype(data->max_angle)>)value;
+}
+
+int LineStyleColorModifier_Curvature_3D_type_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleColorModifier_Curvature_3D_blend_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleColorModifier_Curvature_3D_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleColorModifier_Curvature_3D_influence_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleColorModifier_Curvature_3D_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleColorModifier_Curvature_3D_use_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleColorModifier_Curvature_3D_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleColorModifier_Curvature_3D_expanded_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleColorModifier_Curvature_3D_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleColorModifier_Curvature_3D_color_ramp_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_ColorRamp, data->color_ramp);
+}
+
+float LineStyleColorModifier_Curvature_3D_curvature_min_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->min_curvature);
+}
+
+void LineStyleColorModifier_Curvature_3D_curvature_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    data->min_curvature = (std::remove_reference_t<decltype(data->min_curvature)>)value;
+}
+
+float LineStyleColorModifier_Curvature_3D_curvature_max_get(PointerRNA *ptr)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->max_curvature);
+}
+
+void LineStyleColorModifier_Curvature_3D_curvature_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleColorModifier_Curvature_3D *data = (LineStyleColorModifier_Curvature_3D *)(ptr->data);
+    data->max_curvature = (std::remove_reference_t<decltype(data->max_curvature)>)value;
+}
+
+void LineStyleAlphaModifier_name_get(PointerRNA *ptr, char *value)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int LineStyleAlphaModifier_name_length(PointerRNA *ptr)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    return strlen(data->name);
+}
+
+void LineStyleAlphaModifier_name_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_LineStyleAlphaModifier_name_set;
+    fn(ptr, value);
+}
+
+int LineStyleAlphaModifier_AlongStroke_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_AlongStroke_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_AlongStroke_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_AlongStroke_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_AlongStroke_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_AlongStroke_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_AlongStroke_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_AlongStroke_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_AlongStroke_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_AlongStroke_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_AlongStroke_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_AlongStroke_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_AlongStroke_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_AlongStroke_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_AlongStroke *data = (LineStyleAlphaModifier_AlongStroke *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+int LineStyleAlphaModifier_DistanceFromCamera_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_DistanceFromCamera_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_DistanceFromCamera_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_DistanceFromCamera_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_DistanceFromCamera_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_DistanceFromCamera_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_DistanceFromCamera_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_DistanceFromCamera_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleAlphaModifier_DistanceFromCamera_range_min_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->range_min);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_range_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    data->range_min = (std::remove_reference_t<decltype(data->range_min)>)value;
+}
+
+float LineStyleAlphaModifier_DistanceFromCamera_range_max_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->range_max);
+}
+
+void LineStyleAlphaModifier_DistanceFromCamera_range_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_DistanceFromCamera *data = (LineStyleAlphaModifier_DistanceFromCamera *)(ptr->data);
+    data->range_max = (std::remove_reference_t<decltype(data->range_max)>)value;
+}
+
+int LineStyleAlphaModifier_DistanceFromObject_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_DistanceFromObject_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_DistanceFromObject_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_DistanceFromObject_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_DistanceFromObject_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_DistanceFromObject_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_DistanceFromObject_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_DistanceFromObject_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleAlphaModifier_DistanceFromObject_range_min_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->range_min);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_range_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    data->range_min = (std::remove_reference_t<decltype(data->range_min)>)value;
+}
+
+float LineStyleAlphaModifier_DistanceFromObject_range_max_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->range_max);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_range_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    data->range_max = (std::remove_reference_t<decltype(data->range_max)>)value;
+}
+
+PointerRNA LineStyleAlphaModifier_DistanceFromObject_target_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->target);
+}
+
+void LineStyleAlphaModifier_DistanceFromObject_target_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    LineStyleAlphaModifier_DistanceFromObject *data = (LineStyleAlphaModifier_DistanceFromObject *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->target = value.data;
+}
+
+int LineStyleAlphaModifier_Material_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_Material_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_Material_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_Material_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_Material_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_Material_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_Material_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_Material_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Material_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_Material_material_attribute_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return (int)(data->mat_attr);
+}
+
+void LineStyleAlphaModifier_Material_material_attribute_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    data->mat_attr = (std::remove_reference_t<decltype(data->mat_attr)>)value;
+}
+
+int LineStyleAlphaModifier_Material_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_Material_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_Material_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Material_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_Material_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Material *data = (LineStyleAlphaModifier_Material *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+int LineStyleAlphaModifier_Tangent_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_Tangent_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_Tangent_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_Tangent_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_Tangent_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_Tangent_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_Tangent_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_Tangent_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Tangent_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_Tangent_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_Tangent_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_Tangent_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Tangent_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_Tangent_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Tangent *data = (LineStyleAlphaModifier_Tangent *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+int LineStyleAlphaModifier_Noise_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_Noise_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_Noise_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_Noise_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_Noise_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_Noise_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_Noise_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_Noise_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Noise_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_Noise_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_Noise_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_Noise_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Noise_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_Noise_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleAlphaModifier_Noise_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleAlphaModifier_Noise_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+float LineStyleAlphaModifier_Noise_period_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (float)(data->period);
+}
+
+void LineStyleAlphaModifier_Noise_period_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    data->period = (std::remove_reference_t<decltype(data->period)>)value;
+}
+
+int LineStyleAlphaModifier_Noise_seed_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    return (int)(data->seed);
+}
+
+void LineStyleAlphaModifier_Noise_seed_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Noise *data = (LineStyleAlphaModifier_Noise *)(ptr->data);
+    data->seed = (std::remove_reference_t<decltype(data->seed)>)std::clamp(value, 1, 32767);
+}
+
+int LineStyleAlphaModifier_CreaseAngle_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_CreaseAngle_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_CreaseAngle_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_CreaseAngle_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_CreaseAngle_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_CreaseAngle_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_CreaseAngle_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_CreaseAngle_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleAlphaModifier_CreaseAngle_angle_min_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->min_angle);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_angle_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    data->min_angle = (std::remove_reference_t<decltype(data->min_angle)>)value;
+}
+
+float LineStyleAlphaModifier_CreaseAngle_angle_max_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->max_angle);
+}
+
+void LineStyleAlphaModifier_CreaseAngle_angle_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_CreaseAngle *data = (LineStyleAlphaModifier_CreaseAngle *)(ptr->data);
+    data->max_angle = (std::remove_reference_t<decltype(data->max_angle)>)value;
+}
+
+int LineStyleAlphaModifier_Curvature_3D_type_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleAlphaModifier_Curvature_3D_blend_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleAlphaModifier_Curvature_3D_influence_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleAlphaModifier_Curvature_3D_use_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleAlphaModifier_Curvature_3D_expanded_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleAlphaModifier_Curvature_3D_mapping_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleAlphaModifier_Curvature_3D_invert_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleAlphaModifier_Curvature_3D_curve_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleAlphaModifier_Curvature_3D_curvature_min_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->min_curvature);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_curvature_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    data->min_curvature = (std::remove_reference_t<decltype(data->min_curvature)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleAlphaModifier_Curvature_3D_curvature_max_get(PointerRNA *ptr)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->max_curvature);
+}
+
+void LineStyleAlphaModifier_Curvature_3D_curvature_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleAlphaModifier_Curvature_3D *data = (LineStyleAlphaModifier_Curvature_3D *)(ptr->data);
+    data->max_curvature = (std::remove_reference_t<decltype(data->max_curvature)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+void LineStyleThicknessModifier_name_get(PointerRNA *ptr, char *value)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int LineStyleThicknessModifier_name_length(PointerRNA *ptr)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    return strlen(data->name);
+}
+
+void LineStyleThicknessModifier_name_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_LineStyleThicknessModifier_name_set;
+    fn(ptr, value);
+}
+
+int LineStyleThicknessModifier_Tangent_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_Tangent_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_Tangent_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_Tangent_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_Tangent_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_Tangent_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_Tangent_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_Tangent_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Tangent_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_Tangent_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_Tangent_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_Tangent_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Tangent_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_Tangent_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_Tangent_thickness_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return (float)(data->min_thickness);
+}
+
+void LineStyleThicknessModifier_Tangent_thickness_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    data->min_thickness = (std::remove_reference_t<decltype(data->min_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleThicknessModifier_Tangent_thickness_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    return (float)(data->max_thickness);
+}
+
+void LineStyleThicknessModifier_Tangent_thickness_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Tangent *data = (LineStyleThicknessModifier_Tangent *)(ptr->data);
+    data->max_thickness = (std::remove_reference_t<decltype(data->max_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+int LineStyleThicknessModifier_AlongStroke_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_AlongStroke_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_AlongStroke_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_AlongStroke_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_AlongStroke_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_AlongStroke_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_AlongStroke_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_AlongStroke_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_AlongStroke_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_AlongStroke_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_AlongStroke_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_AlongStroke_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_AlongStroke_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_AlongStroke_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_AlongStroke_value_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return (float)(data->value_min);
+}
+
+void LineStyleThicknessModifier_AlongStroke_value_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    data->value_min = (std::remove_reference_t<decltype(data->value_min)>)value;
+}
+
+float LineStyleThicknessModifier_AlongStroke_value_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    return (float)(data->value_max);
+}
+
+void LineStyleThicknessModifier_AlongStroke_value_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_AlongStroke *data = (LineStyleThicknessModifier_AlongStroke *)(ptr->data);
+    data->value_max = (std::remove_reference_t<decltype(data->value_max)>)value;
+}
+
+int LineStyleThicknessModifier_DistanceFromCamera_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_DistanceFromCamera_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromCamera_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_DistanceFromCamera_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_DistanceFromCamera_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_DistanceFromCamera_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_DistanceFromCamera_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_DistanceFromCamera_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_DistanceFromCamera_range_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->range_min);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_range_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->range_min = (std::remove_reference_t<decltype(data->range_min)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromCamera_range_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->range_max);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_range_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->range_max = (std::remove_reference_t<decltype(data->range_max)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromCamera_value_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->value_min);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_value_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->value_min = (std::remove_reference_t<decltype(data->value_min)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromCamera_value_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    return (float)(data->value_max);
+}
+
+void LineStyleThicknessModifier_DistanceFromCamera_value_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromCamera *data = (LineStyleThicknessModifier_DistanceFromCamera *)(ptr->data);
+    data->value_max = (std::remove_reference_t<decltype(data->value_max)>)value;
+}
+
+int LineStyleThicknessModifier_DistanceFromObject_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_DistanceFromObject_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromObject_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_DistanceFromObject_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_DistanceFromObject_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_DistanceFromObject_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_DistanceFromObject_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_DistanceFromObject_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_DistanceFromObject_range_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->range_min);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_range_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->range_min = (std::remove_reference_t<decltype(data->range_min)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromObject_range_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->range_max);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_range_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->range_max = (std::remove_reference_t<decltype(data->range_max)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromObject_value_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->value_min);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_value_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->value_min = (std::remove_reference_t<decltype(data->value_min)>)value;
+}
+
+float LineStyleThicknessModifier_DistanceFromObject_value_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return (float)(data->value_max);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_value_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    data->value_max = (std::remove_reference_t<decltype(data->value_max)>)value;
+}
+
+PointerRNA LineStyleThicknessModifier_DistanceFromObject_target_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_Object, data->target);
+}
+
+void LineStyleThicknessModifier_DistanceFromObject_target_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    LineStyleThicknessModifier_DistanceFromObject *data = (LineStyleThicknessModifier_DistanceFromObject *)(ptr->data);
+    if (value.data && ptr->owner_id && value.owner_id && !BKE_id_can_use_id(*ptr->owner_id, *value.owner_id)) {
+      return;
+    }
+    if (value.data) {
+        id_lib_extern((ID *)value.data);
+    }
+    *(void **)&data->target = value.data;
+}
+
+int LineStyleThicknessModifier_Material_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_Material_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_Material_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_Material_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_Material_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_Material_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_Material_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_Material_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Material_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_Material_material_attribute_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (int)(data->mat_attr);
+}
+
+void LineStyleThicknessModifier_Material_material_attribute_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    data->mat_attr = (std::remove_reference_t<decltype(data->mat_attr)>)value;
+}
+
+int LineStyleThicknessModifier_Material_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_Material_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_Material_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Material_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_Material_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_Material_value_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (float)(data->value_min);
+}
+
+void LineStyleThicknessModifier_Material_value_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    data->value_min = (std::remove_reference_t<decltype(data->value_min)>)value;
+}
+
+float LineStyleThicknessModifier_Material_value_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    return (float)(data->value_max);
+}
+
+void LineStyleThicknessModifier_Material_value_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Material *data = (LineStyleThicknessModifier_Material *)(ptr->data);
+    data->value_max = (std::remove_reference_t<decltype(data->value_max)>)value;
+}
+
+int LineStyleThicknessModifier_Calligraphy_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_Calligraphy_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_Calligraphy_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_Calligraphy_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_Calligraphy_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_Calligraphy_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_Calligraphy_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_Calligraphy_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Calligraphy_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleThicknessModifier_Calligraphy_orientation_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return (float)(data->orientation);
+}
+
+void LineStyleThicknessModifier_Calligraphy_orientation_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    data->orientation = (std::remove_reference_t<decltype(data->orientation)>)value;
+}
+
+float LineStyleThicknessModifier_Calligraphy_thickness_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return (float)(data->min_thickness);
+}
+
+void LineStyleThicknessModifier_Calligraphy_thickness_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    data->min_thickness = (std::remove_reference_t<decltype(data->min_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleThicknessModifier_Calligraphy_thickness_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    return (float)(data->max_thickness);
+}
+
+void LineStyleThicknessModifier_Calligraphy_thickness_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Calligraphy *data = (LineStyleThicknessModifier_Calligraphy *)(ptr->data);
+    data->max_thickness = (std::remove_reference_t<decltype(data->max_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+int LineStyleThicknessModifier_Noise_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_Noise_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_Noise_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_Noise_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_Noise_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_Noise_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_Noise_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_Noise_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Noise_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleThicknessModifier_Noise_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleThicknessModifier_Noise_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+float LineStyleThicknessModifier_Noise_period_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return (float)(data->period);
+}
+
+void LineStyleThicknessModifier_Noise_period_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    data->period = (std::remove_reference_t<decltype(data->period)>)value;
+}
+
+int LineStyleThicknessModifier_Noise_seed_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return (int)(data->seed);
+}
+
+void LineStyleThicknessModifier_Noise_seed_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    data->seed = (std::remove_reference_t<decltype(data->seed)>)std::clamp(value, 1, 32767);
+}
+
+bool LineStyleThicknessModifier_Noise_use_asymmetric_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    return ((uint64_t(data->flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_Noise_use_asymmetric_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Noise *data = (LineStyleThicknessModifier_Noise *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 1); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1)); }
+}
+
+int LineStyleThicknessModifier_Curvature_3D_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_Curvature_3D_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_Curvature_3D_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_Curvature_3D_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_Curvature_3D_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_Curvature_3D_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_Curvature_3D_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_Curvature_3D_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_Curvature_3D_thickness_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->min_thickness);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_thickness_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->min_thickness = (std::remove_reference_t<decltype(data->min_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleThicknessModifier_Curvature_3D_thickness_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->max_thickness);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_thickness_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->max_thickness = (std::remove_reference_t<decltype(data->max_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleThicknessModifier_Curvature_3D_curvature_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->min_curvature);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_curvature_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->min_curvature = (std::remove_reference_t<decltype(data->min_curvature)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleThicknessModifier_Curvature_3D_curvature_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    return (float)(data->max_curvature);
+}
+
+void LineStyleThicknessModifier_Curvature_3D_curvature_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_Curvature_3D *data = (LineStyleThicknessModifier_Curvature_3D *)(ptr->data);
+    data->max_curvature = (std::remove_reference_t<decltype(data->max_curvature)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+int LineStyleThicknessModifier_CreaseAngle_type_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+int LineStyleThicknessModifier_CreaseAngle_blend_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (int)(data->modifier.blend);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_blend_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->modifier.blend = (std::remove_reference_t<decltype(data->modifier.blend)>)value;
+}
+
+float LineStyleThicknessModifier_CreaseAngle_influence_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->modifier.influence);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_influence_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->modifier.influence = (std::remove_reference_t<decltype(data->modifier.influence)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+bool LineStyleThicknessModifier_CreaseAngle_use_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleThicknessModifier_CreaseAngle_expanded_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleThicknessModifier_CreaseAngle_mapping_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (uint64_t(data->flags) & 1);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_mapping_set(PointerRNA *ptr, int value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+bool LineStyleThicknessModifier_CreaseAngle_invert_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_invert_set(PointerRNA *ptr, bool value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+PointerRNA LineStyleThicknessModifier_CreaseAngle_curve_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_CurveMapping, data->curve);
+}
+
+float LineStyleThicknessModifier_CreaseAngle_angle_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->min_angle);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_angle_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->min_angle = (std::remove_reference_t<decltype(data->min_angle)>)value;
+}
+
+float LineStyleThicknessModifier_CreaseAngle_angle_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->max_angle);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_angle_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->max_angle = (std::remove_reference_t<decltype(data->max_angle)>)value;
+}
+
+float LineStyleThicknessModifier_CreaseAngle_thickness_min_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->min_thickness);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_thickness_min_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->min_thickness = (std::remove_reference_t<decltype(data->min_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+float LineStyleThicknessModifier_CreaseAngle_thickness_max_get(PointerRNA *ptr)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    return (float)(data->max_thickness);
+}
+
+void LineStyleThicknessModifier_CreaseAngle_thickness_max_set(PointerRNA *ptr, float value)
+{
+    LineStyleThicknessModifier_CreaseAngle *data = (LineStyleThicknessModifier_CreaseAngle *)(ptr->data);
+    data->max_thickness = (std::remove_reference_t<decltype(data->max_thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+void LineStyleGeometryModifier_name_get(PointerRNA *ptr, char *value)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    BLI_assert(strlen(data->name) < 64);
+    strcpy(value, data->name);
+}
+
+int LineStyleGeometryModifier_name_length(PointerRNA *ptr)
+{
+    LineStyleModifier *data = (LineStyleModifier *)(ptr->data);
+    return strlen(data->name);
+}
+
+void LineStyleGeometryModifier_name_set(PointerRNA *ptr, const char *value)
+{
+    PropStringSetFunc fn = rna_LineStyleGeometryModifier_name_set;
+    fn(ptr, value);
+}
+
+int LineStyleGeometryModifier_Sampling_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_Sampling_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_Sampling_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_Sampling_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_Sampling_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_Sampling_sampling_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    return (float)(data->sampling);
+}
+
+void LineStyleGeometryModifier_Sampling_sampling_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_Sampling *data = (LineStyleGeometryModifier_Sampling *)(ptr->data);
+    data->sampling = (std::remove_reference_t<decltype(data->sampling)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+int LineStyleGeometryModifier_BezierCurve_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_BezierCurve_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_BezierCurve_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_BezierCurve_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_BezierCurve_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_BezierCurve_error_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    return (float)(data->error);
+}
+
+void LineStyleGeometryModifier_BezierCurve_error_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_BezierCurve *data = (LineStyleGeometryModifier_BezierCurve *)(ptr->data);
+    data->error = (std::remove_reference_t<decltype(data->error)>)value;
+}
+
+int LineStyleGeometryModifier_SinusDisplacement_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_SinusDisplacement_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_SinusDisplacement_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_SinusDisplacement_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_SinusDisplacement_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_SinusDisplacement_wavelength_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    return (float)(data->wavelength);
+}
+
+void LineStyleGeometryModifier_SinusDisplacement_wavelength_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    data->wavelength = (std::remove_reference_t<decltype(data->wavelength)>)std::clamp(value, 0.0001000000f, FLT_MAX);
+}
+
+float LineStyleGeometryModifier_SinusDisplacement_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleGeometryModifier_SinusDisplacement_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+float LineStyleGeometryModifier_SinusDisplacement_phase_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    return (float)(data->phase);
+}
+
+void LineStyleGeometryModifier_SinusDisplacement_phase_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_SinusDisplacement *data = (LineStyleGeometryModifier_SinusDisplacement *)(ptr->data);
+    data->phase = (std::remove_reference_t<decltype(data->phase)>)value;
+}
+
+int LineStyleGeometryModifier_SpatialNoise_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_SpatialNoise_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_SpatialNoise_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_SpatialNoise_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+float LineStyleGeometryModifier_SpatialNoise_scale_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return (float)(data->scale);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_scale_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    data->scale = (std::remove_reference_t<decltype(data->scale)>)value;
+}
+
+int LineStyleGeometryModifier_SpatialNoise_octaves_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return (int)(data->octaves);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_octaves_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    data->octaves = (std::remove_reference_t<decltype(data->octaves)>)std::clamp(value, 0, INT_MAX);
+}
+
+bool LineStyleGeometryModifier_SpatialNoise_smooth_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return ((uint64_t(data->flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_smooth_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 1); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_SpatialNoise_use_pure_random_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    return ((uint64_t(data->flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_SpatialNoise_use_pure_random_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_SpatialNoise *data = (LineStyleGeometryModifier_SpatialNoise *)(ptr->data);
+    if (value) { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | 2); }
+    else { data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(2)); }
+}
+
+int LineStyleGeometryModifier_PerlinNoise1D_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_PerlinNoise1D_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_PerlinNoise1D_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_PerlinNoise1D_frequency_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return (float)(data->frequency);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_frequency_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    data->frequency = (std::remove_reference_t<decltype(data->frequency)>)value;
+}
+
+float LineStyleGeometryModifier_PerlinNoise1D_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+int LineStyleGeometryModifier_PerlinNoise1D_octaves_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return (int)(data->octaves);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_octaves_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    data->octaves = (std::remove_reference_t<decltype(data->octaves)>)std::clamp(value, 0, INT_MAX);
+}
+
+float LineStyleGeometryModifier_PerlinNoise1D_angle_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return (float)(data->angle);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_angle_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    data->angle = (std::remove_reference_t<decltype(data->angle)>)value;
+}
+
+int LineStyleGeometryModifier_PerlinNoise1D_seed_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    return (int)(data->seed);
+}
+
+void LineStyleGeometryModifier_PerlinNoise1D_seed_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_PerlinNoise1D *data = (LineStyleGeometryModifier_PerlinNoise1D *)(ptr->data);
+    data->seed = (std::remove_reference_t<decltype(data->seed)>)value;
+}
+
+int LineStyleGeometryModifier_PerlinNoise2D_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_PerlinNoise2D_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_PerlinNoise2D_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_PerlinNoise2D_frequency_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return (float)(data->frequency);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_frequency_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    data->frequency = (std::remove_reference_t<decltype(data->frequency)>)value;
+}
+
+float LineStyleGeometryModifier_PerlinNoise2D_amplitude_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return (float)(data->amplitude);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_amplitude_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    data->amplitude = (std::remove_reference_t<decltype(data->amplitude)>)value;
+}
+
+int LineStyleGeometryModifier_PerlinNoise2D_octaves_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return (int)(data->octaves);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_octaves_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    data->octaves = (std::remove_reference_t<decltype(data->octaves)>)std::clamp(value, 0, INT_MAX);
+}
+
+float LineStyleGeometryModifier_PerlinNoise2D_angle_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return (float)(data->angle);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_angle_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    data->angle = (std::remove_reference_t<decltype(data->angle)>)value;
+}
+
+int LineStyleGeometryModifier_PerlinNoise2D_seed_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    return (int)(data->seed);
+}
+
+void LineStyleGeometryModifier_PerlinNoise2D_seed_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_PerlinNoise2D *data = (LineStyleGeometryModifier_PerlinNoise2D *)(ptr->data);
+    data->seed = (std::remove_reference_t<decltype(data->seed)>)value;
+}
+
+int LineStyleGeometryModifier_BackboneStretcher_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_BackboneStretcher_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_BackboneStretcher_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_BackboneStretcher_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_BackboneStretcher_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_BackboneStretcher_backbone_length_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    return (float)(data->backbone_length);
+}
+
+void LineStyleGeometryModifier_BackboneStretcher_backbone_length_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_BackboneStretcher *data = (LineStyleGeometryModifier_BackboneStretcher *)(ptr->data);
+    data->backbone_length = (std::remove_reference_t<decltype(data->backbone_length)>)value;
+}
+
+int LineStyleGeometryModifier_TipRemover_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_TipRemover_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_TipRemover_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_TipRemover_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_TipRemover_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_TipRemover_tip_length_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    return (float)(data->tip_length);
+}
+
+void LineStyleGeometryModifier_TipRemover_tip_length_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_TipRemover *data = (LineStyleGeometryModifier_TipRemover *)(ptr->data);
+    data->tip_length = (std::remove_reference_t<decltype(data->tip_length)>)value;
+}
+
+int LineStyleGeometryModifier_Polygonalization_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_Polygonalization_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_Polygonalization_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_Polygonalization_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_Polygonalization_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_Polygonalization_error_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    return (float)(data->error);
+}
+
+void LineStyleGeometryModifier_Polygonalization_error_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_Polygonalization *data = (LineStyleGeometryModifier_Polygonalization *)(ptr->data);
+    data->error = (std::remove_reference_t<decltype(data->error)>)value;
+}
+
+int LineStyleGeometryModifier_GuidingLines_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_GuidingLines_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_GuidingLines_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_GuidingLines_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_GuidingLines_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_GuidingLines_offset_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    return (float)(data->offset);
+}
+
+void LineStyleGeometryModifier_GuidingLines_offset_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_GuidingLines *data = (LineStyleGeometryModifier_GuidingLines *)(ptr->data);
+    data->offset = (std::remove_reference_t<decltype(data->offset)>)value;
+}
+
+int LineStyleGeometryModifier_Blueprint_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_Blueprint_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_Blueprint_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_Blueprint_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_Blueprint_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleGeometryModifier_Blueprint_shape_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (uint64_t(data->flags) & 7);
+}
+
+void LineStyleGeometryModifier_Blueprint_shape_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) & ~uint64_t(7));
+    data->flags = std::remove_reference_t<decltype(data->flags)>(uint64_t(data->flags) | uint64_t(value));
+}
+
+int LineStyleGeometryModifier_Blueprint_rounds_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (int)(data->rounds);
+}
+
+void LineStyleGeometryModifier_Blueprint_rounds_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    data->rounds = (std::remove_reference_t<decltype(data->rounds)>)std::clamp(value, 1, 1000);
+}
+
+float LineStyleGeometryModifier_Blueprint_backbone_length_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (float)(data->backbone_length);
+}
+
+void LineStyleGeometryModifier_Blueprint_backbone_length_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    data->backbone_length = (std::remove_reference_t<decltype(data->backbone_length)>)value;
+}
+
+int LineStyleGeometryModifier_Blueprint_random_radius_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (int)(data->random_radius);
+}
+
+void LineStyleGeometryModifier_Blueprint_random_radius_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    data->random_radius = (std::remove_reference_t<decltype(data->random_radius)>)std::clamp(value, 0, INT_MAX);
+}
+
+int LineStyleGeometryModifier_Blueprint_random_center_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (int)(data->random_center);
+}
+
+void LineStyleGeometryModifier_Blueprint_random_center_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    data->random_center = (std::remove_reference_t<decltype(data->random_center)>)std::clamp(value, 0, INT_MAX);
+}
+
+int LineStyleGeometryModifier_Blueprint_random_backbone_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    return (int)(data->random_backbone);
+}
+
+void LineStyleGeometryModifier_Blueprint_random_backbone_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_Blueprint *data = (LineStyleGeometryModifier_Blueprint *)(ptr->data);
+    data->random_backbone = (std::remove_reference_t<decltype(data->random_backbone)>)std::clamp(value, 0, INT_MAX);
+}
+
+int LineStyleGeometryModifier_2DOffset_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_2DOffset_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_2DOffset_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_2DOffset_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_2DOffset_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_2DOffset_start_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return (float)(data->start);
+}
+
+void LineStyleGeometryModifier_2DOffset_start_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    data->start = (std::remove_reference_t<decltype(data->start)>)value;
+}
+
+float LineStyleGeometryModifier_2DOffset_end_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return (float)(data->end);
+}
+
+void LineStyleGeometryModifier_2DOffset_end_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    data->end = (std::remove_reference_t<decltype(data->end)>)value;
+}
+
+float LineStyleGeometryModifier_2DOffset_x_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return (float)(data->x);
+}
+
+void LineStyleGeometryModifier_2DOffset_x_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    data->x = (std::remove_reference_t<decltype(data->x)>)value;
+}
+
+float LineStyleGeometryModifier_2DOffset_y_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    return (float)(data->y);
+}
+
+void LineStyleGeometryModifier_2DOffset_y_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DOffset *data = (LineStyleGeometryModifier_2DOffset *)(ptr->data);
+    data->y = (std::remove_reference_t<decltype(data->y)>)value;
+}
+
+int LineStyleGeometryModifier_2DTransform_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_2DTransform_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_2DTransform_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_2DTransform_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_2DTransform_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+int LineStyleGeometryModifier_2DTransform_pivot_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (int)(data->pivot);
+}
+
+void LineStyleGeometryModifier_2DTransform_pivot_set(PointerRNA *ptr, int value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->pivot = (std::remove_reference_t<decltype(data->pivot)>)value;
+}
+
+float LineStyleGeometryModifier_2DTransform_scale_x_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (float)(data->scale_x);
+}
+
+void LineStyleGeometryModifier_2DTransform_scale_x_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->scale_x = (std::remove_reference_t<decltype(data->scale_x)>)value;
+}
+
+float LineStyleGeometryModifier_2DTransform_scale_y_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (float)(data->scale_y);
+}
+
+void LineStyleGeometryModifier_2DTransform_scale_y_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->scale_y = (std::remove_reference_t<decltype(data->scale_y)>)value;
+}
+
+float LineStyleGeometryModifier_2DTransform_angle_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (float)(data->angle);
+}
+
+void LineStyleGeometryModifier_2DTransform_angle_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->angle = (std::remove_reference_t<decltype(data->angle)>)value;
+}
+
+float LineStyleGeometryModifier_2DTransform_pivot_u_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (float)(data->pivot_u);
+}
+
+void LineStyleGeometryModifier_2DTransform_pivot_u_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->pivot_u = (std::remove_reference_t<decltype(data->pivot_u)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float LineStyleGeometryModifier_2DTransform_pivot_x_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (float)(data->pivot_x);
+}
+
+void LineStyleGeometryModifier_2DTransform_pivot_x_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->pivot_x = (std::remove_reference_t<decltype(data->pivot_x)>)value;
+}
+
+float LineStyleGeometryModifier_2DTransform_pivot_y_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    return (float)(data->pivot_y);
+}
+
+void LineStyleGeometryModifier_2DTransform_pivot_y_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_2DTransform *data = (LineStyleGeometryModifier_2DTransform *)(ptr->data);
+    data->pivot_y = (std::remove_reference_t<decltype(data->pivot_y)>)value;
+}
+
+int LineStyleGeometryModifier_Simplification_type_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    return (int)(data->modifier.type);
+}
+
+bool LineStyleGeometryModifier_Simplification_use_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 1) != 0);
+}
+
+void LineStyleGeometryModifier_Simplification_use_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 1); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(1)); }
+}
+
+bool LineStyleGeometryModifier_Simplification_expanded_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    return ((uint64_t(data->modifier.flags) & 2) != 0);
+}
+
+void LineStyleGeometryModifier_Simplification_expanded_set(PointerRNA *ptr, bool value)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    if (value) { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) | 2); }
+    else { data->modifier.flags = std::remove_reference_t<decltype(data->modifier.flags)>(uint64_t(data->modifier.flags) & ~uint64_t(2)); }
+}
+
+float LineStyleGeometryModifier_Simplification_tolerance_get(PointerRNA *ptr)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    return (float)(data->tolerance);
+}
+
+void LineStyleGeometryModifier_Simplification_tolerance_set(PointerRNA *ptr, float value)
+{
+    LineStyleGeometryModifier_Simplification *data = (LineStyleGeometryModifier_Simplification *)(ptr->data);
+    data->tolerance = (std::remove_reference_t<decltype(data->tolerance)>)value;
+}
+
+static PointerRNA FreestyleLineStyle_texture_slots_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_LineStyleTextureSlot, rna_iterator_array_dereference_get(iter));
+}
+
+void FreestyleLineStyle_texture_slots_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FreestyleLineStyle_texture_slots;
+
+    PropCollectionBeginFunc fn = rna_LineStyle_mtex_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_texture_slots_get(iter);
+    }
+}
+
+void FreestyleLineStyle_texture_slots_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_array_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_texture_slots_get(iter);
+    }
+}
+
+void FreestyleLineStyle_texture_slots_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_array_end;
+    fn(iter);
+}
+
+bool FreestyleLineStyle_texture_slots_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    FreestyleLineStyle_texture_slots_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ArrayIterator *internal = &iter.internal.array;
+        if (index < 0 || index >= internal->length) {
+#ifdef __GNUC__
+            printf("Array iterator out of range: %s (index %d)\n", __func__, index);
+#else
+            printf("Array iterator out of range: (index %d)\n", index);
+#endif
+        }
+        else if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_array_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            internal->ptr += internal->itemsize * index;
+            found = 1;
+        }
+        if (found) { *r_ptr = FreestyleLineStyle_texture_slots_get(&iter); }
+    }
+
+    FreestyleLineStyle_texture_slots_end(&iter);
+
+    return found;
+}
+
+PointerRNA FreestyleLineStyle_active_texture_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_LineStyle_active_texture_get;
+    return fn(ptr);
+}
+
+void FreestyleLineStyle_active_texture_set(PointerRNA *ptr, PointerRNA value, ReportList *reports)
+{
+    PropPointerSetFunc fn = rna_LineStyle_active_texture_set;
+    fn(ptr, value, reports);
+}
+
+int FreestyleLineStyle_active_texture_index_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->texact);
+}
+
+void FreestyleLineStyle_active_texture_index_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->texact = (std::remove_reference_t<decltype(data->texact)>)std::clamp(value, 0, 17);
+}
+
+int FreestyleLineStyle_panel_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (uint64_t(data->panel) & 7);
+}
+
+void FreestyleLineStyle_panel_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->panel = std::remove_reference_t<decltype(data->panel)>(uint64_t(data->panel) & ~uint64_t(7));
+    data->panel = std::remove_reference_t<decltype(data->panel)>(uint64_t(data->panel) | uint64_t(value));
+}
+
+void FreestyleLineStyle_color_get(PointerRNA *ptr, float values[3])
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        values[i] = (float)((&data->r)[i]);
+    }
+}
+
+void FreestyleLineStyle_color_set(PointerRNA *ptr, const float values[3])
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    uint64_t i;
+    for (i = 0; i < 3; i++) {
+        (&data->r)[i] = std::clamp(values[i], 0.0f, FLT_MAX);
+    }
+}
+
+float FreestyleLineStyle_alpha_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->alpha);
+}
+
+void FreestyleLineStyle_alpha_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->alpha = (std::remove_reference_t<decltype(data->alpha)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+float FreestyleLineStyle_thickness_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->thickness);
+}
+
+void FreestyleLineStyle_thickness_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->thickness = (std::remove_reference_t<decltype(data->thickness)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+int FreestyleLineStyle_thickness_position_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (uint64_t(data->thickness_position) & 7);
+}
+
+void FreestyleLineStyle_thickness_position_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->thickness_position = std::remove_reference_t<decltype(data->thickness_position)>(uint64_t(data->thickness_position) & ~uint64_t(7));
+    data->thickness_position = std::remove_reference_t<decltype(data->thickness_position)>(uint64_t(data->thickness_position) | uint64_t(value));
+}
+
+float FreestyleLineStyle_thickness_ratio_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->thickness_ratio);
+}
+
+void FreestyleLineStyle_thickness_ratio_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->thickness_ratio = (std::remove_reference_t<decltype(data->thickness_ratio)>)std::clamp(value, 0.0f, 1.0f);
+}
+
+static PointerRNA FreestyleLineStyle_color_modifiers_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_LineStyleColorModifier, rna_iterator_listbase_get(iter));
+}
+
+void FreestyleLineStyle_color_modifiers_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FreestyleLineStyle_color_modifiers;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->color_modifiers, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_color_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_color_modifiers_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_color_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_color_modifiers_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool FreestyleLineStyle_color_modifiers_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    FreestyleLineStyle_color_modifiers_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = FreestyleLineStyle_color_modifiers_get(&iter); }
+    }
+
+    FreestyleLineStyle_color_modifiers_end(&iter);
+
+    return found;
+}
+
+int LineStyleColorModifier_name_length(PointerRNA *);
+void LineStyleColorModifier_name_get(PointerRNA *, char *);
+
+bool FreestyleLineStyle_color_modifiers_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    FreestyleLineStyle_color_modifiers_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = LineStyleColorModifier_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                LineStyleColorModifier_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                LineStyleColorModifier_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        FreestyleLineStyle_color_modifiers_next(&iter);
+    }
+    FreestyleLineStyle_color_modifiers_end(&iter);
+
+    return found;
+}
+
+static PointerRNA FreestyleLineStyle_alpha_modifiers_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_LineStyleAlphaModifier, rna_iterator_listbase_get(iter));
+}
+
+void FreestyleLineStyle_alpha_modifiers_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FreestyleLineStyle_alpha_modifiers;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->alpha_modifiers, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_alpha_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_alpha_modifiers_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_alpha_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_alpha_modifiers_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool FreestyleLineStyle_alpha_modifiers_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    FreestyleLineStyle_alpha_modifiers_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = FreestyleLineStyle_alpha_modifiers_get(&iter); }
+    }
+
+    FreestyleLineStyle_alpha_modifiers_end(&iter);
+
+    return found;
+}
+
+int LineStyleAlphaModifier_name_length(PointerRNA *);
+void LineStyleAlphaModifier_name_get(PointerRNA *, char *);
+
+bool FreestyleLineStyle_alpha_modifiers_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    FreestyleLineStyle_alpha_modifiers_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = LineStyleAlphaModifier_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                LineStyleAlphaModifier_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                LineStyleAlphaModifier_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        FreestyleLineStyle_alpha_modifiers_next(&iter);
+    }
+    FreestyleLineStyle_alpha_modifiers_end(&iter);
+
+    return found;
+}
+
+static PointerRNA FreestyleLineStyle_thickness_modifiers_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_LineStyleThicknessModifier, rna_iterator_listbase_get(iter));
+}
+
+void FreestyleLineStyle_thickness_modifiers_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FreestyleLineStyle_thickness_modifiers;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->thickness_modifiers, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_thickness_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_thickness_modifiers_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_thickness_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_thickness_modifiers_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool FreestyleLineStyle_thickness_modifiers_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    FreestyleLineStyle_thickness_modifiers_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = FreestyleLineStyle_thickness_modifiers_get(&iter); }
+    }
+
+    FreestyleLineStyle_thickness_modifiers_end(&iter);
+
+    return found;
+}
+
+int LineStyleThicknessModifier_name_length(PointerRNA *);
+void LineStyleThicknessModifier_name_get(PointerRNA *, char *);
+
+bool FreestyleLineStyle_thickness_modifiers_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    FreestyleLineStyle_thickness_modifiers_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = LineStyleThicknessModifier_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                LineStyleThicknessModifier_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                LineStyleThicknessModifier_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        FreestyleLineStyle_thickness_modifiers_next(&iter);
+    }
+    FreestyleLineStyle_thickness_modifiers_end(&iter);
+
+    return found;
+}
+
+static PointerRNA FreestyleLineStyle_geometry_modifiers_get(CollectionPropertyIterator *iter)
+{
+    return RNA_pointer_create_with_parent(iter->parent, RNA_LineStyleGeometryModifier, rna_iterator_listbase_get(iter));
+}
+
+void FreestyleLineStyle_geometry_modifiers_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_FreestyleLineStyle_geometry_modifiers;
+
+    rna_iterator_listbase_begin(iter, ptr, &data->geometry_modifiers, nullptr);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_geometry_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_geometry_modifiers_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_iterator_listbase_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = FreestyleLineStyle_geometry_modifiers_get(iter);
+    }
+}
+
+void FreestyleLineStyle_geometry_modifiers_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool FreestyleLineStyle_geometry_modifiers_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+
+    FreestyleLineStyle_geometry_modifiers_begin(&iter, ptr);
+
+    if (iter.valid) {
+        ListBaseIterator *internal = &iter.internal.listbase;
+        if (internal->skip) {
+            while (index-- > 0 && iter.valid) {
+                rna_iterator_listbase_next(&iter);
+            }
+            found = (index == -1 && iter.valid);
+        }
+        else {
+            while (index-- > 0 && internal->link) {
+                internal->link = internal->link->next;
+            }
+            found = (index == -1 && internal->link);
+        }
+        if (found) { *r_ptr = FreestyleLineStyle_geometry_modifiers_get(&iter); }
+    }
+
+    FreestyleLineStyle_geometry_modifiers_end(&iter);
+
+    return found;
+}
+
+int LineStyleGeometryModifier_name_length(PointerRNA *);
+void LineStyleGeometryModifier_name_get(PointerRNA *, char *);
+
+bool FreestyleLineStyle_geometry_modifiers_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    bool found = false;
+    CollectionPropertyIterator iter;
+    char namebuf[1024];
+    char *name;
+
+    FreestyleLineStyle_geometry_modifiers_begin(&iter, ptr);
+
+    while (iter.valid) {
+        if (iter.ptr.data) {
+            int namelen = LineStyleGeometryModifier_name_length(&iter.ptr);
+            if (namelen < 1024) {
+                LineStyleGeometryModifier_name_get(&iter.ptr, namebuf);
+                if (strcmp(namebuf, key) == 0) {
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+            }
+            else {
+                name = MEM_new_array_uninitialized<char>(size_t(namelen) + 1,
+                                               "name string");
+                LineStyleGeometryModifier_name_get(&iter.ptr, name);
+                if (strcmp(name, key) == 0) {
+                    MEM_delete(name);
+
+                    found = true;
+                    *r_ptr = iter.ptr;
+                    break;
+                }
+                else {
+                    MEM_delete(name);
+                }
+            }
+        }
+        FreestyleLineStyle_geometry_modifiers_next(&iter);
+    }
+    FreestyleLineStyle_geometry_modifiers_end(&iter);
+
+    return found;
+}
+
+bool FreestyleLineStyle_use_chaining_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return !((uint64_t(data->flag) & 64) != 0);
+}
+
+void FreestyleLineStyle_use_chaining_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (!value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 64); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(64)); }
+}
+
+int FreestyleLineStyle_chaining_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->chaining);
+}
+
+void FreestyleLineStyle_chaining_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->chaining = (std::remove_reference_t<decltype(data->chaining)>)value;
+}
+
+int FreestyleLineStyle_rounds_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->rounds);
+}
+
+void FreestyleLineStyle_rounds_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->rounds = (std::remove_reference_t<decltype(data->rounds)>)std::clamp(value, 1, 1000);
+}
+
+bool FreestyleLineStyle_use_same_object_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 2) != 0);
+}
+
+void FreestyleLineStyle_use_same_object_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2)); }
+}
+
+bool FreestyleLineStyle_use_split_length_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 512) != 0);
+}
+
+void FreestyleLineStyle_use_split_length_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 512); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(512)); }
+}
+
+float FreestyleLineStyle_split_length_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->split_length);
+}
+
+void FreestyleLineStyle_split_length_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_length = (std::remove_reference_t<decltype(data->split_length)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+bool FreestyleLineStyle_use_angle_min_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 128) != 0);
+}
+
+void FreestyleLineStyle_use_angle_min_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 128); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(128)); }
+}
+
+float FreestyleLineStyle_angle_min_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->min_angle);
+}
+
+void FreestyleLineStyle_angle_min_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->min_angle = (std::remove_reference_t<decltype(data->min_angle)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+bool FreestyleLineStyle_use_angle_max_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 256) != 0);
+}
+
+void FreestyleLineStyle_use_angle_max_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 256); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(256)); }
+}
+
+float FreestyleLineStyle_angle_max_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->max_angle);
+}
+
+void FreestyleLineStyle_angle_max_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->max_angle = (std::remove_reference_t<decltype(data->max_angle)>)std::clamp(value, 0.0f, 3.1415927410f);
+}
+
+bool FreestyleLineStyle_use_length_min_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 16) != 0);
+}
+
+void FreestyleLineStyle_use_length_min_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16)); }
+}
+
+float FreestyleLineStyle_length_min_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->min_length);
+}
+
+void FreestyleLineStyle_length_min_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->min_length = (std::remove_reference_t<decltype(data->min_length)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+bool FreestyleLineStyle_use_length_max_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 32) != 0);
+}
+
+void FreestyleLineStyle_use_length_max_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 32); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(32)); }
+}
+
+float FreestyleLineStyle_length_max_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->max_length);
+}
+
+void FreestyleLineStyle_length_max_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->max_length = (std::remove_reference_t<decltype(data->max_length)>)std::clamp(value, 0.0f, 10000.0f);
+}
+
+bool FreestyleLineStyle_use_chain_count_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 16384) != 0);
+}
+
+void FreestyleLineStyle_use_chain_count_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 16384); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(16384)); }
+}
+
+int FreestyleLineStyle_chain_count_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->chain_count);
+}
+
+void FreestyleLineStyle_chain_count_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->chain_count = (std::remove_reference_t<decltype(data->chain_count)>)std::clamp(value, 0, INT_MAX);
+}
+
+bool FreestyleLineStyle_use_split_pattern_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 1024) != 0);
+}
+
+void FreestyleLineStyle_use_split_pattern_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 1024); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(1024)); }
+}
+
+int FreestyleLineStyle_split_dash1_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->split_dash1);
+}
+
+void FreestyleLineStyle_split_dash1_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_dash1 = (std::remove_reference_t<decltype(data->split_dash1)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_split_gap1_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->split_gap1);
+}
+
+void FreestyleLineStyle_split_gap1_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_gap1 = (std::remove_reference_t<decltype(data->split_gap1)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_split_dash2_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->split_dash2);
+}
+
+void FreestyleLineStyle_split_dash2_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_dash2 = (std::remove_reference_t<decltype(data->split_dash2)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_split_gap2_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->split_gap2);
+}
+
+void FreestyleLineStyle_split_gap2_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_gap2 = (std::remove_reference_t<decltype(data->split_gap2)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_split_dash3_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->split_dash3);
+}
+
+void FreestyleLineStyle_split_dash3_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_dash3 = (std::remove_reference_t<decltype(data->split_dash3)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_split_gap3_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->split_gap3);
+}
+
+void FreestyleLineStyle_split_gap3_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->split_gap3 = (std::remove_reference_t<decltype(data->split_gap3)>)std::clamp(value, 0, 65535);
+}
+
+bool FreestyleLineStyle_material_boundary_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 8) != 0);
+}
+
+void FreestyleLineStyle_material_boundary_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 8); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(8)); }
+}
+
+bool FreestyleLineStyle_use_sorting_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return !((uint64_t(data->flag) & 2048) != 0);
+}
+
+void FreestyleLineStyle_use_sorting_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (!value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 2048); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(2048)); }
+}
+
+int FreestyleLineStyle_sort_key_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->sort_key);
+}
+
+void FreestyleLineStyle_sort_key_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->sort_key = (std::remove_reference_t<decltype(data->sort_key)>)value;
+}
+
+int FreestyleLineStyle_sort_order_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (uint64_t(data->flag) & 4096);
+}
+
+void FreestyleLineStyle_sort_order_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(4096));
+    data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | uint64_t(value));
+}
+
+int FreestyleLineStyle_integration_type_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->integration_type);
+}
+
+void FreestyleLineStyle_integration_type_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->integration_type = (std::remove_reference_t<decltype(data->integration_type)>)value;
+}
+
+bool FreestyleLineStyle_use_dashed_line_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 4) != 0);
+}
+
+void FreestyleLineStyle_use_dashed_line_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 4); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(4)); }
+}
+
+int FreestyleLineStyle_caps_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (uint64_t(data->caps) & 3);
+}
+
+void FreestyleLineStyle_caps_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->caps = std::remove_reference_t<decltype(data->caps)>(uint64_t(data->caps) & ~uint64_t(3));
+    data->caps = std::remove_reference_t<decltype(data->caps)>(uint64_t(data->caps) | uint64_t(value));
+}
+
+int FreestyleLineStyle_dash1_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->dash1);
+}
+
+void FreestyleLineStyle_dash1_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->dash1 = (std::remove_reference_t<decltype(data->dash1)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_gap1_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->gap1);
+}
+
+void FreestyleLineStyle_gap1_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->gap1 = (std::remove_reference_t<decltype(data->gap1)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_dash2_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->dash2);
+}
+
+void FreestyleLineStyle_dash2_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->dash2 = (std::remove_reference_t<decltype(data->dash2)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_gap2_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->gap2);
+}
+
+void FreestyleLineStyle_gap2_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->gap2 = (std::remove_reference_t<decltype(data->gap2)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_dash3_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->dash3);
+}
+
+void FreestyleLineStyle_dash3_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->dash3 = (std::remove_reference_t<decltype(data->dash3)>)std::clamp(value, 0, 65535);
+}
+
+int FreestyleLineStyle_gap3_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (int)(data->gap3);
+}
+
+void FreestyleLineStyle_gap3_set(PointerRNA *ptr, int value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->gap3 = (std::remove_reference_t<decltype(data->gap3)>)std::clamp(value, 0, 65535);
+}
+
+bool FreestyleLineStyle_use_texture_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->flag) & 8192) != 0);
+}
+
+void FreestyleLineStyle_use_texture_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) | 8192); }
+    else { data->flag = std::remove_reference_t<decltype(data->flag)>(uint64_t(data->flag) & ~uint64_t(8192)); }
+}
+
+float FreestyleLineStyle_texture_spacing_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return (float)(data->texstep);
+}
+
+void FreestyleLineStyle_texture_spacing_set(PointerRNA *ptr, float value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    data->texstep = (std::remove_reference_t<decltype(data->texstep)>)std::clamp(value, 0.0099999998f, 100.0f);
+}
+
+PointerRNA FreestyleLineStyle_animation_data_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_AnimData, data->adt);
+}
+
+PointerRNA FreestyleLineStyle_node_tree_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return RNA_pointer_create_with_parent(*ptr, RNA_NodeTree, data->nodetree);
+}
+
+bool FreestyleLineStyle_use_nodes_get(PointerRNA *ptr)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    return ((uint64_t(data->use_nodes) & 1) != 0);
+}
+
+void FreestyleLineStyle_use_nodes_set(PointerRNA *ptr, bool value)
+{
+    FreestyleLineStyle *data = (FreestyleLineStyle *)(ptr->data);
+    if (value) { data->use_nodes = std::remove_reference_t<decltype(data->use_nodes)>(uint64_t(data->use_nodes) | 1); }
+    else { data->use_nodes = std::remove_reference_t<decltype(data->use_nodes)>(uint64_t(data->use_nodes) & ~uint64_t(1)); }
+}
+
+static PointerRNA LineStyleTextureSlots_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LineStyleTextureSlots_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LineStyleTextureSlots_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleTextureSlots_rna_properties_get(iter);
+    }
+}
+
+void LineStyleTextureSlots_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleTextureSlots_rna_properties_get(iter);
+    }
+}
+
+void LineStyleTextureSlots_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LineStyleTextureSlots_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LineStyleTextureSlots_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA LineStyleColorModifiers_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LineStyleColorModifiers_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LineStyleColorModifiers_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleColorModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleColorModifiers_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleColorModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleColorModifiers_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LineStyleColorModifiers_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LineStyleColorModifiers_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA LineStyleAlphaModifiers_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LineStyleAlphaModifiers_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LineStyleAlphaModifiers_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleAlphaModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleAlphaModifiers_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleAlphaModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleAlphaModifiers_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LineStyleAlphaModifiers_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LineStyleAlphaModifiers_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA LineStyleThicknessModifiers_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LineStyleThicknessModifiers_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LineStyleThicknessModifiers_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleThicknessModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleThicknessModifiers_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleThicknessModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleThicknessModifiers_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LineStyleThicknessModifiers_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LineStyleThicknessModifiers_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+static PointerRNA LineStyleGeometryModifiers_rna_properties_get(CollectionPropertyIterator *iter)
+{
+    PropCollectionGetFunc fn = rna_builtin_properties_get;
+    return fn(iter);
+}
+
+void LineStyleGeometryModifiers_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+    *iter = {};
+    iter->parent = *ptr;
+    iter->prop = &rna_LineStyleGeometryModifiers_rna_properties;
+
+    PropCollectionBeginFunc fn = rna_builtin_properties_begin;
+    fn(iter, ptr);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleGeometryModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleGeometryModifiers_rna_properties_next(CollectionPropertyIterator *iter)
+{
+    PropCollectionNextFunc fn = rna_builtin_properties_next;
+    fn(iter);
+
+    if (iter->valid) {
+        iter->ptr = LineStyleGeometryModifiers_rna_properties_get(iter);
+    }
+}
+
+void LineStyleGeometryModifiers_rna_properties_end(CollectionPropertyIterator *iter)
+{
+    PropCollectionEndFunc fn = rna_iterator_listbase_end;
+    fn(iter);
+}
+
+bool LineStyleGeometryModifiers_rna_properties_lookup_string(PointerRNA *ptr, const char *key, PointerRNA *r_ptr)
+{
+    PropCollectionLookupStringFunc fn = rna_builtin_properties_lookup_string;
+    return fn(ptr, key, r_ptr);
+}
+
+PointerRNA LineStyleGeometryModifiers_rna_type_get(PointerRNA *ptr)
+{
+    PropPointerGetFunc fn = rna_builtin_type_get;
+    return fn(ptr);
+}
+
+int LineStyleTextureSlot_mapping_x_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (int)(data->projx);
+}
+
+void LineStyleTextureSlot_mapping_x_set(PointerRNA *ptr, int value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->projx = (std::remove_reference_t<decltype(data->projx)>)value;
+}
+
+int LineStyleTextureSlot_mapping_y_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (int)(data->projy);
+}
+
+void LineStyleTextureSlot_mapping_y_set(PointerRNA *ptr, int value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->projy = (std::remove_reference_t<decltype(data->projy)>)value;
+}
+
+int LineStyleTextureSlot_mapping_z_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (int)(data->projz);
+}
+
+void LineStyleTextureSlot_mapping_z_set(PointerRNA *ptr, int value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->projz = (std::remove_reference_t<decltype(data->projz)>)value;
+}
+
+int LineStyleTextureSlot_mapping_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (int)(data->mapping);
+}
+
+void LineStyleTextureSlot_mapping_set(PointerRNA *ptr, int value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->mapping = (std::remove_reference_t<decltype(data->mapping)>)value;
+}
+
+bool LineStyleTextureSlot_use_map_color_diffuse_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return ((uint64_t(data->mapto) & 1) != 0);
+}
+
+void LineStyleTextureSlot_use_map_color_diffuse_set(PointerRNA *ptr, bool value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    if (value) { data->mapto = std::remove_reference_t<decltype(data->mapto)>(uint64_t(data->mapto) | 1); }
+    else { data->mapto = std::remove_reference_t<decltype(data->mapto)>(uint64_t(data->mapto) & ~uint64_t(1)); }
+}
+
+bool LineStyleTextureSlot_use_map_alpha_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return ((uint64_t(data->mapto) & 128) != 0);
+}
+
+void LineStyleTextureSlot_use_map_alpha_set(PointerRNA *ptr, bool value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    if (value) { data->mapto = std::remove_reference_t<decltype(data->mapto)>(uint64_t(data->mapto) | 128); }
+    else { data->mapto = std::remove_reference_t<decltype(data->mapto)>(uint64_t(data->mapto) & ~uint64_t(128)); }
+}
+
+int LineStyleTextureSlot_texture_coords_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (int)(data->texco);
+}
+
+void LineStyleTextureSlot_texture_coords_set(PointerRNA *ptr, int value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->texco = (std::remove_reference_t<decltype(data->texco)>)value;
+}
+
+float LineStyleTextureSlot_alpha_factor_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (float)(data->alphafac);
+}
+
+void LineStyleTextureSlot_alpha_factor_set(PointerRNA *ptr, float value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->alphafac = (std::remove_reference_t<decltype(data->alphafac)>)value;
+}
+
+float LineStyleTextureSlot_diffuse_color_factor_get(PointerRNA *ptr)
+{
+    MTex *data = (MTex *)(ptr->data);
+    return (float)(data->colfac);
+}
+
+void LineStyleTextureSlot_diffuse_color_factor_set(PointerRNA *ptr, float value)
+{
+    MTex *data = (MTex *)(ptr->data);
+    data->colfac = (std::remove_reference_t<decltype(data->colfac)>)value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MTex *LineStyleTextureSlots_add_func(ID *_selfid, bContext *C, ReportList *reports)
+{
+	return rna_mtex_texture_slots_add(_selfid, C, reports);
+}
+
+static void LineStyleTextureSlots_add_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	MTex *mtex;
+	char *_data, *_retdata;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_data = (char *)_parms->data;
+	_retdata = _data;
+	
+	mtex = rna_mtex_texture_slots_add(_selfid, C, reports);
+	*((MTex **)_retdata) = mtex;
+}
+
+MTex *LineStyleTextureSlots_create_func(ID *_selfid, bContext *C, ReportList *reports, int index)
+{
+	return rna_mtex_texture_slots_create(_selfid, C, reports, index);
+}
+
+static void LineStyleTextureSlots_create_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	int index;
+	MTex *mtex;
+	char *_data, *_retdata;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_data = (char *)_parms->data;
+	index = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	mtex = rna_mtex_texture_slots_create(_selfid, C, reports, index);
+	*((MTex **)_retdata) = mtex;
+}
+
+void LineStyleTextureSlots_clear_func(ID *_selfid, bContext *C, ReportList *reports, int index)
+{
+	rna_mtex_texture_slots_clear(_selfid, C, reports, index);
+}
+
+static void LineStyleTextureSlots_clear_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	ID *_selfid;
+	int index;
+	char *_data;
+	
+	_selfid = (ID *)_ptr->owner_id;
+	_data = (char *)_parms->data;
+	index = *((int *)_data);
+	
+	rna_mtex_texture_slots_clear(_selfid, C, reports, index);
+}
+
+/* Repeated prototypes to detect errors */
+
+MTex *rna_mtex_texture_slots_add(ID *_selfid, bContext *C, ReportList *reports);
+MTex *rna_mtex_texture_slots_create(ID *_selfid, bContext *C, ReportList *reports, int index);
+void rna_mtex_texture_slots_clear(ID *_selfid, bContext *C, ReportList *reports, int index);
+
+LineStyleModifier *LineStyleColorModifiers_new_func(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type)
+{
+	return rna_LineStyle_color_modifier_add(_self, reports, name, type);
+}
+
+static void LineStyleColorModifiers_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	const char * name;
+	int type;
+	LineStyleModifier *modifier;
+	char *_data, *_retdata;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	modifier = rna_LineStyle_color_modifier_add(_self, reports, name, type);
+	*((LineStyleModifier **)_retdata) = modifier;
+}
+
+void LineStyleColorModifiers_remove_func(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier)
+{
+	rna_LineStyle_color_modifier_remove(_self, reports, modifier);
+}
+
+static void LineStyleColorModifiers_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	PointerRNA *modifier;
+	char *_data;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	modifier = *((PointerRNA **)_data);
+	
+	rna_LineStyle_color_modifier_remove(_self, reports, modifier);
+}
+
+/* Repeated prototypes to detect errors */
+
+LineStyleModifier *rna_LineStyle_color_modifier_add(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type);
+void rna_LineStyle_color_modifier_remove(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier);
+
+LineStyleModifier *LineStyleAlphaModifiers_new_func(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type)
+{
+	return rna_LineStyle_alpha_modifier_add(_self, reports, name, type);
+}
+
+static void LineStyleAlphaModifiers_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	const char * name;
+	int type;
+	LineStyleModifier *modifier;
+	char *_data, *_retdata;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	modifier = rna_LineStyle_alpha_modifier_add(_self, reports, name, type);
+	*((LineStyleModifier **)_retdata) = modifier;
+}
+
+void LineStyleAlphaModifiers_remove_func(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier)
+{
+	rna_LineStyle_alpha_modifier_remove(_self, reports, modifier);
+}
+
+static void LineStyleAlphaModifiers_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	PointerRNA *modifier;
+	char *_data;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	modifier = *((PointerRNA **)_data);
+	
+	rna_LineStyle_alpha_modifier_remove(_self, reports, modifier);
+}
+
+/* Repeated prototypes to detect errors */
+
+LineStyleModifier *rna_LineStyle_alpha_modifier_add(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type);
+void rna_LineStyle_alpha_modifier_remove(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier);
+
+LineStyleModifier *LineStyleThicknessModifiers_new_func(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type)
+{
+	return rna_LineStyle_thickness_modifier_add(_self, reports, name, type);
+}
+
+static void LineStyleThicknessModifiers_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	const char * name;
+	int type;
+	LineStyleModifier *modifier;
+	char *_data, *_retdata;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	modifier = rna_LineStyle_thickness_modifier_add(_self, reports, name, type);
+	*((LineStyleModifier **)_retdata) = modifier;
+}
+
+void LineStyleThicknessModifiers_remove_func(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier)
+{
+	rna_LineStyle_thickness_modifier_remove(_self, reports, modifier);
+}
+
+static void LineStyleThicknessModifiers_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	PointerRNA *modifier;
+	char *_data;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	modifier = *((PointerRNA **)_data);
+	
+	rna_LineStyle_thickness_modifier_remove(_self, reports, modifier);
+}
+
+/* Repeated prototypes to detect errors */
+
+LineStyleModifier *rna_LineStyle_thickness_modifier_add(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type);
+void rna_LineStyle_thickness_modifier_remove(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier);
+
+LineStyleModifier *LineStyleGeometryModifiers_new_func(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type)
+{
+	return rna_LineStyle_geometry_modifier_add(_self, reports, name, type);
+}
+
+static void LineStyleGeometryModifiers_new_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	const char * name;
+	int type;
+	LineStyleModifier *modifier;
+	char *_data, *_retdata;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	name = *((const char * *)_data);
+	_data += 8;
+	type = *((int *)_data);
+	_data += 8;
+	_retdata = _data;
+	
+	modifier = rna_LineStyle_geometry_modifier_add(_self, reports, name, type);
+	*((LineStyleModifier **)_retdata) = modifier;
+}
+
+void LineStyleGeometryModifiers_remove_func(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier)
+{
+	rna_LineStyle_geometry_modifier_remove(_self, reports, modifier);
+}
+
+static void LineStyleGeometryModifiers_remove_call(bContext *C, ReportList *reports, PointerRNA *_ptr, ParameterList *_parms)
+{
+	FreestyleLineStyle *_self;
+	PointerRNA *modifier;
+	char *_data;
+	
+	_self = (FreestyleLineStyle *)_ptr->data;
+	_data = (char *)_parms->data;
+	modifier = *((PointerRNA **)_data);
+	
+	rna_LineStyle_geometry_modifier_remove(_self, reports, modifier);
+}
+
+/* Repeated prototypes to detect errors */
+
+LineStyleModifier *rna_LineStyle_geometry_modifier_add(FreestyleLineStyle *_self, ReportList *reports, const char * name, int type);
+void rna_LineStyle_geometry_modifier_remove(FreestyleLineStyle *_self, ReportList *reports, PointerRNA *modifier);
+
+
+/* Line Style Modifier */
+static CollectionPropertyRNA rna_LineStyleModifier_rna_properties_;
+PropertyRNA &rna_LineStyleModifier_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LineStyleModifier_rna_properties_);
+
+static PointerPropertyRNA rna_LineStyleModifier_rna_type_;
+PropertyRNA &rna_LineStyleModifier_rna_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleModifier_rna_type_);
+
+StructRNA *RNA_LineStyleModifier;
+void register_struct_LineStyleModifier(BlenderRNA &brna)
+{
+	rna_LineStyleModifier_rna_properties_ = {
+		{&rna_LineStyleModifier_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleModifier_rna_properties_begin, LineStyleModifier_rna_properties_next, LineStyleModifier_rna_properties_end, LineStyleModifier_rna_properties_get, nullptr, nullptr, LineStyleModifier_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LineStyleModifier_rna_type_ = {
+		{nullptr, 	&rna_LineStyleModifier_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleModifier_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_LineStyleModifier;
+	srna->cont.properties = {&rna_LineStyleModifier_rna_properties, &rna_LineStyleModifier_rna_type};
+	srna->identifier = "LineStyleModifier";
+	srna->flag = 516;
+	srna->name = "Line Style Modifier";
+	srna->description = "Base type to define modifiers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+};
+
+/* Line Style Color Modifier */
+static StringPropertyRNA rna_LineStyleColorModifier_name_;
+PropertyRNA &rna_LineStyleColorModifier_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_name_);
+
+StructRNA *RNA_LineStyleColorModifier;
+void register_struct_LineStyleColorModifier(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_name_ = {
+		{nullptr, 	nullptr,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Modifier Name",
+		"Name of the modifier",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_name_get, LineStyleColorModifier_name_length, LineStyleColorModifier_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier;
+	srna->cont.properties = {&rna_LineStyleColorModifier_name, &rna_LineStyleColorModifier_name};
+	srna->identifier = "LineStyleColorModifier";
+	srna->flag = 516;
+	srna->name = "Line Style Color Modifier";
+	srna->description = "Base type to define line color modifiers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Along Stroke */
+static EnumPropertyRNA rna_LineStyleColorModifier_AlongStroke_type_;
+PropertyRNA &rna_LineStyleColorModifier_AlongStroke_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_AlongStroke_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_AlongStroke_blend_;
+PropertyRNA &rna_LineStyleColorModifier_AlongStroke_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_AlongStroke_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_AlongStroke_influence_;
+PropertyRNA &rna_LineStyleColorModifier_AlongStroke_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_AlongStroke_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_AlongStroke_use_;
+PropertyRNA &rna_LineStyleColorModifier_AlongStroke_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_AlongStroke_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_AlongStroke_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_AlongStroke_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_AlongStroke_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_AlongStroke_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_AlongStroke_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_AlongStroke_color_ramp_);
+
+StructRNA *RNA_LineStyleColorModifier_AlongStroke;
+void register_struct_LineStyleColorModifier_AlongStroke(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_AlongStroke_type_ = {
+		{&rna_LineStyleColorModifier_AlongStroke_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_AlongStroke, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_AlongStroke_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_AlongStroke_blend_ = {
+		{&rna_LineStyleColorModifier_AlongStroke_influence, 	&rna_LineStyleColorModifier_AlongStroke_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_AlongStroke, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_AlongStroke_blend_get, LineStyleColorModifier_AlongStroke_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_AlongStroke_influence_ = {
+		{&rna_LineStyleColorModifier_AlongStroke_use, 	&rna_LineStyleColorModifier_AlongStroke_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_AlongStroke, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_AlongStroke_influence_get, LineStyleColorModifier_AlongStroke_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_AlongStroke_use_ = {
+		{&rna_LineStyleColorModifier_AlongStroke_expanded, 	&rna_LineStyleColorModifier_AlongStroke_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_AlongStroke_use_get, LineStyleColorModifier_AlongStroke_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_AlongStroke_expanded_ = {
+		{&rna_LineStyleColorModifier_AlongStroke_color_ramp, 	&rna_LineStyleColorModifier_AlongStroke_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_AlongStroke_expanded_get, LineStyleColorModifier_AlongStroke_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_AlongStroke_color_ramp_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_AlongStroke_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_AlongStroke_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_AlongStroke;
+	srna->cont.properties = {&rna_LineStyleColorModifier_AlongStroke_type, &rna_LineStyleColorModifier_AlongStroke_color_ramp};
+	srna->identifier = "LineStyleColorModifier_AlongStroke";
+	srna->flag = 516;
+	srna->name = "Along Stroke";
+	srna->description = "Change line color along stroke";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Distance from Camera */
+static EnumPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_type_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_blend_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_influence_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_use_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_color_ramp_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_range_min_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_range_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_range_min_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_DistanceFromCamera_range_max_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromCamera_range_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromCamera_range_max_);
+
+StructRNA *RNA_LineStyleColorModifier_DistanceFromCamera;
+void register_struct_LineStyleColorModifier_DistanceFromCamera(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_DistanceFromCamera_type_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromCamera, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_DistanceFromCamera_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_blend_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_influence, 	&rna_LineStyleColorModifier_DistanceFromCamera_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromCamera, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_DistanceFromCamera_blend_get, LineStyleColorModifier_DistanceFromCamera_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_influence_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_use, 	&rna_LineStyleColorModifier_DistanceFromCamera_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromCamera, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_DistanceFromCamera_influence_get, LineStyleColorModifier_DistanceFromCamera_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_use_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_expanded, 	&rna_LineStyleColorModifier_DistanceFromCamera_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromCamera_use_get, LineStyleColorModifier_DistanceFromCamera_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_expanded_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_color_ramp, 	&rna_LineStyleColorModifier_DistanceFromCamera_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromCamera_expanded_get, LineStyleColorModifier_DistanceFromCamera_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_color_ramp_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_range_min, 	&rna_LineStyleColorModifier_DistanceFromCamera_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromCamera_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_range_min_ = {
+		{&rna_LineStyleColorModifier_DistanceFromCamera_range_max, 	&rna_LineStyleColorModifier_DistanceFromCamera_color_ramp,
+		-1, "range_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Min",
+		"Lower bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromCamera, range_min), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_DistanceFromCamera_range_min_get, LineStyleColorModifier_DistanceFromCamera_range_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromCamera_range_max_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_DistanceFromCamera_range_min,
+		-1, "range_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Max",
+		"Upper bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromCamera, range_max), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_DistanceFromCamera_range_max_get, LineStyleColorModifier_DistanceFromCamera_range_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_DistanceFromCamera;
+	srna->cont.properties = {&rna_LineStyleColorModifier_DistanceFromCamera_type, &rna_LineStyleColorModifier_DistanceFromCamera_range_max};
+	srna->identifier = "LineStyleColorModifier_DistanceFromCamera";
+	srna->flag = 516;
+	srna->name = "Distance from Camera";
+	srna->description = "Change line color based on the distance from the camera";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Distance from Object */
+static EnumPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_type_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_blend_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_influence_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_use_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_color_ramp_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_range_min_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_range_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_range_min_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_range_max_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_range_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_range_max_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_DistanceFromObject_target_;
+PropertyRNA &rna_LineStyleColorModifier_DistanceFromObject_target = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_DistanceFromObject_target_);
+
+StructRNA *RNA_LineStyleColorModifier_DistanceFromObject;
+void register_struct_LineStyleColorModifier_DistanceFromObject(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_DistanceFromObject_type_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromObject, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_DistanceFromObject_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_blend_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_influence, 	&rna_LineStyleColorModifier_DistanceFromObject_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromObject, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_DistanceFromObject_blend_get, LineStyleColorModifier_DistanceFromObject_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_influence_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_use, 	&rna_LineStyleColorModifier_DistanceFromObject_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromObject, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_DistanceFromObject_influence_get, LineStyleColorModifier_DistanceFromObject_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_use_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_expanded, 	&rna_LineStyleColorModifier_DistanceFromObject_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromObject_use_get, LineStyleColorModifier_DistanceFromObject_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_expanded_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_color_ramp, 	&rna_LineStyleColorModifier_DistanceFromObject_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromObject_expanded_get, LineStyleColorModifier_DistanceFromObject_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_color_ramp_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_range_min, 	&rna_LineStyleColorModifier_DistanceFromObject_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromObject_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_range_min_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_range_max, 	&rna_LineStyleColorModifier_DistanceFromObject_color_ramp,
+		-1, "range_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Min",
+		"Lower bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromObject, range_min), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_DistanceFromObject_range_min_get, LineStyleColorModifier_DistanceFromObject_range_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_range_max_ = {
+		{&rna_LineStyleColorModifier_DistanceFromObject_target, 	&rna_LineStyleColorModifier_DistanceFromObject_range_min,
+		-1, "range_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Max",
+		"Upper bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_DistanceFromObject, range_max), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_DistanceFromObject_range_max_get, LineStyleColorModifier_DistanceFromObject_range_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_DistanceFromObject_target_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_DistanceFromObject_range_max,
+		-1, "target", 8388737, 0, 0, 0, 0, PropertyPathTemplateType(0), "Target",
+		"Target object from which the distance is measured",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_DistanceFromObject_target_get, LineStyleColorModifier_DistanceFromObject_target_set, nullptr, nullptr,RNA_Object
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_DistanceFromObject;
+	srna->cont.properties = {&rna_LineStyleColorModifier_DistanceFromObject_type, &rna_LineStyleColorModifier_DistanceFromObject_target};
+	srna->identifier = "LineStyleColorModifier_DistanceFromObject";
+	srna->flag = 516;
+	srna->name = "Distance from Object";
+	srna->description = "Change line color based on the distance from an object";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Material */
+static EnumPropertyRNA rna_LineStyleColorModifier_Material_type_;
+PropertyRNA &rna_LineStyleColorModifier_Material_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_Material_blend_;
+PropertyRNA &rna_LineStyleColorModifier_Material_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Material_influence_;
+PropertyRNA &rna_LineStyleColorModifier_Material_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Material_use_;
+PropertyRNA &rna_LineStyleColorModifier_Material_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Material_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_Material_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_expanded_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_Material_material_attribute_;
+PropertyRNA &rna_LineStyleColorModifier_Material_material_attribute = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_material_attribute_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_Material_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_Material_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_color_ramp_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Material_use_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_Material_use_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Material_use_ramp_);
+
+StructRNA *RNA_LineStyleColorModifier_Material;
+void register_struct_LineStyleColorModifier_Material(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_Material_type_ = {
+		{&rna_LineStyleColorModifier_Material_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Material, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Material_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_Material_blend_ = {
+		{&rna_LineStyleColorModifier_Material_influence, 	&rna_LineStyleColorModifier_Material_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Material, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Material_blend_get, LineStyleColorModifier_Material_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_Material_influence_ = {
+		{&rna_LineStyleColorModifier_Material_use, 	&rna_LineStyleColorModifier_Material_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Material, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Material_influence_get, LineStyleColorModifier_Material_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Material_use_ = {
+		{&rna_LineStyleColorModifier_Material_expanded, 	&rna_LineStyleColorModifier_Material_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Material_use_get, LineStyleColorModifier_Material_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Material_expanded_ = {
+		{&rna_LineStyleColorModifier_Material_material_attribute, 	&rna_LineStyleColorModifier_Material_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Material_expanded_get, LineStyleColorModifier_Material_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleColorModifier_Material_material_attribute_items[16] = {
+		{11, "LINE", 0, "Line Color", ""	},
+		{12, "LINE_R", 0, "Line Color Red", ""	},
+		{13, "LINE_G", 0, "Line Color Green", ""	},
+		{14, "LINE_B", 0, "Line Color Blue", ""	},
+		{15, "LINE_A", 0, "Line Color Alpha", ""	},
+		{1, "DIFF", 0, "Diffuse Color", ""	},
+		{2, "DIFF_R", 0, "Diffuse Color Red", ""	},
+		{3, "DIFF_G", 0, "Diffuse Color Green", ""	},
+		{4, "DIFF_B", 0, "Diffuse Color Blue", ""	},
+		{5, "SPEC", 0, "Specular Color", ""	},
+		{6, "SPEC_R", 0, "Specular Color Red", ""	},
+		{7, "SPEC_G", 0, "Specular Color Green", ""	},
+		{8, "SPEC_B", 0, "Specular Color Blue", ""	},
+		{9, "SPEC_HARD", 0, "Specular Hardness", ""	},
+		{10, "ALPHA", 0, "Alpha Transparency", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleColorModifier_Material_material_attribute_ = {
+		{&rna_LineStyleColorModifier_Material_color_ramp, 	&rna_LineStyleColorModifier_Material_expanded,
+		-1, "material_attribute", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Material Attribute",
+		"Specify which material attribute is used",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Material, mat_attr), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Material_material_attribute_get, LineStyleColorModifier_Material_material_attribute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleColorModifier_Material_material_attribute_items, 15, 11
+	};
+
+	rna_LineStyleColorModifier_Material_color_ramp_ = {
+		{&rna_LineStyleColorModifier_Material_use_ramp, 	&rna_LineStyleColorModifier_Material_material_attribute,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Material_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	rna_LineStyleColorModifier_Material_use_ramp_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_Material_color_ramp,
+		-1, "use_ramp", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Ramp",
+		"Use color ramp to map the BW average into an RGB color",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Material_use_ramp_get, LineStyleColorModifier_Material_use_ramp_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_Material;
+	srna->cont.properties = {&rna_LineStyleColorModifier_Material_type, &rna_LineStyleColorModifier_Material_use_ramp};
+	srna->identifier = "LineStyleColorModifier_Material";
+	srna->flag = 516;
+	srna->name = "Material";
+	srna->description = "Change line color based on a material attribute";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Tangent */
+static EnumPropertyRNA rna_LineStyleColorModifier_Tangent_type_;
+PropertyRNA &rna_LineStyleColorModifier_Tangent_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Tangent_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_Tangent_blend_;
+PropertyRNA &rna_LineStyleColorModifier_Tangent_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Tangent_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Tangent_influence_;
+PropertyRNA &rna_LineStyleColorModifier_Tangent_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Tangent_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Tangent_use_;
+PropertyRNA &rna_LineStyleColorModifier_Tangent_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Tangent_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Tangent_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_Tangent_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Tangent_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_Tangent_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_Tangent_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Tangent_color_ramp_);
+
+StructRNA *RNA_LineStyleColorModifier_Tangent;
+void register_struct_LineStyleColorModifier_Tangent(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_Tangent_type_ = {
+		{&rna_LineStyleColorModifier_Tangent_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Tangent, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Tangent_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_Tangent_blend_ = {
+		{&rna_LineStyleColorModifier_Tangent_influence, 	&rna_LineStyleColorModifier_Tangent_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Tangent, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Tangent_blend_get, LineStyleColorModifier_Tangent_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_Tangent_influence_ = {
+		{&rna_LineStyleColorModifier_Tangent_use, 	&rna_LineStyleColorModifier_Tangent_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Tangent, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Tangent_influence_get, LineStyleColorModifier_Tangent_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Tangent_use_ = {
+		{&rna_LineStyleColorModifier_Tangent_expanded, 	&rna_LineStyleColorModifier_Tangent_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Tangent_use_get, LineStyleColorModifier_Tangent_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Tangent_expanded_ = {
+		{&rna_LineStyleColorModifier_Tangent_color_ramp, 	&rna_LineStyleColorModifier_Tangent_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Tangent_expanded_get, LineStyleColorModifier_Tangent_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Tangent_color_ramp_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_Tangent_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Tangent_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_Tangent;
+	srna->cont.properties = {&rna_LineStyleColorModifier_Tangent_type, &rna_LineStyleColorModifier_Tangent_color_ramp};
+	srna->identifier = "LineStyleColorModifier_Tangent";
+	srna->flag = 516;
+	srna->name = "Tangent";
+	srna->description = "Change line color based on the direction of a stroke";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Noise */
+static EnumPropertyRNA rna_LineStyleColorModifier_Noise_type_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_Noise_blend_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Noise_influence_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Noise_use_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Noise_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_Noise_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_color_ramp_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Noise_amplitude_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_amplitude_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Noise_period_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_period = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_period_);
+
+static IntPropertyRNA rna_LineStyleColorModifier_Noise_seed_;
+PropertyRNA &rna_LineStyleColorModifier_Noise_seed = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Noise_seed_);
+
+StructRNA *RNA_LineStyleColorModifier_Noise;
+void register_struct_LineStyleColorModifier_Noise(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_Noise_type_ = {
+		{&rna_LineStyleColorModifier_Noise_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Noise, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Noise_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_Noise_blend_ = {
+		{&rna_LineStyleColorModifier_Noise_influence, 	&rna_LineStyleColorModifier_Noise_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Noise, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Noise_blend_get, LineStyleColorModifier_Noise_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_Noise_influence_ = {
+		{&rna_LineStyleColorModifier_Noise_use, 	&rna_LineStyleColorModifier_Noise_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Noise, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Noise_influence_get, LineStyleColorModifier_Noise_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Noise_use_ = {
+		{&rna_LineStyleColorModifier_Noise_expanded, 	&rna_LineStyleColorModifier_Noise_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Noise_use_get, LineStyleColorModifier_Noise_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Noise_expanded_ = {
+		{&rna_LineStyleColorModifier_Noise_color_ramp, 	&rna_LineStyleColorModifier_Noise_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Noise_expanded_get, LineStyleColorModifier_Noise_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Noise_color_ramp_ = {
+		{&rna_LineStyleColorModifier_Noise_amplitude, 	&rna_LineStyleColorModifier_Noise_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Noise_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	rna_LineStyleColorModifier_Noise_amplitude_ = {
+		{&rna_LineStyleColorModifier_Noise_period, 	&rna_LineStyleColorModifier_Noise_color_ramp,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Noise, amplitude), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Noise_amplitude_get, LineStyleColorModifier_Noise_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Noise_period_ = {
+		{&rna_LineStyleColorModifier_Noise_seed, 	&rna_LineStyleColorModifier_Noise_amplitude,
+		-1, "period", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Period",
+		"Period of the noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Noise, period), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Noise_period_get, LineStyleColorModifier_Noise_period_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Noise_seed_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_Noise_period,
+		-1, "seed", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Seed",
+		"Seed for the noise generation",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Noise, seed), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Noise_seed_get, LineStyleColorModifier_Noise_seed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 32767, 1, 32767, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_Noise;
+	srna->cont.properties = {&rna_LineStyleColorModifier_Noise_type, &rna_LineStyleColorModifier_Noise_seed};
+	srna->identifier = "LineStyleColorModifier_Noise";
+	srna->flag = 516;
+	srna->name = "Noise";
+	srna->description = "Change line color based on random noise";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Crease Angle */
+static EnumPropertyRNA rna_LineStyleColorModifier_CreaseAngle_type_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_CreaseAngle_blend_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_CreaseAngle_influence_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_CreaseAngle_use_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_CreaseAngle_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_CreaseAngle_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_color_ramp_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_CreaseAngle_angle_min_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_angle_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_angle_min_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_CreaseAngle_angle_max_;
+PropertyRNA &rna_LineStyleColorModifier_CreaseAngle_angle_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_CreaseAngle_angle_max_);
+
+StructRNA *RNA_LineStyleColorModifier_CreaseAngle;
+void register_struct_LineStyleColorModifier_CreaseAngle(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_CreaseAngle_type_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_CreaseAngle, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_CreaseAngle_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_blend_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_influence, 	&rna_LineStyleColorModifier_CreaseAngle_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_CreaseAngle, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_CreaseAngle_blend_get, LineStyleColorModifier_CreaseAngle_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_influence_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_use, 	&rna_LineStyleColorModifier_CreaseAngle_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_CreaseAngle, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_CreaseAngle_influence_get, LineStyleColorModifier_CreaseAngle_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_use_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_expanded, 	&rna_LineStyleColorModifier_CreaseAngle_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_CreaseAngle_use_get, LineStyleColorModifier_CreaseAngle_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_expanded_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_color_ramp, 	&rna_LineStyleColorModifier_CreaseAngle_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_CreaseAngle_expanded_get, LineStyleColorModifier_CreaseAngle_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_color_ramp_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_angle_min, 	&rna_LineStyleColorModifier_CreaseAngle_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_CreaseAngle_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_angle_min_ = {
+		{&rna_LineStyleColorModifier_CreaseAngle_angle_max, 	&rna_LineStyleColorModifier_CreaseAngle_color_ramp,
+		-1, "angle_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Angle",
+		"Minimum angle to modify thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_CreaseAngle, min_angle), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_CreaseAngle_angle_min_get, LineStyleColorModifier_CreaseAngle_angle_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_CreaseAngle_angle_max_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_CreaseAngle_angle_min,
+		-1, "angle_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Angle",
+		"Maximum angle to modify thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_CreaseAngle, max_angle), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_CreaseAngle_angle_max_get, LineStyleColorModifier_CreaseAngle_angle_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_CreaseAngle;
+	srna->cont.properties = {&rna_LineStyleColorModifier_CreaseAngle_type, &rna_LineStyleColorModifier_CreaseAngle_angle_max};
+	srna->identifier = "LineStyleColorModifier_CreaseAngle";
+	srna->flag = 516;
+	srna->name = "Crease Angle";
+	srna->description = "Change line color based on the underlying crease angle";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Curvature 3D */
+static EnumPropertyRNA rna_LineStyleColorModifier_Curvature_3D_type_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_type_);
+
+static EnumPropertyRNA rna_LineStyleColorModifier_Curvature_3D_blend_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_blend_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Curvature_3D_influence_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_influence_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Curvature_3D_use_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_use_);
+
+static BoolPropertyRNA rna_LineStyleColorModifier_Curvature_3D_expanded_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_expanded_);
+
+static PointerPropertyRNA rna_LineStyleColorModifier_Curvature_3D_color_ramp_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_color_ramp = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_color_ramp_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Curvature_3D_curvature_min_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_curvature_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_curvature_min_);
+
+static FloatPropertyRNA rna_LineStyleColorModifier_Curvature_3D_curvature_max_;
+PropertyRNA &rna_LineStyleColorModifier_Curvature_3D_curvature_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifier_Curvature_3D_curvature_max_);
+
+StructRNA *RNA_LineStyleColorModifier_Curvature_3D;
+void register_struct_LineStyleColorModifier_Curvature_3D(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifier_Curvature_3D_type_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Curvature_3D, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Curvature_3D_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_blend_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_influence, 	&rna_LineStyleColorModifier_Curvature_3D_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Curvature_3D, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleColorModifier_Curvature_3D_blend_get, LineStyleColorModifier_Curvature_3D_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_ramp_blend_items, 24, 0
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_influence_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_use, 	&rna_LineStyleColorModifier_Curvature_3D_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Curvature_3D, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Curvature_3D_influence_get, LineStyleColorModifier_Curvature_3D_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_use_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_expanded, 	&rna_LineStyleColorModifier_Curvature_3D_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Curvature_3D_use_get, LineStyleColorModifier_Curvature_3D_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_expanded_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_color_ramp, 	&rna_LineStyleColorModifier_Curvature_3D_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Curvature_3D_expanded_get, LineStyleColorModifier_Curvature_3D_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_color_ramp_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_curvature_min, 	&rna_LineStyleColorModifier_Curvature_3D_expanded,
+		-1, "color_ramp", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Ramp",
+		"Color ramp used to change line color",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifier_Curvature_3D_color_ramp_get, nullptr, nullptr, nullptr,RNA_ColorRamp
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_curvature_min_ = {
+		{&rna_LineStyleColorModifier_Curvature_3D_curvature_max, 	&rna_LineStyleColorModifier_Curvature_3D_color_ramp,
+		-1, "curvature_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Curvature",
+		"Minimum Curvature",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Curvature_3D, min_curvature), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Curvature_3D_curvature_min_get, LineStyleColorModifier_Curvature_3D_curvature_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleColorModifier_Curvature_3D_curvature_max_ = {
+		{nullptr, 	&rna_LineStyleColorModifier_Curvature_3D_curvature_min,
+		-1, "curvature_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Curvature",
+		"Maximum Curvature",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleColorModifier_Curvature_3D, max_curvature), RawPropertyType(5), nullptr},
+		LineStyleColorModifier_Curvature_3D_curvature_max_get, LineStyleColorModifier_Curvature_3D_curvature_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifier_Curvature_3D;
+	srna->cont.properties = {&rna_LineStyleColorModifier_Curvature_3D_type, &rna_LineStyleColorModifier_Curvature_3D_curvature_max};
+	srna->identifier = "LineStyleColorModifier_Curvature_3D";
+	srna->flag = 516;
+	srna->name = "Curvature 3D";
+	srna->description = "Change line color based on the radial curvature of 3D mesh surfaces";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleColorModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleColorModifier;
+	srna->refine = rna_LineStyle_color_modifier_refine;
+	srna->path = rna_LineStyle_color_modifier_path;
+};
+
+/* Line Style Alpha Modifier */
+static StringPropertyRNA rna_LineStyleAlphaModifier_name_;
+PropertyRNA &rna_LineStyleAlphaModifier_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_name_);
+
+StructRNA *RNA_LineStyleAlphaModifier;
+void register_struct_LineStyleAlphaModifier(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_name_ = {
+		{nullptr, 	nullptr,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Modifier Name",
+		"Name of the modifier",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_name_get, LineStyleAlphaModifier_name_length, LineStyleAlphaModifier_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_name, &rna_LineStyleAlphaModifier_name};
+	srna->identifier = "LineStyleAlphaModifier";
+	srna->flag = 516;
+	srna->name = "Line Style Alpha Modifier";
+	srna->description = "Base type to define alpha transparency modifiers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Along Stroke */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_AlongStroke_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_AlongStroke_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_AlongStroke_curve_);
+
+StructRNA *RNA_LineStyleAlphaModifier_AlongStroke;
+void register_struct_LineStyleAlphaModifier_AlongStroke(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_AlongStroke_type_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_AlongStroke, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_AlongStroke_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_AlongStroke_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_AlongStroke_blend_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_influence, 	&rna_LineStyleAlphaModifier_AlongStroke_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_AlongStroke, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_AlongStroke_blend_get, LineStyleAlphaModifier_AlongStroke_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_AlongStroke_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_AlongStroke_influence_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_use, 	&rna_LineStyleAlphaModifier_AlongStroke_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_AlongStroke, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_AlongStroke_influence_get, LineStyleAlphaModifier_AlongStroke_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_AlongStroke_use_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_expanded, 	&rna_LineStyleAlphaModifier_AlongStroke_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_AlongStroke_use_get, LineStyleAlphaModifier_AlongStroke_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_AlongStroke_expanded_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_mapping, 	&rna_LineStyleAlphaModifier_AlongStroke_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_AlongStroke_expanded_get, LineStyleAlphaModifier_AlongStroke_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_AlongStroke_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_AlongStroke_mapping_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_invert, 	&rna_LineStyleAlphaModifier_AlongStroke_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_AlongStroke, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_AlongStroke_mapping_get, LineStyleAlphaModifier_AlongStroke_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_AlongStroke_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_AlongStroke_invert_ = {
+		{&rna_LineStyleAlphaModifier_AlongStroke_curve, 	&rna_LineStyleAlphaModifier_AlongStroke_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_AlongStroke_invert_get, LineStyleAlphaModifier_AlongStroke_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_AlongStroke_curve_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_AlongStroke_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_AlongStroke_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_AlongStroke;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_AlongStroke_type, &rna_LineStyleAlphaModifier_AlongStroke_curve};
+	srna->identifier = "LineStyleAlphaModifier_AlongStroke";
+	srna->flag = 516;
+	srna->name = "Along Stroke";
+	srna->description = "Change alpha transparency along stroke";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Distance from Camera */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_curve_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_range_min_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_range_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_range_min_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_DistanceFromCamera_range_max_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromCamera_range_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromCamera_range_max_);
+
+StructRNA *RNA_LineStyleAlphaModifier_DistanceFromCamera;
+void register_struct_LineStyleAlphaModifier_DistanceFromCamera(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_DistanceFromCamera_type_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromCamera, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_DistanceFromCamera_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_DistanceFromCamera_blend_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_influence, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromCamera, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_blend_get, LineStyleAlphaModifier_DistanceFromCamera_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_DistanceFromCamera_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_influence_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_use, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromCamera, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_influence_get, LineStyleAlphaModifier_DistanceFromCamera_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_use_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_expanded, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_use_get, LineStyleAlphaModifier_DistanceFromCamera_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_expanded_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_mapping, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_expanded_get, LineStyleAlphaModifier_DistanceFromCamera_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_DistanceFromCamera_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_DistanceFromCamera_mapping_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_invert, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromCamera, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_mapping_get, LineStyleAlphaModifier_DistanceFromCamera_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_DistanceFromCamera_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_invert_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_curve, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_invert_get, LineStyleAlphaModifier_DistanceFromCamera_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_curve_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_range_min, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_range_min_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromCamera_range_max, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_curve,
+		-1, "range_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Min",
+		"Lower bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromCamera, range_min), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_range_min_get, LineStyleAlphaModifier_DistanceFromCamera_range_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromCamera_range_max_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_DistanceFromCamera_range_min,
+		-1, "range_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Max",
+		"Upper bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromCamera, range_max), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_DistanceFromCamera_range_max_get, LineStyleAlphaModifier_DistanceFromCamera_range_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_DistanceFromCamera;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_DistanceFromCamera_type, &rna_LineStyleAlphaModifier_DistanceFromCamera_range_max};
+	srna->identifier = "LineStyleAlphaModifier_DistanceFromCamera";
+	srna->flag = 516;
+	srna->name = "Distance from Camera";
+	srna->description = "Change alpha transparency based on the distance from the camera";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Distance from Object */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_curve_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_range_min_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_range_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_range_min_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_range_max_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_range_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_range_max_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_DistanceFromObject_target_;
+PropertyRNA &rna_LineStyleAlphaModifier_DistanceFromObject_target = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_DistanceFromObject_target_);
+
+StructRNA *RNA_LineStyleAlphaModifier_DistanceFromObject;
+void register_struct_LineStyleAlphaModifier_DistanceFromObject(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_DistanceFromObject_type_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromObject, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_DistanceFromObject_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_DistanceFromObject_blend_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_influence, 	&rna_LineStyleAlphaModifier_DistanceFromObject_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromObject, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_blend_get, LineStyleAlphaModifier_DistanceFromObject_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_DistanceFromObject_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_influence_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_use, 	&rna_LineStyleAlphaModifier_DistanceFromObject_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromObject, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_influence_get, LineStyleAlphaModifier_DistanceFromObject_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_use_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_expanded, 	&rna_LineStyleAlphaModifier_DistanceFromObject_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_use_get, LineStyleAlphaModifier_DistanceFromObject_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_expanded_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_mapping, 	&rna_LineStyleAlphaModifier_DistanceFromObject_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_expanded_get, LineStyleAlphaModifier_DistanceFromObject_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_DistanceFromObject_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_DistanceFromObject_mapping_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_invert, 	&rna_LineStyleAlphaModifier_DistanceFromObject_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromObject, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_mapping_get, LineStyleAlphaModifier_DistanceFromObject_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_DistanceFromObject_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_invert_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_curve, 	&rna_LineStyleAlphaModifier_DistanceFromObject_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_invert_get, LineStyleAlphaModifier_DistanceFromObject_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_curve_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_range_min, 	&rna_LineStyleAlphaModifier_DistanceFromObject_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_range_min_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_range_max, 	&rna_LineStyleAlphaModifier_DistanceFromObject_curve,
+		-1, "range_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Min",
+		"Lower bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromObject, range_min), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_range_min_get, LineStyleAlphaModifier_DistanceFromObject_range_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_range_max_ = {
+		{&rna_LineStyleAlphaModifier_DistanceFromObject_target, 	&rna_LineStyleAlphaModifier_DistanceFromObject_range_min,
+		-1, "range_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Max",
+		"Upper bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_DistanceFromObject, range_max), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_range_max_get, LineStyleAlphaModifier_DistanceFromObject_range_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_DistanceFromObject_target_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_DistanceFromObject_range_max,
+		-1, "target", 8388737, 0, 0, 0, 0, PropertyPathTemplateType(0), "Target",
+		"Target object from which the distance is measured",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_DistanceFromObject_target_get, LineStyleAlphaModifier_DistanceFromObject_target_set, nullptr, nullptr,RNA_Object
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_DistanceFromObject;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_DistanceFromObject_type, &rna_LineStyleAlphaModifier_DistanceFromObject_target};
+	srna->identifier = "LineStyleAlphaModifier_DistanceFromObject";
+	srna->flag = 516;
+	srna->name = "Distance from Object";
+	srna->description = "Change alpha transparency based on the distance from an object";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Material */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Material_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Material_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Material_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Material_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Material_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Material_material_attribute_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_material_attribute = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_material_attribute_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Material_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Material_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_Material_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_Material_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Material_curve_);
+
+StructRNA *RNA_LineStyleAlphaModifier_Material;
+void register_struct_LineStyleAlphaModifier_Material(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_Material_type_ = {
+		{&rna_LineStyleAlphaModifier_Material_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Material, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Material_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Material_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Material_blend_ = {
+		{&rna_LineStyleAlphaModifier_Material_influence, 	&rna_LineStyleAlphaModifier_Material_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Material, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Material_blend_get, LineStyleAlphaModifier_Material_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Material_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_Material_influence_ = {
+		{&rna_LineStyleAlphaModifier_Material_use, 	&rna_LineStyleAlphaModifier_Material_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Material, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Material_influence_get, LineStyleAlphaModifier_Material_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Material_use_ = {
+		{&rna_LineStyleAlphaModifier_Material_expanded, 	&rna_LineStyleAlphaModifier_Material_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Material_use_get, LineStyleAlphaModifier_Material_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Material_expanded_ = {
+		{&rna_LineStyleAlphaModifier_Material_material_attribute, 	&rna_LineStyleAlphaModifier_Material_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Material_expanded_get, LineStyleAlphaModifier_Material_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Material_material_attribute_items[16] = {
+		{11, "LINE", 0, "Line Color", ""	},
+		{12, "LINE_R", 0, "Line Color Red", ""	},
+		{13, "LINE_G", 0, "Line Color Green", ""	},
+		{14, "LINE_B", 0, "Line Color Blue", ""	},
+		{15, "LINE_A", 0, "Line Color Alpha", ""	},
+		{1, "DIFF", 0, "Diffuse Color", ""	},
+		{2, "DIFF_R", 0, "Diffuse Color Red", ""	},
+		{3, "DIFF_G", 0, "Diffuse Color Green", ""	},
+		{4, "DIFF_B", 0, "Diffuse Color Blue", ""	},
+		{5, "SPEC", 0, "Specular Color", ""	},
+		{6, "SPEC_R", 0, "Specular Color Red", ""	},
+		{7, "SPEC_G", 0, "Specular Color Green", ""	},
+		{8, "SPEC_B", 0, "Specular Color Blue", ""	},
+		{9, "SPEC_HARD", 0, "Specular Hardness", ""	},
+		{10, "ALPHA", 0, "Alpha Transparency", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Material_material_attribute_ = {
+		{&rna_LineStyleAlphaModifier_Material_mapping, 	&rna_LineStyleAlphaModifier_Material_expanded,
+		-1, "material_attribute", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Material Attribute",
+		"Specify which material attribute is used",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Material, mat_attr), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Material_material_attribute_get, LineStyleAlphaModifier_Material_material_attribute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Material_material_attribute_items, 15, 11
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Material_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Material_mapping_ = {
+		{&rna_LineStyleAlphaModifier_Material_invert, 	&rna_LineStyleAlphaModifier_Material_material_attribute,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Material, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Material_mapping_get, LineStyleAlphaModifier_Material_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Material_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_Material_invert_ = {
+		{&rna_LineStyleAlphaModifier_Material_curve, 	&rna_LineStyleAlphaModifier_Material_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Material_invert_get, LineStyleAlphaModifier_Material_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Material_curve_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_Material_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Material_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_Material;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_Material_type, &rna_LineStyleAlphaModifier_Material_curve};
+	srna->identifier = "LineStyleAlphaModifier_Material";
+	srna->flag = 516;
+	srna->name = "Material";
+	srna->description = "Change alpha transparency based on a material attribute";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Tangent */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Tangent_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Tangent_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Tangent_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Tangent_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Tangent_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Tangent_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Tangent_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_Tangent_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_Tangent_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Tangent_curve_);
+
+StructRNA *RNA_LineStyleAlphaModifier_Tangent;
+void register_struct_LineStyleAlphaModifier_Tangent(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_Tangent_type_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Tangent, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Tangent_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Tangent_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Tangent_blend_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_influence, 	&rna_LineStyleAlphaModifier_Tangent_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Tangent, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Tangent_blend_get, LineStyleAlphaModifier_Tangent_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Tangent_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_Tangent_influence_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_use, 	&rna_LineStyleAlphaModifier_Tangent_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Tangent, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Tangent_influence_get, LineStyleAlphaModifier_Tangent_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Tangent_use_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_expanded, 	&rna_LineStyleAlphaModifier_Tangent_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Tangent_use_get, LineStyleAlphaModifier_Tangent_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Tangent_expanded_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_mapping, 	&rna_LineStyleAlphaModifier_Tangent_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Tangent_expanded_get, LineStyleAlphaModifier_Tangent_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Tangent_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Tangent_mapping_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_invert, 	&rna_LineStyleAlphaModifier_Tangent_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Tangent, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Tangent_mapping_get, LineStyleAlphaModifier_Tangent_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Tangent_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_Tangent_invert_ = {
+		{&rna_LineStyleAlphaModifier_Tangent_curve, 	&rna_LineStyleAlphaModifier_Tangent_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Tangent_invert_get, LineStyleAlphaModifier_Tangent_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Tangent_curve_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_Tangent_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Tangent_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_Tangent;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_Tangent_type, &rna_LineStyleAlphaModifier_Tangent_curve};
+	srna->identifier = "LineStyleAlphaModifier_Tangent";
+	srna->flag = 516;
+	srna->name = "Tangent";
+	srna->description = "Alpha transparency based on the direction of the stroke";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Noise */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Noise_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Noise_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Noise_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Noise_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Noise_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Noise_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Noise_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_Noise_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_curve_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Noise_amplitude_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_amplitude_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Noise_period_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_period = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_period_);
+
+static IntPropertyRNA rna_LineStyleAlphaModifier_Noise_seed_;
+PropertyRNA &rna_LineStyleAlphaModifier_Noise_seed = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Noise_seed_);
+
+StructRNA *RNA_LineStyleAlphaModifier_Noise;
+void register_struct_LineStyleAlphaModifier_Noise(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_Noise_type_ = {
+		{&rna_LineStyleAlphaModifier_Noise_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Noise_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Noise_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Noise_blend_ = {
+		{&rna_LineStyleAlphaModifier_Noise_influence, 	&rna_LineStyleAlphaModifier_Noise_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Noise_blend_get, LineStyleAlphaModifier_Noise_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Noise_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_Noise_influence_ = {
+		{&rna_LineStyleAlphaModifier_Noise_use, 	&rna_LineStyleAlphaModifier_Noise_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Noise_influence_get, LineStyleAlphaModifier_Noise_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Noise_use_ = {
+		{&rna_LineStyleAlphaModifier_Noise_expanded, 	&rna_LineStyleAlphaModifier_Noise_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Noise_use_get, LineStyleAlphaModifier_Noise_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Noise_expanded_ = {
+		{&rna_LineStyleAlphaModifier_Noise_mapping, 	&rna_LineStyleAlphaModifier_Noise_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Noise_expanded_get, LineStyleAlphaModifier_Noise_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Noise_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Noise_mapping_ = {
+		{&rna_LineStyleAlphaModifier_Noise_invert, 	&rna_LineStyleAlphaModifier_Noise_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Noise_mapping_get, LineStyleAlphaModifier_Noise_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Noise_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_Noise_invert_ = {
+		{&rna_LineStyleAlphaModifier_Noise_curve, 	&rna_LineStyleAlphaModifier_Noise_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Noise_invert_get, LineStyleAlphaModifier_Noise_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Noise_curve_ = {
+		{&rna_LineStyleAlphaModifier_Noise_amplitude, 	&rna_LineStyleAlphaModifier_Noise_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Noise_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleAlphaModifier_Noise_amplitude_ = {
+		{&rna_LineStyleAlphaModifier_Noise_period, 	&rna_LineStyleAlphaModifier_Noise_curve,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, amplitude), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Noise_amplitude_get, LineStyleAlphaModifier_Noise_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Noise_period_ = {
+		{&rna_LineStyleAlphaModifier_Noise_seed, 	&rna_LineStyleAlphaModifier_Noise_amplitude,
+		-1, "period", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Period",
+		"Period of the noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, period), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Noise_period_get, LineStyleAlphaModifier_Noise_period_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Noise_seed_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_Noise_period,
+		-1, "seed", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Seed",
+		"Seed for the noise generation",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Noise, seed), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Noise_seed_get, LineStyleAlphaModifier_Noise_seed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 32767, 1, 32767, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_Noise;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_Noise_type, &rna_LineStyleAlphaModifier_Noise_seed};
+	srna->identifier = "LineStyleAlphaModifier_Noise";
+	srna->flag = 516;
+	srna->name = "Noise";
+	srna->description = "Alpha transparency based on random noise";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Crease Angle */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_curve_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_angle_min_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_angle_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_angle_min_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_CreaseAngle_angle_max_;
+PropertyRNA &rna_LineStyleAlphaModifier_CreaseAngle_angle_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_CreaseAngle_angle_max_);
+
+StructRNA *RNA_LineStyleAlphaModifier_CreaseAngle;
+void register_struct_LineStyleAlphaModifier_CreaseAngle(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_CreaseAngle_type_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_CreaseAngle, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_CreaseAngle_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_CreaseAngle_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_CreaseAngle_blend_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_influence, 	&rna_LineStyleAlphaModifier_CreaseAngle_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_CreaseAngle, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_CreaseAngle_blend_get, LineStyleAlphaModifier_CreaseAngle_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_CreaseAngle_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_influence_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_use, 	&rna_LineStyleAlphaModifier_CreaseAngle_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_CreaseAngle, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_CreaseAngle_influence_get, LineStyleAlphaModifier_CreaseAngle_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_use_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_expanded, 	&rna_LineStyleAlphaModifier_CreaseAngle_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_CreaseAngle_use_get, LineStyleAlphaModifier_CreaseAngle_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_expanded_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_mapping, 	&rna_LineStyleAlphaModifier_CreaseAngle_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_CreaseAngle_expanded_get, LineStyleAlphaModifier_CreaseAngle_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_CreaseAngle_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_CreaseAngle_mapping_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_invert, 	&rna_LineStyleAlphaModifier_CreaseAngle_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_CreaseAngle, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_CreaseAngle_mapping_get, LineStyleAlphaModifier_CreaseAngle_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_CreaseAngle_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_invert_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_curve, 	&rna_LineStyleAlphaModifier_CreaseAngle_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_CreaseAngle_invert_get, LineStyleAlphaModifier_CreaseAngle_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_curve_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_angle_min, 	&rna_LineStyleAlphaModifier_CreaseAngle_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_CreaseAngle_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_angle_min_ = {
+		{&rna_LineStyleAlphaModifier_CreaseAngle_angle_max, 	&rna_LineStyleAlphaModifier_CreaseAngle_curve,
+		-1, "angle_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Angle",
+		"Minimum angle to modify thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_CreaseAngle, min_angle), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_CreaseAngle_angle_min_get, LineStyleAlphaModifier_CreaseAngle_angle_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_CreaseAngle_angle_max_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_CreaseAngle_angle_min,
+		-1, "angle_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Angle",
+		"Maximum angle to modify thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_CreaseAngle, max_angle), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_CreaseAngle_angle_max_get, LineStyleAlphaModifier_CreaseAngle_angle_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_CreaseAngle;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_CreaseAngle_type, &rna_LineStyleAlphaModifier_CreaseAngle_angle_max};
+	srna->identifier = "LineStyleAlphaModifier_CreaseAngle";
+	srna->flag = 516;
+	srna->name = "Crease Angle";
+	srna->description = "Alpha transparency based on the angle between two adjacent faces";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Curvature 3D */
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_type_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_type_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_blend_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_blend_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_influence_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_influence_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_use_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_use_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_expanded_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_expanded_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_mapping_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_mapping_);
+
+static BoolPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_invert_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_invert_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_curve_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_curve_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_curvature_min_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_curvature_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_curvature_min_);
+
+static FloatPropertyRNA rna_LineStyleAlphaModifier_Curvature_3D_curvature_max_;
+PropertyRNA &rna_LineStyleAlphaModifier_Curvature_3D_curvature_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifier_Curvature_3D_curvature_max_);
+
+StructRNA *RNA_LineStyleAlphaModifier_Curvature_3D;
+void register_struct_LineStyleAlphaModifier_Curvature_3D(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifier_Curvature_3D_type_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Curvature_3D, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Curvature_3D_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Curvature_3D_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Curvature_3D_blend_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_influence, 	&rna_LineStyleAlphaModifier_Curvature_3D_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Curvature_3D, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Curvature_3D_blend_get, LineStyleAlphaModifier_Curvature_3D_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Curvature_3D_blend_items, 8, 0
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_influence_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_use, 	&rna_LineStyleAlphaModifier_Curvature_3D_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Curvature_3D, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Curvature_3D_influence_get, LineStyleAlphaModifier_Curvature_3D_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_use_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_expanded, 	&rna_LineStyleAlphaModifier_Curvature_3D_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Curvature_3D_use_get, LineStyleAlphaModifier_Curvature_3D_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_expanded_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_mapping, 	&rna_LineStyleAlphaModifier_Curvature_3D_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Curvature_3D_expanded_get, LineStyleAlphaModifier_Curvature_3D_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleAlphaModifier_Curvature_3D_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleAlphaModifier_Curvature_3D_mapping_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_invert, 	&rna_LineStyleAlphaModifier_Curvature_3D_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Curvature_3D, flags), RawPropertyType(0), nullptr},
+		LineStyleAlphaModifier_Curvature_3D_mapping_get, LineStyleAlphaModifier_Curvature_3D_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleAlphaModifier_Curvature_3D_mapping_items, 2, 0
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_invert_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_curve, 	&rna_LineStyleAlphaModifier_Curvature_3D_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Curvature_3D_invert_get, LineStyleAlphaModifier_Curvature_3D_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_curve_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_curvature_min, 	&rna_LineStyleAlphaModifier_Curvature_3D_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifier_Curvature_3D_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_curvature_min_ = {
+		{&rna_LineStyleAlphaModifier_Curvature_3D_curvature_max, 	&rna_LineStyleAlphaModifier_Curvature_3D_curve,
+		-1, "curvature_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Curvature",
+		"Minimum Curvature",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Curvature_3D, min_curvature), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Curvature_3D_curvature_min_get, LineStyleAlphaModifier_Curvature_3D_curvature_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleAlphaModifier_Curvature_3D_curvature_max_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifier_Curvature_3D_curvature_min,
+		-1, "curvature_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Curvature",
+		"Maximum Curvature",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleAlphaModifier_Curvature_3D, max_curvature), RawPropertyType(5), nullptr},
+		LineStyleAlphaModifier_Curvature_3D_curvature_max_get, LineStyleAlphaModifier_Curvature_3D_curvature_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifier_Curvature_3D;
+	srna->cont.properties = {&rna_LineStyleAlphaModifier_Curvature_3D_type, &rna_LineStyleAlphaModifier_Curvature_3D_curvature_max};
+	srna->identifier = "LineStyleAlphaModifier_Curvature_3D";
+	srna->flag = 516;
+	srna->name = "Curvature 3D";
+	srna->description = "Alpha transparency based on the radial curvature of 3D mesh surfaces";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleAlphaModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleAlphaModifier;
+	srna->refine = rna_LineStyle_alpha_modifier_refine;
+	srna->path = rna_LineStyle_alpha_modifier_path;
+};
+
+/* Line Style Thickness Modifier */
+static StringPropertyRNA rna_LineStyleThicknessModifier_name_;
+PropertyRNA &rna_LineStyleThicknessModifier_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_name_);
+
+StructRNA *RNA_LineStyleThicknessModifier;
+void register_struct_LineStyleThicknessModifier(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_name_ = {
+		{nullptr, 	nullptr,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Modifier Name",
+		"Name of the modifier",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_name_get, LineStyleThicknessModifier_name_length, LineStyleThicknessModifier_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_name, &rna_LineStyleThicknessModifier_name};
+	srna->identifier = "LineStyleThicknessModifier";
+	srna->flag = 516;
+	srna->name = "Line Style Thickness Modifier";
+	srna->description = "Base type to define line thickness modifiers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Tangent */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Tangent_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Tangent_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Tangent_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Tangent_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Tangent_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Tangent_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Tangent_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_Tangent_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Tangent_thickness_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_thickness_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_thickness_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Tangent_thickness_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_Tangent_thickness_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Tangent_thickness_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_Tangent;
+void register_struct_LineStyleThicknessModifier_Tangent(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_Tangent_type_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Tangent, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Tangent_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Tangent_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Tangent_blend_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_influence, 	&rna_LineStyleThicknessModifier_Tangent_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Tangent, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Tangent_blend_get, LineStyleThicknessModifier_Tangent_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Tangent_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_influence_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_use, 	&rna_LineStyleThicknessModifier_Tangent_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Tangent, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Tangent_influence_get, LineStyleThicknessModifier_Tangent_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_use_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_expanded, 	&rna_LineStyleThicknessModifier_Tangent_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Tangent_use_get, LineStyleThicknessModifier_Tangent_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_expanded_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_mapping, 	&rna_LineStyleThicknessModifier_Tangent_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Tangent_expanded_get, LineStyleThicknessModifier_Tangent_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Tangent_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Tangent_mapping_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_invert, 	&rna_LineStyleThicknessModifier_Tangent_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Tangent, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Tangent_mapping_get, LineStyleThicknessModifier_Tangent_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Tangent_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_invert_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_curve, 	&rna_LineStyleThicknessModifier_Tangent_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Tangent_invert_get, LineStyleThicknessModifier_Tangent_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_curve_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_thickness_min, 	&rna_LineStyleThicknessModifier_Tangent_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Tangent_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_thickness_min_ = {
+		{&rna_LineStyleThicknessModifier_Tangent_thickness_max, 	&rna_LineStyleThicknessModifier_Tangent_curve,
+		-1, "thickness_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Thickness",
+		"Minimum thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Tangent, min_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Tangent_thickness_min_get, LineStyleThicknessModifier_Tangent_thickness_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Tangent_thickness_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_Tangent_thickness_min,
+		-1, "thickness_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Thickness",
+		"Maximum thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Tangent, max_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Tangent_thickness_max_get, LineStyleThicknessModifier_Tangent_thickness_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_Tangent;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_Tangent_type, &rna_LineStyleThicknessModifier_Tangent_thickness_max};
+	srna->identifier = "LineStyleThicknessModifier_Tangent";
+	srna->flag = 516;
+	srna->name = "Tangent";
+	srna->description = "Thickness based on the direction of the stroke";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Along Stroke */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_value_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_value_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_value_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_AlongStroke_value_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_AlongStroke_value_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_AlongStroke_value_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_AlongStroke;
+void register_struct_LineStyleThicknessModifier_AlongStroke(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_AlongStroke_type_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_AlongStroke, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_AlongStroke_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_AlongStroke_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_AlongStroke_blend_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_influence, 	&rna_LineStyleThicknessModifier_AlongStroke_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_AlongStroke, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_AlongStroke_blend_get, LineStyleThicknessModifier_AlongStroke_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_AlongStroke_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_influence_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_use, 	&rna_LineStyleThicknessModifier_AlongStroke_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_AlongStroke, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_AlongStroke_influence_get, LineStyleThicknessModifier_AlongStroke_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_use_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_expanded, 	&rna_LineStyleThicknessModifier_AlongStroke_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_AlongStroke_use_get, LineStyleThicknessModifier_AlongStroke_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_expanded_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_mapping, 	&rna_LineStyleThicknessModifier_AlongStroke_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_AlongStroke_expanded_get, LineStyleThicknessModifier_AlongStroke_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_AlongStroke_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_AlongStroke_mapping_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_invert, 	&rna_LineStyleThicknessModifier_AlongStroke_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_AlongStroke, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_AlongStroke_mapping_get, LineStyleThicknessModifier_AlongStroke_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_AlongStroke_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_invert_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_curve, 	&rna_LineStyleThicknessModifier_AlongStroke_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_AlongStroke_invert_get, LineStyleThicknessModifier_AlongStroke_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_curve_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_value_min, 	&rna_LineStyleThicknessModifier_AlongStroke_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_AlongStroke_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_value_min_ = {
+		{&rna_LineStyleThicknessModifier_AlongStroke_value_max, 	&rna_LineStyleThicknessModifier_AlongStroke_curve,
+		-1, "value_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Min",
+		"Minimum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_AlongStroke, value_min), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_AlongStroke_value_min_get, LineStyleThicknessModifier_AlongStroke_value_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_AlongStroke_value_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_AlongStroke_value_min,
+		-1, "value_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Max",
+		"Maximum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_AlongStroke, value_max), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_AlongStroke_value_max_get, LineStyleThicknessModifier_AlongStroke_value_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_AlongStroke;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_AlongStroke_type, &rna_LineStyleThicknessModifier_AlongStroke_value_max};
+	srna->identifier = "LineStyleThicknessModifier_AlongStroke";
+	srna->flag = 516;
+	srna->name = "Along Stroke";
+	srna->description = "Change line thickness along stroke";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Distance from Camera */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_range_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_range_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_range_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_range_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_range_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_range_max_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_value_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_value_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_value_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromCamera_value_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromCamera_value_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromCamera_value_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_DistanceFromCamera;
+void register_struct_LineStyleThicknessModifier_DistanceFromCamera(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_DistanceFromCamera_type_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_DistanceFromCamera_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_DistanceFromCamera_blend_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_influence, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_blend_get, LineStyleThicknessModifier_DistanceFromCamera_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_DistanceFromCamera_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_influence_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_use, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_influence_get, LineStyleThicknessModifier_DistanceFromCamera_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_use_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_expanded, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_use_get, LineStyleThicknessModifier_DistanceFromCamera_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_expanded_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_mapping, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_expanded_get, LineStyleThicknessModifier_DistanceFromCamera_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_DistanceFromCamera_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_DistanceFromCamera_mapping_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_invert, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_mapping_get, LineStyleThicknessModifier_DistanceFromCamera_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_DistanceFromCamera_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_invert_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_curve, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_invert_get, LineStyleThicknessModifier_DistanceFromCamera_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_curve_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_range_min, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_range_min_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_range_max, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_curve,
+		-1, "range_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Min",
+		"Lower bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, range_min), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_range_min_get, LineStyleThicknessModifier_DistanceFromCamera_range_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_range_max_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_value_min, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_range_min,
+		-1, "range_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Max",
+		"Upper bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, range_max), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_range_max_get, LineStyleThicknessModifier_DistanceFromCamera_range_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_value_min_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromCamera_value_max, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_range_max,
+		-1, "value_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Min",
+		"Minimum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, value_min), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_value_min_get, LineStyleThicknessModifier_DistanceFromCamera_value_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromCamera_value_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_DistanceFromCamera_value_min,
+		-1, "value_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Max",
+		"Maximum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromCamera, value_max), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromCamera_value_max_get, LineStyleThicknessModifier_DistanceFromCamera_value_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_DistanceFromCamera;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_DistanceFromCamera_type, &rna_LineStyleThicknessModifier_DistanceFromCamera_value_max};
+	srna->identifier = "LineStyleThicknessModifier_DistanceFromCamera";
+	srna->flag = 516;
+	srna->name = "Distance from Camera";
+	srna->description = "Change line thickness based on the distance from the camera";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Distance from Object */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_range_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_range_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_range_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_range_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_range_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_range_max_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_value_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_value_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_value_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_value_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_value_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_value_max_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_DistanceFromObject_target_;
+PropertyRNA &rna_LineStyleThicknessModifier_DistanceFromObject_target = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_DistanceFromObject_target_);
+
+StructRNA *RNA_LineStyleThicknessModifier_DistanceFromObject;
+void register_struct_LineStyleThicknessModifier_DistanceFromObject(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_DistanceFromObject_type_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_DistanceFromObject_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_DistanceFromObject_blend_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_influence, 	&rna_LineStyleThicknessModifier_DistanceFromObject_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_blend_get, LineStyleThicknessModifier_DistanceFromObject_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_DistanceFromObject_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_influence_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_use, 	&rna_LineStyleThicknessModifier_DistanceFromObject_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_influence_get, LineStyleThicknessModifier_DistanceFromObject_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_use_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_expanded, 	&rna_LineStyleThicknessModifier_DistanceFromObject_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_use_get, LineStyleThicknessModifier_DistanceFromObject_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_expanded_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_mapping, 	&rna_LineStyleThicknessModifier_DistanceFromObject_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_expanded_get, LineStyleThicknessModifier_DistanceFromObject_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_DistanceFromObject_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_DistanceFromObject_mapping_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_invert, 	&rna_LineStyleThicknessModifier_DistanceFromObject_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_mapping_get, LineStyleThicknessModifier_DistanceFromObject_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_DistanceFromObject_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_invert_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_curve, 	&rna_LineStyleThicknessModifier_DistanceFromObject_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_invert_get, LineStyleThicknessModifier_DistanceFromObject_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_curve_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_range_min, 	&rna_LineStyleThicknessModifier_DistanceFromObject_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_range_min_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_range_max, 	&rna_LineStyleThicknessModifier_DistanceFromObject_curve,
+		-1, "range_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Min",
+		"Lower bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, range_min), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_range_min_get, LineStyleThicknessModifier_DistanceFromObject_range_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_range_max_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_value_min, 	&rna_LineStyleThicknessModifier_DistanceFromObject_range_min,
+		-1, "range_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Range Max",
+		"Upper bound of the input range the mapping is applied",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_DISTANCE) | int(PROP_UNIT_LENGTH)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, range_max), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_range_max_get, LineStyleThicknessModifier_DistanceFromObject_range_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_value_min_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_value_max, 	&rna_LineStyleThicknessModifier_DistanceFromObject_range_max,
+		-1, "value_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Min",
+		"Minimum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, value_min), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_value_min_get, LineStyleThicknessModifier_DistanceFromObject_value_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_value_max_ = {
+		{&rna_LineStyleThicknessModifier_DistanceFromObject_target, 	&rna_LineStyleThicknessModifier_DistanceFromObject_value_min,
+		-1, "value_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Max",
+		"Maximum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_DistanceFromObject, value_max), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_value_max_get, LineStyleThicknessModifier_DistanceFromObject_value_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_DistanceFromObject_target_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_DistanceFromObject_value_max,
+		-1, "target", 8388737, 0, 0, 0, 0, PropertyPathTemplateType(0), "Target",
+		"Target object from which the distance is measured",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_DistanceFromObject_target_get, LineStyleThicknessModifier_DistanceFromObject_target_set, nullptr, nullptr,RNA_Object
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_DistanceFromObject;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_DistanceFromObject_type, &rna_LineStyleThicknessModifier_DistanceFromObject_target};
+	srna->identifier = "LineStyleThicknessModifier_DistanceFromObject";
+	srna->flag = 516;
+	srna->name = "Distance from Object";
+	srna->description = "Change line thickness based on the distance from an object";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Material */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Material_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Material_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Material_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Material_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Material_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Material_material_attribute_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_material_attribute = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_material_attribute_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Material_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Material_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_Material_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Material_value_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_value_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_value_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Material_value_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_Material_value_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Material_value_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_Material;
+void register_struct_LineStyleThicknessModifier_Material(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_Material_type_ = {
+		{&rna_LineStyleThicknessModifier_Material_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Material_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Material_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Material_blend_ = {
+		{&rna_LineStyleThicknessModifier_Material_influence, 	&rna_LineStyleThicknessModifier_Material_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Material_blend_get, LineStyleThicknessModifier_Material_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Material_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_Material_influence_ = {
+		{&rna_LineStyleThicknessModifier_Material_use, 	&rna_LineStyleThicknessModifier_Material_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Material_influence_get, LineStyleThicknessModifier_Material_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Material_use_ = {
+		{&rna_LineStyleThicknessModifier_Material_expanded, 	&rna_LineStyleThicknessModifier_Material_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Material_use_get, LineStyleThicknessModifier_Material_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Material_expanded_ = {
+		{&rna_LineStyleThicknessModifier_Material_material_attribute, 	&rna_LineStyleThicknessModifier_Material_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Material_expanded_get, LineStyleThicknessModifier_Material_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Material_material_attribute_items[16] = {
+		{11, "LINE", 0, "Line Color", ""	},
+		{12, "LINE_R", 0, "Line Color Red", ""	},
+		{13, "LINE_G", 0, "Line Color Green", ""	},
+		{14, "LINE_B", 0, "Line Color Blue", ""	},
+		{15, "LINE_A", 0, "Line Color Alpha", ""	},
+		{1, "DIFF", 0, "Diffuse Color", ""	},
+		{2, "DIFF_R", 0, "Diffuse Color Red", ""	},
+		{3, "DIFF_G", 0, "Diffuse Color Green", ""	},
+		{4, "DIFF_B", 0, "Diffuse Color Blue", ""	},
+		{5, "SPEC", 0, "Specular Color", ""	},
+		{6, "SPEC_R", 0, "Specular Color Red", ""	},
+		{7, "SPEC_G", 0, "Specular Color Green", ""	},
+		{8, "SPEC_B", 0, "Specular Color Blue", ""	},
+		{9, "SPEC_HARD", 0, "Specular Hardness", ""	},
+		{10, "ALPHA", 0, "Alpha Transparency", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Material_material_attribute_ = {
+		{&rna_LineStyleThicknessModifier_Material_mapping, 	&rna_LineStyleThicknessModifier_Material_expanded,
+		-1, "material_attribute", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Material Attribute",
+		"Specify which material attribute is used",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, mat_attr), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Material_material_attribute_get, LineStyleThicknessModifier_Material_material_attribute_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Material_material_attribute_items, 15, 11
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Material_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Material_mapping_ = {
+		{&rna_LineStyleThicknessModifier_Material_invert, 	&rna_LineStyleThicknessModifier_Material_material_attribute,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Material_mapping_get, LineStyleThicknessModifier_Material_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Material_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_Material_invert_ = {
+		{&rna_LineStyleThicknessModifier_Material_curve, 	&rna_LineStyleThicknessModifier_Material_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Material_invert_get, LineStyleThicknessModifier_Material_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Material_curve_ = {
+		{&rna_LineStyleThicknessModifier_Material_value_min, 	&rna_LineStyleThicknessModifier_Material_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Material_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_Material_value_min_ = {
+		{&rna_LineStyleThicknessModifier_Material_value_max, 	&rna_LineStyleThicknessModifier_Material_curve,
+		-1, "value_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Min",
+		"Minimum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, value_min), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Material_value_min_get, LineStyleThicknessModifier_Material_value_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Material_value_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_Material_value_min,
+		-1, "value_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Value Max",
+		"Maximum output value of the mapping",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Material, value_max), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Material_value_max_get, LineStyleThicknessModifier_Material_value_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_Material;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_Material_type, &rna_LineStyleThicknessModifier_Material_value_max};
+	srna->identifier = "LineStyleThicknessModifier_Material";
+	srna->flag = 516;
+	srna->name = "Material";
+	srna->description = "Change line thickness based on a material attribute";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Calligraphy */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_expanded_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_orientation_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_orientation = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_orientation_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_thickness_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_thickness_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_thickness_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Calligraphy_thickness_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_Calligraphy_thickness_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Calligraphy_thickness_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_Calligraphy;
+void register_struct_LineStyleThicknessModifier_Calligraphy(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_Calligraphy_type_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Calligraphy, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Calligraphy_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Calligraphy_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Calligraphy_blend_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_influence, 	&rna_LineStyleThicknessModifier_Calligraphy_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Calligraphy, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Calligraphy_blend_get, LineStyleThicknessModifier_Calligraphy_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Calligraphy_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_Calligraphy_influence_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_use, 	&rna_LineStyleThicknessModifier_Calligraphy_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Calligraphy, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Calligraphy_influence_get, LineStyleThicknessModifier_Calligraphy_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Calligraphy_use_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_expanded, 	&rna_LineStyleThicknessModifier_Calligraphy_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Calligraphy_use_get, LineStyleThicknessModifier_Calligraphy_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Calligraphy_expanded_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_orientation, 	&rna_LineStyleThicknessModifier_Calligraphy_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Calligraphy_expanded_get, LineStyleThicknessModifier_Calligraphy_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Calligraphy_orientation_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_thickness_min, 	&rna_LineStyleThicknessModifier_Calligraphy_expanded,
+		-1, "orientation", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Orientation",
+		"Angle of the main direction",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Calligraphy, orientation), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Calligraphy_orientation_get, LineStyleThicknessModifier_Calligraphy_orientation_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Calligraphy_thickness_min_ = {
+		{&rna_LineStyleThicknessModifier_Calligraphy_thickness_max, 	&rna_LineStyleThicknessModifier_Calligraphy_orientation,
+		-1, "thickness_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Thickness",
+		"Minimum thickness in the direction perpendicular to the main direction",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Calligraphy, min_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Calligraphy_thickness_min_get, LineStyleThicknessModifier_Calligraphy_thickness_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Calligraphy_thickness_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_Calligraphy_thickness_min,
+		-1, "thickness_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Thickness",
+		"Maximum thickness in the main direction",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Calligraphy, max_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Calligraphy_thickness_max_get, LineStyleThicknessModifier_Calligraphy_thickness_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_Calligraphy;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_Calligraphy_type, &rna_LineStyleThicknessModifier_Calligraphy_thickness_max};
+	srna->identifier = "LineStyleThicknessModifier_Calligraphy";
+	srna->flag = 516;
+	srna->name = "Calligraphy";
+	srna->description = "Change line thickness so that stroke looks like made with a calligraphic pen";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Noise */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Noise_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Noise_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Noise_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Noise_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Noise_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_expanded_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Noise_amplitude_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_amplitude_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Noise_period_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_period = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_period_);
+
+static IntPropertyRNA rna_LineStyleThicknessModifier_Noise_seed_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_seed = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_seed_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Noise_use_asymmetric_;
+PropertyRNA &rna_LineStyleThicknessModifier_Noise_use_asymmetric = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Noise_use_asymmetric_);
+
+StructRNA *RNA_LineStyleThicknessModifier_Noise;
+void register_struct_LineStyleThicknessModifier_Noise(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_Noise_type_ = {
+		{&rna_LineStyleThicknessModifier_Noise_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Noise, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Noise_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Noise_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Noise_blend_ = {
+		{&rna_LineStyleThicknessModifier_Noise_influence, 	&rna_LineStyleThicknessModifier_Noise_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Noise, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Noise_blend_get, LineStyleThicknessModifier_Noise_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Noise_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_Noise_influence_ = {
+		{&rna_LineStyleThicknessModifier_Noise_use, 	&rna_LineStyleThicknessModifier_Noise_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Noise, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Noise_influence_get, LineStyleThicknessModifier_Noise_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Noise_use_ = {
+		{&rna_LineStyleThicknessModifier_Noise_expanded, 	&rna_LineStyleThicknessModifier_Noise_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Noise_use_get, LineStyleThicknessModifier_Noise_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Noise_expanded_ = {
+		{&rna_LineStyleThicknessModifier_Noise_amplitude, 	&rna_LineStyleThicknessModifier_Noise_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Noise_expanded_get, LineStyleThicknessModifier_Noise_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Noise_amplitude_ = {
+		{&rna_LineStyleThicknessModifier_Noise_period, 	&rna_LineStyleThicknessModifier_Noise_expanded,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Noise, amplitude), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Noise_amplitude_get, LineStyleThicknessModifier_Noise_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Noise_period_ = {
+		{&rna_LineStyleThicknessModifier_Noise_seed, 	&rna_LineStyleThicknessModifier_Noise_amplitude,
+		-1, "period", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Period",
+		"Period of the noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Noise, period), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Noise_period_get, LineStyleThicknessModifier_Noise_period_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Noise_seed_ = {
+		{&rna_LineStyleThicknessModifier_Noise_use_asymmetric, 	&rna_LineStyleThicknessModifier_Noise_period,
+		-1, "seed", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Seed",
+		"Seed for the noise generation",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Noise, seed), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Noise_seed_get, LineStyleThicknessModifier_Noise_seed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 32767, 1, 32767, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Noise_use_asymmetric_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_Noise_seed,
+		-1, "use_asymmetric", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Asymmetric",
+		"Allow thickness to be assigned asymmetrically",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Noise_use_asymmetric_get, LineStyleThicknessModifier_Noise_use_asymmetric_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_Noise;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_Noise_type, &rna_LineStyleThicknessModifier_Noise_use_asymmetric};
+	srna->identifier = "LineStyleThicknessModifier_Noise";
+	srna->flag = 516;
+	srna->name = "Noise";
+	srna->description = "Line thickness based on random noise";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Curvature 3D */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_thickness_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_thickness_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_thickness_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_thickness_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_thickness_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_thickness_max_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_curvature_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_curvature_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_curvature_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_Curvature_3D_curvature_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_Curvature_3D_curvature_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_Curvature_3D_curvature_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_Curvature_3D;
+void register_struct_LineStyleThicknessModifier_Curvature_3D(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_Curvature_3D_type_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Curvature_3D_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Curvature_3D_blend_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_influence, 	&rna_LineStyleThicknessModifier_Curvature_3D_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_blend_get, LineStyleThicknessModifier_Curvature_3D_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Curvature_3D_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_influence_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_use, 	&rna_LineStyleThicknessModifier_Curvature_3D_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_influence_get, LineStyleThicknessModifier_Curvature_3D_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_use_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_expanded, 	&rna_LineStyleThicknessModifier_Curvature_3D_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Curvature_3D_use_get, LineStyleThicknessModifier_Curvature_3D_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_expanded_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_mapping, 	&rna_LineStyleThicknessModifier_Curvature_3D_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Curvature_3D_expanded_get, LineStyleThicknessModifier_Curvature_3D_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_Curvature_3D_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_Curvature_3D_mapping_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_invert, 	&rna_LineStyleThicknessModifier_Curvature_3D_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_mapping_get, LineStyleThicknessModifier_Curvature_3D_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_Curvature_3D_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_invert_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_curve, 	&rna_LineStyleThicknessModifier_Curvature_3D_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Curvature_3D_invert_get, LineStyleThicknessModifier_Curvature_3D_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_curve_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_thickness_min, 	&rna_LineStyleThicknessModifier_Curvature_3D_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_Curvature_3D_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_thickness_min_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_thickness_max, 	&rna_LineStyleThicknessModifier_Curvature_3D_curve,
+		-1, "thickness_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Thickness",
+		"Minimum thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, min_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_thickness_min_get, LineStyleThicknessModifier_Curvature_3D_thickness_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_thickness_max_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_curvature_min, 	&rna_LineStyleThicknessModifier_Curvature_3D_thickness_min,
+		-1, "thickness_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Thickness",
+		"Maximum thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, max_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_thickness_max_get, LineStyleThicknessModifier_Curvature_3D_thickness_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_curvature_min_ = {
+		{&rna_LineStyleThicknessModifier_Curvature_3D_curvature_max, 	&rna_LineStyleThicknessModifier_Curvature_3D_thickness_max,
+		-1, "curvature_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Curvature",
+		"Minimum Curvature",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, min_curvature), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_curvature_min_get, LineStyleThicknessModifier_Curvature_3D_curvature_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_Curvature_3D_curvature_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_Curvature_3D_curvature_min,
+		-1, "curvature_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Curvature",
+		"Maximum Curvature",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_Curvature_3D, max_curvature), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_Curvature_3D_curvature_max_get, LineStyleThicknessModifier_Curvature_3D_curvature_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_Curvature_3D;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_Curvature_3D_type, &rna_LineStyleThicknessModifier_Curvature_3D_curvature_max};
+	srna->identifier = "LineStyleThicknessModifier_Curvature_3D";
+	srna->flag = 516;
+	srna->name = "Curvature 3D";
+	srna->description = "Line thickness based on the radial curvature of 3D mesh surfaces";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Crease Angle */
+static EnumPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_type_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_type_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_blend_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_blend = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_blend_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_influence_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_influence = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_influence_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_use_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_use_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_expanded_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_expanded_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_mapping_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_mapping_);
+
+static BoolPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_invert_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_invert = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_invert_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_curve_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_curve = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_curve_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_angle_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_angle_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_angle_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_angle_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_angle_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_angle_max_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_thickness_min_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_thickness_min = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_thickness_min_);
+
+static FloatPropertyRNA rna_LineStyleThicknessModifier_CreaseAngle_thickness_max_;
+PropertyRNA &rna_LineStyleThicknessModifier_CreaseAngle_thickness_max = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifier_CreaseAngle_thickness_max_);
+
+StructRNA *RNA_LineStyleThicknessModifier_CreaseAngle;
+void register_struct_LineStyleThicknessModifier_CreaseAngle(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifier_CreaseAngle_type_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_blend, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_CreaseAngle_blend_items[9] = {
+		{0, "MIX", 0, "Mix", ""	},
+		{1, "ADD", 0, "Add", ""	},
+		{3, "SUBTRACT", 0, "Subtract", ""	},
+		{2, "MULTIPLY", 0, "Multiply", ""	},
+		{4, "DIVIDE", 0, "Divide", ""	},
+		{5, "DIFFERENCE", 0, "Difference", ""	},
+		{6, "MINIMUM", 0, "Minimum", ""	},
+		{7, "MAXIMUM", 0, "Maximum", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_CreaseAngle_blend_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_influence, 	&rna_LineStyleThicknessModifier_CreaseAngle_type,
+		-1, "blend", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Blend",
+		"Specify how the modifier value is blended into the base value",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, modifier.blend), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_blend_get, LineStyleThicknessModifier_CreaseAngle_blend_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_CreaseAngle_blend_items, 8, 0
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_influence_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_use, 	&rna_LineStyleThicknessModifier_CreaseAngle_blend,
+		-1, "influence", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Influence",
+		"Influence factor by which the modifier changes the property",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, modifier.influence), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_influence_get, LineStyleThicknessModifier_CreaseAngle_influence_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_use_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_expanded, 	&rna_LineStyleThicknessModifier_CreaseAngle_influence,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_CreaseAngle_use_get, LineStyleThicknessModifier_CreaseAngle_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_expanded_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_mapping, 	&rna_LineStyleThicknessModifier_CreaseAngle_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_CreaseAngle_expanded_get, LineStyleThicknessModifier_CreaseAngle_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleThicknessModifier_CreaseAngle_mapping_items[3] = {
+		{0, "LINEAR", 0, "Linear", "Use linear mapping"	},
+		{1, "CURVE", 0, "Curve", "Use curve mapping"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleThicknessModifier_CreaseAngle_mapping_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_invert, 	&rna_LineStyleThicknessModifier_CreaseAngle_expanded,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"Select the mapping type",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, flags), RawPropertyType(0), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_mapping_get, LineStyleThicknessModifier_CreaseAngle_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleThicknessModifier_CreaseAngle_mapping_items, 2, 0
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_invert_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_curve, 	&rna_LineStyleThicknessModifier_CreaseAngle_mapping,
+		-1, "invert", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Invert",
+		"Invert the fade-out direction of the linear mapping",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_CreaseAngle_invert_get, LineStyleThicknessModifier_CreaseAngle_invert_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_curve_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_angle_min, 	&rna_LineStyleThicknessModifier_CreaseAngle_invert,
+		-1, "curve", 8388608, 0, 0, 0, 0, PropertyPathTemplateType(0), "Curve",
+		"Curve used for the curve mapping",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifier_CreaseAngle_curve_get, nullptr, nullptr, nullptr,RNA_CurveMapping
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_angle_min_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_angle_max, 	&rna_LineStyleThicknessModifier_CreaseAngle_curve,
+		-1, "angle_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Angle",
+		"Minimum angle to modify thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, min_angle), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_angle_min_get, LineStyleThicknessModifier_CreaseAngle_angle_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_angle_max_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_thickness_min, 	&rna_LineStyleThicknessModifier_CreaseAngle_angle_min,
+		-1, "angle_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Angle",
+		"Maximum angle to modify thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, max_angle), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_angle_max_get, LineStyleThicknessModifier_CreaseAngle_angle_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_thickness_min_ = {
+		{&rna_LineStyleThicknessModifier_CreaseAngle_thickness_max, 	&rna_LineStyleThicknessModifier_CreaseAngle_angle_max,
+		-1, "thickness_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min Thickness",
+		"Minimum thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, min_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_thickness_min_get, LineStyleThicknessModifier_CreaseAngle_thickness_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleThicknessModifier_CreaseAngle_thickness_max_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifier_CreaseAngle_thickness_min,
+		-1, "thickness_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max Thickness",
+		"Maximum thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleThicknessModifier_CreaseAngle, max_thickness), RawPropertyType(5), nullptr},
+		LineStyleThicknessModifier_CreaseAngle_thickness_max_get, LineStyleThicknessModifier_CreaseAngle_thickness_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifier_CreaseAngle;
+	srna->cont.properties = {&rna_LineStyleThicknessModifier_CreaseAngle_type, &rna_LineStyleThicknessModifier_CreaseAngle_thickness_max};
+	srna->identifier = "LineStyleThicknessModifier_CreaseAngle";
+	srna->flag = 516;
+	srna->name = "Crease Angle";
+	srna->description = "Line thickness based on the angle between two adjacent faces";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleThicknessModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleThicknessModifier;
+	srna->refine = rna_LineStyle_thickness_modifier_refine;
+	srna->path = rna_LineStyle_thickness_modifier_path;
+};
+
+/* Line Style Geometry Modifier */
+static StringPropertyRNA rna_LineStyleGeometryModifier_name_;
+PropertyRNA &rna_LineStyleGeometryModifier_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_name_);
+
+StructRNA *RNA_LineStyleGeometryModifier;
+void register_struct_LineStyleGeometryModifier(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_name_ = {
+		{nullptr, 	nullptr,
+		-1, "name", 262145, 0, 0, 0, 0, PropertyPathTemplateType(0), "Modifier Name",
+		"Name of the modifier",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {64, 0, 0}, 0,
+		nullptr, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_name_get, LineStyleGeometryModifier_name_length, LineStyleGeometryModifier_name_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 64, ""
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_name, &rna_LineStyleGeometryModifier_name};
+	srna->identifier = "LineStyleGeometryModifier";
+	srna->flag = 516;
+	srna->name = "Line Style Geometry Modifier";
+	srna->description = "Base type to define stroke geometry modifiers";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Sampling */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_Sampling_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_Sampling_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Sampling_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Sampling_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_Sampling_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Sampling_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Sampling_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_Sampling_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Sampling_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_Sampling_sampling_;
+PropertyRNA &rna_LineStyleGeometryModifier_Sampling_sampling = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Sampling_sampling_);
+
+StructRNA *RNA_LineStyleGeometryModifier_Sampling;
+void register_struct_LineStyleGeometryModifier_Sampling(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_Sampling_type_ = {
+		{&rna_LineStyleGeometryModifier_Sampling_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Sampling, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Sampling_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_Sampling_use_ = {
+		{&rna_LineStyleGeometryModifier_Sampling_expanded, 	&rna_LineStyleGeometryModifier_Sampling_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Sampling_use_get, LineStyleGeometryModifier_Sampling_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Sampling_expanded_ = {
+		{&rna_LineStyleGeometryModifier_Sampling_sampling, 	&rna_LineStyleGeometryModifier_Sampling_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Sampling_expanded_get, LineStyleGeometryModifier_Sampling_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Sampling_sampling_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_Sampling_expanded,
+		-1, "sampling", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sampling",
+		"New sampling value to be used for subsequent modifiers",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Sampling, sampling), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_Sampling_sampling_get, LineStyleGeometryModifier_Sampling_sampling_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_Sampling;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_Sampling_type, &rna_LineStyleGeometryModifier_Sampling_sampling};
+	srna->identifier = "LineStyleGeometryModifier_Sampling";
+	srna->flag = 516;
+	srna->name = "Sampling";
+	srna->description = "Specify a new sampling value that determines the resolution of stroke polylines";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Bézier Curve */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_BezierCurve_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BezierCurve_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_BezierCurve_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BezierCurve_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_BezierCurve_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BezierCurve_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_BezierCurve_error_;
+PropertyRNA &rna_LineStyleGeometryModifier_BezierCurve_error = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BezierCurve_error_);
+
+StructRNA *RNA_LineStyleGeometryModifier_BezierCurve;
+void register_struct_LineStyleGeometryModifier_BezierCurve(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_BezierCurve_type_ = {
+		{&rna_LineStyleGeometryModifier_BezierCurve_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_BezierCurve, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_BezierCurve_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_BezierCurve_use_ = {
+		{&rna_LineStyleGeometryModifier_BezierCurve_expanded, 	&rna_LineStyleGeometryModifier_BezierCurve_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_BezierCurve_use_get, LineStyleGeometryModifier_BezierCurve_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_BezierCurve_expanded_ = {
+		{&rna_LineStyleGeometryModifier_BezierCurve_error, 	&rna_LineStyleGeometryModifier_BezierCurve_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_BezierCurve_expanded_get, LineStyleGeometryModifier_BezierCurve_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_BezierCurve_error_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_BezierCurve_expanded,
+		-1, "error", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Error",
+		"Maximum distance allowed between the new Bézier curve and the original backbone geometry",
+		0, "Amount",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_BezierCurve, error), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_BezierCurve_error_get, LineStyleGeometryModifier_BezierCurve_error_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_BezierCurve;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_BezierCurve_type, &rna_LineStyleGeometryModifier_BezierCurve_error};
+	srna->identifier = "LineStyleGeometryModifier_BezierCurve";
+	srna->flag = 516;
+	srna->name = "Bézier Curve";
+	srna->description = "Replace stroke backbone geometry by a Bézier curve approximation of the original backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Sinus Displacement */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_SinusDisplacement_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SinusDisplacement_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_SinusDisplacement_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SinusDisplacement_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_SinusDisplacement_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SinusDisplacement_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_SinusDisplacement_wavelength_;
+PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_wavelength = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SinusDisplacement_wavelength_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_SinusDisplacement_amplitude_;
+PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SinusDisplacement_amplitude_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_SinusDisplacement_phase_;
+PropertyRNA &rna_LineStyleGeometryModifier_SinusDisplacement_phase = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SinusDisplacement_phase_);
+
+StructRNA *RNA_LineStyleGeometryModifier_SinusDisplacement;
+void register_struct_LineStyleGeometryModifier_SinusDisplacement(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_SinusDisplacement_type_ = {
+		{&rna_LineStyleGeometryModifier_SinusDisplacement_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SinusDisplacement, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_SinusDisplacement_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_SinusDisplacement_use_ = {
+		{&rna_LineStyleGeometryModifier_SinusDisplacement_expanded, 	&rna_LineStyleGeometryModifier_SinusDisplacement_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_SinusDisplacement_use_get, LineStyleGeometryModifier_SinusDisplacement_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SinusDisplacement_expanded_ = {
+		{&rna_LineStyleGeometryModifier_SinusDisplacement_wavelength, 	&rna_LineStyleGeometryModifier_SinusDisplacement_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_SinusDisplacement_expanded_get, LineStyleGeometryModifier_SinusDisplacement_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SinusDisplacement_wavelength_ = {
+		{&rna_LineStyleGeometryModifier_SinusDisplacement_amplitude, 	&rna_LineStyleGeometryModifier_SinusDisplacement_expanded,
+		-1, "wavelength", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Wavelength",
+		"Wavelength of the sinus displacement",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SinusDisplacement, wavelength), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_SinusDisplacement_wavelength_get, LineStyleGeometryModifier_SinusDisplacement_wavelength_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0001000000f, FLT_MAX, 0.0001000000f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SinusDisplacement_amplitude_ = {
+		{&rna_LineStyleGeometryModifier_SinusDisplacement_phase, 	&rna_LineStyleGeometryModifier_SinusDisplacement_wavelength,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the sinus displacement",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SinusDisplacement, amplitude), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_SinusDisplacement_amplitude_get, LineStyleGeometryModifier_SinusDisplacement_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SinusDisplacement_phase_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_SinusDisplacement_amplitude,
+		-1, "phase", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Phase",
+		"Phase of the sinus displacement",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SinusDisplacement, phase), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_SinusDisplacement_phase_get, LineStyleGeometryModifier_SinusDisplacement_phase_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_SinusDisplacement;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_SinusDisplacement_type, &rna_LineStyleGeometryModifier_SinusDisplacement_phase};
+	srna->identifier = "LineStyleGeometryModifier_SinusDisplacement";
+	srna->flag = 516;
+	srna->name = "Sinus Displacement";
+	srna->description = "Add sinus displacement to stroke backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Spatial Noise */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_amplitude_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_amplitude_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_scale_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_scale = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_scale_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_octaves_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_octaves = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_octaves_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_smooth_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_smooth = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_smooth_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random_;
+PropertyRNA &rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random_);
+
+StructRNA *RNA_LineStyleGeometryModifier_SpatialNoise;
+void register_struct_LineStyleGeometryModifier_SpatialNoise(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_SpatialNoise_type_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SpatialNoise, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_SpatialNoise_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_use_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_expanded, 	&rna_LineStyleGeometryModifier_SpatialNoise_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_SpatialNoise_use_get, LineStyleGeometryModifier_SpatialNoise_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_expanded_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_amplitude, 	&rna_LineStyleGeometryModifier_SpatialNoise_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_SpatialNoise_expanded_get, LineStyleGeometryModifier_SpatialNoise_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_amplitude_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_scale, 	&rna_LineStyleGeometryModifier_SpatialNoise_expanded,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the spatial noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SpatialNoise, amplitude), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_SpatialNoise_amplitude_get, LineStyleGeometryModifier_SpatialNoise_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_scale_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_octaves, 	&rna_LineStyleGeometryModifier_SpatialNoise_amplitude,
+		-1, "scale", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Scale",
+		"Scale of the spatial noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SpatialNoise, scale), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_SpatialNoise_scale_get, LineStyleGeometryModifier_SpatialNoise_scale_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_octaves_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_smooth, 	&rna_LineStyleGeometryModifier_SpatialNoise_scale,
+		-1, "octaves", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Octaves",
+		"Number of octaves (i.e., the amount of detail of the spatial noise)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_SpatialNoise, octaves), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_SpatialNoise_octaves_get, LineStyleGeometryModifier_SpatialNoise_octaves_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_smooth_ = {
+		{&rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random, 	&rna_LineStyleGeometryModifier_SpatialNoise_octaves,
+		-1, "smooth", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Smooth",
+		"If true, the spatial noise is smooth",
+		0, "FreestyleLineStyle",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_SpatialNoise_smooth_get, LineStyleGeometryModifier_SpatialNoise_smooth_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_SpatialNoise_smooth,
+		-1, "use_pure_random", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Pure Random",
+		"If true, the spatial noise does not show any coherence",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_SpatialNoise_use_pure_random_get, LineStyleGeometryModifier_SpatialNoise_use_pure_random_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_SpatialNoise;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_SpatialNoise_type, &rna_LineStyleGeometryModifier_SpatialNoise_use_pure_random};
+	srna->identifier = "LineStyleGeometryModifier_SpatialNoise";
+	srna->flag = 516;
+	srna->name = "Spatial Noise";
+	srna->description = "Add spatial noise to stroke backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Perlin Noise 1D */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_frequency_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_frequency = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_frequency_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_octaves_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_octaves = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_octaves_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_angle_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_angle = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_angle_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise1D_seed_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise1D_seed = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise1D_seed_);
+
+StructRNA *RNA_LineStyleGeometryModifier_PerlinNoise1D;
+void register_struct_LineStyleGeometryModifier_PerlinNoise1D(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_PerlinNoise1D_type_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise1D, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_use_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_expanded, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_use_get, LineStyleGeometryModifier_PerlinNoise1D_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_expanded_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_frequency, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_expanded_get, LineStyleGeometryModifier_PerlinNoise1D_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_frequency_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_expanded,
+		-1, "frequency", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Frequency",
+		"Frequency of the Perlin noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise1D, frequency), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_frequency_get, LineStyleGeometryModifier_PerlinNoise1D_frequency_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_octaves, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_frequency,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the Perlin noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise1D, amplitude), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_amplitude_get, LineStyleGeometryModifier_PerlinNoise1D_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_octaves_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_angle, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_amplitude,
+		-1, "octaves", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Octaves",
+		"Number of octaves (i.e., the amount of detail of the Perlin noise)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise1D, octaves), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_octaves_get, LineStyleGeometryModifier_PerlinNoise1D_octaves_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_angle_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise1D_seed, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_octaves,
+		-1, "angle", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Angle",
+		"Displacement direction",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise1D, angle), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_angle_get, LineStyleGeometryModifier_PerlinNoise1D_angle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise1D_seed_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_PerlinNoise1D_angle,
+		-1, "seed", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Seed",
+		"Seed for random number generation (if negative, time is used as a seed instead)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise1D, seed), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_PerlinNoise1D_seed_get, LineStyleGeometryModifier_PerlinNoise1D_seed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_PerlinNoise1D;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_PerlinNoise1D_type, &rna_LineStyleGeometryModifier_PerlinNoise1D_seed};
+	srna->identifier = "LineStyleGeometryModifier_PerlinNoise1D";
+	srna->flag = 516;
+	srna->name = "Perlin Noise 1D";
+	srna->description = "Add one-dimensional Perlin noise to stroke backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Perlin Noise 2D */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_frequency_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_frequency = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_frequency_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_octaves_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_octaves = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_octaves_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_angle_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_angle = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_angle_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_PerlinNoise2D_seed_;
+PropertyRNA &rna_LineStyleGeometryModifier_PerlinNoise2D_seed = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_PerlinNoise2D_seed_);
+
+StructRNA *RNA_LineStyleGeometryModifier_PerlinNoise2D;
+void register_struct_LineStyleGeometryModifier_PerlinNoise2D(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_PerlinNoise2D_type_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise2D, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_use_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_expanded, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_use_get, LineStyleGeometryModifier_PerlinNoise2D_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_expanded_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_frequency, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_expanded_get, LineStyleGeometryModifier_PerlinNoise2D_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_frequency_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_expanded,
+		-1, "frequency", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Frequency",
+		"Frequency of the Perlin noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise2D, frequency), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_frequency_get, LineStyleGeometryModifier_PerlinNoise2D_frequency_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_octaves, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_frequency,
+		-1, "amplitude", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Amplitude",
+		"Amplitude of the Perlin noise",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise2D, amplitude), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_amplitude_get, LineStyleGeometryModifier_PerlinNoise2D_amplitude_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_octaves_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_angle, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_amplitude,
+		-1, "octaves", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Octaves",
+		"Number of octaves (i.e., the amount of detail of the Perlin noise)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise2D, octaves), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_octaves_get, LineStyleGeometryModifier_PerlinNoise2D_octaves_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_angle_ = {
+		{&rna_LineStyleGeometryModifier_PerlinNoise2D_seed, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_octaves,
+		-1, "angle", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Angle",
+		"Displacement direction",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise2D, angle), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_angle_get, LineStyleGeometryModifier_PerlinNoise2D_angle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_PerlinNoise2D_seed_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_PerlinNoise2D_angle,
+		-1, "seed", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Seed",
+		"Seed for random number generation (if negative, time is used as a seed instead)",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_PerlinNoise2D, seed), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_PerlinNoise2D_seed_get, LineStyleGeometryModifier_PerlinNoise2D_seed_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, -10000, 10000, INT_MIN, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_PerlinNoise2D;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_PerlinNoise2D_type, &rna_LineStyleGeometryModifier_PerlinNoise2D_seed};
+	srna->identifier = "LineStyleGeometryModifier_PerlinNoise2D";
+	srna->flag = 516;
+	srna->name = "Perlin Noise 2D";
+	srna->description = "Add two-dimensional Perlin noise to stroke backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Backbone Stretcher */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_BackboneStretcher_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BackboneStretcher_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_BackboneStretcher_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BackboneStretcher_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_BackboneStretcher_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BackboneStretcher_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length_;
+PropertyRNA &rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length_);
+
+StructRNA *RNA_LineStyleGeometryModifier_BackboneStretcher;
+void register_struct_LineStyleGeometryModifier_BackboneStretcher(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_BackboneStretcher_type_ = {
+		{&rna_LineStyleGeometryModifier_BackboneStretcher_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_BackboneStretcher, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_BackboneStretcher_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_BackboneStretcher_use_ = {
+		{&rna_LineStyleGeometryModifier_BackboneStretcher_expanded, 	&rna_LineStyleGeometryModifier_BackboneStretcher_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_BackboneStretcher_use_get, LineStyleGeometryModifier_BackboneStretcher_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_BackboneStretcher_expanded_ = {
+		{&rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length, 	&rna_LineStyleGeometryModifier_BackboneStretcher_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_BackboneStretcher_expanded_get, LineStyleGeometryModifier_BackboneStretcher_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_BackboneStretcher_expanded,
+		-1, "backbone_length", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Backbone Length",
+		"Amount of backbone stretching",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_BackboneStretcher, backbone_length), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_BackboneStretcher_backbone_length_get, LineStyleGeometryModifier_BackboneStretcher_backbone_length_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_BackboneStretcher;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_BackboneStretcher_type, &rna_LineStyleGeometryModifier_BackboneStretcher_backbone_length};
+	srna->identifier = "LineStyleGeometryModifier_BackboneStretcher";
+	srna->flag = 516;
+	srna->name = "Backbone Stretcher";
+	srna->description = "Stretch the beginning and the end of stroke backbone";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Tip Remover */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_TipRemover_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_TipRemover_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_TipRemover_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_TipRemover_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_TipRemover_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_TipRemover_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_TipRemover_tip_length_;
+PropertyRNA &rna_LineStyleGeometryModifier_TipRemover_tip_length = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_TipRemover_tip_length_);
+
+StructRNA *RNA_LineStyleGeometryModifier_TipRemover;
+void register_struct_LineStyleGeometryModifier_TipRemover(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_TipRemover_type_ = {
+		{&rna_LineStyleGeometryModifier_TipRemover_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_TipRemover, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_TipRemover_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_TipRemover_use_ = {
+		{&rna_LineStyleGeometryModifier_TipRemover_expanded, 	&rna_LineStyleGeometryModifier_TipRemover_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_TipRemover_use_get, LineStyleGeometryModifier_TipRemover_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_TipRemover_expanded_ = {
+		{&rna_LineStyleGeometryModifier_TipRemover_tip_length, 	&rna_LineStyleGeometryModifier_TipRemover_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_TipRemover_expanded_get, LineStyleGeometryModifier_TipRemover_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_TipRemover_tip_length_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_TipRemover_expanded,
+		-1, "tip_length", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Tip Length",
+		"Length of tips to be removed",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_TipRemover, tip_length), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_TipRemover_tip_length_get, LineStyleGeometryModifier_TipRemover_tip_length_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_TipRemover;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_TipRemover_type, &rna_LineStyleGeometryModifier_TipRemover_tip_length};
+	srna->identifier = "LineStyleGeometryModifier_TipRemover";
+	srna->flag = 516;
+	srna->name = "Tip Remover";
+	srna->description = "Remove a piece of stroke at the beginning and the end of stroke backbone";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Polygonalization */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_Polygonalization_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Polygonalization_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Polygonalization_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Polygonalization_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Polygonalization_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Polygonalization_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_Polygonalization_error_;
+PropertyRNA &rna_LineStyleGeometryModifier_Polygonalization_error = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Polygonalization_error_);
+
+StructRNA *RNA_LineStyleGeometryModifier_Polygonalization;
+void register_struct_LineStyleGeometryModifier_Polygonalization(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_Polygonalization_type_ = {
+		{&rna_LineStyleGeometryModifier_Polygonalization_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Polygonalization, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Polygonalization_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_Polygonalization_use_ = {
+		{&rna_LineStyleGeometryModifier_Polygonalization_expanded, 	&rna_LineStyleGeometryModifier_Polygonalization_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Polygonalization_use_get, LineStyleGeometryModifier_Polygonalization_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Polygonalization_expanded_ = {
+		{&rna_LineStyleGeometryModifier_Polygonalization_error, 	&rna_LineStyleGeometryModifier_Polygonalization_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Polygonalization_expanded_get, LineStyleGeometryModifier_Polygonalization_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Polygonalization_error_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_Polygonalization_expanded,
+		-1, "error", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Error",
+		"Maximum distance between the original stroke and its polygonal approximation",
+		0, "Amount",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Polygonalization, error), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_Polygonalization_error_get, LineStyleGeometryModifier_Polygonalization_error_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_Polygonalization;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_Polygonalization_type, &rna_LineStyleGeometryModifier_Polygonalization_error};
+	srna->identifier = "LineStyleGeometryModifier_Polygonalization";
+	srna->flag = 516;
+	srna->name = "Polygonalization";
+	srna->description = "Modify the stroke geometry so that it looks more \'polygonal\'";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Guiding Lines */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_GuidingLines_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_GuidingLines_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_GuidingLines_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_GuidingLines_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_GuidingLines_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_GuidingLines_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_GuidingLines_offset_;
+PropertyRNA &rna_LineStyleGeometryModifier_GuidingLines_offset = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_GuidingLines_offset_);
+
+StructRNA *RNA_LineStyleGeometryModifier_GuidingLines;
+void register_struct_LineStyleGeometryModifier_GuidingLines(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_GuidingLines_type_ = {
+		{&rna_LineStyleGeometryModifier_GuidingLines_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_GuidingLines, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_GuidingLines_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_GuidingLines_use_ = {
+		{&rna_LineStyleGeometryModifier_GuidingLines_expanded, 	&rna_LineStyleGeometryModifier_GuidingLines_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_GuidingLines_use_get, LineStyleGeometryModifier_GuidingLines_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_GuidingLines_expanded_ = {
+		{&rna_LineStyleGeometryModifier_GuidingLines_offset, 	&rna_LineStyleGeometryModifier_GuidingLines_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_GuidingLines_expanded_get, LineStyleGeometryModifier_GuidingLines_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_GuidingLines_offset_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_GuidingLines_expanded,
+		-1, "offset", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Offset",
+		"Displacement that is applied to the main direction line along its normal",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_GuidingLines, offset), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_GuidingLines_offset_get, LineStyleGeometryModifier_GuidingLines_offset_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_GuidingLines;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_GuidingLines_type, &rna_LineStyleGeometryModifier_GuidingLines_offset};
+	srna->identifier = "LineStyleGeometryModifier_GuidingLines";
+	srna->flag = 516;
+	srna->name = "Guiding Lines";
+	srna->description = "Modify the stroke geometry so that it corresponds to its main direction line";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Blueprint */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_Blueprint_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Blueprint_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Blueprint_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_expanded_);
+
+static EnumPropertyRNA rna_LineStyleGeometryModifier_Blueprint_shape_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_shape = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_shape_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_Blueprint_rounds_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_rounds = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_rounds_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_Blueprint_backbone_length_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_backbone_length = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_backbone_length_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_Blueprint_random_radius_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_random_radius = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_random_radius_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_Blueprint_random_center_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_random_center = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_random_center_);
+
+static IntPropertyRNA rna_LineStyleGeometryModifier_Blueprint_random_backbone_;
+PropertyRNA &rna_LineStyleGeometryModifier_Blueprint_random_backbone = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Blueprint_random_backbone_);
+
+StructRNA *RNA_LineStyleGeometryModifier_Blueprint;
+void register_struct_LineStyleGeometryModifier_Blueprint(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_Blueprint_type_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Blueprint_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_use_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_expanded, 	&rna_LineStyleGeometryModifier_Blueprint_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Blueprint_use_get, LineStyleGeometryModifier_Blueprint_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_expanded_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_shape, 	&rna_LineStyleGeometryModifier_Blueprint_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Blueprint_expanded_get, LineStyleGeometryModifier_Blueprint_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleGeometryModifier_Blueprint_shape_items[4] = {
+		{1, "CIRCLES", 0, "Circles", "Draw a blueprint using circular contour strokes"	},
+		{2, "ELLIPSES", 0, "Ellipses", "Draw a blueprint using elliptic contour strokes"	},
+		{4, "SQUARES", 0, "Squares", "Draw a blueprint using square contour strokes"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleGeometryModifier_Blueprint_shape_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_rounds, 	&rna_LineStyleGeometryModifier_Blueprint_expanded,
+		-1, "shape", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Shape",
+		"Select the shape of blueprint contour strokes",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, flags), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Blueprint_shape_get, LineStyleGeometryModifier_Blueprint_shape_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleGeometryModifier_Blueprint_shape_items, 3, 1
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_rounds_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_backbone_length, 	&rna_LineStyleGeometryModifier_Blueprint_shape,
+		-1, "rounds", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rounds",
+		"Number of rounds in contour strokes",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, rounds), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Blueprint_rounds_get, LineStyleGeometryModifier_Blueprint_rounds_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 1000, 1, 1000, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_backbone_length_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_random_radius, 	&rna_LineStyleGeometryModifier_Blueprint_rounds,
+		-1, "backbone_length", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Backbone Length",
+		"Amount of backbone stretching",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, backbone_length), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_Blueprint_backbone_length_get, LineStyleGeometryModifier_Blueprint_backbone_length_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_random_radius_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_random_center, 	&rna_LineStyleGeometryModifier_Blueprint_backbone_length,
+		-1, "random_radius", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Random Radius",
+		"Randomness of the radius",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, random_radius), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Blueprint_random_radius_get, LineStyleGeometryModifier_Blueprint_random_radius_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_random_center_ = {
+		{&rna_LineStyleGeometryModifier_Blueprint_random_backbone, 	&rna_LineStyleGeometryModifier_Blueprint_random_radius,
+		-1, "random_center", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Random Center",
+		"Randomness of the center",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, random_center), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Blueprint_random_center_get, LineStyleGeometryModifier_Blueprint_random_center_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Blueprint_random_backbone_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_Blueprint_random_center,
+		-1, "random_backbone", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Random Backbone",
+		"Randomness of the backbone stretching",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Blueprint, random_backbone), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Blueprint_random_backbone_get, LineStyleGeometryModifier_Blueprint_random_backbone_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_Blueprint;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_Blueprint_type, &rna_LineStyleGeometryModifier_Blueprint_random_backbone};
+	srna->identifier = "LineStyleGeometryModifier_Blueprint";
+	srna->flag = 516;
+	srna->name = "Blueprint";
+	srna->description = "Produce a blueprint using circular, elliptic, and square contour strokes";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* 2D Offset */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_2DOffset_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_2DOffset_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_2DOffset_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DOffset_start_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_start = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_start_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DOffset_end_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_end = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_end_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DOffset_x_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_x = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_x_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DOffset_y_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DOffset_y = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DOffset_y_);
+
+StructRNA *RNA_LineStyleGeometryModifier_2DOffset;
+void register_struct_LineStyleGeometryModifier_2DOffset(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_2DOffset_type_ = {
+		{&rna_LineStyleGeometryModifier_2DOffset_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DOffset, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_2DOffset_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_2DOffset_use_ = {
+		{&rna_LineStyleGeometryModifier_2DOffset_expanded, 	&rna_LineStyleGeometryModifier_2DOffset_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_2DOffset_use_get, LineStyleGeometryModifier_2DOffset_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DOffset_expanded_ = {
+		{&rna_LineStyleGeometryModifier_2DOffset_start, 	&rna_LineStyleGeometryModifier_2DOffset_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_2DOffset_expanded_get, LineStyleGeometryModifier_2DOffset_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DOffset_start_ = {
+		{&rna_LineStyleGeometryModifier_2DOffset_end, 	&rna_LineStyleGeometryModifier_2DOffset_expanded,
+		-1, "start", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Start",
+		"Displacement that is applied from the beginning of the stroke",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DOffset, start), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DOffset_start_get, LineStyleGeometryModifier_2DOffset_start_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DOffset_end_ = {
+		{&rna_LineStyleGeometryModifier_2DOffset_x, 	&rna_LineStyleGeometryModifier_2DOffset_start,
+		-1, "end", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "End",
+		"Displacement that is applied from the end of the stroke",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DOffset, end), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DOffset_end_get, LineStyleGeometryModifier_2DOffset_end_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DOffset_x_ = {
+		{&rna_LineStyleGeometryModifier_2DOffset_y, 	&rna_LineStyleGeometryModifier_2DOffset_end,
+		-1, "x", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "X",
+		"Displacement that is applied to the X coordinates of stroke vertices",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DOffset, x), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DOffset_x_get, LineStyleGeometryModifier_2DOffset_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DOffset_y_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_2DOffset_x,
+		-1, "y", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Y",
+		"Displacement that is applied to the Y coordinates of stroke vertices",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DOffset, y), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DOffset_y_get, LineStyleGeometryModifier_2DOffset_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_2DOffset;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_2DOffset_type, &rna_LineStyleGeometryModifier_2DOffset_y};
+	srna->identifier = "LineStyleGeometryModifier_2DOffset";
+	srna->flag = 516;
+	srna->name = "2D Offset";
+	srna->description = "Add two-dimensional offsets to stroke backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* 2D Transform */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_2DTransform_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_2DTransform_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_2DTransform_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_expanded_);
+
+static EnumPropertyRNA rna_LineStyleGeometryModifier_2DTransform_pivot_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_pivot_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DTransform_scale_x_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_scale_x = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_scale_x_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DTransform_scale_y_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_scale_y = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_scale_y_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DTransform_angle_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_angle = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_angle_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DTransform_pivot_u_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot_u = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_pivot_u_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DTransform_pivot_x_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot_x = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_pivot_x_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_2DTransform_pivot_y_;
+PropertyRNA &rna_LineStyleGeometryModifier_2DTransform_pivot_y = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_2DTransform_pivot_y_);
+
+StructRNA *RNA_LineStyleGeometryModifier_2DTransform;
+void register_struct_LineStyleGeometryModifier_2DTransform(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_2DTransform_type_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_2DTransform_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_use_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_expanded, 	&rna_LineStyleGeometryModifier_2DTransform_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_2DTransform_use_get, LineStyleGeometryModifier_2DTransform_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_expanded_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_pivot, 	&rna_LineStyleGeometryModifier_2DTransform_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_2DTransform_expanded_get, LineStyleGeometryModifier_2DTransform_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleGeometryModifier_2DTransform_pivot_items[6] = {
+		{1, "CENTER", 0, "Stroke Center", ""	},
+		{2, "START", 0, "Stroke Start", ""	},
+		{3, "END", 0, "Stroke End", ""	},
+		{4, "PARAM", 0, "Stroke Point Parameter", ""	},
+		{5, "ABSOLUTE", 0, "Absolute 2D Point", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleGeometryModifier_2DTransform_pivot_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_scale_x, 	&rna_LineStyleGeometryModifier_2DTransform_expanded,
+		-1, "pivot", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pivot",
+		"Pivot of scaling and rotation operations",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, pivot), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_2DTransform_pivot_get, LineStyleGeometryModifier_2DTransform_pivot_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleGeometryModifier_2DTransform_pivot_items, 5, 1
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_scale_x_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_scale_y, 	&rna_LineStyleGeometryModifier_2DTransform_pivot,
+		-1, "scale_x", 67108867, 0, 0, 4, 0, PropertyPathTemplateType(0), "Scale X",
+		"Scaling factor that is applied along the X axis",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, scale_x), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DTransform_scale_x_get, LineStyleGeometryModifier_2DTransform_scale_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_scale_y_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_angle, 	&rna_LineStyleGeometryModifier_2DTransform_scale_x,
+		-1, "scale_y", 67108867, 0, 0, 4, 0, PropertyPathTemplateType(0), "Scale Y",
+		"Scaling factor that is applied along the Y axis",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, scale_y), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DTransform_scale_y_get, LineStyleGeometryModifier_2DTransform_scale_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_angle_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_pivot_u, 	&rna_LineStyleGeometryModifier_2DTransform_scale_y,
+		-1, "angle", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rotation Angle",
+		"Rotation angle",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, angle), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DTransform_angle_get, LineStyleGeometryModifier_2DTransform_angle_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_pivot_u_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_pivot_x, 	&rna_LineStyleGeometryModifier_2DTransform_angle,
+		-1, "pivot_u", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Stroke Point Parameter",
+		"Pivot in terms of the stroke point parameter u (0 <= u <= 1)",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, pivot_u), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DTransform_pivot_u_get, LineStyleGeometryModifier_2DTransform_pivot_u_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_pivot_x_ = {
+		{&rna_LineStyleGeometryModifier_2DTransform_pivot_y, 	&rna_LineStyleGeometryModifier_2DTransform_pivot_u,
+		-1, "pivot_x", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pivot X",
+		"2D X coordinate of the absolute pivot",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, pivot_x), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DTransform_pivot_x_get, LineStyleGeometryModifier_2DTransform_pivot_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_2DTransform_pivot_y_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_2DTransform_pivot_x,
+		-1, "pivot_y", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Pivot Y",
+		"2D Y coordinate of the absolute pivot",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_2DTransform, pivot_y), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_2DTransform_pivot_y_get, LineStyleGeometryModifier_2DTransform_pivot_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_2DTransform;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_2DTransform_type, &rna_LineStyleGeometryModifier_2DTransform_pivot_y};
+	srna->identifier = "LineStyleGeometryModifier_2DTransform";
+	srna->flag = 516;
+	srna->name = "2D Transform";
+	srna->description = "Apply two-dimensional scaling and rotation to stroke backbone geometry";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Simplification */
+static EnumPropertyRNA rna_LineStyleGeometryModifier_Simplification_type_;
+PropertyRNA &rna_LineStyleGeometryModifier_Simplification_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Simplification_type_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Simplification_use_;
+PropertyRNA &rna_LineStyleGeometryModifier_Simplification_use = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Simplification_use_);
+
+static BoolPropertyRNA rna_LineStyleGeometryModifier_Simplification_expanded_;
+PropertyRNA &rna_LineStyleGeometryModifier_Simplification_expanded = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Simplification_expanded_);
+
+static FloatPropertyRNA rna_LineStyleGeometryModifier_Simplification_tolerance_;
+PropertyRNA &rna_LineStyleGeometryModifier_Simplification_tolerance = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifier_Simplification_tolerance_);
+
+StructRNA *RNA_LineStyleGeometryModifier_Simplification;
+void register_struct_LineStyleGeometryModifier_Simplification(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifier_Simplification_type_ = {
+		{&rna_LineStyleGeometryModifier_Simplification_use, 	nullptr,
+		-1, "type", 2, 0, 0, 4, 0, PropertyPathTemplateType(0), "Modifier Type",
+		"Type of the modifier",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Simplification, modifier.type), RawPropertyType(0), nullptr},
+		LineStyleGeometryModifier_Simplification_type_get, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+
+	rna_LineStyleGeometryModifier_Simplification_use_ = {
+		{&rna_LineStyleGeometryModifier_Simplification_expanded, 	&rna_LineStyleGeometryModifier_Simplification_type,
+		-1, "use", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use",
+		"Enable or disable this modifier during stroke rendering",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Simplification_use_get, LineStyleGeometryModifier_Simplification_use_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Simplification_expanded_ = {
+		{&rna_LineStyleGeometryModifier_Simplification_tolerance, 	&rna_LineStyleGeometryModifier_Simplification_use,
+		-1, "expanded", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Expanded",
+		"True if the modifier tab is expanded",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifier_Simplification_expanded_get, LineStyleGeometryModifier_Simplification_expanded_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_LineStyleGeometryModifier_Simplification_tolerance_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifier_Simplification_expanded,
+		-1, "tolerance", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Tolerance",
+		"Distance below which segments will be merged",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(LineStyleGeometryModifier_Simplification, tolerance), RawPropertyType(5), nullptr},
+		LineStyleGeometryModifier_Simplification_tolerance_get, LineStyleGeometryModifier_Simplification_tolerance_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifier_Simplification;
+	srna->cont.properties = {&rna_LineStyleGeometryModifier_Simplification_type, &rna_LineStyleGeometryModifier_Simplification_tolerance};
+	srna->identifier = "LineStyleGeometryModifier_Simplification";
+	srna->flag = 516;
+	srna->name = "Simplification";
+	srna->description = "Simplify the stroke set";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->nameproperty = &rna_LineStyleGeometryModifier_name;
+	srna->iteratorproperty = &rna_LineStyleModifier_rna_properties;
+	srna->base = RNA_LineStyleGeometryModifier;
+	srna->refine = rna_LineStyle_geometry_modifier_refine;
+	srna->path = rna_LineStyle_geometry_modifier_path;
+};
+
+/* Freestyle Line Style */
+static CollectionPropertyRNA rna_FreestyleLineStyle_texture_slots_;
+PropertyRNA &rna_FreestyleLineStyle_texture_slots = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_texture_slots_);
+
+static PointerPropertyRNA rna_FreestyleLineStyle_active_texture_;
+PropertyRNA &rna_FreestyleLineStyle_active_texture = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_active_texture_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_active_texture_index_;
+PropertyRNA &rna_FreestyleLineStyle_active_texture_index = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_active_texture_index_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_panel_;
+PropertyRNA &rna_FreestyleLineStyle_panel = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_panel_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_color_;
+PropertyRNA &rna_FreestyleLineStyle_color = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_color_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_alpha_;
+PropertyRNA &rna_FreestyleLineStyle_alpha = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_alpha_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_thickness_;
+PropertyRNA &rna_FreestyleLineStyle_thickness = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_thickness_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_thickness_position_;
+PropertyRNA &rna_FreestyleLineStyle_thickness_position = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_thickness_position_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_thickness_ratio_;
+PropertyRNA &rna_FreestyleLineStyle_thickness_ratio = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_thickness_ratio_);
+
+static CollectionPropertyRNA rna_FreestyleLineStyle_color_modifiers_;
+PropertyRNA &rna_FreestyleLineStyle_color_modifiers = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_color_modifiers_);
+
+static CollectionPropertyRNA rna_FreestyleLineStyle_alpha_modifiers_;
+PropertyRNA &rna_FreestyleLineStyle_alpha_modifiers = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_alpha_modifiers_);
+
+static CollectionPropertyRNA rna_FreestyleLineStyle_thickness_modifiers_;
+PropertyRNA &rna_FreestyleLineStyle_thickness_modifiers = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_thickness_modifiers_);
+
+static CollectionPropertyRNA rna_FreestyleLineStyle_geometry_modifiers_;
+PropertyRNA &rna_FreestyleLineStyle_geometry_modifiers = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_geometry_modifiers_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_chaining_;
+PropertyRNA &rna_FreestyleLineStyle_use_chaining = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_chaining_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_chaining_;
+PropertyRNA &rna_FreestyleLineStyle_chaining = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_chaining_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_rounds_;
+PropertyRNA &rna_FreestyleLineStyle_rounds = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_rounds_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_same_object_;
+PropertyRNA &rna_FreestyleLineStyle_use_same_object = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_same_object_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_split_length_;
+PropertyRNA &rna_FreestyleLineStyle_use_split_length = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_split_length_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_split_length_;
+PropertyRNA &rna_FreestyleLineStyle_split_length = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_length_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_angle_min_;
+PropertyRNA &rna_FreestyleLineStyle_use_angle_min = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_angle_min_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_angle_min_;
+PropertyRNA &rna_FreestyleLineStyle_angle_min = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_angle_min_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_angle_max_;
+PropertyRNA &rna_FreestyleLineStyle_use_angle_max = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_angle_max_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_angle_max_;
+PropertyRNA &rna_FreestyleLineStyle_angle_max = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_angle_max_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_length_min_;
+PropertyRNA &rna_FreestyleLineStyle_use_length_min = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_length_min_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_length_min_;
+PropertyRNA &rna_FreestyleLineStyle_length_min = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_length_min_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_length_max_;
+PropertyRNA &rna_FreestyleLineStyle_use_length_max = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_length_max_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_length_max_;
+PropertyRNA &rna_FreestyleLineStyle_length_max = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_length_max_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_chain_count_;
+PropertyRNA &rna_FreestyleLineStyle_use_chain_count = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_chain_count_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_chain_count_;
+PropertyRNA &rna_FreestyleLineStyle_chain_count = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_chain_count_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_split_pattern_;
+PropertyRNA &rna_FreestyleLineStyle_use_split_pattern = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_split_pattern_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_split_dash1_;
+PropertyRNA &rna_FreestyleLineStyle_split_dash1 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_dash1_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_split_gap1_;
+PropertyRNA &rna_FreestyleLineStyle_split_gap1 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_gap1_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_split_dash2_;
+PropertyRNA &rna_FreestyleLineStyle_split_dash2 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_dash2_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_split_gap2_;
+PropertyRNA &rna_FreestyleLineStyle_split_gap2 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_gap2_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_split_dash3_;
+PropertyRNA &rna_FreestyleLineStyle_split_dash3 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_dash3_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_split_gap3_;
+PropertyRNA &rna_FreestyleLineStyle_split_gap3 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_split_gap3_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_material_boundary_;
+PropertyRNA &rna_FreestyleLineStyle_material_boundary = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_material_boundary_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_sorting_;
+PropertyRNA &rna_FreestyleLineStyle_use_sorting = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_sorting_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_sort_key_;
+PropertyRNA &rna_FreestyleLineStyle_sort_key = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_sort_key_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_sort_order_;
+PropertyRNA &rna_FreestyleLineStyle_sort_order = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_sort_order_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_integration_type_;
+PropertyRNA &rna_FreestyleLineStyle_integration_type = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_integration_type_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_dashed_line_;
+PropertyRNA &rna_FreestyleLineStyle_use_dashed_line = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_dashed_line_);
+
+static EnumPropertyRNA rna_FreestyleLineStyle_caps_;
+PropertyRNA &rna_FreestyleLineStyle_caps = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_caps_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_dash1_;
+PropertyRNA &rna_FreestyleLineStyle_dash1 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_dash1_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_gap1_;
+PropertyRNA &rna_FreestyleLineStyle_gap1 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_gap1_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_dash2_;
+PropertyRNA &rna_FreestyleLineStyle_dash2 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_dash2_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_gap2_;
+PropertyRNA &rna_FreestyleLineStyle_gap2 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_gap2_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_dash3_;
+PropertyRNA &rna_FreestyleLineStyle_dash3 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_dash3_);
+
+static IntPropertyRNA rna_FreestyleLineStyle_gap3_;
+PropertyRNA &rna_FreestyleLineStyle_gap3 = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_gap3_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_texture_;
+PropertyRNA &rna_FreestyleLineStyle_use_texture = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_texture_);
+
+static FloatPropertyRNA rna_FreestyleLineStyle_texture_spacing_;
+PropertyRNA &rna_FreestyleLineStyle_texture_spacing = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_texture_spacing_);
+
+static PointerPropertyRNA rna_FreestyleLineStyle_animation_data_;
+PropertyRNA &rna_FreestyleLineStyle_animation_data = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_animation_data_);
+
+static PointerPropertyRNA rna_FreestyleLineStyle_node_tree_;
+PropertyRNA &rna_FreestyleLineStyle_node_tree = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_node_tree_);
+
+static BoolPropertyRNA rna_FreestyleLineStyle_use_nodes_;
+PropertyRNA &rna_FreestyleLineStyle_use_nodes = reinterpret_cast<PropertyRNA &>(rna_FreestyleLineStyle_use_nodes_);
+
+StructRNA *RNA_FreestyleLineStyle;
+void register_struct_FreestyleLineStyle(BlenderRNA &brna)
+{
+	rna_FreestyleLineStyle_texture_slots_ = {
+		{&rna_FreestyleLineStyle_active_texture, 	nullptr,
+		-1, "texture_slots", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Textures",
+		"Texture slots defining the mapping and influence of textures",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_LineStyleTextureSlots},
+		FreestyleLineStyle_texture_slots_begin, FreestyleLineStyle_texture_slots_next, FreestyleLineStyle_texture_slots_end, FreestyleLineStyle_texture_slots_get, nullptr, FreestyleLineStyle_texture_slots_lookup_int, nullptr, nullptr, RNA_LineStyleTextureSlot
+	};
+
+	rna_FreestyleLineStyle_active_texture_ = {
+		{&rna_FreestyleLineStyle_active_texture_index, 	&rna_FreestyleLineStyle_texture_slots,
+		-1, "active_texture", 8388801, 0, 0, 64, 0, PropertyPathTemplateType(0), "Active Texture",
+		"Active texture slot being displayed",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 119537664, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_active_texture_get, FreestyleLineStyle_active_texture_set, nullptr, nullptr,RNA_Texture
+	};
+
+	rna_FreestyleLineStyle_active_texture_index_ = {
+		{&rna_FreestyleLineStyle_panel, 	&rna_FreestyleLineStyle_active_texture,
+		-1, "active_texture_index", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Active Texture Index",
+		"Index of active texture slot",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 119537664, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, texact), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_active_texture_index_get, FreestyleLineStyle_active_texture_index_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 17, 0, 17, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_panel_items[7] = {
+		{1, "STROKES", 0, "Strokes", "Show the panel for stroke construction"	},
+		{2, "COLOR", 0, "Color", "Show the panel for line color options"	},
+		{3, "ALPHA", 0, "Alpha", "Show the panel for alpha transparency options"	},
+		{4, "THICKNESS", 0, "Thickness", "Show the panel for line thickness options"	},
+		{5, "GEOMETRY", 0, "Geometry", "Show the panel for stroke geometry options"	},
+		{6, "TEXTURE", 0, "Texture", "Show the panel for stroke texture options"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_panel_ = {
+		{&rna_FreestyleLineStyle_color, 	&rna_FreestyleLineStyle_active_texture_index,
+		-1, "panel", 1, 0, 0, 4, 0, PropertyPathTemplateType(0), "Panel",
+		"Select the property panel to be shown",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, panel), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_panel_get, FreestyleLineStyle_panel_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_panel_items, 6, 1
+	};
+
+	static float rna_FreestyleLineStyle_color_default[3] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+	rna_FreestyleLineStyle_color_ = {
+		{&rna_FreestyleLineStyle_alpha, 	&rna_FreestyleLineStyle_panel,
+		-1, "color", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Color",
+		"Base line color, possibly modified by line color modifiers",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_COLOR) | int(PROP_UNIT_NONE)), nullptr, 1, {3, 0, 0}, 3,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, r), RawPropertyType(5), nullptr},
+		nullptr, nullptr, FreestyleLineStyle_color_get, FreestyleLineStyle_color_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, FLT_MAX, 10.0f, 3, nullptr, nullptr, 0.0f, rna_FreestyleLineStyle_color_default
+	};
+
+	rna_FreestyleLineStyle_alpha_ = {
+		{&rna_FreestyleLineStyle_thickness, 	&rna_FreestyleLineStyle_color,
+		-1, "alpha", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Alpha Transparency",
+		"Base alpha transparency, possibly modified by alpha transparency modifiers",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, alpha), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_alpha_get, FreestyleLineStyle_alpha_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_thickness_ = {
+		{&rna_FreestyleLineStyle_thickness_position, 	&rna_FreestyleLineStyle_alpha,
+		-1, "thickness", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Thickness",
+		"Base line thickness, possibly modified by line thickness modifiers",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, thickness), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_thickness_get, FreestyleLineStyle_thickness_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 3.0f, nullptr
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_thickness_position_items[5] = {
+		{1, "CENTER", 0, "Center", "Silhouettes and border edges are centered along stroke geometry"	},
+		{2, "INSIDE", 0, "Inside", "Silhouettes and border edges are drawn inside of stroke geometry"	},
+		{3, "OUTSIDE", 0, "Outside", "Silhouettes and border edges are drawn outside of stroke geometry"	},
+		{4, "RELATIVE", 0, "Relative", "Silhouettes and border edges are shifted by a user-defined ratio"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_thickness_position_ = {
+		{&rna_FreestyleLineStyle_thickness_ratio, 	&rna_FreestyleLineStyle_thickness,
+		-1, "thickness_position", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Thickness Position",
+		"Thickness position of silhouettes and border edges (applicable when plain chaining is used with the Same Object option)",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, thickness_position), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_thickness_position_get, FreestyleLineStyle_thickness_position_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_thickness_position_items, 4, 1
+	};
+
+	rna_FreestyleLineStyle_thickness_ratio_ = {
+		{&rna_FreestyleLineStyle_color_modifiers, 	&rna_FreestyleLineStyle_thickness_position,
+		-1, "thickness_ratio", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Thickness Ratio",
+		"A number between 0 (inside) and 1 (outside) specifying the relative position of stroke thickness",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, thickness_ratio), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_thickness_ratio_get, FreestyleLineStyle_thickness_ratio_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, nullptr, nullptr, 0.5000000000f, nullptr
+	};
+
+	rna_FreestyleLineStyle_color_modifiers_ = {
+		{&rna_FreestyleLineStyle_alpha_modifiers, 	&rna_FreestyleLineStyle_thickness_ratio,
+		-1, "color_modifiers", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Color Modifiers",
+		"List of line color modifiers",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_LineStyleColorModifiers},
+		FreestyleLineStyle_color_modifiers_begin, FreestyleLineStyle_color_modifiers_next, FreestyleLineStyle_color_modifiers_end, FreestyleLineStyle_color_modifiers_get, nullptr, FreestyleLineStyle_color_modifiers_lookup_int, FreestyleLineStyle_color_modifiers_lookup_string, nullptr, RNA_LineStyleColorModifier
+	};
+
+	rna_FreestyleLineStyle_alpha_modifiers_ = {
+		{&rna_FreestyleLineStyle_thickness_modifiers, 	&rna_FreestyleLineStyle_color_modifiers,
+		-1, "alpha_modifiers", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Alpha Modifiers",
+		"List of alpha transparency modifiers",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_LineStyleAlphaModifiers},
+		FreestyleLineStyle_alpha_modifiers_begin, FreestyleLineStyle_alpha_modifiers_next, FreestyleLineStyle_alpha_modifiers_end, FreestyleLineStyle_alpha_modifiers_get, nullptr, FreestyleLineStyle_alpha_modifiers_lookup_int, FreestyleLineStyle_alpha_modifiers_lookup_string, nullptr, RNA_LineStyleAlphaModifier
+	};
+
+	rna_FreestyleLineStyle_thickness_modifiers_ = {
+		{&rna_FreestyleLineStyle_geometry_modifiers, 	&rna_FreestyleLineStyle_alpha_modifiers,
+		-1, "thickness_modifiers", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Thickness Modifiers",
+		"List of line thickness modifiers",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_LineStyleThicknessModifiers},
+		FreestyleLineStyle_thickness_modifiers_begin, FreestyleLineStyle_thickness_modifiers_next, FreestyleLineStyle_thickness_modifiers_end, FreestyleLineStyle_thickness_modifiers_get, nullptr, FreestyleLineStyle_thickness_modifiers_lookup_int, FreestyleLineStyle_thickness_modifiers_lookup_string, nullptr, RNA_LineStyleThicknessModifier
+	};
+
+	rna_FreestyleLineStyle_geometry_modifiers_ = {
+		{&rna_FreestyleLineStyle_use_chaining, 	&rna_FreestyleLineStyle_thickness_modifiers,
+		-1, "geometry_modifiers", 0, 0, 0, 0, 0, PropertyPathTemplateType(0), "Geometry Modifiers",
+		"List of stroke geometry modifiers",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, RNA_LineStyleGeometryModifiers},
+		FreestyleLineStyle_geometry_modifiers_begin, FreestyleLineStyle_geometry_modifiers_next, FreestyleLineStyle_geometry_modifiers_end, FreestyleLineStyle_geometry_modifiers_get, nullptr, FreestyleLineStyle_geometry_modifiers_lookup_int, FreestyleLineStyle_geometry_modifiers_lookup_string, nullptr, RNA_LineStyleGeometryModifier
+	};
+
+	rna_FreestyleLineStyle_use_chaining_ = {
+		{&rna_FreestyleLineStyle_chaining, 	&rna_FreestyleLineStyle_geometry_modifiers,
+		-1, "use_chaining", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Chaining",
+		"Enable chaining of feature edges",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_chaining_get, FreestyleLineStyle_use_chaining_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_chaining_items[3] = {
+		{1, "PLAIN", 0, "Plain", "Plain chaining"	},
+		{2, "SKETCHY", 0, "Sketchy", "Sketchy chaining with a multiple touch"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_chaining_ = {
+		{&rna_FreestyleLineStyle_rounds, 	&rna_FreestyleLineStyle_use_chaining,
+		-1, "chaining", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Chaining Method",
+		"Select the way how feature edges are jointed to form chains",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, chaining), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_chaining_get, FreestyleLineStyle_chaining_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_chaining_items, 2, 1
+	};
+
+	rna_FreestyleLineStyle_rounds_ = {
+		{&rna_FreestyleLineStyle_use_same_object, 	&rna_FreestyleLineStyle_chaining,
+		-1, "rounds", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Rounds",
+		"Number of rounds in a sketchy multiple touch",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, rounds), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_rounds_get, FreestyleLineStyle_rounds_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 1, 1000, 1, 1000, 1, nullptr, nullptr, 3, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_same_object_ = {
+		{&rna_FreestyleLineStyle_use_split_length, 	&rna_FreestyleLineStyle_rounds,
+		-1, "use_same_object", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Same Object",
+		"If true, only feature edges of the same object are joined",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_same_object_get, FreestyleLineStyle_use_same_object_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_split_length_ = {
+		{&rna_FreestyleLineStyle_split_length, 	&rna_FreestyleLineStyle_use_same_object,
+		-1, "use_split_length", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Split Length",
+		"Enable chain splitting by curvilinear 2D length",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_split_length_get, FreestyleLineStyle_use_split_length_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_length_ = {
+		{&rna_FreestyleLineStyle_use_angle_min, 	&rna_FreestyleLineStyle_use_split_length,
+		-1, "split_length", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Length",
+		"Curvilinear 2D length for chain splitting",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_length), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_split_length_get, FreestyleLineStyle_split_length_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 100.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_angle_min_ = {
+		{&rna_FreestyleLineStyle_angle_min, 	&rna_FreestyleLineStyle_split_length,
+		-1, "use_angle_min", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Min 2D Angle",
+		"Split chains at points with angles smaller than the minimum 2D angle",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_angle_min_get, FreestyleLineStyle_use_angle_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_angle_min_ = {
+		{&rna_FreestyleLineStyle_use_angle_max, 	&rna_FreestyleLineStyle_use_angle_min,
+		-1, "angle_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min 2D Angle",
+		"Minimum 2D angle for splitting chains",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, min_angle), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_angle_min_get, FreestyleLineStyle_angle_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_angle_max_ = {
+		{&rna_FreestyleLineStyle_angle_max, 	&rna_FreestyleLineStyle_angle_min,
+		-1, "use_angle_max", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Max 2D Angle",
+		"Split chains at points with angles larger than the maximum 2D angle",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_angle_max_get, FreestyleLineStyle_use_angle_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_angle_max_ = {
+		{&rna_FreestyleLineStyle_use_length_min, 	&rna_FreestyleLineStyle_use_angle_max,
+		-1, "angle_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max 2D Angle",
+		"Maximum 2D angle for splitting chains",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_ANGLE) | int(PROP_UNIT_ROTATION)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, max_angle), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_angle_max_get, FreestyleLineStyle_angle_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 3.1415927410f, 0.0f, 3.1415927410f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_length_min_ = {
+		{&rna_FreestyleLineStyle_length_min, 	&rna_FreestyleLineStyle_angle_max,
+		-1, "use_length_min", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Min 2D Length",
+		"Enable the selection of chains by a minimum 2D length",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_length_min_get, FreestyleLineStyle_use_length_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_length_min_ = {
+		{&rna_FreestyleLineStyle_use_length_max, 	&rna_FreestyleLineStyle_use_length_min,
+		-1, "length_min", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Min 2D Length",
+		"Minimum curvilinear 2D length for the selection of chains",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, min_length), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_length_min_get, FreestyleLineStyle_length_min_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 0.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_length_max_ = {
+		{&rna_FreestyleLineStyle_length_max, 	&rna_FreestyleLineStyle_length_min,
+		-1, "use_length_max", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Max 2D Length",
+		"Enable the selection of chains by a maximum 2D length",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_length_max_get, FreestyleLineStyle_use_length_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_length_max_ = {
+		{&rna_FreestyleLineStyle_use_chain_count, 	&rna_FreestyleLineStyle_use_length_max,
+		-1, "length_max", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Max 2D Length",
+		"Maximum curvilinear 2D length for the selection of chains",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, max_length), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_length_max_get, FreestyleLineStyle_length_max_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 10000.0f, 0.0f, 10000.0f, 10.0f, 3, nullptr, nullptr, 10000.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_chain_count_ = {
+		{&rna_FreestyleLineStyle_chain_count, 	&rna_FreestyleLineStyle_length_max,
+		-1, "use_chain_count", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Chain Count",
+		"Enable the selection of first N chains",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_chain_count_get, FreestyleLineStyle_use_chain_count_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_chain_count_ = {
+		{&rna_FreestyleLineStyle_use_split_pattern, 	&rna_FreestyleLineStyle_use_chain_count,
+		-1, "chain_count", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Chain Count",
+		"Chain count for the selection of first N chains",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, chain_count), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_chain_count_get, FreestyleLineStyle_chain_count_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 10000, 0, INT_MAX, 1, nullptr, nullptr, 10, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_split_pattern_ = {
+		{&rna_FreestyleLineStyle_split_dash1, 	&rna_FreestyleLineStyle_chain_count,
+		-1, "use_split_pattern", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Split Pattern",
+		"Enable chain splitting by dashed line patterns",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_split_pattern_get, FreestyleLineStyle_use_split_pattern_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_dash1_ = {
+		{&rna_FreestyleLineStyle_split_gap1, 	&rna_FreestyleLineStyle_use_split_pattern,
+		-1, "split_dash1", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Dash 1",
+		"Length of the 1st dash for splitting",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_dash1), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_split_dash1_get, FreestyleLineStyle_split_dash1_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_gap1_ = {
+		{&rna_FreestyleLineStyle_split_dash2, 	&rna_FreestyleLineStyle_split_dash1,
+		-1, "split_gap1", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Gap 1",
+		"Length of the 1st gap for splitting",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_gap1), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_split_gap1_get, FreestyleLineStyle_split_gap1_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_dash2_ = {
+		{&rna_FreestyleLineStyle_split_gap2, 	&rna_FreestyleLineStyle_split_gap1,
+		-1, "split_dash2", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Dash 2",
+		"Length of the 2nd dash for splitting",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_dash2), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_split_dash2_get, FreestyleLineStyle_split_dash2_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_gap2_ = {
+		{&rna_FreestyleLineStyle_split_dash3, 	&rna_FreestyleLineStyle_split_dash2,
+		-1, "split_gap2", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Gap 2",
+		"Length of the 2nd gap for splitting",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_gap2), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_split_gap2_get, FreestyleLineStyle_split_gap2_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_dash3_ = {
+		{&rna_FreestyleLineStyle_split_gap3, 	&rna_FreestyleLineStyle_split_gap2,
+		-1, "split_dash3", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Dash 3",
+		"Length of the 3rd dash for splitting",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_dash3), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_split_dash3_get, FreestyleLineStyle_split_dash3_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_split_gap3_ = {
+		{&rna_FreestyleLineStyle_material_boundary, 	&rna_FreestyleLineStyle_split_dash3,
+		-1, "split_gap3", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Split Gap 3",
+		"Length of the 3rd gap for splitting",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, split_gap3), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_split_gap3_get, FreestyleLineStyle_split_gap3_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_material_boundary_ = {
+		{&rna_FreestyleLineStyle_use_sorting, 	&rna_FreestyleLineStyle_split_gap3,
+		-1, "material_boundary", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Material Boundary",
+		"If true, chains of feature edges are split at material boundaries",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_material_boundary_get, FreestyleLineStyle_material_boundary_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_sorting_ = {
+		{&rna_FreestyleLineStyle_sort_key, 	&rna_FreestyleLineStyle_material_boundary,
+		-1, "use_sorting", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Sorting",
+		"Arrange the stacking order of strokes",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_sorting_get, FreestyleLineStyle_use_sorting_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_sort_key_items[5] = {
+		{1, "DISTANCE_FROM_CAMERA", 0, "Distance from Camera", "Sort by distance from camera (closer lines lie on top of further lines)"	},
+		{2, "2D_LENGTH", 0, "2D Length", "Sort by curvilinear 2D length (longer lines lie on top of shorter lines)"	},
+		{3, "PROJECTED_X", 0, "Projected X", "Sort by the projected X value in the image coordinate system"	},
+		{4, "PROJECTED_Y", 0, "Projected Y", "Sort by the projected Y value in the image coordinate system"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_sort_key_ = {
+		{&rna_FreestyleLineStyle_sort_order, 	&rna_FreestyleLineStyle_use_sorting,
+		-1, "sort_key", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sort Key",
+		"Select the sort key to determine the stacking order of chains",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, sort_key), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_sort_key_get, FreestyleLineStyle_sort_key_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_sort_key_items, 4, 1
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_sort_order_items[3] = {
+		{0, "DEFAULT", 0, "Default", "Default order of the sort key"	},
+		{4096, "REVERSE", 0, "Reverse", "Reverse order"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_sort_order_ = {
+		{&rna_FreestyleLineStyle_integration_type, 	&rna_FreestyleLineStyle_sort_key,
+		-1, "sort_order", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Sort Order",
+		"Select the sort order",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, flag), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_sort_order_get, FreestyleLineStyle_sort_order_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_sort_order_items, 2, 0
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_integration_type_items[6] = {
+		{1, "MEAN", 0, "Mean", "The value computed for the chain is the mean of the values obtained for chain vertices"	},
+		{2, "MIN", 0, "Min", "The value computed for the chain is the minimum of the values obtained for chain vertices"	},
+		{3, "MAX", 0, "Max", "The value computed for the chain is the maximum of the values obtained for chain vertices"	},
+		{4, "FIRST", 0, "First", "The value computed for the chain is the value obtained for the first chain vertex"	},
+		{5, "LAST", 0, "Last", "The value computed for the chain is the value obtained for the last chain vertex"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_integration_type_ = {
+		{&rna_FreestyleLineStyle_use_dashed_line, 	&rna_FreestyleLineStyle_sort_order,
+		-1, "integration_type", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Integration Type",
+		"Select the way how the sort key is computed for each chain",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, integration_type), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_integration_type_get, FreestyleLineStyle_integration_type_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_integration_type_items, 5, 1
+	};
+
+	rna_FreestyleLineStyle_use_dashed_line_ = {
+		{&rna_FreestyleLineStyle_caps, 	&rna_FreestyleLineStyle_integration_type,
+		-1, "use_dashed_line", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Dashed Line",
+		"Enable or disable dashed line",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_dashed_line_get, FreestyleLineStyle_use_dashed_line_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_FreestyleLineStyle_caps_items[4] = {
+		{1, "BUTT", 0, "Butt", "Butt cap (flat)"	},
+		{2, "ROUND", 0, "Round", "Round cap (half-circle)"	},
+		{3, "SQUARE", 0, "Square", "Square cap (flat and extended)"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_FreestyleLineStyle_caps_ = {
+		{&rna_FreestyleLineStyle_dash1, 	&rna_FreestyleLineStyle_use_dashed_line,
+		-1, "caps", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Caps",
+		"Select the shape of both ends of strokes",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, caps), RawPropertyType(0), nullptr},
+		FreestyleLineStyle_caps_get, FreestyleLineStyle_caps_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_FreestyleLineStyle_caps_items, 3, 1
+	};
+
+	rna_FreestyleLineStyle_dash1_ = {
+		{&rna_FreestyleLineStyle_gap1, 	&rna_FreestyleLineStyle_caps,
+		-1, "dash1", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Dash 1",
+		"Length of the 1st dash for dashed lines",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, dash1), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_dash1_get, FreestyleLineStyle_dash1_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_gap1_ = {
+		{&rna_FreestyleLineStyle_dash2, 	&rna_FreestyleLineStyle_dash1,
+		-1, "gap1", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Gap 1",
+		"Length of the 1st gap for dashed lines",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, gap1), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_gap1_get, FreestyleLineStyle_gap1_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_dash2_ = {
+		{&rna_FreestyleLineStyle_gap2, 	&rna_FreestyleLineStyle_gap1,
+		-1, "dash2", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Dash 2",
+		"Length of the 2nd dash for dashed lines",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, dash2), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_dash2_get, FreestyleLineStyle_dash2_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_gap2_ = {
+		{&rna_FreestyleLineStyle_dash3, 	&rna_FreestyleLineStyle_dash2,
+		-1, "gap2", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Gap 2",
+		"Length of the 2nd gap for dashed lines",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, gap2), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_gap2_get, FreestyleLineStyle_gap2_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_dash3_ = {
+		{&rna_FreestyleLineStyle_gap3, 	&rna_FreestyleLineStyle_gap2,
+		-1, "dash3", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Dash 3",
+		"Length of the 3rd dash for dashed lines",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, dash3), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_dash3_get, FreestyleLineStyle_dash3_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_gap3_ = {
+		{&rna_FreestyleLineStyle_use_texture, 	&rna_FreestyleLineStyle_dash3,
+		-1, "gap3", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Gap 3",
+		"Length of the 3rd gap for dashed lines",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_UNSIGNED) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, gap3), RawPropertyType(1), nullptr},
+		FreestyleLineStyle_gap3_get, FreestyleLineStyle_gap3_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, 65535, 0, 65535, 1, nullptr, nullptr, 0, nullptr
+	};
+
+	rna_FreestyleLineStyle_use_texture_ = {
+		{&rna_FreestyleLineStyle_texture_spacing, 	&rna_FreestyleLineStyle_gap3,
+		-1, "use_texture", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Textures",
+		"Enable or disable textured strokes",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_texture_get, FreestyleLineStyle_use_texture_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_FreestyleLineStyle_texture_spacing_ = {
+		{&rna_FreestyleLineStyle_animation_data, 	&rna_FreestyleLineStyle_use_texture,
+		-1, "texture_spacing", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Texture Spacing",
+		"Spacing for textures along stroke length",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_FACTOR) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(FreestyleLineStyle, texstep), RawPropertyType(5), nullptr},
+		FreestyleLineStyle_texture_spacing_get, FreestyleLineStyle_texture_spacing_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0099999998f, 100.0f, 0.0099999998f, 100.0f, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_FreestyleLineStyle_animation_data_ = {
+		{&rna_FreestyleLineStyle_node_tree, 	&rna_FreestyleLineStyle_texture_spacing,
+		-1, "animation_data", 8388608, 1, 0, 0, 0, PropertyPathTemplateType(0), "Animation Data",
+		"Animation data for this data-block",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_AnimaData_override_apply,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_animation_data_get, nullptr, nullptr, nullptr,RNA_AnimData
+	};
+
+	rna_FreestyleLineStyle_node_tree_ = {
+		{&rna_FreestyleLineStyle_use_nodes, 	&rna_FreestyleLineStyle_animation_data,
+		-1, "node_tree", 8388672, 1, 0, 32, 0, PropertyPathTemplateType(0), "Node Tree",
+		"Node tree for node-based shaders",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_node_tree_get, nullptr, nullptr, nullptr,RNA_NodeTree
+	};
+
+	rna_FreestyleLineStyle_use_nodes_ = {
+		{nullptr, 	&rna_FreestyleLineStyle_node_tree,
+		-1, "use_nodes", 4194305, 0, 0, 0, 0, PropertyPathTemplateType(0), "Use Nodes",
+		"Use shader nodes for the line style",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		(UpdateFunc)(void *)rna_LineStyle_use_nodes_update, 402653184, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		FreestyleLineStyle_use_nodes_get, FreestyleLineStyle_use_nodes_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	StructRNA *srna = RNA_FreestyleLineStyle;
+	srna->cont.properties = {&rna_FreestyleLineStyle_texture_slots, &rna_FreestyleLineStyle_use_nodes};
+	srna->identifier = "FreestyleLineStyle";
+	srna->flag = 519;
+	srna->name = "Freestyle Line Style";
+	srna->description = "Freestyle line style, reusable by multiple line sets";
+	srna->translation_context = "*";
+	srna->icon = 198;
+	srna->nameproperty = &rna_ID_name;
+	srna->iteratorproperty = &rna_ID_rna_properties;
+	srna->base = RNA_ID;
+	srna->refine = rna_ID_refine;
+	srna->instance = rna_ID_instance;
+	srna->idproperties = rna_ID_idprops;
+	srna->system_idproperties = rna_ID_system_idprops;
+};
+
+/* Texture Slots */
+static CollectionPropertyRNA rna_LineStyleTextureSlots_rna_properties_;
+PropertyRNA &rna_LineStyleTextureSlots_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlots_rna_properties_);
+
+static PointerPropertyRNA rna_LineStyleTextureSlots_rna_type_;
+PropertyRNA &rna_LineStyleTextureSlots_rna_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlots_rna_type_);
+
+static PointerPropertyRNA rna_LineStyleTextureSlots_add_mtex_;
+PropertyRNA &rna_LineStyleTextureSlots_add_mtex = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlots_add_mtex_);
+
+FunctionRNA *rna_LineStyleTextureSlots_add_func;
+static IntPropertyRNA rna_LineStyleTextureSlots_create_index_;
+PropertyRNA &rna_LineStyleTextureSlots_create_index = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlots_create_index_);
+
+static PointerPropertyRNA rna_LineStyleTextureSlots_create_mtex_;
+PropertyRNA &rna_LineStyleTextureSlots_create_mtex = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlots_create_mtex_);
+
+FunctionRNA *rna_LineStyleTextureSlots_create_func;
+static IntPropertyRNA rna_LineStyleTextureSlots_clear_index_;
+PropertyRNA &rna_LineStyleTextureSlots_clear_index = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlots_clear_index_);
+
+FunctionRNA *rna_LineStyleTextureSlots_clear_func;
+StructRNA *RNA_LineStyleTextureSlots;
+void register_struct_LineStyleTextureSlots(BlenderRNA &brna)
+{
+	rna_LineStyleTextureSlots_rna_properties_ = {
+		{&rna_LineStyleTextureSlots_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleTextureSlots_rna_properties_begin, LineStyleTextureSlots_rna_properties_next, LineStyleTextureSlots_rna_properties_end, LineStyleTextureSlots_rna_properties_get, nullptr, nullptr, LineStyleTextureSlots_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LineStyleTextureSlots_rna_type_ = {
+		{nullptr, 	&rna_LineStyleTextureSlots_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleTextureSlots_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_LineStyleTextureSlots;
+	srna->cont.properties = {&rna_LineStyleTextureSlots_rna_properties, &rna_LineStyleTextureSlots_rna_type};
+	srna->identifier = "LineStyleTextureSlots";
+	srna->flag = 516;
+	srna->name = "Texture Slots";
+	srna->description = "Collection of texture slots";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LineStyleTextureSlots_rna_properties;
+	{
+	rna_LineStyleTextureSlots_add_mtex_ = {
+		{nullptr, 	nullptr,
+		-1, "mtex", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"The newly initialized mtex",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleTextureSlot
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleTextureSlots_add_mtex, &rna_LineStyleTextureSlots_add_mtex};
+		func->identifier = "add";
+		func->flag = 2073;
+		func->description = "add";
+		func->call = LineStyleTextureSlots_add_call;
+		func->c_ret = &rna_LineStyleTextureSlots_add_mtex;
+		rna_LineStyleTextureSlots_add_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_LineStyleTextureSlots_create_index_ = {
+		{&rna_LineStyleTextureSlots_create_mtex, 	nullptr,
+		-1, "index", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "Index",
+		"Slot index to initialize",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+	rna_LineStyleTextureSlots_create_mtex_ = {
+		{nullptr, 	&rna_LineStyleTextureSlots_create_index,
+		-1, "mtex", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"The newly initialized mtex",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleTextureSlot
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleTextureSlots_create_index, &rna_LineStyleTextureSlots_create_mtex};
+		func->identifier = "create";
+		func->flag = 2073;
+		func->description = "create";
+		func->call = LineStyleTextureSlots_create_call;
+		func->c_ret = &rna_LineStyleTextureSlots_create_mtex;
+		rna_LineStyleTextureSlots_create_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_LineStyleTextureSlots_clear_index_ = {
+		{nullptr, 	nullptr,
+		-1, "index", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "Index",
+		"Slot index to clear",
+		0, "*",
+		nullptr,
+		PROP_INT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		PROP_SCALE_LINEAR, 0, INT_MAX, 0, INT_MAX, 1, nullptr, nullptr, 0, nullptr
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleTextureSlots_clear_index, &rna_LineStyleTextureSlots_clear_index};
+		func->identifier = "clear";
+		func->flag = 2073;
+		func->description = "clear";
+		func->call = LineStyleTextureSlots_clear_call;
+		rna_LineStyleTextureSlots_clear_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Color Modifiers */
+static CollectionPropertyRNA rna_LineStyleColorModifiers_rna_properties_;
+PropertyRNA &rna_LineStyleColorModifiers_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifiers_rna_properties_);
+
+static PointerPropertyRNA rna_LineStyleColorModifiers_rna_type_;
+PropertyRNA &rna_LineStyleColorModifiers_rna_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifiers_rna_type_);
+
+static StringPropertyRNA rna_LineStyleColorModifiers_new_name_;
+PropertyRNA &rna_LineStyleColorModifiers_new_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifiers_new_name_);
+
+static EnumPropertyRNA rna_LineStyleColorModifiers_new_type_;
+PropertyRNA &rna_LineStyleColorModifiers_new_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifiers_new_type_);
+
+static PointerPropertyRNA rna_LineStyleColorModifiers_new_modifier_;
+PropertyRNA &rna_LineStyleColorModifiers_new_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifiers_new_modifier_);
+
+FunctionRNA *rna_LineStyleColorModifiers_new_func;
+static PointerPropertyRNA rna_LineStyleColorModifiers_remove_modifier_;
+PropertyRNA &rna_LineStyleColorModifiers_remove_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleColorModifiers_remove_modifier_);
+
+FunctionRNA *rna_LineStyleColorModifiers_remove_func;
+StructRNA *RNA_LineStyleColorModifiers;
+void register_struct_LineStyleColorModifiers(BlenderRNA &brna)
+{
+	rna_LineStyleColorModifiers_rna_properties_ = {
+		{&rna_LineStyleColorModifiers_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifiers_rna_properties_begin, LineStyleColorModifiers_rna_properties_next, LineStyleColorModifiers_rna_properties_end, LineStyleColorModifiers_rna_properties_get, nullptr, nullptr, LineStyleColorModifiers_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LineStyleColorModifiers_rna_type_ = {
+		{nullptr, 	&rna_LineStyleColorModifiers_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleColorModifiers_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_LineStyleColorModifiers;
+	srna->cont.properties = {&rna_LineStyleColorModifiers_rna_properties, &rna_LineStyleColorModifiers_rna_type};
+	srna->identifier = "LineStyleColorModifiers";
+	srna->flag = 516;
+	srna->name = "Color Modifiers";
+	srna->description = "Color modifiers for changing line colors";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LineStyleColorModifiers_rna_properties;
+	{
+	rna_LineStyleColorModifiers_new_name_ = {
+		{&rna_LineStyleColorModifiers_new_type, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the color modifier (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "ColorModifier"
+	};
+	rna_LineStyleColorModifiers_new_type_ = {
+		{&rna_LineStyleColorModifiers_new_modifier, 	&rna_LineStyleColorModifiers_new_name,
+		-1, "type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Color modifier type to add",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_color_modifier_type_items, 8, 1
+	};
+	rna_LineStyleColorModifiers_new_modifier_ = {
+		{nullptr, 	&rna_LineStyleColorModifiers_new_type,
+		-1, "modifier", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly added color modifier",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleColorModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleColorModifiers_new_name, &rna_LineStyleColorModifiers_new_modifier};
+		func->identifier = "new";
+		func->flag = 16;
+		func->description = "Add a color modifier to line style";
+		func->call = LineStyleColorModifiers_new_call;
+		func->c_ret = &rna_LineStyleColorModifiers_new_modifier;
+		rna_LineStyleColorModifiers_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_LineStyleColorModifiers_remove_modifier_ = {
+		{nullptr, 	nullptr,
+		-1, "modifier", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Color modifier to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleColorModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleColorModifiers_remove_modifier, &rna_LineStyleColorModifiers_remove_modifier};
+		func->identifier = "remove";
+		func->flag = 16;
+		func->description = "Remove a color modifier from line style";
+		func->call = LineStyleColorModifiers_remove_call;
+		rna_LineStyleColorModifiers_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Alpha Modifiers */
+static CollectionPropertyRNA rna_LineStyleAlphaModifiers_rna_properties_;
+PropertyRNA &rna_LineStyleAlphaModifiers_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifiers_rna_properties_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifiers_rna_type_;
+PropertyRNA &rna_LineStyleAlphaModifiers_rna_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifiers_rna_type_);
+
+static StringPropertyRNA rna_LineStyleAlphaModifiers_new_name_;
+PropertyRNA &rna_LineStyleAlphaModifiers_new_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifiers_new_name_);
+
+static EnumPropertyRNA rna_LineStyleAlphaModifiers_new_type_;
+PropertyRNA &rna_LineStyleAlphaModifiers_new_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifiers_new_type_);
+
+static PointerPropertyRNA rna_LineStyleAlphaModifiers_new_modifier_;
+PropertyRNA &rna_LineStyleAlphaModifiers_new_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifiers_new_modifier_);
+
+FunctionRNA *rna_LineStyleAlphaModifiers_new_func;
+static PointerPropertyRNA rna_LineStyleAlphaModifiers_remove_modifier_;
+PropertyRNA &rna_LineStyleAlphaModifiers_remove_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleAlphaModifiers_remove_modifier_);
+
+FunctionRNA *rna_LineStyleAlphaModifiers_remove_func;
+StructRNA *RNA_LineStyleAlphaModifiers;
+void register_struct_LineStyleAlphaModifiers(BlenderRNA &brna)
+{
+	rna_LineStyleAlphaModifiers_rna_properties_ = {
+		{&rna_LineStyleAlphaModifiers_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifiers_rna_properties_begin, LineStyleAlphaModifiers_rna_properties_next, LineStyleAlphaModifiers_rna_properties_end, LineStyleAlphaModifiers_rna_properties_get, nullptr, nullptr, LineStyleAlphaModifiers_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LineStyleAlphaModifiers_rna_type_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifiers_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleAlphaModifiers_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_LineStyleAlphaModifiers;
+	srna->cont.properties = {&rna_LineStyleAlphaModifiers_rna_properties, &rna_LineStyleAlphaModifiers_rna_type};
+	srna->identifier = "LineStyleAlphaModifiers";
+	srna->flag = 516;
+	srna->name = "Alpha Modifiers";
+	srna->description = "Alpha modifiers for changing line alphas";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LineStyleAlphaModifiers_rna_properties;
+	{
+	rna_LineStyleAlphaModifiers_new_name_ = {
+		{&rna_LineStyleAlphaModifiers_new_type, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the alpha modifier (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "AlphaModifier"
+	};
+	rna_LineStyleAlphaModifiers_new_type_ = {
+		{&rna_LineStyleAlphaModifiers_new_modifier, 	&rna_LineStyleAlphaModifiers_new_name,
+		-1, "type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Alpha modifier type to add",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_alpha_modifier_type_items, 8, 1
+	};
+	rna_LineStyleAlphaModifiers_new_modifier_ = {
+		{nullptr, 	&rna_LineStyleAlphaModifiers_new_type,
+		-1, "modifier", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly added alpha modifier",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleAlphaModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleAlphaModifiers_new_name, &rna_LineStyleAlphaModifiers_new_modifier};
+		func->identifier = "new";
+		func->flag = 16;
+		func->description = "Add a alpha modifier to line style";
+		func->call = LineStyleAlphaModifiers_new_call;
+		func->c_ret = &rna_LineStyleAlphaModifiers_new_modifier;
+		rna_LineStyleAlphaModifiers_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_LineStyleAlphaModifiers_remove_modifier_ = {
+		{nullptr, 	nullptr,
+		-1, "modifier", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Alpha modifier to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleAlphaModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleAlphaModifiers_remove_modifier, &rna_LineStyleAlphaModifiers_remove_modifier};
+		func->identifier = "remove";
+		func->flag = 16;
+		func->description = "Remove a alpha modifier from line style";
+		func->call = LineStyleAlphaModifiers_remove_call;
+		rna_LineStyleAlphaModifiers_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Thickness Modifiers */
+static CollectionPropertyRNA rna_LineStyleThicknessModifiers_rna_properties_;
+PropertyRNA &rna_LineStyleThicknessModifiers_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifiers_rna_properties_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifiers_rna_type_;
+PropertyRNA &rna_LineStyleThicknessModifiers_rna_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifiers_rna_type_);
+
+static StringPropertyRNA rna_LineStyleThicknessModifiers_new_name_;
+PropertyRNA &rna_LineStyleThicknessModifiers_new_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifiers_new_name_);
+
+static EnumPropertyRNA rna_LineStyleThicknessModifiers_new_type_;
+PropertyRNA &rna_LineStyleThicknessModifiers_new_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifiers_new_type_);
+
+static PointerPropertyRNA rna_LineStyleThicknessModifiers_new_modifier_;
+PropertyRNA &rna_LineStyleThicknessModifiers_new_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifiers_new_modifier_);
+
+FunctionRNA *rna_LineStyleThicknessModifiers_new_func;
+static PointerPropertyRNA rna_LineStyleThicknessModifiers_remove_modifier_;
+PropertyRNA &rna_LineStyleThicknessModifiers_remove_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleThicknessModifiers_remove_modifier_);
+
+FunctionRNA *rna_LineStyleThicknessModifiers_remove_func;
+StructRNA *RNA_LineStyleThicknessModifiers;
+void register_struct_LineStyleThicknessModifiers(BlenderRNA &brna)
+{
+	rna_LineStyleThicknessModifiers_rna_properties_ = {
+		{&rna_LineStyleThicknessModifiers_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifiers_rna_properties_begin, LineStyleThicknessModifiers_rna_properties_next, LineStyleThicknessModifiers_rna_properties_end, LineStyleThicknessModifiers_rna_properties_get, nullptr, nullptr, LineStyleThicknessModifiers_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LineStyleThicknessModifiers_rna_type_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifiers_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleThicknessModifiers_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_LineStyleThicknessModifiers;
+	srna->cont.properties = {&rna_LineStyleThicknessModifiers_rna_properties, &rna_LineStyleThicknessModifiers_rna_type};
+	srna->identifier = "LineStyleThicknessModifiers";
+	srna->flag = 516;
+	srna->name = "Thickness Modifiers";
+	srna->description = "Thickness modifiers for changing line thickness";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LineStyleThicknessModifiers_rna_properties;
+	{
+	rna_LineStyleThicknessModifiers_new_name_ = {
+		{&rna_LineStyleThicknessModifiers_new_type, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the thickness modifier (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "ThicknessModifier"
+	};
+	rna_LineStyleThicknessModifiers_new_type_ = {
+		{&rna_LineStyleThicknessModifiers_new_modifier, 	&rna_LineStyleThicknessModifiers_new_name,
+		-1, "type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Thickness modifier type to add",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_thickness_modifier_type_items, 9, 1
+	};
+	rna_LineStyleThicknessModifiers_new_modifier_ = {
+		{nullptr, 	&rna_LineStyleThicknessModifiers_new_type,
+		-1, "modifier", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly added thickness modifier",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleThicknessModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleThicknessModifiers_new_name, &rna_LineStyleThicknessModifiers_new_modifier};
+		func->identifier = "new";
+		func->flag = 16;
+		func->description = "Add a thickness modifier to line style";
+		func->call = LineStyleThicknessModifiers_new_call;
+		func->c_ret = &rna_LineStyleThicknessModifiers_new_modifier;
+		rna_LineStyleThicknessModifiers_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_LineStyleThicknessModifiers_remove_modifier_ = {
+		{nullptr, 	nullptr,
+		-1, "modifier", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Thickness modifier to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleThicknessModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleThicknessModifiers_remove_modifier, &rna_LineStyleThicknessModifiers_remove_modifier};
+		func->identifier = "remove";
+		func->flag = 16;
+		func->description = "Remove a thickness modifier from line style";
+		func->call = LineStyleThicknessModifiers_remove_call;
+		rna_LineStyleThicknessModifiers_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* Geometry Modifiers */
+static CollectionPropertyRNA rna_LineStyleGeometryModifiers_rna_properties_;
+PropertyRNA &rna_LineStyleGeometryModifiers_rna_properties = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifiers_rna_properties_);
+
+static PointerPropertyRNA rna_LineStyleGeometryModifiers_rna_type_;
+PropertyRNA &rna_LineStyleGeometryModifiers_rna_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifiers_rna_type_);
+
+static StringPropertyRNA rna_LineStyleGeometryModifiers_new_name_;
+PropertyRNA &rna_LineStyleGeometryModifiers_new_name = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifiers_new_name_);
+
+static EnumPropertyRNA rna_LineStyleGeometryModifiers_new_type_;
+PropertyRNA &rna_LineStyleGeometryModifiers_new_type = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifiers_new_type_);
+
+static PointerPropertyRNA rna_LineStyleGeometryModifiers_new_modifier_;
+PropertyRNA &rna_LineStyleGeometryModifiers_new_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifiers_new_modifier_);
+
+FunctionRNA *rna_LineStyleGeometryModifiers_new_func;
+static PointerPropertyRNA rna_LineStyleGeometryModifiers_remove_modifier_;
+PropertyRNA &rna_LineStyleGeometryModifiers_remove_modifier = reinterpret_cast<PropertyRNA &>(rna_LineStyleGeometryModifiers_remove_modifier_);
+
+FunctionRNA *rna_LineStyleGeometryModifiers_remove_func;
+StructRNA *RNA_LineStyleGeometryModifiers;
+void register_struct_LineStyleGeometryModifiers(BlenderRNA &brna)
+{
+	rna_LineStyleGeometryModifiers_rna_properties_ = {
+		{&rna_LineStyleGeometryModifiers_rna_type, 	nullptr,
+		-1, "rna_properties", 0, 0, 0, 1, 0, PropertyPathTemplateType(0), "Properties",
+		"RNA property collection",
+		0, "*",
+		nullptr,
+		PROP_COLLECTION, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifiers_rna_properties_begin, LineStyleGeometryModifiers_rna_properties_next, LineStyleGeometryModifiers_rna_properties_end, LineStyleGeometryModifiers_rna_properties_get, nullptr, nullptr, LineStyleGeometryModifiers_rna_properties_lookup_string, nullptr, RNA_Property
+	};
+
+	rna_LineStyleGeometryModifiers_rna_type_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifiers_rna_properties,
+		-1, "rna_type", 8912896, 0, 0, 0, 0, PropertyPathTemplateType(0), "RNA",
+		"RNA type definition",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleGeometryModifiers_rna_type_get, nullptr, nullptr, nullptr,RNA_Struct
+	};
+
+	StructRNA *srna = RNA_LineStyleGeometryModifiers;
+	srna->cont.properties = {&rna_LineStyleGeometryModifiers_rna_properties, &rna_LineStyleGeometryModifiers_rna_type};
+	srna->identifier = "LineStyleGeometryModifiers";
+	srna->flag = 516;
+	srna->name = "Geometry Modifiers";
+	srna->description = "Geometry modifiers for changing line geometries";
+	srna->translation_context = "*";
+	srna->icon = 63;
+	srna->iteratorproperty = &rna_LineStyleGeometryModifiers_rna_properties;
+	{
+	rna_LineStyleGeometryModifiers_new_name_ = {
+		{&rna_LineStyleGeometryModifiers_new_type, 	nullptr,
+		-1, "name", 262145, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"New name for the geometry modifier (not unique)",
+		0, "*",
+		nullptr,
+		PROP_STRING, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, eStringPropertySearchFlag(0), nullptr, 0, "GeometryModifier"
+	};
+	rna_LineStyleGeometryModifiers_new_type_ = {
+		{&rna_LineStyleGeometryModifiers_new_modifier, 	&rna_LineStyleGeometryModifiers_new_name,
+		-1, "type", 3, 0, 1, 0, 0, PropertyPathTemplateType(0), "",
+		"Geometry modifier type to add",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_enum_linestyle_geometry_modifier_type_items, 14, 17
+	};
+	rna_LineStyleGeometryModifiers_new_modifier_ = {
+		{nullptr, 	&rna_LineStyleGeometryModifiers_new_type,
+		-1, "modifier", 8388608, 0, 2, 0, 0, PropertyPathTemplateType(0), "",
+		"Newly added geometry modifier",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleGeometryModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleGeometryModifiers_new_name, &rna_LineStyleGeometryModifiers_new_modifier};
+		func->identifier = "new";
+		func->flag = 16;
+		func->description = "Add a geometry modifier to line style";
+		func->call = LineStyleGeometryModifiers_new_call;
+		func->c_ret = &rna_LineStyleGeometryModifiers_new_modifier;
+		rna_LineStyleGeometryModifiers_new_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+	{
+	rna_LineStyleGeometryModifiers_remove_modifier_ = {
+		{nullptr, 	nullptr,
+		-1, "modifier", 262144, 0, 5, 0, 0, PropertyPathTemplateType(0), "",
+		"Geometry modifier to remove",
+		0, "*",
+		nullptr,
+		PROP_POINTER, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		nullptr, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		nullptr, nullptr, nullptr, nullptr,RNA_LineStyleGeometryModifier
+	};
+		auto func = std::make_unique<FunctionRNA>();
+		func->cont.properties = {&rna_LineStyleGeometryModifiers_remove_modifier, &rna_LineStyleGeometryModifiers_remove_modifier};
+		func->identifier = "remove";
+		func->flag = 16;
+		func->description = "Remove a geometry modifier from line style";
+		func->call = LineStyleGeometryModifiers_remove_call;
+		rna_LineStyleGeometryModifiers_remove_func = func.get();
+		srna->functions.append(std::move(func));
+	}
+};
+
+/* LineStyle Texture Slot */
+static EnumPropertyRNA rna_LineStyleTextureSlot_mapping_x_;
+PropertyRNA &rna_LineStyleTextureSlot_mapping_x = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_mapping_x_);
+
+static EnumPropertyRNA rna_LineStyleTextureSlot_mapping_y_;
+PropertyRNA &rna_LineStyleTextureSlot_mapping_y = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_mapping_y_);
+
+static EnumPropertyRNA rna_LineStyleTextureSlot_mapping_z_;
+PropertyRNA &rna_LineStyleTextureSlot_mapping_z = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_mapping_z_);
+
+static EnumPropertyRNA rna_LineStyleTextureSlot_mapping_;
+PropertyRNA &rna_LineStyleTextureSlot_mapping = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_mapping_);
+
+static BoolPropertyRNA rna_LineStyleTextureSlot_use_map_color_diffuse_;
+PropertyRNA &rna_LineStyleTextureSlot_use_map_color_diffuse = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_use_map_color_diffuse_);
+
+static BoolPropertyRNA rna_LineStyleTextureSlot_use_map_alpha_;
+PropertyRNA &rna_LineStyleTextureSlot_use_map_alpha = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_use_map_alpha_);
+
+static EnumPropertyRNA rna_LineStyleTextureSlot_texture_coords_;
+PropertyRNA &rna_LineStyleTextureSlot_texture_coords = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_texture_coords_);
+
+static FloatPropertyRNA rna_LineStyleTextureSlot_alpha_factor_;
+PropertyRNA &rna_LineStyleTextureSlot_alpha_factor = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_alpha_factor_);
+
+static FloatPropertyRNA rna_LineStyleTextureSlot_diffuse_color_factor_;
+PropertyRNA &rna_LineStyleTextureSlot_diffuse_color_factor = reinterpret_cast<PropertyRNA &>(rna_LineStyleTextureSlot_diffuse_color_factor_);
+
+StructRNA *RNA_LineStyleTextureSlot;
+void register_struct_LineStyleTextureSlot(BlenderRNA &brna)
+{
+	static const EnumPropertyItem rna_LineStyleTextureSlot_mapping_x_items[5] = {
+		{0, "NONE", 0, "None", ""	},
+		{1, "X", 0, "X", ""	},
+		{2, "Y", 0, "Y", ""	},
+		{3, "Z", 0, "Z", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleTextureSlot_mapping_x_ = {
+		{&rna_LineStyleTextureSlot_mapping_y, 	nullptr,
+		-1, "mapping_x", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "X Mapping",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, projx), RawPropertyType(2), nullptr},
+		LineStyleTextureSlot_mapping_x_get, LineStyleTextureSlot_mapping_x_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleTextureSlot_mapping_x_items, 4, 1
+	};
+
+	static const EnumPropertyItem rna_LineStyleTextureSlot_mapping_y_items[5] = {
+		{0, "NONE", 0, "None", ""	},
+		{1, "X", 0, "X", ""	},
+		{2, "Y", 0, "Y", ""	},
+		{3, "Z", 0, "Z", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleTextureSlot_mapping_y_ = {
+		{&rna_LineStyleTextureSlot_mapping_z, 	&rna_LineStyleTextureSlot_mapping_x,
+		-1, "mapping_y", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Y Mapping",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, projy), RawPropertyType(2), nullptr},
+		LineStyleTextureSlot_mapping_y_get, LineStyleTextureSlot_mapping_y_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleTextureSlot_mapping_y_items, 4, 2
+	};
+
+	static const EnumPropertyItem rna_LineStyleTextureSlot_mapping_z_items[5] = {
+		{0, "NONE", 0, "None", ""	},
+		{1, "X", 0, "X", ""	},
+		{2, "Y", 0, "Y", ""	},
+		{3, "Z", 0, "Z", ""	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleTextureSlot_mapping_z_ = {
+		{&rna_LineStyleTextureSlot_mapping, 	&rna_LineStyleTextureSlot_mapping_y,
+		-1, "mapping_z", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Z Mapping",
+		"",
+		0, "*",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, projz), RawPropertyType(2), nullptr},
+		LineStyleTextureSlot_mapping_z_get, LineStyleTextureSlot_mapping_z_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleTextureSlot_mapping_z_items, 4, 3
+	};
+
+	static const EnumPropertyItem rna_LineStyleTextureSlot_mapping_items[5] = {
+		{0, "FLAT", 0, "Flat", "Map X and Y coordinates directly"	},
+		{1, "CUBE", 0, "Cube", "Map using the normal vector"	},
+		{2, "TUBE", 0, "Tube", "Map with Z as central axis"	},
+		{3, "SPHERE", 0, "Sphere", "Map with Z as central axis"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleTextureSlot_mapping_ = {
+		{&rna_LineStyleTextureSlot_use_map_color_diffuse, 	&rna_LineStyleTextureSlot_mapping_z,
+		-1, "mapping", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Mapping",
+		"",
+		0, "Image",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, mapping), RawPropertyType(2), nullptr},
+		LineStyleTextureSlot_mapping_get, LineStyleTextureSlot_mapping_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleTextureSlot_mapping_items, 4, 0
+	};
+
+	rna_LineStyleTextureSlot_use_map_color_diffuse_ = {
+		{&rna_LineStyleTextureSlot_use_map_alpha, 	&rna_LineStyleTextureSlot_mapping,
+		-1, "use_map_color_diffuse", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Diffuse Color",
+		"The texture affects basic color of the stroke",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleTextureSlot_use_map_color_diffuse_get, LineStyleTextureSlot_use_map_color_diffuse_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 1, nullptr
+	};
+
+	rna_LineStyleTextureSlot_use_map_alpha_ = {
+		{&rna_LineStyleTextureSlot_texture_coords, 	&rna_LineStyleTextureSlot_use_map_color_diffuse,
+		-1, "use_map_alpha", 3, 0, 0, 0, 0, PropertyPathTemplateType(0), "Alpha",
+		"The texture affects the alpha value",
+		0, "*",
+		nullptr,
+		PROP_BOOLEAN, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+			0, PROP_RAW_UNSET, nullptr},
+		LineStyleTextureSlot_use_map_alpha_get, LineStyleTextureSlot_use_map_alpha_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, 0, nullptr
+	};
+
+	static const EnumPropertyItem rna_LineStyleTextureSlot_texture_coords_items[5] = {
+		{1024, "WINDOW", 0, "Window", "Use screen coordinates as texture coordinates"	},
+		{8, "GLOBAL", 0, "Global", "Use global coordinates for the texture coordinates"	},
+		{16, "ALONG_STROKE", 0, "Along stroke", "Use stroke length for texture coordinates"	},
+		{1, "ORCO", 0, "Generated", "Use the original undeformed coordinates of the object"	},
+			{0, nullptr, 0, nullptr, nullptr}
+	};
+	rna_LineStyleTextureSlot_texture_coords_ = {
+		{&rna_LineStyleTextureSlot_alpha_factor, 	&rna_LineStyleTextureSlot_use_map_alpha,
+		-1, "texture_coords", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Texture Coordinates",
+		"Texture coordinates used to map the texture onto the background",
+		0, "Texture",
+		nullptr,
+		PROP_ENUM, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, texco), RawPropertyType(1), nullptr},
+		LineStyleTextureSlot_texture_coords_get, LineStyleTextureSlot_texture_coords_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, rna_LineStyleTextureSlot_texture_coords_items, 4, 16
+	};
+
+	rna_LineStyleTextureSlot_alpha_factor_ = {
+		{&rna_LineStyleTextureSlot_diffuse_color_factor, 	&rna_LineStyleTextureSlot_texture_coords,
+		-1, "alpha_factor", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Alpha Factor",
+		"Amount texture affects alpha",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, alphafac), RawPropertyType(5), nullptr},
+		LineStyleTextureSlot_alpha_factor_get, LineStyleTextureSlot_alpha_factor_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, -1.0f, 1.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	rna_LineStyleTextureSlot_diffuse_color_factor_ = {
+		{nullptr, 	&rna_LineStyleTextureSlot_alpha_factor,
+		-1, "diffuse_color_factor", 3, 0, 0, 4, 0, PropertyPathTemplateType(0), "Diffuse Color Factor",
+		"Amount texture affects diffuse color",
+		0, "*",
+		nullptr,
+		PROP_FLOAT, PropertySubType(int(PROP_NONE) | int(PROP_UNIT_NONE)), nullptr, 0, {0, 0, 0}, 0,
+		rna_LineStyle_update, 0, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+		offsetof(MTex, colfac), RawPropertyType(5), nullptr},
+		LineStyleTextureSlot_diffuse_color_factor_get, LineStyleTextureSlot_diffuse_color_factor_set, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, PROP_SCALE_LINEAR, 0.0f, 1.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, nullptr, nullptr, 1.0f, nullptr
+	};
+
+	StructRNA *srna = RNA_LineStyleTextureSlot;
+	srna->cont.properties = {&rna_LineStyleTextureSlot_mapping_x, &rna_LineStyleTextureSlot_diffuse_color_factor};
+	srna->identifier = "LineStyleTextureSlot";
+	srna->flag = 516;
+	srna->name = "LineStyle Texture Slot";
+	srna->description = "Texture slot for textures in a LineStyle data-block";
+	srna->translation_context = "*";
+	srna->icon = 200;
+	srna->nameproperty = &rna_TextureSlot_name;
+	srna->iteratorproperty = &rna_TextureSlot_rna_properties;
+	srna->base = RNA_TextureSlot;
+	srna->path = rna_TextureSlot_path;
+};
+
+
+}  // namespace blender

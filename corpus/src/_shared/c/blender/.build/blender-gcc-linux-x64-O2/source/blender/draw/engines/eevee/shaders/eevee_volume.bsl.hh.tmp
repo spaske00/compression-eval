@@ -1,0 +1,547 @@
+#line 1 "eevee_volume.bsl.hh"
+ 
+#line 24
+float3 eevee_volume_volume_light(LightData light, const bool is_directional, LightVector lv)
+{
+  float power = 1.0f;
+  if (!is_directional) {
+    float light_radius = _local(light).local.shape_radius;
+#line 34
+    float d = lv.dist;
+    float d_sqr = square(d);
+    float r_sqr = square(light_radius);
+#line 39
+    power = 2.0f / (d_sqr + r_sqr + d * sqrt(d_sqr + r_sqr));
+
+    if (light.type == LIGHT_RECT || light.type == LIGHT_ELLIPSE) {
+
+      power *= saturate(dot(_z_axis(light), lv.L));
+    }
+  }
+  return light.color * light.power[LIGHT_VOLUME] * power;
+}
+
+#define VOLUMETRIC_SHADOW_MAX_STEP 128.0f
+#line 52
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 51
+float3 eevee_volume_volume_shadow(const eevee_Uniform  uni,
+                     ViewMatrices view,
+                     LightData _0,
+                     const bool is_directional,
+                     float3 P,
+                     LightVector lv,
+                     sampler3D extinction_tx)
+{
+  if (srt_access(eevee_Uniform, uniform_buf).volumes.shadow_steps == 0) {
+    return float3(1.0f);
+  }
+#line 64
+  float dd = lv.dist / srt_access(eevee_Uniform, uniform_buf).volumes.shadow_steps;
+  float3 L = lv.L * lv.dist / srt_access(eevee_Uniform, uniform_buf).volumes.shadow_steps;
+
+  if (is_directional) {
+
+    float3 ndcP = _point_world_to_ndc(view, P);
+    float3 ndcL = _point_world_to_ndc(view, P + lv.L * lv.dist) - ndcP;
+
+    float3 ndc_frustum_isect = ndcP + ndcL * line_unit_box_intersect_dist_safe(ndcP, ndcL);
+
+    L = _point_ndc_to_world(view, ndc_frustum_isect) - P;
+    L /= srt_access(eevee_Uniform, uniform_buf).volumes.shadow_steps;
+    dd = length(L);
+  }
+#line 80
+  float3 shadow = float3(1.0f);
+  for (float t = 1.0f; t < VOLUMETRIC_SHADOW_MAX_STEP && t <= srt_access(eevee_Uniform, uniform_buf).volumes.shadow_steps;
+       t += 1.0f)
+  {
+    float3 w_pos = P + L * t;
+
+    float3 v_pos = _point_world_to_view(view, w_pos);
+    float3 volume_co = volume_view_to_jitter(uni, view, v_pos);
+
+    float3 s_extinction = texture(extinction_tx, volume_co).rgb;
+
+    shadow *= exp(-s_extinction * dd);
+  }
+  return shadow;
+}
+#endif
+#define access_eevee_volume_Scatter_use_volume_light() use_volume_light
+#define access_eevee_volume_Scatter_uniforms() eevee_Uniform_new_()
+#define access_eevee_volume_Scatter_views_() draw_View_new_()
+#define access_eevee_volume_Scatter_light_data() eevee_LightRenderData_new_()
+#define access_eevee_volume_Scatter_shadow_data() eevee_ShadowRenderData_new_()
+#define access_eevee_volume_Scatter_lightprobe_volume_data() eevee_LightprobeVolumeRenderData_new_()
+#define access_eevee_volume_Scatter_scattering_history_tx() scattering_history_tx
+#define access_eevee_volume_Scatter_extinction_history_tx() extinction_history_tx
+#define access_eevee_volume_Scatter_extinction_tx() extinction_tx
+#define access_eevee_volume_Scatter_out_scattering_img() out_scattering_img
+#define access_eevee_volume_Scatter_out_extinction_img() out_extinction_img
+#ifdef CREATE_INFO_RES_PASS_eevee_volume_Scatter
+CREATE_INFO_RES_PASS_eevee_volume_Scatter
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_volume_Scatter
+CREATE_INFO_RES_BATCH_eevee_volume_Scatter
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_volume_Scatter
+CREATE_INFO_RES_GEOMETRY_eevee_volume_Scatter
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_volume_Scatter
+CREATE_INFO_RES_SHARED_VARS_eevee_volume_Scatter
+#endif
+#line 96
+struct eevee_volume_Scatter {
+#line 99
+                           eevee_Uniform  uniforms;
+                           draw_View  views_;
+                           eevee_LightRenderData  light_data;
+                           eevee_ShadowRenderData  shadow_data;
+                           eevee_LightprobeVolumeRenderData  lightprobe_volume_data;
+#line 141
+};
+#line 144
+#ifndef GPU_METAL
+eevee_volume_Scatter eevee_volume_Scatter_ctor_();
+float3 _volume_lightprobe_eval(eevee_volume_Scatter  this_, const eevee_Sampling  sampling,
+                                float3 P,
+                                float3 V,
+                                float s_anisotropy);
+eevee_volume_Scatter eevee_volume_Scatter_new_();
+#endif
+#line 96
+                                    eevee_volume_Scatter eevee_volume_Scatter_ctor_() {eevee_volume_Scatter r;r.uniforms=eevee_Uniform_ctor_();r.views_=draw_View_ctor_();r.light_data=eevee_LightRenderData_ctor_();r.shadow_data=eevee_ShadowRenderData_ctor_();r.lightprobe_volume_data=eevee_LightprobeVolumeRenderData_ctor_();return r;}
+#line 113
+
+#if defined(CREATE_INFO_eevee_volume_Scatter) && defined(CREATE_INFO_eevee_Sampling)
+#line 113
+  float3 _volume_lightprobe_eval(eevee_volume_Scatter  this_, const eevee_Sampling  sampling,
+                                float3 P,
+                                float3 V,
+                                float s_anisotropy)
+  {
+#line 121
+    SphericalHarmonicL1Tfloat4 phase_sh = volume_phase_function_as_sh_L1(V, s_anisotropy);
+    SphericalHarmonicL1Tfloat4 volume_radiance_sh = _sample_probe_no_bias(srt_access(eevee_volume_Scatter, lightprobe_volume_data), sampling, P);
+
+    float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.volume_indirect;
+    volume_radiance_sh = spherical_harmonics_clamp_energy(volume_radiance_sh, clamp_indirect);
+
+    return spherical_harmonics_dot(volume_radiance_sh, phase_sh).xyz;
+  }
+#endif
+       eevee_volume_Scatter eevee_volume_Scatter_new_()
+{
+  eevee_volume_Scatter result;
+  result.uniforms = eevee_Uniform_new_();
+  result.views_ = draw_View_new_();
+  result.light_data = eevee_LightRenderData_new_();
+  result.shadow_data = eevee_ShadowRenderData_new_();
+  result.lightprobe_volume_data = eevee_LightprobeVolumeRenderData_new_();
+  return result;
+#line 128
+}
+#line 131
+struct eevee_volume_LightEvalCtx {
+  float3 radiance;
+  float3 P;
+  float3 V;
+  float anisotropy;
+#line 187
+};
+#line 202
+#ifndef GPU_METAL
+eevee_volume_LightEvalCtx eevee_volume_LightEvalCtx_ctor_();
+float3 _light_eval_single(_ref(eevee_volume_LightEvalCtx ,this_), eevee_volume_Scatter  srt,
+                           LightData light,
+                           const bool is_directional);
+void _eval_directional(_ref(eevee_volume_LightEvalCtx ,this_), eevee_volume_Scatter  srd, uint _0, LightData light);
+void _eval_local(_ref(eevee_volume_LightEvalCtx ,this_), eevee_volume_Scatter  srd, uint _0, LightData light);
+#endif
+#line 131
+                                         eevee_volume_LightEvalCtx eevee_volume_LightEvalCtx_ctor_() {eevee_volume_LightEvalCtx r;r.radiance=float3(0);r.P=float3(0);r.V=float3(0);r.anisotropy=0.0f;return r;}
+#line 137
+
+#if defined(CREATE_INFO_eevee_volume_Scatter)
+#line 137
+  float3 _light_eval_single(_ref(eevee_volume_LightEvalCtx ,this_), eevee_volume_Scatter  srt,
+                           LightData light,
+                           const bool is_directional)
+  {
+#line 146
+    if (light.power[LIGHT_VOLUME] == 0.0f) {
+      return float3(0);
+    }
+
+    LightVector lv = light_shape_vector_get(light, is_directional, this_.P);
+
+    float attenuation = light_attenuation_volume(light, is_directional, lv);
+    if (attenuation < LIGHT_ATTENUATION_THRESHOLD) {
+      return float3(0);
+    }
+
+    float visibility = attenuation;
+    if (light.tilemap_index != LIGHT_NO_SHADOW) {
+      float delta = _shadow_sample(srt_access(eevee_volume_Scatter, shadow_data), is_directional, light, this_.P);
+      if (delta > 0.0f) {
+        return float3(0);
+      }
+    }
+    visibility *= volume_phase_function(-this_.V, lv.L, this_.anisotropy);
+    if (visibility < LIGHT_ATTENUATION_THRESHOLD) {
+      return float3(0);
+    }
+
+    float3 Li = eevee_volume_volume_light(light, is_directional, lv) * visibility;
+
+    if (light.tilemap_index != LIGHT_NO_SHADOW) {
+      Li *= eevee_volume_volume_shadow(srt_access(eevee_volume_Scatter, uniforms), _get(srt_access(eevee_volume_Scatter, views_), 0), light, is_directional, this_.P, lv, srt_access(eevee_volume_Scatter, extinction_tx));
+    }
+
+    return Li;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_volume_Scatter)
+#line 178
+  void _eval_directional(_ref(eevee_volume_LightEvalCtx ,this_), eevee_volume_Scatter  srd, uint _0, LightData light)
+  {
+    this_.radiance += _light_eval_single(this_, srd, light, true);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_volume_Scatter)
+#line 183
+  void _eval_local(_ref(eevee_volume_LightEvalCtx ,this_), eevee_volume_Scatter  srd, uint _0, LightData light)
+  {
+    this_.radiance += _light_eval_single(this_, srd, light, false);
+  }
+#endif
+#line 58 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_volume_Scatter)
+#line 58
+void eevee_light_foreach_visible(const eevee_LightRenderData  srt,
+                     float2 pixel,
+                     float linear_view_z,
+                     _ref(eevee_volume_LightEvalCtx ,cb),
+                     eevee_volume_Scatter  res)
+{
+#line 68
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+#line 74
+#ifdef SRT_CONSTANT_light_iter_force_no_culling
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+  return;
+#endif
+
+  {
+    uint2 tile_co = uint2(pixel / srt_access(eevee_LightRenderData, light_cull_buf).tile_size);
+    uint tile_word_offset = (tile_co.x + tile_co.y * srt_access(eevee_LightRenderData, light_cull_buf).tile_x_len) * srt_access(eevee_LightRenderData, light_cull_buf).tile_word_len;
+    int zbin_index = eevee_light_culling_z_to_zbin(srt_access(eevee_LightRenderData, light_cull_buf).zbin_scale, srt_access(eevee_LightRenderData, light_cull_buf).zbin_bias, linear_view_z);
+    zbin_index = clamp(zbin_index, 0, CULLING_ZBIN_COUNT - 1);
+    uint zbin_data = srt_access(eevee_LightRenderData, light_zbin_buf)[zbin_index];
+    uint min_index = zbin_data & 0xFFFFu;
+    uint max_index = zbin_data >> 16u;
+
+#ifdef GPU_METAL
+#line 99
+    min_index = simd_broadcast_first(simd_min(min_index));
+    max_index = simd_broadcast_first(simd_max(max_index));
+#endif
+
+    uint word_min = min_index >> 5u;
+    uint word_max = max_index >> 5u;
+    for (uint word_idx = word_min; word_idx <= word_max; word_idx++) {
+      uint word = srt_access(eevee_LightRenderData, light_tile_buf)[tile_word_offset + word_idx];
+      word &= eevee_light_zbin_mask(word_idx, min_index, max_index);
+
+#ifdef GPU_METAL
+#line 116
+      word = simd_broadcast_first(simd_or(word));
+#endif
+      int bit_index;
+      while ((bit_index = findLSB(word)) != -1) {
+        word &= ~1u << uint(bit_index);
+        uint index = word_idx * 32u + uint(bit_index);
+        LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+        _eval_local(cb, res, index, light);
+      }
+    }
+  }
+}
+#endif
+#line 200 "eevee_volume.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_volume_Scatter) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UnifiedVolumeProperties)
+#line 200
+
+#if defined(ENTRY_POINT_eevee_volume_scatter_main)
+#line 200
+
+void eevee_volume_scatter_main(
+#line 206
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 207
+  eevee_volume_Scatter srt = eevee_volume_Scatter_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UnifiedVolumeProperties props = UnifiedVolumeProperties_ctor_();
+  int3 froxel = int3(gl_GlobalInvocationID);
+
+  if (any(greaterThanEqual(froxel, srt_access(eevee_Uniform, uniform_buf).volumes.tex_size))) {
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+#line 217
+  float3 scattering = imageLoadFast(srt_access(UnifiedVolumeProperties, in_emission_img), froxel).rgb;
+  float3 extinction = imageLoadFast(srt_access(UnifiedVolumeProperties, in_extinction_img), froxel).rgb;
+
+  float3 s_scattering = imageLoadFast(srt_access(UnifiedVolumeProperties, in_scattering_img), froxel).rgb;
+
+  float offset = _rng_1D_get(sampling, SAMPLING_VOLUME_W);
+  float jitter = volume_froxel_jitter(froxel.xy, offset);
+  float3 uvw = (float3(froxel) + float3(0.5f, 0.5f, 0.5f - jitter)) *
+               srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size;
+  float3 vP = volume_jitter_to_view(uni, view, uvw);
+
+  float3 P = _point_view_to_world(view, vP);
+  float3 V = _world_incident_vector(view, P);
+
+  float phase = imageLoadFast(srt_access(UnifiedVolumeProperties, in_phase_img), froxel).r;
+  float phase_weight = imageLoadFast(srt_access(UnifiedVolumeProperties, in_phase_weight_img), froxel).r;
+
+  float s_anisotropy = phase / max(1.0f, phase_weight);
+
+  float3 direct_radiance = float3(0.0f);
+#line 239
+#if SRT_CONSTANT_use_volume_light
+#line 238
+                                                                            {
+    if (reduce_max(s_scattering) > 0.0f) {
+      eevee_volume_LightEvalCtx ctx ;
+          ctx.radiance = float3(0.0f);
+          ctx.P = P;
+          ctx.V = V;
+          ctx.anisotropy = s_anisotropy
+      ;
+
+      float2 pixel = ((float2(froxel.xy) + 0.5f) * srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size.xy) *
+                     srt_access(eevee_Uniform, uniform_buf).volumes.main_view_extent;
+
+      eevee_light_foreach_visible(srt_access(eevee_volume_Scatter, light_data), pixel, vP.z, ctx, srt);
+      direct_radiance = ctx.radiance;
+    }
+  }
+#endif
+  float3 indirect_radiance = _volume_lightprobe_eval(srt, sampling, P, V, s_anisotropy).xyz;
+
+  direct_radiance *= s_scattering;
+  indirect_radiance *= s_scattering;
+
+  float clamp_direct = srt_access(eevee_Uniform, uniform_buf).clamp.volume_direct;
+  float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.volume_indirect;
+  direct_radiance = colorspace_brightness_clamp_max(direct_radiance, clamp_direct);
+  indirect_radiance = colorspace_brightness_clamp_max(indirect_radiance, clamp_indirect);
+
+  direct_radiance *= srt_access(eevee_Uniform, uniform_buf).clamp.direct_scale;
+  indirect_radiance *= srt_access(eevee_Uniform, uniform_buf).clamp.indirect_scale;
+
+  scattering += direct_radiance + indirect_radiance;
+
+  if (srt_access(eevee_Uniform, uniform_buf).volumes.history_opacity > 0.0f) {
+
+    float3 uvw_history = volume_history_uvw_get(uni, view, froxel);
+    if (uvw_history.x != -1.0f) {
+      float3 scattering_history = texture(srt_access(eevee_volume_Scatter, scattering_history_tx), uvw_history).rgb;
+      float3 extinction_history = texture(srt_access(eevee_volume_Scatter, extinction_history_tx), uvw_history).rgb;
+      scattering = mix(scattering, scattering_history, srt_access(eevee_Uniform, uniform_buf).volumes.history_opacity);
+      extinction = mix(extinction, extinction_history, srt_access(eevee_Uniform, uniform_buf).volumes.history_opacity);
+    }
+  }
+#line 282
+  if (any(isnan(scattering)) || any(isnan(extinction))) {
+    scattering = float3(0.0f);
+    extinction = float3(0.0f);
+  }
+
+  imageStoreFast(srt_access(eevee_volume_Scatter, out_scattering_img), froxel, float4(scattering, 1.0f));
+  imageStoreFast(srt_access(eevee_volume_Scatter, out_extinction_img), froxel, float4(extinction, 1.0f));
+
+#endif
+#line 289
+}
+#endif
+#endif
+#line 290
+#define access_eevee_volume_Integrate_in_scattering_tx() in_scattering_tx
+#define access_eevee_volume_Integrate_in_extinction_tx() in_extinction_tx
+#define access_eevee_volume_Integrate_out_scattering_img() out_scattering_img
+#define access_eevee_volume_Integrate_out_transmittance_img() out_transmittance_img
+#ifdef CREATE_INFO_RES_PASS_eevee_volume_Integrate
+CREATE_INFO_RES_PASS_eevee_volume_Integrate
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_volume_Integrate
+CREATE_INFO_RES_BATCH_eevee_volume_Integrate
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_volume_Integrate
+CREATE_INFO_RES_GEOMETRY_eevee_volume_Integrate
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_volume_Integrate
+CREATE_INFO_RES_SHARED_VARS_eevee_volume_Integrate
+#endif
+#line 290
+struct eevee_volume_Integrate {
+#line 304
+int _pad;};
+#line 309
+#ifndef GPU_METAL
+eevee_volume_Integrate eevee_volume_Integrate_ctor_();
+eevee_volume_Integrate eevee_volume_Integrate_new_();
+#endif
+#line 290
+                                      eevee_volume_Integrate eevee_volume_Integrate_ctor_() {eevee_volume_Integrate r;r._pad=0;return r;}
+#line 297
+       eevee_volume_Integrate eevee_volume_Integrate_new_()
+{
+  eevee_volume_Integrate result;
+  result._pad = 0;
+  return result;
+#line 295
+}
+#line 300
+
+#if defined(CREATE_INFO_eevee_volume_Integrate) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Uniform)
+#line 300
+
+#if defined(ENTRY_POINT_eevee_volume_integration_main)
+#line 300
+
+void eevee_volume_integration_main(
+#line 304
+                                                                    )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 305
+  eevee_volume_Integrate srt = eevee_volume_Integrate_ctor_(); draw_View views = draw_View_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  if (any(greaterThanEqual(texel, srt_access(eevee_Uniform, uniform_buf).volumes.tex_size.xy))) {
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+#line 315
+  float3 scattering = float3(0.0f);
+  float3 transmittance = float3(1.0f);
+#line 320
+  float3 uvw = (float3(float2(texel), 0.0f) + float3(0.5f, 0.5f, 0.0f)) *
+               srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size;
+  float3 view_cell = volume_jitter_to_view(uni, view, uvw);
+
+  float prev_ray_len;
+  float orig_ray_len;
+  if (_is_perspective(view)) {
+    prev_ray_len = length(view_cell);
+    orig_ray_len = prev_ray_len / view_cell.z;
+  }
+  else {
+    prev_ray_len = view_cell.z;
+    orig_ray_len = 1.0f;
+  }
+
+  for (int i = 0; i <= srt_access(eevee_Uniform, uniform_buf).volumes.tex_size.z; i++) {
+    int3 froxel = int3(texel, i);
+
+    float3 froxel_scattering = texelFetch(srt_access(eevee_volume_Integrate, in_scattering_tx), froxel, 0).rgb;
+    float3 extinction = texelFetch(srt_access(eevee_volume_Integrate, in_extinction_tx), froxel, 0).rgb;
+
+    float cell_depth = volume_z_to_view_z(
+        uni, view, (float(i) + 1.0f) * srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size.z);
+    float ray_len = orig_ray_len * cell_depth;
+#line 346
+    float step_len = abs(ray_len - prev_ray_len);
+    prev_ray_len = ray_len;
+    float3 froxel_transmittance = exp(-extinction * step_len);
+#line 354
+    float3 froxel_opacity = 1.0f - froxel_transmittance;
+    float3 froxel_step_opacity = froxel_opacity * safe_rcp(extinction);
+#line 361
+    bool3 is_invalid_extinction = equal(extinction, float3(0.0f));
+    froxel_step_opacity = mix(froxel_step_opacity, float3(step_len), is_invalid_extinction);
+#line 365
+    froxel_scattering = froxel_scattering * froxel_step_opacity;
+#line 368
+    scattering += transmittance * froxel_scattering;
+    transmittance *= froxel_transmittance;
+
+    imageStoreFast(srt_access(eevee_volume_Integrate, out_scattering_img), froxel, float4(scattering, 1.0f));
+    imageStoreFast(srt_access(eevee_volume_Integrate, out_transmittance_img), froxel, float4(transmittance, 1.0f));
+  }
+
+#endif
+#line 374
+}
+#endif
+#endif
+#line 376
+struct eevee_volume_FragOut {
+                              float4 radiance;
+                              float4 transmittance;
+};
+#line 376
+                                    eevee_volume_FragOut eevee_volume_FragOut_ctor_() {eevee_volume_FragOut r;r.radiance=float4(0);r.transmittance=float4(0);return r;}
+#line 381
+
+#if defined(ENTRY_POINT_eevee_volume_resolve_vert)
+#line 381
+
+void eevee_volume_resolve_vert(                                                                  )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 384
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 385
+}
+#endif
+#line 390
+#if defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_UnifiedVolumeData) && defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_eevee_HiZ)
+#line 389
+
+#if defined(ENTRY_POINT_eevee_volume_resolve_frag)
+#line 389
+
+void eevee_volume_resolve_frag(
+#line 395
+                                                        )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 396
+  eevee_Uniform uni = eevee_Uniform_ctor_(); UnifiedVolumeData volumes = UnifiedVolumeData_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_();
+  float2 uvs = gl_FragCoord.xy * srt_access(eevee_Uniform, uniform_buf).volumes.main_view_extent_inv;
+  float scene_depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), int2(gl_FragCoord.xy), 0).r;
+
+  VolumeResolveSample vol = _resolve(volumes, float3(uvs, scene_depth));
+
+  eevee_volume_FragOut_radiance = float4(vol.scattering, 0.0f);
+  eevee_volume_FragOut_transmittance = float4(vol.transmittance, saturate(average(vol.transmittance)));
+
+  _store_color(render_passes, int2(gl_FragCoord.xy), srt_access(eevee_Uniform, uniform_buf).render_pass.volume_light_id, float4(vol.scattering, 1.0f));
+
+#endif
+#line 406
+}
+#endif
+#endif
+#line 413

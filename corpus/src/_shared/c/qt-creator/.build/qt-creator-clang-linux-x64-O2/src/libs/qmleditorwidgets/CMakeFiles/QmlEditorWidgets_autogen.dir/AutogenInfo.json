@@ -1,0 +1,275 @@
+{
+	"BUILD_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/QmlEditorWidgets_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets",
+	"CMAKE_EXECUTABLE" : "/opt/cmake-3.31.10-linux-x86_64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/CMakeLists.txt",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/easingpane/easingpane.qrc",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/resources_qmleditorwidgets.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/QmlEditorWidgets_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "QmlEditorWidgets_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/colorbox.h",
+			"MU",
+			"EWIEGA46WW/moc_colorbox.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/colorbutton.h",
+			"MU",
+			"EWIEGA46WW/moc_colorbutton.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanetextwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_contextpanetextwidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanewidget.h",
+			"MU",
+			"EWIEGA46WW/moc_contextpanewidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanewidgetimage.h",
+			"MU",
+			"EWIEGA46WW/moc_contextpanewidgetimage.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanewidgetrectangle.h",
+			"MU",
+			"EWIEGA46WW/moc_contextpanewidgetrectangle.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/customcolordialog.h",
+			"MU",
+			"EWIEGA46WW/moc_customcolordialog.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/easingpane/easingcontextpane.h",
+			"MU",
+			"7Y2F2WJMUF/moc_easingcontextpane.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/easingpane/easinggraph.h",
+			"MU",
+			"7Y2F2WJMUF/moc_easinggraph.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/filewidget.h",
+			"MU",
+			"EWIEGA46WW/moc_filewidget.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/fontsizespinbox.h",
+			"MU",
+			"EWIEGA46WW/moc_fontsizespinbox.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/gradientline.h",
+			"MU",
+			"EWIEGA46WW/moc_gradientline.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/huecontrol.h",
+			"MU",
+			"EWIEGA46WW/moc_huecontrol.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/qmleditorwidgets_global.h",
+			"MU",
+			"EWIEGA46WW/moc_qmleditorwidgets_global.cpp",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/qmleditorwidgetstr.h",
+			"MU",
+			"EWIEGA46WW/moc_qmleditorwidgetstr.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/QmlEditorWidgets_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/QmlEditorWidgets_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QMLEDITORWIDGETS_LIBRARY",
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_CREATOR",
+		"QT_DISABLE_DEPRECATED_UP_TO=0x050900",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_DEBUG",
+		"QT_NO_FOREACH",
+		"QT_NO_JAVA_STYLE_ITERATORS",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_RESTRICTED_CAST_FROM_ASCII",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WARN_DEPRECATED_UP_TO=0x060400",
+		"QT_WIDGETS_LIB",
+		"QmlEditorWidgets_EXPORTS",
+		"RELATIVE_DATA_PATH=\"../share/qtcreator\"",
+		"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"",
+		"RELATIVE_LIBEXEC_PATH=\"../libexec/qtcreator\"",
+		"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\""
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/3rdparty",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/utils/mimetypes2",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/utils/plaintextedit",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/QtTaskTree",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/QtTaskTree",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtCore",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/mkspecs/linux-g++",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtConcurrent",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtGui",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtNetwork",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtPrintSupport",
+		"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/include/QtWidgets",
+		"/usr/include",
+		"/usr/include/c++/14",
+		"/usr/include/x86_64-linux-gnu/c++/14",
+		"/usr/include/c++/14/backward",
+		"/usr/lib/llvm-18/lib/clang/18/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-std=c++20",
+		"-w",
+		"-dM",
+		"-E",
+		"/opt/cmake-3.31.10-linux-x86_64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/QmlEditorWidgets_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 16,
+	"PARSE_CACHE_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/CMakeFiles/QmlEditorWidgets_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/deps/qt/6.8.3/gcc_64/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/qmleditorwidgets/CMakeFiles/QmlEditorWidgets_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/colorbox.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/colorbutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanetextwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanewidgetimage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/contextpanewidgetrectangle.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/customcolordialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/easingpane/easingcontextpane.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/easingpane/easinggraph.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/filewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/fontsizespinbox.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/gradientline.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/qmleditorwidgets/huecontrol.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

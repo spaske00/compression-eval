@@ -1,0 +1,14 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_LightprobeVolumeRenderData)
+.sampler(VOLUME_PROBE_TEX_SLOT, ImageType::sampler3D, "irradiance_atlas_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.storage_buf(IRRADIANCE_BRICK_BUF_SLOT, Qualifier::read, "uint", "bricks_infos_buf[]", Frequency::PASS)
+.uniform_buf(IRRADIANCE_GRID_BUF_SLOT, "VolumeProbeData", "grids_infos_buf[IRRADIANCE_GRID_MAX]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

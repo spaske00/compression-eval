@@ -1,0 +1,5 @@
+#include "shaders/gpu_shader_display_transform_vert.glsl.info"
+#include "shaders/gpu_shader_display_transform_frag.glsl.info"
+#include "shaders/gpu_shader_display_transform_lib.glsl.info"
+#include "shaders/gpu_shader_display_transform_fallback_lib.glsl.info"
+#include "intern/ocio_shader_shared.hh.info"

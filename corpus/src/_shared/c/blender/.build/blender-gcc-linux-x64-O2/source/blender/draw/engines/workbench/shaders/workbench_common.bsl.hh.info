@@ -1,0 +1,21 @@
+#pragma once
+
+#include "workbench_defines.hh"
+
+#define EPSILON 0.00001f
+
+#define CAVITY_BUFFER_RANGE 4.0f
+
+#define TARGET_BITCOUNT 8u
+#define METALLIC_BITS 3u                                          
+#define ROUGHNESS_BITS (TARGET_BITCOUNT - METALLIC_BITS)
+
+                                                       
+
+
+
+
+GPU_SHADER_CREATE_INFO(workbench_World)
+.uniform_buf(WB_WORLD_SLOT, "WorldData", "world_data", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

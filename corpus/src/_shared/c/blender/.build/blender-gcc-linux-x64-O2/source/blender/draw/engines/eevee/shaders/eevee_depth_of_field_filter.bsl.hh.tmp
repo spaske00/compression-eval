@@ -1,0 +1,201 @@
+#line 1 "eevee_depth_of_field_filter.bsl.hh"
+ 
+#line 18
+struct eevee_dof_filter_pass_FilterSample {
+  float4 color;
+  float weight;
+};
+#line 18
+                                                  eevee_dof_filter_pass_FilterSample eevee_dof_filter_pass_FilterSample_ctor_() {eevee_dof_filter_pass_FilterSample r;r.color=float4(0);r.weight=0.0f;return r;}
+#line 23
+#define access_eevee_dof_filter_pass_Resources_color_tx() color_tx
+#define access_eevee_dof_filter_pass_Resources_weight_tx() weight_tx
+#define access_eevee_dof_filter_pass_Resources_out_color_img() out_color_img
+#define access_eevee_dof_filter_pass_Resources_out_weight_img() out_weight_img
+#define access_eevee_dof_filter_pass_Resources_color_cache() color_cache
+#define access_eevee_dof_filter_pass_Resources_weight_cache() weight_cache
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_filter_pass_Resources
+CREATE_INFO_RES_PASS_eevee_dof_filter_pass_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_filter_pass_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_filter_pass_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_filter_pass_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_filter_pass_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_filter_pass_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_filter_pass_Resources
+#endif
+#line 23
+struct eevee_dof_filter_pass_Resources {
+#line 90
+int _pad;};
+#line 102
+#ifndef GPU_METAL
+eevee_dof_filter_pass_Resources eevee_dof_filter_pass_Resources_ctor_();
+void _init(eevee_dof_filter_pass_Resources  this_, uint3 global_id, uint3 local_id);
+eevee_dof_filter_pass_FilterSample _fetch_sample(eevee_dof_filter_pass_Resources  this_, int x, int y);
+eevee_dof_filter_pass_Resources eevee_dof_filter_pass_Resources_new_();
+#endif
+#line 23
+                                               eevee_dof_filter_pass_Resources eevee_dof_filter_pass_Resources_ctor_() {eevee_dof_filter_pass_Resources r;r._pad=0;return r;}
+#line 37
+
+#if defined(CREATE_INFO_eevee_dof_filter_pass_Resources)
+#line 37
+  void _init(eevee_dof_filter_pass_Resources  this_, uint3 global_id, uint3 local_id)
+  {
+#line 58
+    constexpr uint cache_size = uint(DOF_FILTER_GROUP_SIZE + 2);
+
+    int2 texel = int2(global_id.xy) - 1;
+    if (all(lessThan(local_id.xy, uint2(cache_size / 2u)))) {
+      for (int y = 0; y < 2; y++) {
+        for (int x = 0; x < 2; x++) {
+          int2 offset = int2(x, y) * int2(cache_size / 2u);
+          int2 cache_texel = int2(local_id.xy) + offset;
+          int2 load_texel = clamp(texel + offset, int2(0), textureSize(srt_access(eevee_dof_filter_pass_Resources, color_tx), 0) - 1);
+
+          srt_access(eevee_dof_filter_pass_Resources, color_cache)[cache_texel.y][cache_texel.x] = texelFetch(srt_access(eevee_dof_filter_pass_Resources, color_tx), load_texel, 0);
+          srt_access(eevee_dof_filter_pass_Resources, weight_cache)[cache_texel.y][cache_texel.x] = texelFetch(srt_access(eevee_dof_filter_pass_Resources, weight_tx), load_texel, 0).r;
+        }
+      }
+    }
+    barrier();
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_filter_pass_Resources)
+#line 76
+  eevee_dof_filter_pass_FilterSample _fetch_sample(eevee_dof_filter_pass_Resources  this_, int x, int y)
+  {
+    return _ctor(eevee_dof_filter_pass_FilterSample) srt_access(eevee_dof_filter_pass_Resources, color_cache)[y][x], srt_access(eevee_dof_filter_pass_Resources, weight_cache)[y][x] _rotc() ;
+  }
+#endif
+#line 83
+       eevee_dof_filter_pass_Resources eevee_dof_filter_pass_Resources_new_()
+{
+  eevee_dof_filter_pass_Resources result;
+  result._pad = 0;
+  return result;
+#line 79
+}
+#line 91
+eevee_dof_filter_pass_FilterSample eevee_dof_filter_pass_filter_min(eevee_dof_filter_pass_FilterSample a, eevee_dof_filter_pass_FilterSample b)
+{
+  return _ctor(eevee_dof_filter_pass_FilterSample) min(a.color, b.color), min(a.weight, b.weight) _rotc() ;
+}
+
+eevee_dof_filter_pass_FilterSample eevee_dof_filter_pass_filter_max(eevee_dof_filter_pass_FilterSample a, eevee_dof_filter_pass_FilterSample b)
+{
+  return _ctor(eevee_dof_filter_pass_FilterSample) max(a.color, b.color), max(a.weight, b.weight) _rotc() ;
+}
+
+eevee_dof_filter_pass_FilterSample eevee_dof_filter_pass_filter_min(eevee_dof_filter_pass_FilterSample a, eevee_dof_filter_pass_FilterSample b, eevee_dof_filter_pass_FilterSample c)
+{
+  return _ctor(eevee_dof_filter_pass_FilterSample) min(a.color, min(c.color, b.color)), min(a.weight, min(c.weight, b.weight)) _rotc() ;
+}
+
+eevee_dof_filter_pass_FilterSample eevee_dof_filter_pass_filter_max(eevee_dof_filter_pass_FilterSample a, eevee_dof_filter_pass_FilterSample b, eevee_dof_filter_pass_FilterSample c)
+{
+  return _ctor(eevee_dof_filter_pass_FilterSample) max(a.color, max(c.color, b.color)), max(a.weight, max(c.weight, b.weight)) _rotc() ;
+}
+
+eevee_dof_filter_pass_FilterSample eevee_dof_filter_pass_filter_median(eevee_dof_filter_pass_FilterSample s1, eevee_dof_filter_pass_FilterSample s2, eevee_dof_filter_pass_FilterSample s3)
+{
+
+  eevee_dof_filter_pass_FilterSample l1 = eevee_dof_filter_pass_filter_min(s2, s3);
+  eevee_dof_filter_pass_FilterSample h1 = eevee_dof_filter_pass_filter_max(s2, s3);
+  eevee_dof_filter_pass_FilterSample h2 = eevee_dof_filter_pass_filter_max(s1, l1);
+  eevee_dof_filter_pass_FilterSample l3 = eevee_dof_filter_pass_filter_min(h2, h1);
+  return l3;
+}
+
+struct eevee_dof_filter_pass_FilterLmhResult {
+  eevee_dof_filter_pass_FilterSample low;
+  eevee_dof_filter_pass_FilterSample median;
+  eevee_dof_filter_pass_FilterSample high;
+};
+#line 121
+                                                     eevee_dof_filter_pass_FilterLmhResult eevee_dof_filter_pass_FilterLmhResult_ctor_() {eevee_dof_filter_pass_FilterLmhResult r;r.low=eevee_dof_filter_pass_FilterSample_ctor_();r.median=eevee_dof_filter_pass_FilterSample_ctor_();r.high=eevee_dof_filter_pass_FilterSample_ctor_();return r;}
+#line 127
+eevee_dof_filter_pass_FilterLmhResult eevee_dof_filter_pass_filter_lmh(eevee_dof_filter_pass_FilterSample s1, eevee_dof_filter_pass_FilterSample s2, eevee_dof_filter_pass_FilterSample s3)
+{
+
+  eevee_dof_filter_pass_FilterSample h1 = eevee_dof_filter_pass_filter_max(s2, s3);
+  eevee_dof_filter_pass_FilterSample l1 = eevee_dof_filter_pass_filter_min(s2, s3);
+
+  eevee_dof_filter_pass_FilterSample h2 = eevee_dof_filter_pass_filter_max(s1, l1);
+  eevee_dof_filter_pass_FilterSample l2 = eevee_dof_filter_pass_filter_min(s1, l1);
+
+  eevee_dof_filter_pass_FilterSample h3 = eevee_dof_filter_pass_filter_max(h2, h1);
+  eevee_dof_filter_pass_FilterSample l3 = eevee_dof_filter_pass_filter_min(h2, h1);
+
+  eevee_dof_filter_pass_FilterLmhResult result;
+  result.low = l2;
+  result.median = l3;
+  result.high = h3;
+
+  return result;
+}
+#line 150
+#if defined(CREATE_INFO_eevee_dof_filter_pass_Resources)
+#line 149
+
+#if defined(ENTRY_POINT_eevee_dof_filter_pass_comp_main)
+#line 149
+
+void eevee_dof_filter_pass_comp_main(
+
+                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 153
+  eevee_dof_filter_pass_Resources srt = eevee_dof_filter_pass_Resources_ctor_();
+#line 160
+  _init(srt, gl_GlobalInvocationID, gl_LocalInvocationID);
+
+  int2 texel = int2(gl_LocalInvocationID.xy);
+
+  eevee_dof_filter_pass_FilterLmhResult rows[3];
+#line 168
+{
+#line 165
+                                         {
+    rows[0] = eevee_dof_filter_pass_filter_lmh(_fetch_sample(srt, texel[0] + 0, texel[1] + 0),
+                         _fetch_sample(srt, texel[0] + 1, texel[1] + 0),
+                         _fetch_sample(srt, texel[0] + 2, texel[1] + 0));
+  }
+#line 165
+                                         {
+    rows[1] = eevee_dof_filter_pass_filter_lmh(_fetch_sample(srt, texel[0] + 0, texel[1] + 1),
+                         _fetch_sample(srt, texel[0] + 1, texel[1] + 1),
+                         _fetch_sample(srt, texel[0] + 2, texel[1] + 1));
+  }
+#line 165
+                                         {
+    rows[2] = eevee_dof_filter_pass_filter_lmh(_fetch_sample(srt, texel[0] + 0, texel[1] + 2),
+                         _fetch_sample(srt, texel[0] + 1, texel[1] + 2),
+                         _fetch_sample(srt, texel[0] + 2, texel[1] + 2));
+  }
+#line 169
+  }
+
+  eevee_dof_filter_pass_FilterSample high = eevee_dof_filter_pass_filter_max(rows[0].low, rows[1].low, rows[2].low);
+
+  eevee_dof_filter_pass_FilterSample low = eevee_dof_filter_pass_filter_min(rows[0].high, rows[1].high, rows[2].high);
+
+  eevee_dof_filter_pass_FilterSample median = eevee_dof_filter_pass_filter_median(rows[0].median, rows[1].median, rows[2].median);
+
+  median = eevee_dof_filter_pass_filter_median(low, median, high);
+
+  int2 out_texel = int2(gl_GlobalInvocationID.xy);
+  imageStore(srt_access(eevee_dof_filter_pass_Resources, out_color_img), out_texel, median.color);
+  imageStore(srt_access(eevee_dof_filter_pass_Resources, out_weight_img), out_texel, float4(median.weight));
+
+#endif
+#line 182
+}
+#endif
+#endif
+#line 187

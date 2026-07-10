@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if (( $# < 3 )); then exit 2; fi; cc=$1; cxx=$2; raw=$3; shift 3; flags=("$@"); target=${raw%.out}
+case "$target" in ""|.|..|*/*) exit 2;; esac; case "$(basename "$cc"):$(basename "$cxx")" in gcc*:g++*|clang*:clang++*) ;; *) exit 2;; esac
+root=$(cd "$(dirname "$0")" && pwd); b="$root/.build/$target"; tmp="$root/bin/.$target.tmp"; out="$root/bin/$target"; trap 'rm -rf -- "$tmp"' EXIT; rm -rf "$b" "$tmp" "$out"; mkdir -p "$b" "$tmp"
+cmake -S "$root/upstream" -B "$b" -G Ninja -DCMAKE_C_COMPILER="$cc" -DCMAKE_CXX_COMPILER="$cxx" -DCMAKE_BUILD_TYPE=None -DCMAKE_C_FLAGS="${flags[*]}" -DCMAKE_CXX_FLAGS="${flags[*]}" -DCMAKE_EXE_LINKER_FLAGS="${flags[*]}" -DMI_BUILD_SHARED=OFF -DMI_BUILD_STATIC=ON -DMI_BUILD_TESTS=ON
+cmake --build "$b" --target mimalloc-test-api --parallel "${JOBS:-8}"; artifact="$b/mimalloc-test-api"; test -s "$artifact" -a -x "$artifact"; test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"; cp "$artifact" "$tmp/$target"; chmod u+x "$tmp/$target"; mv -T "$tmp" "$out"; trap - EXIT

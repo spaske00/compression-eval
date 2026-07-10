@@ -1,0 +1,124 @@
+#line 1 "workbench_cavity.bsl.hh"
+ 
+#line 11
+SHADER_LIBRARY_CREATE_INFO(draw_view)
+#line 18
+#define access_workbench_Cavity_jitter_tx() jitter_tx
+#define access_workbench_Cavity_cavity_samples() cavity_samples
+#ifdef CREATE_INFO_RES_PASS_workbench_Cavity
+CREATE_INFO_RES_PASS_workbench_Cavity
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_Cavity
+CREATE_INFO_RES_BATCH_workbench_Cavity
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_Cavity
+CREATE_INFO_RES_GEOMETRY_workbench_Cavity
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_Cavity
+CREATE_INFO_RES_SHARED_VARS_workbench_Cavity
+#endif
+#line 18
+struct workbench_Cavity {
+#line 29
+int _pad;};
+#line 32
+#ifndef GPU_METAL
+workbench_Cavity workbench_Cavity_ctor_();
+workbench_Cavity workbench_Cavity_new_();
+#endif
+#line 18
+                                workbench_Cavity workbench_Cavity_ctor_() {workbench_Cavity r;r._pad=0;return r;}
+#line 22
+       workbench_Cavity workbench_Cavity_new_()
+{
+  workbench_Cavity result;
+  result._pad = 0;
+  return result;
+#line 20
+}
+#line 23
+
+#if defined(CREATE_INFO_workbench_Cavity) && defined(CREATE_INFO_workbench_World)
+#line 23
+void workbench_cavity_compute(const workbench_Cavity  cavity,
+                    const workbench_World  world,
+                    sampler2DDepth depth_tx,
+                    sampler2D normal_tx,
+                    float2 screenco,
+                    _ref(float ,cavities),
+                    _ref(float ,edges))
+{
+  cavities = edges = 0.0f;
+
+  float depth = texture(depth_tx, screenco).x;
+#line 36
+  if (depth == 1.0f || depth == 0.0f) {
+    return;
+  }
+#line 42
+  float3 position = drw_point_screen_to_view(float3(screenco, depth));
+  float3 normal = workbench_normal_decode(texture(normal_tx, screenco));
+
+  float2 jitter_co = (screenco * srt_access(workbench_World, world_data).viewport_size.xy) * srt_access(workbench_World, world_data).cavity_jitter_scale;
+  float3 noise = texture(srt_access(workbench_Cavity, jitter_tx), jitter_co).rgb;
+#line 50
+  float2 offset;
+  float homcoord = drw_view().winmat[2][3] * position.z + drw_view().winmat[3][3];
+  offset.x = drw_view().winmat[0][0] * srt_access(workbench_World, world_data).cavity_distance / homcoord;
+  offset.y = drw_view().winmat[1][1] * srt_access(workbench_World, world_data).cavity_distance / homcoord;
+
+  offset *= 0.5f;
+#line 58
+  float2 rotX = noise.rg;
+  float2 rotY = float2(-rotX.y, rotX.x);
+
+  int sample_start = srt_access(workbench_World, world_data).cavity_sample_start;
+  int sample_end = srt_access(workbench_World, world_data).cavity_sample_end;
+  for (int i = sample_start; i < sample_end && i < 512; i++) {
+#line 66
+    float3 sample_coord = srt_access(workbench_Cavity, cavity_samples)[i].xyz;
+
+    float2 dir_jittered = float2(dot(sample_coord.xy, rotX), dot(sample_coord.xy, rotY));
+    dir_jittered.xy *= sample_coord.z + noise.b;
+
+    float2 uvcoords = screenco + dir_jittered * offset;
+
+    if (any(greaterThan(abs(uvcoords - 0.5f), float2(0.5f)))) {
+      continue;
+    }
+
+    float s_depth = texture(depth_tx, uvcoords).r;
+
+    bool is_background = (s_depth == 1.0f);
+
+    s_depth = (is_background) ? depth : s_depth;
+    float3 s_pos = drw_point_screen_to_view(float3(uvcoords, s_depth));
+
+    if (is_background) {
+      s_pos.z -= srt_access(workbench_World, world_data).cavity_distance;
+    }
+
+    float3 dir = s_pos - position;
+    float len = length(dir);
+    float f_cavities = dot(dir, normal);
+    float f_edge = -f_cavities;
+    float f_bias = 0.05f * len + 0.0001f;
+
+    float attenuation = 1.0f / (len * (1.0f + len * len * srt_access(workbench_World, world_data).cavity_attenuation));
+#line 97
+    if (f_cavities > -f_bias) {
+      cavities += f_cavities * attenuation;
+    }
+
+    if (f_edge > f_bias) {
+      edges += f_edge * attenuation;
+    }
+  }
+  cavities *= srt_access(workbench_World, world_data).cavity_sample_count_inv;
+  edges *= srt_access(workbench_World, world_data).cavity_sample_count_inv;
+#line 109
+  cavities = clamp(cavities * srt_access(workbench_World, world_data).cavity_valley_factor, 0.0f, 1.0f);
+  edges = edges * srt_access(workbench_World, world_data).cavity_ridge_factor;
+}
+#endif
+#line 114

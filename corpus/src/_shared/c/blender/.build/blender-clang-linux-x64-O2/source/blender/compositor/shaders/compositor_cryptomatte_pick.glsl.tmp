@@ -1,0 +1,18 @@
+#line 1 "compositor_cryptomatte_pick.glsl"
+ 
+#line 27
+COMPUTE_SHADER_CREATE_INFO(compositor_cryptomatte_pick)
+#line 31
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 37
+  float2 first_rank = texture_load(first_layer_tx, texel).xy;
+  float id_of_first_rank = first_rank.x;
+#line 42
+  uint hash_value = floatBitsToUint(id_of_first_rank);
+  float green = float(hash_value << 8) / float(0xFFFFFFFFu);
+  float blue = float(hash_value << 16) / float(0xFFFFFFFFu);
+
+  imageStore(output_img, texel, float4(id_of_first_rank, green, blue, 1.0f));
+}

@@ -1,0 +1,48 @@
+{
+    "classes": [
+        {
+            "className": "FancyIconButton",
+            "lineNumber": 17,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "iconOpacity",
+                    "read": "iconOpacity",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setIconOpacity"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "autoHide",
+                    "read": "hasAutoHide",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAutoHide"
+                }
+            ],
+            "qualifiedClassName": "Utils::FancyIconButton",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractButton"
+                }
+            ]
+        }
+    ],
+    "inputFile": "fancyiconbutton.h",
+    "outputRevision": 68
+}

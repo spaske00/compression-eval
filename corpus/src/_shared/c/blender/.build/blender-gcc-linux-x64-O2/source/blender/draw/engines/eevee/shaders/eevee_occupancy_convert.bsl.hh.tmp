@@ -1,0 +1,145 @@
+#line 1 "eevee_occupancy_convert.bsl.hh"
+ 
+#line 15
+#define access_eevee_volume_occupancy_Convert_hit_depth_img() hit_depth_img
+#define access_eevee_volume_occupancy_Convert_hit_count_img() hit_count_img
+#define access_eevee_volume_occupancy_Convert_occupancy_img() occupancy_img
+#ifdef CREATE_INFO_RES_PASS_eevee_volume_occupancy_Convert
+CREATE_INFO_RES_PASS_eevee_volume_occupancy_Convert
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_volume_occupancy_Convert
+CREATE_INFO_RES_BATCH_eevee_volume_occupancy_Convert
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_volume_occupancy_Convert
+CREATE_INFO_RES_GEOMETRY_eevee_volume_occupancy_Convert
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_volume_occupancy_Convert
+CREATE_INFO_RES_SHARED_VARS_eevee_volume_occupancy_Convert
+#endif
+#line 15
+struct eevee_volume_occupancy_Convert {
+#line 28
+int _pad;};
+#line 31
+#ifndef GPU_METAL
+eevee_volume_occupancy_Convert eevee_volume_occupancy_Convert_ctor_();
+eevee_volume_occupancy_Convert eevee_volume_occupancy_Convert_new_();
+#endif
+#line 15
+                                              eevee_volume_occupancy_Convert eevee_volume_occupancy_Convert_ctor_() {eevee_volume_occupancy_Convert r;r._pad=0;return r;}
+#line 21
+       eevee_volume_occupancy_Convert eevee_volume_occupancy_Convert_new_()
+{
+  eevee_volume_occupancy_Convert result;
+  result._pad = 0;
+  return result;
+#line 19
+}
+#line 22
+bool eevee_volume_occupancy_is_front_face_hit(float stored_hit_depth)
+{
+  return stored_hit_depth < 0.0f;
+}
+#line 28
+#if defined(ENTRY_POINT_eevee_volume_occupancy_convert_vert)
+#line 27
+           void eevee_volume_occupancy_convert_vert(                                                                  )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 29
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 30
+}
+#endif
+#line 36
+#if defined(CREATE_INFO_eevee_volume_occupancy_Convert) && defined(CREATE_INFO_eevee_Uniform)
+#line 35
+
+#if defined(ENTRY_POINT_eevee_volume_occupancy_convert_frag)
+#line 35
+
+void eevee_volume_occupancy_convert_frag(
+
+                                                     )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 39
+  eevee_volume_occupancy_Convert srt = eevee_volume_occupancy_Convert_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  float hit_depths[VOLUME_HIT_DEPTH_MAX];
+  float hit_ordered[VOLUME_HIT_DEPTH_MAX + 1];
+  int hit_index[VOLUME_HIT_DEPTH_MAX];
+
+  int2 texel = int2(gl_FragCoord.xy);
+
+  int hit_count = int(imageLoad(srt_access(eevee_volume_occupancy_Convert, hit_count_img), texel).x);
+  hit_count = min(hit_count, VOLUME_HIT_DEPTH_MAX);
+
+  if (hit_count == 0) {
+    return;
+  }
+#line 54
+  imageStore(srt_access(eevee_volume_occupancy_Convert, hit_count_img), texel, uint4(0));
+
+  for (int i = 0; i < hit_count; i++) {
+    hit_depths[i] = imageLoad(srt_access(eevee_volume_occupancy_Convert, hit_depth_img), int3(texel, i)).r;
+  }
+
+  for (int i = 0; i < hit_count; i++) {
+    hit_index[i] = 0;
+    for (int j = 0; j < hit_count; j++) {
+      hit_index[i] += int(abs(hit_depths[i]) > abs(hit_depths[j]));
+    }
+  }
+
+  for (int i = 0; i < hit_count; i++) {
+    hit_ordered[hit_index[i]] = hit_depths[i];
+  }
+#line 78
+    occupancy_Bits occupancy =   occupancy_occupancy_new();
+#line 81
+  bool last_frontfacing = !eevee_volume_occupancy_is_front_face_hit(hit_ordered[0]);
+#line 84
+  hit_ordered[hit_count] = -1.0f;
+
+  int last_bit = 0;
+  for (int i = 0; i <= hit_count; i++) {
+    bool frontfacing = eevee_volume_occupancy_is_front_face_hit(hit_ordered[i]);
+    if (last_frontfacing == frontfacing) {
+
+      continue;
+    }
+    last_frontfacing = frontfacing;
+
+    int occupancy_bit_n =   occupancy_bit_index_from_depth(abs(hit_ordered[i]),
+                                                            srt_access(eevee_Uniform, uniform_buf).volumes.tex_size.z);
+    if (last_bit == occupancy_bit_n) {
+
+      continue;
+    }
+    int bit_start = last_bit;
+    int bit_count = occupancy_bit_n - last_bit;
+    last_bit = occupancy_bit_n;
+
+    if (last_frontfacing == false) {
+
+      continue;
+    }
+    occupancy =   occupancy_set_bits_high(occupancy, bit_start, bit_count);
+  }
+#line 113
+  for (int i = 0; i < imageSize(srt_access(eevee_volume_occupancy_Convert, occupancy_img)).z; i++) {
+    if (occupancy.bits[i] != 0u) {
+
+      imageAtomicOr(srt_access(eevee_volume_occupancy_Convert, occupancy_img), int3(texel, i), occupancy.bits[i]);
+    }
+  }
+
+#endif
+#line 119
+}
+#endif
+#endif
+#line 125

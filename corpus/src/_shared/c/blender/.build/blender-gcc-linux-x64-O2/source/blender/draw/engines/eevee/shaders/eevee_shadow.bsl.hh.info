@@ -1,0 +1,18 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_ShadowRenderData)
+.sampler(SHADOW_ATLAS_TEX_SLOT, ImageType::usampler2DArrayAtomic, "shadow_atlas_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(SHADOW_TILEMAPS_TEX_SLOT, ImageType::usampler2D, "shadow_tilemaps_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.noop()
+
+.additional_info("eevee_Uniform")
+.additional_info("draw_View")
+.additional_info_with_condition("eevee_Sampling", [](blender::Span<CompilationConstant> constants) { int shadow_random = ShaderCreateInfo::find_constant(constants, "shadow_random"); return (shadow_random);})
+.additional_info_with_condition("UtilityTexture", [](blender::Span<CompilationConstant> constants) { int shadow_random = ShaderCreateInfo::find_constant(constants, "shadow_random"); return (shadow_random);})
+GPU_SHADER_CREATE_END()
+

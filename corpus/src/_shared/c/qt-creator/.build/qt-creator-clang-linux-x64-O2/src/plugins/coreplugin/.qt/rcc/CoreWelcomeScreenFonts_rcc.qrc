@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="studiofonts">
+    <file alias="TitilliumWeb-Regular.ttf">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/share/3rdparty/studiofonts//TitilliumWeb-Regular.ttf</file>
+  </qresource>
+</RCC>
+

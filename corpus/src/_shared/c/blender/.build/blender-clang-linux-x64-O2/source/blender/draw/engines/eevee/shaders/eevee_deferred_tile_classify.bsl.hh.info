@@ -1,0 +1,33 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_tiles_TileSubpassIn)
+SUBPASS_IN(1, uint, usampler2DArray, eevee_deferred_tiles_TileSubpassIn_in_gbuffer_header, DEFERRED_GBUFFER_ROG_ID)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_tiles_TileClassification)
+PUSH_CONSTANT(int, current_bit)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_tiles_fullscreen_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_tiles_classify_tiles_infos_)
+ADDITIONAL_INFO(eevee_deferred_tiles_TileClassification)
+ADDITIONAL_INFO(eevee_deferred_tiles_TileSubpassIn)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_deferred_tile_classify)
+GRAPHIC_SOURCE("eevee_deferred_tile_classify.bsl.hh")
+VERTEX_FUNCTION("eevee_deferred_tiles_fullscreen_vert")
+FRAGMENT_FUNCTION("eevee_deferred_tiles_classify_tiles")
+ADDITIONAL_INFO(eevee_deferred_tiles_fullscreen_vert_infos_)
+ADDITIONAL_INFO(eevee_deferred_tiles_classify_tiles_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

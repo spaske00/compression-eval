@@ -1,0 +1,49 @@
+#line 1 "compositor_glare_simple_star_anti_diagonal_pass.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_glare_simple_star_anti_diagonal_pass)
+#line 12
+void main()
+{
+  int2 size = imageSize(anti_diagonal_img);
+  int index = int(gl_GlobalInvocationID.x);
+  int anti_diagonal_length = compute_anti_diagonal_length(size, index);
+  int2 start = compute_anti_diagonal_start(size, index);
+  int2 direction = get_anti_diagonal_direction();
+  int2 end = start + (anti_diagonal_length - 1) * direction;
+#line 23
+  for (int i = 0; i < iterations; i++) {
+#line 28
+    for (int j = 0; j < anti_diagonal_length; j++) {
+      int2 texel = start + j * direction;
+      float4 previous_output = imageLoad(anti_diagonal_img, texel - i * direction);
+      float4 current_input = imageLoad(anti_diagonal_img, texel);
+      float4 next_input = imageLoad(anti_diagonal_img, texel + i * direction);
+
+      float4 neighbor_average = (previous_output + next_input) / 2.0f;
+      float4 causal_output = mix(current_input, neighbor_average, fade_factor);
+      imageStore(anti_diagonal_img, texel, causal_output);
+      imageFence(anti_diagonal_img);
+    }
+#line 44
+    for (int j = 0; j < anti_diagonal_length; j++) {
+      int2 texel = end - j * direction;
+      float4 previous_output = imageLoad(anti_diagonal_img, texel + i * direction);
+      float4 current_input = imageLoad(anti_diagonal_img, texel);
+      float4 next_input = imageLoad(anti_diagonal_img, texel - i * direction);
+
+      float4 neighbor_average = (previous_output + next_input) / 2.0f;
+      float4 non_causal_output = mix(current_input, neighbor_average, fade_factor);
+      imageStore(anti_diagonal_img, texel, non_causal_output);
+      imageFence(anti_diagonal_img);
+    }
+  }
+#line 59
+  for (int j = 0; j < anti_diagonal_length; j++) {
+    int2 texel = start + j * direction;
+    float4 horizontal = texture_load(diagonal_tx, texel);
+    float4 vertical = imageLoad(anti_diagonal_img, texel);
+    float4 combined = horizontal + vertical;
+    imageStore(anti_diagonal_img, texel, float4(combined.rgb, 1.0f));
+  }
+}

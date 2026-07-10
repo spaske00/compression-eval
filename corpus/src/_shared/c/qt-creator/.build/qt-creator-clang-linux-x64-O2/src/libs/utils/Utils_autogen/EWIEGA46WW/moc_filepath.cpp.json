@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "FilePathWatcher",
+            "lineNumber": 118,
+            "object": true,
+            "qualifiedClassName": "Utils::FilePathWatcher",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "pathChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filepath.h",
+    "outputRevision": 68
+}

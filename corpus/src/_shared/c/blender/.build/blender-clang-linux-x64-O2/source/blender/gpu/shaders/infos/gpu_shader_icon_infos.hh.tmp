@@ -1,0 +1,44 @@
+#line 1 "gpu_shader_icon_infos.hh"
+ 
+#line 9
+#ifdef GPU_SHADER
+#endif
+#line 19
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_icon_shared
+CREATE_INFO_RES_PASS_gpu_shader_icon_shared
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_icon_shared
+CREATE_INFO_RES_BATCH_gpu_shader_icon_shared
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_icon_shared
+CREATE_INFO_RES_GEOMETRY_gpu_shader_icon_shared
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_icon_shared
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_icon_shared
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_icon
+CREATE_INFO_RES_PASS_gpu_shader_icon
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_icon
+CREATE_INFO_RES_BATCH_gpu_shader_icon
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_icon
+CREATE_INFO_RES_GEOMETRY_gpu_shader_icon
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_icon
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_icon
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_icon_multi
+CREATE_INFO_RES_PASS_gpu_shader_icon_multi
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_icon_multi
+CREATE_INFO_RES_BATCH_gpu_shader_icon_multi
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_icon_multi
+CREATE_INFO_RES_GEOMETRY_gpu_shader_icon_multi
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_icon_multi
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_icon_multi
+#endif

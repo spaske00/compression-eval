@@ -1,0 +1,49 @@
+#line 1 "eevee_renderbuffers_shared.hh"
+ 
+#line 20
+#define AOV_MAX 128
+#line 23
+#define AOVsInfoData_host_shared_ AOVsInfoData
+#define AOVsInfoData_host_shared_uniform_ AOVsInfoData
+#line 22
+struct                 AOVsInfoData {
+#line 25
+  uint4 hash[AOV_MAX / 4];
+
+  int color_len;
+  int value_len;
+
+  int display_id;
+
+  bool32_t display_is_value;
+};
+#line 22
+                                            AOVsInfoData AOVsInfoData_ctor_() {AOVsInfoData r;r.color_len=0;r.value_len=0;r.display_id=0;r.display_is_value=bool32_t(0);for(int i=0;i < AOV_MAX / 4;i++){r.hash[i]=uint4(0);}return r;}
+#line 36
+#define RenderBuffersInfoData_host_shared_ RenderBuffersInfoData
+#define RenderBuffersInfoData_host_shared_uniform_ RenderBuffersInfoData
+#line 35
+struct                 RenderBuffersInfoData {
+         AOVsInfoData aovs;
+
+  int color_len;
+  int normal_id;
+  int position_id;
+  int diffuse_light_id;
+  int diffuse_color_id;
+  int specular_light_id;
+  int specular_color_id;
+  int volume_light_id;
+  int emission_id;
+  int environment_id;
+  int transparent_id;
+
+  int value_len;
+  int shadow_id;
+  int ambient_occlusion_id;
+  int _pad0;
+  int _pad1;
+};
+#line 35
+                                                     RenderBuffersInfoData RenderBuffersInfoData_ctor_() {RenderBuffersInfoData r;r.aovs=AOVsInfoData_ctor_();r.color_len=0;r.normal_id=0;r.position_id=0;r.diffuse_light_id=0;r.diffuse_color_id=0;r.specular_light_id=0;r.specular_color_id=0;r.volume_light_id=0;r.emission_id=0;r.environment_id=0;r.transparent_id=0;r.value_len=0;r.shadow_id=0;r.ambient_occlusion_id=0;r._pad0=0;r._pad1=0;return r;}
+#line 60

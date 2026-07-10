@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_uv_map.glsl"
+ 
+#line 6
+void node_uvmap(float4 attr_uv, _ref(float3 ,outvec))
+{
+  outvec = attr_uv.xyz;
+}

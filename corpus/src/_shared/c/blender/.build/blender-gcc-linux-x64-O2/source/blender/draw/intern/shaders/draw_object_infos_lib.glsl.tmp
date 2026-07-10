@@ -1,0 +1,26 @@
+#line 1 "draw_object_infos_lib.glsl"
+ 
+#line 11
+#if !defined(OBINFO_LIB) && !defined(GLSL_CPP_STUBS)
+#  error Missing draw_object_infos additional create info on shader create info
+#endif
+
+ObjectInfos drw_object_infos()
+{
+
+#if defined(CREATE_INFO_draw_object_infos)
+#line 17
+  return buffer_get(draw_object_infos, drw_infos)[drw_resource_id()];
+
+#else
+#line 17
+  return ObjectInfos_ctor_();
+#endif
+#line 18
+}
+#line 23
+float3 drw_object_orco(float3 lP)
+{
+  ObjectInfos info = drw_object_infos();
+  return info.orco_add + lP * info.orco_mul;
+}

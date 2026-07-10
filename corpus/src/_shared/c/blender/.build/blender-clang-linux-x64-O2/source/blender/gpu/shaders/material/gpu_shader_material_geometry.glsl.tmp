@@ -1,0 +1,33 @@
+#line 1 "gpu_shader_material_geometry.glsl"
+ 
+#line 8
+void node_geometry(float3 orco_attr,
+                   _ref(float3 ,position),
+                   _ref(float3 ,normal),
+                   _ref(float3 ,tangent),
+                   _ref(float3 ,true_normal),
+                   _ref(float3 ,incoming),
+                   _ref(float3 ,parametric),
+                   _ref(float ,backfacing),
+                   _ref(float ,pointiness),
+                   _ref(float ,random_per_island))
+{
+
+  incoming = coordinate_incoming(g_data.P);
+  position = g_data.P;
+  normal = g_data.N;
+  true_normal = g_data.Ng;
+
+  if (g_data.is_strand) {
+    tangent = g_data.curve_T;
+  }
+  else {
+    tangent_orco_z(orco_attr, orco_attr);
+    node_tangent(orco_attr, tangent);
+  }
+
+  parametric = float3(g_data.barycentric_coords, 0.0f);
+  backfacing = (FrontFacing) ? 0.0f : 1.0f;
+  pointiness = 0.5f;
+  random_per_island = 0.0f;
+}

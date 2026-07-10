@@ -1,0 +1,22 @@
+#pragma once
+
+
+#  define SRT_CONSTANT_light_closure_eval_count_reflect 0
+#  define SRT_CONSTANT_light_closure_eval_count_transmit 0
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_LightEvalData)
+.additional_info("eevee_ShadowRenderData")
+.additional_info("UtilityTexture")
+.noop()
+
+.noop()
+
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_LightEvalIterator)
+.additional_info("eevee_LightEvalData")
+.additional_info("eevee_LightRenderData")
+GPU_SHADER_CREATE_END()
+

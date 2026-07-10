@@ -1,0 +1,17 @@
+#line 1 "gpu_shader_2D_point_uniform_size_aa_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(gpu_shader_2D_point_uniform_size_uniform_color_aa)
+
+void main()
+{
+  gl_Position = ModelViewProjectionMatrix * float4(pos, 0.0f, 1.0f);
+  gl_PointSize = size;
+#line 15
+  float radius = 0.5f * size;
+#line 18
+  radii[0] = radius;
+  radii[1] = radius - 1.0f;
+#line 22
+  radii /= size;
+}

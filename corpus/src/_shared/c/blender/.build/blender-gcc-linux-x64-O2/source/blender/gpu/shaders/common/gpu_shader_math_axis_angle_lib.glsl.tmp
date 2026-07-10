@@ -1,0 +1,21 @@
+#line 1 "gpu_shader_math_axis_angle_lib.glsl"
+ 
+#line 9
+struct AxisAngle {
+  float3 axis;
+  float angle;
+#line 17
+};
+
+#ifndef GPU_METAL
+AxisAngle AxisAngle_ctor_();
+AxisAngle AxisAngle_identity();
+#endif
+#line 9
+                         AxisAngle AxisAngle_ctor_() {AxisAngle r;r.axis=float3(0);r.angle=0.0f;return r;}
+#line 13
+         AxisAngle AxisAngle_identity()
+  {
+    return _ctor(AxisAngle) float3(0, 1, 0), 0 _rotc() ;
+  }
+#line 18

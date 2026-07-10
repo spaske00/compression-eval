@@ -1,0 +1,56 @@
+{
+    "classes": [
+        {
+            "className": "PathListEditor",
+            "lineNumber": 20,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "pathList",
+                    "read": "pathList",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "write": "setPathList"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "fileDialogTitle",
+                    "read": "fileDialogTitle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setFileDialogTitle"
+                }
+            ],
+            "qualifiedClassName": "Utils::PathListEditor",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "pathlisteditor.h",
+    "outputRevision": 68
+}

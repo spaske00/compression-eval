@@ -1,0 +1,11 @@
+#line 1 "gpu_shader_function_invert_matrix.glsl"
+ 
+#line 8
+void node_function_invert_matrix(const float4x4 matrix,
+                                 _ref(float4x4 ,inverted_matrix),
+                                 _ref(float ,is_invertable))
+{
+  const bool is_singular = determinant(matrix) == 0.0f;
+  inverted_matrix = is_singular ? mat4x4_identity() : inverse(matrix);
+  is_invertable = float(!is_singular);
+}

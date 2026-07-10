@@ -1,0 +1,10 @@
+#line 1 "workbench_overlay_depth_frag.glsl"
+ 
+#line 9
+FRAGMENT_SHADER_CREATE_INFO(workbench_overlay_depth)
+
+void main()
+{
+#line 15
+  gl_FragDepth = 0.0f;
+}

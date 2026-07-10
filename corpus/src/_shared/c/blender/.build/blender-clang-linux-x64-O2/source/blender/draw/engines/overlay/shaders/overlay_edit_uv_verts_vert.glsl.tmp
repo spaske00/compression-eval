@@ -1,0 +1,31 @@
+#line 1 "overlay_edit_uv_verts_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_edit_uv_verts)
+#line 12
+void main()
+{
+
+  constexpr float4 pinned_col = float4(1.0f, 0.0f, 0.0f, 1.0f);
+
+  bool is_selected = (flag & (VERT_UV_SELECT | FACE_UV_SELECT)) != 0u;
+  bool is_pinned = (flag & VERT_UV_PINNED) != 0u;
+  float4 deselect_col = (is_pinned) ? pinned_col : float4(color.rgb, 1.0f);
+  fill_color = (is_selected) ? theme.colors.vert_select : deselect_col;
+  outline_color = (is_pinned) ? pinned_col : float4(fill_color.rgb, 0.0f);
+
+  float3 world_pos = float3(au, 0.0f);
+#line 27
+  float depth = is_selected ? (is_pinned ? 0.05f : 0.10f) : 0.15f;
+  gl_Position = float4(drw_point_world_to_homogenous(world_pos).xy, depth, 1.0f);
+  gl_PointSize = dot_size;
+#line 32
+  float radius = 0.5f * dot_size;
+#line 35
+  radii[0] = radius;
+  radii[1] = radius - 1.0f;
+  radii[2] = radius - outline_width;
+  radii[3] = radius - outline_width - 1.0f;
+#line 41
+  radii /= dot_size;
+}

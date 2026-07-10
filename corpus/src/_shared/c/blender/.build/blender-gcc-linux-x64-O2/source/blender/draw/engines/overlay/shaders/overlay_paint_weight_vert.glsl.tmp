@@ -1,0 +1,23 @@
+#line 1 "overlay_paint_weight_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_paint_weight)
+#line 13
+void main()
+{
+  float3 world_pos = drw_point_object_to_world(pos);
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+#line 19
+  weight_interp = max(float2(weight, -weight), 0.0f);
+#line 22
+#ifdef FAKE_SHADING
+  float3 view_normal = normalize(drw_normal_object_to_view(nor));
+  color_fac = abs(dot(view_normal, light_dir));
+  color_fac = color_fac * 0.9f + 0.1f;
+
+#else
+  color_fac = 1.0f;
+#endif
+
+  view_clipping_distances(world_pos);
+}

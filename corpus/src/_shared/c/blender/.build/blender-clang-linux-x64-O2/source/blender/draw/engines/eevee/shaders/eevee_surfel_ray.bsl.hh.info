@@ -1,0 +1,28 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_SurfelRay)
+.additional_info("eevee_LightprobeSphereRenderData")
+.additional_info("SurfelData")
+PUSH_CONSTANT(int, radiance_src)
+PUSH_CONSTANT(int, radiance_dst)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_ray_main_infos_)
+LOCAL_GROUP_SIZE(SURFEL_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_surfel_SurfelRay)
+ADDITIONAL_INFO(draw_View)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_ray)
+COMPUTE_SOURCE("eevee_surfel_ray.bsl.hh")
+COMPUTE_FUNCTION("eevee_surfel_ray_main")
+ADDITIONAL_INFO(eevee_surfel_ray_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

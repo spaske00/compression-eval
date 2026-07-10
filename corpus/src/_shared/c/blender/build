@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2; exit 2; fi
+cc=$1; cxx=$2; raw_target=$3; shift 3; flags=("$@")
+target=${raw_target%.out}
+case "$target" in ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;; esac
+case "$(basename -- "$cc"):$(basename -- "$cxx")" in
+    gcc*:g++*|clang*:clang++*) ;;
+    *) echo "Blender requires a matching GCC/G++ or Clang/Clang++ toolchain: $cc, $cxx" >&2; exit 2 ;;
+esac
+command -v "$cc" >/dev/null || { echo "compiler not found: $cc" >&2; exit 2; }
+command -v "$cxx" >/dev/null || { echo "compiler not found: $cxx" >&2; exit 2; }
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+library="$root/upstream/lib/linux_x64"
+startup="$root/upstream/release/datafiles/startup.blend"
+[[ -f "$library/.git" || -d "$library/.git" ]] || {
+    echo "Blender acquisition is incomplete: missing lib/linux_x64" >&2; exit 1;
+}
+[[ -s "$startup" ]] && (( $(stat -c %s "$startup") >= 1024 )) || {
+    echo "Blender acquisition is incomplete: unresolved Git LFS startup asset" >&2; exit 1;
+}
+
+build_dir="$root/.build/$target"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$build_dir/bin/blender"
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$build_dir" "$temporary"
+
+cmake -S "$root/upstream" -B "$build_dir" -G Ninja \
+    -DCMAKE_C_COMPILER="$cc" -DCMAKE_CXX_COMPILER="$cxx" \
+    -DCMAKE_BUILD_TYPE=None -DCMAKE_C_FLAGS="${flags[*]}" \
+    -DCMAKE_CXX_FLAGS="${flags[*]}" -DCMAKE_EXE_LINKER_FLAGS="${flags[*]}" \
+    -DWITH_LIBS_PRECOMPILED=ON -DWITH_GTESTS=OFF -DWITH_PYTHON_INSTALL=OFF \
+    -DWITH_CYCLES=OFF -DWITH_ALEMBIC=OFF -DWITH_USD=OFF \
+    -DWITH_OPENVDB=OFF -DWITH_OPENIMAGEDENOISE=OFF -DWITH_OPENPGL=OFF \
+    -DWITH_OPENSUBDIV=OFF -DWITH_MOD_FLUID=OFF -DWITH_FREESTYLE=OFF \
+    -DWITH_HYDRA=OFF -DWITH_XR_OPENXR=OFF -DWITH_BULLET=OFF \
+    -DWITH_MANIFOLD=OFF -DWITH_MATERIALX=OFF -DWITH_HARU=OFF \
+    -DWITH_POTRACE=OFF
+cmake --build "$build_dir" --target blender --parallel "${JOBS:-8}"
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

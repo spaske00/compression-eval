@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "BaseTreeView",
+            "lineNumber": 16,
+            "object": true,
+            "qualifiedClassName": "Utils::BaseTreeView",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "aboutToShow",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "TreeView"
+                }
+            ]
+        }
+    ],
+    "inputFile": "basetreeview.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,132 @@
+#line 1 "eevee_occupancy_lib.bsl.hh"
+ 
+#line 11
+struct occupancy_Bits {
+  uint bits[8];
+};
+#line 11
+                              occupancy_Bits occupancy_Bits_ctor_() {occupancy_Bits r;r.bits[0]=0u;r.bits[1]=0u;r.bits[2]=0u;r.bits[3]=0u;r.bits[4]=0u;r.bits[5]=0u;r.bits[6]=0u;r.bits[7]=0u;return r;}
+#line 15
+int occupancy_bit_index_from_depth(float depth, int bit_count)
+{
+#line 19
+  return int(depth * float(bit_count) + 0.5f);
+}
+#line 32
+occupancy_Bits occupancy_bits_from_depth(float depth, int bit_count)
+{
+#line 36
+  int depth_bit_index = occupancy_bit_index_from_depth(depth, bit_count);
+
+  occupancy_Bits occupancy;
+  for (int i = 0; i < 8; i++) {
+    int shift = clamp(depth_bit_index - i * 32, 0, 32);
+
+    occupancy.bits[i] = (shift == 32) ? 0x0u : (~0x0u << uint(shift));
+  }
+  return occupancy;
+}
+#line 50
+occupancy_Bits occupancy_occupancy_new()
+{
+  occupancy_Bits occupancy;
+  for (int i = 0; i < 8; i++) {
+    occupancy.bits[i] = 0x0u;
+  }
+  return occupancy;
+}
+#line 69
+occupancy_Bits occupancy_bit_from_depth(float depth, int bit_count)
+{
+#line 73
+  int depth_bit_index = occupancy_bit_index_from_depth(depth, bit_count);
+
+  occupancy_Bits occupancy;
+  for (int i = 0; i < 8; i++) {
+    int shift = depth_bit_index - i * 32;
+
+    occupancy.bits[i] = (shift >= 0 && shift < 32) ? (0x1u << uint(shift)) : 0x0u;
+  }
+  return occupancy;
+}
+#line 87
+occupancy_Bits occupancy_bitwise_or(occupancy_Bits a, occupancy_Bits b)
+{
+  occupancy_Bits occupancy;
+  for (int i = 0; i < 8; i++) {
+    occupancy.bits[i] = a.bits[i] | b.bits[i];
+  }
+  return occupancy;
+}
+#line 99
+occupancy_Bits occupancy_set_bits_high(occupancy_Bits occupancy, int bit_start, int bit_count)
+{
+  for (int i = 0; i < bit_count; i++) {
+    int bit = bit_start + i;
+    occupancy.bits[bit / 32] |= 1u << uint(bit % 32);
+  }
+  return occupancy;
+}
+#line 111
+int occupancy_find_lsb(occupancy_Bits occupancy)
+{
+  for (int i = 0; i < 8; i++) {
+    if (occupancy.bits[i] != 0) {
+      return findLSB(occupancy.bits[i]) + i * 32;
+    }
+  }
+  return -1;
+}
+#line 124
+uint4 occupancy_to_uint4(occupancy_Bits occupancy)
+{
+  return uint4(occupancy.bits[0], occupancy.bits[1], occupancy.bits[2], occupancy.bits[3]);
+}
+#line 132
+bool occupancy_bit_resolve(occupancy_Bits entry, occupancy_Bits exit, uint bit_n, int _0)
+{
+  int first_exit = occupancy_find_lsb(exit);
+  int first_entry = occupancy_find_lsb(entry);
+  first_exit = (first_exit == -1) ? 99999 : first_exit;
+
+  bool inside_volume = first_exit < first_entry;
+  for (uint j = 0; j <= bit_n / 32; j++) {
+    uint entry_word = entry.bits[j];
+    uint exit_word = exit.bits[j];
+
+    for (uint i = 0; i < 32; i++) {
+      if (flag_test(exit_word, 1u << i) && flag_test(entry_word, 1u << i)) {
+
+      }
+      else {
+        if (flag_test(exit_word, 1u << i)) {
+          inside_volume = false;
+        }
+        if (flag_test(entry_word, 1u << i)) {
+          inside_volume = true;
+        }
+      }
+      if (i + j * 32 == bit_n) {
+        return inside_volume;
+      }
+    }
+  }
+  return inside_volume;
+}
+#line 166
+occupancy_Bits occupancy_resolve(occupancy_Bits entry, occupancy_Bits exit, int bit_count)
+{
+  occupancy_Bits occupancy;
+  for (int j = 0; j < 8; j++) {
+    for (int i = 0; i < 32; i++) {
+      bool test = false;
+      if (i < bit_count - j * 32) {
+        test = occupancy_bit_resolve(entry, exit, uint(i + j * 32), bit_count);
+      }
+      set_flag_from_test(occupancy.bits[j], test, 1u << uint(i));
+    }
+  }
+  return occupancy;
+}
+
+

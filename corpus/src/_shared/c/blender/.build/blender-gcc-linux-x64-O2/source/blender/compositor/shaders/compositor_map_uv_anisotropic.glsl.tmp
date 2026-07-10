@@ -1,0 +1,32 @@
+#line 1 "compositor_map_uv_anisotropic.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_map_uv_anisotropic)
+#line 16
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float2 uv_coordinates = texture_load(uv_tx, texel).xy;
+  float2 uv_size = float2(texture_size(uv_tx));
+#line 25
+  int2 table_index = int2(gl_LocalInvocationID.xy);
+  uv_coordinates_table[table_index.x][table_index.y] = uv_coordinates;
+  barrier();
+#line 42
+  int x_step = (table_index.x % 2) * -2 + 1;
+  float2 x_neighbor = uv_coordinates_table[table_index.x + x_step][table_index.y];
+  float2 x_gradient = (x_neighbor - uv_coordinates) * x_step / uv_size.x;
+#line 48
+  int y_step = (table_index.y % 2) * -2 + 1;
+  float2 y_neighbor = uv_coordinates_table[table_index.x][table_index.y + y_step];
+  float2 y_gradient = (y_neighbor - uv_coordinates) * y_step / uv_size.y;
+#line 54
+  float4 sampled_color = textureGrad(input_tx, uv_coordinates, x_gradient, y_gradient);
+#line 61
+  float alpha = texture_load(uv_tx, texel).z;
+
+  float4 result = sampled_color * alpha;
+
+  imageStore(output_img, texel, result);
+}

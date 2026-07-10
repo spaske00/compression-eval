@@ -1,0 +1,103 @@
+#line 1 "eevee_depth_of_field_shared.hh"
+ 
+#line 21
+#define DOF_FAST_GATHER_COC_ERROR 0.05f
+#define DOF_GATHER_RING_COUNT 5
+#define DOF_DILATE_RING_COUNT 3
+#line 26
+#define DepthOfFieldData_host_shared_ DepthOfFieldData
+#define DepthOfFieldData_host_shared_uniform_ DepthOfFieldData
+#line 25
+struct                 DepthOfFieldData {
+
+  int2 extent;
+
+  float2 texel_size;
+
+  float2 bokeh_anisotropic_scale;
+  float2 bokeh_anisotropic_scale_inv;
+
+  float2 gather_uv_fac;
+
+  float scatter_coc_threshold;
+  float scatter_color_threshold;
+  float scatter_neighbor_max_color;
+  int scatter_sprite_per_row;
+
+  float bokeh_blades;
+
+  float bokeh_rotation;
+
+  float coc_mul;
+  float coc_bias;
+
+  float coc_abs_max;
+
+       eCameraType camera_type;
+
+  float4 filter_samples_weight;
+  float filter_center_weight;
+
+  uint scatter_max_rect;
+
+  int _pad0;
+  int _pad1;
+};
+#line 25
+                                                DepthOfFieldData DepthOfFieldData_ctor_() {DepthOfFieldData r;r.extent=int2(0);r.texel_size=float2(0);r.bokeh_anisotropic_scale=float2(0);r.bokeh_anisotropic_scale_inv=float2(0);r.gather_uv_fac=float2(0);r.scatter_coc_threshold=0.0f;r.scatter_color_threshold=0.0f;r.scatter_neighbor_max_color=0.0f;r.scatter_sprite_per_row=0;r.bokeh_blades=0.0f;r.bokeh_rotation=0.0f;r.coc_mul=0.0f;r.coc_bias=0.0f;r.coc_abs_max=0.0f;r.camera_type=eCameraType_ctor_();r.filter_samples_weight=float4(0);r.filter_center_weight=0.0f;r.scatter_max_rect=0u;r._pad0=0;r._pad1=0;return r;}
+#line 62
+#define ScatterRect_host_shared_ ScatterRect
+#define ScatterRect_host_shared_uniform_ ScatterRect
+#line 61
+struct                 ScatterRect {
+
+  float4 color_and_coc[4];
+
+  float2 offset;
+
+  float2 half_extent;
+};
+#line 61
+                                           ScatterRect ScatterRect_ctor_() {ScatterRect r;r.offset=float2(0);r.half_extent=float2(0);r.color_and_coc[0]=float4(0);r.color_and_coc[1]=float4(0);r.color_and_coc[2]=float4(0);r.color_and_coc[3]=float4(0);return r;}
+#line 70
+float coc_radius_from_camera_depth(DepthOfFieldData dof, float depth)
+{
+  depth = (dof.camera_type != CAMERA_ORTHO) ? 1.0f / depth : depth;
+  return dof.coc_mul * depth + dof.coc_bias;
+}
+
+              float regular_polygon_side_length(float sides_count)
+{
+  return 2.0f * sinf(EEVEE_PI / sides_count);
+}
+#line 83
+              float circle_to_polygon_radius(float sides_count, float theta)
+{
+
+  float side_angle = (2.0f * EEVEE_PI) / sides_count;
+  return cosf(side_angle * 0.5f) /
+         cosf(theta - side_angle * floorf((sides_count * theta + EEVEE_PI) / (2.0f * EEVEE_PI)));
+}
+#line 93
+              float circle_to_polygon_angle(float sides_count, float theta)
+{
+  float side_angle = (2.0f * EEVEE_PI) / sides_count;
+  float halfside_angle = side_angle * 0.5f;
+  float side = floorf(theta / side_angle);
+
+  float adjacent = circle_to_polygon_radius(sides_count, 0.0f);
+#line 102
+  float local_theta = theta - side * side_angle;
+  float ratio = (local_theta - halfside_angle) / halfside_angle;
+
+  float halfside_len = regular_polygon_side_length(sides_count) * 0.5f;
+  float opposite = ratio * halfside_len;
+#line 109
+  float final_local_theta = atanf(opposite / adjacent);
+
+  return side * side_angle + final_local_theta;
+}
+
+
+
+

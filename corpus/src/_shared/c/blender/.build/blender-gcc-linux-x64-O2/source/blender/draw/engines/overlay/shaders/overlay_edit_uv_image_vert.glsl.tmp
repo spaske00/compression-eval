@@ -1,0 +1,13 @@
+#line 1 "overlay_edit_uv_image_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_edit_uv_mask_image)
+#line 11
+void main()
+{
+#line 15
+  float3 image_pos = pos * 0.5f + 0.5f;
+  gl_Position = drw_point_world_to_homogenous(
+      float3(image_pos.xy * brush_scale + brush_offset, 0.0f));
+  uvs = image_pos.xy;
+}

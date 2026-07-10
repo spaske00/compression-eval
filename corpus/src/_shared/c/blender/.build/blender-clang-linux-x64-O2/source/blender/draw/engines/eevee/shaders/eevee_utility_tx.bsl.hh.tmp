@@ -1,0 +1,87 @@
+#line 1 "eevee_utility_tx.bsl.hh"
+ 
+#line 10
+#define access_UtilityTexture_utility_tx() utility_tx
+#ifdef CREATE_INFO_RES_PASS_UtilityTexture
+CREATE_INFO_RES_PASS_UtilityTexture
+#endif
+#ifdef CREATE_INFO_RES_BATCH_UtilityTexture
+CREATE_INFO_RES_BATCH_UtilityTexture
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_UtilityTexture
+CREATE_INFO_RES_GEOMETRY_UtilityTexture
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_UtilityTexture
+CREATE_INFO_RES_SHARED_VARS_UtilityTexture
+#endif
+#line 10
+struct UtilityTexture {
+#line 57
+int _pad;};
+
+#ifndef GPU_METAL
+UtilityTexture UtilityTexture_ctor_();
+float4 _fetch(UtilityTexture  this_, float2 texel, float layer);
+float4 _sample_extend(UtilityTexture  this_, float2 uv, float layer);
+float4 _sample_lut(UtilityTexture  this_, float2 uv, float layer);
+float4 _sample_bsdf_lut(UtilityTexture  this_, float2 uv, float layer);
+UtilityTexture UtilityTexture_new_();
+#endif
+#line 10
+                              UtilityTexture UtilityTexture_ctor_() {UtilityTexture r;r._pad=0;return r;}
+#line 14
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 14
+  float4 _fetch(UtilityTexture  this_, float2 texel, float layer)
+  {
+    return texelFetch(srt_access(UtilityTexture, utility_tx), int3(int2(texel) % UTIL_TEX_SIZE, int(layer)), 0);
+  }
+#endif
+#line 20
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 20
+  float4 _sample_extend(UtilityTexture  this_, float2 uv, float layer)
+  {
+    return textureLod(srt_access(UtilityTexture, utility_tx), float3(uv, layer), 0.0f);
+  }
+#endif
+#line 26
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 26
+  float4 _sample_lut(UtilityTexture  this_, float2 uv, float layer)
+  {
+
+    uv = uv * UTIL_TEX_UV_SCALE + UTIL_TEX_UV_BIAS;
+    return textureLod(srt_access(UtilityTexture, utility_tx), float3(uv, layer), 0.0f);
+  }
+#endif
+#line 34
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 34
+  float4 _sample_bsdf_lut(UtilityTexture  this_, float2 uv, float layer)
+  {
+
+    uv = uv * UTIL_TEX_UV_SCALE + UTIL_TEX_UV_BIAS;
+    layer = layer * UTIL_BSDF_LAYER_COUNT + UTIL_BSDF_LAYER;
+
+    float layer_floored;
+    float interp = modf(layer, layer_floored);
+
+    float4 tex_low = textureLod(srt_access(UtilityTexture, utility_tx), float3(uv, layer_floored), 0.0f);
+    float4 tex_high = textureLod(srt_access(UtilityTexture, utility_tx), float3(uv, layer_floored + 1.0f), 0.0f);
+#line 47
+    return mix(tex_low, tex_high, interp);
+  }
+#endif
+       UtilityTexture UtilityTexture_new_()
+{
+  UtilityTexture result;
+  result._pad = 0;
+  return result;
+#line 48
+}
+#line 50

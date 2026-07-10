@@ -1,0 +1,55 @@
+#pragma once
+
+
+#define linearstep(p0, p1, v) (clamp(((v) - (p0)) / abs((p1) - (p0)), 0.0f, 1.0f))
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_dof_scatter_FragOut)
+FRAGMENT_OUT(0, float4, eevee_dof_scatter_FragOut_color)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(eevee_dof_scatter_VertOut_t)
+FLAT(float4, eevee_dof_scatter_VertOut_color_and_coc1)
+FLAT(float4, eevee_dof_scatter_VertOut_color_and_coc2)
+FLAT(float4, eevee_dof_scatter_VertOut_color_and_coc3)
+FLAT(float4, eevee_dof_scatter_VertOut_color_and_coc4)
+FLAT(float, eevee_dof_scatter_VertOut_distance_scale)
+NO_PERSPECTIVE(float2, eevee_dof_scatter_VertOut_rect_uv1)
+NO_PERSPECTIVE(float2, eevee_dof_scatter_VertOut_rect_uv2)
+NO_PERSPECTIVE(float2, eevee_dof_scatter_VertOut_rect_uv3)
+NO_PERSPECTIVE(float2, eevee_dof_scatter_VertOut_rect_uv4)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(eevee_dof_scatter_Resources)
+PUSH_CONSTANT(bool, use_bokeh_lut)
+.sampler(0, ImageType::sampler2D, "occlusion_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2D, "bokeh_lut_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.uniform_buf(0, "DepthOfFieldData", "dof_buf", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "ScatterRect", "scatter_list_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_scatter_vert_main_infos_)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::VERTEX_ID)
+ADDITIONAL_INFO(eevee_dof_scatter_Resources)
+VERTEX_OUT(eevee_dof_scatter_VertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_scatter_frag_main_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_dof_scatter_Resources)
+ADDITIONAL_INFO(eevee_dof_scatter_FragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_scatter)
+GRAPHIC_SOURCE("eevee_depth_of_field_scatter.bsl.hh")
+VERTEX_FUNCTION("eevee_dof_scatter_vert_main")
+FRAGMENT_FUNCTION("eevee_dof_scatter_frag_main")
+ADDITIONAL_INFO(eevee_dof_scatter_vert_main_infos_)
+ADDITIONAL_INFO(eevee_dof_scatter_frag_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

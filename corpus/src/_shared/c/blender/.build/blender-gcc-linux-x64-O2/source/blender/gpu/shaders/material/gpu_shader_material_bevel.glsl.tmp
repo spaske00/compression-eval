@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_bevel.glsl"
+ 
+#line 6
+void node_bevel(float radius, float3 N, _ref(float3 ,result))
+{
+  result = N;
+}

@@ -1,0 +1,31 @@
+#line 1 "gpu_shader_3D_depth_only_infos.hh"
+ 
+#line 9
+#ifdef GPU_SHADER
+#endif
+#line 20
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_3D_depth_only
+CREATE_INFO_RES_PASS_gpu_shader_3D_depth_only
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_3D_depth_only
+CREATE_INFO_RES_BATCH_gpu_shader_3D_depth_only
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_3D_depth_only
+CREATE_INFO_RES_GEOMETRY_gpu_shader_3D_depth_only
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_3D_depth_only
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_3D_depth_only
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_3D_depth_only_clipped
+CREATE_INFO_RES_PASS_gpu_shader_3D_depth_only_clipped
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_3D_depth_only_clipped
+CREATE_INFO_RES_BATCH_gpu_shader_3D_depth_only_clipped
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_3D_depth_only_clipped
+CREATE_INFO_RES_GEOMETRY_gpu_shader_3D_depth_only_clipped
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_3D_depth_only_clipped
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_3D_depth_only_clipped
+#endif

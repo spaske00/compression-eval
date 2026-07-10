@@ -1,0 +1,254 @@
+#line 1 "eevee_depth_of_field_gather.bsl.hh"
+ 
+#line 12
+#define access_eevee_dof_Gather_accumulator() eevee_dof_Accumulator_new_()
+#define access_eevee_dof_Gather_color_tx() color_tx
+#define access_eevee_dof_Gather_color_bilinear_tx() color_bilinear_tx
+#define access_eevee_dof_Gather_coc_tx() coc_tx
+#define access_eevee_dof_Gather_out_color_img() out_color_img
+#define access_eevee_dof_Gather_out_weight_img() out_weight_img
+#define access_eevee_dof_Gather_is_foreground() is_foreground
+#define access_eevee_dof_Gather_use_lut() use_lut
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_Gather
+CREATE_INFO_RES_PASS_eevee_dof_Gather
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_Gather
+CREATE_INFO_RES_BATCH_eevee_dof_Gather
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_Gather
+CREATE_INFO_RES_GEOMETRY_eevee_dof_Gather
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_Gather
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_Gather
+#endif
+#line 12
+struct eevee_dof_Gather {
+                           eevee_dof_Accumulator  accumulator;
+#line 32
+};
+#line 49
+#ifndef GPU_METAL
+eevee_dof_Gather eevee_dof_Gather_ctor_();
+eevee_dof_Gather eevee_dof_Gather_new_();
+#endif
+#line 12
+                                eevee_dof_Gather eevee_dof_Gather_ctor_() {eevee_dof_Gather r;r.accumulator=eevee_dof_Accumulator_ctor_();return r;}
+#line 25
+       eevee_dof_Gather eevee_dof_Gather_new_()
+{
+  eevee_dof_Gather result;
+  result.accumulator = eevee_dof_Accumulator_new_();
+  return result;
+#line 23
+}
+#line 40
+#define access_eevee_dof_gather_Resources_out_occlusion_img() out_occlusion_img
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_gather_Resources
+CREATE_INFO_RES_PASS_eevee_dof_gather_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_gather_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_gather_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_gather_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_gather_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_gather_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_gather_Resources
+#endif
+#line 40
+struct eevee_dof_gather_Resources {
+#line 50
+int _pad;};
+#line 53
+#ifndef GPU_METAL
+eevee_dof_gather_Resources eevee_dof_gather_Resources_ctor_();
+eevee_dof_gather_Resources eevee_dof_gather_Resources_new_();
+#endif
+#line 40
+                                          eevee_dof_gather_Resources eevee_dof_gather_Resources_ctor_() {eevee_dof_gather_Resources r;r._pad=0;return r;}
+#line 43
+       eevee_dof_gather_Resources eevee_dof_gather_Resources_new_()
+{
+  eevee_dof_gather_Resources result;
+  result._pad = 0;
+  return result;
+#line 41
+}
+#line 44
+
+#if defined(CREATE_INFO_eevee_dof_gather_Resources) && defined(CREATE_INFO_eevee_dof_Gather) && defined(CREATE_INFO_eevee_dof_Tiles)
+#line 44
+
+#if defined(ENTRY_POINT_eevee_dof_gather_comp_main)
+#line 44
+
+void eevee_dof_gather_comp_main(
+#line 48
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 49
+  eevee_dof_gather_Resources srt = eevee_dof_gather_Resources_ctor_(); eevee_dof_Gather gather = eevee_dof_Gather_ctor_(); eevee_dof_Tiles tiles = eevee_dof_Tiles_ctor_();
+#line 52
+  int2 tile_co = int2(gl_GlobalInvocationID.xy / DOF_TILES_SIZE);
+  CocTile coc_tile = dof_coc_tile_load(srt_access(eevee_dof_Tiles, in_tiles_fg_img), srt_access(eevee_dof_Tiles, in_tiles_bg_img), tile_co);
+  CocTilePrediction prediction = dof_coc_tile_prediction_get(coc_tile, false);
+
+  float base_radius, min_radius, min_intersectable_radius;
+  bool can_early_out;
+  if (srt_access(eevee_dof_Gather, is_foreground)) {
+    base_radius = -coc_tile.fg_min_coc;
+    min_radius = -coc_tile.fg_max_coc;
+    min_intersectable_radius = -coc_tile.fg_max_intersectable_coc;
+    can_early_out = !prediction.do_foreground;
+  }
+  else {
+    base_radius = coc_tile.bg_max_coc;
+    min_radius = coc_tile.bg_min_coc;
+    min_intersectable_radius = coc_tile.bg_min_intersectable_coc;
+    can_early_out = !prediction.do_background;
+  }
+
+  bool do_fast_gather = dof_do_fast_gather(base_radius, min_radius, srt_access(eevee_dof_Accumulator, is_foreground), false);
+#line 74
+  base_radius *= 0.5f;
+  min_intersectable_radius *= 0.5f;
+
+  bool do_density_change = _dof_do_density_change(srt_access(eevee_dof_Gather, accumulator), base_radius, min_intersectable_radius);
+
+  float4 out_color;
+  float out_weight;
+  float2 out_occlusion;
+
+  if (can_early_out) {
+    out_color = float4(0.0f);
+    out_weight = 0.0f;
+    out_occlusion = float2(0.0f, 0.0f);
+  }
+  else if (do_fast_gather) {
+    _dof_gather_accumulator(srt_access(eevee_dof_Gather, accumulator), float2(gl_GlobalInvocationID.xy),
+                                 srt_access(eevee_dof_Gather, color_tx),
+                                 srt_access(eevee_dof_Gather, color_bilinear_tx),
+                                 srt_access(eevee_dof_Gather, coc_tx),
+                                 base_radius,
+                                 min_intersectable_radius,
+                                 true,
+                                 false,
+                                 out_color,
+                                 out_weight,
+                                 out_occlusion);
+  }
+  else if (do_density_change) {
+    _dof_gather_accumulator(srt_access(eevee_dof_Gather, accumulator), float2(gl_GlobalInvocationID.xy),
+                                 srt_access(eevee_dof_Gather, color_tx),
+                                 srt_access(eevee_dof_Gather, color_bilinear_tx),
+                                 srt_access(eevee_dof_Gather, coc_tx),
+                                 base_radius,
+                                 min_intersectable_radius,
+                                 false,
+                                 true,
+                                 out_color,
+                                 out_weight,
+                                 out_occlusion);
+  }
+  else {
+    _dof_gather_accumulator(srt_access(eevee_dof_Gather, accumulator), float2(gl_GlobalInvocationID.xy),
+                                 srt_access(eevee_dof_Gather, color_tx),
+                                 srt_access(eevee_dof_Gather, color_bilinear_tx),
+                                 srt_access(eevee_dof_Gather, coc_tx),
+                                 base_radius,
+                                 min_intersectable_radius,
+                                 false,
+                                 false,
+                                 out_color,
+                                 out_weight,
+                                 out_occlusion);
+  }
+
+  int2 out_texel = int2(gl_GlobalInvocationID.xy);
+  imageStore(srt_access(eevee_dof_Gather, out_color_img), out_texel, out_color);
+  imageStore(srt_access(eevee_dof_Gather, out_weight_img), out_texel, float4(out_weight));
+  imageStore(srt_access(eevee_dof_gather_Resources, out_occlusion_img), out_texel, out_occlusion.xyxy);
+
+#endif
+#line 132
+}
+#endif
+#endif
+#line 147
+
+#if defined(CREATE_INFO_eevee_dof_Gather) && defined(CREATE_INFO_eevee_dof_Tiles)
+#line 147
+
+#if defined(ENTRY_POINT_eevee_dof_hole_fill_comp_main)
+#line 147
+
+void eevee_dof_hole_fill_comp_main(
+
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 151
+  eevee_dof_Gather gather = eevee_dof_Gather_ctor_(); eevee_dof_Tiles tiles = eevee_dof_Tiles_ctor_();
+#line 154
+  int2 tile_co = int2(gl_GlobalInvocationID.xy / DOF_TILES_SIZE);
+  CocTile coc_tile = dof_coc_tile_load(srt_access(eevee_dof_Tiles, in_tiles_fg_img), srt_access(eevee_dof_Tiles, in_tiles_bg_img), tile_co);
+  CocTilePrediction prediction = dof_coc_tile_prediction_get(coc_tile, false);
+
+  float base_radius = -coc_tile.fg_min_coc;
+  float min_radius = -coc_tile.fg_max_coc;
+  float min_intersectable_radius = dof_tile_large_coc;
+  bool can_early_out = !prediction.do_hole_fill;
+
+  bool do_fast_gather = dof_do_fast_gather(base_radius, min_radius, srt_access(eevee_dof_Accumulator, is_foreground), false);
+#line 166
+  base_radius *= 0.5f;
+  min_intersectable_radius *= 0.5f;
+
+  float4 out_color = float4(0.0f);
+  float out_weight = 0.0f;
+  float2 unused_occlusion = float2(0.0f, 0.0f);
+
+  if (can_early_out) {
+
+  }
+  else if (do_fast_gather) {
+    _dof_gather_accumulator(srt_access(eevee_dof_Gather, accumulator), float2(gl_GlobalInvocationID.xy),
+                                 srt_access(eevee_dof_Gather, color_tx),
+                                 srt_access(eevee_dof_Gather, color_bilinear_tx),
+                                 srt_access(eevee_dof_Gather, coc_tx),
+                                 base_radius,
+                                 min_intersectable_radius,
+                                 true,
+                                 false,
+                                 out_color,
+                                 out_weight,
+                                 unused_occlusion);
+  }
+  else {
+    _dof_gather_accumulator(srt_access(eevee_dof_Gather, accumulator), float2(gl_GlobalInvocationID.xy),
+                                 srt_access(eevee_dof_Gather, color_tx),
+                                 srt_access(eevee_dof_Gather, color_bilinear_tx),
+                                 srt_access(eevee_dof_Gather, coc_tx),
+                                 base_radius,
+                                 min_intersectable_radius,
+                                 false,
+                                 false,
+                                 out_color,
+                                 out_weight,
+                                 unused_occlusion);
+  }
+
+  int2 out_texel = int2(gl_GlobalInvocationID.xy);
+  imageStore(srt_access(eevee_dof_Gather, out_color_img), out_texel, out_color);
+  imageStore(srt_access(eevee_dof_Gather, out_weight_img), out_texel, float4(out_weight));
+
+#endif
+#line 206
+}
+#endif
+#endif
+#line 212
+#ifndef GLSL_CPP_STUBS
+#line 249
+#endif

@@ -1,0 +1,79 @@
+#line 1 "eevee_geom_world.bsl.hh"
+ 
+#line 14
+VERTEX_SHADER_CREATE_INFO(eevee_nodetree)
+#line 25
+#define access_eevee_GeomWorld_eevee_geom_iface_info() eevee_geom_iface_info
+#ifdef CREATE_INFO_RES_PASS_eevee_GeomWorld
+CREATE_INFO_RES_PASS_eevee_GeomWorld
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_GeomWorld
+CREATE_INFO_RES_BATCH_eevee_GeomWorld
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_GeomWorld
+CREATE_INFO_RES_GEOMETRY_eevee_GeomWorld
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_GeomWorld
+CREATE_INFO_RES_SHARED_VARS_eevee_GeomWorld
+#endif
+#line 25
+struct eevee_GeomWorld {
+#line 35
+int _pad;};
+#line 38
+#ifndef GPU_METAL
+eevee_GeomWorld eevee_GeomWorld_ctor_();
+eevee_GeomWorld eevee_GeomWorld_new_();
+#endif
+#line 25
+                               eevee_GeomWorld eevee_GeomWorld_ctor_() {eevee_GeomWorld r;r._pad=0;return r;}
+#line 28
+       eevee_GeomWorld eevee_GeomWorld_new_()
+{
+  eevee_GeomWorld result;
+  result._pad = 0;
+  return result;
+#line 26
+}
+#line 29
+
+#if defined(CREATE_INFO_eevee_GeomWorld) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model)
+#line 29
+
+#if defined(ENTRY_POINT_eevee_geom_world)
+#line 29
+                             void eevee_geom_world(
+#line 34
+                                                                             )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 36
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 35
+
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 35
+  eevee_GeomWorld _0 = eevee_GeomWorld_ctor_(); eevee_Uniform _1 = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); draw_Model _2 = draw_Model_ctor_();
+#line 39
+  interface_get(eevee_geom_iface_info, interp_flat).resource_id_raw = 0u;
+#line 42
+  int v = gl_VertexID % 3;
+  float x = float((v & 1) << 2) - 1.0f;
+  float y = float((v & 2) << 1) - 1.0f;
+  gl_Position = float4(x, y, 1.0f, 1.0f);
+#line 48
+  interface_get(eevee_geom_iface_info, interp).P = _point_ndc_to_view(_get(views, 0), gl_Position.xyz);
+  interface_get(eevee_geom_iface_info, interp).N = float3(1);
+
+  gl_Position = reverse_z_transform(gl_Position);
+
+#endif
+
+#endif
+
+#endif
+#line 52
+}
+#endif
+#endif

@@ -1,0 +1,10 @@
+#line 1 "gpu_shader_3D_smooth_color_frag.glsl"
+ 
+#line 9
+FRAGMENT_SHADER_CREATE_INFO(gpu_shader_3D_smooth_color)
+
+void main()
+{
+  fragColor = finalColor;
+  fragColor = blender_srgb_to_framebuffer_space(fragColor);
+}

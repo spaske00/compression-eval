@@ -1,0 +1,466 @@
+#line 1 "eevee_shadow_tracing.bsl.hh"
+ 
+#line 28
+#define SHADOW_TRACING_INVALID_HISTORY FLT_MAX
+
+struct eevee_ShadowMapTracingState {
+
+  float2 occluder_history;
+
+  float occluder_slope;
+
+  float ray_step_mul;
+  float ray_step_bias;
+
+  float ray_time;
+  bool hit;
+};
+#line 30
+                                           eevee_ShadowMapTracingState eevee_ShadowMapTracingState_ctor_() {eevee_ShadowMapTracingState r;r.occluder_history=float2(0);r.occluder_slope=0.0f;r.ray_step_mul=0.0f;r.ray_step_bias=0.0f;r.ray_time=0.0f;r.hit=false;return r;}
+#line 43
+eevee_ShadowMapTracingState eevee_shadow_map_trace_init(int sample_count, float step_offset)
+{
+  eevee_ShadowMapTracingState state;
+  state.occluder_history = float2(SHADOW_TRACING_INVALID_HISTORY);
+  state.occluder_slope = SHADOW_TRACING_INVALID_HISTORY;
+
+  state.ray_step_mul = -1.0f / float(sample_count);
+  state.ray_step_bias = 1.0f + step_offset * state.ray_step_mul;
+  state.hit = false;
+  return state;
+}
+
+struct eevee_ShadowTracingSample {
+#line 61
+  float2 occluder;
+  bool skip_sample;
+};
+#line 55
+                                         eevee_ShadowTracingSample eevee_ShadowTracingSample_ctor_() {eevee_ShadowTracingSample r;r.occluder=float2(0);r.skip_sample=false;return r;}
+#line 71
+void eevee_shadow_map_trace_hit_check(_ref(eevee_ShadowMapTracingState ,state),
+                                eevee_ShadowTracingSample samp,
+                                bool is_last_sample)
+{
+  bool is_behind_occluder = samp.occluder.y > 1e-6f;
+
+  if (samp.skip_sample) {
+#line 80
+  }
+  else if (state.occluder_history.x == SHADOW_TRACING_INVALID_HISTORY) {
+
+    state.hit = is_behind_occluder || (is_last_sample && (samp.occluder.x > state.ray_time));
+    state.occluder_history = samp.occluder;
+  }
+  else if (is_behind_occluder && (state.occluder_slope != SHADOW_TRACING_INVALID_HISTORY)) {
+#line 92
+    float delta_time = state.ray_time - state.occluder_history.x;
+    float extrapolated_occluder_y = abs(state.occluder_history.y) +
+                                    state.occluder_slope * delta_time;
+#line 97
+    state.hit = extrapolated_occluder_y < 0.0f;
+  }
+  else {
+
+    float2 delta = samp.occluder - state.occluder_history;
+#line 104
+    const float min_slope = tan(M_PI * 0.25f);
+    state.occluder_slope = max(min_slope, abs(delta.y / delta.x));
+    state.occluder_history = samp.occluder;
+
+    state.hit = is_behind_occluder || (is_last_sample && (samp.occluder.x > state.ray_time));
+  }
+}
+#line 142
+struct eevee_ShadowRayDirectional {
+
+  float3 origin;
+  float3 direction;
+
+  float3 local_ray_up;
+  LightData light;
+};
+#line 142
+                                          eevee_ShadowRayDirectional eevee_ShadowRayDirectional_ctor_() {eevee_ShadowRayDirectional r;r.origin=float3(0);r.direction=float3(0);r.local_ray_up=float3(0);r.light=LightData_ctor_();return r;}
+#line 152
+eevee_ShadowRayDirectional eevee_shadow_ray_generate_directional(LightData light,
+                                                     float2 random_2d,
+                                                     float3 lP,
+                                                     float texel_radius)
+{
+  float clip_near = orderedIntBitsToFloat(light.clip_near);
+
+  float dist_to_near_plane = -lP.z - clip_near;
+
+  float max_tracing_distance = texel_radius * float(SHADOW_PAGE_RES << SHADOW_TILEMAP_LOD);
+  float max_tracing_angle_cos = cos_from_tan(max_tracing_distance / dist_to_near_plane);
+
+  float shadow_angle_cos = max(_sun(light).shadow_angle_cos, max_tracing_angle_cos);
+#line 167
+  float3 direction = sample_uniform_cone(random_2d, shadow_angle_cos);
+#line 170
+  direction *= max(texel_radius, dist_to_near_plane / direction.z);
+
+  eevee_ShadowRayDirectional ray;
+  ray.origin = lP;
+  ray.direction = direction;
+  ray.light = light;
+
+  ray.local_ray_up = safe_normalize(
+      cross(cross(float3(0.0f, 0.0f, -1.0f), ray.direction), ray.direction));
+  return ray;
+}
+#line 183
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 182
+eevee_ShadowTracingSample eevee_shadow_map_trace_sample(eevee_ShadowRenderData  srd,
+                                            eevee_ShadowMapTracingState state,
+                                            _ref(eevee_ShadowRayDirectional ,ray))
+{
+
+  float3 ray_pos = ray.origin + ray.direction * state.ray_time;
+
+  ShadowCoordinates coord = shadow_directional_coordinates(ray.light, ray_pos);
+
+  float depth = _read_depth(srd, coord);
+
+  float clip_near = orderedIntBitsToFloat(ray.light.clip_near);
+  float3 occluder_pos = float3(ray_pos.xy, -depth - clip_near);
+
+  float3 ray_local_occluder = occluder_pos - ray.origin;
+
+  eevee_ShadowTracingSample samp;
+  samp.occluder.x = dot(ray_local_occluder, ray.direction) / length_squared(ray.direction);
+  samp.occluder.y = dot(ray_local_occluder, ray.local_ray_up);
+  samp.skip_sample = (depth == -1.0f);
+  return samp;
+}
+#endif
+#line 119
+
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 119
+bool eevee_shadow_map_trace(eevee_ShadowRenderData  srd,
+                      eevee_ShadowRayDirectional ray,
+                      int sample_count,
+                      float step_offset)
+{
+  eevee_ShadowMapTracingState state = eevee_shadow_map_trace_init(sample_count, step_offset);
+  for (int i = 0; (i <= sample_count) && (i <= SHADOW_MAX_STEP) && (state.hit == false); i++)
+  {
+    state.ray_time = square(saturate(float(i) * state.ray_step_mul + state.ray_step_bias));
+
+    eevee_ShadowTracingSample samp = eevee_shadow_map_trace_sample(srd, state, ray);
+
+    eevee_shadow_map_trace_hit_check(state, samp, i == sample_count);
+  }
+  return state.hit;
+}
+#endif
+#line 216
+struct eevee_ShadowRayPunctual {
+
+  float3 origin;
+  float3 direction;
+
+  float3 local_ray_up;
+
+  int light_tilemap_index;
+  LightData light;
+};
+#line 216
+                                       eevee_ShadowRayPunctual eevee_ShadowRayPunctual_ctor_() {eevee_ShadowRayPunctual r;r.origin=float3(0);r.direction=float3(0);r.local_ray_up=float3(0);r.light_tilemap_index=0;r.light=LightData_ctor_();return r;}
+#line 228
+eevee_ShadowRayPunctual eevee_shadow_ray_generate_punctual(LightData light, float2 random_2d, float3 lP)
+{
+  if (light.type == LIGHT_RECT) {
+    random_2d = random_2d * 2.0f - 1.0f;
+  }
+  else {
+    random_2d = sample_disk(random_2d);
+  }
+
+  float clip_near = intBitsToFloat(light.clip_near);
+  float shape_radius = _spot(light).local.shadow_radius;
+#line 241
+  shape_radius = max(0.00002f, shape_radius);
+
+  float3 point_on_light_shape;
+  if (is_area_light(light.type)) {
+    random_2d *= _area(light).size * _area(light).shadow_scale;
+
+    point_on_light_shape = float3(random_2d, 0.0f);
+  }
+  else {
+    float dist;
+    float3 lL = normalize_and_get_length(lP, dist);
+
+    float3 right, up;
+    make_orthonormal_basis(lL, right, up);
+
+    if (is_sphere_light(light.type)) {
+      shape_radius = light_sphere_disk_radius(shape_radius, dist);
+    }
+    random_2d *= shape_radius;
+
+    point_on_light_shape = right * random_2d.x + up * random_2d.y;
+  }
+#line 265
+  if (length_squared(point_on_light_shape) < 1e-8f) {
+    point_on_light_shape = float3(1e-6f);
+  }
+
+  float3 direction = point_on_light_shape - lP;
+
+  float3 shadow_position = _local(light).local.shadow_position;
+#line 274
+  float clip_distance = max(0.0f, length(lP - shadow_position) - clip_near);
+
+  direction *= saturate(1e-6f + clip_distance * inversesqrt(length_squared(direction)));
+#line 279
+  eevee_ShadowRayPunctual ray;
+
+  ray.origin = lP - shadow_position;
+  ray.direction = direction + shadow_position;
+  ray.light_tilemap_index = light.tilemap_index;
+  ray.local_ray_up = safe_normalize(cross(cross(ray.origin, ray.direction), ray.direction));
+  ray.light = light;
+  return ray;
+}
+#line 290
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 289
+eevee_ShadowTracingSample eevee_shadow_map_trace_sample(eevee_ShadowRenderData  srd,
+                                            eevee_ShadowMapTracingState state,
+                                            _ref(eevee_ShadowRayPunctual ,ray))
+{
+  float3 receiver_pos = ray.origin + ray.direction * state.ray_time;
+  int face_id = shadow_punctual_face_index_get(receiver_pos);
+  float3 face_pos = shadow_punctual_local_position_to_face_local(face_id, receiver_pos);
+  ShadowCoordinates coord = shadow_punctual_coordinates(ray.light, face_pos, face_id);
+
+  float radial_occluder_depth = _read_depth(srd, coord);
+  float3 occluder_pos = receiver_pos * (radial_occluder_depth / length(receiver_pos));
+#line 302
+  float3 ray_local_occluder = occluder_pos - ray.origin;
+
+  eevee_ShadowTracingSample samp;
+  samp.occluder.x = dot(ray_local_occluder, ray.direction) / length_squared(ray.direction);
+  samp.occluder.y = dot(ray_local_occluder, ray.local_ray_up);
+  samp.skip_sample = (radial_occluder_depth == -1.0f);
+  return samp;
+}
+#endif
+#line 119
+
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 119
+bool eevee_shadow_map_trace(eevee_ShadowRenderData  srd,
+                      eevee_ShadowRayPunctual ray,
+                      int sample_count,
+                      float step_offset)
+{
+  eevee_ShadowMapTracingState state = eevee_shadow_map_trace_init(sample_count, step_offset);
+  for (int i = 0; (i <= sample_count) && (i <= SHADOW_MAX_STEP) && (state.hit == false); i++)
+  {
+    state.ray_time = square(saturate(float(i) * state.ray_step_mul + state.ray_step_bias));
+
+    eevee_ShadowTracingSample samp = eevee_shadow_map_trace_sample(srd, state, ray);
+
+    eevee_shadow_map_trace_hit_check(state, samp, i == sample_count);
+  }
+  return state.hit;
+}
+#endif
+#line 324
+float3 eevee_shadow_pcf_offset(float3 L, float3 Ng, float2 random)
+{
+
+  float cos_theta = abs(dot(L, Ng));
+  float sin_theta = sin_from_cos(cos_theta);
+#line 331
+  float cone_height = saturate(sin_theta * safe_rcp(cos_theta));
+#line 334
+  float distance_to_center = sqrt(random.x);
+  float2 disk_sample = sample_circle(random.y) * distance_to_center;
+
+  float3 cone_sample = float3(disk_sample, distance_to_center * cone_height);
+
+  float3 pcf_offset = from_up_axis(L) * cone_sample;
+#line 342
+  pcf_offset += Ng * saturate(sin_theta - cos_theta);
+  return pcf_offset;
+}
+#line 352
+#if defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View)
+#line 351
+float eevee_shadow_texel_radius_at_position(const eevee_Uniform  uni,
+                                      const draw_View  views,
+                                      LightData light,
+                                      const bool is_directional,
+                                      float3 P)
+{
+#line 360
+  float scale = 1.0f;
+  if (is_directional) {
+    float3 lP = transform_direction_transposed(light.object_to_world, P);
+    lP -= _position(light);
+    LightSunData sun = _sun(light);
+    if (light.type == LIGHT_SUN) {
+#line 369
+      scale = length(lP) * 2.0f;
+      scale = max(scale * exp2(light.lod_bias), exp2(light.lod_min));
+      scale = clamp(scale, exp2(float(sun.clipmap_lod_min)), exp2(float(sun.clipmap_lod_max)));
+    }
+    else {
+#line 377
+      scale = exp2(float(sun.clipmap_lod_min));
+    }
+  }
+  else {
+    const ViewMatrices view = _get(views, 0);
+
+    float3 lP = light_world_to_local_point(light, P);
+    lP -= _local(light).local.shadow_position;
+
+    scale = shadow_punctual_pixel_ratio(light,
+                                        lP,
+                                        _is_perspective(view),
+                                        _z_distance(view, P),
+                                        srt_access(eevee_Uniform, uniform_buf).shadow.film_pixel_radius);
+
+    scale = 1.0f / scale;
+    scale = min(scale, float(1 << SHADOW_TILEMAP_LOD));
+
+    scale *= reduce_max(abs(lP));
+  }
+#line 399
+  constexpr float texel_radius = M_SQRT2 / SHADOW_MAP_MAX_RES;
+  return texel_radius * scale;
+}
+#endif
+#line 410
+float eevee_shadow_normal_offset(float3 Ng, float3 L, float texel_radius)
+{
+
+  float cos_theta = abs(dot(Ng, L));
+  float slope_offset = sin_from_cos(cos_theta);
+#line 417
+  const float max_angular_quantization_error = 0.534f;
+  const float max_error_cos_inv = 1.0f / cos(max_angular_quantization_error);
+#line 421
+  const float max_error_adjacent_polygon = 0.195f;
+  float biased_offset = slope_offset * max_error_cos_inv + max_error_adjacent_polygon;
+
+  return biased_offset * texel_radius;
+}
+
+float eevee_shadow_terminator_offset(float3 N,
+                               float3 L,
+                               float shadow_terminator_normal_offset,
+                               float shadow_terminator_geometry_offset)
+{
+  const float offset_cutoff = shadow_terminator_geometry_offset;
+
+  if (shadow_terminator_geometry_offset == 0.0) {
+    return 0.0;
+  }
+
+  float cos_theta = dot(N, L);
+  const float offset_amount = saturate(1.0f - cos_theta / offset_cutoff);
+  return offset_amount * shadow_terminator_normal_offset;
+}
+#line 448
+#if defined(CREATE_INFO_eevee_ShadowRenderData)
+#line 447
+float eevee_shadow_eval(eevee_ShadowRenderData  srd,
+                  LightData light,
+                  const bool is_directional,
+                  const bool is_transmission,
+                  bool is_translucent_with_thickness,
+                  float2 frag_co,
+                  Thickness thickness,
+                  float3 P,
+                  float3 Ng,
+                  float3 N,
+                  float terminator_normal_offset,
+                  float terminator_geometry_offset,
+                  int ray_count,
+                  int ray_step_count)
+{
+
+  float3 random_shadow_3d = float3(0.5f);
+  float2 random_pcf_2d = float2(0.0f);
+#line 470
+#if SRT_CONSTANT_shadow_random
+#line 469
+                                                                           {
+    const eevee_Sampling sampling = srt_access(eevee_ShadowRenderData, sampling);
+    const UtilityTexture util_tx = srt_access(eevee_ShadowRenderData, util_tx);
+    float3 blue_noise_3d = _fetch(util_tx, frag_co, UTIL_BLUE_NOISE_LAYER).rgb;
+    random_shadow_3d = fract(blue_noise_3d + _rng_3D_get(sampling, SAMPLING_SHADOW_U));
+    random_pcf_2d = fract(blue_noise_3d.xy + _rng_2D_get(sampling, SAMPLING_SHADOW_X));
+  }
+#endif
+  float distance_to_shadow;
+#line 480
+  float3 L;
+  if (is_directional) {
+    L = _z_axis(light);
+  }
+  else {
+    L = _position(light) + _local(light).local.shadow_position - P;
+    L = normalize_and_get_length(L, distance_to_shadow);
+  }
+
+  bool is_facing_light = (dot(Ng, L) > 0.0f);
+
+  float3 N_bias = (is_transmission && !is_facing_light) ? reflect(Ng, L) : Ng;
+#line 494
+  float texel_radius = eevee_shadow_texel_radius_at_position(srt_access(eevee_ShadowRenderData, uniforms), srt_access(eevee_ShadowRenderData, views), light, is_directional, P);
+
+  if (is_transmission && !is_facing_light) {
+#line 500
+    P += abs(is_directional ? _value(thickness) :
+                              min(_value(thickness), distance_to_shadow - 0.01f)) *
+         L;
+  }
+
+  P = offset_ray(P, N_bias);
+
+  P += (light.filter_radius * texel_radius) * eevee_shadow_pcf_offset(L, Ng, random_pcf_2d);
+
+  P += N_bias * eevee_shadow_normal_offset(Ng, L, texel_radius);
+#line 512
+  P += N * eevee_shadow_terminator_offset(N, L, terminator_normal_offset, terminator_geometry_offset);
+
+  float3 lP = is_directional ? light_world_to_local_direction(light, P) :
+                               light_world_to_local_point(light, P);
+  float3 lNg = light_world_to_local_direction(light, Ng);
+
+  lNg = (is_transmission) ? -lNg : lNg;
+
+  lNg = (is_transmission && is_translucent_with_thickness) ? float3(0.0f) : lNg;
+
+  float surface_hit = 0.0f;
+  for (int ray_index = 0; ray_index < ray_count && ray_index < SHADOW_MAX_RAY; ray_index++) {
+    float2 random_ray_2d = fract(hammersley_2d(ray_index, ray_count) + random_shadow_3d.xy);
+
+    bool has_hit;
+    if (is_directional) {
+      eevee_ShadowRayDirectional clip_ray = eevee_shadow_ray_generate_directional(
+          light, random_ray_2d, lP, texel_radius);
+      has_hit = eevee_shadow_map_trace(srd, clip_ray, ray_step_count, random_shadow_3d.z);
+    }
+    else {
+      eevee_ShadowRayPunctual clip_ray = eevee_shadow_ray_generate_punctual(light, random_ray_2d, lP);
+      has_hit = eevee_shadow_map_trace(srd, clip_ray, ray_step_count, random_shadow_3d.z);
+    }
+
+    surface_hit += float(has_hit);
+  }
+
+  return saturate(1.0f - surface_hit / float(ray_count));
+}
+#endif
+#line 546

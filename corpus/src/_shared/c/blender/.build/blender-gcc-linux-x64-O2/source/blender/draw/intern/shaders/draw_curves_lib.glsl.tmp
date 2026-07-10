@@ -1,0 +1,310 @@
+#line 1 "draw_curves_lib.glsl"
+ 
+#line 22
+struct curves_Segment {
+
+  uint id;
+
+  uint v_idx;
+
+  bool is_end_of_segment;
+};
+#line 22
+                              curves_Segment curves_Segment_ctor_() {curves_Segment r;r.id=0u;r.v_idx=0u;r.is_end_of_segment=false;return r;}
+#line 32
+curves_Segment curves_segment_get(uint vertex_id)
+{
+
+#if defined(CREATE_INFO_draw_curves_infos)
+  const bool is_cylinder = buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count > 1u;
+  curves_Segment segment;
+  segment.id = vertex_id / buffer_get(draw_curves_infos, drw_curves).vertex_per_segment;
+  segment.v_idx = vertex_id % buffer_get(draw_curves_infos, drw_curves).vertex_per_segment;
+  segment.is_end_of_segment = is_cylinder && (segment.v_idx == buffer_get(draw_curves_infos, drw_curves).vertex_per_segment - 1);
+  if (is_cylinder && !segment.is_end_of_segment && (segment.id & 1u) == 0u) {
+#line 46
+    segment.v_idx ^= 1u;
+  }
+  return segment;
+
+#else
+#line 34
+  return curves_Segment_ctor_();
+#endif
+#line 49
+}
+#line 54
+struct curves_Indirection {
+
+  int curve_id;
+
+  int curve_segment;
+
+  bool is_end_of_curve;
+
+  bool is_cyclic_point;
+};
+#line 54
+                                  curves_Indirection curves_Indirection_ctor_() {curves_Indirection r;r.curve_id=0;r.curve_segment=0;r.is_end_of_curve=false;r.is_cyclic_point=false;return r;}
+#line 65
+curves_Indirection curves_indirection_get(curves_Segment segment)
+{
+
+#if defined(CREATE_INFO_draw_curves)
+#line 67
+
+#if defined(CREATE_INFO_draw_curves_infos)
+#line 70
+  curves_Indirection ind;
+  ind.is_cyclic_point = false;
+  ind.is_end_of_curve = false;
+  ind.curve_id = 0;
+
+  constexpr int cyclic_endpoint_pivot = INT_MAX / 2;
+  constexpr int end_of_curve = INT_MAX;
+
+  int indirection_value = texelFetch(sampler_get(draw_curves, curves_indirection_buf), int(segment.id)).r;
+  if (indirection_value == end_of_curve) {
+    ind.curve_segment = 0;
+    ind.is_end_of_curve = true;
+  }
+  else if (indirection_value >= 0) {
+
+    ind.curve_segment = 0;
+    ind.curve_id = indirection_value;
+  }
+  else if (indirection_value <= -cyclic_endpoint_pivot) {
+#line 91
+    ind.curve_segment = -indirection_value - cyclic_endpoint_pivot;
+    ind.is_cyclic_point = true;
+  }
+  else {
+
+    ind.curve_segment = -indirection_value;
+  }
+
+  if (ind.curve_segment != 0) {
+    ind.curve_id = texelFetch(sampler_get(draw_curves, curves_indirection_buf), int(segment.id) - ind.curve_segment).r;
+  }
+
+  const bool is_cylinder = buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count > 1u;
+  if (is_cylinder) {
+    bool is_end_of_segment = (segment.v_idx & 1u) != 0u;
+    ind.curve_segment += int(is_end_of_segment);
+
+    if (!is_end_of_segment) {
+      ind.is_cyclic_point = false;
+    }
+  }
+  return ind;
+
+#else
+#line 67
+  return curves_Indirection_ctor_();
+#endif
+#line 113
+
+#else
+#line 67
+  return curves_Indirection_ctor_();
+#endif
+#line 113
+}
+
+int curves_point_id_get(curves_Segment segment, curves_Indirection indirection)
+{
+
+#if defined(CREATE_INFO_draw_curves_infos)
+  const bool is_cylinder = buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count > 1u;
+  if (is_cylinder) {
+    return int(segment.id) + indirection.curve_id + int(segment.v_idx & 1u);
+  }
+  return int(segment.id) - indirection.curve_id;
+
+#else
+#line 117
+  return int(0);
+#endif
+#line 124
+}
+
+float curves_azimuthal_offset_get(curves_Segment segment)
+{
+
+#if defined(CREATE_INFO_draw_curves_infos)
+  float offset;
+  const bool is_strand = buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count == 0u;
+  const bool is_cylinder = buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count > 1u;
+  if (is_strand) {
+    offset = 0.5f;
+  }
+  else if (is_cylinder) {
+    offset = float(segment.v_idx >> 1) / float(buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count);
+  }
+  else {
+    offset = float(segment.v_idx);
+  }
+  return offset * 2.0f - 1.0f;
+
+#else
+#line 128
+  return float(0);
+#endif
+#line 143
+}
+
+float4 curves_point_position_and_radius_get(uint point_id)
+{
+
+#if defined(CREATE_INFO_draw_curves)
+  return texelFetch(buffer_get(draw_curves, curves_pos_rad_buf), int(point_id));
+
+#else
+#line 147
+  return float4(0);
+#endif
+#line 150
+}
+
+float3 curves_point_position_get(uint point_id)
+{
+
+#if defined(CREATE_INFO_draw_curves)
+  return texelFetch(buffer_get(draw_curves, curves_pos_rad_buf), int(point_id)).rgb;
+
+#else
+#line 154
+  return float3(0);
+#endif
+#line 157
+}
+
+struct curves_Point {
+
+  float3 P;
+
+  float3 T;
+
+  float radius;
+
+  float azimuthal_offset;
+
+  int point_id;
+  int curve_id;
+  int curve_segment;
+};
+#line 159
+                            curves_Point curves_Point_ctor_() {curves_Point r;r.P=float3(0);r.T=float3(0);r.radius=0.0f;r.azimuthal_offset=0.0f;r.point_id=0;r.curve_id=0;r.curve_segment=0;return r;}
+#line 175
+curves_Point curves_point_get(uint vertex_id)
+{
+  curves_Segment segment = curves_segment_get(vertex_id);
+  curves_Indirection indirection = curves_indirection_get(segment);
+
+  curves_Point pt;
+  pt.point_id = curves_point_id_get(segment, indirection);
+  pt.curve_id = indirection.curve_id;
+  pt.curve_segment = indirection.curve_segment;
+
+  float4 pos_rad = curves_point_position_and_radius_get(uint(pt.point_id));
+
+  bool restart_strip = indirection.is_end_of_curve || segment.is_end_of_segment;
+  pt.P = (restart_strip) ? float3(NAN_FLT) : pos_rad.xyz;
+  pt.radius = pos_rad.w;
+  pt.azimuthal_offset = curves_azimuthal_offset_get(segment);
+
+  if (pt.curve_segment == 0) {
+
+    pt.T = curves_point_position_get(uint(pt.point_id + 1)) - pt.P;
+  }
+  else if (indirection.is_cyclic_point) {
+
+    pt.T = curves_point_position_get(uint(pt.point_id - pt.curve_segment + 1)) - pt.P;
+  }
+  else {
+    pt.T = pt.P - curves_point_position_get(uint(pt.point_id - 1));
+  }
+  return pt;
+}
+
+curves_Point curves_object_to_world(curves_Point pt, float4x4 object_to_world)
+{
+  pt.P = transform_point(object_to_world, pt.P);
+  pt.T = normalize(transform_direction(object_to_world, pt.T));
+  pt.radius *= length(to_scale(object_to_world)) * M_SQRT1_3;
+  return pt;
+}
+
+struct curves_ShapePoint {
+
+  float3 curve_N;
+  float3 curve_T;
+  float3 curve_B;
+
+  float3 P;
+
+  float3 N;
+};
+#line 214
+                                 curves_ShapePoint curves_ShapePoint_ctor_() {curves_ShapePoint r;r.curve_N=float3(0);r.curve_T=float3(0);r.curve_B=float3(0);r.P=float3(0);r.N=float3(0);return r;}
+#line 230
+curves_ShapePoint curves_shape_point_get(const curves_Point pt, const float3 V)
+{
+
+#if defined(CREATE_INFO_draw_curves_infos)
+#line 232
+  const bool is_strand = buffer_get(draw_curves_infos, drw_curves).half_cylinder_face_count == 0u;
+
+  curves_ShapePoint shape;
+#line 237
+  shape.curve_T = -pt.T;
+  shape.curve_B = normalize(cross(pt.T, V));
+  shape.curve_N = cross(shape.curve_B, pt.T);
+
+  const float2 lP = float2(pt.azimuthal_offset, sin_from_cos(abs(pt.azimuthal_offset)));
+  shape.N = shape.curve_B * lP.x + shape.curve_N * lP.y;
+  shape.P = pt.P + shape.N * (is_strand ? 0.0f : pt.radius);
+  return shape;
+
+#else
+#line 232
+  return curves_ShapePoint_ctor_();
+#endif
+#line 245
+}
+
+float curves_get_customdata_float(const int curve_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, curve_id).x;
+}
+
+float2 curves_get_customdata_vec2(const int curve_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, curve_id).xy;
+}
+
+float3 curves_get_customdata_vec3(const int curve_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, curve_id).xyz;
+}
+
+float4 curves_get_customdata_vec4(const int curve_id, const samplerBuffer cd_buf)
+{
+  return texelFetch(cd_buf, curve_id).xyzw;
+}
+
+float3 curves_get_curve_root_pos(const int point_id, const int curve_segment)
+{
+
+#if defined(CREATE_INFO_draw_curves)
+  int curve_start = point_id - curve_segment;
+  return texelFetch(buffer_get(draw_curves, curves_pos_rad_buf), curve_start).xyz;
+
+#else
+#line 269
+  return float3(0);
+#endif
+#line 273
+}
+
+

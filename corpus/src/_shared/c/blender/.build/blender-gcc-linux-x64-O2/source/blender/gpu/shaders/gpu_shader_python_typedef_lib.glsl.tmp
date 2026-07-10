@@ -1,0 +1,10 @@
+#line 1 "gpu_shader_python_typedef_lib.glsl"
+ 
+#line 15
+struct MyType {
+  int foo;
+  float bar;
+};
+#line 15
+                      MyType MyType_ctor_() {MyType r;r.foo=0;r.bar=0.0f;return r;}
+#line 19

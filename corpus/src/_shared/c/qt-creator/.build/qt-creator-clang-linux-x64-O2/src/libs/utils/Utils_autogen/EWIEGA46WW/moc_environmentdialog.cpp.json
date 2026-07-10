@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "NameValueItemsWidget",
+            "lineNumber": 21,
+            "object": true,
+            "qualifiedClassName": "Utils::NameValueItemsWidget",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "envChanges",
+                            "type": "EnvironmentChanges"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "userChangedItems",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "environmentdialog.h",
+    "outputRevision": 68
+}

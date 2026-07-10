@@ -1,0 +1,34 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_EvalLight)
+.noop()
+
+.noop()
+
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_eval_light_infos_)
+LOCAL_GROUP_SIZE(SURFEL_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_surfel_EvalLight)
+ADDITIONAL_INFO(eevee_LightEvalIterator)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(SurfelData)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surfel_light)
+COMPUTE_SOURCE("eevee_surfel_light.bsl.hh")
+COMPUTE_FUNCTION("eevee_surfel_eval_light")
+ADDITIONAL_INFO(eevee_surfel_eval_light_infos_)
+COMPILATION_CONSTANT(bool, light_iter_force_no_culling, true)
+COMPILATION_CONSTANT(bool, shadow_random, false)
+COMPILATION_CONSTANT(int, light_closure_eval_count_reflect, 1)
+COMPILATION_CONSTANT(int, light_closure_eval_count_transmit, 0)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

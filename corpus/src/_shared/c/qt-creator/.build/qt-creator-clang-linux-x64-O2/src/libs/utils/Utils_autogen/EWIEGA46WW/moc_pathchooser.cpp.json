@@ -1,0 +1,107 @@
+{
+    "classes": [
+        {
+            "className": "PathChooser",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Kind",
+                    "values": [
+                        "ExistingDirectory",
+                        "Directory",
+                        "File",
+                        "SaveFile",
+                        "ExistingCommand",
+                        "Command",
+                        "Any"
+                    ]
+                }
+            ],
+            "lineNumber": 25,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "path",
+                    "notify": "textChanged",
+                    "read": "path",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setPath"
+                }
+            ],
+            "qualifiedClassName": "Utils::PathChooser",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "validState",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "validChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "rawPathChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "text",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "textChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "editingFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "beforeBrowsing",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "browsingFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "returnPressed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "pathchooser.h",
+    "outputRevision": 68
+}

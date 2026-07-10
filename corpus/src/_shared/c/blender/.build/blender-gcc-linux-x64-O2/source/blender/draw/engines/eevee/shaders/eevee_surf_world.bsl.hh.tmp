@@ -1,0 +1,114 @@
+#line 1 "eevee_surf_world.bsl.hh"
+ 
+#line 15
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+FRAGMENT_SHADER_CREATE_INFO(eevee_geom_iface_info)
+#line 26
+float4 closure_to_rgba_world(Closure _0)
+{
+  float3 transmittance = g_transmittance;
+  closure_weights_reset(0.0f);
+  return float4(0.0f, 0.0f, 0.0f, saturate(1.0f - average(transmittance)));
+}
+#line 35
+#define access_eevee_SurfWorld_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_SurfWorld_world_opacity_fade() world_opacity_fade
+#define access_eevee_SurfWorld_world_background_blur() world_background_blur
+#define access_eevee_SurfWorld_world_coord_packed() world_coord_packed
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfWorld
+CREATE_INFO_RES_PASS_eevee_SurfWorld
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfWorld
+CREATE_INFO_RES_BATCH_eevee_SurfWorld
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfWorld
+CREATE_INFO_RES_GEOMETRY_eevee_SurfWorld
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfWorld
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfWorld
+#endif
+#line 35
+struct eevee_SurfWorld {
+#line 49
+int _pad;};
+#line 52
+#ifndef GPU_METAL
+eevee_SurfWorld eevee_SurfWorld_ctor_();
+eevee_SurfWorld eevee_SurfWorld_new_();
+#endif
+#line 35
+                               eevee_SurfWorld eevee_SurfWorld_ctor_() {eevee_SurfWorld r;r._pad=0;return r;}
+#line 42
+       eevee_SurfWorld eevee_SurfWorld_new_()
+{
+  eevee_SurfWorld result;
+  result._pad = 0;
+  return result;
+#line 40
+}
+#line 43
+struct eevee_SurfWorldFragOut {
+                    float4 background;
+};
+#line 43
+                                      eevee_SurfWorldFragOut eevee_SurfWorldFragOut_ctor_() {eevee_SurfWorldFragOut r;r.background=float4(0);return r;}
+#line 47
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_SurfWorld) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_draw_View)
+#line 47
+
+#if defined(ENTRY_POINT_eevee_surf_world)
+#line 47
+
+void eevee_surf_world(
+#line 57
+                                                      )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 58
+  eevee_PipelineConstants _0 = eevee_PipelineConstants_ctor_(); eevee_SurfWorld srt = eevee_SurfWorld_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); UtilityTexture _1 = UtilityTexture_ctor_(); draw_View views = draw_View_ctor_();
+  const ViewMatrices view = _get(views, 0);
+  init_globals(uni, view, gl_FrontFacing);
+
+  g_data.N = _normal_view_to_world(view, _view_incident_vector(view, interp.P));
+  g_data.Ng = g_data.N;
+  g_data.P = -g_data.N;
+  attrib_load(_ctor(WorldPoint) g_data.P _rotc() );
+
+  nodetree_surface(0.0f);
+
+  g_holdout = saturate(g_holdout);
+
+  eevee_SurfWorldFragOut_background.rgb = colorspace_safe_color(g_emission) * (1.0f - g_holdout);
+  eevee_SurfWorldFragOut_background.a = saturate(average(g_transmittance)) * g_holdout;
+
+  if (g_data.ray_type == RAY_TYPE_CAMERA && srt_access(eevee_SurfWorld, world_background_blur) != 0.0f) {
+#line 78
+    float base_lod = eevee_lightprobe_sphere_roughness_to_lod(srt_access(eevee_SurfWorld, world_background_blur));
+    float lod = max(1.0f, base_lod);
+    float mix_factor = min(1.0f, base_lod);
+    SphereProbeUvArea world_atlas_coord = eevee_reinterpret_as_atlas_coord(srt_access(eevee_SurfWorld, world_coord_packed));
+    float4 probe_color = _sample_probe(srt_access(eevee_LightprobeRenderData, spheres), -g_data.N, lod, world_atlas_coord);
+    eevee_SurfWorldFragOut_background.rgb = mix(eevee_SurfWorldFragOut_background.rgb, probe_color.rgb, mix_factor);
+
+    SphericalHarmonicL1Tfloat4 volume_irradiance = _world(srt_access(eevee_LightprobeRenderData, volumes));
+    float3 radiance_sh = _evaluate_lambert(volume_irradiance, -g_data.N).rgb;
+    float radiance_mix_factor = eevee_lightprobe_sphere_roughness_to_mix_fac(
+        srt_access(eevee_SurfWorld, world_background_blur));
+    eevee_SurfWorldFragOut_background.rgb = mix(eevee_SurfWorldFragOut_background.rgb, radiance_sh, radiance_mix_factor);
+  }
+#line 93
+  float4 environment = eevee_SurfWorldFragOut_background;
+  environment.a = 1.0f - environment.a;
+  environment.rgb *= environment.a;
+  _store_color(render_passes, int2(gl_FragCoord.xy), srt_access(eevee_Uniform, uniform_buf).render_pass.environment_id, environment);
+
+  eevee_SurfWorldFragOut_background = mix(
+      float4(0.0f, 0.0f, 0.0f, 1.0f), eevee_SurfWorldFragOut_background, srt_access(eevee_SurfWorld, world_opacity_fade));
+
+#endif
+#line 100
+}
+#endif
+#endif
+#line 102

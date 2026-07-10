@@ -1,0 +1,118 @@
+#line 1 "gpu_shader_compositor_separate_combine.glsl"
+ 
+#line 10
+void node_composite_combine_xyz(float x, float y, float z, _ref(float3 ,vector))
+{
+  vector = float3(x, y, z);
+}
+#line 16
+void node_composite_separate_xyz(float3 vector, _ref(float ,x), _ref(float ,y), _ref(float ,z))
+{
+  x = vector.x;
+  y = vector.y;
+  z = vector.z;
+}
+#line 26
+void node_composite_combine_rgba(float r, float g, float b, float a, _ref(float4 ,color))
+{
+  color = float4(r, g, b, a);
+}
+#line 32
+void node_composite_separate_rgba(float4 color, _ref(float ,r), _ref(float ,g), _ref(float ,b), _ref(float ,a))
+{
+  r = color.r;
+  g = color.g;
+  b = color.b;
+  a = color.a;
+}
+#line 43
+void node_composite_combine_hsva(float h, float s, float v, float a, _ref(float4 ,color))
+{
+  hsv_to_rgb(float4(h, s, v, a), color);
+}
+#line 49
+void node_composite_separate_hsva(float4 color, _ref(float ,h), _ref(float ,s), _ref(float ,v), _ref(float ,a))
+{
+  float4 hsva;
+  rgb_to_hsv(color, hsva);
+  h = hsva.x;
+  s = hsva.y;
+  v = hsva.z;
+  a = hsva.a;
+}
+#line 62
+void node_composite_combine_hsla(float h, float s, float l, float a, _ref(float4 ,color))
+{
+  hsl_to_rgb(float4(h, s, l, a), color);
+  color.rgb = max(color.rgb, float3(0.0f));
+}
+#line 69
+void node_composite_separate_hsla(float4 color, _ref(float ,h), _ref(float ,s), _ref(float ,l), _ref(float ,a))
+{
+  float4 hsla;
+  rgb_to_hsl(color, hsla);
+  h = hsla.x;
+  s = hsla.y;
+  l = hsla.z;
+  a = hsla.a;
+}
+#line 82
+void node_composite_combine_ycca_itu_601(float y, float cb, float cr, float a, _ref(float4 ,color))
+{
+  ycca_to_rgba_itu_601(float4(y, cb, cr, a), color);
+}
+#line 88
+void node_composite_combine_ycca_itu_709(float y, float cb, float cr, float a, _ref(float4 ,color))
+{
+  ycca_to_rgba_itu_709(float4(y, cb, cr, a), color);
+}
+#line 94
+void node_composite_combine_ycca_jpeg(float y, float cb, float cr, float a, _ref(float4 ,color))
+{
+  ycca_to_rgba_jpeg(float4(y, cb, cr, a), color);
+}
+#line 100
+void node_composite_separate_ycca_itu_601(float4 color, _ref(float ,y), _ref(float ,cb), _ref(float ,cr), _ref(float ,a))
+{
+  float4 ycca;
+  rgba_to_ycca_itu_601(color, ycca);
+  y = ycca.x;
+  cb = ycca.y;
+  cr = ycca.z;
+  a = ycca.a;
+}
+#line 111
+void node_composite_separate_ycca_itu_709(float4 color, _ref(float ,y), _ref(float ,cb), _ref(float ,cr), _ref(float ,a))
+{
+  float4 ycca;
+  rgba_to_ycca_itu_709(color, ycca);
+  y = ycca.x;
+  cb = ycca.y;
+  cr = ycca.z;
+  a = ycca.a;
+}
+#line 122
+void node_composite_separate_ycca_jpeg(float4 color, _ref(float ,y), _ref(float ,cb), _ref(float ,cr), _ref(float ,a))
+{
+  float4 ycca;
+  rgba_to_ycca_jpeg(color, ycca);
+  y = ycca.x;
+  cb = ycca.y;
+  cr = ycca.z;
+  a = ycca.a;
+}
+#line 135
+void node_composite_combine_yuva_itu_709(float y, float u, float v, float a, _ref(float4 ,color))
+{
+  yuva_to_rgba_itu_709(float4(y, u, v, a), color);
+}
+#line 141
+void node_composite_separate_yuva_itu_709(float4 color, _ref(float ,y), _ref(float ,u), _ref(float ,v), _ref(float ,a))
+{
+  float4 yuva;
+  rgba_to_yuva_itu_709(color, yuva);
+  y = yuva.x;
+  u = yuva.y;
+  v = yuva.z;
+  a = yuva.a;
+}

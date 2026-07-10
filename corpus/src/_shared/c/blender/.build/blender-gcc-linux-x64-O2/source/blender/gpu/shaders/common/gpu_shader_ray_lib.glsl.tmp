@@ -1,0 +1,11 @@
+#line 1 "gpu_shader_ray_lib.glsl"
+ 
+#line 10
+struct Ray {
+  packed_float3 direction;
+  float max_time;
+  packed_float3 origin;
+};
+#line 10
+                   Ray Ray_ctor_() {Ray r;r.direction=packed_float3(0);r.max_time=0.0f;r.origin=packed_float3(0);return r;}
+#line 15

@@ -1,0 +1,21 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(UnifiedVolumeProperties)
+.image(VOLUME_PROP_SCATTERING_IMG_SLOT, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read, ImageReadWriteType::image3D, "in_scattering_img", Frequency::PASS)
+.image(VOLUME_PROP_EXTINCTION_IMG_SLOT, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read, ImageReadWriteType::image3D, "in_extinction_img", Frequency::PASS)
+.image(VOLUME_PROP_EMISSION_IMG_SLOT, blender::gpu::TextureFormat::UFLOAT_11_11_10, Qualifier::read, ImageReadWriteType::image3D, "in_emission_img", Frequency::PASS)
+.image(VOLUME_PROP_PHASE_IMG_SLOT, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::read, ImageReadWriteType::image3D, "in_phase_img", Frequency::PASS)
+.image(VOLUME_PROP_PHASE_WEIGHT_IMG_SLOT, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::read, ImageReadWriteType::image3D, "in_phase_weight_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(UnifiedVolumeData)
+.additional_info("eevee_Uniform")
+.additional_info("draw_View")
+.sampler(VOLUME_TRANSMITTANCE_TEX_SLOT, ImageType::sampler3D, "volume_transmittance_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(VOLUME_SCATTERING_TEX_SLOT, ImageType::sampler3D, "volume_scattering_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+

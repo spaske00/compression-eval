@@ -1,0 +1,59 @@
+#pragma once
+
+
+#define ANTIALIAS 0.75f
+
+
+GPU_SHADER_CREATE_INFO(builtin_nodelink_NodeLinkVertIn)
+VERTEX_IN(0, float2, uv)
+VERTEX_IN(1, float2, pos)
+VERTEX_IN(2, float2, expand)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_CREATE_INFO(builtin_nodelink_NodeLinkFragOut)
+FRAGMENT_OUT(0, float4, builtin_nodelink_NodeLinkFragOut_color)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(builtin_nodelink_NodeLinkVertOut_t)
+SMOOTH(float4, builtin_nodelink_NodeLinkVertOut_final_color)
+SMOOTH(float2, builtin_nodelink_NodeLinkVertOut_line_uv)
+FLAT(float, builtin_nodelink_NodeLinkVertOut_line_length)
+FLAT(float, builtin_nodelink_NodeLinkVertOut_line_thickness)
+FLAT(float, builtin_nodelink_NodeLinkVertOut_dash_length)
+FLAT(float, builtin_nodelink_NodeLinkVertOut_dash_factor)
+FLAT(float, builtin_nodelink_NodeLinkVertOut_dash_alpha)
+FLAT(float, builtin_nodelink_NodeLinkVertOut_aspect)
+FLAT(int, builtin_nodelink_NodeLinkVertOut_has_back_link)
+FLAT(int, builtin_nodelink_NodeLinkVertOut_is_main_line)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(builtin_nodelink_NodeLinkSRT)
+PUSH_CONSTANT(float4x4, ModelViewProjectionMatrix)
+.uniform_buf(0, "NodeLinkUniformData", "link_uniforms", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "NodeLinkData", "link_data_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(builtin_nodelink_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+ADDITIONAL_INFO(builtin_nodelink_NodeLinkSRT)
+ADDITIONAL_INFO(builtin_nodelink_NodeLinkVertIn)
+VERTEX_OUT(builtin_nodelink_NodeLinkVertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(builtin_nodelink_frag_infos_)
+ADDITIONAL_INFO(builtin_nodelink_NodeLinkFragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(gpu_shader_2D_nodelink)
+GRAPHIC_SOURCE("gpu_shader_2D_nodelink.bsl.hh")
+VERTEX_FUNCTION("builtin_nodelink_vert")
+FRAGMENT_FUNCTION("builtin_nodelink_frag")
+ADDITIONAL_INFO(builtin_nodelink_vert_infos_)
+ADDITIONAL_INFO(builtin_nodelink_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

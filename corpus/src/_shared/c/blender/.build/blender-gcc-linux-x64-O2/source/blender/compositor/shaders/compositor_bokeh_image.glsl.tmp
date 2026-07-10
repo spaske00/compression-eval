@@ -1,0 +1,80 @@
+#line 1 "compositor_bokeh_image.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_bokeh_image)
+#line 17
+float2 get_regular_polygon_vertex_position(int vertex_index)
+{
+  float angle = exterior_angle * vertex_index - rotation;
+  return float2(cos(angle), sin(angle));
+}
+#line 25
+float2 closest_point_on_line(float2 point, float2 line_start, float2 line_end)
+{
+  float2 line_vector = line_end - line_start;
+  float2 point_vector = point - line_start;
+  float line_length_squared = dot(line_vector, line_vector);
+  float parameter = dot(point_vector, line_vector) / line_length_squared;
+  return line_start + line_vector * parameter;
+}
+#line 48
+float bokeh(float2 point, float circumradius)
+{
+  if (circumradius == 0.0f) {
+    return 0.0f;
+  }
+#line 57
+  float angle = mod(atan(point.y, point.x) + rotation, 2.0f * M_PI);
+  int vertex_index = int(angle / exterior_angle);
+#line 62
+  float2 first_vertex = get_regular_polygon_vertex_position(vertex_index) * circumradius;
+  float2 second_vertex = get_regular_polygon_vertex_position(vertex_index + 1) * circumradius;
+  float2 closest_point = closest_point_on_line(point, first_vertex, second_vertex);
+  float distance_to_edge = length(closest_point);
+#line 69
+  float distance_to_edge_round = mix(distance_to_edge, circumradius, roundness);
+#line 72
+  float distance = length(point);
+  if (distance > distance_to_edge_round) {
+    return 0.0f;
+  }
+#line 78
+  float catadioptric_distance = distance_to_edge_round * catadioptric;
+  if (distance < catadioptric_distance) {
+    return 0.0f;
+  }
+#line 85
+  if (distance_to_edge_round - distance < 1.0f) {
+    return distance_to_edge_round - distance;
+  }
+#line 91
+  if (catadioptric != 0.0f && distance - catadioptric_distance < 1.0f) {
+    return distance - catadioptric_distance;
+  }
+#line 96
+  return 1.0f;
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 105
+  float circumradius = float(imageSize(output_img).x) / 2.0f;
+#line 108
+  float2 point = float2(texel) + float2(0.5f) - circumradius;
+#line 114
+  float min_shift = abs(lens_shift * circumradius);
+  float min = bokeh(point, circumradius - min_shift);
+
+  float median_shift = min_shift / 2.0f;
+  float median = bokeh(point, circumradius - median_shift);
+
+  float max = bokeh(point, circumradius);
+  float4 bokeh = float4(min, median, max, (max + median + min) / 3.0f);
+#line 126
+  if (lens_shift < 0.0f) {
+    bokeh = bokeh.zyxw;
+  }
+
+  imageStore(output_img, texel, bokeh);
+}

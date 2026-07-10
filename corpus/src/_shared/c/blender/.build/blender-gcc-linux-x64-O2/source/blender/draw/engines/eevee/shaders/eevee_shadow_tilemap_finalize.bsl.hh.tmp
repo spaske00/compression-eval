@@ -1,0 +1,318 @@
+#line 1 "eevee_shadow_tilemap_finalize.bsl.hh"
+ 
+#line 20
+int eevee_shadow_viewport_select(int2 rect_size)
+{
+
+  int max_dim = max(rect_size.x, rect_size.y);
+
+  int power_of_two = findMSB(uint(max_dim));
+  if ((1 << power_of_two) != max_dim) {
+    power_of_two += 1;
+  }
+  return power_of_two;
+}
+
+#define access_eevee_shadow_TilemapFinalize_tilemaps_img() tilemaps_img
+#define access_eevee_shadow_TilemapFinalize_rect_min_x() rect_min_x
+#define access_eevee_shadow_TilemapFinalize_rect_min_y() rect_min_y
+#define access_eevee_shadow_TilemapFinalize_rect_max_x() rect_max_x
+#define access_eevee_shadow_TilemapFinalize_rect_max_y() rect_max_y
+#define access_eevee_shadow_TilemapFinalize_lod_rendered() lod_rendered
+#define access_eevee_shadow_TilemapFinalize_pages_infos_buf() pages_infos_buf
+#define access_eevee_shadow_TilemapFinalize_statistics_buf() statistics_buf
+#define access_eevee_shadow_TilemapFinalize_tilemaps_buf() tilemaps_buf
+#define access_eevee_shadow_TilemapFinalize_tiles_buf() tiles_buf
+#define access_eevee_shadow_TilemapFinalize_view_infos_buf() view_infos_buf
+#define access_eevee_shadow_TilemapFinalize_render_view_buf() render_view_buf
+#define access_eevee_shadow_TilemapFinalize_tilemaps_clip_buf() tilemaps_clip_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_TilemapFinalize
+CREATE_INFO_RES_PASS_eevee_shadow_TilemapFinalize
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_TilemapFinalize
+CREATE_INFO_RES_BATCH_eevee_shadow_TilemapFinalize
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_TilemapFinalize
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_TilemapFinalize
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TilemapFinalize
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TilemapFinalize
+#endif
+#line 32
+struct eevee_shadow_TilemapFinalize {
+#line 55
+int _pad;};
+#line 65
+#ifndef GPU_METAL
+eevee_shadow_TilemapFinalize eevee_shadow_TilemapFinalize_ctor_();
+eevee_shadow_TilemapFinalize eevee_shadow_TilemapFinalize_new_();
+#endif
+#line 32
+                                            eevee_shadow_TilemapFinalize eevee_shadow_TilemapFinalize_ctor_() {eevee_shadow_TilemapFinalize r;r._pad=0;return r;}
+#line 48
+       eevee_shadow_TilemapFinalize eevee_shadow_TilemapFinalize_new_()
+{
+  eevee_shadow_TilemapFinalize result;
+  result._pad = 0;
+  return result;
+#line 46
+}
+#line 56
+
+#if defined(CREATE_INFO_eevee_shadow_TilemapFinalize)
+#line 56
+
+#if defined(ENTRY_POINT_eevee_shadow_tilemap_finalize_main)
+#line 56
+
+void eevee_shadow_tilemap_finalize_main(
+
+                                                                            )
+
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 61
+  eevee_shadow_TilemapFinalize srt = eevee_shadow_TilemapFinalize_ctor_();
+  int tilemap_index = int(gl_GlobalInvocationID.z);
+  int2 tile_co = int2(gl_GlobalInvocationID.xy);
+
+  ShadowTileMapData tilemap_data = srt_access(eevee_shadow_TilemapFinalize, tilemaps_buf)[tilemap_index];
+  bool is_cubemap = (tilemap_data.projection_type == SHADOW_PROJECTION_CUBEFACE);
+  int lod_max = is_cubemap ? SHADOW_TILEMAP_LOD : 0;
+
+  srt_access(eevee_shadow_TilemapFinalize, lod_rendered) = 0u;
+
+  for (int lod = lod_max; lod >= 0; lod--) {
+    int2 tile_co_lod = tile_co >> lod;
+    int tile_index = shadow_tile_offset(uint2(tile_co_lod), tilemap_data.tiles_index, lod);
+#line 76
+    if (gl_LocalInvocationIndex == 0u) {
+      srt_access(eevee_shadow_TilemapFinalize, rect_min_x) = SHADOW_TILEMAP_RES;
+      srt_access(eevee_shadow_TilemapFinalize, rect_min_y) = SHADOW_TILEMAP_RES;
+      srt_access(eevee_shadow_TilemapFinalize, rect_max_x) = 0;
+      srt_access(eevee_shadow_TilemapFinalize, rect_max_y) = 0;
+    }
+
+    barrier();
+
+    ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_shadow_TilemapFinalize, tiles_buf)[tile_index]);
+    bool lod_valid_thread = all(equal(tile_co, tile_co_lod << lod));
+    bool do_page_render = tile.is_used && tile.do_update && lod_valid_thread;
+    if (do_page_render) {
+      atomicMin(srt_access(eevee_shadow_TilemapFinalize, rect_min_x), tile_co_lod.x);
+      atomicMin(srt_access(eevee_shadow_TilemapFinalize, rect_min_y), tile_co_lod.y);
+      atomicMax(srt_access(eevee_shadow_TilemapFinalize, rect_max_x), tile_co_lod.x + 1);
+      atomicMax(srt_access(eevee_shadow_TilemapFinalize, rect_max_y), tile_co_lod.y + 1);
+    }
+
+    barrier();
+
+    int2 rect_min = int2(srt_access(eevee_shadow_TilemapFinalize, rect_min_x), srt_access(eevee_shadow_TilemapFinalize, rect_min_y));
+    int2 rect_max = int2(srt_access(eevee_shadow_TilemapFinalize, rect_max_x), srt_access(eevee_shadow_TilemapFinalize, rect_max_y));
+
+    int viewport_index = eevee_shadow_viewport_select(rect_max - rect_min);
+    int2 viewport_size = shadow_viewport_size_get(uint(viewport_index));
+#line 104
+    if (gl_LocalInvocationIndex == 0u) {
+      bool lod_has_update = rect_min.x < rect_max.x;
+      if (lod_has_update) {
+        int view_index = atomicAdd(srt_access(eevee_shadow_TilemapFinalize, statistics_buf).view_needed_count, 1);
+        if (view_index < SHADOW_VIEW_MAX) {
+          srt_access(eevee_shadow_TilemapFinalize, lod_rendered) |= 1u << lod;
+#line 112
+          srt_access(eevee_shadow_TilemapFinalize, view_infos_buf)[view_index].viewmat = tilemap_data.viewmat;
+          srt_access(eevee_shadow_TilemapFinalize, view_infos_buf)[view_index].viewinv = inverse(tilemap_data.viewmat);
+
+          float lod_res = float(SHADOW_TILEMAP_RES >> lod);
+#line 120
+          float2 view_start = (float2(rect_min) / lod_res) * 2.0f - 1.0f;
+          float2 view_end = (float2(rect_min + viewport_size) / lod_res) * 2.0f - 1.0f;
+
+          int clip_index = tilemap_data.clip_data_index;
+          float clip_far = srt_access(eevee_shadow_TilemapFinalize, tilemaps_clip_buf)[clip_index].clip_far_stored;
+          float clip_near = srt_access(eevee_shadow_TilemapFinalize, tilemaps_clip_buf)[clip_index].clip_near_stored;
+
+          view_start = view_start * tilemap_data.half_size + tilemap_data.center_offset;
+          view_end = view_end * tilemap_data.half_size + tilemap_data.center_offset;
+
+          float4x4 winmat;
+          if (tilemap_data.projection_type != SHADOW_PROJECTION_CUBEFACE) {
+            winmat = projection_orthographic(
+                view_start.x, view_end.x, view_start.y, view_end.y, clip_near, clip_far);
+          }
+          else {
+            winmat = projection_perspective(
+                view_start.x, view_end.x, view_start.y, view_end.y, clip_near, clip_far);
+          }
+
+          srt_access(eevee_shadow_TilemapFinalize, view_infos_buf)[view_index].winmat = winmat;
+          srt_access(eevee_shadow_TilemapFinalize, view_infos_buf)[view_index].wininv = inverse(winmat);
+
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].viewport_index = uint(viewport_index);
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].is_directional = !is_cubemap;
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].clip_near = clip_near;
+
+          if (is_point_light(tilemap_data.light_type)) {
+
+            srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].clip_distance_inv = M_SQRT1_3 / tilemap_data.clip_near;
+          }
+          else {
+
+            srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].clip_distance_inv = 0.0f;
+          }
+
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].tilemap_tiles_index = tilemap_data.tiles_index;
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].tilemap_lod = lod;
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].rect_min = rect_min;
+
+          srt_access(eevee_shadow_TilemapFinalize, render_view_buf)[view_index].shadow_set_membership =
+              tilemap_data.shadow_set_membership;
+        }
+      }
+    }
+  }
+#line 168
+  barrier();
+#line 174
+  int valid_tile_index = -1;
+  uint valid_lod = 0u;
+  for (int lod = lod_max; lod >= 0; lod--) {
+    int2 tile_co_lod = tile_co >> lod;
+    int tile_index = shadow_tile_offset(uint2(tile_co_lod), tilemap_data.tiles_index, lod);
+    ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_shadow_TilemapFinalize, tiles_buf)[tile_index]);
+
+    bool lod_is_rendered = ((srt_access(eevee_shadow_TilemapFinalize, lod_rendered) >> lod) & 1u) == 1u;
+    if (tile.is_used && tile.is_allocated && (!tile.do_update || lod_is_rendered)) {
+
+      valid_tile_index = tile_index;
+      valid_lod = uint(lod);
+    }
+  }
+#line 190
+  ShadowTileDataPacked tile_packed = (valid_tile_index != -1) ? srt_access(eevee_shadow_TilemapFinalize, tiles_buf)[valid_tile_index] :
+                                                                SHADOW_NO_DATA;
+  ShadowTileData tile_data = shadow_tile_unpack(tile_packed);
+  ShadowSamplingTile tile_sampling = shadow_sampling_tile_create(tile_data, valid_lod);
+  ShadowSamplingTilePacked tile_sampling_packed = shadow_sampling_tile_pack(tile_sampling);
+
+  uint2 atlas_texel = shadow_tile_coord_in_atlas(uint2(tile_co), tilemap_index);
+  imageStoreFast(srt_access(eevee_shadow_TilemapFinalize, tilemaps_img), int2(atlas_texel), uint4(tile_sampling_packed));
+
+  if (all(equal(gl_GlobalInvocationID, uint3(0)))) {
+
+    srt_access(eevee_shadow_TilemapFinalize, pages_infos_buf).page_free_count = max(srt_access(eevee_shadow_TilemapFinalize, pages_infos_buf).page_free_count, 0);
+  }
+
+#endif
+#line 203
+}
+#endif
+#endif
+#line 205
+#define access_eevee_shadow_RendermapFinalize_statistics_buf() statistics_buf
+#define access_eevee_shadow_RendermapFinalize_clear_dispatch_buf() clear_dispatch_buf
+#define access_eevee_shadow_RendermapFinalize_tile_draw_buf() tile_draw_buf
+#define access_eevee_shadow_RendermapFinalize_render_view_buf() render_view_buf
+#define access_eevee_shadow_RendermapFinalize_tiles_buf() tiles_buf
+#define access_eevee_shadow_RendermapFinalize_dst_coord_buf() dst_coord_buf
+#define access_eevee_shadow_RendermapFinalize_src_coord_buf() src_coord_buf
+#define access_eevee_shadow_RendermapFinalize_render_map_buf() render_map_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_RendermapFinalize
+CREATE_INFO_RES_PASS_eevee_shadow_RendermapFinalize
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_RendermapFinalize
+CREATE_INFO_RES_BATCH_eevee_shadow_RendermapFinalize
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_RendermapFinalize
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_RendermapFinalize
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_RendermapFinalize
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_RendermapFinalize
+#endif
+#line 205
+struct eevee_shadow_RendermapFinalize {
+#line 222
+int _pad;};
+#line 230
+#ifndef GPU_METAL
+eevee_shadow_RendermapFinalize eevee_shadow_RendermapFinalize_ctor_();
+eevee_shadow_RendermapFinalize eevee_shadow_RendermapFinalize_new_();
+#endif
+#line 205
+                                              eevee_shadow_RendermapFinalize eevee_shadow_RendermapFinalize_ctor_() {eevee_shadow_RendermapFinalize r;r._pad=0;return r;}
+#line 215
+       eevee_shadow_RendermapFinalize eevee_shadow_RendermapFinalize_new_()
+{
+  eevee_shadow_RendermapFinalize result;
+  result._pad = 0;
+  return result;
+#line 213
+}
+#line 221
+
+#if defined(CREATE_INFO_eevee_shadow_RendermapFinalize)
+#line 221
+
+#if defined(ENTRY_POINT_eevee_shadow_rendermap_finalize_main)
+#line 221
+
+void eevee_shadow_rendermap_finalize_main(
+                                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 224
+  eevee_shadow_RendermapFinalize srt = eevee_shadow_RendermapFinalize_ctor_();
+  int view_index = int(gl_GlobalInvocationID.z);
+
+  if (view_index >= srt_access(eevee_shadow_RendermapFinalize, statistics_buf).view_needed_count) {
+    return;
+  }
+
+  int2 rect_min = srt_access(eevee_shadow_RendermapFinalize, render_view_buf)[view_index].rect_min;
+  int tilemap_tiles_index = srt_access(eevee_shadow_RendermapFinalize, render_view_buf)[view_index].tilemap_tiles_index;
+  int lod = srt_access(eevee_shadow_RendermapFinalize, render_view_buf)[view_index].tilemap_lod;
+  int2 viewport_size = shadow_viewport_size_get(srt_access(eevee_shadow_RendermapFinalize, render_view_buf)[view_index].viewport_index);
+
+  int2 tile_co = int2(gl_GlobalInvocationID.xy);
+  int2 tile_co_lod = tile_co >> lod;
+  bool lod_valid_thread = all(equal(tile_co, tile_co_lod << lod));
+
+  int tile_index = shadow_tile_offset(uint2(tile_co_lod), tilemap_tiles_index, lod);
+
+  if (lod_valid_thread) {
+    ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_shadow_RendermapFinalize, tiles_buf)[tile_index]);
+
+    int2 viewport_tile_co = tile_co_lod - rect_min;
+#line 250
+    int lod_res = SHADOW_TILEMAP_RES >> lod;
+    int2 relative_tile_co = (viewport_tile_co + lod_res) % lod_res;
+    if (all(lessThan(relative_tile_co, viewport_size))) {
+      bool do_page_render = tile.is_used && tile.do_update;
+      uint page_packed = shadow_page_pack(tile.page);
+
+      int render_page_index = shadow_render_page_index_get(view_index, relative_tile_co);
+      srt_access(eevee_shadow_RendermapFinalize, render_map_buf)[render_page_index] = do_page_render ? page_packed : 0xFFFFFFFFu;
+
+      if (do_page_render) {
+
+        uint page_index = atomicAdd(srt_access(eevee_shadow_RendermapFinalize, clear_dispatch_buf).num_groups_z, 1u);
+
+        atomicAdd(srt_access(eevee_shadow_RendermapFinalize, tile_draw_buf).vertex_len, 6u);
+
+        srt_access(eevee_shadow_RendermapFinalize, dst_coord_buf)[page_index] = page_packed;
+        srt_access(eevee_shadow_RendermapFinalize, src_coord_buf)[page_index] = packUvec4x8(
+            uint4(int4(relative_tile_co.x, relative_tile_co.y, view_index, 0)));
+
+        srt_access(eevee_shadow_RendermapFinalize, tiles_buf)[tile_index] |= SHADOW_IS_RENDERED;
+
+        atomicAdd(srt_access(eevee_shadow_RendermapFinalize, statistics_buf).page_rendered_count, 1);
+      }
+    }
+  }
+
+#endif
+#line 275
+}
+#endif
+#endif
+#line 281

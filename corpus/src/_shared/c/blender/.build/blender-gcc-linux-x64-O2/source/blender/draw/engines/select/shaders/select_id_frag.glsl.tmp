@@ -1,0 +1,7 @@
+#line 1 "select_id_frag.glsl"
+ 
+#line 7
+void main()
+{
+  frag_color = floatBitsToUint(intBitsToFloat(select_id));
+}

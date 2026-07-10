@@ -1,0 +1,62 @@
+#line 1 "eevee_renderpass_clear.bsl.hh"
+ 
+#line 17
+struct eevee_RenderPassClearFragOut {
+                    float4 background;
+};
+#line 17
+                                            eevee_RenderPassClearFragOut eevee_RenderPassClearFragOut_ctor_() {eevee_RenderPassClearFragOut r;r.background=float4(0);return r;}
+#line 21
+
+#if defined(ENTRY_POINT_eevee_renderpass_clear_vert)
+#line 21
+
+void eevee_renderpass_clear_vert(                                                                  )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 24
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 25
+}
+#endif
+#line 28
+#if defined(CREATE_INFO_eevee_CryptomatteOutput) && defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_eevee_Uniform)
+#line 27
+
+#if defined(ENTRY_POINT_eevee_renderpass_clear_frag)
+#line 27
+
+void eevee_renderpass_clear_frag(
+#line 32
+                                                                         )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 33
+  eevee_CryptomatteOutput cryptomatte = eevee_CryptomatteOutput_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  eevee_RenderPassClearFragOut_background = float4(0.0f);
+#line 39
+  _clear_aovs(render_passes, uni, texel);
+  float4 clear_color = float4(0.0f, 0.0f, 0.0f, 1.0f);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.environment_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.normal_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.position_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.diffuse_light_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.specular_light_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.diffuse_color_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.specular_color_id, clear_color);
+  _store_color(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.emission_id, clear_color);
+  _store_value(render_passes, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.shadow_id, 1.0f);
+#line 52
+  imageStoreFast(srt_access(eevee_CryptomatteOutput, rp_cryptomatte_img), texel, float4(0.0f));
+
+#endif
+#line 53
+}
+#endif
+#endif
+#line 57

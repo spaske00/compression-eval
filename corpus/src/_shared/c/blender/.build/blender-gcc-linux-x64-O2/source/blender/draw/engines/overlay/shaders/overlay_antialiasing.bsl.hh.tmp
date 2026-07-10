@@ -1,0 +1,232 @@
+#line 1 "overlay_antialiasing.bsl.hh"
+ 
+#line 22
+SHADER_LIBRARY_CREATE_INFO(draw_globals)
+#line 27
+struct overlay_antialiasing_Line {
+  float2 dir;
+  float dist;
+  float dist_raw;
+#line 53
+};
+#line 56
+#ifndef GPU_METAL
+overlay_antialiasing_Line overlay_antialiasing_Line_ctor_();
+overlay_antialiasing_Line overlay_antialiasing_Line_decode(float2 data);
+bool _is_valid(const overlay_antialiasing_Line this_);
+#endif
+#line 27
+                                         overlay_antialiasing_Line overlay_antialiasing_Line_ctor_() {overlay_antialiasing_Line r;r.dir=float2(0);r.dist=0.0f;r.dist_raw=0.0f;return r;}
+#line 32
+         overlay_antialiasing_Line overlay_antialiasing_Line_decode(float2 data)
+  {
+
+    float dist = (data.y - 0.5f) * 2.5f;
+#line 38
+    float sin_theta = (data.x - 0.5f) * 2.0f;
+    float cos_theta = cos_from_sin(sin_theta);
+    float2 perp = normalize(float2(sin_theta, cos_theta));
+
+    {overlay_antialiasing_Line _tmp ;
+        _tmp.dir = perp;
+        _tmp.dist = dist;
+        _tmp.dist_raw = data.y
+    ;   return _tmp;};
+  }
+#line 49
+  bool _is_valid(const overlay_antialiasing_Line this_)
+  {
+    return this_.dist_raw != 0.0f;
+  }
+#line 55
+struct overlay_antialiasing_TexelData {
+  float4 color;
+  float depth;
+  overlay_antialiasing_Line line;
+};
+#line 55
+                                              overlay_antialiasing_TexelData overlay_antialiasing_TexelData_ctor_() {overlay_antialiasing_TexelData r;r.color=float4(0);r.depth=0.0f;r.line=overlay_antialiasing_Line_ctor_();return r;}
+#line 61
+#define access_overlay_antialiasing_Resources_draw_globals() draw_globals
+#define access_overlay_antialiasing_Resources_depth_tx() depth_tx
+#define access_overlay_antialiasing_Resources_color_tx() color_tx
+#define access_overlay_antialiasing_Resources_line_tx() line_tx
+#define access_overlay_antialiasing_Resources_do_smooth_lines() do_smooth_lines
+#ifdef CREATE_INFO_RES_PASS_overlay_antialiasing_Resources
+CREATE_INFO_RES_PASS_overlay_antialiasing_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_antialiasing_Resources
+CREATE_INFO_RES_BATCH_overlay_antialiasing_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_antialiasing_Resources
+CREATE_INFO_RES_GEOMETRY_overlay_antialiasing_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_antialiasing_Resources
+CREATE_INFO_RES_SHARED_VARS_overlay_antialiasing_Resources
+#endif
+#line 61
+struct overlay_antialiasing_Resources {
+#line 87
+int _pad;};
+#line 106
+#ifndef GPU_METAL
+overlay_antialiasing_Resources overlay_antialiasing_Resources_ctor_();
+overlay_antialiasing_TexelData _fetch_texel(overlay_antialiasing_Resources  this_, int2 texel, int2 offset);
+overlay_antialiasing_Resources overlay_antialiasing_Resources_new_();
+#endif
+#line 61
+                                              overlay_antialiasing_Resources overlay_antialiasing_Resources_ctor_() {overlay_antialiasing_Resources r;r._pad=0;return r;}
+#line 70
+
+#if defined(CREATE_INFO_overlay_antialiasing_Resources)
+#line 70
+  overlay_antialiasing_TexelData _fetch_texel(overlay_antialiasing_Resources  this_, int2 texel, int2 offset)
+  {
+    int2 texel_actual = texel + offset;
+    {overlay_antialiasing_TexelData _tmp ;
+        _tmp.color = texelFetch(srt_access(overlay_antialiasing_Resources, color_tx), texel_actual, 0);
+        _tmp.depth = texelFetch(srt_access(overlay_antialiasing_Resources, depth_tx), texel_actual, 0).r;
+        _tmp.line = overlay_antialiasing_Line_decode(texelFetch(srt_access(overlay_antialiasing_Resources, line_tx), texel_actual, 0).rg)
+    ;   return _tmp;};
+  }
+#endif
+       overlay_antialiasing_Resources overlay_antialiasing_Resources_new_()
+{
+  overlay_antialiasing_Resources result;
+  result._pad = 0;
+  return result;
+#line 78
+}
+#line 86
+float overlay_antialiasing_line_coverage(float distance_to_line, float line_kernel_size, bool do_smooth_lines)
+{
+  if (do_smooth_lines) {
+    return smoothstep(
+        LINE_SMOOTH_END, LINE_SMOOTH_START, abs(distance_to_line) - line_kernel_size);
+  }
+  return step(-0.5f, line_kernel_size - abs(distance_to_line));
+}
+#line 86
+float4 overlay_antialiasing_line_coverage(float4 distance_to_line, float line_kernel_size, bool do_smooth_lines)
+{
+  if (do_smooth_lines) {
+    return smoothstep(
+        LINE_SMOOTH_END, LINE_SMOOTH_START, abs(distance_to_line) - line_kernel_size);
+  }
+  return step(-0.5f, line_kernel_size - abs(distance_to_line));
+}
+#line 103
+float overlay_antialiasing_neighbor_dist(overlay_antialiasing_TexelData neighbor, int2 offset)
+{
+  bool is_dir_horizontal = abs(neighbor.line.dir.x) > abs(neighbor.line.dir.y);
+  bool is_ofs_horizontal = offset.x != 0;
+
+  if (!_is_valid(neighbor.line) || is_ofs_horizontal != is_dir_horizontal) {
+    return 1e10f;
+  }
+#line 113
+  return neighbor.line.dist + dot(float2(offset), -neighbor.line.dir);
+}
+#line 121
+void overlay_antialiasing_neighbor_blend(overlay_antialiasing_TexelData neighbor, _ref(overlay_antialiasing_TexelData ,target), float line_coverage)
+{
+  neighbor.color *= line_coverage;
+  if (line_coverage > 0.0f && neighbor.depth < target.depth) {
+
+    target.color = neighbor.color + target.color * (1.0f - neighbor.color.a);
+    target.depth = neighbor.depth;
+  }
+  else {
+
+    target.color = target.color + neighbor.color * (1.0f - target.color.a);
+  }
+}
+#line 136
+#if defined(ENTRY_POINT_overlay_antialiasing_vert_main)
+#line 135
+           void overlay_antialiasing_vert_main(                                                           )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 137
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 138
+}
+#endif
+struct overlay_antialiasing_FragOut {
+                    float4 color;
+};
+#line 140
+                                            overlay_antialiasing_FragOut overlay_antialiasing_FragOut_ctor_() {overlay_antialiasing_FragOut r;r.color=float4(0);return r;}
+#line 144
+
+#if defined(CREATE_INFO_overlay_antialiasing_Resources)
+#line 144
+
+#if defined(ENTRY_POINT_overlay_antialiasing_frag_main)
+#line 144
+             void overlay_antialiasing_frag_main(
+
+                                                                      )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 147
+  overlay_antialiasing_Resources srt = overlay_antialiasing_Resources_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+#line 151
+  overlay_antialiasing_TexelData center = _fetch_texel(srt, texel, int2(0));
+#line 154
+  bool original_center_has_alpha = center.color.a < 1.0f;
+#line 157
+  if (!srt_access(overlay_antialiasing_Resources, do_smooth_lines) && center.line.dist <= 1.0f) {
+    overlay_antialiasing_FragOut_color = center.color;
+    return;
+  }
+#line 163
+  overlay_antialiasing_TexelData neighbors[4] = ARRAY_T(overlay_antialiasing_TexelData) ARRAY_V( _fetch_texel(srt, texel, int2(1, 0)),
+                           _fetch_texel(srt, texel, int2(-1, 0)),
+                           _fetch_texel(srt, texel, int2(0, 1)),
+                           _fetch_texel(srt, texel, int2(0, -1)) );
+
+  float4 neighbor_dists = float4(overlay_antialiasing_neighbor_dist(neighbors[0], int2(1, 0)),
+                                 overlay_antialiasing_neighbor_dist(neighbors[1], int2(-1, 0)),
+                                 overlay_antialiasing_neighbor_dist(neighbors[2], int2(0, 1)),
+                                 overlay_antialiasing_neighbor_dist(neighbors[3], int2(0, -1)));
+#line 174
+  float line_kernel = theme.sizes.pixel * 0.5f - 0.5f;
+  float4 coverage = overlay_antialiasing_line_coverage(neighbor_dists, line_kernel, srt_access(overlay_antialiasing_Resources, do_smooth_lines));
+#line 178
+  if (_is_valid(center.line)) {
+    float coverage = overlay_antialiasing_line_coverage(center.line.dist, line_kernel, srt_access(overlay_antialiasing_Resources, do_smooth_lines));
+    center.color *= coverage;
+  }
+#line 186
+  overlay_antialiasing_neighbor_blend(neighbors[0], center, coverage.x);
+  overlay_antialiasing_neighbor_blend(neighbors[1], center, coverage.y);
+  overlay_antialiasing_neighbor_blend(neighbors[2], center, coverage.z);
+  overlay_antialiasing_neighbor_blend(neighbors[3], center, coverage.w);
+
+#if 1
+
+  if (!original_center_has_alpha && _is_valid(center.line) && line_kernel < 0.45f) {
+    float4 lines_raw = float4(neighbors[0].line.dist_raw,
+                              neighbors[1].line.dist_raw,
+                              neighbors[2].line.dist_raw,
+                              neighbors[3].line.dist_raw);
+    float blend = dot(float4(0.25f), step(1e-2f, lines_raw));
+#line 201
+    blend = clamp(blend * 2.0f - 1.0f, 0.0f, 1.0f);
+    center.color = mix(center.color, center.color / center.color.a, blend);
+  }
+#endif
+
+  overlay_antialiasing_FragOut_color = center.color;
+
+#endif
+#line 207
+}
+#endif
+#endif
+#line 212

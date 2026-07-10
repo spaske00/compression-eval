@@ -1,0 +1,44 @@
+#line 1 "overlay_common_infos.hh"
+ 
+#line 7
+#ifdef GPU_SHADER
+#endif
+#line 21
+#ifdef CREATE_INFO_RES_PASS_draw_globals
+CREATE_INFO_RES_PASS_draw_globals
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_globals
+CREATE_INFO_RES_BATCH_draw_globals
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_globals
+CREATE_INFO_RES_GEOMETRY_draw_globals
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_globals
+CREATE_INFO_RES_SHARED_VARS_draw_globals
+#endif
+#line 39
+#ifdef CREATE_INFO_RES_PASS_select_id_patch
+CREATE_INFO_RES_PASS_select_id_patch
+#endif
+#ifdef CREATE_INFO_RES_BATCH_select_id_patch
+CREATE_INFO_RES_BATCH_select_id_patch
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_select_id_patch
+CREATE_INFO_RES_GEOMETRY_select_id_patch
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_select_id_patch
+CREATE_INFO_RES_SHARED_VARS_select_id_patch
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_overlay_select
+CREATE_INFO_RES_PASS_overlay_select
+#endif
+#ifdef CREATE_INFO_RES_BATCH_overlay_select
+CREATE_INFO_RES_BATCH_overlay_select
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_overlay_select
+CREATE_INFO_RES_GEOMETRY_overlay_select
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_overlay_select
+CREATE_INFO_RES_SHARED_VARS_overlay_select
+#endif

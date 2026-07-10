@@ -1,0 +1,86 @@
+#line 1 "eevee_geom_volume.bsl.hh"
+ 
+#line 10
+VERTEX_SHADER_CREATE_INFO(eevee_nodetree)
+#line 22
+#define access_eevee_GeomVolume_draw_volume_infos() draw_volume_infos
+#define access_eevee_GeomVolume_eevee_geom_iface_info() eevee_geom_iface_info
+#ifdef CREATE_INFO_RES_PASS_eevee_GeomVolume
+CREATE_INFO_RES_PASS_eevee_GeomVolume
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_GeomVolume
+CREATE_INFO_RES_BATCH_eevee_GeomVolume
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_GeomVolume
+CREATE_INFO_RES_GEOMETRY_eevee_GeomVolume
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_GeomVolume
+CREATE_INFO_RES_SHARED_VARS_eevee_GeomVolume
+#endif
+#line 22
+struct eevee_GeomVolume {
+#line 34
+int _pad;};
+#line 37
+#ifndef GPU_METAL
+eevee_GeomVolume eevee_GeomVolume_ctor_();
+eevee_GeomVolume eevee_GeomVolume_new_();
+#endif
+#line 22
+                                eevee_GeomVolume eevee_GeomVolume_ctor_() {eevee_GeomVolume r;r._pad=0;return r;}
+#line 27
+       eevee_GeomVolume eevee_GeomVolume_new_()
+{
+  eevee_GeomVolume result;
+  result._pad = 0;
+  return result;
+#line 25
+}
+#line 28
+struct eevee_GeomVolumeIn {
+                   float3 pos;
+};
+#line 28
+                                  eevee_GeomVolumeIn eevee_GeomVolumeIn_ctor_() {eevee_GeomVolumeIn r;r.pos=float3(0);return r;}
+#line 32
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_GeomVolume) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_draw_Resource)
+#line 32
+
+#if defined(ENTRY_POINT_eevee_geom_volume)
+#line 32
+                             void eevee_geom_volume(
+#line 44
+                                     )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 46
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 45
+  eevee_PipelineConstants _0 = eevee_PipelineConstants_ctor_(); eevee_GeomVolume _1 = eevee_GeomVolume_ctor_(); eevee_Uniform _2 = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); draw_Model models = draw_Model_ctor_(); draw_Infos infos = draw_Infos_ctor_(); draw_Resource res_id = draw_Resource_ctor_();
+  const draw_ID id = _get(res_id, gpu_InstanceIndex);
+  const uint view_id = 0;
+  const uint resource_id = _resource_idT1(id);
+
+  const ViewMatrices view = _get(views, view_id);
+  const ObjectMatrices obj = _get(models, resource_id);
+#line 55
+  init_interface(id.raw_id);
+#line 58
+  ObjectInfos info = _get(infos, resource_id);
+  float3 size = safe_rcp(info.orco_mul * 2.0f);
+  float3 loc = size + (info.orco_add / -info.orco_mul);
+#line 63
+  float3 lP = loc + pos * size;
+  interface_get(eevee_geom_iface_info, interp).P = _point_object_to_world(obj, lP);
+
+  gl_Position = reverse_z_transform(_point_world_to_homogenous(view, interface_get(eevee_geom_iface_info, interp).P));
+
+#endif
+
+#endif
+#line 67
+}
+#endif
+#endif

@@ -1,0 +1,49 @@
+#line 1 "eevee_surfel.bsl.hh"
+ 
+#line 9
+#define access_SurfelData_capture_info_buf() capture_info_buf
+#define access_SurfelData_surfel_buf() surfel_buf
+#ifdef CREATE_INFO_RES_PASS_SurfelData
+CREATE_INFO_RES_PASS_SurfelData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_SurfelData
+CREATE_INFO_RES_BATCH_SurfelData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_SurfelData
+CREATE_INFO_RES_GEOMETRY_SurfelData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_SurfelData
+CREATE_INFO_RES_SHARED_VARS_SurfelData
+#endif
+#line 9
+struct SurfelData {
+#line 32
+int _pad;};
+
+#ifndef GPU_METAL
+SurfelData SurfelData_ctor_();
+bool _is_valid_surfel_link(SurfelData  this_, int a, int b);
+SurfelData SurfelData_new_();
+#endif
+#line 9
+                          SurfelData SurfelData_ctor_() {SurfelData r;r._pad=0;return r;}
+#line 17
+
+#if defined(CREATE_INFO_SurfelData)
+#line 17
+  bool _is_valid_surfel_link(SurfelData  this_, int a, int b)
+  {
+    float3 link_vector = normalize(surfel_buf[b].position - surfel_buf[a].position);
+    float link_angle_cos = dot(surfel_buf[a].normal, link_vector);
+    bool is_coplanar = abs(link_angle_cos) < 0.05f;
+    return !is_coplanar;
+  }
+#endif
+       SurfelData SurfelData_new_()
+{
+  SurfelData result;
+  result._pad = 0;
+  return result;
+#line 23
+}
+#line 25

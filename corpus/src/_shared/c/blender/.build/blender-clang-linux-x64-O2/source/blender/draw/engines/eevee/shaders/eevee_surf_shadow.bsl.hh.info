@@ -1,0 +1,25 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfShadow)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+.image(SHADOW_ATLAS_IMG_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read_write, ImageReadWriteType::uimage2DArrayAtomic, "shadow_atlas_img", Frequency::PASS)
+.storage_buf(SHADOW_RENDER_MAP_BUF_SLOT, Qualifier::read, "uint", "render_map_buf[SHADOW_RENDER_MAP_SIZE]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_shadow_infos_)
+BUILTINS(BuiltinBits::TEXTURE_ATOMIC)
+BUILTINS(BuiltinBits::FRONT_FACING)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_SurfShadow)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+GPU_SHADER_CREATE_END()
+

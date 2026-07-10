@@ -1,0 +1,838 @@
+#line 1 "eevee_lightprobe_sphere_bake.bsl.hh"
+ 
+#line 22
+#define access_eevee_lightprobe_sphere_Remap_extract_sh() extract_sh
+#define access_eevee_lightprobe_sphere_Remap_extract_sun() extract_sun
+#define access_eevee_lightprobe_sphere_Remap_do_remap_mip0() do_remap_mip0
+#define access_eevee_lightprobe_sphere_Remap_probe_coord_packed() probe_coord_packed
+#define access_eevee_lightprobe_sphere_Remap_write_coord_packed() write_coord_packed
+#define access_eevee_lightprobe_sphere_Remap_world_coord_packed() world_coord_packed
+#define access_eevee_lightprobe_sphere_Remap_cubemap_tx() cubemap_tx
+#define access_eevee_lightprobe_sphere_Remap_atlas_tx() atlas_tx
+#define access_eevee_lightprobe_sphere_Remap_atlas_img() atlas_img
+#define access_eevee_lightprobe_sphere_Remap_local_radiance() local_radiance
+#define access_eevee_lightprobe_sphere_Remap_out_sh() out_sh
+#define access_eevee_lightprobe_sphere_Remap_out_sun() out_sun
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_Remap
+CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_Remap
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_Remap
+CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_Remap
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_Remap
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_Remap
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_Remap
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_Remap
+#endif
+#line 22
+struct eevee_lightprobe_sphere_Remap {
+#line 48
+int _pad;};
+#line 51
+#ifndef GPU_METAL
+eevee_lightprobe_sphere_Remap eevee_lightprobe_sphere_Remap_ctor_();
+eevee_lightprobe_sphere_Remap eevee_lightprobe_sphere_Remap_new_();
+#endif
+#line 22
+                                             eevee_lightprobe_sphere_Remap eevee_lightprobe_sphere_Remap_ctor_() {eevee_lightprobe_sphere_Remap r;r._pad=0;return r;}
+#line 41
+       eevee_lightprobe_sphere_Remap eevee_lightprobe_sphere_Remap_new_()
+{
+  eevee_lightprobe_sphere_Remap result;
+  result._pad = 0;
+  return result;
+#line 39
+}
+#line 42
+float eevee_lightprobe_sphere_triangle_solid_angle(float3 A, float3 B, float3 C)
+{
+  return 2.0f * atan(abs(dot(A, cross(B, C))), (1.0f + dot(B, C) + dot(A, C) + dot(A, B)));
+}
+
+float eevee_lightprobe_sphere_quad_solid_angle(float3 A, float3 B, float3 C, float3 D)
+{
+  return eevee_lightprobe_sphere_triangle_solid_angle(A, B, C) + eevee_lightprobe_sphere_triangle_solid_angle(C, B, D);
+}
+
+float eevee_lightprobe_sphere_octahedral_texel_solid_angle(int2 local_texel, SphereProbePixelArea write_co)
+{
+  if (any(equal(local_texel, int2(write_co.extent - 1)))) {
+
+    return 0.0f;
+  }
+#line 72
+  int half_size = write_co.extent >> 1;
+  int padded_size = write_co.extent - 2;
+  int2 wrapped_texel;
+  wrapped_texel.x = (local_texel.x >= half_size) ? (padded_size - local_texel.x) : local_texel.x;
+  wrapped_texel.y = (local_texel.y >= half_size) ? (padded_size - local_texel.y) : local_texel.y;
+
+  float2 texel_corner_v00 = float2(wrapped_texel) + float2(-0.5f, -0.5f);
+  float2 texel_corner_v10 = float2(wrapped_texel) + float2(+0.5f, -0.5f);
+  float2 texel_corner_v01 = float2(wrapped_texel) + float2(-0.5f, +0.5f);
+  float2 texel_corner_v11 = float2(wrapped_texel) + float2(+0.5f, +0.5f);
+
+  texel_corner_v00 = clamp(texel_corner_v00, float2(0.0f), float2(half_size - 1));
+  texel_corner_v10 = clamp(texel_corner_v10, float2(0.0f), float2(half_size - 1));
+  texel_corner_v01 = clamp(texel_corner_v01, float2(0.0f), float2(half_size - 1));
+  texel_corner_v11 = clamp(texel_corner_v11, float2(0.0f), float2(half_size - 1));
+
+  float3 v00 = eevee_lightprobe_sphere_texel_to_direction(texel_corner_v00, write_co);
+  float3 v10 = eevee_lightprobe_sphere_texel_to_direction(texel_corner_v10, write_co);
+  float3 v01 = eevee_lightprobe_sphere_texel_to_direction(texel_corner_v01, write_co);
+  float3 v11 = eevee_lightprobe_sphere_texel_to_direction(texel_corner_v11, write_co);
+
+  v00 = normalize(v00);
+  v10 = normalize(v10);
+  v01 = normalize(v01);
+  v11 = normalize(v11);
+
+  float texel_clipped_solid_angle = eevee_lightprobe_sphere_quad_solid_angle(v00, v10, v01, v11);
+#line 103
+  if (wrapped_texel.x == half_size - 1) {
+    texel_clipped_solid_angle *= 2.0f;
+  }
+  if (wrapped_texel.y == half_size - 1) {
+    texel_clipped_solid_angle *= 2.0f;
+  }
+  return texel_clipped_solid_angle;
+}
+#line 114
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_Remap) && defined(CREATE_INFO_eevee_Uniform)
+#line 113
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_remap_cubemap_to_octahedral)
+#line 113
+
+void eevee_lightprobe_sphere_remap_cubemap_to_octahedral(
+#line 119
+                                                                                  )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 120
+  eevee_lightprobe_sphere_Remap srt = eevee_lightprobe_sphere_Remap_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  const uint work_group_index = gl_NumWorkGroups.x * gl_WorkGroupID.y + gl_WorkGroupID.x;
+  constexpr uint group_size = SPHERE_PROBE_REMAP_GROUP_SIZE * SPHERE_PROBE_REMAP_GROUP_SIZE;
+
+  SphereProbeUvArea world_coord = eevee_reinterpret_as_atlas_coord(srt_access(eevee_lightprobe_sphere_Remap, world_coord_packed));
+  SphereProbePixelArea write_coord = eevee_reinterpret_as_write_coord(srt_access(eevee_lightprobe_sphere_Remap, write_coord_packed));
+#line 128
+  int2 local_texel = int2(gl_GlobalInvocationID.xy);
+
+  float2 wrapped_uv;
+  float3 direction = eevee_lightprobe_sphere_texel_to_direction(float2(local_texel), write_coord, wrapped_uv);
+  float4 radiance_and_transmittance = texture(srt_access(eevee_lightprobe_sphere_Remap, cubemap_tx), direction);
+  float3 radiance = radiance_and_transmittance.xyz;
+
+  float opacity = 1.0f - radiance_and_transmittance.a;
+#line 138
+  bool is_world = all(equal(srt_access(eevee_lightprobe_sphere_Remap, probe_coord_packed), srt_access(eevee_lightprobe_sphere_Remap, world_coord_packed)));
+  if (!is_world && opacity != 1.0f) {
+    float2 biased_uv = eevee_lightprobe_sphere_miplvl_scale_bias(0.0f, world_coord, saturate(wrapped_uv));
+    float2 world_uv = biased_uv * world_coord.scale + world_coord.offset;
+    float4 world_radiance = textureLod(srt_access(eevee_lightprobe_sphere_Remap, atlas_tx), float3(world_uv, world_coord.layer), 0.0f);
+    radiance.rgb = mix(world_radiance.rgb, radiance.rgb, opacity);
+  }
+
+  float sun_threshold = srt_access(eevee_Uniform, uniform_buf).clamp.sun_threshold;
+  float3 radiance_clamped = colorspace_brightness_clamp_max(radiance, sun_threshold);
+  float3 radiance_sun = radiance - radiance_clamped;
+  radiance = radiance_clamped;
+
+  if (srt_access(eevee_lightprobe_sphere_Remap, do_remap_mip0) && !any(greaterThanEqual(local_texel, int2(write_coord.extent)))) {
+    float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+    float3 out_radiance = colorspace_brightness_clamp_max(radiance, clamp_indirect);
+
+    int3 texel = int3(local_texel + write_coord.offset, write_coord.layer);
+    imageStore(srt_access(eevee_lightprobe_sphere_Remap, atlas_img), texel, float4(out_radiance, 1.0f));
+  }
+
+  float sample_weight = eevee_lightprobe_sphere_octahedral_texel_solid_angle(local_texel, write_coord);
+
+  if (srt_access(eevee_lightprobe_sphere_Remap, extract_sun)) {
+
+    srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] = radiance_sun.xyzz * sample_weight;
+#line 172
+{
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (0 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (1 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (2 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (3 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (4 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (5 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (6 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (7 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (8 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 170
+                                             {
+      barrier();
+      uint stride = group_size >> (9 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 176
+    }
+    barrier();
+
+    if (gl_LocalInvocationIndex == 0u) {
+      srt_access(eevee_lightprobe_sphere_Remap, out_sun)[work_group_index].radiance = srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[0].xyz;
+    }
+    barrier();
+#line 187
+    srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] = float4(normalize(direction), 1.0f) * sample_weight *
+                                   length(radiance_sun.xyz);
+#line 197
+{
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (0 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (1 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (2 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (3 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (4 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (5 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (6 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (7 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (8 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 195
+                                             {
+      barrier();
+      uint stride = group_size >> (9 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 201
+    }
+    barrier();
+
+    if (gl_LocalInvocationIndex == 0u) {
+      srt_access(eevee_lightprobe_sphere_Remap, out_sun)[work_group_index].direction = srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[0];
+    }
+    barrier();
+  }
+
+  if (srt_access(eevee_lightprobe_sphere_Remap, extract_sh)) {
+
+    srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] = radiance.xyzz * sample_weight;
+#line 221
+{
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (0 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (1 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (2 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (3 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (4 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (5 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (6 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (7 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (8 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 219
+                                             {
+      barrier();
+      uint stride = group_size >> (9 + 1u);
+      if (gl_LocalInvocationIndex < stride) {
+        srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[gl_LocalInvocationIndex + stride];
+      }
+    }
+#line 225
+    }
+    barrier();
+
+    if (gl_LocalInvocationIndex == 0u) {
+#line 234
+      int2 max_group_texel = local_texel + int2(SPHERE_PROBE_REMAP_GROUP_SIZE);
+
+      float3 min_direction = normalize(direction);
+      float3 max_direction = normalize(eevee_lightprobe_sphere_texel_to_direction(float2(max_group_texel), write_coord));
+      float3 L = normalize(min_direction + max_direction);
+
+      SphericalHarmonicL1Tfloat4 sh = SphericalHarmonicL1Tfloat4_ctor_();
+      _encode_signal_sample(sh, L, srt_access(eevee_lightprobe_sphere_Remap, local_radiance)[0]);
+
+      srt_access(eevee_lightprobe_sphere_Remap, out_sh)[work_group_index].L0_M0 = sh.L0.M0;
+      srt_access(eevee_lightprobe_sphere_Remap, out_sh)[work_group_index].L1_Mn1 = sh.L1.Mn1;
+      srt_access(eevee_lightprobe_sphere_Remap, out_sh)[work_group_index].L1_M0 = sh.L1.M0;
+      srt_access(eevee_lightprobe_sphere_Remap, out_sh)[work_group_index].L1_Mp1 = sh.L1.Mp1;
+    }
+  }
+
+#endif
+#line 249
+}
+#endif
+#endif
+#line 256
+float eevee_lightprobe_sphere_roughness_from_relative_mip(float prev_mip_roughness, float curr_mip_roughness)
+{
+#ifdef ALWAYS_SAMPLE_CUBEMAP
+
+  return curr_mip_roughness;
+#else
+
+  constexpr float exponent = 3.0f;
+
+  float m_prev = pow(prev_mip_roughness, exponent);
+  float m_curr = pow(curr_mip_roughness, exponent);
+#line 270
+  float m_target = m_curr - m_prev;
+
+  return pow(m_target, 1.0f / exponent);
+#endif
+}
+
+float eevee_lightprobe_sphere_cone_cosine_from_roughness(float linear_roughness)
+{
+
+  float m = square(linear_roughness);
+
+  float cutoff_value = mix(0.01f, 0.14f, m);
+
+  float half_angle_cos = 1.0f + (log(cutoff_value) * square(m)) / 2.0f;
+  float half_angle_sin = safe_sqrt(1.0f - square(half_angle_cos));
+
+  return square(half_angle_cos) - square(half_angle_sin);
+}
+
+int eevee_lightprobe_sphere_sample_count_get()
+{
+#line 294
+  return 196;
+}
+
+float eevee_lightprobe_sphere_sample_weight(float3 out_direction, float3 in_direction, float linear_roughness)
+{
+  out_direction = normalize(out_direction);
+  in_direction = normalize(in_direction);
+#line 303
+  float m = square(linear_roughness);
+#line 308
+  float3 N = out_direction;
+  float3 H = normalize(out_direction + in_direction);
+  float NH = saturate(dot(N, H));
+#line 314
+  return exp(2.0f * (NH - 1.0f) / square(m));
+}
+
+float3x3 eevee_lightprobe_sphere_tangent_basis(float3 N)
+{
+
+  return from_up_axis(N);
+}
+
+#define access_eevee_lightprobe_sphere_Convolve_probe_coord_packed() probe_coord_packed
+#define access_eevee_lightprobe_sphere_Convolve_write_coord_packed() write_coord_packed
+#define access_eevee_lightprobe_sphere_Convolve_read_coord_packed() read_coord_packed
+#define access_eevee_lightprobe_sphere_Convolve_read_lod() read_lod
+#define access_eevee_lightprobe_sphere_Convolve_cubemap_tx() cubemap_tx
+#define access_eevee_lightprobe_sphere_Convolve_in_atlas_mip_tx() in_atlas_mip_tx
+#define access_eevee_lightprobe_sphere_Convolve_out_atlas_mip_img() out_atlas_mip_img
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_Convolve
+CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_Convolve
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_Convolve
+CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_Convolve
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_Convolve
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_Convolve
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_Convolve
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_Convolve
+#endif
+#line 323
+struct eevee_lightprobe_sphere_Convolve {
+#line 339
+int _pad;};
+#line 343
+#ifndef GPU_METAL
+eevee_lightprobe_sphere_Convolve eevee_lightprobe_sphere_Convolve_ctor_();
+eevee_lightprobe_sphere_Convolve eevee_lightprobe_sphere_Convolve_new_();
+#endif
+#line 323
+                                                eevee_lightprobe_sphere_Convolve eevee_lightprobe_sphere_Convolve_ctor_() {eevee_lightprobe_sphere_Convolve r;r._pad=0;return r;}
+#line 332
+       eevee_lightprobe_sphere_Convolve eevee_lightprobe_sphere_Convolve_new_()
+{
+  eevee_lightprobe_sphere_Convolve result;
+  result._pad = 0;
+  return result;
+#line 330
+}
+#line 334
+
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_Convolve)
+#line 334
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_mip_convolve)
+#line 334
+
+void eevee_lightprobe_sphere_mip_convolve(                                                                                     )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 336
+  eevee_lightprobe_sphere_Convolve srt = eevee_lightprobe_sphere_Convolve_ctor_();
+  SphereProbeUvArea sample_coord = eevee_reinterpret_as_atlas_coord(srt_access(eevee_lightprobe_sphere_Convolve, probe_coord_packed));
+  SphereProbePixelArea out_texel_area = eevee_reinterpret_as_write_coord(srt_access(eevee_lightprobe_sphere_Convolve, write_coord_packed));
+#line 341
+  int2 out_local_texel = int2(gl_GlobalInvocationID.xy);
+#line 344
+  if (any(greaterThanEqual(out_local_texel, int2(out_texel_area.extent)))) {
+    return;
+  }
+#line 349
+  float prev_mip_roughness = eevee_lightprobe_sphere_lod_to_roughness(float(srt_access(eevee_lightprobe_sphere_Convolve, read_lod)));
+  float curr_mip_roughness = eevee_lightprobe_sphere_lod_to_roughness(float(srt_access(eevee_lightprobe_sphere_Convolve, read_lod) + 1));
+#line 354
+  float mip_roughness = eevee_lightprobe_sphere_roughness_from_relative_mip(prev_mip_roughness, curr_mip_roughness);
+
+  float mip_roughness_clamped = max(mip_roughness, BSDF_ROUGHNESS_THRESHOLD);
+  float cone_cos = eevee_lightprobe_sphere_cone_cosine_from_roughness(mip_roughness_clamped);
+
+  float3 out_direction = eevee_lightprobe_sphere_texel_to_direction(float2(out_local_texel), out_texel_area);
+  out_direction = normalize(out_direction);
+
+  float3x3 basis = eevee_lightprobe_sphere_tangent_basis(out_direction);
+
+  int2 out_texel = out_texel_area.offset + out_local_texel;
+
+  float weight_accum = 0.0f;
+  float4 radiance_accum = float4(0.0f);
+
+  int sample_count = eevee_lightprobe_sphere_sample_count_get();
+  for (int i = 0; i < sample_count; i++) {
+    float2 rand = hammersley_2d(i, sample_count);
+    float3 in_direction = basis * sample_uniform_cone(rand, cone_cos);
+
+#ifndef ALWAYS_SAMPLE_CUBEMAP
+    float2 in_uv = eevee_lightprobe_sphere_direction_to_uv(in_direction, float(srt_access(eevee_lightprobe_sphere_Convolve, read_lod)), sample_coord);
+    float4 radiance = texture(srt_access(eevee_lightprobe_sphere_Convolve, in_atlas_mip_tx), float3(in_uv, sample_coord.layer));
+#else
+    float4 radiance = texture(cubemap_tx, in_direction);
+#endif
+
+    float weight = eevee_lightprobe_sphere_sample_weight(out_direction, in_direction, mip_roughness_clamped);
+    radiance_accum += radiance * weight;
+    weight_accum += weight;
+  }
+  float4 out_radiance = radiance_accum * safe_rcp(weight_accum);
+
+#ifdef USE_PIXEL_CHECKERBOARD
+  int2 a = out_texel % 2;
+  out_radiance = float4(a.x == a.y);
+#endif
+
+  imageStore(srt_access(eevee_lightprobe_sphere_Convolve, out_atlas_mip_img), int3(out_texel, out_texel_area.layer), out_radiance);
+
+#endif
+#line 393
+}
+#endif
+#endif
+#line 395
+#define access_eevee_lightprobe_sphere_IrradianceSum_probe_remap_dispatch_size() probe_remap_dispatch_size
+#define access_eevee_lightprobe_sphere_IrradianceSum_local_sh_coefs() local_sh_coefs
+#define access_eevee_lightprobe_sphere_IrradianceSum_out_sh() out_sh
+#define access_eevee_lightprobe_sphere_IrradianceSum_in_sh() in_sh
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_IrradianceSum
+CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_IrradianceSum
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_IrradianceSum
+CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_IrradianceSum
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_IrradianceSum
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_IrradianceSum
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_IrradianceSum
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_IrradianceSum
+#endif
+#line 395
+struct eevee_lightprobe_sphere_IrradianceSum {
+#line 410
+int _pad;};
+#line 413
+#ifndef GPU_METAL
+eevee_lightprobe_sphere_IrradianceSum eevee_lightprobe_sphere_IrradianceSum_ctor_();
+eevee_lightprobe_sphere_IrradianceSum eevee_lightprobe_sphere_IrradianceSum_new_();
+#endif
+#line 395
+                                                     eevee_lightprobe_sphere_IrradianceSum eevee_lightprobe_sphere_IrradianceSum_ctor_() {eevee_lightprobe_sphere_IrradianceSum r;r._pad=0;return r;}
+#line 403
+       eevee_lightprobe_sphere_IrradianceSum eevee_lightprobe_sphere_IrradianceSum_new_()
+{
+  eevee_lightprobe_sphere_IrradianceSum result;
+  result._pad = 0;
+  return result;
+#line 401
+}
+#line 404
+
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_IrradianceSum)
+#line 404
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_irradiance_sum)
+#line 404
+
+void eevee_lightprobe_sphere_irradiance_sum(
+                                                                     )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 407
+  eevee_lightprobe_sphere_IrradianceSum srt = eevee_lightprobe_sphere_IrradianceSum_ctor_();
+  constexpr uint group_size = SPHERE_PROBE_SH_GROUP_SIZE;
+
+  SphericalHarmonicL1Tfloat4 sh;
+  sh.L0.M0 = float4(0.0f);
+  sh.L1.Mn1 = float4(0.0f);
+  sh.L1.M0 = float4(0.0f);
+  sh.L1.Mp1 = float4(0.0f);
+#line 417
+  uint valid_data_len = uint(srt_access(eevee_lightprobe_sphere_IrradianceSum, probe_remap_dispatch_size).x * srt_access(eevee_lightprobe_sphere_IrradianceSum, probe_remap_dispatch_size).y);
+  constexpr uint iter_count = uint(SPHERE_PROBE_MAX_HARMONIC) / group_size;
+  for (uint i = 0; i < iter_count; i++) {
+    uint index = SPHERE_PROBE_SH_GROUP_SIZE * i + gl_LocalInvocationIndex;
+    if (index >= valid_data_len) {
+      break;
+    }
+    SphericalHarmonicL1Tfloat4 sh_sample;
+    sh_sample.L0.M0 = srt_access(eevee_lightprobe_sphere_IrradianceSum, in_sh)[index].L0_M0;
+    sh_sample.L1.Mn1 = srt_access(eevee_lightprobe_sphere_IrradianceSum, in_sh)[index].L1_Mn1;
+    sh_sample.L1.M0 = srt_access(eevee_lightprobe_sphere_IrradianceSum, in_sh)[index].L1_M0;
+    sh_sample.L1.Mp1 = srt_access(eevee_lightprobe_sphere_IrradianceSum, in_sh)[index].L1_Mp1;
+    sh = spherical_harmonics_add(sh, sh_sample);
+  }
+#line 433
+  srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[gl_LocalInvocationIndex][0] = sh.L0.M0;
+  srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[gl_LocalInvocationIndex][1] = sh.L1.Mn1;
+  srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[gl_LocalInvocationIndex][2] = sh.L1.M0;
+  srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[gl_LocalInvocationIndex][3] = sh.L1.Mp1;
+#line 439
+  uint stride = group_size / 2;
+  for (int i = 0; i < 10; i++) {
+    barrier();
+    if (gl_LocalInvocationIndex < stride) {
+      for (int i = 0; i < 4; i++) {
+        srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[gl_LocalInvocationIndex][i] += srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[gl_LocalInvocationIndex + stride][i];
+      }
+    }
+    stride /= 2;
+  }
+
+  barrier();
+  if (gl_LocalInvocationIndex == 0u) {
+    srt_access(eevee_lightprobe_sphere_IrradianceSum, out_sh).L0_M0 = srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[0][0];
+    srt_access(eevee_lightprobe_sphere_IrradianceSum, out_sh).L1_Mn1 = srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[0][1];
+    srt_access(eevee_lightprobe_sphere_IrradianceSum, out_sh).L1_M0 = srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[0][2];
+    srt_access(eevee_lightprobe_sphere_IrradianceSum, out_sh).L1_Mp1 = srt_access(eevee_lightprobe_sphere_IrradianceSum, local_sh_coefs)[0][3];
+  }
+
+#endif
+#line 457
+}
+#endif
+#endif
+#line 459
+#define access_eevee_lightprobe_sphere_SunExtraction_sun_id() sun_id
+#define access_eevee_lightprobe_sphere_SunExtraction_probe_remap_dispatch_size() probe_remap_dispatch_size
+#define access_eevee_lightprobe_sphere_SunExtraction_local_radiance() local_radiance
+#define access_eevee_lightprobe_sphere_SunExtraction_local_direction() local_direction
+#define access_eevee_lightprobe_sphere_SunExtraction_in_sun() in_sun
+#define access_eevee_lightprobe_sphere_SunExtraction_sunlight_buf() sunlight_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_SunExtraction
+CREATE_INFO_RES_PASS_eevee_lightprobe_sphere_SunExtraction
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_SunExtraction
+CREATE_INFO_RES_BATCH_eevee_lightprobe_sphere_SunExtraction
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_SunExtraction
+CREATE_INFO_RES_GEOMETRY_eevee_lightprobe_sphere_SunExtraction
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_SunExtraction
+CREATE_INFO_RES_SHARED_VARS_eevee_lightprobe_sphere_SunExtraction
+#endif
+#line 459
+struct eevee_lightprobe_sphere_SunExtraction {
+#line 475
+int _pad;};
+#line 478
+#ifndef GPU_METAL
+eevee_lightprobe_sphere_SunExtraction eevee_lightprobe_sphere_SunExtraction_ctor_();
+eevee_lightprobe_sphere_SunExtraction eevee_lightprobe_sphere_SunExtraction_new_();
+#endif
+#line 459
+                                                     eevee_lightprobe_sphere_SunExtraction eevee_lightprobe_sphere_SunExtraction_ctor_() {eevee_lightprobe_sphere_SunExtraction r;r._pad=0;return r;}
+#line 468
+       eevee_lightprobe_sphere_SunExtraction eevee_lightprobe_sphere_SunExtraction_new_()
+{
+  eevee_lightprobe_sphere_SunExtraction result;
+  result._pad = 0;
+  return result;
+#line 466
+}
+#line 469
+
+#if defined(CREATE_INFO_eevee_lightprobe_sphere_SunExtraction)
+#line 469
+
+#if defined(ENTRY_POINT_eevee_lightprobe_sphere_sun_extraction)
+#line 469
+
+void eevee_lightprobe_sphere_sun_extraction(
+                                                                     )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 472
+  eevee_lightprobe_sphere_SunExtraction srt = eevee_lightprobe_sphere_SunExtraction_ctor_();
+  constexpr uint group_size = SPHERE_PROBE_SH_GROUP_SIZE;
+
+  SphereProbeSunLight sun;
+  sun.radiance = float3(0.0f);
+  sun.direction = float4(0.0f);
+#line 480
+  uint valid_data_len = uint(srt_access(eevee_lightprobe_sphere_SunExtraction, probe_remap_dispatch_size).x * srt_access(eevee_lightprobe_sphere_SunExtraction, probe_remap_dispatch_size).y);
+  constexpr uint iter_count = uint(SPHERE_PROBE_MAX_HARMONIC) / group_size;
+  for (uint i = 0; i < iter_count; i++) {
+    uint index = SPHERE_PROBE_SH_GROUP_SIZE * i + gl_LocalInvocationIndex;
+    if (index >= valid_data_len) {
+      break;
+    }
+    sun.radiance += srt_access(eevee_lightprobe_sphere_SunExtraction, in_sun)[index].radiance;
+    sun.direction += srt_access(eevee_lightprobe_sphere_SunExtraction, in_sun)[index].direction;
+  }
+#line 492
+  srt_access(eevee_lightprobe_sphere_SunExtraction, local_radiance)[gl_LocalInvocationIndex] = sun.radiance;
+  srt_access(eevee_lightprobe_sphere_SunExtraction, local_direction)[gl_LocalInvocationIndex] = sun.direction;
+#line 496
+  uint stride = group_size / 2;
+  for (int i = 0; i < 10; i++) {
+    barrier();
+    if (gl_LocalInvocationIndex < stride) {
+      srt_access(eevee_lightprobe_sphere_SunExtraction, local_radiance)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_SunExtraction, local_radiance)[gl_LocalInvocationIndex + stride];
+      srt_access(eevee_lightprobe_sphere_SunExtraction, local_direction)[gl_LocalInvocationIndex] += srt_access(eevee_lightprobe_sphere_SunExtraction, local_direction)[gl_LocalInvocationIndex + stride];
+    }
+    stride /= 2;
+  }
+
+  barrier();
+  if (gl_LocalInvocationIndex == 0u) {
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].color = srt_access(eevee_lightprobe_sphere_SunExtraction, local_radiance)[0];
+#line 512
+    float len;
+    float3 direction = safe_normalize_and_get_length(
+        srt_access(eevee_lightprobe_sphere_SunExtraction, local_direction)[0].xyz / srt_access(eevee_lightprobe_sphere_SunExtraction, local_direction)[0].w, len);
+
+    float3x3 tx = transpose(from_up_axis(direction));
+
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].object_to_world.x = float4(tx[0], 0.0f);
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].object_to_world.y = float4(tx[1], 0.0f);
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].object_to_world.z = float4(tx[2], 0.0f);
+#line 523
+    float sun_angle_cos = 2.0f * len - 1.0f;
+
+    float sun_angle_tan = sqrt(-1.0f + 1.0f / square(sun_angle_cos));
+
+    float sun_radius = clamp(sun_angle_tan, 0.001f, 20.0f);
+#line 530
+    float shape_power = M_1_PI * (1.0f + 1.0f / square(sun_radius));
+    float point_power = 1.0f;
+
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].power[LIGHT_DIFFUSE] = shape_power;
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].power[LIGHT_SPECULAR] = shape_power;
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].power[LIGHT_TRANSMISSION] = shape_power;
+    srt_access(eevee_lightprobe_sphere_SunExtraction, sunlight_buf)[srt_access(eevee_lightprobe_sphere_SunExtraction, sun_id)].power[LIGHT_VOLUME] = point_power;
+#line 539
+  }
+
+#endif
+#line 540
+}
+#endif
+#endif
+#line 549

@@ -1,0 +1,12 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(SurfelData)
+.storage_buf(CAPTURE_BUF_SLOT, Qualifier::read, "CaptureInfoData", "capture_info_buf", Frequency::PASS)
+.storage_buf(SURFEL_BUF_SLOT, Qualifier::read_write, "Surfel", "surfel_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

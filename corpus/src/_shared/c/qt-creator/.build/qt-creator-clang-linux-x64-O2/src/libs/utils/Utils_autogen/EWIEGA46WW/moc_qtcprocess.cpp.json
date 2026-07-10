@@ -1,0 +1,80 @@
+{
+    "classes": [
+        {
+            "className": "Process",
+            "lineNumber": 32,
+            "object": true,
+            "qualifiedClassName": "Utils::Process",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "starting",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "started",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "done",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "readyReadStandardOutput",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "readyReadStandardError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "text",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "textOnStandardOutput",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "text",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "textOnStandardError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "name": "stoppingForcefully",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qtcprocess.h",
+    "outputRevision": 68
+}

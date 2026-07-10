@@ -1,0 +1,84 @@
+#line 1 "eevee_lightprobe_plane.bsl.hh"
+ 
+#line 13
+float3 eevee_lightprobe_plane_parallax(PlanarProbeData planar, float3 P, float3 N, float3 V)
+{
+#line 18
+  float3 proj_ref = reflect(-V, N) * planar.parallax_distance;
+
+  return P + reflect(proj_ref, planar.normal);
+}
+#line 27
+#define access_eevee_LightprobePlaneRenderData_planar_radiance_tx() planar_radiance_tx
+#define access_eevee_LightprobePlaneRenderData_planar_depth_tx() planar_depth_tx
+#define access_eevee_LightprobePlaneRenderData_probe_planar_buf() probe_planar_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_LightprobePlaneRenderData
+CREATE_INFO_RES_PASS_eevee_LightprobePlaneRenderData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_LightprobePlaneRenderData
+CREATE_INFO_RES_BATCH_eevee_LightprobePlaneRenderData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_LightprobePlaneRenderData
+CREATE_INFO_RES_GEOMETRY_eevee_LightprobePlaneRenderData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_LightprobePlaneRenderData
+CREATE_INFO_RES_SHARED_VARS_eevee_LightprobePlaneRenderData
+#endif
+#line 27
+struct eevee_LightprobePlaneRenderData {
+#line 74
+int _pad;};
+#line 78
+#ifndef GPU_METAL
+eevee_LightprobePlaneRenderData eevee_LightprobePlaneRenderData_ctor_();
+int _select_probe(eevee_LightprobePlaneRenderData  this_, float3 P, float3 N);
+float eevee_LightprobePlaneRenderData_distance_score(PlanarProbeData planar, float3 P);
+float eevee_LightprobePlaneRenderData_probe_score(PlanarProbeData planar, float3 P, float3 N);
+eevee_LightprobePlaneRenderData eevee_LightprobePlaneRenderData_new_();
+#endif
+#line 27
+                                               eevee_LightprobePlaneRenderData eevee_LightprobePlaneRenderData_ctor_() {eevee_LightprobePlaneRenderData r;r._pad=0;return r;}
+#line 35
+
+#if defined(CREATE_INFO_eevee_LightprobePlaneRenderData)
+#line 35
+  int _select_probe(eevee_LightprobePlaneRenderData  this_, float3 P, float3 N)
+  {
+    float best_score = 0.0;
+    int best_index = -1;
+
+    for (int index = 0; index < PLANAR_PROBE_MAX; index++) {
+      if (probe_planar_buf[index].layer_id == -1) {
+
+        break;
+      }
+      float score = eevee_LightprobePlaneRenderData_probe_score(probe_planar_buf[index], P, N);
+      if (score > best_score) {
+        best_score = score;
+        best_index = index;
+      }
+    }
+    return best_index;
+  }
+#endif
+#line 55
+         float eevee_LightprobePlaneRenderData_distance_score(PlanarProbeData planar, float3 P)
+  {
+    float3 lP = float4(P, 1.0f) * planar.world_to_object_transposed;
+
+    return float(all(lessThan(abs(lP), float3(1.0f))));
+  }
+#line 62
+         float eevee_LightprobePlaneRenderData_probe_score(PlanarProbeData planar, float3 P, float3 N)
+  {
+    return saturate(dot(N, planar.normal)) * eevee_LightprobePlaneRenderData_distance_score(planar, P);
+  }
+#line 67
+       eevee_LightprobePlaneRenderData eevee_LightprobePlaneRenderData_new_()
+{
+  eevee_LightprobePlaneRenderData result;
+  result._pad = 0;
+  return result;
+#line 65
+}
+#line 69

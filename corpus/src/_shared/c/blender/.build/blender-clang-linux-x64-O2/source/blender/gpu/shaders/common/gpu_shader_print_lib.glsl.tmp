@@ -1,0 +1,33 @@
+#line 1 "gpu_shader_print_lib.glsl"
+ 
+#line 9
+SHADER_LIBRARY_CREATE_INFO(gpu_print)
+
+uint print_data(uint offset, uint data)
+{
+  if (offset < GPU_SHADER_PRINTF_MAX_CAPACITY) {
+    gpu_print_buf[offset] = data;
+  }
+  return offset + 1u;
+}
+
+uint print_data(uint offset, string_t data)
+{
+  return print_data(offset, as_uint(data));
+}
+
+uint print_data(uint offset, int data)
+{
+  return print_data(offset, uint(data));
+}
+
+uint print_data(uint offset, float data)
+{
+  return print_data(offset, floatBitsToUint(data));
+}
+
+uint print_start(const uint data_len)
+{
+
+  return atomicAdd(gpu_print_buf[0], data_len) + 1u;
+}

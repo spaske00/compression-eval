@@ -1,0 +1,12 @@
+#pragma once
+
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(OCIO_Processor)
+LOCAL_GROUP_SIZE(16, 16)
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,67 @@
+#line 1 "compositor_glare_bloom_downsample.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_glare_bloom_downsample_shared)
+#line 15
+#if defined(KARIS_AVERAGE)
+#line 22
+float4 karis_brightness_weighted_sum(float4 color1, float4 color2, float4 color3, float4 color4)
+{
+  float4 brightness = float4(
+      reduce_max(color1), reduce_max(color2), reduce_max(color3), reduce_max(color4));
+  float4 weights = 1.0f / (brightness + 1.0f);
+  return weighted_sum(color1, color2, color3, color4, weights);
+}
+#endif
+
+void main()
+{
+#line 35
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 39
+  float2 coordinates = (float2(texel) + float2(0.5f)) / float2(imageSize(output_img));
+#line 43
+  float2 pixel_size = 1.0f / float2(texture_size(input_tx));
+#line 56
+  float4 center = texture(input_tx, coordinates);
+  float4 upper_left_near = texture(input_tx, coordinates + pixel_size * float2(-1.0f, 1.0f));
+  float4 upper_right_near = texture(input_tx, coordinates + pixel_size * float2(1.0f, 1.0f));
+  float4 lower_left_near = texture(input_tx, coordinates + pixel_size * float2(-1.0f, -1.0f));
+  float4 lower_right_near = texture(input_tx, coordinates + pixel_size * float2(1.0f, -1.0f));
+  float4 left_far = texture(input_tx, coordinates + pixel_size * float2(-2.0f, 0.0f));
+  float4 right_far = texture(input_tx, coordinates + pixel_size * float2(2.0f, 0.0f));
+  float4 upper_far = texture(input_tx, coordinates + pixel_size * float2(0.0f, 2.0f));
+  float4 lower_far = texture(input_tx, coordinates + pixel_size * float2(0.0f, -2.0f));
+  float4 upper_left_far = texture(input_tx, coordinates + pixel_size * float2(-2.0f, 2.0f));
+  float4 upper_right_far = texture(input_tx, coordinates + pixel_size * float2(2.0f, 2.0f));
+  float4 lower_left_far = texture(input_tx, coordinates + pixel_size * float2(-2.0f, -2.0f));
+  float4 lower_right_far = texture(input_tx, coordinates + pixel_size * float2(2.0f, -2.0f));
+
+#if defined(SIMPLE_AVERAGE)
+#line 79
+  float4 result = (4.0f / 32.0f) * center +
+                  (4.0f / 32.0f) *
+                      (upper_left_near + upper_right_near + lower_left_near + lower_right_near) +
+                  (2.0f / 32.0f) * (left_far + right_far + upper_far + lower_far) +
+                  (1.0f / 32.0f) *
+                      (upper_left_far + upper_right_far + lower_left_far + lower_right_far);
+#elif defined(KARIS_AVERAGE)
+#line 92
+  float4 center_weighted_sum = karis_brightness_weighted_sum(
+      upper_left_near, upper_right_near, lower_right_near, lower_left_near);
+  float4 upper_left_weighted_sum = karis_brightness_weighted_sum(
+      upper_left_far, upper_far, center, left_far);
+  float4 upper_right_weighted_sum = karis_brightness_weighted_sum(
+      upper_far, upper_right_far, right_far, center);
+  float4 lower_right_weighted_sum = karis_brightness_weighted_sum(
+      center, right_far, lower_right_far, lower_far);
+  float4 lower_left_weighted_sum = karis_brightness_weighted_sum(
+      left_far, center, lower_far, lower_left_far);
+#line 108
+  float4 result = (4.0f / 8.0f) * center_weighted_sum +
+                  (1.0f / 8.0f) * (upper_left_weighted_sum + upper_right_weighted_sum +
+                                   lower_left_weighted_sum + lower_right_weighted_sum);
+#endif
+
+  imageStore(output_img, texel, result);
+}

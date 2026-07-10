@@ -1,0 +1,121 @@
+#line 1 "eevee_renderpass.bsl.hh"
+ 
+#line 13
+#define access_eevee_RenderPassOutput_rp_color_img() rp_color_img
+#define access_eevee_RenderPassOutput_rp_value_img() rp_value_img
+#ifdef CREATE_INFO_RES_PASS_eevee_RenderPassOutput
+CREATE_INFO_RES_PASS_eevee_RenderPassOutput
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_RenderPassOutput
+CREATE_INFO_RES_BATCH_eevee_RenderPassOutput
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_RenderPassOutput
+CREATE_INFO_RES_GEOMETRY_eevee_RenderPassOutput
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_RenderPassOutput
+CREATE_INFO_RES_SHARED_VARS_eevee_RenderPassOutput
+#endif
+#line 13
+struct eevee_RenderPassOutput {
+#line 48
+int _pad;};
+#line 53
+#ifndef GPU_METAL
+eevee_RenderPassOutput eevee_RenderPassOutput_ctor_();
+void _store_color(eevee_RenderPassOutput  this_, int2 texel, int id, float4 color);
+void _store_value(eevee_RenderPassOutput  this_, int2 texel, int id, float value);
+void _clear_aovs(eevee_RenderPassOutput  this_, const eevee_Uniform  uni, int2 texel);
+eevee_RenderPassOutput eevee_RenderPassOutput_new_();
+#endif
+#line 13
+                                      eevee_RenderPassOutput eevee_RenderPassOutput_ctor_() {eevee_RenderPassOutput r;r._pad=0;return r;}
+#line 17
+
+#if defined(CREATE_INFO_eevee_RenderPassOutput)
+#line 17
+  void _store_color(eevee_RenderPassOutput  this_, int2 texel, int id, float4 color)
+  {
+    if (id >= 0) {
+      imageStoreFast(srt_access(eevee_RenderPassOutput, rp_color_img), int3(texel, id), color);
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_RenderPassOutput)
+#line 24
+  void _store_value(eevee_RenderPassOutput  this_, int2 texel, int id, float value)
+  {
+    if (id >= 0) {
+      imageStoreFast(srt_access(eevee_RenderPassOutput, rp_value_img), int3(texel, id), float4(value));
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_eevee_Uniform)
+#line 31
+  void _clear_aovs(eevee_RenderPassOutput  this_, const eevee_Uniform  uni, int2 texel)
+  {
+    for (int i = 0; i < AOV_MAX && i < srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.color_len; i++) {
+      _store_color(this_, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.color_len + i, float4(0));
+    }
+    for (int i = 0; i < AOV_MAX && i < srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.value_len; i++) {
+      _store_value(this_, texel, srt_access(eevee_Uniform, uniform_buf).render_pass.value_len + i, 0.0f);
+    }
+  }
+#endif
+       eevee_RenderPassOutput eevee_RenderPassOutput_new_()
+{
+  eevee_RenderPassOutput result;
+  result._pad = 0;
+  return result;
+#line 39
+}
+#line 44
+void output_aov(
+    int2 texel, float4 color, float value, uint hash, float holdout, eObjectInfoFlag ob_flag)
+{
+
+#if defined(CREATE_INFO_eevee_RenderPassOutput)
+#line 47
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 50
+  uint total_len = srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.color_len +
+                   srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.value_len;
+#line 54
+  uint hash_index;
+  for (hash_index = 0u; hash_index < AOV_MAX && hash_index < total_len; hash_index += 4u) {
+    bool4 cmp_mask = equal(srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.hash[hash_index >> 2u], uint4(hash));
+    if (any(cmp_mask)) {
+
+      hash_index += (cmp_mask[0] ? 0u : (cmp_mask[1] ? 1u : (cmp_mask[2] ? 2u : 3u)));
+      break;
+    }
+  }
+#line 65
+  if (hash_index < total_len) {
+
+    if (flag_test(ob_flag, OBJECT_HOLDOUT)) {
+      holdout = 1.0f;
+    }
+    holdout = saturate(holdout);
+#line 73
+    bool is_value = hash_index >= uint(srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.color_len);
+    uint aov_index = hash_index - (is_value ? srt_access(eevee_Uniform, uniform_buf).render_pass.aovs.color_len : 0u);
+#line 77
+    float4 out_aov = is_value ? float4(value) : color;
+    out_aov *= 1.0f - holdout;
+
+    if (is_value) {
+      _store_value(resource_table_get(eevee_RenderPassOutput), texel, int(srt_access(eevee_Uniform, uniform_buf).render_pass.value_len + aov_index), out_aov.r);
+    }
+    else {
+      _store_color(resource_table_get(eevee_RenderPassOutput), texel, int(srt_access(eevee_Uniform, uniform_buf).render_pass.color_len + aov_index), out_aov);
+    }
+  }
+
+#endif
+
+#endif
+#line 87
+}

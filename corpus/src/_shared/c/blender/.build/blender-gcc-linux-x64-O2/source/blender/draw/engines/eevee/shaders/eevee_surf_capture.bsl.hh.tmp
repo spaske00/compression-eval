@@ -1,0 +1,118 @@
+#line 1 "eevee_surf_capture.bsl.hh"
+ 
+#line 16
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+FRAGMENT_SHADER_CREATE_INFO(eevee_geom_iface_info)
+#line 25
+float4 closure_to_rgba_capture(Closure _0)
+{
+  float3 transmittance = g_transmittance;
+  closure_weights_reset(0.0f);
+  return float4(0.0f, 0.0f, 0.0f, saturate(1.0f - average(transmittance)));
+}
+#line 34
+#define access_eevee_SurfaceCapture_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_SurfaceCapture_is_double_sided() is_double_sided
+#define access_eevee_SurfaceCapture_capture_info_buf() capture_info_buf
+#define access_eevee_SurfaceCapture_surfel_buf() surfel_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfaceCapture
+CREATE_INFO_RES_PASS_eevee_SurfaceCapture
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfaceCapture
+CREATE_INFO_RES_BATCH_eevee_SurfaceCapture
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfaceCapture
+CREATE_INFO_RES_GEOMETRY_eevee_SurfaceCapture
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceCapture
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceCapture
+#endif
+#line 34
+struct eevee_SurfaceCapture {
+#line 49
+int _pad;};
+#line 52
+#ifndef GPU_METAL
+eevee_SurfaceCapture eevee_SurfaceCapture_ctor_();
+eevee_SurfaceCapture eevee_SurfaceCapture_new_();
+#endif
+#line 34
+                                    eevee_SurfaceCapture eevee_SurfaceCapture_ctor_() {eevee_SurfaceCapture r;r._pad=0;return r;}
+#line 42
+       eevee_SurfaceCapture eevee_SurfaceCapture_new_()
+{
+  eevee_SurfaceCapture result;
+  result._pad = 0;
+  return result;
+#line 40
+}
+#line 43
+
+#if defined(CREATE_INFO_eevee_SurfaceCapture) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_UtilityTexture)
+#line 43
+
+#if defined(ENTRY_POINT_eevee_surf_capture)
+#line 43
+
+void eevee_surf_capture(
+#line 49
+                                                        )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 50
+  eevee_SurfaceCapture srt = eevee_SurfaceCapture_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); UtilityTexture _0 = UtilityTexture_ctor_();
+  const ViewMatrices view = _get(views, 0);
+
+  init_globals(uni, view, gl_FrontFacing);
+#line 56
+  float closure_rand = 0.5f;
+
+  nodetree_surface(closure_rand);
+
+  float3 albedo = float3(0.0f);
+
+  for (int i = 0; i < CLOSURE_BIN_COUNT; i++) {
+    ClosureUndetermined cl = g_closure_get_resolved(uchar(i), 1.0f);
+    if (cl.weight <= CLOSURE_WEIGHT_CUTOFF) {
+      continue;
+    }
+    if (!closure_has_transmission(cl.type)) {
+
+      albedo += cl.color;
+    }
+  }
+#line 75
+  if (srt_access(eevee_SurfaceCapture, capture_info_buf).do_surfel_count) {
+
+    float3 vNg = _normal_world_to_view(_get(views, 0), g_data.Ng);
+    bool is_surface_view_aligned = dominant_axis(vNg) == 2;
+    if (is_surface_view_aligned) {
+      uint surfel_id = atomicAdd(srt_access(eevee_SurfaceCapture, capture_info_buf).surfel_len, 1u);
+      if (srt_access(eevee_SurfaceCapture, capture_info_buf).do_surfel_output) {
+        ObjectInfos object_infos = object_infos_get();
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].position = g_data.P;
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].normal = gl_FrontFacing ? g_data.Ng : -g_data.Ng;
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].albedo_front = albedo;
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].radiance_direct.front.rgb = g_emission;
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].radiance_direct.front.a = 0.0f;
+
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].albedo_back = srt_access(eevee_SurfaceCapture, is_double_sided) ? albedo : float3(0);
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].radiance_direct.back.rgb = srt_access(eevee_SurfaceCapture, is_double_sided) ? g_emission :
+                                                                                   float3(0);
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].radiance_direct.back.a = 0.0f;
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].double_sided = srt_access(eevee_SurfaceCapture, is_double_sided);
+        srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].receiver_light_set = receiver_light_set_get(object_infos);
+
+        if (!srt_access(eevee_SurfaceCapture, capture_info_buf).capture_emission) {
+          srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].radiance_direct.front.rgb = float3(0.0f);
+          srt_access(eevee_SurfaceCapture, surfel_buf)[surfel_id].radiance_direct.back.rgb = float3(0.0f);
+        }
+      }
+    }
+  }
+
+#endif
+#line 103
+}
+#endif
+#endif

@@ -1,0 +1,1442 @@
+#line 1 "compositor_convert.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_convert_float2_to_color)
+#line 16
+void convert_float_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_int)
+#line 18
+
+#if defined(CREATE_INFO_compositor_convert_float_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_int, output_img), texel, int4(float_to_int(value.x), int3(0)));
+
+#endif
+
+#endif
+#line 23
+}
+
+void convert_float_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_int2)
+#line 27
+
+#if defined(CREATE_INFO_compositor_convert_float_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_int2, output_img), texel, int4(float_to_int2(value.x), int2(0)));
+
+#endif
+
+#endif
+#line 32
+}
+
+void convert_float_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_int3)
+#line 36
+
+#if defined(CREATE_INFO_compositor_convert_float_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_int3, output_img), texel, int4(float_to_int3(value.x), 0));
+
+#endif
+
+#endif
+#line 41
+}
+
+void convert_float_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_float2)
+#line 45
+
+#if defined(CREATE_INFO_compositor_convert_float_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_float2, output_img), texel, float4(float_to_float2(value.x), float2(0.0f)));
+
+#endif
+
+#endif
+#line 50
+}
+
+void convert_float_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_float3)
+#line 54
+
+#if defined(CREATE_INFO_compositor_convert_float_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_float3, output_img), texel, float4(float_to_float3(value.x), 0.0f));
+
+#endif
+
+#endif
+#line 59
+}
+
+void convert_float_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_color)
+#line 63
+
+#if defined(CREATE_INFO_compositor_convert_float_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_color, output_img), texel, float4(float_to_color(value.x)));
+
+#endif
+
+#endif
+#line 68
+}
+
+void convert_float_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_float4)
+#line 72
+
+#if defined(CREATE_INFO_compositor_convert_float_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_float4, output_img), texel, float4(float_to_float4(value.x)));
+
+#endif
+
+#endif
+#line 77
+}
+
+void convert_float_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_bool)
+#line 81
+
+#if defined(CREATE_INFO_compositor_convert_float_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_bool, output_img), texel, int4(float_to_bool(value.x)));
+
+#endif
+
+#endif
+#line 86
+}
+
+void convert_float_to_quaternion()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float_to_quaternion)
+#line 90
+
+#if defined(CREATE_INFO_compositor_convert_float_to_quaternion)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float_to_quaternion, input_tx), texel);
+  imageStore(image_get(compositor_convert_float_to_quaternion, output_img), texel, float_to_quaternion(value.x));
+
+#endif
+
+#endif
+#line 95
+}
+#line 101
+void convert_float2_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_float)
+#line 103
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_float, output_img), texel, float4(float2_to_float(value.xy), float3(0.0f)));
+
+#endif
+
+#endif
+#line 108
+}
+
+void convert_float2_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_int)
+#line 112
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_int, output_img), texel, int4(float2_to_int(value.xy), int3(0)));
+
+#endif
+
+#endif
+#line 117
+}
+
+void convert_float2_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_int2)
+#line 121
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_int2, output_img), texel, int4(float2_to_int2(value.xy), int2(0)));
+
+#endif
+
+#endif
+#line 126
+}
+
+void convert_float2_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_int3)
+#line 130
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_int3, output_img), texel, int4(float2_to_int3(value.xy), 0));
+
+#endif
+
+#endif
+#line 135
+}
+
+void convert_float2_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_float3)
+#line 139
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_float3, output_img), texel, float4(float2_to_float3(value.xy), 0.0f));
+
+#endif
+
+#endif
+#line 144
+}
+
+void convert_float2_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_color)
+#line 148
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_color, output_img), texel, float4(float2_to_color(value.xy)));
+
+#endif
+
+#endif
+#line 153
+}
+
+void convert_float2_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_float4)
+#line 157
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_float4, output_img), texel, float4(float2_to_float4(value.xy)));
+
+#endif
+
+#endif
+#line 162
+}
+
+void convert_float2_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_bool)
+#line 166
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_bool, output_img), texel, int4(float2_to_bool(value.xy)));
+
+#endif
+
+#endif
+#line 171
+}
+
+void convert_float2_to_quaternion()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_quaternion)
+#line 175
+
+#if defined(CREATE_INFO_compositor_convert_float2_to_quaternion)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float2_to_quaternion, input_tx), texel);
+  imageStore(image_get(compositor_convert_float2_to_quaternion, output_img), texel, float2_to_quaternion(value.xy));
+
+#endif
+
+#endif
+#line 180
+}
+#line 186
+void convert_float3_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_float)
+#line 188
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_float, output_img), texel, float4(float3_to_float(value.xyz), float3(0.0f)));
+
+#endif
+
+#endif
+#line 193
+}
+
+void convert_float3_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_int)
+#line 197
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_int, output_img), texel, int4(float3_to_int(value.xyz), int3(0)));
+
+#endif
+
+#endif
+#line 202
+}
+
+void convert_float3_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_int2)
+#line 206
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_int2, output_img), texel, int4(float3_to_int2(value.xyz), int2(0)));
+
+#endif
+
+#endif
+#line 211
+}
+
+void convert_float3_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_int3)
+#line 215
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_int3, output_img), texel, int4(float3_to_int3(value.xyz), 0));
+
+#endif
+
+#endif
+#line 220
+}
+
+void convert_float3_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_float2)
+#line 224
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_float2, output_img), texel, float4(float3_to_float2(value.xyz), float2(0.0f)));
+
+#endif
+
+#endif
+#line 229
+}
+
+void convert_float3_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_color)
+#line 233
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_color, output_img), texel, float4(float3_to_color(value.xyz)));
+
+#endif
+
+#endif
+#line 238
+}
+
+void convert_float3_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_float4)
+#line 242
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_float4, output_img), texel, float4(float3_to_float4(value.xyz)));
+
+#endif
+
+#endif
+#line 247
+}
+
+void convert_float3_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_bool)
+#line 251
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_bool, output_img), texel, int4(float3_to_bool(value.xyz)));
+
+#endif
+
+#endif
+#line 256
+}
+
+void convert_float3_to_quaternion()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_quaternion)
+#line 260
+
+#if defined(CREATE_INFO_compositor_convert_float3_to_quaternion)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float3_to_quaternion, input_tx), texel);
+  imageStore(image_get(compositor_convert_float3_to_quaternion, output_img), texel, float3_to_quaternion(value.xyz));
+
+#endif
+
+#endif
+#line 265
+}
+#line 271
+void convert_float4_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_float)
+#line 273
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_float, output_img), texel, float4(float4_to_float(value), float3(0.0f)));
+
+#endif
+
+#endif
+#line 278
+}
+
+void convert_float4_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_int)
+#line 282
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_int, output_img), texel, int4(float4_to_int(value), int3(0)));
+
+#endif
+
+#endif
+#line 287
+}
+
+void convert_float4_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_int2)
+#line 291
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_int2, output_img), texel, int4(float4_to_int2(value), int2(0)));
+
+#endif
+
+#endif
+#line 296
+}
+
+void convert_float4_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_int3)
+#line 300
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_int3, output_img), texel, int4(float4_to_int3(value), 0));
+
+#endif
+
+#endif
+#line 305
+}
+
+void convert_float4_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_float2)
+#line 309
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_float2, output_img), texel, float4(float4_to_float2(value), float2(0.0f)));
+
+#endif
+
+#endif
+#line 314
+}
+
+void convert_float4_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_float3)
+#line 318
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_float3, output_img), texel, float4(float4_to_float3(value), 0.0f));
+
+#endif
+
+#endif
+#line 323
+}
+
+void convert_float4_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_color)
+#line 327
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_color, output_img), texel, float4(float4_to_color(value)));
+
+#endif
+
+#endif
+#line 332
+}
+
+void convert_float4_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_bool)
+#line 336
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_bool, output_img), texel, int4(float4_to_bool(value)));
+
+#endif
+
+#endif
+#line 341
+}
+
+void convert_float4_to_quaternion()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_quaternion)
+#line 345
+
+#if defined(CREATE_INFO_compositor_convert_float4_to_quaternion)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_float4_to_quaternion, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4_to_quaternion, output_img), texel, float4_to_quaternion(value));
+
+#endif
+
+#endif
+#line 350
+}
+#line 356
+void convert_color_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float)
+#line 358
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float)
+#line 358
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float)
+#line 358
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_float, input_tx), texel);
+#line 364
+  imageStore(image_get(compositor_convert_color_to_float, output_img), texel, float4(color_to_float(value, push_constant_get(compositor_convert_color_to_float,
+                                       luminance_coefficients_u))));
+
+#endif
+
+#endif
+
+#endif
+#line 365
+}
+
+void convert_color_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int)
+#line 369
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int)
+#line 369
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int)
+#line 369
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_int, input_tx), texel);
+#line 374
+  imageStore(image_get(compositor_convert_color_to_int, output_img), texel, int4(color_to_int(value, push_constant_get(compositor_convert_color_to_int, luminance_coefficients_u))));
+
+#endif
+
+#endif
+
+#endif
+#line 375
+}
+
+void convert_color_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int2)
+#line 379
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int2)
+#line 379
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_int2, input_tx), texel);
+
+  imageStore(image_get(compositor_convert_color_to_int2, output_img), texel, int4(color_to_int2(value), int2(0)));
+
+#endif
+
+#endif
+#line 384
+}
+
+void convert_color_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int3)
+#line 388
+
+#if defined(CREATE_INFO_compositor_convert_color_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_color_to_int3, output_img), texel, int4(color_to_int3(value), 0));
+
+#endif
+
+#endif
+#line 393
+}
+
+void convert_color_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float2)
+#line 397
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float2)
+#line 397
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_float2, input_tx), texel);
+
+  imageStore(image_get(compositor_convert_color_to_float2, output_img), texel, float4(color_to_float2(value), float2(0.0f)));
+
+#endif
+
+#endif
+#line 402
+}
+
+void convert_color_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float3)
+#line 406
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float3)
+#line 406
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_float3, input_tx), texel);
+
+  imageStore(image_get(compositor_convert_color_to_float3, output_img), texel, float4(color_to_float3(value), 0.0f));
+
+#endif
+
+#endif
+#line 411
+}
+
+void convert_color_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float4)
+#line 415
+
+#if defined(CREATE_INFO_compositor_convert_color_to_float4)
+#line 415
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_float4, input_tx), texel);
+
+  imageStore(image_get(compositor_convert_color_to_float4, output_img), texel, float4(color_to_float4(value)));
+
+#endif
+
+#endif
+#line 420
+}
+
+void convert_color_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_bool)
+#line 424
+
+#if defined(CREATE_INFO_compositor_convert_color_to_bool)
+#line 424
+
+#if defined(CREATE_INFO_compositor_convert_color_to_bool)
+#line 424
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_bool, input_tx), texel);
+#line 429
+  imageStore(image_get(compositor_convert_color_to_bool, output_img), texel, int4(color_to_bool(value, push_constant_get(compositor_convert_color_to_bool, luminance_coefficients_u))));
+
+#endif
+
+#endif
+
+#endif
+#line 430
+}
+
+void convert_color_to_alpha()
+{
+
+#if defined(CREATE_INFO_compositor_convert_color_to_alpha)
+#line 434
+
+#if defined(CREATE_INFO_compositor_convert_color_to_alpha)
+#line 434
+
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_color_to_alpha, input_tx), texel);
+
+  imageStore(image_get(compositor_convert_color_to_alpha, output_img), texel, float4(value.a));
+
+#endif
+
+#endif
+#line 439
+}
+#line 445
+void convert_int_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_int2)
+#line 447
+
+#if defined(CREATE_INFO_compositor_convert_int_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_int2, output_img), texel, int4(int_to_int2(value.x), int2(0)));
+
+#endif
+
+#endif
+#line 452
+}
+
+void convert_int_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_int3)
+#line 456
+
+#if defined(CREATE_INFO_compositor_convert_int_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_int3, output_img), texel, int4(int_to_int3(value.x), 0));
+
+#endif
+
+#endif
+#line 461
+}
+
+void convert_int_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float)
+#line 465
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_float, output_img), texel, float4(int_to_float(value.x), float3(0.0f)));
+
+#endif
+
+#endif
+#line 470
+}
+
+void convert_int_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float2)
+#line 474
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_float2, output_img), texel, float4(int_to_float2(value.x), float2(0.0f)));
+
+#endif
+
+#endif
+#line 479
+}
+
+void convert_int_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float3)
+#line 483
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_float3, output_img), texel, float4(int_to_float3(value.x), 0.0f));
+
+#endif
+
+#endif
+#line 488
+}
+
+void convert_int_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_color)
+#line 492
+
+#if defined(CREATE_INFO_compositor_convert_int_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_color, output_img), texel, float4(int_to_color(value.x)));
+
+#endif
+
+#endif
+#line 497
+}
+
+void convert_int_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float4)
+#line 501
+
+#if defined(CREATE_INFO_compositor_convert_int_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_float4, output_img), texel, float4(int_to_float4(value.x)));
+
+#endif
+
+#endif
+#line 506
+}
+
+void convert_int_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int_to_bool)
+#line 510
+
+#if defined(CREATE_INFO_compositor_convert_int_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_int_to_bool, output_img), texel, int4(int_to_bool(value.x)));
+
+#endif
+
+#endif
+#line 515
+}
+#line 521
+void convert_int2_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_int)
+#line 523
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_int, output_img), texel, int4(int2_to_int(value.xy), int3(0)));
+
+#endif
+
+#endif
+#line 528
+}
+
+void convert_int2_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_int3)
+#line 532
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_int3, output_img), texel, int4(int2_to_int3(value.xy), 0));
+
+#endif
+
+#endif
+#line 537
+}
+
+void convert_int2_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float)
+#line 541
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_float, output_img), texel, float4(int2_to_float(value.xy), float3(0.0f)));
+
+#endif
+
+#endif
+#line 546
+}
+
+void convert_int2_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float2)
+#line 550
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_float2, output_img), texel, float4(int2_to_float2(value.xy), float2(0.0f)));
+
+#endif
+
+#endif
+#line 555
+}
+
+void convert_int2_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float3)
+#line 559
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_float3, output_img), texel, float4(int2_to_float3(value.xy), 0.0f));
+
+#endif
+
+#endif
+#line 564
+}
+
+void convert_int2_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_color)
+#line 568
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_color, output_img), texel, float4(int2_to_color(value.xy)));
+
+#endif
+
+#endif
+#line 573
+}
+
+void convert_int2_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float4)
+#line 577
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_float4, output_img), texel, float4(int2_to_float4(value.xy)));
+
+#endif
+
+#endif
+#line 582
+}
+
+void convert_int2_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_bool)
+#line 586
+
+#if defined(CREATE_INFO_compositor_convert_int2_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int2_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_int2_to_bool, output_img), texel, int4(int2_to_bool(value.xy)));
+
+#endif
+
+#endif
+#line 591
+}
+#line 597
+void convert_int3_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_int)
+#line 599
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_int, output_img), texel, int4(int3_to_int(value.xyz), int3(0)));
+
+#endif
+
+#endif
+#line 604
+}
+
+void convert_int3_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_int2)
+#line 608
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_int2, output_img), texel, int4(int3_to_int2(value.xyz), int2(0)));
+
+#endif
+
+#endif
+#line 613
+}
+
+void convert_int3_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float)
+#line 617
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_float, output_img), texel, float4(int3_to_float(value.xyz), float3(0.0f)));
+
+#endif
+
+#endif
+#line 622
+}
+
+void convert_int3_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float2)
+#line 626
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_float2, output_img), texel, float4(int3_to_float2(value.xyz), float2(0.0f)));
+
+#endif
+
+#endif
+#line 631
+}
+
+void convert_int3_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float3)
+#line 635
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_float3, output_img), texel, float4(int3_to_float3(value.xyz), 0.0f));
+
+#endif
+
+#endif
+#line 640
+}
+
+void convert_int3_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_color)
+#line 644
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_color, output_img), texel, float4(int3_to_color(value.xyz)));
+
+#endif
+
+#endif
+#line 649
+}
+
+void convert_int3_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float4)
+#line 653
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_float4, output_img), texel, float4(int3_to_float4(value.xyz)));
+
+#endif
+
+#endif
+#line 658
+}
+
+void convert_int3_to_bool()
+{
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_bool)
+#line 662
+
+#if defined(CREATE_INFO_compositor_convert_int3_to_bool)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_int3_to_bool, input_tx), texel);
+  imageStore(image_get(compositor_convert_int3_to_bool, output_img), texel, int4(int3_to_bool(value.xyz)));
+
+#endif
+
+#endif
+#line 667
+}
+#line 673
+void convert_bool_to_float()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float)
+#line 675
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_float, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_float, output_img), texel, float4(bool_to_float(bool(value.x)), float3(0.0f)));
+
+#endif
+
+#endif
+#line 680
+}
+
+void convert_bool_to_int()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_int)
+#line 684
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_int)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_int, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_int, output_img), texel, int4(bool_to_int(bool(value.x)), int3(0)));
+
+#endif
+
+#endif
+#line 689
+}
+
+void convert_bool_to_int2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_int2)
+#line 693
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_int2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_int2, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_int2, output_img), texel, int4(bool_to_int2(bool(value.x)), int2(0)));
+
+#endif
+
+#endif
+#line 698
+}
+
+void convert_bool_to_int3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_int3)
+#line 702
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_int3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_int3, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_int3, output_img), texel, int4(bool_to_int3(bool(value.x)), 0));
+
+#endif
+
+#endif
+#line 707
+}
+
+void convert_bool_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float2)
+#line 711
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_float2, output_img), texel, float4(bool_to_float2(bool(value.x)), float2(0.0f)));
+
+#endif
+
+#endif
+#line 716
+}
+
+void convert_bool_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float3)
+#line 720
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_float3, output_img), texel, float4(bool_to_float3(bool(value.x)), 0.0f));
+
+#endif
+
+#endif
+#line 725
+}
+
+void convert_bool_to_color()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_color)
+#line 729
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_color)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_color, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_color, output_img), texel, float4(bool_to_color(bool(value.x))));
+
+#endif
+
+#endif
+#line 734
+}
+
+void convert_bool_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float4)
+#line 738
+
+#if defined(CREATE_INFO_compositor_convert_bool_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  int4 value = texture_load(sampler_get(compositor_convert_bool_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_bool_to_float4, output_img), texel, float4(bool_to_float4(bool(value.x))));
+
+#endif
+
+#endif
+#line 743
+}
+#line 749
+void convert_float4x4_to_quaternion()
+{
+
+#if defined(CREATE_INFO_compositor_convert_float4x4_to_quaternion)
+#line 751
+
+#if defined(CREATE_INFO_compositor_convert_float4x4_to_quaternion)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4x4 mat = texture_load_float4x4(sampler_get(compositor_convert_float4x4_to_quaternion, input_tx), texel);
+  imageStore(image_get(compositor_convert_float4x4_to_quaternion, output_img), texel, float4x4_to_quaternion(mat));
+
+#endif
+
+#endif
+#line 756
+}
+#line 762
+void convert_quaternion_to_float2()
+{
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float2)
+#line 764
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float2)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_quaternion_to_float2, input_tx), texel);
+  imageStore(image_get(compositor_convert_quaternion_to_float2, output_img), texel, float4(quaternion_to_float2(value), 0.0f, 0.0f));
+
+#endif
+
+#endif
+#line 769
+}
+
+void convert_quaternion_to_float3()
+{
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float3)
+#line 773
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float3)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_quaternion_to_float3, input_tx), texel);
+  imageStore(image_get(compositor_convert_quaternion_to_float3, output_img), texel, float4(quaternion_to_float3(value), 0.0f));
+
+#endif
+
+#endif
+#line 778
+}
+
+void convert_quaternion_to_float4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float4)
+#line 782
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_quaternion_to_float4, input_tx), texel);
+  imageStore(image_get(compositor_convert_quaternion_to_float4, output_img), texel, float4(quaternion_to_float4(value)));
+
+#endif
+
+#endif
+#line 787
+}
+
+void convert_quaternion_to_float4x4()
+{
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float4x4)
+#line 791
+
+#if defined(CREATE_INFO_compositor_convert_quaternion_to_float4x4)
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 value = texture_load(sampler_get(compositor_convert_quaternion_to_float4x4, input_tx), texel);
+  float4x4 mat = quaternion_to_float4x4(value);
+  imageStore(image_get(compositor_convert_quaternion_to_float4x4, output_img), int3(texel, 0), mat[0]);
+  imageStore(image_get(compositor_convert_quaternion_to_float4x4, output_img), int3(texel, 1), mat[1]);
+  imageStore(image_get(compositor_convert_quaternion_to_float4x4, output_img), int3(texel, 2), mat[2]);
+  imageStore(image_get(compositor_convert_quaternion_to_float4x4, output_img), int3(texel, 3), mat[3]);
+
+#endif
+
+#endif
+#line 800
+}

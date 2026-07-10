@@ -1,0 +1,24 @@
+#line 1 "workbench_prepass_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 16
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define WORKBENCH_COLOR_MATERIAL
+#  define WORKBENCH_COLOR_TEXTURE
+#  define WORKBENCH_TEXTURE_IMAGE_ARRAY
+#  define WORKBENCH_COLOR_MATERIAL
+#  define WORKBENCH_COLOR_VERTEX
+#  define WORKBENCH_LIGHTING_MATCAP 1
+
+#  define CURVES_SHADER
+#  define DRW_HAIR_INFO
+
+#  define POINTCLOUD_SHADER
+#  define DRW_POINTCLOUD_INFO
+#endif
+
+
+

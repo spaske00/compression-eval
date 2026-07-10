@@ -1,0 +1,659 @@
+#line 1 "workbench_volume.bsl.hh"
+ 
+#line 11
+SHADER_LIBRARY_CREATE_INFO(draw_mesh)
+SHADER_LIBRARY_CREATE_INFO(draw_resource_id_varying)
+#line 24
+float4 workbench_volume_sample_tricubic(sampler3D ima, float3 co)
+{
+  float3 tex_size = float3(textureSize(ima, 0).xyz);
+
+  co *= tex_size;
+
+  float3 tc = floor(co - 0.5f) + 0.5f;
+  float3 f = co - tc;
+  float3 f2 = f * f;
+  float3 f3 = f2 * f;
+
+  float3 w3 = f3 / 6.0f;
+  float3 w0 = -w3 + f2 * 0.5f - f * 0.5f + 1.0f / 6.0f;
+  float3 w1 = f3 * 0.5f - f2 + 2.0f / 3.0f;
+  float3 w2 = 1.0f - w0 - w1 - w3;
+
+  float3 s0 = w0 + w1;
+  float3 s1 = w2 + w3;
+
+  float3 f0 = w1 / (w0 + w1);
+  float3 f1 = w3 / (w2 + w3);
+
+  float2 final_z;
+  float4 final_co;
+  final_co.xy = tc.xy - 1.0f + f0.xy;
+  final_co.zw = tc.xy + 1.0f + f1.xy;
+  final_z = tc.zz + float2(-1.0f, 1.0f) + float2(f0.z, f1.z);
+
+  final_co /= tex_size.xyxy;
+  final_z /= tex_size.zz;
+
+  float4 color;
+  color = texture(ima, float3(final_co.xy, final_z.x)) * s0.x * s0.y * s0.z;
+  color += texture(ima, float3(final_co.zy, final_z.x)) * s1.x * s0.y * s0.z;
+  color += texture(ima, float3(final_co.xw, final_z.x)) * s0.x * s1.y * s0.z;
+  color += texture(ima, float3(final_co.zw, final_z.x)) * s1.x * s1.y * s0.z;
+
+  color += texture(ima, float3(final_co.xy, final_z.y)) * s0.x * s0.y * s1.z;
+  color += texture(ima, float3(final_co.zy, final_z.y)) * s1.x * s0.y * s1.z;
+  color += texture(ima, float3(final_co.xw, final_z.y)) * s0.x * s1.y * s1.z;
+  color += texture(ima, float3(final_co.zw, final_z.y)) * s1.x * s1.y * s1.z;
+
+  return color;
+}
+#line 70
+float4 workbench_volume_sample_closest(sampler3D ima, float3 co)
+{
+
+  int3 cell_co = int3(co * float3(textureSize(ima, 0).xyz));
+
+  return texelFetch(ima, cell_co, 0);
+}
+#line 79
+#define access_workbench_volume_Smoke_draw_modelmat() draw_modelmat
+#define access_workbench_volume_Smoke_flame_tx() flame_tx
+#define access_workbench_volume_Smoke_flame_color_tx() flame_color_tx
+#ifdef CREATE_INFO_RES_PASS_workbench_volume_Smoke
+CREATE_INFO_RES_PASS_workbench_volume_Smoke
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_volume_Smoke
+CREATE_INFO_RES_BATCH_workbench_volume_Smoke
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_volume_Smoke
+CREATE_INFO_RES_GEOMETRY_workbench_volume_Smoke
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_volume_Smoke
+CREATE_INFO_RES_SHARED_VARS_workbench_volume_Smoke
+#endif
+#line 79
+struct workbench_volume_Smoke {
+#line 92
+int _pad;};
+#line 96
+#ifndef GPU_METAL
+workbench_volume_Smoke workbench_volume_Smoke_ctor_();
+workbench_volume_Smoke workbench_volume_Smoke_new_();
+#endif
+#line 79
+                                      workbench_volume_Smoke workbench_volume_Smoke_ctor_() {workbench_volume_Smoke r;r._pad=0;return r;}
+#line 85
+       workbench_volume_Smoke workbench_volume_Smoke_new_()
+{
+  workbench_volume_Smoke result;
+  result._pad = 0;
+  return result;
+#line 83
+}
+#line 87
+#define access_workbench_volume_Volume_draw_volume() draw_volume
+#define access_workbench_volume_Volume_volume_texture_to_object() volume_texture_to_object
+#define access_workbench_volume_Volume_volume_object_to_texture() volume_object_to_texture
+#ifdef CREATE_INFO_RES_PASS_workbench_volume_Volume
+CREATE_INFO_RES_PASS_workbench_volume_Volume
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_volume_Volume
+CREATE_INFO_RES_BATCH_workbench_volume_Volume
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_volume_Volume
+CREATE_INFO_RES_GEOMETRY_workbench_volume_Volume
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_volume_Volume
+CREATE_INFO_RES_SHARED_VARS_workbench_volume_Volume
+#endif
+#line 87
+struct workbench_volume_Volume {
+#line 100
+int _pad;};
+#line 103
+#ifndef GPU_METAL
+workbench_volume_Volume workbench_volume_Volume_ctor_();
+workbench_volume_Volume workbench_volume_Volume_new_();
+#endif
+#line 87
+                                       workbench_volume_Volume workbench_volume_Volume_ctor_() {workbench_volume_Volume r;r._pad=0;return r;}
+#line 93
+       workbench_volume_Volume workbench_volume_Volume_new_()
+{
+  workbench_volume_Volume result;
+  result._pad = 0;
+  return result;
+#line 91
+}
+#line 94
+#define access_workbench_volume_ColorBand_flag_tx() flag_tx
+#define access_workbench_volume_ColorBand_transfer_tx() transfer_tx
+#define access_workbench_volume_ColorBand_show_phi() show_phi
+#define access_workbench_volume_ColorBand_show_flags() show_flags
+#define access_workbench_volume_ColorBand_show_pressure() show_pressure
+#define access_workbench_volume_ColorBand_grid_scale() grid_scale
+#ifdef CREATE_INFO_RES_PASS_workbench_volume_ColorBand
+CREATE_INFO_RES_PASS_workbench_volume_ColorBand
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_volume_ColorBand
+CREATE_INFO_RES_BATCH_workbench_volume_ColorBand
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_volume_ColorBand
+CREATE_INFO_RES_GEOMETRY_workbench_volume_ColorBand
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_volume_ColorBand
+CREATE_INFO_RES_SHARED_VARS_workbench_volume_ColorBand
+#endif
+#line 94
+struct workbench_volume_ColorBand {
+#line 110
+int _pad;};
+#line 113
+#ifndef GPU_METAL
+workbench_volume_ColorBand workbench_volume_ColorBand_ctor_();
+workbench_volume_ColorBand workbench_volume_ColorBand_new_();
+#endif
+#line 94
+                                          workbench_volume_ColorBand workbench_volume_ColorBand_ctor_() {workbench_volume_ColorBand r;r._pad=0;return r;}
+#line 103
+       workbench_volume_ColorBand workbench_volume_ColorBand_new_()
+{
+  workbench_volume_ColorBand result;
+  result._pad = 0;
+  return result;
+#line 101
+}
+#line 104
+#define access_workbench_volume_ColorUniform_shadow_tx() shadow_tx
+#define access_workbench_volume_ColorUniform_active_color() active_color
+#define access_workbench_volume_ColorUniform_show_flags() show_flags
+#define access_workbench_volume_ColorUniform_show_pressure() show_pressure
+#define access_workbench_volume_ColorUniform_grid_scale() grid_scale
+#ifdef CREATE_INFO_RES_PASS_workbench_volume_ColorUniform
+CREATE_INFO_RES_PASS_workbench_volume_ColorUniform
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_volume_ColorUniform
+CREATE_INFO_RES_BATCH_workbench_volume_ColorUniform
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_volume_ColorUniform
+CREATE_INFO_RES_GEOMETRY_workbench_volume_ColorUniform
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_volume_ColorUniform
+CREATE_INFO_RES_SHARED_VARS_workbench_volume_ColorUniform
+#endif
+#line 104
+struct workbench_volume_ColorUniform {
+#line 119
+int _pad;};
+#line 122
+#ifndef GPU_METAL
+workbench_volume_ColorUniform workbench_volume_ColorUniform_ctor_();
+workbench_volume_ColorUniform workbench_volume_ColorUniform_new_();
+#endif
+#line 104
+                                             workbench_volume_ColorUniform workbench_volume_ColorUniform_ctor_() {workbench_volume_ColorUniform r;r._pad=0;return r;}
+#line 112
+       workbench_volume_ColorUniform workbench_volume_ColorUniform_new_()
+{
+  workbench_volume_ColorUniform result;
+  result._pad = 0;
+  return result;
+#line 110
+}
+#line 113
+#define access_workbench_volume_Resources_draw_view() draw_view
+#define access_workbench_volume_Resources_draw_object_infos() draw_object_infos
+#define access_workbench_volume_Resources_draw_resource_id_varying() draw_resource_id_varying
+#define access_workbench_volume_Resources_use_slice() use_slice
+#define access_workbench_volume_Resources_use_color_band() use_color_band
+#define access_workbench_volume_Resources_is_legacy_smoke() is_legacy_smoke
+#define access_workbench_volume_Resources_interpolation() interpolation
+#define access_workbench_volume_Resources_depth_buffer() depth_buffer
+#define access_workbench_volume_Resources_density_tx() density_tx
+#define access_workbench_volume_Resources_stencil_tx() stencil_tx
+#define access_workbench_volume_Resources_samples_len() samples_len
+#define access_workbench_volume_Resources_noise_ofs() noise_ofs
+#define access_workbench_volume_Resources_step_length() step_length
+#define access_workbench_volume_Resources_density_fac() density_fac
+#define access_workbench_volume_Resources_do_depth_test() do_depth_test
+#define access_workbench_volume_Resources_slice_axis() slice_axis
+#define access_workbench_volume_Resources_slice_position() slice_position
+#define access_workbench_volume_Resources_volume() workbench_volume_Volume_new_()
+#define access_workbench_volume_Resources_smoke() workbench_volume_Smoke_new_()
+#define access_workbench_volume_Resources_color_band() workbench_volume_ColorBand_new_()
+#define access_workbench_volume_Resources_color_uniform() workbench_volume_ColorUniform_new_()
+#ifdef CREATE_INFO_RES_PASS_workbench_volume_Resources
+CREATE_INFO_RES_PASS_workbench_volume_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_volume_Resources
+CREATE_INFO_RES_BATCH_workbench_volume_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_volume_Resources
+CREATE_INFO_RES_GEOMETRY_workbench_volume_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_volume_Resources
+CREATE_INFO_RES_SHARED_VARS_workbench_volume_Resources
+#endif
+#line 113
+struct workbench_volume_Resources {
+#line 136
+                                                        workbench_volume_Volume  volume;
+                                                       workbench_volume_Smoke  smoke;
+
+                                                      workbench_volume_ColorBand  color_band;
+                                                       workbench_volume_ColorUniform  color_uniform;
+#line 164
+};
+#line 167
+#ifndef GPU_METAL
+workbench_volume_Resources workbench_volume_Resources_ctor_();
+float4 _sample_volume_texture(workbench_volume_Resources  this_, sampler3D ima, float3 co);
+workbench_volume_Resources workbench_volume_Resources_new_();
+#endif
+#line 113
+                                          workbench_volume_Resources workbench_volume_Resources_ctor_() {workbench_volume_Resources r;r.volume=workbench_volume_Volume_ctor_();r.smoke=workbench_volume_Smoke_ctor_();r.color_band=workbench_volume_ColorBand_ctor_();r.color_uniform=workbench_volume_ColorUniform_ctor_();return r;}
+#line 142
+
+#if defined(CREATE_INFO_workbench_volume_Resources)
+#line 142
+  float4 _sample_volume_texture(workbench_volume_Resources  this_, sampler3D ima, float3 co)
+  {
+
+#if SRT_CONSTANT_interpolation == 0
+#line 144
+                                                                                      {
+      return workbench_volume_sample_closest(ima, co);
+    }
+
+#endif
+#line 147
+
+#if SRT_CONSTANT_interpolation == 2
+#line 147
+                                                                                      {
+      return workbench_volume_sample_tricubic(ima, co);
+    }
+#endif
+    return texture(ima, co);
+  }
+#endif
+       workbench_volume_Resources workbench_volume_Resources_new_()
+{
+  workbench_volume_Resources result;
+  result.volume = workbench_volume_Volume_new_();
+  result.smoke = workbench_volume_Smoke_new_();
+  result.color_band = workbench_volume_ColorBand_new_();
+  result.color_uniform = workbench_volume_ColorUniform_new_();
+  return result;
+#line 152
+}
+#line 155
+float workbench_volume_phase_function_isotropic()
+{
+  return 1.0f / (4.0f * M_PI);
+}
+
+float workbench_volume_line_unit_box_intersect_dist(float3 lineorigin, float3 linedirection)
+{
+#line 164
+  float3 firstplane = (float3(1.0f) - lineorigin) * safe_rcp(linedirection);
+  float3 secondplane = (float3(-1.0f) - lineorigin) * safe_rcp(linedirection);
+  float3 furthestplane = min(firstplane, secondplane);
+  return reduce_max(furthestplane);
+}
+
+float4 workbench_volume_flag_to_color(uint flag)
+{
+
+  float4 color = float4(0.0f, 0.0f, 0.0f, 0.06f);
+
+  if (bool(flag & uint(1))) {
+    color.rgb += float3(0.0f, 0.0f, 0.75f);
+  }
+  if (bool(flag & uint(2))) {
+    color.rgb += float3(0.2f, 0.2f, 0.2f);
+  }
+  if (bool(flag & uint(4))) {
+    color.rgb += float3(0.25f, 0.0f, 0.2f);
+  }
+  if (bool(flag & uint(8))) {
+    color.rgb += float3(0.0f, 0.5f, 0.0f);
+  }
+  if (bool(flag & uint(16))) {
+    color.rgb += float3(0.9f, 0.3f, 0.0f);
+  }
+  if (is_zero(color.rgb)) {
+    color.rgb += float3(0.5f, 0.0f, 0.0f);
+  }
+  return color;
+}
+#line 197
+#if defined(CREATE_INFO_workbench_volume_Resources)
+#line 196
+void workbench_volume_volume_properties(workbench_volume_Resources  srt,
+                       float3 ls_pos,
+                       _ref(float3 ,scattering),
+                       _ref(float ,extinction))
+{
+  float3 co = ls_pos * 0.5f + 0.5f;
+#line 204
+#if SRT_CONSTANT_use_color_band
+#line 203
+                                                                                {
+
+    float4 tval;
+    if (srt_access(workbench_volume_ColorBand, show_phi)) {
+
+      float val = _sample_volume_texture(srt, srt_access(workbench_volume_Resources, density_tx), co).r * srt_access(workbench_volume_ColorBand, grid_scale);
+
+      val = max(min(val * 0.2f, 1.0f), -1.0f);
+
+      if (val >= 0.0f) {
+        tval = float4(val, 0.0f, 0.5f, 0.06f);
+      }
+      else {
+        tval = float4(0.5f, 1.0f + val, 0.0f, 0.06f);
+      }
+    }
+    else if (srt_access(workbench_volume_ColorBand, show_flags)) {
+
+      uint flag = texture(srt_access(workbench_volume_ColorBand, flag_tx), co).r;
+      tval = workbench_volume_flag_to_color(flag);
+    }
+    else if (srt_access(workbench_volume_ColorBand, show_pressure)) {
+
+      float val = _sample_volume_texture(srt, srt_access(workbench_volume_Resources, density_tx), co).r * srt_access(workbench_volume_ColorBand, grid_scale);
+
+      if (val > 0) {
+        tval = float4(val, val, val, 0.06f);
+      }
+      else {
+        tval = float4(-val, 0.0f, 0.0f, 0.06f);
+      }
+    }
+    else {
+      float val = _sample_volume_texture(srt, srt_access(workbench_volume_Resources, density_tx), co).r * srt_access(workbench_volume_ColorBand, grid_scale);
+      tval = texture(srt_access(workbench_volume_ColorBand, transfer_tx), val);
+    }
+    tval *= srt_access(workbench_volume_Resources, density_fac);
+    tval.rgb = pow(tval.rgb, float3(2.2f));
+    scattering = tval.rgb * 1500.0f;
+    extinction = max(1e-4f, tval.a * 50.0f);
+  }
+
+#else
+#line 244
+       {
+
+    float3 density = _sample_volume_texture(srt, srt_access(workbench_volume_Resources, density_tx), co).rgb;
+    float shadows = _sample_volume_texture(srt, srt_access(workbench_volume_ColorUniform, shadow_tx), co).r;
+
+    scattering = density * srt_access(workbench_volume_Resources, density_fac);
+    extinction = max(1e-4f, dot(scattering, float3(0.33333f)));
+    scattering *= srt_access(workbench_volume_ColorUniform, active_color);
+#line 254
+    scattering *= exp(clamp(log(shadows) * srt_access(workbench_volume_Resources, density_fac) * 0.1f, -2.5f, 0.0f)) * M_PI;
+#line 257
+#if SRT_CONSTANT_is_legacy_smoke
+#line 256
+                                                                                   {
+
+      float flame = _sample_volume_texture(srt, srt_access(workbench_volume_Smoke, flame_tx), co).r;
+      float4 emission = texture(srt_access(workbench_volume_Smoke, flame_color_tx), flame);
+
+      scattering += emission.rgb * emission.a * 800.0f;
+    }
+
+#endif
+#line 263
+  }
+
+#endif
+#line 264
+}
+#endif
+void workbench_volume_eval_volume_step(_ref(float3 ,Lscat), float extinction, float step_len, _ref(float ,Tr))
+{
+  Lscat *= workbench_volume_phase_function_isotropic();
+
+  Tr = exp(-extinction * step_len);
+
+  Lscat = (Lscat - Lscat * Tr) / extinction;
+}
+
+#define P(x) ((x + 0.5f) * (1.0f / 16.0f))
+#line 278
+#if defined(CREATE_INFO_workbench_volume_Resources)
+#line 277
+float4 workbench_volume_volume_integration(workbench_volume_Resources  srt,
+                          float4 frag_coord,
+                          float3 ray_ori,
+                          float3 ray_dir,
+                          float ray_inc,
+                          float ray_max,
+                          float step_len)
+{
+#line 287
+  constexpr float4 dither_mat[4] = float4_array(float4(P(0.0f), P(8.0f), P(2.0f), P(10.0f)),
+                                                float4(P(12.0f), P(4.0f), P(14.0f), P(6.0f)),
+                                                float4(P(3.0f), P(11.0f), P(1.0f), P(9.0f)),
+                                                float4(P(15.0f), P(7.0f), P(13.0f), P(5.0f)));
+
+  float3 final_scattering = float3(0.0f);
+  float final_transmittance = 1.0f;
+
+  int2 tx = int2(frag_coord.xy) % 4;
+  float noise = fract(dither_mat[tx.x][tx.y] + srt_access(workbench_volume_Resources, noise_ofs));
+
+  float ray_len = noise * ray_inc;
+  for (int i = 0; i < srt_access(workbench_volume_Resources, samples_len) && ray_len < ray_max; i++, ray_len += ray_inc) {
+    float3 ls_pos = ray_ori + ray_dir * ray_len;
+
+    float3 Lscat;
+    float s_extinction, Tr;
+    workbench_volume_volume_properties(srt, ls_pos, Lscat, s_extinction);
+    workbench_volume_eval_volume_step(Lscat, s_extinction, step_len, Tr);
+
+    final_scattering += final_transmittance * Lscat;
+    final_transmittance *= Tr;
+
+    if (final_transmittance <= 0.01f) {
+
+      final_transmittance = 0.0f;
+      break;
+    }
+  }
+
+  return float4(final_scattering, final_transmittance);
+}
+#endif
+struct workbench_volume_VertIn {
+                   float3 pos;
+};
+#line 320
+                                       workbench_volume_VertIn workbench_volume_VertIn_ctor_() {workbench_volume_VertIn r;r.pos=float3(0);return r;}
+#line 324
+struct workbench_volume_VertOut {
+             float3 local_pos;
+};
+#line 324
+                                        workbench_volume_VertOut workbench_volume_VertOut_ctor_() {workbench_volume_VertOut r;r.local_pos=float3(0);return r;}
+#line 328
+
+#if defined(CREATE_INFO_workbench_volume_Resources)
+#line 328
+
+#if defined(ENTRY_POINT_workbench_volume_vertex_function)
+#line 328
+           void workbench_volume_vertex_function(
+#line 331
+                                                                 )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 332
+  workbench_volume_Resources srt = workbench_volume_Resources_ctor_();
+  drw_ResourceID_iface.resource_id = drw_resource_id_raw();
+
+  float3 final_pos;
+#line 338
+#if SRT_CONSTANT_use_slice
+#line 337
+                                                                           {
+    if (srt_access(workbench_volume_Resources, slice_axis) == 0) {
+      workbench_volume_VertOut_local_pos = float3(srt_access(workbench_volume_Resources, slice_position) * 2.0f - 1.0f, pos.xy);
+    }
+    else if (srt_access(workbench_volume_Resources, slice_axis) == 1) {
+      workbench_volume_VertOut_local_pos = float3(pos.x, srt_access(workbench_volume_Resources, slice_position) * 2.0f - 1.0f, pos.y);
+    }
+    else {
+      workbench_volume_VertOut_local_pos = float3(pos.xy, srt_access(workbench_volume_Resources, slice_position) * 2.0f - 1.0f);
+    }
+    final_pos = workbench_volume_VertOut_local_pos;
+  }
+
+#else
+#line 349
+       {
+    final_pos = pos;
+  }
+#endif
+
+#if SRT_CONSTANT_is_legacy_smoke
+#line 353
+                                                                                 {
+    ObjectInfos info = drw_object_infos();
+    final_pos = ((final_pos * 0.5f + 0.5f) - info.orco_add) / info.orco_mul;
+  }
+
+#else
+#line 357
+       {
+
+    final_pos = (srt_access(workbench_volume_Volume, volume_texture_to_object) * float4(final_pos * 0.5f + 0.5f, 1.0f)).xyz;
+  }
+
+#endif
+#line 361
+  gl_Position = drw_point_world_to_homogenous(drw_point_object_to_world(final_pos));
+
+#endif
+#line 362
+}
+#endif
+#endif
+#line 364
+struct workbench_volume_FragOut {
+                    float4 color;
+};
+#line 364
+                                        workbench_volume_FragOut workbench_volume_FragOut_ctor_() {workbench_volume_FragOut r;r.color=float4(0);return r;}
+#line 368
+
+#if defined(CREATE_INFO_workbench_volume_Resources)
+#line 368
+
+#if defined(ENTRY_POINT_workbench_volume_fragment_function)
+#line 368
+             void workbench_volume_fragment_function(
+#line 371
+                                                                              )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 372
+  workbench_volume_Resources srt = workbench_volume_Resources_ctor_();
+  uint stencil = texelFetch(srt_access(workbench_volume_Resources, stencil_tx), int2(gl_FragCoord.xy), 0).r;
+
+  constexpr uint in_front_stencil_bits = 1u << 1;
+  if (srt_access(workbench_volume_Resources, do_depth_test) && (stencil & in_front_stencil_bits) != 0) {
+
+    gpu_discard_fragment();
+    return;
+  }
+#line 383
+#if SRT_CONSTANT_use_slice
+#line 382
+                                                                           {
+
+    float depth = texelFetch(srt_access(workbench_volume_Resources, depth_buffer), int2(gl_FragCoord.xy), 0).r;
+    if (srt_access(workbench_volume_Resources, do_depth_test) && gl_FragCoord.z >= depth) {
+#line 393
+      gpu_discard_fragment();
+      return;
+    }
+
+    float3 Lscat;
+    float s_extinction, Tr;
+    workbench_volume_volume_properties(srt, workbench_volume_VertOut_local_pos, Lscat, s_extinction);
+    workbench_volume_eval_volume_step(Lscat, s_extinction, srt_access(workbench_volume_Resources, step_length), Tr);
+
+    workbench_volume_FragOut_color = float4(Lscat, Tr);
+  }
+
+#else
+#line 404
+       {
+    float2 screen_uv = gl_FragCoord.xy / float2(textureSize(srt_access(workbench_volume_Resources, depth_buffer), 0).xy);
+    bool is_persp = drw_view().winmat[3][3] == 0.0f;
+
+    float depth = srt_access(workbench_volume_Resources, do_depth_test) ? texelFetch(srt_access(workbench_volume_Resources, depth_buffer), int2(gl_FragCoord.xy), 0).r :
+                                      1.0f;
+    float depth_end = min(depth, gl_FragCoord.z);
+    float3 vs_ray_end = drw_point_screen_to_view(float3(screen_uv, depth_end));
+    float3 vs_ray_ori = drw_point_screen_to_view(float3(screen_uv, 0.0f));
+    float3 vs_ray_dir = (is_persp) ? (vs_ray_end - vs_ray_ori) : float3(0.0f, 0.0f, -1.0f);
+    vs_ray_dir /= abs(vs_ray_dir.z);
+
+    float3 ls_ray_dir = drw_point_view_to_object(vs_ray_ori + vs_ray_dir);
+    float3 ls_ray_ori = drw_point_view_to_object(vs_ray_ori);
+    float3 ls_ray_end = drw_point_view_to_object(vs_ray_end);
+#line 421
+#if SRT_CONSTANT_is_legacy_smoke
+#line 420
+                                                                                   {
+      ls_ray_dir = (drw_object_orco(ls_ray_dir)) * 2.0f - 1.0f;
+      ls_ray_ori = (drw_object_orco(ls_ray_ori)) * 2.0f - 1.0f;
+      ls_ray_end = (drw_object_orco(ls_ray_end)) * 2.0f - 1.0f;
+    }
+
+#else
+#line 425
+         {
+
+      ls_ray_dir = (srt_access(workbench_volume_Volume, volume_object_to_texture) * float4(ls_ray_dir, 1.0f)).xyz * 2.0f - 1.0f;
+      ls_ray_ori = (srt_access(workbench_volume_Volume, volume_object_to_texture) * float4(ls_ray_ori, 1.0f)).xyz * 2.0f - 1.0f;
+      ls_ray_end = (srt_access(workbench_volume_Volume, volume_object_to_texture) * float4(ls_ray_end, 1.0f)).xyz * 2.0f - 1.0f;
+    }
+#endif
+    ls_ray_dir -= ls_ray_ori;
+#line 436
+    float dist = workbench_volume_line_unit_box_intersect_dist(ls_ray_ori, ls_ray_dir);
+    if (dist > 0.0f) {
+      ls_ray_ori = ls_ray_dir * dist + ls_ray_ori;
+    }
+
+    float3 ls_vol_isect = ls_ray_end - ls_ray_ori;
+    if (dot(ls_ray_dir, ls_vol_isect) < 0.0f) {
+#line 445
+      gpu_discard_fragment();
+      return;
+    }
+
+    workbench_volume_FragOut_color = workbench_volume_volume_integration(srt,
+                                        gl_FragCoord,
+                                        ls_ray_ori,
+                                        ls_ray_dir,
+                                        srt_access(workbench_volume_Resources, step_length),
+                                        length(ls_vol_isect) / length(ls_ray_dir),
+                                        length(vs_ray_dir) * srt_access(workbench_volume_Resources, step_length));
+  }
+#endif
+#line 459
+  workbench_volume_FragOut_color.a = 1.0f - workbench_volume_FragOut_color.a;
+
+#endif
+#line 460
+}
+#endif
+#endif
+#line 490

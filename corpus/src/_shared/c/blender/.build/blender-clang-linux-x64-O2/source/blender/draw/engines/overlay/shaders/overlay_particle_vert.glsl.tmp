@@ -1,0 +1,26 @@
+#line 1 "overlay_particle_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_particle_dot)
+#line 14
+void main()
+{
+  select_id_set(drw_custom_id());
+#line 19
+  float draw_size = ucolor.a;
+
+  float3 world_pos = part_pos;
+
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+
+  gl_PointSize = draw_size * drw_view().winmat[1][1] * uniform_buf.size_viewport.y / gl_Position.w;
+#line 28
+  if (part_val < 0.0f) {
+    final_color = float4(ucolor.rgb, 1.0f);
+  }
+  else {
+    final_color = float4(texture(weight_tx, part_val).rgb, 1.0f);
+  }
+
+  view_clipping_distances(world_pos);
+}

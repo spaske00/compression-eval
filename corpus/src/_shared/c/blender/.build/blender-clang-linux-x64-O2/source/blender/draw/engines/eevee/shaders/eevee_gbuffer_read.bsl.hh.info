@@ -1,0 +1,18 @@
+#pragma once
+
+
+#define GBUFFER_HAS_REFLECTION
+#define GBUFFER_HAS_REFRACTION
+#define GBUFFER_HAS_SUBSURFACE
+#define GBUFFER_HAS_TRANSLUCENT
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(gbuffer_Reader)
+.sampler(GBUF_HEADER_TEX_SLOT, ImageType::usampler2DArray, "gbuf_header_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(GBUF_CLOSURE_TEX_SLOT, ImageType::sampler2DArray, "gbuf_closure_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(GBUF_NORMAL_TEX_SLOT, ImageType::sampler2DArray, "gbuf_normal_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+GPU_SHADER_CREATE_END()
+

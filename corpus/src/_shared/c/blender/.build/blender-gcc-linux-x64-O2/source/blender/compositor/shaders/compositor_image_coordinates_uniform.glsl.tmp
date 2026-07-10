@@ -1,0 +1,17 @@
+#line 1 "compositor_image_coordinates_uniform.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_image_coordinates_uniform)
+#line 11
+void main()
+{
+  const int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  const int max_display_size = reduce_max(display_size);
+
+  const float2 coordinates = float2(data_offset + texel) + 0.5f;
+  const float2 centered_coordinates = coordinates - float2(display_size) / 2.0f;
+  const float2 normalized_coordinates = (centered_coordinates / max_display_size) * 2.0f;
+
+  imageStore(output_img, texel, float4(normalized_coordinates, float2(0.0f)));
+}

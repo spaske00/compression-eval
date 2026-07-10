@@ -1,0 +1,227 @@
+#line 1 "eevee_sampling_lib.bsl.hh"
+ 
+#line 27
+#define access_eevee_Sampling_sampling_buf() sampling_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_Sampling
+CREATE_INFO_RES_PASS_eevee_Sampling
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_Sampling
+CREATE_INFO_RES_BATCH_eevee_Sampling
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_Sampling
+CREATE_INFO_RES_GEOMETRY_eevee_Sampling
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_Sampling
+CREATE_INFO_RES_SHARED_VARS_eevee_Sampling
+#endif
+#line 27
+struct eevee_Sampling {
+#line 54
+int _pad;};
+#line 68
+#ifndef GPU_METAL
+eevee_Sampling eevee_Sampling_ctor_();
+float _rng_1D_get(eevee_Sampling  this_, const eSamplingDimension dim);
+float2 _rng_2D_get(eevee_Sampling  this_, const eSamplingDimension dim);
+float3 _rng_3D_get(eevee_Sampling  this_, const eSamplingDimension dim);
+eevee_Sampling eevee_Sampling_new_();
+#endif
+#line 27
+                              eevee_Sampling eevee_Sampling_ctor_() {eevee_Sampling r;r._pad=0;return r;}
+#line 30
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 30
+  float _rng_1D_get(eevee_Sampling  this_, const eSamplingDimension dim)
+  {
+    return srt_access(eevee_Sampling, sampling_buf).dimensions[dim];
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 35
+  float2 _rng_2D_get(eevee_Sampling  this_, const eSamplingDimension dim)
+  {
+    return float2(srt_access(eevee_Sampling, sampling_buf).dimensions[dim], srt_access(eevee_Sampling, sampling_buf).dimensions[dim + 1u]);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 40
+  float3 _rng_3D_get(eevee_Sampling  this_, const eSamplingDimension dim)
+  {
+    return float3(srt_access(eevee_Sampling, sampling_buf).dimensions[dim],
+                  srt_access(eevee_Sampling, sampling_buf).dimensions[dim + 1u],
+                  srt_access(eevee_Sampling, sampling_buf).dimensions[dim + 2u]);
+  }
+#endif
+       eevee_Sampling eevee_Sampling_new_()
+{
+  eevee_Sampling result;
+  result._pad = 0;
+  return result;
+#line 45
+}
+#line 59
+float interleaved_gradient_noise(float2 pixel, float seed, float offset)
+{
+  pixel += seed * (float2(47, 17) * 0.695f);
+  return fract(offset + 52.9829189f * fract(0.06711056f * pixel.x + 0.00583715f * pixel.y));
+}
+
+float2 interleaved_gradient_noise(float2 pixel, float2 seed, float2 offset)
+{
+  return float2(interleaved_gradient_noise(pixel, seed.x, offset.x),
+                interleaved_gradient_noise(pixel, seed.y, offset.y));
+}
+
+float3 interleaved_gradient_noise(float2 pixel, float3 seed, float3 offset)
+{
+  return float3(interleaved_gradient_noise(pixel, seed.x, offset.x),
+                interleaved_gradient_noise(pixel, seed.y, offset.y),
+                interleaved_gradient_noise(pixel, seed.z, offset.z));
+}
+#line 79
+float van_der_corput_radical_inverse(uint bits)
+{
+#if 0
+#line 87
+#else
+  bits = bitfieldReverse(bits);
+#endif
+
+  return float(bits) * 2.3283064365386963e-10f;
+}
+
+float2 hammersley_2d(float i, float sample_count)
+{
+  float2 rand;
+  rand.x = i / sample_count;
+  rand.y = van_der_corput_radical_inverse(uint(i));
+  return rand;
+}
+
+float2 hammersley_2d(uint i, uint sample_count)
+{
+  float2 rand;
+  rand.x = float(i) / float(sample_count);
+  rand.y = van_der_corput_radical_inverse(i);
+  return rand;
+}
+
+float2 hammersley_2d(int i, int sample_count)
+{
+  return hammersley_2d(uint(i), uint(sample_count));
+}
+#line 116
+float2 regular_grid_2d(int i, int sample_count)
+{
+  int sample_per_dim = int(sqrt(float(sample_count)));
+  return (float2(i % sample_per_dim, i / sample_per_dim) + 0.5f) / float(sample_per_dim);
+}
+#line 125
+uint pcg_uint(uint u)
+{
+  uint state = u * 747796405u + 2891336453u;
+  uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
+  return (word >> 22u) ^ word;
+}
+
+float pcg(float v)
+{
+  return pcg_uint(floatBitsToUint(v)) / float(0xffffffffU);
+}
+
+float pcg(float2 v)
+{
+
+  uint2 u = floatBitsToUint(v);
+  return pcg_uint(pcg_uint(u.x) + u.y) / float(0xffffffffU);
+}
+#line 145
+float3 pcg3d(float3 v)
+{
+  uint3 u = floatBitsToUint(v);
+
+  u = u * 1664525u + 1013904223u;
+
+  u.x += u.y * u.z;
+  u.y += u.z * u.x;
+  u.z += u.x * u.y;
+
+  u ^= u >> 16u;
+
+  u.x += u.y * u.z;
+  u.y += u.z * u.x;
+  u.z += u.x * u.y;
+
+  return float3(u) / float(0xffffffffU);
+}
+#line 165
+float4 pcg4d(float4 v)
+{
+  uint4 u = floatBitsToUint(v);
+
+  u = u * 1664525u + 1013904223u;
+
+  u.x += u.y * u.w;
+  u.y += u.z * u.x;
+  u.z += u.x * u.y;
+  u.w += u.y * u.z;
+
+  u ^= u >> 16u;
+
+  u.x += u.y * u.w;
+  u.y += u.z * u.x;
+  u.z += u.x * u.y;
+  u.w += u.y * u.z;
+
+  return float4(u) / float(0xffffffffU);
+}
+#line 195
+float2 sample_circle(float rand)
+{
+  float phi = (rand - 0.5f) * M_TAU;
+  float cos_phi = cos(phi);
+  float sin_phi = sqrt(1.0f - square(cos_phi)) * sign(phi);
+  return float2(cos_phi, sin_phi);
+}
+#line 204
+float2 sample_disk(float2 rand)
+{
+  return sample_circle(rand.y) * sqrt(rand.x);
+}
+#line 212
+float3 sample_cylinder(float2 rand)
+{
+  return float3(rand.x, sample_circle(rand.y));
+}
+#line 223
+float3 sample_sphere(float2 rand)
+{
+  float cos_theta = rand.x * 2.0f - 1.0f;
+  float sin_theta = safe_sqrt(1.0f - cos_theta * cos_theta);
+  return float3(sin_theta * sample_circle(rand.y), cos_theta);
+}
+#line 234
+float3 sample_ball(float3 rand)
+{
+
+  return sample_sphere(rand.xy) * sqrt(sqrt(rand.z));
+}
+#line 246
+float3 sample_hemisphere(float2 rand)
+{
+  float cos_theta = rand.x;
+  float sin_theta = safe_sqrt(1.0f - square(cos_theta));
+  return float3(sin_theta * sample_circle(rand.y), cos_theta);
+}
+#line 260
+float3 sample_uniform_cone(float2 rand, float cos_angle)
+{
+  float cos_theta = mix(cos_angle, 1.0f, rand.x);
+  float sin_theta = safe_sqrt(1.0f - square(cos_theta));
+  return float3(sin_theta * sample_circle(rand.y), cos_theta);
+}
+
+

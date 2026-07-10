@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/core">
+    <file alias="images/qtcreatorlogo-big.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/app//images/logo/128/QtProject-qtcreator.png</file>
+    <file alias="images/qtcreatorlogo-big@2x.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/app//images/logo/256/QtProject-qtcreator.png</file>
+    </qresource>
+</RCC>

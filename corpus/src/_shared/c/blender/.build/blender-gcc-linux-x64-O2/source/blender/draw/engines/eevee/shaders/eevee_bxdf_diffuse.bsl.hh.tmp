@@ -1,0 +1,105 @@
+#line 1 "eevee_bxdf_diffuse.bsl.hh"
+ 
+#line 27
+BsdfSample bxdf_diffuse_sample(float3 rand)
+{
+  float cos_theta = safe_sqrt(rand.x);
+  BsdfSample samp;
+  samp.direction = float3(rand.yz * sin_from_cos(cos_theta), cos_theta);
+  samp.pdf = cos_theta * M_1_PI;
+  return samp;
+}
+
+BsdfEval bxdf_diffuse_eval(float3 N, float3 L)
+{
+  BsdfEval eval;
+  eval.throughput = eval.pdf = saturate(dot(N, L));
+  return eval;
+}
+
+float bxdf_diffuse_perceived_roughness()
+{
+  return 1.0f;
+}
+
+LightProbeRay bxdf_diffuse_lightprobe(float3 N)
+{
+  LightProbeRay probe;
+  probe.perceptual_roughness = bxdf_diffuse_perceived_roughness();
+  probe.dominant_direction = N;
+  return probe;
+}
+
+ClosureLight bxdf_diffuse_light(ClosureUndetermined cl)
+{
+  ClosureLight light;
+  light.ltc_mat = eevee_lut_ltc_identity();
+  light.N = cl.N;
+  light.type = LIGHT_DIFFUSE;
+  return light;
+}
+#line 79
+BsdfSample bxdf_translucent_sample(float3 rand, Thickness thickness)
+{
+  if (_mode(thickness) == ThicknessMode_Sphere) {
+
+    float cos_theta = rand.x * 2.0f - 1.0f;
+    BsdfSample samp;
+    samp.direction = float3(rand.yz * sin_from_cos(cos_theta), -cos_theta);
+    samp.pdf = 0.25f * M_1_PI;
+    return samp;
+  }
+#line 91
+  BsdfSample samp = bxdf_diffuse_sample(rand);
+  samp.direction = -samp.direction;
+  return samp;
+}
+
+BsdfEval bxdf_translucent_eval(float3 N, float3 L, Thickness thickness)
+{
+  if (_mode(thickness) == ThicknessMode_Sphere) {
+
+    BsdfEval eval;
+    eval.throughput = eval.pdf = 0.25f * M_1_PI;
+    return eval;
+  }
+
+  BsdfEval eval;
+  eval.throughput = eval.pdf = saturate(dot(-N, L));
+  return eval;
+}
+
+float bxdf_translucent_perceived_roughness()
+{
+  return 1.0f;
+}
+
+LightProbeRay bxdf_translucent_lightprobe(float3 N, Thickness thickness)
+{
+  LightProbeRay probe;
+  probe.perceptual_roughness = bxdf_translucent_perceived_roughness();
+
+  probe.dominant_direction = (_mode(thickness) == ThicknessMode_Sphere) ? float3(0.0f) : -N;
+  return probe;
+}
+
+Ray bxdf_translucent_ray_amend(ClosureUndetermined cl, float3 _0, Ray ray, Thickness thickness)
+{
+  if (_mode(thickness) == ThicknessMode_Sphere) {
+#line 129
+    ray.origin += (ray.direction - cl.N) * _value(thickness) * 0.505f;
+  }
+  return ray;
+}
+
+ClosureLight bxdf_translucent_light(ClosureUndetermined cl, float3 _0, Thickness thickness)
+{
+#line 143
+  ClosureLight light;
+  light.ltc_mat = eevee_lut_ltc_identity();
+  light.N = -cl.N;
+  light.type = (_value(thickness) != 0.0f) ? LIGHT_TRANSLUCENT_WITH_THICKNESS : LIGHT_DIFFUSE;
+  return light;
+}
+
+

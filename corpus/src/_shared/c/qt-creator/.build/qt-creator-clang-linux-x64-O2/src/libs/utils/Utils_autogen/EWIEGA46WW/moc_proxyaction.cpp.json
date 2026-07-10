@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "ProxyAction",
+            "lineNumber": 13,
+            "object": true,
+            "qualifiedClassName": "Utils::ProxyAction",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "action",
+                            "type": "QAction*"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "currentActionChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAction"
+                }
+            ]
+        }
+    ],
+    "inputFile": "proxyaction.h",
+    "outputRevision": 68
+}

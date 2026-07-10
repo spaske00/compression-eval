@@ -1,0 +1,285 @@
+#line 1 "eevee_volume_lib.bsl.hh"
+ 
+#line 17
+#define access_UnifiedVolumeProperties_in_scattering_img() in_scattering_img
+#define access_UnifiedVolumeProperties_in_extinction_img() in_extinction_img
+#define access_UnifiedVolumeProperties_in_emission_img() in_emission_img
+#define access_UnifiedVolumeProperties_in_phase_img() in_phase_img
+#define access_UnifiedVolumeProperties_in_phase_weight_img() in_phase_weight_img
+#ifdef CREATE_INFO_RES_PASS_UnifiedVolumeProperties
+CREATE_INFO_RES_PASS_UnifiedVolumeProperties
+#endif
+#ifdef CREATE_INFO_RES_BATCH_UnifiedVolumeProperties
+CREATE_INFO_RES_BATCH_UnifiedVolumeProperties
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_UnifiedVolumeProperties
+CREATE_INFO_RES_GEOMETRY_UnifiedVolumeProperties
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_UnifiedVolumeProperties
+CREATE_INFO_RES_SHARED_VARS_UnifiedVolumeProperties
+#endif
+#line 17
+struct UnifiedVolumeProperties {
+#line 31
+int _pad;};
+#line 36
+#ifndef GPU_METAL
+UnifiedVolumeProperties UnifiedVolumeProperties_ctor_();
+UnifiedVolumeProperties UnifiedVolumeProperties_new_();
+#endif
+#line 17
+                                       UnifiedVolumeProperties UnifiedVolumeProperties_ctor_() {UnifiedVolumeProperties r;r._pad=0;return r;}
+#line 24
+       UnifiedVolumeProperties UnifiedVolumeProperties_new_()
+{
+  UnifiedVolumeProperties result;
+  result._pad = 0;
+  return result;
+#line 22
+}
+#line 27
+float volume_froxel_jitter(int2 froxel, float offset)
+{
+  return interleaved_gradient_noise(float2(froxel), 0.0f, offset);
+}
+#line 35
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 34
+float volume_z_to_view_z(const eevee_Uniform  uni,
+                         const ViewMatrices view,
+                         float z)
+{
+  float near = srt_access(eevee_Uniform, uniform_buf).volumes.depth_near;
+  float far = srt_access(eevee_Uniform, uniform_buf).volumes.depth_far;
+  float distribution = srt_access(eevee_Uniform, uniform_buf).volumes.depth_distribution;
+  if (_is_perspective(view)) {
+
+    return (exp2(z / distribution) - near) / far;
+  }
+  else {
+
+    return near + (far - near) * z;
+  }
+}
+#endif
+#line 53
+float view_z_to_volume_z(
+    const ViewMatrices view, float depth, float near, float far, float distribution)
+{
+  if (_is_perspective(view)) {
+
+    return distribution * log2(max(1e-8, depth * far + near));
+  }
+  else {
+
+    return (depth - near) / (far - near);
+  }
+}
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 65
+float view_z_to_volume_z(const eevee_Uniform  uni,
+                         const ViewMatrices view,
+                         float depth)
+{
+  return view_z_to_volume_z(view,
+                            depth,
+                            srt_access(eevee_Uniform, uniform_buf).volumes.depth_near,
+                            srt_access(eevee_Uniform, uniform_buf).volumes.depth_far,
+                            srt_access(eevee_Uniform, uniform_buf).volumes.depth_distribution);
+}
+#endif
+#line 77
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 77
+float3 volume_jitter_to_view(const eevee_Uniform  uni,
+                             const ViewMatrices view,
+                             float3 coord)
+{
+#line 84
+  float4x4 winmat = srt_access(eevee_Uniform, uniform_buf).volumes.winmat_finite;
+  float4x4 wininv = srt_access(eevee_Uniform, uniform_buf).volumes.wininv_finite;
+
+  float view_z = volume_z_to_view_z(uni, view, coord.z);
+
+  float ndc_z = _perspective_divide(view, winmat * float4(0.0f, 0.0f, view_z, 1.0f)).z;
+  float2 ndc_xy = _screen_to_ndc(view, coord.xy  );
+
+  return _perspective_divide(view, wininv * float4(ndc_xy, ndc_z, 1.0f)).xyz;
+}
+#endif
+#line 96
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 96
+float3 volume_view_to_jitter(const eevee_Uniform  uni,
+                             const ViewMatrices view,
+                             float3 vP)
+{
+#line 103
+  float4x4 winmat = srt_access(eevee_Uniform, uniform_buf).volumes.winmat_finite;
+
+  float3 ndc_P = _perspective_divide(view, winmat * float4(vP, 1.0f));
+
+  return float3(_ndc_to_screen(view, ndc_P.xy  ), view_z_to_volume_z(uni, view, vP.z));
+}
+#endif
+#line 112
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 112
+float3 volume_resolve_to_screen(const eevee_Uniform  uni,
+                                const ViewMatrices view,
+                                float3 coord)
+{
+  coord.z = volume_z_to_view_z(uni, view, coord.z);
+  coord.z = _depth_view_to_screen(view, coord.z);
+  coord.xy /= srt_access(eevee_Uniform, uniform_buf).volumes.coord_scale;
+  return coord;
+}
+#endif
+#line 123
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 123
+float3 volume_screen_to_resolve(const eevee_Uniform  uni,
+                                const ViewMatrices view,
+                                float3 coord)
+{
+  coord.xy *= srt_access(eevee_Uniform, uniform_buf).volumes.coord_scale;
+  coord.z = _depth_screen_to_view(view, coord.z);
+  coord.z = view_z_to_volume_z(uni, view, coord.z);
+  return coord;
+}
+#endif
+#line 135
+
+#if defined(CREATE_INFO_eevee_Uniform)
+#line 135
+float3 volume_history_uvw_get(const eevee_Uniform  uni,
+                              const ViewMatrices view,
+                              int3 froxel)
+{
+  float4x4 wininv = srt_access(eevee_Uniform, uniform_buf).volumes.wininv_stable;
+  float4x4 winmat = srt_access(eevee_Uniform, uniform_buf).volumes.winmat_stable;
+#line 143
+  float3 uvw = (float3(froxel) + 0.5f) * srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size;
+  float3 ndc_P = _screen_to_ndc(view, uvw);
+
+  float view_z = volume_z_to_view_z(uni, view, uvw.z);
+  ndc_P.z = _perspective_divide(view, winmat * float4(0.0f, 0.0f, view_z, 1.0f)).z;
+
+  float3 vs_P = project_point(wininv, ndc_P);
+#line 152
+  float3 vs_P_history = transform_point(srt_access(eevee_Uniform, uniform_buf).volumes.curr_view_to_past_view, vs_P);
+#line 155
+  float4 hs_P_history = srt_access(eevee_Uniform, uniform_buf).volumes.history_winmat_stable * float4(vs_P_history, 1.0f);
+  float3 ndc_P_history = _perspective_divide(view, hs_P_history);
+
+  if (hs_P_history.w < 0.0f || any(greaterThan(abs(ndc_P_history.xy), float2(1.0f)))) {
+    return float3(-1.0f);
+  }
+
+  float3 uvw_history;
+  uvw_history.xy = _ndc_to_screen(view, ndc_P_history.xy  );
+  uvw_history.z = view_z_to_volume_z(view,
+                                     vs_P_history.z,
+                                     srt_access(eevee_Uniform, uniform_buf).volumes.history_depth_near,
+                                     srt_access(eevee_Uniform, uniform_buf).volumes.history_depth_far,
+                                     srt_access(eevee_Uniform, uniform_buf).volumes.history_depth_distribution);
+
+  if (uvw_history.z < 0.0f || uvw_history.z > 1.0f) {
+    return float3(-1.0f);
+  }
+  return uvw_history;
+}
+#endif
+float volume_phase_function_isotropic()
+{
+  return 1.0f / (4.0f * M_PI);
+}
+
+float volume_phase_function(float3 V, float3 L, float g)
+{
+
+  float cos_theta = dot(V, L);
+  g = clamp(g, -1.0f + 1e-3f, 1.0f - 1e-3f);
+  float sqr_g = g * g;
+  return (1 - sqr_g) / max(1e-8f, 4.0f * M_PI * pow(1 + sqr_g - 2 * g * cos_theta, 3.0f / 2.0f));
+}
+
+SphericalHarmonicL1Tfloat4 volume_phase_function_as_sh_L1(float3 V, float g)
+{
+#line 198
+  SphericalHarmonicL1Tfloat4 sh;
+  sh.L0.M0 = spherical_harmonics_L0_M0_coef(V) * float4(1.0f);
+  sh.L1.Mn1 = spherical_harmonics_L1_Mn1_coef(V) * float4(g);
+  sh.L1.M0 = spherical_harmonics_L1_M0_coef(V) * float4(g);
+  sh.L1.Mp1 = spherical_harmonics_L1_Mp1_coef(V) * float4(g);
+  return sh;
+}
+
+struct VolumeResolveSample {
+  float3 transmittance;
+  float3 scattering;
+};
+#line 206
+                                   VolumeResolveSample VolumeResolveSample_ctor_() {VolumeResolveSample r;r.transmittance=float3(0);r.scattering=float3(0);return r;}
+#line 211
+#define access_UnifiedVolumeData_uniforms() eevee_Uniform_new_()
+#define access_UnifiedVolumeData_views_() draw_View_new_()
+#define access_UnifiedVolumeData_volume_transmittance_tx() volume_transmittance_tx
+#define access_UnifiedVolumeData_volume_scattering_tx() volume_scattering_tx
+#ifdef CREATE_INFO_RES_PASS_UnifiedVolumeData
+CREATE_INFO_RES_PASS_UnifiedVolumeData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_UnifiedVolumeData
+CREATE_INFO_RES_BATCH_UnifiedVolumeData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_UnifiedVolumeData
+CREATE_INFO_RES_GEOMETRY_UnifiedVolumeData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_UnifiedVolumeData
+CREATE_INFO_RES_SHARED_VARS_UnifiedVolumeData
+#endif
+#line 211
+struct UnifiedVolumeData {
+                           eevee_Uniform  uniforms;
+                           draw_View  views_;
+#line 245
+};
+
+#ifndef GPU_METAL
+UnifiedVolumeData UnifiedVolumeData_ctor_();
+VolumeResolveSample _resolve(UnifiedVolumeData  this_, float3 ndc_P);
+UnifiedVolumeData UnifiedVolumeData_new_();
+#endif
+#line 211
+                                 UnifiedVolumeData UnifiedVolumeData_ctor_() {UnifiedVolumeData r;r.uniforms=eevee_Uniform_ctor_();r.views_=draw_View_ctor_();return r;}
+#line 218
+
+#if defined(CREATE_INFO_UnifiedVolumeData)
+#line 218
+  VolumeResolveSample _resolve(UnifiedVolumeData  this_, float3 ndc_P)
+  {
+#line 223
+    float3 coord = volume_screen_to_resolve(srt_access(UnifiedVolumeData, uniforms), _get(srt_access(UnifiedVolumeData, views_), 0), ndc_P);
+#line 228
+    coord.z -= srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size.z;
+#line 231
+    VolumeResolveSample volume;
+    volume.scattering = texture(srt_access(UnifiedVolumeData, volume_scattering_tx), coord).rgb;
+    volume.transmittance = texture(srt_access(UnifiedVolumeData, volume_transmittance_tx), coord).rgb;
+    return volume;
+  }
+#endif
+       UnifiedVolumeData UnifiedVolumeData_new_()
+{
+  UnifiedVolumeData result;
+  result.uniforms = eevee_Uniform_new_();
+  result.views_ = draw_View_new_();
+  return result;
+#line 235
+}
+#line 237

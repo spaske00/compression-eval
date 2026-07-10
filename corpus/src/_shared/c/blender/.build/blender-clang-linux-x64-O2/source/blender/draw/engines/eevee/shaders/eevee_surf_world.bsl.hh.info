@@ -1,0 +1,32 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfWorldFragOut)
+FRAGMENT_OUT(0, float4, eevee_SurfWorldFragOut_background)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfWorld)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+PUSH_CONSTANT(float, world_opacity_fade)
+PUSH_CONSTANT(float, world_background_blur)
+PUSH_CONSTANT(int4, world_coord_packed)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_world_infos_)
+EARLY_FRAGMENT_TEST(true)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_SurfWorld)
+ADDITIONAL_INFO(eevee_LightprobeRenderData)
+ADDITIONAL_INFO(eevee_RenderPassOutput)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_SurfWorldFragOut)
+GPU_SHADER_CREATE_END()
+

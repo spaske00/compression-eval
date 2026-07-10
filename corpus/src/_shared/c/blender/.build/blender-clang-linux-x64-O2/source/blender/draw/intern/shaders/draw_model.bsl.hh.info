@@ -1,0 +1,20 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(draw_Resource)
+.storage_buf(DRW_RESOURCE_ID_SLOT, Qualifier::read, "uint", "res_id_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(draw_ResourceCustomID)
+.storage_buf(DRW_RESOURCE_ID_SLOT, Qualifier::read, "uint2", "res_id_with_custom_id_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(draw_Model)
+.storage_buf(DRW_OBJ_MAT_SLOT, Qualifier::read, "ObjectMatrices", "drw_matrix_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(draw_Infos)
+.storage_buf(DRW_OBJ_INFOS_SLOT, Qualifier::read, "ObjectInfos", "drw_infos[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

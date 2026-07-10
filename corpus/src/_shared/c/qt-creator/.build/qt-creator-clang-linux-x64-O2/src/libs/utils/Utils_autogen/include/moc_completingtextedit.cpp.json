@@ -1,0 +1,73 @@
+{
+    "classes": [
+        {
+            "className": "CompletingTextEdit",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "CompletionBehavior",
+                    "values": [
+                        "OnKeyPress",
+                        "OnTextChange"
+                    ]
+                }
+            ],
+            "lineNumber": 23,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "completionLengthThreshold",
+                    "read": "completionLengthThreshold",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setCompletionLengthThreshold"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "completionBehavior",
+                    "read": "completionBehavior",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "CompletionBehavior",
+                    "user": false,
+                    "write": "setCompletionBehavior"
+                }
+            ],
+            "qualifiedClassName": "Utils::CompletingTextEdit",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "returnPressed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "rightSideIconClicked",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QTextEdit"
+                }
+            ]
+        }
+    ],
+    "inputFile": "completingtextedit.h",
+    "outputRevision": 68
+}

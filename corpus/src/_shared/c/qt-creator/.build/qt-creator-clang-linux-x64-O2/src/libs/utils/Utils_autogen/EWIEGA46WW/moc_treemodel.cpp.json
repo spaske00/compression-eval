@@ -1,0 +1,42 @@
+{
+    "classes": [
+        {
+            "className": "BaseTreeModel",
+            "lineNumber": 198,
+            "object": true,
+            "qualifiedClassName": "Utils::BaseTreeModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QModelIndex"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "requestExpansion",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QModelIndex"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "requestCollapse",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractItemModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "treemodel.h",
+    "outputRevision": 68
+}

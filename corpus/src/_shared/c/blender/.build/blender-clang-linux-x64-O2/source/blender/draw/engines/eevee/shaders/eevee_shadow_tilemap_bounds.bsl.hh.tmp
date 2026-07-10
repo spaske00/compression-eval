@@ -1,0 +1,247 @@
+#line 1 "eevee_shadow_tilemap_bounds.bsl.hh"
+ 
+#line 22
+#define access_eevee_shadow_TilemapBoundsInit_tilemaps_clip_buf_len() tilemaps_clip_buf_len
+#define access_eevee_shadow_TilemapBoundsInit_tilemaps_clip_buf() tilemaps_clip_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_TilemapBoundsInit
+CREATE_INFO_RES_PASS_eevee_shadow_TilemapBoundsInit
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_TilemapBoundsInit
+CREATE_INFO_RES_BATCH_eevee_shadow_TilemapBoundsInit
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_TilemapBoundsInit
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_TilemapBoundsInit
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TilemapBoundsInit
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TilemapBoundsInit
+#endif
+#line 22
+struct eevee_shadow_TilemapBoundsInit {
+#line 33
+int _pad;};
+#line 36
+#ifndef GPU_METAL
+eevee_shadow_TilemapBoundsInit eevee_shadow_TilemapBoundsInit_ctor_();
+eevee_shadow_TilemapBoundsInit eevee_shadow_TilemapBoundsInit_new_();
+#endif
+#line 22
+                                              eevee_shadow_TilemapBoundsInit eevee_shadow_TilemapBoundsInit_ctor_() {eevee_shadow_TilemapBoundsInit r;r._pad=0;return r;}
+#line 26
+       eevee_shadow_TilemapBoundsInit eevee_shadow_TilemapBoundsInit_new_()
+{
+  eevee_shadow_TilemapBoundsInit result;
+  result._pad = 0;
+  return result;
+#line 24
+}
+#line 27
+
+#if defined(CREATE_INFO_eevee_shadow_TilemapBoundsInit)
+#line 27
+
+#if defined(ENTRY_POINT_eevee_shadow_tilemap_bounds_clear)
+#line 27
+
+void eevee_shadow_tilemap_bounds_clear(
+                                                                        )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 30
+  eevee_shadow_TilemapBoundsInit srt = eevee_shadow_TilemapBoundsInit_ctor_();
+  int index = int(gl_GlobalInvocationID.x);
+  if (index < srt_access(eevee_shadow_TilemapBoundsInit, tilemaps_clip_buf_len)) {
+    srt_access(eevee_shadow_TilemapBoundsInit, tilemaps_clip_buf)[index].clip_far = floatBitsToOrderedInt(-FLT_MAX);
+    srt_access(eevee_shadow_TilemapBoundsInit, tilemaps_clip_buf)[index].clip_near = floatBitsToOrderedInt(FLT_MAX);
+  }
+
+#endif
+#line 36
+}
+#endif
+#endif
+#line 38
+#define access_eevee_shadow_TilemapBounds_light_data() eevee_LightRenderData_new_()
+#define access_eevee_shadow_TilemapBounds_resource_len() resource_len
+#define access_eevee_shadow_TilemapBounds_global_min() global_min
+#define access_eevee_shadow_TilemapBounds_global_max() global_max
+#define access_eevee_shadow_TilemapBounds_casters_id_buf() casters_id_buf
+#define access_eevee_shadow_TilemapBounds_tilemaps_buf() tilemaps_buf
+#define access_eevee_shadow_TilemapBounds_bounds_buf() bounds_buf
+#define access_eevee_shadow_TilemapBounds_tilemaps_clip_buf() tilemaps_clip_buf
+#define access_eevee_shadow_TilemapBounds_light_buf_write() light_buf_write
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_TilemapBounds
+CREATE_INFO_RES_PASS_eevee_shadow_TilemapBounds
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_TilemapBounds
+CREATE_INFO_RES_BATCH_eevee_shadow_TilemapBounds
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_TilemapBounds
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_TilemapBounds
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TilemapBounds
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TilemapBounds
+#endif
+#line 38
+struct eevee_shadow_TilemapBounds {
+                           eevee_LightRenderData  light_data;
+#line 60
+};
+#line 63
+#ifndef GPU_METAL
+eevee_shadow_TilemapBounds eevee_shadow_TilemapBounds_ctor_();
+eevee_shadow_TilemapBounds eevee_shadow_TilemapBounds_new_();
+#endif
+#line 38
+                                          eevee_shadow_TilemapBounds eevee_shadow_TilemapBounds_ctor_() {eevee_shadow_TilemapBounds r;r.light_data=eevee_LightRenderData_ctor_();return r;}
+#line 53
+       eevee_shadow_TilemapBounds eevee_shadow_TilemapBounds_new_()
+{
+  eevee_shadow_TilemapBounds result;
+  result.light_data = eevee_LightRenderData_new_();
+  return result;
+#line 51
+}
+#line 54
+struct eevee_shadow_TilemapBoundsCtx {
+  Box box;
+  bool is_valid;
+  uint local_id;
+#line 115
+};
+#line 128
+#ifndef GPU_METAL
+eevee_shadow_TilemapBoundsCtx eevee_shadow_TilemapBoundsCtx_ctor_();
+void _eval_directional(_ref(eevee_shadow_TilemapBoundsCtx ,this_), eevee_shadow_TilemapBounds  srt, uint l_index, LightData _0);
+void _eval_local(_ref(eevee_shadow_TilemapBoundsCtx ,this_), eevee_shadow_TilemapBounds   _0, uint _1, LightData _2);
+#endif
+#line 54
+                                             eevee_shadow_TilemapBoundsCtx eevee_shadow_TilemapBoundsCtx_ctor_() {eevee_shadow_TilemapBoundsCtx r;r.box=Box_ctor_();r.is_valid=false;r.local_id=0u;return r;}
+#line 59
+
+#if defined(CREATE_INFO_eevee_shadow_TilemapBounds)
+#line 59
+  void _eval_directional(_ref(eevee_shadow_TilemapBoundsCtx ,this_), eevee_shadow_TilemapBounds  srt, uint l_index, LightData _0)
+  {
+
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[l_index];
+
+    if (light.tilemap_index == LIGHT_NO_SHADOW) {
+      return;
+    }
+
+    float local_min = FLT_MAX;
+    float local_max = -FLT_MAX;
+    for (int i = 0; i < 8; i++) {
+      float z = dot(this_.box.corners[i].xyz, -_z_axis(light));
+      local_min = min(local_min, z);
+      local_max = max(local_max, z);
+    }
+
+    if (this_.local_id == 0u) {
+      srt_access(eevee_shadow_TilemapBounds, global_min) = floatBitsToOrderedInt(FLT_MAX);
+      srt_access(eevee_shadow_TilemapBounds, global_max) = floatBitsToOrderedInt(-FLT_MAX);
+    }
+
+    barrier();
+#line 84
+    local_min -= abs(local_min) * 0.01f;
+    local_max += abs(local_max) * 0.01f;
+
+    if (this_.is_valid) {
+
+      atomicMin(srt_access(eevee_shadow_TilemapBounds, global_min), floatBitsToOrderedInt(local_min));
+      atomicMax(srt_access(eevee_shadow_TilemapBounds, global_max), floatBitsToOrderedInt(local_max));
+    }
+
+    barrier();
+
+    if (this_.local_id == 0u) {
+
+      atomicMin(srt_access(eevee_shadow_TilemapBounds, light_buf_write)[l_index].clip_near, srt_access(eevee_shadow_TilemapBounds, global_min));
+      atomicMax(srt_access(eevee_shadow_TilemapBounds, light_buf_write)[l_index].clip_far, srt_access(eevee_shadow_TilemapBounds, global_max));
+#line 101
+      for (int i = light.tilemap_index; i <= _tilemap_max_get(light); i++) {
+        int index = srt_access(eevee_shadow_TilemapBounds, tilemaps_buf)[i].clip_data_index;
+        atomicMin(srt_access(eevee_shadow_TilemapBounds, tilemaps_clip_buf)[index].clip_near, srt_access(eevee_shadow_TilemapBounds, global_min));
+        atomicMax(srt_access(eevee_shadow_TilemapBounds, tilemaps_clip_buf)[index].clip_far, srt_access(eevee_shadow_TilemapBounds, global_max));
+      }
+    }
+#line 110
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_TilemapBounds)
+#line 112
+  void _eval_local(_ref(eevee_shadow_TilemapBoundsCtx ,this_), eevee_shadow_TilemapBounds   _0, uint _1, LightData _2)
+  {
+  }
+#endif
+#line 38 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_shadow_TilemapBounds)
+#line 38
+void eevee_light_foreach(const eevee_LightRenderData  srt,
+             _ref(eevee_shadow_TilemapBoundsCtx ,cb),
+             eevee_shadow_TilemapBounds  res)
+{
+#line 44
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+}
+#endif
+#line 126 "eevee_shadow_tilemap_bounds.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_shadow_TilemapBounds)
+#line 126
+
+#if defined(ENTRY_POINT_eevee_shadow_tilemap_bounds_min_max)
+#line 126
+
+void eevee_shadow_tilemap_bounds_min_max(
+
+                                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 130
+  eevee_shadow_TilemapBounds srt = eevee_shadow_TilemapBounds_ctor_();
+  eevee_shadow_TilemapBoundsCtx ctx;
+  ctx.is_valid = true;
+  ctx.local_id = gl_LocalInvocationIndex;
+
+  if (srt_access(eevee_shadow_TilemapBounds, resource_len) > 0) {
+    uint index = gl_GlobalInvocationID.x;
+
+    index = min(index, uint(srt_access(eevee_shadow_TilemapBounds, resource_len)) - 1);
+    uint resource_id = srt_access(eevee_shadow_TilemapBounds, casters_id_buf)[index];
+    resource_id = (resource_id & 0x7FFFFFFFu);
+
+    ObjectBounds bounds = srt_access(eevee_shadow_TilemapBounds, bounds_buf)[resource_id];
+    ctx.is_valid = drw_bounds_corners_are_valid(bounds);
+    ctx.box = shape_box(bounds.bounding_corners[0].xyz,
+                        bounds.bounding_corners[0].xyz + bounds.bounding_corners[1].xyz,
+                        bounds.bounding_corners[0].xyz + bounds.bounding_corners[2].xyz,
+                        bounds.bounding_corners[0].xyz + bounds.bounding_corners[3].xyz);
+  }
+  else {
+
+    ctx.box = shape_box(float3(-1.0f),
+                        float3(-1.0f) + float3(1.0f, 0.0f, 0.0f),
+                        float3(-1.0f) + float3(0.0f, 1.0f, 0.0f),
+                        float3(-1.0f) + float3(0.0f, 0.0f, 1.0f));
+  }
+
+  eevee_light_foreach(srt_access(eevee_shadow_TilemapBounds, light_data), ctx, srt);
+
+#endif
+#line 158
+}
+#endif
+#endif
+#line 164

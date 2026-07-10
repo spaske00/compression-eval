@@ -1,0 +1,14 @@
+#line 1 "workbench_shadow_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 17
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define DYNAMIC_PASS_SELECTION
+#endif
+
+
+
+

@@ -1,0 +1,39 @@
+#line 1 "eevee_light_data.bsl.hh"
+ 
+#line 13
+#define access_eevee_LightRenderData_light_cull_buf() light_cull_buf
+#define access_eevee_LightRenderData_light_buf() light_buf
+#define access_eevee_LightRenderData_light_zbin_buf() light_zbin_buf
+#define access_eevee_LightRenderData_light_tile_buf() light_tile_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_LightRenderData
+CREATE_INFO_RES_PASS_eevee_LightRenderData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_LightRenderData
+CREATE_INFO_RES_BATCH_eevee_LightRenderData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_LightRenderData
+CREATE_INFO_RES_GEOMETRY_eevee_LightRenderData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_LightRenderData
+CREATE_INFO_RES_SHARED_VARS_eevee_LightRenderData
+#endif
+#line 13
+struct eevee_LightRenderData {
+#line 26
+int _pad;};
+#line 30
+#ifndef GPU_METAL
+eevee_LightRenderData eevee_LightRenderData_ctor_();
+eevee_LightRenderData eevee_LightRenderData_new_();
+#endif
+#line 13
+                                     eevee_LightRenderData eevee_LightRenderData_ctor_() {eevee_LightRenderData r;r._pad=0;return r;}
+#line 19
+       eevee_LightRenderData eevee_LightRenderData_new_()
+{
+  eevee_LightRenderData result;
+  result._pad = 0;
+  return result;
+#line 17
+}
+#line 21

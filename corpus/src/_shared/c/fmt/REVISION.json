@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "fmt",
+  "input_url": "https://github.com/fmtlib/fmt",
+  "canonical_url": "https://github.com/fmtlib/fmt",
+  "source_directory": "fmt/upstream",
+  "commit": "77b6ff700be3417e0a3ad9674ca306e40c451b6b",
+  "nested_submodules": []
+}

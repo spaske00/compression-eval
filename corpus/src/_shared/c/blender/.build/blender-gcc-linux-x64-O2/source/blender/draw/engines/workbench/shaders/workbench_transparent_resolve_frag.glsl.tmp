@@ -1,0 +1,16 @@
+#line 1 "workbench_transparent_resolve_frag.glsl"
+ 
+#line 12
+FRAGMENT_SHADER_CREATE_INFO(workbench_transparent_resolve)
+
+void main()
+{
+  float2 screen_uv = gl_FragCoord.xy / float2(textureSize(transparent_accum, 0).xy);
+#line 20
+  float4 trans_accum = texture(transparent_accum, screen_uv);
+  float trans_weight = texture(transparent_revealage, screen_uv).r;
+  float trans_reveal = trans_accum.a;
+#line 25
+  frag_color.rgb = trans_accum.rgb / clamp(trans_weight, 1e-4f, 5e4f);
+  frag_color.a = 1.0f - trans_reveal;
+}

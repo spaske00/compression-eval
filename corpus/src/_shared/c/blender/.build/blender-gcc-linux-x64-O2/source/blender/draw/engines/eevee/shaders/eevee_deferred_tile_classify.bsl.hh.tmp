@@ -1,0 +1,93 @@
+#line 1 "eevee_deferred_tile_classify.bsl.hh"
+ 
+#line 13
+#if defined(ENTRY_POINT_eevee_deferred_tiles_fullscreen_vert)
+#line 12
+
+void eevee_deferred_tiles_fullscreen_vert(                                                                  )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 15
+  fullscreen_vertex(gl_VertexID, gl_Position);
+
+#endif
+#line 16
+}
+#endif
+struct eevee_deferred_tiles_TileSubpassIn {
+
+                                                  uint in_gbuffer_header;
+};
+#line 18
+                                                  eevee_deferred_tiles_TileSubpassIn eevee_deferred_tiles_TileSubpassIn_ctor_() {eevee_deferred_tiles_TileSubpassIn r;r.in_gbuffer_header=0u;return r;}
+#line 23
+#define access_eevee_deferred_tiles_TileClassification_current_bit() current_bit
+#ifdef CREATE_INFO_RES_PASS_eevee_deferred_tiles_TileClassification
+CREATE_INFO_RES_PASS_eevee_deferred_tiles_TileClassification
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_deferred_tiles_TileClassification
+CREATE_INFO_RES_BATCH_eevee_deferred_tiles_TileClassification
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_deferred_tiles_TileClassification
+CREATE_INFO_RES_GEOMETRY_eevee_deferred_tiles_TileClassification
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_deferred_tiles_TileClassification
+CREATE_INFO_RES_SHARED_VARS_eevee_deferred_tiles_TileClassification
+#endif
+#line 23
+struct eevee_deferred_tiles_TileClassification {
+#line 33
+int _pad;};
+#line 40
+#ifndef GPU_METAL
+eevee_deferred_tiles_TileClassification eevee_deferred_tiles_TileClassification_ctor_();
+eevee_deferred_tiles_TileClassification eevee_deferred_tiles_TileClassification_new_();
+#endif
+#line 23
+                                                       eevee_deferred_tiles_TileClassification eevee_deferred_tiles_TileClassification_ctor_() {eevee_deferred_tiles_TileClassification r;r._pad=0;return r;}
+#line 26
+       eevee_deferred_tiles_TileClassification eevee_deferred_tiles_TileClassification_new_()
+{
+  eevee_deferred_tiles_TileClassification result;
+  result._pad = 0;
+  return result;
+#line 24
+}
+#line 31
+
+#if defined(CREATE_INFO_eevee_deferred_tiles_TileClassification)
+#line 31
+
+#if defined(ENTRY_POINT_eevee_deferred_tiles_classify_tiles)
+#line 31
+
+void eevee_deferred_tiles_classify_tiles(
+                                                                                    )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 34
+  eevee_deferred_tiles_TileClassification srt = eevee_deferred_tiles_TileClassification_ctor_();
+  gbuffer_Header header = gbuffer_Header_from_data(eevee_deferred_tiles_TileSubpassIn_in_gbuffer_header);
+  int closure_count = int(_closure_len(header));
+  int is_transmission = 0;
+  if (_has_transmission(header)) {
+    is_transmission = 1 << 2;
+  }
+
+#if defined(GPU_ARB_shader_stencil_export) || defined(GPU_METAL)
+  gl_FragStencilRefARB = closure_count | is_transmission;
+#else
+#line 48
+  if ((srt_access(eevee_deferred_tiles_TileClassification, current_bit) & (closure_count | is_transmission)) == 0) {
+    gpu_discard_fragment();
+    return;
+  }
+#endif
+
+#endif
+#line 53
+}
+#endif
+#endif
+#line 59

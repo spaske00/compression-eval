@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2; exit 2; fi
+cc=$1; cxx=$2; raw_target=$3; shift 3; flags=("$@")
+target=${raw_target%.out}
+case "$target" in ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;; esac
+case "$(basename -- "$cc"):$(basename -- "$cxx")" in
+    gcc*:g++*|clang*:clang++*) ;;
+    *) echo "Assimp requires a matching GCC/G++ or Clang/Clang++ toolchain: $cc, $cxx" >&2; exit 2 ;;
+esac
+command -v "$cc" >/dev/null || { echo "compiler not found: $cc" >&2; exit 2; }
+command -v "$cxx" >/dev/null || { echo "compiler not found: $cxx" >&2; exit 2; }
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+build_dir="$root/.build/$target"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$build_dir/bin/assimp"
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$build_dir" "$temporary"
+
+cmake -S "$root/upstream" -B "$build_dir" -G Ninja \
+    -DCMAKE_C_COMPILER="$cc" -DCMAKE_CXX_COMPILER="$cxx" \
+    -DCMAKE_BUILD_TYPE=None -DCMAKE_C_FLAGS="${flags[*]}" \
+    -DCMAKE_CXX_FLAGS="${flags[*]}" -DCMAKE_EXE_LINKER_FLAGS="${flags[*]}" \
+    -DASSIMP_BUILD_ASSIMP_TOOLS=ON -DASSIMP_BUILD_TESTS=OFF \
+    -DASSIMP_BUILD_SAMPLES=OFF -DASSIMP_BUILD_ASSIMP_VIEW=OFF \
+    -DASSIMP_BUILD_DRACO=OFF -DASSIMP_INSTALL=OFF \
+    -DASSIMP_WARNINGS_AS_ERRORS=OFF
+cmake --build "$build_dir" --target assimp_cmd --parallel "${JOBS:-8}"
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

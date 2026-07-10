@@ -1,0 +1,22 @@
+#line 1 "overlay_depth_only_curves_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_depth_curves)
+#line 15
+#if defined(GPU_NVIDIA) && defined(GPU_OPENGL)
+
+#  define const
+#endif
+
+void main()
+{
+  select_id_set(drw_custom_id());
+
+  const curves_Point ls_pt = curves_point_get(uint(gl_VertexID));
+  const curves_Point ws_pt = curves_object_to_world(ls_pt, drw_modelmat());
+  float3 world_pos = curves_shape_point_get(ws_pt, drw_world_incident_vector(ws_pt.P)).P;
+
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+
+  view_clipping_distances(world_pos);
+}

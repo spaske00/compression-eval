@@ -1,0 +1,27 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_dof_bokeh_lut_Resources)
+.image(0, blender::gpu::TextureFormat::SFLOAT_16_16, Qualifier::write, ImageReadWriteType::image2D, "out_gather_lut_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::write, ImageReadWriteType::image2D, "out_scatter_lut_img", Frequency::PASS)
+.image(2, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::write, ImageReadWriteType::image2D, "out_resolve_lut_img", Frequency::PASS)
+.uniform_buf(0, "DepthOfFieldData", "dof_buf", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_bokeh_lut_comp_main_infos_)
+LOCAL_GROUP_SIZE(DOF_BOKEH_LUT_SIZE, DOF_BOKEH_LUT_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_dof_bokeh_lut_Resources)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_bokeh_lut)
+COMPUTE_SOURCE("eevee_depth_of_field_bokeh_lut.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_bokeh_lut_comp_main")
+ADDITIONAL_INFO(eevee_dof_bokeh_lut_comp_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

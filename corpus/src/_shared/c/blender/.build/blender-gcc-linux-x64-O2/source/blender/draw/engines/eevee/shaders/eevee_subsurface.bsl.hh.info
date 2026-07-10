@@ -1,0 +1,66 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_subsurface_Setup)
+SPECIALIZATION_CONSTANT(bool, use_split_radiance, false)
+.sampler(2, ImageType::sampler2DDepth, "depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(0, blender::gpu::TextureFormat::DEFERRED_RADIANCE_FORMAT, Qualifier::read, ImageReadWriteType::uimage2D, "direct_light_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::RAYTRACE_RADIANCE_FORMAT, Qualifier::read, ImageReadWriteType::image2D, "indirect_light_img", Frequency::PASS)
+.image(2, blender::gpu::TextureFormat::SUBSURFACE_OBJECT_ID_FORMAT, Qualifier::write, ImageReadWriteType::uimage2D, "object_id_img", Frequency::PASS)
+.image(3, blender::gpu::TextureFormat::SUBSURFACE_RADIANCE_FORMAT, Qualifier::write, ImageReadWriteType::image2DArray, "radiance_img", Frequency::PASS)
+GROUP_SHARED(uint, has_visible_sss)
+.storage_buf(1, Qualifier::read_write, "DispatchCommand", "convolve_dispatch_buf", Frequency::PASS)
+.storage_buf(0, Qualifier::write, "uint", "convolve_tile_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_subsurface_Convolve)
+SPECIALIZATION_CONSTANT(bool, use_split_radiance, false)
+.sampler(2, ImageType::sampler2DArray, "radiance_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(3, ImageType::sampler2DDepth, "depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(4, ImageType::usampler2D, "object_id_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(0, blender::gpu::TextureFormat::DEFERRED_RADIANCE_FORMAT, Qualifier::write, ImageReadWriteType::uimage2D, "out_direct_light_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::RAYTRACE_RADIANCE_FORMAT, Qualifier::write, ImageReadWriteType::image2D, "out_indirect_light_img", Frequency::PASS)
+GROUP_SHARED(float3, cached_radiance[SUBSURFACE_GROUP_SIZE][SUBSURFACE_GROUP_SIZE])
+GROUP_SHARED(uint, cached_sss_id[SUBSURFACE_GROUP_SIZE][SUBSURFACE_GROUP_SIZE])
+GROUP_SHARED(float, cached_depth[SUBSURFACE_GROUP_SIZE][SUBSURFACE_GROUP_SIZE])
+.uniform_buf(SUBSURFACE_BUF_SLOT, "SubsurfaceData", "subsurface_buf", Frequency::PASS)
+.storage_buf(0, Qualifier::read, "uint", "tiles_coord_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_subsurface_setup_main_infos_)
+LOCAL_GROUP_SIZE(SUBSURFACE_GROUP_SIZE, SUBSURFACE_GROUP_SIZE)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_subsurface_Setup)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(gbuffer_Reader)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_subsurface_convolve_main_infos_)
+LOCAL_GROUP_SIZE(SUBSURFACE_GROUP_SIZE, SUBSURFACE_GROUP_SIZE)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_subsurface_Convolve)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(gbuffer_Reader)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_subsurface_setup)
+COMPUTE_SOURCE("eevee_subsurface.bsl.hh")
+COMPUTE_FUNCTION("eevee_subsurface_setup_main")
+ADDITIONAL_INFO(eevee_subsurface_setup_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_subsurface_convolve)
+COMPUTE_SOURCE("eevee_subsurface.bsl.hh")
+COMPUTE_FUNCTION("eevee_subsurface_convolve_main")
+ADDITIONAL_INFO(eevee_subsurface_convolve_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

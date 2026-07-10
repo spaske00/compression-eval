@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="/i18n">
+    <file alias="fincept_zh_CN.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_zh_CN.qm</file>
+    <file alias="fincept_zh_HK.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_zh_HK.qm</file>
+    <file alias="fincept_zh_TW.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_zh_TW.qm</file>
+    <file alias="fincept_id_ID.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_id_ID.qm</file>
+    <file alias="fincept_vi_VN.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_vi_VN.qm</file>
+    <file alias="fincept_tr_TR.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_tr_TR.qm</file>
+    <file alias="fincept_de_DE.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_de_DE.qm</file>
+    <file alias="fincept_pt_BR.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_pt_BR.qm</file>
+    <file alias="fincept_es_ES.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_es_ES.qm</file>
+    <file alias="fincept_fr_FR.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_fr_FR.qm</file>
+    <file alias="fincept_it_IT.qm">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/fincept-terminal/.build/fincept-terminal-clang-linux-x64-O2/fincept_it_IT.qm</file>
+  </qresource>
+</RCC>
+

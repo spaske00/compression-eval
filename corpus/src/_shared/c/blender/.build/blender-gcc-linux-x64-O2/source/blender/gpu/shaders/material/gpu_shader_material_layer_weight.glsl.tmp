@@ -1,0 +1,20 @@
+#line 1 "gpu_shader_material_layer_weight.glsl"
+ 
+#line 8
+void node_layer_weight(float blend, float3 N, _ref(float ,fresnel), _ref(float ,facing))
+{
+  N = normalize(N);
+#line 13
+  float eta = max(1.0f - blend, 0.00001f);
+  float3 V = coordinate_incoming(g_data.P);
+
+  fresnel = fresnel_dielectric(V, N, (FrontFacing) ? 1.0f / eta : eta);
+#line 19
+  facing = abs(dot(V, N));
+  if (blend != 0.5f) {
+    blend = clamp(blend, 0.0f, 0.99999f);
+    blend = (blend < 0.5f) ? 2.0f * blend : 0.5f / (1.0f - blend);
+    facing = pow(facing, blend);
+  }
+  facing = 1.0f - facing;
+}

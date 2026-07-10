@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_function_matrix_determinant.glsl"
+ 
+#line 6
+void node_function_matrix_determinant(const float4x4 matrix, _ref(float ,output_determinant))
+{
+  output_determinant = determinant(matrix);
+}

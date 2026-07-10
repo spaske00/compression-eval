@@ -1,0 +1,46 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceDepthFragOutTfalse)
+FRAGMENT_OUT(PREPASS_FRAG_OUT_NORMAL, float4, eevee_SurfaceDepthFragOutTfalse_normal)
+FRAGMENT_OUT(PREPASS_FRAG_OUT_OB_ID, uint, eevee_SurfaceDepthFragOutTfalse_object_id)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceDepthFragOutTtrue)
+FRAGMENT_OUT(PREPASS_FRAG_OUT_NORMAL, float4, eevee_SurfaceDepthFragOutTtrue_normal)
+FRAGMENT_OUT(PREPASS_FRAG_OUT_OB_ID, uint, eevee_SurfaceDepthFragOutTtrue_object_id)
+FRAGMENT_OUT(PREPASS_FRAG_OUT_VELOCITY, float4, eevee_SurfaceDepthFragOutTtrue_velocity)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceDepth)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_depthTtrue_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_SurfaceDepth)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_SurfaceDepthFragOutTtrue)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_depthTfalse_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_PipelineConstants)
+ADDITIONAL_INFO(eevee_SurfaceDepth)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(UtilityTexture)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_SurfaceDepthFragOutTfalse)
+GPU_SHADER_CREATE_END()
+

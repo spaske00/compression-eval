@@ -1,0 +1,454 @@
+#line 1 "eevee_light_shared.hh"
+ 
+#line 20
+#define LIGHT_NO_SHADOW -1
+#line 28
+constant static constexpr uint32_t WORLD_SUN_COMBINED = 0u;
+#line 31
+constant static constexpr uint32_t WORLD_SUN_DIFFUSE = 0u;
+constant static constexpr uint32_t WORLD_SUN_GLOSSY = 1u;
+#line 34
+constant static constexpr uint32_t WORLD_SUN_MAX = 2u;
+
+#define WorldSunIndex uint32_t
+#line 26
+
+#define WorldSunIndex_host_shared_ WorldSunIndex
+#line 26
+
+WorldSunIndex WorldSunIndex_ctor_() { return WorldSunIndex(0); }
+#line 38
+constant static constexpr uint32_t LIGHT_SUN = 0u;
+constant static constexpr uint32_t LIGHT_SUN_ORTHO = 1u;
+#line 41
+constant static constexpr uint32_t LIGHT_OMNI_SPHERE = 10u;
+constant static constexpr uint32_t LIGHT_OMNI_DISK = 11u;
+#line 44
+constant static constexpr uint32_t LIGHT_SPOT_SPHERE = 12u;
+constant static constexpr uint32_t LIGHT_SPOT_DISK = 13u;
+#line 47
+constant static constexpr uint32_t LIGHT_RECT = 20u;
+constant static constexpr uint32_t LIGHT_ELLIPSE = 21u;
+
+#define eLightType uint32_t
+#line 37
+
+#define eLightType_host_shared_ eLightType
+#line 37
+
+eLightType eLightType_ctor_() { return eLightType(0); }
+#line 51
+              bool is_area_light(eLightType type)
+{
+  return type >= LIGHT_RECT;
+}
+
+              bool is_point_light(eLightType type)
+{
+  return type >= LIGHT_OMNI_SPHERE && type <= LIGHT_SPOT_DISK;
+}
+
+              bool is_spot_light(eLightType type)
+{
+  return type == LIGHT_SPOT_SPHERE || type == LIGHT_SPOT_DISK;
+}
+
+              bool is_sphere_light(eLightType type)
+{
+  return type == LIGHT_SPOT_SPHERE || type == LIGHT_OMNI_SPHERE;
+}
+
+              bool is_oriented_disk_light(eLightType type)
+{
+  return type == LIGHT_SPOT_DISK || type == LIGHT_OMNI_DISK;
+}
+
+              bool is_sun_light(eLightType type)
+{
+  return type < LIGHT_OMNI_SPHERE;
+}
+
+              bool is_local_light(eLightType type)
+{
+  return type >= LIGHT_OMNI_SPHERE;
+}
+#line 87
+#define LightLocalCommon_host_shared_ LightLocalCommon
+#define LightLocalCommon_host_shared_uniform_ LightLocalCommon
+#line 86
+struct                 LightLocalCommon {
+
+  packed_float3 shadow_position;
+
+  float shadow_radius;
+
+  float shape_radius;
+
+  float influence_radius_max;
+
+  float influence_radius_invsqr_surface;
+  float influence_radius_invsqr_volume;
+};
+#line 86
+                                                LightLocalCommon LightLocalCommon_ctor_() {LightLocalCommon r;r.shadow_position=packed_float3(0);r.shadow_radius=0.0f;r.shape_radius=0.0f;r.influence_radius_max=0.0f;r.influence_radius_invsqr_surface=0.0f;r.influence_radius_invsqr_volume=0.0f;return r;}
+#line 103
+#define LightLocalData_host_shared_ LightLocalData
+#define LightLocalData_host_shared_uniform_ LightLocalData
+#line 102
+struct                 LightLocalData {
+         LightLocalCommon local;
+#line 106
+  int tilemaps_count;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+
+  float2 _pad3;
+  float _pad4;
+  float _pad5;
+};
+#line 102
+                                              LightLocalData LightLocalData_ctor_() {LightLocalData r;r.local=LightLocalCommon_ctor_();r.tilemaps_count=0;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;r._pad3=float2(0);r._pad4=0.0f;r._pad5=0.0f;return r;}
+#line 118
+#define LightSpotData_host_shared_ LightSpotData
+#define LightSpotData_host_shared_uniform_ LightSpotData
+#line 117
+struct                 LightSpotData {
+         LightLocalCommon local;
+#line 121
+  int tilemaps_count;
+  float _pad0;
+  float _pad1;
+
+  float spot_mul;
+#line 128
+  float2 spot_size_inv;
+
+  float spot_tan;
+  float spot_bias;
+};
+#line 117
+                                             LightSpotData LightSpotData_ctor_() {LightSpotData r;r.local=LightLocalCommon_ctor_();r.tilemaps_count=0;r._pad0=0.0f;r._pad1=0.0f;r.spot_mul=0.0f;r.spot_size_inv=float2(0);r.spot_tan=0.0f;r.spot_bias=0.0f;return r;}
+#line 135
+#define LightAreaData_host_shared_ LightAreaData
+#define LightAreaData_host_shared_uniform_ LightAreaData
+#line 134
+struct                 LightAreaData {
+         LightLocalCommon local;
+#line 138
+  int tilemaps_count;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+#line 144
+  float2 size;
+
+  float shadow_scale;
+  float _pad6;
+};
+#line 134
+                                             LightAreaData LightAreaData_ctor_() {LightAreaData r;r.local=LightLocalCommon_ctor_();r.tilemaps_count=0;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;r.size=float2(0);r.shadow_scale=0.0f;r._pad6=0.0f;return r;}
+#line 151
+#define LightSunData_host_shared_ LightSunData
+#define LightSunData_host_shared_uniform_ LightSunData
+#line 150
+struct                 LightSunData {
+
+  packed_float3 direction;
+
+  float shape_radius;
+#line 158
+  int2 clipmap_base_offset_neg;
+  int2 clipmap_base_offset_pos;
+#line 162
+  float shadow_angle;
+  float shadow_angle_cos;
+  float _pad3;
+  float _pad4;
+#line 168
+  float2 clipmap_origin;
+
+  int clipmap_lod_min;
+  int clipmap_lod_max;
+};
+#line 150
+                                            LightSunData LightSunData_ctor_() {LightSunData r;r.direction=packed_float3(0);r.shape_radius=0.0f;r.clipmap_base_offset_neg=int2(0);r.clipmap_base_offset_pos=int2(0);r.shadow_angle=0.0f;r.shadow_angle_cos=0.0f;r._pad3=0.0f;r._pad4=0.0f;r.clipmap_origin=float2(0);r.clipmap_lod_min=0;r.clipmap_lod_max=0;return r;}
+#line 212
+
+#define LightData_union0_host_shared_ LightData_union0
+#define LightData_union0_host_shared_uniform_ LightData_union0
+#line 212
+struct                 LightData_union0 {
+  float4 data0;
+  float4 data1;
+  float4 data2;
+  float4 data3;
+
+};
+#line 212
+                                                LightData_union0 LightData_union0_ctor_() {LightData_union0 r;r.data0=float4(0);r.data1=float4(0);r.data2=float4(0);r.data3=float4(0);return r;}
+#line 174
+
+#define LightData_host_shared_ LightData
+#define LightData_host_shared_uniform_ LightData
+#line 174
+struct                 LightData {
+#line 180
+         Transform object_to_world;
+#line 183
+  float4 power;
+
+  packed_float3 color;
+
+       eLightType type;
+#line 191
+  int clip_near;
+  int clip_far;
+
+  int tilemap_index;
+
+  float filter_radius;
+#line 199
+  float lod_bias;
+
+  float lod_min;
+
+  bool32_t shadow_jitter;
+
+  bool32_t visible_camera;
+  uint2 light_set_membership;
+#line 210
+  uint2 shadow_set_membership;
+
+         LightData_union0 union0;
+#line 388
+};
+#line 396
+#ifndef GPU_METAL
+LightData LightData_ctor_();
+float3 _x_axis(const LightData this_);
+float3 _y_axis(const LightData this_);
+float3 _z_axis(const LightData this_);
+float3 _position(const LightData this_);
+int _tilemap_max_get(const LightData this_);
+int _local_tilemap_count(const LightData this_);
+LightLocalData _local(const LightData this_);
+void _local_set_(_ref(LightData ,this_), LightLocalData value);
+LightSpotData _spot(const LightData this_);
+void _spot_set_(_ref(LightData ,this_), LightSpotData value);
+LightAreaData _area(const LightData this_);
+void _area_set_(_ref(LightData ,this_), LightAreaData value);
+LightSunData _sun(const LightData this_);
+void _sun_set_(_ref(LightData ,this_), LightSunData value);
+#endif
+#line 174
+                                         LightData LightData_ctor_() {LightData r;r.object_to_world=Transform_ctor_();r.power=float4(0);r.color=packed_float3(0);r.type=eLightType_ctor_();r.clip_near=0;r.clip_far=0;r.tilemap_index=0;r.filter_radius=0.0f;r.lod_bias=0.0f;r.lod_min=0.0f;r.shadow_jitter=bool32_t(0);r.visible_camera=bool32_t(0);r.light_set_membership=uint2(0);r.shadow_set_membership=uint2(0);r.union0=LightData_union0_ctor_();return r;}
+#line 219
+  float3 _x_axis(const LightData this_)
+  {
+    return _x_axis(this_.object_to_world);
+  }
+  float3 _y_axis(const LightData this_)
+  {
+    return _y_axis(this_.object_to_world);
+  }
+  float3 _z_axis(const LightData this_)
+  {
+    return _z_axis(this_.object_to_world);
+  }
+  float3 _position(const LightData this_)
+  {
+    return _location(this_.object_to_world);
+  }
+#line 236
+  int _tilemap_max_get(const LightData this_)
+  {
+
+    if (is_sun_light(this_.type)) {
+      return this_.tilemap_index + (_sun(this_).clipmap_lod_max - _sun(this_).clipmap_lod_min);
+    }
+    return this_.tilemap_index + _local(this_).tilemaps_count - 1;
+  }
+#line 246
+  int _local_tilemap_count(const LightData this_)
+  {
+    if (is_spot_light(this_.type)) {
+      return (_spot(this_).spot_tan > tanf(EEVEE_PI / 4.0)) ? 5 : 1;
+    }
+    if (is_area_light(this_.type)) {
+      return 5;
+    }
+    return 6;
+  }
+#line 257
+LightLocalData _local(const LightData this_)       {
+  LightLocalData val;
+  val.local.shadow_position = this_.union0.data0.xyz;
+  val.local.shadow_radius = this_.union0.data0.w;
+  val.local.shape_radius = this_.union0.data1.x;
+  val.local.influence_radius_max = this_.union0.data1.y;
+  val.local.influence_radius_invsqr_surface = this_.union0.data1.z;
+  val.local.influence_radius_invsqr_volume = this_.union0.data1.w;
+  val.tilemaps_count = floatBitsToInt(this_.union0.data2.x);
+  val._pad0 = this_.union0.data2.y;
+  val._pad1 = this_.union0.data2.z;
+  val._pad2 = this_.union0.data2.w;
+  val._pad3 = this_.union0.data3.xy;
+  val._pad4 = this_.union0.data3.z;
+  val._pad5 = this_.union0.data3.w;
+  return val;
+}
+#line 275
+void _local_set_(_ref(LightData ,this_), LightLocalData value) {
+  this_.union0.data0.xyz = value.local.shadow_position;
+  this_.union0.data0.w = value.local.shadow_radius;
+  this_.union0.data1.x = value.local.shape_radius;
+  this_.union0.data1.y = value.local.influence_radius_max;
+  this_.union0.data1.z = value.local.influence_radius_invsqr_surface;
+  this_.union0.data1.w = value.local.influence_radius_invsqr_volume;
+  this_.union0.data2.x = intBitsToFloat(value.tilemaps_count);
+  this_.union0.data2.y = value._pad0;
+  this_.union0.data2.z = value._pad1;
+  this_.union0.data2.w = value._pad2;
+  this_.union0.data3.xy = value._pad3;
+  this_.union0.data3.z = value._pad4;
+  this_.union0.data3.w = value._pad5;
+}
+#line 291
+LightSpotData _spot(const LightData this_)       {
+  LightSpotData val;
+  val.local.shadow_position = this_.union0.data0.xyz;
+  val.local.shadow_radius = this_.union0.data0.w;
+  val.local.shape_radius = this_.union0.data1.x;
+  val.local.influence_radius_max = this_.union0.data1.y;
+  val.local.influence_radius_invsqr_surface = this_.union0.data1.z;
+  val.local.influence_radius_invsqr_volume = this_.union0.data1.w;
+  val.tilemaps_count = floatBitsToInt(this_.union0.data2.x);
+  val._pad0 = this_.union0.data2.y;
+  val._pad1 = this_.union0.data2.z;
+  val.spot_mul = this_.union0.data2.w;
+  val.spot_size_inv = this_.union0.data3.xy;
+  val.spot_tan = this_.union0.data3.z;
+  val.spot_bias = this_.union0.data3.w;
+  return val;
+}
+#line 309
+void _spot_set_(_ref(LightData ,this_), LightSpotData value) {
+  this_.union0.data0.xyz = value.local.shadow_position;
+  this_.union0.data0.w = value.local.shadow_radius;
+  this_.union0.data1.x = value.local.shape_radius;
+  this_.union0.data1.y = value.local.influence_radius_max;
+  this_.union0.data1.z = value.local.influence_radius_invsqr_surface;
+  this_.union0.data1.w = value.local.influence_radius_invsqr_volume;
+  this_.union0.data2.x = intBitsToFloat(value.tilemaps_count);
+  this_.union0.data2.y = value._pad0;
+  this_.union0.data2.z = value._pad1;
+  this_.union0.data2.w = value.spot_mul;
+  this_.union0.data3.xy = value.spot_size_inv;
+  this_.union0.data3.z = value.spot_tan;
+  this_.union0.data3.w = value.spot_bias;
+}
+#line 325
+LightAreaData _area(const LightData this_)       {
+  LightAreaData val;
+  val.local.shadow_position = this_.union0.data0.xyz;
+  val.local.shadow_radius = this_.union0.data0.w;
+  val.local.shape_radius = this_.union0.data1.x;
+  val.local.influence_radius_max = this_.union0.data1.y;
+  val.local.influence_radius_invsqr_surface = this_.union0.data1.z;
+  val.local.influence_radius_invsqr_volume = this_.union0.data1.w;
+  val.tilemaps_count = floatBitsToInt(this_.union0.data2.x);
+  val._pad0 = this_.union0.data2.y;
+  val._pad1 = this_.union0.data2.z;
+  val._pad2 = this_.union0.data2.w;
+  val.size = this_.union0.data3.xy;
+  val.shadow_scale = this_.union0.data3.z;
+  val._pad6 = this_.union0.data3.w;
+  return val;
+}
+#line 343
+void _area_set_(_ref(LightData ,this_), LightAreaData value) {
+  this_.union0.data0.xyz = value.local.shadow_position;
+  this_.union0.data0.w = value.local.shadow_radius;
+  this_.union0.data1.x = value.local.shape_radius;
+  this_.union0.data1.y = value.local.influence_radius_max;
+  this_.union0.data1.z = value.local.influence_radius_invsqr_surface;
+  this_.union0.data1.w = value.local.influence_radius_invsqr_volume;
+  this_.union0.data2.x = intBitsToFloat(value.tilemaps_count);
+  this_.union0.data2.y = value._pad0;
+  this_.union0.data2.z = value._pad1;
+  this_.union0.data2.w = value._pad2;
+  this_.union0.data3.xy = value.size;
+  this_.union0.data3.z = value.shadow_scale;
+  this_.union0.data3.w = value._pad6;
+}
+#line 359
+LightSunData _sun(const LightData this_)       {
+  LightSunData val;
+  val.direction = this_.union0.data0.xyz;
+  val.shape_radius = this_.union0.data0.w;
+  val.clipmap_base_offset_neg = floatBitsToInt(this_.union0.data1.xy);
+  val.clipmap_base_offset_pos = floatBitsToInt(this_.union0.data1.zw);
+  val.shadow_angle = this_.union0.data2.x;
+  val.shadow_angle_cos = this_.union0.data2.y;
+  val._pad3 = this_.union0.data2.z;
+  val._pad4 = this_.union0.data2.w;
+  val.clipmap_origin = this_.union0.data3.xy;
+  val.clipmap_lod_min = floatBitsToInt(this_.union0.data3.z);
+  val.clipmap_lod_max = floatBitsToInt(this_.union0.data3.w);
+  return val;
+}
+#line 375
+void _sun_set_(_ref(LightData ,this_), LightSunData value) {
+  this_.union0.data0.xyz = value.direction;
+  this_.union0.data0.w = value.shape_radius;
+  this_.union0.data1.xy = intBitsToFloat(value.clipmap_base_offset_neg);
+  this_.union0.data1.zw = intBitsToFloat(value.clipmap_base_offset_pos);
+  this_.union0.data2.x = value.shadow_angle;
+  this_.union0.data2.y = value.shadow_angle_cos;
+  this_.union0.data2.z = value._pad3;
+  this_.union0.data2.w = value._pad4;
+  this_.union0.data3.xy = value.clipmap_origin;
+  this_.union0.data3.z = intBitsToFloat(value.clipmap_lod_min);
+  this_.union0.data3.w = intBitsToFloat(value.clipmap_lod_max);
+}
+#line 395
+#define CULLING_MAX_ITEM 65536
+
+#define CULLING_ZBIN_COUNT 4096
+
+#define CULLING_TILE_RES 16
+#line 402
+#define LightCullingData_host_shared_ LightCullingData
+#define LightCullingData_host_shared_uniform_ LightCullingData
+#line 401
+struct                 LightCullingData {
+
+  float2 tile_to_uv_fac;
+
+  float zbin_scale;
+  float zbin_bias;
+
+  uint items_count;
+
+  uint local_lights_len;
+
+  uint sun_lights_len;
+
+  uint visible_count;
+
+  float tile_size;
+
+  uint tile_x_len;
+  uint tile_y_len;
+
+  uint tile_word_len;
+
+  bool32_t view_is_flipped;
+  uint _pad0;
+  uint _pad1;
+  uint _pad2;
+};
+#line 401
+                                                LightCullingData LightCullingData_ctor_() {LightCullingData r;r.tile_to_uv_fac=float2(0);r.zbin_scale=0.0f;r.zbin_bias=0.0f;r.items_count=0u;r.local_lights_len=0u;r.sun_lights_len=0u;r.visible_count=0u;r.tile_size=0.0f;r.tile_x_len=0u;r.tile_y_len=0u;r.tile_word_len=0u;r.view_is_flipped=bool32_t(0);r._pad0=0u;r._pad1=0u;r._pad2=0u;return r;}
+#line 434

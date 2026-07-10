@@ -1,0 +1,143 @@
+#line 1 "draw_object_infos_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 13
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define CURVES_SHADER
+#  define DRW_GPENCIL_INFO
+#endif
+#line 23
+#ifdef CREATE_INFO_RES_PASS_draw_volume_infos
+CREATE_INFO_RES_PASS_draw_volume_infos
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_volume_infos
+CREATE_INFO_RES_BATCH_draw_volume_infos
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_volume_infos
+CREATE_INFO_RES_GEOMETRY_draw_volume_infos
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_volume_infos
+CREATE_INFO_RES_SHARED_VARS_draw_volume_infos
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_curves_infos
+CREATE_INFO_RES_PASS_draw_curves_infos
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_curves_infos
+CREATE_INFO_RES_BATCH_draw_curves_infos
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_curves_infos
+CREATE_INFO_RES_GEOMETRY_draw_curves_infos
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_curves_infos
+CREATE_INFO_RES_SHARED_VARS_draw_curves_infos
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_layer_attributes
+CREATE_INFO_RES_PASS_draw_layer_attributes
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_layer_attributes
+CREATE_INFO_RES_BATCH_draw_layer_attributes
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_layer_attributes
+CREATE_INFO_RES_GEOMETRY_draw_layer_attributes
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_layer_attributes
+CREATE_INFO_RES_SHARED_VARS_draw_layer_attributes
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_object_infos
+CREATE_INFO_RES_PASS_draw_object_infos
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_object_infos
+CREATE_INFO_RES_BATCH_draw_object_infos
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_object_infos
+CREATE_INFO_RES_GEOMETRY_draw_object_infos
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_object_infos
+CREATE_INFO_RES_SHARED_VARS_draw_object_infos
+#endif
+#line 76
+#ifdef CREATE_INFO_RES_PASS_draw_object_attributes
+CREATE_INFO_RES_PASS_draw_object_attributes
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_object_attributes
+CREATE_INFO_RES_BATCH_draw_object_attributes
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_object_attributes
+CREATE_INFO_RES_GEOMETRY_draw_object_attributes
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_object_attributes
+CREATE_INFO_RES_SHARED_VARS_draw_object_attributes
+#endif
+#line 93
+#ifdef CREATE_INFO_RES_PASS_draw_mesh
+CREATE_INFO_RES_PASS_draw_mesh
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_mesh
+CREATE_INFO_RES_BATCH_draw_mesh
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_mesh
+CREATE_INFO_RES_GEOMETRY_draw_mesh
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_mesh
+CREATE_INFO_RES_SHARED_VARS_draw_mesh
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_curves
+CREATE_INFO_RES_PASS_draw_curves
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_curves
+CREATE_INFO_RES_BATCH_draw_curves
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_curves
+CREATE_INFO_RES_GEOMETRY_draw_curves
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_curves
+CREATE_INFO_RES_SHARED_VARS_draw_curves
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_pointcloud
+CREATE_INFO_RES_PASS_draw_pointcloud
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_pointcloud
+CREATE_INFO_RES_BATCH_draw_pointcloud
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_pointcloud
+CREATE_INFO_RES_GEOMETRY_draw_pointcloud
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_pointcloud
+CREATE_INFO_RES_SHARED_VARS_draw_pointcloud
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_volume
+CREATE_INFO_RES_PASS_draw_volume
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_volume
+CREATE_INFO_RES_BATCH_draw_volume
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_volume
+CREATE_INFO_RES_GEOMETRY_draw_volume
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_volume
+CREATE_INFO_RES_SHARED_VARS_draw_volume
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_draw_gpencil
+CREATE_INFO_RES_PASS_draw_gpencil
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_gpencil
+CREATE_INFO_RES_BATCH_draw_gpencil
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_gpencil
+CREATE_INFO_RES_GEOMETRY_draw_gpencil
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_gpencil
+CREATE_INFO_RES_SHARED_VARS_draw_gpencil
+#endif
+
+

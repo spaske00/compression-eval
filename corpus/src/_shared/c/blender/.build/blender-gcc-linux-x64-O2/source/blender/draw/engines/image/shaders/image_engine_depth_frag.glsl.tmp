@@ -1,0 +1,14 @@
+#line 1 "image_engine_depth_frag.glsl"
+ 
+#line 10
+bool is_border(float2 uv)
+{
+  return (uv.x < min_max_uv.x || uv.y < min_max_uv.y || uv.x >= min_max_uv.z ||
+          uv.y >= min_max_uv.w);
+}
+
+void main()
+{
+  bool border = is_border(uv_image);
+  gl_FragDepth = border ? Z_DEPTH_BORDER : Z_DEPTH_IMAGE;
+}

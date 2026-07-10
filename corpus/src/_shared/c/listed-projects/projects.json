@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "revision_record": "revision.schema.json",
+  "projects": [
+    {"key": "stockfish", "input_url": "https://github.com/official-stockfish/Stockfish", "canonical_url": "https://github.com/official-stockfish/Stockfish"},
+    {"key": "fmt", "input_url": "https://github.com/fmtlib/fmt", "canonical_url": "https://github.com/fmtlib/fmt"},
+    {"key": "fincept-terminal", "input_url": "https://github.com/Fincept-Corporation/FinceptTerminal", "canonical_url": "https://github.com/Fincept-Corporation/FinceptTerminal"},
+    {"key": "spdlog", "input_url": "https://github.com/gabime/spdlog", "canonical_url": "https://github.com/gabime/spdlog"},
+    {"key": "dragonfly", "input_url": "https://github.com/dragonflydb/dragonfly", "canonical_url": "https://github.com/dragonflydb/dragonfly"},
+    {"key": "clickhouse", "input_url": "https://github.com/ClickHouse/ClickHouse", "canonical_url": "https://github.com/ClickHouse/ClickHouse"},
+    {"key": "imhex", "input_url": "https://github.com/WerWolv/ImHex/releases", "canonical_url": "https://github.com/WerWolv/ImHex"},
+    {"key": "qt-creator", "input_url": "https://github.com/qt-creator/qt-creator", "canonical_url": "https://github.com/qt-creator/qt-creator"},
+    {"key": "krita", "input_url": "https://github.com/KDE/krita", "canonical_url": "https://github.com/KDE/krita"},
+    {"key": "kdeconnect", "input_url": "https://github.com/KDE/kdeconnect-kde", "canonical_url": "https://github.com/KDE/kdeconnect-kde"},
+    {"key": "ghostwriter", "input_url": "https://github.com/KDE/ghostwriter", "canonical_url": "https://github.com/KDE/ghostwriter"},
+    {"key": "heaptrack", "input_url": "https://github.com/KDE/heaptrack", "canonical_url": "https://github.com/KDE/heaptrack"},
+    {"key": "kdenlive", "input_url": "https://github.com/KDE/kdenlive", "canonical_url": "https://github.com/KDE/kdenlive"},
+    {"key": "libreoffice", "input_url": "https://github.com/LibreOffice/core", "canonical_url": "https://github.com/LibreOffice/core"},
+    {"key": "blender", "input_url": "https://github.com/blender/blender", "canonical_url": "https://github.com/blender/blender"},
+    {"key": "memcached", "input_url": "https://github.com/memcached/memcached", "canonical_url": "https://github.com/memcached/memcached"},
+    {"key": "mold", "input_url": "https://github.com/rui314/mold/", "canonical_url": "https://github.com/rui314/mold"},
+    {"key": "assimp", "input_url": "https://github.com/assimp/assimp", "canonical_url": "https://github.com/assimp/assimp"},
+    {"key": "imgui", "input_url": "https://github.com/ocornut/imgui", "canonical_url": "https://github.com/ocornut/imgui"}
+  ]
+}

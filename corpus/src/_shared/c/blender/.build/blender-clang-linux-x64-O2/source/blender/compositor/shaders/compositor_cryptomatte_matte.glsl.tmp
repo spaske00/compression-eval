@@ -1,0 +1,31 @@
+#line 1 "compositor_cryptomatte_matte.glsl"
+ 
+#line 17
+COMPUTE_SHADER_CREATE_INFO(compositor_cryptomatte_matte)
+#line 21
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float4 layer = texture_load(layer_tx, texel);
+#line 27
+  float2 first_rank = layer.xy;
+  float2 second_rank = layer.zw;
+#line 32
+  float identifier_of_first_rank = first_rank.x;
+  float coverage_of_first_rank = first_rank.y;
+  float identifier_of_second_rank = second_rank.x;
+  float coverage_of_second_rank = second_rank.y;
+#line 39
+  float total_coverage = 0.0f;
+  for (int i = 0; i < identifiers_count; i++) {
+    float identifier = identifiers[i];
+    if (identifier_of_first_rank == identifier) {
+      total_coverage += coverage_of_first_rank;
+    }
+    if (identifier_of_second_rank == identifier) {
+      total_coverage += coverage_of_second_rank;
+    }
+  }
+#line 51
+  imageStore(matte_img, texel, imageLoad(matte_img, texel) + float4(total_coverage));
+}

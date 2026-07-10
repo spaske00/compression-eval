@@ -1,0 +1,82 @@
+#line 1 "gpu_shader_math_matrix_lib.glsl"
+ 
+#line 28
+float2x2 invert(float2x2 mat)
+{
+  return inverse(mat);
+}
+#line 36
+float3x3 invert(float3x3 mat)
+{
+  return inverse(mat);
+}
+#line 44
+float4x4 invert(float4x4 mat)
+{
+  return inverse(mat);
+}
+#line 53
+float2x2 invert(float2x2 mat, _ref(bool ,r_success))
+{
+  r_success = determinant(mat) != 0.0f;
+  return r_success ? inverse(mat) : float2x2(0.0f);
+}
+#line 62
+float3x3 invert(float3x3 mat, _ref(bool ,r_success))
+{
+  r_success = determinant(mat) != 0.0f;
+  return r_success ? inverse(mat) : float3x3(0.0f);
+}
+#line 71
+float4x4 invert(float4x4 mat, _ref(bool ,r_success))
+{
+  r_success = determinant(mat) != 0.0f;
+  return r_success ? inverse(mat) : float4x4(0.0f);
+}
+#line 80
+float4x4 translate(float4x4 mat, float3 translation)
+{
+  mat[3].xyz += translation[0] * mat[0].xyz;
+  mat[3].xyz += translation[1] * mat[1].xyz;
+  mat[3].xyz += translation[2] * mat[2].xyz;
+  return mat;
+}
+#line 90
+float4x4 translate(float4x4 mat, float2 translation)
+{
+  mat[3].xyz += translation[0] * mat[0].xyz;
+  mat[3].xyz += translation[1] * mat[1].xyz;
+  return mat;
+}
+#line 100
+float3x3 scale(float3x3 mat, float2 scale)
+{
+  mat[0] *= scale[0];
+  mat[1] *= scale[1];
+  return mat;
+}
+#line 109
+float3x3 scale(float3x3 mat, float3 scale)
+{
+  mat[0] *= scale[0];
+  mat[1] *= scale[1];
+  mat[2] *= scale[2];
+  return mat;
+}
+#line 119
+float4x4 scale(float4x4 mat, float2 scale)
+{
+  mat[0] *= scale[0];
+  mat[1] *= scale[1];
+  return mat;
+}
+#line 128
+float4x4 scale(float4x4 mat, float3 scale)
+{
+  mat[0] *= scale[0];
+  mat[1] *= scale[1];
+  mat[2] *= scale[2];
+  return mat;
+}
+
+

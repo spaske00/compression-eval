@@ -1,0 +1,77 @@
+#line 1 "compositor_van_vliet_gaussian_blur.glsl"
+ 
+#line 20
+COMPUTE_SHADER_CREATE_INFO(compositor_van_vliet_gaussian_blur)
+#line 24
+#define FILTER_ORDER 2
+
+void main()
+{
+
+  int y = int(gl_GlobalInvocationID.x);
+  int width = texture_size(input_tx).x;
+#line 40
+  bool is_causal = gl_GlobalInvocationID.y % 2 == 0;
+  float2 first_feedforward_coefficients = is_causal ? first_causal_feedforward_coefficients :
+                                                      first_non_causal_feedforward_coefficients;
+  float first_boundary_coefficient = is_causal ? first_causal_boundary_coefficient :
+                                                 first_non_causal_boundary_coefficient;
+  float2 second_feedforward_coefficients = is_causal ? second_causal_feedforward_coefficients :
+                                                       second_non_causal_feedforward_coefficients;
+  float second_boundary_coefficient = is_causal ? second_causal_boundary_coefficient :
+                                                  second_non_causal_boundary_coefficient;
+
+  bool is_first_filter = gl_GlobalInvocationID.y < 2;
+  float2 feedforward_coefficients = is_first_filter ? first_feedforward_coefficients :
+                                                      second_feedforward_coefficients;
+  float2 feedback_coefficients = is_first_filter ? first_feedback_coefficients :
+                                                   second_feedback_coefficients;
+  float boundary_coefficient = is_first_filter ? first_boundary_coefficient :
+                                                 second_boundary_coefficient;
+#line 61
+  int2 boundary_texel = is_causal ? int2(0, y) : int2(width - 1, y);
+  float4 input_boundary = texture_load(input_tx, boundary_texel);
+  float4 inputs[FILTER_ORDER + 1] = float4_array(input_boundary, input_boundary, input_boundary);
+#line 70
+  float4 output_boundary = input_boundary * boundary_coefficient;
+  float4 outputs[FILTER_ORDER + 1] = float4_array(
+      output_boundary, output_boundary, output_boundary);
+
+  for (int x = 0; x < width; x++) {
+
+    int2 texel = is_causal ? int2(x, y) : int2(width - 1 - x, y);
+    inputs[0] = texture_load(input_tx, texel);
+#line 90
+    outputs[0] = float4(0.0f);
+    int first_input_index = is_causal ? 0 : 1;
+    for (int i = 0; i < FILTER_ORDER; i++) {
+      outputs[0] += feedforward_coefficients[i] * inputs[first_input_index + i];
+      outputs[0] -= feedback_coefficients[i] * outputs[i + 1];
+    }
+#line 99
+    if (is_causal) {
+      if (is_first_filter) {
+        imageStore(first_causal_output_img, texel, outputs[0]);
+      }
+      else {
+        imageStore(second_causal_output_img, texel, outputs[0]);
+      }
+    }
+    else {
+      if (is_first_filter) {
+        imageStore(first_non_causal_output_img, texel, outputs[0]);
+      }
+      else {
+        imageStore(second_non_causal_output_img, texel, outputs[0]);
+      }
+    }
+#line 119
+    for (int i = FILTER_ORDER; i >= 1; i--) {
+      inputs[i] = inputs[i - 1];
+    }
+#line 126
+    for (int i = FILTER_ORDER; i >= 1; i--) {
+      outputs[i] = outputs[i - 1];
+    }
+  }
+}

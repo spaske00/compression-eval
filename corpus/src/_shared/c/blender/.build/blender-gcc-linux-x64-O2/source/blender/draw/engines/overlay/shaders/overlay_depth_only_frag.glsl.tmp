@@ -1,0 +1,16 @@
+#line 1 "overlay_depth_only_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(overlay_depth_mesh_base)
+#line 11
+void main()
+{
+#ifdef SELECT_ENABLE
+  if (uniform_buf.backface_culling && !gl_FrontFacing) {
+
+    return;
+  }
+#endif
+#line 23
+  select_id_output(select_id);
+}

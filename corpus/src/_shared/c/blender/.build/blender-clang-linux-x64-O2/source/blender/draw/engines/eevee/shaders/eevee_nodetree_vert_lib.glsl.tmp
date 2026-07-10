@@ -1,0 +1,33 @@
+#line 1 "eevee_nodetree_vert_lib.glsl"
+ 
+#line 14
+void attrib_load(MeshVertex _0) {}
+void attrib_load(PointCloudPoint _0) {}
+void attrib_load(CurvesPoint _0) {}
+
+#ifndef NODETREE_FUNCTIONS
+#  define NODETREE_FUNCTIONS
+#line 22
+float3 nodetree_displacement()
+{
+  return float3(0.0f);
+}
+#line 28
+Closure nodetree_surface(float _0)
+{
+  return Closure(0);
+}
+#line 34
+Closure nodetree_volume()
+{
+  return Closure(0);
+}
+#line 40
+float nodetree_thickness()
+{
+  return 0.1f;
+}
+#line 47
+ThicknessMode thickness_mode = ThicknessMode_Slab;
+
+#endif

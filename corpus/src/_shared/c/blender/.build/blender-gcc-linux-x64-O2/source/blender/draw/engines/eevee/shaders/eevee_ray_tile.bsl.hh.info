@@ -1,0 +1,56 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_raytracing_TileClassify)
+.image(0, blender::gpu::TextureFormat::RAYTRACE_TILEMASK_FORMAT, Qualifier::write, ImageReadWriteType::uimage2DArray, "tile_raytrace_denoise_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::RAYTRACE_TILEMASK_FORMAT, Qualifier::write, ImageReadWriteType::uimage2DArray, "tile_raytrace_tracing_img", Frequency::PASS)
+.image(2, blender::gpu::TextureFormat::RAYTRACE_TILEMASK_FORMAT, Qualifier::write, ImageReadWriteType::uimage2DArray, "tile_fast_gi_denoise_img", Frequency::PASS)
+.image(3, blender::gpu::TextureFormat::RAYTRACE_TILEMASK_FORMAT, Qualifier::write, ImageReadWriteType::uimage2DArray, "tile_fast_gi_tracing_img", Frequency::PASS)
+GROUP_SHARED(uint, tile_contains_fast_gi_scan)
+GROUP_SHARED(uint, tile_contains_ray_tracing[4])
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_raytracing_TileCompact)
+SPECIALIZATION_CONSTANT(int, closure_index, 0)
+SPECIALIZATION_CONSTANT(int, resolution_scale, 2)
+.image(0, blender::gpu::TextureFormat::RAYTRACE_TILEMASK_FORMAT, Qualifier::read, ImageReadWriteType::uimage2DArray, "tile_raytrace_denoise_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::RAYTRACE_TILEMASK_FORMAT, Qualifier::read, ImageReadWriteType::uimage2DArray, "tile_raytrace_tracing_img", Frequency::PASS)
+.storage_buf(0, Qualifier::read_write, "DispatchCommand", "raytrace_tracing_dispatch_buf", Frequency::PASS)
+.storage_buf(1, Qualifier::read_write, "DispatchCommand", "raytrace_denoise_dispatch_buf", Frequency::PASS)
+.storage_buf(4, Qualifier::write, "uint", "raytrace_tracing_tiles_buf[]", Frequency::PASS)
+.storage_buf(5, Qualifier::write, "uint", "raytrace_denoise_tiles_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_raytracing_tile_classify_infos_)
+LOCAL_GROUP_SIZE(RAYTRACE_GROUP_SIZE, RAYTRACE_GROUP_SIZE)
+BUILTINS(BuiltinBits::WORK_GROUP_ID)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_INDEX)
+ADDITIONAL_INFO(eevee_raytracing_TileClassify)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(gbuffer_Reader)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_raytracing_tile_compact_infos_)
+LOCAL_GROUP_SIZE(RAYTRACE_GROUP_SIZE, RAYTRACE_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_raytracing_TileCompact)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_ray_tile_classify)
+COMPUTE_SOURCE("eevee_ray_tile.bsl.hh")
+COMPUTE_FUNCTION("eevee_raytracing_tile_classify")
+ADDITIONAL_INFO(eevee_raytracing_tile_classify_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_ray_tile_compact)
+COMPUTE_SOURCE("eevee_ray_tile.bsl.hh")
+COMPUTE_FUNCTION("eevee_raytracing_tile_compact")
+ADDITIONAL_INFO(eevee_raytracing_tile_compact_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

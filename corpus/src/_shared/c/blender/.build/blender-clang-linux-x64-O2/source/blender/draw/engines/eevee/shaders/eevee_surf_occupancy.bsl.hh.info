@@ -1,0 +1,25 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfOccupancy)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+.image(VOLUME_HIT_DEPTH_SLOT, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::write, ImageReadWriteType::image3D, "hit_depth_img", Frequency::PASS)
+.image(VOLUME_HIT_COUNT_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read_write, ImageReadWriteType::uimage2DAtomic, "hit_count_img", Frequency::PASS)
+.image(VOLUME_OCCUPANCY_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read_write, ImageReadWriteType::uimage3DAtomic, "occupancy_img", Frequency::PASS)
+PUSH_CONSTANT(bool, use_fast_method)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_occupancy_infos_)
+BUILTINS(BuiltinBits::TEXTURE_ATOMIC)
+BUILTINS(BuiltinBits::FRONT_FACING)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_SurfOccupancy)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Sampling)
+GPU_SHADER_CREATE_END()
+

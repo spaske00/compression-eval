@@ -1,0 +1,940 @@
+#line 1 "compositor_parallel_reduction.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_parallel_reduction_shared)
+COMPUTE_SHADER_CREATE_INFO(compositor_parallel_reduction_output_float4)
+#line 23
+           float loadTfloat(float4 value)
+{
+  return value.x;
+}
+
+           float2 loadTfloat2(float4 value)
+{
+  return value.xy;
+}
+
+           float4 loadTfloat4(float4 value)
+{
+  return value;
+}
+#line 42
+float4 to_storage_value(float value)
+{
+  return float4(value);
+}
+
+float4 to_storage_value(float2 value)
+{
+  return value.xyyy;
+}
+
+float4 to_storage_value(float4 value)
+{
+  return value;
+}
+#line 65
+           float load_shared_dataTfloat(uint index)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_float_shared)
+#line 67
+  return shared_variable_get(compositor_parallel_reduction_float_shared, reduction_data)[index];
+
+#else
+#line 67
+  return float(0);
+#endif
+#line 68
+}
+
+           float2 load_shared_dataTfloat2(uint index)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_float2_shared)
+#line 72
+  return shared_variable_get(compositor_parallel_reduction_float2_shared, reduction_data)[index];
+
+#else
+#line 72
+  return float2(0);
+#endif
+#line 73
+}
+
+           float4 load_shared_dataTfloat4(uint index)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_float4_shared)
+#line 77
+  return shared_variable_get(compositor_parallel_reduction_float4_shared, reduction_data)[index];
+
+#else
+#line 77
+  return float4(0);
+#endif
+#line 78
+}
+#line 83
+void store_shared_data(uint index, float data)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_float_shared)
+#line 85
+  shared_variable_get(compositor_parallel_reduction_float_shared, reduction_data)[index] = data;
+
+#endif
+#line 86
+}
+
+void store_shared_data(uint index, float2 data)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_float2_shared)
+#line 90
+  shared_variable_get(compositor_parallel_reduction_float2_shared, reduction_data)[index] = data;
+
+#endif
+#line 91
+}
+
+void store_shared_data(uint index, float4 data)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_float4_shared)
+#line 95
+  shared_variable_get(compositor_parallel_reduction_float4_shared, reduction_data)[index] = data;
+
+#endif
+#line 96
+}
+#line 103
+struct IdentityZero {                                                                            int _pad;};
+#line 103
+                            IdentityZero IdentityZero_ctor_() {IdentityZero r;r._pad=0;return r;}
+struct IdentityMinimumFloat {                                                                                                    int _pad;};
+#line 104
+                                    IdentityMinimumFloat IdentityMinimumFloat_ctor_() {IdentityMinimumFloat r;r._pad=0;return r;}
+struct IdentityMaximumFloat {                                                                                                    int _pad;};
+#line 105
+                                    IdentityMaximumFloat IdentityMaximumFloat_ctor_() {IdentityMaximumFloat r;r._pad=0;return r;}
+struct IdentityLowerBound {                                                                                              int _pad;};
+#line 106
+                                  IdentityLowerBound IdentityLowerBound_ctor_() {IdentityLowerBound r;r._pad=0;return r;}
+struct IdentityUpperBound {                                                                                              int _pad;};
+#line 107
+                                  IdentityUpperBound IdentityUpperBound_ctor_() {IdentityUpperBound r;r._pad=0;return r;}
+#line 114
+float identityTfloatTIdentityZero()
+{
+  return 0.0f;
+}
+
+           float4 identityTfloat4TIdentityZero()
+{
+  return float4(0.0f);
+}
+
+           float identityTfloatTIdentityMinimumFloat()
+{
+  return -FLT_MAX;
+}
+
+           float2 identityTfloat2TIdentityMinimumFloat()
+{
+  return float2(-FLT_MAX);
+}
+
+           float4 identityTfloat4TIdentityMinimumFloat()
+{
+  return float4(-FLT_MAX);
+}
+
+           float identityTfloatTIdentityMaximumFloat()
+{
+  return FLT_MAX;
+}
+
+           float4 identityTfloat4TIdentityMaximumFloat()
+{
+  return float4(FLT_MAX);
+}
+
+           float identityTfloatTIdentityLowerBound()
+{
+
+#if defined(CREATE_INFO_compositor_maximum_float_in_range)
+#line 151
+  return push_constant_get(compositor_maximum_float_in_range, lower_bound);
+
+#else
+#line 151
+  return float(0);
+#endif
+#line 152
+}
+
+           float identityTfloatTIdentityUpperBound()
+{
+
+#if defined(CREATE_INFO_compositor_minimum_float_in_range)
+#line 156
+  return push_constant_get(compositor_minimum_float_in_range, upper_bound);
+
+#else
+#line 156
+  return float(0);
+#endif
+#line 157
+}
+#line 164
+struct InitializeDefault {                                                                                           int _pad;};
+#line 164
+                                 InitializeDefault InitializeDefault_ctor_() {InitializeDefault r;r._pad=0;return r;}
+struct InitializeSquaredDifference {                                                                                                                         int _pad;};
+#line 165
+                                           InitializeSquaredDifference InitializeSquaredDifference_ctor_() {InitializeSquaredDifference r;r._pad=0;return r;}
+struct InitializeMinimumInRange {                                                                                                                int _pad;};
+#line 166
+                                        InitializeMinimumInRange InitializeMinimumInRange_ctor_() {InitializeMinimumInRange r;r._pad=0;return r;}
+struct InitializeMaximumInRange {                                                                                                                int _pad;};
+#line 167
+                                        InitializeMaximumInRange InitializeMaximumInRange_ctor_() {InitializeMaximumInRange r;r._pad=0;return r;}
+struct InitializeLuminance {                                                                                                 int _pad;};
+#line 168
+                                   InitializeLuminance InitializeLuminance_ctor_() {InitializeLuminance r;r._pad=0;return r;}
+struct InitializeLogLuminance {                                                                                                          int _pad;};
+#line 169
+                                      InitializeLogLuminance InitializeLogLuminance_ctor_() {InitializeLogLuminance r;r._pad=0;return r;}
+#line 176
+float initializeTfloatTInitializeDefault(float4 value)
+{
+  return value.x;
+}
+
+           float2 initializeTfloat2TInitializeDefault(float4 value)
+{
+  return value.xy;
+}
+
+           float4 initializeTfloat4TInitializeDefault(float4 value)
+{
+  return value;
+}
+
+           float4 initializeTfloat4TInitializeSquaredDifference(float4 value)
+{
+
+#if defined(CREATE_INFO_compositor_sum_squared_difference_color)
+#line 193
+  float4 sub = push_constant_get(compositor_sum_squared_difference_color, subtrahend);
+  return square(value - sub);
+
+#else
+#line 193
+  return float4(0);
+#endif
+}
+
+           float initializeTfloatTInitializeMinimumInRange(float4 value)
+{
+
+#if defined(CREATE_INFO_compositor_minimum_float_in_range)
+#line 199
+
+#if defined(CREATE_INFO_compositor_minimum_float_in_range)
+#line 199
+  const float max = push_constant_get(compositor_minimum_float_in_range, upper_bound);
+  const float min = push_constant_get(compositor_minimum_float_in_range, lower_bound);
+  return ((value.x <= max) && (value.x >= min)) ? value.x : max;
+
+#else
+#line 199
+  return float(0);
+#endif
+#line 202
+
+#else
+#line 199
+  return float(0);
+#endif
+#line 202
+}
+
+           float initializeTfloatTInitializeMaximumInRange(float4 value)
+{
+
+#if defined(CREATE_INFO_compositor_maximum_float_in_range)
+#line 206
+
+#if defined(CREATE_INFO_compositor_maximum_float_in_range)
+#line 206
+  float max = push_constant_get(compositor_maximum_float_in_range, upper_bound);
+  float min = push_constant_get(compositor_maximum_float_in_range, lower_bound);
+  return ((value.x <= max) && (value.x >= min)) ? value.x : min;
+
+#else
+#line 206
+  return float(0);
+#endif
+#line 209
+
+#else
+#line 206
+  return float(0);
+#endif
+#line 209
+}
+
+           float initializeTfloatTInitializeLuminance(float4 value)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_luminance_shared)
+#line 213
+  float3 coefficients = push_constant_get(compositor_parallel_reduction_luminance_shared,
+                                          luminance_coefficients);
+  return dot(value.rgb, coefficients);
+
+#else
+#line 213
+  return float(0);
+#endif
+#line 216
+}
+
+           float initializeTfloatTInitializeLogLuminance(float4 value)
+{
+
+#if defined(CREATE_INFO_compositor_parallel_reduction_luminance_shared)
+#line 220
+  float3 coefficients = push_constant_get(compositor_parallel_reduction_luminance_shared,
+                                          luminance_coefficients);
+  return log(max(dot(value.rgb, coefficients), 1e-5f));
+
+#else
+#line 220
+  return float(0);
+#endif
+#line 223
+}
+#line 228
+struct ReduceSum {                                                                   int _pad;};
+#line 228
+                         ReduceSum ReduceSum_ctor_() {ReduceSum r;r._pad=0;return r;}
+struct ReduceMinimum {                                                                               int _pad;};
+#line 229
+                             ReduceMinimum ReduceMinimum_ctor_() {ReduceMinimum r;r._pad=0;return r;}
+struct ReduceMaximum {                                                                               int _pad;};
+#line 230
+                             ReduceMaximum ReduceMaximum_ctor_() {ReduceMaximum r;r._pad=0;return r;}
+struct ReduceMinimumInRange {                                                                                                    int _pad;};
+#line 231
+                                    ReduceMinimumInRange ReduceMinimumInRange_ctor_() {ReduceMinimumInRange r;r._pad=0;return r;}
+struct ReduceMaximumInRange {                                                                                                    int _pad;};
+#line 232
+                                    ReduceMaximumInRange ReduceMaximumInRange_ctor_() {ReduceMaximumInRange r;r._pad=0;return r;}
+struct ReduceMaximumVelocity {                                                                                                       int _pad;};
+#line 233
+                                     ReduceMaximumVelocity ReduceMaximumVelocity_ctor_() {ReduceMaximumVelocity r;r._pad=0;return r;}
+#line 240
+float4 reduceTfloat4TReduceSum(float4 lhs, float4 rhs)
+{
+  return lhs + rhs;
+}
+
+           float reduceTfloatTReduceSum(float lhs, float rhs)
+{
+  return lhs + rhs;
+}
+
+           float reduceTfloatTReduceMinimum(float lhs, float rhs)
+{
+  return min(lhs, rhs);
+}
+
+           float4 reduceTfloat4TReduceMinimum(float4 lhs, float4 rhs)
+{
+  return min(lhs, rhs);
+}
+
+           float reduceTfloatTReduceMaximum(float lhs, float rhs)
+{
+  return max(lhs, rhs);
+}
+
+           float2 reduceTfloat2TReduceMaximum(float2 lhs, float2 rhs)
+{
+  return max(lhs, rhs);
+}
+
+           float4 reduceTfloat4TReduceMaximum(float4 lhs, float4 rhs)
+{
+  return max(lhs, rhs);
+}
+
+           float reduceTfloatTReduceMinimumInRange(float lhs, float rhs)
+{
+
+#if defined(CREATE_INFO_compositor_minimum_float_in_range)
+#line 277
+  float min = push_constant_get(compositor_minimum_float_in_range, lower_bound);
+  return ((rhs < lhs) && (rhs >= min)) ? rhs : lhs;
+
+#else
+#line 277
+  return float(0);
+#endif
+}
+
+           float reduceTfloatTReduceMaximumInRange(float lhs, float rhs)
+{
+
+#if defined(CREATE_INFO_compositor_maximum_float_in_range)
+#line 283
+  float max = push_constant_get(compositor_maximum_float_in_range, upper_bound);
+  return ((rhs > lhs) && (rhs <= max)) ? rhs : lhs;
+
+#else
+#line 283
+  return float(0);
+#endif
+}
+
+           float4 reduceTfloat4TReduceMaximumVelocity(float4 lhs, float4 rhs)
+{
+  return float4(dot(lhs.xy, lhs.xy) > dot(rhs.xy, rhs.xy) ? lhs.xy : rhs.xy,
+                dot(lhs.zw, lhs.zw) > dot(rhs.zw, rhs.zw) ? lhs.zw : rhs.zw);
+}
+#line 334
+void reductionTfloat4TIdentityZeroTInitializeDefaultTReduceSum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloat4TIdentityZero());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float4 data = is_initial_reduction ? initializeTfloat4TInitializeDefault(value) : loadTfloat4(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float4 first_value = load_shared_dataTfloat4(gl_LocalInvocationIndex);
+    const float4 second_value = load_shared_dataTfloat4(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float4 result = reduceTfloat4TReduceSum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat4(0)));
+  }
+}
+#line 395
+void reduce_sum_color()
+{
+  reductionTfloat4TIdentityZeroTInitializeDefaultTReduceSum();
+}
+#line 334
+void reductionTfloatTIdentityZeroTInitializeLogLuminanceTReduceSum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityZero());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeLogLuminance(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceSum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 401
+void reduce_sum_log_luminance()
+{
+  reductionTfloatTIdentityZeroTInitializeLogLuminanceTReduceSum();
+}
+#line 334
+void reductionTfloat4TIdentityZeroTInitializeSquaredDifferenceTReduceSum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloat4TIdentityZero());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float4 data = is_initial_reduction ? initializeTfloat4TInitializeSquaredDifference(value) : loadTfloat4(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float4 first_value = load_shared_dataTfloat4(gl_LocalInvocationIndex);
+    const float4 second_value = load_shared_dataTfloat4(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float4 result = reduceTfloat4TReduceSum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat4(0)));
+  }
+}
+#line 407
+void reduce_sum_squared_difference_color()
+{
+  reductionTfloat4TIdentityZeroTInitializeSquaredDifferenceTReduceSum();
+}
+#line 334
+void reductionTfloatTIdentityMaximumFloatTInitializeDefaultTReduceMinimum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityMaximumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeDefault(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceMinimum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 413
+void reduce_minimum_float()
+{
+  reductionTfloatTIdentityMaximumFloatTInitializeDefaultTReduceMinimum();
+}
+#line 334
+void reductionTfloat4TIdentityMaximumFloatTInitializeDefaultTReduceMinimum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloat4TIdentityMaximumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float4 data = is_initial_reduction ? initializeTfloat4TInitializeDefault(value) : loadTfloat4(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float4 first_value = load_shared_dataTfloat4(gl_LocalInvocationIndex);
+    const float4 second_value = load_shared_dataTfloat4(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float4 result = reduceTfloat4TReduceMinimum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat4(0)));
+  }
+}
+#line 419
+void reduce_minimum_float4()
+{
+  reductionTfloat4TIdentityMaximumFloatTInitializeDefaultTReduceMinimum();
+}
+#line 334
+void reductionTfloatTIdentityMaximumFloatTInitializeLuminanceTReduceMinimum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityMaximumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeLuminance(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceMinimum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 425
+void reduce_minimum_luminance()
+{
+  reductionTfloatTIdentityMaximumFloatTInitializeLuminanceTReduceMinimum();
+}
+#line 334
+void reductionTfloatTIdentityUpperBoundTInitializeMinimumInRangeTReduceMinimumInRange()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityUpperBound());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeMinimumInRange(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceMinimumInRange(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 434
+void reduce_minimum_float_in_range()
+{
+  reductionTfloatTIdentityUpperBoundTInitializeMinimumInRangeTReduceMinimumInRange();
+}
+#line 334
+void reductionTfloatTIdentityMinimumFloatTInitializeDefaultTReduceMaximum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityMinimumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeDefault(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceMaximum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 440
+void reduce_maximum_float()
+{
+  reductionTfloatTIdentityMinimumFloatTInitializeDefaultTReduceMaximum();
+}
+#line 334
+void reductionTfloat2TIdentityMinimumFloatTInitializeDefaultTReduceMaximum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloat2TIdentityMinimumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float2 data = is_initial_reduction ? initializeTfloat2TInitializeDefault(value) : loadTfloat2(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float2 first_value = load_shared_dataTfloat2(gl_LocalInvocationIndex);
+    const float2 second_value = load_shared_dataTfloat2(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float2 result = reduceTfloat2TReduceMaximum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat2(0)));
+  }
+}
+#line 446
+void reduce_maximum_float2()
+{
+  reductionTfloat2TIdentityMinimumFloatTInitializeDefaultTReduceMaximum();
+}
+#line 334
+void reductionTfloat4TIdentityMinimumFloatTInitializeDefaultTReduceMaximum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloat4TIdentityMinimumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float4 data = is_initial_reduction ? initializeTfloat4TInitializeDefault(value) : loadTfloat4(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float4 first_value = load_shared_dataTfloat4(gl_LocalInvocationIndex);
+    const float4 second_value = load_shared_dataTfloat4(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float4 result = reduceTfloat4TReduceMaximum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat4(0)));
+  }
+}
+#line 452
+void reduce_maximum_float4()
+{
+  reductionTfloat4TIdentityMinimumFloatTInitializeDefaultTReduceMaximum();
+}
+#line 334
+void reductionTfloatTIdentityMinimumFloatTInitializeLuminanceTReduceMaximum()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityMinimumFloat());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeLuminance(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceMaximum(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 458
+void reduce_maximum_luminance()
+{
+  reductionTfloatTIdentityMinimumFloatTInitializeLuminanceTReduceMaximum();
+}
+#line 334
+void reductionTfloatTIdentityLowerBoundTInitializeMaximumInRangeTReduceMaximumInRange()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloatTIdentityLowerBound());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float data = is_initial_reduction ? initializeTfloatTInitializeMaximumInRange(value) : loadTfloat(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float first_value = load_shared_dataTfloat(gl_LocalInvocationIndex);
+    const float second_value = load_shared_dataTfloat(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float result = reduceTfloatTReduceMaximumInRange(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat(0)));
+  }
+}
+#line 467
+void reduce_maximum_float_in_range()
+{
+  reductionTfloatTIdentityLowerBoundTInitializeMaximumInRangeTReduceMaximumInRange();
+}
+#line 334
+void reductionTfloat4TIdentityZeroTInitializeDefaultTReduceMaximumVelocity()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 340
+  if (any(lessThan(texel, int2(0))) || any(greaterThanEqual(texel, texture_size(input_tx)))) {
+    store_shared_data(gl_LocalInvocationIndex, identityTfloat4TIdentityZero());
+  }
+  else {
+    float4 value = texture_load_unbound(input_tx, texel);
+#line 356
+    float4 data = is_initial_reduction ? initializeTfloat4TInitializeDefault(value) : loadTfloat4(value);
+    store_shared_data(gl_LocalInvocationIndex, data);
+  }
+#line 362
+  constexpr uint reduction_size = gl_WorkGroupSize.x * gl_WorkGroupSize.y;
+  for (uint stride = reduction_size / 2; stride > 0; stride /= 2) {
+    barrier();
+#line 369
+    const float4 first_value = load_shared_dataTfloat4(gl_LocalInvocationIndex);
+    const float4 second_value = load_shared_dataTfloat4(gl_LocalInvocationIndex + stride);
+#line 373
+    barrier();
+#line 377
+    if (gl_LocalInvocationIndex < stride) {
+#line 380
+      const float4 result = reduceTfloat4TReduceMaximumVelocity(first_value, second_value);
+      store_shared_data(gl_LocalInvocationIndex, result);
+    }
+  }
+#line 388
+  barrier();
+  if (gl_LocalInvocationIndex == 0) {
+    imageStore(output_img, int2(gl_WorkGroupID.xy), to_storage_value(load_shared_dataTfloat4(0)));
+  }
+}
+#line 473
+void reduce_max_velocity()
+{
+  reductionTfloat4TIdentityZeroTInitializeDefaultTReduceMaximumVelocity();
+}

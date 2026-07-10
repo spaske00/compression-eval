@@ -1,0 +1,1 @@
+/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/.build/qt-creator-clang-linux-x64-O2/src/libs/solutions/spinner/Spinner_autogen/include/../EWIEGA46WW/moc_spinner.cpp.json

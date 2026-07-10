@@ -1,0 +1,102 @@
+#line 1 "eevee_hiz.bsl.hh"
+ 
+#line 27
+#define access_eevee_HiZ_hiz_tx() hiz_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_HiZ
+CREATE_INFO_RES_PASS_eevee_HiZ
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_HiZ
+CREATE_INFO_RES_BATCH_eevee_HiZ
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_HiZ
+CREATE_INFO_RES_GEOMETRY_eevee_HiZ
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_HiZ
+CREATE_INFO_RES_SHARED_VARS_eevee_HiZ
+#endif
+#line 27
+struct eevee_HiZ {
+#line 37
+int _pad;};
+#line 40
+#ifndef GPU_METAL
+eevee_HiZ eevee_HiZ_ctor_();
+eevee_HiZ eevee_HiZ_new_();
+#endif
+#line 27
+                         eevee_HiZ eevee_HiZ_ctor_() {eevee_HiZ r;r._pad=0;return r;}
+#line 30
+       eevee_HiZ eevee_HiZ_new_()
+{
+  eevee_HiZ result;
+  result._pad = 0;
+  return result;
+#line 28
+}
+#line 31
+#define access_eevee_PreviousLayerHiZ_hiz_prev_tx() hiz_prev_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_PreviousLayerHiZ
+CREATE_INFO_RES_PASS_eevee_PreviousLayerHiZ
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_PreviousLayerHiZ
+CREATE_INFO_RES_BATCH_eevee_PreviousLayerHiZ
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_PreviousLayerHiZ
+CREATE_INFO_RES_GEOMETRY_eevee_PreviousLayerHiZ
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_PreviousLayerHiZ
+CREATE_INFO_RES_SHARED_VARS_eevee_PreviousLayerHiZ
+#endif
+#line 31
+struct eevee_PreviousLayerHiZ {
+#line 41
+int _pad;};
+#line 44
+#ifndef GPU_METAL
+eevee_PreviousLayerHiZ eevee_PreviousLayerHiZ_ctor_();
+eevee_PreviousLayerHiZ eevee_PreviousLayerHiZ_new_();
+#endif
+#line 31
+                                      eevee_PreviousLayerHiZ eevee_PreviousLayerHiZ_ctor_() {eevee_PreviousLayerHiZ r;r._pad=0;return r;}
+#line 34
+       eevee_PreviousLayerHiZ eevee_PreviousLayerHiZ_new_()
+{
+  eevee_PreviousLayerHiZ result;
+  result._pad = 0;
+  return result;
+#line 32
+}
+#line 35
+#define access_eevee_PreviousLayerRadiance_previous_layer_radiance_tx() previous_layer_radiance_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_PreviousLayerRadiance
+CREATE_INFO_RES_PASS_eevee_PreviousLayerRadiance
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_PreviousLayerRadiance
+CREATE_INFO_RES_BATCH_eevee_PreviousLayerRadiance
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_PreviousLayerRadiance
+CREATE_INFO_RES_GEOMETRY_eevee_PreviousLayerRadiance
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_PreviousLayerRadiance
+CREATE_INFO_RES_SHARED_VARS_eevee_PreviousLayerRadiance
+#endif
+#line 35
+struct eevee_PreviousLayerRadiance {
+#line 45
+int _pad;};
+#line 49
+#ifndef GPU_METAL
+eevee_PreviousLayerRadiance eevee_PreviousLayerRadiance_ctor_();
+eevee_PreviousLayerRadiance eevee_PreviousLayerRadiance_new_();
+#endif
+#line 35
+                                           eevee_PreviousLayerRadiance eevee_PreviousLayerRadiance_ctor_() {eevee_PreviousLayerRadiance r;r._pad=0;return r;}
+#line 38
+       eevee_PreviousLayerRadiance eevee_PreviousLayerRadiance_new_()
+{
+  eevee_PreviousLayerRadiance result;
+  result._pad = 0;
+  return result;
+#line 36
+}
+#line 40

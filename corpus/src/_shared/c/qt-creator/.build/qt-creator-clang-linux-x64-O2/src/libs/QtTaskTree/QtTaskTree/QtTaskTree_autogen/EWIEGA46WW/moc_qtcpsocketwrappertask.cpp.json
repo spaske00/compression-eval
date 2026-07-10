@@ -1,0 +1,38 @@
+{
+    "classes": [
+        {
+            "className": "QTcpSocketWrapper",
+            "lineNumber": 23,
+            "object": true,
+            "qualifiedClassName": "QtTaskTree::QTcpSocketWrapper",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "started",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "result",
+                            "type": "QtTaskTree::DoneResult"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "done",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qtcpsocketwrappertask.h",
+    "outputRevision": 68
+}

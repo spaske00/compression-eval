@@ -1,0 +1,20 @@
+#line 1 "gpu_shader_material_object_info.glsl"
+ 
+#line 6
+void node_object_info(float mat_index,
+                      _ref(float3 ,location),
+                      _ref(float4 ,color),
+                      _ref(float ,alpha),
+                      _ref(float ,object_index),
+                      _ref(float ,material_index),
+                      _ref(float ,random))
+{
+  location = object_matrices_get().model[3].xyz;
+  ObjectInfos info = object_infos_get();
+  color = info.ob_color;
+  alpha = info.ob_color.a;
+  object_index = info.index;
+
+  material_index = mat_index;
+  random = info.random;
+}

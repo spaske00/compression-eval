@@ -1,0 +1,7 @@
+module QmlRuntime.QmlConfiguration
+linktarget qmlpuppetplugin
+optional plugin qmlpuppetplugin
+classname QmlRuntime_QmlConfigurationPlugin
+typeinfo qmlpuppet.qmltypes
+prefer :/qt-project.org/imports/QmlRuntime/QmlConfiguration/
+

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "mold",
+  "input_url": "https://github.com/rui314/mold/",
+  "canonical_url": "https://github.com/rui314/mold",
+  "source_directory": "mold/upstream",
+  "commit": "f5fd48874a7ce62438ea922e77a9c8be3506c4a8",
+  "nested_submodules": []
+}

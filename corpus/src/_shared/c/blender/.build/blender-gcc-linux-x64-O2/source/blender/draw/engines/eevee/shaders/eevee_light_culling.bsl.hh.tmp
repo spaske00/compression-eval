@@ -1,0 +1,853 @@
+#line 1 "eevee_light_culling.bsl.hh"
+ 
+#line 23
+#define access_eevee_light_culling_Cull_draw_view_culling() draw_view_culling
+#define access_eevee_light_culling_Cull_light_cull_buf() light_cull_buf
+#define access_eevee_light_culling_Cull_sunlight_buf() sunlight_buf
+#define access_eevee_light_culling_Cull_in_light_buf() in_light_buf
+#define access_eevee_light_culling_Cull_out_light_buf() out_light_buf
+#define access_eevee_light_culling_Cull_out_zdist_buf() out_zdist_buf
+#define access_eevee_light_culling_Cull_out_key_buf() out_key_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_light_culling_Cull
+CREATE_INFO_RES_PASS_eevee_light_culling_Cull
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_light_culling_Cull
+CREATE_INFO_RES_BATCH_eevee_light_culling_Cull
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_light_culling_Cull
+CREATE_INFO_RES_GEOMETRY_eevee_light_culling_Cull
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_Cull
+CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_Cull
+#endif
+#line 23
+struct eevee_light_culling_Cull {
+#line 42
+int _pad;};
+#line 45
+#ifndef GPU_METAL
+eevee_light_culling_Cull eevee_light_culling_Cull_ctor_();
+eevee_light_culling_Cull eevee_light_culling_Cull_new_();
+#endif
+#line 23
+                                        eevee_light_culling_Cull eevee_light_culling_Cull_ctor_() {eevee_light_culling_Cull r;r._pad=0;return r;}
+#line 35
+       eevee_light_culling_Cull eevee_light_culling_Cull_new_()
+{
+  eevee_light_culling_Cull result;
+  result._pad = 0;
+  return result;
+#line 33
+}
+#line 36
+
+#if defined(CREATE_INFO_eevee_light_culling_Cull) && defined(CREATE_INFO_draw_View)
+#line 36
+
+#if defined(ENTRY_POINT_eevee_light_culling_cull_main)
+#line 36
+
+void eevee_light_culling_cull_main(
+
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 40
+  eevee_light_culling_Cull srt = eevee_light_culling_Cull_ctor_(); draw_View views = draw_View_ctor_();
+  uint l_idx = gl_GlobalInvocationID.x;
+  if (l_idx >= srt_access(eevee_light_culling_Cull, light_cull_buf).items_count) {
+    return;
+  }
+
+  LightData light = srt_access(eevee_light_culling_Cull, in_light_buf)[l_idx];
+#line 49
+  if (is_sun_light(light.type)) {
+
+    bool is_world_sun_light = light.color.r < 0.0f;
+    if (is_world_sun_light) {
+      light.color = srt_access(eevee_light_culling_Cull, sunlight_buf)[l_idx].color;
+      light.object_to_world = srt_access(eevee_light_culling_Cull, sunlight_buf)[l_idx].object_to_world;
+
+      LightSunData sun_data = _sun(light);
+      sun_data.direction = _z_axis(srt_access(eevee_light_culling_Cull, sunlight_buf)[l_idx].object_to_world);
+      _sun_set_(light, sun_data);
+
+    }
+
+    srt_access(eevee_light_culling_Cull, out_light_buf)[srt_access(eevee_light_culling_Cull, light_cull_buf).local_lights_len + l_idx] = light;
+    return;
+  }
+#line 67
+  if (_local(light).local.influence_radius_max < 1e-8f) {
+    return;
+  }
+
+  Sphere sphere;
+  switch (light.type) {
+    case LIGHT_SPOT_SPHERE:
+    case LIGHT_SPOT_DISK: {
+      LightSpotData spot = _spot(light);
+
+      if (spot.spot_tan < 10.0f) {
+        float3 x_axis = _x_axis(light);
+        float3 y_axis = _y_axis(light);
+        float3 z_axis = _z_axis(light);
+        Pyramid pyramid = shape_pyramid_non_oblique(
+            _position(light),
+            _position(light) - z_axis * spot.local.influence_radius_max,
+            x_axis * spot.local.influence_radius_max * spot.spot_tan / spot.spot_size_inv.x,
+            y_axis * spot.local.influence_radius_max * spot.spot_tan / spot.spot_size_inv.y);
+        if (!intersect_view(pyramid)) {
+          return;
+        }
+      }
+      ATTR_FALLTHROUGH;
+    }
+    case LIGHT_RECT:
+    case LIGHT_ELLIPSE:
+    case LIGHT_OMNI_SPHERE:
+    case LIGHT_OMNI_DISK:
+      sphere.center = _position(light);
+      sphere.radius = _local(light).local.influence_radius_max;
+      break;
+    default:
+      break;
+  }
+#line 107
+  if (intersect_view(sphere)) {
+    const ViewMatrices view = _get(views, 0);
+    uint index = atomicAdd(srt_access(eevee_light_culling_Cull, light_cull_buf).visible_count, 1u);
+
+    float z_dist = dot(_forward(view), _position(light)) - dot(_forward(view), _position(view));
+    srt_access(eevee_light_culling_Cull, out_zdist_buf)[index] = z_dist;
+    srt_access(eevee_light_culling_Cull, out_key_buf)[index] = l_idx;
+  }
+
+#endif
+#line 115
+}
+#endif
+#endif
+#line 122
+#define access_eevee_light_culling_Sort_zdists_cache() zdists_cache
+#define access_eevee_light_culling_Sort_light_cull_buf() light_cull_buf
+#define access_eevee_light_culling_Sort_in_light_buf() in_light_buf
+#define access_eevee_light_culling_Sort_in_zdist_buf() in_zdist_buf
+#define access_eevee_light_culling_Sort_in_key_buf() in_key_buf
+#define access_eevee_light_culling_Sort_out_light_buf() out_light_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_light_culling_Sort
+CREATE_INFO_RES_PASS_eevee_light_culling_Sort
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_light_culling_Sort
+CREATE_INFO_RES_BATCH_eevee_light_culling_Sort
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_light_culling_Sort
+CREATE_INFO_RES_GEOMETRY_eevee_light_culling_Sort
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_Sort
+CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_Sort
+#endif
+#line 122
+struct eevee_light_culling_Sort {
+#line 140
+int _pad;};
+#line 143
+#ifndef GPU_METAL
+eevee_light_culling_Sort eevee_light_culling_Sort_ctor_();
+eevee_light_culling_Sort eevee_light_culling_Sort_new_();
+#endif
+#line 122
+                                        eevee_light_culling_Sort eevee_light_culling_Sort_ctor_() {eevee_light_culling_Sort r;r._pad=0;return r;}
+#line 133
+       eevee_light_culling_Sort eevee_light_culling_Sort_new_()
+{
+  eevee_light_culling_Sort result;
+  result._pad = 0;
+  return result;
+#line 131
+}
+#line 134
+
+#if defined(CREATE_INFO_eevee_light_culling_Sort)
+#line 134
+
+#if defined(ENTRY_POINT_eevee_light_culling_sort_main)
+#line 134
+
+void eevee_light_culling_sort_main(
+
+                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 138
+  eevee_light_culling_Sort srt = eevee_light_culling_Sort_ctor_();
+
+  if (srt_access(eevee_light_culling_Sort, light_cull_buf).visible_count == 0) {
+    return;
+  }
+
+  const uint group_size = CULLING_SORT_GROUP_SIZE;
+  uint src_index = gl_GlobalInvocationID.x;
+  bool valid_thread = true;
+
+  if (src_index >= srt_access(eevee_light_culling_Sort, light_cull_buf).visible_count) {
+#line 151
+    src_index = srt_access(eevee_light_culling_Sort, light_cull_buf).visible_count - 1;
+    valid_thread = false;
+  }
+
+  float local_zdist = srt_access(eevee_light_culling_Sort, in_zdist_buf)[src_index];
+
+  int prefix_sum = 0;
+
+  uint iter = divide_ceil(srt_access(eevee_light_culling_Sort, light_cull_buf).visible_count, group_size);
+  for (uint i = 0u; i < iter; i++) {
+    uint index = group_size * i + gl_LocalInvocationID.x;
+
+    index = min(index, srt_access(eevee_light_culling_Sort, light_cull_buf).visible_count - 1);
+    srt_access(eevee_light_culling_Sort, zdists_cache)[gl_LocalInvocationID.x] = srt_access(eevee_light_culling_Sort, in_zdist_buf)[index];
+
+    barrier();
+#line 169
+    uint line_end = min(group_size, srt_access(eevee_light_culling_Sort, light_cull_buf).visible_count - group_size * i);
+    for (uint j = 0u; j < line_end; j++) {
+      if (srt_access(eevee_light_culling_Sort, zdists_cache)[j] < local_zdist) {
+        prefix_sum++;
+      }
+      else if (srt_access(eevee_light_culling_Sort, zdists_cache)[j] == local_zdist) {
+
+        if ((group_size * i + j) < src_index) {
+          prefix_sum++;
+        }
+      }
+    }
+
+    barrier();
+  }
+
+  if (valid_thread) {
+
+    uint input_index = srt_access(eevee_light_culling_Sort, in_key_buf)[src_index];
+    srt_access(eevee_light_culling_Sort, out_light_buf)[prefix_sum] = srt_access(eevee_light_culling_Sort, in_light_buf)[input_index];
+  }
+
+#endif
+#line 190
+}
+#endif
+#endif
+#line 198
+#define access_eevee_light_culling_ZBinning_zbin_max() zbin_max
+#define access_eevee_light_culling_ZBinning_zbin_min() zbin_min
+#define access_eevee_light_culling_ZBinning_light_cull_buf() light_cull_buf
+#define access_eevee_light_culling_ZBinning_light_buf() light_buf
+#define access_eevee_light_culling_ZBinning_out_zbin_buf() out_zbin_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_light_culling_ZBinning
+CREATE_INFO_RES_PASS_eevee_light_culling_ZBinning
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_light_culling_ZBinning
+CREATE_INFO_RES_BATCH_eevee_light_culling_ZBinning
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_light_culling_ZBinning
+CREATE_INFO_RES_GEOMETRY_eevee_light_culling_ZBinning
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_ZBinning
+CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_ZBinning
+#endif
+#line 198
+struct eevee_light_culling_ZBinning {
+#line 214
+int _pad;};
+#line 217
+#ifndef GPU_METAL
+eevee_light_culling_ZBinning eevee_light_culling_ZBinning_ctor_();
+eevee_light_culling_ZBinning eevee_light_culling_ZBinning_new_();
+#endif
+#line 198
+                                            eevee_light_culling_ZBinning eevee_light_culling_ZBinning_ctor_() {eevee_light_culling_ZBinning r;r._pad=0;return r;}
+#line 207
+       eevee_light_culling_ZBinning eevee_light_culling_ZBinning_new_()
+{
+  eevee_light_culling_ZBinning result;
+  result._pad = 0;
+  return result;
+#line 205
+}
+#line 208
+
+#if defined(CREATE_INFO_eevee_light_culling_ZBinning) && defined(CREATE_INFO_draw_View)
+#line 208
+
+#if defined(ENTRY_POINT_eevee_light_culling_zbin_main)
+#line 208
+
+void eevee_light_culling_zbin_main(
+
+                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 212
+  eevee_light_culling_ZBinning srt = eevee_light_culling_ZBinning_ctor_(); draw_View views = draw_View_ctor_();
+  constexpr uint zbin_iter = CULLING_ZBIN_COUNT / CULLING_ZBIN_GROUP_SIZE;
+  const uint zbin_local = gl_LocalInvocationID.x * zbin_iter;
+
+  for (uint i = 0u, l = zbin_local; i < zbin_iter; i++, l++) {
+    srt_access(eevee_light_culling_ZBinning, zbin_max)[l] = 0x0u;
+    srt_access(eevee_light_culling_ZBinning, zbin_min)[l] = ~0x0u;
+  }
+  barrier();
+
+  const ViewMatrices view = _get(views, 0);
+
+  uint light_iter = divide_ceil(srt_access(eevee_light_culling_ZBinning, light_cull_buf).visible_count, uint(CULLING_ZBIN_GROUP_SIZE));
+  for (uint i = 0u; i < light_iter; i++) {
+    uint index = i * CULLING_ZBIN_GROUP_SIZE + gl_LocalInvocationID.x;
+    if (index >= srt_access(eevee_light_culling_ZBinning, light_cull_buf).visible_count) {
+      continue;
+    }
+    LightData light = srt_access(eevee_light_culling_ZBinning, light_buf)[index];
+    float3 P = _position(light);
+
+    float radius = _local(light).local.influence_radius_max;
+    float z_dist = dot(_forward(view), P) - dot(_forward(view), _position(view));
+    int z_min = eevee_light_culling_z_to_zbin(
+        srt_access(eevee_light_culling_ZBinning, light_cull_buf).zbin_scale, srt_access(eevee_light_culling_ZBinning, light_cull_buf).zbin_bias, z_dist + radius);
+    int z_max = eevee_light_culling_z_to_zbin(
+        srt_access(eevee_light_culling_ZBinning, light_cull_buf).zbin_scale, srt_access(eevee_light_culling_ZBinning, light_cull_buf).zbin_bias, z_dist - radius);
+    z_min = clamp(z_min, 0, CULLING_ZBIN_COUNT - 1);
+    z_max = clamp(z_max, 0, CULLING_ZBIN_COUNT - 1);
+
+    for (int z = z_min; z <= z_max; z++) {
+      atomicMin(srt_access(eevee_light_culling_ZBinning, zbin_min)[z], index);
+      atomicMax(srt_access(eevee_light_culling_ZBinning, zbin_max)[z], index);
+    }
+  }
+  barrier();
+#line 250
+  for (uint i = 0u, l = zbin_local; i < zbin_iter; i++, l++) {
+    srt_access(eevee_light_culling_ZBinning, out_zbin_buf)[l] = (srt_access(eevee_light_culling_ZBinning, zbin_max)[l] << 16u) | (srt_access(eevee_light_culling_ZBinning, zbin_min)[l] & 0xFFFFu);
+  }
+
+#endif
+#line 253
+}
+#endif
+#endif
+#line 261
+struct eevee_light_culling_CullingTile {
+  IsectFrustum frustum;
+  float4 bounds;
+#line 337
+};
+#line 340
+#ifndef GPU_METAL
+eevee_light_culling_CullingTile eevee_light_culling_CullingTile_ctor_();
+eevee_light_culling_CullingTile eevee_light_culling_CullingTile_from_corners(bool is_persp, float3 corners[8]);
+bool _intersect(_ref(eevee_light_culling_CullingTile ,this_), const ViewMatrices view, Sphere sphere);
+bool _intersect(_ref(eevee_light_culling_CullingTile ,this_), Box bbox);
+bool _intersect(_ref(eevee_light_culling_CullingTile ,this_), Pyramid pyramid);
+float4 eevee_light_culling_CullingTile_tile_bound_cone(float3 v00, float3 v01, float3 v10, float3 v11);
+float4 eevee_light_culling_CullingTile_tile_bound_cylinder(float3 v00, float3 v01, float3 v10, float3 v11);
+#endif
+#line 261
+                                               eevee_light_culling_CullingTile eevee_light_culling_CullingTile_ctor_() {eevee_light_culling_CullingTile r;r.frustum=IsectFrustum_ctor_();r.bounds=float4(0);return r;}
+#line 265
+         eevee_light_culling_CullingTile eevee_light_culling_CullingTile_from_corners(bool is_persp, float3 corners[8])
+  {
+    eevee_light_culling_CullingTile tile;
+    tile.bounds = (is_persp) ? eevee_light_culling_CullingTile_tile_bound_cone(corners[0], corners[4], corners[7], corners[3]) :
+                               eevee_light_culling_CullingTile_tile_bound_cylinder(corners[0], corners[4], corners[7], corners[3]);
+
+    tile.frustum = isect_frustum_setup(shape_frustum(corners));
+    return tile;
+  }
+#line 275
+  bool _intersect(_ref(eevee_light_culling_CullingTile ,this_), const ViewMatrices view, Sphere sphere)
+  {
+    bool isect = true;
+#line 280
+    if (_is_perspective(view)) {
+      isect =   intersect(shape_cone(this_.bounds.xyz, this_.bounds.w), sphere);
+    }
+    else {
+
+      isect =   intersect(shape_circle(this_.bounds.xy, this_.bounds.w),
+                          shape_circle(sphere.center.xy, sphere.radius));
+    }
+#line 290
+    if (isect) {
+      isect =   intersect(this_.frustum, sphere);
+    }
+    return isect;
+  }
+#line 296
+  bool _intersect(_ref(eevee_light_culling_CullingTile ,this_), Box bbox)
+  {
+    return   intersect(this_.frustum, bbox);
+  }
+#line 301
+  bool _intersect(_ref(eevee_light_culling_CullingTile ,this_), Pyramid pyramid)
+  {
+    return   intersect(this_.frustum, pyramid);
+  }
+#line 309
+         float4 eevee_light_culling_CullingTile_tile_bound_cone(float3 v00, float3 v01, float3 v10, float3 v11)
+  {
+    v00 = normalize(v00);
+    v01 = normalize(v01);
+    v10 = normalize(v10);
+    v11 = normalize(v11);
+    float3 center = normalize(v00 + v01 + v10 + v11);
+    float angle_cosine = dot(center, v00);
+    angle_cosine = min(angle_cosine, dot(center, v01));
+    angle_cosine = min(angle_cosine, dot(center, v10));
+    angle_cosine = min(angle_cosine, dot(center, v11));
+
+    angle_cosine = uintBitsToFloat(floatBitsToUint(angle_cosine) - 1u);
+    return float4(center, angle_cosine);
+  }
+#line 327
+         float4 eevee_light_culling_CullingTile_tile_bound_cylinder(float3 v00, float3 v01, float3 v10, float3 v11)
+  {
+    float3 center = (v00 + v01 + v10 + v11) * 0.25f;
+    float dist_sqr = distance_squared(center, v00);
+    dist_sqr = max(dist_sqr, distance_squared(center, v01));
+    dist_sqr = max(dist_sqr, distance_squared(center, v10));
+    dist_sqr = max(dist_sqr, distance_squared(center, v11));
+
+    return float4(center, sqrt(dist_sqr));
+  }
+#line 339
+#define access_eevee_light_culling_Tile_draw_view_culling() draw_view_culling
+#define access_eevee_light_culling_Tile_light_cull_buf() light_cull_buf
+#define access_eevee_light_culling_Tile_light_buf() light_buf
+#define access_eevee_light_culling_Tile_out_light_tile_buf() out_light_tile_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_light_culling_Tile
+CREATE_INFO_RES_PASS_eevee_light_culling_Tile
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_light_culling_Tile
+CREATE_INFO_RES_BATCH_eevee_light_culling_Tile
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_light_culling_Tile
+CREATE_INFO_RES_GEOMETRY_eevee_light_culling_Tile
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_Tile
+CREATE_INFO_RES_SHARED_VARS_eevee_light_culling_Tile
+#endif
+#line 339
+struct eevee_light_culling_Tile {
+#line 386
+int _pad;};
+#line 389
+#ifndef GPU_METAL
+eevee_light_culling_Tile eevee_light_culling_Tile_ctor_();
+float2 _tile_to_ndc(eevee_light_culling_Tile  this_, float2 tile_co, float2 offset);
+eevee_light_culling_CullingTile _tile_culling_get(eevee_light_culling_Tile  this_, const ViewMatrices view, uint2 tile_co);
+eevee_light_culling_Tile eevee_light_culling_Tile_new_();
+#endif
+#line 339
+                                        eevee_light_culling_Tile eevee_light_culling_Tile_ctor_() {eevee_light_culling_Tile r;r._pad=0;return r;}
+#line 347
+
+#if defined(CREATE_INFO_eevee_light_culling_Tile)
+#line 347
+  float2 _tile_to_ndc(eevee_light_culling_Tile  this_, float2 tile_co, float2 offset)
+  {
+
+    constexpr float margin = 0.02f;
+    tile_co += margin * (offset * 2.0f - 1.0f);
+
+    tile_co += offset;
+    return tile_co * srt_access(eevee_light_culling_Tile, light_cull_buf).tile_to_uv_fac * 2.0f - 1.0f;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_light_culling_Tile)
+#line 357
+  eevee_light_culling_CullingTile _tile_culling_get(eevee_light_culling_Tile  this_, const ViewMatrices view, uint2 tile_co)
+  {
+    float2 ftile = float2(tile_co);
+
+    float3 corners[8];
+
+    corners[1].xy = corners[0].xy = _tile_to_ndc(this_, ftile, float2(0, 0));
+    corners[5].xy = corners[4].xy = _tile_to_ndc(this_, ftile, float2(1, 0));
+    corners[6].xy = corners[7].xy = _tile_to_ndc(this_, ftile, float2(1, 1));
+    corners[2].xy = corners[3].xy = _tile_to_ndc(this_, ftile, float2(0, 1));
+    corners[1].z = corners[5].z = corners[6].z = corners[2].z = -1.0f;
+    corners[0].z = corners[4].z = corners[7].z = corners[3].z = 1.0f;
+#line 373
+{
+#line 370
+                                           {
+
+      corners[0] = project_point(view.wininv, corners[0]);
+    }
+#line 370
+                                           {
+
+      corners[1] = project_point(view.wininv, corners[1]);
+    }
+#line 370
+                                           {
+
+      corners[2] = project_point(view.wininv, corners[2]);
+    }
+#line 370
+                                           {
+
+      corners[3] = project_point(view.wininv, corners[3]);
+    }
+#line 370
+                                           {
+
+      corners[4] = project_point(view.wininv, corners[4]);
+    }
+#line 370
+                                           {
+
+      corners[5] = project_point(view.wininv, corners[5]);
+    }
+#line 370
+                                           {
+
+      corners[6] = project_point(view.wininv, corners[6]);
+    }
+#line 370
+                                           {
+
+      corners[7] = project_point(view.wininv, corners[7]);
+    }
+#line 373
+    }
+
+    bool is_persp = view.winmat[3][3] == 0.0f;
+    return eevee_light_culling_CullingTile_from_corners(is_persp, corners);
+  }
+#endif
+       eevee_light_culling_Tile eevee_light_culling_Tile_new_()
+{
+  eevee_light_culling_Tile result;
+  result._pad = 0;
+  return result;
+#line 377
+}
+#line 380
+
+#if defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_light_culling_Tile)
+#line 380
+
+#if defined(ENTRY_POINT_eevee_light_culling_tile_main)
+#line 380
+
+void eevee_light_culling_tile_main(
+
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 384
+  draw_View views = draw_View_ctor_(); eevee_light_culling_Tile srt = eevee_light_culling_Tile_ctor_();
+  uint word_idx = gl_GlobalInvocationID.x % srt_access(eevee_light_culling_Tile, light_cull_buf).tile_word_len;
+  uint tile_idx = gl_GlobalInvocationID.x / srt_access(eevee_light_culling_Tile, light_cull_buf).tile_word_len;
+  uint2 tile_co = uint2(tile_idx % srt_access(eevee_light_culling_Tile, light_cull_buf).tile_x_len,
+                        tile_idx / srt_access(eevee_light_culling_Tile, light_cull_buf).tile_x_len);
+
+  if (tile_co.y >= srt_access(eevee_light_culling_Tile, light_cull_buf).tile_y_len) {
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+#line 397
+  eevee_light_culling_CullingTile tile = _tile_culling_get(srt, view, tile_co);
+
+  uint l_idx = word_idx * 32u;
+  uint l_end = min(l_idx + 32u, srt_access(eevee_light_culling_Tile, light_cull_buf).visible_count);
+  uint word = 0u;
+  for (; l_idx < l_end; l_idx++) {
+    LightData light = srt_access(eevee_light_culling_Tile, light_buf)[l_idx];
+#line 406
+    float3 vP = _point_world_to_view(view, _position(light));
+    float3 v_right = _normal_world_to_view(view, _x_axis(light));
+    float3 v_up = _normal_world_to_view(view, _y_axis(light));
+    float3 v_back = _normal_world_to_view(view, _z_axis(light));
+    float radius = _local(light).local.influence_radius_max;
+
+    if (srt_access(eevee_light_culling_Tile, light_cull_buf).view_is_flipped) {
+      v_right = -v_right;
+    }
+
+    Sphere sphere = shape_sphere(vP, radius);
+    bool intersect_tile = _intersect(tile, view, sphere);
+
+    switch (light.type) {
+      case LIGHT_SPOT_SPHERE:
+      case LIGHT_SPOT_DISK: {
+        LightSpotData spot = _spot(light);
+
+        if (spot.spot_tan < 10.0f) {
+          Pyramid pyramid = shape_pyramid_non_oblique(
+              vP,
+              vP - v_back * radius,
+              v_right * radius * spot.spot_tan / spot.spot_size_inv.x,
+              v_up * radius * spot.spot_tan / spot.spot_size_inv.y);
+          intersect_tile = intersect_tile && _intersect(tile, pyramid);
+          break;
+        }
+
+        ATTR_FALLTHROUGH;
+      }
+      case LIGHT_RECT:
+      case LIGHT_ELLIPSE: {
+        float3 v000 = vP - v_right * radius - v_up * radius;
+        float3 v100 = v000 + v_right * (radius * 2.0f);
+        float3 v010 = v000 + v_up * (radius * 2.0f);
+        float3 v001 = v000 - v_back * radius;
+        Box bbox = shape_box(v000, v100, v010, v001);
+        intersect_tile = intersect_tile && _intersect(tile, bbox);
+        break;
+      }
+      default:
+        break;
+    }
+
+    if (intersect_tile) {
+      word |= 1u << (l_idx % 32u);
+    }
+  }
+
+  srt_access(eevee_light_culling_Tile, out_light_tile_buf)[gl_GlobalInvocationID.x] = word;
+
+#endif
+#line 456
+}
+#endif
+#endif
+#line 463
+struct eevee_light_culling_DebugVertOut {
+             float2 screen_uv;
+};
+#line 463
+                                                eevee_light_culling_DebugVertOut eevee_light_culling_DebugVertOut_ctor_() {eevee_light_culling_DebugVertOut r;r.screen_uv=float2(0);return r;}
+#line 467
+struct eevee_light_culling_DebugFragOut {
+                              float4 out_debug_color_add;
+                              float4 out_debug_color_mul;
+};
+#line 467
+                                                eevee_light_culling_DebugFragOut eevee_light_culling_DebugFragOut_ctor_() {eevee_light_culling_DebugFragOut r;r.out_debug_color_add=float4(0);r.out_debug_color_mul=float4(0);return r;}
+#line 472
+
+#if defined(ENTRY_POINT_eevee_light_culling_debug_vert)
+#line 472
+
+void eevee_light_culling_debug_vert(
+
+                                                               )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 477
+  fullscreen_vertex(gl_VertexID, gl_Position, eevee_light_culling_DebugVertOut_screen_uv);
+
+#endif
+#line 478
+}
+#endif
+struct eevee_light_culling_NoCullCtx {
+  float light_count;
+  uint light_bits;
+#line 495
+};
+#line 498
+#ifndef GPU_METAL
+eevee_light_culling_NoCullCtx eevee_light_culling_NoCullCtx_ctor_();
+void _eval_directional(_ref(eevee_light_culling_NoCullCtx ,this_), eevee_LightRenderData   _0,
+                        uint _1,
+                        LightData _2);
+void _eval_local(_ref(eevee_light_culling_NoCullCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData _1);
+#endif
+#line 480
+                                             eevee_light_culling_NoCullCtx eevee_light_culling_NoCullCtx_ctor_() {eevee_light_culling_NoCullCtx r;r.light_count=0.0f;r.light_bits=0u;return r;}
+#line 484
+
+#if defined(CREATE_INFO_eevee_LightRenderData)
+#line 484
+  void _eval_directional(_ref(eevee_light_culling_NoCullCtx ,this_), eevee_LightRenderData   _0,
+                        uint _1,
+                        LightData _2)
+  {
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightRenderData)
+#line 490
+  void _eval_local(_ref(eevee_light_culling_NoCullCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData _1)
+  {
+    this_.light_bits |= 1u << l_idx;
+    this_.light_count += 1.0f;
+  }
+#endif
+#line 497
+struct eevee_light_culling_WithCullCtx {
+  uint light_bits;
+  float3 P;
+#line 514
+};
+#line 526
+#ifndef GPU_METAL
+eevee_light_culling_WithCullCtx eevee_light_culling_WithCullCtx_ctor_();
+void _eval_directional(_ref(eevee_light_culling_WithCullCtx ,this_), eevee_LightRenderData   _0,
+                        uint _1,
+                        LightData _2);
+void _eval_local(_ref(eevee_light_culling_WithCullCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData light);
+#endif
+#line 497
+                                               eevee_light_culling_WithCullCtx eevee_light_culling_WithCullCtx_ctor_() {eevee_light_culling_WithCullCtx r;r.light_bits=0u;r.P=float3(0);return r;}
+#line 501
+
+#if defined(CREATE_INFO_eevee_LightRenderData)
+#line 501
+  void _eval_directional(_ref(eevee_light_culling_WithCullCtx ,this_), eevee_LightRenderData   _0,
+                        uint _1,
+                        LightData _2)
+  {
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightRenderData)
+#line 507
+  void _eval_local(_ref(eevee_light_culling_WithCullCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData light)
+  {
+    LightVector lv = light_vector_get(light, false, this_.P);
+    if (light_attenuation_surface(light, false, lv) > LIGHT_ATTENUATION_THRESHOLD) {
+      this_.light_bits |= 1u << l_idx;
+    }
+  }
+#endif
+#line 38 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_LightRenderData)
+#line 38
+void eevee_light_foreach(const eevee_LightRenderData  srt,
+             _ref(eevee_light_culling_NoCullCtx ,cb),
+             eevee_LightRenderData  res)
+{
+#line 44
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+}
+#endif
+#line 524 "eevee_light_culling.bsl.hh"
+#line 58 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_LightRenderData)
+#line 58
+void eevee_light_foreach_visible(const eevee_LightRenderData  srt,
+                     float2 pixel,
+                     float linear_view_z,
+                     _ref(eevee_light_culling_WithCullCtx ,cb),
+                     eevee_LightRenderData  res)
+{
+#line 68
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+#line 74
+#ifdef SRT_CONSTANT_light_iter_force_no_culling
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+  return;
+#endif
+
+  {
+    uint2 tile_co = uint2(pixel / srt_access(eevee_LightRenderData, light_cull_buf).tile_size);
+    uint tile_word_offset = (tile_co.x + tile_co.y * srt_access(eevee_LightRenderData, light_cull_buf).tile_x_len) * srt_access(eevee_LightRenderData, light_cull_buf).tile_word_len;
+    int zbin_index = eevee_light_culling_z_to_zbin(srt_access(eevee_LightRenderData, light_cull_buf).zbin_scale, srt_access(eevee_LightRenderData, light_cull_buf).zbin_bias, linear_view_z);
+    zbin_index = clamp(zbin_index, 0, CULLING_ZBIN_COUNT - 1);
+    uint zbin_data = srt_access(eevee_LightRenderData, light_zbin_buf)[zbin_index];
+    uint min_index = zbin_data & 0xFFFFu;
+    uint max_index = zbin_data >> 16u;
+
+#ifdef GPU_METAL
+#line 99
+    min_index = simd_broadcast_first(simd_min(min_index));
+    max_index = simd_broadcast_first(simd_max(max_index));
+#endif
+
+    uint word_min = min_index >> 5u;
+    uint word_max = max_index >> 5u;
+    for (uint word_idx = word_min; word_idx <= word_max; word_idx++) {
+      uint word = srt_access(eevee_LightRenderData, light_tile_buf)[tile_word_offset + word_idx];
+      word &= eevee_light_zbin_mask(word_idx, min_index, max_index);
+
+#ifdef GPU_METAL
+#line 116
+      word = simd_broadcast_first(simd_or(word));
+#endif
+      int bit_index;
+      while ((bit_index = findLSB(word)) != -1) {
+        word &= ~1u << uint(bit_index);
+        uint index = word_idx * 32u + uint(bit_index);
+        LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+        _eval_local(cb, res, index, light);
+      }
+    }
+  }
+}
+#endif
+#line 530 "eevee_light_culling.bsl.hh"
+
+#if defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_HiZ)
+#line 530
+
+#if defined(ENTRY_POINT_eevee_light_culling_debug_frag)
+#line 530
+
+void eevee_light_culling_debug_frag(
+#line 536
+                                                                  )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 537
+  draw_View views = draw_View_ctor_(); eevee_LightRenderData lrd = eevee_LightRenderData_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  const ViewMatrices view = _get(views, 0);
+
+  float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r;
+  float vP_z = _depth_screen_to_view(view, depth);
+  float3 P = _point_screen_to_world(view, float3(eevee_light_culling_DebugVertOut_screen_uv, depth));
+
+  eevee_light_culling_NoCullCtx no_cull = eevee_light_culling_NoCullCtx_ctor_();
+  eevee_light_foreach(lrd, no_cull, lrd);
+
+  eevee_light_culling_WithCullCtx with_cull ;                                  with_cull.P = P;
+  eevee_light_foreach_visible(lrd, gl_FragCoord.xy, vP_z, with_cull, lrd);
+
+  float4 color = float4(heatmap_gradient(no_cull.light_count / 4.0f), 1.0f);
+
+  if ((with_cull.light_bits & no_cull.light_bits) != no_cull.light_bits) {
+
+    color = float4(0.0f, 1.0f, 0.0f, 1.0f);
+  }
+
+  eevee_light_culling_DebugFragOut_out_debug_color_add = float4(color.rgb, 0.0f) * 0.2f;
+  eevee_light_culling_DebugFragOut_out_debug_color_mul = color;
+
+#endif
+#line 561
+}
+#endif
+#endif
+#line 566

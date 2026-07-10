@@ -1,0 +1,139 @@
+#line 1 "eevee_nodetree_closures_lib.glsl"
+ 
+#line 12
+packed_float3 g_emission;
+packed_float3 g_transmittance;
+float g_holdout;
+
+packed_float3 g_volume_scattering;
+float g_volume_anisotropy;
+packed_float3 g_volume_absorption;
+#line 21
+#define Closure float
+#define CLOSURE_DEFAULT 0.0f
+
+#ifdef GLSL_CPP_STUBS
+#  define CLOSURE_BIN_COUNT 3
+#endif
+#line 29
+#ifndef CLOSURE_BIN_COUNT
+#  define CLOSURE_BIN_COUNT 1
+#endif
+
+ClosureUndetermined g_closure_bins[CLOSURE_BIN_COUNT];
+
+float g_closure_rand[CLOSURE_BIN_COUNT];
+
+ClosureUndetermined g_closure_get(uchar i)
+{
+  switch (i) {
+    case 0:
+      return g_closure_bins[0];
+#if CLOSURE_BIN_COUNT > 1
+    case 1:
+      return g_closure_bins[1];
+#endif
+#if CLOSURE_BIN_COUNT > 2
+    case 2:
+      return g_closure_bins[2];
+#endif
+  }
+
+  ;
+  return g_closure_bins[0];
+}
+
+ClosureUndetermined g_closure_get_resolved(uchar i, float weight_fac)
+{
+  ClosureUndetermined cl = g_closure_get(i);
+  cl.color *= cl.weight * weight_fac;
+  return cl;
+}
+
+ClosureType closure_type_get(ClosureDiffuse _0)
+{
+  return CLOSURE_BSDF_DIFFUSE_ID;
+}
+
+ClosureType closure_type_get(ClosureTranslucent _0)
+{
+  return CLOSURE_BSDF_TRANSLUCENT_ID;
+}
+
+ClosureType closure_type_get(ClosureReflection _0)
+{
+  return CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID;
+}
+
+ClosureType closure_type_get(ClosureRefraction _0)
+{
+  return CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID;
+}
+
+ClosureType closure_type_get(ClosureSubsurface _0)
+{
+  return CLOSURE_BSSRDF_BURLEY_ID;
+}
+
+ClosureType closure_type_get(ClosureThinRefraction _0)
+{
+  return CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID;
+}
+#line 96
+bool closure_select_check(float weight, _ref(float ,total_weight), _ref(float ,r))
+{
+  if (weight < 1e-5f) {
+    return false;
+  }
+  total_weight += weight;
+  float x = weight / total_weight;
+  bool chosen = (r < x);
+#line 106
+  r = (chosen) ? (r / x) : ((r - x) / (1.0f - x));
+  return chosen;
+}
+#line 113
+void closure_select(_ref(ClosureUndetermined ,destination), _ref(float ,random), ClosureUndetermined candidate)
+{
+  float candidate_color_weight = average(abs(candidate.color));
+  if (closure_select_check(candidate.weight * candidate_color_weight, destination.weight, random))
+  {
+    float total_weight = destination.weight;
+    destination = candidate;
+    destination.color /= candidate_color_weight;
+    destination.weight = total_weight;
+  }
+}
+
+void closure_weights_reset(float closure_rand)
+{
+  g_closure_rand[0] = closure_rand;
+  g_closure_bins[0].color = float3(0.0f);
+  g_closure_bins[0].weight = 0.0f;
+  g_closure_bins[0].N = float3(0.0f);
+  g_closure_bins[0].type = CLOSURE_NONE_ID;
+#if CLOSURE_BIN_COUNT > 1
+  g_closure_rand[1] = closure_rand;
+  g_closure_bins[1].color = float3(0.0f);
+  g_closure_bins[1].weight = 0.0f;
+  g_closure_bins[1].N = float3(0.0f);
+  g_closure_bins[1].type = CLOSURE_NONE_ID;
+#endif
+#if CLOSURE_BIN_COUNT > 2
+  g_closure_rand[2] = closure_rand;
+  g_closure_bins[2].color = float3(0.0f);
+  g_closure_bins[2].weight = 0.0f;
+  g_closure_bins[2].N = float3(0.0f);
+  g_closure_bins[2].type = CLOSURE_NONE_ID;
+#endif
+
+  g_volume_scattering = float3(0.0f);
+  g_volume_anisotropy = 0.0f;
+  g_volume_absorption = float3(0.0f);
+
+  g_emission = float3(0.0f);
+  g_transmittance = float3(0.0f);
+  g_volume_scattering = float3(0.0f);
+  g_volume_absorption = float3(0.0f);
+  g_holdout = 0.0f;
+}

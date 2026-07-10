@@ -1,0 +1,139 @@
+{
+    "classes": [
+        {
+            "className": "DetailsWidget",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "State",
+                    "values": [
+                        "Expanded",
+                        "Collapsed",
+                        "NoSummary",
+                        "OnlySummary"
+                    ]
+                }
+            ],
+            "lineNumber": 15,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "summaryText",
+                    "read": "summaryText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setSummaryText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "additionalSummaryText",
+                    "read": "additionalSummaryText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setAdditionalSummaryText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "useCheckBox",
+                    "read": "useCheckBox",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setUseCheckBox"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "checked",
+                    "read": "isChecked",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setChecked"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "state",
+                    "read": "state",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "State",
+                    "user": false,
+                    "write": "setState"
+                }
+            ],
+            "qualifiedClassName": "Utils::DetailsWidget",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "checked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "link",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "linkActivated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "expanded",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "detailswidget.h",
+    "outputRevision": 68
+}

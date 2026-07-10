@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "ToolTip",
+            "lineNumber": 33,
+            "object": true,
+            "qualifiedClassName": "Utils::ToolTip",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "shown",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "hidden",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "tooltip.h",
+    "outputRevision": 68
+}

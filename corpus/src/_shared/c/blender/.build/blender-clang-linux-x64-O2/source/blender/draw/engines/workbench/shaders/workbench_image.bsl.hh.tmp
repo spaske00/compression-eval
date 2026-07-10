@@ -1,0 +1,96 @@
+#line 1 "workbench_image.bsl.hh"
+ 
+#line 11
+#define access_workbench_color_Texture_imageTexture() imageTexture
+#define access_workbench_color_Texture_imageTileArray() imageTileArray
+#define access_workbench_color_Texture_imageTileData() imageTileData
+#define access_workbench_color_Texture_is_image_tile() is_image_tile
+#define access_workbench_color_Texture_image_premult() image_premult
+#define access_workbench_color_Texture_image_transparency_cutoff() image_transparency_cutoff
+#ifdef CREATE_INFO_RES_PASS_workbench_color_Texture
+CREATE_INFO_RES_PASS_workbench_color_Texture
+#endif
+#ifdef CREATE_INFO_RES_BATCH_workbench_color_Texture
+CREATE_INFO_RES_BATCH_workbench_color_Texture
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_workbench_color_Texture
+CREATE_INFO_RES_GEOMETRY_workbench_color_Texture
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_workbench_color_Texture
+CREATE_INFO_RES_SHARED_VARS_workbench_color_Texture
+#endif
+#line 11
+struct workbench_color_Texture {
+#line 26
+int _pad;};
+#line 30
+#ifndef GPU_METAL
+workbench_color_Texture workbench_color_Texture_ctor_();
+workbench_color_Texture workbench_color_Texture_new_();
+#endif
+#line 11
+                                       workbench_color_Texture workbench_color_Texture_ctor_() {workbench_color_Texture r;r._pad=0;return r;}
+#line 19
+       workbench_color_Texture workbench_color_Texture_new_()
+{
+  workbench_color_Texture result;
+  result._pad = 0;
+  return result;
+#line 17
+}
+#line 21
+bool workbench_color_tile_lookup(_ref(float3 ,co), sampler1DArray map)
+{
+  float2 tile_pos = floor(co.xy);
+
+  if (tile_pos.x < 0 || tile_pos.y < 0 || tile_pos.x >= 10) {
+    return false;
+  }
+
+  float tile = 10.0f * tile_pos.y + tile_pos.x;
+  if (tile >= textureSize(map, 0).x) {
+    return false;
+  }
+#line 35
+  float tile_layer = texelFetch(map, int2(int(tile), 0), 0).x;
+  if (tile_layer < 0.0f) {
+    return false;
+  }
+
+  float4 tile_info = texelFetch(map, int2(int(tile), 1), 0);
+
+  co = float3(((co.xy - tile_pos) * tile_info.zw) + tile_info.xy, tile_layer);
+  return true;
+}
+#line 47
+#if defined(CREATE_INFO_workbench_color_Texture)
+#line 46
+float3 workbench_color_image_color(workbench_color_Texture  srt, float2 uvs)
+{
+  float4 color;
+
+  float3 co = float3(uvs, 0.0f);
+  if (srt_access(workbench_color_Texture, is_image_tile)) {
+    if (workbench_color_tile_lookup(co, srt_access(workbench_color_Texture, imageTileData))) {
+      color = texture(srt_access(workbench_color_Texture, imageTileArray), co);
+    }
+    else {
+      color = float4(1.0f, 0.0f, 1.0f, 1.0f);
+    }
+  }
+  else {
+    color = texture(srt_access(workbench_color_Texture, imageTexture), uvs);
+  }
+#line 64
+  if (srt_access(workbench_color_Texture, image_premult) && !(color.a == 0.0f || color.a == 1.0f)) {
+    color.rgb /= color.a;
+  }
+
+  if (color.a < srt_access(workbench_color_Texture, image_transparency_cutoff)) {
+    gpu_discard_fragment();
+  }
+
+  return color.rgb;
+}
+#endif
+#line 76

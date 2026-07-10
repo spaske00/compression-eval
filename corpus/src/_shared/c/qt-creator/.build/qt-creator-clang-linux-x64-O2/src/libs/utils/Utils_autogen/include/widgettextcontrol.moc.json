@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "UnicodeControlCharacterMenu",
+            "lineNumber": 34,
+            "object": true,
+            "qualifiedClassName": "Utils::UnicodeControlCharacterMenu",
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 0,
+                    "name": "menuActionTriggered",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QMenu"
+                }
+            ]
+        }
+    ],
+    "inputFile": "widgettextcontrol.cpp",
+    "outputRevision": 68
+}

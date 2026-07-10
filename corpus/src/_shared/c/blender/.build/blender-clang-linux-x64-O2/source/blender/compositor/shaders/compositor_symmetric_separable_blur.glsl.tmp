@@ -1,0 +1,22 @@
+#line 1 "compositor_symmetric_separable_blur.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_symmetric_separable_blur_float)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 accumulated_color = float4(0.0f);
+#line 18
+  float4 center_color = texture_load(input_tx, texel);
+  accumulated_color += center_color * texture_load(weights_tx, int2(0)).x;
+#line 25
+  for (int i = 1; i < texture_size(weights_tx).x; i++) {
+    float weight = texture_load(weights_tx, int2(i, 0)).x;
+    accumulated_color += texture_load(input_tx, texel + int2(i, 0)) * weight;
+    accumulated_color += texture_load(input_tx, texel + int2(-i, 0)) * weight;
+  }
+#line 33
+  imageStore(output_img, texel.yx, accumulated_color);
+}

@@ -1,0 +1,82 @@
+#line 1 "eevee_geom_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 16
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define CURVES_SHADER
+#  define DRW_HAIR_INFO
+
+#  define POINTCLOUD_SHADER
+#  define DRW_POINTCLOUD_INFO
+
+#  define MAT_TRANSPARENT
+#  define MAT_SHADER_TO_RGBA
+#endif
+#line 76
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_iface_info
+CREATE_INFO_RES_PASS_eevee_shadow_iface_info
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_iface_info
+CREATE_INFO_RES_BATCH_eevee_shadow_iface_info
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_iface_info
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_iface_info
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_iface_info
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_iface_info
+#endif
+#line 90
+#ifdef CREATE_INFO_RES_PASS_eevee_geom_curves_iface_info
+CREATE_INFO_RES_PASS_eevee_geom_curves_iface_info
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_geom_curves_iface_info
+CREATE_INFO_RES_BATCH_eevee_geom_curves_iface_info
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_geom_curves_iface_info
+CREATE_INFO_RES_GEOMETRY_eevee_geom_curves_iface_info
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_geom_curves_iface_info
+CREATE_INFO_RES_SHARED_VARS_eevee_geom_curves_iface_info
+#endif
+#line 104
+#ifdef CREATE_INFO_RES_PASS_eevee_geom_pointcloud_iface_info
+CREATE_INFO_RES_PASS_eevee_geom_pointcloud_iface_info
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_geom_pointcloud_iface_info
+CREATE_INFO_RES_BATCH_eevee_geom_pointcloud_iface_info
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_geom_pointcloud_iface_info
+CREATE_INFO_RES_GEOMETRY_eevee_geom_pointcloud_iface_info
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_geom_pointcloud_iface_info
+CREATE_INFO_RES_SHARED_VARS_eevee_geom_pointcloud_iface_info
+#endif
+#line 118
+#ifdef CREATE_INFO_RES_PASS_eevee_geom_iface_info
+CREATE_INFO_RES_PASS_eevee_geom_iface_info
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_geom_iface_info
+CREATE_INFO_RES_BATCH_eevee_geom_iface_info
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_geom_iface_info
+CREATE_INFO_RES_GEOMETRY_eevee_geom_iface_info
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_geom_iface_info
+CREATE_INFO_RES_SHARED_VARS_eevee_geom_iface_info
+#endif
+#line 136
+#ifdef CREATE_INFO_RES_PASS_eevee_clip_plane
+CREATE_INFO_RES_PASS_eevee_clip_plane
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_clip_plane
+CREATE_INFO_RES_BATCH_eevee_clip_plane
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_clip_plane
+CREATE_INFO_RES_GEOMETRY_eevee_clip_plane
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_clip_plane
+CREATE_INFO_RES_SHARED_VARS_eevee_clip_plane
+#endif

@@ -1,0 +1,21 @@
+#line 1 "gpu_shader_material_point_info.glsl"
+ 
+#line 8
+void node_point_info(_ref(float3 ,position), _ref(float ,radius), _ref(float ,random))
+{
+#ifdef MAT_GEOM_POINTCLOUD
+
+  position = pointcloud_interp.position;
+  radius = pointcloud_interp.radius;
+  random = wang_hash_noise(uint(pointcloud_interp_flat.id));
+#elif defined(POINTCLOUD_SHADER)
+
+  position = pointPosition;
+  radius = pointRadius;
+  random = wang_hash_noise(uint(pointID));
+#else
+  position = float3(0.0f, 0.0f, 0.0f);
+  radius = 0.0f;
+  random = 0.0f;
+#endif
+}

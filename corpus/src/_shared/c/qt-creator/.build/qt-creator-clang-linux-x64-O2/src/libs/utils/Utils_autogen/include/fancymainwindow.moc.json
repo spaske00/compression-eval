@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "DockWidget",
+            "lineNumber": 101,
+            "object": true,
+            "qualifiedClassName": "Utils::DockWidget",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "collapseChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QDockWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "fancymainwindow.cpp",
+    "outputRevision": 68
+}

@@ -1,0 +1,57 @@
+{
+    "classes": [
+        {
+            "className": "Spinner",
+            "lineNumber": 26,
+            "object": true,
+            "qualifiedClassName": "SpinnerSolution::Spinner",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "SpinnerWidget",
+            "lineNumber": 44,
+            "object": true,
+            "qualifiedClassName": "SpinnerSolution::SpinnerWidget",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        },
+        {
+            "className": "SpinnerSolution",
+            "enums": [
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "SpinnerSize",
+                    "values": [
+                        "Small",
+                        "Medium",
+                        "Large"
+                    ]
+                },
+                {
+                    "isClass": true,
+                    "isFlag": false,
+                    "name": "SpinnerState",
+                    "values": [
+                        "NotRunning",
+                        "Running"
+                    ]
+                }
+            ],
+            "lineNumber": 12,
+            "namespace": true,
+            "qualifiedClassName": "SpinnerSolution"
+        }
+    ],
+    "inputFile": "spinner.h",
+    "outputRevision": 68
+}

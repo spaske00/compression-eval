@@ -1,0 +1,15 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_CryptomatteOutput)
+.image(RBUFS_CRYPTOMATTE_SLOT, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::write, ImageReadWriteType::image2D, "rp_cryptomatte_img", Frequency::PASS)
+.storage_buf(CRYPTOMATTE_BUF_SLOT, Qualifier::read, "float2", "cryptomatte_object_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_Cryptomatte)
+.image(7, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image2DArray, "cryptomatte_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

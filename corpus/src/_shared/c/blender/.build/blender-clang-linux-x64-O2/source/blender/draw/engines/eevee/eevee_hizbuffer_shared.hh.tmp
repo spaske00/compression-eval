@@ -1,0 +1,15 @@
+#line 1 "eevee_hizbuffer_shared.hh"
+ 
+#line 18
+#define HiZData_host_shared_ HiZData
+#define HiZData_host_shared_uniform_ HiZData
+#line 17
+struct                 HiZData {
+
+  float2 uv_scale;
+
+  float2 _pad0;
+};
+#line 17
+                                       HiZData HiZData_ctor_() {HiZData r;r.uv_scale=float2(0);r._pad0=float2(0);return r;}
+#line 27

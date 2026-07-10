@@ -1,0 +1,337 @@
+#line 1 "GPU_shader_shared.hh"
+ 
+#line 23
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_DIAMOND = (1u << 0u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_CIRCLE = (1u << 1u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_CLIPPED_VERTICAL = (1u << 2u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_CLIPPED_HORIZONTAL = (1u << 3u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_INNER_DOT = (1u << 4u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_ARROW_END_MAX = (1u << 8u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_ARROW_END_MIN = (1u << 9u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_ARROW_END_MIXED = (1u << 10u);
+constant static constexpr uint32_t GPU_KEYFRAME_SHAPE_SQUARE = (GPU_KEYFRAME_SHAPE_CLIPPED_VERTICAL |
+                               GPU_KEYFRAME_SHAPE_CLIPPED_HORIZONTAL);
+
+#define GPUKeyframeShapes uint32_t
+#line 22
+
+#define GPUKeyframeShapes_host_shared_ GPUKeyframeShapes
+#line 22
+
+GPUKeyframeShapes GPUKeyframeShapes_ctor_() { return GPUKeyframeShapes(0); }
+#line 35
+#define MAX_SOCKET_PARAMETERS 4
+#define MAX_SOCKET_INSTANCE 32
+#line 40
+#define NodeSocketShaderParameters_host_shared_ NodeSocketShaderParameters
+#define NodeSocketShaderParameters_host_shared_uniform_ NodeSocketShaderParameters
+#line 39
+struct                 NodeSocketShaderParameters {
+  float4 rect;
+  float4 color_inner;
+  float4 color_outline;
+  float outline_thickness;
+  float outline_offset;
+  float shape;
+  float aspect;
+};
+#line 39
+                                                          NodeSocketShaderParameters NodeSocketShaderParameters_ctor_() {NodeSocketShaderParameters r;r.rect=float4(0);r.color_inner=float4(0);r.color_outline=float4(0);r.outline_thickness=0.0f;r.outline_offset=0.0f;r.shape=0.0f;r.aspect=0.0f;return r;}
+#line 51
+#define NodeLinkData_host_shared_ NodeLinkData
+#define NodeLinkData_host_shared_uniform_ NodeLinkData
+#line 50
+struct                 NodeLinkData {
+  float4 start_color;
+  float4 end_color;
+  float2 bezier_P0;
+  float2 bezier_P1;
+  float2 bezier_P2;
+  float2 bezier_P3;
+  uint color_ids;
+  float dash_length;
+  float dash_factor;
+  float dash_alpha;
+  float dim_factor;
+  float thickness;
+  float aspect;
+  bool32_t do_arrow;
+  bool32_t do_muted;
+  bool32_t has_back_link;
+  float _pad0;
+  float _pad1;
+};
+#line 50
+                                            NodeLinkData NodeLinkData_ctor_() {NodeLinkData r;r.start_color=float4(0);r.end_color=float4(0);r.bezier_P0=float2(0);r.bezier_P1=float2(0);r.bezier_P2=float2(0);r.bezier_P3=float2(0);r.color_ids=0u;r.dash_length=0.0f;r.dash_factor=0.0f;r.dash_alpha=0.0f;r.dim_factor=0.0f;r.thickness=0.0f;r.aspect=0.0f;r.do_arrow=bool32_t(0);r.do_muted=bool32_t(0);r.has_back_link=bool32_t(0);r._pad0=0.0f;r._pad1=0.0f;return r;}
+#line 73
+#define NodeLinkUniformData_host_shared_ NodeLinkUniformData
+#define NodeLinkUniformData_host_shared_uniform_ NodeLinkUniformData
+#line 72
+struct                 NodeLinkUniformData {
+  float4 colors[6];
+  float aspect;
+  float arrow_size;
+  float2 _pad;
+};
+#line 72
+                                                   NodeLinkUniformData NodeLinkUniformData_ctor_() {NodeLinkUniformData r;r.aspect=0.0f;r.arrow_size=0.0f;r._pad=float2(0);r.colors[0]=float4(0);r.colors[1]=float4(0);r.colors[2]=float4(0);r.colors[3]=float4(0);r.colors[4]=float4(0);r.colors[5]=float4(0);return r;}
+#line 80
+#define GPencilStrokeData_host_shared_ GPencilStrokeData
+#define GPencilStrokeData_host_shared_uniform_ GPencilStrokeData
+#line 79
+struct                 GPencilStrokeData {
+  float2 viewport;
+  float pixsize;
+  float objscale;
+  int caps_start;
+  int caps_end;
+  bool32_t fill_stroke;
+  float _pad;
+};
+#line 79
+                                                 GPencilStrokeData GPencilStrokeData_ctor_() {GPencilStrokeData r;r.viewport=float2(0);r.pixsize=0.0f;r.objscale=0.0f;r.caps_start=0;r.caps_end=0;r.fill_stroke=bool32_t(0);r._pad=0.0f;return r;}
+#line 90
+#define GPUClipPlanes_host_shared_ GPUClipPlanes
+#define GPUClipPlanes_host_shared_uniform_ GPUClipPlanes
+#line 89
+struct                 GPUClipPlanes {
+  float4x4 ClipModelMatrix;
+  float4 world[6];
+};
+#line 89
+                                             GPUClipPlanes GPUClipPlanes_ctor_() {GPUClipPlanes r;r.ClipModelMatrix=float4x4(0);r.world[0]=float4(0);r.world[1]=float4(0);r.world[2]=float4(0);r.world[3]=float4(0);r.world[4]=float4(0);r.world[5]=float4(0);return r;}
+#line 95
+#define SimpleLightingData_host_shared_ SimpleLightingData
+#define SimpleLightingData_host_shared_uniform_ SimpleLightingData
+#line 94
+struct                 SimpleLightingData {
+  float4 l_color;
+  packed_float3 light;
+  float _pad;
+};
+#line 94
+                                                  SimpleLightingData SimpleLightingData_ctor_() {SimpleLightingData r;r.l_color=float4(0);r.light=packed_float3(0);r._pad=0.0f;return r;}
+#line 100
+#define MAX_CALLS 16
+#line 103
+#define MultiIconCallData_host_shared_ MultiIconCallData
+#define MultiIconCallData_host_shared_uniform_ MultiIconCallData
+#line 102
+struct                 MultiIconCallData {
+  float4 calls_data[MAX_CALLS * 3];
+};
+#line 102
+                                                 MultiIconCallData MultiIconCallData_ctor_() {MultiIconCallData r;for(int i=0;i < MAX_CALLS * 3;i++){r.calls_data[i]=float4(0);}return r;}
+#line 106
+#define GPU_SEQ_STRIP_DRAW_DATA_LEN 256
+#line 109
+constant static constexpr uint32_t GPU_SEQ_FLAG_BACKGROUND = (1u << 0u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_SINGLE_IMAGE = (1u << 1u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_COLOR_BAND = (1u << 2u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_TRANSITION = (1u << 3u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_LOCKED = (1u << 4u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_MISSING_TITLE = (1u << 5u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_MISSING_CONTENT = (1u << 6u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_SELECTED = (1u << 7u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_ACTIVE = (1u << 8u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_HIGHLIGHT = (1u << 9u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_BORDER = (1u << 10u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_SELECTED_LH = (1u << 11u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_SELECTED_RH = (1u << 12u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_OVERLAP = (1u << 15u);
+constant static constexpr uint32_t GPU_SEQ_FLAG_CLAMPED = (1u << 16u);
+#line 125
+constant static constexpr uint32_t GPU_SEQ_FLAG_ANY_HANDLE = GPU_SEQ_FLAG_SELECTED_LH | GPU_SEQ_FLAG_SELECTED_RH;
+
+#define GPUSeqFlags uint32_t
+#line 108
+
+#define GPUSeqFlags_host_shared_ GPUSeqFlags
+#line 108
+
+GPUSeqFlags GPUSeqFlags_ctor_() { return GPUSeqFlags(0); }
+#line 130
+#define GlyphQuad_host_shared_ GlyphQuad
+#define GlyphQuad_host_shared_uniform_ GlyphQuad
+#line 129
+struct                 GlyphQuad {
+  int4 position;
+  float4 glyph_color;
+  int2 glyph_size;
+  int offset;
+  uint flags;
+};
+#line 129
+                                         GlyphQuad GlyphQuad_ctor_() {GlyphQuad r;r.position=int4(0);r.glyph_color=float4(0);r.glyph_size=int2(0);r.offset=0;r.flags=0u;return r;}
+#line 139
+#define SeqStripDrawData_host_shared_ SeqStripDrawData
+#define SeqStripDrawData_host_shared_uniform_ SeqStripDrawData
+#line 138
+struct                 SeqStripDrawData {
+#line 141
+  float left_handle;
+  float right_handle;
+
+  float content_start;
+  float content_end;
+  float handle_width;
+
+  float bottom;
+  float top;
+  float strip_content_top;
+  uint flags;
+
+  uint col_background;
+  uint col_outline;
+  uint col_color_band;
+  uint col_transition_in;
+  uint col_transition_out;
+  float _pad0;
+  float _pad1;
+};
+#line 138
+                                                SeqStripDrawData SeqStripDrawData_ctor_() {SeqStripDrawData r;r.left_handle=0.0f;r.right_handle=0.0f;r.content_start=0.0f;r.content_end=0.0f;r.handle_width=0.0f;r.bottom=0.0f;r.top=0.0f;r.strip_content_top=0.0f;r.flags=0u;r.col_background=0u;r.col_outline=0u;r.col_color_band=0u;r.col_transition_in=0u;r.col_transition_out=0u;r._pad0=0.0f;r._pad1=0.0f;return r;}
+#line 162
+BLI_STATIC_ASSERT(sizeof(SeqStripDrawData) * GPU_SEQ_STRIP_DRAW_DATA_LEN <= 16384, string_t(2739498870u))
+#line 167
+#define SeqStripThumbData_host_shared_ SeqStripThumbData
+#define SeqStripThumbData_host_shared_uniform_ SeqStripThumbData
+#line 166
+struct                 SeqStripThumbData {
+
+  float left;
+  float right;
+  float bottom;
+  float top;
+
+  float x1;
+  float y1;
+  float x2;
+  float y2;
+
+  float u1;
+  float v1;
+  float u2;
+  float v2;
+  float4 tint_color;
+};
+#line 166
+                                                 SeqStripThumbData SeqStripThumbData_ctor_() {SeqStripThumbData r;r.left=0.0f;r.right=0.0f;r.bottom=0.0f;r.top=0.0f;r.x1=0.0f;r.y1=0.0f;r.x2=0.0f;r.y2=0.0f;r.u1=0.0f;r.v1=0.0f;r.u2=0.0f;r.v2=0.0f;r.tint_color=float4(0);return r;}
+#line 185
+BLI_STATIC_ASSERT(sizeof(SeqStripThumbData) * GPU_SEQ_STRIP_DRAW_DATA_LEN <= 16384, string_t(2594197499u))
+#line 190
+#define SeqContextDrawData_host_shared_ SeqContextDrawData
+#define SeqContextDrawData_host_shared_uniform_ SeqContextDrawData
+#line 189
+struct                 SeqContextDrawData {
+  float round_radius;
+  float pixelsize;
+  uint col_back;
+  float _pad0;
+};
+#line 189
+                                                  SeqContextDrawData SeqContextDrawData_ctor_() {SeqContextDrawData r;r.round_radius=0.0f;r.pixelsize=0.0f;r.col_back=0u;r._pad0=0.0f;return r;}
+#line 198
+#define SeqScopeRasterData_host_shared_ SeqScopeRasterData
+#define SeqScopeRasterData_host_shared_uniform_ SeqScopeRasterData
+#line 197
+struct                 SeqScopeRasterData {
+  uint col_r;
+  uint col_g;
+  uint col_b;
+  uint col_a;
+};
+#line 197
+                                                  SeqScopeRasterData SeqScopeRasterData_ctor_() {SeqScopeRasterData r;r.col_r=0u;r.col_g=0u;r.col_b=0u;r.col_a=0u;return r;}
+#line 205
+#define GreasePencilStrokeData_host_shared_ GreasePencilStrokeData
+#define GreasePencilStrokeData_host_shared_uniform_ GreasePencilStrokeData
+#line 204
+struct                 GreasePencilStrokeData {
+  packed_float3 position;
+  float stroke_thickness;
+  float4 stroke_color;
+};
+#line 204
+                                                      GreasePencilStrokeData GreasePencilStrokeData_ctor_() {GreasePencilStrokeData r;r.position=packed_float3(0);r.stroke_thickness=0.0f;r.stroke_color=float4(0);return r;}
+#line 211
+constant static constexpr uint32_t TEST_STATUS_NONE = 0u;
+constant static constexpr uint32_t TEST_STATUS_PASSED = 1u;
+constant static constexpr uint32_t TEST_STATUS_FAILED = 2u;
+
+#define TestStatus uint32_t
+#line 210
+
+#define TestStatus_host_shared_ TestStatus
+#line 210
+
+TestStatus TestStatus_ctor_() { return TestStatus(0); }
+#line 216
+constant static constexpr uint32_t TEST_TYPE_BOOL = 0u;
+constant static constexpr uint32_t TEST_TYPE_UINT = 1u;
+constant static constexpr uint32_t TEST_TYPE_INT = 2u;
+constant static constexpr uint32_t TEST_TYPE_FLOAT = 3u;
+constant static constexpr uint32_t TEST_TYPE_IVEC2 = 4u;
+constant static constexpr uint32_t TEST_TYPE_IVEC3 = 5u;
+constant static constexpr uint32_t TEST_TYPE_IVEC4 = 6u;
+constant static constexpr uint32_t TEST_TYPE_UVEC2 = 7u;
+constant static constexpr uint32_t TEST_TYPE_UVEC3 = 8u;
+constant static constexpr uint32_t TEST_TYPE_UVEC4 = 9u;
+constant static constexpr uint32_t TEST_TYPE_VEC2 = 10u;
+constant static constexpr uint32_t TEST_TYPE_VEC3 = 11u;
+constant static constexpr uint32_t TEST_TYPE_VEC4 = 12u;
+constant static constexpr uint32_t TEST_TYPE_MAT2X2 = 13u;
+constant static constexpr uint32_t TEST_TYPE_MAT2X3 = 14u;
+constant static constexpr uint32_t TEST_TYPE_MAT2X4 = 15u;
+constant static constexpr uint32_t TEST_TYPE_MAT3X2 = 16u;
+constant static constexpr uint32_t TEST_TYPE_MAT3X3 = 17u;
+constant static constexpr uint32_t TEST_TYPE_MAT3X4 = 18u;
+constant static constexpr uint32_t TEST_TYPE_MAT4X2 = 19u;
+constant static constexpr uint32_t TEST_TYPE_MAT4X3 = 20u;
+constant static constexpr uint32_t TEST_TYPE_MAT4X4 = 21u;
+
+#define TestType uint32_t
+#line 215
+
+#define TestType_host_shared_ TestType
+#line 215
+
+TestType TestType_ctor_() { return TestType(0); }
+#line 242
+#define TestOutputRawData_host_shared_ TestOutputRawData
+#define TestOutputRawData_host_shared_uniform_ TestOutputRawData
+#line 241
+struct                 TestOutputRawData {
+  uint data[16];
+};
+#line 241
+                                                 TestOutputRawData TestOutputRawData_ctor_() {TestOutputRawData r;r.data[0]=0u;r.data[1]=0u;r.data[2]=0u;r.data[3]=0u;r.data[4]=0u;r.data[5]=0u;r.data[6]=0u;r.data[7]=0u;r.data[8]=0u;r.data[9]=0u;r.data[10]=0u;r.data[11]=0u;r.data[12]=0u;r.data[13]=0u;r.data[14]=0u;r.data[15]=0u;return r;}
+#line 246
+#define TestOutput_host_shared_ TestOutput
+#define TestOutput_host_shared_uniform_ TestOutput
+#line 245
+struct                 TestOutput {
+         TestOutputRawData expect;
+         TestOutputRawData result;
+
+  uint status;
+
+  int line;
+
+  uint type;
+  int _pad0;
+};
+#line 245
+                                          TestOutput TestOutput_ctor_() {TestOutput r;r.expect=TestOutputRawData_ctor_();r.result=TestOutputRawData_ctor_();r.status=0u;r.line=0;r.type=0u;r._pad0=0;return r;}
+#line 257
+#ifdef GPU_SHADER
+TestOutput test_output(TestOutputRawData expect, TestOutputRawData result, bool status, uint type)
+{
+  TestOutput test;
+  test.expect = expect;
+  test.result = result;
+  test.status = status ? TEST_STATUS_PASSED : TEST_STATUS_FAILED;
+  test.type = type;
+  return test;
+}
+#endif

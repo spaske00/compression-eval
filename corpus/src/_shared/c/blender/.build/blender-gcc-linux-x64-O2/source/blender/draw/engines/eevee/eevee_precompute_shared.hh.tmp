@@ -1,0 +1,28 @@
+#line 1 "eevee_precompute_shared.hh"
+ 
+#line 19
+constant static constexpr uint32_t LUT_GGX_BRDF_SPLIT_SUM = 0u;
+constant static constexpr uint32_t LUT_GGX_BTDF_IOR_GT_ONE = 1u;
+constant static constexpr uint32_t LUT_GGX_BSDF_SPLIT_SUM = 2u;
+constant static constexpr uint32_t LUT_BURLEY_SSS_PROFILE = 3u;
+constant static constexpr uint32_t LUT_RANDOM_WALK_SSS_PROFILE = 4u;
+
+#define PrecomputeType uint32_t
+#line 18
+
+#define PrecomputeType_host_shared_ PrecomputeType
+#line 18
+
+PrecomputeType PrecomputeType_ctor_() { return PrecomputeType(0); }
+#line 18
+
+
+
+
+
+
+
+
+
+
+

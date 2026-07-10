@@ -1,0 +1,216 @@
+#line 1 "eevee_hiz_update.bsl.hh"
+ 
+#line 29
+#define access_eevee_hiz_Update_update_mip_0() update_mip_0
+#define access_eevee_hiz_Update_use_layer() use_layer
+#define access_eevee_hiz_Update_depth_tx() depth_tx
+#define access_eevee_hiz_Update_depth_layered_tx() depth_layered_tx
+#define access_eevee_hiz_Update_layer_id() layer_id
+#define access_eevee_hiz_Update_out_mip_0() out_mip_0
+#define access_eevee_hiz_Update_out_mip_1() out_mip_1
+#define access_eevee_hiz_Update_out_mip_2() out_mip_2
+#define access_eevee_hiz_Update_out_mip_3() out_mip_3
+#define access_eevee_hiz_Update_out_mip_4() out_mip_4
+#define access_eevee_hiz_Update_out_mip_5() out_mip_5
+#define access_eevee_hiz_Update_out_mip_6() out_mip_6
+#define access_eevee_hiz_Update_local_depths() local_depths
+#define access_eevee_hiz_Update_finished_tile_counter() finished_tile_counter
+#ifdef CREATE_INFO_RES_PASS_eevee_hiz_Update
+CREATE_INFO_RES_PASS_eevee_hiz_Update
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_hiz_Update
+CREATE_INFO_RES_BATCH_eevee_hiz_Update
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_hiz_Update
+CREATE_INFO_RES_GEOMETRY_eevee_hiz_Update
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_hiz_Update
+CREATE_INFO_RES_SHARED_VARS_eevee_hiz_Update
+#endif
+#line 29
+struct eevee_hiz_Update {
+#line 72
+int _pad;};
+#line 75
+#ifndef GPU_METAL
+eevee_hiz_Update eevee_hiz_Update_ctor_();
+float4 _load_local_depths(eevee_hiz_Update  this_, int2 pixel);
+void _store_local_depth(eevee_hiz_Update  this_, int2 pixel, float depth);
+eevee_hiz_Update eevee_hiz_Update_new_();
+#endif
+#line 29
+                                eevee_hiz_Update eevee_hiz_Update_ctor_() {eevee_hiz_Update r;r._pad=0;return r;}
+#line 51
+
+#if defined(CREATE_INFO_eevee_hiz_Update)
+#line 51
+  float4 _load_local_depths(eevee_hiz_Update  this_, int2 pixel)
+  {
+    pixel *= 2;
+    return float4(srt_access(eevee_hiz_Update, local_depths)[pixel.y + 1][pixel.x + 0],
+                  srt_access(eevee_hiz_Update, local_depths)[pixel.y + 1][pixel.x + 1],
+                  srt_access(eevee_hiz_Update, local_depths)[pixel.y + 0][pixel.x + 1],
+                  srt_access(eevee_hiz_Update, local_depths)[pixel.y + 0][pixel.x + 0]);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_hiz_Update)
+#line 60
+  void _store_local_depth(eevee_hiz_Update  this_, int2 pixel, float depth)
+  {
+    srt_access(eevee_hiz_Update, local_depths)[pixel.y][pixel.x] = depth;
+  }
+#endif
+       eevee_hiz_Update eevee_hiz_Update_new_()
+{
+  eevee_hiz_Update result;
+  result._pad = 0;
+  return result;
+#line 63
+}
+#line 66
+
+#if defined(CREATE_INFO_eevee_hiz_Update)
+#line 66
+
+#if defined(ENTRY_POINT_eevee_hiz_update_main)
+#line 66
+
+void eevee_hiz_update_main(
+
+                                                       )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 70
+  eevee_hiz_Update srt = eevee_hiz_Update_ctor_();
+  int2 local_px = int2(gl_LocalInvocationID.xy);
+
+  int2 kernel_origin = int2(HIZ_GROUP_SIZE * gl_WorkGroupID.xy);
+#line 76
+  int2 src_px = int2(kernel_origin + local_px) * 2;
+  float4 samp;
+#line 80
+#if SRT_CONSTANT_use_layer
+#line 79
+                                                                 {
+    float2 samp_co = float2(src_px + 1) / float2(textureSize(srt_access(eevee_hiz_Update, depth_layered_tx), 0).xy);
+    samp = textureGather(srt_access(eevee_hiz_Update, depth_layered_tx), float3(samp_co, float(srt_access(eevee_hiz_Update, layer_id))));
+  }
+
+#else
+#line 83
+       {
+    float2 samp_co = float2(src_px + 1) / float2(textureSize(srt_access(eevee_hiz_Update, depth_tx), 0));
+    samp = textureGather(srt_access(eevee_hiz_Update, depth_tx), samp_co);
+  }
+#endif
+  samp = reverse_z_read(samp);
+
+  if (srt_access(eevee_hiz_Update, update_mip_0)) {
+    imageStoreFast(srt_access(eevee_hiz_Update, out_mip_0), src_px + int2(0, 1), samp.xxxx);
+    imageStoreFast(srt_access(eevee_hiz_Update, out_mip_0), src_px + int2(1, 1), samp.yyyy);
+    imageStoreFast(srt_access(eevee_hiz_Update, out_mip_0), src_px + int2(1, 0), samp.zzzz);
+    imageStoreFast(srt_access(eevee_hiz_Update, out_mip_0), src_px + int2(0, 0), samp.wwww);
+  }
+#line 98
+  float max_depth = reduce_max(samp);
+  int2 dst_px = int2(kernel_origin + local_px);
+  imageStoreFast(srt_access(eevee_hiz_Update, out_mip_1), dst_px, float4(max_depth));
+  _store_local_depth(srt, local_px, max_depth);
+#line 104
+  {
+    barrier();
+    bool active_thread = all(lessThan(uint2(local_px), uint2(HIZ_GROUP_SIZE) >> uint(1)));
+    if (active_thread) {
+      max_depth = reduce_max(_load_local_depths(srt, local_px));
+      dst_px = int2((kernel_origin >> 1) + local_px);
+      imageStoreFast(srt_access(eevee_hiz_Update, out_mip_2), dst_px, float4(max_depth));
+    }
+    barrier();
+    if (active_thread) {
+      _store_local_depth(srt, local_px, max_depth);
+    }
+  }
+
+  {
+    barrier();
+    bool active_thread = all(lessThan(uint2(local_px), uint2(HIZ_GROUP_SIZE) >> uint(2)));
+    if (active_thread) {
+      max_depth = reduce_max(_load_local_depths(srt, local_px));
+      dst_px = int2((kernel_origin >> 2) + local_px);
+      imageStoreFast(srt_access(eevee_hiz_Update, out_mip_3), dst_px, float4(max_depth));
+    }
+    barrier();
+    if (active_thread) {
+      _store_local_depth(srt, local_px, max_depth);
+    }
+  }
+
+  {
+    barrier();
+    bool active_thread = all(lessThan(uint2(local_px), uint2(HIZ_GROUP_SIZE) >> uint(3)));
+    if (active_thread) {
+      max_depth = reduce_max(_load_local_depths(srt, local_px));
+      dst_px = int2((kernel_origin >> 3) + local_px);
+      imageStoreFast(srt_access(eevee_hiz_Update, out_mip_4), dst_px, float4(max_depth));
+    }
+    barrier();
+    if (active_thread) {
+      _store_local_depth(srt, local_px, max_depth);
+    }
+  }
+
+  {
+    barrier();
+    bool active_thread = all(lessThan(uint2(local_px), uint2(HIZ_GROUP_SIZE) >> uint(4)));
+    if (active_thread) {
+      max_depth = reduce_max(_load_local_depths(srt, local_px));
+      dst_px = int2((kernel_origin >> 4) + local_px);
+      imageStoreFast(srt_access(eevee_hiz_Update, out_mip_5), dst_px, float4(max_depth));
+    }
+    barrier();
+    if (active_thread) {
+      _store_local_depth(srt, local_px, max_depth);
+    }
+  }
+#line 161
+  uint2 mip5_size = uint2(imageSize(srt_access(eevee_hiz_Update, out_mip_5)).xy);
+  uint tile_count = mip5_size.x * mip5_size.y;
+
+  bool last_tile = atomicAdd(srt_access(eevee_hiz_Update, finished_tile_counter), 1u) + 1u < tile_count;
+  if (last_tile == false) {
+    return;
+  }
+
+  srt_access(eevee_hiz_Update, finished_tile_counter) = 0u;
+
+  int2 iter = divide_ceil(imageSize(srt_access(eevee_hiz_Update, out_mip_5)), int2(HIZ_GROUP_SIZE * 2u));
+  int2 image_border = imageSize(srt_access(eevee_hiz_Update, out_mip_5)) - 1;
+  for (int y = 0; y < iter.y; y++) {
+    for (int x = 0; x < iter.x; x++) {
+
+      kernel_origin = int2(HIZ_GROUP_SIZE) * int2(x, y);
+      src_px = int2(kernel_origin + local_px) * 2;
+      float4 samp;
+      samp.x = imageLoadFast(srt_access(eevee_hiz_Update, out_mip_5), min(src_px + int2(0, 1), image_border)).x;
+      samp.y = imageLoadFast(srt_access(eevee_hiz_Update, out_mip_5), min(src_px + int2(1, 1), image_border)).x;
+      samp.z = imageLoadFast(srt_access(eevee_hiz_Update, out_mip_5), min(src_px + int2(1, 0), image_border)).x;
+      samp.w = imageLoadFast(srt_access(eevee_hiz_Update, out_mip_5), min(src_px + int2(0, 0), image_border)).x;
+
+      float max_depth = reduce_max(samp);
+      int2 dst_px = int2(kernel_origin + local_px);
+      imageStoreFast(srt_access(eevee_hiz_Update, out_mip_6), dst_px, float4(max_depth));
+      _store_local_depth(srt, local_px, max_depth);
+#line 196
+    }
+  }
+
+#endif
+#line 198
+}
+#endif
+#endif
+#line 202
+#ifndef GLSL_CPP_STUBS
+#line 206
+#endif

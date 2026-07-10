@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "QtColorButtonPrivate",
+            "lineNumber": 18,
+            "object": true,
+            "qualifiedClassName": "Utils::QtColorButtonPrivate",
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "slotEditColor",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qtcolorbutton.cpp",
+    "outputRevision": 68
+}

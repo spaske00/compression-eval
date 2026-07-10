@@ -1,0 +1,26 @@
+#line 1 "compositor_inpaint_compute_region.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_inpaint_compute_region)
+#line 11
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  float4 color = texture_load(input_tx, texel);
+#line 18
+  if (color.a == 1.0f) {
+    imageStore(output_img, texel, color);
+    return;
+  }
+
+  float distance_to_boundary = texture_load(distance_to_boundary_tx, texel).x;
+#line 27
+  if (distance_to_boundary > max_distance) {
+    imageStore(output_img, texel, color);
+    return;
+  }
+#line 34
+  float4 inpainted_color = texture_load(inpainted_region_tx, texel);
+  imageStore(output_img, texel, float4(mix(inpainted_color.rgb, color.rgb, color.a), 1.0f));
+}

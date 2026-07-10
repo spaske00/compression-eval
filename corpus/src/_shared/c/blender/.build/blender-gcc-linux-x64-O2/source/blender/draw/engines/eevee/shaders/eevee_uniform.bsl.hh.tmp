@@ -1,0 +1,38 @@
+#line 1 "eevee_uniform.bsl.hh"
+ 
+#line 11
+#define access_eevee_Uniform_uniform_buf() uniform_buf
+#define access_eevee_Uniform_pipeline_buf() pipeline_buf
+#define access_eevee_Uniform_raytrace_buf() raytrace_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_Uniform
+CREATE_INFO_RES_PASS_eevee_Uniform
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_Uniform
+CREATE_INFO_RES_BATCH_eevee_Uniform
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_Uniform
+CREATE_INFO_RES_GEOMETRY_eevee_Uniform
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_Uniform
+CREATE_INFO_RES_SHARED_VARS_eevee_Uniform
+#endif
+#line 11
+struct eevee_Uniform {
+#line 23
+int _pad;};
+#line 27
+#ifndef GPU_METAL
+eevee_Uniform eevee_Uniform_ctor_();
+eevee_Uniform eevee_Uniform_new_();
+#endif
+#line 11
+                             eevee_Uniform eevee_Uniform_ctor_() {eevee_Uniform r;r._pad=0;return r;}
+#line 16
+       eevee_Uniform eevee_Uniform_new_()
+{
+  eevee_Uniform result;
+  result._pad = 0;
+  return result;
+#line 14
+}
+#line 18

@@ -1,0 +1,9 @@
+#line 1 "gpu_shader_display_fallback_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(gpu_shader_cycles_display_fallback)
+
+void main()
+{
+  fragColor = texture(image_texture, texCoord_interp);
+}

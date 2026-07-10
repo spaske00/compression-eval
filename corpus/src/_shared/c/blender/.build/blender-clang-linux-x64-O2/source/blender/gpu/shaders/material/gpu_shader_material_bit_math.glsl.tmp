@@ -1,0 +1,56 @@
+#line 1 "gpu_shader_material_bit_math.glsl"
+ 
+#line 6
+void bit_math_and(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) & int(b));
+}
+#line 12
+void bit_math_or(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) | int(b));
+}
+#line 18
+void bit_math_xor(float a, float b, _ref(float ,result))
+{
+  result = float(int(a) ^ int(b));
+}
+#line 24
+void bit_math_not(float a, _ref(float ,result))
+{
+  result = float(~int(a));
+}
+#line 30
+void bit_math_shift(float a, float shift_amount, _ref(float ,result))
+{
+  const uint value = uint(int(a));
+  const int shift = int(shift_amount);
+
+  if (shift < -31 || shift > 31) {
+    result = 0.0f;
+  }
+  else {
+    if (shift >= 0) {
+      result = float(int(value << uint(shift)));
+    }
+    else {
+      result = float(int(value >> uint(-shift)));
+    }
+  }
+}
+#line 49
+void bit_math_rotate(float a, float shift_amount, _ref(float ,result))
+{
+  const uint value = uint(int(a));
+  int shift = int(shift_amount) % 32;
+
+  if (shift < 0) {
+    shift += 32;
+  }
+  if (shift == 0) {
+    result = float(int(value));
+  }
+  else {
+    result = float(int((value << uint(shift)) | (value >> uint(32 - shift))));
+  }
+}

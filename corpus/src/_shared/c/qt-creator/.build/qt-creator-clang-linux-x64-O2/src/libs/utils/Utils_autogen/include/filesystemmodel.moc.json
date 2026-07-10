@@ -1,0 +1,266 @@
+{
+    "classes": [
+        {
+            "className": "FileSystemWorker",
+            "lineNumber": 64,
+            "object": true,
+            "qualifiedClassName": "Utils::FileSystemWorker",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "dirPath",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "children",
+                            "type": "Utils::FilePaths"
+                        },
+                        {
+                            "name": "infos",
+                            "type": "QList<Utils::FilePathInfo>"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "childrenFetched",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "dirPath",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "childrenFetchFailed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "icon",
+                            "type": "QIcon"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "iconFetched",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "dirPath",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "fetchChildren",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "paths",
+                            "type": "Utils::FilePaths"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "queueIcons",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "clearIconQueue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 6,
+                    "name": "processNextIcon",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "FileSystemModelPrivate",
+            "lineNumber": 171,
+            "object": true,
+            "qualifiedClassName": "Utils::FileSystemModelPrivate",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "requestFetchChildren",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "paths",
+                            "type": "Utils::FilePaths"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "requestQueueIcons",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "requestClearIconQueue",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "dirPath",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "children",
+                            "type": "Utils::FilePaths"
+                        },
+                        {
+                            "name": "infos",
+                            "type": "QList<Utils::FilePathInfo>"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "onChildrenFetched",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "dirPath",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "onChildrenFetchFailed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "icon",
+                            "type": "QIcon"
+                        },
+                        {
+                            "name": "generation",
+                            "type": "quint64"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "onIconFetched",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 6,
+                    "name": "flushIconUpdates",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "onDirectoryChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filesystemmodel.cpp",
+    "outputRevision": 68
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "memcached",
+  "input_url": "https://github.com/memcached/memcached",
+  "canonical_url": "https://github.com/memcached/memcached",
+  "source_directory": "memcached/upstream",
+  "commit": "f1674f0231e5d291db474c4ad297f5f069d32521",
+  "nested_submodules": []
+}

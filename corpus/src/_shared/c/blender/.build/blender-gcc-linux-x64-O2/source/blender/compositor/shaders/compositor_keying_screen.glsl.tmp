@@ -1,0 +1,44 @@
+#line 1 "compositor_keying_screen.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_keying_screen)
+#line 13
+#define CACHE_SIZE (gl_WorkGroupSize.x * gl_WorkGroupSize.y)
+#line 17
+void populate_cache()
+{
+  if (int(gl_LocalInvocationIndex) < number_of_markers) {
+    cached_marker_positions[gl_LocalInvocationIndex] = marker_positions[gl_LocalInvocationIndex];
+    cached_marker_colors[gl_LocalInvocationIndex] = marker_colors[gl_LocalInvocationIndex];
+  }
+  barrier();
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+
+  int2 size = imageSize(output_img);
+  float2 normalized_pixel_location = (float2(texel) + float2(0.5f)) / float2(size);
+  float squared_shape_parameter = square(1.0f / smoothness);
+
+  populate_cache();
+#line 39
+  float sum_of_weights = 0.0f;
+  float4 weighted_sum = float4(0.0f);
+  for (int i = 0; i < number_of_markers; i++) {
+    bool use_cache = i < int(CACHE_SIZE);
+
+    float2 marker_position = use_cache ? cached_marker_positions[i] : marker_positions[i];
+    float2 difference = normalized_pixel_location - marker_position;
+    float squared_distance = dot(difference, difference);
+    float gaussian = exp(-squared_distance * squared_shape_parameter);
+
+    float4 marker_color = use_cache ? cached_marker_colors[i] : marker_colors[i];
+    weighted_sum += marker_color * gaussian;
+    sum_of_weights += gaussian;
+  }
+  weighted_sum /= sum_of_weights;
+
+  imageStore(output_img, texel, weighted_sum);
+}

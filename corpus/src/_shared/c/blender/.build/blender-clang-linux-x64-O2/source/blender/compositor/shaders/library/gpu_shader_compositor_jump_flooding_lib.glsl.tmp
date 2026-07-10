@@ -1,0 +1,14 @@
+#line 1 "gpu_shader_compositor_jump_flooding_lib.glsl"
+ 
+#line 9
+#define JUMP_FLOODING_NON_FLOODED_VALUE int2(-1)
+#line 13
+int2 encode_jump_flooding_value(int2 closest_seed_texel, bool is_flooded)
+{
+  return is_flooded ? closest_seed_texel : JUMP_FLOODING_NON_FLOODED_VALUE;
+}
+#line 21
+int2 initialize_jump_flooding_value(int2 texel, bool is_seed)
+{
+  return encode_jump_flooding_value(texel, is_seed);
+}

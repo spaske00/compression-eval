@@ -1,0 +1,377 @@
+#line 1 "eevee_ray_trace_screen_lib.bsl.hh"
+ 
+#line 27
+void raytrace_clip_ray_to_near_plane(ViewMatrices view, _ref(Ray ,ray))
+{
+  float near_dist = _near(view);
+  if ((ray.origin.z + ray.direction.z * ray.max_time) > near_dist) {
+    ray.max_time = abs((near_dist - ray.origin.z) / ray.direction.z);
+  }
+}
+
+struct ScreenTraceHitData {
+
+  float3 ss_hit_P;
+
+  float3 v_hit_P;
+
+  float time;
+
+  bool valid;
+
+  bool hit_backface;
+};
+#line 35
+                                  ScreenTraceHitData ScreenTraceHitData_ctor_() {ScreenTraceHitData r;r.ss_hit_P=float3(0);r.v_hit_P=float3(0);r.time=0.0f;r.valid=false;r.hit_backface=false;return r;}
+#line 61
+ScreenTraceHitData raytrace_screen(ViewMatrices view,
+                                   RayTraceData rt_data,
+                                   HiZData hiz_data,
+                                   sampler2D hiz_tx,
+                                   float stride_rand,
+                                   float roughness,
+                                   const bool allow_self_intersection,
+                                   Ray ray)
+{
+
+  if (view.winmat[3][3] == 0.0f) {
+    raytrace_clip_ray_to_near_plane(view, ray);
+  }
+#line 76
+  ScreenSpaceRay ssray = ScreenSpaceRay_create(view, ray, 2.0f * rt_data.full_resolution_inv);
+#line 79
+  if (!allow_self_intersection && ssray.max_time < 1.1f) {
+
+    float3 hit_ssP = ssray.origin.xyz + ssray.direction.xyz * ssray.max_time;
+    float3 hit_P = _point_screen_to_world(view, float3(hit_ssP.xy, saturate(hit_ssP.z)));
+    ray.direction = hit_P - ray.origin;
+
+    ScreenTraceHitData no_hit;
+    no_hit.time = 0.0f;
+    no_hit.valid = false;
+    return no_hit;
+  }
+
+  ssray.max_time = max(1.1f, ssray.max_time);
+
+  float prev_delta = 0.0f, prev_time = 0.0f;
+  float depth_sample = _depth_view_to_screen(view, ray.origin.z);
+  float delta = depth_sample - ssray.origin.z;
+
+  float lod_fac = saturate(sqrt_fast(roughness) * 2.0f - 0.4f);
+
+  ScreenThicknessEstimator thickness_estimator = ScreenThicknessEstimator_init(depth_sample);
+  float prev_ray_z = ssray.origin.z;
+#line 103
+  float t = 1.001f, time = 1.001f;
+  bool hit = false;
+  constexpr int max_steps = 255;
+  for (int iter = 1; !hit && (time < ssray.max_time) && (iter < max_steps); iter++) {
+    float stride = 1.0f + float(iter) * rt_data.quality;
+    float lod = log2(stride) * lod_fac;
+
+    prev_time = time;
+    prev_delta = delta;
+
+    time = min(t + stride * stride_rand, ssray.max_time);
+    t += stride;
+
+    float3 ss_ray_P = _screen_position_at(ssray, time);
+    depth_sample = textureLod(hiz_tx, ss_ray_P.xy * hiz_data.uv_scale, floor(lod)).r;
+
+    float sample_view_Z = _depth_screen_to_view(view, depth_sample);
+    float sample_ndc_min_thickness = _pixel_depth_thickness_at(rt_data.ray_thickness, sample_view_Z);
+
+    delta = depth_sample - ss_ray_P.z;
+    hit = _intersect(thickness_estimator, depth_sample, time, sample_ndc_min_thickness, ss_ray_P.z, prev_ray_z);
+    prev_ray_z = ss_ray_P.z;
+  }
+
+  hit = hit && (depth_sample != 1.0f);
+#line 130
+  time = mix(prev_time, time, saturate(prev_delta / (prev_delta - delta)));
+
+  ScreenTraceHitData result;
+
+  result.hit_backface = prev_delta < 0.0f;
+  result.ss_hit_P = ssray.origin.xyz + ssray.direction.xyz * time;
+  result.v_hit_P = _point_screen_to_view(view, result.ss_hit_P);
+
+  result.time = length(result.v_hit_P - ray.origin) / length(ray.direction);
+
+  result.valid = hit &&
+                 (textureLod(hiz_tx, result.ss_hit_P.xy * hiz_data.uv_scale, 0.0f).r != 1.0f);
+
+  return result;
+}
+
+ScreenTraceHitData raytrace_planar(ViewMatrices view,
+                                   RayTraceData rt_data,
+                                   sampler2DArrayDepth planar_depth_tx,
+                                   PlanarProbeData planar,
+                                   float stride_rand,
+                                   Ray ray)
+{
+
+  if (view.winmat[3][3] == 0.0f) {
+    raytrace_clip_ray_to_near_plane(view, ray);
+  }
+
+  float2 inv_texture_size = 1.0f / float2(textureSize(planar_depth_tx, 0).xy);
+
+  ScreenSpaceRay ssray = ScreenSpaceRay_create(ray, planar.winmat, 2.0f * inv_texture_size);
+
+  float prev_delta = 0.0f, prev_time = 0.0f;
+  float depth_sample = reverse_z_read(
+      texture(planar_depth_tx, float3(ssray.origin.xy, planar.layer_id)).r);
+  float delta = depth_sample - ssray.origin.z;
+
+  float t = 0.0f, time = 0.0f;
+  bool hit = false;
+  constexpr int max_steps = 32;
+  for (int iter = 1; !hit && (time < ssray.max_time) && (iter < max_steps); iter++) {
+    float stride = 1.0f + float(iter) * rt_data.quality;
+
+    prev_time = time;
+    prev_delta = delta;
+
+    time = min(t + stride * stride_rand, ssray.max_time);
+    t += stride;
+
+    float4 ss_ray = ssray.origin + ssray.direction * time;
+
+    depth_sample = reverse_z_read(texture(planar_depth_tx, float3(ss_ray.xy, planar.layer_id)).r);
+
+    delta = depth_sample - ss_ray.z;
+
+    hit = (delta < 0.0f);
+  }
+
+  hit = hit && (depth_sample != 1.0f);
+#line 191
+  time = mix(prev_time, time, saturate(prev_delta / (prev_delta - delta)));
+
+  ScreenTraceHitData result;
+  result.ss_hit_P = ssray.origin.xyz + ssray.direction.xyz * time;
+
+  result.valid =
+      hit &&
+      textureLod(planar_depth_tx, float3(result.ss_hit_P.xy, planar.layer_id), 0.0f).r != 0.0;
+#line 201
+  result.v_hit_P = project_point(planar.wininv, _screen_to_ndc(view, result.ss_hit_P));
+
+  result.time = length(result.v_hit_P - ray.origin) / length(ray.direction);
+  return result;
+}
+#line 209
+Ray raytrace_thickness_ray_amend(Ray ray, ClosureUndetermined cl, float3 V, Thickness thickness)
+{
+  switch (cl.type) {
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      return bxdf_ggx_ray_amend_transmission(cl, V, ray, thickness);
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+      return bxdf_translucent_ray_amend(cl, V, ray, thickness);
+    case CLOSURE_NONE_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+      break;
+  }
+  return ray;
+}
+
+bool clip_ray(_ref(float3 ,start),
+              _ref(float3 ,end),
+              const float3 direction,
+              const float max_distance,
+              const float4 frustum_planes[6])
+{
+  float min_t = 0.0f;
+  float max_t = max_distance;
+
+  for (int i = 0; i < 6; i++) {
+#line 238
+    const float3 plane_normal = -frustum_planes[i].xyz;
+    const float plane_distance = frustum_planes[i].w;
+
+    const float NoR = dot(plane_normal, direction);
+    const float NoS = dot(plane_normal, start);
+
+    if (abs(NoR) < 1e-6f) {
+
+      if (NoS > plane_distance) {
+
+        return false;
+      }
+      continue;
+    }
+
+    const float plane_t = (plane_distance - NoS) / NoR;
+
+    if (NoR > 0.0f) {
+
+      max_t = min(max_t, plane_t);
+    }
+    else {
+
+      min_t = max(min_t, plane_t);
+    }
+  }
+
+  end = start + direction * max_t;
+  start = start + direction * min_t;
+
+  return max_t > min_t;
+}
+#line 281
+float raytrace_screen_2(ViewMatrices view,
+                        const float3 vs_origin,
+                        const float3 vs_end,
+                        const float3 vs_direction,
+                        sampler2D depth_tx,
+                        const RayTraceData rt_data,
+                        const int max_steps,
+                        const float jitter,
+                        usampler2D ob_id_tx,
+                        const uint object_id,
+                        _ref(float2 ,r_hit_uv))
+{
+
+  float3 start, end;
+  start.xyz = _point_view_to_screen(view, vs_origin);
+  end.xyz = _point_view_to_screen(view, vs_end);
+
+  const float2 extent = float2(textureSize(ob_id_tx, 0).xy);
+  const float2 texel_to_uv = (float2(1.0f) / extent);
+
+  const float2 total_pixel_delta = abs(start.xy - end.xy) * extent;
+
+  int steps = int(max(total_pixel_delta.x, total_pixel_delta.y)) + 1;
+
+  steps = min(steps, max_steps);
+#line 308
+  const float3 delta = (end - start) / float(steps);
+
+  const float max_t = max(steps - 1, 1);
+  float previous_step_z = start.z;
+
+  ScreenThicknessEstimator thickness_estimator = ScreenThicknessEstimator_init(start.z);
+#line 316
+  for (int i = 1; i < steps || i == 1; i++) {
+
+    const float step_t = min(float(i) + jitter, max_t);
+    const float3 step = start + delta * step_t;
+
+    const float2 texel = step.xy * extent;
+    if (object_id != 0 && object_id != texelFetch(ob_id_tx, int2(texel), 0).r) {
+      _thickness(thickness_estimator, 1.0f, step_t, 0.0f);
+      previous_step_z = step.z;
+      continue;
+    }
+#line 333
+    const float2 gather_uv = round(texel) * texel_to_uv;
+    const float2 bilinear_coords = fract(texel - 0.5f);
+    const float4 depth4 = reverse_z_read(textureGather(depth_tx, gather_uv));
+    const float hit_depth_point = mix(mix(depth4.w, depth4.z, bilinear_coords.x > 0.5f),
+                                      mix(depth4.x, depth4.y, bilinear_coords.x > 0.5f),
+                                      bilinear_coords.y > 0.5f);
+    const float hit_depth_linear = mix(mix(depth4.w, depth4.z, bilinear_coords.x),
+                                       mix(depth4.x, depth4.y, bilinear_coords.x),
+                                       bilinear_coords.y);
+    const float hit_min_z = min(hit_depth_point, hit_depth_linear);
+    const float hit_max_z = max(hit_depth_point, hit_depth_linear);
+
+    const float sample_view_Z = _depth_screen_to_view(view, hit_depth_point);
+    const float sample_ndc_min_thickness = _pixel_depth_thickness_at(rt_data.ray_thickness, sample_view_Z);
+#line 349
+    float sample_thickness = _thickness(thickness_estimator, hit_depth_point, step_t, sample_ndc_min_thickness);
+#line 353
+    sample_thickness += abs(step.z - previous_step_z);
+
+    const float sample_min = hit_max_z;
+    const float sample_max = hit_min_z + sample_thickness;
+    const bool hit = step.z >= sample_min && step.z <= sample_max;
+
+    previous_step_z = step.z;
+
+    if (hit) {
+      r_hit_uv = step.xy;
+
+      const float3 vs_hit_point = _point_screen_to_view(view, float3(step.xy, hit_depth_point));
+
+      return dot(vs_hit_point - vs_origin, vs_direction);
+    }
+  }
+#line 371
+  return -1.0f;
+}
+#line 378
+float3 raytrace_sample_screen(ViewMatrices view,
+                              sampler2D radiance_tx,
+                              RayTraceData raytrace,
+                              ScreenTraceHitData hit,
+                              float roughness,
+                              float2 ss_hit_P)
+{
+#line 387
+  float shading_cone_tangent = saturate(roughness * 0.05);
+  float vs_footprint = shading_cone_tangent * hit.time;
+
+  float4 hs_hit_P = view.winmat * float4(hit.v_hit_P, 1.0f);
+  float ndc_footprint = (vs_footprint * view.winmat[0][0]) / hs_hit_P.w;
+  float pixel_footprint = ndc_footprint * raytrace.full_resolution.x;
+
+  float3 radiance;
+
+  if (pixel_footprint < 1.0f) {
+    radiance = textureLod(radiance_tx, ss_hit_P, 0.0f).rgb;
+  }
+  else {
+    float kernel_radius = saturate(pixel_footprint - 1.0f);
+    float4 ofs = float2(kernel_radius, -kernel_radius).xxyy * raytrace.full_resolution_inv.xyxy;
+#line 405
+    radiance = log2(1.0f + textureLod(radiance_tx, ss_hit_P + ofs.xy, 0.0f).rgb);
+    radiance += log2(1.0f + textureLod(radiance_tx, ss_hit_P + ofs.xw, 0.0f).rgb);
+    radiance += log2(1.0f + textureLod(radiance_tx, ss_hit_P + ofs.zy, 0.0f).rgb);
+    radiance += log2(1.0f + textureLod(radiance_tx, ss_hit_P + ofs.zw, 0.0f).rgb);
+    radiance *= 0.25f;
+    radiance = exp2(radiance) - 1.0f;
+  }
+  return radiance;
+}
+#line 419
+float3 raytrace_sample_screen(ViewMatrices view,
+                              sampler2DArray radiance_tx,
+                              RayTraceData raytrace,
+                              ScreenTraceHitData hit,
+                              float roughness,
+                              float2 ss_hit_P,
+                              int layer)
+{
+#line 429
+  float shading_cone_tangent = saturate(roughness * 0.05);
+  float vs_footprint = shading_cone_tangent * hit.time;
+
+  float4 hs_hit_P = view.winmat * float4(hit.v_hit_P, 1.0f);
+  float ndc_footprint = (vs_footprint * view.winmat[0][0]) / hs_hit_P.w;
+  float pixel_footprint = ndc_footprint * raytrace.full_resolution.x;
+
+  float3 radiance;
+
+  if (pixel_footprint < 1.0f) {
+    radiance = textureLod(radiance_tx, float3(ss_hit_P, layer), 0.0f).rgb;
+  }
+  else {
+    float kernel_radius = saturate(pixel_footprint - 1.0f);
+    float4 ofs = float2(kernel_radius, -kernel_radius).xxyy * raytrace.full_resolution_inv.xyxy;
+#line 447
+    radiance = log2(1.0f + textureLod(radiance_tx, float3(ss_hit_P + ofs.xy, layer), 0.0f).rgb);
+    radiance += log2(1.0f + textureLod(radiance_tx, float3(ss_hit_P + ofs.xw, layer), 0.0f).rgb);
+    radiance += log2(1.0f + textureLod(radiance_tx, float3(ss_hit_P + ofs.zy, layer), 0.0f).rgb);
+    radiance += log2(1.0f + textureLod(radiance_tx, float3(ss_hit_P + ofs.zw, layer), 0.0f).rgb);
+    radiance *= 0.25f;
+    radiance = exp2(radiance) - 1.0f;
+  }
+  return radiance;
+}

@@ -1,0 +1,33 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_volume_occupancy_Convert)
+.image(VOLUME_HIT_DEPTH_SLOT, blender::gpu::TextureFormat::SFLOAT_32, Qualifier::read, ImageReadWriteType::image3D, "hit_depth_img", Frequency::PASS)
+.image(VOLUME_HIT_COUNT_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read_write, ImageReadWriteType::uimage2D, "hit_count_img", Frequency::PASS)
+.image(VOLUME_OCCUPANCY_SLOT, blender::gpu::TextureFormat::UINT_32, Qualifier::read_write, ImageReadWriteType::uimage3DAtomic, "occupancy_img", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_occupancy_convert_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_occupancy_convert_frag_infos_)
+BUILTINS(BuiltinBits::TEXTURE_ATOMIC)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_volume_occupancy_Convert)
+ADDITIONAL_INFO(eevee_Uniform)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_volume_occupancy_convert)
+GRAPHIC_SOURCE("eevee_occupancy_convert.bsl.hh")
+VERTEX_FUNCTION("eevee_volume_occupancy_convert_vert")
+FRAGMENT_FUNCTION("eevee_volume_occupancy_convert_frag")
+ADDITIONAL_INFO(eevee_volume_occupancy_convert_vert_infos_)
+ADDITIONAL_INFO(eevee_volume_occupancy_convert_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

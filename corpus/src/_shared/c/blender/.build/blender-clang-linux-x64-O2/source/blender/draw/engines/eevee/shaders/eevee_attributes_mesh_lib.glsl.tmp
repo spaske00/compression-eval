@@ -1,0 +1,45 @@
+#line 1 "eevee_attributes_mesh_lib.glsl"
+ 
+#line 17
+float3 attr_load_orco(MeshVertex vert, float4 orco, int _0)
+{
+#line 21
+  if (orco.w == 1.0f) {
+#line 24
+    return vert.orco_default;
+  }
+  return orco.xyz * 0.5f + 0.5f;
+}
+
+float4 attr_load_tangent(MeshVertex vert, float4 tangent, int _0)
+{
+
+  tangent.xyz = safe_normalize(tangent.xyz * vert.world_to_object);
+  return tangent;
+}
+float4 attr_load_float4(MeshVertex _0, float4 attr, int _1)
+{
+  return attr;
+}
+float3 attr_load_float3(MeshVertex _0, float3 attr, int _1)
+{
+  return attr;
+}
+float2 attr_load_float2(MeshVertex _0, float2 attr, int _1)
+{
+  return attr;
+}
+float attr_load_float(MeshVertex _0, float attr, int _1)
+{
+  return attr;
+}
+float4 attr_load_color(MeshVertex _0, float4 attr, int _1)
+{
+  return attr;
+}
+float3 attr_load_uv(MeshVertex _0, float3 attr, int _1)
+{
+  return attr;
+}
+
+

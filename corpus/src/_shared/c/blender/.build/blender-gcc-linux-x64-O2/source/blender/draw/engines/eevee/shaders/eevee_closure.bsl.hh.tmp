@@ -1,0 +1,170 @@
+#line 1 "eevee_closure.bsl.hh"
+ 
+#line 11
+float closure_apparent_roughness_get(ClosureUndetermined cl)
+{
+  switch (cl.type) {
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+      return bxdf_diffuse_perceived_roughness();
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+      return bxdf_translucent_perceived_roughness();
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+      return bxdf_ggx_perceived_roughness_reflection(to_closure_reflection(cl).roughness);
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+      return bxdf_ggx_perceived_roughness_reflection(to_closure_thin_refraction(cl).roughness);
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      return bxdf_ggx_perceived_roughness_transmission(to_closure_refraction(cl).roughness,
+                                                       to_closure_refraction(cl).ior);
+    case CLOSURE_NONE_ID:
+      return 0.0f;
+  }
+  return 0.0f;
+}
+
+float closure_evaluate_pdf(ClosureUndetermined cl, float3 L, float3 V, Thickness thickness)
+{
+  switch (cl.type) {
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+      return bxdf_translucent_eval(cl.N, L, thickness).pdf;
+    case CLOSURE_BSSRDF_BURLEY_ID:
+
+      return bxdf_diffuse_eval(cl.N, L).pdf;
+    case CLOSURE_BSDF_DIFFUSE_ID:
+      return bxdf_diffuse_eval(cl.N, L).pdf;
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID: {
+      ClosureReflection cl_ = to_closure_reflection(cl);
+      float roughness_sq = square(cl_.roughness);
+      return bxdf_ggx_eval_reflection(cl.N, L, V, roughness_sq, true).pdf;
+    }
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID: {
+      ClosureRefraction cl_ = to_closure_refraction(cl);
+      float roughness_sq = square(cl_.roughness);
+      return bxdf_ggx_eval_refraction(cl.N, L, V, roughness_sq, cl_.ior, thickness, true).pdf;
+    }
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID: {
+      ClosureThinRefraction cl_ = to_closure_thin_refraction(cl);
+      float roughness_sq = square(cl_.roughness);
+      return bxdf_ggx_eval_reflection(-cl.N, L, reflect(V, cl.N), roughness_sq, true).pdf;
+    }
+    case CLOSURE_NONE_ID:
+      break;
+  }
+  ;
+  return 0.0f;
+}
+
+LightProbeRay bxdf_lightprobe_ray(ClosureUndetermined cl,
+                                  float3 _0,
+                                  float3 V,
+                                  Thickness thickness)
+{
+  switch (cl.type) {
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      bxdf_ggx_context_amend_transmission(cl, V, thickness);
+      break;
+    case CLOSURE_NONE_ID:
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+      break;
+  }
+
+  switch (cl.type) {
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+      return bxdf_translucent_lightprobe(cl.N, thickness);
+    case CLOSURE_NONE_ID:
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+      return bxdf_diffuse_lightprobe(cl.N);
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+      return bxdf_ggx_lightprobe_reflection(to_closure_reflection(cl), V);
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      return bxdf_ggx_lightprobe_transmission(to_closure_refraction(cl), V, thickness);
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+      return bxdf_ggx_lightprobe_thin_glass_transmission(to_closure_thin_refraction(cl), V);
+  }
+
+  ;
+  return LightProbeRay_ctor_();
+}
+#line 102
+#if defined(CREATE_INFO_UtilityTexture)
+#line 101
+ClosureLight closure_light_new_ex(const UtilityTexture  util_tx,
+                                  ClosureUndetermined cl,
+                                  float3 V,
+                                  Thickness thickness,
+                                  const bool is_transmission)
+{
+  ClosureLight cl_light;
+  if (is_transmission) {
+
+    switch (cl.type) {
+      case CLOSURE_BSSRDF_BURLEY_ID:
+#line 115
+        cl_light = bxdf_translucent_light(cl, V, Thickness_zero());
+        break;
+      case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+        cl_light = bxdf_ggx_light_transmission(util_tx, to_closure_refraction(cl), V, thickness);
+        break;
+      case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+        cl_light = bxdf_ggx_light_thin_glass_transmission(
+            util_tx, to_closure_thin_refraction(cl), V);
+        break;
+      case CLOSURE_BSDF_TRANSLUCENT_ID:
+
+      case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+      case CLOSURE_BSDF_DIFFUSE_ID:
+      case CLOSURE_NONE_ID:
+        cl_light = bxdf_translucent_light(cl, V, thickness);
+        break;
+    }
+  }
+  else {
+
+    switch (cl.type) {
+      case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+        cl_light = bxdf_ggx_light_reflection(util_tx, to_closure_reflection(cl), V);
+        break;
+      case CLOSURE_BSSRDF_BURLEY_ID:
+      case CLOSURE_BSDF_DIFFUSE_ID:
+
+      case CLOSURE_BSDF_TRANSLUCENT_ID:
+      case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+      case CLOSURE_NONE_ID:
+        cl_light = bxdf_diffuse_light(cl);
+        break;
+    }
+  }
+  cl_light.light_shadowed = float3(0.0f);
+  cl_light.light_unshadowed = float3(0.0f);
+  return cl_light;
+}
+#endif
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 155
+ClosureLight closure_light_new(const UtilityTexture  util_tx,
+                               ClosureUndetermined cl,
+                               float3 V,
+                               Thickness thickness)
+{
+  return closure_light_new_ex(util_tx, cl, V, thickness, true);
+}
+#endif
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 163
+ClosureLight closure_light_new(const UtilityTexture  util_tx,
+                               ClosureUndetermined cl,
+                               float3 V)
+{
+  return closure_light_new_ex(util_tx, cl, V, Thickness_zero(), false);
+}
+
+#endif
+#line 169

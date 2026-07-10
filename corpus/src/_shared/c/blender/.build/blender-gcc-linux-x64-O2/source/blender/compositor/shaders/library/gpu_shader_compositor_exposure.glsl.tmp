@@ -1,0 +1,8 @@
+#line 1 "gpu_shader_compositor_exposure.glsl"
+ 
+#line 6
+void node_composite_exposure(float4 color, float exposure, _ref(float4 ,result))
+{
+  float multiplier = exp2(exposure);
+  result = float4(color.rgb * multiplier, color.a);
+}

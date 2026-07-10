@@ -1,0 +1,9 @@
+#line 1 "gpencil_fullscreen_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(gpencil_fx_common)
+#line 11
+void main()
+{
+  fullscreen_vertex(gl_VertexID, gl_Position);
+}

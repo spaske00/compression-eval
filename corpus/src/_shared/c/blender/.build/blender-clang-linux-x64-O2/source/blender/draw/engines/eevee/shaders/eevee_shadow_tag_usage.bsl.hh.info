@@ -1,0 +1,76 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_TagUsage)
+.additional_info("eevee_LightRenderData")
+.additional_info("eevee_shadow_TileMaps")
+.additional_info("eevee_shadow_Tiles")
+.additional_info("eevee_Uniform")
+.additional_info("draw_View")
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_TagUsageOpaque)
+PUSH_CONSTANT(int2, input_depth_extent)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_TagUsageSurfel)
+PUSH_CONSTANT(int, directional_level)
+GPU_SHADER_CREATE_END()
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_SurfelCapture)
+.storage_buf(CAPTURE_BUF_SLOT, Qualifier::read, "CaptureInfoData", "capture_info_buf", Frequency::PASS)
+.storage_buf(SURFEL_BUF_SLOT, Qualifier::read_write, "Surfel", "surfel_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_tag_usage_opaque_infos_)
+LOCAL_GROUP_SIZE(SHADOW_DEPTH_SCAN_GROUP_SIZE, SHADOW_DEPTH_SCAN_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsageOpaque)
+ADDITIONAL_INFO(eevee_HiZ)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsage)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_tag_usage_surfel_infos_)
+LOCAL_GROUP_SIZE(SURFEL_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsageSurfel)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsage)
+ADDITIONAL_INFO(eevee_shadow_usage_SurfelCapture)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_tag_usage_volume_infos_)
+LOCAL_GROUP_SIZE(VOLUME_GROUP_SIZE, VOLUME_GROUP_SIZE, VOLUME_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(UnifiedVolumeProperties)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsage)
+ADDITIONAL_INFO(eevee_shadow_usage_SurfelCapture)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(eevee_Sampling)
+ADDITIONAL_INFO(eevee_HiZ)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tag_usage_opaque)
+COMPUTE_SOURCE("eevee_shadow_tag_usage.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_usage_tag_usage_opaque")
+ADDITIONAL_INFO(eevee_shadow_usage_tag_usage_opaque_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tag_usage_surfels)
+COMPUTE_SOURCE("eevee_shadow_tag_usage.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_usage_tag_usage_surfel")
+ADDITIONAL_INFO(eevee_shadow_usage_tag_usage_surfel_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tag_usage_volume)
+COMPUTE_SOURCE("eevee_shadow_tag_usage.bsl.hh")
+COMPUTE_FUNCTION("eevee_shadow_usage_tag_usage_volume")
+ADDITIONAL_INFO(eevee_shadow_usage_tag_usage_volume_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

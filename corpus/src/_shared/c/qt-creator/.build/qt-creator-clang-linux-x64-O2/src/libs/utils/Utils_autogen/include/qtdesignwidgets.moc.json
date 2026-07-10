@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "CachedImage",
+            "lineNumber": 852,
+            "object": true,
+            "qualifiedClassName": "Utils::CachedImage",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "imageReady",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "imageError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qtdesignwidgets.cpp",
+    "outputRevision": 68
+}

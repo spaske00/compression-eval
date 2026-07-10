@@ -1,0 +1,56 @@
+#pragma once
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_VertIn)
+VERTEX_IN(0, float3, pos)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_INTERFACE_INFO(eevee_shadow_usage_VertOut_t)
+SMOOTH(float3, eevee_shadow_usage_VertOut_P)
+SMOOTH(float3, eevee_shadow_usage_VertOut_vP)
+FLAT(float3, eevee_shadow_usage_VertOut_ls_aabb_min)
+FLAT(float3, eevee_shadow_usage_VertOut_ls_aabb_max)
+FLAT(uint, eevee_shadow_usage_VertOut_resource_id)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_TagUsageTransparent)
+.additional_info("eevee_Uniform")
+PUSH_CONSTANT(int2, fb_resolution)
+PUSH_CONSTANT(int, fb_lod)
+.storage_buf(4, Qualifier::read, "ObjectBounds", "bounds_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_tag_usage_vert_infos_)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+BUILTINS(BuiltinBits::VERTEX_ID)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsageTransparent)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsage)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Model)
+ADDITIONAL_INFO(draw_Resource)
+ADDITIONAL_INFO(eevee_shadow_usage_VertIn)
+VERTEX_OUT(eevee_shadow_usage_VertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_usage_tag_usage_frag_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsageTransparent)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Model)
+ADDITIONAL_INFO(eevee_shadow_usage_TagUsage)
+ADDITIONAL_INFO(eevee_HiZ)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_shadow_tag_usage_transparent)
+GRAPHIC_SOURCE("eevee_shadow_tag_usage_transparent.bsl.hh")
+VERTEX_FUNCTION("eevee_shadow_usage_tag_usage_vert")
+FRAGMENT_FUNCTION("eevee_shadow_usage_tag_usage_frag")
+ADDITIONAL_INFO(eevee_shadow_usage_tag_usage_vert_infos_)
+ADDITIONAL_INFO(eevee_shadow_usage_tag_usage_frag_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

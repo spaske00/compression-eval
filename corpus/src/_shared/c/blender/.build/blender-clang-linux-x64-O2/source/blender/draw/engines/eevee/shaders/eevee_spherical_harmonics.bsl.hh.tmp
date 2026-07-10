@@ -1,0 +1,534 @@
+#line 1 "eevee_spherical_harmonics.bsl.hh"
+ 
+#line 28
+float spherical_harmonics_L0_M0_coef(float3 _0)
+{
+  return 0.282094792f;
+}
+
+float spherical_harmonics_L1_Mn1_coef(float3 v)
+{
+  return -0.488602512f * v.y;
+}
+float spherical_harmonics_L1_M0_coef(float3 v)
+{
+  return 0.488602512f * v.z;
+}
+float spherical_harmonics_L1_Mp1_coef(float3 v)
+{
+  return -0.488602512f * v.x;
+}
+
+float spherical_harmonics_L2_Mn2_coef(float3 v)
+{
+  return 1.092548431f * (v.x * v.y);
+}
+float spherical_harmonics_L2_Mn1_coef(float3 v)
+{
+  return -1.092548431f * (v.y * v.z);
+}
+float spherical_harmonics_L2_M0_coef(float3 v)
+{
+  return 0.315391565f * (3.0f * v.z * v.z - 1.0f);
+}
+float spherical_harmonics_L2_Mp1_coef(float3 v)
+{
+  return -1.092548431f * (v.x * v.z);
+}
+float spherical_harmonics_L2_Mp2_coef(float3 v)
+{
+  return 0.546274215f * (v.x * v.x - v.y * v.y);
+}
+#line 67
+struct spherical_harmonics_BandL0Tfloat {
+  float M0;
+#line 107
+};
+#line 111
+#ifndef GPU_METAL
+spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_ctor_();
+void _encode_signal_sample(_ref(spherical_harmonics_BandL0Tfloat ,this_), float3 direction, float amplitude);
+float _evaluate(const spherical_harmonics_BandL0Tfloat this_, float3 direction);
+spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_madd(spherical_harmonics_BandL0Tfloat a, float b, spherical_harmonics_BandL0Tfloat c);
+spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_mul_scalar(spherical_harmonics_BandL0Tfloat a, float b);
+spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_mul(spherical_harmonics_BandL0Tfloat a, float b);
+spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_add(spherical_harmonics_BandL0Tfloat a, spherical_harmonics_BandL0Tfloat b);
+#endif
+#line 67
+                                                spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_ctor_() {spherical_harmonics_BandL0Tfloat r;r.M0=0.0f;return r;}
+#line 70
+  void _encode_signal_sample(_ref(spherical_harmonics_BandL0Tfloat ,this_), float3 direction, float amplitude)
+  {
+    this_.M0 += spherical_harmonics_L0_M0_coef(direction) * amplitude;
+  }
+#line 75
+  float _evaluate(const spherical_harmonics_BandL0Tfloat this_, float3 direction)
+  {
+    return spherical_harmonics_L0_M0_coef(direction) * this_.M0;
+  }
+#line 80
+         spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_madd(spherical_harmonics_BandL0Tfloat a, float b, spherical_harmonics_BandL0Tfloat c)
+  {
+    spherical_harmonics_BandL0Tfloat result;
+    result.M0 = a.M0 * b + c.M0;
+    return result;
+  }
+#line 87
+         spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_mul_scalar(spherical_harmonics_BandL0Tfloat a, float b)
+  {
+    spherical_harmonics_BandL0Tfloat result;
+    result.M0 = a.M0 * b;
+    return result;
+  }
+#line 94
+         spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_mul(spherical_harmonics_BandL0Tfloat a, float b)
+  {
+    spherical_harmonics_BandL0Tfloat result;
+    result.M0 = a.M0 * b;
+    return result;
+  }
+#line 101
+         spherical_harmonics_BandL0Tfloat spherical_harmonics_BandL0Tfloat_add(spherical_harmonics_BandL0Tfloat a, spherical_harmonics_BandL0Tfloat b)
+  {
+    spherical_harmonics_BandL0Tfloat result;
+    result.M0 = a.M0 + b.M0;
+    return result;
+  }
+#line 67
+struct spherical_harmonics_BandL0Tfloat4 {
+  float4 M0;
+#line 107
+};
+#line 111
+#ifndef GPU_METAL
+spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_ctor_();
+void _encode_signal_sample(_ref(spherical_harmonics_BandL0Tfloat4 ,this_), float3 direction, float4 amplitude);
+float4 _evaluate(const spherical_harmonics_BandL0Tfloat4 this_, float3 direction);
+spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_madd(spherical_harmonics_BandL0Tfloat4 a, float b, spherical_harmonics_BandL0Tfloat4 c);
+spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_mul_scalar(spherical_harmonics_BandL0Tfloat4 a, float b);
+spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_mul(spherical_harmonics_BandL0Tfloat4 a, float4 b);
+spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_add(spherical_harmonics_BandL0Tfloat4 a, spherical_harmonics_BandL0Tfloat4 b);
+#endif
+#line 67
+                                                 spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_ctor_() {spherical_harmonics_BandL0Tfloat4 r;r.M0=float4(0);return r;}
+#line 70
+  void _encode_signal_sample(_ref(spherical_harmonics_BandL0Tfloat4 ,this_), float3 direction, float4 amplitude)
+  {
+    this_.M0 += spherical_harmonics_L0_M0_coef(direction) * amplitude;
+  }
+#line 75
+  float4 _evaluate(const spherical_harmonics_BandL0Tfloat4 this_, float3 direction)
+  {
+    return spherical_harmonics_L0_M0_coef(direction) * this_.M0;
+  }
+#line 80
+         spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_madd(spherical_harmonics_BandL0Tfloat4 a, float b, spherical_harmonics_BandL0Tfloat4 c)
+  {
+    spherical_harmonics_BandL0Tfloat4 result;
+    result.M0 = a.M0 * b + c.M0;
+    return result;
+  }
+#line 87
+         spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_mul_scalar(spherical_harmonics_BandL0Tfloat4 a, float b)
+  {
+    spherical_harmonics_BandL0Tfloat4 result;
+    result.M0 = a.M0 * b;
+    return result;
+  }
+#line 94
+         spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_mul(spherical_harmonics_BandL0Tfloat4 a, float4 b)
+  {
+    spherical_harmonics_BandL0Tfloat4 result;
+    result.M0 = a.M0 * b;
+    return result;
+  }
+#line 101
+         spherical_harmonics_BandL0Tfloat4 spherical_harmonics_BandL0Tfloat4_add(spherical_harmonics_BandL0Tfloat4 a, spherical_harmonics_BandL0Tfloat4 b)
+  {
+    spherical_harmonics_BandL0Tfloat4 result;
+    result.M0 = a.M0 + b.M0;
+    return result;
+  }
+#line 109
+struct spherical_harmonics_BandL1Tfloat {
+  float Mn1;float M0;float Mp1;
+#line 160
+};
+#line 164
+#ifndef GPU_METAL
+spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_ctor_();
+void _encode_signal_sample(_ref(spherical_harmonics_BandL1Tfloat ,this_), float3 direction, float amplitude);
+float _evaluate(const spherical_harmonics_BandL1Tfloat this_, float3 direction);
+spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_madd(spherical_harmonics_BandL1Tfloat a, float b, spherical_harmonics_BandL1Tfloat c);
+spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_mul_scalar(spherical_harmonics_BandL1Tfloat a, float b);
+spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_mul(spherical_harmonics_BandL1Tfloat a, float b);
+spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_add(spherical_harmonics_BandL1Tfloat a, spherical_harmonics_BandL1Tfloat b);
+#endif
+#line 109
+                                                spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_ctor_() {spherical_harmonics_BandL1Tfloat r;r.Mn1=0.0f;r.M0=0.0f;r.Mp1=0.0f;return r;}
+#line 112
+  void _encode_signal_sample(_ref(spherical_harmonics_BandL1Tfloat ,this_), float3 direction, float amplitude)
+  {
+    this_.Mn1 += spherical_harmonics_L1_Mn1_coef(direction) * amplitude;
+    this_.M0 += spherical_harmonics_L1_M0_coef(direction) * amplitude;
+    this_.Mp1 += spherical_harmonics_L1_Mp1_coef(direction) * amplitude;
+  }
+#line 119
+  float _evaluate(const spherical_harmonics_BandL1Tfloat this_, float3 direction)
+  {
+    return spherical_harmonics_L1_Mn1_coef(direction) * this_.Mn1 + spherical_harmonics_L1_M0_coef(direction) * this_.M0 +
+           spherical_harmonics_L1_Mp1_coef(direction) * this_.Mp1;
+  }
+#line 125
+         spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_madd(spherical_harmonics_BandL1Tfloat a, float b, spherical_harmonics_BandL1Tfloat c)
+  {
+    spherical_harmonics_BandL1Tfloat result;
+    result.Mn1 = a.Mn1 * b + c.Mn1;
+    result.M0 = a.M0 * b + c.M0;
+    result.Mp1 = a.Mp1 * b + c.Mp1;
+    return result;
+  }
+#line 134
+         spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_mul_scalar(spherical_harmonics_BandL1Tfloat a, float b)
+  {
+    spherical_harmonics_BandL1Tfloat result;
+    result.Mn1 = a.Mn1 * b;
+    result.M0 = a.M0 * b;
+    result.Mp1 = a.Mp1 * b;
+    return result;
+  }
+#line 143
+         spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_mul(spherical_harmonics_BandL1Tfloat a, float b)
+  {
+    spherical_harmonics_BandL1Tfloat result;
+    result.Mn1 = a.Mn1 * b;
+    result.M0 = a.M0 * b;
+    result.Mp1 = a.Mp1 * b;
+    return result;
+  }
+#line 152
+         spherical_harmonics_BandL1Tfloat spherical_harmonics_BandL1Tfloat_add(spherical_harmonics_BandL1Tfloat a, spherical_harmonics_BandL1Tfloat b)
+  {
+    spherical_harmonics_BandL1Tfloat result;
+    result.Mn1 = a.Mn1 + b.Mn1;
+    result.M0 = a.M0 + b.M0;
+    result.Mp1 = a.Mp1 + b.Mp1;
+    return result;
+  }
+#line 109
+struct spherical_harmonics_BandL1Tfloat4 {
+  float4 Mn1;float4 M0;float4 Mp1;
+#line 160
+};
+#line 164
+#ifndef GPU_METAL
+spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_ctor_();
+void _encode_signal_sample(_ref(spherical_harmonics_BandL1Tfloat4 ,this_), float3 direction, float4 amplitude);
+float4 _evaluate(const spherical_harmonics_BandL1Tfloat4 this_, float3 direction);
+spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_madd(spherical_harmonics_BandL1Tfloat4 a, float b, spherical_harmonics_BandL1Tfloat4 c);
+spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_mul_scalar(spherical_harmonics_BandL1Tfloat4 a, float b);
+spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_mul(spherical_harmonics_BandL1Tfloat4 a, float4 b);
+spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_add(spherical_harmonics_BandL1Tfloat4 a, spherical_harmonics_BandL1Tfloat4 b);
+#endif
+#line 109
+                                                 spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_ctor_() {spherical_harmonics_BandL1Tfloat4 r;r.Mn1=float4(0);r.M0=float4(0);r.Mp1=float4(0);return r;}
+#line 112
+  void _encode_signal_sample(_ref(spherical_harmonics_BandL1Tfloat4 ,this_), float3 direction, float4 amplitude)
+  {
+    this_.Mn1 += spherical_harmonics_L1_Mn1_coef(direction) * amplitude;
+    this_.M0 += spherical_harmonics_L1_M0_coef(direction) * amplitude;
+    this_.Mp1 += spherical_harmonics_L1_Mp1_coef(direction) * amplitude;
+  }
+#line 119
+  float4 _evaluate(const spherical_harmonics_BandL1Tfloat4 this_, float3 direction)
+  {
+    return spherical_harmonics_L1_Mn1_coef(direction) * this_.Mn1 + spherical_harmonics_L1_M0_coef(direction) * this_.M0 +
+           spherical_harmonics_L1_Mp1_coef(direction) * this_.Mp1;
+  }
+#line 125
+         spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_madd(spherical_harmonics_BandL1Tfloat4 a, float b, spherical_harmonics_BandL1Tfloat4 c)
+  {
+    spherical_harmonics_BandL1Tfloat4 result;
+    result.Mn1 = a.Mn1 * b + c.Mn1;
+    result.M0 = a.M0 * b + c.M0;
+    result.Mp1 = a.Mp1 * b + c.Mp1;
+    return result;
+  }
+#line 134
+         spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_mul_scalar(spherical_harmonics_BandL1Tfloat4 a, float b)
+  {
+    spherical_harmonics_BandL1Tfloat4 result;
+    result.Mn1 = a.Mn1 * b;
+    result.M0 = a.M0 * b;
+    result.Mp1 = a.Mp1 * b;
+    return result;
+  }
+#line 143
+         spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_mul(spherical_harmonics_BandL1Tfloat4 a, float4 b)
+  {
+    spherical_harmonics_BandL1Tfloat4 result;
+    result.Mn1 = a.Mn1 * b;
+    result.M0 = a.M0 * b;
+    result.Mp1 = a.Mp1 * b;
+    return result;
+  }
+#line 152
+         spherical_harmonics_BandL1Tfloat4 spherical_harmonics_BandL1Tfloat4_add(spherical_harmonics_BandL1Tfloat4 a, spherical_harmonics_BandL1Tfloat4 b)
+  {
+    spherical_harmonics_BandL1Tfloat4 result;
+    result.Mn1 = a.Mn1 + b.Mn1;
+    result.M0 = a.M0 + b.M0;
+    result.Mp1 = a.Mp1 + b.Mp1;
+    return result;
+  }
+#line 222
+struct SphericalHarmonicL1Tfloat {
+  spherical_harmonics_BandL0Tfloat L0;
+  spherical_harmonics_BandL1Tfloat L1;
+#line 290
+};
+#line 293
+#ifndef GPU_METAL
+SphericalHarmonicL1Tfloat SphericalHarmonicL1Tfloat_ctor_();
+void _encode_signal_sample(_ref(SphericalHarmonicL1Tfloat ,this_), float3 direction, float amplitude);
+float _evaluate(const SphericalHarmonicL1Tfloat this_, float3 direction);
+float _evaluate_lambert(const SphericalHarmonicL1Tfloat this_, float3 N);
+#endif
+#line 222
+                                         SphericalHarmonicL1Tfloat SphericalHarmonicL1Tfloat_ctor_() {SphericalHarmonicL1Tfloat r;r.L0=spherical_harmonics_BandL0Tfloat_ctor_();r.L1=spherical_harmonics_BandL1Tfloat_ctor_();return r;}
+#line 228
+  void _encode_signal_sample(_ref(SphericalHarmonicL1Tfloat ,this_), float3 direction, float amplitude)
+  {
+    _encode_signal_sample(this_.L0, direction, amplitude);
+    _encode_signal_sample(this_.L1, direction, amplitude);
+  }
+#line 235
+  float _evaluate(const SphericalHarmonicL1Tfloat this_, float3 direction)
+  {
+    float eval = _evaluate(this_.L0, direction) + _evaluate(this_.L1, direction);
+    return max(float(0.0f), eval);
+  }
+#line 247
+  float _evaluate_lambert(const SphericalHarmonicL1Tfloat this_, float3 N)
+  {
+    float radiance = _evaluate(this_.L0, N) + _evaluate(this_.L1, N) * (2.0f / 3.0f);
+    return max(float(0.0f), radiance);
+  }
+#line 222
+struct SphericalHarmonicL1Tfloat4 {
+  spherical_harmonics_BandL0Tfloat4 L0;
+  spherical_harmonics_BandL1Tfloat4 L1;
+#line 290
+};
+#line 293
+#ifndef GPU_METAL
+SphericalHarmonicL1Tfloat4 SphericalHarmonicL1Tfloat4_ctor_();
+void _encode_signal_sample(_ref(SphericalHarmonicL1Tfloat4 ,this_), float3 direction, float4 amplitude);
+float4 _evaluate(const SphericalHarmonicL1Tfloat4 this_, float3 direction);
+float4 _evaluate_lambert(const SphericalHarmonicL1Tfloat4 this_, float3 N);
+#endif
+#line 222
+                                          SphericalHarmonicL1Tfloat4 SphericalHarmonicL1Tfloat4_ctor_() {SphericalHarmonicL1Tfloat4 r;r.L0=spherical_harmonics_BandL0Tfloat4_ctor_();r.L1=spherical_harmonics_BandL1Tfloat4_ctor_();return r;}
+#line 228
+  void _encode_signal_sample(_ref(SphericalHarmonicL1Tfloat4 ,this_), float3 direction, float4 amplitude)
+  {
+    _encode_signal_sample(this_.L0, direction, amplitude);
+    _encode_signal_sample(this_.L1, direction, amplitude);
+  }
+#line 235
+  float4 _evaluate(const SphericalHarmonicL1Tfloat4 this_, float3 direction)
+  {
+    float4 eval = _evaluate(this_.L0, direction) + _evaluate(this_.L1, direction);
+    return max(float4(0.0f), eval);
+  }
+#line 247
+  float4 _evaluate_lambert(const SphericalHarmonicL1Tfloat4 this_, float3 N)
+  {
+    float4 radiance = _evaluate(this_.L0, N) + _evaluate(this_.L1, N) * (2.0f / 3.0f);
+    return max(float4(0.0f), radiance);
+  }
+#line 305
+SphericalHarmonicL1Tfloat4 spherical_harmonics_unpack(float4 L0_L1_a,
+                                   float4 L0_L1_b,
+                                   float4 L0_L1_c,
+                                   float4 L0_L1_vis)
+{
+  SphericalHarmonicL1Tfloat4 sh;
+  sh.L0.M0.xyz = L0_L1_a.xyz;
+  sh.L1.Mn1.xyz = L0_L1_b.xyz;
+  sh.L1.M0.xyz = L0_L1_c.xyz;
+  sh.L1.Mp1.xyz = float3(L0_L1_a.w, L0_L1_b.w, L0_L1_c.w);
+  sh.L0.M0.w = L0_L1_vis.x;
+  sh.L1.Mn1.w = L0_L1_vis.y;
+  sh.L1.M0.w = L0_L1_vis.z;
+  sh.L1.Mp1.w = L0_L1_vis.w;
+  return sh;
+}
+
+void spherical_harmonics_pack(SphericalHarmonicL1Tfloat4 sh,
+          _ref(float4 ,L0_L1_a),
+          _ref(float4 ,L0_L1_b),
+          _ref(float4 ,L0_L1_c),
+          _ref(float4 ,L0_L1_vis))
+{
+  L0_L1_a.xyz = sh.L0.M0.xyz;
+  L0_L1_b.xyz = sh.L1.Mn1.xyz;
+  L0_L1_c.xyz = sh.L1.M0.xyz;
+  L0_L1_a.w = sh.L1.Mp1.x;
+  L0_L1_b.w = sh.L1.Mp1.y;
+  L0_L1_c.w = sh.L1.Mp1.z;
+  L0_L1_vis = float4(sh.L0.M0.w, sh.L1.Mn1.w, sh.L1.M0.w, sh.L1.Mp1.w);
+}
+#line 343
+SphericalHarmonicL1Tfloat4 spherical_harmonics_triple_product(SphericalHarmonicL1Tfloat4 a,
+                                           SphericalHarmonicL1Tfloat4 b)
+{
+#line 349
+  constexpr float L0_M0_coef = 0.282094792f;
+  SphericalHarmonicL1Tfloat4 sh;
+  sh.L0.M0 = a.L0.M0 * b.L0.M0;
+  sh.L0.M0 += a.L1.Mn1 * b.L1.Mn1;
+  sh.L0.M0 += a.L1.M0 * b.L1.M0;
+  sh.L0.M0 += a.L1.Mp1 * b.L1.Mp1;
+  sh.L0.M0 *= L0_M0_coef;
+
+  sh.L1.Mn1 = L0_M0_coef * (a.L0.M0 * b.L1.Mn1 + b.L0.M0 * a.L1.Mn1);
+  sh.L1.M0 = L0_M0_coef * (a.L0.M0 * b.L1.M0 + b.L0.M0 * a.L1.M0);
+  sh.L1.Mp1 = L0_M0_coef * (a.L0.M0 * b.L1.Mp1 + b.L0.M0 * a.L1.Mp1);
+  return sh;
+}
+#line 369
+SphericalHarmonicL1Tfloat4 spherical_harmonics_madd(SphericalHarmonicL1Tfloat4 a,
+                                 float b,
+                                 SphericalHarmonicL1Tfloat4 c)
+{
+  SphericalHarmonicL1Tfloat4 result;
+  result.L0 = spherical_harmonics_BandL0Tfloat4_madd(a.L0, b, c.L0);
+  result.L1 = spherical_harmonics_BandL1Tfloat4_madd(a.L1, b, c.L1);
+  return result;
+}
+
+SphericalHarmonicL1Tfloat4 spherical_harmonics_mul(SphericalHarmonicL1Tfloat4 a, float b)
+{
+  SphericalHarmonicL1Tfloat4 result;
+  result.L0 = spherical_harmonics_BandL0Tfloat4_mul_scalar(a.L0, b);
+  result.L1 = spherical_harmonics_BandL1Tfloat4_mul_scalar(a.L1, b);
+  return result;
+}
+
+SphericalHarmonicL1Tfloat4 spherical_harmonics_mul(SphericalHarmonicL1Tfloat4 a, float4 b)
+{
+  SphericalHarmonicL1Tfloat4 result;
+  result.L0 = spherical_harmonics_BandL0Tfloat4_mul(a.L0, b);
+  result.L1 = spherical_harmonics_BandL1Tfloat4_mul(a.L1, b);
+  return result;
+}
+
+SphericalHarmonicL1Tfloat4 spherical_harmonics_add(SphericalHarmonicL1Tfloat4 a, SphericalHarmonicL1Tfloat4 b)
+{
+  SphericalHarmonicL1Tfloat4 result;
+  result.L0 = spherical_harmonics_BandL0Tfloat4_add(a.L0, b.L0);
+  result.L1 = spherical_harmonics_BandL1Tfloat4_add(a.L1, b.L1);
+  return result;
+}
+
+SphericalHarmonicL1Tfloat4 spherical_harmonics_rotate(float3x3 rotation, SphericalHarmonicL1Tfloat4 sh)
+{
+#line 407
+  float4x3 per_channel = transpose(float3x4(sh.L1.Mp1, sh.L1.Mn1, -sh.L1.M0));
+
+  per_channel[0] = rotation * per_channel[0];
+  per_channel[1] = rotation * per_channel[1];
+  per_channel[2] = rotation * per_channel[2];
+  per_channel[3] = rotation * per_channel[3];
+#line 415
+  float3x4 per_coef = transpose(per_channel);
+  sh.L1.Mn1 = per_coef[1];
+  sh.L1.M0 = -per_coef[2];
+  sh.L1.Mp1 = per_coef[0];
+#line 421
+  return sh;
+}
+#line 430
+float4 spherical_harmonics_dot(SphericalHarmonicL1Tfloat4 a, SphericalHarmonicL1Tfloat4 b)
+{
+
+  float4x4 a_mat = transpose(float4x4(a.L0.M0, a.L1.Mn1, a.L1.M0, a.L1.Mp1));
+  float4x4 b_mat = transpose(float4x4(b.L0.M0, b.L1.Mn1, b.L1.M0, b.L1.Mp1));
+  float4 result;
+  result[0] =   dot(a_mat[0], b_mat[0]);
+  result[1] =   dot(a_mat[1], b_mat[1]);
+  result[2] =   dot(a_mat[2], b_mat[2]);
+  result[3] =   dot(a_mat[3], b_mat[3]);
+  return result;
+}
+#line 451
+SphericalHarmonicL1Tfloat4 spherical_harmonics_compress(SphericalHarmonicL1Tfloat4 sh)
+{
+  SphericalHarmonicL1Tfloat4 result;
+  result.L0 = sh.L0;
+  float4 fac = safe_rcp(sh.L0.M0 * M_SQRT3);
+  result.L1.Mn1 = (sh.L1.Mn1 * fac) * 0.5f + 0.5f;
+  result.L1.M0 = (sh.L1.M0 * fac) * 0.5f + 0.5f;
+  result.L1.Mp1 = (sh.L1.Mp1 * fac) * 0.5f + 0.5f;
+  return result;
+}
+
+SphericalHarmonicL1Tfloat4 spherical_harmonics_decompress(SphericalHarmonicL1Tfloat4 sh)
+{
+  SphericalHarmonicL1Tfloat4 result;
+  result.L0 = sh.L0;
+  float4 fac = sh.L0.M0 * M_SQRT3;
+  result.L1.Mn1 = (sh.L1.Mn1 * 2.0f - 1.0f) * fac;
+  result.L1.M0 = (sh.L1.M0 * 2.0f - 1.0f) * fac;
+  result.L1.Mp1 = (sh.L1.Mp1 * 2.0f - 1.0f) * fac;
+  return result;
+}
+#line 481
+SphericalHarmonicL1Tfloat4 spherical_harmonics_dering(SphericalHarmonicL1Tfloat4 sh)
+{
+  float L0_weight = 0.282094792f;
+  float L1_weight = 0.488602512f;
+
+  L1_weight *= (2.0f / 3.0f);
+
+  L1_weight += 0.05f;
+#line 491
+  const float4x4 m = transpose(float4x4(max(abs(sh.L0.M0) * L0_weight, float4(1e-8f)),
+                                        abs(sh.L1.Mn1),
+                                        abs(sh.L1.M0),
+                                        abs(sh.L1.Mp1)));
+#line 498
+  float fac_r = m[0].x / max(1e-8f, length(m[0].yzw) * L1_weight);
+  float fac_g = m[1].x / max(1e-8f, length(m[1].yzw) * L1_weight);
+  float fac_b = m[2].x / max(1e-8f, length(m[2].yzw) * L1_weight);
+#line 503
+  float fac = reduce_min(float3(fac_r, fac_g, fac_b));
+  if (fac < 1.0f) {
+    sh.L1 = spherical_harmonics_BandL1Tfloat4_mul(sh.L1, float4(fac));
+  }
+  return sh;
+}
+#line 518
+SphericalHarmonicL1Tfloat4 spherical_harmonics_clamp_energy(SphericalHarmonicL1Tfloat4 sh, float clamp_value)
+{
+
+  float4x4 per_channel = transpose(float4x4(sh.L0.M0, sh.L1.Mn1, sh.L1.M0, sh.L1.Mp1));
+
+  float3 mag_L1;
+  mag_L1.r = length(per_channel[0].yzw);
+  mag_L1.g = length(per_channel[1].yzw);
+  mag_L1.b = length(per_channel[2].yzw);
+
+  float3 max_sh = abs(sh.L0.M0.rgb) * 0.282094792f + mag_L1 * 0.488602512f;
+
+  float fac = clamp_value * safe_rcp(reduce_max(max_sh));
+  if (fac < 1.0f) {
+    sh = spherical_harmonics_mul(sh, fac);
+  }
+  return sh;
+}
+
+
+
+

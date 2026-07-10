@@ -1,0 +1,110 @@
+#line 1 "draw_attribute_shader_shared.hh"
+ 
+#line 13
+constant static constexpr uint32_t CURVE_TYPE_CATMULL_ROM = 0u;
+constant static constexpr uint32_t CURVE_TYPE_POLY = 1u;
+constant static constexpr uint32_t CURVE_TYPE_BEZIER = 2u;
+constant static constexpr uint32_t CURVE_TYPE_NURBS = 3u;
+
+#define CurveType uint32_t
+#line 12
+
+#define CurveType_host_shared_ CurveType
+#line 12
+
+CurveType CurveType_ctor_() { return CurveType(0); }
+#line 28
+#define StoredFloat4_host_shared_ StoredFloat4
+#define StoredFloat4_host_shared_uniform_ StoredFloat4
+#line 27
+struct                 StoredFloat4 {
+  float x;
+  float y;
+  float z;
+  float w;
+};
+#line 27
+                                            StoredFloat4 StoredFloat4_ctor_() {StoredFloat4 r;r.x=0.0f;r.y=0.0f;r.z=0.0f;r.w=0.0f;return r;}
+#line 35
+#define StoredFloat3_host_shared_ StoredFloat3
+#line 34
+struct                 StoredFloat3 {
+  float x;
+  float y;
+  float z;
+};
+#line 34
+                                            StoredFloat3 StoredFloat3_ctor_() {StoredFloat3 r;r.x=0.0f;r.y=0.0f;r.z=0.0f;return r;}
+#line 41
+#define StoredFloat2_host_shared_ StoredFloat2
+#line 40
+struct                 StoredFloat2 {
+  float x;
+  float y;
+};
+#line 40
+                                            StoredFloat2 StoredFloat2_ctor_() {StoredFloat2 r;r.x=0.0f;r.y=0.0f;return r;}
+#line 46
+#define StoredFloat_host_shared_ StoredFloat
+#line 45
+struct                 StoredFloat {
+  float x;
+};
+#line 45
+                                           StoredFloat StoredFloat_ctor_() {StoredFloat r;r.x=0.0f;return r;}
+#line 49
+float4 load_data(StoredFloat4 data)
+{
+  return float4(data.x, data.y, data.z, data.w);
+}
+
+float3 load_data(StoredFloat3 data)
+{
+  return float3(data.x, data.y, data.z);
+}
+
+float2 load_data(StoredFloat2 data)
+{
+  return float2(data.x, data.y);
+}
+
+float load_data(StoredFloat data)
+{
+  return float(data.x);
+}
+
+StoredFloat4 as_data(float4 interp)
+{
+  StoredFloat4 data;
+  data.x = interp.x;
+  data.y = interp.y;
+  data.z = interp.z;
+  data.w = interp.w;
+  return data;
+}
+
+StoredFloat3 as_data(float3 interp)
+{
+  StoredFloat3 data;
+  data.x = interp.x;
+  data.y = interp.y;
+  data.z = interp.z;
+  return data;
+}
+
+StoredFloat2 as_data(float2 interp)
+{
+  StoredFloat2 data;
+  data.x = interp.x;
+  data.y = interp.y;
+  return data;
+}
+
+StoredFloat as_data(float interp)
+{
+  StoredFloat data;
+  data.x = interp;
+  return data;
+}
+
+

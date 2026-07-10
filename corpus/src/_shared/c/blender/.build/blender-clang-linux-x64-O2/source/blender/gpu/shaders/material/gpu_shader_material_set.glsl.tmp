@@ -1,0 +1,47 @@
+#line 1 "gpu_shader_material_set.glsl"
+ 
+#line 6
+void set_value(float val, _ref(float ,outval))
+{
+  outval = val;
+}
+#line 12
+void set_rgb(float3 col, _ref(float3 ,outcol))
+{
+  outcol = col;
+}
+#line 18
+void set_rgba(float4 col, _ref(float4 ,outcol))
+{
+  outcol = col;
+}
+#line 24
+void set_value_zero(_ref(float ,outval))
+{
+  outval = 0.0f;
+}
+#line 30
+void set_value_one(_ref(float ,outval))
+{
+  outval = 1.0f;
+}
+#line 36
+void set_rgb_zero(_ref(float3 ,outval))
+{
+  outval = float3(0.0f);
+}
+#line 42
+void set_rgb_one(_ref(float3 ,outval))
+{
+  outval = float3(1.0f);
+}
+#line 48
+void set_rgba_zero(_ref(float4 ,outval))
+{
+  outval = float4(0.0f);
+}
+#line 54
+void set_rgba_one(_ref(float4 ,outval))
+{
+  outval = float4(1.0f);
+}

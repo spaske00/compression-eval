@@ -1,0 +1,351 @@
+#line 1 "eevee_shadow_page_ops.bsl.hh"
+ 
+#line 9
+#define max_page uint(SHADOW_MAX_PAGE)
+#line 13
+#define access_eevee_shadow_TileMaps_tilemaps_buf() tilemaps_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_TileMaps
+CREATE_INFO_RES_PASS_eevee_shadow_TileMaps
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_TileMaps
+CREATE_INFO_RES_BATCH_eevee_shadow_TileMaps
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_TileMaps
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_TileMaps
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TileMaps
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_TileMaps
+#endif
+#line 13
+struct eevee_shadow_TileMaps {
+#line 23
+int _pad;};
+#line 26
+#ifndef GPU_METAL
+eevee_shadow_TileMaps eevee_shadow_TileMaps_ctor_();
+eevee_shadow_TileMaps eevee_shadow_TileMaps_new_();
+#endif
+#line 13
+                                     eevee_shadow_TileMaps eevee_shadow_TileMaps_ctor_() {eevee_shadow_TileMaps r;r._pad=0;return r;}
+#line 16
+       eevee_shadow_TileMaps eevee_shadow_TileMaps_new_()
+{
+  eevee_shadow_TileMaps result;
+  result._pad = 0;
+  return result;
+#line 14
+}
+#line 17
+#define access_eevee_shadow_Tiles_tiles_buf() tiles_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_Tiles
+CREATE_INFO_RES_PASS_eevee_shadow_Tiles
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_Tiles
+CREATE_INFO_RES_BATCH_eevee_shadow_Tiles
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_Tiles
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_Tiles
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_Tiles
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_Tiles
+#endif
+#line 17
+struct eevee_shadow_Tiles {
+#line 27
+int _pad;};
+#line 30
+#ifndef GPU_METAL
+eevee_shadow_Tiles eevee_shadow_Tiles_ctor_();
+eevee_shadow_Tiles eevee_shadow_Tiles_new_();
+#endif
+#line 17
+                                  eevee_shadow_Tiles eevee_shadow_Tiles_ctor_() {eevee_shadow_Tiles r;r._pad=0;return r;}
+#line 20
+       eevee_shadow_Tiles eevee_shadow_Tiles_new_()
+{
+  eevee_shadow_Tiles result;
+  result._pad = 0;
+  return result;
+#line 18
+}
+#line 21
+#define access_eevee_shadow_Statistics_statistics_buf() statistics_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_Statistics
+CREATE_INFO_RES_PASS_eevee_shadow_Statistics
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_Statistics
+CREATE_INFO_RES_BATCH_eevee_shadow_Statistics
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_Statistics
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_Statistics
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_Statistics
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_Statistics
+#endif
+#line 21
+struct eevee_shadow_Statistics {
+#line 31
+int _pad;};
+#line 40
+#ifndef GPU_METAL
+eevee_shadow_Statistics eevee_shadow_Statistics_ctor_();
+eevee_shadow_Statistics eevee_shadow_Statistics_new_();
+#endif
+#line 21
+                                       eevee_shadow_Statistics eevee_shadow_Statistics_ctor_() {eevee_shadow_Statistics r;r._pad=0;return r;}
+#line 24
+       eevee_shadow_Statistics eevee_shadow_Statistics_new_()
+{
+  eevee_shadow_Statistics result;
+  result._pad = 0;
+  return result;
+#line 22
+}
+#line 31
+#define access_eevee_shadow_PageAllocator_pages_infos_buf() pages_infos_buf
+#define access_eevee_shadow_PageAllocator_tiles_buf() tiles_buf
+#define access_eevee_shadow_PageAllocator_pages_free_buf() pages_free_buf
+#define access_eevee_shadow_PageAllocator_pages_cached_buf() pages_cached_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_shadow_PageAllocator
+CREATE_INFO_RES_PASS_eevee_shadow_PageAllocator
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_shadow_PageAllocator
+CREATE_INFO_RES_BATCH_eevee_shadow_PageAllocator
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_shadow_PageAllocator
+CREATE_INFO_RES_GEOMETRY_eevee_shadow_PageAllocator
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_shadow_PageAllocator
+CREATE_INFO_RES_SHARED_VARS_eevee_shadow_PageAllocator
+#endif
+#line 31
+struct eevee_shadow_PageAllocator {
+#line 239
+int _pad;};
+#line 242
+#ifndef GPU_METAL
+eevee_shadow_PageAllocator eevee_shadow_PageAllocator_ctor_();
+void _page_free(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile));
+void _page_alloc(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile));
+void _page_cache_append(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile), uint tile_index);
+void _page_cache_remove(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile));
+void _page_cache_update_page_ref(eevee_shadow_PageAllocator  this_, uint page_index, uint new_page_index);
+void _page_cache_update_tile_ref(eevee_shadow_PageAllocator  this_, uint page_index, uint new_tile_index);
+void _find_first_valid(eevee_shadow_PageAllocator  this_, _ref(uint ,src), uint dst);
+void _free_cached_page(eevee_shadow_PageAllocator  this_, uint page_index);
+bool _check_heap_integrity(eevee_shadow_PageAllocator  this_, int start, int size, const uint invalid_val);
+void _defrag(eevee_shadow_PageAllocator  this_);
+eevee_shadow_PageAllocator eevee_shadow_PageAllocator_new_();
+#endif
+#line 31
+                                          eevee_shadow_PageAllocator eevee_shadow_PageAllocator_ctor_() {eevee_shadow_PageAllocator r;r._pad=0;return r;}
+#line 43
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 43
+  void _page_free(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile))
+  {
+    ;
+
+    int index = atomicAdd(srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_free_count, 1);
+    ;
+
+    pages_free_buf[index] = shadow_page_pack(tile.page);
+
+    tile.page = uint3(~0u);
+    tile.is_cached = false;
+    tile.is_allocated = false;
+  }
+#endif
+#line 58
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 58
+  void _page_alloc(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile))
+  {
+    ;
+
+    int index = atomicAdd(srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_free_count, -1) - 1;
+
+    if (index < 0) {
+      return;
+    }
+
+    tile.page = shadow_page_unpack(pages_free_buf[index]);
+    tile.is_allocated = true;
+    tile.do_update = true;
+
+    pages_free_buf[index] = uint(-1);
+  }
+#endif
+#line 76
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 76
+  void _page_cache_append(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile), uint tile_index)
+  {
+    ;
+#line 81
+    uint index = atomicAdd(srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_next, 1u) % uint(SHADOW_MAX_PAGE);
+
+    pages_cached_buf[index] = uint2(shadow_page_pack(tile.page), tile_index);
+
+    tile.page = uint3(~0u);
+    tile.cache_index = index;
+    tile.is_cached = true;
+    tile.is_allocated = false;
+  }
+#endif
+#line 92
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 92
+  void _page_cache_remove(eevee_shadow_PageAllocator  this_, _ref(ShadowTileData ,tile))
+  {
+    ;
+    ;
+
+    uint index = tile.cache_index;
+
+    tile.page = shadow_page_unpack(pages_cached_buf[index].x);
+    tile.cache_index = uint(-1);
+    tile.is_cached = false;
+    tile.is_allocated = true;
+
+    pages_cached_buf[index] = uint2(~0u);
+  }
+#endif
+#line 108
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 108
+  void _page_cache_update_page_ref(eevee_shadow_PageAllocator  this_, uint page_index, uint new_page_index)
+  {
+    uint tile_index = pages_cached_buf[page_index].y;
+    ShadowTileData tile = shadow_tile_unpack(tiles_buf[tile_index]);
+    tile.cache_index = new_page_index;
+    tiles_buf[tile_index] = shadow_tile_pack(tile);
+  }
+#endif
+#line 119
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 119
+  void _page_cache_update_tile_ref(eevee_shadow_PageAllocator  this_, uint page_index, uint new_tile_index)
+  {
+    pages_cached_buf[page_index].y = new_tile_index;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 124
+  void _find_first_valid(eevee_shadow_PageAllocator  this_, _ref(uint ,src), uint dst)
+  {
+    for (uint i = src; i < dst; i++) {
+      if (pages_cached_buf[i % max_page].x != uint(-1)) {
+        src = i;
+        return;
+      }
+    }
+
+    src = dst;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 136
+  void _free_cached_page(eevee_shadow_PageAllocator  this_, uint page_index)
+  {
+    uint tile_index = pages_cached_buf[page_index].y;
+    ShadowTileData tile = shadow_tile_unpack(tiles_buf[tile_index]);
+
+    _page_cache_remove(this_, tile);
+    _page_free(this_, tile);
+
+    tiles_buf[tile_index] = shadow_tile_pack(tile);
+  }
+#endif
+#line 148
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 148
+  bool _check_heap_integrity(eevee_shadow_PageAllocator  this_, int start, int size, const uint invalid_val)
+  {
+
+    bool result = true;
+    for (int i = 0; i < int(max_page); i++) {
+      if ((i >= start) && (i < (start + size))) {
+        result = result && (pages_free_buf[i] != invalid_val);
+      }
+      else {
+        result = result && (pages_free_buf[i] == invalid_val);
+      }
+    }
+    return result;
+  }
+#endif
+#line 164
+
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator)
+#line 164
+  void _defrag(eevee_shadow_PageAllocator  this_)
+  {
+
+    int additional_pages = srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_alloc_count - srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_free_count;
+
+    uint src = srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_start;
+    uint end = srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_end;
+
+    _find_first_valid(this_, src, end);
+#line 182
+    for (; additional_pages > 0 && src < end; additional_pages--) {
+      _free_cached_page(this_, src % max_page);
+      _find_first_valid(this_, src, end);
+    }
+#line 188
+    bool is_empty = (src == end);
+    if (!is_empty) {
+#line 192
+      for (uint dst = end - 1; dst > src; dst--) {
+
+        if (pages_cached_buf[dst % max_page].x != uint(-1)) {
+          continue;
+        }
+
+        _page_cache_update_page_ref(this_, src % max_page, dst % max_page);
+
+        pages_cached_buf[dst % max_page] = pages_cached_buf[src % max_page];
+        pages_cached_buf[src % max_page] = uint2(~0u);
+
+        _find_first_valid(this_, src, dst);
+      }
+    }
+
+    end = srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_next;
+
+    for (; additional_pages > 0 && src < end; additional_pages--, src++) {
+      _free_cached_page(this_, src % max_page);
+    }
+#line 219
+    srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_start = src;
+    srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_end = end;
+    srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_alloc_count = 0;
+#line 225
+    if (srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_start > max_page) {
+      srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_next -= max_page;
+      srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_start -= max_page;
+      srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_cached_end -= max_page;
+    }
+  }
+#endif
+       eevee_shadow_PageAllocator eevee_shadow_PageAllocator_new_()
+{
+  eevee_shadow_PageAllocator result;
+  result._pad = 0;
+  return result;
+#line 230
+}
+#line 233
+#undef max_page
+
+

@@ -1,0 +1,39 @@
+#line 1 "eevee_common_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 10
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define MAT_TRANSPARENT
+#  define MAT_RAYCAST
+#endif
+#line 24
+#ifdef CREATE_INFO_RES_PASS_eevee_raycast
+CREATE_INFO_RES_PASS_eevee_raycast
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raycast
+CREATE_INFO_RES_BATCH_eevee_raycast
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raycast
+CREATE_INFO_RES_GEOMETRY_eevee_raycast
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raycast
+CREATE_INFO_RES_SHARED_VARS_eevee_raycast
+#endif
+#line 55
+#ifdef CREATE_INFO_RES_PASS_eevee_velocity_iface_info
+CREATE_INFO_RES_PASS_eevee_velocity_iface_info
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_velocity_iface_info
+CREATE_INFO_RES_BATCH_eevee_velocity_iface_info
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_velocity_iface_info
+CREATE_INFO_RES_GEOMETRY_eevee_velocity_iface_info
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_velocity_iface_info
+CREATE_INFO_RES_SHARED_VARS_eevee_velocity_iface_info
+#endif
+
+

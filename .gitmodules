@@ -74,3 +74,24 @@
 	path = corpus/src/_shared/c/imgui/upstream
 	url = https://github.com/ocornut/imgui
 	shallow = true
+[submodule "corpus/src/_shared/c/redis/upstream"]
+	path = corpus/src/_shared/c/redis/upstream
+	url = https://github.com/redis/redis
+[submodule "corpus/src/_shared/c/snappy/upstream"]
+	path = corpus/src/_shared/c/snappy/upstream
+	url = https://github.com/google/snappy
+[submodule "corpus/src/_shared/c/flatbuffers/upstream"]
+	path = corpus/src/_shared/c/flatbuffers/upstream
+	url = https://github.com/google/flatbuffers
+[submodule "corpus/src/_shared/c/mimalloc/upstream"]
+	path = corpus/src/_shared/c/mimalloc/upstream
+	url = https://github.com/microsoft/mimalloc
+[submodule "corpus/src/_shared/c/tmux/upstream"]
+	path = corpus/src/_shared/c/tmux/upstream
+	url = https://github.com/tmux/tmux
+[submodule "corpus/src/_shared/c/tinycc/upstream"]
+	path = corpus/src/_shared/c/tinycc/upstream
+	url = https://github.com/TinyCC/tinycc
+[submodule "corpus/src/_shared/c/ncmpcpp/upstream"]
+	path = corpus/src/_shared/c/ncmpcpp/upstream
+	url = https://github.com/ncmpcpp/ncmpcpp

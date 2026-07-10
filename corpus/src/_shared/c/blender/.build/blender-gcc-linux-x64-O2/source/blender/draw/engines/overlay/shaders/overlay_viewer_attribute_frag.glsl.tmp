@@ -1,0 +1,12 @@
+#line 1 "overlay_viewer_attribute_frag.glsl"
+ 
+#line 7
+FRAGMENT_SHADER_CREATE_INFO(overlay_viewer_attribute_pointcloud)
+
+void main()
+{
+  out_color = final_color;
+  out_color.a *= opacity;
+
+  line_output = float4(0.0f);
+}

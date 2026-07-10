@@ -1,0 +1,20 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_GeomWorld)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_geom_world_infos_)
+BUILTINS(BuiltinBits::CLIP_CONTROL)
+BUILTINS(BuiltinBits::VERTEX_ID)
+ADDITIONAL_INFO(eevee_GeomWorld)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(draw_Model)
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,193 @@
+#line 1 "eevee_depth_of_field_scatter.bsl.hh"
+ 
+#line 17
+#define linearstep(p0, p1, v) (clamp(((v) - (p0)) / abs((p1) - (p0)), 0.0f, 1.0f))
+#line 21
+struct eevee_dof_scatter_VertOut {
+
+           float4 color_and_coc1;
+           float4 color_and_coc2;
+           float4 color_and_coc3;
+           float4 color_and_coc4;
+
+           float distance_scale;
+
+                     float2 rect_uv1;
+                     float2 rect_uv2;
+                     float2 rect_uv3;
+                     float2 rect_uv4;
+};
+#line 21
+                                         eevee_dof_scatter_VertOut eevee_dof_scatter_VertOut_ctor_() {eevee_dof_scatter_VertOut r;r.color_and_coc1=float4(0);r.color_and_coc2=float4(0);r.color_and_coc3=float4(0);r.color_and_coc4=float4(0);r.distance_scale=0.0f;r.rect_uv1=float2(0);r.rect_uv2=float2(0);r.rect_uv3=float2(0);r.rect_uv4=float2(0);return r;}
+#line 36
+#define access_eevee_dof_scatter_Resources_use_bokeh_lut() use_bokeh_lut
+#define access_eevee_dof_scatter_Resources_occlusion_tx() occlusion_tx
+#define access_eevee_dof_scatter_Resources_bokeh_lut_tx() bokeh_lut_tx
+#define access_eevee_dof_scatter_Resources_dof_buf() dof_buf
+#define access_eevee_dof_scatter_Resources_scatter_list_buf() scatter_list_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_scatter_Resources
+CREATE_INFO_RES_PASS_eevee_dof_scatter_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_scatter_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_scatter_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_scatter_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_scatter_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_scatter_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_scatter_Resources
+#endif
+#line 36
+struct eevee_dof_scatter_Resources {
+#line 53
+int _pad;};
+#line 56
+#ifndef GPU_METAL
+eevee_dof_scatter_Resources eevee_dof_scatter_Resources_ctor_();
+eevee_dof_scatter_Resources eevee_dof_scatter_Resources_new_();
+#endif
+#line 36
+                                           eevee_dof_scatter_Resources eevee_dof_scatter_Resources_ctor_() {eevee_dof_scatter_Resources r;r._pad=0;return r;}
+#line 46
+       eevee_dof_scatter_Resources eevee_dof_scatter_Resources_new_()
+{
+  eevee_dof_scatter_Resources result;
+  result._pad = 0;
+  return result;
+#line 44
+}
+#line 47
+
+#if defined(CREATE_INFO_eevee_dof_scatter_Resources)
+#line 47
+
+#if defined(ENTRY_POINT_eevee_dof_scatter_vert_main)
+#line 47
+
+void eevee_dof_scatter_vert_main(
+#line 52
+                                                )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 53
+  eevee_dof_scatter_Resources srt = eevee_dof_scatter_Resources_ctor_();
+  if (uint(gl_InstanceID) >= srt_access(eevee_dof_scatter_Resources, dof_buf).scatter_max_rect) {
+
+    gl_Position = float4(0.0f);
+    return;
+  }
+
+  ScatterRect rect = srt_access(eevee_dof_scatter_Resources, scatter_list_buf)[gl_InstanceID];
+
+  eevee_dof_scatter_VertOut_color_and_coc1 = rect.color_and_coc[0];
+  eevee_dof_scatter_VertOut_color_and_coc2 = rect.color_and_coc[1];
+  eevee_dof_scatter_VertOut_color_and_coc3 = rect.color_and_coc[2];
+  eevee_dof_scatter_VertOut_color_and_coc4 = rect.color_and_coc[3];
+
+  float2 uv = float2(gl_VertexID & 1, gl_VertexID >> 1) * 2.0f - 1.0f;
+  uv = uv * rect.half_extent;
+
+  gl_Position = float4(uv + rect.offset, 0.0f, 1.0f);
+
+  gl_Position.xy = (gl_Position.xy / float2(textureSize(srt_access(eevee_dof_scatter_Resources, occlusion_tx), 0).xy)) * 2.0f - 1.0f;
+
+  if (srt_access(eevee_dof_scatter_Resources, use_bokeh_lut)) {
+
+    eevee_dof_scatter_VertOut_distance_scale = (float(DOF_BOKEH_LUT_SIZE) / float(DOF_BOKEH_LUT_SIZE - 1));
+    float2 uv_div = 1.0f / (eevee_dof_scatter_VertOut_distance_scale * abs(rect.half_extent));
+    eevee_dof_scatter_VertOut_rect_uv1 = ((uv + quad_offsets[0]) * uv_div) * 0.5f + 0.5f;
+    eevee_dof_scatter_VertOut_rect_uv2 = ((uv + quad_offsets[1]) * uv_div) * 0.5f + 0.5f;
+    eevee_dof_scatter_VertOut_rect_uv3 = ((uv + quad_offsets[2]) * uv_div) * 0.5f + 0.5f;
+    eevee_dof_scatter_VertOut_rect_uv4 = ((uv + quad_offsets[3]) * uv_div) * 0.5f + 0.5f;
+
+    eevee_dof_scatter_VertOut_distance_scale *= reduce_max(abs(rect.half_extent));
+  }
+  else {
+    eevee_dof_scatter_VertOut_distance_scale = 1.0f;
+    eevee_dof_scatter_VertOut_rect_uv1 = uv + quad_offsets[0];
+    eevee_dof_scatter_VertOut_rect_uv2 = uv + quad_offsets[1];
+    eevee_dof_scatter_VertOut_rect_uv3 = uv + quad_offsets[2];
+    eevee_dof_scatter_VertOut_rect_uv4 = uv + quad_offsets[3];
+  }
+
+#endif
+#line 92
+}
+#endif
+#endif
+#line 94
+struct eevee_dof_scatter_FragOut {
+                    float4 color;
+};
+#line 94
+                                         eevee_dof_scatter_FragOut eevee_dof_scatter_FragOut_ctor_() {eevee_dof_scatter_FragOut r;r.color=float4(0);return r;}
+#line 98
+
+#if defined(CREATE_INFO_eevee_dof_scatter_Resources)
+#line 98
+
+#if defined(ENTRY_POINT_eevee_dof_scatter_frag_main)
+#line 98
+
+void eevee_dof_scatter_frag_main(
+#line 102
+                                                          )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 103
+  eevee_dof_scatter_Resources srt = eevee_dof_scatter_Resources_ctor_();
+  float4 coc4 = float4(eevee_dof_scatter_VertOut_color_and_coc1.w,
+                       eevee_dof_scatter_VertOut_color_and_coc2.w,
+                       eevee_dof_scatter_VertOut_color_and_coc3.w,
+                       eevee_dof_scatter_VertOut_color_and_coc4.w);
+  float4 shapes;
+  if (srt_access(eevee_dof_scatter_Resources, use_bokeh_lut)) {
+    shapes = float4(texture(srt_access(eevee_dof_scatter_Resources, bokeh_lut_tx), eevee_dof_scatter_VertOut_rect_uv1).r,
+                    texture(srt_access(eevee_dof_scatter_Resources, bokeh_lut_tx), eevee_dof_scatter_VertOut_rect_uv2).r,
+                    texture(srt_access(eevee_dof_scatter_Resources, bokeh_lut_tx), eevee_dof_scatter_VertOut_rect_uv3).r,
+                    texture(srt_access(eevee_dof_scatter_Resources, bokeh_lut_tx), eevee_dof_scatter_VertOut_rect_uv4).r);
+  }
+  else {
+    shapes = float4(length(eevee_dof_scatter_VertOut_rect_uv1),
+                    length(eevee_dof_scatter_VertOut_rect_uv2),
+                    length(eevee_dof_scatter_VertOut_rect_uv3),
+                    length(eevee_dof_scatter_VertOut_rect_uv4));
+  }
+  shapes *= eevee_dof_scatter_VertOut_distance_scale;
+
+  shapes -= coc4;
+
+  shapes = saturate(1.0f - linearstep(-0.8f, 0.8f, shapes));
+
+  if (reduce_max(shapes) == 0.0f) {
+    gpu_discard_fragment();
+    return;
+  }
+
+  if (!no_scatter_occlusion) {
+
+    float2 uv = gl_FragCoord.xy / float2(textureSize(srt_access(eevee_dof_scatter_Resources, occlusion_tx), 0).xy);
+    float2 occlusion_data = texture(srt_access(eevee_dof_scatter_Resources, occlusion_tx), uv).rg;
+
+    constexpr float correction_fac = 1.0f - DOF_FAST_GATHER_COC_ERROR;
+
+    float mean = occlusion_data.x;
+    float variance = occlusion_data.y;
+    shapes *= variance * safe_rcp(variance + square(max(coc4 * correction_fac - mean, 0.0f)));
+  }
+
+  eevee_dof_scatter_FragOut_color = (eevee_dof_scatter_VertOut_color_and_coc1 * shapes[0] + eevee_dof_scatter_VertOut_color_and_coc2 * shapes[1] +
+                    eevee_dof_scatter_VertOut_color_and_coc3 * shapes[2] + eevee_dof_scatter_VertOut_color_and_coc4 * shapes[3]);
+
+  eevee_dof_scatter_FragOut_color.a = 0.0f;
+
+  if (debug_scatter_perf) {
+    eevee_dof_scatter_FragOut_color.rgb = average(eevee_dof_scatter_FragOut_color.rgb) * float3(1.0f, 0.0f, 0.0f);
+  }
+
+#endif
+#line 152
+}
+#endif
+#endif
+#line 158

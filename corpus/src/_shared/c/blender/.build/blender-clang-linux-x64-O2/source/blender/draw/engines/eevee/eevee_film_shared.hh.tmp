@@ -1,0 +1,154 @@
+#line 1 "eevee_film_shared.hh"
+ 
+#line 17
+#define FILM_PRECOMP_SAMPLE_MAX 16
+#line 20
+constant static constexpr uint32_t FILM_WEIGHT_LAYER_ACCUMULATION = 0u;
+constant static constexpr uint32_t FILM_WEIGHT_LAYER_DISTANCE = FILM_WEIGHT_LAYER_ACCUMULATION + 1u;
+
+#define eFilmWeightLayerIndex uint32_t
+#line 19
+
+#define eFilmWeightLayerIndex_host_shared_ eFilmWeightLayerIndex
+#line 19
+
+eFilmWeightLayerIndex eFilmWeightLayerIndex_ctor_() { return eFilmWeightLayerIndex(0); }
+#line 25
+constant static constexpr uint32_t PASS_STORAGE_COLOR = 0u;
+constant static constexpr uint32_t PASS_STORAGE_VALUE = PASS_STORAGE_COLOR + 1u;
+constant static constexpr uint32_t PASS_STORAGE_CRYPTOMATTE = PASS_STORAGE_VALUE + 1u;
+
+#define ePassStorageType uint32_t
+#line 24
+
+#define ePassStorageType_host_shared_ ePassStorageType
+#line 24
+
+ePassStorageType ePassStorageType_ctor_() { return ePassStorageType(0); }
+#line 31
+constant static constexpr uint32_t PASS_CATEGORY_DATA = 1u << 0;
+constant static constexpr uint32_t PASS_CATEGORY_COLOR_1 = 1u << 1;
+constant static constexpr uint32_t PASS_CATEGORY_COLOR_2 = 1u << 2;
+constant static constexpr uint32_t PASS_CATEGORY_COLOR_3 = 1u << 3;
+constant static constexpr uint32_t PASS_CATEGORY_AOV = 1u << 4;
+constant static constexpr uint32_t PASS_CATEGORY_CRYPTOMATTE = 1u << 5;
+
+#define PassCategory uint32_t
+#line 30
+
+#define PassCategory_host_shared_ PassCategory
+#line 30
+
+PassCategory PassCategory_ctor_() { return PassCategory(0); }
+#line 38
+ENUM_OPERATORS(PassCategory)
+#line 41
+#define FilmSample_host_shared_ FilmSample
+#define FilmSample_host_shared_uniform_ FilmSample
+#line 40
+struct                 FilmSample {
+  int2 texel;
+  float weight;
+
+  float weight_sum_inv;
+};
+#line 40
+                                          FilmSample FilmSample_ctor_() {FilmSample r;r.texel=int2(0);r.weight=0.0f;r.weight_sum_inv=0.0f;return r;}
+#line 48
+#define FilmData_host_shared_ FilmData
+#define FilmData_host_shared_uniform_ FilmData
+#line 47
+struct                 FilmData {
+
+  int2 extent;
+
+  int2 offset;
+
+  int2 render_extent;
+#line 61
+  float2 subpixel_offset;
+
+  float2 extent_inv;
+#line 68
+  int overscan;
+
+  bool32_t use_history;
+
+  float background_opacity;
+
+  int color_len;
+  int value_len;
+
+  int mist_id;
+  int normal_id;
+  int position_id;
+  int vector_id;
+  int diffuse_light_id;
+  int diffuse_color_id;
+  int specular_light_id;
+  int specular_color_id;
+  int volume_light_id;
+  int emission_id;
+  int environment_id;
+  int shadow_id;
+  int ambient_occlusion_id;
+  int transparent_id;
+
+  int depth_id;
+  int combined_id;
+
+  int display_id;
+
+       ePassStorageType display_storage_type;
+
+  int aov_color_id;
+  int aov_color_len;
+  int aov_value_id;
+  int aov_value_len;
+
+  int cryptomatte_object_id;
+  int cryptomatte_asset_id;
+  int cryptomatte_material_id;
+
+  int cryptomatte_samples_len;
+
+  float mist_scale;
+  float mist_bias;
+  float mist_exponent;
+
+  float exposure_scale;
+
+  int scaling_factor;
+
+  float texture_lod_bias;
+
+  float filter_radius;
+
+  int samples_len;
+
+  float samples_weight_total;
+  int _pad0;int _pad1;
+         FilmSample samples[FILM_PRECOMP_SAMPLE_MAX];
+};
+#line 47
+                                        FilmData FilmData_ctor_() {FilmData r;r.extent=int2(0);r.offset=int2(0);r.render_extent=int2(0);r.subpixel_offset=float2(0);r.extent_inv=float2(0);r.overscan=0;r.use_history=bool32_t(0);r.background_opacity=0.0f;r.color_len=0;r.value_len=0;r.mist_id=0;r.normal_id=0;r.position_id=0;r.vector_id=0;r.diffuse_light_id=0;r.diffuse_color_id=0;r.specular_light_id=0;r.specular_color_id=0;r.volume_light_id=0;r.emission_id=0;r.environment_id=0;r.shadow_id=0;r.ambient_occlusion_id=0;r.transparent_id=0;r.depth_id=0;r.combined_id=0;r.display_id=0;r.display_storage_type=ePassStorageType_ctor_();r.aov_color_id=0;r.aov_color_len=0;r.aov_value_id=0;r.aov_value_len=0;r.cryptomatte_object_id=0;r.cryptomatte_asset_id=0;r.cryptomatte_material_id=0;r.cryptomatte_samples_len=0;r.mist_scale=0.0f;r.mist_bias=0.0f;r.mist_exponent=0.0f;r.exposure_scale=0.0f;r.scaling_factor=0;r.texture_lod_bias=0.0f;r.filter_radius=0.0f;r.samples_len=0;r.samples_weight_total=0.0f;r._pad0=0;r._pad1=0;for(int i=0;i < FILM_PRECOMP_SAMPLE_MAX;i++){r.samples[i]=FilmSample_ctor_();}return r;}
+#line 129
+float film_filter_weight(float filter_radius, float sample_distance_sqr)
+{
+#if 1
+
+  float r = sample_distance_sqr / (filter_radius * filter_radius);
+  const float sigma = 0.284f;
+  const float fac = -0.5f / (sigma * sigma);
+  float weight = expf(fac * r);
+#else
+
+  float r = M_TAU * saturate(0.5 + sqrtf(sample_distance_sqr) / (2.0 * filter_radius));
+  float weight = 0.35875 - 0.48829 * cosf(r) + 0.14128 * cosf(2.0 * r) - 0.01168 * cosf(3.0 * r);
+#endif
+  return weight;
+}
+
+
+
+

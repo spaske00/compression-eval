@@ -1,0 +1,91 @@
+#line 1 "eevee_surf_occupancy.bsl.hh"
+ 
+#line 37
+FRAGMENT_SHADER_CREATE_INFO(eevee_geom_iface_info)
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+#line 46
+#define access_eevee_SurfOccupancy_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_SurfOccupancy_hit_depth_img() hit_depth_img
+#define access_eevee_SurfOccupancy_hit_count_img() hit_count_img
+#define access_eevee_SurfOccupancy_occupancy_img() occupancy_img
+#define access_eevee_SurfOccupancy_use_fast_method() use_fast_method
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfOccupancy
+CREATE_INFO_RES_PASS_eevee_SurfOccupancy
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfOccupancy
+CREATE_INFO_RES_BATCH_eevee_SurfOccupancy
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfOccupancy
+CREATE_INFO_RES_GEOMETRY_eevee_SurfOccupancy
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfOccupancy
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfOccupancy
+#endif
+#line 46
+struct eevee_SurfOccupancy {
+#line 62
+int _pad;};
+#line 67
+#ifndef GPU_METAL
+eevee_SurfOccupancy eevee_SurfOccupancy_ctor_();
+eevee_SurfOccupancy eevee_SurfOccupancy_new_();
+#endif
+#line 46
+                                   eevee_SurfOccupancy eevee_SurfOccupancy_ctor_() {eevee_SurfOccupancy r;r._pad=0;return r;}
+#line 55
+       eevee_SurfOccupancy eevee_SurfOccupancy_new_()
+{
+  eevee_SurfOccupancy result;
+  result._pad = 0;
+  return result;
+#line 53
+}
+#line 58
+
+#if defined(CREATE_INFO_eevee_SurfOccupancy) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Sampling)
+#line 58
+
+#if defined(ENTRY_POINT_eevee_surf_occupancy)
+#line 58
+
+void eevee_surf_occupancy(
+#line 64
+                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 65
+  eevee_SurfOccupancy srt = eevee_SurfOccupancy_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_();
+  const ViewMatrices view = _get(views, 0);
+  int2 texel = int2(gl_FragCoord.xy);
+  float vPz = dot(_forward(view), interp.P) - dot(_forward(view), _position(view));
+
+  float offset = _rng_1D_get(sampling, SAMPLING_VOLUME_W);
+  float jitter = volume_froxel_jitter(texel, offset) * srt_access(eevee_Uniform, uniform_buf).volumes.inv_tex_size.z;
+  float volume_z = view_z_to_volume_z(uni, view, vPz) + jitter;
+
+  if (srt_access(eevee_SurfOccupancy, use_fast_method)) {
+    occupancy_Bits occupancy_bits = occupancy_bits_from_depth(
+        volume_z, srt_access(eevee_Uniform, uniform_buf).volumes.tex_size.z);
+    for (int i = 0; i < imageSize(srt_access(eevee_SurfOccupancy, occupancy_img)).z; i++) {
+#line 81
+      occupancy_bits.bits[i] = ~occupancy_bits.bits[i];
+      if (occupancy_bits.bits[i] != 0u) {
+        imageAtomicXor(srt_access(eevee_SurfOccupancy, occupancy_img), int3(texel, i), occupancy_bits.bits[i]);
+      }
+    }
+  }
+  else {
+    if (volume_z > 0.0f) {
+      uint hit_id = imageAtomicAdd(srt_access(eevee_SurfOccupancy, hit_count_img), texel, 1u);
+      if (hit_id < VOLUME_HIT_DEPTH_MAX) {
+        float value = gl_FrontFacing ? volume_z : -volume_z;
+        imageStore(srt_access(eevee_SurfOccupancy, hit_depth_img), int3(texel, int(hit_id)), float4(value));
+      }
+    }
+  }
+
+#endif
+#line 96
+}
+#endif
+#endif

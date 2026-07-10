@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_compositor_color_to_luminance.glsl"
+ 
+#line 8
+void color_to_luminance(float4 color, float3 luminance_coefficients, _ref(float ,result))
+{
+  result = get_luminance(color.rgb, luminance_coefficients);
+}

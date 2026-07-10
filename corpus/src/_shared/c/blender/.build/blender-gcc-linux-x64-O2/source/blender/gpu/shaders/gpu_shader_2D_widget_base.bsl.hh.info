@@ -1,0 +1,69 @@
+#pragma once
+
+
+#define MAX_PARAM 12
+#define MAX_INSTANCE 6
+
+
+
+GPU_SHADER_CREATE_INFO(builtin_widget_FragOut)
+FRAGMENT_OUT(0, float4, builtin_widget_FragOut_color)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(builtin_widget_VertOut_t)
+FLAT(float, builtin_widget_VertOut_discard_fac)
+FLAT(float, builtin_widget_VertOut_line_width)
+FLAT(float2, builtin_widget_VertOut_out_rect_size)
+FLAT(float4, builtin_widget_VertOut_border_color)
+FLAT(float4, builtin_widget_VertOut_emboss_color)
+FLAT(float4, builtin_widget_VertOut_out_round_corners)
+NO_PERSPECTIVE(float, builtin_widget_VertOut_but_co)
+NO_PERSPECTIVE(float2, builtin_widget_VertOut_uv_interp)
+NO_PERSPECTIVE(float4, builtin_widget_VertOut_inner_color)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(builtin_widget_Resources)
+ADDITIONAL_INFO(gpu_srgb_to_framebuffer_space)
+PUSH_CONSTANT(float4x4, ModelViewProjectionMatrix)
+PUSH_CONSTANT(float3, checkerColorAndSize)
+.noop()
+
+PUSH_CONSTANT_ARRAY(float4, parameters_inst, MAX_PARAM * MAX_INSTANCE)
+PUSH_CONSTANT_ARRAY(float4, parameters, MAX_PARAM)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(builtin_widget_vert_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+BUILTINS(BuiltinBits::INSTANCE_ID)
+ADDITIONAL_INFO(builtin_widget_Resources)
+VERTEX_OUT(builtin_widget_VertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(builtin_widget_frag_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(builtin_widget_FragOut)
+ADDITIONAL_INFO(builtin_widget_Resources)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(gpu_shader_2D_widget_base)
+GRAPHIC_SOURCE("gpu_shader_2D_widget_base.bsl.hh")
+VERTEX_FUNCTION("builtin_widget_vert")
+FRAGMENT_FUNCTION("builtin_widget_frag")
+ADDITIONAL_INFO(builtin_widget_vert_infos_)
+ADDITIONAL_INFO(builtin_widget_frag_infos_)
+COMPILATION_CONSTANT(bool, instanced, false)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(gpu_shader_2D_widget_base_inst)
+GRAPHIC_SOURCE("gpu_shader_2D_widget_base.bsl.hh")
+VERTEX_FUNCTION("builtin_widget_vert")
+FRAGMENT_FUNCTION("builtin_widget_frag")
+ADDITIONAL_INFO(builtin_widget_vert_infos_)
+ADDITIONAL_INFO(builtin_widget_frag_infos_)
+COMPILATION_CONSTANT(bool, instanced, true)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,38 @@
+#line 1 "draw_debug_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#line 10
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define DRW_DEBUG_DRAW
+#endif
+#line 25
+#ifdef CREATE_INFO_RES_PASS_draw_debug_draw
+CREATE_INFO_RES_PASS_draw_debug_draw
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_debug_draw
+CREATE_INFO_RES_BATCH_draw_debug_draw
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_debug_draw
+CREATE_INFO_RES_GEOMETRY_draw_debug_draw
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_debug_draw
+CREATE_INFO_RES_SHARED_VARS_draw_debug_draw
+#endif
+#line 44
+#ifdef CREATE_INFO_RES_PASS_draw_debug_draw_display
+CREATE_INFO_RES_PASS_draw_debug_draw_display
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_debug_draw_display
+CREATE_INFO_RES_BATCH_draw_debug_draw_display
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_debug_draw_display
+CREATE_INFO_RES_GEOMETRY_draw_debug_draw_display
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_debug_draw_display
+CREATE_INFO_RES_SHARED_VARS_draw_debug_draw_display
+#endif
+
+

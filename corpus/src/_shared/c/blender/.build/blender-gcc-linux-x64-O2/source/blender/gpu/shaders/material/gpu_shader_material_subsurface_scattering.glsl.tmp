@@ -1,0 +1,27 @@
+#line 1 "gpu_shader_material_subsurface_scattering.glsl"
+ 
+#line 8
+void node_subsurface_scattering(float4 color,
+                                float scale,
+                                float3 radius,
+                                float ior,
+                                float roughness,
+                                float anisotropy,
+                                float3 N,
+                                float weight,
+                                float random_walk_radius_scale,
+                                _ref(Closure ,result))
+{
+  color = max(color, float4(0.0f));
+  ior = max(ior, 1e-5f);
+
+  N = safe_normalize(N);
+
+  ClosureSubsurface sss_data;
+  sss_data.weight = weight;
+  sss_data.color = color.rgb;
+  sss_data.N = N;
+  sss_data.sss_radius = max(radius * scale * random_walk_radius_scale, float3(0.0f));
+
+  result = closure_eval(sss_data);
+}

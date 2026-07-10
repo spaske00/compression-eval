@@ -1,0 +1,13 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_Uniform)
+.uniform_buf(UNIFORM_BUF_SLOT, "UniformData", "uniform_buf", Frequency::PASS)
+.uniform_buf(PIPELINE_BUF_SLOT, "PipelineInfoData", "pipeline_buf", Frequency::PASS)
+.uniform_buf(RAYTRACE_BUF_SLOT, "RayTraceData", "raytrace_buf", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

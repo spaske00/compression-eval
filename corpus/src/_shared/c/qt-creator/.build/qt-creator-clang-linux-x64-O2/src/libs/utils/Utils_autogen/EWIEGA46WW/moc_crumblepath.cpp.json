@@ -1,0 +1,104 @@
+{
+    "classes": [
+        {
+            "className": "CrumblePath",
+            "lineNumber": 15,
+            "object": true,
+            "qualifiedClassName": "Utils::CrumblePath",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "data",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "elementClicked",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "data",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "pushElement",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "isCloned": true,
+                    "name": "pushElement",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "data",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "addChild",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "isCloned": true,
+                    "name": "addChild",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "popElement",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "clear",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "crumblepath.h",
+    "outputRevision": 68
+}

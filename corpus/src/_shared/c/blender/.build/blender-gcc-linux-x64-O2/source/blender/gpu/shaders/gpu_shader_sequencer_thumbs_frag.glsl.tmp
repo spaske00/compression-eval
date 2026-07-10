@@ -1,0 +1,31 @@
+#line 1 "gpu_shader_sequencer_thumbs_frag.glsl"
+ 
+#line 9
+FRAGMENT_SHADER_CREATE_INFO(gpu_shader_sequencer_thumbs)
+
+void main()
+{
+  SeqStripThumbData thumb = thumb_data[thumb_id];
+  float2 pos1, pos2, size, center, pos;
+  float radius = 0.0f;
+  strip_box(thumb.left,
+            thumb.right,
+            thumb.bottom,
+            thumb.top,
+            pos_interp,
+            pos1,
+            pos2,
+            size,
+            center,
+            pos,
+            radius);
+#line 29
+  float4 col = texture(image, texCoord_interp) * thumb.tint_color;
+#line 32
+  float sdf = sdf_rounded_box(pos - center, size, radius);
+  if (sdf > 0.0f) {
+    col = float4(0.0f);
+  }
+
+  fragColor = col;
+}

@@ -1,0 +1,39 @@
+#pragma once
+
+
+#define closure_base_copy(cl, in_cl) \
+  cl.weight = in_cl.weight; \
+  cl.color = in_cl.color; \
+  cl.N = in_cl.N; \
+  cl.type = closure_type_get(in_cl);
+
+                   
+#define CHOOSE_MIN_WEIGHT_CLOSURE_BIN(a, b) \
+  if (g_closure_reflection_bin) { \
+    closure_select(g_closure_bins[b], g_closure_rand[b], cl); \
+  } \
+  else { \
+    closure_select(g_closure_bins[a], g_closure_rand[a], cl); \
+  } \
+  g_closure_reflection_bin = !g_closure_reflection_bin;
+
+#undef CHOOSE_MIN_WEIGHT_CLOSURE_BIN
+
+  #    define GRID_ATTRIBUTES_LOAD_POST
+#undef GRID_ATTRIBUTES_LOAD_POST
+
+         
+
+                                                                          
+                            
+  
+                                                                                               
+                                                                                          
+  
+        
+
+
+
+
+
+

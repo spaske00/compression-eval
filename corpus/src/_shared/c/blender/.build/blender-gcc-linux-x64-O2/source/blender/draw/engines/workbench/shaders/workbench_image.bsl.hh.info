@@ -1,0 +1,16 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(workbench_color_Texture)
+.sampler(WB_TEXTURE_SLOT, ImageType::sampler2D, "imageTexture", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(WB_TILE_ARRAY_SLOT, ImageType::sampler2DArray, "imageTileArray", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(WB_TILE_DATA_SLOT, ImageType::sampler1DArray, "imageTileData", Frequency::PASS, GPUSamplerState::internal_sampler())
+PUSH_CONSTANT(bool, is_image_tile)
+PUSH_CONSTANT(bool, image_premult)
+PUSH_CONSTANT(float, image_transparency_cutoff)
+GPU_SHADER_CREATE_END()
+

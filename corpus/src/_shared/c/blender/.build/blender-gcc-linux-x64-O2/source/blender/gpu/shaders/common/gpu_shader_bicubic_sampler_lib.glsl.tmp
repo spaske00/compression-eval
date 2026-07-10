@@ -1,0 +1,68 @@
+#line 1 "gpu_shader_bicubic_sampler_lib.glsl"
+ 
+#line 10
+void cubic_bspline_coefficients(float2 f, _ref(float2 ,w0), _ref(float2 ,w1), _ref(float2 ,w2), _ref(float2 ,w3))
+{
+  float2 f2 = f * f;
+  float2 f3 = f2 * f;
+
+  w3 = f3 / 6.0f;
+  w0 = -w3 + f2 * 0.5f - f * 0.5f + 1.0f / 6.0f;
+  w1 = f3 * 0.5f - f2 * 1.0f + 2.0f / 3.0f;
+  w2 = 1.0f - w0 - w1 - w3;
+}
+#line 24
+float4 texture_bicubic(sampler2D sampler_2d, float2 coordinates)
+{
+  float2 texture_size = float2(textureSize(sampler_2d, 0).xy);
+  coordinates.xy *= texture_size;
+
+  float2 w0, w1, w2, w3;
+  float2 texel_center = floor(coordinates.xy - 0.5f) + 0.5f;
+  cubic_bspline_coefficients(coordinates.xy - texel_center, w0, w1, w2, w3);
+
+#if 1
+  float2 s0 = w0 + w1;
+  float2 s1 = w2 + w3;
+
+  float2 f0 = w1 / (w0 + w1);
+  float2 f1 = w3 / (w2 + w3);
+
+  float4 sampling_coordinates;
+  sampling_coordinates.xy = texel_center - 1.0f + f0;
+  sampling_coordinates.zw = texel_center + 1.0f + f1;
+
+  sampling_coordinates /= texture_size.xyxy;
+
+  float4 sampled_color = textureLod(sampler_2d, sampling_coordinates.xy, 0.0f) * s0.x * s0.y;
+  sampled_color += textureLod(sampler_2d, sampling_coordinates.zy, 0.0f) * s1.x * s0.y;
+  sampled_color += textureLod(sampler_2d, sampling_coordinates.xw, 0.0f) * s0.x * s1.y;
+  sampled_color += textureLod(sampler_2d, sampling_coordinates.zw, 0.0f) * s1.x * s1.y;
+
+  return sampled_color;
+
+#else
+  float4 color = texelFetch(sampler_2d, int2(texel_center + float2(-1.0f, -1.0f)), 0) * w0.x *
+                 w0.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(0.0f, -1.0f)), 0) * w1.x * w0.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(1.0f, -1.0f)), 0) * w2.x * w0.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(2.0f, -1.0f)), 0) * w3.x * w0.y;
+
+  color += texelFetch(sampler_2d, int2(texel_center + float2(-1.0f, 0.0f)), 0) * w0.x * w1.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(0.0f, 0.0f)), 0) * w1.x * w1.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(1.0f, 0.0f)), 0) * w2.x * w1.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(2.0f, 0.0f)), 0) * w3.x * w1.y;
+
+  color += texelFetch(sampler_2d, int2(texel_center + float2(-1.0f, 1.0f)), 0) * w0.x * w2.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(0.0f, 1.0f)), 0) * w1.x * w2.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(1.0f, 1.0f)), 0) * w2.x * w2.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(2.0f, 1.0f)), 0) * w3.x * w2.y;
+
+  color += texelFetch(sampler_2d, int2(texel_center + float2(-1.0f, 2.0f)), 0) * w0.x * w3.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(0.0f, 2.0f)), 0) * w1.x * w3.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(1.0f, 2.0f)), 0) * w2.x * w3.y;
+  color += texelFetch(sampler_2d, int2(texel_center + float2(2.0f, 2.0f)), 0) * w3.x * w3.y;
+
+  return color;
+#endif
+}

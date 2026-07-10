@@ -1,0 +1,10 @@
+#line 1 "gpu_shader_material_light_falloff.glsl"
+ 
+#line 6
+void node_light_falloff(
+    float strength, float tsmooth, _ref(float ,quadratic), _ref(float ,linear), _ref(float ,falloff_constant))
+{
+  quadratic = strength;
+  linear = strength;
+  falloff_constant = strength;
+}

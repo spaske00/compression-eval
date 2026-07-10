@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "Aggregate",
+            "lineNumber": 16,
+            "object": true,
+            "qualifiedClassName": "Aggregation::Aggregate",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "aggregate.h",
+    "outputRevision": 68
+}

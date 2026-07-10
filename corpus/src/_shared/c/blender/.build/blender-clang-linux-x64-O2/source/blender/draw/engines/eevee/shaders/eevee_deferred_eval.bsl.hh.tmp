@@ -1,0 +1,907 @@
+#line 1 "eevee_deferred_eval.bsl.hh"
+ 
+#line 27
+struct eevee_deferred_VertOut {
+             float2 screen_uv;
+};
+#line 27
+                                      eevee_deferred_VertOut eevee_deferred_VertOut_ctor_() {eevee_deferred_VertOut r;r.screen_uv=float2(0);return r;}
+#line 31
+
+#if defined(ENTRY_POINT_eevee_deferred_fullscreen_vert)
+#line 31
+
+void eevee_deferred_fullscreen_vert(
+
+                                                          )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 36
+  fullscreen_vertex(gl_VertexID, gl_Position, eevee_deferred_VertOut_screen_uv);
+  gl_Position = reverse_z_transform(gl_Position);
+
+#endif
+#line 38
+}
+#endif
+struct eevee_deferred_FragOut {
+                    float4 radiance;
+};
+#line 40
+                                      eevee_deferred_FragOut eevee_deferred_FragOut_ctor_() {eevee_deferred_FragOut r;r.radiance=float4(0);return r;}
+#line 56
+
+#if defined(CREATE_INFO_eevee_RenderPassOutput) && defined(CREATE_INFO_eevee_Uniform)
+#line 56
+
+#if defined(ENTRY_POINT_eevee_deferred_aov_clear_frag)
+#line 56
+
+void eevee_deferred_aov_clear_frag(
+
+                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 60
+  eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+  _clear_aovs(render_passes, uni, int2(gl_FragCoord.xy));
+
+#endif
+#line 62
+}
+#endif
+#endif
+#line 72
+#define access_eevee_deferred_LightEval_use_split_indirect() use_split_indirect
+#define access_eevee_deferred_LightEval_use_lightprobe_eval() use_lightprobe_eval
+#define access_eevee_deferred_LightEval_use_transmission() use_transmission
+#define access_eevee_deferred_LightEval_render_pass_shadow_id() render_pass_shadow_id
+#define access_eevee_deferred_LightEval_shadow_ray_count() shadow_ray_count
+#define access_eevee_deferred_LightEval_shadow_ray_step_count() shadow_ray_step_count
+#define access_eevee_deferred_LightEval_direct_radiance_1_img() direct_radiance_1_img
+#define access_eevee_deferred_LightEval_direct_radiance_2_img() direct_radiance_2_img
+#define access_eevee_deferred_LightEval_direct_radiance_3_img() direct_radiance_3_img
+#define access_eevee_deferred_LightEval_indirect_radiance_1_img() indirect_radiance_1_img
+#define access_eevee_deferred_LightEval_indirect_radiance_2_img() indirect_radiance_2_img
+#define access_eevee_deferred_LightEval_indirect_radiance_3_img() indirect_radiance_3_img
+#ifdef CREATE_INFO_RES_PASS_eevee_deferred_LightEval
+CREATE_INFO_RES_PASS_eevee_deferred_LightEval
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_deferred_LightEval
+CREATE_INFO_RES_BATCH_eevee_deferred_LightEval
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_deferred_LightEval
+CREATE_INFO_RES_GEOMETRY_eevee_deferred_LightEval
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_deferred_LightEval
+CREATE_INFO_RES_SHARED_VARS_eevee_deferred_LightEval
+#endif
+#line 72
+struct eevee_deferred_LightEval {
+#line 125
+int _pad;};
+#line 130
+#ifndef GPU_METAL
+eevee_deferred_LightEval eevee_deferred_LightEval_ctor_();
+void _write_radiance_direct(eevee_deferred_LightEval  this_, uchar layer_index, int2 texel, float3 radiance);
+void _write_radiance_indirect(eevee_deferred_LightEval  this_, uchar layer_index, int2 texel, float3 radiance);
+eevee_deferred_LightEval eevee_deferred_LightEval_new_();
+#endif
+#line 72
+                                        eevee_deferred_LightEval eevee_deferred_LightEval_ctor_() {eevee_deferred_LightEval r;r._pad=0;return r;}
+#line 89
+
+#if defined(CREATE_INFO_eevee_deferred_LightEval)
+#line 89
+  void _write_radiance_direct(eevee_deferred_LightEval  this_, uchar layer_index, int2 texel, float3 radiance)
+  {
+
+    uint data = rgb9e5_encode(radiance);
+    if (layer_index == 0u) {
+      imageStore(srt_access(eevee_deferred_LightEval, direct_radiance_1_img), texel, uint4(data));
+    }
+    else if (layer_index == 1u) {
+      imageStore(srt_access(eevee_deferred_LightEval, direct_radiance_2_img), texel, uint4(data));
+    }
+    else if (layer_index == 2u) {
+      imageStore(srt_access(eevee_deferred_LightEval, direct_radiance_3_img), texel, uint4(data));
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_deferred_LightEval)
+#line 104
+  void _write_radiance_indirect(eevee_deferred_LightEval  this_, uchar layer_index, int2 texel, float3 radiance)
+  {
+
+    if (layer_index == 0u) {
+      imageStore(srt_access(eevee_deferred_LightEval, indirect_radiance_1_img), texel, float4(radiance, 1.0f));
+    }
+    else if (layer_index == 1u) {
+      imageStore(srt_access(eevee_deferred_LightEval, indirect_radiance_2_img), texel, float4(radiance, 1.0f));
+    }
+    else if (layer_index == 2u) {
+      imageStore(srt_access(eevee_deferred_LightEval, indirect_radiance_3_img), texel, float4(radiance, 1.0f));
+    }
+  }
+#endif
+       eevee_deferred_LightEval eevee_deferred_LightEval_new_()
+{
+  eevee_deferred_LightEval result;
+  result._pad = 0;
+  return result;
+#line 116
+}
+#line 121
+
+#if defined(CREATE_INFO_eevee_deferred_LightEval) && defined(CREATE_INFO_eevee_LightEvalIterator) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_RenderPassOutput)
+#line 121
+
+#if defined(ENTRY_POINT_eevee_deferred_light_eval_frag)
+#line 121
+
+void eevee_deferred_light_eval_frag(
+#line 133
+                                                              )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 134
+  eevee_deferred_LightEval srt = eevee_deferred_LightEval_ctor_(); eevee_LightEvalIterator lights = eevee_LightEvalIterator_ctor_(); draw_View views = draw_View_ctor_(); draw_Infos infos = draw_Infos_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_(); eevee_RenderPassOutput render_passes = eevee_RenderPassOutput_ctor_();
+#line 137
+  const int2 texel = int2(gl_FragCoord.xy);
+#line 141
+  constexpr float bias = 2.4e-7f;
+
+  const float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r - bias;
+  const gbuffer_Layers gbuf = _read_layers(reader, texel);
+  const Thickness thickness = _read_thickness(reader, gbuf.header, texel);
+  const uchar closure_count = _closure_len(gbuf.header);
+
+  const ViewMatrices view = _get(views, 0);
+
+  const float3 P = _point_screen_to_world(view, float3(eevee_deferred_VertOut_screen_uv, depth));
+  const float3 Ng = _geometry_normal(gbuf.header, _surface_N(gbuf));
+  const float3 V = _world_incident_vector(view, P);
+  const float vPz = dot(_forward(view), P) - dot(_forward(view), _position(view));
+
+  eevee_light_EvalCtxTfalse ctx;
+#line 160
+{
+#line 157
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 158
+                                                                                                 {
+      ctx.stack.cl[0] = closure_light_new(util_tx, gbuf.layer[0], V);
+    }
+
+#endif
+#line 161
+  }
+#line 157
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 158
+                                                                                                 {
+      ctx.stack.cl[1] = closure_light_new(util_tx, gbuf.layer[1], V);
+    }
+
+#endif
+#line 161
+  }
+#line 157
+                                           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 158
+                                                                                                 {
+      ctx.stack.cl[2] = closure_light_new(util_tx, gbuf.layer[2], V);
+    }
+
+#endif
+#line 161
+  }
+#line 161
+  }
+
+  ctx.P = P;
+  ctx.Ng = Ng;
+  ctx.V = V;
+  ctx.texel = gl_FragCoord.xy;
+  ctx.thickness = thickness;
+  ctx.receiver_light_set = 0;
+  ctx.terminator_normal_offset = 0.0f;
+  ctx.terminator_geometry_offset = 0.0f;
+  if (_use_object_id(gbuf.header)) {
+    uint object_id = _read_object_id(reader, texel);
+    ObjectInfos object_infos = _get(infos, object_id);
+    ctx.receiver_light_set = receiver_light_set_get(object_infos);
+    ctx.terminator_normal_offset = object_infos.shadow_terminator_normal_offset;
+    ctx.terminator_geometry_offset = object_infos.shadow_terminator_geometry_offset;
+  }
+#line 181
+  _eval_reflection(lights, ctx, vPz);
+
+  if (srt_access(eevee_deferred_LightEval, use_transmission)) {
+    eevee_light_EvalCtxTtrue ctx_tr = eevee_light_init_from_reflect_ctx(ctx);
+
+    ClosureUndetermined cl_transmit = gbuf.layer[0];
+    ctx_tr.stack.cl[0] = closure_light_new(util_tx, cl_transmit, V, thickness);
+#line 190
+    _eval_transmission(lights, ctx_tr, vPz);
+
+    if (cl_transmit.type == CLOSURE_BSSRDF_BURLEY_ID) {
+
+      float3 sss_profile = subsurface_transmission(
+          util_tx, to_closure_subsurface(cl_transmit).sss_radius, _value(thickness));
+      ctx.stack.cl[0].light_shadowed += ctx_tr.stack.cl[0].light_shadowed * sss_profile;
+      ctx.stack.cl[0].light_unshadowed += ctx_tr.stack.cl[0].light_unshadowed * sss_profile;
+    }
+    else {
+      ctx.stack.cl[0].light_shadowed = ctx_tr.stack.cl[0].light_shadowed;
+      ctx.stack.cl[0].light_unshadowed = ctx_tr.stack.cl[0].light_unshadowed;
+    }
+  }
+
+  if (srt_access(eevee_deferred_LightEval, render_pass_shadow_id) != -1) {
+    float3 radiance_shadowed = float3(0);
+    float3 radiance_unshadowed = float3(0);
+#line 210
+{
+#line 208
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 209
+                                                                                                   {
+        if (0 < closure_count) {
+          radiance_shadowed += ctx.stack.cl[0].light_shadowed;
+          radiance_unshadowed += ctx.stack.cl[0].light_unshadowed;
+        }
+      }
+
+#endif
+#line 215
+    }
+#line 208
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 209
+                                                                                                   {
+        if (1 < closure_count) {
+          radiance_shadowed += ctx.stack.cl[1].light_shadowed;
+          radiance_unshadowed += ctx.stack.cl[1].light_unshadowed;
+        }
+      }
+
+#endif
+#line 215
+    }
+#line 208
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 209
+                                                                                                   {
+        if (2 < closure_count) {
+          radiance_shadowed += ctx.stack.cl[2].light_shadowed;
+          radiance_unshadowed += ctx.stack.cl[2].light_unshadowed;
+        }
+      }
+
+#endif
+#line 215
+    }
+#line 215
+    }
+    float3 shadows = radiance_shadowed * safe_rcp(radiance_unshadowed);
+    _store_value(render_passes, texel, srt_access(eevee_deferred_LightEval, render_pass_shadow_id), average(shadows));
+  }
+
+  if (srt_access(eevee_deferred_LightEval, use_lightprobe_eval)) {
+    eevee_LightProbeSample samp = _load(lightprobes, gl_FragCoord.xy, P, Ng, V);
+
+    float clamp_indirect = srt_access(eevee_Uniform, uniform_buf).clamp.surface_indirect;
+    samp.volume_irradiance = spherical_harmonics_clamp_energy(samp.volume_irradiance,
+                                                               clamp_indirect);
+
+    uint3 bin_indices = _bin_index_per_layer(gbuf.header);
+#line 231
+{
+#line 229
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 230
+                                                                                                   {
+        if (0 < closure_count) {
+          float3 indirect_light = _eval(lightprobes, samp, gbuf.layer[0], P, V, thickness);
+          float3 direct_light = ctx.stack.cl[0].light_shadowed;
+          if (srt_access(eevee_deferred_LightEval, use_split_indirect)) {
+            _write_radiance_indirect(srt, bin_indices[0], texel, indirect_light);
+            _write_radiance_direct(srt, bin_indices[0], texel, direct_light);
+          }
+          else {
+            _write_radiance_direct(srt, bin_indices[0], texel, direct_light + indirect_light);
+          }
+        }
+      }
+
+#endif
+#line 243
+    }
+#line 229
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 230
+                                                                                                   {
+        if (1 < closure_count) {
+          float3 indirect_light = _eval(lightprobes, samp, gbuf.layer[1], P, V, thickness);
+          float3 direct_light = ctx.stack.cl[1].light_shadowed;
+          if (srt_access(eevee_deferred_LightEval, use_split_indirect)) {
+            _write_radiance_indirect(srt, bin_indices[1], texel, indirect_light);
+            _write_radiance_direct(srt, bin_indices[1], texel, direct_light);
+          }
+          else {
+            _write_radiance_direct(srt, bin_indices[1], texel, direct_light + indirect_light);
+          }
+        }
+      }
+
+#endif
+#line 243
+    }
+#line 229
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 230
+                                                                                                   {
+        if (2 < closure_count) {
+          float3 indirect_light = _eval(lightprobes, samp, gbuf.layer[2], P, V, thickness);
+          float3 direct_light = ctx.stack.cl[2].light_shadowed;
+          if (srt_access(eevee_deferred_LightEval, use_split_indirect)) {
+            _write_radiance_indirect(srt, bin_indices[2], texel, indirect_light);
+            _write_radiance_direct(srt, bin_indices[2], texel, direct_light);
+          }
+          else {
+            _write_radiance_direct(srt, bin_indices[2], texel, direct_light + indirect_light);
+          }
+        }
+      }
+
+#endif
+#line 243
+    }
+#line 243
+    }
+  }
+  else {
+    uint3 bin_indices = _bin_index_per_layer(gbuf.header);
+#line 250
+{
+#line 248
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 249
+                                                                                                   {
+        if (0 < closure_count) {
+          float3 direct_light = ctx.stack.cl[0].light_shadowed;
+          _write_radiance_direct(srt, bin_indices[0], texel, direct_light);
+        }
+      }
+
+#endif
+#line 255
+    }
+#line 248
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 249
+                                                                                                   {
+        if (1 < closure_count) {
+          float3 direct_light = ctx.stack.cl[1].light_shadowed;
+          _write_radiance_direct(srt, bin_indices[1], texel, direct_light);
+        }
+      }
+
+#endif
+#line 255
+    }
+#line 248
+                                             {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 249
+                                                                                                   {
+        if (2 < closure_count) {
+          float3 direct_light = ctx.stack.cl[2].light_shadowed;
+          _write_radiance_direct(srt, bin_indices[2], texel, direct_light);
+        }
+      }
+
+#endif
+#line 255
+    }
+#line 255
+    }
+  }
+
+#endif
+#line 257
+}
+#endif
+#endif
+#line 267
+
+#if defined(CREATE_INFO_eevee_LightEvalIterator) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_eevee_LightprobeVolumeRenderData) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_gbuffer_Reader)
+#line 267
+
+#if defined(ENTRY_POINT_eevee_deferred_sphere_eval_frag)
+#line 267
+
+void eevee_deferred_sphere_eval_frag(
+#line 278
+                                                              )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 279
+  eevee_LightEvalIterator lights = eevee_LightEvalIterator_ctor_(); draw_View views = draw_View_ctor_(); draw_Infos infos = draw_Infos_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); eevee_LightprobeVolumeRenderData lightprobes = eevee_LightprobeVolumeRenderData_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r;
+
+  const gbuffer_Layers gbuf = _read_layers(reader, texel);
+
+  if (_has_no_closure(gbuf)) {
+    eevee_deferred_FragOut_radiance = float4(0.0f);
+    return;
+  }
+
+  const uchar closure_count = _closure_len(gbuf.header);
+  const Thickness thickness = _read_thickness(reader, gbuf.header, texel);
+
+  float3 albedo_front = float3(0.0f);
+  float3 albedo_back = float3(0.0f);
+#line 301
+{
+#line 298
+                                                                 {
+    if (0 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[0];
+      switch (cl.type) {
+        case CLOSURE_BSSRDF_BURLEY_ID:
+        case CLOSURE_BSDF_DIFFUSE_ID:
+        case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+          albedo_front += cl.color;
+          break;
+        case CLOSURE_BSDF_TRANSLUCENT_ID:
+        case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+          albedo_back += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+          break;
+        case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+          albedo_back += cl.color;
+          break;
+        case CLOSURE_NONE_ID:
+
+          break;
+      }
+    }
+  }
+#line 298
+                                                                 {
+    if (1 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[1];
+      switch (cl.type) {
+        case CLOSURE_BSSRDF_BURLEY_ID:
+        case CLOSURE_BSDF_DIFFUSE_ID:
+        case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+          albedo_front += cl.color;
+          break;
+        case CLOSURE_BSDF_TRANSLUCENT_ID:
+        case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+          albedo_back += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+          break;
+        case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+          albedo_back += cl.color;
+          break;
+        case CLOSURE_NONE_ID:
+
+          break;
+      }
+    }
+  }
+#line 298
+                                                                 {
+    if (2 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[2];
+      switch (cl.type) {
+        case CLOSURE_BSSRDF_BURLEY_ID:
+        case CLOSURE_BSDF_DIFFUSE_ID:
+        case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+          albedo_front += cl.color;
+          break;
+        case CLOSURE_BSDF_TRANSLUCENT_ID:
+        case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+          albedo_back += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+          break;
+        case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+          albedo_back += cl.color;
+          break;
+        case CLOSURE_NONE_ID:
+
+          break;
+      }
+    }
+  }
+#line 319
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 P = _point_screen_to_world(view, float3(eevee_deferred_VertOut_screen_uv, depth));
+  float3 Ng = _geometry_normal(gbuf.header, _surface_N(gbuf));
+  float3 V = _world_incident_vector(view, P);
+  float vPz = dot(_forward(view), P) - dot(_forward(view), _position(view));
+
+  ClosureUndetermined cl;
+  cl.N = _surface_N(gbuf);
+  cl.type = CLOSURE_BSDF_DIFFUSE_ID;
+
+  ClosureUndetermined cl_transmit;
+  cl_transmit.N = _surface_N(gbuf);
+  cl_transmit.type = CLOSURE_BSDF_TRANSLUCENT_ID;
+
+  eevee_light_EvalCtxTfalse ctx;
+  ctx.P = P;
+  ctx.Ng = Ng;
+  ctx.V = V;
+  ctx.texel = gl_FragCoord.xy;
+  ctx.thickness = thickness;
+  ctx.receiver_light_set = 0;
+  ctx.terminator_normal_offset = 0.0f;
+  ctx.terminator_geometry_offset = 0.0f;
+  if (_use_object_id(gbuf.header)) {
+    uint object_id = _read_object_id(reader, texel);
+    ObjectInfos object_infos = _get(infos, object_id);
+    ctx.receiver_light_set = receiver_light_set_get(object_infos);
+    ctx.terminator_normal_offset = object_infos.shadow_terminator_normal_offset;
+    ctx.terminator_geometry_offset = object_infos.shadow_terminator_geometry_offset;
+  }
+#line 354
+  ctx.stack.cl[0] = closure_light_new(util_tx, cl, V);
+  _eval_reflection(lights, ctx, vPz);
+
+  float3 radiance_front = ctx.stack.cl[0].light_shadowed;
+
+  eevee_light_EvalCtxTtrue ctx_tr = eevee_light_init_from_reflect_ctx(ctx);
+
+  ctx_tr.stack.cl[0] = closure_light_new(util_tx, cl_transmit, V, thickness);
+  _eval_transmission(lights, ctx_tr, vPz);
+
+  float3 radiance_back = ctx_tr.stack.cl[0].light_shadowed;
+#line 368
+  SphericalHarmonicL1Tfloat4 sh = _sample_probe(lightprobes, sampling, P, V, Ng);
+
+  radiance_front += _evaluate_lambert(sh, Ng).rgb;
+
+  radiance_back += _evaluate_lambert(sh, -Ng).rgb;
+
+  eevee_deferred_FragOut_radiance = float4(radiance_front * albedo_front + radiance_back * albedo_back, 0.0f);
+
+#endif
+#line 375
+}
+#endif
+#endif
+#line 377
+#define access_eevee_deferred_PlanarProbeEval_legacy_sphere_probe_enable() legacy_sphere_probe_enable
+#ifdef CREATE_INFO_RES_PASS_eevee_deferred_PlanarProbeEval
+CREATE_INFO_RES_PASS_eevee_deferred_PlanarProbeEval
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_deferred_PlanarProbeEval
+CREATE_INFO_RES_BATCH_eevee_deferred_PlanarProbeEval
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_deferred_PlanarProbeEval
+CREATE_INFO_RES_GEOMETRY_eevee_deferred_PlanarProbeEval
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_deferred_PlanarProbeEval
+CREATE_INFO_RES_SHARED_VARS_eevee_deferred_PlanarProbeEval
+#endif
+#line 377
+struct eevee_deferred_PlanarProbeEval {
+#line 388
+int _pad;};
+#line 391
+#ifndef GPU_METAL
+eevee_deferred_PlanarProbeEval eevee_deferred_PlanarProbeEval_ctor_();
+eevee_deferred_PlanarProbeEval eevee_deferred_PlanarProbeEval_new_();
+#endif
+#line 377
+                                              eevee_deferred_PlanarProbeEval eevee_deferred_PlanarProbeEval_ctor_() {eevee_deferred_PlanarProbeEval r;r._pad=0;return r;}
+#line 381
+       eevee_deferred_PlanarProbeEval eevee_deferred_PlanarProbeEval_new_()
+{
+  eevee_deferred_PlanarProbeEval result;
+  result._pad = 0;
+  return result;
+#line 379
+}
+#line 382
+
+#if defined(CREATE_INFO_eevee_deferred_PlanarProbeEval) && defined(CREATE_INFO_eevee_LightEvalIterator) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_eevee_HiZ) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_gbuffer_Reader)
+#line 382
+
+#if defined(ENTRY_POINT_eevee_deferred_planar_eval_frag)
+#line 382
+
+void eevee_deferred_planar_eval_frag(
+#line 394
+                                                              )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 395
+  eevee_deferred_PlanarProbeEval _0 = eevee_deferred_PlanarProbeEval_ctor_(); eevee_LightEvalIterator lights = eevee_LightEvalIterator_ctor_(); draw_View views = draw_View_ctor_(); draw_Infos infos = draw_Infos_ctor_(); eevee_LightprobeRenderData lightprobes = eevee_LightprobeRenderData_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r;
+
+  const gbuffer_Layers gbuf = _read_layers(reader, texel);
+  const uchar closure_count = _closure_len(gbuf.header);
+  const Thickness thickness = _read_thickness(reader, gbuf.header, texel);
+
+  float3 albedo_front = float3(0.0f);
+  float3 albedo_back = float3(0.0f);
+
+  ClosureUndetermined cl_reflect;
+  cl_reflect.type = CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID;
+  cl_reflect.color = float3(0.0);
+  cl_reflect.N = float3(0.0);
+  cl_reflect.data = float4(0.0);
+  float reflect_weight = 0.0;
+
+  ClosureUndetermined cl_refract;
+  cl_refract.type = CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID;
+  cl_refract.color = float3(0.0);
+  cl_refract.N = float3(0.0);
+  cl_refract.data = float4(0.0);
+  float refract_weight = 0.0;
+#line 425
+{
+#line 422
+                                         {
+    if (0 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[0];
+      switch (cl.type) {
+        case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID: {
+          cl_reflect.color += cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_reflect.N += cl.N * weight;
+          cl_reflect.data += cl.data * weight;
+          reflect_weight += weight;
+          break;
+        }
+        case CLOSURE_BSSRDF_BURLEY_ID:
+        case CLOSURE_BSDF_DIFFUSE_ID:
+          albedo_front += cl.color;
+          break;
+        case CLOSURE_BSDF_TRANSLUCENT_ID:
+          albedo_back += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+          break;
+        case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID: {
+          cl_refract.color += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_refract.N += cl.N * weight;
+          cl_refract.data += cl.data * weight;
+          refract_weight += weight;
+          break;
+        }
+        case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID: {
+          cl_refract.color += cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_refract.N += cl.N * weight;
+          cl_refract.data += cl.data * weight;
+          refract_weight += weight;
+          break;
+        }
+        case CLOSURE_NONE_ID:
+
+          break;
+      }
+    }
+  }
+#line 422
+                                         {
+    if (1 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[1];
+      switch (cl.type) {
+        case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID: {
+          cl_reflect.color += cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_reflect.N += cl.N * weight;
+          cl_reflect.data += cl.data * weight;
+          reflect_weight += weight;
+          break;
+        }
+        case CLOSURE_BSSRDF_BURLEY_ID:
+        case CLOSURE_BSDF_DIFFUSE_ID:
+          albedo_front += cl.color;
+          break;
+        case CLOSURE_BSDF_TRANSLUCENT_ID:
+          albedo_back += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+          break;
+        case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID: {
+          cl_refract.color += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_refract.N += cl.N * weight;
+          cl_refract.data += cl.data * weight;
+          refract_weight += weight;
+          break;
+        }
+        case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID: {
+          cl_refract.color += cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_refract.N += cl.N * weight;
+          cl_refract.data += cl.data * weight;
+          refract_weight += weight;
+          break;
+        }
+        case CLOSURE_NONE_ID:
+
+          break;
+      }
+    }
+  }
+#line 422
+                                         {
+    if (2 < closure_count) {
+      ClosureUndetermined cl = gbuf.layer[2];
+      switch (cl.type) {
+        case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID: {
+          cl_reflect.color += cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_reflect.N += cl.N * weight;
+          cl_reflect.data += cl.data * weight;
+          reflect_weight += weight;
+          break;
+        }
+        case CLOSURE_BSSRDF_BURLEY_ID:
+        case CLOSURE_BSDF_DIFFUSE_ID:
+          albedo_front += cl.color;
+          break;
+        case CLOSURE_BSDF_TRANSLUCENT_ID:
+          albedo_back += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+          break;
+        case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID: {
+          cl_refract.color += (_value(thickness) != 0.0f) ? square(cl.color) : cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_refract.N += cl.N * weight;
+          cl_refract.data += cl.data * weight;
+          refract_weight += weight;
+          break;
+        }
+        case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID: {
+          cl_refract.color += cl.color;
+
+          float weight = reduce_add(cl.color);
+          cl_refract.N += cl.N * weight;
+          cl_refract.data += cl.data * weight;
+          refract_weight += weight;
+          break;
+        }
+        case CLOSURE_NONE_ID:
+
+          break;
+      }
+    }
+  }
+#line 465
+  }
+
+  {
+    if (reflect_weight > 1e-6) {
+      float inv_weight = 1.0f / reflect_weight;
+      cl_reflect.N *= inv_weight;
+      cl_reflect.data *= inv_weight;
+    }
+    else {
+
+      cl_reflect.N = _surface_N(gbuf);
+      cl_reflect.data.xy = float2(1.0f);
+    }
+  }
+  {
+    if (refract_weight > 1e-6) {
+      float inv_weight = 1.0f / refract_weight;
+      cl_refract.N *= inv_weight;
+      cl_refract.data *= inv_weight;
+    }
+    else {
+
+      cl_refract.N = _surface_N(gbuf);
+      cl_refract.data.xy = float2(1.0f);
+    }
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float3 P = _point_screen_to_world(view, float3(eevee_deferred_VertOut_screen_uv, depth));
+  float3 Ng = _geometry_normal(gbuf.header, _surface_N(gbuf));
+  float3 V = _world_incident_vector(view, P);
+  float vPz = dot(_forward(view), P) - dot(_forward(view), _position(view));
+
+  ClosureUndetermined cl;
+  cl.N = _surface_N(gbuf);
+  cl.type = CLOSURE_BSDF_DIFFUSE_ID;
+
+  ClosureUndetermined cl_transmit;
+  cl_transmit.N = _surface_N(gbuf);
+  cl_transmit.type = CLOSURE_BSDF_TRANSLUCENT_ID;
+
+  eevee_light_EvalCtxTfalse ctx;
+  ctx.P = P;
+  ctx.Ng = Ng;
+  ctx.V = V;
+  ctx.texel = gl_FragCoord.xy;
+  ctx.thickness = thickness;
+  ctx.receiver_light_set = 0;
+  ctx.terminator_normal_offset = 0.0f;
+  ctx.terminator_geometry_offset = 0.0f;
+  if (_use_object_id(gbuf.header)) {
+    uint object_id = _read_object_id(reader, texel);
+    ObjectInfos object_infos = _get(infos, object_id);
+    ctx.receiver_light_set = receiver_light_set_get(object_infos);
+    ctx.terminator_normal_offset = object_infos.shadow_terminator_normal_offset;
+    ctx.terminator_geometry_offset = object_infos.shadow_terminator_geometry_offset;
+  }
+#line 525
+  ctx.stack.cl[0] = closure_light_new(util_tx, cl, V);
+  ctx.stack.cl[1] = closure_light_new(util_tx, cl_reflect, V);
+  _eval_reflection(lights, ctx, vPz);
+
+  float3 radiance_front = ctx.stack.cl[0].light_shadowed;
+  float3 radiance_reflect = ctx.stack.cl[1].light_shadowed;
+
+  eevee_light_EvalCtxTtrue ctx_tr = eevee_light_init_from_reflect_ctx(ctx);
+  ctx_tr.stack.cl[0] = closure_light_new(util_tx, cl_transmit, V, thickness);
+  ctx_tr.stack.cl[1] = closure_light_new(util_tx, cl_refract, V, thickness);
+  _eval_transmission(lights, ctx_tr, vPz);
+
+  float3 radiance_back = ctx_tr.stack.cl[0].light_shadowed;
+  float3 radiance_refract = ctx_tr.stack.cl[1].light_shadowed;
+#line 542
+  SphericalHarmonicL1Tfloat4 sh = _sample_probe(srt_access(eevee_LightprobeRenderData, volumes), sampling, P, V, Ng);
+  eevee_LightProbeSample samp = _load(lightprobes, gl_FragCoord.xy, P, Ng, V);
+
+  radiance_front += _evaluate_lambert(sh, Ng).rgb;
+  radiance_back += _evaluate_lambert(sh, -Ng).rgb;
+  radiance_reflect += _eval(lightprobes, samp, cl_reflect, P, V, thickness);
+  radiance_refract += _eval(lightprobes, samp, cl_refract, P, V, thickness);
+#line 551
+  eevee_deferred_FragOut_radiance = float4(0.0f);
+  eevee_deferred_FragOut_radiance.xyz += radiance_reflect * cl_reflect.color;
+  eevee_deferred_FragOut_radiance.xyz += radiance_refract * cl_refract.color;
+  eevee_deferred_FragOut_radiance.xyz += radiance_front * albedo_front;
+  eevee_deferred_FragOut_radiance.xyz += radiance_back * albedo_back;
+
+#endif
+#line 556
+}
+#endif
+#endif
+#line 610

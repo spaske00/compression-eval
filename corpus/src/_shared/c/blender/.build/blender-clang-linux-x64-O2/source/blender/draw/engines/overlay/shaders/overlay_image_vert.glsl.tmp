@@ -1,0 +1,37 @@
+#line 1 "overlay_image_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_image_base)
+VERTEX_SHADER_CREATE_INFO(draw_modelmat)
+#line 15
+void main()
+{
+  select_id_set(drw_custom_id());
+  float3 world_pos = drw_point_object_to_world(pos);
+  if (is_camera_background) {
+
+#ifdef DEPTH_BIAS
+    gl_Position = depth_bias_winmat * float4(world_pos, 1.0f);
+#else
+    gl_Position = drw_point_view_to_homogenous(world_pos);
+#endif
+#line 28
+    view_clipping_distances_bypass();
+  }
+  else {
+#ifdef DEPTH_BIAS
+    gl_Position = depth_bias_winmat * (drw_view().viewmat * float4(world_pos, 1.0f));
+#else
+    gl_Position = drw_point_world_to_homogenous(world_pos);
+#endif
+    view_clipping_distances(world_pos);
+  }
+
+  if (depth_set) {
+#line 43
+    gl_Position.z = gl_Position.w - 2.4e-7f;
+    view_clipping_distances_bypass();
+  }
+
+  uvs = pos.xy * 0.5f + 0.5f;
+}

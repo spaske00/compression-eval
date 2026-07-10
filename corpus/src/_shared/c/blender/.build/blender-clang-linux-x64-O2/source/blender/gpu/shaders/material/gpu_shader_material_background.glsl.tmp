@@ -1,0 +1,11 @@
+#line 1 "gpu_shader_material_background.glsl"
+ 
+#line 6
+void node_background(float4 color, float strength, float weight, _ref(Closure ,result))
+{
+  ClosureEmission emission_data;
+  emission_data.weight = weight;
+  emission_data.emission = color.rgb * strength;
+
+  result = closure_eval(emission_data);
+}

@@ -1,0 +1,17 @@
+#line 1 "gpu_shader_python_frag.glsl"
+ 
+#line 23
+#ifdef CREATE_INFO_RES_PASS_gpu_shader_python
+CREATE_INFO_RES_PASS_gpu_shader_python
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_shader_python
+CREATE_INFO_RES_BATCH_gpu_shader_python
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_shader_python
+CREATE_INFO_RES_GEOMETRY_gpu_shader_python
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_shader_python
+CREATE_INFO_RES_SHARED_VARS_gpu_shader_python
+#endif
+
+void main() {}

@@ -1,0 +1,18 @@
+#line 1 "gpu_shader_fullscreen_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+#endif
+#line 16
+#ifdef CREATE_INFO_RES_PASS_gpu_fullscreen
+CREATE_INFO_RES_PASS_gpu_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_fullscreen
+CREATE_INFO_RES_BATCH_gpu_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_fullscreen
+CREATE_INFO_RES_GEOMETRY_gpu_fullscreen
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_fullscreen
+CREATE_INFO_RES_SHARED_VARS_gpu_fullscreen
+#endif

@@ -1,0 +1,12 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(workbench_Cavity)
+.sampler(7, ImageType::sampler2D, "jitter_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.uniform_buf(5, "float4", "cavity_samples[512]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "key": "blender",
+  "input_url": "https://github.com/blender/blender",
+  "canonical_url": "https://github.com/blender/blender",
+  "source_directory": "blender/upstream",
+  "commit": "f8b3d5872b9a6726a0384641c160c041e5773d2e",
+  "nested_submodules": [
+    {"path": "lib/linux_x64", "commit": "0729aa1d23dda5033c885503e159fa0e2856275b"}
+  ]
+}

@@ -1,0 +1,23 @@
+#line 1 "workbench_effect_dof_lib.glsl"
+ 
+#line 15
+#define dof_aperturesize dof_params.x
+#define dof_distance dof_params.y
+#define dof_invsensorsize dof_params.z
+#line 20
+#define dof_calculate_coc(zdepth) \
+  (dof_aperturesize * (dof_distance / zdepth - 1.0f) * dof_invsensorsize)
+
+#define MAX_COC_SIZE 100.0f
+float2 dof_encode_coc(float near, float far)
+{
+  return float2(near, far) / MAX_COC_SIZE;
+}
+float dof_decode_coc(float2 cocs)
+{
+  return max(cocs.x, cocs.y) * MAX_COC_SIZE;
+}
+float dof_decode_signed_coc(float2 cocs)
+{
+  return ((cocs.x > cocs.y) ? cocs.x : -cocs.y) * MAX_COC_SIZE;
+}

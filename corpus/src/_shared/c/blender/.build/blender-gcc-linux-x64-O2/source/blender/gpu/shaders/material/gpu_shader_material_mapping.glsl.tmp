@@ -1,0 +1,37 @@
+#line 1 "gpu_shader_material_mapping.glsl"
+ 
+#line 10
+void mapping_mat4(float3 vec,
+                  float4 m0,
+                  float4 m1,
+                  float4 m2,
+                  float4 m3,
+                  float3 minvec,
+                  float3 maxvec,
+                  _ref(float3 ,outvec))
+{
+  float4x4 mat = float4x4(m0, m1, m2, m3);
+  outvec = (mat * float4(vec, 1.0f)).xyz;
+  outvec = clamp(outvec, minvec, maxvec);
+}
+#line 25
+void mapping_point(float3 vector, float3 location, float3 rotation, float3 scale, _ref(float3 ,result))
+{
+  result = (from_rotation(EulerXYZ_from_float3(rotation)) * (vector * scale)) + location;
+}
+#line 31
+void mapping_texture(float3 vector, float3 location, float3 rotation, float3 scale, _ref(float3 ,result))
+{
+  result = safe_divide(
+      transpose(from_rotation(EulerXYZ_from_float3(rotation))) * (vector - location), scale);
+}
+#line 38
+void mapping_vector(float3 vector, float3 location, float3 rotation, float3 scale, _ref(float3 ,result))
+{
+  result = from_rotation(EulerXYZ_from_float3(rotation)) * (vector * scale);
+}
+#line 44
+void mapping_normal(float3 vector, float3 location, float3 rotation, float3 scale, _ref(float3 ,result))
+{
+  result = normalize(from_rotation(EulerXYZ_from_float3(rotation)) * safe_divide(vector, scale));
+}

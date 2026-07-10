@@ -1,0 +1,122 @@
+{
+    "classes": [
+        {
+            "className": "SidebarModel",
+            "lineNumber": 728,
+            "object": true,
+            "qualifiedClassName": "Utils::SidebarModel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QStandardItemModel"
+                }
+            ]
+        },
+        {
+            "className": "SidebarView",
+            "lineNumber": 895,
+            "object": true,
+            "qualifiedClassName": "Utils::SidebarView",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        },
+                        {
+                            "name": "row",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "favoriteDropped",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "Utils::FilePath"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "favoriteRemoved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "fromRow",
+                            "type": "int"
+                        },
+                        {
+                            "name": "toRow",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "favoriteReordered",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QListView"
+                }
+            ]
+        },
+        {
+            "className": "SearchModel",
+            "lineNumber": 1154,
+            "object": true,
+            "qualifiedClassName": "Utils::SearchModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "searchFinished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        },
+        {
+            "className": "GoToFolderOverlay",
+            "lineNumber": 1378,
+            "object": true,
+            "qualifiedClassName": "Utils::GoToFolderOverlay",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "pathEntered",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QFrame"
+                }
+            ]
+        }
+    ],
+    "inputFile": "filedialog.cpp",
+    "outputRevision": 68
+}

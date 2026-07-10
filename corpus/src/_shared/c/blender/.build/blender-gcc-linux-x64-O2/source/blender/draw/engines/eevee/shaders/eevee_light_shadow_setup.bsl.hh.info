@@ -1,0 +1,30 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_light_Resources)
+.additional_info("eevee_Uniform")
+.storage_buf(0, Qualifier::read, "LightCullingData", "light_cull_buf", Frequency::PASS)
+.storage_buf(1, Qualifier::read_write, "LightData", "light_buf[]", Frequency::PASS)
+.storage_buf(2, Qualifier::read_write, "ShadowTileMapData", "tilemaps_buf[]", Frequency::PASS)
+.storage_buf(3, Qualifier::read_write, "ShadowTileMapClip", "tilemaps_clip_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_light_shadow_setup_main_infos_)
+LOCAL_GROUP_SIZE(CULLING_SELECT_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_light_Resources)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(eevee_Sampling)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_light_shadow_setup)
+COMPUTE_SOURCE("eevee_light_shadow_setup.bsl.hh")
+COMPUTE_FUNCTION("eevee_light_shadow_setup_main")
+ADDITIONAL_INFO(eevee_light_shadow_setup_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

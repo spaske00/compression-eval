@@ -1,0 +1,36 @@
+#line 1 "gpu_shader_material_raycast.glsl"
+ 
+#line 6
+void node_raycast(float3 position,
+                  float3 direction,
+                  float length,
+                  _ref(float ,is_hit),
+                  _ref(float ,is_self_hit),
+                  _ref(float ,hit_distance),
+                  _ref(float3 ,hit_position),
+                  _ref(float3 ,hit_normal))
+{
+  bool hit = false;
+  bool self_hit = false;
+  raycast_eval(
+      position, direction, length, false, hit, self_hit, hit_distance, hit_position, hit_normal);
+  is_hit = hit ? 1.0f : 0.0f;
+  is_self_hit = self_hit ? 1.0f : 0.0f;
+}
+#line 24
+void node_raycast_only_local(float3 position,
+                             float3 direction,
+                             float length,
+                             _ref(float ,is_hit),
+                             _ref(float ,is_self_hit),
+                             _ref(float ,hit_distance),
+                             _ref(float3 ,hit_position),
+                             _ref(float3 ,hit_normal))
+{
+  bool hit = false;
+  bool self_hit = false;
+  raycast_eval(
+      position, direction, length, true, hit, self_hit, hit_distance, hit_position, hit_normal);
+  is_hit = hit ? 1.0f : 0.0f;
+  is_self_hit = self_hit ? 1.0f : 0.0f;
+}

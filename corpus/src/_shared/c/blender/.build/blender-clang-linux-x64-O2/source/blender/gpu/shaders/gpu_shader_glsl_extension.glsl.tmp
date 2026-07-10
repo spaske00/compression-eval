@@ -1,0 +1,28 @@
+#line 1 "gpu_shader_glsl_extension.glsl"
+ 
+#line 16
+#if defined(GPU_OPENGL)
+
+#  version 430
+
+#  extension GL_ARB_shader_draw_parameters : enable
+
+#  extension GL_ARB_shader_viewport_layer_array : enable
+
+#  extension GL_AMD_shader_explicit_vertex_parameter : enable
+
+#  extension GL_EXT_shader_framebuffer_fetch : enable
+
+#  extension GL_ARB_shader_stencil_export : enable
+
+#elif defined(GPU_VULKAN)
+#  version 450
+
+#  extension GL_ARB_shader_draw_parameters : enable
+
+#  extension GL_ARB_shader_viewport_layer_array : enable
+
+#  extension GL_EXT_fragment_shader_barycentric : require
+
+#  extension GL_ARB_shader_stencil_export : enable
+#endif

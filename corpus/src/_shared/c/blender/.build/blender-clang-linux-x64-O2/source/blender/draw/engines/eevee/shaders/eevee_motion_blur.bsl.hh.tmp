@@ -1,0 +1,820 @@
+#line 1 "eevee_motion_blur.bsl.hh"
+ 
+#line 21
+#define MotionTilePayload uint
+#line 24
+constant static constexpr uchar MOTION_PREV = 0u;
+constant static constexpr uchar MOTION_NEXT = 1u;
+
+#define MotionStep uchar
+#line 23
+
+MotionStep MotionStep_ctor_() { return MotionStep(0); }
+#line 29
+#define access_eevee_motion_blur_TileBuf_tile_indirection_buf() tile_indirection_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_motion_blur_TileBuf
+CREATE_INFO_RES_PASS_eevee_motion_blur_TileBuf
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_motion_blur_TileBuf
+CREATE_INFO_RES_BATCH_eevee_motion_blur_TileBuf
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_TileBuf
+CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_TileBuf
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_TileBuf
+CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_TileBuf
+#endif
+#line 29
+struct eevee_motion_blur_TileBuf {
+#line 75
+int _pad;};
+#line 98
+#ifndef GPU_METAL
+eevee_motion_blur_TileBuf eevee_motion_blur_TileBuf_ctor_();
+void _store(eevee_motion_blur_TileBuf  this_, MotionStep motion_step, uint2 tile, MotionTilePayload payload);
+int2 _load(eevee_motion_blur_TileBuf  this_, MotionStep motion_step, uint2 tile);
+uint eevee_motion_blur_TileBuf_indirection_index(uint motion_step, uint2 tile);
+MotionTilePayload eevee_motion_blur_TileBuf_pack_payload(float2 motion, uint2 payload);
+int2 eevee_motion_blur_TileBuf_unpack_payload(uint data);
+eevee_motion_blur_TileBuf eevee_motion_blur_TileBuf_new_();
+#endif
+#line 29
+                                         eevee_motion_blur_TileBuf eevee_motion_blur_TileBuf_ctor_() {eevee_motion_blur_TileBuf r;r._pad=0;return r;}
+#line 32
+
+#if defined(CREATE_INFO_eevee_motion_blur_TileBuf)
+#line 32
+  void _store(eevee_motion_blur_TileBuf  this_, MotionStep motion_step, uint2 tile, MotionTilePayload payload)
+  {
+    uint index = eevee_motion_blur_TileBuf_indirection_index(uint(motion_step), tile);
+    atomicMax(tile_indirection_buf[index], payload);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_motion_blur_TileBuf)
+#line 38
+  int2 _load(eevee_motion_blur_TileBuf  this_, MotionStep motion_step, uint2 tile)
+  {
+    uint index = eevee_motion_blur_TileBuf_indirection_index(uint(motion_step), tile);
+    return eevee_motion_blur_TileBuf_unpack_payload(tile_indirection_buf[index]);
+  }
+#endif
+         uint eevee_motion_blur_TileBuf_indirection_index(uint motion_step, uint2 tile)
+  {
+    uint index = tile.x;
+    index += tile.y * MOTION_BLUR_MAX_TILE;
+    index += motion_step * MOTION_BLUR_MAX_TILE * MOTION_BLUR_MAX_TILE;
+    return index;
+  }
+#line 53
+         MotionTilePayload eevee_motion_blur_TileBuf_pack_payload(float2 motion, uint2 payload)
+  {
+#line 57
+    uint velocity = min(uint(ceil(length(motion))), 0x3FFFu);
+
+    return (velocity << 18u) | ((payload.x & 0x1FFu) << 9u) | (payload.y & 0x1FFu);
+  }
+#line 63
+         int2 eevee_motion_blur_TileBuf_unpack_payload(uint data)
+  {
+    return int2((data >> 9u) & 0x1FFu, data & 0x1FFu);
+  }
+#line 68
+       eevee_motion_blur_TileBuf eevee_motion_blur_TileBuf_new_()
+{
+  eevee_motion_blur_TileBuf result;
+  result._pad = 0;
+  return result;
+#line 66
+}
+#line 73
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_camera() eevee_CameraVelocity_new_()
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_depth_tx() depth_tx
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_velocity_img() velocity_img
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_out_tiles_img() out_tiles_img
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_payload_prev() payload_prev
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_payload_next() payload_next
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_max_motion_prev() max_motion_prev
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_max_motion_next() max_motion_next
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_motion_blur_buf() motion_blur_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+CREATE_INFO_RES_PASS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+CREATE_INFO_RES_BATCH_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16
+#endif
+#line 73
+struct eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 {
+                           eevee_CameraVelocity  camera;
+#line 93
+};
+#line 97
+#ifndef GPU_METAL
+eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_ctor_();
+eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_new_();
+#endif
+#line 73
+                                                                eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_ctor_() {eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 r;r.camera=eevee_CameraVelocity_ctor_();return r;}
+#line 86
+       eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_new_()
+{
+  eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 result;
+  result.camera = eevee_CameraVelocity_new_();
+  return result;
+#line 84
+}
+#line 73
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_camera() eevee_CameraVelocity_new_()
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_depth_tx() depth_tx
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_velocity_img() velocity_img
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_out_tiles_img() out_tiles_img
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_payload_prev() payload_prev
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_payload_next() payload_next
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_max_motion_prev() max_motion_prev
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_max_motion_next() max_motion_next
+#define access_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_motion_blur_buf() motion_blur_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+CREATE_INFO_RES_PASS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+CREATE_INFO_RES_BATCH_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16
+#endif
+#line 73
+struct eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 {
+                           eevee_CameraVelocity  camera;
+#line 93
+};
+#line 97
+#ifndef GPU_METAL
+eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_ctor_();
+eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_new_();
+#endif
+#line 73
+                                                                      eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_ctor_() {eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 r;r.camera=eevee_CameraVelocity_ctor_();return r;}
+#line 86
+       eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_new_()
+{
+  eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 result;
+  result.camera = eevee_CameraVelocity_new_();
+  return result;
+#line 84
+}
+#line 91
+uint eevee_motion_blur_flatten_pack_payload(float2 motion, uint2 thread_id)
+{
+
+  return (min(uint(ceil(length(motion))), 0xFFFFu) << 16u) | (thread_id.y << 8) | thread_id.x;
+}
+#line 98
+uint2 eevee_motion_blur_flatten_unpack_payload(uint payload)
+{
+  return uint2(payload & 0xFFu, (payload >> 8) & 0xFFu);
+}
+#line 115
+
+#if defined(CREATE_INFO_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16) && defined(CREATE_INFO_draw_View)
+#line 115
+
+#if defined(ENTRY_POINT_eevee_motion_blur_flatten_flatten_compTSFLOAT_16_16)
+#line 115
+
+void eevee_motion_blur_flatten_flatten_compTSFLOAT_16_16(
+#line 121
+                                                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 122
+  eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16 srt = eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_ctor_(); draw_View views = draw_View_ctor_();
+#line 125
+  if (gl_LocalInvocationIndex == 0u) {
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, payload_prev) = 0u;
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, payload_next) = 0u;
+  }
+  barrier();
+
+  uint local_payload_prev = 0u;
+  uint local_payload_next = 0u;
+  float2 local_max_motion_prev;
+  float2 local_max_motion_next;
+
+  int2 texel = min(int2(gl_GlobalInvocationID.xy), imageSize(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, velocity_img)) - 1);
+
+  float2 render_size = float2(imageSize(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, velocity_img)).xy);
+  float2 uv = (float2(texel) + 0.5f) / render_size;
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, depth_tx), texel, 0).r);
+  float4 motion = _resolve(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, camera), views, imageLoad(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, velocity_img), texel), uv, depth);
+#ifdef FLATTEN_RG
+
+  motion = motion.xyxy;
+#endif
+#line 150
+  imageStore(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, velocity_img), int2(gl_GlobalInvocationID.xy), eevee_velocity_pack(motion));
+
+  float2 line_clip;
+  line_clip.x = line_unit_square_intersect_dist_safe(uv * 2.0f - 1.0f, motion.xy * 2.0f);
+  line_clip.y = line_unit_square_intersect_dist_safe(uv * 2.0f - 1.0f, -motion.zw * 2.0f);
+  motion *= min(line_clip, float2(1.0f)).xxyy;
+
+  motion *= render_size.xyxy;
+
+  motion *= srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, motion_blur_buf).motion_scale.xxyy;
+
+  uint sample_payload_prev = eevee_motion_blur_flatten_pack_payload(motion.xy, gl_LocalInvocationID.xy);
+  if (local_payload_prev < sample_payload_prev) {
+    local_payload_prev = sample_payload_prev;
+    local_max_motion_prev = motion.xy;
+  }
+
+  uint sample_payload_next = eevee_motion_blur_flatten_pack_payload(motion.zw, gl_LocalInvocationID.xy);
+  if (local_payload_next < sample_payload_next) {
+    local_payload_next = sample_payload_next;
+    local_max_motion_next = motion.zw;
+  }
+#line 174
+  atomicMax(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, payload_prev), local_payload_prev);
+  atomicMax(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, payload_next), local_payload_next);
+  barrier();
+#line 179
+  if (all(equal(eevee_motion_blur_flatten_unpack_payload(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, payload_prev)), gl_LocalInvocationID.xy))) {
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, max_motion_prev) = local_max_motion_prev;
+  }
+  if (all(equal(eevee_motion_blur_flatten_unpack_payload(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, payload_next)), gl_LocalInvocationID.xy))) {
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, max_motion_next) = local_max_motion_next;
+  }
+  barrier();
+
+  if (gl_LocalInvocationIndex == 0u) {
+    int2 tile_co = int2(gl_WorkGroupID.xy);
+    imageStore(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, out_tiles_img), tile_co, float4(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, max_motion_prev), srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16, max_motion_next)));
+  }
+
+#endif
+#line 191
+}
+#endif
+#endif
+#line 115
+
+#if defined(CREATE_INFO_eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16) && defined(CREATE_INFO_draw_View)
+#line 115
+
+#if defined(ENTRY_POINT_eevee_motion_blur_flatten_flatten_compTSFLOAT_16_16_16_16)
+#line 115
+
+void eevee_motion_blur_flatten_flatten_compTSFLOAT_16_16_16_16(
+#line 121
+                                                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 122
+  eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16 srt = eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16_ctor_(); draw_View views = draw_View_ctor_();
+#line 125
+  if (gl_LocalInvocationIndex == 0u) {
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, payload_prev) = 0u;
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, payload_next) = 0u;
+  }
+  barrier();
+
+  uint local_payload_prev = 0u;
+  uint local_payload_next = 0u;
+  float2 local_max_motion_prev;
+  float2 local_max_motion_next;
+
+  int2 texel = min(int2(gl_GlobalInvocationID.xy), imageSize(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, velocity_img)) - 1);
+
+  float2 render_size = float2(imageSize(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, velocity_img)).xy);
+  float2 uv = (float2(texel) + 0.5f) / render_size;
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, depth_tx), texel, 0).r);
+  float4 motion = _resolve(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, camera), views, imageLoad(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, velocity_img), texel), uv, depth);
+#ifdef FLATTEN_RG
+
+  motion = motion.xyxy;
+#endif
+#line 150
+  imageStore(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, velocity_img), int2(gl_GlobalInvocationID.xy), eevee_velocity_pack(motion));
+
+  float2 line_clip;
+  line_clip.x = line_unit_square_intersect_dist_safe(uv * 2.0f - 1.0f, motion.xy * 2.0f);
+  line_clip.y = line_unit_square_intersect_dist_safe(uv * 2.0f - 1.0f, -motion.zw * 2.0f);
+  motion *= min(line_clip, float2(1.0f)).xxyy;
+
+  motion *= render_size.xyxy;
+
+  motion *= srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, motion_blur_buf).motion_scale.xxyy;
+
+  uint sample_payload_prev = eevee_motion_blur_flatten_pack_payload(motion.xy, gl_LocalInvocationID.xy);
+  if (local_payload_prev < sample_payload_prev) {
+    local_payload_prev = sample_payload_prev;
+    local_max_motion_prev = motion.xy;
+  }
+
+  uint sample_payload_next = eevee_motion_blur_flatten_pack_payload(motion.zw, gl_LocalInvocationID.xy);
+  if (local_payload_next < sample_payload_next) {
+    local_payload_next = sample_payload_next;
+    local_max_motion_next = motion.zw;
+  }
+#line 174
+  atomicMax(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, payload_prev), local_payload_prev);
+  atomicMax(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, payload_next), local_payload_next);
+  barrier();
+#line 179
+  if (all(equal(eevee_motion_blur_flatten_unpack_payload(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, payload_prev)), gl_LocalInvocationID.xy))) {
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, max_motion_prev) = local_max_motion_prev;
+  }
+  if (all(equal(eevee_motion_blur_flatten_unpack_payload(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, payload_next)), gl_LocalInvocationID.xy))) {
+    srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, max_motion_next) = local_max_motion_next;
+  }
+  barrier();
+
+  if (gl_LocalInvocationIndex == 0u) {
+    int2 tile_co = int2(gl_WorkGroupID.xy);
+    imageStore(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, out_tiles_img), tile_co, float4(srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, max_motion_prev), srt_access(eevee_motion_blur_flatten_ResourcesTSFLOAT_16_16_16_16, max_motion_next)));
+  }
+
+#endif
+#line 191
+}
+#endif
+#endif
+#line 210
+#define DEBUG_BYPASS_DILATION 0
+
+struct eevee_motion_blur_dilate_MotionRect {
+  int2 bottom_left;
+  int2 extent;
+};
+#line 212
+                                                   eevee_motion_blur_dilate_MotionRect eevee_motion_blur_dilate_MotionRect_ctor_() {eevee_motion_blur_dilate_MotionRect r;r.bottom_left=int2(0);r.extent=int2(0);return r;}
+#line 217
+struct eevee_motion_blur_dilate_MotionLine {
+
+  float2 origin;
+
+  float2 normal;
+#line 234
+};
+#line 237
+#ifndef GPU_METAL
+eevee_motion_blur_dilate_MotionLine eevee_motion_blur_dilate_MotionLine_ctor_();
+bool _is_inside_motion_line(const eevee_motion_blur_dilate_MotionLine this_, int2 tile);
+#endif
+#line 217
+                                                   eevee_motion_blur_dilate_MotionLine eevee_motion_blur_dilate_MotionLine_ctor_() {eevee_motion_blur_dilate_MotionLine r;r.origin=float2(0);r.normal=float2(0);return r;}
+#line 223
+  bool _is_inside_motion_line(const eevee_motion_blur_dilate_MotionLine this_, int2 tile)
+  {
+#if DEBUG_BYPASS_DILATION
+    return true;
+#endif
+
+    float dist = point_line_projection_dist(float2(tile), this_.origin, this_.normal);
+#line 232
+    return abs(dist) < M_SQRT2;
+  }
+#line 236
+#define access_eevee_motion_blur_dilate_Resources_in_tiles_img() in_tiles_img
+#ifdef CREATE_INFO_RES_PASS_eevee_motion_blur_dilate_Resources
+CREATE_INFO_RES_PASS_eevee_motion_blur_dilate_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_motion_blur_dilate_Resources
+CREATE_INFO_RES_BATCH_eevee_motion_blur_dilate_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_dilate_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_dilate_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_dilate_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_dilate_Resources
+#endif
+#line 236
+struct eevee_motion_blur_dilate_Resources {
+#line 272
+int _pad;};
+#line 279
+#ifndef GPU_METAL
+eevee_motion_blur_dilate_Resources eevee_motion_blur_dilate_Resources_ctor_();
+eevee_motion_blur_dilate_MotionLine _compute_motion_line(eevee_motion_blur_dilate_Resources  this_, int2 tile, float2 motion);
+eevee_motion_blur_dilate_MotionRect _compute_motion_rect(eevee_motion_blur_dilate_Resources  this_, int2 tile, float2 motion);
+eevee_motion_blur_dilate_Resources eevee_motion_blur_dilate_Resources_new_();
+#endif
+#line 236
+                                                  eevee_motion_blur_dilate_Resources eevee_motion_blur_dilate_Resources_ctor_() {eevee_motion_blur_dilate_Resources r;r._pad=0;return r;}
+#line 239
+
+#if defined(CREATE_INFO_eevee_motion_blur_dilate_Resources)
+#line 239
+  eevee_motion_blur_dilate_MotionLine _compute_motion_line(eevee_motion_blur_dilate_Resources  this_, int2 tile, float2 motion)
+  {
+    float2 dir = safe_normalize(motion);
+    {eevee_motion_blur_dilate_MotionLine _tmp ;                                      _tmp.origin = float2(tile);
+
+            _tmp.normal = float2(-dir.y, dir.x);   return _tmp;};
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_motion_blur_dilate_Resources)
+#line 247
+  eevee_motion_blur_dilate_MotionRect _compute_motion_rect(eevee_motion_blur_dilate_Resources  this_, int2 tile, float2 motion)
+  {
+#if DEBUG_BYPASS_DILATION
+    return _ctor(eevee_motion_blur_dilate_MotionRect) tile, int2(1) _rotc() ;
+#endif
+
+    int2 point1 = tile + int2(sign(motion) * ceil(abs(motion) / float(MOTION_BLUR_TILE_SIZE)));
+    int2 point2 = tile;
+
+    int2 max_point = max(point1, point2);
+    int2 min_point = min(point1, point2);
+
+    max_point = min(max_point, imageSize(srt_access(eevee_motion_blur_dilate_Resources, in_tiles_img)) - 1);
+    min_point = max(min_point, int2(0));
+
+    {eevee_motion_blur_dilate_MotionRect _tmp ;                                      _tmp.bottom_left = min_point;  _tmp.extent = 1 + max_point - min_point;   return _tmp;};
+  }
+#endif
+       eevee_motion_blur_dilate_Resources eevee_motion_blur_dilate_Resources_new_()
+{
+  eevee_motion_blur_dilate_Resources result;
+  result._pad = 0;
+  return result;
+#line 263
+}
+#line 270
+
+#if defined(CREATE_INFO_eevee_motion_blur_dilate_Resources) && defined(CREATE_INFO_eevee_motion_blur_TileBuf)
+#line 270
+
+#if defined(ENTRY_POINT_eevee_motion_blur_dilate_dilate_comp)
+#line 270
+
+void eevee_motion_blur_dilate_dilate_comp(
+
+                                                               )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 274
+  eevee_motion_blur_dilate_Resources srt = eevee_motion_blur_dilate_Resources_ctor_(); eevee_motion_blur_TileBuf tiles = eevee_motion_blur_TileBuf_ctor_();
+  int2 src_tile = int2(gl_GlobalInvocationID.xy);
+  if (any(greaterThanEqual(src_tile, imageSize(srt_access(eevee_motion_blur_dilate_Resources, in_tiles_img))))) {
+    return;
+  }
+
+  float4 max_motion = imageLoad(srt_access(eevee_motion_blur_dilate_Resources, in_tiles_img), src_tile);
+
+  MotionTilePayload payload_prev = eevee_motion_blur_TileBuf_pack_payload(max_motion.xy, uint2(src_tile));
+  MotionTilePayload payload_next = eevee_motion_blur_TileBuf_pack_payload(max_motion.zw, uint2(src_tile));
+  if (true) {
+
+    eevee_motion_blur_dilate_MotionRect motion_rect = _compute_motion_rect(srt, src_tile, max_motion.xy);
+    eevee_motion_blur_dilate_MotionLine motion_line = _compute_motion_line(srt, src_tile, max_motion.xy);
+
+    for (int x = 0; x < motion_rect.extent.x; x++) {
+      for (int y = 0; y < motion_rect.extent.y; y++) {
+        int2 tile = motion_rect.bottom_left + int2(x, y);
+        if (_is_inside_motion_line(motion_line, tile)) {
+          _store(tiles, MOTION_PREV, uint2(tile), payload_prev);
+#line 296
+          _store(tiles, MOTION_NEXT, uint2(tile), payload_next);
+        }
+      }
+    }
+  }
+
+  if (true) {
+
+    eevee_motion_blur_dilate_MotionRect motion_rect = _compute_motion_rect(srt, src_tile, max_motion.zw);
+    eevee_motion_blur_dilate_MotionLine motion_line = _compute_motion_line(srt, src_tile, max_motion.zw);
+
+    for (int x = 0; x < motion_rect.extent.x; x++) {
+      for (int y = 0; y < motion_rect.extent.y; y++) {
+        int2 tile = motion_rect.bottom_left + int2(x, y);
+        if (_is_inside_motion_line(motion_line, tile)) {
+          _store(tiles, MOTION_NEXT, uint2(tile), payload_next);
+#line 314
+          _store(tiles, MOTION_PREV, uint2(tile), payload_prev);
+        }
+      }
+    }
+  }
+
+#endif
+#line 319
+}
+#endif
+#endif
+#line 325
+#define gather_sample_count 8
+
+struct eevee_motion_blur_gather_Accumulator {
+  float4 fg;
+  float4 bg;
+
+  float3 weight;
+};
+#line 327
+                                                    eevee_motion_blur_gather_Accumulator eevee_motion_blur_gather_Accumulator_ctor_() {eevee_motion_blur_gather_Accumulator r;r.fg=float4(0);r.bg=float4(0);r.weight=float3(0);return r;}
+#line 334
+#define access_eevee_motion_blur_gather_Resources_depth_tx() depth_tx
+#define access_eevee_motion_blur_gather_Resources_velocity_tx() velocity_tx
+#define access_eevee_motion_blur_gather_Resources_in_color_tx() in_color_tx
+#define access_eevee_motion_blur_gather_Resources_in_tiles_img() in_tiles_img
+#define access_eevee_motion_blur_gather_Resources_out_color_img() out_color_img
+#define access_eevee_motion_blur_gather_Resources_motion_blur_buf() motion_blur_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_motion_blur_gather_Resources
+CREATE_INFO_RES_PASS_eevee_motion_blur_gather_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_motion_blur_gather_Resources
+CREATE_INFO_RES_BATCH_eevee_motion_blur_gather_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_gather_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_motion_blur_gather_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_gather_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_motion_blur_gather_Resources
+#endif
+#line 334
+struct eevee_motion_blur_gather_Resources {
+#line 480
+int _pad;};
+#line 493
+#ifndef GPU_METAL
+eevee_motion_blur_gather_Resources eevee_motion_blur_gather_Resources_ctor_();
+float4 _motion_blur_sample_velocity(eevee_motion_blur_gather_Resources  this_, float2 uv);
+float2 _spread_compare(eevee_motion_blur_gather_Resources  this_, float center_motion_length,
+                        float sample_motion_length,
+                        float offset_length);
+float2 _depth_compare(eevee_motion_blur_gather_Resources  this_, float center_depth, float sample_depth);
+float _dir_compare(eevee_motion_blur_gather_Resources  this_, float2 offset, float2 sample_motion, float sample_motion_length);
+float2 _sample_weights(eevee_motion_blur_gather_Resources  this_, float center_depth,
+                        float sample_depth,
+                        float center_motion_length,
+                        float sample_motion_length,
+                        float offset_length);
+void _gather_sample(eevee_motion_blur_gather_Resources  this_, ViewMatrices view,
+                     float2 screen_uv,
+                     float center_depth,
+                     float center_motion_len,
+                     float2 offset,
+                     float offset_len,
+                     const bool next,
+                     _ref(eevee_motion_blur_gather_Accumulator ,accum));
+void _gather_blur(eevee_motion_blur_gather_Resources  this_, ViewMatrices view,
+                   float2 screen_uv,
+                   float2 center_motion,
+                   float center_depth,
+                   float2 max_motion,
+                   float ofs,
+                   const bool next,
+                   _ref(eevee_motion_blur_gather_Accumulator ,accum));
+eevee_motion_blur_gather_Resources eevee_motion_blur_gather_Resources_new_();
+#endif
+#line 334
+                                                  eevee_motion_blur_gather_Resources eevee_motion_blur_gather_Resources_ctor_() {eevee_motion_blur_gather_Resources r;r._pad=0;return r;}
+#line 344
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 344
+  float4 _motion_blur_sample_velocity(eevee_motion_blur_gather_Resources  this_, float2 uv)
+  {
+#line 348
+    float4 velocity = eevee_velocity_unpack(texture(srt_access(eevee_motion_blur_gather_Resources, velocity_tx), uv));
+    return velocity * float2(textureSize(srt_access(eevee_motion_blur_gather_Resources, velocity_tx), 0)).xyxy * srt_access(eevee_motion_blur_gather_Resources, motion_blur_buf).motion_scale.xxyy;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 352
+  float2 _spread_compare(eevee_motion_blur_gather_Resources  this_, float center_motion_length,
+                        float sample_motion_length,
+                        float offset_length)
+  {
+    return saturate(float2(center_motion_length, sample_motion_length) - offset_length + 1.0f);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 359
+  float2 _depth_compare(eevee_motion_blur_gather_Resources  this_, float center_depth, float sample_depth)
+  {
+    float2 depth_scale = float2(-srt_access(eevee_motion_blur_gather_Resources, motion_blur_buf).depth_scale, srt_access(eevee_motion_blur_gather_Resources, motion_blur_buf).depth_scale);
+    return saturate(0.5f + depth_scale * (sample_depth - center_depth));
+  }
+#endif
+#line 366
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 366
+  float _dir_compare(eevee_motion_blur_gather_Resources  this_, float2 offset, float2 sample_motion, float sample_motion_length)
+  {
+    if (sample_motion_length < 0.5f) {
+      return 1.0f;
+    }
+    return (dot(offset, sample_motion) > 0.0f) ? 1.0f : 0.0f;
+  }
+#endif
+#line 375
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 375
+  float2 _sample_weights(eevee_motion_blur_gather_Resources  this_, float center_depth,
+                        float sample_depth,
+                        float center_motion_length,
+                        float sample_motion_length,
+                        float offset_length)
+  {
+
+    float2 depth_weight = _depth_compare(this_, center_depth, sample_depth);
+
+    float2 spread_weight = _spread_compare(this_, center_motion_length, sample_motion_length, offset_length);
+    return depth_weight * spread_weight;
+  }
+#endif
+#line 389
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 389
+  void _gather_sample(eevee_motion_blur_gather_Resources  this_, ViewMatrices view,
+                     float2 screen_uv,
+                     float center_depth,
+                     float center_motion_len,
+                     float2 offset,
+                     float offset_len,
+                     const bool next,
+                     _ref(eevee_motion_blur_gather_Accumulator ,accum))
+  {
+    float2 sample_uv = screen_uv - offset * srt_access(eevee_motion_blur_gather_Resources, motion_blur_buf).target_size_inv;
+    float4 sample_vectors = _motion_blur_sample_velocity(this_, sample_uv);
+    float2 sample_motion = (next) ? sample_vectors.zw : sample_vectors.xy;
+    float sample_motion_len = length(sample_motion);
+    float sample_depth = reverse_z_read(textureLod(srt_access(eevee_motion_blur_gather_Resources, depth_tx), sample_uv, 0.0f).r);
+    float4 sample_color = textureLod(srt_access(eevee_motion_blur_gather_Resources, in_color_tx), sample_uv, 0.0f);
+
+    sample_depth = _depth_screen_to_view(view, sample_depth);
+
+    float3 weights;
+    weights.xy = _sample_weights(this_, center_depth, sample_depth, center_motion_len, sample_motion_len, offset_len);
+    weights.z = _dir_compare(this_, offset, sample_motion, sample_motion_len);
+    weights.xy *= weights.z;
+
+    accum.fg += sample_color * weights.y;
+    accum.bg += sample_color * weights.x;
+    accum.weight += weights;
+  }
+#endif
+#line 418
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources)
+#line 418
+  void _gather_blur(eevee_motion_blur_gather_Resources  this_, ViewMatrices view,
+                   float2 screen_uv,
+                   float2 center_motion,
+                   float center_depth,
+                   float2 max_motion,
+                   float ofs,
+                   const bool next,
+                   _ref(eevee_motion_blur_gather_Accumulator ,accum))
+  {
+    float center_motion_len = length(center_motion);
+    float max_motion_len = length(max_motion);
+#line 432
+    if (max_motion_len < center_motion_len) {
+      max_motion_len = center_motion_len;
+      max_motion = center_motion;
+    }
+
+    if (max_motion_len < 0.5f) {
+      return;
+    }
+
+    int i;
+    float t, inc = 1.0f / float(gather_sample_count);
+    for (i = 0, t = ofs * inc; i < gather_sample_count; i++, t += inc) {
+      _gather_sample(this_, view,
+                    screen_uv,
+                    center_depth,
+                    center_motion_len,
+                    max_motion * t,
+                    max_motion_len * t,
+                    next,
+                    accum);
+    }
+
+    if (center_motion_len < 0.5f) {
+      return;
+    }
+
+    for (i = 0, t = ofs * inc; i < gather_sample_count; i++, t += inc) {
+#line 462
+      _gather_sample(this_, view,
+                    screen_uv,
+                    center_depth,
+                    center_motion_len,
+                    center_motion * t,
+                    center_motion_len * t,
+                    next,
+                    accum);
+    }
+  }
+#endif
+       eevee_motion_blur_gather_Resources eevee_motion_blur_gather_Resources_new_()
+{
+  eevee_motion_blur_gather_Resources result;
+  result._pad = 0;
+  return result;
+#line 471
+}
+#line 484
+
+#if defined(CREATE_INFO_eevee_motion_blur_gather_Resources) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_motion_blur_TileBuf)
+#line 484
+
+#if defined(ENTRY_POINT_eevee_motion_blur_gather_gather_comp)
+#line 484
+
+void eevee_motion_blur_gather_gather_comp(
+#line 489
+                                                               )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 490
+  eevee_motion_blur_gather_Resources srt = eevee_motion_blur_gather_Resources_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); draw_View views = draw_View_ctor_(); eevee_motion_blur_TileBuf tiles = eevee_motion_blur_TileBuf_ctor_();
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float2 uv = (float2(texel) + 0.5f) / float2(textureSize(srt_access(eevee_motion_blur_gather_Resources, depth_tx), 0).xy);
+
+  if (!in_texture_range(texel, srt_access(eevee_motion_blur_gather_Resources, depth_tx))) {
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+#line 501
+  float center_depth = reverse_z_read(texelFetch(srt_access(eevee_motion_blur_gather_Resources, depth_tx), texel, 0).r);
+  center_depth = _depth_screen_to_view(view, center_depth);
+  float4 center_motion = _motion_blur_sample_velocity(srt, uv);
+
+  float4 center_color = textureLod(srt_access(eevee_motion_blur_gather_Resources, in_color_tx), uv, 0.0f);
+
+  float noise_offset = _rng_1D_get(sampling, SAMPLING_TIME);
+
+  float2 rand = float2(interleaved_gradient_noise(float2(gl_GlobalInvocationID.xy), 0, noise_offset),
+                       interleaved_gradient_noise(float2(gl_GlobalInvocationID.xy), 1, noise_offset));
+#line 514
+  rand.x = rand.x * 2.0f - 1.0f;
+  int2 tile = (texel + int2(int(rand.x * float(MOTION_BLUR_TILE_SIZE) * 0.25f))) /
+              MOTION_BLUR_TILE_SIZE;
+  tile = clamp(tile, int2(0), imageSize(srt_access(eevee_motion_blur_gather_Resources, in_tiles_img)) - 1);
+
+  float4 max_motion;
+
+  int2 tile_prev = _load(tiles, MOTION_PREV, uint2(tile));
+  max_motion.xy = imageLoad(srt_access(eevee_motion_blur_gather_Resources, in_tiles_img), tile_prev).xy;
+  int2 tile_next = _load(tiles, MOTION_NEXT, uint2(tile));
+  max_motion.zw = imageLoad(srt_access(eevee_motion_blur_gather_Resources, in_tiles_img), tile_next).zw;
+
+  eevee_motion_blur_gather_Accumulator accum;
+  accum.weight = float3(0.0f, 0.0f, 1.0f);
+  accum.bg = float4(0.0f);
+  accum.fg = float4(0.0f);
+
+  _gather_blur(srt, view, uv, center_motion.xy, center_depth, max_motion.xy, rand.y, false, accum);
+
+  _gather_blur(srt, view, uv, center_motion.zw, center_depth, max_motion.zw, rand.y, true, accum);
+
+#if 1
+
+  float w = 1.0f / (50.0f * float(gather_sample_count) * 4.0f);
+
+  bool no_motion = length(center_motion.xy) + length(center_motion.zw) < 0.5;
+  if (accum.weight.x < 1.0 && no_motion) {
+    w = 1.0f;
+  }
+  accum.bg += center_color * w;
+  accum.weight.x += w;
+#line 549
+  center_color = accum.bg / accum.weight.x;
+#endif
+
+  accum.fg += accum.bg;
+  accum.weight.y += accum.weight.x;
+#line 556
+  float blend_fac = saturate(1.0f - accum.weight.y / accum.weight.z);
+  float4 out_color = (accum.fg / accum.weight.z) + center_color * blend_fac;
+#line 564
+  imageStoreFast(srt_access(eevee_motion_blur_gather_Resources, out_color_img), texel, out_color);
+
+#endif
+#line 565
+}
+#endif
+#endif
+#line 577

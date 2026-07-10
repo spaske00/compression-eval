@@ -1,0 +1,4 @@
+# ninja log v7
+1	381	1782927495299668303	CMakeFiles/fmt.dir/src/os.cc.o	f27a9a539c7e1b06
+0	2409	1782927495298701258	CMakeFiles/fmt.dir/src/format.cc.o	2c9a1ff526a6f709
+2409	2442	1782927497706673304	libfmt.a	35a7230cd300aa4c

@@ -1,0 +1,10 @@
+#pragma once
+
+
+#define SHADOW_TRACING_INVALID_HISTORY FLT_MAX
+
+
+
+
+
+

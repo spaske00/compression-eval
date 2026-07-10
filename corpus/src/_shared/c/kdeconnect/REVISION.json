@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "kdeconnect",
+  "input_url": "https://github.com/KDE/kdeconnect-kde",
+  "canonical_url": "https://github.com/KDE/kdeconnect-kde",
+  "source_directory": "kdeconnect/upstream",
+  "commit": "58e52572fb7928985d00f34420ed461cb0c82717",
+  "nested_submodules": []
+}

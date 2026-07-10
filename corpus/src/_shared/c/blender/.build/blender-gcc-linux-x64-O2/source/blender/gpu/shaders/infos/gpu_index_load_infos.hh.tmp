@@ -1,0 +1,23 @@
+#line 1 "gpu_index_load_infos.hh"
+ 
+#line 11
+#ifdef GPU_SHADER
+#line 16
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define GPU_INDEX_LOAD
+#endif
+#line 24
+#ifdef CREATE_INFO_RES_PASS_gpu_index_buffer_load
+CREATE_INFO_RES_PASS_gpu_index_buffer_load
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gpu_index_buffer_load
+CREATE_INFO_RES_BATCH_gpu_index_buffer_load
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gpu_index_buffer_load
+CREATE_INFO_RES_GEOMETRY_gpu_index_buffer_load
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gpu_index_buffer_load
+CREATE_INFO_RES_SHARED_VARS_gpu_index_buffer_load
+#endif

@@ -1,0 +1,29 @@
+#line 1 "gpu_shader_material_volume_coefficients.glsl"
+ 
+#line 8
+void node_volume_coefficients(float weight,
+                              float3 AbsorptionCoefficients,
+                              float3 ScatterCoefficients,
+                              float Anisotropy,
+                              float IOR,
+                              float Backscatter,
+                              float Alpha,
+                              float Diameter,
+                              float3 EmissionCoefficients,
+                              _ref(Closure ,result))
+{
+  ClosureVolumeScatter volume_scatter_data;
+  volume_scatter_data.weight = weight;
+  volume_scatter_data.scattering = ScatterCoefficients;
+  volume_scatter_data.anisotropy = Anisotropy;
+
+  ClosureVolumeAbsorption volume_absorption_data;
+  volume_absorption_data.weight = weight;
+  volume_absorption_data.absorption = AbsorptionCoefficients;
+
+  ClosureEmission emission_data;
+  emission_data.weight = weight;
+  emission_data.emission = EmissionCoefficients;
+
+  result = closure_eval(volume_scatter_data, volume_absorption_data, emission_data);
+}

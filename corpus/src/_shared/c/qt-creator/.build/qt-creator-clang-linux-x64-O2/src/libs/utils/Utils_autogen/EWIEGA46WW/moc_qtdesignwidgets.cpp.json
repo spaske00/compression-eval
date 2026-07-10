@@ -1,0 +1,135 @@
+{
+    "classes": [
+        {
+            "className": "QtcButton",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Role",
+                    "values": [
+                        "LargePrimary",
+                        "LargeSecondary",
+                        "LargeTertiary",
+                        "LargeGhost",
+                        "MediumPrimary",
+                        "MediumSecondary",
+                        "MediumTertiary",
+                        "MediumGhost",
+                        "SmallPrimary",
+                        "SmallSecondary",
+                        "SmallTertiary",
+                        "SmallGhost",
+                        "SmallList",
+                        "SmallLink",
+                        "Tag"
+                    ]
+                }
+            ],
+            "lineNumber": 21,
+            "object": true,
+            "qualifiedClassName": "Utils::QtcButton",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractButton"
+                }
+            ]
+        },
+        {
+            "className": "QtcLabel",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Role",
+                    "values": [
+                        "Primary",
+                        "Secondary"
+                    ]
+                }
+            ],
+            "lineNumber": 60,
+            "object": true,
+            "qualifiedClassName": "Utils::QtcLabel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QLabel"
+                }
+            ]
+        },
+        {
+            "className": "QtcComboBox",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Role",
+                    "values": [
+                        "LargePrimary",
+                        "SmallPrimary"
+                    ]
+                }
+            ],
+            "lineNumber": 97,
+            "object": true,
+            "qualifiedClassName": "Utils::QtcComboBox",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QComboBox"
+                }
+            ]
+        },
+        {
+            "className": "QtcProgressBar",
+            "lineNumber": 136,
+            "object": true,
+            "qualifiedClassName": "Utils::QtcProgressBar",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QProgressBar"
+                }
+            ]
+        },
+        {
+            "className": "QtcIconDisplay",
+            "lineNumber": 245,
+            "object": true,
+            "qualifiedClassName": "Utils::QtcIconDisplay",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        },
+        {
+            "className": "QtcBadge",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Role",
+                    "values": [
+                        "NumberPrimary",
+                        "NumberSecondary"
+                    ]
+                }
+            ],
+            "lineNumber": 263,
+            "object": true,
+            "qualifiedClassName": "Utils::QtcBadge",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qtdesignwidgets.h",
+    "outputRevision": 68
+}

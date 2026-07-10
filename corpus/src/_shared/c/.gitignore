@@ -33,6 +33,30 @@
 *.exe
 *.out
 *.app
+
+# Prepared popular-project sources and verified download cache
+popular-projects/.cache/
+popular-projects/sources/
+popular-projects/.build/
+popular-projects/qualification/artifacts/
+popular-projects/bin/
+popular-projects/build-receipts/
+popular-projects/.build-receipts/
+fincept-terminal/deps/
+redis/.build/
+redis/bin/
+snappy/.build/
+snappy/bin/
+flatbuffers/.build/
+flatbuffers/bin/
+mimalloc/.build/
+mimalloc/bin/
+tmux/.build/
+tmux/bin/
+tinycc/.build/
+tinycc/bin/
+ncmpcpp/.build/
+ncmpcpp/bin/
 *.i*86
 *.x86_64
 *.hex
@@ -85,4 +109,3 @@ dkms.conf
 *.exe
 *.out
 *.app
-

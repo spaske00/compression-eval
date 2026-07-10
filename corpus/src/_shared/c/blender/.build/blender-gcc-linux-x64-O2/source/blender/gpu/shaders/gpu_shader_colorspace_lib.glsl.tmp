@@ -1,0 +1,42 @@
+#line 1 "gpu_shader_colorspace_lib.glsl"
+ 
+#line 13
+SHADER_LIBRARY_CREATE_INFO(gpu_srgb_to_framebuffer_space)
+#line 16
+#undef blender_srgb_to_framebuffer_space
+#line 34
+float4 blender_srgb_to_framebuffer_space(float4 srgb_color)
+{
+#line 40
+  if (!srgbTarget) {
+
+    return srgb_color;
+  }
+
+  float3 c = max(srgb_color.rgb, float3(0.0f));
+  float3 c1 = c * (1.0f / 12.92f);
+  float3 c2 = pow((c + 0.055f) * (1.0f / 1.055f), float3(2.4f));
+  float4 linear_color;
+  linear_color.rgb = mix(c1, c2, step(float3(0.04045f), c));
+  linear_color.a = srgb_color.a;
+  return linear_color;
+}
+#line 58
+float4 blender_rec709_srgb_to_output_space(float4 srgb_color)
+{
+  return blender_srgb_to_framebuffer_space(srgb_color);
+}
+#line 64
+float4 blender_scene_linear_to_rec709_srgb(float3x3 scene_linear_to_rec709,
+                                           float4 scene_linear_color)
+{
+  float3 rec709_linear = scene_linear_to_rec709 * scene_linear_color.rgb;
+#line 73
+  float3 c = max(rec709_linear, float3(0.0f));
+  float3 c1 = c * 12.92f;
+  float3 c2 = 1.055f * pow(c, float3(1.0f / 2.4f)) - 0.055f;
+  float4 srgb_color;
+  srgb_color.rgb = mix(c1, c2, step(float3(0.0031308f), c));
+  srgb_color.a = scene_linear_color.a;
+  return srgb_color;
+}

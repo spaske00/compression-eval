@@ -1,0 +1,7 @@
+#line 1 "gpu_shader_material_rgb_to_bw.glsl"
+ 
+#line 6
+void rgbtobw(float4 color, float3 luminance_coefficients, _ref(float ,outval))
+{
+  outval = dot(color.rgb, luminance_coefficients);
+}

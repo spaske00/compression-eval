@@ -1,0 +1,48 @@
+{
+    "classes": [
+        {
+            "className": "JsonRpcInspector",
+            "lineNumber": 66,
+            "object": true,
+            "qualifiedClassName": "Utils::JsonRpcInspector",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "endpoint",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "message",
+                            "type": "Utils::JsonRpcLogMessage"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "newMessage",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "endpoint",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "endpointRefreshRequested",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "jsonrpcinspector.h",
+    "outputRevision": 68
+}

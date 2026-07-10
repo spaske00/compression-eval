@@ -1,0 +1,12 @@
+#line 1 "overlay_clipbound_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_clipbound)
+#line 11
+void main()
+{
+  float3 world_pos = boundbox[gl_VertexID];
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+#line 19
+  gl_Position.z = gl_Position.w - 2.4e-7f;
+}

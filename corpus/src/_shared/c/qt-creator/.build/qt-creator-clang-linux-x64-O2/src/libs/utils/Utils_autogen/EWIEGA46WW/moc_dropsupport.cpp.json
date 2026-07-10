@@ -1,0 +1,64 @@
+{
+    "classes": [
+        {
+            "className": "DropSupport",
+            "lineNumber": 23,
+            "object": true,
+            "qualifiedClassName": "Utils::DropSupport",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "files",
+                            "type": "QList<DropSupport::FileSpec>"
+                        },
+                        {
+                            "name": "dropPos",
+                            "type": "QPoint"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "filesDropped",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "values",
+                            "type": "QList<QVariant>"
+                        },
+                        {
+                            "name": "dropPos",
+                            "type": "QPoint"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "valuesDropped",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "DropMimeData",
+            "lineNumber": 62,
+            "object": true,
+            "qualifiedClassName": "Utils::DropMimeData",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QMimeData"
+                }
+            ]
+        }
+    ],
+    "inputFile": "dropsupport.h",
+    "outputRevision": 68
+}

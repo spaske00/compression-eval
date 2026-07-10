@@ -1,0 +1,59 @@
+#line 1 "eevee_camera_shared.hh"
+ 
+#line 18
+constant static constexpr uint32_t CAMERA_PERSP = 0u;
+constant static constexpr uint32_t CAMERA_ORTHO = 1u;
+constant static constexpr uint32_t CAMERA_PANO_EQUIRECT = 2u;
+constant static constexpr uint32_t CAMERA_PANO_EQUISOLID = 3u;
+constant static constexpr uint32_t CAMERA_PANO_EQUIDISTANT = 4u;
+constant static constexpr uint32_t CAMERA_PANO_MIRROR = 5u;
+
+#define eCameraType uint32_t
+#line 17
+
+#define eCameraType_host_shared_ eCameraType
+#line 17
+
+eCameraType eCameraType_ctor_() { return eCameraType(0); }
+#line 26
+              bool is_panoramic(eCameraType type)
+{
+  return type > CAMERA_ORTHO;
+}
+#line 32
+#define CameraData_host_shared_ CameraData
+#define CameraData_host_shared_uniform_ CameraData
+#line 31
+struct                 CameraData {
+
+  float4x4 persmat;
+  float4x4 persinv;
+  float4x4 viewmat;
+  float4x4 viewinv;
+  float4x4 winmat;
+  float4x4 wininv;
+
+  float2 uv_scale;
+  float2 uv_bias;
+
+  float2 equirect_scale;
+  float2 equirect_scale_inv;
+  float2 equirect_bias;
+  float fisheye_fov;
+  float fisheye_lens;
+
+  float clip_near;
+  float clip_far;
+       eCameraType type;
+
+  float screen_diagonal_length;
+  float _pad0;
+  float _pad1;
+  float _pad2;
+
+  bool32_t initialized;
+#line 64
+};
+#line 31
+                                          CameraData CameraData_ctor_() {CameraData r;r.persmat=float4x4(0);r.persinv=float4x4(0);r.viewmat=float4x4(0);r.viewinv=float4x4(0);r.winmat=float4x4(0);r.wininv=float4x4(0);r.uv_scale=float2(0);r.uv_bias=float2(0);r.equirect_scale=float2(0);r.equirect_scale_inv=float2(0);r.equirect_bias=float2(0);r.fisheye_fov=0.0f;r.fisheye_lens=0.0f;r.clip_near=0.0f;r.clip_far=0.0f;r.type=eCameraType_ctor_();r.screen_diagonal_length=0.0f;r._pad0=0.0f;r._pad1=0.0f;r._pad2=0.0f;r.initialized=bool32_t(0);return r;}
+#line 69

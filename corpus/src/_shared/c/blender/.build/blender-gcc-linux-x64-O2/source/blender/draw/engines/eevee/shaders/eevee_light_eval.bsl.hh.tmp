@@ -1,0 +1,754 @@
+#line 1 "eevee_light_eval.bsl.hh"
+ 
+#line 15
+#if !defined(SRT_CONSTANT_light_closure_eval_count_reflect)
+#  define SRT_CONSTANT_light_closure_eval_count_reflect 0
+#endif
+#if !defined(SRT_CONSTANT_light_closure_eval_count_transmit)
+#  define SRT_CONSTANT_light_closure_eval_count_transmit 0
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define LIGHT_STACK_SIZE_REFLECT 3
+#elif SRT_CONSTANT_light_closure_eval_count_reflect == 0
+#  define LIGHT_STACK_SIZE_REFLECT 1
+#else
+#  define LIGHT_STACK_SIZE_REFLECT SRT_CONSTANT_light_closure_eval_count_reflect
+#endif
+
+#ifdef GLSL_CPP_STUBS
+#  define LIGHT_STACK_SIZE_TRANSMIT 3
+#elif SRT_CONSTANT_light_closure_eval_count_transmit == 0
+#  define LIGHT_STACK_SIZE_TRANSMIT 1
+#else
+#  define LIGHT_STACK_SIZE_TRANSMIT SRT_CONSTANT_light_closure_eval_count_transmit
+#endif
+#line 40
+#define access_eevee_LightEvalData_shadow_data() eevee_ShadowRenderData_new_()
+#define access_eevee_LightEvalData_utility_tx() UtilityTexture_new_()
+#define access_eevee_LightEvalData_light_closure_eval_count_reflect() light_closure_eval_count_reflect
+#define access_eevee_LightEvalData_light_closure_eval_count_transmit() light_closure_eval_count_transmit
+#ifdef CREATE_INFO_RES_PASS_eevee_LightEvalData
+CREATE_INFO_RES_PASS_eevee_LightEvalData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_LightEvalData
+CREATE_INFO_RES_BATCH_eevee_LightEvalData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_LightEvalData
+CREATE_INFO_RES_GEOMETRY_eevee_LightEvalData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_LightEvalData
+CREATE_INFO_RES_SHARED_VARS_eevee_LightEvalData
+#endif
+#line 40
+struct eevee_LightEvalData {
+                           eevee_ShadowRenderData  shadow_data;
+                           UtilityTexture  utility_tx;
+#line 55
+};
+#line 62
+#ifndef GPU_METAL
+eevee_LightEvalData eevee_LightEvalData_ctor_();
+eevee_LightEvalData eevee_LightEvalData_new_();
+#endif
+#line 40
+                                   eevee_LightEvalData eevee_LightEvalData_ctor_() {eevee_LightEvalData r;r.shadow_data=eevee_ShadowRenderData_ctor_();r.utility_tx=UtilityTexture_ctor_();return r;}
+#line 47
+       eevee_LightEvalData eevee_LightEvalData_new_()
+{
+  eevee_LightEvalData result;
+  result.shadow_data = eevee_ShadowRenderData_new_();
+  result.utility_tx = UtilityTexture_new_();
+  return result;
+#line 45
+}
+#line 52
+struct eevee_light_ClosureStackTfalse {
+  ClosureLight cl[LIGHT_STACK_SIZE_REFLECT];
+};
+#line 52
+                                                         eevee_light_ClosureStackTfalse eevee_light_ClosureStackTfalse_ctor_() {eevee_light_ClosureStackTfalse r;for(int i=0;i < LIGHT_STACK_SIZE_REFLECT;i++){r.cl[i]=ClosureLight_ctor_();}return r;}
+#line 56
+struct eevee_light_ClosureStackTtrue {
+  ClosureLight cl[LIGHT_STACK_SIZE_TRANSMIT];
+};
+#line 56
+                                                        eevee_light_ClosureStackTtrue eevee_light_ClosureStackTtrue_ctor_() {eevee_light_ClosureStackTtrue r;for(int i=0;i < LIGHT_STACK_SIZE_TRANSMIT;i++){r.cl[i]=ClosureLight_ctor_();}return r;}
+#line 60
+float eevee_light_power_get(LightData light, LightingType type)
+{
+
+  return light.power[type & 3u];
+}
+
+bool eevee_light_light_linking_affects_receiver(uint2 light_set_membership, uchar receiver_light_set)
+{
+  return bitmask64_test(light_set_membership, receiver_light_set);
+}
+
+void eevee_light_eval_single_closure(sampler2DArray util_tx,
+                         LightData light,
+                         LightVector lv,
+                         LightVertices vertices,
+                         _ref(ClosureLight ,cl),
+                         float3 V,
+                         float attenuation,
+                         float shadow)
+{
+  attenuation *= eevee_light_power_get(light, cl.type);
+  if (attenuation < 1e-30f) {
+    return;
+  }
+  float ltc_result = light_ltc(util_tx, light, cl.N, V, lv, cl.ltc_mat, vertices);
+  float3 out_radiance = light.color * ltc_result;
+  float visibility = shadow * attenuation;
+  cl.light_shadowed += visibility * out_radiance;
+  cl.light_unshadowed += attenuation * out_radiance;
+}
+#line 91
+struct eevee_light_EvalCtxTtrue {
+  eevee_light_ClosureStackTtrue stack;
+
+  float3 P;
+  float3 Ng;
+  float3 V;
+  float2 texel;
+  Thickness thickness;
+  uchar receiver_light_set;
+  float terminator_normal_offset;
+  float terminator_geometry_offset;
+#line 197
+};
+#line 201
+#ifndef GPU_METAL
+eevee_light_EvalCtxTtrue eevee_light_EvalCtxTtrue_ctor_();
+void _light_eval_single(_ref(eevee_light_EvalCtxTtrue ,this_), eevee_LightEvalData  srt,
+                         LightData light,
+                         const bool is_directional);
+void _eval_directional(_ref(eevee_light_EvalCtxTtrue ,this_), eevee_LightEvalData  srt, uint _0, LightData light);
+void _eval_local(_ref(eevee_light_EvalCtxTtrue ,this_), eevee_LightEvalData  srt, uint _0, LightData light);
+#endif
+#line 91
+                                        eevee_light_EvalCtxTtrue eevee_light_EvalCtxTtrue_ctor_() {eevee_light_EvalCtxTtrue r;r.stack=eevee_light_ClosureStackTtrue_ctor_();r.P=float3(0);r.Ng=float3(0);r.V=float3(0);r.texel=float2(0);r.thickness=Thickness_ctor_();r.receiver_light_set=0u;r.terminator_normal_offset=0.0f;r.terminator_geometry_offset=0.0f;return r;}
+#line 103
+
+#if defined(CREATE_INFO_eevee_LightEvalData)
+#line 103
+  void _light_eval_single(_ref(eevee_light_EvalCtxTtrue ,this_), eevee_LightEvalData  srt,
+                         LightData light,
+                         const bool is_directional)
+  {
+#line 110
+    if (!eevee_light_light_linking_affects_receiver(light.light_set_membership, this_.receiver_light_set)) {
+      return;
+    }
+
+#if defined(SPECIALIZED_SHADOW_PARAMS) || defined(SRT_CONSTANT_shadow_ray_count)
+    int ray_count = shadow_ray_count;
+    int ray_step_count = shadow_ray_step_count;
+#else
+    int ray_count = srt_access(eevee_Uniform, uniform_buf).shadow.ray_count;
+    int ray_step_count = srt_access(eevee_Uniform, uniform_buf).shadow.step_count;
+#endif
+
+    LightVector lv = light_vector_get(light, is_directional, this_.P);
+#line 125
+    bool is_translucent_with_thickness = true &&
+                                         (this_.stack.cl[0].type == LIGHT_TRANSLUCENT_WITH_THICKNESS);
+
+    float attenuation = light_attenuation_surface(light, is_directional, lv);
+    float facing = light_attenuation_facing(light, lv.L, lv.dist, this_.stack.cl[0].N, true);
+
+    if (!is_translucent_with_thickness) {
+#line 134
+      attenuation *= facing;
+    }
+
+    if (attenuation < LIGHT_ATTENUATION_THRESHOLD) {
+      return;
+    }
+
+    float shadow = 1.0f;
+    if (light.tilemap_index != LIGHT_NO_SHADOW) {
+      shadow = eevee_shadow_eval(srt_access(eevee_LightEvalData, shadow_data),
+                           light,
+                           is_directional,
+                           true,
+                           is_translucent_with_thickness,
+                           this_.texel,
+                           this_.thickness,
+                           this_.P,
+                           this_.Ng,
+                           this_.stack.cl[0].N,
+                           this_.terminator_normal_offset,
+                           this_.terminator_geometry_offset,
+                           ray_count,
+                           ray_step_count);
+    }
+
+    if (is_translucent_with_thickness) {
+#line 162
+      this_.stack.cl[0].N = lv.L;
+
+      attenuation *= M_1_PI;
+    }
+
+    LightVertices light_shape_vertices = light_shape_corners(light, lv);
+#line 174
+{
+#line 172
+                                             {
+
+#if 1
+#line 173
+                                  {
+
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 0
+#line 174
+                                                                                                      {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[0], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 178
+      }
+
+#else
+#line 179
+           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 180
+                                                                                                     {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[0], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 184
+      }
+
+#endif
+#line 185
+    }
+#line 172
+                                             {
+
+#if 1
+#line 173
+                                  {
+
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 1
+#line 174
+                                                                                                      {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[1], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 178
+      }
+
+#else
+#line 179
+           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 180
+                                                                                                     {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[1], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 184
+      }
+
+#endif
+#line 185
+    }
+#line 172
+                                             {
+
+#if 1
+#line 173
+                                  {
+
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 2
+#line 174
+                                                                                                      {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[2], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 178
+      }
+
+#else
+#line 179
+           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 180
+                                                                                                     {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[2], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 184
+      }
+
+#endif
+#line 185
+    }
+#line 185
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightEvalData)
+#line 188
+  void _eval_directional(_ref(eevee_light_EvalCtxTtrue ,this_), eevee_LightEvalData  srt, uint _0, LightData light)
+  {
+    _light_eval_single(this_, srt, light, true);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightEvalData)
+#line 193
+  void _eval_local(_ref(eevee_light_EvalCtxTtrue ,this_), eevee_LightEvalData  srt, uint _0, LightData light)
+  {
+    _light_eval_single(this_, srt, light, false);
+  }
+#endif
+#line 91
+struct eevee_light_EvalCtxTfalse {
+  eevee_light_ClosureStackTfalse stack;
+
+  float3 P;
+  float3 Ng;
+  float3 V;
+  float2 texel;
+  Thickness thickness;
+  uchar receiver_light_set;
+  float terminator_normal_offset;
+  float terminator_geometry_offset;
+#line 197
+};
+#line 201
+#ifndef GPU_METAL
+eevee_light_EvalCtxTfalse eevee_light_EvalCtxTfalse_ctor_();
+void _light_eval_single(_ref(eevee_light_EvalCtxTfalse ,this_), eevee_LightEvalData  srt,
+                         LightData light,
+                         const bool is_directional);
+void _eval_directional(_ref(eevee_light_EvalCtxTfalse ,this_), eevee_LightEvalData  srt, uint _0, LightData light);
+void _eval_local(_ref(eevee_light_EvalCtxTfalse ,this_), eevee_LightEvalData  srt, uint _0, LightData light);
+#endif
+#line 91
+                                         eevee_light_EvalCtxTfalse eevee_light_EvalCtxTfalse_ctor_() {eevee_light_EvalCtxTfalse r;r.stack=eevee_light_ClosureStackTfalse_ctor_();r.P=float3(0);r.Ng=float3(0);r.V=float3(0);r.texel=float2(0);r.thickness=Thickness_ctor_();r.receiver_light_set=0u;r.terminator_normal_offset=0.0f;r.terminator_geometry_offset=0.0f;return r;}
+#line 103
+
+#if defined(CREATE_INFO_eevee_LightEvalData)
+#line 103
+  void _light_eval_single(_ref(eevee_light_EvalCtxTfalse ,this_), eevee_LightEvalData  srt,
+                         LightData light,
+                         const bool is_directional)
+  {
+#line 110
+    if (!eevee_light_light_linking_affects_receiver(light.light_set_membership, this_.receiver_light_set)) {
+      return;
+    }
+
+#if defined(SPECIALIZED_SHADOW_PARAMS) || defined(SRT_CONSTANT_shadow_ray_count)
+    int ray_count = shadow_ray_count;
+    int ray_step_count = shadow_ray_step_count;
+#else
+    int ray_count = srt_access(eevee_Uniform, uniform_buf).shadow.ray_count;
+    int ray_step_count = srt_access(eevee_Uniform, uniform_buf).shadow.step_count;
+#endif
+
+    LightVector lv = light_vector_get(light, is_directional, this_.P);
+#line 125
+    bool is_translucent_with_thickness = false &&
+                                         (this_.stack.cl[0].type == LIGHT_TRANSLUCENT_WITH_THICKNESS);
+
+    float attenuation = light_attenuation_surface(light, is_directional, lv);
+    float facing = light_attenuation_facing(light, lv.L, lv.dist, this_.stack.cl[0].N, false);
+
+    if (!is_translucent_with_thickness) {
+#line 134
+      attenuation *= facing;
+    }
+
+    if (attenuation < LIGHT_ATTENUATION_THRESHOLD) {
+      return;
+    }
+
+    float shadow = 1.0f;
+    if (light.tilemap_index != LIGHT_NO_SHADOW) {
+      shadow = eevee_shadow_eval(srt_access(eevee_LightEvalData, shadow_data),
+                           light,
+                           is_directional,
+                           false,
+                           is_translucent_with_thickness,
+                           this_.texel,
+                           this_.thickness,
+                           this_.P,
+                           this_.Ng,
+                           this_.stack.cl[0].N,
+                           this_.terminator_normal_offset,
+                           this_.terminator_geometry_offset,
+                           ray_count,
+                           ray_step_count);
+    }
+
+    if (is_translucent_with_thickness) {
+#line 162
+      this_.stack.cl[0].N = lv.L;
+
+      attenuation *= M_1_PI;
+    }
+
+    LightVertices light_shape_vertices = light_shape_corners(light, lv);
+#line 174
+{
+#line 172
+                                             {
+
+#if 0
+#line 173
+                                   {
+
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 0
+#line 174
+                                                                                                      {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[0], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 178
+      }
+
+#else
+#line 179
+           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 180
+                                                                                                     {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[0], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 184
+      }
+
+#endif
+#line 185
+    }
+#line 172
+                                             {
+
+#if 0
+#line 173
+                                   {
+
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 1
+#line 174
+                                                                                                      {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[1], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 178
+      }
+
+#else
+#line 179
+           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 1
+#line 180
+                                                                                                     {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[1], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 184
+      }
+
+#endif
+#line 185
+    }
+#line 172
+                                             {
+
+#if 0
+#line 173
+                                   {
+
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 2
+#line 174
+                                                                                                      {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[2], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 178
+      }
+
+#else
+#line 179
+           {
+
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 2
+#line 180
+                                                                                                     {
+          eevee_light_eval_single_closure(
+              srt_access(UtilityTexture, utility_tx), light, lv, light_shape_vertices, this_.stack.cl[2], this_.V, attenuation, shadow);
+        }
+
+#endif
+#line 184
+      }
+
+#endif
+#line 185
+    }
+#line 185
+    }
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightEvalData)
+#line 188
+  void _eval_directional(_ref(eevee_light_EvalCtxTfalse ,this_), eevee_LightEvalData  srt, uint _0, LightData light)
+  {
+    _light_eval_single(this_, srt, light, true);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightEvalData)
+#line 193
+  void _eval_local(_ref(eevee_light_EvalCtxTfalse ,this_), eevee_LightEvalData  srt, uint _0, LightData light)
+  {
+    _light_eval_single(this_, srt, light, false);
+  }
+#endif
+#line 58 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_LightEvalData)
+#line 58
+void eevee_light_foreach_visible(const eevee_LightRenderData  srt,
+                     float2 pixel,
+                     float linear_view_z,
+                     _ref(eevee_light_EvalCtxTtrue ,cb),
+                     eevee_LightEvalData  res)
+{
+#line 68
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+#line 74
+#ifdef SRT_CONSTANT_light_iter_force_no_culling
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+  return;
+#endif
+
+  {
+    uint2 tile_co = uint2(pixel / srt_access(eevee_LightRenderData, light_cull_buf).tile_size);
+    uint tile_word_offset = (tile_co.x + tile_co.y * srt_access(eevee_LightRenderData, light_cull_buf).tile_x_len) * srt_access(eevee_LightRenderData, light_cull_buf).tile_word_len;
+    int zbin_index = eevee_light_culling_z_to_zbin(srt_access(eevee_LightRenderData, light_cull_buf).zbin_scale, srt_access(eevee_LightRenderData, light_cull_buf).zbin_bias, linear_view_z);
+    zbin_index = clamp(zbin_index, 0, CULLING_ZBIN_COUNT - 1);
+    uint zbin_data = srt_access(eevee_LightRenderData, light_zbin_buf)[zbin_index];
+    uint min_index = zbin_data & 0xFFFFu;
+    uint max_index = zbin_data >> 16u;
+
+#ifdef GPU_METAL
+#line 99
+    min_index = simd_broadcast_first(simd_min(min_index));
+    max_index = simd_broadcast_first(simd_max(max_index));
+#endif
+
+    uint word_min = min_index >> 5u;
+    uint word_max = max_index >> 5u;
+    for (uint word_idx = word_min; word_idx <= word_max; word_idx++) {
+      uint word = srt_access(eevee_LightRenderData, light_tile_buf)[tile_word_offset + word_idx];
+      word &= eevee_light_zbin_mask(word_idx, min_index, max_index);
+
+#ifdef GPU_METAL
+#line 116
+      word = simd_broadcast_first(simd_or(word));
+#endif
+      int bit_index;
+      while ((bit_index = findLSB(word)) != -1) {
+        word &= ~1u << uint(bit_index);
+        uint index = word_idx * 32u + uint(bit_index);
+        LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+        _eval_local(cb, res, index, light);
+      }
+    }
+  }
+}
+#endif
+#line 204 "eevee_light_eval.bsl.hh"
+#line 58 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_LightEvalData)
+#line 58
+void eevee_light_foreach_visible(const eevee_LightRenderData  srt,
+                     float2 pixel,
+                     float linear_view_z,
+                     _ref(eevee_light_EvalCtxTfalse ,cb),
+                     eevee_LightEvalData  res)
+{
+#line 68
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+#line 74
+#ifdef SRT_CONSTANT_light_iter_force_no_culling
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+  return;
+#endif
+
+  {
+    uint2 tile_co = uint2(pixel / srt_access(eevee_LightRenderData, light_cull_buf).tile_size);
+    uint tile_word_offset = (tile_co.x + tile_co.y * srt_access(eevee_LightRenderData, light_cull_buf).tile_x_len) * srt_access(eevee_LightRenderData, light_cull_buf).tile_word_len;
+    int zbin_index = eevee_light_culling_z_to_zbin(srt_access(eevee_LightRenderData, light_cull_buf).zbin_scale, srt_access(eevee_LightRenderData, light_cull_buf).zbin_bias, linear_view_z);
+    zbin_index = clamp(zbin_index, 0, CULLING_ZBIN_COUNT - 1);
+    uint zbin_data = srt_access(eevee_LightRenderData, light_zbin_buf)[zbin_index];
+    uint min_index = zbin_data & 0xFFFFu;
+    uint max_index = zbin_data >> 16u;
+
+#ifdef GPU_METAL
+#line 99
+    min_index = simd_broadcast_first(simd_min(min_index));
+    max_index = simd_broadcast_first(simd_max(max_index));
+#endif
+
+    uint word_min = min_index >> 5u;
+    uint word_max = max_index >> 5u;
+    for (uint word_idx = word_min; word_idx <= word_max; word_idx++) {
+      uint word = srt_access(eevee_LightRenderData, light_tile_buf)[tile_word_offset + word_idx];
+      word &= eevee_light_zbin_mask(word_idx, min_index, max_index);
+
+#ifdef GPU_METAL
+#line 116
+      word = simd_broadcast_first(simd_or(word));
+#endif
+      int bit_index;
+      while ((bit_index = findLSB(word)) != -1) {
+        word &= ~1u << uint(bit_index);
+        uint index = word_idx * 32u + uint(bit_index);
+        LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+        _eval_local(cb, res, index, light);
+      }
+    }
+  }
+}
+#endif
+#line 208 "eevee_light_eval.bsl.hh"
+eevee_light_EvalCtxTtrue eevee_light_init_from_reflect_ctx(eevee_light_EvalCtxTfalse ctx)
+{
+  eevee_light_EvalCtxTtrue ctx_tr;
+  ctx_tr.P = ctx.P;
+  ctx_tr.Ng = ctx.Ng;
+  ctx_tr.V = ctx.V;
+  ctx_tr.texel = ctx.texel;
+  ctx_tr.thickness = ctx.thickness;
+  ctx_tr.receiver_light_set = ctx.receiver_light_set;
+  ctx_tr.terminator_normal_offset = ctx.terminator_normal_offset;
+  ctx_tr.terminator_geometry_offset = ctx.terminator_geometry_offset;
+  return ctx_tr;
+}
+#line 224
+#define access_eevee_LightEvalIterator_inner() eevee_LightEvalData_new_()
+#define access_eevee_LightEvalIterator_light_data() eevee_LightRenderData_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_LightEvalIterator
+CREATE_INFO_RES_PASS_eevee_LightEvalIterator
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_LightEvalIterator
+CREATE_INFO_RES_BATCH_eevee_LightEvalIterator
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_LightEvalIterator
+CREATE_INFO_RES_GEOMETRY_eevee_LightEvalIterator
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_LightEvalIterator
+CREATE_INFO_RES_SHARED_VARS_eevee_LightEvalIterator
+#endif
+#line 224
+struct eevee_LightEvalIterator {
+                           eevee_LightEvalData  inner;
+                           eevee_LightRenderData  light_data;
+#line 252
+};
+#line 256
+#ifndef GPU_METAL
+eevee_LightEvalIterator eevee_LightEvalIterator_ctor_();
+void _eval_reflection(eevee_LightEvalIterator  this_, _ref(eevee_light_EvalCtxTfalse ,ctx), float vPz);
+void _eval_transmission(eevee_LightEvalIterator  this_, _ref(eevee_light_EvalCtxTtrue ,ctx), float vPz);
+eevee_LightEvalIterator eevee_LightEvalIterator_new_();
+#endif
+#line 224
+                                       eevee_LightEvalIterator eevee_LightEvalIterator_ctor_() {eevee_LightEvalIterator r;r.inner=eevee_LightEvalData_ctor_();r.light_data=eevee_LightRenderData_ctor_();return r;}
+#line 228
+
+#if defined(CREATE_INFO_eevee_LightEvalIterator)
+#line 228
+  void _eval_reflection(eevee_LightEvalIterator  this_, _ref(eevee_light_EvalCtxTfalse ,ctx), float vPz)
+  {
+#line 232
+#if SRT_CONSTANT_light_closure_eval_count_reflect > 0
+#line 231
+                                                                                                 {
+      eevee_light_foreach_visible(srt_access(eevee_LightEvalIterator, light_data), ctx.texel, vPz, ctx, srt_access(eevee_LightEvalIterator, inner));
+    }
+
+#endif
+#line 234
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightEvalIterator)
+#line 236
+  void _eval_transmission(eevee_LightEvalIterator  this_, _ref(eevee_light_EvalCtxTtrue ,ctx), float vPz)
+  {
+#line 240
+#if SRT_CONSTANT_light_closure_eval_count_transmit > 0
+#line 239
+                                                                                                  {
+      eevee_light_foreach_visible(srt_access(eevee_LightEvalIterator, light_data), ctx.texel, vPz, ctx, srt_access(eevee_LightEvalIterator, inner));
+    }
+
+#endif
+#line 242
+  }
+#endif
+       eevee_LightEvalIterator eevee_LightEvalIterator_new_()
+{
+  eevee_LightEvalIterator result;
+  result.inner = eevee_LightEvalData_new_();
+  result.light_data = eevee_LightRenderData_new_();
+  return result;
+#line 242
+}
+#line 246

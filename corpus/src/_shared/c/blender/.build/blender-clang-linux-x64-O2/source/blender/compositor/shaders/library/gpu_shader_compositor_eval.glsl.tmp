@@ -1,0 +1,6 @@
+#line 1 "gpu_shader_compositor_eval.glsl"
+ 
+#line 11
+COMPUTE_SHADER_CREATE_INFO(compositor_nodetree)
+#line 14
+void evaluate() {}

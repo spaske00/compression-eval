@@ -1,0 +1,38 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(overlay_antialiasing_FragOut)
+FRAGMENT_OUT(0, float4, overlay_antialiasing_FragOut_color)
+GPU_SHADER_CREATE_END()
+
+
+
+GPU_SHADER_CREATE_INFO(overlay_antialiasing_Resources)
+ADDITIONAL_INFO(draw_globals)
+.sampler(0, ImageType::sampler2DDepth, "depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2D, "color_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(2, ImageType::sampler2D, "line_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+PUSH_CONSTANT(bool, do_smooth_lines)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(overlay_antialiasing_vert_main_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(overlay_antialiasing_frag_main_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+ADDITIONAL_INFO(overlay_antialiasing_Resources)
+ADDITIONAL_INFO(overlay_antialiasing_FragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(overlay_antialiasing_pipeline)
+GRAPHIC_SOURCE("overlay_antialiasing.bsl.hh")
+VERTEX_FUNCTION("overlay_antialiasing_vert_main")
+FRAGMENT_FUNCTION("overlay_antialiasing_frag_main")
+ADDITIONAL_INFO(overlay_antialiasing_vert_main_infos_)
+ADDITIONAL_INFO(overlay_antialiasing_frag_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

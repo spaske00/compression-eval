@@ -1,0 +1,35 @@
+#line 1 "overlay_outline_prepass_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_outline_prepass_mesh)
+#line 15
+uint outline_colorid_get()
+{
+  eObjectInfoFlag ob_flag = drw_object_infos().flag;
+  bool is_active = flag_test(ob_flag, OBJECT_ACTIVE);
+
+  if (is_transform) {
+    return 0u;
+  }
+  if (is_active) {
+    return 3u;
+  }
+  return 1u;
+}
+
+void main()
+{
+  float3 world_pos = drw_point_object_to_world(pos);
+
+  gl_Position = drw_point_world_to_homogenous(world_pos);
+#line 36
+  gl_Position.z -= 1e-3f;
+#line 39
+  interp.ob_id = uint(drw_resource_id() + 1);
+#line 42
+  uint outline_id = outline_colorid_get();
+#line 45
+  interp.ob_id = outline_id_pack(outline_id, interp.ob_id);
+
+  view_clipping_distances(world_pos);
+}

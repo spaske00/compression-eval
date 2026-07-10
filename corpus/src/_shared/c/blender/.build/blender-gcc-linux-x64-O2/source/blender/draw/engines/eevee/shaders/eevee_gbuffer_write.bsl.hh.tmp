@@ -1,0 +1,608 @@
+#line 1 "eevee_gbuffer_write.bsl.hh"
+ 
+#line 28
+#define access_gbuffer_PackParameters_gbuffer_has_reflection() gbuffer_has_reflection
+#define access_gbuffer_PackParameters_gbuffer_has_refraction() gbuffer_has_refraction
+#define access_gbuffer_PackParameters_gbuffer_has_subsurface() gbuffer_has_subsurface
+#define access_gbuffer_PackParameters_gbuffer_has_translucent() gbuffer_has_translucent
+#define access_gbuffer_PackParameters_gbuffer_reflection_colorless() gbuffer_reflection_colorless
+#define access_gbuffer_PackParameters_gbuffer_refraction_colorless() gbuffer_refraction_colorless
+#define access_gbuffer_PackParameters_gbuffer_layer_max() gbuffer_layer_max
+#define access_gbuffer_PackParameters_gbuffer_simple_layout() gbuffer_simple_layout
+#ifdef CREATE_INFO_RES_PASS_gbuffer_PackParameters
+CREATE_INFO_RES_PASS_gbuffer_PackParameters
+#endif
+#ifdef CREATE_INFO_RES_BATCH_gbuffer_PackParameters
+CREATE_INFO_RES_BATCH_gbuffer_PackParameters
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_gbuffer_PackParameters
+CREATE_INFO_RES_GEOMETRY_gbuffer_PackParameters
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_gbuffer_PackParameters
+CREATE_INFO_RES_SHARED_VARS_gbuffer_PackParameters
+#endif
+#line 28
+struct gbuffer_PackParameters {
+#line 45
+int _pad;};
+#line 49
+#ifndef GPU_METAL
+gbuffer_PackParameters gbuffer_PackParameters_ctor_();
+gbuffer_PackParameters gbuffer_PackParameters_new_();
+#endif
+#line 28
+                                      gbuffer_PackParameters gbuffer_PackParameters_ctor_() {gbuffer_PackParameters r;r._pad=0;return r;}
+#line 38
+       gbuffer_PackParameters gbuffer_PackParameters_new_()
+{
+  gbuffer_PackParameters result;
+  result._pad = 0;
+  return result;
+#line 36
+}
+#line 40
+#ifdef SRT_CONSTANT_gbuffer_layer_max
+#  define GBUFFER_LAYER_MAX SRT_CONSTANT_gbuffer_layer_max
+#endif
+#line 52
+#if defined(CREATE_INFO_gbuffer_PackParameters)
+#line 51
+gbuffer_ClosurePacking gbuffer_pack_closure(const gbuffer_PackParameters  srt, ClosureUndetermined cl)
+{
+  gbuffer_ClosurePacking cl_packed;
+  cl_packed.mode = gbuffer_closure_type_to_mode(cl.type, gbuffer_color_is_grayscale(cl.color));
+
+  if (cl.weight <= CLOSURE_WEIGHT_CUTOFF) {
+    cl_packed.mode = GBUF_NONE;
+  }
+
+  cl_packed.N = cl.N;
+  cl_packed.data0 = gbuffer_closure_color_pack(cl.color);
+
+  switch (cl_packed.mode) {
+    case GBUF_REFLECTION:
+
+#if SRT_CONSTANT_gbuffer_has_reflection
+#line 65
+                                                                                        {
+
+#if SRT_CONSTANT_gbuffer_reflection_colorless
+#line 66
+                                                                                                {
+
+          ;
+        }
+
+#else
+#line 70
+             {
+          gbuffer_Reflection_pack_additional(cl_packed, cl);
+        }
+
+#endif
+#line 73
+      }
+
+#endif
+#line 74
+      break;
+    case GBUF_REFLECTION_COLORLESS:
+
+#if SRT_CONSTANT_gbuffer_has_reflection
+#line 76
+                                                                                        {
+        gbuffer_ReflectionColorless_pack_additional(cl_packed, cl);
+      }
+
+#endif
+#line 79
+      break;
+    case GBUF_REFRACTION:
+
+#if SRT_CONSTANT_gbuffer_has_refraction
+#line 81
+                                                                                        {
+
+#if SRT_CONSTANT_gbuffer_refraction_colorless
+#line 82
+                                                                                                {
+
+          ;
+        }
+
+#else
+#line 86
+             {
+          gbuffer_Refraction_pack_additional(cl_packed, cl);
+        }
+
+#endif
+#line 89
+      }
+
+#endif
+#line 90
+      break;
+    case GBUF_REFRACTION_COLORLESS:
+
+#if SRT_CONSTANT_gbuffer_has_refraction
+#line 92
+                                                                                        {
+        gbuffer_RefractionColorless_pack_additional(cl_packed, cl);
+      }
+
+#endif
+#line 95
+      break;
+    case GBUF_THIN_REFRACTION:
+
+#if SRT_CONSTANT_gbuffer_has_refraction
+#line 97
+                                                                                        {
+
+#if SRT_CONSTANT_gbuffer_refraction_colorless
+#line 98
+                                                                                                {
+
+          ;
+        }
+
+#else
+#line 102
+             {
+          gbuffer_ThinRefraction_pack_additional(cl_packed, cl);
+        }
+
+#endif
+#line 105
+      }
+
+#endif
+#line 106
+      break;
+    case GBUF_THIN_REFRACTION_COLORLESS:
+
+#if SRT_CONSTANT_gbuffer_has_refraction
+#line 108
+                                                                                        {
+        gbuffer_ThinRefractionColorless_pack_additional(cl_packed, cl);
+      }
+
+#endif
+#line 111
+      break;
+    case GBUF_SUBSURFACE:
+
+#if SRT_CONSTANT_gbuffer_has_subsurface
+#line 113
+                                                                                        {
+        gbuffer_Subsurface_pack_additional(cl_packed, cl);
+      }
+
+#endif
+#line 116
+      break;
+    default:
+      break;
+  }
+  return cl_packed;
+}
+#endif
+#line 124
+struct gbuffer_Packed {
+  float4 closure[GBUFFER_LAYER_MAX * 2];
+  float2 normal[GBUFFER_LAYER_MAX];
+  float2 additional_info;
+  uint header;
+  uint object_id;
+  UsedLayerFlag used_layers;
+};
+#line 124
+                              gbuffer_Packed gbuffer_Packed_ctor_() {gbuffer_Packed r;r.additional_info=float2(0);r.header=0u;r.object_id=0u;r.used_layers=UsedLayerFlag_ctor_();for(int i=0;i < GBUFFER_LAYER_MAX * 2;i++){r.closure[i]=float4(0);}for(int i=0;i < GBUFFER_LAYER_MAX;i++){r.normal[i]=float2(0);}return r;}
+#line 134
+float3 gbuffer_closure_data_dither_round_to_nearest(float3 data, float3 noise)
+{
+  constexpr float quantization_step = 1.0f / 1023.0f;
+  return saturate(data + (noise - 0.5f) * quantization_step);
+}
+
+float4 gbuffer_closure_data_dither_round_to_nearest(float4 data, float3 noise)
+{
+  return float4(gbuffer_closure_data_dither_round_to_nearest(data.rgb, noise), data.a);
+}
+#line 146
+float3 gbuffer_closure_data_dither_flush_to_zero(float3 data, float3 noise)
+{
+  constexpr float quantization_step = 1.0f / 1023.0f;
+  return saturate(data + noise * quantization_step);
+}
+
+float4 gbuffer_closure_data_dither_flush_to_zero(float4 data, float3 noise)
+{
+  return float4(gbuffer_closure_data_dither_flush_to_zero(data.rgb, noise), data.a);
+}
+
+float3 gbuffer_closure_dither_noise(float2 texel, uint layer_id, float3 offset)
+{
+  float seed = float(layer_id) * 3.0f;
+  return interleaved_gradient_noise(texel, float3(seed, seed + 1.0f, seed + 2.0f), offset);
+}
+
+float4 gbuffer_closure_data_layer_dither_round_to_nearest(float4 data,
+                                                  float2 texel,
+                                                  uint layer_id,
+                                                  float3 offset)
+{
+  return gbuffer_closure_data_dither_round_to_nearest(data, gbuffer_closure_dither_noise(texel, layer_id, offset));
+}
+
+float4 gbuffer_closure_data_layer_dither_flush_to_zero(float4 data,
+                                               float2 texel,
+                                               uint layer_id,
+                                               float3 offset)
+{
+  return gbuffer_closure_data_dither_flush_to_zero(data, gbuffer_closure_dither_noise(texel, layer_id, offset));
+}
+#line 180
+struct gbuffer_Packer {
+
+  gbuffer_ClosurePacking closures[GBUFFER_LAYER_MAX];
+
+  float additional_info;
+
+  gbuffer_Header header;
+#line 341
+};
+#line 344
+#ifndef GPU_METAL
+gbuffer_Packer gbuffer_Packer_ctor_();
+void _closures_to_layer_order(_ref(gbuffer_Packer ,this_), const gbuffer_PackParameters  srt);
+void _reuse_tangent_spaces(_ref(gbuffer_Packer ,this_), const gbuffer_PackParameters  srt);
+UsedLayerFlag _get_used_normal_layers(_ref(gbuffer_Packer ,this_));
+gbuffer_Packed _result_get(_ref(gbuffer_Packer ,this_), const gbuffer_PackParameters  srt);
+#endif
+#line 180
+                              gbuffer_Packer gbuffer_Packer_ctor_() {gbuffer_Packer r;r.additional_info=0.0f;r.header=gbuffer_Header_ctor_();for(int i=0;i < GBUFFER_LAYER_MAX;i++){r.closures[i]=gbuffer_ClosurePacking_ctor_();}return r;}
+#line 189
+
+#if defined(CREATE_INFO_gbuffer_PackParameters)
+#line 189
+  void _closures_to_layer_order(_ref(gbuffer_Packer ,this_), const gbuffer_PackParameters  srt)
+  {
+#line 200
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 199
+                                                                                     {
+      if (_is_empty(this_.closures[1])) {
+        this_.closures[1] = this_.closures[2];
+        this_.closures[2].mode = GBUF_NONE;
+#line 209
+      }
+    }
+
+#endif
+#line 211
+
+#if SRT_CONSTANT_gbuffer_layer_max > 1
+#line 211
+                                                                                     {
+      if (_is_empty(this_.closures[0])) {
+        this_.closures[0] = this_.closures[1];
+        this_.closures[1].mode = GBUF_NONE;
+
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 215
+                                                                                         {
+          this_.closures[1] = this_.closures[2];
+          this_.closures[2].mode = GBUF_NONE;
+#line 224
+        }
+
+#endif
+#line 225
+      }
+    }
+
+#endif
+#line 227
+  }
+#endif
+#line 230
+
+#if defined(CREATE_INFO_gbuffer_PackParameters)
+#line 230
+  void _reuse_tangent_spaces(_ref(gbuffer_Packer ,this_), const gbuffer_PackParameters  srt)
+  {
+#line 236
+#if SRT_CONSTANT_gbuffer_layer_max > 1
+#line 235
+                                                                                     {
+      if (!_is_empty(this_.closures[1])) {
+        if (!all(equal(this_.closures[0].N, this_.closures[1].N))) {
+
+          _tangent_space_id_set(this_.header, 1, 1);
+        }
+        else {
+
+        }
+      }
+    }
+
+#endif
+#line 246
+
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 246
+                                                                                     {
+      if (!_is_empty(this_.closures[2])) {
+        if (!all(equal(this_.closures[0].N, this_.closures[2].N))) {
+          if (!all(equal(this_.closures[1].N, this_.closures[2].N))) {
+
+            _tangent_space_id_set(this_.header, 2, 2);
+          }
+          else {
+
+            _tangent_space_id_set(this_.header, 2, 1);
+          }
+        }
+        else {
+
+        }
+      }
+    }
+
+#endif
+#line 263
+  }
+#endif
+  UsedLayerFlag _get_used_normal_layers(_ref(gbuffer_Packer ,this_))
+  {
+    uchar flag = 0;
+    if (_tangent_space_id(this_.header, 1) == 1u) {
+      flag |= NORMAL_DATA_1;
+    }
+    if (_tangent_space_id(this_.header, 2) == 2u) {
+      flag |= NORMAL_DATA_2;
+    }
+    return UsedLayerFlag(flag);
+  }
+#line 277
+
+#if defined(CREATE_INFO_gbuffer_PackParameters)
+#line 277
+  gbuffer_Packed _result_get(_ref(gbuffer_Packer ,this_), const gbuffer_PackParameters  srt)
+  {
+    gbuffer_Packed data;
+#line 286
+{
+#line 283
+                                                                   {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 0
+#line 284
+                                                                                       {
+        data.normal[0] = gbuffer_normal_pack(this_.closures[0].N);
+      }
+
+#endif
+#line 287
+    }
+#line 283
+                                                                   {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 1
+#line 284
+                                                                                       {
+        data.normal[1] = gbuffer_normal_pack(this_.closures[1].N);
+      }
+
+#endif
+#line 287
+    }
+#line 283
+                                                                   {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 284
+                                                                                       {
+        data.normal[2] = gbuffer_normal_pack(this_.closures[2].N);
+      }
+
+#endif
+#line 287
+    }
+#line 287
+    }
+
+    uint used_layers = _get_used_normal_layers(this_);
+
+    uint closure_count = _closure_len(this_.header);
+#line 294
+    switch (closure_count) {
+      case 1u:
+        data.closure[0] = this_.closures[0].data0;
+        data.closure[1] = this_.closures[0].data1;
+        break;
+      case 2u:
+
+#if SRT_CONSTANT_gbuffer_layer_max > 1
+#line 300
+                                                                                         {
+          data.closure[0] = this_.closures[0].data0;
+          data.closure[1] = this_.closures[1].data0;
+
+#if !SRT_CONSTANT_gbuffer_simple_layout
+#line 303
+                                                                                            {
+            data.closure[2] = this_.closures[0].data1;
+            data.closure[3] = this_.closures[1].data1;
+            set_flag_from_test(used_layers, _use_data1(this_.closures[0]), CLOSURE_DATA_2);
+            set_flag_from_test(used_layers, _use_data1(this_.closures[1]), CLOSURE_DATA_3);
+          }
+
+#endif
+#line 309
+        }
+
+#endif
+#line 310
+        break;
+      case 3u:
+
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 312
+                                                                                         {
+          data.closure[0] = this_.closures[0].data0;
+          data.closure[1] = this_.closures[1].data0;
+          data.closure[2] = this_.closures[2].data0;
+          data.closure[3] = this_.closures[0].data1;
+          data.closure[4] = this_.closures[1].data1;
+          data.closure[5] = this_.closures[2].data1;
+          set_flag_from_test(used_layers, true, CLOSURE_DATA_2);
+          set_flag_from_test(used_layers, _use_data1(this_.closures[0]), CLOSURE_DATA_3);
+          set_flag_from_test(used_layers, _use_data1(this_.closures[1]), CLOSURE_DATA_4);
+          set_flag_from_test(used_layers, _use_data1(this_.closures[2]), CLOSURE_DATA_5);
+        }
+
+#endif
+#line 324
+        break;
+    }
+
+    if (_has_additional_data(this_.header)) {
+      data.additional_info = float2(this_.additional_info);
+      set_flag_from_test(used_layers, true, ADDITIONAL_DATA);
+    }
+
+    if (_use_object_id(this_.header)) {
+      set_flag_from_test(used_layers, true, OBJECT_ID);
+    }
+
+    data.used_layers = UsedLayerFlag(used_layers);
+    data.header = _raw(this_.header);
+
+    return data;
+  }
+#endif
+#line 343
+struct gbuffer_InputClosures {
+  ClosureUndetermined closure[GBUFFER_LAYER_MAX];
+};
+#line 343
+                                     gbuffer_InputClosures gbuffer_InputClosures_ctor_() {gbuffer_InputClosures r;for(int i=0;i < GBUFFER_LAYER_MAX;i++){r.closure[i]=ClosureUndetermined_ctor_();}return r;}
+#line 354
+
+#if defined(CREATE_INFO_gbuffer_PackParameters)
+#line 354
+gbuffer_Packed gbuffer_pack(const gbuffer_PackParameters  srt,
+            gbuffer_InputClosures cl_data,
+            float3 Ng,
+            packed_float3 surface_N,
+            Thickness thickness,
+            bool use_object_id)
+{
+  gbuffer_Packer packer;
+  packer.header = gbuffer_Header_zero();
+  _use_object_id_set(packer.header, use_object_id);
+#line 368
+{
+#line 365
+                                                                 {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 0
+#line 366
+                                                                                     {
+      packer.closures[0] = gbuffer_pack_closure(srt, cl_data.closure[0]);
+    }
+
+#endif
+#line 369
+  }
+#line 365
+                                                                 {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 1
+#line 366
+                                                                                     {
+      packer.closures[1] = gbuffer_pack_closure(srt, cl_data.closure[1]);
+    }
+
+#endif
+#line 369
+  }
+#line 365
+                                                                 {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 366
+                                                                                     {
+      packer.closures[2] = gbuffer_pack_closure(srt, cl_data.closure[2]);
+    }
+
+#endif
+#line 369
+  }
+#line 369
+  }
+#line 374
+{
+#line 371
+                                                                 {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 0
+#line 372
+                                                                                     {
+      _closure_set(packer.header, uchar(0), packer.closures[0].mode);
+    }
+
+#endif
+#line 375
+  }
+#line 371
+                                                                 {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 1
+#line 372
+                                                                                     {
+      _closure_set(packer.header, uchar(1), packer.closures[1].mode);
+    }
+
+#endif
+#line 375
+  }
+#line 371
+                                                                 {
+
+#if SRT_CONSTANT_gbuffer_layer_max > 2
+#line 372
+                                                                                     {
+      _closure_set(packer.header, uchar(2), packer.closures[2].mode);
+    }
+
+#endif
+#line 375
+  }
+#line 375
+  }
+
+  if (_has_additional_data(packer.header)) {
+    packer.additional_info = gbuffer_AdditionalInfo_pack(thickness).x;
+  }
+#line 382
+  _closures_to_layer_order(packer, srt);
+#line 385
+  bool has_any_closure = packer.closures[0].mode != GBUF_NONE;
+  if (!has_any_closure) {
+
+    packer.closures[0] = gbuffer_ClosurePacking_fallback(surface_N);
+    _closure_set(packer.header, 0, packer.closures[0].mode);
+  }
+
+  _reuse_tangent_spaces(packer, srt);
+#line 395
+  _geometry_normal_set(packer.header, Ng, packer.closures[0].N);
+
+  return _result_get(packer, srt);
+}
+#endif
+#line 403

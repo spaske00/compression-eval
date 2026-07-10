@@ -1,0 +1,21 @@
+#line 1 "overlay_edit_mesh_facedot_vert.glsl"
+ 
+#line 7
+VERTEX_SHADER_CREATE_INFO(overlay_edit_mesh_facedot)
+
+#ifdef GLSL_CPP_STUBS
+#  define FACEDOT
+#endif
+#line 15
+void main()
+{
+  VertIn vert_in;
+  vert_in.lP = pos;
+  vert_in.lN = norAndFlag.xyz;
+  vert_in.e_data = data;
+#line 23
+  VertOut vert_out = vertex_main(vert_in);
+  view_clipping_distances(vert_out.world_position);
+  gl_Position = vert_out.gpu_position;
+  final_color = vert_out.final_color;
+}

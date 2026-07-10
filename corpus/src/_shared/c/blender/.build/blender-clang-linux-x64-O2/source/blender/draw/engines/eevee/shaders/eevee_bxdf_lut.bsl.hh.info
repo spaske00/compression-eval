@@ -1,0 +1,26 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_lut_LUT)
+.image(0, blender::gpu::TextureFormat::SFLOAT_32_32_32_32, Qualifier::read_write, ImageReadWriteType::image3D, "image", Frequency::PASS)
+PUSH_CONSTANT(int, type)
+PUSH_CONSTANT(int3, extent)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lut_comp_main_infos_)
+LOCAL_GROUP_SIZE(LUT_WORKGROUP_SIZE, LUT_WORKGROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_lut_LUT)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_lut_comp)
+COMPUTE_SOURCE("eevee_bxdf_lut.bsl.hh")
+COMPUTE_FUNCTION("eevee_lut_comp_main")
+ADDITIONAL_INFO(eevee_lut_comp_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

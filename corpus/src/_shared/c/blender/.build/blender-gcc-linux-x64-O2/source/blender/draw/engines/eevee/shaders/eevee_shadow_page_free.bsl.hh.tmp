@@ -1,0 +1,61 @@
+#line 1 "eevee_shadow_page_free.bsl.hh"
+ 
+#line 23
+#if defined(CREATE_INFO_eevee_shadow_PageAllocator) && defined(CREATE_INFO_eevee_shadow_TileMaps)
+#line 22
+
+#if defined(ENTRY_POINT_eevee_shadow_free)
+#line 22
+
+void eevee_shadow_free(
+#line 26
+                                                          )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 27
+  eevee_shadow_PageAllocator allocator = eevee_shadow_PageAllocator_ctor_(); eevee_shadow_TileMaps tilemaps = eevee_shadow_TileMaps_ctor_();
+  ShadowTileMapData tilemap_data = srt_access(eevee_shadow_TileMaps, tilemaps_buf)[gl_GlobalInvocationID.z];
+
+  uint tile_start = tilemap_data.tiles_index;
+  for (int lod = 0; lod <= SHADOW_TILEMAP_LOD; lod++) {
+    uint lod_len = uint(SHADOW_TILEMAP_LOD0_LEN >> (lod * 2));
+    if (gl_LocalInvocationIndex < lod_len) {
+      uint tile_index = tile_start + gl_LocalInvocationIndex;
+
+      ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_shadow_PageAllocator, tiles_buf)[tile_index]);
+
+      bool is_orphaned = !tile.is_used && tile.do_update;
+      if (is_orphaned) {
+        if (tile.is_cached) {
+          _page_cache_remove(allocator, tile);
+        }
+        if (tile.is_allocated) {
+          _page_free(allocator, tile);
+        }
+      }
+
+      if (tile.is_used) {
+        if (tile.is_cached) {
+          _page_cache_remove(allocator, tile);
+        }
+        if (!tile.is_allocated) {
+          atomicAdd(srt_access(eevee_shadow_PageAllocator, pages_infos_buf).page_alloc_count, 1);
+        }
+      }
+      else {
+        if (tile.is_allocated) {
+          _page_cache_append(allocator, tile, tile_index);
+        }
+      }
+
+      srt_access(eevee_shadow_PageAllocator, tiles_buf)[tile_index] = shadow_tile_pack(tile);
+    }
+    tile_start += lod_len;
+  }
+
+#endif
+#line 66
+}
+#endif
+#endif
+#line 71

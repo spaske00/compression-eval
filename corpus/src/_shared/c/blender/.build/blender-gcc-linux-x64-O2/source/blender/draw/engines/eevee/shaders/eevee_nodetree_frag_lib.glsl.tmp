@@ -1,0 +1,32 @@
+#line 1 "eevee_nodetree_frag_lib.glsl"
+ 
+#line 13
+void attrib_load(WorldPoint _0) {}
+void attrib_load(VolumePoint _0) {}
+
+#ifndef NODETREE_FUNCTIONS
+#  define NODETREE_FUNCTIONS
+#line 20
+float3 nodetree_displacement()
+{
+  return float3(0.0f);
+}
+#line 26
+Closure nodetree_surface(float _0)
+{
+  return Closure(0);
+}
+#line 32
+Closure nodetree_volume()
+{
+  return Closure(0);
+}
+#line 38
+float nodetree_thickness()
+{
+  return 0.1f;
+}
+#line 45
+ThicknessMode thickness_mode = ThicknessMode_Slab;
+
+#endif

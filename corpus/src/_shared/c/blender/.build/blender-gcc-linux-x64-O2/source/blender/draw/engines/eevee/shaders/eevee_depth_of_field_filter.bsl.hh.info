@@ -1,0 +1,31 @@
+#pragma once
+
+#include "eevee_defines.hh"
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_dof_filter_pass_Resources)
+.sampler(0, ImageType::sampler2D, "color_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2D, "weight_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.image(0, blender::gpu::TextureFormat::SFLOAT_16_16_16_16, Qualifier::write, ImageReadWriteType::image2D, "out_color_img", Frequency::PASS)
+.image(1, blender::gpu::TextureFormat::SFLOAT_16, Qualifier::write, ImageReadWriteType::image2D, "out_weight_img", Frequency::PASS)
+GROUP_SHARED(float4, color_cache[DOF_FILTER_GROUP_SIZE + 2][DOF_FILTER_GROUP_SIZE + 2])
+GROUP_SHARED(float, weight_cache[DOF_FILTER_GROUP_SIZE + 2][DOF_FILTER_GROUP_SIZE + 2])
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_dof_filter_pass_comp_main_infos_)
+LOCAL_GROUP_SIZE(DOF_FILTER_GROUP_SIZE, DOF_FILTER_GROUP_SIZE)
+BUILTINS(BuiltinBits::GLOBAL_INVOCATION_ID)
+BUILTINS(BuiltinBits::LOCAL_INVOCATION_ID)
+ADDITIONAL_INFO(eevee_dof_filter_pass_Resources)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_depth_of_field_filter)
+COMPUTE_SOURCE("eevee_depth_of_field_filter.bsl.hh")
+COMPUTE_FUNCTION("eevee_dof_filter_pass_comp_main")
+ADDITIONAL_INFO(eevee_dof_filter_pass_comp_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

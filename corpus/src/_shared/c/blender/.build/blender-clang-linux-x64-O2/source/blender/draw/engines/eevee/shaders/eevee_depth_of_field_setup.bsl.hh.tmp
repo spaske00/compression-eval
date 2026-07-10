@@ -1,0 +1,893 @@
+#line 1 "eevee_depth_of_field_setup.bsl.hh"
+ 
+#line 28
+#define access_eevee_dof_setup_setup_Resources_color_tx() color_tx
+#define access_eevee_dof_setup_setup_Resources_depth_tx() depth_tx
+#define access_eevee_dof_setup_setup_Resources_out_color_img() out_color_img
+#define access_eevee_dof_setup_setup_Resources_out_coc_img() out_coc_img
+#define access_eevee_dof_setup_setup_Resources_dof_buf() dof_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_setup_setup_Resources
+CREATE_INFO_RES_PASS_eevee_dof_setup_setup_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_setup_setup_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_setup_setup_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_setup_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_setup_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_setup_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_setup_Resources
+#endif
+#line 28
+struct eevee_dof_setup_setup_Resources {
+#line 44
+int _pad;};
+#line 47
+#ifndef GPU_METAL
+eevee_dof_setup_setup_Resources eevee_dof_setup_setup_Resources_ctor_();
+eevee_dof_setup_setup_Resources eevee_dof_setup_setup_Resources_new_();
+#endif
+#line 28
+                                               eevee_dof_setup_setup_Resources eevee_dof_setup_setup_Resources_ctor_() {eevee_dof_setup_setup_Resources r;r._pad=0;return r;}
+#line 37
+       eevee_dof_setup_setup_Resources eevee_dof_setup_setup_Resources_new_()
+{
+  eevee_dof_setup_setup_Resources result;
+  result._pad = 0;
+  return result;
+#line 35
+}
+#line 38
+
+#if defined(CREATE_INFO_eevee_dof_setup_setup_Resources) && defined(CREATE_INFO_draw_View)
+#line 38
+
+#if defined(ENTRY_POINT_eevee_dof_setup_setup_comp_main)
+#line 38
+
+void eevee_dof_setup_setup_comp_main(
+
+                                                             )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 42
+  eevee_dof_setup_setup_Resources srt = eevee_dof_setup_setup_Resources_ctor_(); draw_View views = draw_View_ctor_();
+  float2 fullres_texel_size = 1.0f / float2(textureSize(srt_access(eevee_dof_setup_setup_Resources, color_tx), 0).xy);
+
+  float2 quad_center = float2(gl_GlobalInvocationID.xy * 2 + 1) * fullres_texel_size;
+
+  float4 colors[4];
+  float4 cocs;
+  for (int i = 0; i < 4; i++) {
+    float2 sample_uv = quad_center + quad_offsets[i] * fullres_texel_size;
+    float depth = reverse_z_read(textureLod(srt_access(eevee_dof_setup_setup_Resources, depth_tx), sample_uv, 0.0f).r);
+
+    colors[i] = colorspace_safe_color(textureLod(srt_access(eevee_dof_setup_setup_Resources, color_tx), sample_uv, 0.0f));
+    cocs[i] = dof_coc_from_depth(views, srt_access(eevee_dof_setup_setup_Resources, dof_buf), sample_uv, depth);
+  }
+
+  cocs = clamp(cocs, -srt_access(eevee_dof_setup_setup_Resources, dof_buf).coc_abs_max, srt_access(eevee_dof_setup_setup_Resources, dof_buf).coc_abs_max);
+
+  float4 weights = dof_bilateral_coc_weights(cocs);
+  weights *= dof_bilateral_color_weights(colors);
+
+  weights *= safe_rcp(reduce_add(weights));
+
+  int2 out_texel = int2(gl_GlobalInvocationID.xy);
+  float4 out_color = weighted_sum_array(colors, weights);
+  imageStore(srt_access(eevee_dof_setup_setup_Resources, out_color_img), out_texel, out_color);
+
+  float out_coc = dot(cocs, weights);
+  imageStore(srt_access(eevee_dof_setup_setup_Resources, out_coc_img), out_texel, float4(out_coc));
+
+#endif
+#line 70
+}
+#endif
+#endif
+#line 90
+struct eevee_dof_setup_stabilize_DofSample {
+  float4 color;
+  float coc;
+};
+#line 90
+                                                   eevee_dof_setup_stabilize_DofSample eevee_dof_setup_stabilize_DofSample_ctor_() {eevee_dof_setup_stabilize_DofSample r;r.color=float4(0);r.coc=0.0f;return r;}
+#line 95
+struct eevee_dof_setup_stabilize_DofNeighborhoodMinMax {
+  eevee_dof_setup_stabilize_DofSample min;
+  eevee_dof_setup_stabilize_DofSample max;
+};
+#line 95
+                                                               eevee_dof_setup_stabilize_DofNeighborhoodMinMax eevee_dof_setup_stabilize_DofNeighborhoodMinMax_ctor_() {eevee_dof_setup_stabilize_DofNeighborhoodMinMax r;r.min=eevee_dof_setup_stabilize_DofSample_ctor_();r.max=eevee_dof_setup_stabilize_DofSample_ctor_();return r;}
+#line 100
+float eevee_dof_setup_stabilize_luma_weight(float luma)
+{
+#line 104
+  constexpr float exposure_scale = 1.0f;
+  return 1.0f / (4.0f + luma * exposure_scale);
+}
+
+float eevee_dof_setup_stabilize_bilateral_weight(float reference_coc, float sample_coc)
+{
+#line 114
+  return saturate(1.0f - (sample_coc - reference_coc) / max(1.0f, abs(reference_coc)));
+}
+
+#define access_eevee_dof_setup_stabilize_Resources_camera() eevee_CameraVelocity_new_()
+#define access_eevee_dof_setup_stabilize_Resources_views() draw_View_new_()
+#define access_eevee_dof_setup_stabilize_Resources_u_use_history() u_use_history
+#define access_eevee_dof_setup_stabilize_Resources_coc_tx() coc_tx
+#define access_eevee_dof_setup_stabilize_Resources_color_tx() color_tx
+#define access_eevee_dof_setup_stabilize_Resources_velocity_tx() velocity_tx
+#define access_eevee_dof_setup_stabilize_Resources_in_history_tx() in_history_tx
+#define access_eevee_dof_setup_stabilize_Resources_depth_tx() depth_tx
+#define access_eevee_dof_setup_stabilize_Resources_out_color_img() out_color_img
+#define access_eevee_dof_setup_stabilize_Resources_out_coc_img() out_coc_img
+#define access_eevee_dof_setup_stabilize_Resources_out_history_img() out_history_img
+#define access_eevee_dof_setup_stabilize_Resources_color_cache() color_cache
+#define access_eevee_dof_setup_stabilize_Resources_coc_cache() coc_cache
+#define access_eevee_dof_setup_stabilize_Resources_depth_cache() depth_cache
+#define access_eevee_dof_setup_stabilize_Resources_dof_buf() dof_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_setup_stabilize_Resources
+CREATE_INFO_RES_PASS_eevee_dof_setup_stabilize_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_setup_stabilize_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_setup_stabilize_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_stabilize_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_stabilize_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_stabilize_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_stabilize_Resources
+#endif
+#line 117
+struct eevee_dof_setup_stabilize_Resources {
+                           eevee_CameraVelocity  camera;
+                           draw_View  views;
+#line 395
+};
+#line 399
+#ifndef GPU_METAL
+eevee_dof_setup_stabilize_Resources eevee_dof_setup_stabilize_Resources_ctor_();
+void _cache_init(eevee_dof_setup_stabilize_Resources  this_, uint3 global_id, uint3 local_id);
+eevee_dof_setup_stabilize_DofSample _fetch_input_sample(eevee_dof_setup_stabilize_Resources  this_, int2 offset, uint3 local_id);
+float _fetch_half_depth(eevee_dof_setup_stabilize_Resources  this_, int2 offset, uint3 local_id);
+eevee_dof_setup_stabilize_DofSample _spatial_filtering(eevee_dof_setup_stabilize_Resources  this_, uint3 local_id);
+eevee_dof_setup_stabilize_DofNeighborhoodMinMax _neighbor_boundbox(eevee_dof_setup_stabilize_Resources  this_, uint3 local_id);
+float2 _pixel_history_motion_vector(eevee_dof_setup_stabilize_Resources  this_, int2 texel_sample, uint3 local_id);
+eevee_dof_setup_stabilize_DofSample _sample_history(eevee_dof_setup_stabilize_Resources  this_, float2 input_texel);
+float _history_blend_factor(
+      eevee_dof_setup_stabilize_Resources  this_, float velocity, float2 texel, eevee_dof_setup_stabilize_DofNeighborhoodMinMax bbox, eevee_dof_setup_stabilize_DofSample src, eevee_dof_setup_stabilize_DofSample dst);
+eevee_dof_setup_stabilize_Resources eevee_dof_setup_stabilize_Resources_new_();
+#endif
+#line 117
+                                                   eevee_dof_setup_stabilize_Resources eevee_dof_setup_stabilize_Resources_ctor_() {eevee_dof_setup_stabilize_Resources r;r.camera=eevee_CameraVelocity_ctor_();r.views=draw_View_ctor_();return r;}
+#line 144
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 144
+  void _cache_init(eevee_dof_setup_stabilize_Resources  this_, uint3 global_id, uint3 local_id)
+  {
+#line 164
+    constexpr uint cache_size = uint(DOF_STABILIZE_GROUP_SIZE + 2);
+    constexpr uint cache_depth_size = uint(DOF_STABILIZE_GROUP_SIZE + 4);
+
+    int2 texel = int2(global_id.xy);
+    for (int y = 0; y < 2; y++) {
+      for (int x = 0; x < 2; x++) {
+
+        if (all(lessThan(local_id.xy, uint2(cache_size / 2u)))) {
+          int2 offset = int2(x, y) * int2(cache_size / 2u);
+          int2 cache_texel = int2(local_id.xy) + offset;
+          int2 load_texel = clamp(texel + offset - 1, int2(0), textureSize(srt_access(eevee_dof_setup_stabilize_Resources, color_tx), 0) - 1);
+
+          float4 color = texelFetch(srt_access(eevee_dof_setup_stabilize_Resources, color_tx), load_texel, 0);
+          srt_access(eevee_dof_setup_stabilize_Resources, color_cache)[cache_texel.y][cache_texel.x] = colorspace_YCoCg_from_scene_linear(color);
+          srt_access(eevee_dof_setup_stabilize_Resources, coc_cache)[cache_texel.y][cache_texel.x] = texelFetch(srt_access(eevee_dof_setup_stabilize_Resources, coc_tx), load_texel, 0).x;
+        }
+
+        if (all(lessThan(local_id.xy, uint2(cache_depth_size / 2u)))) {
+          int2 offset = int2(x, y) * int2(cache_depth_size / 2u);
+          int2 cache_texel = int2(local_id.xy) + offset;
+
+          int2 load_texel = clamp((texel + offset - 2) * 2, int2(0), textureSize(srt_access(eevee_dof_setup_stabilize_Resources, depth_tx), 0) - 1);
+
+          float depth = reverse_z_read(texelFetch(srt_access(eevee_dof_setup_stabilize_Resources, depth_tx), load_texel, 0).x);
+          srt_access(eevee_dof_setup_stabilize_Resources, depth_cache)[cache_texel.y][cache_texel.x] = depth;
+        }
+      }
+    }
+    barrier();
+  }
+#endif
+#line 196
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 196
+  eevee_dof_setup_stabilize_DofSample _fetch_input_sample(eevee_dof_setup_stabilize_Resources  this_, int2 offset, uint3 local_id)
+  {
+    int2 coord = offset + 1 + int2(local_id.xy);
+    return _ctor(eevee_dof_setup_stabilize_DofSample) srt_access(eevee_dof_setup_stabilize_Resources, color_cache)[coord.y][coord.x], srt_access(eevee_dof_setup_stabilize_Resources, coc_cache)[coord.y][coord.x] _rotc() ;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 202
+  float _fetch_half_depth(eevee_dof_setup_stabilize_Resources  this_, int2 offset, uint3 local_id)
+  {
+    int2 coord = offset + 2 + int2(local_id.xy);
+    return srt_access(eevee_dof_setup_stabilize_Resources, depth_cache)[coord.y][coord.x];
+  }
+#endif
+#line 210
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 210
+  eevee_dof_setup_stabilize_DofSample _spatial_filtering(eevee_dof_setup_stabilize_Resources  this_, uint3 local_id)
+  {
+
+    constexpr int2 plus_offsets[4] = int2_array(int2(-1, 0), int2(0, -1), int2(1, 0), int2(0, 1));
+    eevee_dof_setup_stabilize_DofSample center = _fetch_input_sample(this_, int2(0), local_id);
+    eevee_dof_setup_stabilize_DofSample accum = _ctor(eevee_dof_setup_stabilize_DofSample) float4(0.0f), 0.0f _rotc() ;
+    float accum_weight = 0.0f;
+    for (int i = 0; i < 4; i++) {
+      eevee_dof_setup_stabilize_DofSample samp = _fetch_input_sample(this_, plus_offsets[i], local_id);
+      float weight = srt_access(eevee_dof_setup_stabilize_Resources, dof_buf).filter_samples_weight[i] * eevee_dof_setup_stabilize_luma_weight(samp.color.x) *
+                     eevee_dof_setup_stabilize_bilateral_weight(center.coc, samp.coc);
+
+      accum.color += samp.color * weight;
+      accum.coc += samp.coc * weight;
+      accum_weight += weight;
+    }
+
+    float weight = srt_access(eevee_dof_setup_stabilize_Resources, dof_buf).filter_center_weight * eevee_dof_setup_stabilize_luma_weight(center.color.x);
+    accum.color += center.color * weight;
+    accum.coc += center.coc * weight;
+    accum_weight += weight;
+
+    float rcp_weight = 1.0f / accum_weight;
+    accum.color *= rcp_weight;
+    accum.coc *= rcp_weight;
+    return accum;
+  }
+#endif
+#line 239
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 239
+  eevee_dof_setup_stabilize_DofNeighborhoodMinMax _neighbor_boundbox(eevee_dof_setup_stabilize_Resources  this_, uint3 local_id)
+  {
+
+    constexpr int2 plus_offsets[4] = int2_array(int2(-1, 0), int2(0, -1), int2(1, 0), int2(0, 1));
+#line 247
+    eevee_dof_setup_stabilize_DofSample min_c = _fetch_input_sample(this_, int2(0), local_id);
+    eevee_dof_setup_stabilize_DofSample max_c = min_c;
+    for (int i = 0; i < 4; i++) {
+      eevee_dof_setup_stabilize_DofSample samp = _fetch_input_sample(this_, plus_offsets[i], local_id);
+      min_c.color = min(min_c.color, samp.color);
+      max_c.color = max(max_c.color, samp.color);
+      min_c.coc = min(min_c.coc, samp.coc);
+      max_c.coc = max(max_c.coc, samp.coc);
+    }
+#line 258
+    eevee_dof_setup_stabilize_DofSample min_c_3x3 = min_c;
+    eevee_dof_setup_stabilize_DofSample max_c_3x3 = max_c;
+    constexpr int2 corners[4] = int2_array(int2(-1, -1), int2(1, -1), int2(-1, 1), int2(1, 1));
+    for (int i = 0; i < 4; i++) {
+      eevee_dof_setup_stabilize_DofSample samp = _fetch_input_sample(this_, corners[i], local_id);
+      min_c_3x3.color = min(min_c_3x3.color, samp.color);
+      max_c_3x3.color = max(max_c_3x3.color, samp.color);
+      min_c_3x3.coc = min(min_c_3x3.coc, samp.coc);
+      max_c_3x3.coc = max(max_c_3x3.coc, samp.coc);
+    }
+    min_c.color = (min_c.color + min_c_3x3.color) * 0.5f;
+    max_c.color = (max_c.color + max_c_3x3.color) * 0.5f;
+    min_c.coc = (min_c.coc + min_c_3x3.coc) * 0.5f;
+    max_c.coc = (max_c.coc + max_c_3x3.coc) * 0.5f;
+
+    return _ctor(eevee_dof_setup_stabilize_DofNeighborhoodMinMax) min_c, max_c _rotc() ;
+  }
+#endif
+#line 277
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 277
+  float2 _pixel_history_motion_vector(eevee_dof_setup_stabilize_Resources  this_, int2 texel_sample, uint3 local_id)
+  {
+#line 285
+    constexpr int2 corners[4] = int2_array(int2(-2, -2), int2(2, -2), int2(-2, 2), int2(2, 2));
+    float min_depth = _fetch_half_depth(this_, int2(0), local_id);
+    int2 nearest_texel = int2(0);
+    for (int i = 0; i < 4; i++) {
+      float depth = _fetch_half_depth(this_, corners[i], local_id);
+      if (min_depth > depth) {
+        min_depth = depth;
+        nearest_texel = corners[i];
+      }
+    }
+
+    int2 velocity_texel = (texel_sample + nearest_texel) * 2;
+    velocity_texel = clamp(velocity_texel, int2(0), textureSize(srt_access(eevee_dof_setup_stabilize_Resources, velocity_tx), 0).xy - 1);
+    float4 vector = _resolve(srt_access(eevee_dof_setup_stabilize_Resources, camera), srt_access(eevee_dof_setup_stabilize_Resources, views), srt_access(eevee_dof_setup_stabilize_Resources, velocity_tx), velocity_texel, min_depth);
+
+    return vector.xy * float2(textureSize(srt_access(eevee_dof_setup_stabilize_Resources, color_tx), 0));
+  }
+#endif
+#line 305
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 305
+  eevee_dof_setup_stabilize_DofSample _sample_history(eevee_dof_setup_stabilize_Resources  this_, float2 input_texel)
+  {
+#if 1
+    float2 uv = float2(input_texel + 0.5f) / float2(textureSize(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), 0));
+    float4 color = textureLod(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), uv, 0.0f);
+
+#else
+    float2 center_texel;
+    float2 inter_texel = modf(input_texel, center_texel);
+    float2 weights[4];
+    film_get_catmull_rom_weights(inter_texel, weights);
+#line 323
+    center_texel += 0.5f;
+#line 326
+    float2 weight_12 = weights[1] + weights[2];
+    float2 uv_12 = (center_texel + weights[2] / weight_12) * uniform_buf.film.extent_inv;
+    float2 uv_0 = (center_texel - 1.0f) * uniform_buf.film.extent_inv;
+    float2 uv_3 = (center_texel + 2.0f) * uniform_buf.film.extent_inv;
+
+    float4 color;
+    float4 weight_cross = weight_12.xyyx * float4(weights[0].yx, weights[3].xy);
+    float weight_center = weight_12.x * weight_12.y;
+
+    color = textureLod(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), uv_12, 0.0f) * weight_center;
+    color += textureLod(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), float2(uv_12.x, uv_0.y), 0.0f) * weight_cross.x;
+    color += textureLod(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), float2(uv_0.x, uv_12.y), 0.0f) * weight_cross.y;
+    color += textureLod(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), float2(uv_3.x, uv_12.y), 0.0f) * weight_cross.z;
+    color += textureLod(srt_access(eevee_dof_setup_stabilize_Resources, in_history_tx), float2(uv_12.x, uv_3.y), 0.0f) * weight_cross.w;
+
+    color /= (weight_center + reduce_add(weight_cross));
+#endif
+
+    return _ctor(eevee_dof_setup_stabilize_DofSample) color.xyzz, color.w _rotc() ;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 347
+  float _history_blend_factor(
+      eevee_dof_setup_stabilize_Resources  this_, float velocity, float2 texel, eevee_dof_setup_stabilize_DofNeighborhoodMinMax bbox, eevee_dof_setup_stabilize_DofSample src, eevee_dof_setup_stabilize_DofSample dst)
+  {
+    float luma_min = bbox.min.color.x;
+    float luma_max = bbox.max.color.x;
+    float luma_history = dst.color.x;
+#line 355
+    float blend = 0.05f;
+#line 358
+    blend = mix(blend, 0.20f, saturate(velocity * 0.02f * 2.0f));
+#line 363
+    float distance_to_luma_clip = reduce_min(
+        float2(luma_history - luma_min, luma_max - luma_history));
+
+    distance_to_luma_clip *= 2.0f * safe_rcp(luma_max - luma_min);
+
+    blend *= saturate(distance_to_luma_clip * 4.0f + 0.1f);
+#line 372
+    float coc_diff_ratio = saturate(abs(src.coc - dst.coc) / max(1.0f, abs(src.coc)));
+    blend = mix(blend, 1.0f, coc_diff_ratio);
+
+    if (any(lessThan(texel, float2(0))) ||
+        any(greaterThanEqual(texel, float2(imageSize(srt_access(eevee_dof_setup_stabilize_Resources, out_history_img))))))
+    {
+      blend = 1.0f;
+    }
+
+    if (srt_access(eevee_dof_setup_stabilize_Resources, u_use_history) == false) {
+      blend = 1.0f;
+    }
+    return blend;
+  }
+#endif
+       eevee_dof_setup_stabilize_Resources eevee_dof_setup_stabilize_Resources_new_()
+{
+  eevee_dof_setup_stabilize_Resources result;
+  result.camera = eevee_CameraVelocity_new_();
+  result.views = draw_View_new_();
+  return result;
+#line 385
+}
+#line 389
+eevee_dof_setup_stabilize_DofSample eevee_dof_setup_stabilize_amend_history(eevee_dof_setup_stabilize_DofNeighborhoodMinMax bbox,
+                        eevee_dof_setup_stabilize_DofSample history,
+                                         eevee_dof_setup_stabilize_DofSample src)
+{
+#if 0
+#line 400
+#else
+
+  history.color = clamp(history.color, bbox.min.color, bbox.max.color);
+#endif
+
+  history.coc = clamp(history.coc, bbox.min.coc, bbox.max.coc);
+
+  return history;
+}
+#line 411
+#if defined(CREATE_INFO_eevee_dof_setup_stabilize_Resources)
+#line 410
+
+#if defined(ENTRY_POINT_eevee_dof_setup_stabilize_comp_main)
+#line 410
+
+void eevee_dof_setup_stabilize_comp_main(
+
+                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 414
+  eevee_dof_setup_stabilize_Resources srt = eevee_dof_setup_stabilize_Resources_ctor_();
+  _cache_init(srt, gl_GlobalInvocationID, gl_LocalInvocationID);
+
+  int2 src_texel = int2(gl_GlobalInvocationID.xy);
+#line 424
+  eevee_dof_setup_stabilize_DofSample src = _spatial_filtering(srt, gl_LocalInvocationID);
+#line 427
+  float2 motion = _pixel_history_motion_vector(srt, src_texel, gl_LocalInvocationID);
+  float2 history_texel = float2(src_texel) + motion;
+
+  float velocity = length(motion);
+
+  eevee_dof_setup_stabilize_DofSample dst = _sample_history(srt, history_texel);
+#line 435
+  eevee_dof_setup_stabilize_DofNeighborhoodMinMax bbox = _neighbor_boundbox(srt, gl_LocalInvocationID);
+
+  float blend = _history_blend_factor(srt, velocity, history_texel, bbox, src, dst);
+
+  dst = eevee_dof_setup_stabilize_amend_history(bbox, dst, src);
+#line 442
+  float weight_dst = eevee_dof_setup_stabilize_luma_weight(dst.color.x) * (1.0f - blend);
+  float weight_src = eevee_dof_setup_stabilize_luma_weight(src.color.x) * (blend);
+
+  eevee_dof_setup_stabilize_DofSample result;
+
+  result.color = float4(dst.color.rgb, dst.coc) * weight_dst +
+                 float4(src.color.rgb, src.coc) * weight_src;
+  result.color /= weight_src + weight_dst;
+#line 452
+  imageStore(srt_access(eevee_dof_setup_stabilize_Resources, out_history_img), src_texel, result.color);
+#line 455
+  result.coc = result.color.a;
+
+  result.color.a = clamp(src.color.a, bbox.min.color.a, bbox.max.color.a);
+
+  result.color = colorspace_scene_linear_from_YCoCg(result.color);
+
+  imageStore(srt_access(eevee_dof_setup_stabilize_Resources, out_color_img), src_texel, result.color);
+  imageStore(srt_access(eevee_dof_setup_stabilize_Resources, out_coc_img), src_texel, float4(result.coc));
+
+#endif
+#line 463
+}
+#endif
+#endif
+#line 475
+#define access_eevee_dof_setup_downsample_Resources_color_tx() color_tx
+#define access_eevee_dof_setup_downsample_Resources_coc_tx() coc_tx
+#define access_eevee_dof_setup_downsample_Resources_out_color_img() out_color_img
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_setup_downsample_Resources
+CREATE_INFO_RES_PASS_eevee_dof_setup_downsample_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_setup_downsample_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_setup_downsample_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_downsample_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_downsample_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_downsample_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_downsample_Resources
+#endif
+#line 475
+struct eevee_dof_setup_downsample_Resources {
+#line 487
+int _pad;};
+#line 490
+#ifndef GPU_METAL
+eevee_dof_setup_downsample_Resources eevee_dof_setup_downsample_Resources_ctor_();
+eevee_dof_setup_downsample_Resources eevee_dof_setup_downsample_Resources_new_();
+#endif
+#line 475
+                                                    eevee_dof_setup_downsample_Resources eevee_dof_setup_downsample_Resources_ctor_() {eevee_dof_setup_downsample_Resources r;r._pad=0;return r;}
+#line 480
+       eevee_dof_setup_downsample_Resources eevee_dof_setup_downsample_Resources_new_()
+{
+  eevee_dof_setup_downsample_Resources result;
+  result._pad = 0;
+  return result;
+#line 478
+}
+#line 481
+
+#if defined(CREATE_INFO_eevee_dof_setup_downsample_Resources)
+#line 481
+
+#if defined(ENTRY_POINT_eevee_dof_setup_downsample_comp_main)
+#line 481
+
+void eevee_dof_setup_downsample_comp_main(                                                                                         )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 483
+  eevee_dof_setup_downsample_Resources srt = eevee_dof_setup_downsample_Resources_ctor_();
+  float2 halfres_texel_size = 1.0f / float2(textureSize(srt_access(eevee_dof_setup_downsample_Resources, color_tx), 0).xy);
+
+  float2 quad_center = float2(gl_GlobalInvocationID.xy * 2 + 1) * halfres_texel_size;
+
+  float4 colors[4];
+  float4 cocs;
+  for (int i = 0; i < 4; i++) {
+    float2 sample_uv = quad_center + quad_offsets[i] * halfres_texel_size;
+    colors[i] = textureLod(srt_access(eevee_dof_setup_downsample_Resources, color_tx), sample_uv, 0.0f);
+    cocs[i] = textureLod(srt_access(eevee_dof_setup_downsample_Resources, coc_tx), sample_uv, 0.0f).r;
+  }
+
+  float4 weights = dof_bilateral_coc_weights(cocs);
+
+  weights *= safe_rcp(reduce_add(weights));
+
+  float4 out_color = weighted_sum_array(colors, weights);
+
+  imageStore(srt_access(eevee_dof_setup_downsample_Resources, out_color_img), int2(gl_GlobalInvocationID.xy), out_color);
+
+#endif
+#line 503
+}
+#endif
+#endif
+#line 520
+float eevee_dof_setup_reduce_fast_luma(float3 color)
+{
+  return (2.0f * color.g) + color.r + color.b;
+}
+
+#define access_eevee_dof_setup_reduce_Resources_downsample_tx() downsample_tx
+#define access_eevee_dof_setup_reduce_Resources_inout_color_lod0_img() inout_color_lod0_img
+#define access_eevee_dof_setup_reduce_Resources_out_color_lod1_img() out_color_lod1_img
+#define access_eevee_dof_setup_reduce_Resources_out_color_lod2_img() out_color_lod2_img
+#define access_eevee_dof_setup_reduce_Resources_out_color_lod3_img() out_color_lod3_img
+#define access_eevee_dof_setup_reduce_Resources_in_coc_lod0_img() in_coc_lod0_img
+#define access_eevee_dof_setup_reduce_Resources_out_coc_lod1_img() out_coc_lod1_img
+#define access_eevee_dof_setup_reduce_Resources_out_coc_lod2_img() out_coc_lod2_img
+#define access_eevee_dof_setup_reduce_Resources_out_coc_lod3_img() out_coc_lod3_img
+#define access_eevee_dof_setup_reduce_Resources_color_cache() color_cache
+#define access_eevee_dof_setup_reduce_Resources_coc_cache() coc_cache
+#define access_eevee_dof_setup_reduce_Resources_scatter_fg_indirect_buf() scatter_fg_indirect_buf
+#define access_eevee_dof_setup_reduce_Resources_scatter_bg_indirect_buf() scatter_bg_indirect_buf
+#define access_eevee_dof_setup_reduce_Resources_dof_buf() dof_buf
+#define access_eevee_dof_setup_reduce_Resources_scatter_fg_list_buf() scatter_fg_list_buf
+#define access_eevee_dof_setup_reduce_Resources_scatter_bg_list_buf() scatter_bg_list_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_dof_setup_reduce_Resources
+CREATE_INFO_RES_PASS_eevee_dof_setup_reduce_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_dof_setup_reduce_Resources
+CREATE_INFO_RES_BATCH_eevee_dof_setup_reduce_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_reduce_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_dof_setup_reduce_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_reduce_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_dof_setup_reduce_Resources
+#endif
+#line 525
+struct eevee_dof_setup_reduce_Resources {
+#line 639
+int _pad;};
+#line 642
+#ifndef GPU_METAL
+eevee_dof_setup_reduce_Resources eevee_dof_setup_reduce_Resources_ctor_();
+void _store_color_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord, float4 value);
+float4 _load_color_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord);
+void _store_coc_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord, float value);
+float _load_coc_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord);
+float4 _load4_coc_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord);
+float _scatter_neighborhood_rejection(eevee_dof_setup_reduce_Resources  this_, uint2 texel, float3 color);
+float _scatter_screen_border_rejection(eevee_dof_setup_reduce_Resources  this_, float coc, int2 texel);
+float _scatter_luminosity_rejection(eevee_dof_setup_reduce_Resources  this_, float3 color);
+float _scatter_coc_radius_rejection(eevee_dof_setup_reduce_Resources  this_, float coc);
+eevee_dof_setup_reduce_Resources eevee_dof_setup_reduce_Resources_new_();
+#endif
+#line 525
+                                                eevee_dof_setup_reduce_Resources eevee_dof_setup_reduce_Resources_ctor_() {eevee_dof_setup_reduce_Resources r;r._pad=0;return r;}
+#line 552
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 552
+  void _store_color_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord, float4 value)
+  {
+    srt_access(eevee_dof_setup_reduce_Resources, color_cache)[coord.y][coord.x] = value;
+  }
+#endif
+#line 556
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 556
+  float4 _load_color_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord)
+  {
+    return srt_access(eevee_dof_setup_reduce_Resources, color_cache)[coord.y][coord.x];
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 561
+  void _store_coc_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord, float value)
+  {
+    srt_access(eevee_dof_setup_reduce_Resources, coc_cache)[coord.y][coord.x] = value;
+  }
+#endif
+#line 565
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 565
+  float _load_coc_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord)
+  {
+    return srt_access(eevee_dof_setup_reduce_Resources, coc_cache)[coord.y][coord.x];
+  }
+#endif
+#line 569
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 569
+  float4 _load4_coc_cache(eevee_dof_setup_reduce_Resources  this_, uint2 coord)
+  {
+    return float4(_load_coc_cache(this_, coord + quad_offsets_u[0]),
+                  _load_coc_cache(this_, coord + quad_offsets_u[1]),
+                  _load_coc_cache(this_, coord + quad_offsets_u[2]),
+                  _load_coc_cache(this_, coord + quad_offsets_u[3]));
+  }
+#endif
+#line 580
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 580
+  float _scatter_neighborhood_rejection(eevee_dof_setup_reduce_Resources  this_, uint2 texel, float3 color)
+  {
+    color = min(float3(srt_access(eevee_dof_setup_reduce_Resources, dof_buf).scatter_neighbor_max_color), color);
+
+    float validity = 0.0f;
+#line 587
+    float2 texel_size = 1.0f / float2(textureSize(srt_access(eevee_dof_setup_reduce_Resources, downsample_tx), 0).xy);
+    float2 uv = ((float2(texel) + 0.5f) * 0.5f) * texel_size;
+
+    for (int i = 0; i < 4; i++) {
+      float2 sample_uv = uv + quad_offsets[i] * texel_size;
+      float3 ref = textureLod(srt_access(eevee_dof_setup_reduce_Resources, downsample_tx), sample_uv, 0.0f).rgb;
+
+      ref = min(float3(srt_access(eevee_dof_setup_reduce_Resources, dof_buf).scatter_neighbor_max_color), ref);
+      float diff = reduce_max(max(float3(0.0f), abs(ref - color)));
+
+      constexpr float rejection_threshold = 0.7f;
+      diff = saturate(diff / rejection_threshold - 1.0f);
+      validity = max(validity, diff);
+    }
+
+    return validity;
+  }
+#endif
+#line 607
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 607
+  float _scatter_screen_border_rejection(eevee_dof_setup_reduce_Resources  this_, float coc, int2 texel)
+  {
+    float2 screen_size = float2(imageSize(srt_access(eevee_dof_setup_reduce_Resources, inout_color_lod0_img)));
+    float2 uv = (float2(texel) + 0.5f) / screen_size;
+    float2 screen_pos = uv * screen_size;
+    float min_screen_border_distance = reduce_min(min(screen_pos, screen_size - screen_pos));
+
+    coc *= 0.5f;
+
+    constexpr float rejection_hardness = 1.0f / 10.0f;
+    return saturate((min_screen_border_distance - abs(coc)) * rejection_hardness + 1.0f);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 620
+  float _scatter_luminosity_rejection(eevee_dof_setup_reduce_Resources  this_, float3 color)
+  {
+    constexpr float rejection_hardness = 1.0f;
+    return saturate(reduce_max(color - srt_access(eevee_dof_setup_reduce_Resources, dof_buf).scatter_color_threshold) * rejection_hardness);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 626
+  float _scatter_coc_radius_rejection(eevee_dof_setup_reduce_Resources  this_, float coc)
+  {
+    constexpr float rejection_hardness = 0.3f;
+    return saturate((abs(coc) - srt_access(eevee_dof_setup_reduce_Resources, dof_buf).scatter_coc_threshold) * rejection_hardness);
+  }
+#endif
+       eevee_dof_setup_reduce_Resources eevee_dof_setup_reduce_Resources_new_()
+{
+  eevee_dof_setup_reduce_Resources result;
+  result._pad = 0;
+  return result;
+#line 630
+}
+#line 633
+
+#if defined(CREATE_INFO_eevee_dof_setup_reduce_Resources)
+#line 633
+
+#if defined(ENTRY_POINT_eevee_dof_setup_reduce_comp_main)
+#line 633
+
+void eevee_dof_setup_reduce_comp_main(
+
+                                                           )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 637
+  eevee_dof_setup_reduce_Resources srt = eevee_dof_setup_reduce_Resources_ctor_();
+
+  int2 texel = min(int2(gl_GlobalInvocationID.xy), imageSize(srt_access(eevee_dof_setup_reduce_Resources, inout_color_lod0_img)) - 1);
+  uint2 thread_co = gl_LocalInvocationID.xy;
+
+  float4 local_color = imageLoad(srt_access(eevee_dof_setup_reduce_Resources, inout_color_lod0_img), texel);
+  float local_coc = imageLoad(srt_access(eevee_dof_setup_reduce_Resources, in_coc_lod0_img), texel).r;
+#line 646
+  float do_scatter = _scatter_luminosity_rejection(srt, local_color.rgb);
+
+  do_scatter *= _scatter_coc_radius_rejection(srt, local_coc);
+
+  do_scatter *= _scatter_screen_border_rejection(srt, local_coc, texel);
+
+  do_scatter *= _scatter_neighborhood_rejection(srt, gl_GlobalInvocationID.xy, local_color.rgb);
+
+  if (no_scatter_pass) {
+    do_scatter = 0.0f;
+  }
+#line 659
+  _store_coc_cache(srt, thread_co, do_scatter);
+  barrier();
+#line 663
+  float4 do_scatter4 = _load4_coc_cache(srt, thread_co & ~1u);
+  barrier();
+#line 667
+  _store_color_cache(srt, thread_co, local_color);
+  _store_coc_cache(srt, thread_co, local_coc);
+  barrier();
+#line 672
+  bool any_scatter = any(greaterThan(do_scatter4, float4(0.0f)));
+  if (all(equal(thread_co & 1u, uint2(0))) && any_scatter) {
+
+    do_scatter4 *= reduce_max(srt_access(eevee_dof_setup_reduce_Resources, dof_buf).bokeh_anisotropic_scale_inv);
+
+    float4 coc4 = _load4_coc_cache(srt, thread_co);
+
+    coc4 *= 0.5f;
+
+    float2 offset = float2(gl_GlobalInvocationID.xy) + 1;
+#line 684
+    float2 half_extent = reduce_max(abs(coc4)) * srt_access(eevee_dof_setup_reduce_Resources, dof_buf).bokeh_anisotropic_scale + 2.5f;
+
+    float3 color4_0 = _load_color_cache(srt, thread_co + quad_offsets_u[0]).rgb;
+    float3 color4_1 = _load_color_cache(srt, thread_co + quad_offsets_u[1]).rgb;
+    float3 color4_2 = _load_color_cache(srt, thread_co + quad_offsets_u[2]).rgb;
+    float3 color4_3 = _load_color_cache(srt, thread_co + quad_offsets_u[3]).rgb;
+
+    if (any(lessThan(do_scatter4 * sign(coc4), float4(0.0f)))) {
+
+      srt_access(eevee_dof_setup_reduce_Resources, scatter_fg_indirect_buf).vertex_len = 4u;
+
+      uint rect_id = atomicAdd(srt_access(eevee_dof_setup_reduce_Resources, scatter_fg_indirect_buf).instance_len, 1u);
+      if (rect_id < srt_access(eevee_dof_setup_reduce_Resources, dof_buf).scatter_max_rect) {
+
+        float4 coc4_fg = max(float4(0.0f), -coc4);
+        float4 fg_weights = dof_layer_weight(coc4_fg) * dof_sample_weight(coc4_fg) * do_scatter4;
+
+        fg_weights = select(fg_weights, float4(0.0f), equal(coc4_fg, float4(0.0f)));
+
+        ScatterRect rect_fg;
+        rect_fg.offset = offset;
+
+        rect_fg.half_extent = -half_extent;
+#line 711
+        rect_fg.color_and_coc[0].a = coc4_fg[0];
+        rect_fg.color_and_coc[1].a = coc4_fg[3];
+        rect_fg.color_and_coc[2].a = coc4_fg[2];
+        rect_fg.color_and_coc[3].a = coc4_fg[1];
+
+        rect_fg.color_and_coc[0].rgb = color4_0 * fg_weights[0];
+        rect_fg.color_and_coc[1].rgb = color4_3 * fg_weights[3];
+        rect_fg.color_and_coc[2].rgb = color4_2 * fg_weights[2];
+        rect_fg.color_and_coc[3].rgb = color4_1 * fg_weights[1];
+
+        srt_access(eevee_dof_setup_reduce_Resources, scatter_fg_list_buf)[rect_id] = rect_fg;
+      }
+    }
+    if (any(greaterThan(do_scatter4 * sign(coc4), float4(0.0f)))) {
+
+      srt_access(eevee_dof_setup_reduce_Resources, scatter_bg_indirect_buf).vertex_len = 4u;
+
+      uint rect_id = atomicAdd(srt_access(eevee_dof_setup_reduce_Resources, scatter_bg_indirect_buf).instance_len, 1u);
+      if (rect_id < srt_access(eevee_dof_setup_reduce_Resources, dof_buf).scatter_max_rect) {
+        float4 coc4_bg = max(float4(0.0f), coc4);
+        float4 bg_weights = dof_layer_weight(coc4_bg) * dof_sample_weight(coc4_bg) * do_scatter4;
+
+        bg_weights = select(bg_weights, float4(0.0f), equal(coc4_bg, float4(0.0f)));
+
+        ScatterRect rect_bg;
+        rect_bg.offset = offset;
+        rect_bg.half_extent = half_extent;
+#line 740
+        rect_bg.color_and_coc[0].a = coc4_bg[0];
+        rect_bg.color_and_coc[1].a = coc4_bg[1];
+        rect_bg.color_and_coc[2].a = coc4_bg[2];
+        rect_bg.color_and_coc[3].a = coc4_bg[3];
+
+        rect_bg.color_and_coc[0].rgb = color4_0 * bg_weights[0];
+        rect_bg.color_and_coc[1].rgb = color4_1 * bg_weights[1];
+        rect_bg.color_and_coc[2].rgb = color4_2 * bg_weights[2];
+        rect_bg.color_and_coc[3].rgb = color4_3 * bg_weights[3];
+
+        srt_access(eevee_dof_setup_reduce_Resources, scatter_bg_list_buf)[rect_id] = rect_bg;
+      }
+    }
+  }
+#line 756
+  float4 color_lod0 = _load_color_cache(srt, thread_co) * (1.0f - do_scatter);
+  _store_color_cache(srt, thread_co, color_lod0);
+
+  imageStore(srt_access(eevee_dof_setup_reduce_Resources, inout_color_lod0_img), texel, color_lod0);
+#line 762
+  for (uint i = 1u; i < DOF_MIP_COUNT; i++) {
+    barrier();
+    uint mask = ~(~0u << i);
+    if (all(equal(gl_LocalInvocationID.xy & mask, uint2(0)))) {
+      uint ofs = 1u << (i - 1u);
+#line 769
+      float4 coc4;
+      coc4[0] = _load_coc_cache(srt, thread_co + uint2(ofs, 0));
+      coc4[1] = _load_coc_cache(srt, thread_co + uint2(ofs, ofs));
+      coc4[2] = _load_coc_cache(srt, thread_co + uint2(0, ofs));
+      coc4[3] = _load_coc_cache(srt, thread_co + uint2(0, 0));
+      float4 colors[4];
+      colors[0] = _load_color_cache(srt, thread_co + uint2(ofs, 0));
+      colors[1] = _load_color_cache(srt, thread_co + uint2(ofs, ofs));
+      colors[2] = _load_color_cache(srt, thread_co + uint2(0, ofs));
+      colors[3] = _load_color_cache(srt, thread_co + uint2(0, 0));
+
+      float4 weights = dof_bilateral_coc_weights(coc4) * dof_bilateral_color_weights(colors);
+
+      weights *= safe_rcp(reduce_add(weights));
+
+      float4 color_lod = weighted_sum_array(colors, weights);
+      float coc_lod = dot(coc4, weights);
+
+      _store_color_cache(srt, thread_co, color_lod);
+      _store_coc_cache(srt, thread_co, coc_lod);
+
+      int2 texel = int2(gl_GlobalInvocationID.xy >> i);
+
+      if (i == 1) {
+        imageStore(srt_access(eevee_dof_setup_reduce_Resources, out_color_lod1_img), texel, color_lod);
+        imageStore(srt_access(eevee_dof_setup_reduce_Resources, out_coc_lod1_img), texel, float4(coc_lod));
+      }
+      else if (i == 2) {
+        imageStore(srt_access(eevee_dof_setup_reduce_Resources, out_color_lod2_img), texel, color_lod);
+        imageStore(srt_access(eevee_dof_setup_reduce_Resources, out_coc_lod2_img), texel, float4(coc_lod));
+      }
+      else                   {
+        imageStore(srt_access(eevee_dof_setup_reduce_Resources, out_color_lod3_img), texel, color_lod);
+        imageStore(srt_access(eevee_dof_setup_reduce_Resources, out_coc_lod3_img), texel, float4(coc_lod));
+      }
+    }
+  }
+
+#endif
+#line 806
+}
+#endif
+#endif
+#line 816

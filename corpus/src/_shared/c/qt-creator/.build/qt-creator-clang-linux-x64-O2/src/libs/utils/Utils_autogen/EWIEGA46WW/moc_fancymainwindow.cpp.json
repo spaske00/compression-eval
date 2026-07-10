@@ -1,0 +1,46 @@
+{
+    "classes": [
+        {
+            "className": "FancyMainWindow",
+            "lineNumber": 17,
+            "object": true,
+            "qualifiedClassName": "Utils::FancyMainWindow",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "resetLayout",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "dockWidgetsChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "setDockActionsVisible",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QMainWindow"
+                }
+            ]
+        }
+    ],
+    "inputFile": "fancymainwindow.h",
+    "outputRevision": 68
+}

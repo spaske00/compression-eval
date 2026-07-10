@@ -1,0 +1,23 @@
+#line 1 "gpu_shader_material_particle_info.glsl"
+ 
+#line 6
+void particle_info(_ref(float ,index),
+                   _ref(float ,random),
+                   _ref(float ,age),
+                   _ref(float ,life_time),
+                   _ref(float3 ,location),
+                   _ref(float ,size),
+                   _ref(float3 ,velocity),
+                   _ref(float3 ,angular_velocity))
+{
+
+  index = 0.0f;
+  random = 0.0f;
+  age = 0.0f;
+  life_time = 0.0f;
+  size = 0.0f;
+
+  location = float3(0.0f);
+  velocity = float3(0.0f);
+  angular_velocity = float3(0.0f);
+}

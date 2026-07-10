@@ -1,0 +1,32 @@
+{
+    "classes": [
+        {
+            "className": "CompletionShortcut",
+            "lineNumber": 95,
+            "object": true,
+            "qualifiedClassName": "Utils::CompletionShortcut",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "key",
+                            "type": "QKeySequence"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "keyChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "fancylineedit.cpp",
+    "outputRevision": 68
+}

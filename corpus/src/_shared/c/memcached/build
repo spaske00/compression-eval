@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2; exit 2; fi
+cc=$1; cxx=$2; raw_target=$3; shift 3; flags=("$@")
+target=${raw_target%.out}
+case "$target" in ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;; esac
+case "$(basename -- "$cc"):$(basename -- "$cxx")" in
+    gcc*:g++*|clang*:clang++*) ;;
+    *) echo "memcached requires a matching GCC/G++ or Clang/Clang++ toolchain: $cc, $cxx" >&2; exit 2 ;;
+esac
+command -v "$cc" >/dev/null || { echo "compiler not found: $cc" >&2; exit 2; }
+command -v "$cxx" >/dev/null || { echo "compiler not found: $cxx" >&2; exit 2; }
+for tool in git tar perl autoconf automake aclocal autoheader make; do
+    command -v "$tool" >/dev/null || { echo "required build tool not found: $tool" >&2; exit 2; }
+done
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+build_dir="$root/.build/$target"
+source_dir="$build_dir/source"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$source_dir/memcached"
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$source_dir" "$temporary"
+
+git -C "$root/upstream" archive --format=tar HEAD | tar -xf - -C "$source_dir"
+(
+    cd -- "$source_dir"
+    ./autogen.sh
+    CC="$cc" CFLAGS="${flags[*]}" LDFLAGS="${flags[*]}" ./configure
+    make --jobs="${JOBS:-8}" CC="$cc" CFLAGS="${flags[*]}" \
+        LDFLAGS="${flags[*]}" memcached
+)
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

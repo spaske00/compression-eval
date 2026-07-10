@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( $# < 3 )); then
+    echo "usage: $0 CC CXX TARGET_NAME [FLAGS ...]" >&2
+    exit 2
+fi
+
+cc=$1
+cxx=$2
+raw_target=$3
+shift 3
+flags=("$@")
+target=${raw_target%.out}
+case "$target" in
+    ""|.|..|*/*) echo "invalid TARGET_NAME: $raw_target" >&2; exit 2 ;;
+esac
+case "$(basename -- "$cc"):$(basename -- "$cxx")" in
+    gcc*:g++*|clang*:clang++*) ;;
+    *) echo "fmt requires a matching GCC/G++ or Clang/Clang++ toolchain: $cc, $cxx" >&2; exit 2 ;;
+esac
+command -v "$cc" >/dev/null || { echo "compiler not found: $cc" >&2; exit 2; }
+command -v "$cxx" >/dev/null || { echo "compiler not found: $cxx" >&2; exit 2; }
+
+root=$(cd -- "$(dirname -- "$0")" && pwd)
+build_dir="$root/.build/$target"
+publish_dir="$root/bin/$target"
+temporary="$root/bin/.$target.tmp"
+artifact="$build_dir/$target"
+
+cleanup() { rm -rf -- "$temporary"; }
+trap cleanup EXIT
+rm -rf -- "$build_dir" "$temporary" "$publish_dir"
+mkdir -p -- "$build_dir" "$temporary"
+
+cmake -S "$root/upstream" -B "$build_dir" -G Ninja \
+    -DCMAKE_C_COMPILER="$cc" -DCMAKE_CXX_COMPILER="$cxx" \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_CXX_FLAGS="${flags[*]}" \
+    -DCMAKE_EXE_LINKER_FLAGS="${flags[*]}" \
+    -DFMT_DOC=OFF -DFMT_TEST=OFF -DFMT_INSTALL=OFF -DFMT_WERROR=OFF
+cmake --build "$build_dir" --target fmt --parallel "${JOBS:-8}"
+
+library=$(find "$build_dir" -type f -name 'libfmt.a' -print -quit)
+if [[ -z "$library" ]]; then
+    echo "fmt build did not produce libfmt.a" >&2
+    exit 1
+fi
+"$cxx" "${flags[@]}" -I"$root/upstream/include" "$root/driver.cpp" \
+    "$library" "${flags[@]}" -o "$artifact"
+
+test -s "$artifact" && test -x "$artifact"
+test "$(dd if="$artifact" bs=4 count=1 status=none)" = "$(printf '\177ELF')"
+cp -- "$artifact" "$temporary/$target"
+chmod u+x -- "$temporary/$target"
+mv -T -- "$temporary" "$publish_dir"
+trap - EXIT

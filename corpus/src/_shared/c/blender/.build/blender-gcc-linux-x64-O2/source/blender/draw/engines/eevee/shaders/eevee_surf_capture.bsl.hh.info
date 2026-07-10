@@ -1,0 +1,23 @@
+#pragma once
+
+
+
+
+
+
+GPU_SHADER_CREATE_INFO(eevee_SurfaceCapture)
+ADDITIONAL_INFO(eevee_geom_iface_info)
+PUSH_CONSTANT(bool, is_double_sided)
+.storage_buf(CAPTURE_BUF_SLOT, Qualifier::read_write, "CaptureInfoData", "capture_info_buf", Frequency::PASS)
+.storage_buf(SURFEL_BUF_SLOT, Qualifier::write, "Surfel", "surfel_buf[]", Frequency::PASS)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(eevee_surf_capture_infos_)
+BUILTINS(BuiltinBits::FRAG_COORD)
+BUILTINS(BuiltinBits::FRONT_FACING)
+ADDITIONAL_INFO(eevee_SurfaceCapture)
+ADDITIONAL_INFO(eevee_Uniform)
+ADDITIONAL_INFO(draw_View)
+ADDITIONAL_INFO(UtilityTexture)
+GPU_SHADER_CREATE_END()
+

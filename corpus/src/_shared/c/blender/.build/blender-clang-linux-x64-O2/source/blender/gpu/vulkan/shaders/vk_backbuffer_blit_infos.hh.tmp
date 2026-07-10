@@ -1,0 +1,32 @@
+#line 1 "vk_backbuffer_blit_infos.hh"
+ 
+#line 5
+#ifdef GPU_SHADER
+
+#endif
+#line 11
+#ifdef CREATE_INFO_RES_PASS_vk_backbuffer_blit
+CREATE_INFO_RES_PASS_vk_backbuffer_blit
+#endif
+#ifdef CREATE_INFO_RES_BATCH_vk_backbuffer_blit
+CREATE_INFO_RES_BATCH_vk_backbuffer_blit
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_vk_backbuffer_blit
+CREATE_INFO_RES_GEOMETRY_vk_backbuffer_blit
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_vk_backbuffer_blit
+CREATE_INFO_RES_SHARED_VARS_vk_backbuffer_blit
+#endif
+
+#ifdef CREATE_INFO_RES_PASS_vk_backbuffer_blit_gamma22
+CREATE_INFO_RES_PASS_vk_backbuffer_blit_gamma22
+#endif
+#ifdef CREATE_INFO_RES_BATCH_vk_backbuffer_blit_gamma22
+CREATE_INFO_RES_BATCH_vk_backbuffer_blit_gamma22
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_vk_backbuffer_blit_gamma22
+CREATE_INFO_RES_GEOMETRY_vk_backbuffer_blit_gamma22
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_vk_backbuffer_blit_gamma22
+CREATE_INFO_RES_SHARED_VARS_vk_backbuffer_blit_gamma22
+#endif

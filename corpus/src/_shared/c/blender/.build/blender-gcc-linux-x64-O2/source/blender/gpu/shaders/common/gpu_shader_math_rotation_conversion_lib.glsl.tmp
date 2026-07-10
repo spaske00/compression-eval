@@ -1,0 +1,312 @@
+#line 1 "gpu_shader_math_rotation_conversion_lib.glsl"
+ 
+#line 19
+Quaternion detail_normalized_to_quat_fast(float3x3 mat)
+{
+
+  Quaternion q;
+#line 28
+  if (mat[2][2] < 0.0f) {
+    if (mat[0][0] > mat[1][1]) {
+      float trace = 1.0f + mat[0][0] - mat[1][1] - mat[2][2];
+      float s = 2.0f * sqrt(trace);
+      if (mat[1][2] < mat[2][1]) {
+
+        s = -s;
+      }
+      q.y = 0.25f * s;
+      s = 1.0f / s;
+      q.x = (mat[1][2] - mat[2][1]) * s;
+      q.z = (mat[0][1] + mat[1][0]) * s;
+      q.w = (mat[2][0] + mat[0][2]) * s;
+      if ((trace == 1.0f) && (q.x == 0.0f && q.z == 0.0f && q.w == 0.0f)) {
+
+        q.y = 1.0f;
+      }
+    }
+    else {
+      float trace = 1.0f - mat[0][0] + mat[1][1] - mat[2][2];
+      float s = 2.0f * sqrt(trace);
+      if (mat[2][0] < mat[0][2]) {
+
+        s = -s;
+      }
+      q.z = 0.25f * s;
+      s = 1.0f / s;
+      q.x = (mat[2][0] - mat[0][2]) * s;
+      q.y = (mat[0][1] + mat[1][0]) * s;
+      q.w = (mat[1][2] + mat[2][1]) * s;
+      if ((trace == 1.0f) && (q.x == 0.0f && q.y == 0.0f && q.w == 0.0f)) {
+
+        q.z = 1.0f;
+      }
+    }
+  }
+  else {
+    if (mat[0][0] < -mat[1][1]) {
+      float trace = 1.0f - mat[0][0] - mat[1][1] + mat[2][2];
+      float s = 2.0f * sqrt(trace);
+      if (mat[0][1] < mat[1][0]) {
+
+        s = -s;
+      }
+      q.w = 0.25f * s;
+      s = 1.0f / s;
+      q.x = (mat[0][1] - mat[1][0]) * s;
+      q.y = (mat[2][0] + mat[0][2]) * s;
+      q.z = (mat[1][2] + mat[2][1]) * s;
+      if ((trace == 1.0f) && (q.x == 0.0f && q.y == 0.0f && q.z == 0.0f)) {
+
+        q.w = 1.0f;
+      }
+    }
+    else {
+#line 85
+      float trace = 1.0f + mat[0][0] + mat[1][1] + mat[2][2];
+      float s = 2.0f * sqrt(trace);
+      q.x = 0.25f * s;
+      s = 1.0f / s;
+      q.y = (mat[1][2] - mat[2][1]) * s;
+      q.z = (mat[2][0] - mat[0][2]) * s;
+      q.w = (mat[0][1] - mat[1][0]) * s;
+      if ((trace == 1.0f) && (q.y == 0.0f && q.z == 0.0f && q.w == 0.0f)) {
+
+        q.x = 1.0f;
+      }
+    }
+  }
+  return q;
+}
+
+Quaternion detail_normalized_to_quat_with_checks(float3x3 mat)
+{
+  float det = determinant(mat);
+  if (!isfinite(det)) {
+    return Quaternion_identity();
+  }
+  if (det < 0.0f) {
+    return detail_normalized_to_quat_fast(-mat);
+  }
+  return detail_normalized_to_quat_fast(mat);
+}
+
+void detail_normalized_to_eul2(float3x3 mat, _ref(EulerXYZ ,eul1), _ref(EulerXYZ ,eul2))
+{
+  float cy = hypot(mat[0][0], mat[0][1]);
+  if (cy > 16.0f * FLT_EPSILON) {
+    eul1.x = atan2(mat[1][2], mat[2][2]);
+    eul1.y = atan2(-mat[0][2], cy);
+    eul1.z = atan2(mat[0][1], mat[0][0]);
+
+    eul2.x = atan2(-mat[1][2], -mat[2][2]);
+    eul2.y = atan2(-mat[0][2], -cy);
+    eul2.z = atan2(-mat[0][1], -mat[0][0]);
+  }
+  else {
+    eul1.x = atan2(-mat[2][1], mat[1][1]);
+    eul1.y = atan2(-mat[0][2], cy);
+    eul1.z = 0.0f;
+
+    eul2 = eul1;
+  }
+}
+#line 140
+Quaternion to_quaternion(EulerXYZ eul)
+{
+  float ti = eul.x * 0.5f;
+  float tj = eul.y * 0.5f;
+  float th = eul.z * 0.5f;
+  float ci = cos(ti);
+  float cj = cos(tj);
+  float ch = cos(th);
+  float si = sin(ti);
+  float sj = sin(tj);
+  float sh = sin(th);
+  float cc = ci * ch;
+  float cs = ci * sh;
+  float sc = si * ch;
+  float ss = si * sh;
+
+  Quaternion quat;
+  quat.x = cj * cc + sj * ss;
+  quat.y = cj * sc - sj * cs;
+  quat.z = cj * ss + sj * cc;
+  quat.w = cj * cs - sj * sc;
+  return quat;
+}
+#line 168
+Quaternion to_quaternion(float3x3 mat)
+{
+  return detail_normalized_to_quat_with_checks(normalize(mat));
+}
+#line 176
+Quaternion to_quaternion(float3x3 mat, const bool normalized)
+{
+  if (!normalized) {
+    mat = normalize(mat);
+  }
+  return to_quaternion(mat);
+}
+#line 187
+Quaternion to_quaternion(float4x4 mat)
+{
+  return to_quaternion(to_float3x3(mat));
+}
+#line 195
+Quaternion to_quaternion(float4x4 mat, const bool normalized)
+{
+  return to_quaternion(to_float3x3(mat), normalized);
+}
+
+Quaternion to_quaternion(AxisAngle axis_angle)
+{
+  float angle_cos = cos(axis_angle.angle);
+
+  float sine = sqrt(0.5f - angle_cos * 0.5f);
+  float cosine = sqrt(0.5f + angle_cos * 0.5f);
+#line 208
+  float angle_sin = sin(axis_angle.angle);
+  if (angle_sin < 0.0f) {
+    sine = -sine;
+  }
+
+  Quaternion quat;
+  quat.x = cosine;
+  quat.y = axis_angle.axis.x * sine;
+  quat.z = axis_angle.axis.y * sine;
+  quat.w = axis_angle.axis.z * sine;
+  return quat;
+}
+
+Quaternion to_quaternion(float3 axis, float angle)
+{
+  if (is_zero(axis)) {
+    return Quaternion_identity();
+  }
+  AxisAngle aa;
+  aa.axis = normalize(axis);
+  aa.angle = angle;
+  return to_quaternion(aa);
+}
+#line 242
+EulerXYZ to_euler(float3x3 mat, const bool normalized)
+{
+  if (!normalized) {
+    mat = normalize(mat);
+  }
+  EulerXYZ eul1, eul2;
+  detail_normalized_to_eul2(mat, eul1, eul2);
+
+  return (length_manhattan(_as_float3(eul1)) > length_manhattan(_as_float3(eul2))) ? eul2 : eul1;
+}
+#line 256
+EulerXYZ to_euler(float3x3 mat)
+{
+  return to_euler(mat, true);
+}
+#line 264
+EulerXYZ to_euler(float4x4 mat, const bool normalized)
+{
+  return to_euler(to_float3x3(mat), normalized);
+}
+#line 272
+EulerXYZ to_euler(float4x4 mat)
+{
+  return to_euler(to_float3x3(mat));
+}
+#line 283
+AxisAngle to_axis_angle(Quaternion quat)
+{
+
+  float ha = acos(quat.x);
+  float si = sin(ha);
+#line 290
+  float angle = ha * 2;
+
+  if (abs(si) < 0.0005f) {
+    si = 1.0f;
+  }
+
+  float3 axis = float3(quat.y, quat.z, quat.w) / si;
+  if (is_zero(axis)) {
+    axis[1] = 1.0f;
+  }
+  return _ctor(AxisAngle) axis, angle _rotc() ;
+}
+
+AxisAngle to_axis_angle(EulerXYZ eul)
+{
+
+  return to_axis_angle(to_quaternion(eul));
+}
+#line 321
+void to_rot_scale(float3x3 mat, _ref(EulerXYZ ,r_rotation), _ref(float3 ,r_scale))
+{
+  r_scale = to_scale(mat);
+  r_rotation = to_euler(mat, true);
+}
+#line 333
+void to_rot_scale(float3x3 mat,
+                  _ref(EulerXYZ ,r_rotation),
+                  _ref(float3 ,r_scale),
+                  const bool allow_negative_scale)
+{
+  float3x3 normalized_mat = normalize_and_get_size(mat, r_scale);
+  if (allow_negative_scale) {
+    if (is_negative(normalized_mat)) {
+      normalized_mat = -normalized_mat;
+      r_scale = -r_scale;
+    }
+  }
+  r_rotation = to_euler(normalized_mat, true);
+}
+void to_rot_scale(float3x3 mat, _ref(Quaternion ,r_rotation), _ref(float3 ,r_scale))
+{
+  r_scale = to_scale(mat);
+  r_rotation = to_quaternion(mat, true);
+}
+void to_rot_scale(float3x3 mat,
+                  _ref(Quaternion ,r_rotation),
+                  _ref(float3 ,r_scale),
+                  const bool allow_negative_scale)
+{
+  float3x3 normalized_mat = normalize_and_get_size(mat, r_scale);
+  if (allow_negative_scale) {
+    if (is_negative(normalized_mat)) {
+      normalized_mat = -normalized_mat;
+      r_scale = -r_scale;
+    }
+  }
+  r_rotation = to_quaternion(normalized_mat, true);
+}
+
+void to_loc_rot_scale(float4x4 mat, _ref(float3 ,r_location), _ref(EulerXYZ ,r_rotation), _ref(float3 ,r_scale))
+{
+  r_location = mat[3].xyz;
+  to_rot_scale(to_float3x3(mat), r_rotation, r_scale);
+}
+void to_loc_rot_scale(float4x4 mat,
+                      _ref(float3 ,r_location),
+                      _ref(EulerXYZ ,r_rotation),
+                      _ref(float3 ,r_scale),
+                      const bool allow_negative_scale)
+{
+  r_location = mat[3].xyz;
+  to_rot_scale(to_float3x3(mat), r_rotation, r_scale, allow_negative_scale);
+}
+void to_loc_rot_scale(float4x4 mat, _ref(float3 ,r_location), _ref(Quaternion ,r_rotation), _ref(float3 ,r_scale))
+{
+  r_location = mat[3].xyz;
+  to_rot_scale(to_float3x3(mat), r_rotation, r_scale);
+}
+void to_loc_rot_scale(float4x4 mat,
+                      _ref(float3 ,r_location),
+                      _ref(Quaternion ,r_rotation),
+                      _ref(float3 ,r_scale),
+                      const bool allow_negative_scale)
+{
+  r_location = mat[3].xyz;
+  to_rot_scale(to_float3x3(mat), r_rotation, r_scale, allow_negative_scale);
+}
+
+

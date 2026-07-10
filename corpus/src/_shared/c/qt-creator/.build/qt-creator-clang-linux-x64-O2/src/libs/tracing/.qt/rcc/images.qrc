@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/tracing">
+    <file alias="images/edit.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/edit.png</file>
+    <file alias="images/edit@2x.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/edit@2x.png</file>
+    <file alias="images/rangeselected.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/rangeselected.png</file>
+    <file alias="images/rangeselected@2x.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/rangeselected@2x.png</file>
+    <file alias="images/rangeselection.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/rangeselection.png</file>
+    <file alias="images/rangeselection@2x.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/rangeselection@2x.png</file>
+    <file alias="images/selectionmode.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/selectionmode.png</file>
+    <file alias="images/selectionmode@2x.png">/home/ms/ms-base/work/phd/compression-algs-eval/compression-eval/corpus/src/_shared/c/qt-creator/upstream/src/libs/tracing/images/selectionmode@2x.png</file>
+  </qresource>
+</RCC>
+

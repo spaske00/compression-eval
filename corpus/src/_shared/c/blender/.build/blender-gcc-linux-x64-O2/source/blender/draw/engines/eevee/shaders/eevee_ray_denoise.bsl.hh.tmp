@@ -1,0 +1,838 @@
+#line 1 "eevee_ray_denoise.bsl.hh"
+ 
+#line 32
+float4 eevee_raytracing_denoise_bilinear_weights_from_subpixel_coord(float2 co)
+{
+
+  float4 weights;
+  weights.x = (1.0f - co.x) * co.y;
+  weights.y = co.x * co.y;
+  weights.z = co.x * (1.0f - co.y);
+  weights.w = (1.0f - co.x) * (1.0f - co.y);
+  return weights;
+}
+
+#define access_eevee_raytracing_denoise_TileBuffer_tiles_coord_buf() tiles_coord_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_raytracing_denoise_TileBuffer
+CREATE_INFO_RES_PASS_eevee_raytracing_denoise_TileBuffer
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_TileBuffer
+CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_TileBuffer
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_TileBuffer
+CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_TileBuffer
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_TileBuffer
+CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_TileBuffer
+#endif
+#line 43
+struct eevee_raytracing_denoise_TileBuffer {
+#line 58
+int _pad;};
+#line 61
+#ifndef GPU_METAL
+eevee_raytracing_denoise_TileBuffer eevee_raytracing_denoise_TileBuffer_ctor_();
+uint2 _tile_coord(eevee_raytracing_denoise_TileBuffer  this_, uint tile_id);
+eevee_raytracing_denoise_TileBuffer eevee_raytracing_denoise_TileBuffer_new_();
+#endif
+#line 43
+                                                   eevee_raytracing_denoise_TileBuffer eevee_raytracing_denoise_TileBuffer_ctor_() {eevee_raytracing_denoise_TileBuffer r;r._pad=0;return r;}
+#line 46
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_TileBuffer)
+#line 46
+  uint2 _tile_coord(eevee_raytracing_denoise_TileBuffer  this_, uint tile_id)
+  {
+    return unpackUvec2x16(tiles_coord_buf[tile_id]);
+  }
+#endif
+       eevee_raytracing_denoise_TileBuffer eevee_raytracing_denoise_TileBuffer_new_()
+{
+  eevee_raytracing_denoise_TileBuffer result;
+  result._pad = 0;
+  return result;
+#line 49
+}
+#line 52
+#define access_eevee_raytracing_denoise_DenoiseSpatial_raytrace_resolution_scale() raytrace_resolution_scale
+#define access_eevee_raytracing_denoise_DenoiseSpatial_skip_denoise() skip_denoise
+#define access_eevee_raytracing_denoise_DenoiseSpatial_closure_index() closure_index
+#define access_eevee_raytracing_denoise_DenoiseSpatial_depth_tx() depth_tx
+#define access_eevee_raytracing_denoise_DenoiseSpatial_ray_data_img() ray_data_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_ray_time_img() ray_time_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_ray_radiance_img() ray_radiance_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_out_radiance_img() out_radiance_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_out_variance_img() out_variance_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_out_hit_depth_img() out_hit_depth_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_tile_mask_img() tile_mask_img
+#define access_eevee_raytracing_denoise_DenoiseSpatial_tiles() eevee_raytracing_denoise_TileBuffer_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_raytracing_denoise_DenoiseSpatial
+CREATE_INFO_RES_PASS_eevee_raytracing_denoise_DenoiseSpatial
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_DenoiseSpatial
+CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_DenoiseSpatial
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_DenoiseSpatial
+CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_DenoiseSpatial
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_DenoiseSpatial
+CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_DenoiseSpatial
+#endif
+#line 52
+struct eevee_raytracing_denoise_DenoiseSpatial {
+#line 70
+                           eevee_raytracing_denoise_TileBuffer  tiles;
+#line 115
+};
+#line 118
+#ifndef GPU_METAL
+eevee_raytracing_denoise_DenoiseSpatial eevee_raytracing_denoise_DenoiseSpatial_ctor_();
+void _invalid_pixel_write(eevee_raytracing_denoise_DenoiseSpatial  this_, int2 texel);
+float _sample_weight_get(eevee_raytracing_denoise_DenoiseSpatial  this_, const gbuffer_Reader  reader,
+                          const eevee_Uniform  uni,
+                          ViewMatrices view,
+                          float3 center_N,
+                          float3 center_P,
+                          int2 sample_texel);
+eevee_raytracing_denoise_DenoiseSpatial eevee_raytracing_denoise_DenoiseSpatial_new_();
+#endif
+#line 52
+                                                       eevee_raytracing_denoise_DenoiseSpatial eevee_raytracing_denoise_DenoiseSpatial_ctor_() {eevee_raytracing_denoise_DenoiseSpatial r;r.tiles=eevee_raytracing_denoise_TileBuffer_ctor_();return r;}
+#line 73
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseSpatial)
+#line 73
+  void _invalid_pixel_write(eevee_raytracing_denoise_DenoiseSpatial  this_, int2 texel)
+  {
+    imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_radiance_img), texel, float4(FLT_11_11_10_MAX, 0.0f));
+    imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_variance_img), texel, float4(0.0f));
+    imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_hit_depth_img), texel, float4(0.0f));
+  }
+#endif
+#line 81
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseSpatial) && defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_Uniform)
+#line 81
+  float _sample_weight_get(eevee_raytracing_denoise_DenoiseSpatial  this_, const gbuffer_Reader  reader,
+                          const eevee_Uniform  uni,
+                          ViewMatrices view,
+                          float3 center_N,
+                          float3 center_P,
+                          int2 sample_texel)
+  {
+    int2 sample_texel_fullres = sample_texel * srt_access(eevee_Uniform, raytrace_buf).trace_pixel_scale +
+                                srt_access(eevee_Uniform, raytrace_buf).trace_pixel_offset;
+
+    float sample_depth = texelFetch(srt_access(eevee_raytracing_denoise_DenoiseSpatial, depth_tx), sample_texel_fullres, 0).r;
+
+    float2 sample_uv = float2(sample_texel_fullres) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+    float3 sample_N = _read_bin(reader, sample_texel_fullres, srt_access(eevee_raytracing_denoise_DenoiseSpatial, closure_index)).N;
+    float3 sample_P = _point_screen_to_world(view, float3(sample_uv, sample_depth));
+#line 98
+    float depth_weight = filters_planar_weight(center_N, center_P, sample_P, 10000.0f);
+    float normal_weight = filters_angle_weight(center_N, sample_N);
+#line 103
+    float epsilon_weight = 1e-4f;
+
+    return max(epsilon_weight, depth_weight * normal_weight);
+  }
+#endif
+       eevee_raytracing_denoise_DenoiseSpatial eevee_raytracing_denoise_DenoiseSpatial_new_()
+{
+  eevee_raytracing_denoise_DenoiseSpatial result;
+  result.tiles = eevee_raytracing_denoise_TileBuffer_new_();
+  return result;
+#line 106
+}
+#line 109
+void eevee_raytracing_denoise_transmission_thickness_amend_closure(_ref(ClosureUndetermined ,cl), _ref(float3 ,V), Thickness thickness)
+{
+  switch (cl.type) {
+    case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+      bxdf_ggx_context_amend_transmission(cl, V, thickness);
+      break;
+    case CLOSURE_NONE_ID:
+    case CLOSURE_BSDF_DIFFUSE_ID:
+    case CLOSURE_BSDF_TRANSLUCENT_ID:
+    case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+    case CLOSURE_BSSRDF_BURLEY_ID:
+    case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+      break;
+  }
+}
+#line 134
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseSpatial) && defined(CREATE_INFO_gbuffer_Reader) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture)
+#line 133
+
+#if defined(ENTRY_POINT_eevee_raytracing_denoise_spatial_main)
+#line 137
+void eevee_raytracing_denoise_spatial_main(
+#line 144
+                                                              )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 145
+  eevee_raytracing_denoise_DenoiseSpatial srt = eevee_raytracing_denoise_DenoiseSpatial_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); draw_View views = draw_View_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_();
+
+  uint2 tile_coord = _tile_coord(srt_access(eevee_raytracing_denoise_DenoiseSpatial, tiles), gl_WorkGroupID.x);
+
+  const ViewMatrices view = _get(views, 0);
+
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  int2 texel_fullres = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+#line 155
+  int2 texel_shifted = max(int2(0), texel_fullres - srt_access(eevee_Uniform, raytrace_buf).trace_pixel_offset);
+  int2 texel_nearest = texel_shifted / srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale);
+  float2 bilinear_co = fract(float2(texel_shifted) / float2(srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale)));
+
+  if (srt_access(eevee_raytracing_denoise_DenoiseSpatial, skip_denoise)) {
+    if (srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale) == 1) {
+
+      imageStore(
+          srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_radiance_img), texel_fullres, imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_radiance_img), texel_fullres));
+      return;
+    }
+#line 168
+    float center_depth = texelFetch(srt_access(eevee_raytracing_denoise_DenoiseSpatial, depth_tx), texel_fullres, 0).r;
+    float2 center_uv = float2(texel_fullres) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+    float3 center_N = _read_bin(reader, texel_fullres, srt_access(eevee_raytracing_denoise_DenoiseSpatial, closure_index)).N;
+    float3 center_P = _point_screen_to_world(view, float3(center_uv, center_depth));
+
+    float4 bilinear_weights = eevee_raytracing_denoise_bilinear_weights_from_subpixel_coord(bilinear_co);
+
+    float4 bilateral_weights = float4(
+        _sample_weight_get(srt, reader, uni, view, center_N, center_P, texel_nearest + int2(0, 1)),
+        _sample_weight_get(srt, reader, uni, view, center_N, center_P, texel_nearest + int2(1, 1)),
+        _sample_weight_get(srt, reader, uni, view, center_N, center_P, texel_nearest + int2(1, 0)),
+        _sample_weight_get(srt, reader, uni, view, center_N, center_P, texel_nearest + int2(0, 0)));
+
+    float4 ray_pdf_inv = float4(imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_data_img), texel_nearest + int2(0, 1)).w,
+                                imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_data_img), texel_nearest + int2(1, 1)).w,
+                                imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_data_img), texel_nearest + int2(1, 0)).w,
+                                imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_data_img), texel_nearest + int2(0, 0)).w);
+    float4 ray_validity = float4(not(equal(ray_pdf_inv, float4(0.0f))));
+
+    float4 ray_radiance0 = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_radiance_img), texel_nearest + int2(0, 1));
+    float4 ray_radiance1 = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_radiance_img), texel_nearest + int2(1, 1));
+    float4 ray_radiance2 = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_radiance_img), texel_nearest + int2(1, 0));
+    float4 ray_radiance3 = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_radiance_img), texel_nearest + int2(0, 0));
+
+    float4 weights = ray_validity * bilinear_weights * bilateral_weights;
+
+    float4 radiance;
+    radiance = colorspace_log_from_scene_linear(ray_radiance0) * weights.x;
+    radiance += colorspace_log_from_scene_linear(ray_radiance1) * weights.y;
+    radiance += colorspace_log_from_scene_linear(ray_radiance2) * weights.z;
+    radiance += colorspace_log_from_scene_linear(ray_radiance3) * weights.w;
+    radiance *= safe_rcp(radiance.w);
+    radiance = colorspace_scene_linear_from_log(radiance);
+
+    imageStore(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_radiance_img), texel_fullres, radiance);
+    return;
+  }
+#line 208
+  for (int x = -1; x <= 1; x++) {
+    for (int y = -1; y <= 1; y++) {
+      if (x == 0 && y == 0) {
+        continue;
+      }
+
+      int2 tile_coord_neighbor = int2(tile_coord) + int2(x, y);
+      if (!in_image_range(tile_coord_neighbor, srt_access(eevee_raytracing_denoise_DenoiseSpatial, tile_mask_img))) {
+        continue;
+      }
+
+      int3 sample_tile = int3(tile_coord_neighbor, srt_access(eevee_raytracing_denoise_DenoiseSpatial, closure_index));
+
+      uint tile_mask = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, tile_mask_img), sample_tile).r;
+      bool tile_is_unused = !flag_test(tile_mask, 1u << 0u);
+      if (tile_is_unused) {
+        int2 texel_fullres_neighbor = texel_fullres + int2(x, y) * int(tile_size);
+
+        if (in_texture_range(texel_fullres, srt_access(gbuffer_Reader, gbuf_header_tx))) {
+          _invalid_pixel_write(srt, texel_fullres_neighbor);
+        }
+      }
+    }
+  }
+
+  gbuffer_Header gbuf_header = _read_header(reader, texel_fullres);
+
+  ClosureUndetermined closure = _read_bin(reader, texel_fullres, srt_access(eevee_raytracing_denoise_DenoiseSpatial, closure_index));
+
+  if (closure.type == CLOSURE_NONE_ID) {
+    _invalid_pixel_write(srt, texel_fullres);
+    return;
+  }
+
+  float2 noise = _fetch(util_tx, float2(texel_fullres), UTIL_BLUE_NOISE_LAYER).ba;
+  noise = fract(noise + _rng_1D_get(sampling, SAMPLING_CLOSURE));
+
+  int2 center_sample_texel = texel_nearest;
+  if (srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale) != 1) {
+
+    center_sample_texel += int2(greaterThan(bilinear_co, noise));
+  }
+#line 255
+  float2 uv = (float2(center_sample_texel) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv *
+              float(srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale));
+
+  float depth = reverse_z_read(texelFetch(srt_access(eevee_raytracing_denoise_DenoiseSpatial, depth_tx), texel_fullres, 0).r);
+  float3 vs_P = _point_screen_to_view(view, float3(uv, depth));
+  float scene_z = vs_P.z;
+  float3 P = _point_view_to_world(view, vs_P);
+  float3 V = _world_incident_vector(view, P);
+
+  Thickness thickness = _read_thickness(reader, gbuf_header, texel_fullres);
+  if (_value(thickness) != 0.0f) {
+    eevee_raytracing_denoise_transmission_thickness_amend_closure(closure, V, thickness);
+  }
+#line 270
+  float apparent_roughness = closure_apparent_roughness_get(closure);
+
+  float filter_size_factor = saturate(apparent_roughness * 8.0f);
+  uint sample_count = 1u + uint(floor(15.0f * filter_size_factor + 0.5f));
+  float filter_radius = 8.0f * sqrt(filter_size_factor);
+#line 277
+  float max_filter_radius = float(RAYTRACE_GROUP_SIZE - 1);
+  float min_filter_radius = 0.0f;
+  if (srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale) > 1) {
+
+    min_filter_radius = 1.5f;
+    sample_count = max(sample_count, 5u);
+  }
+
+  float3 rgb_moment = float3(0.0f);
+  float3 radiance_accum = float3(0.0f);
+  float weight_accum = 0.0f;
+  float closest_hit_time = 1.0e10f;
+#line 292
+  float3 vs_N = _normal_world_to_view(view, closure.N);
+  float2 pixel_uv_size = srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv *
+                         float(srt_access(eevee_raytracing_denoise_DenoiseSpatial, raytrace_resolution_scale));
+  float3 vs_Pdx = _point_screen_to_view(view, float3(uv + float2(pixel_uv_size.x, 0.0), depth));
+  float3 vs_Pdy = _point_screen_to_view(view, float3(uv + float2(0.0, pixel_uv_size.y), depth));
+  float2x3 dPdxy;
+  dPdxy[0] = line_plane_intersect(vs_Pdx, _view_incident_vector(view, vs_Pdx), vs_P, vs_N) - vs_P;
+  dPdxy[1] = line_plane_intersect(vs_Pdy, _view_incident_vector(view, vs_Pdy), vs_P, vs_N) - vs_P;
+  dPdxy[0] = _normal_view_to_world(view, dPdxy[0]);
+  dPdxy[1] = _normal_view_to_world(view, dPdxy[1]);
+#line 304
+  float bias = max(0.2f, saturate((0.75f - apparent_roughness) / (0.75f - 0.3f)));
+  dPdxy[0] *= bias;
+  dPdxy[1] *= bias;
+#line 311
+  float2 filter_up = safe_normalize(float2(vs_N.xy));
+  float2x2 filter_rotation = float2x2(filter_up, orthogonal(filter_up));
+#line 315
+  float aspect = 1.0f - 0.5f * saturate(min(apparent_roughness * 12.0f,
+                                            2.0f - apparent_roughness * 5.0f));
+
+  filter_rotation[0] *= clamp(filter_radius, min_filter_radius, max_filter_radius);
+  filter_rotation[1] *= clamp(filter_radius * aspect, min_filter_radius, max_filter_radius);
+
+  for (uint i = 0u; i < sample_count; i++) {
+    float2 Xi = hammersley_2d(i, sample_count);
+#line 325
+    Xi.y *= 1.0f - (noise.x / float(sample_count));
+
+    float2 offset_f = filter_rotation * sample_disk(Xi);
+    int2 offset = int2(floor(offset_f + 0.5f));
+
+    int2 sample_texel = center_sample_texel + offset;
+
+    float4 ray_data = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_data_img), sample_texel);
+    float ray_time = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_time_img), sample_texel).r;
+    float4 ray_radiance = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseSpatial, ray_radiance_img), sample_texel);
+
+    float3 ray_direction = ray_data.xyz;
+    float ray_pdf_inv = abs(ray_data.w);
+
+    if (ray_pdf_inv == 0.0f) {
+      continue;
+    }
+
+    closest_hit_time = min(closest_hit_time, ray_time);
+#line 348
+    ray_direction = safe_normalize(dPdxy * float2(offset) + ray_direction * ray_time);
+#line 353
+    float pdf = closure_evaluate_pdf(closure, ray_direction, V, thickness);
+
+    float weight = min(1e30f, pdf * ray_pdf_inv);
+
+    float3 log_radiance = colorspace_log_from_scene_linear(ray_radiance.rgb);
+
+    radiance_accum += log_radiance * weight;
+    weight_accum += weight;
+#line 363
+    rgb_moment += square(log_radiance) * weight;
+  }
+  float inv_weight = safe_rcp(weight_accum);
+  radiance_accum *= inv_weight;
+#line 369
+  float3 rgb_mean = radiance_accum;
+  rgb_moment *= inv_weight;
+
+  float3 rgb_variance = abs(rgb_moment - square(rgb_mean)) * safe_rcp(rgb_mean);
+  float hit_variance = reduce_max(rgb_variance);
+
+  float hit_depth = _depth_view_to_screen(view, scene_z - closest_hit_time);
+
+  radiance_accum = colorspace_scene_linear_from_log(radiance_accum);
+  imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_radiance_img), texel_fullres, float4(radiance_accum, 0.0f));
+  imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_variance_img), texel_fullres, float4(hit_variance));
+  imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseSpatial, out_hit_depth_img), texel_fullres, float4(hit_depth));
+
+#endif
+#line 381
+}
+#endif
+#endif
+#line 383
+struct eevee_raytracing_denoise_LocalStatistics {
+  float3 mean;
+  float3 moment;
+  float3 variance;
+  float3 deviation;
+  float3 clamp_min;
+  float3 clamp_max;
+};
+#line 383
+                                                        eevee_raytracing_denoise_LocalStatistics eevee_raytracing_denoise_LocalStatistics_ctor_() {eevee_raytracing_denoise_LocalStatistics r;r.mean=float3(0);r.moment=float3(0);r.variance=float3(0);r.deviation=float3(0);r.clamp_min=float3(0);r.clamp_max=float3(0);return r;}
+#line 392
+#define access_eevee_raytracing_denoise_DenoiseTemporal_closure_index() closure_index
+#define access_eevee_raytracing_denoise_DenoiseTemporal_radiance_history_tx() radiance_history_tx
+#define access_eevee_raytracing_denoise_DenoiseTemporal_variance_history_tx() variance_history_tx
+#define access_eevee_raytracing_denoise_DenoiseTemporal_tilemask_history_tx() tilemask_history_tx
+#define access_eevee_raytracing_denoise_DenoiseTemporal_depth_tx() depth_tx
+#define access_eevee_raytracing_denoise_DenoiseTemporal_hit_depth_img() hit_depth_img
+#define access_eevee_raytracing_denoise_DenoiseTemporal_in_radiance_img() in_radiance_img
+#define access_eevee_raytracing_denoise_DenoiseTemporal_in_variance_img() in_variance_img
+#define access_eevee_raytracing_denoise_DenoiseTemporal_out_radiance_img() out_radiance_img
+#define access_eevee_raytracing_denoise_DenoiseTemporal_out_variance_img() out_variance_img
+#define access_eevee_raytracing_denoise_DenoiseTemporal_tile_mask_img() tile_mask_img
+#define access_eevee_raytracing_denoise_DenoiseTemporal_tiles() eevee_raytracing_denoise_TileBuffer_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_raytracing_denoise_DenoiseTemporal
+CREATE_INFO_RES_PASS_eevee_raytracing_denoise_DenoiseTemporal
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_DenoiseTemporal
+CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_DenoiseTemporal
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_DenoiseTemporal
+CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_DenoiseTemporal
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_DenoiseTemporal
+CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_DenoiseTemporal
+#endif
+#line 392
+struct eevee_raytracing_denoise_DenoiseTemporal {
+#line 412
+                           eevee_raytracing_denoise_TileBuffer  tiles;
+#line 556
+};
+#line 567
+#ifndef GPU_METAL
+eevee_raytracing_denoise_DenoiseTemporal eevee_raytracing_denoise_DenoiseTemporal_ctor_();
+eevee_raytracing_denoise_LocalStatistics _local_statistics_get(eevee_raytracing_denoise_DenoiseTemporal  this_, int2 texel, float3 center_radiance);
+float4 _history_validate(eevee_raytracing_denoise_DenoiseTemporal  this_, int2 texel, float bilinear_weight, float3 history_radiance);
+float4 _radiance_history_sample(eevee_raytracing_denoise_DenoiseTemporal  this_, const eevee_Uniform  uni,
+                                 float3 P,
+                                 eevee_raytracing_denoise_LocalStatistics local);
+float2 _variance_history_sample(eevee_raytracing_denoise_DenoiseTemporal  this_, const eevee_Uniform  uni, float3 P);
+eevee_raytracing_denoise_DenoiseTemporal eevee_raytracing_denoise_DenoiseTemporal_new_();
+#endif
+#line 392
+                                                        eevee_raytracing_denoise_DenoiseTemporal eevee_raytracing_denoise_DenoiseTemporal_ctor_() {eevee_raytracing_denoise_DenoiseTemporal r;r.tiles=eevee_raytracing_denoise_TileBuffer_ctor_();return r;}
+#line 414
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseTemporal)
+#line 414
+  eevee_raytracing_denoise_LocalStatistics _local_statistics_get(eevee_raytracing_denoise_DenoiseTemporal  this_, int2 texel, float3 center_radiance)
+  {
+    float3 center_radiance_YCoCg = colorspace_YCoCg_from_scene_linear(center_radiance);
+#line 419
+    eevee_raytracing_denoise_LocalStatistics result;
+    result.mean = center_radiance_YCoCg;
+    result.moment = square(center_radiance_YCoCg);
+    float weight_accum = 1.0f;
+
+    for (int x = -1; x <= 1; x++) {
+      for (int y = -1; y <= 1; y++) {
+        if (x == 0 && y == 0) {
+          continue;
+        }
+
+        int2 neighbor_texel = texel + int2(x, y);
+        if (!in_image_range(neighbor_texel, srt_access(eevee_raytracing_denoise_DenoiseTemporal, in_radiance_img))) {
+          continue;
+        }
+        float3 radiance = imageLoad(srt_access(eevee_raytracing_denoise_DenoiseTemporal, in_radiance_img), neighbor_texel).rgb;
+
+        if (all(equal(radiance, FLT_11_11_10_MAX))) {
+          continue;
+        }
+#line 446
+        float3 radiance_YCoCg = colorspace_YCoCg_from_scene_linear(radiance.rgb);
+        result.mean += radiance_YCoCg;
+        result.moment += square(radiance_YCoCg);
+        weight_accum += 1.0f;
+      }
+    }
+    float inv_weight = safe_rcp(weight_accum);
+    result.mean *= inv_weight;
+    result.moment *= inv_weight;
+    result.variance = abs(result.moment - square(result.mean));
+    result.deviation = max(float3(1e-4f), sqrt(result.variance));
+    result.clamp_min = result.mean - result.deviation;
+    result.clamp_max = result.mean + result.deviation;
+    return result;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseTemporal)
+#line 462
+  float4 _history_validate(eevee_raytracing_denoise_DenoiseTemporal  this_, int2 texel, float bilinear_weight, float3 history_radiance)
+  {
+
+    if (!in_texture_range(texel, srt_access(eevee_raytracing_denoise_DenoiseTemporal, radiance_history_tx))) {
+      return float4(0.0f);
+    }
+
+    int3 history_tile = int3(texel / RAYTRACE_GROUP_SIZE, srt_access(eevee_raytracing_denoise_DenoiseTemporal, closure_index));
+
+    bool is_valid_history = texelFetch(srt_access(eevee_raytracing_denoise_DenoiseTemporal, tilemask_history_tx), history_tile, 0).r != 0;
+
+    if (!is_valid_history) {
+      return float4(0.0f);
+    }
+
+    if (all(equal(history_radiance, FLT_11_11_10_MAX))) {
+      return float4(0.0f);
+    }
+    return float4(history_radiance * bilinear_weight, bilinear_weight);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseTemporal) && defined(CREATE_INFO_eevee_Uniform)
+#line 483
+  float4 _radiance_history_sample(eevee_raytracing_denoise_DenoiseTemporal  this_, const eevee_Uniform  uni,
+                                 float3 P,
+                                 eevee_raytracing_denoise_LocalStatistics local)
+  {
+    float2 uv = project_point(srt_access(eevee_Uniform, raytrace_buf).denoise_history_persmat, P).xy * 0.5f + 0.5f;
+
+    float2 tex_size = float2(textureSize(srt_access(eevee_raytracing_denoise_DenoiseTemporal, radiance_history_tx), 0).xy);
+    float2 texel_co = uv * tex_size - 0.5f;
+    float2 round_co = floor(texel_co);
+    float2 fract_co = texel_co - round_co;
+    float4 bilinear_weights = eevee_raytracing_denoise_bilinear_weights_from_subpixel_coord(fract_co);
+    int2 texel = int2(round_co);
+#line 497
+    float2 safe_uv = (round_co + 0.5f) / tex_size;
+
+    float4 r_samples = textureGather0(srt_access(eevee_raytracing_denoise_DenoiseTemporal, radiance_history_tx), safe_uv   );
+    float4 g_samples = textureGather1(srt_access(eevee_raytracing_denoise_DenoiseTemporal, radiance_history_tx), safe_uv   );
+    float4 b_samples = textureGather2(srt_access(eevee_raytracing_denoise_DenoiseTemporal, radiance_history_tx), safe_uv   );
+    float4x3 gather4 = transpose(float3x4(r_samples, g_samples, b_samples));
+
+    float4 history_radiance;
+    history_radiance = _history_validate(this_, texel + int2(0, 1), bilinear_weights.x, gather4[0]);
+    history_radiance += _history_validate(this_, texel + int2(1, 1), bilinear_weights.y, gather4[1]);
+    history_radiance += _history_validate(this_, texel + int2(1, 0), bilinear_weights.z, gather4[2]);
+    history_radiance += _history_validate(this_, texel + int2(0, 0), bilinear_weights.w, gather4[3]);
+#line 511
+    float4 history_radiance_YCoCg;
+    history_radiance_YCoCg.rgb = colorspace_YCoCg_from_scene_linear(history_radiance.rgb);
+    history_radiance_YCoCg.a = history_radiance.a;
+#line 516
+    float3 dist = abs(history_radiance_YCoCg.rgb - local.mean) / local.deviation;
+    float weight = exp2(-4.0f * dot(dist, float3(1.0f)));
+
+    return history_radiance_YCoCg * weight;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseTemporal) && defined(CREATE_INFO_eevee_Uniform)
+#line 522
+  float2 _variance_history_sample(eevee_raytracing_denoise_DenoiseTemporal  this_, const eevee_Uniform  uni, float3 P)
+  {
+    float2 uv = project_point(srt_access(eevee_Uniform, raytrace_buf).denoise_history_persmat, P).xy * 0.5f + 0.5f;
+
+    if (!in_range_exclusive(uv, float2(0.0f), float2(1.0f))) {
+
+      return float2(0.0f);
+    }
+#line 536
+    float history_variance = texture(srt_access(eevee_raytracing_denoise_DenoiseTemporal, variance_history_tx), uv).r;
+
+    int2 history_texel = int2(floor(uv * float2(textureSize(srt_access(eevee_raytracing_denoise_DenoiseTemporal, variance_history_tx), 0).xy)));
+    int3 history_tile = int3(history_texel / RAYTRACE_GROUP_SIZE, srt_access(eevee_raytracing_denoise_DenoiseTemporal, closure_index));
+
+    bool is_valid_history = texelFetch(srt_access(eevee_raytracing_denoise_DenoiseTemporal, tilemask_history_tx), history_tile, 0).r != 0;
+
+    if (is_valid_history) {
+      return float2(history_variance, 1.0f);
+    }
+    return float2(0.0f);
+  }
+#endif
+       eevee_raytracing_denoise_DenoiseTemporal eevee_raytracing_denoise_DenoiseTemporal_new_()
+{
+  eevee_raytracing_denoise_DenoiseTemporal result;
+  result.tiles = eevee_raytracing_denoise_TileBuffer_new_();
+  return result;
+#line 547
+}
+#line 558
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseTemporal) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_Uniform)
+#line 558
+
+#if defined(ENTRY_POINT_eevee_raytracing_denoise_temporal_main)
+#line 562
+void eevee_raytracing_denoise_temporal_main(
+#line 566
+                                                               )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 567
+  eevee_raytracing_denoise_DenoiseTemporal srt = eevee_raytracing_denoise_DenoiseTemporal_ctor_(); draw_View views = draw_View_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_();
+
+  uint2 tile_coord = _tile_coord(srt_access(eevee_raytracing_denoise_DenoiseTemporal, tiles), gl_WorkGroupID.x);
+
+  const ViewMatrices view = _get(views, 0);
+
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  int2 texel_fullres = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+  float2 uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+#line 579
+  for (int x = -1; x <= 1; x++) {
+    for (int y = -1; y <= 1; y++) {
+      if (x == 0 && y == 0) {
+        continue;
+      }
+
+      int2 tile_coord_neighbor = int2(tile_coord) + int2(x, y);
+      if (!in_image_range(tile_coord_neighbor, srt_access(eevee_raytracing_denoise_DenoiseTemporal, tile_mask_img))) {
+        continue;
+      }
+
+      int3 sample_tile = int3(tile_coord_neighbor, srt_access(eevee_raytracing_denoise_DenoiseTemporal, closure_index));
+
+      uint tile_mask = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, tile_mask_img), sample_tile).r;
+      bool tile_is_unused = !flag_test(tile_mask, 1u << 0u);
+      if (tile_is_unused) {
+        int2 texel_fullres_neighbor = texel_fullres + int2(x, y) * int(tile_size);
+        imageStore(srt_access(eevee_raytracing_denoise_DenoiseTemporal, out_variance_img), texel_fullres_neighbor, float4(0.0f));
+      }
+    }
+  }
+#line 603
+  if (any(greaterThanEqual(texel_fullres, imageSize(srt_access(eevee_raytracing_denoise_DenoiseTemporal, in_radiance_img)).xy))) {
+    return;
+  }
+
+  float in_variance = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, in_variance_img), texel_fullres).r;
+  float3 in_radiance = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, in_radiance_img), texel_fullres).rgb;
+
+  if (all(equal(in_radiance, FLT_11_11_10_MAX))) {
+
+    imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, out_radiance_img), texel_fullres, float4(FLT_11_11_10_MAX, 0.0f));
+    imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, out_variance_img), texel_fullres, float4(0.0f));
+    return;
+  }
+
+  eevee_raytracing_denoise_LocalStatistics local = _local_statistics_get(srt, texel_fullres, in_radiance);
+#line 623
+  float scene_depth = reverse_z_read(texelFetch(srt_access(eevee_raytracing_denoise_DenoiseTemporal, depth_tx), texel_fullres, 0).r);
+  float3 P = _point_screen_to_world(view, float3(uv, scene_depth));
+  float4 history_radiance = _radiance_history_sample(srt, uni, P, local);
+
+  float hit_depth = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, hit_depth_img), texel_fullres).r;
+  float3 P_hit = _point_screen_to_world(view, float3(uv, hit_depth));
+  history_radiance += _radiance_history_sample(srt, uni, P_hit, local);
+
+  history_radiance *= safe_rcp(history_radiance.w);
+
+  history_radiance.rgb = clamp(history_radiance.rgb, local.clamp_min, local.clamp_max);
+
+  history_radiance.rgb = colorspace_scene_linear_from_YCoCg(history_radiance.rgb);
+
+  float mix_fac = (history_radiance.w > 1e-3f) ? 0.97f : 0.0f;
+
+  mix_fac *= mix(0.75f, 1.0f, saturate(in_variance * 20.0f));
+  float3 out_radiance = mix(
+      colorspace_safe_color(in_radiance), colorspace_safe_color(history_radiance.rgb), mix_fac);
+
+  imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, out_radiance_img), texel_fullres, float4(out_radiance, 0.0f));
+#line 648
+  float2 history_variance = _variance_history_sample(srt, uni, P_hit);
+
+  float mix_variance_fac = (history_variance.y == 0.0f) ? 0.0f : 0.85f;
+
+  history_variance.x = clamp(history_variance.x, 0.0f, 100.0f);
+
+  float out_variance = sqrt(
+      mix(square(in_variance), square(history_variance.x), mix_variance_fac));
+
+  imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseTemporal, out_variance_img), texel_fullres, float4(out_variance));
+
+#endif
+#line 658
+}
+#endif
+#endif
+#line 660
+#define access_eevee_raytracing_denoise_DenoiseBilateral_depth_tx() depth_tx
+#define access_eevee_raytracing_denoise_DenoiseBilateral_tile_mask_img() tile_mask_img
+#define access_eevee_raytracing_denoise_DenoiseBilateral_in_radiance_img() in_radiance_img
+#define access_eevee_raytracing_denoise_DenoiseBilateral_in_variance_img() in_variance_img
+#define access_eevee_raytracing_denoise_DenoiseBilateral_out_radiance_img() out_radiance_img
+#define access_eevee_raytracing_denoise_DenoiseBilateral_closure_index() closure_index
+#define access_eevee_raytracing_denoise_DenoiseBilateral_tiles() eevee_raytracing_denoise_TileBuffer_new_()
+#ifdef CREATE_INFO_RES_PASS_eevee_raytracing_denoise_DenoiseBilateral
+CREATE_INFO_RES_PASS_eevee_raytracing_denoise_DenoiseBilateral
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_DenoiseBilateral
+CREATE_INFO_RES_BATCH_eevee_raytracing_denoise_DenoiseBilateral
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_DenoiseBilateral
+CREATE_INFO_RES_GEOMETRY_eevee_raytracing_denoise_DenoiseBilateral
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_DenoiseBilateral
+CREATE_INFO_RES_SHARED_VARS_eevee_raytracing_denoise_DenoiseBilateral
+#endif
+#line 660
+struct eevee_raytracing_denoise_DenoiseBilateral {
+#line 672
+                           eevee_raytracing_denoise_TileBuffer  tiles;
+#line 681
+};
+#line 692
+#ifndef GPU_METAL
+eevee_raytracing_denoise_DenoiseBilateral eevee_raytracing_denoise_DenoiseBilateral_ctor_();
+eevee_raytracing_denoise_DenoiseBilateral eevee_raytracing_denoise_DenoiseBilateral_new_();
+#endif
+#line 660
+                                                         eevee_raytracing_denoise_DenoiseBilateral eevee_raytracing_denoise_DenoiseBilateral_ctor_() {eevee_raytracing_denoise_DenoiseBilateral r;r.tiles=eevee_raytracing_denoise_TileBuffer_ctor_();return r;}
+#line 674
+       eevee_raytracing_denoise_DenoiseBilateral eevee_raytracing_denoise_DenoiseBilateral_new_()
+{
+  eevee_raytracing_denoise_DenoiseBilateral result;
+  result.tiles = eevee_raytracing_denoise_TileBuffer_new_();
+  return result;
+#line 672
+}
+#line 683
+
+#if defined(CREATE_INFO_eevee_raytracing_denoise_DenoiseBilateral) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_gbuffer_Reader)
+#line 683
+
+#if defined(ENTRY_POINT_eevee_raytracing_denoise_bilateral_main)
+#line 683
+
+void eevee_raytracing_denoise_bilateral_main(
+#line 690
+                                                                )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 691
+  eevee_raytracing_denoise_DenoiseBilateral srt = eevee_raytracing_denoise_DenoiseBilateral_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); draw_View views = draw_View_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+
+  uint2 tile_coord = _tile_coord(srt_access(eevee_raytracing_denoise_DenoiseBilateral, tiles), gl_WorkGroupID.x);
+
+  const ViewMatrices view = _get(views, 0);
+
+  constexpr uint tile_size = RAYTRACE_GROUP_SIZE;
+  int2 texel_fullres = int2(gl_LocalInvocationID.xy + tile_coord * tile_size);
+  float2 center_uv = (float2(texel_fullres) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+
+  float center_depth = reverse_z_read(texelFetch(srt_access(eevee_raytracing_denoise_DenoiseBilateral, depth_tx), texel_fullres, 0).r);
+  float3 center_P = _point_screen_to_world(view, float3(center_uv, center_depth));
+
+  ClosureUndetermined center_closure = _read_bin(reader, texel_fullres, srt_access(eevee_raytracing_denoise_DenoiseBilateral, closure_index));
+
+  if (center_closure.type == CLOSURE_NONE_ID) {
+
+    return;
+  }
+
+  float roughness = closure_apparent_roughness_get(center_closure);
+  float variance = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseBilateral, in_variance_img), texel_fullres).r;
+  float3 in_radiance = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseBilateral, in_radiance_img), texel_fullres).rgb;
+
+  bool is_background = (center_depth == 0.0f);
+  bool is_smooth = (roughness < 0.05f);
+  bool is_low_variance = (variance < 0.1f);
+#line 720
+  float filter_size_factor = saturate(roughness * 8.0f) * saturate(variance * 2.0);
+  float filter_size = mix(0.0f, 9.0f, filter_size_factor);
+  uint sample_count = uint(mix(1.0f, 15.0f, saturate(variance * 2.0)));
+
+  if (is_smooth || is_background || is_low_variance) {
+
+    imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseBilateral, out_radiance_img), texel_fullres, float4(in_radiance, 0.0f));
+    return;
+  }
+
+  float2 noise = interleaved_gradient_noise(
+      float2(texel_fullres) + 0.5f, float2(3, 5), float2(0.0f));
+  noise += _rng_2D_get(sampling, SAMPLING_RAYTRACE_W);
+#line 735
+  float3 accum_radiance = colorspace_log_from_scene_linear(in_radiance);
+  float accum_weight = 1.0f;
+#line 739
+  for (uint i = 0u; i < sample_count; i++) {
+
+    float2 offset_f = (fract(hammersley_2d(i, sample_count) + noise) - 0.5f) * filter_size;
+    int2 offset = int2(floor(offset_f + 0.5f));
+
+    int2 sample_texel = texel_fullres + offset;
+    int3 sample_tile = int3(sample_texel / RAYTRACE_GROUP_SIZE, srt_access(eevee_raytracing_denoise_DenoiseBilateral, closure_index));
+
+    if (imageLoad(srt_access(eevee_raytracing_denoise_DenoiseBilateral, tile_mask_img), sample_tile).r == 0u) {
+      continue;
+    }
+
+    float sample_depth = reverse_z_read(texelFetch(srt_access(eevee_raytracing_denoise_DenoiseBilateral, depth_tx), sample_texel, 0).r);
+    float2 sample_uv = (float2(sample_texel) + 0.5f) * srt_access(eevee_Uniform, raytrace_buf).full_resolution_inv;
+    float3 sample_P = _point_screen_to_world(view, float3(sample_uv, sample_depth));
+#line 756
+    if (sample_depth == 0.0f) {
+      continue;
+    }
+
+    float3 radiance = imageLoadFast(srt_access(eevee_raytracing_denoise_DenoiseBilateral, in_radiance_img), sample_texel).rgb;
+#line 763
+    if (all(equal(radiance, FLT_11_11_10_MAX))) {
+      continue;
+    }
+
+    ClosureUndetermined sample_closure = _read_bin(reader, sample_texel, srt_access(eevee_raytracing_denoise_DenoiseBilateral, closure_index));
+
+    if (sample_closure.type == CLOSURE_NONE_ID) {
+      continue;
+    }
+
+    float gauss = filters_gaussian_factor(filter_size, 1.5f);
+#line 776
+    float depth_weight = filters_planar_weight(center_closure.N, center_P, sample_P, 10000.0f);
+    float spatial_weight = filters_gaussian_weight(gauss, length_squared(float2(offset)));
+    float normal_weight = filters_angle_weight(center_closure.N, sample_closure.N);
+    float weight = depth_weight * spatial_weight * normal_weight;
+
+    accum_radiance += colorspace_log_from_scene_linear(radiance) * weight;
+    accum_weight += weight;
+  }
+
+  float3 out_radiance = accum_radiance * safe_rcp(accum_weight);
+  out_radiance = colorspace_scene_linear_from_log(out_radiance);
+
+  imageStoreFast(srt_access(eevee_raytracing_denoise_DenoiseBilateral, out_radiance_img), texel_fullres, float4(out_radiance, 0.0f));
+
+#endif
+#line 789
+}
+#endif
+#endif
+#line 796

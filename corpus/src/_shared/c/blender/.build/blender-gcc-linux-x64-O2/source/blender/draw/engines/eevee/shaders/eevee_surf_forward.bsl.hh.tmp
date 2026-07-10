@@ -1,0 +1,213 @@
+#line 1 "eevee_surf_forward.bsl.hh"
+ 
+#line 15
+FRAGMENT_SHADER_CREATE_INFO(eevee_nodetree)
+FRAGMENT_SHADER_CREATE_INFO(eevee_geom_iface_info)
+#line 28
+Thickness g_thickness_forward;
+
+float4 closure_to_rgba_forward(Closure _0)
+{
+
+#if defined(CREATE_INFO_draw_View)
+#line 32
+
+#if defined(CREATE_INFO_eevee_Sampling)
+#line 32
+
+#if defined(CREATE_INFO_UtilityTexture)
+#line 32
+
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 36
+  draw_ID id = _ctor(draw_ID) interface_get(eevee_geom_iface_info, interp_flat).resource_id_raw _rotc() ;
+  const uint resource_id = _resource_idT1(id);
+
+  const float2 frag_co = gl_FragCoord.xy;
+
+  float3 radiance, transmittance;
+  eevee_forward_lighting_eval(
+      _get(resource_table_get(draw_View), 0), resource_id, g_thickness_forward, frag_co, radiance, transmittance);
+#line 46
+  float noise = _fetch(resource_table_get(UtilityTexture), frag_co, UTIL_BLUE_NOISE_LAYER).r;
+  float closure_rand = fract(noise + _rng_1D_get(resource_table_get(eevee_Sampling), SAMPLING_CLOSURE));
+  closure_weights_reset(closure_rand);
+
+#if defined(MAT_TRANSPARENT) && defined(MAT_SHADER_TO_RGBA)
+  {
+#line 55
+#if defined(CREATE_INFO_eevee_LightprobeRenderData)
+#line 58
+    float3 V = -_world_incident_vector(_get(resource_table_get(draw_View), 0), g_data.P);
+    eevee_LightProbeSample samp = _load(resource_table_get(eevee_LightprobeRenderData), frag_co, g_data.P, g_data.N, V);
+    float3 radiance_behind = _spherical_sample_normalized_with_parallax(srt_access(eevee_LightprobeRenderData, spheres), samp, g_data.P, V, 0.0);
+
+#  ifndef MAT_FIRST_LAYER
+    {
+#line 67
+#if defined(CREATE_INFO_eevee_PreviousLayerHiZ)
+#line 67
+
+#if defined(CREATE_INFO_eevee_PreviousLayerRadiance)
+#line 71
+      int2 texel = int2(frag_co);
+      if (texelFetchExtend(srt_access(eevee_PreviousLayerHiZ, hiz_prev_tx), texel, 0).x != 1.0f) {
+        radiance_behind = texelFetch(srt_access(eevee_PreviousLayerRadiance, previous_layer_radiance_tx), texel, 0).xyz;
+      }
+
+#endif
+
+#endif
+#line 75
+    }
+#  endif
+
+    radiance += radiance_behind * saturate(transmittance);
+
+#endif
+#line 79
+  }
+#endif
+
+  return float4(radiance, saturate(1.0f - average(transmittance)));
+
+#else
+#line 32
+  return float4(0);
+#endif
+#line 83
+
+#else
+#line 32
+  return float4(0);
+#endif
+#line 83
+
+#else
+#line 32
+  return float4(0);
+#endif
+#line 83
+
+#else
+#line 32
+  return float4(0);
+#endif
+#line 83
+}
+#line 87
+#define access_eevee_SurfaceForward_eevee_geom_iface_info() eevee_geom_iface_info
+#define access_eevee_SurfaceForward_draw_view_culling() draw_view_culling
+#ifdef CREATE_INFO_RES_PASS_eevee_SurfaceForward
+CREATE_INFO_RES_PASS_eevee_SurfaceForward
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_SurfaceForward
+CREATE_INFO_RES_BATCH_eevee_SurfaceForward
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_SurfaceForward
+CREATE_INFO_RES_GEOMETRY_eevee_SurfaceForward
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceForward
+CREATE_INFO_RES_SHARED_VARS_eevee_SurfaceForward
+#endif
+#line 87
+struct eevee_SurfaceForward {
+#line 103
+int _pad;};
+#line 106
+#ifndef GPU_METAL
+eevee_SurfaceForward eevee_SurfaceForward_ctor_();
+eevee_SurfaceForward eevee_SurfaceForward_new_();
+#endif
+#line 87
+                                    eevee_SurfaceForward eevee_SurfaceForward_ctor_() {eevee_SurfaceForward r;r._pad=0;return r;}
+#line 96
+       eevee_SurfaceForward eevee_SurfaceForward_new_()
+{
+  eevee_SurfaceForward result;
+  result._pad = 0;
+  return result;
+#line 90
+}
+#line 93
+struct eevee_SurfaceForwardFragOut {
+#line 96
+                    float4 combined_r;
+                    float4 combined_g;
+                    float4 combined_b;
+                    float4 combined_a;
+};
+#line 93
+                                           eevee_SurfaceForwardFragOut eevee_SurfaceForwardFragOut_ctor_() {eevee_SurfaceForwardFragOut r;r.combined_r=float4(0);r.combined_g=float4(0);r.combined_b=float4(0);r.combined_a=float4(0);return r;}
+#line 104
+
+#if defined(CREATE_INFO_eevee_PipelineConstants) && defined(CREATE_INFO_eevee_SurfaceForward) && defined(CREATE_INFO_eevee_LightEvalIterator) && defined(CREATE_INFO_eevee_LightprobeRenderData) && defined(CREATE_INFO_eevee_LightprobePlaneRenderData) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_draw_Model) && defined(CREATE_INFO_draw_Infos) && defined(CREATE_INFO_UnifiedVolumeData) && defined(CREATE_INFO_eevee_Uniform) && defined(CREATE_INFO_eevee_Sampling) && defined(CREATE_INFO_UtilityTexture)
+#line 104
+
+#if defined(ENTRY_POINT_eevee_surf_forward)
+#line 104
+
+void eevee_surf_forward(
+#line 119
+                                                        )
+{
+
+#if defined(GPU_FRAGMENT_SHADER)
+#line 121
+#if defined(CREATE_INFO_eevee_geom_iface_info)
+#line 120
+  eevee_PipelineConstants _0 = eevee_PipelineConstants_ctor_(); eevee_SurfaceForward _1 = eevee_SurfaceForward_ctor_(); eevee_LightEvalIterator _2 = eevee_LightEvalIterator_ctor_(); eevee_LightprobeRenderData _3 = eevee_LightprobeRenderData_ctor_(); eevee_LightprobePlaneRenderData _4 = eevee_LightprobePlaneRenderData_ctor_(); draw_View views = draw_View_ctor_(); draw_Model _5 = draw_Model_ctor_(); draw_Infos _6 = draw_Infos_ctor_(); UnifiedVolumeData volumes = UnifiedVolumeData_ctor_(); eevee_Uniform uni = eevee_Uniform_ctor_(); eevee_Sampling sampling = eevee_Sampling_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_();
+
+  draw_ID id = _ctor(draw_ID) interface_get(eevee_geom_iface_info, interp_flat).resource_id_raw _rotc() ;
+  const uint resource_id = _resource_idT1(id);
+
+  const ViewMatrices view = _get(views, 0);
+
+  init_globals(uni, view, gl_FrontFacing);
+
+  float noise = _fetch(util_tx, gl_FragCoord.xy, UTIL_BLUE_NOISE_LAYER).r;
+  float closure_rand = fract(noise + _rng_1D_get(sampling, SAMPLING_CLOSURE));
+
+  fragment_displacement();
+
+  g_thickness_forward = Thickness_from(nodetree_thickness(), thickness_mode);
+
+  nodetree_surface(closure_rand);
+
+  float3 radiance, transmittance;
+  eevee_forward_lighting_eval(
+      view, resource_id, g_thickness_forward, gl_FragCoord.xy, radiance, transmittance);
+#line 143
+  float2 uvs = gl_FragCoord.xy * srt_access(eevee_Uniform, uniform_buf).volumes.main_view_extent_inv;
+  VolumeResolveSample vol = _resolve(volumes, float3(uvs, reverse_z_read(gl_FragCoord.z)));
+#line 148
+  vol.scattering -= vol.scattering * g_transmittance;
+  radiance = radiance * vol.transmittance + vol.scattering;
+
+  eObjectInfoFlag ob_flag = object_infos_get().flag;
+  if (flag_test(ob_flag, OBJECT_HOLDOUT)) {
+    g_holdout = 1.0f - average(g_transmittance);
+    radiance *= 0.0f;
+  }
+
+  g_holdout = saturate(g_holdout);
+
+  radiance *= 1.0f - g_holdout;
+#line 164
+  if (srt_access(eevee_Uniform, pipeline_buf).use_monochromatic_transmittance) {
+    eevee_SurfaceForwardFragOut_combined_r = float4(radiance.rgb, transmittance.r);
+  }
+  else {
+    eevee_SurfaceForwardFragOut_combined_r = float4(radiance.r, 0.0f, 0.0f, transmittance.r);
+    eevee_SurfaceForwardFragOut_combined_g = float4(radiance.g, 0.0f, 0.0f, transmittance.g);
+    eevee_SurfaceForwardFragOut_combined_b = float4(radiance.b, 0.0f, 0.0f, transmittance.b);
+    eevee_SurfaceForwardFragOut_combined_a = float4(g_holdout, 0.0f, 0.0f, average(transmittance));
+  }
+
+#endif
+
+#endif
+#line 173
+}
+#endif
+#endif

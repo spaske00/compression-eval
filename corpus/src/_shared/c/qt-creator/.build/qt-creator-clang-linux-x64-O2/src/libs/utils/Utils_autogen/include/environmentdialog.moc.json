@@ -1,0 +1,26 @@
+{
+    "classes": [
+        {
+            "className": "TextEditHelper",
+            "lineNumber": 42,
+            "object": true,
+            "qualifiedClassName": "Utils::Internal::TextEditHelper",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "lostFocus",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QPlainTextEdit"
+                }
+            ]
+        }
+    ],
+    "inputFile": "environmentdialog.cpp",
+    "outputRevision": 68
+}

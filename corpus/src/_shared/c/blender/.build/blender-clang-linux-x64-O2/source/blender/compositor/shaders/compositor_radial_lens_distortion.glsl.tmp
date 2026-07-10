@@ -1,0 +1,97 @@
+#line 1 "compositor_radial_lens_distortion.glsl"
+ 
+#line 7
+COMPUTE_SHADER_CREATE_INFO(compositor_radial_lens_distortion)
+#line 16
+float compute_distortion_scale(float distortion, float distance_squared)
+{
+  return 1.0f / (1.0f + sqrt(max(0.0f, 1.0f - distortion * distance_squared)));
+}
+#line 23
+float3 compute_chromatic_distortion_scale(float distance_squared)
+{
+  return 1.0f / (1.0f + sqrt(max(float3(0.0f), 1.0f - chromatic_distortion * distance_squared)));
+}
+#line 31
+float2 compute_distorted_uv(float2 uv, float uv_scale)
+{
+  return (uv * uv_scale + 0.5f) * float2(texture_size(input_tx));
+}
+#line 41
+int compute_number_of_integration_steps_heuristic(float distortion)
+{
+#if defined(JITTER)
+  return distortion < 4.0f ? 2 : int(sqrt(distortion + 1.0f));
+#else
+  return int(distortion + 1.0f);
+#endif
+}
+#line 55
+int4 compute_number_of_integration_steps(float2 uv, float distance_squared)
+{
+
+  float3 distortion_scale = compute_chromatic_distortion_scale(distance_squared);
+  float2 distorted_uv_red = compute_distorted_uv(uv, distortion_scale.r);
+  float2 distorted_uv_green = compute_distorted_uv(uv, distortion_scale.g);
+  float2 distorted_uv_blue = compute_distorted_uv(uv, distortion_scale.b);
+#line 65
+  float distortion_red = distance(distorted_uv_red, distorted_uv_green);
+  int steps_red = compute_number_of_integration_steps_heuristic(distortion_red);
+#line 70
+  float distortion_blue = distance(distorted_uv_green, distorted_uv_blue);
+  int steps_blue = compute_number_of_integration_steps_heuristic(distortion_blue);
+#line 75
+  return int4(steps_red, steps_red + steps_blue, steps_blue, steps_red + steps_blue);
+}
+#line 80
+float get_jitter(                 int seed)
+{
+#if defined(JITTER)
+  return hash_uint3_to_float(gl_GlobalInvocationID.x, gl_GlobalInvocationID.y, seed);
+#else
+  return 0.5f;
+#endif
+}
+#line 100
+float4 integrate_distortion(int start, int end, float distance_squared, float2 uv, int steps)
+{
+  float4 accumulated_color = float4(0.0f);
+  float distortion_amount = chromatic_distortion[end] - chromatic_distortion[start];
+  for (int i = 0; i < steps; i++) {
+#line 107
+    float increment = (i + get_jitter(start * steps + i)) / steps;
+    float distortion = chromatic_distortion[start] + increment * distortion_amount;
+    float distortion_scale = compute_distortion_scale(distortion, distance_squared);
+#line 113
+    float2 distorted_uv = compute_distorted_uv(uv, distortion_scale);
+    float4 color = texture(input_tx, distorted_uv / float2(texture_size(input_tx)));
+    accumulated_color[start] += (1.0f - increment) * color[start];
+    accumulated_color[end] += increment * color[end];
+    accumulated_color.w += color.w;
+  }
+  return accumulated_color;
+}
+
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+#line 128
+  float2 center = float2(texture_size(input_tx)) / 2.0f;
+  float2 uv = scale * (float2(texel) + float2(0.5f) - center) / center;
+  float distance_squared = dot(uv, uv);
+#line 134
+  if (any(greaterThan(chromatic_distortion * distance_squared, float3(1.0f)))) {
+    imageStore(output_img, texel, float4(0.0f));
+    return;
+  }
+#line 141
+  int4 number_of_steps = compute_number_of_integration_steps(uv, distance_squared);
+#line 147
+  float4 color = float4(0.0f);
+  color += integrate_distortion(0, 1, distance_squared, uv, number_of_steps.r);
+  color += integrate_distortion(1, 2, distance_squared, uv, number_of_steps.b);
+#line 160
+  color *= float4(float3(2.0f), 1.0f) / float4(number_of_steps);
+
+  imageStore(output_img, texel, color);
+}

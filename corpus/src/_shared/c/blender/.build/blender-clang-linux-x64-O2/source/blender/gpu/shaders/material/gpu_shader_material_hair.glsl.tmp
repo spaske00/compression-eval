@@ -1,0 +1,55 @@
+#line 1 "gpu_shader_material_hair.glsl"
+ 
+#line 6
+void node_bsdf_hair(float4 color,
+                    float offset,
+                    float roughness_u,
+                    float roughness_v,
+                    float3 T,
+                    float weight,
+                    _ref(Closure ,result))
+{
+  color = max(color, float4(0.0f));
+
+#if 0
+#line 26
+#else
+  ClosureDiffuse hair_data;
+  hair_data.weight = weight;
+  hair_data.color = color.rgb;
+  hair_data.N = g_data.N;
+#endif
+  result = closure_eval(hair_data);
+}
+#line 36
+void node_bsdf_hair_principled(float4 color,
+                               float melanin,
+                               float melanin_redness,
+                               float4 tint,
+                               float3 absorption_coefficient,
+                               float roughness,
+                               float radial_roughness,
+                               float coat,
+                               float ior,
+                               float offset,
+                               float aspect_ratio,
+                               float R,
+                               float TT,
+                               float TRT,
+                               float random_color,
+                               float random_roughness,
+                               float random,
+                               float weight,
+                               _ref(Closure ,result))
+{
+#line 59
+#if 0
+#line 66
+#else
+  ClosureDiffuse hair_data;
+  hair_data.weight = weight;
+  hair_data.color = color.rgb;
+  hair_data.N = g_data.N;
+#endif
+  result = closure_eval(hair_data);
+}

@@ -1,0 +1,258 @@
+#line 1 "eevee_lightprobe_sphere.bsl.hh"
+ 
+#line 18
+SphereProbePixelArea eevee_reinterpret_as_write_coord(int4 packed_coord)
+{
+  SphereProbePixelArea unpacked;
+  unpacked.offset = packed_coord.xy;
+  unpacked.extent = packed_coord.z;
+  unpacked.layer = packed_coord.w;
+  return unpacked;
+}
+
+SphereProbeUvArea eevee_reinterpret_as_atlas_coord(int4 packed_coord)
+{
+  SphereProbeUvArea unpacked;
+  unpacked.offset = intBitsToFloat(packed_coord.xy);
+  unpacked.scale = intBitsToFloat(packed_coord.z);
+  unpacked.layer = intBitsToFloat(packed_coord.w);
+  return unpacked;
+}
+#line 42
+float3 eevee_lightprobe_sphere_texel_to_direction(float2 local_texel, SphereProbePixelArea texel_area, _ref(float2 ,sampling_uv))
+{
+#line 47
+  sampling_uv = local_texel / float2(texel_area.extent - 2);
+
+  return octahedral_uv_to_direction(sampling_uv);
+}
+#line 54
+float3 eevee_lightprobe_sphere_texel_to_direction(float2 local_texel, SphereProbePixelArea texel_area)
+{
+  float2 sampling_uv_unused;
+  return eevee_lightprobe_sphere_texel_to_direction(local_texel, texel_area, sampling_uv_unused);
+}
+#line 61
+float2 eevee_lightprobe_sphere_miplvl_scale_bias(float mip_lvl, SphereProbeUvArea uv_area, float2 uv)
+{
+
+  int mip_0_res = int(float(SPHERE_PROBE_ATLAS_RES) * uv_area.scale + 0.5f);
+  float mip_lvl_res = float(mip_0_res >> int(mip_lvl));
+  float mip_lvl_res_inv = 1.0f / mip_lvl_res;
+#line 71
+  float scale = (mip_lvl_res - 2.0f) * mip_lvl_res_inv;
+  float offset = 0.5f * mip_lvl_res_inv;
+  return uv * scale + offset;
+}
+
+void eevee_lightprobe_sphere_direction_to_uv(float3 L,
+                     float lod_min,
+                     float lod_max,
+                     SphereProbeUvArea uv_area,
+                     _ref(float2 ,altas_uv_min),
+                     _ref(float2 ,altas_uv_max))
+{
+  float2 octahedral_uv = octahedral_uv_from_direction(L);
+#line 86
+  float2 local_uv_min = eevee_lightprobe_sphere_miplvl_scale_bias(lod_min, uv_area, octahedral_uv);
+  float2 local_uv_max = eevee_lightprobe_sphere_miplvl_scale_bias(lod_max, uv_area, octahedral_uv);
+
+  altas_uv_min = local_uv_min * uv_area.scale + uv_area.offset;
+  altas_uv_max = local_uv_max * uv_area.scale + uv_area.offset;
+}
+#line 94
+float2 eevee_lightprobe_sphere_direction_to_uv(float3 L, float lod, SphereProbeUvArea uv_area)
+{
+  float2 altas_uv_min, altas_uv_max_unused;
+  eevee_lightprobe_sphere_direction_to_uv(L, lod, 0.0f, uv_area, altas_uv_min, altas_uv_max_unused);
+  return altas_uv_min;
+}
+
+float eevee_lightprobe_sphere_roughness_to_mix_fac(float roughness)
+{
+  constexpr float scale = 1.0f /
+                          (SPHERE_PROBE_MIX_END_ROUGHNESS - SPHERE_PROBE_MIX_START_ROUGHNESS);
+  constexpr float bias = scale * SPHERE_PROBE_MIX_START_ROUGHNESS;
+  return square(saturate(roughness * scale - bias));
+}
+#line 110
+float eevee_lightprobe_sphere_roughness_to_lod(float roughness)
+{
+
+  float ratio = saturate(roughness / SPHERE_PROBE_MIP_MAX_ROUGHNESS);
+  float ratio_sqrt = sqrt_fast(ratio);
+
+  float mip_ratio = mix(ratio, ratio_sqrt, 0.4f);
+  return mip_ratio * float(SPHERE_PROBE_MIPMAP_LEVELS - 1);
+}
+#line 121
+float eevee_lightprobe_sphere_lod_to_roughness(float lod)
+{
+
+  float mip_ratio = lod / float(SPHERE_PROBE_MIPMAP_LEVELS - 1);
+  float a = mip_ratio;
+  constexpr float b = 0.6f;
+  constexpr float c = 0.4f;
+  float b2 = square(b);
+  float c2 = square(c);
+  float c4 = square(c2);
+
+  float ratio = (-sqrt(4.0f * a * b * c2 + c4) + 2.0f * a * b + c2) / (2.0f * b2);
+  return ratio * SPHERE_PROBE_MIP_MAX_ROUGHNESS;
+}
+#line 137
+float3 eevee_lightprobe_sphere_parallax_eval(SphereProbeData probe, float3 P, float3 L)
+{
+  bool is_world = (probe.influence_scale == 0.0f);
+  if (is_world) {
+    return L;
+  }
+
+  float3 lP = float4(P, 1.0f) * probe.world_to_probe_transposed;
+  float3 lL = (L * to_float3x3(probe.world_to_probe_transposed)) / probe.parallax_distance;
+
+  float dist = (probe.parallax_shape == SHAPE_ELIPSOID) ? line_unit_sphere_intersect_dist(lP, lL) :
+                                                          line_unit_box_intersect_dist(lP, lL);
+#line 152
+  float3 L_new = P + L * dist - probe.location;
+#line 156
+  return L_new;
+}
+
+ReflectionProbeLowFreqLight eevee_lightprobe_sphere_extract_low_freq_lighting(SphericalHarmonicL1Tfloat4 sh)
+{
+
+  ReflectionProbeLowFreqLight result;
+  result.ambient = sh.L0.M0.r + sh.L0.M0.g + sh.L0.M0.b;
+
+  result.ambient += 1e-6f;
+
+  float3x4 L1_per_band;
+  L1_per_band[0] = sh.L1.Mn1;
+  L1_per_band[1] = sh.L1.M0;
+  L1_per_band[2] = sh.L1.Mp1;
+
+  float4x3 L1_per_comp = transpose(L1_per_band);
+  result.direction = L1_per_comp[0] + L1_per_comp[1] + L1_per_comp[2];
+
+  return result;
+}
+
+float eevee_lightprobe_sphere_normalization_factor(float3 _0,
+                           ReflectionProbeLowFreqLight numerator,
+                           ReflectionProbeLowFreqLight denominator)
+{
+#line 184
+  return saturate(numerator.ambient / denominator.ambient);
+}
+#line 191
+struct eevee_LightProbeSample {
+  SphericalHarmonicL1Tfloat4 volume_irradiance;
+  int spherical_id;
+};
+#line 191
+                                      eevee_LightProbeSample eevee_LightProbeSample_ctor_() {eevee_LightProbeSample r;r.volume_irradiance=SphericalHarmonicL1Tfloat4_ctor_();r.spherical_id=0;return r;}
+#line 196
+#define access_eevee_LightprobeSphereRenderData_lightprobe_spheres_tx() lightprobe_spheres_tx
+#define access_eevee_LightprobeSphereRenderData_lightprobe_sphere_buf() lightprobe_sphere_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_LightprobeSphereRenderData
+CREATE_INFO_RES_PASS_eevee_LightprobeSphereRenderData
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_LightprobeSphereRenderData
+CREATE_INFO_RES_BATCH_eevee_LightprobeSphereRenderData
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_LightprobeSphereRenderData
+CREATE_INFO_RES_GEOMETRY_eevee_LightprobeSphereRenderData
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_LightprobeSphereRenderData
+CREATE_INFO_RES_SHARED_VARS_eevee_LightprobeSphereRenderData
+#endif
+#line 196
+struct eevee_LightprobeSphereRenderData {
+#line 265
+int _pad;};
+#line 269
+#ifndef GPU_METAL
+eevee_LightprobeSphereRenderData eevee_LightprobeSphereRenderData_ctor_();
+int _select_probe(eevee_LightprobeSphereRenderData  this_, float3 P, float random_probe);
+float4 _sample_probe(eevee_LightprobeSphereRenderData  this_, float3 L, float lod, SphereProbeUvArea uv_area);
+float3 _spherical_sample_normalized_with_parallax(eevee_LightprobeSphereRenderData  this_, eevee_LightProbeSample samp,
+                                                   float3 P,
+                                                   float3 L,
+                                                   float lod);
+eevee_LightprobeSphereRenderData eevee_LightprobeSphereRenderData_new_();
+#endif
+#line 196
+                                                eevee_LightprobeSphereRenderData eevee_LightprobeSphereRenderData_ctor_() {eevee_LightprobeSphereRenderData r;r._pad=0;return r;}
+#line 200
+
+#if defined(CREATE_INFO_eevee_LightprobeSphereRenderData)
+#line 200
+  int _select_probe(eevee_LightprobeSphereRenderData  this_, float3 P, float random_probe)
+  {
+    for (int index = 0; index < SPHERE_PROBE_MAX; index++) {
+      SphereProbeData probe_data = lightprobe_sphere_buf[index];
+
+      if (probe_data.atlas_coord.layer == -1) {
+
+        return index - 1;
+      }
+#line 211
+      float3 lP = float4(P, 1.0f) * probe_data.world_to_probe_transposed;
+      float gradient = (probe_data.influence_shape == SHAPE_ELIPSOID) ?
+                           length(lP) :
+                           max(max(abs(lP.x), abs(lP.y)), abs(lP.z));
+      float score = saturate(probe_data.influence_bias - gradient * probe_data.influence_scale);
+      if (score > random_probe) {
+        return index;
+      }
+    }
+
+    return SPHERE_PROBE_MAX - 1;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_LightprobeSphereRenderData)
+#line 224
+  float4 _sample_probe(eevee_LightprobeSphereRenderData  this_, float3 L, float lod, SphereProbeUvArea uv_area)
+  {
+    float lod_min = floor(lod);
+    float lod_max = ceil(lod);
+    float mix_fac = lod - lod_min;
+
+    float2 altas_uv_min, altas_uv_max;
+    eevee_lightprobe_sphere_direction_to_uv(L, lod_min, lod_max, uv_area, altas_uv_min, altas_uv_max);
+
+    float4 color_min = textureLod(
+        srt_access(eevee_LightprobeSphereRenderData, lightprobe_spheres_tx), float3(altas_uv_min, uv_area.layer), lod_min);
+    float4 color_max = textureLod(
+        srt_access(eevee_LightprobeSphereRenderData, lightprobe_spheres_tx), float3(altas_uv_max, uv_area.layer), lod_max);
+    return mix(color_min, color_max, mix_fac);
+  }
+#endif
+#line 244
+
+#if defined(CREATE_INFO_eevee_LightprobeSphereRenderData)
+#line 244
+  float3 _spherical_sample_normalized_with_parallax(eevee_LightprobeSphereRenderData  this_, eevee_LightProbeSample samp,
+                                                   float3 P,
+                                                   float3 L,
+                                                   float lod)
+  {
+    SphereProbeData probe = lightprobe_sphere_buf[samp.spherical_id];
+    ReflectionProbeLowFreqLight shading_sh = eevee_lightprobe_sphere_extract_low_freq_lighting(
+        samp.volume_irradiance);
+    float normalization_fac = eevee_lightprobe_sphere_normalization_factor(
+        L, shading_sh, probe.low_freq_light);
+    L = eevee_lightprobe_sphere_parallax_eval(probe, P, L);
+    return normalization_fac * _sample_probe(this_, L, lod, probe.atlas_coord).rgb;
+  }
+#endif
+       eevee_LightprobeSphereRenderData eevee_LightprobeSphereRenderData_new_()
+{
+  eevee_LightprobeSphereRenderData result;
+  result._pad = 0;
+  return result;
+#line 256
+}
+#line 260

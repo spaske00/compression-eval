@@ -1,0 +1,45 @@
+#line 1 "draw_view.bsl.hh"
+ 
+#line 11
+#define access_draw_View_view_buf() view_buf
+#ifdef CREATE_INFO_RES_PASS_draw_View
+CREATE_INFO_RES_PASS_draw_View
+#endif
+#ifdef CREATE_INFO_RES_BATCH_draw_View
+CREATE_INFO_RES_BATCH_draw_View
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_draw_View
+CREATE_INFO_RES_GEOMETRY_draw_View
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_draw_View
+CREATE_INFO_RES_SHARED_VARS_draw_View
+#endif
+#line 11
+struct draw_View {
+#line 27
+int _pad;};
+#line 31
+#ifndef GPU_METAL
+draw_View draw_View_ctor_();
+ViewMatrices _get(draw_View  this_, uint view_id);
+draw_View draw_View_new_();
+#endif
+#line 11
+                         draw_View draw_View_ctor_() {draw_View r;r._pad=0;return r;}
+#line 15
+
+#if defined(CREATE_INFO_draw_View)
+#line 15
+  ViewMatrices _get(draw_View  this_, uint view_id)
+  {
+    return view_buf[view_id];
+  }
+#endif
+       draw_View draw_View_new_()
+{
+  draw_View result;
+  result._pad = 0;
+  return result;
+#line 18
+}
+#line 22

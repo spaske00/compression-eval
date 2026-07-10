@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "ghostwriter",
+  "input_url": "https://github.com/KDE/ghostwriter",
+  "canonical_url": "https://github.com/KDE/ghostwriter",
+  "source_directory": "ghostwriter/upstream",
+  "commit": "3b43604653fab5206af8b3c1a8802772aba4f790",
+  "nested_submodules": []
+}

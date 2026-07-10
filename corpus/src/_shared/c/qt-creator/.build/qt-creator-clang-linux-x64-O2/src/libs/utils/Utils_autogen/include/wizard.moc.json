@@ -1,0 +1,30 @@
+{
+    "classes": [
+        {
+            "className": "ProgressItemWidget",
+            "lineNumber": 64,
+            "object": true,
+            "qualifiedClassName": "Utils::ProgressItemWidget",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        },
+        {
+            "className": "LinearProgressWidget",
+            "lineNumber": 106,
+            "object": true,
+            "qualifiedClassName": "Utils::LinearProgressWidget",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "wizard.cpp",
+    "outputRevision": 68
+}

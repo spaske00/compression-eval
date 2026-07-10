@@ -1,0 +1,19 @@
+#line 1 "compositor_defocus_radius_from_depth.glsl"
+ 
+#line 13
+COMPUTE_SHADER_CREATE_INFO(compositor_defocus_radius_from_depth)
+#line 17
+void main()
+{
+  int2 texel = int2(gl_GlobalInvocationID.xy);
+  float depth = texture_load(depth_tx, texel).x;
+#line 23
+  const float distance_to_image_of_object = (focal_length * depth) / (depth - focal_length);
+#line 28
+  float diameter = abs((distance_to_image_of_object - distance_to_image_of_focus) *
+                       (focal_length / (f_stop * distance_to_image_of_object)));
+#line 32
+  float radius = (diameter / 2.0f) * pixels_per_meter;
+
+  imageStore(radius_img, texel, float4(min(max_radius, radius)));
+}

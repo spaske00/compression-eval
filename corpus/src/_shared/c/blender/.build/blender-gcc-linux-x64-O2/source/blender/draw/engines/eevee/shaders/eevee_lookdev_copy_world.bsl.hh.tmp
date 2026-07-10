@@ -1,0 +1,165 @@
+#line 1 "eevee_lookdev_copy_world.bsl.hh"
+ 
+#line 13
+#define access_eevee_lookdev_CopyWorld_read_coord_packed() read_coord_packed
+#define access_eevee_lookdev_CopyWorld_write_coord_mip0_packed() write_coord_mip0_packed
+#define access_eevee_lookdev_CopyWorld_write_coord_mip1_packed() write_coord_mip1_packed
+#define access_eevee_lookdev_CopyWorld_write_coord_mip2_packed() write_coord_mip2_packed
+#define access_eevee_lookdev_CopyWorld_write_coord_mip3_packed() write_coord_mip3_packed
+#define access_eevee_lookdev_CopyWorld_write_coord_mip4_packed() write_coord_mip4_packed
+#define access_eevee_lookdev_CopyWorld_lookdev_rotation() lookdev_rotation
+#define access_eevee_lookdev_CopyWorld_in_sphere_tx() in_sphere_tx
+#define access_eevee_lookdev_CopyWorld_out_sphere_mip0() out_sphere_mip0
+#define access_eevee_lookdev_CopyWorld_out_sphere_mip1() out_sphere_mip1
+#define access_eevee_lookdev_CopyWorld_out_sphere_mip2() out_sphere_mip2
+#define access_eevee_lookdev_CopyWorld_out_sphere_mip3() out_sphere_mip3
+#define access_eevee_lookdev_CopyWorld_out_sphere_mip4() out_sphere_mip4
+#define access_eevee_lookdev_CopyWorld_in_sh() in_sh
+#define access_eevee_lookdev_CopyWorld_out_sh() out_sh
+#define access_eevee_lookdev_CopyWorld_in_sun() in_sun
+#define access_eevee_lookdev_CopyWorld_out_sun() out_sun
+#ifdef CREATE_INFO_RES_PASS_eevee_lookdev_CopyWorld
+CREATE_INFO_RES_PASS_eevee_lookdev_CopyWorld
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_lookdev_CopyWorld
+CREATE_INFO_RES_BATCH_eevee_lookdev_CopyWorld
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_lookdev_CopyWorld
+CREATE_INFO_RES_GEOMETRY_eevee_lookdev_CopyWorld
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_lookdev_CopyWorld
+CREATE_INFO_RES_SHARED_VARS_eevee_lookdev_CopyWorld
+#endif
+#line 13
+struct eevee_lookdev_CopyWorld {
+#line 55
+int _pad;};
+#line 63
+#ifndef GPU_METAL
+eevee_lookdev_CopyWorld eevee_lookdev_CopyWorld_ctor_();
+float4 _get_mip_data(eevee_lookdev_CopyWorld  this_, int mip,
+                      int2 texel,
+                      SphereProbeUvArea read_coord,
+                      SphereProbePixelArea write_coord,
+                      float3x3 rotation_mat);
+eevee_lookdev_CopyWorld eevee_lookdev_CopyWorld_new_();
+#endif
+#line 13
+                                       eevee_lookdev_CopyWorld eevee_lookdev_CopyWorld_ctor_() {eevee_lookdev_CopyWorld r;r._pad=0;return r;}
+#line 33
+
+#if defined(CREATE_INFO_eevee_lookdev_CopyWorld)
+#line 33
+  float4 _get_mip_data(eevee_lookdev_CopyWorld  this_, int mip,
+                      int2 texel,
+                      SphereProbeUvArea read_coord,
+                      SphereProbePixelArea write_coord,
+                      float3x3 rotation_mat)
+  {
+    float3 rotated_ws_direction = eevee_lightprobe_sphere_texel_to_direction(float2(texel),
+                                                                         write_coord);
+#line 43
+    float3 original_ws_direction = transpose(rotation_mat) * rotated_ws_direction;
+    float2 uv = eevee_lightprobe_sphere_direction_to_uv(original_ws_direction, float(mip), read_coord);
+    return textureLod(srt_access(eevee_lookdev_CopyWorld, in_sphere_tx), float3(uv, read_coord.layer), float(mip));
+  }
+#endif
+       eevee_lookdev_CopyWorld eevee_lookdev_CopyWorld_new_()
+{
+  eevee_lookdev_CopyWorld result;
+  result._pad = 0;
+  return result;
+#line 46
+}
+#line 54
+
+#if defined(CREATE_INFO_eevee_lookdev_CopyWorld)
+#line 54
+
+#if defined(ENTRY_POINT_eevee_lookdev_copy_world_main)
+#line 54
+
+void eevee_lookdev_copy_world_main(
+                                                                   )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 57
+  eevee_lookdev_CopyWorld srt = eevee_lookdev_CopyWorld_ctor_();
+  float3x3 rotation_mat = to_float3x3(srt_access(eevee_lookdev_CopyWorld, lookdev_rotation));
+  if (all(equal(gl_GlobalInvocationID.xy, uint2(0)))) {
+    {
+      SphericalHarmonicL1Tfloat4 sh;
+      sh.L0.M0 = srt_access(eevee_lookdev_CopyWorld, in_sh).L0_M0;
+      sh.L1.M0 = srt_access(eevee_lookdev_CopyWorld, in_sh).L1_M0;
+      sh.L1.Mn1 = srt_access(eevee_lookdev_CopyWorld, in_sh).L1_Mn1;
+      sh.L1.Mp1 = srt_access(eevee_lookdev_CopyWorld, in_sh).L1_Mp1;
+      sh = spherical_harmonics_rotate(rotation_mat, sh);
+      srt_access(eevee_lookdev_CopyWorld, out_sh).L0_M0 = sh.L0.M0;
+      srt_access(eevee_lookdev_CopyWorld, out_sh).L1_M0 = sh.L1.M0;
+      srt_access(eevee_lookdev_CopyWorld, out_sh).L1_Mn1 = sh.L1.Mn1;
+      srt_access(eevee_lookdev_CopyWorld, out_sh).L1_Mp1 = sh.L1.Mp1;
+    }
+    {
+      LightData sun = srt_access(eevee_lookdev_CopyWorld, in_sun);
+      float3x3 sun_direction = to_float3x3(transform_to_matrix(sun.object_to_world));
+      sun_direction = rotation_mat * sun_direction;
+      sun.object_to_world = transform_from_matrix(to_float4x4(sun_direction));
+      srt_access(eevee_lookdev_CopyWorld, out_sun) = sun;
+    }
+  }
+
+  int2 local_texel = int2(gl_GlobalInvocationID.xy);
+  SphereProbeUvArea read_coord = eevee_reinterpret_as_atlas_coord(srt_access(eevee_lookdev_CopyWorld, read_coord_packed));
+  SphereProbePixelArea write_coord;
+#line 87
+  write_coord = eevee_reinterpret_as_write_coord(srt_access(eevee_lookdev_CopyWorld, write_coord_mip0_packed));
+  if (any(greaterThanEqual(local_texel, int2(write_coord.extent)))) {
+    return;
+  }
+  imageStore(srt_access(eevee_lookdev_CopyWorld, out_sphere_mip0),
+             int3(local_texel, write_coord.layer),
+             _get_mip_data(srt, 0, local_texel, read_coord, write_coord, rotation_mat));
+
+  write_coord = eevee_reinterpret_as_write_coord(srt_access(eevee_lookdev_CopyWorld, write_coord_mip1_packed));
+  if (any(greaterThanEqual(local_texel, int2(write_coord.extent)))) {
+    return;
+  }
+  imageStore(srt_access(eevee_lookdev_CopyWorld, out_sphere_mip1),
+             int3(local_texel, write_coord.layer),
+             _get_mip_data(srt, 1, local_texel, read_coord, write_coord, rotation_mat));
+
+  write_coord = eevee_reinterpret_as_write_coord(srt_access(eevee_lookdev_CopyWorld, write_coord_mip2_packed));
+  if (any(greaterThanEqual(local_texel, int2(write_coord.extent)))) {
+    return;
+  }
+  imageStore(srt_access(eevee_lookdev_CopyWorld, out_sphere_mip2),
+             int3(local_texel, write_coord.layer),
+             _get_mip_data(srt, 2, local_texel, read_coord, write_coord, rotation_mat));
+
+  write_coord = eevee_reinterpret_as_write_coord(srt_access(eevee_lookdev_CopyWorld, write_coord_mip3_packed));
+  if (any(greaterThanEqual(local_texel, int2(write_coord.extent)))) {
+    return;
+  }
+  imageStore(srt_access(eevee_lookdev_CopyWorld, out_sphere_mip3),
+             int3(local_texel, write_coord.layer),
+             _get_mip_data(srt, 3, local_texel, read_coord, write_coord, rotation_mat));
+
+  write_coord = eevee_reinterpret_as_write_coord(srt_access(eevee_lookdev_CopyWorld, write_coord_mip4_packed));
+  if (any(greaterThanEqual(local_texel, int2(write_coord.extent)))) {
+    return;
+  }
+  imageStore(srt_access(eevee_lookdev_CopyWorld, out_sphere_mip4),
+             int3(local_texel, write_coord.layer),
+             _get_mip_data(srt, 4, local_texel, read_coord, write_coord, rotation_mat));
+
+#ifdef GLSL_CPP_STUBS
+
+  static_assert(SPHERE_PROBE_MIPMAP_LEVELS == 5);
+#endif
+
+#endif
+#line 131
+}
+#endif
+#endif
+#line 136

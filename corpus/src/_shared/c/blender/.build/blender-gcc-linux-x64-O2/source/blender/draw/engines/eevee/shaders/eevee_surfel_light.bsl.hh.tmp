@@ -1,0 +1,104 @@
+#line 1 "eevee_surfel_light.bsl.hh"
+ 
+#line 17
+#define access_eevee_surfel_EvalLight_light_iter_force_no_culling() light_iter_force_no_culling
+#define access_eevee_surfel_EvalLight_shadow_no_random() shadow_no_random
+#ifdef CREATE_INFO_RES_PASS_eevee_surfel_EvalLight
+CREATE_INFO_RES_PASS_eevee_surfel_EvalLight
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_surfel_EvalLight
+CREATE_INFO_RES_BATCH_eevee_surfel_EvalLight
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_surfel_EvalLight
+CREATE_INFO_RES_GEOMETRY_eevee_surfel_EvalLight
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_surfel_EvalLight
+CREATE_INFO_RES_SHARED_VARS_eevee_surfel_EvalLight
+#endif
+#line 17
+struct eevee_surfel_EvalLight {
+#line 30
+int _pad;};
+#line 33
+#ifndef GPU_METAL
+eevee_surfel_EvalLight eevee_surfel_EvalLight_ctor_();
+eevee_surfel_EvalLight eevee_surfel_EvalLight_new_();
+#endif
+#line 17
+                                      eevee_surfel_EvalLight eevee_surfel_EvalLight_ctor_() {eevee_surfel_EvalLight r;r._pad=0;return r;}
+#line 23
+       eevee_surfel_EvalLight eevee_surfel_EvalLight_new_()
+{
+  eevee_surfel_EvalLight result;
+  result._pad = 0;
+  return result;
+#line 21
+}
+#line 24
+
+#if defined(CREATE_INFO_eevee_surfel_EvalLight) && defined(CREATE_INFO_eevee_LightEvalIterator) && defined(CREATE_INFO_UtilityTexture) && defined(CREATE_INFO_SurfelData)
+#line 24
+
+#if defined(ENTRY_POINT_eevee_surfel_eval_light)
+#line 24
+
+void eevee_surfel_eval_light(
+#line 29
+                                                              )
+{
+#if defined(GPU_COMPUTE_SHADER)
+#line 30
+  eevee_surfel_EvalLight _0 = eevee_surfel_EvalLight_ctor_(); eevee_LightEvalIterator lights = eevee_LightEvalIterator_ctor_(); UtilityTexture util_tx = UtilityTexture_ctor_(); SurfelData surfels = SurfelData_ctor_();
+  const int index = int(gl_GlobalInvocationID.x);
+  if (index >= int(srt_access(SurfelData, capture_info_buf).surfel_len)) {
+    return;
+  }
+
+  Surfel surfel = srt_access(SurfelData, surfel_buf)[index];
+#line 39
+  float3 V = surfel.normal;
+  float3 Ng = surfel.normal;
+  float3 P = surfel.position;
+
+  eevee_light_EvalCtxTfalse ctx;
+  ctx.P = P;
+  ctx.Ng = Ng;
+  ctx.V = V;
+
+  ctx.texel = float2(0.0);
+  ctx.thickness = Thickness_zero();
+  ctx.receiver_light_set = surfel.receiver_light_set;
+  ctx.terminator_normal_offset = 0.0f;
+  ctx.terminator_geometry_offset = 0.0f;
+
+  ClosureUndetermined cl_reflect;
+  cl_reflect.N = surfel.normal;
+  cl_reflect.type = CLOSURE_BSDF_DIFFUSE_ID;
+  ctx.stack.cl[0] = closure_light_new(util_tx, cl_reflect, V);
+  _eval_reflection(lights, ctx, 1.0f);
+
+  if (srt_access(SurfelData, capture_info_buf).capture_indirect) {
+    srt_access(SurfelData, surfel_buf)[index].radiance_direct.front.rgb += ctx.stack.cl[0].light_shadowed *
+                                                           surfel.albedo_front;
+  }
+
+  ClosureUndetermined cl_transmit;
+  cl_transmit.N = -surfel.normal;
+  cl_transmit.type = CLOSURE_BSDF_DIFFUSE_ID;
+  ctx.stack.cl[0] = closure_light_new(util_tx, cl_transmit, -V);
+
+  ctx.Ng = -Ng;
+  ctx.V = -V;
+  _eval_reflection(lights, ctx, 1.0f);
+
+  if (srt_access(SurfelData, capture_info_buf).capture_indirect) {
+    srt_access(SurfelData, surfel_buf)[index].radiance_direct.back.rgb += ctx.stack.cl[0].light_shadowed *
+                                                          surfel.albedo_back;
+  }
+
+#endif
+#line 78
+}
+#endif
+#endif
+#line 93

@@ -1,0 +1,62 @@
+{
+    "classes": [
+        {
+            "className": "ElidingLabel",
+            "lineNumber": 12,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "elideMode",
+                    "read": "elideMode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "Qt::TextElideMode",
+                    "user": false,
+                    "write": "setElideMode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "additionalToolTip",
+                    "read": "additionalToolTip",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setAdditionalToolTip"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "additionalToolTipSeparator",
+                    "read": "additionalToolTipSeparator",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setAdditionalToolTipSeparator"
+                }
+            ],
+            "qualifiedClassName": "Utils::ElidingLabel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QLabel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "elidinglabel.h",
+    "outputRevision": 68
+}

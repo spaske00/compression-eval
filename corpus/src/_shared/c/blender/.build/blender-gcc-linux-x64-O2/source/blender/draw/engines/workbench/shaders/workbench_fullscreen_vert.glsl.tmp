@@ -1,0 +1,9 @@
+#line 1 "workbench_fullscreen_vert.glsl"
+ 
+#line 8
+VERTEX_SHADER_CREATE_INFO(workbench_merge_depth)
+#line 12
+void main()
+{
+  fullscreen_vertex(gl_VertexID, gl_Position);
+}

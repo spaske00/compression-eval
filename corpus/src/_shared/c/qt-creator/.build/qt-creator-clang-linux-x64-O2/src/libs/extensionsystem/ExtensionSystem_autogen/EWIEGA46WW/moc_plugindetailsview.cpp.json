@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "PluginDetailsView",
+            "lineNumber": 16,
+            "object": true,
+            "qualifiedClassName": "ExtensionSystem::PluginDetailsView",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "plugindetailsview.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,950 @@
+#line 1 "eevee_debug.bsl.hh"
+ 
+#line 30
+struct eevee_DebugVertOut {
+             float2 screen_uv;
+};
+#line 30
+                                  eevee_DebugVertOut eevee_DebugVertOut_ctor_() {eevee_DebugVertOut r;r.screen_uv=float2(0);return r;}
+#line 34
+
+#if defined(ENTRY_POINT_eevee_debug_fullscreen_vert)
+#line 34
+           void eevee_debug_fullscreen_vert(
+
+                                                                       )
+{
+
+#if defined(GPU_VERTEX_SHADER)
+#line 38
+  fullscreen_vertex(gl_VertexID, gl_Position, eevee_DebugVertOut_screen_uv);
+
+#endif
+#line 39
+}
+#endif
+#define default_depth -1.0f
+
+struct eevee_SearchDebugLightCtx {
+  int debug_tilemap_index;
+  uint light_index;
+#line 59
+};
+#line 67
+#ifndef GPU_METAL
+eevee_SearchDebugLightCtx eevee_SearchDebugLightCtx_ctor_();
+void _eval_directional(_ref(eevee_SearchDebugLightCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData light);
+void _eval_local(_ref(eevee_SearchDebugLightCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData light);
+#endif
+#line 43
+                                         eevee_SearchDebugLightCtx eevee_SearchDebugLightCtx_ctor_() {eevee_SearchDebugLightCtx r;r.debug_tilemap_index=0;r.light_index=0u;return r;}
+#line 47
+
+#if defined(CREATE_INFO_eevee_LightRenderData)
+#line 47
+  void _eval_directional(_ref(eevee_SearchDebugLightCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData light)
+  {
+    if (light.tilemap_index == this_.debug_tilemap_index) {
+      this_.light_index = l_idx;
+    }
+  }
+#endif
+#line 53
+
+#if defined(CREATE_INFO_eevee_LightRenderData)
+#line 53
+  void _eval_local(_ref(eevee_SearchDebugLightCtx ,this_), eevee_LightRenderData   _0, uint l_idx, LightData light)
+  {
+    if (light.tilemap_index == this_.debug_tilemap_index) {
+      this_.light_index = l_idx;
+    }
+  }
+#endif
+#line 38 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_LightRenderData)
+#line 38
+void eevee_light_foreach(const eevee_LightRenderData  srt,
+             _ref(eevee_SearchDebugLightCtx ,cb),
+             eevee_LightRenderData  res)
+{
+#line 44
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+}
+#endif
+#line 65 "eevee_debug.bsl.hh"
+#define access_eevee_ShadowDebug_light_data() eevee_LightRenderData_new_()
+#define access_eevee_ShadowDebug_shadow_data() eevee_ShadowRenderData_new_()
+#define access_eevee_ShadowDebug_debug_mode() debug_mode
+#define access_eevee_ShadowDebug_debug_tilemap_index() debug_tilemap_index
+#define access_eevee_ShadowDebug_tilemaps_buf() tilemaps_buf
+#define access_eevee_ShadowDebug_tiles_buf() tiles_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_ShadowDebug
+CREATE_INFO_RES_PASS_eevee_ShadowDebug
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_ShadowDebug
+CREATE_INFO_RES_BATCH_eevee_ShadowDebug
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_ShadowDebug
+CREATE_INFO_RES_GEOMETRY_eevee_ShadowDebug
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_ShadowDebug
+CREATE_INFO_RES_SHARED_VARS_eevee_ShadowDebug
+#endif
+#line 65
+struct eevee_ShadowDebug {
+                           eevee_LightRenderData  light_data;
+                           eevee_ShadowRenderData  shadow_data;
+#line 174
+};
+#line 177
+#ifndef GPU_METAL
+eevee_ShadowDebug eevee_ShadowDebug_ctor_();
+ShadowSamplingTile _shadow_tile_data_get(eevee_ShadowDebug  this_, usampler2D tilemaps_tx, ShadowCoordinates coord);
+float3 _debug_random_color(eevee_ShadowDebug  this_, int2 v);
+float3 _debug_random_color(eevee_ShadowDebug  this_, int v);
+void _debug_tile_print(                 eevee_ShadowDebug  this_, ShadowTileData tile,
+                                         int4 tile_coord);
+float3 _debug_tile_state_color(eevee_ShadowDebug  this_, ShadowTileData tile);
+float3 _debug_tile_lod(eevee_ShadowDebug  this_, eLightType type, ShadowSamplingTile tile);
+ShadowCoordinates _debug_coord_get(eevee_ShadowDebug  this_, float3 P, LightData light);
+ShadowSamplingTile _debug_tile_get(eevee_ShadowDebug  this_, float3 P, LightData light);
+LightData _debug_light_get(eevee_ShadowDebug  this_);
+eevee_ShadowDebug eevee_ShadowDebug_new_();
+#endif
+#line 65
+                                 eevee_ShadowDebug eevee_ShadowDebug_ctor_() {eevee_ShadowDebug r;r.light_data=eevee_LightRenderData_ctor_();r.shadow_data=eevee_ShadowRenderData_ctor_();return r;}
+#line 74
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 74
+  ShadowSamplingTile _shadow_tile_data_get(eevee_ShadowDebug  this_, usampler2D tilemaps_tx, ShadowCoordinates coord)
+  {
+    return shadow_tile_load(tilemaps_tx, coord.tilemap_tile, coord.tilemap_index);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 79
+  float3 _debug_random_color(eevee_ShadowDebug  this_, int2 v)
+  {
+    float r = interleaved_gradient_noise(float2(v), 0.0f, 0.0f);
+    return hue_gradient(r);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 85
+  float3 _debug_random_color(eevee_ShadowDebug  this_, int v)
+  {
+    return _debug_random_color(this_, int2(v, 0));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 90
+  void _debug_tile_print(                 eevee_ShadowDebug  this_, ShadowTileData tile,
+                                         int4 tile_coord)
+  {
+#line 99
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 101
+  float3 _debug_tile_state_color(eevee_ShadowDebug  this_, ShadowTileData tile)
+  {
+    if (tile.do_update && tile.is_used) {
+
+      return float3(0.5f, 1, 0);
+    }
+    if (tile.is_used) {
+
+      return float3(0, 1, 0);
+    }
+    float3 col = float3(0);
+    if (tile.is_cached) {
+      col += float3(0.2f, 0, 0.5f);
+      if (tile.do_update) {
+        col += float3(0.8f, 0, 0);
+      }
+    }
+    return col;
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 121
+  float3 _debug_tile_lod(eevee_ShadowDebug  this_, eLightType type, ShadowSamplingTile tile)
+  {
+    if (!tile.is_valid) {
+      return float3(1, 0, 0);
+    }
+
+    return neon_gradient(float(tile.lod) / float((type == LIGHT_SUN) ?
+                                                     SHADOW_TILEMAP_MAX_CLIPMAP_LOD :
+                                                     SHADOW_TILEMAP_LOD));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 132
+  ShadowCoordinates _debug_coord_get(eevee_ShadowDebug  this_, float3 P, LightData light)
+  {
+    if (is_sun_light(light.type)) {
+      float3 lP = light_world_to_local_direction(light, P);
+      return shadow_directional_coordinates(light, lP);
+    }
+
+    float3 lP = light_world_to_local_point(light, P);
+    int face_id = shadow_punctual_face_index_get(lP);
+    lP = shadow_punctual_local_position_to_face_local(face_id, lP);
+    return shadow_punctual_coordinates(light, lP, face_id);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 145
+  ShadowSamplingTile _debug_tile_get(eevee_ShadowDebug  this_, float3 P, LightData light)
+  {
+
+    ShadowCoordinates coord = _debug_coord_get(this_, P, light);
+    return _shadow_tile_data_get(this_, srt_access(eevee_ShadowRenderData, shadow_tilemaps_tx), coord);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 152
+  LightData _debug_light_get(eevee_ShadowDebug  this_)
+  {
+#line 156
+    eevee_SearchDebugLightCtx ctx ;
+        ctx.debug_tilemap_index = srt_access(eevee_ShadowDebug, debug_tilemap_index);
+        ctx.light_index = 0
+    ;
+
+    eevee_light_foreach(srt_access(eevee_ShadowDebug, light_data), ctx, srt_access(eevee_ShadowDebug, light_data));
+
+    return srt_access(eevee_LightRenderData, light_buf)[ctx.light_index];
+  }
+#endif
+       eevee_ShadowDebug eevee_ShadowDebug_new_()
+{
+  eevee_ShadowDebug result;
+  result.light_data = eevee_LightRenderData_new_();
+  result.shadow_data = eevee_ShadowRenderData_new_();
+  return result;
+#line 164
+}
+#line 167
+struct eevee_DualBlendFragOut {
+                              float4 color_add;
+                              float4 color_mul;
+};
+#line 167
+                                      eevee_DualBlendFragOut eevee_DualBlendFragOut_ctor_() {eevee_DualBlendFragOut r;r.color_add=float4(0);r.color_mul=float4(0);return r;}
+#line 172
+struct eevee_ShadowDebugOutput {
+  bool valid;
+  float4 color_add;
+  float4 color_mul;
+  float depth;
+};
+#line 172
+                                       eevee_ShadowDebugOutput eevee_ShadowDebugOutput_ctor_() {eevee_ShadowDebugOutput r;r.valid=false;r.color_add=float4(0);r.color_mul=float4(0);r.depth=0.0f;return r;}
+#line 179
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 179
+eevee_ShadowDebugOutput eevee_debug_tilemaps(const eevee_ShadowDebug  srt,
+                                 float3 _0,
+                                 LightData light,
+                                 int2 texel,
+                                 bool do_debug_sample_tile)
+{
+#line 188
+  constexpr int debug_tile_size_px = 4;
+
+  int2 px = texel / debug_tile_size_px;
+  int tilemap = px.x / SHADOW_TILEMAP_RES;
+  int tilemap_index = light.tilemap_index + tilemap;
+  if ((px.y < SHADOW_TILEMAP_RES) && (tilemap_index <= _tilemap_max_get(light))) {
+    if (do_debug_sample_tile) {
+
+      uint2 tilemap_texel = shadow_tile_coord_in_atlas(uint2(px), tilemap_index);
+      ShadowSamplingTile tile = shadow_sampling_tile_unpack(
+          texelFetch(srt_access(eevee_ShadowRenderData, shadow_tilemaps_tx), int2(tilemap_texel), 0).x);
+
+      if (!any(equal(texel % (SHADOW_TILEMAP_RES * debug_tile_size_px), int2(0)))) {
+        {eevee_ShadowDebugOutput _tmp ;                          _tmp.valid = true;
+                _tmp.color_add = float4(_debug_tile_lod(srt, light.type, tile), 0.0f);
+                _tmp.color_mul = float4(0.0f);
+                _tmp.depth = 1.0f;   return _tmp;};
+      }
+    }
+    else {
+
+      ShadowTileMapData tilemap = srt_access(eevee_ShadowDebug, tilemaps_buf)[tilemap_index];
+      int tile_index = shadow_tile_offset(
+          uint2(px + SHADOW_TILEMAP_RES) % SHADOW_TILEMAP_RES, tilemap.tiles_index, 0);
+      ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_ShadowDebug, tiles_buf)[tile_index]);
+
+      if (!any(equal(texel % (SHADOW_TILEMAP_RES * debug_tile_size_px), int2(0)))) {
+        {eevee_ShadowDebugOutput _tmp ;                          _tmp.valid = true;
+                _tmp.color_add = float4(_debug_tile_state_color(srt, tile), 0.0f);
+                _tmp.color_mul = float4(0.0f);
+                _tmp.depth = 1.0f;   return _tmp;};
+      }
+    }
+  }
+  return _ctor(eevee_ShadowDebugOutput) false, float4(0.0f), float4(1.0f), 1.0f _rotc() ;
+}
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 225
+eevee_ShadowDebugOutput eevee_debug_tile_state(const eevee_ShadowDebug  srt,
+                                   float3 P,
+                                   LightData light)
+{
+  ShadowSamplingTile tile_samp = _debug_tile_get(srt, P, light);
+  ShadowCoordinates coord = _debug_coord_get(srt, P, light);
+  ShadowTileMapData tilemap = srt_access(eevee_ShadowDebug, tilemaps_buf)[coord.tilemap_index];
+  int tile_index = shadow_tile_offset(
+      uint2(coord.tilemap_tile >> tile_samp.lod), tilemap.tiles_index, int(tile_samp.lod));
+  ShadowTileData tile = shadow_tile_unpack(srt_access(eevee_ShadowDebug, tiles_buf)[tile_index]);
+  {eevee_ShadowDebugOutput _tmp ;                          _tmp.valid = true;
+          _tmp.color_add = float4(_debug_tile_state_color(srt, tile), 0) * 0.5f;
+          _tmp.color_mul = float4(0.5f);
+          _tmp.depth = default_depth;   return _tmp;};
+}
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 241
+eevee_ShadowDebugOutput eevee_debug_atlas_values(const eevee_ShadowDebug  srt,
+                                     float3 P,
+                                     LightData light)
+{
+#line 247
+  ShadowCoordinates coord = _debug_coord_get(srt, P, light);
+  float depth = _read_depth(srt_access(eevee_ShadowDebug, shadow_data), coord);
+  {eevee_ShadowDebugOutput _tmp ;
+      _tmp.valid = true;
+      _tmp.color_add = float4((depth == -1) ? float3(1.0f, 0.0f, 0.0f) : float3(1.0f / depth), 0.0f) *
+                   0.5f;
+      _tmp.color_mul = float4(0.5f);
+      _tmp.depth = default_depth;   return _tmp;};
+}
+#endif
+struct eevee_AtomicCostCtx {
+  float3 P;
+  float cost;
+#line 279
+};
+#line 287
+#ifndef GPU_METAL
+eevee_AtomicCostCtx eevee_AtomicCostCtx_ctor_();
+float _atomic_cost(_ref(eevee_AtomicCostCtx ,this_), const eevee_ShadowDebug  srt, LightData light);
+void _eval_directional(_ref(eevee_AtomicCostCtx ,this_), eevee_ShadowDebug  srt, uint _0, LightData light);
+void _eval_local(_ref(eevee_AtomicCostCtx ,this_), eevee_ShadowDebug  srt, uint _0, LightData light);
+#endif
+#line 257
+                                   eevee_AtomicCostCtx eevee_AtomicCostCtx_ctor_() {eevee_AtomicCostCtx r;r.P=float3(0);r.cost=0.0f;return r;}
+#line 261
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 261
+  float _atomic_cost(_ref(eevee_AtomicCostCtx ,this_), const eevee_ShadowDebug  srt, LightData light)
+  {
+#line 265
+    ShadowCoordinates coord = _debug_coord_get(srt, this_.P, light);
+    uint u_cost = floatBitsToUint(_read_depth(srt_access(eevee_ShadowDebug, shadow_data), coord));
+    return float(u_cost - floatBitsToUint(FLT_MAX));
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 270
+  void _eval_directional(_ref(eevee_AtomicCostCtx ,this_), eevee_ShadowDebug  srt, uint _0, LightData light)
+  {
+    this_.cost += _atomic_cost(this_, srt, light);
+  }
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 275
+  void _eval_local(_ref(eevee_AtomicCostCtx ,this_), eevee_ShadowDebug  srt, uint _0, LightData light)
+  {
+    this_.cost += _atomic_cost(this_, srt, light);
+  }
+#endif
+#line 38 "eevee_light_iter.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_LightRenderData) && defined(CREATE_INFO_eevee_ShadowDebug)
+#line 38
+void eevee_light_foreach(const eevee_LightRenderData  srt,
+             _ref(eevee_AtomicCostCtx ,cb),
+             eevee_ShadowDebug  res)
+{
+#line 44
+  for (uint index = srt_access(eevee_LightRenderData, light_cull_buf).local_lights_len; index < srt_access(eevee_LightRenderData, light_cull_buf).items_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_directional(cb, res, index, light);
+  }
+
+  for (uint index = 0; index < srt_access(eevee_LightRenderData, light_cull_buf).visible_count; index++) {
+    LightData light = srt_access(eevee_LightRenderData, light_buf)[index];
+    _eval_local(cb, res, index, light);
+  }
+}
+#endif
+#line 285 "eevee_debug.bsl.hh"
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 285
+eevee_ShadowDebugOutput eevee_debug_atomic_cost(eevee_ShadowDebug  srt,
+                                    float3 P,
+                                    LightData _0)
+{
+  eevee_AtomicCostCtx ctx ;                      ctx.P = P;  ctx.cost = 0.0f;
+
+  eevee_light_foreach(srt_access(eevee_ShadowDebug, light_data), ctx, srt);
+
+  ctx.cost /= 60.0f;
+  {eevee_ShadowDebugOutput _tmp ;                          _tmp.valid = true;
+          _tmp.color_add = float4(heatmap_gradient(ctx.cost), 0.0f);
+          _tmp.color_mul = float4(0.0f);
+          _tmp.depth = default_depth;   return _tmp;};
+}
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 300
+eevee_ShadowDebugOutput eevee_debug_random_tile_color(const eevee_ShadowDebug  srt,
+                                          float3 P,
+                                          LightData light)
+{
+  ShadowSamplingTile tile = _debug_tile_get(srt, P, light);
+  {eevee_ShadowDebugOutput _tmp ;                          _tmp.valid = true;
+          _tmp.color_add = float4(_debug_random_color(srt, int2(tile.page.xy)), 0) * 0.5f;
+          _tmp.color_mul = float4(0.5f);
+          _tmp.depth = default_depth;   return _tmp;};
+}
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug)
+#line 311
+eevee_ShadowDebugOutput eevee_debug_random_tilemap_color(const eevee_ShadowDebug  srt,
+                                             float3 P,
+                                             LightData light)
+{
+  ShadowCoordinates coord = _debug_coord_get(srt, P, light);
+  {eevee_ShadowDebugOutput _tmp ;                          _tmp.valid = true;
+          _tmp.color_add = float4(_debug_random_color(srt, int2(coord.tilemap_index)), 0) * 0.5f;
+          _tmp.color_mul = float4(0.5f);
+          _tmp.depth = default_depth;   return _tmp;};
+}
+#endif
+
+#if defined(CREATE_INFO_eevee_ShadowDebug) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_eevee_HiZ)
+#line 322
+
+#if defined(ENTRY_POINT_eevee_debug_shadow_frag)
+#line 322
+
+void eevee_debug_shadow_frag(
+#line 329
+                                                               )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 330
+  eevee_ShadowDebug srt = eevee_ShadowDebug_ctor_(); draw_View views = draw_View_ctor_(); eevee_HiZ hiz = eevee_HiZ_ctor_();
+
+  eevee_DualBlendFragOut_color_add = float4(0.0f);
+  eevee_DualBlendFragOut_color_mul = float4(1.0f);
+
+  const ViewMatrices view = _get(views, 0);
+
+  float depth = texelFetch(srt_access(eevee_HiZ, hiz_tx), int2(gl_FragCoord.xy), 0).r;
+  float3 P = _point_screen_to_world(view, float3(eevee_DebugVertOut_screen_uv, depth));
+
+  const LightData light = _debug_light_get(srt);
+
+  const eDebugMode mode = eDebugMode(srt_access(eevee_ShadowDebug, debug_mode));
+  bool do_debug_sample_tile = mode != DEBUG_SHADOW_TILEMAPS;
+
+  eevee_ShadowDebugOutput result;
+  result.valid = false;
+  if (mode != DEBUG_SHADOW_ATOMIC_COST) {
+    result = eevee_debug_tilemaps(srt, P, light, int2(gl_FragCoord.xy), do_debug_sample_tile);
+  }
+
+  if (!result.valid && depth != 1.0f) {
+    switch (mode) {
+      case DEBUG_SHADOW_TILEMAPS:
+        result = eevee_debug_tile_state(srt, P, light);
+        break;
+      case DEBUG_SHADOW_VALUES:
+        result = eevee_debug_atlas_values(srt, P, light);
+        break;
+      case DEBUG_SHADOW_TILE_RANDOM_COLOR:
+        result = eevee_debug_random_tile_color(srt, P, light);
+        break;
+      case DEBUG_SHADOW_TILEMAP_RANDOM_COLOR:
+        result = eevee_debug_random_tilemap_color(srt, P, light);
+        break;
+      case DEBUG_SHADOW_ATOMIC_COST:
+        result = eevee_debug_atomic_cost(srt, P, light);
+        break;
+      default:
+        break;
+    }
+  }
+
+  eevee_DualBlendFragOut_color_add = result.color_add;
+  eevee_DualBlendFragOut_color_mul = result.color_mul;
+
+  gl_FragDepth = result.depth == default_depth ? 1.0f - depth + 1e-6f : result.depth;
+
+#endif
+#line 377
+}
+#endif
+#endif
+#line 387
+struct eevee_debug_irradiance_grid_VertOut {
+             float4 interp_color;
+};
+#line 387
+                                                   eevee_debug_irradiance_grid_VertOut eevee_debug_irradiance_grid_VertOut_ctor_() {eevee_debug_irradiance_grid_VertOut r;r.interp_color=float4(0);return r;}
+#line 391
+struct eevee_debug_irradiance_grid_FragOut {
+                    float4 out_color;
+};
+#line 391
+                                                   eevee_debug_irradiance_grid_FragOut eevee_debug_irradiance_grid_FragOut_ctor_() {eevee_debug_irradiance_grid_FragOut r;r.out_color=float4(0);return r;}
+#line 395
+#define access_eevee_debug_irradiance_grid_Resources_grid_mat() grid_mat
+#define access_eevee_debug_irradiance_grid_Resources_debug_mode() debug_mode
+#define access_eevee_debug_irradiance_grid_Resources_debug_value() debug_value
+#define access_eevee_debug_irradiance_grid_Resources_debug_data_tx() debug_data_tx
+#ifdef CREATE_INFO_RES_PASS_eevee_debug_irradiance_grid_Resources
+CREATE_INFO_RES_PASS_eevee_debug_irradiance_grid_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_debug_irradiance_grid_Resources
+CREATE_INFO_RES_BATCH_eevee_debug_irradiance_grid_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_debug_irradiance_grid_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_debug_irradiance_grid_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_debug_irradiance_grid_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_debug_irradiance_grid_Resources
+#endif
+#line 395
+struct eevee_debug_irradiance_grid_Resources {
+#line 409
+int _pad;};
+#line 412
+#ifndef GPU_METAL
+eevee_debug_irradiance_grid_Resources eevee_debug_irradiance_grid_Resources_ctor_();
+eevee_debug_irradiance_grid_Resources eevee_debug_irradiance_grid_Resources_new_();
+#endif
+#line 395
+                                                     eevee_debug_irradiance_grid_Resources eevee_debug_irradiance_grid_Resources_ctor_() {eevee_debug_irradiance_grid_Resources r;r._pad=0;return r;}
+#line 402
+       eevee_debug_irradiance_grid_Resources eevee_debug_irradiance_grid_Resources_new_()
+{
+  eevee_debug_irradiance_grid_Resources result;
+  result._pad = 0;
+  return result;
+#line 400
+}
+#line 403
+
+#if defined(CREATE_INFO_eevee_debug_irradiance_grid_Resources) && defined(CREATE_INFO_draw_View)
+#line 403
+
+#if defined(ENTRY_POINT_eevee_debug_irradiance_grid_vert_main)
+#line 403
+                         void eevee_debug_irradiance_grid_vert_main(
+#line 408
+                                                                                          )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 409
+  eevee_debug_irradiance_grid_Resources srt = eevee_debug_irradiance_grid_Resources_ctor_(); draw_View views = draw_View_ctor_();
+  int3 grid_resolution = textureSize(srt_access(eevee_debug_irradiance_grid_Resources, debug_data_tx), 0);
+  int3 grid_sample;
+  int sample_id = 0;
+  if (srt_access(eevee_debug_irradiance_grid_Resources, debug_mode) == DEBUG_IRRADIANCE_CACHE_VALIDITY) {
+
+    sample_id = gl_VertexID;
+  }
+  else if (srt_access(eevee_debug_irradiance_grid_Resources, debug_mode) == DEBUG_IRRADIANCE_CACHE_VIRTUAL_OFFSET) {
+
+    sample_id = gl_VertexID / 2;
+  }
+
+  grid_sample.x = (sample_id % grid_resolution.x);
+  grid_sample.y = (sample_id / grid_resolution.x) % grid_resolution.y;
+  grid_sample.z = (sample_id / (grid_resolution.x * grid_resolution.y));
+
+  float3 P = eevee_lightprobe_volume_grid_sample_position(
+      srt_access(eevee_debug_irradiance_grid_Resources, grid_mat), grid_resolution, grid_sample);
+
+  float4 debug_data = texelFetch(srt_access(eevee_debug_irradiance_grid_Resources, debug_data_tx), grid_sample, 0);
+  if (srt_access(eevee_debug_irradiance_grid_Resources, debug_mode) == DEBUG_IRRADIANCE_CACHE_VALIDITY) {
+    eevee_debug_irradiance_grid_VertOut_interp_color = float4(1.0f - debug_data.r, debug_data.r, 0.0f, 0.0f);
+    gl_PointSize = 3.0f;
+    if (debug_data.r > srt_access(eevee_debug_irradiance_grid_Resources, debug_value)) {
+
+      gl_Position = float4(0.0f);
+      gl_PointSize = 0.0f;
+      return;
+    }
+  }
+  else if (srt_access(eevee_debug_irradiance_grid_Resources, debug_mode) == DEBUG_IRRADIANCE_CACHE_VIRTUAL_OFFSET) {
+    if (is_zero(debug_data.xyz)) {
+
+      gl_Position = float4(0.0f);
+      gl_PointSize = 0.0f;
+      return;
+    }
+
+    if ((gl_VertexID & 1) == 1) {
+      P += debug_data.xyz;
+      eevee_debug_irradiance_grid_VertOut_interp_color = float4(1.0f, 0.0f, 0.0f, 0.0f);
+    }
+    else {
+      eevee_debug_irradiance_grid_VertOut_interp_color = float4(0.0f, 0.0f, 1.0f, 0.0f);
+    }
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  gl_Position = _point_world_to_homogenous(view, P);
+  gl_Position.z -= 2.5e-5f;
+  gl_PointSize = 3.0f;
+
+#endif
+#line 462
+}
+#endif
+#endif
+#line 464
+
+#if defined(ENTRY_POINT_eevee_debug_irradiance_grid_frag_main)
+#line 464
+
+void eevee_debug_irradiance_grid_frag_main(                                                                                                              )
+{
+
+#if defined(GPU_FRAGMENT_SHADER)
+#line 467
+  eevee_debug_irradiance_grid_FragOut_out_color = eevee_debug_irradiance_grid_VertOut_interp_color;
+
+#endif
+#line 468
+}
+#endif
+#line 477
+struct eevee_debug_surfels_VertOut {
+             float3 P;
+           int surfel_index;
+};
+#line 477
+                                           eevee_debug_surfels_VertOut eevee_debug_surfels_VertOut_ctor_() {eevee_debug_surfels_VertOut r;r.P=float3(0);r.surfel_index=0;return r;}
+#line 482
+struct eevee_debug_surfels_FragOut {
+                    float4 out_color;
+};
+#line 482
+                                           eevee_debug_surfels_FragOut eevee_debug_surfels_FragOut_ctor_() {eevee_debug_surfels_FragOut r;r.out_color=float4(0);return r;}
+#line 486
+#define access_eevee_debug_surfels_Resources_debug_surfel_radius() debug_surfel_radius
+#define access_eevee_debug_surfels_Resources_debug_mode() debug_mode
+#define access_eevee_debug_surfels_Resources_surfels_buf() surfels_buf
+#ifdef CREATE_INFO_RES_PASS_eevee_debug_surfels_Resources
+CREATE_INFO_RES_PASS_eevee_debug_surfels_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_debug_surfels_Resources
+CREATE_INFO_RES_BATCH_eevee_debug_surfels_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_debug_surfels_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_debug_surfels_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_debug_surfels_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_debug_surfels_Resources
+#endif
+#line 486
+struct eevee_debug_surfels_Resources {
+#line 499
+int _pad;};
+#line 502
+#ifndef GPU_METAL
+eevee_debug_surfels_Resources eevee_debug_surfels_Resources_ctor_();
+eevee_debug_surfels_Resources eevee_debug_surfels_Resources_new_();
+#endif
+#line 486
+                                             eevee_debug_surfels_Resources eevee_debug_surfels_Resources_ctor_() {eevee_debug_surfels_Resources r;r._pad=0;return r;}
+#line 492
+       eevee_debug_surfels_Resources eevee_debug_surfels_Resources_new_()
+{
+  eevee_debug_surfels_Resources result;
+  result._pad = 0;
+  return result;
+#line 490
+}
+#line 493
+
+#if defined(CREATE_INFO_eevee_debug_surfels_Resources) && defined(CREATE_INFO_draw_View)
+#line 493
+
+#if defined(ENTRY_POINT_eevee_debug_surfels_vert_main)
+#line 493
+
+void eevee_debug_surfels_vert_main(
+#line 499
+                                                         )
+{
+#if defined(GPU_VERTEX_SHADER)
+#line 500
+  eevee_debug_surfels_Resources srt = eevee_debug_surfels_Resources_ctor_(); draw_View views = draw_View_ctor_();
+  eevee_debug_surfels_VertOut_surfel_index = gl_InstanceID;
+  Surfel surfel = srt_access(eevee_debug_surfels_Resources, surfels_buf)[eevee_debug_surfels_VertOut_surfel_index];
+#line 515
+  float3 lP;
+
+  switch (gl_VertexID) {
+    case 0:
+      lP = float3(-1, 1, 0);
+      break;
+    case 1:
+      lP = float3(-1, -1, 0);
+      break;
+    case 2:
+      lP = float3(1, 1, 0);
+      break;
+    case 3:
+      lP = float3(1, -1, 0);
+      break;
+  }
+
+  float3x3 TBN = from_up_axis(surfel.normal);
+
+  float4x4 model_matrix = float4x4(float4(TBN[0] * srt_access(eevee_debug_surfels_Resources, debug_surfel_radius), 0),
+                                   float4(TBN[1] * srt_access(eevee_debug_surfels_Resources, debug_surfel_radius), 0),
+                                   float4(TBN[2] * srt_access(eevee_debug_surfels_Resources, debug_surfel_radius), 0),
+                                   float4(surfel.position, 1));
+
+  eevee_debug_surfels_VertOut_P = (model_matrix * float4(lP, 1)).xyz;
+
+  const ViewMatrices view = _get(views, 0);
+
+  gl_Position = reverse_z_transform(_point_world_to_homogenous(view, eevee_debug_surfels_VertOut_P));
+  gl_Position.z += 2.5e-5f;
+
+#endif
+#line 545
+}
+#endif
+#endif
+#line 547
+float3 eevee_debug_surfels_debug_random_color(int v)
+{
+  float r = interleaved_gradient_noise(float2(v, 0), 0.0f, 0.0f);
+  return hue_gradient(r);
+}
+#line 554
+#if defined(CREATE_INFO_eevee_debug_surfels_Resources)
+#line 553
+
+#if defined(ENTRY_POINT_eevee_debug_surfels_frag_main)
+#line 553
+
+void eevee_debug_surfels_frag_main(
+#line 557
+                                                            )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 558
+  eevee_debug_surfels_Resources srt = eevee_debug_surfels_Resources_ctor_();
+  Surfel surfel = srt_access(eevee_debug_surfels_Resources, surfels_buf)[eevee_debug_surfels_VertOut_surfel_index];
+
+  float4 radiance_vis = float4(0.0f);
+  radiance_vis += gl_FrontFacing ? surfel.radiance_direct.front : surfel.radiance_direct.back;
+  radiance_vis += gl_FrontFacing ? surfel.radiance_indirect[1].front :
+                               surfel.radiance_indirect[1].back;
+
+  switch (eDebugMode(srt_access(eevee_debug_surfels_Resources, debug_mode))) {
+    default:
+    case DEBUG_IRRADIANCE_CACHE_SURFELS_NORMAL:
+      eevee_debug_surfels_FragOut_out_color = float4(pow(surfel.normal * 0.5f + 0.5f, float3(2.2f)), 0.0f);
+      break;
+    case DEBUG_IRRADIANCE_CACHE_SURFELS_CLUSTER:
+      eevee_debug_surfels_FragOut_out_color = float4(pow(eevee_debug_surfels_debug_random_color(surfel.cluster_id), float3(2.2f)), 0.0f);
+      break;
+    case DEBUG_IRRADIANCE_CACHE_SURFELS_IRRADIANCE:
+      eevee_debug_surfels_FragOut_out_color = float4(radiance_vis.rgb, 0.0f);
+      break;
+    case DEBUG_IRRADIANCE_CACHE_SURFELS_VISIBILITY:
+      eevee_debug_surfels_FragOut_out_color = float4(radiance_vis.aaa, 0.0f);
+      break;
+  }
+#line 583
+  if (distance(eevee_debug_surfels_VertOut_P, surfel.position) > srt_access(eevee_debug_surfels_Resources, debug_surfel_radius)) {
+    gpu_discard_fragment();
+    return;
+  }
+
+#endif
+#line 587
+}
+#endif
+#endif
+#line 596
+#define access_eevee_debug_gbuffer_Resources_debug_mode() debug_mode
+#ifdef CREATE_INFO_RES_PASS_eevee_debug_gbuffer_Resources
+CREATE_INFO_RES_PASS_eevee_debug_gbuffer_Resources
+#endif
+#ifdef CREATE_INFO_RES_BATCH_eevee_debug_gbuffer_Resources
+CREATE_INFO_RES_BATCH_eevee_debug_gbuffer_Resources
+#endif
+#ifdef CREATE_INFO_RES_GEOMETRY_eevee_debug_gbuffer_Resources
+CREATE_INFO_RES_GEOMETRY_eevee_debug_gbuffer_Resources
+#endif
+#ifdef CREATE_INFO_RES_SHARED_VARS_eevee_debug_gbuffer_Resources
+CREATE_INFO_RES_SHARED_VARS_eevee_debug_gbuffer_Resources
+#endif
+#line 596
+struct eevee_debug_gbuffer_Resources {
+#line 606
+int _pad;};
+#line 609
+#ifndef GPU_METAL
+eevee_debug_gbuffer_Resources eevee_debug_gbuffer_Resources_ctor_();
+eevee_debug_gbuffer_Resources eevee_debug_gbuffer_Resources_new_();
+#endif
+#line 596
+                                             eevee_debug_gbuffer_Resources eevee_debug_gbuffer_Resources_ctor_() {eevee_debug_gbuffer_Resources r;r._pad=0;return r;}
+#line 599
+       eevee_debug_gbuffer_Resources eevee_debug_gbuffer_Resources_new_()
+{
+  eevee_debug_gbuffer_Resources result;
+  result._pad = 0;
+  return result;
+#line 597
+}
+#line 600
+
+#if defined(CREATE_INFO_eevee_debug_gbuffer_Resources) && defined(CREATE_INFO_draw_View) && defined(CREATE_INFO_gbuffer_Reader)
+#line 600
+
+#if defined(ENTRY_POINT_eevee_debug_gbuffer_frag_main)
+#line 600
+
+void eevee_debug_gbuffer_frag_main(
+#line 605
+                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 606
+  eevee_debug_gbuffer_Resources srt = eevee_debug_gbuffer_Resources_ctor_(); draw_View views = draw_View_ctor_(); gbuffer_Reader reader = gbuffer_Reader_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  const   gbuffer_Layers gbuf = _read_layers(reader, texel);
+
+  if (_has_no_closure(gbuf)) {
+    gpu_discard_fragment();
+    return;
+  }
+
+  const ViewMatrices view = _get(views, 0);
+
+  float shade = saturate(_normal_world_to_view(view, _surface_N(gbuf)).z);
+
+    gbuffer_Header header = _read_header(reader, texel);
+  uint4 closure_types = (uint4(_raw(header)) >> uint4(0u, 4u, 8u, 12u)) & 15u;
+  float storage_cost = reduce_add(float4(not(equal(closure_types, uint4(0u)))));
+
+  float eval_cost = 0.0f;
+  for (uchar i = 0; i < GBUFFER_LAYER_MAX; i++) {
+    switch (gbuf.layer[i].type) {
+      case CLOSURE_BSDF_DIFFUSE_ID:
+      case CLOSURE_BSDF_TRANSLUCENT_ID:
+      case CLOSURE_BSDF_MICROFACET_GGX_REFLECTION_ID:
+      case CLOSURE_BSDF_MICROFACET_GGX_REFRACTION_ID:
+        eval_cost += 1.0f;
+        break;
+      case CLOSURE_BSSRDF_BURLEY_ID:
+      case CLOSURE_BSDF_THIN_GLASS_TRANSMISSION_ID:
+        eval_cost += 2.0f;
+        break;
+      case CLOSURE_NONE_ID:
+        break;
+    }
+  }
+
+  switch (eDebugMode(srt_access(eevee_debug_gbuffer_Resources, debug_mode))) {
+    default:
+    case DEBUG_GBUFFER_STORAGE:
+      eevee_DualBlendFragOut_color_add = shade * float4(green_to_red_gradient(storage_cost / 4.0f), 0.0f);
+      break;
+    case DEBUG_GBUFFER_EVALUATION:
+      eevee_DualBlendFragOut_color_add = shade * float4(green_to_red_gradient(eval_cost / 4.0f), 0.0f);
+      break;
+  }
+
+  eevee_DualBlendFragOut_color_mul = float4(0.0f);
+
+#endif
+#line 653
+}
+#endif
+#endif
+#line 666
+
+#if defined(CREATE_INFO_eevee_HiZ)
+#line 666
+
+#if defined(ENTRY_POINT_eevee_debug_hiz_frag_main)
+#line 666
+
+void eevee_debug_hiz_frag_main(
+
+                                                       )
+{
+#if defined(GPU_FRAGMENT_SHADER)
+#line 670
+  eevee_HiZ hiz = eevee_HiZ_ctor_();
+  int2 texel = int2(gl_FragCoord.xy);
+
+  float depth0 = texelFetch(srt_access(eevee_HiZ, hiz_tx), texel, 0).r;
+
+  float4 color = float4(0.1f, 0.1f, 1.0f, 1.0f);
+  for (int i = 1; i < HIZ_MIP_COUNT; i++) {
+    int2 lvl_texel = texel / int2(uint2(1) << uint(i));
+    lvl_texel = min(lvl_texel, textureSize(srt_access(eevee_HiZ, hiz_tx), i) - 1);
+    if (texelFetch(srt_access(eevee_HiZ, hiz_tx), lvl_texel, i).r < depth0) {
+      color = float4(1.0f, 0.1f, 0.1f, 1.0f);
+      break;
+    }
+  }
+  eevee_DualBlendFragOut_color_add = float4(color.rgb, 0.0f) * 0.2f;
+  eevee_DualBlendFragOut_color_mul = color;
+
+#endif
+#line 686
+}
+#endif
+#endif
+#line 691

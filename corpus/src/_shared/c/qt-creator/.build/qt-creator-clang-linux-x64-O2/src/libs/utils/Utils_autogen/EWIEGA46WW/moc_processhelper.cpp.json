@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "ProcessHelper",
+            "lineNumber": 32,
+            "object": true,
+            "qualifiedClassName": "Utils::ProcessHelper",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QProcess"
+                }
+            ]
+        }
+    ],
+    "inputFile": "processhelper.h",
+    "outputRevision": 68
+}

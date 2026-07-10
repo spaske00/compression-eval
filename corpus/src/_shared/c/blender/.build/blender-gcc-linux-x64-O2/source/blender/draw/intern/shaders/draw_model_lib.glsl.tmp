@@ -1,0 +1,129 @@
+#line 1 "draw_model_lib.glsl"
+ 
+#line 11
+#if !defined(DRAW_MODELMAT_CREATE_INFO) && !defined(GLSL_CPP_STUBS)
+#  error Missing draw_modelmat additional create info on shader create info
+#endif
+
+#if defined(GPU_VERTEX_SHADER)
+VERTEX_SHADER_CREATE_INFO(draw_resource_id_varying)
+#elif defined(GPU_FRAGMENT_SHADER)
+FRAGMENT_SHADER_CREATE_INFO(draw_resource_id_varying)
+#elif defined(GPU_LIBRARY_SHADER)
+SHADER_LIBRARY_CREATE_INFO(draw_resource_id_varying)
+#endif
+
+uint drw_resource_id_raw()
+{
+#if defined(GPU_VERTEX_SHADER)
+#  ifdef WITH_CUSTOM_IDS
+  uint id = res_id_with_custom_id_buf[gpu_BaseInstance + gl_InstanceID].x;
+#  else
+  uint id = res_id_buf[gpu_BaseInstance + gl_InstanceID];
+#  endif
+  return id;
+
+#elif (defined(GPU_FRAGMENT_SHADER) || defined(GPU_LIBRARY_SHADER)) && defined(RESOURCE_ID_VARYING)
+  return drw_ResourceID_iface.resource_id;
+#endif
+  return 0;
+}
+
+uint drw_resource_id()
+{
+  return drw_resource_id_raw() >> DRW_VIEW_SHIFT;
+}
+
+uint drw_custom_id()
+{
+#ifdef WITH_CUSTOM_IDS
+#  if defined(GPU_VERTEX_SHADER)
+  uint inst_id = gpu_BaseInstance + gl_InstanceID;
+  return res_id_with_custom_id_buf[gpu_BaseInstance + gl_InstanceID].y;
+#  endif
+#endif
+  return 0;
+}
+
+float4x4 drw_modelmat()
+{
+
+#if defined(CREATE_INFO_draw_modelmat_common)
+#line 57
+
+  return buffer_get(draw_modelmat_common, drw_matrix_buf)[drw_resource_id()].model;
+
+#else
+#line 57
+  return float4x4(0);
+#endif
+}
+float4x4 drw_modelinv()
+{
+
+#if defined(CREATE_INFO_draw_modelmat_common)
+#line 62
+
+  return buffer_get(draw_modelmat_common, drw_matrix_buf)[drw_resource_id()].model_inverse;
+
+#else
+#line 62
+  return float4x4(0);
+#endif
+}
+#line 78
+float3x3 drw_normat()
+{
+  return transpose(to_float3x3(drw_modelinv()));
+}
+float3x3 drw_norinv()
+{
+  return transpose(to_float3x3(drw_modelmat()));
+}
+#line 93
+float3 drw_normal_object_to_world(float3 lN)
+{
+  return (drw_normat() * lN);
+}
+float3 drw_normal_world_to_object(float3 N)
+{
+  return (drw_norinv() * N);
+}
+
+float3 drw_normal_object_to_view(float3 lN)
+{
+  return (to_float3x3(drw_view().viewmat) * (drw_normat() * lN));
+}
+float3 drw_normal_view_to_object(float3 vN)
+{
+  return (drw_norinv() * (to_float3x3(drw_view().viewinv) * vN));
+}
+#line 119
+float3 drw_point_object_to_world(float3 lP)
+{
+  return (drw_modelmat() * float4(lP, 1.0f)).xyz;
+}
+float3 drw_point_world_to_object(float3 P)
+{
+  return (drw_modelinv() * float4(P, 1.0f)).xyz;
+}
+
+float3 drw_point_object_to_view(float3 lP)
+{
+  return (drw_view().viewmat * (drw_modelmat() * float4(lP, 1.0f))).xyz;
+}
+float3 drw_point_view_to_object(float3 vP)
+{
+  return (drw_modelinv() * (drw_view().viewinv * float4(vP, 1.0f))).xyz;
+}
+
+float4 drw_point_object_to_homogenous(float3 lP)
+{
+  return (drw_view().winmat * (drw_view().viewmat * (drw_modelmat() * float4(lP, 1.0f))));
+}
+float3 drw_point_object_to_ndc(float3 lP)
+{
+  return drw_perspective_divide(drw_point_object_to_homogenous(lP));
+}
+
+

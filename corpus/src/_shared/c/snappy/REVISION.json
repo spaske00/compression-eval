@@ -1,0 +1,1 @@
+{"schema_version":1,"key":"snappy","input_url":"https://github.com/google/snappy","canonical_url":"https://github.com/google/snappy","source_directory":"snappy/upstream","commit":"3ac3722e1bee4b99860a282fb779e8e72fa18163","nested_submodules":[{"path":"third_party/benchmark","commit":"b20cea674170b2ba45da0dfaf03953cdea473d0d"}]}

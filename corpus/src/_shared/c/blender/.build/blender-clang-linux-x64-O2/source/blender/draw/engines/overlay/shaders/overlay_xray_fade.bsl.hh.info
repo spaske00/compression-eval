@@ -1,0 +1,42 @@
+#pragma once
+
+
+
+
+GPU_SHADER_CREATE_INFO(overlay_xray_fade_FragOut)
+FRAGMENT_OUT(0, float4, overlay_xray_fade_FragOut_color)
+GPU_SHADER_CREATE_END()
+
+
+GPU_SHADER_INTERFACE_INFO(overlay_xray_fade_VertOut_t)
+SMOOTH(float2, overlay_xray_fade_VertOut_uv)
+GPU_SHADER_INTERFACE_END()
+
+
+GPU_SHADER_CREATE_INFO(overlay_xray_fade_Resources)
+.sampler(0, ImageType::sampler2DDepth, "depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(1, ImageType::sampler2DDepth, "depth_in_front_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(2, ImageType::sampler2DDepth, "xray_depth_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+.sampler(3, ImageType::sampler2DDepth, "xray_depth_in_front_tx", Frequency::PASS, GPUSamplerState::internal_sampler())
+PUSH_CONSTANT(float, opacity)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(overlay_xray_fade_vert_main_infos_)
+BUILTINS(BuiltinBits::VERTEX_ID)
+VERTEX_OUT(overlay_xray_fade_VertOut_t)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(overlay_xray_fade_frag_main_infos_)
+ADDITIONAL_INFO(overlay_xray_fade_Resources)
+ADDITIONAL_INFO(overlay_xray_fade_FragOut)
+GPU_SHADER_CREATE_END()
+
+GPU_SHADER_CREATE_INFO(overlay_xray_fade_pipeline)
+GRAPHIC_SOURCE("overlay_xray_fade.bsl.hh")
+VERTEX_FUNCTION("overlay_xray_fade_vert_main")
+FRAGMENT_FUNCTION("overlay_xray_fade_frag_main")
+ADDITIONAL_INFO(overlay_xray_fade_vert_main_infos_)
+ADDITIONAL_INFO(overlay_xray_fade_frag_main_infos_)
+DO_STATIC_COMPILATION()
+GPU_SHADER_CREATE_END()
+

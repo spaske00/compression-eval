@@ -1,0 +1,22 @@
+#line 1 "eevee_reverse_z_lib.bsl.hh"
+ 
+#line 18
+float4 reverse_z_transform(float4 hs_position)
+{
+
+  hs_position.z = -hs_position.z;
+  return hs_position;
+}
+#line 27
+float reverse_z_read(float depth_buffer_value)
+{
+
+  return 1.0f - depth_buffer_value;
+}
+#line 27
+float4 reverse_z_read(float4 depth_buffer_value)
+{
+
+  return 1.0f - depth_buffer_value;
+}
+#line 36
