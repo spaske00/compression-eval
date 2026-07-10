@@ -42,12 +42,13 @@ function make_all ()
 {
     local cc="$1"
     local cxx="$2"
+    local compiler_label="${COMPILER_LABEL:-$cc}"
     shift 2
 
     for a in "${arch[@]}"; do
         for o in "${!opts[@]}"; do
             local prog
-            prog="$(basename "$PWD")-${cc}"
+            prog="$(basename "$PWD")-${compiler_label}"
             local opt="${opts[$o]}"
             local target="$prog-$a-$o"
 
